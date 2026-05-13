@@ -9,7 +9,8 @@
       "PowerShell(pnpm lint *)",
       "PowerShell(python scripts/run_phase.py --complete phase-01-nextjs-init)",
       "PowerShell(pnpm *)",
-      "PowerShell(npm view *)"
+      "PowerShell(npm view *)",
+      "PowerShell(pip install *)"
     ]
   }
 }

@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-13T07:07:38.405037+00:00",
+  "last_updated": "2026-05-13T08:52:56.140324+00:00",
   "current_phase": "phase-00-setup",
   "total_phases": 14,
-  "completed_phases": 3,
-  "remaining_phases": 11,
-  "last_successful_state": "phase-01-nextjs-init",
+  "completed_phases": 4,
+  "remaining_phases": 10,
+  "last_successful_state": "phase-03-db-schema",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -59,17 +59,19 @@
       "id": "phase-03-db-schema",
       "name": "Supabase 6개 테이블 + 라이선스 트리거 적용",
       "category": "Phase 0",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-00-setup"
       ],
       "spec_file": "tasks/phase-03-db-schema.json",
       "verification": [
-        "6개 테이블 생성 완료",
-        "enforce_commercial_license 트리거 작동 확인",
-        "RLS 활성화 확인",
-        "NC 라이선스 INSERT 시도 시 예외 발생 확인"
-      ]
+        "6개 테이블 생성 확인 (profiles, children, books, reading_sessions, favorites, child_badges)",
+        "enforce_commercial_license 트리거 작동 (NC 차단 테스트 통과)",
+        "attribution_text NOT NULL 강제 (NULL INSERT 차단 테스트 통과)",
+        "RLS 활성화 (모든 테이블)",
+        "scripts/verify_schema.py 실행 통과"
+      ],
+      "completed_at": "2026-05-13T08:52:56.140305+00:00"
     },
     {
       "id": "phase-04-book-dash-sync",
