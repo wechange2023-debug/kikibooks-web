@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.0",
+  "project": "kikibooks",
+  "last_updated": "2026-05-13T07:07:38.405037+00:00",
+  "current_phase": "phase-00-setup",
+  "total_phases": 14,
+  "completed_phases": 3,
+  "remaining_phases": 11,
+  "last_successful_state": "phase-01-nextjs-init",
+  "phases": [
+    {
+      "id": "phase-00-setup",
+      "name": "계정 및 도구 초기화",
+      "category": "Phase 0",
+      "status": "success",
+      "depends_on": [],
+      "spec_file": "tasks/phase-00-setup.json",
+      "verification": [
+        "GitHub Private Repo 생성됨",
+        "Supabase 프로젝트(Seoul region) 생성됨",
+        "Vercel 프로젝트 GitHub 연동 완료"
+      ],
+      "completed_at": "2026-05-13T06:31:33.155556+00:00"
+    },
+    {
+      "id": "phase-01-nextjs-init",
+      "name": "Next.js 14 + Tailwind + shadcn 초기 셋업",
+      "category": "Phase 0",
+      "status": "success",
+      "depends_on": [
+        "phase-00-setup"
+      ],
+      "spec_file": "tasks/phase-01-nextjs-init.json",
+      "verification": [
+        "pnpm dev 실행 시 기본 페이지 표시",
+        "Tailwind 토큰 적용 확인",
+        "shadcn/ui 컴포넌트 1개 이상 정상 렌더"
+      ],
+      "completed_at": "2026-05-13T07:07:38.405011+00:00"
+    },
+    {
+      "id": "phase-02-design-system",
+      "name": "디자인 시스템 확정 (Claude Design 추출 + 키키북스 보강)",
+      "category": "Phase 0",
+      "status": "success",
+      "completed_at": "2026-05-13T00:00:00Z",
+      "depends_on": [
+        "phase-01-nextjs-init"
+      ],
+      "spec_file": "tasks/phase-02-design-md.json",
+      "verification": [
+        "docs/design-system.md v1.0 작성 완료",
+        "docs/adr/0002-design-system.md 작성 완료",
+        "claude.md 라우팅 테이블 갱신 완료",
+        "AttributionBox/Reader/Celebrate/Streak/Level 컬러 매핑 5종 보강 완료"
+      ]
+    },
+    {
+      "id": "phase-03-db-schema",
+      "name": "Supabase 6개 테이블 + 라이선스 트리거 적용",
+      "category": "Phase 0",
+      "status": "pending",
+      "depends_on": [
+        "phase-00-setup"
+      ],
+      "spec_file": "tasks/phase-03-db-schema.json",
+      "verification": [
+        "6개 테이블 생성 완료",
+        "enforce_commercial_license 트리거 작동 확인",
+        "RLS 활성화 확인",
+        "NC 라이선스 INSERT 시도 시 예외 발생 확인"
+      ]
+    },
+    {
+      "id": "phase-04-book-dash-sync",
+      "name": "Book Dash 동기화 스크립트 작성 및 1차 적재",
+      "category": "Phase 0",
+      "status": "pending",
+      "depends_on": [
+        "phase-03-db-schema"
+      ],
+      "spec_file": "tasks/phase-04-book-dash-sync.json",
+      "verification": [
+        "books 테이블에 200권 이상 적재",
+        "attribution_text 누락 0건",
+        "license 값이 cc-by-4-0인 책만 존재"
+      ]
+    },
+    {
+      "id": "phase-05-gdl-sync",
+      "name": "Global Digital Library 동기화 스크립트 작성 및 1차 적재",
+      "category": "Phase 0",
+      "status": "pending",
+      "depends_on": [
+        "phase-03-db-schema"
+      ],
+      "spec_file": "tasks/phase-05-gdl-sync.json",
+      "verification": [
+        "books 테이블에 영어 CC BY 600권 이상 추가 적재",
+        "level/age 자동 추정 작동",
+        "총 1,300권 이상 누적 적재"
+      ]
+    },
+    {
+      "id": "phase-06-github-actions",
+      "name": "GitHub Actions cron 워크플로 설정",
+      "category": "Phase 0",
+      "status": "pending",
+      "depends_on": [
+        "phase-04-book-dash-sync",
+        "phase-05-gdl-sync"
+      ],
+      "spec_file": "tasks/phase-06-github-actions.json",
+      "verification": [
+        "Secrets 등록 완료 (SUPABASE_URL, SERVICE_ROLE_KEY 등)",
+        "수동 트리거 성공",
+        "cron 스케줄 매일 03:00 UTC 설정"
+      ]
+    },
+    {
+      "id": "phase-07-auth",
+      "name": "Supabase Auth + 이메일/구글/카카오 OAuth",
+      "category": "Phase 1",
+      "status": "pending",
+      "depends_on": [
+        "phase-01-nextjs-init",
+        "phase-03-db-schema"
+      ],
+      "spec_file": "tasks/phase-07-auth.json",
+      "verification": [
+        "이메일 가입/로그인 작동",
+        "구글 OAuth 작동",
+        "카카오 OAuth 작동 (또는 가입 후 추가 가능)",
+        "middleware.ts 보호 라우트 작동"
+      ]
+    },
+    {
+      "id": "phase-08-onboarding",
+      "name": "자녀 프로필 등록 온보딩 플로우",
+      "category": "Phase 1",
+      "status": "pending",
+      "depends_on": [
+        "phase-07-auth"
+      ],
+      "spec_file": "tasks/phase-08-onboarding.json",
+      "verification": [
+        "첫 로그인 → /onboarding 자동 리다이렉트",
+        "자녀 이름·나이·레벨 입력 후 /home 진입",
+        "children 테이블에 정상 INSERT"
+      ]
+    },
+    {
+      "id": "phase-09-screen-01-landing",
+      "name": "Screen 01 랜딩 페이지 구현",
+      "category": "Phase 1",
+      "status": "pending",
+      "depends_on": [
+        "phase-02-design-system",
+        "phase-05-gdl-sync"
+      ],
+      "spec_file": "tasks/phase-09-screen-01-landing.json",
+      "verification": [
+        "비로그인 시 랜딩 표시",
+        "로그인 시 /home 리다이렉트",
+        "추천 책 6권 표시"
+      ]
+    },
+    {
+      "id": "phase-10-screen-02-home",
+      "name": "Screen 02 로그인 후 홈 구현",
+      "category": "Phase 1",
+      "status": "pending",
+      "depends_on": [
+        "phase-08-onboarding"
+      ],
+      "spec_file": "tasks/phase-10-screen-02-home.json",
+      "verification": [
+        "자녀 프로필 칩 표시",
+        "오늘의 추천 5권 (level ±1 기준)",
+        "카테고리 그리드 8개",
+        "스트릭 막대그래프"
+      ]
+    },
+    {
+      "id": "phase-11-screen-03-book-detail",
+      "name": "Screen 03 책 상세 + AttributionBox 구현",
+      "category": "Phase 1",
+      "status": "pending",
+      "depends_on": [
+        "phase-10-screen-02-home"
+      ],
+      "spec_file": "tasks/phase-11-screen-03-book-detail.json",
+      "verification": [
+        "AttributionBox 100% 표시 (라이선스 감사 통과)",
+        "원본 URL 새 탭 오픈",
+        "읽기 버튼 → /book/[id]/read 이동"
+      ]
+    },
+    {
+      "id": "phase-12-screen-04-reader",
+      "name": "Screen 04 책 뷰어 (HTML/ePub/H5P 분기)",
+      "category": "Phase 1",
+      "status": "pending",
+      "depends_on": [
+        "phase-11-screen-03-book-detail"
+      ],
+      "spec_file": "tasks/phase-12-screen-04-reader.json",
+      "verification": [
+        "Book Dash HTML iframe 정상",
+        "GDL H5P 정상",
+        "reading_sessions 페이지 단위 업데이트",
+        "마지막 페이지 → /book/[id]/celebrate 이동"
+      ]
+    },
+    {
+      "id": "phase-13-screen-05-celebrate",
+      "name": "Screen 05 완독 보상 + 라이브러리",
+      "category": "Phase 1",
+      "status": "pending",
+      "depends_on": [
+        "phase-12-screen-04-reader"
+      ],
+      "spec_file": "tasks/phase-13-screen-05-celebrate.json",
+      "verification": [
+        "별 3개 SVG 애니메이션",
+        "포인트 +50 children.points 반영",
+        "child_badges INSERT",
+        "라이브러리 필터·검색·무한 스크롤 작동"
+      ]
+    }
+  ],
+  "global_verification": {
+    "license_audit_query": "SELECT COUNT(*) FROM books WHERE attribution_text IS NULL OR license LIKE '%nc%' OR license LIKE '%nd%';",
+    "expected_result": 0,
+    "performance_targets": {
+      "lighthouse_performance_min": 80,
+      "lighthouse_accessibility_min": 90,
+      "fcp_book_detail_max_seconds": 2
+    }
+  },
+  "recovery": {
+    "policy": "마지막 성공한 페이즈의 종료 상태로 원복 후 해당 페이즈부터 재실행",
+    "rollback_script": "scripts/rollback_to_last_success.py",
+    "max_retries_per_phase": 3
+  }
+}

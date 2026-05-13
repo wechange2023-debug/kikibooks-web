@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Vercel
+.vercel/
+
+# Environment ★ 보안: 절대 커밋 금지 (Hard Rule 6 — service_role 키 보호)
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*.local.json
+
+# TypeScript
+*.tsbuildinfo
+
+# Tests / coverage
+coverage/
+
+# Misc
+.tmp_init_path
+*.pem

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/run_phase.py --status)",
+      "Bash(PYTHONIOENCODING=utf-8 python scripts/run_phase.py --status)",
+      "PowerShell(pnpm add *)",
+      "PowerShell(pnpm type-check *)",
+      "PowerShell(pnpm dev *)",
+      "PowerShell(pnpm lint *)",
+      "PowerShell(python scripts/run_phase.py --complete phase-01-nextjs-init)",
+      "PowerShell(pnpm *)",
+      "PowerShell(npm view *)"
+    ]
+  }
+}
