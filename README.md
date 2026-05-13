@@ -17,14 +17,18 @@ pnpm install
 cp .env.example .env.local
 ```
 
-`.env.local` 파일을 열고 다음 3개 키를 입력합니다 (Supabase 대시보드에서 확인):
+`.env.local` 파일을 열고 다음 3개 키를 입력합니다 (Supabase 대시보드 → Project Settings → **API**):
 
 - `NEXT_PUBLIC_SUPABASE_URL` — 프로젝트 URL
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` — 공개 anon 키
-- `SUPABASE_SERVICE_ROLE_KEY` — **서버 전용** service_role 키 (절대 노출 금지)
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` — `sb_publishable_xxx` 형태의 공개 키
+- `SUPABASE_SECRET_KEY` — `sb_secret_xxx` 형태의 **서버 전용** 비밀 키 (절대 노출 금지)
 
 > `.env.local`은 `.gitignore`에 의해 커밋되지 않습니다.
-> service_role 키는 비밀번호 매니저에 보관하고, 직접 타이핑하지 말고 복사해서 붙여넣으세요.
+> Secret 키는 비밀번호 매니저에 보관하고, 직접 타이핑하지 말고 복사해서 붙여넣으세요.
+> 새 API 키 시스템(Publishable / Secret) 채택 배경은 [`docs/adr/0003-supabase-new-api-keys.md`](./docs/adr/0003-supabase-new-api-keys.md).
+>
+> ※ 옛 이름(`NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`)으로 입력해도
+> 코드 fallback 덕분에 당분간 작동하지만, 새 이름으로의 전환을 권장합니다.
 
 ### 3. 개발 서버 실행
 

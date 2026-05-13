@@ -41,7 +41,7 @@
 3. **CC BY-NC, CC BY-ND, SAG-AFTRA(Storyline Online) 콘텐츠 어떤 형태로도 적재 금지**
 4. **유명 작가 미협상 IP 사용 금지** — Eric Carle, Mo Willems, Dr. Seuss, Gruffalo, Anthony Browne 등은 협상 체결 전 텍스트·이미지·낭독 어떤 형태도 금지
 5. **`Peter Rabbit™` 등 상표적 명칭·로고 사용 금지** — Beatrix Potter 텍스트는 PD이나 상표는 별도 보호
-6. **Supabase `service_role` 키를 클라이언트 코드·공개 환경변수에 노출 금지** — 서버 컴포넌트·API Route·GitHub Actions Secret에서만 사용
+6. **Supabase 비밀 키(`sb_secret_xxx` 또는 legacy `service_role`)를 클라이언트 코드·공개 환경변수에 노출 금지** — 서버 컴포넌트·API Route·GitHub Actions Secret에서만 사용. 환경변수 이름은 `SUPABASE_SECRET_KEY`를 표준으로 함 (ADR-0003)
 7. **PLAN.md의 Phase 순서 임의 변경 금지** — Phase 0 완료 전 Phase 1 진입 금지
 8. **DB 스키마 변경 시 반드시 `docs/adr/` 신규 ADR 작성 선행** — 코드를 먼저 쓰지 않는다
 9. **YouTube 임베드(출판사 공식 채널 외) 금지** — 광고 매출 결합 불가
