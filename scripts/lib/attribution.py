@@ -145,15 +145,86 @@ def build_book_dash_attribution(
 
 
 # ---------------------------------------------------------------------------
+# GDL 전용 헬퍼 — publisher → author 매핑, 결측 시 정직 폴백 (C안)
+# ---------------------------------------------------------------------------
+# 2026-05-14 실측: GDL 영어 책 1,313권 중 856권(65.2%)이 publisher 빈 문자열.
+# 다른 creator-like 필드(contentsource/mainCategory/collectionTag)도 거의 비어
+# 있음. ADR-0007 §7 amendment(C안 정직 폴백)에 따라, publisher가 없는 경우
+# author 슬롯에 명시적 폴백 텍스트를 사용한다. CC BY 4.0 §3(a)(1)(A)(i)에
+# 따르면 라이선서가 attribution 정보를 제공하지 않은 경우 라이선시는 그들이
+# 제공한 만큼 표기하면 되므로, 폴백 텍스트는 메타데이터 한계를 사용자에게
+# 투명하게 알리는 역할도 한다.
+GDL_FALLBACK_AUTHOR = (
+    "Global Digital Library (creator information not provided by source)"
+)
+
+
+def build_gdl_attribution(
+    *,
+    title: str,
+    publisher: Optional[str],
+    post_link: str,
+    license_code: str,
+) -> tuple[str, bool]:
+    """
+    Returns:
+        (attribution_text, used_fallback)
+        - attribution_text: books.attribution_text 컬럼에 그대로 INSERT
+        - used_fallback: True면 publisher 결측으로 GDL_FALLBACK_AUTHOR 사용됨
+
+    sync_gdl.py는 used_fallback이 True인 건수를 `inserted_with_fallback_author`
+    카운터에 집계한다.
+
+    title/post_link/license_code 결측 시에만 AttributionError를 던진다.
+    """
+    used_fallback = False
+    author = (publisher or "").strip()
+    if not author:
+        author = GDL_FALLBACK_AUTHOR
+        used_fallback = True
+
+    text = build_attribution(
+        title=title,
+        author=author,
+        illustrator=None,
+        source_platform="gdl",
+        license_code=license_code,
+        original_url=post_link,
+    )
+    return text, used_fallback
+
+
+# ---------------------------------------------------------------------------
 # CLI 자가 검증 (개발용)
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    sample = build_book_dash_attribution(
+    sample_bd = build_book_dash_attribution(
         title="A Beautiful Day",
         creator="Raeesah Vawda, Lindy Pelzl, Elana Bregin",
         slug="a-beautiful-day",
     )
-    print(sample)
+    print("[Book Dash 샘플]")
+    print(sample_bd)
     print()
-    print(f"길이: {len(sample)}자 (verify_schema 최소 50자 기준 통과 여부: "
-          f"{'OK' if len(sample) >= 50 else 'FAIL'})")
+    sample_gdl, _ = build_gdl_attribution(
+        title="I Love My Mom",
+        publisher="StoryWeaver",
+        post_link="https://content.digitallibrary.io/en/book/i-love-my-mom-3/",
+        license_code="cc-by-4-0",
+    )
+    print("[GDL 샘플 — publisher 있음]")
+    print(sample_gdl)
+    print()
+    sample_gdl_fb, used_fb = build_gdl_attribution(
+        title="Animal Hide-and-Seek",
+        publisher=None,
+        post_link="https://content.digitallibrary.io/en/book/animal-hide-and-seek/",
+        license_code="cc-by-4-0",
+    )
+    print(f"[GDL 샘플 — publisher 없음, 정직 폴백 (used_fallback={used_fb})]")
+    print(sample_gdl_fb)
+    print()
+    print(f"BD: {len(sample_bd)}자 / GDL: {len(sample_gdl)}자 / "
+          f"GDL-fallback: {len(sample_gdl_fb)}자  "
+          f"(50자 기준 통과 여부: "
+          f"{'OK' if min(len(sample_bd), len(sample_gdl), len(sample_gdl_fb)) >= 50 else 'FAIL'})")

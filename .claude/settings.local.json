@@ -15,7 +15,9 @@
       "WebFetch(domain:bookdash.org)",
       "WebFetch(domain:bookdash.github.io)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:gist.github.com)"
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:digitallibrary.io)",
+      "WebFetch(domain:content.digitallibrary.io)"
     ]
   }
 }

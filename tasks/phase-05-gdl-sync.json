@@ -1,0 +1,146 @@
+{
+  "phase_id": "phase-05-gdl-sync",
+  "name": "Global Digital Library 동기화 (영어 only) — 600권 이상 + level/age 휴리스틱",
+  "category": "Phase 0",
+  "version": "1.0",
+  "created_at": "2026-05-14",
+
+  "summary": "Global Digital Library(content.digitallibrary.io)의 WordPress REST API(/wp-json/content-api/v1/books/en)에서 영어 + CC BY 4.0/CC BY-SA 4.0 책 메타데이터를 페이지네이션으로 적재한다. 본문은 GDL 책 페이지(postLink)를 iframe으로 임베드한다 — Phase 04 Book Dash와 동일 패턴. 인증 불필요(anonymous), robots.txt 전체 허용, iframe 헤더 사전 검증 완료(2026-05-14).",
+
+  "goals": [
+    "books 테이블에 source_platform='gdl', language='en' 책 600권 이상 적재",
+    "license는 cc-by-4-0 또는 cc-by-sa-4-0만 — NC/ND는 트리거 + 클라이언트 양쪽에서 차단",
+    "level/age_min/age_max 자동 추정 작동(임시 분류) — 정확도 보정은 Phase 9~10",
+    "Book Dash + GDL 합산 660권 이상 누적 적재 (1,300권 목표의 첫 절반)"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 1 — attribution_text NOT NULL (publisher 결측 책은 skip)",
+    "Hard Rule 2 — enforce_commercial_license 트리거 활성 유지",
+    "Hard Rule 3 — NC/ND 콘텐츠 client-side + DB 양쪽 차단",
+    "Hard Rule 6 — SUPABASE_SECRET_KEY 서버 전용, 출력 금지"
+  ],
+
+  "data_source": {
+    "api_base": "https://content.digitallibrary.io/wp-json/content-api/v1/books/en",
+    "pagination": "★ 미작동 — 모든 페이지네이션 파라미터가 무시되며 단일 응답에 1,313권 일괄 반환 (ADR-0007 §7.3 amendment, 2026-05-14 dry-run 후 정정)",
+    "auth": "anonymous (인증 불필요, 2026-05-14 실측)",
+    "single_response_size": "약 5.7MB / 1,313권",
+    "content_url": "{book.postLink} → https://content.digitallibrary.io/en/book/{slug}/",
+    "cover_url": "https://content.digitallibrary.io/wp-content/uploads/h5p/content/{h5pId}/images/coverImage.jpg",
+    "iframe_compat": "X-Frame-Options/CSP 모두 없음, embedTypes='iframe' (2026-05-14 HEAD 검증)",
+    "robots_txt": "User-agent: * / Disallow: (전체 허용)",
+    "publisher_fallback": "C안 — publisher 결측 시 'Global Digital Library (creator information not provided by source)' 정직 폴백 (ADR-0007 §7.2)",
+    "title_dedup": "정규화 title 그룹에서 lastChanged 최신 1건만 채택 (ADR-0007 §7.4)",
+    "book_dash_skip": "publisher=='BookDash' 33권은 Phase 04 중복 회피로 skip (ADR-0007 §7.5)",
+    "rejected_alternatives": [
+      "h5p-standalone 자체 호스팅 (.h5p 파일 직접 다운로드) — Supabase Storage 비용·뷰어 복잡도",
+      "epub.js + epubUrl — H5P 인터랙티브 손실, 동적 변환 지연"
+    ]
+  },
+
+  "scope_in": [
+    "WP REST API에서 영어 책 1회 fetch (페이지네이션 미작동, ADR-0007 §7.3)",
+    "license[0].slug ∈ {cc-by-4-0, cc-by-sa-4-0}만 INSERT",
+    "title/description/publisher에 html.unescape() 적용 (ADR-0007 §7.9)",
+    "publisher 필드를 author 슬롯에 매핑 (있으면 그대로, 없으면 정직 폴백 — license-rules.md 4.3 + ADR-0007 §7.2)",
+    "publisher=='BookDash' 33권 skip (Phase 04 중복 회피, ADR-0007 §7.5)",
+    "비-그림책 skip: h5pLibrary.name=='H5P.InteractiveVideo' + title prefix(Introduction to/Numeracy Level/Literacy Level/World Around Us) (ADR-0007 §7.8)",
+    "H5P 기술 변형본 skip: title 정규식 (Arrow navigation/Column/Comprehension after|in book 등). skip 제목은 stdout 항상 출력 (ADR-0007 §7.8)",
+    "동제목 dedup — 정규화 title 그룹에서 lastChanged 최신 1건만 채택 (ADR-0007 §7.4)",
+    "level 비어 있는 책: description 단어 수 휴리스틱으로 임시 분류 (ADR-0007 §4.3)",
+    "100건 단위 batch upsert (UNIQUE(source_platform, source_id) 기반 idempotent)",
+    "결과 로그: received, skipped_by_*, skipped_as_non_picture_book, skipped_as_h5p_variant, inserted_or_updated, inserted_with_fallback_author, errors"
+  ],
+
+  "scope_out": [
+    "번역본(en 이외 언어) — ADR-0006",
+    ".h5p 파일 자체 다운로드/호스팅",
+    "level 큐레이션 정확도 보정 — Phase 9~10",
+    "GitHub Actions cron — Phase 6",
+    "스크립트 자동 실행 — 사용자가 직접 실행"
+  ],
+
+  "files_to_create_or_modify": [
+    "docs/adr/0007-gdl-sync-strategy.md (신규)",
+    "docs/guidelines/license-rules.md (4.3 GDL 행만 수정)",
+    "scripts/lib/attribution.py (build_gdl_attribution 헬퍼 추가)",
+    "scripts/lib/level_estimator.py (신규)",
+    "scripts/sync_gdl.py (신규)",
+    "scripts/verify_gdl_sync.py (신규)"
+  ],
+
+  "verification": [
+    {
+      "id": "v1-gdl-en-count",
+      "description": "source_platform='gdl' AND language='en' 책 600권 이상",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform='gdl' AND language='en';",
+      "expected": ">= 600"
+    },
+    {
+      "id": "v2-cumulative-count",
+      "description": "Book Dash + GDL 합산 660권 이상 누적",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform IN ('book_dash','gdl') AND language='en';",
+      "expected": ">= 660"
+    },
+    {
+      "id": "v3-attribution-not-null",
+      "description": "GDL 책의 attribution_text 누락(50자 미만 포함) 0건",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform='gdl' AND (attribution_text IS NULL OR LENGTH(attribution_text) < 50);",
+      "expected": "= 0"
+    },
+    {
+      "id": "v4-license-purity",
+      "description": "GDL 책의 license가 cc-by-4-0 또는 cc-by-sa-4-0만 (NC/ND 0건)",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform='gdl' AND license NOT IN ('cc-by-4-0','cc-by-sa-4-0');",
+      "expected": "= 0"
+    },
+    {
+      "id": "v5-content-url-format",
+      "description": "GDL 책의 content_url이 content.digitallibrary.io 형식 100%",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform='gdl' AND content_url NOT LIKE 'https://content.digitallibrary.io/en/book/%';",
+      "expected": "= 0"
+    },
+    {
+      "id": "v6-level-coverage-info",
+      "description": "GDL 책의 level 채워진 비율 (참고용, 통과 기준 아님)",
+      "sql": "SELECT COUNT(*) FILTER (WHERE level IS NOT NULL) * 100.0 / COUNT(*) FROM books WHERE source_platform='gdl';",
+      "expected": "info only"
+    },
+    {
+      "id": "v7-fallback-author-ratio-info",
+      "description": "정직 폴백 author를 사용한 GDL 책 비율 (참고용, ADR-0007 §7.2). 패턴 매칭으로 추정",
+      "sql": "SELECT COUNT(*) FILTER (WHERE attribution_text LIKE '%creator information not provided%') * 100.0 / COUNT(*) FROM books WHERE source_platform='gdl';",
+      "expected": "info only (실측 ~65% 예상)"
+    },
+    {
+      "id": "v8-cumulative-vs-beta-target-info",
+      "description": "Book Dash + GDL 누적과 베타 목표 1,300권 비교 (정보 only, 미달 시 경고 아님)",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform IN ('book_dash','gdl') AND language='en';",
+      "expected": "info only — Phase 06 이후 신규 출처 추가로 보강 예정"
+    },
+    {
+      "id": "v9-curation-candidates-info",
+      "description": "1순위 큐레이션 검토 후보 권수 (ADR-0007 §7.8) — Phase 9~10에서 is_active=false 처리할 책 목록",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform='gdl' AND (title ILIKE '%test%' OR title ILIKE '%demo%' OR title ILIKE '%sample%' OR title ~ '\\([a-z]{2}\\)\\s*$' OR title ILIKE '%(cab%');",
+      "expected": "info only (실측 ~10~15권 예상)"
+    }
+  ],
+
+  "user_steps": [
+    "(선택, 권장) python scripts/sync_gdl.py --dry-run --max-books 40             # 1회 fetch + dedup, 40권 slice",
+    "(선택) python scripts/sync_gdl.py --dry-run --verbose                       # 동제목 dedup 결정 상세 로그",
+    "python scripts/sync_gdl.py                                                   # 본 동기화 (~30초, 1회 fetch + batch upsert)",
+    "python scripts/verify_gdl_sync.py",
+    "python scripts/run_phase.py --complete phase-05-gdl-sync"
+  ],
+
+  "references": [
+    "claude.md 2절 Hard Rules",
+    "docs/guidelines/license-rules.md 3절·4.2절·4.3절(본 페이즈에서 수정)",
+    "docs/adr/0004-source-platform-list.md",
+    "docs/adr/0006-beta-language-scope.md",
+    "docs/adr/0007-gdl-sync-strategy.md (본 페이즈 생성)",
+    "supabase/migrations/001_initial_schema.sql"
+  ]
+}

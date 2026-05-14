@@ -125,7 +125,7 @@ Original text source: Project Gutenberg (https://www.gutenberg.org/ebooks/14838)
 | 소스 플랫폼 | author 필드 | illustrator 필드 | 라이선스 URL |
 |---|---|---|---|
 | `book_dash` | `creator` API 필드 | `illustrator` API 필드 | CC BY 4.0 URL 고정 |
-| `gdl` | `authors[]` 첫 항목 | `illustrators[]` 첫 항목 | `license.url` API 필드 |
+| `gdl` | `publisher` API 필드 (실측: GDL 응답에 authors/illustrators 미제공, ADR-0007 §4.1·4.2 참조) | (없음) | `license[0].slug` API 필드 (예: `cc-by-4-0`) |
 | `librivox` | `authors[]` 첫 항목 | (없음, "Audio narration by {readers}") | CC0 URL |
 | `pg` (Project Gutenberg) | `author` 필드 | (PD 작품 대부분 없음) | PD 근거 |
 

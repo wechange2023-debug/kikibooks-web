@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-14T02:05:25.351551+00:00",
+  "last_updated": "2026-05-14T05:34:00.874948+00:00",
   "current_phase": "phase-00-setup",
   "total_phases": 14,
-  "completed_phases": 5,
-  "remaining_phases": 9,
-  "last_successful_state": "phase-04-book-dash-sync",
+  "completed_phases": 6,
+  "remaining_phases": 8,
+  "last_successful_state": "phase-05-gdl-sync",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -93,7 +93,7 @@
       "id": "phase-05-gdl-sync",
       "name": "Global Digital Library 동기화 스크립트 작성 및 1차 적재",
       "category": "Phase 0",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-03-db-schema"
       ],
@@ -102,7 +102,8 @@
         "books 테이블에 영어 CC BY 600권 이상 추가 적재",
         "level/age 자동 추정 작동",
         "총 1,300권 이상 누적 적재"
-      ]
+      ],
+      "completed_at": "2026-05-14T05:34:00.874929+00:00"
     },
     {
       "id": "phase-06-github-actions",
