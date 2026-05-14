@@ -1,0 +1,104 @@
+{
+  "phase_id": "phase-04-book-dash-sync",
+  "name": "Book Dash 동기화 스크립트 작성 및 1차 적재 (영어 only)",
+  "category": "Phase 0",
+  "version": "1.0",
+  "created_at": "2026-05-14",
+
+  "summary": "Book Dash의 공식 GitHub 저장소 bookdash-books의 _data/meta.yml을 단일 출처로 사용하여, 영어(en) 원본 책 메타데이터를 Supabase books 테이블에 적재한다. 번역본은 베타 스코프 외(ADR-0006)이므로 적재하지 않는다. 본문은 bookdash.github.io GitHub Pages의 HTML을 iframe으로 임베드한다 (iframe·CORS 호환성 사전 확인 완료, 2026-05-14).",
+
+  "goals": [
+    "books 테이블에 source_platform='book_dash', language='en' 책 50권 이상 적재",
+    "attribution_text를 license-rules.md 4.2절 표준 포맷으로 100% 자동 생성",
+    "license='cc-by-4-0' 100%, NC/ND 라이선스 0건 (DB 트리거가 1차 방어선)",
+    "content_url 100%가 bookdash.github.io 형식 (Phase 12 iframe reader 호환)"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 1 — attribution_text NOT NULL (DB가 강제, 코드 추가 가드)",
+    "Hard Rule 2 — enforce_commercial_license 트리거 활성 유지 (cc-by-4-0만 통과)",
+    "Hard Rule 3 — NC/ND 콘텐츠 어떤 형태로도 적재 금지",
+    "Hard Rule 6 — SUPABASE_SECRET_KEY는 .env.local에서만 로드, 출력 금지"
+  ],
+
+  "data_source": {
+    "primary": "https://raw.githubusercontent.com/bookdash/bookdash-books/master/_data/meta.yml",
+    "html_render": "https://bookdash.github.io/bookdash-books/{slug}/en/",
+    "cover": "https://bookdash.github.io/bookdash-books/{slug}/en/images/cover.jpg",
+    "canonical_external": "https://bookdash.org/books/{slug}/",
+    "license_root": "https://creativecommons.org/licenses/by/4.0/",
+    "rejected_alternatives": [
+      "bookdash.org sitemap 스크래핑 (HTML 깨지기 쉬움, content_type이 PDF뿐, Phase 12 spec과 불일치) — ADR-0005 참조"
+    ]
+  },
+
+  "scope_in": [
+    "meta.yml의 titles.* 중 language가 'en'이거나 미지정인 항목",
+    "다음 컬럼 채우기: source_platform, source_id(UUID), title, cover_url, content_url, content_type='html', language='en', license='cc-by-4-0', author, original_url, attribution_text",
+    "books.UNIQUE(source_platform, source_id) 기반 idempotent UPSERT",
+    "동기화 결과 카운트 로그 (inserted / updated / skipped_by_language / skipped_by_attribution / errors)"
+  ],
+
+  "scope_out": [
+    "번역본(zu, xh, af, st 등) — ADR-0006",
+    "level/age_min/age_max 자동 추정 — Phase 5/8에서 처리",
+    "GitHub Actions cron — Phase 6",
+    "PDF/ePub 본문 — HTML iframe만 사용",
+    "스크립트 자동 실행 — 사용자가 직접 실행"
+  ],
+
+  "files_to_create": [
+    "docs/adr/0004-source-platform-list.md",
+    "docs/adr/0005-book-dash-sync-strategy.md",
+    "docs/adr/0006-beta-language-scope.md",
+    "requirements.txt",
+    "scripts/lib/__init__.py",
+    "scripts/lib/attribution.py",
+    "scripts/sync_book_dash.py",
+    "scripts/verify_book_dash_sync.py"
+  ],
+
+  "verification": [
+    {
+      "id": "v1-book-count",
+      "description": "books 테이블에 source_platform='book_dash' AND language='en' 책 50권 이상 적재",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform='book_dash' AND language='en';",
+      "expected": ">= 50"
+    },
+    {
+      "id": "v2-attribution-not-null",
+      "description": "Book Dash 책의 attribution_text 누락 0건",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform='book_dash' AND (attribution_text IS NULL OR LENGTH(attribution_text) < 50);",
+      "expected": "= 0"
+    },
+    {
+      "id": "v3-license-purity",
+      "description": "Book Dash 책의 license가 100% cc-by-4-0",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform='book_dash' AND license != 'cc-by-4-0';",
+      "expected": "= 0"
+    },
+    {
+      "id": "v4-content-url-format",
+      "description": "Book Dash 책의 content_url이 100% bookdash.github.io 형식 (iframe 호환)",
+      "sql": "SELECT COUNT(*) FROM books WHERE source_platform='book_dash' AND content_url NOT LIKE 'https://bookdash.github.io/%';",
+      "expected": "= 0"
+    }
+  ],
+
+  "user_steps": [
+    "pip install -r requirements.txt",
+    "python scripts/sync_book_dash.py",
+    "python scripts/verify_book_dash_sync.py",
+    "python scripts/run_phase.py --complete phase-04-book-dash-sync"
+  ],
+
+  "references": [
+    "claude.md 2절 Hard Rules",
+    "docs/guidelines/license-rules.md 3절·4.2절·6절",
+    "docs/adr/0003-supabase-new-api-keys.md",
+    "docs/adr/0004-source-platform-list.md (본 페이즈 생성)",
+    "docs/adr/0005-book-dash-sync-strategy.md (본 페이즈 생성)",
+    "docs/adr/0006-beta-language-scope.md (본 페이즈 생성)",
+    "supabase/migrations/001_initial_schema.sql"
+  ]
+}

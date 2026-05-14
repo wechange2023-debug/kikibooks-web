@@ -10,7 +10,12 @@
       "PowerShell(python scripts/run_phase.py --complete phase-01-nextjs-init)",
       "PowerShell(pnpm *)",
       "PowerShell(npm view *)",
-      "PowerShell(pip install *)"
+      "PowerShell(pip install *)",
+      "WebSearch",
+      "WebFetch(domain:bookdash.org)",
+      "WebFetch(domain:bookdash.github.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:gist.github.com)"
     ]
   }
 }

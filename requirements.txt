@@ -1,0 +1,28 @@
+# =============================================================================
+# Kikibooks Python 의존성 (스크립트 전용 — Node.js 런타임과 무관)
+#
+# 사용:
+#   pip install -r requirements.txt --break-system-packages
+#
+# 적용 범위:
+#   - scripts/verify_schema.py       (Phase 03)
+#   - scripts/sync_book_dash.py      (Phase 04)
+#   - scripts/verify_book_dash_sync.py (Phase 04)
+#   - 향후 scripts/sync_gdl.py        (Phase 05)
+#
+# 참조:
+#   - docs/adr/0003-supabase-new-api-keys.md (supabase-py + SUPABASE_SECRET_KEY)
+#   - docs/adr/0005-book-dash-sync-strategy.md (meta.yml YAML 파싱)
+# =============================================================================
+
+# Supabase Python SDK — DB INSERT/SELECT (RLS는 secret 키로 우회)
+supabase>=2.0.0
+
+# .env.local 로드 — 환경변수 (Hard Rule 6: 비밀 키 보호)
+python-dotenv>=1.0.0
+
+# Book Dash meta.yml 파싱 (Phase 04)
+PyYAML>=6.0
+
+# 외부 데이터 fetch (raw.githubusercontent.com)
+requests>=2.31.0

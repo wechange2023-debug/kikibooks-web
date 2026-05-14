@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-13T08:52:56.140324+00:00",
+  "last_updated": "2026-05-14T02:05:25.351551+00:00",
   "current_phase": "phase-00-setup",
   "total_phases": 14,
-  "completed_phases": 4,
-  "remaining_phases": 10,
-  "last_successful_state": "phase-03-db-schema",
+  "completed_phases": 5,
+  "remaining_phases": 9,
+  "last_successful_state": "phase-04-book-dash-sync",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -77,7 +77,7 @@
       "id": "phase-04-book-dash-sync",
       "name": "Book Dash 동기화 스크립트 작성 및 1차 적재",
       "category": "Phase 0",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-03-db-schema"
       ],
@@ -86,7 +86,8 @@
         "books 테이블에 200권 이상 적재",
         "attribution_text 누락 0건",
         "license 값이 cc-by-4-0인 책만 존재"
-      ]
+      ],
+      "completed_at": "2026-05-14T02:05:25.351532+00:00"
     },
     {
       "id": "phase-05-gdl-sync",
