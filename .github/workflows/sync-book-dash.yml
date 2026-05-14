@@ -1,0 +1,69 @@
+# =============================================================================
+# Sync Book Dash (weekly)
+#
+# 비개발자 요약:
+#   - 매주 일요일 새벽 02:00 UTC (한국시간 일요일 오전 11시)에 자동 실행
+#   - Book Dash NPO의 공식 GitHub 저장소(bookdash-books)에서 영어 책 목록을
+#     가져와 Supabase의 books 테이블에 추가/갱신 (이미 있는 책은 안전하게 덮어씀)
+#   - 수동 실행: Actions 탭 → "Sync Book Dash" → "Run workflow"
+#
+# 관련 문서: ADR-0005 (Book Dash meta.yml 단일 출처), tasks/phase-06-github-actions.json
+# Secrets 의존: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY
+# =============================================================================
+
+name: Sync Book Dash (weekly)
+
+on:
+  schedule:
+    # 매주 일요일 02:00 UTC = 한국시간 일요일 11:00 AM
+    # Book Dash는 신간 빌드 주기가 느려서 (ADR-0005 §3.4 메모 1) 일 1회 불필요
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'DB INSERT 없이 meta.yml 파싱·어트리뷰션 빌드만 수행 (점검용)'
+        required: false
+        default: false
+        type: boolean
+
+# 권한 최소화 — 이 워크플로는 외부 데이터를 가져와 Supabase에 쓰기만 함.
+# GitHub 자체에 대한 쓰기 권한 불필요.
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Book Dash sync
+        # 실행 스크립트  : scripts/sync_book_dash.py
+        # 사용 인자       : --dry-run 옵션 (수동 트리거의 dry_run 입력값에 따라)
+        # 환경변수 의존  : NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY
+        # 데이터 흐름    : bookdash-books GitHub 저장소의 _data/meta.yml 1회 fetch
+        #                  → 영어 책만 필터 → books 테이블에 UPSERT (idempotent)
+        # 예상 결과      : 약 54권 적재 (ADR-0006 영어 only 스코프, 신간 시 자동 추가)
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            echo "==> dry-run 모드 (DB 미변경)"
+            python scripts/sync_book_dash.py --dry-run
+          else
+            echo "==> 실 동기화 모드"
+            python scripts/sync_book_dash.py
+          fi

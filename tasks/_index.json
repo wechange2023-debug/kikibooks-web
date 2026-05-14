@@ -101,13 +101,13 @@
       "verification": [
         "books 테이블에 영어 CC BY 600권 이상 추가 적재",
         "level/age 자동 추정 작동",
-        "총 1,300권 이상 누적 적재"
+        "Book Dash + GDL 누적 적재 완료 (베타 목표는 ADR-0008로 900권 정정)"
       ],
       "completed_at": "2026-05-14T05:34:00.874929+00:00"
     },
     {
       "id": "phase-06-github-actions",
-      "name": "GitHub Actions cron 워크플로 설정",
+      "name": "GitHub Actions 자동 동기화 + 라이선스 감사 워크플로",
       "category": "Phase 0",
       "status": "pending",
       "depends_on": [
@@ -116,9 +116,15 @@
       ],
       "spec_file": "tasks/phase-06-github-actions.json",
       "verification": [
-        "Secrets 등록 완료 (SUPABASE_URL, SERVICE_ROLE_KEY 등)",
-        "수동 트리거 성공",
-        "cron 스케줄 매일 03:00 UTC 설정"
+        "Secrets 등록 완료 (NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY — ADR-0003 표준)",
+        "3개 워크플로 파일 모두 GitHub Actions UI에 인식됨",
+        "workflow_dispatch 수동 트리거로 3개 모두 성공 실행 (각 1회 이상)",
+        "sync-book-dash cron: 매주 일요일 02:00 UTC",
+        "sync-gdl cron: 매일 03:00 UTC",
+        "verify-licenses cron: 매월 1일 04:00 UTC",
+        "load_env()가 .env.local 부재 + GitHub Secrets 환경 모두에서 작동",
+        "verify_licenses.py 작성 완료 + workflow에서 1회 실행 통과 (dry-run only)",
+        "ADR-0008 (베타 목표 900권 하향) 작성 완료"
       ]
     },
     {

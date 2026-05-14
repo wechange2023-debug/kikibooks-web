@@ -11,7 +11,7 @@
     "books 테이블에 source_platform='gdl', language='en' 책 600권 이상 적재",
     "license는 cc-by-4-0 또는 cc-by-sa-4-0만 — NC/ND는 트리거 + 클라이언트 양쪽에서 차단",
     "level/age_min/age_max 자동 추정 작동(임시 분류) — 정확도 보정은 Phase 9~10",
-    "Book Dash + GDL 합산 660권 이상 누적 적재 (1,300권 목표의 첫 절반)"
+    "Book Dash + GDL 합산 660권 이상 누적 적재 (베타 목표 900권 — ADR-0008)"
   ],
 
   "hard_rules_applied": [
@@ -115,7 +115,7 @@
     },
     {
       "id": "v8-cumulative-vs-beta-target-info",
-      "description": "Book Dash + GDL 누적과 베타 목표 1,300권 비교 (정보 only, 미달 시 경고 아님)",
+      "description": "Book Dash + GDL 누적과 베타 목표 900권 비교 (ADR-0008 정정, 정보 only)",
       "sql": "SELECT COUNT(*) FROM books WHERE source_platform IN ('book_dash','gdl') AND language='en';",
       "expected": "info only — Phase 06 이후 신규 출처 추가로 보강 예정"
     },

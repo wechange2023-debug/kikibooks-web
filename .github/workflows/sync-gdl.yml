@@ -1,0 +1,93 @@
+# =============================================================================
+# Sync GDL (daily)
+#
+# 비개발자 요약:
+#   - 매일 새벽 03:00 UTC (한국시간 오후 12시)에 자동 실행
+#   - Global Digital Library의 영어 책 약 1,313권(ADR-0007 §7.1 실측)을 가져와
+#     필터·중복 제거를 거쳐 Supabase의 books 테이블에 추가/갱신
+#     (현재 약 842권이 적재된 상태, 신간이 들어오면 자동 추가됨)
+#   - 수동 실행: Actions 탭 → "Sync GDL" → "Run workflow"
+#
+# 관련 문서: ADR-0007 (§7 amendment 포함), tasks/phase-05-gdl-sync.json
+# Secrets 의존: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY
+# =============================================================================
+
+name: Sync GDL (daily)
+
+on:
+  schedule:
+    # 매일 03:00 UTC = 한국시간 12:00 PM
+    # _index.json phase-06 verification 기준 시각
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'DB INSERT 없이 fetch + 필터 + dedup 빌드만 수행 (점검용)'
+        required: false
+        default: false
+        type: boolean
+      max_books:
+        description: '처리할 최대 책 수 (점검용 슬라이스, 비워두면 전체). 예: 40'
+        required: false
+        default: ''
+        type: string
+
+# 권한 최소화 — 외부 fetch + Supabase 쓰기만. GitHub 권한 불필요.
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    # timeout 15분 근거:
+    #   - GDL 응답 ~5.7MB (1,313권 단일 응답, ADR-0007 §7.3)
+    #   - 정상 실행 시간 약 30초
+    #   - 그러나 sync_gdl.py 내부 HTTP_TIMEOUT=120s × RETRY_MAX=3 +
+    #     RETRY_BACKOFF=10s × 2 = 최악 ~7분 + batch upsert ~30초
+    #   - 안전 마진 포함 15분 (Book Dash 10분보다 5분 더)
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run GDL sync
+        # 실행 스크립트  : scripts/sync_gdl.py
+        # 사용 인자       : --dry-run (수동 dry_run=true 시), --max-books N (수동 max_books 입력 시)
+        # 환경변수 의존  : NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY
+        # 데이터 흐름    : content.digitallibrary.io WP REST API 1회 fetch (~5.7MB)
+        #                  → BookDash publisher skip + 비-그림책 skip + H5P 변형본 skip
+        #                  → 동제목 dedup → books 테이블에 batch UPSERT (100건 단위)
+        # 예상 결과      : 약 1,200권 적재 (ADR-0007 §7 amendment 모든 필터 적용 후)
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        # 입력 처리:
+        #   - dry_run: cron 자동 실행 시 빈 문자열 → 실 sync 모드
+        #              수동에서 체크 시 "true" → --dry-run 인자 추가
+        #   - max_books: cron 자동 실행 시 빈 문자열 → --max-books 인자 미추가
+        #                = sync_gdl.py의 기본값 0 (무제한) 적용
+        #                수동에서 "40" 입력 시 → "--max-books 40" 인자 추가
+        run: |
+          ARGS=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            echo "==> dry-run 모드 (DB 미변경)"
+            ARGS="$ARGS --dry-run"
+          else
+            echo "==> 실 동기화 모드"
+          fi
+          MAX_BOOKS="${{ github.event.inputs.max_books }}"
+          if [ -n "$MAX_BOOKS" ]; then
+            echo "==> 점검용 슬라이스: --max-books $MAX_BOOKS"
+            ARGS="$ARGS --max-books $MAX_BOOKS"
+          fi
+          python scripts/sync_gdl.py $ARGS

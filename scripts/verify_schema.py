@@ -67,13 +67,13 @@ TEST_SOURCE_ID_PREFIX = f"_kiki_verify_{uuid.uuid4().hex[:8]}"
 # 환경변수 로드
 # =============================================================================
 def load_env() -> Tuple[str, str, str | None]:
-    """환경변수 로드. (URL, SECRET_KEY, PUBLISHABLE_KEY?) 반환."""
-    if not ENV_FILE.exists():
-        print(f"[FAIL] .env.local 파일이 없습니다: {ENV_FILE}")
-        print("       .env.example을 .env.local로 복사한 뒤 키를 채워 넣으세요.")
-        sys.exit(1)
-
-    load_dotenv(ENV_FILE)
+    """
+    환경변수 로드. (URL, SECRET_KEY, PUBLISHABLE_KEY?) 반환.
+    로컬은 .env.local에서, CI(GitHub Actions)는 OS 환경변수에서.
+    .env.local이 있으면 거기서 우선 로드(기존 동작 유지), 없으면 OS env로 폴백.
+    """
+    if ENV_FILE.exists():
+        load_dotenv(ENV_FILE)
 
     url = os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
     secret = os.environ.get("SUPABASE_SECRET_KEY") or os.environ.get(
@@ -88,7 +88,7 @@ def load_env() -> Tuple[str, str, str | None]:
             "[FAIL] 환경변수 누락:\n"
             "       NEXT_PUBLIC_SUPABASE_URL\n"
             "       SUPABASE_SECRET_KEY (또는 legacy SUPABASE_SERVICE_ROLE_KEY)\n"
-            "       .env.local에 설정되어 있는지 확인하세요."
+            "       로컬은 .env.local, CI는 GitHub Secrets로 설정."
         )
         sys.exit(1)
 

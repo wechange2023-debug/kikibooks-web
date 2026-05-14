@@ -1,7 +1,7 @@
 # Kikibooks
 
 > 한국 유아(만 3~7세) 대상 영어 그림책 e-라이브러리.
-> CC BY 4.0 / Public Domain 1,300권+ 무료 콘텐츠로 베타 출시.
+> CC BY 4.0 / Public Domain 900권+ 무료 콘텐츠로 베타 출시 (ADR-0008).
 
 ## 시작하기
 

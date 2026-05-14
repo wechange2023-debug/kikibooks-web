@@ -1,0 +1,155 @@
+{
+  "phase_id": "phase-06-github-actions",
+  "name": "GitHub Actions 자동 동기화 + 라이선스 감사 워크플로",
+  "category": "Phase 0",
+  "version": "1.0",
+  "created_at": "2026-05-14",
+
+  "summary": "Phase 04(Book Dash) / Phase 05(GDL) 동기화 스크립트와 신규 verify_licenses.py를 GitHub Actions cron으로 자동 실행한다. 3개 워크플로(주 1회 Book Dash, 일 1회 GDL, 월 1회 라이선스 감사)로 분리하여 책임·스케줄·실패 격리. 라이선스 감사는 ADR-0008 §6 정책에 따라 dry-run만 실행하고 변경 감지 시 GitHub Issue로 보고 — DB 비활성화는 사람이 수동으로 --apply.",
+
+  "goals": [
+    "베타 운영 중에도 GDL 신간을 매일 자동 흡수 (cron 03:00 UTC)",
+    "Book Dash 신간을 주 1회 자동 확인 (cron 일요일 02:00 UTC)",
+    "외부 출처의 라이선스 변경을 월 1회 감지하여 GitHub Issue로 통보 (cron 1일 04:00 UTC)",
+    "수동 트리거(workflow_dispatch)로 즉시 점검 가능 — dry-run 옵션 포함",
+    "secret 값은 GitHub Secrets로만 주입, 코드·로그에 일체 노출 안 함"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 1 — sync 스크립트가 NOT NULL attribution_text 보장 (기존 검증)",
+    "Hard Rule 2 — enforce_commercial_license 트리거 활성 유지 (자동 sync 결과도 통과해야 함)",
+    "Hard Rule 6 — SUPABASE_SECRET_KEY는 GitHub Secrets에서만 주입, 워크플로 코드에 평문 미포함",
+    "ADR-0008 §6 — verify_licenses 자동 적용 금지 (dry-run only, --apply는 사람이 수동)"
+  ],
+
+  "files_created": [
+    "docs/adr/0008-beta-content-target-900.md",
+    "scripts/verify_licenses.py",
+    ".github/workflows/sync-book-dash.yml",
+    ".github/workflows/sync-gdl.yml",
+    ".github/workflows/verify-licenses.yml",
+    "tasks/phase-06-github-actions.json"
+  ],
+
+  "files_modified": [
+    "scripts/sync_book_dash.py (load_env CI 호환)",
+    "scripts/sync_gdl.py (load_env CI 호환)",
+    "scripts/verify_schema.py (load_env CI 호환 + fail 메시지)",
+    "scripts/verify_book_dash_sync.py (load_env CI 호환)",
+    "scripts/verify_gdl_sync.py (load_env CI 호환)",
+    "tasks/_index.json (phase-06 verification 정정, phase-05 1,300권 표기 정정)"
+  ],
+
+  "workflows": {
+    "sync-book-dash.yml": {
+      "schedule": "0 2 * * 0 (매주 일요일 02:00 UTC = 한국시간 일요일 11:00 AM)",
+      "frequency_rationale": "Book Dash HTML은 2019 빌드라 신간 자동 반영 기대 안 함 (ADR-0005 §3.4 메모 1). 일 1회 cron은 낭비",
+      "inputs": ["dry_run (boolean, default false)"],
+      "timeout_minutes": 10,
+      "permissions": ["contents: read"],
+      "exit_handling": "스크립트 실패 → 워크플로 실패 → GitHub 자동 알림"
+    },
+    "sync-gdl.yml": {
+      "schedule": "0 3 * * * (매일 03:00 UTC = 한국시간 12:00 PM)",
+      "inputs": ["dry_run (boolean, default false)", "max_books (string, default '')"],
+      "timeout_minutes": 15,
+      "timeout_rationale": "GDL 응답 5.7MB + 내부 HTTP_TIMEOUT 120s × RETRY_MAX 3 = 최악 7분 + batch upsert 30초",
+      "permissions": ["contents: read"]
+    },
+    "verify-licenses.yml": {
+      "schedule": "0 4 1 * * (매월 1일 04:00 UTC = 한국시간 1일 1:00 PM)",
+      "inputs": [],
+      "timeout_minutes": 10,
+      "permissions": ["contents: read", "issues: write"],
+      "execution_mode": "★ dry-run only — --apply 절대 미사용 (ADR-0008 §6)",
+      "exit_code_branching": {
+        "0": "변경 감지 없음 → 워크플로 성공, 추가 동작 없음",
+        "2": "변경 감지됨 → gh issue create (label: license-audit,automated) → 워크플로 성공",
+        "1": "치명적 오류 → exit 1 → 워크플로 실패 (GitHub 자동 알림)",
+        "other": "예상 외 코드 → exit 1 → 워크플로 실패"
+      }
+    }
+  },
+
+  "github_secrets_required": [
+    {
+      "name": "NEXT_PUBLIC_SUPABASE_URL",
+      "description": "Supabase 프로젝트 URL. 형식: https://<project-id>.supabase.co",
+      "source": "Supabase 대시보드 → Project Settings → API → Project URL"
+    },
+    {
+      "name": "SUPABASE_SECRET_KEY",
+      "description": "Supabase secret 키 (sb_secret_…). RLS 우회용 — 서버 전용",
+      "source": "Supabase 대시보드 → Project Settings → API → Secret 키",
+      "warning": "Hard Rule 6 — 절대 클라이언트 코드·공개 환경변수에 노출 금지"
+    }
+  ],
+
+  "github_labels_required": [
+    {
+      "name": "license-audit",
+      "color": "권장 #d93f0b (붉은 계열, 라이선스 주제)",
+      "description": "verify_licenses.py가 자동 생성한 라이선스 변경 감지 이슈"
+    },
+    {
+      "name": "automated",
+      "color": "권장 #c5def5 (옅은 청색)",
+      "description": "GitHub Actions 자동 생성 이슈"
+    }
+  ],
+
+  "verification": [
+    {
+      "id": "v1-secrets-registered",
+      "description": "GitHub 리포지토리 Settings → Secrets and variables → Actions에 2개 secret 등록됨",
+      "expected": "NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY"
+    },
+    {
+      "id": "v2-workflows-recognized",
+      "description": "Actions 탭에 3개 워크플로 모두 나열됨",
+      "expected": "Sync Book Dash (weekly), Sync GDL (daily), Verify Licenses (monthly)"
+    },
+    {
+      "id": "v3-manual-trigger-book-dash",
+      "description": "sync-book-dash workflow_dispatch 수동 실행 1회 성공 (dry-run 권장)",
+      "expected": "Actions 로그에 '약 54권 inserted/updated' 출력"
+    },
+    {
+      "id": "v4-manual-trigger-gdl",
+      "description": "sync-gdl workflow_dispatch 수동 실행 1회 성공 (dry-run + max_books=40 권장)",
+      "expected": "Actions 로그에 'step 1~6' 진행 + 적재 40권 미리보기"
+    },
+    {
+      "id": "v5-manual-trigger-verify-licenses",
+      "description": "verify-licenses workflow_dispatch 수동 실행 1회 성공",
+      "expected": "exit code 0 (변경 없음) — 'No changes' step 실행, 워크플로 success"
+    },
+    {
+      "id": "v6-cron-eligibility",
+      "description": "main 브랜치에 워크플로 머지 후 다음 cron 시각에 자동 트리거됨 (24시간 이내 GDL로 확인 가능)",
+      "expected": "최소 1회의 cron 트리거 성공 (수동 실행 외)"
+    }
+  ],
+
+  "scope_out": [
+    "verify_licenses.py --apply 자동 적용 (ADR-0008 §6 — 사람 수동만)",
+    "Book Dash 신간 sitemap 적재 (Phase 2 보강)",
+    "다국어 콘텐츠 동기화 (ADR-0006)",
+    "Phase 7 이후 인증·UI 페이즈"
+  ],
+
+  "user_steps_after_merge": [
+    "GitHub 리포지토리에 Secret 2개 등록 (Settings → Secrets and variables → Actions)",
+    "GitHub 리포지토리에 라벨 2개 생성 (Issues 탭 → Labels → New label)",
+    "Actions 탭에서 3개 워크플로 각각 'Run workflow' 수동 트리거 → 성공 확인",
+    "python scripts/run_phase.py --complete phase-06-github-actions"
+  ],
+
+  "references": [
+    "claude.md 2절 Hard Rules",
+    "docs/adr/0003-supabase-new-api-keys.md (SUPABASE_SECRET_KEY 표준)",
+    "docs/adr/0008-beta-content-target-900.md (§6 운영 정책)",
+    "docs/guidelines/license-rules.md 6.2 (월 1회 감사)",
+    "tasks/phase-04-book-dash-sync.json, tasks/phase-05-gdl-sync.json"
+  ]
+}

@@ -4,7 +4,7 @@ verify_gdl_sync.py — Phase 05 검증
 
 검증 항목 (tasks/phase-05-gdl-sync.json verification 절):
   v1. source_platform='gdl' AND language='en' 책 600권 이상
-  v2. Book Dash + GDL 합산 660권 이상 (1,300권 목표의 첫 절반)
+  v2. Book Dash + GDL 합산 660권 이상 (베타 목표 900권 — ADR-0008로 1,300→900 정정)
   v3. GDL 책의 attribution_text 누락/50자 미만 0건
   v4. GDL license가 cc-by-4-0 또는 cc-by-sa-4-0만 (NC/ND 0건)
   v5. GDL content_url이 content.digitallibrary.io/en/book/ 형식 100%
@@ -48,7 +48,7 @@ MIN_ATTRIBUTION_LEN = 50
 ALLOWED_LICENSES = {"cc-by-4-0", "cc-by-sa-4-0"}
 EXPECTED_URL_PREFIX = "https://content.digitallibrary.io/en/book/"
 FALLBACK_AUTHOR_MARKER = "creator information not provided by source"
-BETA_CONTENT_TARGET = 1300  # PLAN.md 베타 콘텐츠 스코프, 정보 출력용 (통과 기준 아님)
+BETA_CONTENT_TARGET = 900  # ADR-0008로 1,300 → 900 하향. 정보 출력용 (통과 기준 아님)
 
 # 1순위 큐레이션 후보 식별 패턴 (ADR-0007 §7.8)
 CURATION_KEYWORDS = ("test", "demo", "sample", "(cab")
@@ -56,16 +56,21 @@ CURATION_LANG_SUFFIX_REGEX = re.compile(r"\([a-z]{2}\)\s*$", flags=re.IGNORECASE
 
 
 def load_env() -> tuple[str, str]:
-    if not ENV_FILE.exists():
-        print(f"[FAIL] .env.local 없음: {ENV_FILE}")
-        sys.exit(1)
-    load_dotenv(ENV_FILE)
+    """
+    환경변수 로드. 로컬은 .env.local에서, CI(GitHub Actions)는 OS 환경변수에서.
+    .env.local이 있으면 거기서 우선 로드(기존 동작 유지), 없으면 OS env로 폴백.
+    """
+    if ENV_FILE.exists():
+        load_dotenv(ENV_FILE)
     url = os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
     secret = os.environ.get("SUPABASE_SECRET_KEY") or os.environ.get(
         "SUPABASE_SERVICE_ROLE_KEY"
     )
     if not url or not secret:
-        print("[FAIL] NEXT_PUBLIC_SUPABASE_URL 또는 SUPABASE_SECRET_KEY 누락")
+        print(
+            "[FAIL] NEXT_PUBLIC_SUPABASE_URL 또는 SUPABASE_SECRET_KEY 누락 "
+            "— 로컬은 .env.local, CI는 GitHub Secrets로 설정"
+        )
         sys.exit(1)
     return url, secret
 
