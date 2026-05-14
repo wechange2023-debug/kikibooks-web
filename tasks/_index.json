@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-14T05:34:00.874948+00:00",
+  "last_updated": "2026-05-14T08:12:50.256000+00:00",
   "current_phase": "phase-00-setup",
   "total_phases": 14,
-  "completed_phases": 6,
-  "remaining_phases": 8,
-  "last_successful_state": "phase-05-gdl-sync",
+  "completed_phases": 7,
+  "remaining_phases": 7,
+  "last_successful_state": "phase-06-github-actions",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -109,7 +109,7 @@
       "id": "phase-06-github-actions",
       "name": "GitHub Actions 자동 동기화 + 라이선스 감사 워크플로",
       "category": "Phase 0",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-04-book-dash-sync",
         "phase-05-gdl-sync"
@@ -125,7 +125,8 @@
         "load_env()가 .env.local 부재 + GitHub Secrets 환경 모두에서 작동",
         "verify_licenses.py 작성 완료 + workflow에서 1회 실행 통과 (dry-run only)",
         "ADR-0008 (베타 목표 900권 하향) 작성 완료"
-      ]
+      ],
+      "completed_at": "2026-05-14T08:12:50.255980+00:00"
     },
     {
       "id": "phase-07-auth",
