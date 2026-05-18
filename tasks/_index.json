@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-14T08:12:50.256000+00:00",
-  "current_phase": "phase-00-setup",
+  "last_updated": "2026-05-18T08:38:55.246533+00:00",
+  "current_phase": "phase-08-onboarding",
   "total_phases": 14,
-  "completed_phases": 7,
-  "remaining_phases": 7,
-  "last_successful_state": "phase-06-github-actions",
+  "completed_phases": 8,
+  "remaining_phases": 6,
+  "last_successful_state": "phase-07-auth",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -130,9 +130,9 @@
     },
     {
       "id": "phase-07-auth",
-      "name": "Supabase Auth + 이메일/구글/카카오 OAuth",
+      "name": "Supabase Auth — 이메일·Google OAuth + 보호 라우트 (카카오 phase-13 이후)",
       "category": "Phase 1",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-01-nextjs-init",
         "phase-03-db-schema"
@@ -141,9 +141,10 @@
       "verification": [
         "이메일 가입/로그인 작동",
         "구글 OAuth 작동",
-        "카카오 OAuth 작동 (또는 가입 후 추가 가능)",
+        "카카오 OAuth — phase-13 이후로 연기 (ADR-0009 결정 1)",
         "middleware.ts 보호 라우트 작동"
-      ]
+      ],
+      "completed_at": "2026-05-18T08:38:55.246410+00:00"
     },
     {
       "id": "phase-08-onboarding",

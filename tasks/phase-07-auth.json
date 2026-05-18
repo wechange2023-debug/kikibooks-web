@@ -99,7 +99,8 @@
       "id": "v6-email-signup-login",
       "description": "이메일 회원가입 → (확인 메일) → 로그인 성공",
       "method": "클릭 테스트 — /signup에서 가입 후 /login에서 로그인",
-      "expected": "로그인 후 /home 진입"
+      "expected": "로그인 후 /home 진입",
+      "note": "★ 메일 발송 부분 보류 — 2026-05-18 클릭 테스트에서 키키북스 코드 경로(회원가입 폼·서버 액션·확인 메일 안내 화면)는 정상 검증했으나, confirmation 메일의 실제 도달은 Supabase 기본 SMTP 한계로 미확인. 베타 출시 직전 커스텀 SMTP 연결 phase에서 재검증. 근거: docs/adr/0010-email-smtp-deferred.md"
     },
     {
       "id": "v7-google-oauth",
@@ -156,6 +157,7 @@
     "docs/adr/0001-tech-stack.md §2.2 (Supabase Auth 결정)",
     "docs/adr/0003-supabase-new-api-keys.md (publishable/secret 키 표준)",
     "docs/adr/0009-auth-architecture.md (본 페이즈 생성 — 인증 4대 결정)",
+    "docs/adr/0010-email-smtp-deferred.md (v6 메일 발송 보류 결정)",
     "docs/intent/auth-flow.md (본 페이즈 생성 — 사용자 흐름)",
     "docs/design-system.md (로그인/회원가입 UI semantic 토큰)",
     "supabase/migrations/001_initial_schema.sql (profiles 테이블 + RLS 정책)",
