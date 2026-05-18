@@ -1,0 +1,164 @@
+{
+  "phase_id": "phase-07-auth",
+  "name": "Supabase Auth — 이메일 + Google OAuth + 보호 라우트",
+  "category": "Phase 1",
+  "version": "1.0",
+  "created_at": "2026-05-18",
+
+  "summary": "Supabase Auth로 이메일(비밀번호) 회원가입·로그인과 Google OAuth를 구현한다. @supabase/ssr 쿠키 세션을 middleware.ts가 매 요청 갱신하고, 같은 미들웨어가 보호 라우트를 중앙에서 가드한다. 로그인 사용자의 profiles 행은 DB 트리거가 아니라 앱-레벨 idempotent upsert(ensureProfile 헬퍼)로 만든다 → DB 스키마 변경 0건(ADR-0009 결정 2). 카카오 OAuth는 phase-13 이후로 연기한다(ADR-0009 결정 1). 사용자 흐름은 docs/intent/auth-flow.md, 기술 결정과 대안 비교는 docs/adr/0009-auth-architecture.md 참조.",
+
+  "goals": [
+    "이메일 회원가입·로그인 작동 (확인 메일 흐름 포함)",
+    "Google OAuth 로그인 작동 (/auth/callback 세션 교환)",
+    "middleware.ts가 세션 자동 갱신 + 보호 라우트 가드 (비로그인 → /login, 로그인 상태로 /login·/signup 접근 → /home)",
+    "로그인 사용자의 profiles 행 100% 보장 — 앱-레벨 idempotent upsert",
+    "DB 스키마 변경 0건 (ADR-0009 결정 2) — supabase/migrations 신규 파일 없음",
+    "/login·/signup UI는 design-system.md semantic 토큰만 사용 (Hard Rule 10)"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 6 — 인증 흐름은 publishable 키만 사용. SUPABASE_SECRET_KEY는 인증 코드·클라이언트 코드·공개 환경변수에 일체 미등장",
+    "Hard Rule 8 — 본 페이즈는 DB 스키마 변경 없음(앱-레벨 프로필 생성 채택). 스키마 변경이 없으므로 신규 마이그레이션 불필요. 인증 기술 결정은 ADR-0009로 기록",
+    "Hard Rule 10 — /login·/signup 화면은 raw 색상값 금지, design-system.md semantic 토큰만 사용"
+  ],
+
+  "scope_in": [
+    "Supabase Auth 이메일(비밀번호) 공급자 연결 — signUp / signInWithPassword 서버 액션",
+    "Supabase Auth Google OAuth 연결 — signInWithOAuth + /auth/callback의 exchangeCodeForSession",
+    "middleware.ts — @supabase/ssr 세션 갱신(updateSession) + 보호/공개 라우트 중앙 가드",
+    "/login, /signup 페이지 + 폼 UI (react-hook-form + zod, 디자인 토큰 준수)",
+    "/auth/callback Route Handler (이메일 확인 링크·OAuth 공통 진입점) + /auth/auth-error 안내 페이지",
+    "로그아웃 (세션 종료 → / 이동)",
+    "ensureProfile 헬퍼 — profiles 행 idempotent upsert. /auth/callback과 이메일 회원가입/로그인 서버 액션에서만 호출",
+    "임시 /home 플레이스홀더 — 인증 성공을 눈으로 확인할 최소 화면 (phase-10에서 진짜 홈으로 교체)"
+  ],
+
+  "scope_out": [
+    "카카오 OAuth — phase-13 이후 (ADR-0009 결정 1)",
+    "자녀 프로필 등록 온보딩 /onboarding — phase-08",
+    "'첫 로그인이면 /onboarding으로' 분기 — phase-08",
+    "Screen 01~05 (랜딩·홈·책 상세·뷰어·완독 보상) — phase-09~13",
+    "공통 Header/Footer 전체 레이아웃 — phase-09 이후 (phase-07은 인증 화면 최소 레이아웃만)",
+    "비밀번호 재설정·이메일 변경·계정 삭제 UI — 베타 출시 후",
+    "DB 스키마 변경 (handle_new_user 트리거 등) — 미채택 (ADR-0009 결정 2)"
+  ],
+
+  "files_to_create_or_modify": [
+    "docs/intent/auth-flow.md (신규 — phase-07 문서 단계)",
+    "docs/adr/0009-auth-architecture.md (신규 — phase-07 문서 단계)",
+    "tasks/phase-07-auth.json (신규 — 본 파일)",
+    "middleware.ts (신규 — 세션 갱신 + 보호 라우트 가드)",
+    "lib/supabase/middleware.ts (신규 — @supabase/ssr updateSession 헬퍼)",
+    "lib/auth/ensure-profile.ts (신규 — profiles idempotent upsert 헬퍼)",
+    "lib/auth/routes.ts (신규 — 보호/공개 라우트 목록 상수)",
+    "app/login/page.tsx (신규 — 로그인 페이지)",
+    "app/login/actions.ts (신규 — 이메일 로그인/회원가입 서버 액션)",
+    "app/signup/page.tsx (신규 — 회원가입 페이지)",
+    "app/auth/callback/route.ts (신규 — 세션 교환 + ensureProfile)",
+    "app/auth/sign-out/route.ts (신규 — 로그아웃)",
+    "app/auth/auth-error/page.tsx (신규 — 콜백 실패 안내)",
+    "app/home/page.tsx (신규 — 임시 플레이스홀더, phase-10에서 교체)",
+    "components/auth/login-form.tsx (신규 — 이메일 로그인 폼)",
+    "components/auth/signup-form.tsx (신규 — 이메일 회원가입 폼)",
+    "components/auth/google-button.tsx (신규 — Google로 계속하기 버튼)",
+    "tasks/_index.json (수정 — phase-07 완료 시 last_successful_state·current_phase 갱신)"
+  ],
+
+  "verification": [
+    {
+      "id": "v1-lint",
+      "description": "린트 에러 0",
+      "method": "pnpm lint",
+      "expected": "에러 0"
+    },
+    {
+      "id": "v2-type-check",
+      "description": "타입 체크 에러 0",
+      "method": "pnpm type-check",
+      "expected": "에러 0"
+    },
+    {
+      "id": "v3-build",
+      "description": "프로덕션 빌드 성공",
+      "method": "pnpm build",
+      "expected": "성공"
+    },
+    {
+      "id": "v4-no-schema-change",
+      "description": "DB 스키마 무변경 — supabase/migrations에 002 이상 신규 파일 없음 (ADR-0009 결정 2)",
+      "method": "supabase/migrations 디렉토리 + git status 확인",
+      "expected": "001_initial_schema.sql 외 신규 마이그레이션 0건"
+    },
+    {
+      "id": "v5-no-secret-leak",
+      "description": "인증 흐름 파일에 secret 키 미등장 (Hard Rule 6)",
+      "method": "middleware.ts, app/login, app/signup, app/auth/**, components/auth/** 에서 SUPABASE_SECRET_KEY / service_role 문자열 검색",
+      "expected": "0건"
+    },
+    {
+      "id": "v6-email-signup-login",
+      "description": "이메일 회원가입 → (확인 메일) → 로그인 성공",
+      "method": "클릭 테스트 — /signup에서 가입 후 /login에서 로그인",
+      "expected": "로그인 후 /home 진입"
+    },
+    {
+      "id": "v7-google-oauth",
+      "description": "Google 로그인 성공",
+      "method": "클릭 테스트 — /login에서 'Google로 계속하기'",
+      "expected": "동의 후 /home 진입"
+    },
+    {
+      "id": "v8-protected-redirect",
+      "description": "비로그인 상태로 /home 접근 시 /login으로 리다이렉트",
+      "method": "클릭 테스트 — 로그아웃 상태에서 /home 직접 접근",
+      "expected": "/login으로 이동"
+    },
+    {
+      "id": "v9-auth-page-redirect",
+      "description": "로그인 상태로 /login 접근 시 /home으로 리다이렉트",
+      "method": "클릭 테스트 — 로그인 상태에서 /login 직접 접근",
+      "expected": "/home으로 이동"
+    },
+    {
+      "id": "v10-profile-row",
+      "description": "로그인 사용자의 profiles 행 1건 생성 확인",
+      "method": "Supabase 대시보드 → Table Editor → profiles에서 본인 행 확인",
+      "expected": "id가 auth 사용자 id와 같고 email이 일치하는 행 1건"
+    },
+    {
+      "id": "v11-sign-out",
+      "description": "로그아웃 후 보호 라우트 재접근 시 차단",
+      "method": "클릭 테스트 — 로그아웃 후 /home 접근",
+      "expected": "/login으로 이동"
+    }
+  ],
+
+  "completion_criteria": [
+    "v1~v5 자동 검증 전부 통과 (lint·type-check·build 에러 0, 스키마 무변경, secret 미노출)",
+    "v6~v11 클릭 테스트 전부 통과 (사용자 검증)",
+    "tasks/_index.json의 last_successful_state를 'phase-07-auth'로, current_phase를 'phase-07-auth'로 갱신",
+    "python scripts/run_phase.py --complete phase-07-auth 실행 완료"
+  ],
+
+  "user_steps": [
+    ".env.local에 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY 존재 확인 (없으면 Supabase 대시보드 → Project Settings → API → publishable 키를 .env.local에 추가)",
+    "Supabase 대시보드 → Authentication → Providers → Email 공급자 활성화 (확인 메일 사용 여부 결정)",
+    "Google Cloud Console → API 및 서비스 → 사용자 인증 정보 → OAuth 2.0 클라이언트 ID 생성 → 승인된 리디렉션 URI에 https://<project-id>.supabase.co/auth/v1/callback 등록",
+    "Supabase 대시보드 → Authentication → Providers → Google 활성화 + 위 Client ID/Secret 입력",
+    "Supabase 대시보드 → Authentication → URL Configuration → Site URL(http://localhost:3000) + Redirect URLs(http://localhost:3000/**, 배포 도메인) 설정",
+    "pnpm dev 실행 후 /signup·/login에서 v6~v11 클릭 테스트",
+    "pnpm lint && pnpm type-check && pnpm build",
+    "python scripts/run_phase.py --complete phase-07-auth"
+  ],
+
+  "references": [
+    "claude.md 2절 Hard Rule 6·8·10, 5절 라우팅(인증·온보딩)",
+    "docs/adr/0001-tech-stack.md §2.2 (Supabase Auth 결정)",
+    "docs/adr/0003-supabase-new-api-keys.md (publishable/secret 키 표준)",
+    "docs/adr/0009-auth-architecture.md (본 페이즈 생성 — 인증 4대 결정)",
+    "docs/intent/auth-flow.md (본 페이즈 생성 — 사용자 흐름)",
+    "docs/design-system.md (로그인/회원가입 UI semantic 토큰)",
+    "supabase/migrations/001_initial_schema.sql (profiles 테이블 + RLS 정책)",
+    "PLAN.md 9절 (Week 3~4 인증)"
+  ]
+}
