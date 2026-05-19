@@ -97,7 +97,7 @@
 | Screen 05 (완독 보상) 구현 | `docs/intent/screen-05-celebrate.md` + `docs/design-system.md` (7.3 Celebrate 모션) | 9절 |
 | **디자인 시스템·토큰 변경** | `docs/design-system.md` + `docs/adr/0002-design-system.md` + 신규 ADR 작성 | — |
 | **Tailwind 설정 변경** | `docs/design-system.md` 10절 (필수) | — |
-| 인증·온보딩 | `docs/intent/auth-flow.md` | 9절 Week 3~4 |
+| 인증·온보딩 | `docs/intent/auth-flow.md` + `docs/intent/onboarding-flow.md` | 9절 Week 3~4 |
 | 콘텐츠 동기화 (Book Dash, GDL) | `docs/intent/content-sync.md` + `docs/guidelines/license-rules.md` | 8절 |
 | DB 마이그레이션·스키마 | `docs/guidelines/db-schema-rules.md` + 신규 ADR 작성 | 7절 |
 | 라이선스·어트리뷰션 (모든 작업) | `docs/guidelines/license-rules.md` (필수) | 4절, 15절 |

@@ -1,0 +1,201 @@
+{
+  "phase_id": "phase-08-onboarding",
+  "name": "자녀 프로필 등록 온보딩 플로우",
+  "category": "Phase 1",
+  "version": "1.0",
+  "created_at": "2026-05-19",
+
+  "summary": "첫 로그인 직후 자녀 정보가 없으면 /onboarding으로 보내 자녀 1명(이름·나이·레벨)을 등록시키고 /home으로 진입시킨다. 분기는 로그인이 완료되는 지점(/auth/callback·이메일 로그인/회원가입 서버 액션)에서 resolvePostLoginPath 헬퍼가 children 존재 여부를 1회 조회해 결정하며 middleware.ts는 수정하지 않는다(ADR-0011 결정 1). 레벨은 나이에서 자동 추천되고 학부모가 수동 조정한다(ADR-0011 §3 매핑표). children 테이블은 phase-03에서 이미 생성되어 있고 색상 아바타·필드 최소화 결정으로 DB 스키마 변경이 0건이다(ADR-0011 결정 6). 사용자 흐름은 docs/intent/onboarding-flow.md, 기술 결정과 대안 비교는 docs/adr/0011-onboarding-flow.md 참조.",
+
+  "goals": [
+    "첫 로그인 → 자녀 없으면 /onboarding 자동 리다이렉트, 자녀 있으면 /home 직행",
+    "/onboarding 화면 — 자녀 1명의 이름·나이·레벨 입력 폼 (ADR-0011 결정 2·5)",
+    "나이 기반 레벨 자동 추천 + 학부모 수동 조정 (ADR-0011 결정 3·§3 매핑표)",
+    "children 테이블에 본인 자녀 행 1건 INSERT — 사용자 세션 RLS 통과",
+    "이미 자녀가 있는 사용자가 /onboarding 직접 접근 시 /home으로 역가드",
+    "DB 스키마 변경 0건 (ADR-0011 결정 6) — supabase/migrations 신규 파일 없음",
+    "/onboarding UI는 design-system.md semantic 토큰만 사용 (Hard Rule 10)"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 6 — 온보딩 흐름은 publishable 키만 사용. SUPABASE_SECRET_KEY/service_role는 온보딩 코드·클라이언트 코드·공개 환경변수에 일체 미등장",
+    "Hard Rule 8 — children 테이블은 phase-03에서 생성 완료. 색상 아바타·필드 최소화 결정으로 본 페이즈는 DB 스키마 변경 없음. 스키마 변경이 없으므로 신규 마이그레이션 불필요. 온보딩 결정은 ADR-0011로 기록",
+    "Hard Rule 10 — /onboarding 화면은 raw 색상값 금지, design-system.md semantic 토큰만 사용. 레벨 컬러는 1.8절 --level-1~--level-5 토큰"
+  ],
+
+  "scope_in": [
+    "lib/children/has-children.ts — 로그인 사용자의 children 행 존재 여부 확인 헬퍼 (server-only)",
+    "lib/levels/age-to-level.ts — 나이(3~7)→추천 레벨(1~5) 매핑 헬퍼 (ADR-0011 §3 정본표)",
+    "lib/auth/resolve-post-login-path.ts — children 유무로 /home·/onboarding 도착 경로 결정 헬퍼",
+    "lib/auth/routes.ts 수정 — ONBOARDING_PATH 상수 추가",
+    "app/auth/callback/route.ts 수정 — POST_LOGIN_PATH 고정 → resolvePostLoginPath 결과로 분기",
+    "app/login/actions.ts 수정 — signIn/signUp 리다이렉트를 resolvePostLoginPath 결과로 분기",
+    "app/onboarding/page.tsx — 온보딩 페이지 (서버 컴포넌트, 자녀 존재 시 /home 역가드 후 폼 렌더)",
+    "app/onboarding/actions.ts — children INSERT 서버 액션 (zod 검증, 본인 세션 RLS 통과)",
+    "components/onboarding/child-profile-form.tsx — 자녀 입력 폼 (react-hook-form + zod, 이름·나이·레벨, 나이→레벨 자동 추천, 색상 아바타 미리보기, 디자인 토큰 준수)"
+  ],
+
+  "scope_out": [
+    "다자녀 등록·자녀 전환 UI — 출시 후 (ADR-0011 결정 2·§6)",
+    "자녀 사진 업로드(Supabase Storage) — 색상 아바타로 대체 (ADR-0011 결정 4)",
+    "자녀 정보 수정·삭제 화면 — phase-10 이후",
+    "정식 홈 화면(/home 교체) — phase-10 (phase-08은 phase-07 임시 /home 미수정)",
+    "middleware.ts 수정 — 하지 않음. 분기는 로그인 도착 지점에서만 (ADR-0011 결정 1)",
+    "children 스키마 변경(avatar_url·gender 등 컬럼 추가) — 미채택 (ADR-0011 결정 4·5·6)",
+    "level_estimator.py와 age-to-level.ts의 코드 단일화 — 언어 상이로 불가, ADR-0011 §3을 정본으로 박제하는 데서 그침"
+  ],
+
+  "files_to_create_or_modify": [
+    "docs/intent/onboarding-flow.md (신규 — CP1 문서 단계)",
+    "docs/adr/0011-onboarding-flow.md (신규 — CP1 문서 단계)",
+    "tasks/phase-08-onboarding.json (신규 — 본 파일, CP1)",
+    "claude.md (수정 — 라우팅 테이블 '인증·온보딩' 행에 onboarding-flow.md 추가, CP1)",
+    "lib/children/has-children.ts (신규 — children 존재 확인 헬퍼, CP2)",
+    "lib/levels/age-to-level.ts (신규 — 나이→레벨 추천 헬퍼, ADR-0011 §3, CP2)",
+    "lib/auth/routes.ts (수정 — ONBOARDING_PATH 상수 추가, CP2)",
+    "lib/auth/resolve-post-login-path.ts (신규 — children 유무 분기 헬퍼, CP2)",
+    "app/auth/callback/route.ts (수정 — resolvePostLoginPath 분기 적용, CP2)",
+    "app/login/actions.ts (수정 — signIn/signUp 분기 적용, CP2)",
+    "app/onboarding/actions.ts (신규 — children INSERT 서버 액션, CP3)",
+    "components/onboarding/child-profile-form.tsx (신규 — 자녀 입력 폼, CP3)",
+    "app/onboarding/page.tsx (신규 — 온보딩 페이지 + 자녀 존재 역가드, CP3)",
+    "tasks/_index.json (수정 — phase-08 완료 시 status·last_successful_state 갱신)"
+  ],
+
+  "checkpoints": [
+    {
+      "id": "CP1-docs",
+      "description": "문서 — 의도 문서 + ADR-0011 + 본 명세 + claude.md 라우팅 행. 코드 선행(claude.md §2-8·§3-5). 완료 후 멈춤·보고·승인 게이트",
+      "files": [
+        "docs/intent/onboarding-flow.md",
+        "docs/adr/0011-onboarding-flow.md",
+        "tasks/phase-08-onboarding.json",
+        "claude.md"
+      ]
+    },
+    {
+      "id": "CP2-branch-infra",
+      "description": "분기 인프라 — children 존재 헬퍼 + 나이→레벨 헬퍼 + ONBOARDING_PATH 상수 + resolvePostLoginPath + 콜백·로그인 액션 분기 적용. 완료 후 멈춤·보고",
+      "files": [
+        "lib/children/has-children.ts",
+        "lib/levels/age-to-level.ts",
+        "lib/auth/routes.ts",
+        "lib/auth/resolve-post-login-path.ts",
+        "app/auth/callback/route.ts",
+        "app/login/actions.ts"
+      ]
+    },
+    {
+      "id": "CP3-onboarding-screen",
+      "description": "온보딩 화면 — children INSERT 서버 액션 + 자녀 입력 폼 + /onboarding 페이지. 완료 후 멈춤·보고",
+      "files": [
+        "app/onboarding/actions.ts",
+        "components/onboarding/child-profile-form.tsx",
+        "app/onboarding/page.tsx"
+      ]
+    }
+  ],
+
+  "verification": [
+    {
+      "id": "v1-lint",
+      "description": "린트 에러 0",
+      "method": "pnpm lint",
+      "expected": "에러 0"
+    },
+    {
+      "id": "v2-type-check",
+      "description": "타입 체크 에러 0",
+      "method": "pnpm type-check",
+      "expected": "에러 0"
+    },
+    {
+      "id": "v3-build",
+      "description": "프로덕션 빌드 성공",
+      "method": "pnpm build",
+      "expected": "성공"
+    },
+    {
+      "id": "v4-no-schema-change",
+      "description": "DB 스키마 무변경 — supabase/migrations에 002 이상 신규 파일 없음 (ADR-0011 결정 6)",
+      "method": "supabase/migrations 디렉토리 + git status 확인",
+      "expected": "001_initial_schema.sql 외 신규 마이그레이션 0건"
+    },
+    {
+      "id": "v5-no-secret-leak",
+      "description": "온보딩 흐름 파일에 secret 키 미등장 (Hard Rule 6)",
+      "method": "app/onboarding/**, lib/children/**, lib/levels/**, lib/auth/resolve-post-login-path.ts, components/onboarding/** 에서 SUPABASE_SECRET_KEY / service_role 문자열 검색",
+      "expected": "0건"
+    },
+    {
+      "id": "v6-onboarding-redirect",
+      "description": "자녀 없는 신규 계정 로그인 시 /onboarding 자동 진입",
+      "method": "클릭 테스트 — 자녀 미등록 계정으로 로그인",
+      "expected": "/onboarding으로 이동"
+    },
+    {
+      "id": "v7-level-recommend",
+      "description": "나이 입력 시 레벨 자동 추천 + 수동 조정 동작",
+      "method": "클릭 테스트 — /onboarding에서 이름·나이 입력, 추천 레벨 표시 확인 후 레벨 변경",
+      "expected": "나이에 맞는 레벨이 미리 선택되고(3→1·4→2·5→3·6→4·7→5), 1~5로 수동 변경 가능"
+    },
+    {
+      "id": "v8-submit-to-home",
+      "description": "자녀 입력 완료 후 /home 진입",
+      "method": "클릭 테스트 — /onboarding에서 폼 제출",
+      "expected": "/home으로 이동"
+    },
+    {
+      "id": "v9-children-row",
+      "description": "children 테이블에 본인 자녀 행 1건 INSERT 확인",
+      "method": "Supabase 대시보드 → Table Editor → children에서 본인 행 확인",
+      "expected": "parent_id가 로그인 사용자 id와 같고 name·age·current_level이 입력값과 일치하는 행 1건"
+    },
+    {
+      "id": "v10-skip-when-child-exists",
+      "description": "자녀가 이미 있는 계정 재로그인 시 /onboarding 건너뜀",
+      "method": "클릭 테스트 — 자녀 등록된 계정으로 로그아웃 후 재로그인",
+      "expected": "/onboarding을 거치지 않고 /home으로 직행"
+    },
+    {
+      "id": "v11-onboarding-guard",
+      "description": "자녀가 있는 상태로 /onboarding 직접 접근 시 /home 역가드",
+      "method": "클릭 테스트 — 자녀 등록된 상태에서 /onboarding 직접 접근",
+      "expected": "/home으로 이동"
+    },
+    {
+      "id": "v12-license-audit",
+      "description": "라이선스 감사 — phase-08은 books 미수정, 쿼리 결과 0 유지 (claude.md §7)",
+      "method": "SELECT COUNT(*) FROM books WHERE attribution_text IS NULL OR license LIKE '%nc%' OR license LIKE '%nd%';",
+      "expected": "0 (변동 없음)"
+    }
+  ],
+
+  "completion_criteria": [
+    "v1~v5 자동 검증 전부 통과 (lint·type-check·build 에러 0, 스키마 무변경, secret 미노출)",
+    "v6~v11 클릭 테스트 전부 통과 (사용자 검증)",
+    "v12 라이선스 감사 결과 0 유지 (books 미수정 확인)",
+    "tasks/_index.json의 phase-08-onboarding status를 'success'로, last_successful_state를 'phase-08-onboarding'으로 갱신",
+    "python scripts/run_phase.py --complete phase-08-onboarding 실행 완료"
+  ],
+
+  "user_steps": [
+    "외부 콘솔 설정 불필요 — phase-08은 코드만으로 완결 (ADR-0011 결정 4·6, Supabase Storage 미사용)",
+    "pnpm dev 실행 후 /onboarding에서 v6~v11 클릭 테스트",
+    "Supabase 대시보드 → Table Editor → children에서 v9 자녀 행 확인",
+    "pnpm lint && pnpm type-check && pnpm build",
+    "python scripts/run_phase.py --complete phase-08-onboarding"
+  ],
+
+  "references": [
+    "claude.md 2절 Hard Rule 6·8·10, 5절 라우팅(인증·온보딩)",
+    "docs/adr/0011-onboarding-flow.md (본 페이즈 생성 — 온보딩 6대 결정 + 나이→레벨 매핑표)",
+    "docs/adr/0009-auth-architecture.md (POST_LOGIN_PATH·미들웨어 중앙 가드 — 분기 추가 지점)",
+    "docs/intent/onboarding-flow.md (본 페이즈 생성 — 사용자 흐름)",
+    "docs/intent/auth-flow.md 4.1·4.4·4.5절 (분기 추가 지점·ensureProfile 패턴)",
+    "supabase/migrations/001_initial_schema.sql (children 테이블 + RLS 정책 4종)",
+    "scripts/lib/level_estimator.py (LEVEL_TABLE — 나이→레벨 매핑 도출 근거)",
+    "docs/design-system.md 1.8절 (레벨 1~5 컬러 토큰)",
+    "PLAN.md 9절 (Week 3~4 온보딩)"
+  ]
+}
