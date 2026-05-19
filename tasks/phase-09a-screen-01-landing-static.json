@@ -1,0 +1,265 @@
+{
+  "phase_id": "phase-09a-screen-01-landing-static",
+  "name": "Screen 01 랜딩 페이지 정적 구현",
+  "category": "Phase 1",
+  "version": "1.0",
+  "created_at": "2026-05-19",
+
+  "summary": "비로그인 방문자가 가입을 결심하게 만드는 랜딩 페이지(/)를 정적으로 구현한다. app/page.tsx의 Phase 0 placeholder를 5개 섹션(헤더·히어로·핵심 가치 4개·인기 책·푸터)으로 교체한다. 카피는 lib/landing/copy.ts 단일 출처에서 오고 컴포넌트는 props로 받는다(ADR-0012 결정 2 — phase-13b DB 교체 대비). 인기 책은 베타 데이터가 없어 랜덤 6권으로 노출하며, Supabase RANDOM RPC를 만들지 않고 애플리케이션 코드에서 무작위 선정한다(ADR-0012 결정 3 — Hard Rule 8 회피, DB 스키마 변경 0건). 로그인 사용자가 /에 접근하면 페이지 컴포넌트가 phase-08의 resolvePostLoginPath로 /home·/onboarding 분기 리다이렉트한다(ADR-0012 결정 4 — middleware.ts·routes.ts 무변경). 표지 썸네일에는 제목·저자 캡션과 CC BY 안내를 표시한다(ADR-0013). /terms·/privacy placeholder 페이지와 robots.txt·sitemap.xml·SEO 메타데이터·동적 OG 이미지를 포함한다. phase-09는 본 phase-09a와 phase-13b(Admin)로 분할되었다(ADR-0012 결정 1). 사용자 흐름은 docs/intent/screen-01-landing.md, 기술 결정과 대안 비교는 docs/adr/0012-landing-page-static.md·docs/adr/0013-cover-attribution-policy.md 참조.",
+
+  "goals": [
+    "app/page.tsx를 정식 랜딩 페이지로 교체 — 헤더·히어로·핵심 가치 4개·인기 책·푸터 5개 섹션 (모바일 390px 우선)",
+    "랜딩 카피 단일 출처 lib/landing/copy.ts + getLandingCopy() 추상화 — 컴포넌트는 props 수신 (ADR-0012 결정 2)",
+    "인기 책 랜덤 6권 노출 — is_active=true, DB 함수 미생성 애플리케이션 코드 랜덤 (ADR-0012 결정 3)",
+    "로그인 사용자가 / 접근 시 페이지 컴포넌트가 resolvePostLoginPath로 /home·/onboarding 분기 리다이렉트 (ADR-0012 결정 4)",
+    "핵심 가치 ① '890권이 넘는 영어 그림책' 확정 — AI 과장 카피 폐기 (ADR-0012 결정 5)",
+    "표지 썸네일에 제목·저자 캡션 + 푸터 CC BY 안내 (ADR-0013 결정 1·2)",
+    "/terms·/privacy placeholder 페이지 신설 — 베타 임시 배너 + 별도 라우트 (비보호)",
+    "SEO 메타데이터(OpenGraph·Twitter) + 동적 OG 이미지 + robots.txt + sitemap.xml",
+    "DB 스키마 변경 0건 — books 읽기만, supabase/migrations 신규 파일 없음",
+    "랜딩 UI는 design-system.md semantic 토큰만 사용 (Hard Rule 10)"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 6 — 랜딩 흐름은 publishable 키만 사용. SUPABASE_SECRET_KEY/service_role는 랜딩 코드·클라이언트 코드·공개 환경변수에 일체 미등장",
+    "Hard Rule 8 — books 테이블은 phase-03에서 생성 완료. phase-09a는 books를 읽기만 하며 신규 마이그레이션이 없다. 인기 책 랜덤은 DB RPC 함수를 만들지 않고 애플리케이션 코드에서 처리 (ADR-0012 결정 3)",
+    "Hard Rule 10 — 랜딩 화면은 raw 색상값 금지, design-system.md semantic 토큰만 사용",
+    "Hard Rule 1·3 — books.attribution_text·license 트리거 등 라이선스 장치 미변경. 표지 노출 시 어트리뷰션은 ADR-0013 정책 준수"
+  ],
+
+  "scope_in": [
+    "docs/intent/screen-01-landing.md — 랜딩 의도 문서 (신규, CP1)",
+    "docs/adr/0012-landing-page-static.md — phase 분할·카피 단일 출처·렌더링·로그인 분기 결정 (신규, CP1)",
+    "docs/adr/0013-cover-attribution-policy.md — 표지 어트리뷰션 정책 (신규, CP1)",
+    "tasks/_index.json — phase-09 분할 반영 (수정, CP1)",
+    "lib/landing/copy.ts — LandingCopy 인터페이스 + LANDING_COPY 상수 + getLandingCopy() (신규, CP2)",
+    "lib/landing/popular-books.ts — 인기 책 랜덤 6권 조회 헬퍼, server-only (신규, CP2)",
+    "next.config.js — images.remotePatterns에 bookdash.github.io·content.digitallibrary.io 추가 (수정, CP2)",
+    "app/page.tsx — Phase 0 placeholder를 랜딩 페이지로 교체, 로그인 사용자 분기 리다이렉트 (수정, CP3)",
+    "components/landing/landing-header.tsx — 로고 + 로그인·가입 버튼 (신규, CP3)",
+    "components/landing/hero-section.tsx — 메인·서브 카피 + CTA + 색상 블록 영역 (신규, CP3)",
+    "components/landing/value-props.tsx — 핵심 가치 4개 (신규, CP3)",
+    "components/landing/popular-books.tsx — 인기 책 6권 그리드 (신규, CP3)",
+    "components/landing/book-cover-card.tsx — 표지 1장 + 제목·저자 캡션 + 깨진 이미지 fallback (신규, CP3)",
+    "components/landing/landing-footer.tsx — 약관 링크 + 회사정보 + CC BY 안내 (신규, CP3)",
+    "app/terms/page.tsx — 이용약관 placeholder + 베타 배너 (신규, CP4)",
+    "app/privacy/page.tsx — 개인정보처리방침 placeholder + 베타 배너 (신규, CP4)",
+    "components/legal/legal-page-shell.tsx — 약관 페이지 공용 레이아웃 (신규, CP4)",
+    "app/opengraph-image.tsx — 동적 OG 이미지, 영문 브랜드 (신규, CP4)",
+    "app/robots.ts — / 허용, 읽기 콘텐츠 경로 차단 (신규, CP4)",
+    "app/sitemap.ts — 공개 3개 URL (신규, CP4)"
+  ],
+
+  "scope_out": [
+    "진짜 인기순·큐레이션 알고리즘 — phase-13b 이후, 베타 데이터 축적 후 (ADR-0012 결정 3·5절)",
+    "랜딩 카피 DB 관리(landing_copy 테이블)·Admin 화면 — phase-13b (ADR-0012 결정 1, getLandingCopy()가 교체 인터페이스 마련)",
+    "랜덤 RPC 함수 — 미생성. 애플리케이션 코드 랜덤으로 대체 (ADR-0012 결정 3)",
+    "파트너(출판사) 로고 섹션 — 협상 체결 전이라 노출할 파트너 없음",
+    "책 상세 페이지 AttributionBox(4요소 전체) — phase-11 (license-rules.md 5절)",
+    "책 상세·뷰어 화면 — phase-11·12. 표지 클릭은 /signup으로 유도",
+    "정식 약관·개인정보처리방침 문안 — phase-14 변호사 검토 교체. phase-09a는 placeholder",
+    "OG 이미지 한글화 — phase-14 (ADR-0012 결정 7)",
+    "middleware.ts·lib/auth/routes.ts 수정 — 하지 않음. /는 공개 라우트, 분기는 페이지 컴포넌트에서 (ADR-0012 결정 4)",
+    "인기 책 조회 unstable_cache 캐싱 — 트래픽 증가 시 후속 작업 (ADR-0012 결정 6)"
+  ],
+
+  "files_to_create_or_modify": [
+    "docs/intent/screen-01-landing.md (신규 — CP1 문서 단계)",
+    "docs/adr/0012-landing-page-static.md (신규 — CP1 문서 단계)",
+    "docs/adr/0013-cover-attribution-policy.md (신규 — CP1 문서 단계)",
+    "tasks/phase-09a-screen-01-landing-static.json (신규 — 본 파일, CP1)",
+    "tasks/_index.json (수정 — phase-09 분할: total 14→15, phase-09→09a 교체, phase-13b 삽입, CP1)",
+    "lib/landing/copy.ts (신규 — 카피 단일 출처 + getLandingCopy(), CP2)",
+    "lib/landing/popular-books.ts (신규 — 인기 책 랜덤 6권 조회, CP2)",
+    "next.config.js (수정 — images.remotePatterns 2개 추가, CP2)",
+    "app/page.tsx (수정 — 랜딩 페이지로 교체 + 로그인 분기, CP3)",
+    "components/landing/landing-header.tsx (신규 — CP3)",
+    "components/landing/hero-section.tsx (신규 — CP3)",
+    "components/landing/value-props.tsx (신규 — CP3)",
+    "components/landing/popular-books.tsx (신규 — CP3)",
+    "components/landing/book-cover-card.tsx (신규 — CP3)",
+    "components/landing/landing-footer.tsx (신규 — CP3)",
+    "app/terms/page.tsx (신규 — CP4)",
+    "app/privacy/page.tsx (신규 — CP4)",
+    "components/legal/legal-page-shell.tsx (신규 — CP4)",
+    "app/opengraph-image.tsx (신규 — CP4)",
+    "app/robots.ts (신규 — CP4)",
+    "app/sitemap.ts (신규 — CP4)"
+  ],
+
+  "checkpoints": [
+    {
+      "id": "CP1-docs",
+      "description": "문서 — 의도 문서 + ADR-0012 + ADR-0013 + 본 명세 + _index.json 분할 갱신. 코드 선행(claude.md §2-8·§3-5). claude.md 라우팅은 screen-01-landing.md 기등재로 무변경. 완료 후 멈춤·보고·승인 게이트",
+      "files": [
+        "docs/intent/screen-01-landing.md",
+        "docs/adr/0012-landing-page-static.md",
+        "docs/adr/0013-cover-attribution-policy.md",
+        "tasks/phase-09a-screen-01-landing-static.json",
+        "tasks/_index.json"
+      ]
+    },
+    {
+      "id": "CP2-data-foundation",
+      "description": "데이터·설정 토대 — 카피 단일 출처 + 인기 책 랜덤 조회 헬퍼 + 이미지 도메인 허용. 비주얼 없음. 완료 후 멈춤·보고",
+      "files": [
+        "lib/landing/copy.ts",
+        "lib/landing/popular-books.ts",
+        "next.config.js"
+      ]
+    },
+    {
+      "id": "CP3-landing-page",
+      "description": "랜딩 페이지 본체 — app/page.tsx 교체(로그인 분기 포함) + 5개 섹션 컴포넌트. 표지 캡션 두 줄→제목만 후퇴 여부는 모바일 레이아웃 실측 후 판단·보고(ADR-0013 결정 1). 완료 후 멈춤·보고",
+      "files": [
+        "app/page.tsx",
+        "components/landing/landing-header.tsx",
+        "components/landing/hero-section.tsx",
+        "components/landing/value-props.tsx",
+        "components/landing/popular-books.tsx",
+        "components/landing/book-cover-card.tsx",
+        "components/landing/landing-footer.tsx"
+      ]
+    },
+    {
+      "id": "CP4-legal-seo",
+      "description": "부속 페이지 + SEO — /terms·/privacy placeholder + 동적 OG 이미지 + robots.txt + sitemap.xml + 메타데이터. 완료 후 멈춤·보고",
+      "files": [
+        "app/terms/page.tsx",
+        "app/privacy/page.tsx",
+        "components/legal/legal-page-shell.tsx",
+        "app/opengraph-image.tsx",
+        "app/robots.ts",
+        "app/sitemap.ts"
+      ]
+    }
+  ],
+
+  "verification": [
+    {
+      "id": "v1-lint",
+      "description": "린트 에러 0",
+      "method": "pnpm lint",
+      "expected": "에러 0"
+    },
+    {
+      "id": "v2-type-check",
+      "description": "타입 체크 에러 0",
+      "method": "pnpm type-check",
+      "expected": "에러 0"
+    },
+    {
+      "id": "v3-build",
+      "description": "프로덕션 빌드 성공",
+      "method": "pnpm build",
+      "expected": "성공"
+    },
+    {
+      "id": "v4-no-schema-change",
+      "description": "DB 스키마 무변경 — supabase/migrations에 신규 파일 없음 (ADR-0012 결정 3)",
+      "method": "supabase/migrations 디렉토리 + git status 확인",
+      "expected": "001_initial_schema.sql 외 신규 마이그레이션 0건"
+    },
+    {
+      "id": "v5-no-secret-leak",
+      "description": "랜딩 흐름 파일에 secret 키 미등장 (Hard Rule 6)",
+      "method": "app/page.tsx, app/terms/**, app/privacy/**, lib/landing/**, components/landing/**, components/legal/** 에서 SUPABASE_SECRET_KEY / service_role 문자열 검색",
+      "expected": "0건"
+    },
+    {
+      "id": "v6-no-middleware-routes-change",
+      "description": "middleware.ts·lib/auth/routes.ts 무변경 (ADR-0012 결정 4)",
+      "method": "git status로 두 파일 미변경 확인",
+      "expected": "두 파일 변경 0건"
+    },
+    {
+      "id": "v7-design-tokens-only",
+      "description": "랜딩 화면에 raw HEX 직접 사용 없음 (Hard Rule 10)",
+      "method": "app/page.tsx, components/landing/**, components/legal/** 에서 #RRGGBB 패턴 검색 (일러스트 색면은 토큰 클래스 사용)",
+      "expected": "raw HEX 0건"
+    },
+    {
+      "id": "v8-landing-shows",
+      "description": "비로그인 방문자에게 랜딩 5개 섹션 표시",
+      "method": "클릭 테스트 — 로그아웃 상태로 / 접근",
+      "expected": "헤더·히어로·핵심 가치 4개·인기 책·푸터가 모두 표시"
+    },
+    {
+      "id": "v9-logged-in-redirect",
+      "description": "로그인 사용자가 / 접근 시 분기 리다이렉트",
+      "method": "클릭 테스트 — 로그인 상태로 / 접근",
+      "expected": "자녀 있으면 /home, 없으면 /onboarding으로 이동 (resolvePostLoginPath 결과)"
+    },
+    {
+      "id": "v10-popular-books-6",
+      "description": "인기 책 랜덤 6권 표지 표시",
+      "method": "클릭 테스트 — / 인기 책 섹션 확인, 새로고침 시 구성 변화 확인",
+      "expected": "is_active 책 표지 6장 표시, 새로고침 시 다른 6권이 나올 수 있음"
+    },
+    {
+      "id": "v11-cta-to-signup",
+      "description": "CTA 버튼·표지 클릭 시 /signup 이동",
+      "method": "클릭 테스트 — '무료로 시작하기' 버튼과 표지 카드 클릭",
+      "expected": "/signup으로 이동. 헤더 '로그인'은 /login으로 이동"
+    },
+    {
+      "id": "v12-cover-attribution",
+      "description": "표지 캡션(제목·저자) + 푸터 CC BY 안내 표시 (ADR-0013)",
+      "method": "클릭 테스트 — 표지 아래 캡션과 푸터 안내 문구 확인",
+      "expected": "각 표지에 제목·저자(또는 제목만 — CP3 실측 결정) 캡션, 푸터에 CC BY 4.0 안내 문구"
+    },
+    {
+      "id": "v13-legal-pages",
+      "description": "/terms·/privacy 페이지 200 응답 + 베타 임시 배너",
+      "method": "클릭 테스트 — 푸터 링크로 두 페이지 접근",
+      "expected": "두 페이지 정상 표시, 각 페이지에 베타 임시 문서 배너"
+    },
+    {
+      "id": "v14-robots-sitemap",
+      "description": "robots.txt가 읽기 콘텐츠 경로 차단, sitemap.xml 생성",
+      "method": "/robots.txt, /sitemap.xml 접근",
+      "expected": "robots.txt가 /·/terms·/privacy 허용, /home·/book·/library·/onboarding·/login·/signup 차단. sitemap.xml에 공개 3개 URL"
+    },
+    {
+      "id": "v15-lighthouse",
+      "description": "Lighthouse Performance 80+·Accessibility 90+ (_index.json global_verification)",
+      "method": "Chrome DevTools Lighthouse — / 측정",
+      "expected": "Performance ≥ 80, Accessibility ≥ 90"
+    },
+    {
+      "id": "v16-license-audit",
+      "description": "라이선스 감사 — phase-09a는 books 미수정, 쿼리 결과 0 유지 (claude.md §7)",
+      "method": "SELECT COUNT(*) FROM books WHERE attribution_text IS NULL OR license LIKE '%nc%' OR license LIKE '%nd%';",
+      "expected": "0 (변동 없음)"
+    }
+  ],
+
+  "completion_criteria": [
+    "v1~v7 자동 검증 전부 통과 (lint·type-check·build 에러 0, 스키마 무변경, secret 미노출, middleware·routes 무변경, 디자인 토큰만)",
+    "v8~v15 클릭 테스트·Lighthouse 전부 통과 (사용자 검증)",
+    "v16 라이선스 감사 결과 0 유지 (books 미수정 확인)",
+    "tasks/_index.json의 phase-09a-screen-01-landing-static status를 'success'로, last_successful_state를 'phase-09a-screen-01-landing-static'으로 갱신",
+    "python scripts/run_phase.py --complete phase-09a-screen-01-landing-static 실행 완료"
+  ],
+
+  "user_steps": [
+    "외부 콘솔 설정 불필요 — phase-09a는 코드만으로 완결 (books는 phase-04·05에서 적재 완료)",
+    "pnpm dev 실행 후 / 에서 v8~v14 클릭 테스트 (로그아웃·로그인 두 상태 모두)",
+    "Chrome DevTools Lighthouse로 v15 Performance·Accessibility 측정",
+    "pnpm lint && pnpm type-check && pnpm build",
+    "python scripts/run_phase.py --complete phase-09a-screen-01-landing-static"
+  ],
+
+  "references": [
+    "claude.md 2절 Hard Rule 1·3·6·8·10, 5절 라우팅(Screen 01)",
+    "docs/adr/0012-landing-page-static.md (본 페이즈 생성 — phase 분할 + 랜딩 7대 결정)",
+    "docs/adr/0013-cover-attribution-policy.md (본 페이즈 생성 — 표지 어트리뷰션 정책)",
+    "docs/adr/0011-onboarding-flow.md 결정 1 (resolvePostLoginPath — 로그인 분기 헬퍼)",
+    "docs/intent/screen-01-landing.md (본 페이즈 생성 — 사용자 흐름)",
+    "docs/guidelines/license-rules.md 4·5절 (어트리뷰션 4요소·AttributionBox)",
+    "docs/design-system.md 1절(컬러)·2.2절(타입 스케일)·6.1절(Button)·6.2절(Card)",
+    "lib/auth/resolve-post-login-path.ts (phase-08 — 로그인 도착 경로 분기 헬퍼)",
+    "supabase/migrations/001_initial_schema.sql (books 테이블 + 공개 SELECT 정책)",
+    "PLAN.md 9절 (Screen 01 랜딩)·15절 (CC BY 4.0·closed environment)"
+  ]
+}

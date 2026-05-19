@@ -2,10 +2,10 @@
   "schema_version": "1.0",
   "project": "kikibooks",
   "last_updated": "2026-05-19T02:46:37.510018+00:00",
-  "current_phase": "phase-09-screen-01-landing",
-  "total_phases": 14,
+  "current_phase": "phase-09a-screen-01-landing-static",
+  "total_phases": 15,
   "completed_phases": 9,
-  "remaining_phases": 5,
+  "remaining_phases": 6,
   "last_successful_state": "phase-08-onboarding",
   "phases": [
     {
@@ -164,19 +164,22 @@
       "verification_result": "v1~v5 자동 검증(lint·type-check·build·스키마 무변경·secret 미노출) 통과 + v6~v11 사용자 클릭 테스트(분기·레벨 추천·수동 조정·제출→/home·children 행·재로그인 건너뜀·역가드) 통과 (2026-05-19)"
     },
     {
-      "id": "phase-09-screen-01-landing",
-      "name": "Screen 01 랜딩 페이지 구현",
+      "id": "phase-09a-screen-01-landing-static",
+      "name": "Screen 01 랜딩 페이지 정적 구현",
       "category": "Phase 1",
       "status": "pending",
       "depends_on": [
         "phase-02-design-system",
         "phase-05-gdl-sync"
       ],
-      "spec_file": "tasks/phase-09-screen-01-landing.json",
+      "spec_file": "tasks/phase-09a-screen-01-landing-static.json",
+      "note": "phase-09는 ADR-0012 결정 1로 phase-09a(랜딩 정적 구현)와 phase-13b(Admin)로 분할되었다.",
       "verification": [
-        "비로그인 시 랜딩 표시",
-        "로그인 시 /home 리다이렉트",
-        "추천 책 6권 표시"
+        "비로그인 시 랜딩 5개 섹션 표시",
+        "로그인 시 resolvePostLoginPath 결과로 /home·/onboarding 리다이렉트",
+        "인기 책 랜덤 6권 표시",
+        "/terms·/privacy placeholder 페이지 200 응답",
+        "표지 어트리뷰션 정책(ADR-0013) 준수"
       ]
     },
     {
@@ -240,6 +243,24 @@
         "포인트 +50 children.points 반영",
         "child_badges INSERT",
         "라이브러리 필터·검색·무한 스크롤 작동"
+      ]
+    },
+    {
+      "id": "phase-13b-admin-system",
+      "name": "Admin 시스템 — 랜딩 카피 관리 + 책 큐레이션 + 사용자 관리",
+      "category": "Phase 1",
+      "status": "pending",
+      "depends_on": [
+        "phase-09a-screen-01-landing-static",
+        "phase-13-screen-05-celebrate"
+      ],
+      "spec_file": "tasks/phase-13b-admin-system.json",
+      "note": "phase-09 분할로 신설(ADR-0012 결정 1). 모든 Screen 화면 완료 후 진행. spec_file은 phase-13b 착수 시 작성한다.",
+      "verification": [
+        "랜딩 카피 DB 편집 → / 반영 (getLandingCopy() DB 교체)",
+        "책 is_active 토글 큐레이션",
+        "사용자 목록 조회",
+        "admin 전용 보호 라우트 작동"
       ]
     }
   ],
