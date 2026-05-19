@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-18T08:38:55.246533+00:00",
-  "current_phase": "phase-08-onboarding",
+  "last_updated": "2026-05-19T02:46:37.510018+00:00",
+  "current_phase": "phase-09-screen-01-landing",
   "total_phases": 14,
-  "completed_phases": 8,
-  "remaining_phases": 6,
-  "last_successful_state": "phase-07-auth",
+  "completed_phases": 9,
+  "remaining_phases": 5,
+  "last_successful_state": "phase-08-onboarding",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -150,7 +150,7 @@
       "id": "phase-08-onboarding",
       "name": "자녀 프로필 등록 온보딩 플로우",
       "category": "Phase 1",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-07-auth"
       ],
@@ -159,7 +159,9 @@
         "첫 로그인 → /onboarding 자동 리다이렉트",
         "자녀 이름·나이·레벨 입력 후 /home 진입",
         "children 테이블에 정상 INSERT"
-      ]
+      ],
+      "completed_at": "2026-05-19T02:46:37.509720+00:00",
+      "verification_result": "v1~v5 자동 검증(lint·type-check·build·스키마 무변경·secret 미노출) 통과 + v6~v11 사용자 클릭 테스트(분기·레벨 추천·수동 조정·제출→/home·children 행·재로그인 건너뜀·역가드) 통과 (2026-05-19)"
     },
     {
       "id": "phase-09-screen-01-landing",
