@@ -1,84 +1,60 @@
-import { Button } from '@/components/ui/button';
+import { redirect } from 'next/navigation';
 
-// 디자인 토큰 적용 확인용 페이지. Phase 1 화면 작업 시작 시 교체될 예정.
-export default function Page() {
+import { HeroSection } from '@/components/landing/hero-section';
+import { LandingFooter } from '@/components/landing/landing-footer';
+import { LandingHeader } from '@/components/landing/landing-header';
+import { PopularBooks } from '@/components/landing/popular-books';
+import { ValueProps } from '@/components/landing/value-props';
+import { resolvePostLoginPath } from '@/lib/auth/resolve-post-login-path';
+import { getLandingCopy } from '@/lib/landing/copy';
+import { getPopularBooks, type PopularBook } from '@/lib/landing/popular-books';
+import { createClient } from '@/lib/supabase/server';
+
+/**
+ * Screen 01 랜딩 페이지 (`/`).
+ *
+ * 비로그인 방문자에게 5개 섹션(헤더·히어로·핵심 가치·인기 책·푸터)을 보여주는
+ * 마케팅 페이지다. 로그인 상태로 접근하면 phase-08의 resolvePostLoginPath()
+ * 결과로 /home·/onboarding에 리다이렉트한다 — 분기는 이 페이지 컴포넌트가
+ * 직접 하며 middleware.ts·lib/auth/routes.ts는 건드리지 않는다
+ * (docs/adr/0012-landing-page-static.md 결정 4).
+ *
+ * createClient()가 세션 쿠키를 읽으므로 이 라우트는 dynamic으로 렌더된다.
+ * 인기 책 랜덤 6권은 매 요청 새로 뽑힌다 (ADR-0012 결정 3·6).
+ *
+ * 의도 문서: docs/intent/screen-01-landing.md
+ */
+export default async function LandingPage() {
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // ADR-0012 결정 4 — 로그인 사용자는 도착 경로(/home·/onboarding)로 리다이렉트.
+  if (user) {
+    redirect(await resolvePostLoginPath(supabase, user.id));
+  }
+
+  // 비로그인 방문자 — 랜딩을 렌더한다.
+  const copy = await getLandingCopy();
+
+  // 인기 책 조회 실패가 마케팅 페이지 전체를 막지 않도록 방어한다.
+  let books: PopularBook[] = [];
+  try {
+    books = await getPopularBooks(supabase);
+  } catch (error) {
+    console.error('LandingPage: 인기 책 조회 실패 —', error);
+  }
+
   return (
-    <main className="min-h-screen px-8 py-16">
-      <div className="mx-auto max-w-2xl space-y-10">
-        <header className="space-y-3">
-          <p className="text-xs font-bold uppercase tracking-wider text-text-variant">
-            Phase 0 · Setup Complete
-          </p>
-          <h1 className="font-display text-[30px] font-semibold leading-[1.1] text-text">
-            Kikibooks · Setup Complete
-          </h1>
-          <p className="text-base text-text-variant">
-            Next.js 14 + Tailwind + Design System v1.0 토큰이 정상 적용되었습니다.
-          </p>
-        </header>
-
-        <section className="space-y-4">
-          <h2 className="font-display text-[20px] font-semibold text-text">
-            컬러 토큰
-          </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <div className="rounded-md bg-primary p-5 text-on-primary shadow-elev-1">
-              <p className="text-sm font-semibold">Primary</p>
-              <p className="text-xs opacity-80">CTA · 강조</p>
-            </div>
-            <div className="rounded-md bg-secondary p-5 text-on-secondary shadow-elev-1">
-              <p className="text-sm font-semibold">Secondary</p>
-              <p className="text-xs opacity-80">보조 액션</p>
-            </div>
-            <div className="rounded-md bg-tertiary p-5 text-on-tertiary shadow-elev-1">
-              <p className="text-sm font-semibold">Tertiary</p>
-              <p className="text-xs opacity-80">정보형</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="font-display text-[20px] font-semibold text-text">
-            자녀 레벨 컬러 (1 → 5)
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            <span className="rounded-pill bg-level-1 px-4 py-2 text-sm font-semibold text-text-inverse">
-              Level 1 · 새싹
-            </span>
-            <span className="rounded-pill bg-level-2 px-4 py-2 text-sm font-semibold text-text-inverse">
-              Level 2 · 하늘
-            </span>
-            <span className="rounded-pill bg-level-3 px-4 py-2 text-sm font-semibold text-text-inverse">
-              Level 3 · 햇살
-            </span>
-            <span className="rounded-pill bg-level-4 px-4 py-2 text-sm font-semibold text-text-inverse">
-              Level 4 · 꽃
-            </span>
-            <span className="rounded-pill bg-level-5 px-4 py-2 text-sm font-semibold text-text-inverse">
-              Level 5 · 별
-            </span>
-          </div>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="font-display text-[20px] font-semibold text-text">
-            shadcn/ui Button
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            <Button>읽기 시작</Button>
-            <Button variant="secondary">나중에</Button>
-            <Button variant="outline">자세히</Button>
-          </div>
-        </section>
-
-        <footer className="border-t border-outline pt-6 text-sm text-text-variant">
-          <p>
-            다음 단계: <code className="rounded-xs bg-surface-3 px-1.5 py-0.5 font-mono text-xs">.env.example</code> 복사 →
-            <code className="rounded-xs bg-surface-3 px-1.5 py-0.5 font-mono text-xs">.env.local</code> 작성 →
-            <code className="rounded-xs bg-surface-3 px-1.5 py-0.5 font-mono text-xs">pnpm dev</code>
-          </p>
-        </footer>
-      </div>
-    </main>
+    <div className="flex min-h-screen flex-col bg-bg">
+      <LandingHeader brandName={copy.brandName} copy={copy.header} />
+      <main className="flex-1">
+        <HeroSection copy={copy.hero} />
+        <ValueProps items={copy.valueProps} />
+        <PopularBooks copy={copy.popularSection} books={books} />
+      </main>
+      <LandingFooter brandName={copy.brandName} copy={copy.footer} />
+    </div>
   );
 }

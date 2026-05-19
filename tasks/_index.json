@@ -3,9 +3,9 @@
   "project": "kikibooks",
   "last_updated": "2026-05-19T02:46:37.510018+00:00",
   "current_phase": "phase-09a-screen-01-landing-static",
-  "total_phases": 15,
+  "total_phases": 16,
   "completed_phases": 9,
-  "remaining_phases": 6,
+  "remaining_phases": 7,
   "last_successful_state": "phase-08-onboarding",
   "phases": [
     {
@@ -183,12 +183,29 @@
       ]
     },
     {
+      "id": "phase-09b-content-quality-fix",
+      "name": "GDL 표지 URL 정정 + 재동기화",
+      "category": "Phase 1",
+      "status": "pending",
+      "depends_on": [
+        "phase-09a-screen-01-landing-static"
+      ],
+      "spec_file": "tasks/phase-09b-content-quality-fix.json",
+      "note": "phase-09a CP3 진단으로 발견(2026-05-19). GDL 842권 표지 28% 정상률 → 95%+ 목표. sync_gdl.py가 h5pId 템플릿 대신 GDL API 실제 표지 URL을 쓰도록 정정 후 재동기화. phase-10 진입 전 필수. spec_file은 착수 시 작성한다.",
+      "verification": [
+        "GDL 표지 HEAD 표본 정상률 ≥ 95%",
+        "랜딩 source_platform 필터 제거 후 정상 표지 비율 ≥ 90%",
+        "phase-10 진입 가능"
+      ]
+    },
+    {
       "id": "phase-10-screen-02-home",
       "name": "Screen 02 로그인 후 홈 구현",
       "category": "Phase 1",
       "status": "pending",
       "depends_on": [
-        "phase-08-onboarding"
+        "phase-08-onboarding",
+        "phase-09b-content-quality-fix"
       ],
       "spec_file": "tasks/phase-10-screen-02-home.json",
       "verification": [

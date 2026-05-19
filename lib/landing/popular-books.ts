@@ -17,11 +17,23 @@ import type { SupabaseClient } from '@supabase/supabase-js';
  *
  * 표지 캡션에 쓸 title·author를 함께 가져온다(ADR-0013 결정 1).
  *
+ * ★ 랜딩 임시 조치 (phase-09a CP3) — 후보를 source_platform='book_dash'로 한정한다.
+ *   CP3 표지 진단에서 GDL 표지 28% 정상률(842권 중 약 606권 404)이 확인되어,
+ *   표지 90% 정상률인 Book Dash 안에서만 랜덤 6권을 뽑는다. phase-09b
+ *   (GDL 표지 정정·재동기화) 완료 후 전 카탈로그 환원을 재검토한다
+ *   (docs/adr/0012-landing-page-static.md 결정 3 보강).
+ *
  * 의도 문서: docs/intent/screen-01-landing.md 4.3절
  */
 
 /** 랜딩 인기 책 섹션에 노출하는 책 수. */
 export const POPULAR_BOOKS_COUNT = 6;
+
+/**
+ * 랜딩 인기 책 후보 소스 — phase-09a 임시 조치로 Book Dash로 한정한다.
+ * phase-09b에서 GDL 표지가 정정되면 이 제한을 환원/재검토한다.
+ */
+const LANDING_SOURCE_PLATFORM = 'book_dash';
 
 /** 랜딩 표지 카드 1장에 필요한 책 데이터. */
 export interface PopularBook {
@@ -61,6 +73,7 @@ export async function getPopularBooks(
     .from('books')
     .select('id')
     .eq('is_active', true)
+    .eq('source_platform', LANDING_SOURCE_PLATFORM)
     .returns<BookIdRow[]>();
 
   if (idError) {
