@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import { z } from 'zod';
 
 import { ensureProfile } from '@/lib/auth/ensure-profile';
-import { POST_LOGIN_PATH } from '@/lib/auth/routes';
+import { resolvePostLoginPath } from '@/lib/auth/resolve-post-login-path';
 import { createClient } from '@/lib/supabase/server';
 
 /**
@@ -33,7 +33,7 @@ export type EmailAuthInput = {
 
 /**
  * 이메일·비밀번호 로그인.
- * 성공 시 /home으로 리다이렉트하므로 값을 반환하지 않는다.
+ * 성공 시 /home(자녀 있음) 또는 /onboarding(자녀 없음)으로 리다이렉트하므로 값을 반환하지 않는다.
  * 실패 시에만 에러 메시지를 돌려준다 (계정 존재 여부는 노출하지 않음 — auth-flow.md 4.2).
  */
 export async function signInWithEmail(
@@ -54,16 +54,17 @@ export async function signInWithEmail(
     return { error: '이메일 또는 비밀번호가 올바르지 않습니다.' };
   }
 
-  // 세션이 생겼으니 profiles 행을 보장한다 (auth-flow.md 4.4).
+  // 세션이 생겼으니 profiles 행을 보장하고, 자녀 유무로 도착 경로를 정한다
+  // (auth-flow.md 4.4, onboarding-flow.md 4.1).
   await ensureProfile(supabase, data.user);
-  redirect(POST_LOGIN_PATH);
+  redirect(await resolvePostLoginPath(supabase, data.user.id));
 }
 
 /**
  * 이메일·비밀번호 회원가입.
  * - 이메일 확인이 켜져 있으면 세션 없이 확인 메일이 발송된다 → needsEmailConfirmation.
  *   (이 경우 프로필 생성은 /auth/callback이 담당한다.)
- * - 이메일 확인이 꺼져 있으면 즉시 세션이 생긴다 → 프로필 보장 후 /home으로 리다이렉트.
+ * - 이메일 확인이 꺼져 있으면 즉시 세션이 생긴다 → 프로필 보장 후 자녀 유무로 /home·/onboarding 분기.
  */
 export async function signUpWithEmail(
   input: EmailAuthInput,
@@ -90,10 +91,10 @@ export async function signUpWithEmail(
     };
   }
 
-  // 세션이 즉시 생긴 경우(이메일 확인 꺼짐) → 프로필 보장 후 홈으로.
+  // 세션이 즉시 생긴 경우(이메일 확인 꺼짐) → 프로필 보장 후 자녀 유무로 분기.
   if (data.session && data.user) {
     await ensureProfile(supabase, data.user);
-    redirect(POST_LOGIN_PATH);
+    redirect(await resolvePostLoginPath(supabase, data.user.id));
   }
 
   // 세션이 없으면 확인 메일 발송 상태.

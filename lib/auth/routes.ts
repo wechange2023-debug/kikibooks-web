@@ -11,8 +11,11 @@ export const PROTECTED_PREFIXES = ['/home', '/onboarding', '/library', '/book'] 
 /** 로그인한 사용자에게는 다시 보여주지 않는 인증 페이지. */
 export const AUTH_PAGES = ['/login', '/signup'] as const;
 
-/** 로그인 성공 후 기본 도착 경로. (phase-08에서 온보딩 분기가 추가될 자리) */
+/** 로그인 성공 후 자녀가 이미 있을 때의 도착 경로. */
 export const POST_LOGIN_PATH = '/home';
+
+/** 로그인 성공 후 자녀가 없을 때 보내는 온보딩 경로 (phase-08). */
+export const ONBOARDING_PATH = '/onboarding';
 
 /** 비로그인 사용자가 보호 라우트에 접근했을 때 보내는 경로. */
 export const SIGN_IN_PATH = '/login';

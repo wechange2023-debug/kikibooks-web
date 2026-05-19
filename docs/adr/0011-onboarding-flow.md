@@ -22,6 +22,8 @@ phase-08 진입 전, 새 세션이 임의 결정하면 안 되는 5개 항목을
 
 "자녀 없으면 `/onboarding`, 있으면 `/home`" 분기는 **로그인이 완료되는 지점**(`app/auth/callback/route.ts`, `app/login/actions.ts`)에서만 수행한다. 공통 헬퍼 `resolvePostLoginPath`가 `children` 존재 여부를 1회 조회하여 도착 경로를 반환한다. `middleware.ts`는 **수정하지 않는다**.
 
+콜백·서버 액션에서 `hasChildren` 조회 실패 시 `/auth/auth-error`로 처리한다(`ensureProfile` 실패와 동일 취급). DB 조회 실패는 드문 케이스이나, 잘못 추측해 `/home`으로 보내는 것보다 명시적 에러가 안전하다.
+
 ### 결정 2 — 베타 온보딩은 자녀 1명 고정 (D1)
 
 온보딩 화면은 자녀 1명만 입력받는다. `children` 스키마는 다자녀(1 부모 N 자녀)를 그대로 지원하지만, 베타 온보딩 UI는 단일 자녀 폼으로 고정한다. 추가 자녀 등록·자녀 전환 UI는 출시 후로 미룬다.
