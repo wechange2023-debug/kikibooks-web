@@ -155,3 +155,35 @@ ADR-0012 결정 3의 임시 조치를 환원한다. CP3에서 `lib/landing/popul
 ---
 
 *문서 끝.*
+
+---
+
+## Amendment (2026-05-20 CP2 dry-run 측정)
+
+본 ADR §2의 thumbnail=False 7권은 GDL API 응답 전체(1,313권) 기준이다.
+CP2 dry-run(`python scripts/sync_gdl.py --dry-run --verbose`)에서 sync 적재 대상(필터 + dedup 후 842권) 기준으로는 폴백 1권만 발생함을 확인했다.
+
+**식별된 폴백 1권**: postId=45239 "I Love My Mom" (thumbnail=False)
+
+**누락된 6권의 행방** (1313 → 842 필터 체인에서 흡수):
+- BookDash publisher 중복 33건
+- 비-그림책 8건 (H5P.InteractiveVideo + title prefix)
+- H5P 기술 변형본 11건
+- 동제목 dedup 후순위 44건
+- license NC/ND 등 화이트리스트 외 368건
+- language/필수필드 결측 7건
+
+**결과적 정상 URL률 추정 (적재 842권 기준)**:
+- thumbnail 우선 사용: 841/842 (99.88%)
+- 폴백 1권: 표본 정상률 33% 가정 시 0.33권 정상
+- 종합 정상률 추정: **약 99.92%** — v6(≥ 95%) 통과 큰 마진
+
+**v6 사후 처리 분기 (CP3에서 측정·결정)**:
+- postId=45239 폴백 URL이 200이면: 무조치
+- 404이면: lib/landing/popular-books.ts 블랙리스트 추가 검토 (결정 2 패턴 확장)
+
+본 Amendment는 §1~§7 본문을 변경하지 않는다.
+
+---
+
+*Amendment 끝.*

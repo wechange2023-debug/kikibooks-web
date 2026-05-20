@@ -67,6 +67,10 @@ ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = ROOT / ".env.local"
 
 API_URL = "https://content.digitallibrary.io/wp-json/content-api/v1/books/en"
+# ADR-0014 결정 1: 본 템플릿은 *폴백 전용*으로 의미가 재정의됨.
+# 정상 경로는 API 응답의 thumbnail 필드(string URL, 1306/1313=99.5% 정상).
+# thumbnail이 boolean False(7권, 0.5%)이거나 누락된 경우에만 본 템플릿 사용.
+# 측정(2026-05-20, n=30): 템플릿 단독 33% vs thumbnail 우선 100% (ADR-0014 §2).
 COVER_URL_TEMPLATE = (
     "https://content.digitallibrary.io/wp-content/uploads/h5p/content/{h5pId}/images/coverImage.jpg"
 )
@@ -294,11 +298,24 @@ def build_payload(book: dict[str, Any]) -> tuple[Optional[dict[str, Any]], bool]
     # author 필드: publisher가 있으면 그대로, 없으면 None (폴백 텍스트는 attribution_text에만)
     raw_author = (publisher or "").strip()
 
+    # ADR-0014 결정 1: cover_url은 API thumbnail 필드 우선,
+    # boolean False/누락 시만 폴백 템플릿 사용. 폴백 케이스는 운영자 확인용으로 stderr 경고.
+    raw_thumbnail = book.get("thumbnail")
+    if isinstance(raw_thumbnail, str) and raw_thumbnail:
+        cover_url = raw_thumbnail
+    else:
+        cover_url = COVER_URL_TEMPLATE.format(h5pId=h5p_id)
+        print(
+            f"  ⚠ cover fallback: postId={post_id} "
+            f"(thumbnail={raw_thumbnail!r}, ADR-0014 결정 1)",
+            file=sys.stderr,
+        )
+
     payload = {
         "source_platform": SOURCE_PLATFORM,
         "source_id": str(post_id),
         "title": title,
-        "cover_url": COVER_URL_TEMPLATE.format(h5pId=h5p_id),
+        "cover_url": cover_url,
         "content_url": post_link,
         "content_type": CONTENT_TYPE,
         "language": LANGUAGE,
@@ -521,6 +538,8 @@ def main() -> int:
             fb_mark = "★폴백" if "creator information not provided" in p["attribution_text"] else ""
             print(f"  {i+1}. source_id={p['source_id']:>6}  "
                   f"{p['title'][:45]:<45} {fb_mark}")
+            cover = p['cover_url']
+            print(f"     cover_url: {cover[:80]}{'...' if len(cover) > 80 else ''}")
     else:
         print()
         print(f"[step 6] Supabase batch upsert (BATCH_SIZE={BATCH_SIZE})")
