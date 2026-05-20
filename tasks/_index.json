@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-19T02:46:37.510018+00:00",
-  "current_phase": "phase-09a-screen-01-landing-static",
+  "last_updated": "2026-05-20T01:37:18.748143+00:00",
+  "current_phase": "phase-09b-content-quality-fix",
   "total_phases": 16,
-  "completed_phases": 9,
-  "remaining_phases": 7,
-  "last_successful_state": "phase-08-onboarding",
+  "completed_phases": 10,
+  "remaining_phases": 6,
+  "last_successful_state": "phase-09a-screen-01-landing-static",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -167,7 +167,7 @@
       "id": "phase-09a-screen-01-landing-static",
       "name": "Screen 01 랜딩 페이지 정적 구현",
       "category": "Phase 1",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-02-design-system",
         "phase-05-gdl-sync"
@@ -180,7 +180,9 @@
         "인기 책 랜덤 6권 표시",
         "/terms·/privacy placeholder 페이지 200 응답",
         "표지 어트리뷰션 정책(ADR-0013) 준수"
-      ]
+      ],
+      "completed_at": "2026-05-20T01:37:18.748121+00:00",
+      "verification_result": "v1~v7 자동 검증(lint·type-check·build·스키마 무변경·secret 미노출·middleware/routes 무변경·디자인 토큰) + v16 라이선스 감사(books 미수정) 통과 + v8~v15 사용자 클릭 테스트(랜딩 5섹션·로그인 분기·인기책 6권·CTA→/signup·표지 캡션·약관 placeholder·robots/sitemap·Lighthouse 100/94/100/100) 통과 (2026-05-20). v7 OG 이미지 4건 HEX는 Hard Rule 10 일러스트 예외 + ADR-0012 결정 7. v8~v12는 CP3(cd0fab0) 박제 인용 + 오늘 프로덕션 Lighthouse 측정으로 간접 재확인. phase-09a 진행 중 6건 발견 박제: GDL 표지 28% 정상률(→ phase-09b 신설, ADR-0012 결정 3), illustrator 100% 누락(→ phase-11 트리거, ADR-0013 §7), Copilot 확장 console 노이즈(코드 무관 진단), Windows × @vercel/og 빌드 호환성(Edge runtime 표준 적용), 한글 어절 줄바꿈(break-keep 도입), metadataBase 사이트 전역 위치(layout.tsx 이동)."
     },
     {
       "id": "phase-09b-content-quality-fix",
