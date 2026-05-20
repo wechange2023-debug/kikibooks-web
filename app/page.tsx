@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import { HeroSection } from '@/components/landing/hero-section';
@@ -9,6 +10,34 @@ import { resolvePostLoginPath } from '@/lib/auth/resolve-post-login-path';
 import { getLandingCopy } from '@/lib/landing/copy';
 import { getPopularBooks, type PopularBook } from '@/lib/landing/popular-books';
 import { createClient } from '@/lib/supabase/server';
+
+const PAGE_TITLE = 'Kikibooks · 우리 아이의 첫 영어 그림책 서재';
+const PAGE_DESCRIPTION =
+  '만 3~7세 아이를 위한 무료 영어 그림책 서재. 890권이 넘는 그림책을 나이별 맞춤 추천으로, 광고 없이 안전하게 보여주세요.';
+
+/**
+ * 랜딩 페이지 SEO 메타데이터 (phase-09a CP4 — D-3).
+ *
+ * og:image·twitter:image는 app/opengraph-image.tsx를 Next.js가 자동으로 연결한다.
+ * 절대 URL 해석 기준 metadataBase는 app/layout.tsx(루트)에 사이트 전역으로 설정한다.
+ */
+export const metadata: Metadata = {
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  openGraph: {
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    siteName: 'Kikibooks',
+    locale: 'ko_KR',
+    type: 'website',
+    url: '/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+  },
+};
 
 /**
  * Screen 01 랜딩 페이지 (`/`).
