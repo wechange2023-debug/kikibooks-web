@@ -1,0 +1,152 @@
+{
+  "phase_id": "phase-09b-content-quality-fix",
+  "name": "GDL 표지 URL 정정 + Book Dash 4건 사전 차단 + 옵션 Y 환원",
+  "category": "Phase 1",
+  "version": "1.0",
+  "created_at": "2026-05-20",
+
+  "summary": "phase-09a CP3에서 발견된 콘텐츠 품질 이슈 2건을 해소한다. (1) GDL sync_gdl.py가 h5pId 기반 cover_url 템플릿을 쓰는데 표본 30건 측정 결과 33% 정상률이다. GDL API 응답에 이미 정확한 `thumbnail` 필드(1306/1313권에 실제 CDN URL)가 있으므로 이 필드를 우선 사용하도록 정정한 뒤 idempotent UPSERT로 재동기화한다. 표본 100% 정상률을 달성하는 단순한 1줄 교체 + 폴백 분기다(ADR-0014 결정 1). (2) Book Dash는 87% 정상(26/30)이며 404 4건은 슬러그 GitHub Pages 미배포로 추정된다. sync 스크립트·DB는 무변경, lib/landing/popular-books.ts에서 4개 슬러그를 명시 블랙리스트로 사전 차단한다(ADR-0014 결정 2). 마지막에 옵션 Y(source_platform='book_dash' 필터)를 환원하여 랜딩에 GDL+Book Dash가 모두 노출되도록 한다. illustrator(ADR-0013 §7)와 GDL author=publisher 현황(신규 발견)은 본 페이즈 범위 외로 phase-11에 이연한다(ADR-0014 결정 3·6). 기술 결정 전체는 docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md, 진단 수치는 본 파일 diagnosis 필드와 ADR-0014 §2에 박제한다.",
+
+  "goals": [
+    "GDL HEAD 정상률 33% → ≥ 95% 달성 (sync_gdl.py cover_url 정정 + 재동기화)",
+    "Book Dash 404 4건은 sync·DB 무변경, lib/landing/popular-books.ts 블랙리스트로 사전 차단",
+    "옵션 Y 환원: lib/landing/popular-books.ts에서 source_platform='book_dash' 필터 제거 (ADR-0012 결정 3 보강)",
+    "랜딩 인기 책 6권 표지 정상률 ≥ 90% (옵션 Y 환원 후)",
+    "ADR-0014 7대 결정 박제 + ADR-0013 §7(illustrator phase-11)와의 정합 확인",
+    "phase-10 진입 차단 요소 0건 확인",
+    "DB 스키마 변경 0건 (books 재동기화만, UPSERT idempotent)"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 6 — sync 스크립트는 GitHub Secrets/.env.local의 SUPABASE_SECRET_KEY만 사용. 클라이언트·공개 환경변수 노출 0건",
+    "Hard Rule 8 — DB 스키마 변경 0건. books 테이블은 UPSERT만, supabase/migrations 신규 0건",
+    "Hard Rule 1·3 — books.attribution_text NOT NULL·enforce_commercial_license 트리거 무변경. 재동기화는 cc-by-4-0/sa-4-0만 통과",
+    "Hard Rule 10 — 랜딩 코드 정정(popular-books.ts) raw HEX 미등장, 블랙리스트는 슬러그 문자열"
+  ],
+
+  "scope_in": [
+    "scripts/sync_gdl.py — cover_url을 API 응답 thumbnail 필드 우선 사용으로 정정, False/누락 시 기존 템플릿 폴백 (CP2)",
+    "lib/landing/popular-books.ts — Book Dash 4개 슬러그 블랙리스트 추가 + 옵션 Y(source_platform 필터) 제거 (CP3)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md — 7대 결정 + 진단 결과 박제 (CP1 신규)",
+    "tasks/phase-09b-content-quality-fix.json — 본 파일 (CP1 신규)",
+    "docs/adr/0012-landing-page-static.md — 결정 3에 옵션 Y 환원 + 정상률 결과 박제 (CP3 보강)",
+    ".gitignore — 진단 임시 파일 2개 추가 (CP1)",
+    "tasks/_index.json — phase-09b mark_success (CP3 메타)",
+    "재동기화 실행 — python scripts/sync_gdl.py 1회 (CP3, DB 변경)"
+  ],
+
+  "scope_out": [
+    "illustrator 필드 적재 — phase-09b 범위 외, ADR-0013 §7 + ADR-0014 결정 3 유지 → phase-11 진단",
+    "GDL author=publisher 현황 정정 — phase-09b 범위 외, ADR-0014 결정 6 → phase-11 진단",
+    "scripts/sync_book_dash.py 수정 — DB·sync 무변경, 블랙리스트는 랜딩 쿼리에서 처리 (ADR-0014 결정 2)",
+    "HEAD 사전 검증 sync 시점 도입 — ADR-0014 결정 5: 미도입, CP3 사후 측정",
+    "Book Dash 404 4건의 원인 분석·복구 — phase-13b 또는 Book Dash 메타 정상화 시점까지 이연",
+    "랜덤 RPC 함수 신설·인기 책 알고리즘 개선 — phase-13b (ADR-0012 결정 3 유지)"
+  ],
+
+  "files_to_create_or_modify": [
+    "tasks/phase-09b-content-quality-fix.json (신규 — 본 파일, CP1)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md (신규 — CP1)",
+    ".gitignore (수정 — 진단 임시 파일 2개 추가, CP1)",
+    "scripts/sync_gdl.py (수정 — cover_url thumbnail 우선 + 폴백, CP2)",
+    "lib/landing/popular-books.ts (수정 — 블랙리스트 + 옵션 Y 제거, CP3)",
+    "docs/adr/0012-landing-page-static.md (수정 — 결정 3 보강, CP3)",
+    "tasks/_index.json (수정 — mark_success, CP3 메타 단계)"
+  ],
+
+  "checkpoints": [
+    {
+      "id": "CP1-spec-adr",
+      "description": "명세 + ADR-0014 + .gitignore. 코드 수정 0건. 진단 결과(GDL 33%/100%, Book Dash 87%, 4 슬러그 식별)는 본 파일 diagnosis 필드와 ADR-0014 §2에 박제. 완료 후 멈춤·보고",
+      "files": [
+        "tasks/phase-09b-content-quality-fix.json",
+        "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md",
+        ".gitignore"
+      ]
+    },
+    {
+      "id": "CP2-sync-fix",
+      "description": "sync_gdl.py cover_url thumbnail 우선 + 폴백 분기. dry-run 검증만, DB 무변경. sync_book_dash.py·books 테이블 무수정. 완료 후 멈춤·보고",
+      "files": [
+        "scripts/sync_gdl.py"
+      ]
+    },
+    {
+      "id": "CP3-resync-and-restore",
+      "description": "실 DB 재동기화 1회 + lib/landing/popular-books.ts 블랙리스트 + 옵션 Y 환원 + v1~v9 측정 + ADR-0012 결정 3 보강 + mark_success + 메타 커밋. 완료 후 멈춤·보고",
+      "files": [
+        "lib/landing/popular-books.ts",
+        "docs/adr/0012-landing-page-static.md",
+        "tasks/_index.json"
+      ]
+    }
+  ],
+
+  "verification": [
+    { "id": "v1-lint", "description": "린트 에러 0", "method": "pnpm lint", "expected": "에러 0" },
+    { "id": "v2-type-check", "description": "타입 체크 에러 0", "method": "pnpm type-check", "expected": "에러 0" },
+    { "id": "v3-build", "description": "프로덕션 빌드 성공", "method": "pnpm build", "expected": "성공" },
+    { "id": "v4-no-schema-change", "description": "DB 스키마 무변경", "method": "supabase/migrations 디렉토리 확인", "expected": "001_initial_schema.sql 외 0건" },
+    { "id": "v5-no-secret-leak", "description": "랜딩·sync 파일에 secret 미노출", "method": "grep SUPABASE_SECRET_KEY 등", "expected": "0건 (load_env 외)" },
+    { "id": "v6-gdl-cover-head", "description": "GDL 표지 HEAD 200 응답률 ≥ 95% (CP3 사후 측정, 무작위 100건 표본)", "method": "scripts/diagnose_cover_health.py 또는 verify_gdl_sync.py 확장 — random.seed=42 100건 표본", "expected": "≥ 95%" },
+    { "id": "v7-landing-cover-display", "description": "옵션 Y 환원 후 랜딩 / 인기 책 6권 표지 정상률 ≥ 90%", "method": "/ 클릭 5회 새로고침 평균, 정상 표지 개수/6 평균", "expected": "≥ 90%" },
+    { "id": "v8-phase-10-ready", "description": "phase-10 진입 차단 요소 0건", "method": "tasks/phase-10-screen-02-home.json 읽고 추가 차단 요소 확인", "expected": "차단 0건" },
+    { "id": "v9-bookdash-blocklist", "description": "분기점 #4 — 블랙리스트 4 슬러그가 랜딩 popular-books 쿼리 결과에 미등장", "method": "lib/landing/popular-books.ts에서 4 슬러그 제외 코드 존재 + 100회 호출 결과에서 4 슬러그 미등장 (또는 SQL: source_id NOT IN (...))", "expected": "4 슬러그 등장 0건" }
+  ],
+
+  "completion_criteria": [
+    "v1~v5 자동 검증 통과",
+    "v6 GDL HEAD ≥ 95% (사후 측정)",
+    "v7 랜딩 표지 정상률 ≥ 90% (사용자 클릭)",
+    "v8 phase-10 진입 차단 요소 0건",
+    "v9 Book Dash 4 슬러그 사전 차단 확인",
+    "tasks/_index.json phase-09b status: pending → success, last_successful_state 갱신, current_phase → phase-10-screen-02-home",
+    "python scripts/run_phase.py --complete phase-09b-content-quality-fix 실행 + 수동 추가(current_phase, verification_result)"
+  ],
+
+  "user_steps": [
+    "외부 콘솔 설정 불필요 — phase-09b는 코드·DB만",
+    "CP2 dry-run 결과 5건 샘플 확인",
+    "CP3 재동기화 후 / 에서 v7 클릭 테스트 (5회 새로고침)",
+    "pnpm lint && pnpm type-check && pnpm build",
+    "python scripts/run_phase.py --complete phase-09b-content-quality-fix"
+  ],
+
+  "diagnosis": {
+    "measured_at": "2026-05-20 phase-09b 플랜 단계",
+    "gdl_api": {
+      "endpoint": "https://content.digitallibrary.io/wp-json/content-api/v1/books/en",
+      "total_books_in_response": 1313,
+      "thumbnail_field_present_as_string": "1306/1313 (99.5%)",
+      "thumbnail_field_false": "7/1313 (0.5%) — 폴백 필요",
+      "current_template": "https://content.digitallibrary.io/wp-content/uploads/h5p/content/{h5pId}/images/coverImage.jpg",
+      "head_30_sample_seed_42_template": "10/30 = 33% (404 20건)",
+      "head_30_sample_seed_42_thumbnail": "30/30 = 100%",
+      "illustrator_field": "없음",
+      "author_field": "없음 (현재 sync는 publisher를 author로 적재 — ADR-0014 결정 6 phase-11 이연)"
+    },
+    "book_dash": {
+      "source": "https://raw.githubusercontent.com/bookdash/bookdash-books/master/_data/meta.yml",
+      "total_titles": 54,
+      "english_books": 54,
+      "fields_present_all_54": ["title","subtitle","creator","contributor","publisher","language","identifier", "..."],
+      "creator_format": "콤마 구분 다중 역할(예: 'Author, Illustrator, Designer') — 순서 보장 없음 → illustrator 파싱 불가, ADR-0014 결정 3",
+      "contributor_value": "모든 54권이 'Book Dash volunteers' — illustrator 아님",
+      "head_30_sample_seed_42": "26/30 = 87% (404 4건)",
+      "blocklisted_slugs": ["the-lion-who-wouldnt-try","i-can-dress-myself","hugs-in-the-city","katiitis-song"]
+    }
+  },
+
+  "references": [
+    "claude.md 2절 Hard Rule 1·3·6·8·10, 5절 라우팅(콘텐츠 동기화)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md (본 페이즈 핵심 결정)",
+    "docs/adr/0012-landing-page-static.md 결정 3 (옵션 Y 임시 적용 → 본 페이즈 결정 4에서 환원)",
+    "docs/adr/0013-cover-attribution-policy.md §7 (illustrator phase-11 이연, 본 페이즈에서 유지)",
+    "docs/adr/0007-gdl-sync-strategy.md (GDL sync 원본 결정)",
+    "docs/adr/0005-book-dash-sync-strategy.md (Book Dash sync 원본 결정)",
+    "scripts/sync_gdl.py (수정 대상)",
+    "scripts/sync_book_dash.py (무수정, 참조용)",
+    "lib/landing/popular-books.ts (수정 대상)",
+    "supabase/migrations/001_initial_schema.sql (books — UPSERT만, 스키마 무변경)"
+  ]
+}

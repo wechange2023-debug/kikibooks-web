@@ -37,3 +37,7 @@ coverage/
 # Misc
 .tmp_init_path
 *.pem
+
+# Phase 진단 임시 파일 (수치는 ADR-0014 §2에 텍스트 박제 — 파일은 재현 가능, gitignore)
+gdl_sample_diag.json
+bookdash_meta_diag.yml
