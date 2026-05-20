@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-20T01:37:18.748143+00:00",
-  "current_phase": "phase-09b-content-quality-fix",
+  "last_updated": "2026-05-20T07:36:16.026584+00:00",
+  "current_phase": "phase-10-screen-02-home",
   "total_phases": 16,
-  "completed_phases": 10,
-  "remaining_phases": 6,
-  "last_successful_state": "phase-09a-screen-01-landing-static",
+  "completed_phases": 11,
+  "remaining_phases": 5,
+  "last_successful_state": "phase-09b-content-quality-fix",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -188,7 +188,7 @@
       "id": "phase-09b-content-quality-fix",
       "name": "GDL 표지 URL 정정 + 재동기화",
       "category": "Phase 1",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-09a-screen-01-landing-static"
       ],
@@ -198,7 +198,9 @@
         "GDL 표지 HEAD 표본 정상률 ≥ 95%",
         "랜딩 source_platform 필터 제거 후 정상 표지 비율 ≥ 90%",
         "phase-10 진입 가능"
-      ]
+      ],
+      "completed_at": "2026-05-20T07:36:16.026545+00:00",
+      "verification_result": "v1~v5 자동 검증(lint·type-check·build·DB 스키마 무변경·secret 미노출) + v6 GDL HEAD 100/100=100%(임계 95%, +5%p 마진, random.seed=42) + v7 랜딩 표지 36/36=100%(임계 90%, +10%p 마진, 6회 새로고침) + v8 phase-10 진입 차단 0건 + v9 Book Dash 4 슬러그 노출 0/36 통과 (2026-05-20). CP3 박제 6건: v6 추정 99.92% 초과 100%, 폴백 1권 postId=45239 200 정상(블랙리스트 추가 불요), UPSERT idempotent 완전 입증(896/842/54 변동 0), 결정 7 정합 100%(is_active·publisher·트리거 차단 무변경), DB source_id가 UUID(슬러그 ≠ UUID — 사전 진단으로 회귀 방지, ADR-0014 Amendment #2 B), publisher가 랜딩 카드 라벨로 노출(ADR-0014 결정 6의 사용자 가시 증거, phase-11 AttributionBox 진단 트리거 우선순위 보강)."
     },
     {
       "id": "phase-10-screen-02-home",

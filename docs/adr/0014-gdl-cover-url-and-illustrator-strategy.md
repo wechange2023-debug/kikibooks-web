@@ -187,3 +187,59 @@ CP2 dry-run(`python scripts/sync_gdl.py --dry-run --verbose`)에서 sync 적재 
 ---
 
 *Amendment 끝.*
+
+---
+
+## Amendment #2 (2026-05-20 CP3 사후 측정)
+
+CP3 그룹 A (DB 재동기화 + v6 사후 측정) 및 그룹 B (랜딩 환원 + v7 클릭 측정) 실측에서 다음을 박제한다.
+
+### A. 폴백 1권 200 정상 (Amendment #1 보강)
+
+Amendment #1에서 식별한 폴백 1권 postId=45239 "I Love My Mom"의 cover_url
+(`https://content.digitallibrary.io/wp-content/uploads/h5p/content/17974/images/coverImage.jpg`)은
+CP3 그룹 A4의 단건 HEAD 측정에서 **status=200**으로 확인됐다.
+
+→ Amendment #1의 "v6 사후 처리 분기" 중 "200이면 무조치" 경로 발동. 블랙리스트 추가 0건.
+→ Amendment #1의 99.92% 추정은 사실상 100%로 정정될 수 있다(v6 실측 100/100 = 100%).
+
+### B. 슬러그 ↔ UUID 매핑 표 (결정 2 정정)
+
+§2와 결정 2에 박제된 "404 4 슬러그"는 Book Dash `meta.yml`의 cover.jpg URL 인간 식별자다. 실제 `books.source_id` 컬럼에는 `meta.yml`의 `identifier` UUID가 저장된다(`sync_book_dash.py:152`). 따라서 랜딩 쿼리의 블랙리스트는 UUID로 구현돼야 한다.
+
+| 슬러그 (ADR §2 박제) | DB `source_id` (UUID) |
+|---|---|
+| `the-lion-who-wouldnt-try` | `9ca00316-fe46-11e5-86aa-5e5517507c66` |
+| `i-can-dress-myself` | `9c9eb452-fe46-11e5-86aa-5e5517507c66` |
+| `hugs-in-the-city` | `9c9eb574-fe46-11e5-86aa-5e5517507c66` |
+| `katiitis-song` | `9c9fffba-fe46-11e5-86aa-5e5517507c66` |
+
+`lib/landing/popular-books.ts`의 `BOOK_DASH_404_SOURCE_IDS` 상수가 위 UUID를 사용하며 인라인 슬러그 주석으로 사람 추적성을 보존한다. 향후 슬러그 정상화 시(§6 후속 과제 2) 본 표와 코드 상수를 함께 갱신한다.
+
+### C. UPSERT idempotent 완전 입증 (결정 7 정정 0)
+
+CP3 그룹 A1·A2 측정에서 재동기화 전후 books 분포가 모든 차원에서 변동 0임을 확인했다:
+
+| 항목 | baseline (A1 전) | 재동기화 후 (A2) | 변동 |
+|---|---|---|---|
+| 전체 권수 | 896 | 896 | +0 |
+| 활성 권수 (`is_active=true`) | 896 | 896 | +0 |
+| `source_platform='gdl'` 활성 | 842 | 842 | +0 |
+| `source_platform='book_dash'` 활성 | 54 | 54 | +0 |
+| `illustrator IS NULL` 활성 | 896 (100%) | 896 (100%) | +0 |
+
+→ 결정 7 "UPSERT 그대로, is_active 무변경, books.author=publisher 무변경"이 실측으로 입증됐다. 라이선스 트리거(enforce_commercial_license) 차단도 0건(errors 0).
+
+### D. publisher가 랜딩 카드 라벨로 노출 (결정 6 사용자 가시 증거)
+
+CP3 그룹 B v7 클릭 측정 중 사용자가 랜딩 인기 책 카드에 `StoryWeaver`·`African Storybook` 등 GDL 출판사명이 라벨로 노출됨을 확인했다. 이는 현재 `books.author` 컬럼이 GDL `publisher`로 채워진 결과(`ADR-0007 §4.2 amendment` + 본 ADR 결정 6)가 사용자 화면에 직접 가시되는 첫 증거다.
+
+→ 결정 6 "GDL `author=publisher` 현황은 phase-11 이연" 결정의 phase-11 트리거 우선순위를 보강한다. phase-11 Screen 03(책 상세 + AttributionBox) 설계 시, 카드 라벨과 AttributionBox 행 표시를 통합 결정해야 한다(`publisher` 분리 vs. `author` 비우기 vs. 양쪽 표시).
+
+참조: `lib/landing/popular-books.ts`의 `PopularBook.author` 필드와 Screen 01 카드 라벨 컴포넌트(향후 식별)가 본 결정의 영향 범위.
+
+본 Amendment #2는 §1~§7 본문과 Amendment #1을 변경하지 않는다.
+
+---
+
+*Amendment #2 끝.*

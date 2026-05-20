@@ -17,11 +17,17 @@ import type { SupabaseClient } from '@supabase/supabase-js';
  *
  * 표지 캡션에 쓸 title·author를 함께 가져온다(ADR-0013 결정 1).
  *
- * ★ 랜딩 임시 조치 (phase-09a CP3) — 후보를 source_platform='book_dash'로 한정한다.
- *   CP3 표지 진단에서 GDL 표지 28% 정상률(842권 중 약 606권 404)이 확인되어,
- *   표지 90% 정상률인 Book Dash 안에서만 랜덤 6권을 뽑는다. phase-09b
- *   (GDL 표지 정정·재동기화) 완료 후 전 카탈로그 환원을 재검토한다
- *   (docs/adr/0012-landing-page-static.md 결정 3 보강).
+ * ★ phase-09b CP3에서 옵션 Y 환원 (ADR-0014 결정 4):
+ *   sync_gdl.py가 thumbnail 필드 우선으로 정정되어 GDL 표지 정상률이
+ *   CP3 v6 측정에서 100%(100/100 표본, random.seed=42)를 달성했다.
+ *   따라서 source_platform='book_dash' 한정 필터를 제거하고 전 카탈로그
+ *   (gdl 842 + book_dash 54, 총 896권)를 인기 책 후보로 사용한다.
+ *
+ * ★ Book Dash 4건 사전 차단 (ADR-0014 결정 2):
+ *   GitHub Pages 미배포로 cover.jpg가 404인 4 슬러그를 사전 차단한다.
+ *   sync_book_dash.py·books 테이블은 무수정 — 슬러그 복귀 시 자동 회복
+ *   여지를 보존한다. ADR-0014 §6 후속 과제 2: 슬러그 정상화 확인 시
+ *   본 블랙리스트 축소 검토.
  *
  * 의도 문서: docs/intent/screen-01-landing.md 4.3절
  */
@@ -30,10 +36,21 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 export const POPULAR_BOOKS_COUNT = 6;
 
 /**
- * 랜딩 인기 책 후보 소스 — phase-09a 임시 조치로 Book Dash로 한정한다.
- * phase-09b에서 GDL 표지가 정정되면 이 제한을 환원/재검토한다.
+ * Book Dash 표지 404 사전 차단 목록 (ADR-0014 결정 2).
+ *
+ * 다음 슬러그의 cover.jpg가 GitHub Pages에서 404를 반환한다(2026-05-20 측정,
+ * Book Dash 영어 54권 중 4건, 87% 정상률). meta.yml에 identifier UUID가
+ * 명시되어 있어 DB의 source_id는 UUID로 저장된다(sync_book_dash.py:152).
+ *
+ * 슬러그 복귀 시 자동 회복 여지를 위해 sync·DB 무변경, 랜딩 쿼리에서만 사전 차단.
+ * ADR-0014 §6 후속 과제 2 — 정상화 확인 시 본 목록 축소 검토.
  */
-const LANDING_SOURCE_PLATFORM = 'book_dash';
+const BOOK_DASH_404_SOURCE_IDS = [
+  '9ca00316-fe46-11e5-86aa-5e5517507c66', // the-lion-who-wouldnt-try
+  '9c9eb452-fe46-11e5-86aa-5e5517507c66', // i-can-dress-myself
+  '9c9eb574-fe46-11e5-86aa-5e5517507c66', // hugs-in-the-city
+  '9c9fffba-fe46-11e5-86aa-5e5517507c66', // katiitis-song
+] as const;
 
 /** 랜딩 표지 카드 1장에 필요한 책 데이터. */
 export interface PopularBook {
@@ -69,12 +86,17 @@ export async function getPopularBooks(
   count: number = POPULAR_BOOKS_COUNT,
 ): Promise<PopularBook[]> {
   // 1) 활성 책 id 목록 조회
-  const { data: idRows, error: idError } = await supabase
+  let idQuery = supabase
     .from('books')
     .select('id')
-    .eq('is_active', true)
-    .eq('source_platform', LANDING_SOURCE_PLATFORM)
-    .returns<BookIdRow[]>();
+    .eq('is_active', true);
+
+  // ADR-0014 결정 2: Book Dash 404 4건 사전 차단 (UUID 매칭)
+  for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
+    idQuery = idQuery.neq('source_id', blockedSourceId);
+  }
+
+  const { data: idRows, error: idError } = await idQuery.returns<BookIdRow[]>();
 
   if (idError) {
     throw new Error(`getPopularBooks: 활성 책 id 조회 실패 — ${idError.message}`);

@@ -41,6 +41,8 @@ Supabase JS 클라이언트는 `ORDER BY RANDOM()`을 직접 지원하지 않는
 
 **phase-09a CP3 보강 (2026-05-19).** CP3 표지 진단에서 GDL 표지 28% 정상률(842권 중 약 606권이 404)이 발견됐다. 근본 원인은 `sync_gdl.py`가 GDL API의 실제 표지 URL 대신 `h5pId` 템플릿으로 URL을 조립한 것이다. 랜딩 임시 조치로 `getPopularBooks`에 `source_platform = 'book_dash'` 필터를 적용한다 — Book Dash 90% 정상률 안에서 랜덤 6권을 뽑는다. `phase-09b`(content-quality-fix)에서 `sync_gdl.py` 정정 + GDL 재동기화가 끝나면 전 카탈로그 환원을 재검토한다.
 
+**phase-09b CP3 환원 (2026-05-20).** sync_gdl.py가 thumbnail 필드 우선으로 정정되어(ADR-0014 결정 1) GDL 표지 정상률이 CP3 v6 측정에서 100%(100/100 표본, random.seed=42)를 달성했다. 따라서 옵션 Y(`source_platform='book_dash'` 한정 필터)를 환원하고 전 카탈로그(gdl 842 + book_dash 54, 총 896권)를 인기 책 후보로 복원한다. 단 Book Dash 4건의 GitHub Pages 미배포 cover.jpg를 사전 차단하기 위해 `lib/landing/popular-books.ts`에 `BOOK_DASH_404_SOURCE_IDS` UUID 블랙리스트를 두고 다중 `.neq()` 체인으로 적용한다(ADR-0014 결정 2). 환원 후 v7 사용자 클릭 측정: 36/36 = 100%(6회 새로고침, 임계 90% +10%p 마진, 4 슬러그 노출 0건).
+
 ### 결정 4 — 로그인 사용자의 `/` 접근은 페이지 컴포넌트가 분기
 
 로그인 상태로 `/`에 접근하면 `/` 페이지(서버 컴포넌트)가 `auth.getUser()`로 세션을 확인하고, phase-08의 `resolvePostLoginPath()` 헬퍼 결과(자녀 있으면 `/home`, 없으면 `/onboarding`)로 `redirect()`한다.
