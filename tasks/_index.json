@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-21T04:46:06.780491+00:00",
-  "current_phase": "phase-11-screen-03-book-detail",
+  "last_updated": "2026-05-21T12:00:00+00:00",
+  "current_phase": "phase-12-screen-04-reader",
   "total_phases": 16,
-  "completed_phases": 12,
-  "remaining_phases": 4,
-  "last_successful_state": "phase-10-screen-02-home",
+  "completed_phases": 13,
+  "remaining_phases": 3,
+  "last_successful_state": "phase-11-screen-03-book-detail",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -226,7 +226,7 @@
       "id": "phase-11-screen-03-book-detail",
       "name": "Screen 03 책 상세 + AttributionBox 구현",
       "category": "Phase 1",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-10-screen-02-home"
       ],
@@ -235,7 +235,10 @@
         "AttributionBox 100% 표시 (라이선스 감사 통과)",
         "원본 URL 새 탭 오픈",
         "읽기 버튼 → /book/[id]/read 이동"
-      ]
+      ],
+      "completed_at": "2026-05-21T12:00:00+00:00",
+      "commit_range": "f093624..main (16 sub-step 커밋 + CP4 메타 통합 = 17 커밋)",
+      "verification_result": "v1~v5 자동 검증(lint·type-check·build·schema 무변경·secret 미노출) 통과 + v6~v16 사용자/자동 클릭 검증 11건 모두 통과 + ADR-0016 신규 + ADR-0014 Amendment #4 작성. 빌드 산출 ƒ /book/[id] 835 B / 103 kB First Load JS 정상 등록. 시각 검수 3 케이스: Book Dash 'A Dancer\\u2019s Tale'(글·illustrator skip·언어 1칩) + GDL 'Where is My Mother?'(출판사 StoryWeaver 분기·Level 1·3~4세·영어 3칩) + 블랙리스트 The Lion Who Wouldn't Try(not-found.tsx 렌더) 모두 통과. CP3-c 4 viewport(390/768/1024/1280) 모두 통과 — 1024px sub_case 신규 박제. 미세 보강 2건 박제: CP2-a source_id NOT NULL 정정(2e52264) + CP3-a #3 사전 Book.level/age nullable 정정(52a3283). 후속 트리거 5건 박제(F8 illustrator NULL 진단·F9 AttributionBox 법무 검토·F10 블랙리스트 옵션 B 임계·F11 CC BY 안내 중복·F12 Book Dash level/age NULL sync) 모두 blocker=false. Monica AI 외부 확장 콘솔 에러는 키키북스 코드 무관 (박제 불요)."
     },
     {
       "id": "phase-12-screen-04-reader",

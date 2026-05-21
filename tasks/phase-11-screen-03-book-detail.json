@@ -6,17 +6,17 @@
   "created_at": "2026-05-21",
 
   "cp_progress": {
-    "phase_status": "in_progress",
-    "current_cp": "CP2-data-layer",
-    "last_successful_cp": "CP1-spec-intent-adrs",
+    "phase_status": "success",
+    "phase_completed_at": "2026-05-21",
+    "current_cp": null,
+    "last_successful_cp": "CP4-verify-and-meta",
     "completed_cps": [
-      "CP1-spec-intent-adrs"
-    ],
-    "pending_cps": [
+      "CP1-spec-intent-adrs",
       "CP2-data-layer",
       "CP3-ui",
       "CP4-verify-and-meta"
-    ]
+    ],
+    "pending_cps": []
   },
 
   "summary": "phase-10 홈에서 비활성으로 박제됐던 추천·카테고리 카드 클릭이 본 페이즈에서 `/book/[id]` 정식 라우팅으로 활성화된다. 책 상세 페이지는 표지 + H1 제목 + 메타(레벨·연령·언어) + AttributionBox(5요소) + 읽기 버튼으로 구성된다. AttributionBox는 베타 법적 의무로 100% 표시(license-rules.md §5). CP1에서 ADR-0016(illustrator + author/publisher + AttributionBox 5요소 사유) + ADR-0014 Amendment #4(블랙리스트 책 상세 차단 + 404) 두 ADR 신규/갱신 작성 후 외부 검토 통과 전까지 코드 작성 0건. URL 구조는 books.id UUID 단순 라우팅 채택(외부 검토 #3). 즐겨찾기는 phase-13 라이브러리 시점 통합(외부 검토 #4). DB 스키마 변경 0건(Hard Rule 8). Hard Rule 1·3·6·8·10 무위반.",
@@ -103,29 +103,42 @@
     },
     {
       "id": "CP2-data-layer",
-      "description": "lib/book/ 데이터 fetch + 카피 + 어트리뷰션 분기 헬퍼 3종 신규. server-only 함수만(Hard Rule 6). DB 변경 0건(Hard Rule 8). 각 파일 JSDoc 첫 줄에 ADR-0016 결정 인용 명시. 3 sub-step으로 분할(CP2-a/b/c) — 검증 단위 명료화 + dry-run 시그니처 검토 단계별 반영. 각 sub-step 단독 커밋 + 멈춤·보고. CP3 자동 진입 금지.",
-      "status": "in_progress",
+      "description": "lib/book/ 데이터 fetch + 카피 + 어트리뷰션 분기 헬퍼 3종 신규. server-only 함수만(Hard Rule 6). DB 변경 0건(Hard Rule 8). 각 파일 JSDoc 첫 줄에 ADR-0016 결정 인용 명시. 3 sub-step으로 분할(CP2-a/b/c) — 검증 단위 명료화 + dry-run 시그니처 검토 단계별 반영. 각 sub-step 단독 커밋 + 멈춤·보고.",
+      "status": "success",
+      "completed_at": "2026-05-21",
       "sub_steps": [
         {
           "id": "CP2-a-detail",
-          "description": "lib/book/detail.ts 신규. getBookById(id: string): Promise<Book | null> — books.id UUID 단일 조회. SELECT 컬럼 = AttributionBox 5요소 + BookCoverHero·BookMeta 필수 컬럼(id·title·author·illustrator·cover_url·original_url·license·attribution_text·source_platform·source_id·level·age_min·age_max·language·is_active). is_active=true AND id 일치 필터. RLS 의존(authenticated session). NULL 또는 RLS 차단 시 null 반환(throw 미사용, 호출 측에서 notFound() 처리). JSDoc 첫 줄에 ADR-0016 결정 인용 + RLS 근거 + 호출 측 notFound 분기 박제. server-only 모듈. 의존성 최저(타 lib/book 파일 import 없음). 완료 후 단독 커밋 + 멈춤·보고 + dry-run 시그니처 검토. CP2-b 자동 진입 금지.",
-          "status": "pending",
+          "description": "lib/book/detail.ts 신규. getBookById(supabase, id): Promise<Book | null> — books.id UUID 단일 조회. SELECT 15 컬럼 + is_active=true 필터 + maybeSingle. NULL 또는 RLS 차단 시 null 반환(throw 미사용). server-only + 의존성 0건.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "commits": [
+            "7f2947b (CP2-a — detail.ts 신규 + Book 15 컬럼)",
+            "2e52264 (CP2-a 미세 보강 — Book.source_id: string | null → string, NOT NULL 확정)"
+          ],
           "files": [
             "lib/book/detail.ts"
           ]
         },
         {
           "id": "CP2-b-copy",
-          "description": "lib/book/copy.ts 신규. AttributionBox 5요소 라벨(📚 출처·✍️ 글·🎨 그림·🏢 출판사·📜 라이선스·🔗 원본) + CC BY 안내 문구(ADR-0013 결정 2 인용) + source_platform 한국어명 매핑(book_dash → 'Book Dash', gdl → 'Global Digital Library' 또는 'GDL') + license 한국어명 매핑(cc-by-4-0 → 'CC BY 4.0' 등) + 라이선스 URL 매핑. BookDetailCopy 인터페이스 + BOOK_DETAIL_COPY 정본. JSDoc 첫 줄에 ADR-0016 결정 3 인용 + ADR-0012 결정 2(카피 단일 출처) 정합. 의존성 0건(상수만). 완료 후 단독 커밋 + 멈춤·보고. CP2-c 자동 진입 금지.",
-          "status": "pending",
+          "description": "lib/book/copy.ts 신규. BookDetailCopy 인터페이스 + BOOK_DETAIL_COPY 정본(module-private). AttributionBox 5요소 라벨 + CC BY 안내 + source_platform/license 한국어명·URL 매핑. ADR-0012 결정 2 + ADR-0016 결정 3 정합. F11 트리거 사후 박제(CC BY 안내 다중 표면 중복).",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "commits": [
+            "2bef6a3 (CP2-b — copy.ts 신규 + BookDetailCopy + getBookDetailCopy)",
+            "394ec85 (CP2-b 사후 박제 — F11 트리거 박제)"
+          ],
           "files": [
             "lib/book/copy.ts"
           ]
         },
         {
           "id": "CP2-c-attribution",
-          "description": "lib/book/attribution.ts 신규. buildAttributionRows(book): AttributionRow[] — 출처·글·그림·출판사·라이선스·원본 6 가능 행을 ADR-0016 결정 1·2에 따라 선별 생성. (1-가) illustrator IS NULL → '🎨 그림' 행 skip. (2-나) source_platform='gdl' → '✍️ 글' 행 skip + '🏢 출판사: {publisher}' 행 추가(publisher = book.author 컬럼 값 그대로). source_platform='book_dash' → '✍️ 글' 행 추가 + '🏢 출판사' 행 skip. lib/book/copy.ts에서 라벨·매핑 import. JSDoc 첫 줄에 ADR-0016 결정 1·2 인용 + 분기 의사 코드 박제. server-only 모듈. 완료 후 단독 커밋 + 멈춤·보고. CP3 자동 진입 금지.",
-          "status": "pending",
+          "description": "lib/book/attribution.ts 신규. AttributionRow 인터페이스 export + buildAttributionRows(book, copy) 4 분기. (1-가) illustrator NULL skip / (2-나) GDL publisher 분리 + Book Dash author / (publisher = book.author 그대로). type-only import.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "commit": "a0078ca",
           "files": [
             "lib/book/attribution.ts"
           ]
@@ -135,15 +148,100 @@
     },
     {
       "id": "CP3-ui",
-      "description": "UI 컴포넌트 4종 + page.tsx 통합 + not-found 페이지 + 반응형 점검. 3 sub-step 예상(CP3-a 컴포넌트 / CP3-b page+not-found / CP3-c 반응형). design-system §1·§3·§6.x·§7.1 토큰 100% 사용. raw HEX 0건. AttributionBox는 §7.1 명세(surface-2 배경·outline 보더·radius-md·16px 20px padding·body-sm 13px 600·caption 12px·tertiary 링크). BookCoverHero는 표지 + H1 제목 + 메타 칩(BookMeta) 통합. ReadButton은 phase-12 활성화 자리만(disabled 또는 href='/book/[id]/read' 클릭 시 placeholder). app/book/[id]/page.tsx는 force-dynamic + 블랙리스트 4 UUID 차단(ADR-0014 Amendment #4) + getBookById notFound() 분기. not-found.tsx는 공통 404 페이지(블랙리스트·RLS·미존재 모두 동일 UX). 완료 후 커밋 1~3건(sub-step별) + 멈춤·보고.",
-      "status": "pending",
+      "description": "UI 컴포넌트 4종 + page.tsx 통합 + not-found 페이지 + 반응형 점검. design-system §1·§3·§6.x·§7.1 토큰 100% 사용. raw HEX 0건. 3 sub-step 진행 — CP3-a 컴포넌트 4종 단독 커밋 + CP3-a #3 사전 보강(Book.level nullable) / CP3-b page.tsx + not-found.tsx + intent §3 정정 3 단독 커밋 / CP3-c 4 viewport 자동 추론 + 사용자 시각 검수.",
+      "status": "success",
+      "completed_at": "2026-05-21",
+      "sub_steps": [
+        {
+          "id": "CP3-a-components",
+          "description": "4 컴포넌트 단독 커밋(AttributionBox·BookCoverHero·BookMeta·ReadButton) + Book.level/age nullable 사전 보강 1건. 각 컴포넌트 작성 후 멈춤·보고 + dry-run 시각 검토. 의존성 0건 (각 컴포넌트 독립). design-system §7.1 AttributionBox 토큰 100% + §6.1 Button + §6.2 Card + §1.8 Level 컬러 100% 매핑.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "commits": [
+            "4c512fe (#1 AttributionBox — 베타 법적 의무, key별 분기 3종)",
+            "b887c15 (#2 BookCoverHero — 표지 + H1, fallback 패턴)",
+            "52a3283 (#3 사전 보강 — Book.level/age nullable 정정, 실측 NULL 54건 박제)",
+            "ae43545 (#3 BookMeta — 칩 3종 NULL 안전 분기)",
+            "905d105 (#4 ReadButton — Primary CTA, Link 자리만)"
+          ],
+          "files": [
+            "components/book/attribution-box.tsx",
+            "components/book/book-cover-hero.tsx",
+            "components/book/book-meta.tsx",
+            "components/book/read-button.tsx",
+            "lib/book/detail.ts"
+          ]
+        },
+        {
+          "id": "CP3-b-page-integration",
+          "description": "app/book/[id]/page.tsx + not-found.tsx + intent §3 정정 3 단독 커밋. 5건 사전 점검(패턴·블랙리스트 위치·UUID regex·인증·metadata) 결과 박제 + 사용자 확정 후 진행. 가드 4종 박제 (UUID 형식·미인증·블랙리스트·book NULL). dev server + Book Dash/GDL/블랙리스트 3 케이스 사용자 시각 검수 통과.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "commits": [
+            "dfaf0d8 (사전 정정 — intent §3 자녀 가드 표현 통일)",
+            "16936f5 (#2 page.tsx — Server Component, 가드 4종, v3 build 통과 ƒ 835 B / 103 kB)",
+            "6b9cd49 (#3 not-found.tsx — 공통 404, 4 케이스 동일 UX)"
+          ],
+          "files": [
+            "docs/intent/screen-03-book-detail.md",
+            "app/book/[id]/page.tsx",
+            "app/book/[id]/not-found.tsx"
+          ]
+        },
+        {
+          "id": "CP3-c-responsive",
+          "description": "Tailwind 반응형 클래스 자동 인벤토리 분석 + 4 viewport 사용자 시각 검수. 미세 조정 0건. 1024px 태블릿 가로 sub_case 신규 박제(★) — e-라이브러리 주요 환경.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "verification_result": {
+            "v12_mobile_fold_above": "pass (자동 추론 — AttributionBox 시작 577px / iPhone 8 fold 667px 안 + 사용자 시각 확인)",
+            "v15_mobile_390": "pass (CP3-b 단계 사용자 통과)",
+            "v15_tablet_portrait_768": "pass (CP3-b 단계 사용자 통과)",
+            "v15_tablet_landscape_1024": "pass (★ NEW sub_case — CP3-c 단계 사용자 통과, Tailwind lg 정합)",
+            "v15_desktop_1280": "pass (CP3-c 단계 사용자 통과 — phase-10 F2 재발 없음, 본 페이지 단일 컬럼 mx-auto 정합)",
+            "micro_adjustments": "0건 (자동 추론 + 사용자 검수 정합)",
+            "notes": [
+              "page.tsx 컨테이너: default(max-w-screen-sm) → md(screen-md, px-6, gap-6) → lg(screen-lg). xl breakpoint 부재는 의도된 정합 — 책 상세 단일 컬럼 가독성 우선",
+              "BookCoverHero 표지: max-w-xs(320px) → sm:max-w-sm(384px, 640px+)",
+              "BookMeta·AttributionBox: flex-wrap·dl 자연 적응 — 반응형 클래스 불요",
+              "Monica AI 브라우저 확장 콘솔 에러는 외부 환경 이슈 — 키키북스 코드 무관, 트리거 박제 불요"
+            ]
+          },
+          "files": []
+        }
+      ],
       "files": []
     },
     {
       "id": "CP4-verify-and-meta",
-      "description": "사용자 클릭 검증 v6~v15 수행 + ADR-0016 §결정 인용 정합 점검 + tasks/_index.json mark_success + verification_result 박제 + 메타 커밋 1건. 미달 항목 1건이라도 발생 시 CP3 또는 ADR-0016 갱신으로 회귀. 완료 후 멈춤·보고. phase-12 자동 진입 금지.",
-      "status": "pending",
+      "description": "사용자 클릭 검증 v6~v16 통합 박제 + tasks/_index.json mark_success + spec verification_result 박제 + 메타 커밋 1건. 미세 보강 0건. v15 sub_cases에 1024px 태블릿 가로 신규 박제(★) — CP3-c 검수에서 박제 결정.",
+      "status": "success",
+      "completed_at": "2026-05-21",
+      "verification_result": {
+        "v1_lint": "pass (pnpm lint EXIT=0, No ESLint warnings or errors)",
+        "v2_type_check": "pass (pnpm type-check EXIT=0, tsc --noEmit)",
+        "v3_build": "pass (pnpm build — ƒ /book/[id] 835 B / 103 kB First Load JS, Dynamic 정상 등록)",
+        "v4_no_schema_change": "pass (supabase/migrations/ 001_initial_schema.sql 단일 — 무변경)",
+        "v5_no_secret_leak": "pass (grep SUPABASE_SECRET_KEY/service_role in app/book/·lib/book/·components/book/ — 0건)",
+        "v6_attribution_box_100pct": "pass (app/book/[id]/page.tsx:89 <AttributionBox rows={rows}/> 박제 + 케이스 A·B 시각 검수 통과)",
+        "v7_cc_by_4_elements": "pass (4 sub-case 모두 — 케이스 A·B 모두 H1 + AttributionBox 통합 어트리뷰션 단위 시각 검수 통과)",
+        "v8_illustrator_null_skip": "pass (케이스 A·B 모두 illustrator NULL → '🎨 그림' 행 DOM 부재 시각 검수 통과)",
+        "v9_gdl_publisher_separated": "pass (케이스 B GDL StoryWeaver → '🏢 출판사' 행 노출 + '✍️ 글' 행 부재. 케이스 A Book Dash → '✍️ 글' 행 노출 + '🏢 출판사' 행 부재)",
+        "v10_external_link_safety": "pass (AttributionBox.tsx href 존재 행 target=_blank + rel=noopener noreferrer 자동 부착)",
+        "v11_read_button_placeholder": "pass (Link href=/book/[id]/read → phase-12 page.tsx 부재 → Next.js 기본 404. cp1_decisions d4 비활성 버튼 기각 정합)",
+        "v12_mobile_fold_above": "pass (CP3-c 자동 추론 + 사용자 시각 확인 — AttributionBox 시작 577px, iPhone 8 fold 안)",
+        "v13_phase_12_ready": "pass (app/book/[id]/ 디렉토리에 page.tsx + not-found.tsx만 — read/ 부재로 phase-12 차단 0건)",
+        "v14_hard_rule_10_raw_hex": "pass (grep -E '#[0-9a-fA-F]{3,8}' components/book/·lib/book/·app/book/ — 0건)",
+        "v15_responsive": "pass (4 viewport 모두 사용자 시각 통과 — CP3-c sub_step verification_result 인용)",
+        "v16_blocklist_404": "pass (케이스 C the-lion-who-wouldnt-try UUID 1eb267e9-6915-4752-a9e8-6f4fb17c71ba → not-found.tsx '찾을 수 없는 책이에요' 렌더 + 차단 사실 비노출)",
+        "notes": [
+          "Monica AI 콘솔 에러는 외부 브라우저 확장 충돌 — 키키북스 코드 무관, 박제 불요",
+          "F12 미발동 결정 유지 — BookMeta 케이스 A 시각 자연 + fallback 카피 추가 불요",
+          "phase-11 후속 트리거 누적 5건(F8·F9·F10·F11·F12) 모두 blocker=false, deferred 시점 명시 박제"
+        ]
+      },
       "files": [
+        "tasks/phase-11-screen-03-book-detail.json",
         "tasks/_index.json"
       ]
     }
@@ -177,13 +275,14 @@
     { "id": "v14-hard-rule-10", "description": "Hard Rule 10 raw HEX 0건", "method": "grep -E '#[0-9a-fA-F]{3,8}' components/book/ lib/book/ app/book/", "expected": "0건" },
     {
       "id": "v15-responsive",
-      "description": "모바일·태블릿·데스크탑 3 viewport 반응형 정상",
-      "method": "DevTools 또는 실기기로 390px / 768px / 1280px 스냅샷 측정",
+      "description": "모바일·태블릿(세로/가로)·데스크탑 4 viewport 반응형 정상",
+      "method": "DevTools 또는 실기기로 390px / 768px / 1024px / 1280px 스냅샷 측정 (★ 1024px sub_case CP3-c 신규 박제)",
       "expected": "5개 구성요소 모두 viewport별 명세 정합",
       "sub_cases": [
-        { "id": "v15-mobile", "description": "390px", "expected": "표지·H1·메타·AttributionBox(fold above)·읽기 버튼 세로 스택" },
-        { "id": "v15-tablet", "description": "768px", "expected": "표지 좌측 / 메타+AttributionBox 우측 2열 또는 세로 스택(설계 시 결정)" },
-        { "id": "v15-desktop", "description": "1280px", "expected": "최대 max-width 적용 + 페이지 좌우 32px 여백" }
+        { "id": "v15-mobile", "description": "390px (모바일)", "expected": "표지·H1·메타·AttributionBox(fold above)·읽기 버튼 세로 스택. 표지 max-w-xs 320px" },
+        { "id": "v15-tablet-portrait", "description": "768px (태블릿 세로, Tailwind md)", "expected": "max-w-screen-md 720px 콘텐츠. 표지 sm:max-w-sm 384px, mx-auto 중앙. 칩 3개 한 줄" },
+        { "id": "v15-tablet-landscape", "description": "1024px (태블릿 가로, Tailwind lg) ★ CP3-c 신규 박제 — e-라이브러리 주요 사용 환경(부모+자녀 iPad)", "expected": "max-w-screen-lg 976px 콘텐츠. 표지 384px mx-auto 중앙. 모든 자식 컴포넌트 중앙 정렬 자연" },
+        { "id": "v15-desktop", "description": "1280px (데스크탑)", "expected": "xl breakpoint 부재 — lg 유지(max-w-screen-lg 1024px). 페이지 좌우 128px 여백. phase-10 F2 영향 없음(단일 컬럼 mx-auto)" }
       ]
     },
     { "id": "v16-blocklist-404", "description": "ADR-0014 Amendment #4 — 블랙리스트 4 UUID 직접 접속 시 404", "method": "4 UUID 각각 `/book/{uuid}` 직접 접속 시 not-found 페이지 노출 확인", "expected": "4건 모두 404 응답 + not-found.tsx 렌더" }
