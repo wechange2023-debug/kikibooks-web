@@ -284,6 +284,16 @@
         "candidate_fix": "phase-11 종료 후 별도 리팩토링 작업: (1) lib/shared/blacklist.ts 신규 — BOOK_DASH_404_SOURCE_IDS 상수 + JSDoc 이전 (2) lib/landing/popular-books.ts — import로 전환, 상수 본문 제거 (3) lib/home/recommendations.ts + lib/home/categories.ts + app/book/[id]/page.tsx — import 경로 변경 1줄씩 (4) ADR-0014 Amendment #5 박제 — 이동 사유 + 사용처 인벤토리 4 표면 + 운영 안전성 영향 평가",
         "deferred_to": "phase-11 종료 후 별도 리팩토링 phase 또는 phase-12 진입 전 정합 정리 단계",
         "blocker": false
+      },
+      {
+        "id": "F11",
+        "title": "CC BY 안내 문구 다중 표면 중복 — phase-13b 공통 카피 테이블 통합 검토",
+        "discovered_at": "phase-11 CP2-b 사후 검토 (2026-05-21)",
+        "location": "lib/landing/copy.ts (footer.attributionNotice) + lib/book/copy.ts (BOOK_DETAIL_COPY.attribution.ccByNotice) — phase-11 CP2-b 시점 2 표면",
+        "impact": "ADR-0012 결정 2 (카피 단일 출처) 부분 위배. 현재 JSDoc 동기화 주의로 즉시성은 확보. 표면 3개 이상 도달 시 단일 출처 위배 누적 영향 평가 필요. F10(블랙리스트 옵션 B)과 패턴 정합 — 다중 표면 중복은 단일 출처로 통합하는 트리거를 동일하게 적용",
+        "candidate_fix": "phase-13b에서 lib/shared/cc-by-notice.ts 또는 공통 카피 테이블(home_copy·book_detail_copy·landing_copy 통합 schema) 도입 — 모든 표면이 단일 상수 import. 옵션 B 패턴(F10)과 동일 — lib/shared/ 또는 DB 테이블로 단일화",
+        "deferred_to": "phase-13b 라이브러리 phase 또는 별도 카피 정합 phase",
+        "blocker": false
       }
     ]
   },
