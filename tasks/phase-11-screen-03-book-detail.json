@@ -7,11 +7,12 @@
 
   "cp_progress": {
     "phase_status": "in_progress",
-    "current_cp": "CP1-spec-intent-adrs",
-    "last_successful_cp": null,
-    "completed_cps": [],
+    "current_cp": "CP2-data-layer",
+    "last_successful_cp": "CP1-spec-intent-adrs",
+    "completed_cps": [
+      "CP1-spec-intent-adrs"
+    ],
     "pending_cps": [
-      "CP1-spec-intent-adrs",
       "CP2-data-layer",
       "CP3-ui",
       "CP4-verify-and-meta"
@@ -90,7 +91,9 @@
     {
       "id": "CP1-spec-intent-adrs",
       "description": "명세 4종 신규/갱신 작성. 코드 수정 0건. 단일 커밋 1건. (1) 본 spec JSON (2) docs/intent/screen-03-book-detail.md — 5개 구성요소 + 사용자 흐름 + 가드 + 라우트 지도 (3) docs/adr/0016 — illustrator 행 생략(결정 1-가) + GDL author=publisher 분리 표시(결정 2-나) + AttributionBox 5요소 사유 박제(결정 3, 'B.2 결정 3 그대로'). 결정 2 박제 문안에 '랜딩 카드 publisher 표시는 phase-10 박제 유지, 책 상세는 분리 표시 — 이 비일관은 의도된 것' 1줄 명시(외부 검토 보강 2). (4) docs/adr/0014 Amendment #4 — 블랙리스트 4 UUID 책 상세 직접 접속 시 차단 + 404 정책(외부 검토 보강 1). 완료 후 커밋 1건 + 멈춤·보고. CP2 자동 진입 금지.",
-      "status": "in_progress",
+      "status": "success",
+      "completed_at": "2026-05-21",
+      "commit": "f093624",
       "files": [
         "tasks/phase-11-screen-03-book-detail.json",
         "docs/intent/screen-03-book-detail.md",
@@ -100,8 +103,34 @@
     },
     {
       "id": "CP2-data-layer",
-      "description": "lib/book/ 데이터 fetch + 카피 + 어트리뷰션 분기 헬퍼 3종 신규. server-only 함수만. lib/book/detail.ts는 getBookById(id: string) — books.id UUID 단일 조회 + RLS 차단·NULL 시 'not_found' 반환. lib/book/copy.ts는 AttributionBox 5요소 라벨 + CC BY 안내 + source_platform 한국어명 매핑. lib/book/attribution.ts는 buildAttributionRows(book) — ADR-0016 결정 1·2 인용 JSDoc + illustrator IS NULL 시 행 생략(1-가) + source_platform='gdl' 시 author 행 NULL + publisher 행 추가(2-나) 분기 박제. 각 함수 JSDoc 필수(의도 + RLS 근거 + ADR-0016 결정 인용). DB 변경 0건. 완료 후 커밋 1건 + 멈춤·보고. CP3 자동 진입 금지.",
-      "status": "pending",
+      "description": "lib/book/ 데이터 fetch + 카피 + 어트리뷰션 분기 헬퍼 3종 신규. server-only 함수만(Hard Rule 6). DB 변경 0건(Hard Rule 8). 각 파일 JSDoc 첫 줄에 ADR-0016 결정 인용 명시. 3 sub-step으로 분할(CP2-a/b/c) — 검증 단위 명료화 + dry-run 시그니처 검토 단계별 반영. 각 sub-step 단독 커밋 + 멈춤·보고. CP3 자동 진입 금지.",
+      "status": "in_progress",
+      "sub_steps": [
+        {
+          "id": "CP2-a-detail",
+          "description": "lib/book/detail.ts 신규. getBookById(id: string): Promise<Book | null> — books.id UUID 단일 조회. SELECT 컬럼 = AttributionBox 5요소 + BookCoverHero·BookMeta 필수 컬럼(id·title·author·illustrator·cover_url·original_url·license·attribution_text·source_platform·source_id·level·age_min·age_max·language·is_active). is_active=true AND id 일치 필터. RLS 의존(authenticated session). NULL 또는 RLS 차단 시 null 반환(throw 미사용, 호출 측에서 notFound() 처리). JSDoc 첫 줄에 ADR-0016 결정 인용 + RLS 근거 + 호출 측 notFound 분기 박제. server-only 모듈. 의존성 최저(타 lib/book 파일 import 없음). 완료 후 단독 커밋 + 멈춤·보고 + dry-run 시그니처 검토. CP2-b 자동 진입 금지.",
+          "status": "pending",
+          "files": [
+            "lib/book/detail.ts"
+          ]
+        },
+        {
+          "id": "CP2-b-copy",
+          "description": "lib/book/copy.ts 신규. AttributionBox 5요소 라벨(📚 출처·✍️ 글·🎨 그림·🏢 출판사·📜 라이선스·🔗 원본) + CC BY 안내 문구(ADR-0013 결정 2 인용) + source_platform 한국어명 매핑(book_dash → 'Book Dash', gdl → 'Global Digital Library' 또는 'GDL') + license 한국어명 매핑(cc-by-4-0 → 'CC BY 4.0' 등) + 라이선스 URL 매핑. BookDetailCopy 인터페이스 + BOOK_DETAIL_COPY 정본. JSDoc 첫 줄에 ADR-0016 결정 3 인용 + ADR-0012 결정 2(카피 단일 출처) 정합. 의존성 0건(상수만). 완료 후 단독 커밋 + 멈춤·보고. CP2-c 자동 진입 금지.",
+          "status": "pending",
+          "files": [
+            "lib/book/copy.ts"
+          ]
+        },
+        {
+          "id": "CP2-c-attribution",
+          "description": "lib/book/attribution.ts 신규. buildAttributionRows(book): AttributionRow[] — 출처·글·그림·출판사·라이선스·원본 6 가능 행을 ADR-0016 결정 1·2에 따라 선별 생성. (1-가) illustrator IS NULL → '🎨 그림' 행 skip. (2-나) source_platform='gdl' → '✍️ 글' 행 skip + '🏢 출판사: {publisher}' 행 추가(publisher = book.author 컬럼 값 그대로). source_platform='book_dash' → '✍️ 글' 행 추가 + '🏢 출판사' 행 skip. lib/book/copy.ts에서 라벨·매핑 import. JSDoc 첫 줄에 ADR-0016 결정 1·2 인용 + 분기 의사 코드 박제. server-only 모듈. 완료 후 단독 커밋 + 멈춤·보고. CP3 자동 진입 금지.",
+          "status": "pending",
+          "files": [
+            "lib/book/attribution.ts"
+          ]
+        }
+      ],
       "files": []
     },
     {
@@ -244,6 +273,16 @@
         "impact": "ADR-0016 결정 3이 'H1 제목 + AttributionBox = 통합 어트리뷰션 단위' 가정으로 CC BY 4.0 4요소 충족을 박제한다. 이 가정의 법적 타당성은 기술 검토만으로 확정 불가 — 변호사 검토에서 'reasonable to the medium' 원칙 해석에 이견 가능. 베타 출시 직전 1회 검토로 박제 문안 신뢰도 보강",
         "candidate_validation": "phase-14 베타 직전 변호사 검토 단계에서 ADR-0016 §결정 3 박제 문안(B.2 결정 3 그대로) + license-rules.md §5 전체를 함께 검토. 이견 시 ADR-0016 갱신 + AttributionBox 표시 항목 재설계(예: 제목 행 추가 또는 안내 문구 보강)",
         "deferred_to": "phase-14 베타 직전 법무 검토",
+        "blocker": false
+      },
+      {
+        "id": "F10",
+        "title": "BOOK_DASH_404_SOURCE_IDS 옵션 B 임계 도달 — lib/shared/blacklist.ts 이동 검토",
+        "discovered_at": "phase-11 CP1 사후 검토 (2026-05-21, Claude Code 보고 마지막 줄 박제 트리거)",
+        "location": "lib/landing/popular-books.ts (정의) + 4 사용처 표면: lib/landing/popular-books.ts(랜딩) + lib/home/recommendations.ts(홈 추천) + lib/home/categories.ts(홈 카테고리) + app/book/[id]/page.tsx(책 상세, phase-11 CP3-b 신규)",
+        "impact": "ADR-0014 Amendment #3에서 박제한 옵션 B 트리거 '사용처 3개 이상'이 phase-11 CP1의 ADR-0014 Amendment #4(책 상세 차단) 추가로 4 표면 도달. 옵션 A(popular-books.ts에서 export)의 단순성이 4 표면 시점에서는 단일 진실 공급원으로서 운영 부담 증가 가능. 단 phase-11 종료 전까지는 옵션 A 유지(본 페이즈 범위 보존). ADR-0014 Amendment #4가 본 임계 도달을 명시 박제했고 옵션 B 이동은 Amendment #5로 별도 박제 예정",
+        "candidate_fix": "phase-11 종료 후 별도 리팩토링 작업: (1) lib/shared/blacklist.ts 신규 — BOOK_DASH_404_SOURCE_IDS 상수 + JSDoc 이전 (2) lib/landing/popular-books.ts — import로 전환, 상수 본문 제거 (3) lib/home/recommendations.ts + lib/home/categories.ts + app/book/[id]/page.tsx — import 경로 변경 1줄씩 (4) ADR-0014 Amendment #5 박제 — 이동 사유 + 사용처 인벤토리 4 표면 + 운영 안전성 영향 평가",
+        "deferred_to": "phase-11 종료 후 별도 리팩토링 phase 또는 phase-12 진입 전 정합 정리 단계",
         "blocker": false
       }
     ]
