@@ -49,9 +49,22 @@ export interface Book {
    *   - ADR-0014 Amendment #4 블랙리스트 UUID 비교 키 (book_dash UUID, gdl 정수문자열 혼재)
    */
   source_id: string;
-  level: number;
+  /**
+   * 자녀 추천 레벨 1~5. 실데이터 NULL 54건(Book Dash 54권 전부 = 활성 6%).
+   *   - DB 제약: 001 §books line 80 `level INT CHECK (level BETWEEN 1 AND 5)` — NOT NULL 미선언
+   *   - 실데이터 (2026-05-21 측정): 활성 54건 NULL (Book Dash 100% NULL, GDL 0% NULL)
+   *   - BookMeta·LevelSelector·추천 폴백 사다리는 NULL 안전 분기 의무
+   */
+  level: number | null;
+  /** 연령 하한. Book Dash 54권 NULL (level과 동일 분포). */
   age_min: number | null;
+  /** 연령 상한. Book Dash 54권 NULL. */
   age_max: number | null;
+  /**
+   * 언어 코드. NOT NULL DEFAULT 'en'.
+   *   - DB 제약: 001 §books line 79 `language TEXT NOT NULL DEFAULT 'en'`
+   *   - 실데이터 (2026-05-21 측정): 활성 896권 distinct = {'en'} (베타 영어 단일, ADR-0006)
+   */
   language: string;
   is_active: boolean;
 }
