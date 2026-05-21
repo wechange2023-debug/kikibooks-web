@@ -42,8 +42,13 @@ export interface Book {
   attribution_text: string;
   /** 'book_dash' | 'gdl' — ADR-0016 결정 2-나 분기 키 + ADR-0014 Amendment #4 차단 판별. */
   source_platform: string;
-  /** ADR-0014 Amendment #4 블랙리스트 UUID 비교 키. */
-  source_id: string | null;
+  /**
+   * 외부 플랫폼의 원본 식별자. NOT NULL.
+   *   - DB 제약: 001 §books line 71 `source_id TEXT NOT NULL`
+   *   - 실데이터 (2026-05-21 측정): 활성 896권/전체 896권 모두 NULL 0건
+   *   - ADR-0014 Amendment #4 블랙리스트 UUID 비교 키 (book_dash UUID, gdl 정수문자열 혼재)
+   */
+  source_id: string;
   level: number;
   age_min: number | null;
   age_max: number | null;
