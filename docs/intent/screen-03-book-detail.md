@@ -52,7 +52,7 @@
 
 | 경로 | 공개/보호 | 비고 |
 |---|---|---|
-| `/book/[id]` | 보호 (로그인 + 자녀 ≥ 1) | 미로그인 → `/login` (middleware). [id]는 books.id UUID(ADR-0016 cp1_decisions d3). 블랙리스트 4 UUID 일치 → notFound() (ADR-0014 Amendment #4). books 행 NULL 또는 RLS 차단 → notFound() |
+| `/book/[id]` | 보호 (로그인 필수) | 미로그인 → `/login` (middleware). [id]는 books.id UUID(ADR-0016 cp1_decisions d3). 블랙리스트 4 UUID 일치 → notFound() (ADR-0014 Amendment #4). books 행 NULL 또는 RLS 차단 → notFound(). 자녀 가드는 미적용 (§4.3 — 책 상세는 자녀 무관) |
 | `/book/[id]/read` | (phase-12 신설 예정) | 본 페이즈에서 미존재. 읽기 버튼은 자리만 |
 
 **routes.ts·middleware.ts는 수정하지 않는다.** `/book`은 phase-07 기존 보호 라우트 prefix에 자연 포함될지 검증 후, 추가 처리가 필요하면 CP3-b 시점에 별도 보강(현재 plan 단계에서는 추가 수정 0건 가정).
