@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-20T07:36:16.026584+00:00",
-  "current_phase": "phase-10-screen-02-home",
+  "last_updated": "2026-05-21T04:46:06.780491+00:00",
+  "current_phase": "phase-11-screen-03-book-detail",
   "total_phases": 16,
-  "completed_phases": 11,
-  "remaining_phases": 5,
-  "last_successful_state": "phase-09b-content-quality-fix",
+  "completed_phases": 12,
+  "remaining_phases": 4,
+  "last_successful_state": "phase-10-screen-02-home",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -206,7 +206,7 @@
       "id": "phase-10-screen-02-home",
       "name": "Screen 02 로그인 후 홈 구현",
       "category": "Phase 1",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-08-onboarding",
         "phase-09b-content-quality-fix"
@@ -217,7 +217,10 @@
         "오늘의 추천 5권 (level ±1 기준)",
         "카테고리 그리드 8개",
         "스트릭 막대그래프"
-      ]
+      ],
+      "completed_at": "2026-05-21T04:46:06.780491+00:00",
+      "commit_range": "71bc98a..c436698 (9 sub-step 커밋 + CP4 메타)",
+      "verification_result": "v1~v5 자동 검증(lint·type-check·build·schema 무변경·secret 미노출) 통과 + v6~v13 사용자/자동 클릭 검증 11건 통과(시나리오 A·B·C, v6-2 NULL 폴백, v7-1·2·4, v8 8/8+D24, v9-1·2, v10-1, v11·v12 자동, v13 모바일·태블릿) + deferred 3건 박제(v6-1·v7-3·v10-2 → F5·F6·F7 후속 트리거). 박제: cp1/2/3 결정 24건(d1~d24), CP3-c 후속 트리거 7건(F1~F7 모두 blocker=false). phase-09b 박제 phase-11 트리거 3건(illustrator·GDL author=publisher·Book Dash 4 슬러그)은 phase-10 무변경 인용으로 정합 유지. /home: ƒ Dynamic 1.68 kB / 112 kB First Load JS 정상 등록."
     },
     {
       "id": "phase-11-screen-03-book-detail",

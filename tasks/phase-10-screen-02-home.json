@@ -6,8 +6,10 @@
   "created_at": "2026-05-21",
 
   "cp_progress": {
-    "current_cp": "CP4-verify-and-meta",
-    "last_successful_cp": "CP3-c-responsive",
+    "phase_status": "success",
+    "phase_completed_at": "2026-05-21T04:46:06.780491+00:00",
+    "current_cp": null,
+    "last_successful_cp": "CP4-verify-and-meta",
     "last_successful_at": "2026-05-21",
     "completed_cps": [
       "CP1-spec-intent-adr",
@@ -16,11 +18,10 @@
       "CP2-c-verify-meta",
       "CP3-a-components",
       "CP3-b-page-integration",
-      "CP3-c-responsive"
-    ],
-    "pending_cps": [
+      "CP3-c-responsive",
       "CP4-verify-and-meta"
-    ]
+    ],
+    "pending_cps": []
   },
 
   "summary": "phase-08 온보딩 + phase-09b 콘텐츠 품질 정정을 마친 학부모가 매일 진입하는 홈(`/home`)을 정식 구현한다. 5개 구성요소: (1) 인사 카드(display_name NULL이면 '{자녀이름} 부모님' 폴백), (2) 오늘의 추천 5권(level ±1 → ±2 → ±3 → N권만 폴백 사다리, Book Dash 4 UUID 블랙리스트 재사용, 옵션 Y 환원 정합), (3) 카테고리 그리드 8개(동물·가족·ABC·숫자·감정·자연·음식·잠자리 — title ILIKE 키워드 매핑, ADR-0015), (4) 레벨 선택 바(server action + revalidatePath('/home')), (5) 최근 7일 스트릭(완독 기준, design-system §7.4 토큰 100%). DB 스키마 변경 0건(Hard Rule 8 회피, ADR-0012 결정 3·ADR-0014 결정 2와 동일 패턴). 카테고리 카드 클릭은 `/home?cat={slug}`로 홈 내부 확장(ADR-0015 결정 5b). 캐싱은 `dynamic='force-dynamic'` 보수적 적용. 온보딩 가드는 page.tsx 안에서 redirect('/onboarding'). phase-11(illustrator·GDL author=publisher·책 상세 라우팅) 후속 트리거는 본 페이즈 범위 외(ADR-0014 결정 3·6 유지).",
