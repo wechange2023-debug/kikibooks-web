@@ -44,8 +44,12 @@ export const POPULAR_BOOKS_COUNT = 6;
  *
  * 슬러그 복귀 시 자동 회복 여지를 위해 sync·DB 무변경, 랜딩 쿼리에서만 사전 차단.
  * ADR-0014 §6 후속 과제 2 — 정상화 확인 시 본 목록 축소 검토.
+ *
+ * ★ phase-10 CP2-b: 옵션 A 채택으로 export 추가 (ADR-0014 Amendment #3).
+ *   lib/home/recommendations.ts·categories.ts가 본 상수를 import 재사용한다.
+ *   사용처가 3 표면 이상으로 늘어나면 lib/shared/blacklist.ts로 이동 검토.
  */
-const BOOK_DASH_404_SOURCE_IDS = [
+export const BOOK_DASH_404_SOURCE_IDS = [
   '9ca00316-fe46-11e5-86aa-5e5517507c66', // the-lion-who-wouldnt-try
   '9c9eb452-fe46-11e5-86aa-5e5517507c66', // i-can-dress-myself
   '9c9eb574-fe46-11e5-86aa-5e5517507c66', // hugs-in-the-city
