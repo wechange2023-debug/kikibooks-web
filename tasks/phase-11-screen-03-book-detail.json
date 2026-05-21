@@ -294,6 +294,16 @@
         "candidate_fix": "phase-13b에서 lib/shared/cc-by-notice.ts 또는 공통 카피 테이블(home_copy·book_detail_copy·landing_copy 통합 schema) 도입 — 모든 표면이 단일 상수 import. 옵션 B 패턴(F10)과 동일 — lib/shared/ 또는 DB 테이블로 단일화",
         "deferred_to": "phase-13b 라이브러리 phase 또는 별도 카피 정합 phase",
         "blocker": false
+      },
+      {
+        "id": "F12",
+        "title": "Book Dash 54권 level/age_min/age_max 100% NULL — sync 적재 누락 vs 원천 부재 진단",
+        "discovered_at": "phase-11 CP3-a #3 사전 점검 (2026-05-21)",
+        "location": "Book Dash 적재 sync 스크립트(phase-09b 시점) + 영향 3 표면 (components/book/book-meta.tsx · components/home/level-selector.tsx · lib/home/recommendations.ts 폴백 사다리)",
+        "impact": "F8(illustrator 100% NULL)과 동일 데이터 부재 진단 패턴. 활성 책 6% 케이스 (54/896 — Book Dash 전체). BookMeta가 NULL 안전 분기로 즉시 영향 차단 + JSDoc에 의무 박제로 회귀 위험 방어. 다만 큐레이션 가치(자녀 레벨 매칭·연령 추천)는 데이터 보강 전까지 Book Dash 54권에서 누락 상태 — 현재 phase-10 추천 5권에서 Book Dash 책은 level 기반 매칭에서 제외됨",
+        "candidate_fix": "phase-09b sync 스크립트 재실행 또는 별도 enrichment phase — (1) Book Dash repo metadata 재크롤 (meta.yml에 level/age 필드 존재 여부 확인) (2) 큐레이터 수동 입력 (3) GDL 메타데이터와 매칭 추정. F8 illustrator 진단과 묶어서 처리 권장 — 두 트리거 모두 Book Dash sync 영역",
+        "deferred_to": "phase-13b 또는 별도 sync 보강 phase (F8과 묶음)",
+        "blocker": false
       }
     ]
   },
