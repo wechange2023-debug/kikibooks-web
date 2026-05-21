@@ -328,6 +328,21 @@
     ]
   },
 
+  "cp3_decisions": {
+    "context": "CP3-a 진단(plan 모드)에서 박제하고 CP3-a 본 작업 + CP3-b·CP3-c가 따르는 9건 결정. 외부 검토(2026-05-21) 반영. D11~D15는 plan 보고에서 도출, D16~D19는 외부 검토로 추가.",
+    "decisions": [
+      { "id": "d11-category-accent-class-mapping-location", "description": "카테고리 카드 accent Tailwind 클래스는 components/home/category-grid.tsx 내부에 CATEGORY_ACCENT_CLASSES: Record<CategorySlug, string> 정적 매핑으로 박제. lib/home/categories.ts(데이터)는 무수정. 사유: UI 관심사를 컴포넌트에 집중 + Tailwind content 스캐너가 정적 클래스 문자열만 인식(동적 조합 금지).", "ref": "components/home/category-grid.tsx (CP3-a 작성 시)" },
+      { "id": "d12-recommendation-list-client-unified", "description": "components/home/recommendation-list.tsx 전체를 'use client'로 통일. BookCoverCard(landing) 재사용하지 않고 홈 전용 인라인 카드 마크업 작성. 사유: next/image onError fallback 패턴이 필요하고, landing BookCoverCard는 href='/signup' 하드코딩으로 홈 부적합(intent §5.2 phase-10에서 카드 클릭 비활성).", "ref": "components/home/recommendation-list.tsx (CP3-a)" },
+      { "id": "d13-category-grid-link-server", "description": "CategoryGrid 8 카드는 <Link href={`/home?cat=${slug}`}>로 라우팅 → server 컴포넌트 유지(use client 불요). router.push 미사용. SEO + 성능 + 서버 컴포넌트 이점.", "ref": "components/home/category-grid.tsx (CP3-a)" },
+      { "id": "d14-single-batch-progression", "description": "CP3-a 5 컴포넌트 단일 batch 진행(분할 없음). 각 컴포넌트 평균 80~150 lines 예상(CP2-b 1086의 60~70%). lint·type-check는 5 파일 작성 완료 후 1회. 작성 순서 = 복잡도 오름차순: streak-chart → greeting-card → level-selector → category-grid → recommendation-list.", "ref": "checkpoints CP3-a-components (5 files)" },
+      { "id": "d15-streak-chart-div-no-svg", "description": "StreakChart 막대 7개는 SVG 없이 div + Tailwind 클래스로 구현. w-7(28px) + max-h-[60px](arbitrary) + rounded-t-sm(12px 위쪽만) + bg-primary(완독)/bg-surface-3(미완료) + gap-2(8px). 오늘 dot은 별도 div(bg-accent-yellow). design-system §7.4 토큰 100% 매핑. 막대 높이 자체는 D17 공식으로 인라인 style 동적.", "ref": "components/home/streak-chart.tsx (CP3-a)" },
+      { "id": "d16-category-accent-mapping-integrity-check", "description": "category-grid.tsx 작성 직전에 CATEGORY_ACCENT_CLASSES의 키 8개가 ADR-0015 §2.1·§2.2 slug 8개(animals·family·abc·numbers·emotions·nature·food·bedtime)와 1:1 정합인지 확인. 키 누락/오타 발견 시 즉시 보고 후 멈춤(자체 점검 (b) 패턴).", "ref": "components/home/category-grid.tsx CATEGORY_ACCENT_CLASSES (CP3-a)" },
+      { "id": "d17-streak-bar-height-formula", "description": "StreakChart 막대 높이 공식 = Math.min(completedCount * 12, 60) px. 완독 1권 = 12px, 5권 = 60px(상한 도달). completedCount=0이면 막대 영역 자체는 항상 렌더하되 visible 막대는 minHeight=0(또는 0px). 보이지 않는 트랙/축 라인은 별도 div로 처리(필요 시). 직관성 + max 60px 토큰 정합. JSDoc에 공식 박제 필수.", "ref": "components/home/streak-chart.tsx (CP3-a)" },
+      { "id": "d18-level-selector-inline-error", "description": "LevelSelector 에러 표시 = 컴포넌트 내부 인라인 에러 메시지. useTransition + useState(activeLevel) + useState(error). server action 실패 시 옵티미스틱 활성 레벨 롤백 + error 메시지 표시. sonner 토스트는 phase-11 이후 도입까지 미사용(현 단계 미설치). 에러 텍스트는 lib/home/actions.ts에 이미 박제된 4종 메시지를 그대로 표시(HOME_COPY.levelSelector.error 신규 추가 불요 — copy.ts 무수정).", "ref": "components/home/level-selector.tsx (CP3-a) + lib/home/actions.ts (CP2-b 기존)" },
+      { "id": "d19-category-grid-uniform-display", "description": "CategoryGrid는 distribution 호출 없이 8 카드 균등 표시. getCategoryDistribution()은 CP3-a UI 단계에서 호출 안 함(데이터 의존 회피, 빠른 첫 렌더). 0건 카테고리 카드도 동일하게 클릭 가능 — 결과 페이지(/home?cat=…)에서 ADR-0015 결정 6 폴백 메시지로 처리(CP3-b 또는 phase-13b). 그리드 카드 자체에는 권수 표시·disabled 표시 없음.", "ref": "components/home/category-grid.tsx (CP3-a) + app/home/page.tsx (CP3-b)" }
+    ]
+  },
+
   "diagnosis": {
     "measured_at": "2026-05-21 phase-10 CP1 플랜 단계",
     "books_table_columns": {
