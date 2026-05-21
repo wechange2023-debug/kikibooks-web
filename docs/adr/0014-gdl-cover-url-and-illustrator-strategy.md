@@ -243,3 +243,40 @@ CP3 그룹 B v7 클릭 측정 중 사용자가 랜딩 인기 책 카드에 `Stor
 ---
 
 *Amendment #2 끝.*
+
+---
+
+## Amendment #3 (2026-05-21 phase-10 CP2-a)
+
+phase-10 CP2-a 진단에서 `BOOK_DASH_404_SOURCE_IDS` 상수의 사용처가 lib/landing/popular-books.ts(랜딩 인기 책)에서 lib/home/recommendations.ts(오늘의 추천 5권) + lib/home/categories.ts(카테고리 결과)로 확장된다. 본 단계의 재사용 방식은 **옵션 A — popular-books.ts에서 `export const`로 1줄 변경, lib/home에서 import**다(phase-10 cp2_decisions d8).
+
+### 옵션 B 트리거 (향후 검토 조건)
+
+다음 조건이 만족되면 `lib/shared/blacklist.ts`로 상수를 이동하는 옵션 B를 진지하게 검토한다:
+
+- 본 블랙리스트를 import하는 표면이 **3개 이상**으로 늘어날 때 (예: phase-11 책 상세에서 직접 차단, phase-12 책 뷰어에서 차단, phase-13 라이브러리 검색에서 차단 등)
+- 또는 블랙리스트 항목이 5건 이상으로 늘어나 운영상 단일 파일 관리가 명확히 더 적절한 시점
+
+옵션 B로 이동 시:
+1. `lib/shared/blacklist.ts` 신규 — `BOOK_DASH_404_SOURCE_IDS` 상수 + JSDoc(현재 popular-books.ts:38~47의 박제 주석 이전)
+2. `lib/landing/popular-books.ts` — import로 전환, 상수 본문 제거
+3. `lib/home/recommendations.ts`·`lib/home/categories.ts` — import 경로 변경 1줄
+4. 본 ADR-0014에 Amendment #4 박제 (이동 사유 + 사용처 인벤토리)
+
+phase-10에서는 옵션 B로 가지 않는다 — 사용처 2개로 옵션 A의 단순성이 우월.
+
+### 영향 범위 (CP2-a 시점 인벤토리)
+
+| 파일 | 사용 방식 | 단계 |
+|---|---|---|
+| `lib/landing/popular-books.ts` | 정의 + 사용 (`.neq('source_id', ...)`) | phase-09b CP3 완료 |
+| `lib/home/recommendations.ts` | import + 추천 쿼리에서 `.neq('source_id', ...)` 적용 | phase-10 CP2-b 신규 |
+| `lib/home/categories.ts` | import + `getCategoryBooks` 카테고리 쿼리에서 `.neq('source_id', ...)` 적용 | phase-10 CP2-b 신규 |
+
+§6 후속 과제 2(Book Dash 4 슬러그 정상화 시 블랙리스트 축소)는 옵션 A·B 어느 쪽이든 단일 진실 공급원에서 1번 갱신하면 모든 표면에 전파되므로 운영 안전성 동일.
+
+본 Amendment #3은 §1~§7 본문, Amendment #1, Amendment #2를 변경하지 않는다.
+
+---
+
+*Amendment #3 끝.*

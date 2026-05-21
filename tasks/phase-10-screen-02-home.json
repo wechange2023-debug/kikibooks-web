@@ -28,20 +28,23 @@
 
   "scope_in": [
     "app/home/page.tsx — 5개 구성요소 통합 (CP3-b)",
-    "lib/home/copy.ts — 카피 단일 출처 (CP3-a)",
-    "lib/home/greeting.ts — display_name + 자녀 프로필 fetch (CP2)",
-    "lib/home/recommendations.ts — level ±N 폴백 사다리 + Book Dash UUID 블랙리스트 재사용 (CP2)",
-    "lib/home/categories.ts — ADR-0015 결정 2.2 키워드 풀 8개 정적 정의 + 매칭 함수 (CP2)",
-    "lib/home/streak.ts — 최근 7일 완독 집계 (CP2)",
-    "lib/home/actions.ts — updateChildLevel server action + revalidatePath (CP2)",
+    "lib/home/copy.ts — 카피 단일 출처 (CP2-b)",
+    "lib/home/active-child.ts — 활성 자녀 결정 헬퍼 (CP2-b, CP2-a 진단으로 추가)",
+    "lib/home/greeting.ts — display_name + 자녀 프로필 fetch (CP2-b)",
+    "lib/home/recommendations.ts — level ±N 폴백 사다리 + Book Dash UUID 블랙리스트 재사용 (CP2-b)",
+    "lib/home/categories.ts — ADR-0015 결정 2.2 키워드 풀 8개 정적 정의 + 매칭 + getCategoryBooks(synced_at DESC, 캡 24권) + getCategoryDistribution (CP2-b)",
+    "lib/home/streak.ts — 최근 7일 완독 집계 (CP2-b)",
+    "lib/home/actions.ts — updateChildLevel server action + .select('id').single() affected_rows 검증 + revalidatePath (CP2-b)",
+    "lib/landing/popular-books.ts — BOOK_DASH_404_SOURCE_IDS export 1줄 추가 (CP2-b, ADR-0014 결정 2 재사용)",
     "components/home/greeting-card.tsx (CP3-a)",
     "components/home/recommendation-list.tsx (CP3-a)",
     "components/home/category-grid.tsx (CP3-a)",
     "components/home/level-selector.tsx (CP3-a)",
     "components/home/streak-chart.tsx (CP3-a)",
     "docs/intent/screen-02-home.md (CP1 신규)",
-    "docs/adr/0015-screen-02-category-strategy.md (CP1 신규)",
-    "tasks/phase-10-screen-02-home.json (CP1 신규 — 본 파일)",
+    "docs/adr/0015-screen-02-category-strategy.md (CP1 신규 + CP2-a Amendment #1)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md (CP2-a Amendment #3)",
+    "tasks/phase-10-screen-02-home.json (CP1 신규 — 본 파일, CP2-a 갱신)",
     "tasks/_index.json — phase-10 mark_success (CP4)"
   ],
 
@@ -62,15 +65,18 @@
   ],
 
   "files_to_create_or_modify": [
-    "tasks/phase-10-screen-02-home.json (신규 — 본 파일, CP1)",
+    "tasks/phase-10-screen-02-home.json (신규 — 본 파일, CP1 + CP2-a 갱신)",
     "docs/intent/screen-02-home.md (신규 — CP1)",
-    "docs/adr/0015-screen-02-category-strategy.md (신규 — CP1)",
-    "lib/home/copy.ts (신규 — CP2 또는 CP3-a)",
-    "lib/home/greeting.ts (신규 — CP2)",
-    "lib/home/recommendations.ts (신규 — CP2)",
-    "lib/home/categories.ts (신규 — CP2)",
-    "lib/home/streak.ts (신규 — CP2)",
-    "lib/home/actions.ts (신규 — CP2)",
+    "docs/adr/0015-screen-02-category-strategy.md (신규 — CP1, CP2-a Amendment #1 추가)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md (수정 — CP2-a Amendment #3)",
+    "lib/home/copy.ts (신규 — CP2-b)",
+    "lib/home/active-child.ts (신규 — CP2-b)",
+    "lib/home/greeting.ts (신규 — CP2-b)",
+    "lib/home/recommendations.ts (신규 — CP2-b)",
+    "lib/home/categories.ts (신규 — CP2-b)",
+    "lib/home/streak.ts (신규 — CP2-b)",
+    "lib/home/actions.ts (신규 — CP2-b)",
+    "lib/landing/popular-books.ts (수정 — CP2-b, BOOK_DASH_404_SOURCE_IDS export 1줄)",
     "components/home/greeting-card.tsx (신규 — CP3-a)",
     "components/home/recommendation-list.tsx (신규 — CP3-a)",
     "components/home/category-grid.tsx (신규 — CP3-a)",
@@ -92,14 +98,36 @@
     },
     {
       "id": "CP2-data-layer",
-      "description": "lib/home/ 데이터 fetch 레이어 7종 신규. server-only 함수 작성. DB 변경 0건(SELECT + children.current_level UPDATE만). Book Dash 4 UUID 블랙리스트는 lib/landing/popular-books.ts의 BOOK_DASH_404_SOURCE_IDS 상수를 import 재사용. 추천 폴백 사다리 ±1→±2→±3→N권 구현. 카테고리 키워드 풀 108개를 ADR-0015 결정 2.2에서 1:1 옮겨 적기. server action updateChildLevel은 서버에서 childId를 세션 자녀로 한정. dry-run 검증(단위 호출 결과 4건 샘플 확인). 완료 후 커밋 1건 + 멈춤·보고. CP3 자동 진입 금지.",
-      "files": [
-        "lib/home/copy.ts",
-        "lib/home/greeting.ts",
-        "lib/home/recommendations.ts",
-        "lib/home/categories.ts",
-        "lib/home/streak.ts",
-        "lib/home/actions.ts"
+      "description": "lib/home/ 데이터 fetch 레이어 8종 신규(active-child 포함) + popular-books.ts export 1줄. CP2-a 진단에서 3 sub-step으로 세분화.",
+      "sub_steps": [
+        {
+          "id": "CP2-a-spec-update",
+          "description": "spec JSON 갱신 5건(a~e) + ADR-0014 Amendment #3(블랙리스트 옵션 B 트리거) + ADR-0015 Amendment #1(getCategoryDistribution 도입 박제) = 총 7건. 본 sub-step은 명세·결정 박제 전용, 코드 0건. 완료 후 커밋 1건 + 멈춤·보고. CP2-b 자동 진입 금지.",
+          "files": [
+            "tasks/phase-10-screen-02-home.json",
+            "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md",
+            "docs/adr/0015-screen-02-category-strategy.md"
+          ]
+        },
+        {
+          "id": "CP2-b-implementation",
+          "description": "lib/home/ 8종 신규 + lib/landing/popular-books.ts BOOK_DASH_404_SOURCE_IDS export 1줄. server-only 함수만 작성(클라이언트 노출 0건, service_role 호출 0건). 추천 폴백 사다리 ±1→±2→±3→N권 구현. 카테고리 키워드 풀 108개를 ADR-0015 결정 2.2에서 1:1 옮겨 적기. getCategoryBooks는 synced_at DESC 안정 정렬 + 캡 24권(cp2_decisions d9). getCategoryDistribution은 phase-13b baseline용 분포 함수(ADR-0015 Amendment #1). updateChildLevel은 .update().eq('id', childId).select('id').single()로 affected_rows 검증, 0행이면 명시적 error(RLS만 의존 시 묵묵한 실패 방지). 각 함수 JSDoc 필수(의도 + RLS 근거 + 폴백 정책). DB 변경 0건(SELECT + children.current_level UPDATE만). 완료 후 커밋 1건 + 멈춤·보고. CP2-c 자동 진입 금지.",
+          "files": [
+            "lib/home/active-child.ts",
+            "lib/home/copy.ts",
+            "lib/home/greeting.ts",
+            "lib/home/recommendations.ts",
+            "lib/home/categories.ts",
+            "lib/home/streak.ts",
+            "lib/home/actions.ts",
+            "lib/landing/popular-books.ts"
+          ]
+        },
+        {
+          "id": "CP2-c-verify-meta",
+          "description": "CP2 자동 검증 측정: pnpm lint(v1) + pnpm type-check(v2) + grep service_role/SUPABASE_SECRET_KEY in lib/home(v5 0건) + supabase/migrations 신규 0건(v4). v3 build는 UI 미존재로 lib만 컴파일은 의미 약함 → CP3-b 통합 후로 이전(cp2_decisions d10). 통과 시 메타 커밋 1건(또는 CP2-b에 amend) + 멈춤·보고. CP3 자동 진입 금지.",
+          "files": []
+        }
       ]
     },
     {
@@ -228,6 +256,17 @@
       { "id": "d3-cache-policy", "description": "Cache Components 정책 = `export const dynamic = 'force-dynamic'` 보수적 적용. 자녀별·세션별 데이터 결합이 강하고 캐싱 오작동 위험. PPR/cacheLife/cacheTag는 phase-13b 이후.", "ref": "docs/intent/screen-02-home.md §6" },
       { "id": "d4-onboarding-guard", "description": "온보딩 가드 = page.tsx 안에서 자녀 0명 시 redirect('/onboarding'). middleware.ts 무변경. phase-08 '분기는 도착 지점에서' 원칙 계승.", "ref": "docs/intent/screen-02-home.md §3·§4.2" },
       { "id": "d5-recommendation-fallback-ladder", "description": "추천 5권 폴백 사다리 = level ±1 → ±2 → ±3 → N권만 → 빈 상태 메시지 (5단계). 각 단계 폴백은 사용자에게 별도 알림 없이 자연스럽게.", "ref": "docs/intent/screen-02-home.md §5.2" }
+    ]
+  },
+
+  "cp2_decisions": {
+    "context": "CP2-a 진단에서 박제하고 CP2-b 이후 구현이 따르는 5건 결정 + ADR Amendment 2건. 외부 검토(2026-05-21 점검 사이클) 반영.",
+    "decisions": [
+      { "id": "d6-active-child-extract", "description": "lib/home/active-child.ts 신규 분리 — 활성 자녀 결정 헬퍼. 베타 정책: 첫 번째 자녀(created_at ASC LIMIT 1). 다자녀 모드는 phase-13 이후 본 파일만 수정으로 확장 가능. greeting·recommendations·streak·page.tsx가 본 함수에 의존.", "ref": "lib/home/active-child.ts (CP2-b 신규)" },
+      { "id": "d7-dry-run-redef", "description": "CP2 dry-run 검증 정의 = 타입 안전성 + 시그니처 + JSDoc 의도 박제. 실 데이터 측정은 CP3-b 통합 직후 dev server에서 1회로 이전. 사유: server-only + next/headers cookies 의존으로 tsx 단독 호출 불가, 임시 route handler·dry-run 스크립트 신설은 오버엔지니어링이고 잔존 위험.", "ref": "checkpoints CP2-c-verify-meta" },
+      { "id": "d8-blocklist-reuse-option-a", "description": "BOOK_DASH_404_SOURCE_IDS 재사용 = 옵션 A 채택 — lib/landing/popular-books.ts에서 export 1줄 추가, lib/home/recommendations.ts·categories.ts에서 import. 옵션 B(lib/shared/blacklist.ts 이동)는 사용처 ≥ 3 표면(phase-11·12·13 진행 후)에 진지하게 검토 — ADR-0014 Amendment #3 박제.", "ref": "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md Amendment #3" },
+      { "id": "d9-category-sort-cap", "description": "getCategoryBooks 정렬 정책 = synced_at DESC 안정 정렬 + 캡 24권. 사유: 동일 카테고리 재진입 시 결과 변동 최소화(랜덤 정렬은 사용자 혼란). 캡 24권은 ADR-0015 §6 '다중 매칭 과다' 위험 보완.", "ref": "lib/home/categories.ts getCategoryBooks 시그니처 (CP2-b)" },
+      { "id": "d10-verification-mapping", "description": "v 검증 측정 시점 매핑 = v1 lint + v2 type-check + v4 schema 무변경 + v5 secret 미노출은 CP2-c에서 측정. v3 build는 CP3-b 통합 후로 이전(CP2는 UI 미존재로 lib 단독 컴파일이 build 자체로는 의미 약함). v6~v13은 CP3-c 또는 CP4에서 측정.", "ref": "checkpoints CP2-c-verify-meta + CP3-b + CP4" }
     ]
   },
 
