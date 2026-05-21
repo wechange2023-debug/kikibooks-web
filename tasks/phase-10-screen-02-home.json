@@ -1,0 +1,284 @@
+{
+  "phase_id": "phase-10-screen-02-home",
+  "name": "Screen 02 로그인 후 홈 구현 — 5개 구성요소 + 카테고리 정적 매핑",
+  "category": "Phase 1",
+  "version": "1.0",
+  "created_at": "2026-05-21",
+
+  "summary": "phase-08 온보딩 + phase-09b 콘텐츠 품질 정정을 마친 학부모가 매일 진입하는 홈(`/home`)을 정식 구현한다. 5개 구성요소: (1) 인사 카드(display_name NULL이면 '{자녀이름} 부모님' 폴백), (2) 오늘의 추천 5권(level ±1 → ±2 → ±3 → N권만 폴백 사다리, Book Dash 4 UUID 블랙리스트 재사용, 옵션 Y 환원 정합), (3) 카테고리 그리드 8개(동물·가족·ABC·숫자·감정·자연·음식·잠자리 — title ILIKE 키워드 매핑, ADR-0015), (4) 레벨 선택 바(server action + revalidatePath('/home')), (5) 최근 7일 스트릭(완독 기준, design-system §7.4 토큰 100%). DB 스키마 변경 0건(Hard Rule 8 회피, ADR-0012 결정 3·ADR-0014 결정 2와 동일 패턴). 카테고리 카드 클릭은 `/home?cat={slug}`로 홈 내부 확장(ADR-0015 결정 5b). 캐싱은 `dynamic='force-dynamic'` 보수적 적용. 온보딩 가드는 page.tsx 안에서 redirect('/onboarding'). phase-11(illustrator·GDL author=publisher·책 상세 라우팅) 후속 트리거는 본 페이즈 범위 외(ADR-0014 결정 3·6 유지).",
+
+  "goals": [
+    "/home 5개 구성요소 정식 구현 (placeholder → 정식)",
+    "lib/home/ 데이터 fetch 레이어 4종 (greeting · recommendations · categories · streak)",
+    "신규 컴포넌트 5종 (GreetingCard · RecommendationList · CategoryGrid · LevelSelector · StreakChart)",
+    "카테고리 정적 매핑 8개 (ADR-0015 결정 1·2 구현, 키워드 풀 108개 박제)",
+    "추천 5권 폴백 사다리 작동 (level ±1 → ±2 → ±3 → N권 → 빈 상태)",
+    "스트릭 막대그래프 design-system §7.4 토큰 100% 매핑",
+    "Hard Rule 1·3·6·8·10 무위반",
+    "phase-11 진입 차단 요소 0건"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 1 — books.attribution_text NOT NULL 트리거 무변경 (books INSERT/UPDATE 0건)",
+    "Hard Rule 3 — CC BY-NC/ND 콘텐츠 적재·노출 0건 (books 조회만)",
+    "Hard Rule 6 — Server Component에서만 SUPABASE_SECRET_KEY 사용. 클라이언트·공개 환경변수 노출 0건. server action도 server 환경에서만",
+    "Hard Rule 8 — DB 스키마 변경 0건. supabase/migrations 신규 0건. children.current_level UPDATE는 기존 컬럼 사용",
+    "Hard Rule 10 — 모든 색·간격·폰트는 design-system.md semantic 토큰만. raw HEX 직접 입력 0건. design-system §7.4 Streak 토큰 100% 매핑"
+  ],
+
+  "scope_in": [
+    "app/home/page.tsx — 5개 구성요소 통합 (CP3-b)",
+    "lib/home/copy.ts — 카피 단일 출처 (CP3-a)",
+    "lib/home/greeting.ts — display_name + 자녀 프로필 fetch (CP2)",
+    "lib/home/recommendations.ts — level ±N 폴백 사다리 + Book Dash UUID 블랙리스트 재사용 (CP2)",
+    "lib/home/categories.ts — ADR-0015 결정 2.2 키워드 풀 8개 정적 정의 + 매칭 함수 (CP2)",
+    "lib/home/streak.ts — 최근 7일 완독 집계 (CP2)",
+    "lib/home/actions.ts — updateChildLevel server action + revalidatePath (CP2)",
+    "components/home/greeting-card.tsx (CP3-a)",
+    "components/home/recommendation-list.tsx (CP3-a)",
+    "components/home/category-grid.tsx (CP3-a)",
+    "components/home/level-selector.tsx (CP3-a)",
+    "components/home/streak-chart.tsx (CP3-a)",
+    "docs/intent/screen-02-home.md (CP1 신규)",
+    "docs/adr/0015-screen-02-category-strategy.md (CP1 신규)",
+    "tasks/phase-10-screen-02-home.json (CP1 신규 — 본 파일)",
+    "tasks/_index.json — phase-10 mark_success (CP4)"
+  ],
+
+  "scope_out": [
+    "책 상세 페이지 (`/book/[id]`) — phase-11. 추천·카테고리 카드 클릭은 phase-10에서 비활성(클릭 무반응)",
+    "AttributionBox 전체 어트리뷰션 화면 — phase-11",
+    "책 뷰어·완독 보상 — phase-12·13",
+    "illustrator 데이터 적재 — ADR-0013 §7 + ADR-0014 결정 3 유지(phase-11 결정)",
+    "GDL author=publisher 정정 — ADR-0014 결정 6 유지(phase-11 결정). 홈 카드 라벨에 publisher 노출 현황은 phase-10 무변경",
+    "Book Dash 4 슬러그 블랙리스트 갱신 — ADR-0014 결정 2 그대로 인용·재사용",
+    "라이브러리(`/library`) 신설 — phase-13. 카테고리 라우팅 5a 이전은 phase-13",
+    "카테고리 키워드 풀 정확도 측정 도구 — phase-13b Admin (ADR-0015 결정 7)",
+    "ALTER TABLE books ADD COLUMN categories — phase-13b 정식 컬럼 도입 트리거 임계 도달 시 (ADR-0015 결정 7)",
+    "Cache Components(PPR · cacheLife · cacheTag) 도입 — phase-13b 이후 운영 데이터 기반 결정",
+    "다자녀 모드 — 인사 카드는 첫 번째 자녀만, phase-13 이후 고려",
+    "다크 모드 — design-system §9 Phase 2 이후",
+    "middleware.ts·routes.ts 수정 — phase-07·08 확정본 무변경"
+  ],
+
+  "files_to_create_or_modify": [
+    "tasks/phase-10-screen-02-home.json (신규 — 본 파일, CP1)",
+    "docs/intent/screen-02-home.md (신규 — CP1)",
+    "docs/adr/0015-screen-02-category-strategy.md (신규 — CP1)",
+    "lib/home/copy.ts (신규 — CP2 또는 CP3-a)",
+    "lib/home/greeting.ts (신규 — CP2)",
+    "lib/home/recommendations.ts (신규 — CP2)",
+    "lib/home/categories.ts (신규 — CP2)",
+    "lib/home/streak.ts (신규 — CP2)",
+    "lib/home/actions.ts (신규 — CP2)",
+    "components/home/greeting-card.tsx (신규 — CP3-a)",
+    "components/home/recommendation-list.tsx (신규 — CP3-a)",
+    "components/home/category-grid.tsx (신규 — CP3-a)",
+    "components/home/level-selector.tsx (신규 — CP3-a)",
+    "components/home/streak-chart.tsx (신규 — CP3-a)",
+    "app/home/page.tsx (수정 — CP3-b, placeholder → 정식)",
+    "tasks/_index.json (수정 — mark_success, CP4)"
+  ],
+
+  "checkpoints": [
+    {
+      "id": "CP1-spec-intent-adr",
+      "description": "명세 3종 신규 작성. 코드 수정 0건. ADR-0015는 (a) 카테고리 키워드 풀 8개 × 평균 13.5 = 108 키워드 박제 (b) 매칭 실패 처리 결정 3 (β) (c) phase-13b 정식 컬럼 도입 트리거 임계 (정확도 ≤ 70% 또는 클릭률 ≥ 10%) 박제. Intent는 5개 구성요소 + CP1 결정 5건(NULL 폴백·revalidatePath·force-dynamic·온보딩 가드·폴백 사다리) 박제. 완료 후 커밋 1건 + 멈춤·보고. CP2 자동 진입 금지.",
+      "files": [
+        "tasks/phase-10-screen-02-home.json",
+        "docs/intent/screen-02-home.md",
+        "docs/adr/0015-screen-02-category-strategy.md"
+      ]
+    },
+    {
+      "id": "CP2-data-layer",
+      "description": "lib/home/ 데이터 fetch 레이어 7종 신규. server-only 함수 작성. DB 변경 0건(SELECT + children.current_level UPDATE만). Book Dash 4 UUID 블랙리스트는 lib/landing/popular-books.ts의 BOOK_DASH_404_SOURCE_IDS 상수를 import 재사용. 추천 폴백 사다리 ±1→±2→±3→N권 구현. 카테고리 키워드 풀 108개를 ADR-0015 결정 2.2에서 1:1 옮겨 적기. server action updateChildLevel은 서버에서 childId를 세션 자녀로 한정. dry-run 검증(단위 호출 결과 4건 샘플 확인). 완료 후 커밋 1건 + 멈춤·보고. CP3 자동 진입 금지.",
+      "files": [
+        "lib/home/copy.ts",
+        "lib/home/greeting.ts",
+        "lib/home/recommendations.ts",
+        "lib/home/categories.ts",
+        "lib/home/streak.ts",
+        "lib/home/actions.ts"
+      ]
+    },
+    {
+      "id": "CP3-ui",
+      "description": "UI 컴포넌트 5종 + page.tsx 통합 + 반응형 점검. 3 sub-step.",
+      "sub_steps": [
+        {
+          "id": "CP3-a-components",
+          "description": "components/home/ 5종 개별 신규: GreetingCard · RecommendationList · CategoryGrid · LevelSelector · StreakChart. design-system §1.4·§1.8·§3·§6.x·§7.4 토큰 100% 사용. raw HEX 0건. 카테고리 결과 권수 캡(24권) + 결과 0건 폴백 UI + 스트릭 빈 상태 폴백 UI 박제. 카드 클릭은 phase-10에서 비활성(href 없음 또는 disabled). 완료 후 커밋 1건 + 멈춤·보고.",
+          "files": [
+            "components/home/greeting-card.tsx",
+            "components/home/recommendation-list.tsx",
+            "components/home/category-grid.tsx",
+            "components/home/level-selector.tsx",
+            "components/home/streak-chart.tsx"
+          ]
+        },
+        {
+          "id": "CP3-b-page-integration",
+          "description": "app/home/page.tsx 정식 통합. force-dynamic 적용. 온보딩 가드(자녀 0명 시 redirect('/onboarding')) 페이지 컴포넌트 안에서 처리. `/home?cat={slug}` 쿼리 파라미터 해석 + 카테고리 결과 섹션 확장 표시. middleware.ts·routes.ts 무변경. 완료 후 커밋 1건 + 멈춤·보고.",
+          "files": [
+            "app/home/page.tsx"
+          ]
+        },
+        {
+          "id": "CP3-c-responsive",
+          "description": "3 viewport(390px / 768px / 1280px) 스냅샷 점검. 모바일 가로 스크롤 / 태블릿+ 5권 한 줄 등 §5.2·§5.3 명세 정합 확인. v13 측정. 완료 후 커밋 1건 + 멈춤·보고.",
+          "files": []
+        }
+      ]
+    },
+    {
+      "id": "CP4-verify-and-meta",
+      "description": "사용자 클릭 검증 v6~v13 수행 + ADR-0015 §6 후속 과제 확인 + tasks/_index.json mark_success + verification_result 박제 + 메타 커밋 1건. 미달 항목 1건이라도 발생 시 CP3 또는 ADR-0015 갱신으로 회귀. 완료 후 멈춤·보고. phase-11 자동 진입 금지.",
+      "files": [
+        "tasks/_index.json"
+      ]
+    }
+  ],
+
+  "verification": [
+    { "id": "v1-lint", "description": "린트 에러 0", "method": "pnpm lint", "expected": "에러 0" },
+    { "id": "v2-type-check", "description": "타입 체크 에러 0", "method": "pnpm type-check", "expected": "에러 0" },
+    { "id": "v3-build", "description": "프로덕션 빌드 성공", "method": "pnpm build", "expected": "성공" },
+    { "id": "v4-no-schema-change", "description": "DB 스키마 무변경", "method": "supabase/migrations 디렉토리 확인", "expected": "001_initial_schema.sql 외 0건" },
+    { "id": "v5-no-secret-leak", "description": "홈·lib/home·components/home·server action에 secret 미노출", "method": "grep SUPABASE_SECRET_KEY 및 service_role in app/home·lib/home·components/home", "expected": "0건 (load_env / server-only 모듈 외)" },
+    { "id": "v6-greeting-fallback", "description": "인사 카드 NULL 폴백 정상 표시", "method": "(a) display_name 있는 계정으로 / 접속 → '{display_name}님 👋' 확인. (b) display_name NULL 계정으로 접속 → '{자녀이름} 부모님 👋' 확인", "expected": "(a)·(b) 모두 정상 표시, 자녀 프로필 칩 §1.8 레벨 컬러 매핑 일치" },
+    {
+      "id": "v7-recommendations",
+      "description": "오늘의 추천 5권 4 sub-case 모두 통과",
+      "method": "v7-1·v7-2·v7-3·v7-4 sub-case 개별 측정",
+      "expected": "모든 sub-case 통과",
+      "sub_cases": [
+        { "id": "v7-1-blocklist", "description": "Book Dash 4 UUID 블랙리스트 정합 — 100회 호출 결과에서 4 UUID 미등장", "expected": "4 UUID 등장 0건" },
+        { "id": "v7-2-option-y", "description": "옵션 Y 환원 정합 — source_platform 필터 없음, GDL+Book Dash 모두 노출", "expected": "100회 호출 결과 중 GDL ≥ 1회 + Book Dash ≥ 1회" },
+        { "id": "v7-3-level-fallback", "description": "폴백 사다리 ±2 작동 — 인공 시나리오: level ±1 미독 책 < 5권인 자녀로 접속 시 ±2 폴백 발동", "expected": "5권 또는 ±2 확장 후 N권 표시" },
+        { "id": "v7-4-unread", "description": "미독 책만 반환 — 임의 책 1권 강제 reading_sessions.is_completed=true INSERT 후 추천 결과에서 해당 책 제외 확인", "expected": "완독 처리한 책 등장 0건" }
+      ]
+    },
+    {
+      "id": "v8-category-grid",
+      "description": "카테고리 그리드 8개 렌더 + 라우팅 + 매칭 결과",
+      "method": "(a) 8개 카드 모두 한글 라벨·accent 컬러 정확 매핑 확인. (b) 카드 클릭 시 URL이 `/home?cat={slug}`로 변경 확인 (ADR-0015 결정 5b). (c) 매칭된 책이 1권 이상인 카테고리 ≥ 5개 확인 (정확도 baseline). (d) `/home?cat=animals` 직접 접속 시 카테고리 결과 섹션 확장 표시",
+      "expected": "(a)·(b)·(c)·(d) 모두 통과"
+    },
+    {
+      "id": "v9-level-selector",
+      "description": "레벨 변경 즉시 재계산",
+      "method": "Level 5 Chip 클릭 → children.current_level UPDATE → 추천 5권이 새 레벨 기준으로 재계산되어 표시 (revalidatePath 작동)",
+      "expected": "옵티미스틱 UI 즉시 반영 + 추천 5권 재계산 결과 표시"
+    },
+    {
+      "id": "v10-streak",
+      "description": "최근 7일 스트릭 막대그래프 정상 표시 + 빈 상태 폴백",
+      "method": "v10-1·v10-2 sub-case 측정",
+      "expected": "양쪽 모두 통과",
+      "sub_cases": [
+        { "id": "v10-1-completed", "description": "완독 기준 채움 — reading_sessions.is_completed=true 강제 INSERT 후 해당 일자 막대가 --color-primary로 표시, 미완독일은 --color-surface-3, 오늘은 dot --color-accent-yellow", "expected": "design-system §7.4 토큰 100% 매핑" },
+        { "id": "v10-2-empty-fallback", "description": "빈 상태 폴백 — 최근 7일 완독 0건인 신규 자녀로 접속 시 차트 영역 아래 '오늘부터 시작해볼까요?' 메시지 카드 1장 표시", "expected": "메시지 카드 표시 + 빈 막대 7개 정상 렌더" }
+      ]
+    },
+    { "id": "v11-hard-rule-10", "description": "Hard Rule 10 raw HEX 0건", "method": "grep -E '#[0-9a-fA-F]{3,8}' components/home/ lib/home/ app/home/", "expected": "0건 (단, 일러스트 SVG 내부 색상은 예외 — design-system §1.4 accent 토큰만 사용 시 그것도 0건)" },
+    { "id": "v12-phase-11-ready", "description": "phase-11 진입 차단 요소 0건", "method": "tasks/phase-11-screen-03-book-detail.json depends_on 충족 확인", "expected": "차단 0건" },
+    {
+      "id": "v13-responsive",
+      "description": "모바일·태블릿·데스크탑 3 viewport 반응형 정상",
+      "method": "DevTools 또는 실기기로 390px / 768px / 1280px 스냅샷 측정",
+      "expected": "5개 구성요소 모두 viewport별 명세 정합 (모바일 가로 스크롤·태블릿+ 5권 한 줄·2×4 그리드 일관)",
+      "sub_cases": [
+        { "id": "v13-mobile", "description": "390px", "expected": "추천 5권 가로 스크롤·카테고리 2×4·스트릭 7막대 horizontal" },
+        { "id": "v13-tablet", "description": "768px", "expected": "추천 5권 한 줄·여백 1.25배·카테고리 2×4 유지" },
+        { "id": "v13-desktop", "description": "1280px", "expected": "추천 5권 한 줄·페이지 좌우 32px·전체 max-width 적용" }
+      ]
+    }
+  ],
+
+  "completion_criteria": [
+    "v1~v5 자동 검증 통과",
+    "v6 인사 카드 NULL 폴백 양쪽 통과",
+    "v7 4 sub-case 모두 통과 (블랙리스트·옵션 Y·±2 폴백·미독)",
+    "v8 카테고리 그리드 4 항목 모두 통과",
+    "v9 레벨 변경 재계산 즉시 반영",
+    "v10 2 sub-case 모두 통과 (완독 기준·빈 상태 폴백)",
+    "v11 Hard Rule 10 raw HEX 0건",
+    "v12 phase-11 진입 차단 0건",
+    "v13 3 viewport 모두 통과",
+    "tasks/_index.json phase-10 status: pending → success, last_successful_state 갱신, current_phase → phase-11-screen-03-book-detail",
+    "python scripts/run_phase.py --complete phase-10-screen-02-home 실행 + 수동 추가(current_phase, verification_result)"
+  ],
+
+  "user_steps": [
+    "외부 콘솔 설정 불필요 — phase-10은 코드·DB UPDATE만(스키마 무변경)",
+    "CP2 dry-run 결과 단위 함수 4건 샘플 확인",
+    "CP3-a 컴포넌트 5종 시각 확인",
+    "CP3-c 반응형 3 viewport 스냅샷",
+    "CP4 v6~v13 클릭 테스트 수행",
+    "pnpm lint && pnpm type-check && pnpm build",
+    "python scripts/run_phase.py --complete phase-10-screen-02-home"
+  ],
+
+  "cp1_decisions": {
+    "context": "CP1에서 박제하고 CP2 이후 구현이 따르는 5건 결정. 외부 검토(2026-05-21) 반영.",
+    "decisions": [
+      { "id": "d1-greeting-null-fallback", "description": "인사 카드 NULL 폴백 문자열 = '{자녀이름} 부모님'. display_name이 NULL인 경우 첫 번째 자녀 이름을 빌려 한국어 호칭으로 가린다.", "ref": "docs/intent/screen-02-home.md §5.1" },
+      { "id": "d2-level-change-recompute", "description": "레벨 변경 재계산 = server-side server action + revalidatePath('/home'). 클라이언트 단독 상태 관리·SWR/React Query 도입 미채택.", "ref": "docs/intent/screen-02-home.md §5.4" },
+      { "id": "d3-cache-policy", "description": "Cache Components 정책 = `export const dynamic = 'force-dynamic'` 보수적 적용. 자녀별·세션별 데이터 결합이 강하고 캐싱 오작동 위험. PPR/cacheLife/cacheTag는 phase-13b 이후.", "ref": "docs/intent/screen-02-home.md §6" },
+      { "id": "d4-onboarding-guard", "description": "온보딩 가드 = page.tsx 안에서 자녀 0명 시 redirect('/onboarding'). middleware.ts 무변경. phase-08 '분기는 도착 지점에서' 원칙 계승.", "ref": "docs/intent/screen-02-home.md §3·§4.2" },
+      { "id": "d5-recommendation-fallback-ladder", "description": "추천 5권 폴백 사다리 = level ±1 → ±2 → ±3 → N권만 → 빈 상태 메시지 (5단계). 각 단계 폴백은 사용자에게 별도 알림 없이 자연스럽게.", "ref": "docs/intent/screen-02-home.md §5.2" }
+    ]
+  },
+
+  "diagnosis": {
+    "measured_at": "2026-05-21 phase-10 CP1 플랜 단계",
+    "books_table_columns": {
+      "category_or_categories_column": "부재 — ADR-0015로 정적 키워드 매핑 채택",
+      "topic_column": "부재",
+      "tags_column": "부재",
+      "title_column": "TEXT NOT NULL — 매칭 대상",
+      "level_column": "INT CHECK (1-5) — 추천 ±1 폴백 사다리 베이스",
+      "age_min_age_max": "INT (NULL 허용)",
+      "language_default": "'en'"
+    },
+    "children_table": {
+      "current_level_column": "INT NOT NULL DEFAULT 1 CHECK (1-5) — 레벨 선택 바 베이스",
+      "name_column": "TEXT NOT NULL — 인사 카드 NULL 폴백 베이스",
+      "points_column": "INT NOT NULL DEFAULT 0 (phase-10 미사용)"
+    },
+    "profiles_table": {
+      "display_name_column": "TEXT (NULL 허용) — NULL 폴백 시나리오 발생",
+      "role_default": "'parent'"
+    },
+    "reading_sessions_table": {
+      "is_completed_column": "BOOLEAN NOT NULL DEFAULT false — 스트릭 채움 기준",
+      "completed_at_column": "TIMESTAMPTZ NULL — 최근 7일 필터 베이스",
+      "child_id_index": "idx_reading_sessions_child_id 존재"
+    },
+    "design_system_tokens": {
+      "streak_section_7_4": "박제 완료 — 막대 28px·max 60px·radius-sm·--color-primary/--color-surface-3·--color-accent-yellow dot",
+      "category_specific_tokens": "부재 — Card sm + §1.4 accent 5색 재사용",
+      "chip_section_3": "0 16px / 38px / pill radius — 레벨 선택 바·자녀 프로필 칩에 재사용",
+      "level_color_mapping_1_8": "Level 1~5 → green/sky/yellow/pink/violet 정상 매핑"
+    },
+    "intent_doc_screen_02_home": "CP1에서 신규 작성 (선행: screen-01-landing.md 패턴)",
+    "adr_0015": "CP1에서 신규 작성 — 카테고리 옵션 D + 키워드 풀 108개 + 매칭 실패 (β) + 트리거 임계 (정확도 ≤ 70% OR 클릭률 ≥ 10%)"
+  },
+
+  "references": [
+    "claude.md 2절 Hard Rule 1·3·6·8·10, 5절 라우팅(Screen 02)",
+    "docs/adr/0015-screen-02-category-strategy.md (본 페이즈 핵심 결정 — 카테고리 전략)",
+    "docs/adr/0012-landing-page-static.md 결정 3 (DB 무변경 패턴 — 본 페이즈가 정합 인용)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md 결정 2·3·4·6 (블랙리스트·illustrator·옵션 Y·author=publisher — 무변경 인용)",
+    "docs/adr/0013-cover-attribution-policy.md §3 (표지 캡션 — 추천·카테고리 카드에 재사용)",
+    "docs/intent/screen-02-home.md (본 페이즈 의도 문서)",
+    "docs/intent/screen-01-landing.md (선행 패턴)",
+    "docs/intent/onboarding-flow.md (자녀 등록 — 본 페이즈 가드 베이스)",
+    "docs/design-system.md §1.4 Accent·§1.8 Level·§3 Spacing·§6.2 Card·§7.4 Streak",
+    "lib/landing/popular-books.ts (BOOK_DASH_404_SOURCE_IDS 재사용)",
+    "lib/auth/resolve-post-login-path.ts (phase-08 분기 헬퍼)",
+    "supabase/migrations/001_initial_schema.sql (profiles·children·books·reading_sessions — 조회·UPDATE 베이스)",
+    "PLAN.md 9절 Screen 02 명세"
+  ]
+}
