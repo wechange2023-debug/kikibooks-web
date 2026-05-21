@@ -5,6 +5,24 @@
   "version": "1.0",
   "created_at": "2026-05-21",
 
+  "cp_progress": {
+    "current_cp": "CP3-a-components",
+    "last_successful_cp": "CP2-c-verify-meta",
+    "last_successful_at": "2026-05-21",
+    "completed_cps": [
+      "CP1-spec-intent-adr",
+      "CP2-a-spec-update",
+      "CP2-b-implementation",
+      "CP2-c-verify-meta"
+    ],
+    "pending_cps": [
+      "CP3-a-components",
+      "CP3-b-page-integration",
+      "CP3-c-responsive",
+      "CP4-verify-and-meta"
+    ]
+  },
+
   "summary": "phase-08 온보딩 + phase-09b 콘텐츠 품질 정정을 마친 학부모가 매일 진입하는 홈(`/home`)을 정식 구현한다. 5개 구성요소: (1) 인사 카드(display_name NULL이면 '{자녀이름} 부모님' 폴백), (2) 오늘의 추천 5권(level ±1 → ±2 → ±3 → N권만 폴백 사다리, Book Dash 4 UUID 블랙리스트 재사용, 옵션 Y 환원 정합), (3) 카테고리 그리드 8개(동물·가족·ABC·숫자·감정·자연·음식·잠자리 — title ILIKE 키워드 매핑, ADR-0015), (4) 레벨 선택 바(server action + revalidatePath('/home')), (5) 최근 7일 스트릭(완독 기준, design-system §7.4 토큰 100%). DB 스키마 변경 0건(Hard Rule 8 회피, ADR-0012 결정 3·ADR-0014 결정 2와 동일 패턴). 카테고리 카드 클릭은 `/home?cat={slug}`로 홈 내부 확장(ADR-0015 결정 5b). 캐싱은 `dynamic='force-dynamic'` 보수적 적용. 온보딩 가드는 page.tsx 안에서 redirect('/onboarding'). phase-11(illustrator·GDL author=publisher·책 상세 라우팅) 후속 트리거는 본 페이즈 범위 외(ADR-0014 결정 3·6 유지).",
 
   "goals": [
@@ -90,6 +108,9 @@
     {
       "id": "CP1-spec-intent-adr",
       "description": "명세 3종 신규 작성. 코드 수정 0건. ADR-0015는 (a) 카테고리 키워드 풀 8개 × 평균 13.5 = 108 키워드 박제 (b) 매칭 실패 처리 결정 3 (β) (c) phase-13b 정식 컬럼 도입 트리거 임계 (정확도 ≤ 70% 또는 클릭률 ≥ 10%) 박제. Intent는 5개 구성요소 + CP1 결정 5건(NULL 폴백·revalidatePath·force-dynamic·온보딩 가드·폴백 사다리) 박제. 완료 후 커밋 1건 + 멈춤·보고. CP2 자동 진입 금지.",
+      "status": "success",
+      "completed_at": "2026-05-21",
+      "commit": "71bc98a",
       "files": [
         "tasks/phase-10-screen-02-home.json",
         "docs/intent/screen-02-home.md",
@@ -99,10 +120,15 @@
     {
       "id": "CP2-data-layer",
       "description": "lib/home/ 데이터 fetch 레이어 8종 신규(active-child 포함) + popular-books.ts export 1줄. CP2-a 진단에서 3 sub-step으로 세분화.",
+      "status": "success",
+      "completed_at": "2026-05-21",
       "sub_steps": [
         {
           "id": "CP2-a-spec-update",
           "description": "spec JSON 갱신 5건(a~e) + ADR-0014 Amendment #3(블랙리스트 옵션 B 트리거) + ADR-0015 Amendment #1(getCategoryDistribution 도입 박제) = 총 7건. 본 sub-step은 명세·결정 박제 전용, 코드 0건. 완료 후 커밋 1건 + 멈춤·보고. CP2-b 자동 진입 금지.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "commit": "1c60120",
           "files": [
             "tasks/phase-10-screen-02-home.json",
             "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md",
@@ -112,6 +138,17 @@
         {
           "id": "CP2-b-implementation",
           "description": "lib/home/ 8종 신규 + lib/landing/popular-books.ts BOOK_DASH_404_SOURCE_IDS export 1줄. server-only 함수만 작성(클라이언트 노출 0건, service_role 호출 0건). 추천 폴백 사다리 ±1→±2→±3→N권 구현. 카테고리 키워드 풀 108개를 ADR-0015 결정 2.2에서 1:1 옮겨 적기. getCategoryBooks는 synced_at DESC 안정 정렬 + 캡 24권(cp2_decisions d9). getCategoryDistribution은 phase-13b baseline용 분포 함수(ADR-0015 Amendment #1). updateChildLevel은 .update().eq('id', childId).select('id').single()로 affected_rows 검증, 0행이면 명시적 error(RLS만 의존 시 묵묵한 실패 방지). 각 함수 JSDoc 필수(의도 + RLS 근거 + 폴백 정책). DB 변경 0건(SELECT + children.current_level UPDATE만). 완료 후 커밋 1건 + 멈춤·보고. CP2-c 자동 진입 금지.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "commit": "9af6ee9",
+          "implementation_notes": [
+            "신규 7 파일: copy.ts(HomeCopy + getHomeCopy)·active-child.ts(getActiveChild)·greeting.ts(getGreetingProfile + buildGreeting 순수 분리)·recommendations.ts(폴백 사다리 5단계 명시 분기 + JS 부분 셔플)·categories.ts(108 키워드 + matchCategories + getCategoryBooks + getCategoryDistribution + isCategorySlug)·streak.ts(Asia/Seoul 기준 7일)·actions.ts(updateChildLevel server action + zod + maybeSingle 0행 분기 + revalidatePath)",
+            "수정 1 파일: popular-books.ts BOOK_DASH_404_SOURCE_IDS const → export const (옵션 A, ADR-0014 Amendment #3 인용 JSDoc 보강)",
+            "actions.ts는 single() 대신 maybeSingle() 채택 — 0행과 일반 에러를 구분된 메시지로 표시 가능. 자체 점검 (c) 박제 의도와 정합",
+            "categories.ts level 필터 미적용 — intent §5.3, ADR-0015 §6 권장 ±1은 베타 단순성 위해 본 코드에 적용하지 않음. phase-13b 정확도 측정 후 재검토",
+            "streak.ts 타임존 = Asia/Seoul 채택 (자체 점검 (d)). Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Seoul'})로 YYYY-MM-DD 그룹핑. UTC 채택 시 한국 자정 직후 혼란 회피",
+            "recommendations.ts·categories.ts에 동일 fetchCompletedBookIds 헬퍼 중복 — 소량 중복은 모듈 응집도 우선. 사용처 ≥ 3 시 lib/shared로 통합 검토(ADR-0014 Amendment #3 패턴 정합)"
+          ],
           "files": [
             "lib/home/active-child.ts",
             "lib/home/copy.ts",
@@ -126,6 +163,27 @@
         {
           "id": "CP2-c-verify-meta",
           "description": "CP2 자동 검증 측정: pnpm lint(v1) + pnpm type-check(v2) + grep service_role/SUPABASE_SECRET_KEY in lib/home(v5 0건) + supabase/migrations 신규 0건(v4). v3 build는 UI 미존재로 lib만 컴파일은 의미 약함 → CP3-b 통합 후로 이전(cp2_decisions d10). 통과 시 메타 커밋 1건(또는 CP2-b에 amend) + 멈춤·보고. CP3 자동 진입 금지.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "verification_result": {
+            "v1_lint": "pass (No ESLint warnings or errors)",
+            "v2_type_check": "pass (tsc --noEmit EXIT=0)",
+            "v4_schema_unchanged": "pass (supabase/migrations/ 001_initial_schema.sql 단일 — 무변경)",
+            "v5_secret_unleaked": "pass (grep SUPABASE_SECRET_KEY/SUPABASE_SERVICE_ROLE_KEY/service_role/createServiceRoleClient in lib/home/ — 0 matches)",
+            "v3_build": "deferred to CP3-b (UI 미존재로 단독 build 의미 약함 — cp2_decisions d10 매핑)",
+            "self_checks": {
+              "a_fallback_ladder_explicit_branches": "pass (recommendations.ts stage1/stage2/stage3 별도 쿼리 + stage3.length 분기로 4·5 단계 식별 가능)",
+              "b_blocklist_import_consistency": "pass (categories.ts와 recommendations.ts 모두 @/lib/landing/popular-books에서 import)",
+              "c_actions_single_zero_row_branch": "pass (maybeSingle 채택 — data=null 명시 분기로 RLS 묵묵한 실패 방지)",
+              "d_streak_timezone_policy": "pass (Asia/Seoul 채택 + JSDoc 박제, Intl.DateTimeFormat 'en-CA')"
+            },
+            "notes": [
+              "CP2-b 통합 커밋(9af6ee9) 시점에 v1·v2·v4·v5 동시 측정 완료",
+              "v3 build는 CP3-b 통합 후로 이전(cp2_decisions d10 매핑)",
+              "자체 점검 (a)·(b)·(c)·(d) 4건 모두 코드 레벨 구현 완료",
+              "다음 v 측정 시점: v3 build → CP3-b 통합 직후, v6~v13 → CP3-c·CP4"
+            ]
+          },
           "files": []
         }
       ]
