@@ -1,0 +1,301 @@
+{
+  "phase_id": "phase-11-screen-03-book-detail",
+  "name": "Screen 03 책 상세 + AttributionBox 구현",
+  "category": "Phase 1",
+  "version": "1.0",
+  "created_at": "2026-05-21",
+
+  "cp_progress": {
+    "phase_status": "in_progress",
+    "current_cp": "CP1-spec-intent-adrs",
+    "last_successful_cp": null,
+    "completed_cps": [],
+    "pending_cps": [
+      "CP1-spec-intent-adrs",
+      "CP2-data-layer",
+      "CP3-ui",
+      "CP4-verify-and-meta"
+    ]
+  },
+
+  "summary": "phase-10 홈에서 비활성으로 박제됐던 추천·카테고리 카드 클릭이 본 페이즈에서 `/book/[id]` 정식 라우팅으로 활성화된다. 책 상세 페이지는 표지 + H1 제목 + 메타(레벨·연령·언어) + AttributionBox(5요소) + 읽기 버튼으로 구성된다. AttributionBox는 베타 법적 의무로 100% 표시(license-rules.md §5). CP1에서 ADR-0016(illustrator + author/publisher + AttributionBox 5요소 사유) + ADR-0014 Amendment #4(블랙리스트 책 상세 차단 + 404) 두 ADR 신규/갱신 작성 후 외부 검토 통과 전까지 코드 작성 0건. URL 구조는 books.id UUID 단순 라우팅 채택(외부 검토 #3). 즐겨찾기는 phase-13 라이브러리 시점 통합(외부 검토 #4). DB 스키마 변경 0건(Hard Rule 8). Hard Rule 1·3·6·8·10 무위반.",
+
+  "goals": [
+    "/book/[id] 정식 페이지 구현 (현재 부재 → 정식)",
+    "AttributionBox 5요소 100% 표시 + CC BY 4.0 법적 4요소 충족 메커니즘 박제 (H1 제목 + AttributionBox = 통합 어트리뷰션 단위)",
+    "ADR-0016 작성 — illustrator + author/publisher + 5요소 사유 결정 3건 박제",
+    "ADR-0014 Amendment #4 — 블랙리스트 4 UUID 책 상세 직접 접속 시 차단 + 404 정책 박제",
+    "GDL `author=publisher` 분리 표시(2-나) — '🏢 출판사: {publisher}' 행 별도 + author 행 NULL 분기 — UI 레이어만, DB 무변경",
+    "illustrator NULL 시 행 자체 생략(1-가) — license-rules.md §5.1 정합",
+    "읽기 버튼 → /book/[id]/read 자리 잡기 (phase-12 활성화)",
+    "Hard Rule 1·3·6·8·10 무위반",
+    "phase-12 진입 차단 요소 0건"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 1 — books.attribution_text NOT NULL 트리거 무변경 (books INSERT/UPDATE 0건, SELECT만)",
+    "Hard Rule 3 — CC BY-NC/ND 콘텐츠 적재·노출 0건 (books 조회만, enforce_commercial_license 트리거 무변경)",
+    "Hard Rule 6 — Server Component에서만 SUPABASE_SECRET_KEY 사용. 클라이언트·공개 환경변수 노출 0건",
+    "Hard Rule 8 — DB 스키마 변경 0건. supabase/migrations 신규 0건. ADR-0016/Amendment #4 모두 UI·라우팅 레이어만 결정",
+    "Hard Rule 10 — 모든 색·간격·폰트는 design-system.md semantic 토큰만. raw HEX 직접 입력 0건. AttributionBox는 design-system §7.1 토큰 100% 매핑"
+  ],
+
+  "scope_in": [
+    "tasks/phase-11-screen-03-book-detail.json (CP1 신규 — 본 파일)",
+    "docs/intent/screen-03-book-detail.md (CP1 신규)",
+    "docs/adr/0016-illustrator-author-publisher-attributionbox.md (CP1 신규)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md (CP1 수정 — Amendment #4 추가)",
+    "lib/book/detail.ts (CP2 신규 — getBookById + RLS 확인 + NULL 처리)",
+    "lib/book/copy.ts (CP2 신규 — AttributionBox 5요소 라벨 + CC BY 안내 + source_platform 한국어명)",
+    "lib/book/attribution.ts (CP2 신규 — illustrator/publisher 분기 헬퍼, ADR-0016 결정 1·2 인용 JSDoc)",
+    "components/book/attribution-box.tsx (CP3-a 신규)",
+    "components/book/book-cover-hero.tsx (CP3-a 신규)",
+    "components/book/book-meta.tsx (CP3-a 신규)",
+    "components/book/read-button.tsx (CP3-a 신규 — /book/[id]/read 자리만)",
+    "app/book/[id]/page.tsx (CP3-b 신규 — force-dynamic + 블랙리스트 차단 + AttributionBox 통합)",
+    "app/book/[id]/not-found.tsx (CP3-b 신규 — books NULL · RLS 차단 · 블랙리스트 차단 공통 404 페이지)",
+    "tasks/_index.json (CP4 mark_success)"
+  ],
+
+  "scope_out": [
+    "책 뷰어 (/book/[id]/read) — phase-12",
+    "완독 보상 (/book/[id]/celebrate) — phase-13",
+    "라이브러리 (/library) — phase-13",
+    "즐겨찾기 토글 ⭐ UI + server action — phase-13 라이브러리 시점 통합 (외부 검토 #4)",
+    "illustrator 데이터 sync 적재 (외부 enrichment) — ADR-0016 결정 1에 따라 별도 sync 보강 phase. 본 페이즈는 행 생략 채택",
+    "AttributionBox 박제 문안 법무 검토 — phase-14 베타 직전 (F9 트리거 박제)",
+    "다자녀 모드 — 활성 자녀 결정은 phase-10 lib/home/active-child.ts 재사용",
+    "다크 모드 — design-system §9 Phase 2 이후",
+    "middleware.ts·routes.ts 수정 — phase-07·08 확정본 무변경"
+  ],
+
+  "files_to_create_or_modify": [
+    "tasks/phase-11-screen-03-book-detail.json (신규 — CP1)",
+    "docs/intent/screen-03-book-detail.md (신규 — CP1)",
+    "docs/adr/0016-illustrator-author-publisher-attributionbox.md (신규 — CP1)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md (수정 — CP1, Amendment #4 추가)",
+    "lib/book/detail.ts (신규 — CP2)",
+    "lib/book/copy.ts (신규 — CP2)",
+    "lib/book/attribution.ts (신규 — CP2)",
+    "components/book/attribution-box.tsx (신규 — CP3-a)",
+    "components/book/book-cover-hero.tsx (신규 — CP3-a)",
+    "components/book/book-meta.tsx (신규 — CP3-a)",
+    "components/book/read-button.tsx (신규 — CP3-a)",
+    "app/book/[id]/page.tsx (신규 — CP3-b)",
+    "app/book/[id]/not-found.tsx (신규 — CP3-b)",
+    "tasks/_index.json (수정 — mark_success, CP4)"
+  ],
+
+  "checkpoints": [
+    {
+      "id": "CP1-spec-intent-adrs",
+      "description": "명세 4종 신규/갱신 작성. 코드 수정 0건. 단일 커밋 1건. (1) 본 spec JSON (2) docs/intent/screen-03-book-detail.md — 5개 구성요소 + 사용자 흐름 + 가드 + 라우트 지도 (3) docs/adr/0016 — illustrator 행 생략(결정 1-가) + GDL author=publisher 분리 표시(결정 2-나) + AttributionBox 5요소 사유 박제(결정 3, 'B.2 결정 3 그대로'). 결정 2 박제 문안에 '랜딩 카드 publisher 표시는 phase-10 박제 유지, 책 상세는 분리 표시 — 이 비일관은 의도된 것' 1줄 명시(외부 검토 보강 2). (4) docs/adr/0014 Amendment #4 — 블랙리스트 4 UUID 책 상세 직접 접속 시 차단 + 404 정책(외부 검토 보강 1). 완료 후 커밋 1건 + 멈춤·보고. CP2 자동 진입 금지.",
+      "status": "in_progress",
+      "files": [
+        "tasks/phase-11-screen-03-book-detail.json",
+        "docs/intent/screen-03-book-detail.md",
+        "docs/adr/0016-illustrator-author-publisher-attributionbox.md",
+        "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md"
+      ]
+    },
+    {
+      "id": "CP2-data-layer",
+      "description": "lib/book/ 데이터 fetch + 카피 + 어트리뷰션 분기 헬퍼 3종 신규. server-only 함수만. lib/book/detail.ts는 getBookById(id: string) — books.id UUID 단일 조회 + RLS 차단·NULL 시 'not_found' 반환. lib/book/copy.ts는 AttributionBox 5요소 라벨 + CC BY 안내 + source_platform 한국어명 매핑. lib/book/attribution.ts는 buildAttributionRows(book) — ADR-0016 결정 1·2 인용 JSDoc + illustrator IS NULL 시 행 생략(1-가) + source_platform='gdl' 시 author 행 NULL + publisher 행 추가(2-나) 분기 박제. 각 함수 JSDoc 필수(의도 + RLS 근거 + ADR-0016 결정 인용). DB 변경 0건. 완료 후 커밋 1건 + 멈춤·보고. CP3 자동 진입 금지.",
+      "status": "pending",
+      "files": []
+    },
+    {
+      "id": "CP3-ui",
+      "description": "UI 컴포넌트 4종 + page.tsx 통합 + not-found 페이지 + 반응형 점검. 3 sub-step 예상(CP3-a 컴포넌트 / CP3-b page+not-found / CP3-c 반응형). design-system §1·§3·§6.x·§7.1 토큰 100% 사용. raw HEX 0건. AttributionBox는 §7.1 명세(surface-2 배경·outline 보더·radius-md·16px 20px padding·body-sm 13px 600·caption 12px·tertiary 링크). BookCoverHero는 표지 + H1 제목 + 메타 칩(BookMeta) 통합. ReadButton은 phase-12 활성화 자리만(disabled 또는 href='/book/[id]/read' 클릭 시 placeholder). app/book/[id]/page.tsx는 force-dynamic + 블랙리스트 4 UUID 차단(ADR-0014 Amendment #4) + getBookById notFound() 분기. not-found.tsx는 공통 404 페이지(블랙리스트·RLS·미존재 모두 동일 UX). 완료 후 커밋 1~3건(sub-step별) + 멈춤·보고.",
+      "status": "pending",
+      "files": []
+    },
+    {
+      "id": "CP4-verify-and-meta",
+      "description": "사용자 클릭 검증 v6~v15 수행 + ADR-0016 §결정 인용 정합 점검 + tasks/_index.json mark_success + verification_result 박제 + 메타 커밋 1건. 미달 항목 1건이라도 발생 시 CP3 또는 ADR-0016 갱신으로 회귀. 완료 후 멈춤·보고. phase-12 자동 진입 금지.",
+      "status": "pending",
+      "files": [
+        "tasks/_index.json"
+      ]
+    }
+  ],
+
+  "verification": [
+    { "id": "v1-lint", "description": "린트 에러 0", "method": "pnpm lint", "expected": "에러 0" },
+    { "id": "v2-type-check", "description": "타입 체크 에러 0", "method": "pnpm type-check", "expected": "에러 0" },
+    { "id": "v3-build", "description": "프로덕션 빌드 성공", "method": "pnpm build", "expected": "성공" },
+    { "id": "v4-no-schema-change", "description": "DB 스키마 무변경", "method": "supabase/migrations 디렉토리 확인", "expected": "001_initial_schema.sql 외 0건" },
+    { "id": "v5-no-secret-leak", "description": "lib/book·components/book·app/book에 secret 미노출", "method": "grep SUPABASE_SECRET_KEY 및 service_role in app/book·lib/book·components/book", "expected": "0건" },
+    { "id": "v6-attribution-box-100pct", "description": "AttributionBox 모든 책 상세 페이지에 100% 표시 (라이선스 감사 통과)", "method": "(a) 책 상세 페이지 JSX에 <AttributionBox> 호출 grep 1건 이상. (b) 임의 책 5권 직접 접속 시 모두 AttributionBox 노출 확인", "expected": "(a)·(b) 모두 통과" },
+    {
+      "id": "v7-cc-by-4-elements",
+      "description": "CC BY 4.0 법적 4요소(저작자·제목·라이선스URL·원본URL) 충족 — H1 제목 + AttributionBox 통합 단위",
+      "method": "v7-1·v7-2·v7-3·v7-4 sub-case 개별 측정",
+      "expected": "모든 sub-case 통과",
+      "sub_cases": [
+        { "id": "v7-1-title-h1", "description": "책 제목 H1 태그로 표시 + AttributionBox 인접 배치 확인", "expected": "<h1>{book.title}</h1> 존재 + AttributionBox DOM 인접" },
+        { "id": "v7-2-author", "description": "저작자 행 표시 (Book Dash 책 — author 존재 케이스)", "expected": "'✍️ 글: {author}' 행 노출" },
+        { "id": "v7-3-license-url", "description": "라이선스 행 + 외부 링크 (CC BY 4.0 URL)", "expected": "https://creativecommons.org/licenses/by/4.0/ 링크 + target=_blank + rel=noopener noreferrer" },
+        { "id": "v7-4-original-url", "description": "원본 URL 외부 링크 (book.original_url)", "expected": "외부 새 탭 오픈 + rel=noopener noreferrer" }
+      ]
+    },
+    { "id": "v8-illustrator-null-skip", "description": "illustrator NULL 시 '🎨 그림' 행 자체 생략 (ADR-0016 결정 1-가)", "method": "임의 책(activeBooks 100% NULL) 접속 시 '🎨 그림' 행 부재 확인 + DOM 검사", "expected": "'🎨 그림' 행 DOM 부재" },
+    { "id": "v9-gdl-publisher-separated", "description": "GDL `author=publisher` 케이스 분리 표시 (ADR-0016 결정 2-나)", "method": "source_platform='gdl' 책 접속 시 (a) '✍️ 글' 행 부재 또는 NULL 분기 (b) '🏢 출판사: {publisher}' 행 노출 확인. source_platform='book_dash' 책 접속 시 (c) '✍️ 글' 행 노출 + '🏢 출판사' 행 부재", "expected": "(a)·(b)·(c) 모두 통과" },
+    { "id": "v10-external-link-safety", "description": "원본 URL + 라이선스 URL 외부 링크 안전 속성", "method": "DevTools에서 a 태그 속성 검사", "expected": "target=_blank + rel=noopener noreferrer (license-rules.md §7.2)" },
+    { "id": "v11-read-button-placeholder", "description": "읽기 버튼은 phase-12 자리만 — 클릭 시 placeholder 또는 disabled", "method": "버튼 클릭 시 동작 확인", "expected": "/book/[id]/read 경로 미존재 → 404 또는 의도된 placeholder UI 표시. phase-12 진입 차단 명세 정합" },
+    { "id": "v12-mobile-fold-above", "description": "모바일(390px) AttributionBox 위치 — fold above (license-rules.md §5.3)", "method": "DevTools 390px 또는 실기기에서 첫 화면 스크롤 없이 AttributionBox 노출 확인", "expected": "AttributionBox 첫 fold 안에 노출" },
+    { "id": "v13-phase-12-ready", "description": "phase-12 진입 차단 요소 0건", "method": "tasks/phase-12-screen-04-reader.json depends_on 충족 확인", "expected": "차단 0건" },
+    { "id": "v14-hard-rule-10", "description": "Hard Rule 10 raw HEX 0건", "method": "grep -E '#[0-9a-fA-F]{3,8}' components/book/ lib/book/ app/book/", "expected": "0건" },
+    {
+      "id": "v15-responsive",
+      "description": "모바일·태블릿·데스크탑 3 viewport 반응형 정상",
+      "method": "DevTools 또는 실기기로 390px / 768px / 1280px 스냅샷 측정",
+      "expected": "5개 구성요소 모두 viewport별 명세 정합",
+      "sub_cases": [
+        { "id": "v15-mobile", "description": "390px", "expected": "표지·H1·메타·AttributionBox(fold above)·읽기 버튼 세로 스택" },
+        { "id": "v15-tablet", "description": "768px", "expected": "표지 좌측 / 메타+AttributionBox 우측 2열 또는 세로 스택(설계 시 결정)" },
+        { "id": "v15-desktop", "description": "1280px", "expected": "최대 max-width 적용 + 페이지 좌우 32px 여백" }
+      ]
+    },
+    { "id": "v16-blocklist-404", "description": "ADR-0014 Amendment #4 — 블랙리스트 4 UUID 직접 접속 시 404", "method": "4 UUID 각각 `/book/{uuid}` 직접 접속 시 not-found 페이지 노출 확인", "expected": "4건 모두 404 응답 + not-found.tsx 렌더" }
+  ],
+
+  "completion_criteria": [
+    "v1~v5 자동 검증 통과",
+    "v6 AttributionBox 100% 표시 통과",
+    "v7 CC BY 4.0 4요소 충족 4 sub-case 모두 통과",
+    "v8 illustrator NULL 행 생략 통과",
+    "v9 GDL author=publisher 분리 표시 통과",
+    "v10 외부 링크 안전 속성 통과",
+    "v11 읽기 버튼 placeholder 통과",
+    "v12 모바일 fold above 통과",
+    "v13 phase-12 진입 차단 0건",
+    "v14 Hard Rule 10 raw HEX 0건",
+    "v15 3 viewport 모두 통과",
+    "v16 블랙리스트 4 UUID 404 통과",
+    "tasks/_index.json phase-11 status: pending → success, last_successful_state 갱신, current_phase → phase-12-screen-04-reader",
+    "python scripts/run_phase.py --complete phase-11-screen-03-book-detail 실행"
+  ],
+
+  "user_steps": [
+    "외부 콘솔 설정 불필요 — phase-11은 코드만(DB 스키마 무변경)",
+    "CP2 dry-run 결과 단위 함수 3건 샘플 확인",
+    "CP3-a 컴포넌트 4종 시각 확인",
+    "CP3-c 반응형 3 viewport 스냅샷",
+    "CP4 v6~v16 클릭 테스트 수행 (블랙리스트 4 UUID 직접 접속 포함)",
+    "pnpm lint && pnpm type-check && pnpm build",
+    "python scripts/run_phase.py --complete phase-11-screen-03-book-detail"
+  ],
+
+  "cp1_decisions": {
+    "context": "CP1에서 박제하고 CP2 이후 구현이 따르는 5건 결정. plan 단계 외부 검토(2026-05-21) 반영 — 잠정 권장 4건 모두 채택 + 4건 보강 적용.",
+    "decisions": [
+      {
+        "id": "d1-adr-0016-scope",
+        "description": "ADR-0016 범위 = 옵션 (a) — illustrator + author/publisher + AttributionBox 5요소 사유 박제. 블랙리스트 비-랜딩 표면 차단 정책은 ADR-0014 Amendment #4로 분리 박제(보강 1). 옵션 b/c 기각 사유는 ADR-0016 §대안 비교에 기록.",
+        "ref": "docs/adr/0016-illustrator-author-publisher-attributionbox.md (CP1 신규)"
+      },
+      {
+        "id": "d2-attribution-box-rationale-verbatim",
+        "description": "AttributionBox 박제 문안 = plan 산출물 B.2 결정 3 그대로. '제목' 누락 사유(H1 통합 어트리뷰션 단위 + 시각 노이즈 회피 + 모바일 fold above 보장) + '출처' 추가 사유(큐레이션 투명성 + 협상 출판사 확장성 + attribution_text 표준 포맷 정합) 박제. 추가 1줄(보강 2): '랜딩 카드 publisher 표시는 phase-10 박제 유지, 책 상세는 분리 표시 — 이 비일관은 의도된 것'.",
+        "ref": "docs/adr/0016-illustrator-author-publisher-attributionbox.md §결정 3 (CP1 신규)"
+      },
+      {
+        "id": "d3-url-uuid",
+        "description": "URL 구조 = /book/[id] UUID 단순 라우팅. books.id (uuid PK) 그대로 사용. /book/[source_platform]/[source_id] 옵션은 SEO 친화 + 사람 추적성 이점이 closed environment 정책(ADR-0013 결정 4)으로 상쇄 못함 + source_id 타입 혼재(Book Dash UUID, GDL 정수)로 라우팅 분기 복잡 + (source_platform, source_id) 인덱스 신설은 Hard Rule 8 트리거.",
+        "ref": "app/book/[id]/page.tsx (CP3-b) + lib/book/detail.ts getBookById(id: string)"
+      },
+      {
+        "id": "d4-favorites-deferred-to-phase-13",
+        "description": "즐겨찾기 phase-11 범위 = (4-다) phase-13 라이브러리 시점 통합. 본 페이즈는 표지·H1·메타·AttributionBox·읽기 버튼 5요소에 집중. favorites 테이블(supabase/migrations/001 phase-03)은 이미 존재하나 UI 진입점은 phase-13에서 책 상세 ⭐ 토글 + /library?fav=true 목록 페이지를 동시 구현. 사유: 즐겨찾기 후 확인 경로(목록 페이지)가 없으면 ⭐ 토글은 dead end.",
+        "ref": "phase-13 라이브러리 spec (예정)"
+      },
+      {
+        "id": "d5-adr-0014-amendment-4-blocklist-404",
+        "description": "ADR-0014 Amendment #4 — 블랙리스트 4 UUID 책 상세 직접 접속 시 차단 + 404(외부 검토 보강 1). app/book/[id]/page.tsx에서 lib/landing/popular-books.ts의 BOOK_DASH_404_SOURCE_IDS 재사용해 일치 시 next/navigation notFound() 호출. 사유: 비-랜딩 표면(/book/[id]) 직접 URL 입력 또는 외부 링크에서도 깨진 책 노출 방지 + UX 일관성(랜딩·홈·책상세 모두 차단).",
+        "ref": "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md Amendment #4 (CP1 신규)"
+      }
+    ]
+  },
+
+  "phase_11_follow_up_triggers": {
+    "context": "plan 단계 외부 검토(2026-05-21)에서 사전 박제된 트리거. CP3-c·CP4 실측에서 추가 트리거 발견 시 본 필드에 누적 박제한다. F8·F9는 모두 baseline 박제(blocker=false).",
+    "triggers": [
+      {
+        "id": "F8",
+        "title": "illustrator 100% NULL 진단 — sync 누락 vs 원천 부재",
+        "discovered_at": "phase-11 plan 단계 외부 검토 (2026-05-21)",
+        "location": "scripts/sync_book_dash.py + scripts/sync_gdl.py + 외부 enrichment 영역",
+        "impact": "활성 책 896/896 = 100% illustrator NULL (ADR-0013 §7 + ADR-0014 결정 3 + Amendment #2 §C). PLAN.md 9절 '🎨 그림' 행은 본 페이즈에서 행 생략(ADR-0016 결정 1-가)으로 처리하나, 장기적으로 illustrator 데이터 입수 경로 확립 필요. AttributionBox 4요소 충족도 향상에 기여하나 본 페이즈 법적 충분성에는 영향 없음(H1 제목 + 저작자·라이선스·원본URL로 4요소 충족)",
+        "candidate_investigation": [
+          "(a) sync_book_dash.py가 meta.yml illustrator 필드를 적재하지 않는지 코드 진단 — Book Dash meta.yml에 illustrator가 있는데 누락이라면 sync 보강만으로 해결",
+          "(b) GDL API 응답에 illustrator 필드가 부재한지 외부 API 진단 — ADR-0014 §2.1에서 illustrator 부재 확인됐으나 GDL 응답 스키마 갱신 가능성 모니터링",
+          "(c) 외부 enrichment 채택 시 (Open Library API, ISBN DB 등) 비용·정확도 평가"
+        ],
+        "candidate_fix": "별도 sync 보강 phase 신설 (예: phase-15 content-illustrator-enrichment). 본 페이즈는 ADR-0016 결정 1-가(행 생략) 유지",
+        "deferred_to": "별도 sync 보강 phase (phase-14 이후 또는 phase-13b Admin에서 수동 큐레이션 트리거)",
+        "blocker": false
+      },
+      {
+        "id": "F9",
+        "title": "AttributionBox 박제 문안 법무 검토",
+        "discovered_at": "phase-11 plan 단계 외부 검토 (2026-05-21)",
+        "location": "docs/adr/0016-illustrator-author-publisher-attributionbox.md §결정 3 (CC BY 4.0 4요소 충족 메커니즘 박제)",
+        "impact": "ADR-0016 결정 3이 'H1 제목 + AttributionBox = 통합 어트리뷰션 단위' 가정으로 CC BY 4.0 4요소 충족을 박제한다. 이 가정의 법적 타당성은 기술 검토만으로 확정 불가 — 변호사 검토에서 'reasonable to the medium' 원칙 해석에 이견 가능. 베타 출시 직전 1회 검토로 박제 문안 신뢰도 보강",
+        "candidate_validation": "phase-14 베타 직전 변호사 검토 단계에서 ADR-0016 §결정 3 박제 문안(B.2 결정 3 그대로) + license-rules.md §5 전체를 함께 검토. 이견 시 ADR-0016 갱신 + AttributionBox 표시 항목 재설계(예: 제목 행 추가 또는 안내 문구 보강)",
+        "deferred_to": "phase-14 베타 직전 법무 검토",
+        "blocker": false
+      }
+    ]
+  },
+
+  "diagnosis": {
+    "measured_at": "2026-05-21 phase-11 plan 단계 (외부 검토 직후)",
+    "books_table_columns": {
+      "id": "UUID PK (gen_random_uuid()) — /book/[id] 라우팅 키",
+      "title": "TEXT NOT NULL — H1 표시",
+      "author": "TEXT (NULL 허용) — Book Dash 100% 존재 / GDL은 publisher 적재 상태",
+      "illustrator": "TEXT (NULL 허용) — 활성 책 896/896 100% NULL (ADR-0013 §7 실측)",
+      "level": "INT CHECK (1-5) — 메타 칩",
+      "age_min·age_max": "INT NULL — 메타 칩",
+      "language": "TEXT DEFAULT 'en' — 메타 칩",
+      "cover_url": "TEXT — BookCoverHero 표지",
+      "original_url": "TEXT NOT NULL — AttributionBox 원본 링크",
+      "license": "TEXT NOT NULL CHECK — AttributionBox 라이선스 행",
+      "attribution_text": "TEXT NOT NULL — Hard Rule 1, 표준 포맷 (license-rules.md §4.2)",
+      "source_platform": "TEXT NOT NULL — '출처' 행 + GDL 분기 판별",
+      "source_id": "TEXT — 외부 추적성 (라우팅 미사용)",
+      "is_active": "BOOLEAN NOT NULL DEFAULT true — 비활성 시 노출 금지"
+    },
+    "phase_10_carryover": {
+      "blacklist_4_uuids": "lib/landing/popular-books.ts BOOK_DASH_404_SOURCE_IDS — phase-11에서 app/book/[id]/page.tsx에서 재사용(ADR-0014 Amendment #4)",
+      "active_child_helper": "lib/home/active-child.ts — phase-11은 활성 자녀 미의존(책 상세는 자녀 무관). 단 향후 즐겨찾기 phase-13 통합 시 재사용",
+      "card_label_publisher": "phase-10 RecommendationList·CategoryGrid 카드 라벨에 publisher 노출 박제 유지(ADR-0014 Amendment #2 §D + 본 페이즈 ADR-0016 결정 2 보강 2)"
+    },
+    "design_system_tokens": {
+      "attribution_box_section_7_1": "박제 완료 — surface-2 배경·outline 1px·radius-md·padding 16px 20px·body-sm 13px 600·caption 12px·tertiary 링크·tertiary-container 라이선스 배지",
+      "card_section_6_2": "BookCoverHero·BookMeta 컨테이너 재사용",
+      "button_section_6_1": "ReadButton primary 변형 재사용",
+      "level_color_mapping_1_8": "BookMeta 레벨 칩 — phase-10 LevelSelector와 동일 매핑"
+    },
+    "intent_doc_screen_03_book_detail": "CP1에서 신규 작성 (선행: screen-02-home.md 패턴)",
+    "adr_0016": "CP1에서 신규 작성 — 옵션 (a) + 결정 3건(illustrator 행 생략·publisher 분리 표시·5요소 사유 박제)",
+    "adr_0014_amendment_4": "CP1에서 ADR-0014 본문 끝에 추가 — 블랙리스트 4 UUID 책 상세 차단 + 404"
+  },
+
+  "references": [
+    "claude.md 2절 Hard Rule 1·3·6·8·10, 5절 라우팅(Screen 03 + AttributionBox)",
+    "docs/adr/0016-illustrator-author-publisher-attributionbox.md (본 페이즈 핵심 결정)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md Amendment #4 (블랙리스트 책 상세 차단)",
+    "docs/adr/0013-cover-attribution-policy.md §7 (illustrator phase-11 진단 트리거 — 본 페이즈 ADR-0016 결정 1-가로 해소)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md 결정 3·6 + Amendment #2 §D (illustrator·author=publisher 통합 결정 트리거 — 본 페이즈 ADR-0016 결정 1·2로 해소)",
+    "docs/adr/0015-screen-02-category-strategy.md (phase-10 카테고리 매핑 패턴 — DB 무변경 정합 인용)",
+    "docs/intent/screen-03-book-detail.md (본 페이즈 의도 문서)",
+    "docs/intent/screen-02-home.md (선행 패턴)",
+    "docs/design-system.md §1·§3·§6.1·§6.2·§7.1 (Card·Button·AttributionBox 토큰)",
+    "docs/guidelines/license-rules.md §4·§5·§7.2 (CC BY 4.0 4요소·AttributionBox·외부 링크 안전 속성)",
+    "lib/landing/popular-books.ts (BOOK_DASH_404_SOURCE_IDS 재사용 — ADR-0014 Amendment #4)",
+    "supabase/migrations/001_initial_schema.sql (books·favorites — 조회 베이스, 즐겨찾기는 phase-13)",
+    "PLAN.md 9절 Week 6 Screen 03 명세"
+  ]
+}

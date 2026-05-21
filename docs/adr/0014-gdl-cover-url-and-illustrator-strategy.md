@@ -280,3 +280,74 @@ phase-10에서는 옵션 B로 가지 않는다 — 사용처 2개로 옵션 A의
 ---
 
 *Amendment #3 끝.*
+
+---
+
+## Amendment #4 (2026-05-21 phase-11 CP1)
+
+phase-11 plan 단계 외부 검토(2026-05-21)에서 블랙리스트 4 UUID의 책 상세 직접 접속(`/book/[id]`) 차단 정책이 박제됐다(phase-11 cp1_decisions d5). ADR-0016과 동시 작성된다. 본 Amendment는 결정 2(랜딩 쿼리 측 블랙리스트)의 적용 범위를 비-랜딩 표면 1건(`/book/[id]`)으로 확장한다.
+
+### 결정 — 책 상세 직접 접속 시 차단 + 404
+
+`app/book/[id]/page.tsx`(phase-11 CP3-b 신규)는 다음 분기를 갖는다:
+
+```ts
+// 의사 코드
+import { BOOK_DASH_404_SOURCE_IDS } from "@/lib/landing/popular-books";
+import { notFound } from "next/navigation";
+
+const book = await getBookById(params.id);
+if (!book) notFound();
+if (book.source_platform === "book_dash" && BOOK_DASH_404_SOURCE_IDS.includes(book.source_id)) {
+  notFound();
+}
+```
+
+**차단 방식**: Next.js `notFound()` 호출로 `app/book/[id]/not-found.tsx`(phase-11 CP3-b 신규) 공통 404 페이지 렌더. 사용자는 차단 사유를 구분 인지하지 못한다(블랙리스트 vs books 행 NULL vs RLS 차단 모두 동일 UX) — 보안 + UX 일관성.
+
+### 사유
+
+- **비-랜딩 표면 직접 접속 보호**: 블랙리스트 4 UUID 책은 원본 GitHub Pages에서 404 응답하므로 책 상세에 도달해도 표지·메타 외에는 사용자에게 가치 0건. `/book/{uuid}` 직접 URL 입력 또는 외부 링크(예: 검색엔진 캐시·SNS 공유)에서도 깨진 책 노출 방지.
+- **표면 일관성**: 랜딩(결정 2) · 홈 추천(Amendment #3 인벤토리) · 홈 카테고리 결과(Amendment #3 인벤토리) · 책 상세(본 Amendment) 4개 표면에서 동일 4 UUID가 차단되어 운영 단일 진실 공급원 정합.
+- **사용자 보고 경로 보장**: 차단된 책 표지가 노출되어 학부모가 "이 책을 클릭했더니 깨졌어요" 보고하는 경로가 사라진다 — 즉 사용자 경험 일관성 ↑.
+
+### 영향 범위 (Amendment #4 추가 시점)
+
+| 파일 | 사용 방식 | 단계 |
+|---|---|---|
+| `lib/landing/popular-books.ts` | 정의 + 사용 (`.neq('source_id', ...)`) | phase-09b CP3 완료 |
+| `lib/home/recommendations.ts` | import + 추천 쿼리에서 `.neq('source_id', ...)` 적용 | phase-10 CP2-b 완료 |
+| `lib/home/categories.ts` | import + `getCategoryBooks` 카테고리 쿼리에서 `.neq('source_id', ...)` 적용 | phase-10 CP2-b 완료 |
+| `app/book/[id]/page.tsx` | import + `BOOK_DASH_404_SOURCE_IDS.includes(book.source_id)` 비교 + `notFound()` 호출 | phase-11 CP3-b 신규 |
+
+→ 사용처가 4개 표면이 됐다. **Amendment #3에서 옵션 B(`lib/shared/blacklist.ts` 이동) 트리거 임계로 박제한 "3개 이상" 조건을 본 Amendment #4 추가로 도달한다.** 단, phase-11에서는 옵션 B 이동을 동반하지 않는다 — 본 CP1 범위는 책 상세 차단 정책 박제이며, 상수 위치 변경은 별도 리팩토링 작업으로 분리한다(추가 트리거 박제).
+
+### 옵션 B 이동 트리거 활성화 (Amendment #3 후속)
+
+phase-11 CP3-b 시점에서 `lib/landing/popular-books.ts`의 `BOOK_DASH_404_SOURCE_IDS`를 import하는 표면이 4개(랜딩 + 추천 + 카테고리 + 책 상세)에 도달한다. Amendment #3의 옵션 B 임계 "사용처 3개 이상"이 충족됐다. 다음 시점에 옵션 B 이동을 검토한다:
+
+- phase-11 종료 후 별도 리팩토링 phase (또는 phase-12 진입 전 정합 정리 단계)
+- 옵션 B 이동 시 Amendment #5로 박제: 이동 사유 + 사용처 인벤토리 + import 경로 변경 1줄씩 4 파일
+
+### v 검증 (phase-11)
+
+`tasks/phase-11-screen-03-book-detail.json` v16(블랙리스트 4 UUID 직접 접속 시 404) 측정. 4 UUID 각각 `/book/{uuid}` 직접 접속 시 not-found.tsx 렌더 확인. 통과 시 본 Amendment 정책 발동 입증.
+
+### 슬러그 ↔ UUID 매핑 (Amendment #2 §B 인용)
+
+Amendment #2 §B의 표를 그대로 인용한다(별도 보강 없음):
+
+| 슬러그 | DB `source_id` (UUID) |
+|---|---|
+| `the-lion-who-wouldnt-try` | `9ca00316-fe46-11e5-86aa-5e5517507c66` |
+| `i-can-dress-myself` | `9c9eb452-fe46-11e5-86aa-5e5517507c66` |
+| `hugs-in-the-city` | `9c9eb574-fe46-11e5-86aa-5e5517507c66` |
+| `katiitis-song` | `9c9fffba-fe46-11e5-86aa-5e5517507c66` |
+
+§6 후속 과제 2(Book Dash 4 슬러그 정상화 시 블랙리스트 축소)는 본 Amendment 추가로 영향 범위가 1개 표면 더 확장됐을 뿐, 단일 진실 공급원 갱신 시 4개 표면 전파 정합은 동일하게 유지된다.
+
+본 Amendment #4는 §1~§7 본문과 Amendment #1·#2·#3을 변경하지 않는다.
+
+---
+
+*Amendment #4 끝.*
