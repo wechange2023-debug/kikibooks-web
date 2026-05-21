@@ -6,19 +6,19 @@
   "created_at": "2026-05-21",
 
   "cp_progress": {
-    "current_cp": "CP3-b-page-integration",
-    "last_successful_cp": "CP3-a-components",
+    "current_cp": "CP4-verify-and-meta",
+    "last_successful_cp": "CP3-c-responsive",
     "last_successful_at": "2026-05-21",
     "completed_cps": [
       "CP1-spec-intent-adr",
       "CP2-a-spec-update",
       "CP2-b-implementation",
       "CP2-c-verify-meta",
-      "CP3-a-components"
+      "CP3-a-components",
+      "CP3-b-page-integration",
+      "CP3-c-responsive"
     ],
     "pending_cps": [
-      "CP3-b-page-integration",
-      "CP3-c-responsive",
       "CP4-verify-and-meta"
     ]
   },
@@ -191,10 +191,15 @@
     {
       "id": "CP3-ui",
       "description": "UI 컴포넌트 5종 + page.tsx 통합 + 반응형 점검. 3 sub-step.",
+      "status": "success",
+      "completed_at": "2026-05-21",
       "sub_steps": [
         {
           "id": "CP3-a-components",
           "description": "components/home/ 5종 개별 신규: GreetingCard · RecommendationList · CategoryGrid · LevelSelector · StreakChart. design-system §1.4·§1.8·§3·§6.x·§7.4 토큰 100% 사용. raw HEX 0건. 카테고리 결과 권수 캡(24권) + 결과 0건 폴백 UI + 스트릭 빈 상태 폴백 UI 박제. 카드 클릭은 phase-10에서 비활성(href 없음 또는 disabled). 완료 후 커밋 1건 + 멈춤·보고.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "commits": ["4321e06 (spec 갱신 D11~D19)", "74dee8b (컴포넌트 5종)"],
           "files": [
             "components/home/greeting-card.tsx",
             "components/home/recommendation-list.tsx",
@@ -206,13 +211,48 @@
         {
           "id": "CP3-b-page-integration",
           "description": "app/home/page.tsx 정식 통합. force-dynamic 적용. 온보딩 가드(자녀 0명 시 redirect('/onboarding')) 페이지 컴포넌트 안에서 처리. `/home?cat={slug}` 쿼리 파라미터 해석 + 카테고리 결과 섹션 확장 표시. middleware.ts·routes.ts 무변경. 완료 후 커밋 1건 + 멈춤·보고.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "commits": ["3b7cf59 (spec 갱신 D20~D24)", "98b68cb (copy.ts + page.tsx)"],
+          "implementation_notes": [
+            "lib/home/copy.ts 수정: HomeCopy.categories.comingSoonTemplate 필드 추가 (D23 박제)",
+            "app/home/page.tsx 신설: force-dynamic + searchParams 동기 props(D20) + 자녀 0명 가드(D4) + Promise.all 병렬 fetch + 안내 카드(D21·D24)",
+            "v3 build EXIT=0 첫 통과 — CP2-c deferred 검증 완료. /home: 1.68 kB / 112 kB First Load JS, ƒ Dynamic 라우트 정상 등록"
+          ],
           "files": [
-            "app/home/page.tsx"
+            "app/home/page.tsx",
+            "lib/home/copy.ts"
           ]
         },
         {
           "id": "CP3-c-responsive",
-          "description": "3 viewport(390px / 768px / 1280px) 스냅샷 점검. 모바일 가로 스크롤 / 태블릿+ 5권 한 줄 등 §5.2·§5.3 명세 정합 확인. v13 측정. 완료 후 커밋 1건 + 멈춤·보고.",
+          "description": "3 viewport(390px / 768px / 1280px) 스냅샷 점검 + 사용자 클릭 검증 v6~v13. 모바일 가로 스크롤 / 태블릿+ 5권 한 줄 등 §5.2·§5.3 명세 정합 확인. 통과·deferred 박제. 발견된 후속 트리거 F1~F7은 phase_10_follow_up_triggers 필드에 별도 박제.",
+          "status": "success",
+          "completed_at": "2026-05-21",
+          "verification_result": {
+            "scenarios_pre_check": "pass (시나리오 A 비로그인 → /login, 시나리오 B 자녀 0명 → /onboarding [D4 가드 검증], 시나리오 C 정상 렌더 5 구성요소 모두 표시)",
+            "v6_1_display_name_present": "deferred (현재 테스트 계정에서 display_name 있는 케이스 미진행 — F5 트리거)",
+            "v6_2_display_name_null_fallback": "pass (시나리오 C에서 '쵸은우 부모님' 표시 확인 — d1 NULL 폴백 작동)",
+            "v7_1_blocklist": "pass (v8 부수 검증, Book Dash 4 UUID 노출 0건)",
+            "v7_2_option_y": "pass (v8 부수 검증, GDL + Book Dash 양쪽 source_platform 노출)",
+            "v7_3_level_fallback_pm2": "deferred (stage 1에서 5권 충족하여 ±2 폴백 자연 발동 안 됨 — F6 트리거)",
+            "v7_4_unread_filter": "pass (v8 셔플 다양성으로 미독 필터 작동 확인)",
+            "v8_category_grid_routing": "pass (8/8 카테고리 카드 클릭 → /home?cat={slug} URL 변경 + 안내 카드 표시. D24 invalid slug 너그러운 무시 정상)",
+            "v9_1_optimistic_recompute": "pass (Level 5 → Level 3 옵티미스틱 활성 컬러 즉시 변경 + 추천 5권 자동 재계산)",
+            "v9_2_consecutive_change": "pass (Lv.3 → Lv.1 → Lv.5 연속 변경 안정성 확인 — server action + revalidatePath 정상)",
+            "v10_1_streak_empty_fallback": "pass (시나리오 C 신규 자녀 케이스에서 '오늘부터 시작해볼까요?' 빈 상태 카드 표시)",
+            "v10_2_streak_completed_data": "deferred (reading_sessions 0건이라 완독 막대 시각 검증 미진행 — F7 트리거, phase-12 자연 발생 데이터로 검증)",
+            "v11_hard_rule_10_raw_hex": "pass (grep '#[0-9a-fA-F]{3,8}' in app/home/·components/home/·lib/home/ — 3 디렉토리 모두 0건)",
+            "v12_phase_11_blocked": "pass (tasks/_index.json line 227~229 phase-11 depends_on: ['phase-10-screen-02-home'] 명시. phase-10 status 'pending'이므로 phase-11 진입 차단 정상)",
+            "v13_responsive_three_viewports": "pass (모바일 390px + 태블릿 768px 완벽 통과. 데스크탑 1280px 미세 어색함 발견 — F2 트리거, 베타 차단 사유 아님)",
+            "console_errors": "0건 (LCP priority warning 1건만 — F1 트리거)",
+            "notes": [
+              "사용자 액션 검증 7건 통과 (v6-2 / v7-1·2·4 / v8 / v9-1·2 / v10-1)",
+              "Claude Code 자동 검증 2건 통과 (v11 / v12)",
+              "Deferred 3건은 후속 트리거 F5·F6·F7로 박제 (테스트 환경 한계 또는 phase 자연 발생 데이터 필요)",
+              "발견 후속 트리거 F1~F7은 phase_10_follow_up_triggers 필드에 박제"
+            ]
+          },
           "files": []
         }
       ]
@@ -345,6 +385,87 @@
       { "id": "d22-error-boundary-deferred", "description": "Error boundary 신설 미채택. app/error.tsx·app/home/error.tsx 신설 안 함. lib/home/* 함수 throw는 Next.js 기본 에러 페이지로 위임. 사유: 본 CP3-b 범위 집중 + lib/home 함수의 throw 메시지가 이미 명시 한국어로 디버깅 가능. phase-14 베타 배포 직전 error boundary 정책 통합 결정.", "ref": "phase-14 베타 배포 결정 (예정)" },
       { "id": "d23-home-copy-coming-soon-template", "description": "안내 카드 카피 박제 = lib/home/copy.ts의 HomeCopy 인터페이스에 categories.comingSoonTemplate: string 필드 추가 + HOME_COPY 정본에 '{label} 카테고리 결과는 곧 추가될 예정이에요.' 박제. {label} 치환은 page.tsx에서 CATEGORIES에서 찾은 categoryDef.labelKo로(replace 1회). ADR-0012 결정 2(카피 단일 출처) 정합. phase-13b에서 결과 페이지 구현 시 본 카피는 제거(또는 0건 폴백 메시지로 재활용).", "ref": "lib/home/copy.ts (CP3-b 수정) + app/home/page.tsx (CP3-b)" },
       { "id": "d24-invalid-search-params-tolerant-ignore", "description": "잘못된 searchParams.cat 처리 = 너그러운 무시. isCategorySlug() 검증 실패 시 안내 카드 미표시 + 정상 홈 화면 그대로 렌더. redirect·404·에러 표시 없음. 사유: 사용자 URL 직접 입력 실수에도 페이지 작동 보장 + 빈 쿼리(undefined)와 동일 경로로 처리.", "ref": "app/home/page.tsx (CP3-b) + lib/home/categories.ts isCategorySlug 재사용" }
+    ]
+  },
+
+  "phase_10_follow_up_triggers": {
+    "context": "CP3-c 사용자 클릭 검증(2026-05-21)에서 발견되어 phase-10에서 해결하지 않고 후속 phase로 이연한 7건. F1~F7은 모두 베타 차단 사유가 아니며 phase-10 verification 통과 기준에 영향을 주지 않는다. 각 트리거는 발견 위치 + 이연 시점 + 검증 baseline을 박제한다.",
+    "triggers": [
+      {
+        "id": "F1",
+        "title": "next/image LCP priority warning",
+        "discovered_at": "CP3-c v9-1 콘솔 warning",
+        "location": "components/home/recommendation-list.tsx 첫 카드 (가로 스크롤 첫 권)",
+        "impact": "Lighthouse 성능 점수 baseline — Largest Contentful Paint 후보 이미지에 priority 미지정",
+        "candidate_fix": "첫 1~2장에 priority={true} 추가 또는 fetchPriority='high'",
+        "deferred_to": "phase-14 베타 직전 통합 성능 점검 (viewport별 LCP 재측정)",
+        "blocker": false
+      },
+      {
+        "id": "F2",
+        "title": "데스크탑 1280px 추천 5권 좌측 정렬 어색함",
+        "discovered_at": "CP3-c v13-1 데스크탑 스냅샷",
+        "location": "components/home/recommendation-list.tsx 가로 스크롤 컨테이너",
+        "impact": "데스크탑 viewport에서 5권 카드 그룹이 좌측 정렬되어 우측에 빈 여백 과다 발생. 모바일·태블릿은 정상",
+        "candidate_fixes": [
+          "A: 중앙 정렬 (justify-center 적용)",
+          "B: 1280px+에서 grid 5열 분기 (overflow 제거)",
+          "C: 카드 컨테이너 max-width 제한"
+        ],
+        "deferred_to": "phase-11 또는 phase-13b 미세 조정 phase",
+        "blocker": false
+      },
+      {
+        "id": "F3",
+        "title": "Sister! Sister! 시리즈 다양성 부재",
+        "discovered_at": "CP3-c v9-2 Level 4·5 비교",
+        "location": "lib/home/recommendations.ts pickBooksAtLevelRange 셔플 로직",
+        "impact": "같은 시리즈(또는 같은 author) 다수 권이 동시 추천 5권에 등장 가능 — UX 다양성 저하",
+        "candidate_fix": "같은 author·시리즈 다양성 제약 (예: 같은 author는 1권 이내) 또는 시리즈 dedup 후 셔플",
+        "deferred_to": "phase-11 또는 별도 추천 알고리즘 phase",
+        "blocker": false
+      },
+      {
+        "id": "F4",
+        "title": "거의 같은 제목 책 dedup 검토",
+        "discovered_at": "CP3-c v9-2",
+        "location": "DB books 테이블 (lib/home 무관, sync 또는 컨텐츠 큐레이션 영역)",
+        "impact": "'Sister! Sister! Where Does the Sun Go...' vs 'Sister Where Does the Sun Go at Night?' 등 유사 제목 책이 별도 행으로 적재됨",
+        "hypothesis": "같은 시리즈의 언어/버전 변형 또는 sync 시점 dedup 누락 (phase-09b dedup 로직 점검 트리거)",
+        "candidate_fix": "phase-09b dedup 로직 보강 + 제목 유사도(Levenshtein 등) 점검 + 큐레이션 측 결정",
+        "deferred_to": "phase-13b 컨텐츠 큐레이션 또는 별도 phase",
+        "blocker": false
+      },
+      {
+        "id": "F5",
+        "title": "v6-1 display_name 있음 케이스 미진행",
+        "discovered_at": "CP3-c v6 단계",
+        "location": "components/home/greeting-card.tsx withName 분기 (buildGreeting d1)",
+        "impact": "현재 테스트 계정 display_name = NULL이라 nameOnly 폴백만 시각 검증. withName 케이스는 코드 분기로만 검증",
+        "candidate_validation": "phase-14 베타 테스터 자연 검증 또는 운영자가 임의로 profiles.display_name 설정 후 재시도",
+        "deferred_to": "phase-14 베타 테스터 자연 검증",
+        "blocker": false
+      },
+      {
+        "id": "F6",
+        "title": "v7-3 ±2 폴백 미발동",
+        "discovered_at": "CP3-c v7-3 시도",
+        "location": "lib/home/recommendations.ts stage 1·2 분기",
+        "impact": "stage 1(±1)에서 5권 충족하여 ±2 폴백이 자연 발동 안 됨. 코드 분기 자체는 검증된 명시 분기이나 실데이터 사다리 발동 미검증",
+        "candidate_validation": "책 적재 부족 환경(임시 is_active=false로 ±1 책 부족 강제) 또는 phase-13b 정확도 측정 시 baseline",
+        "deferred_to": "책 적재 부족 시점 자연 발동 또는 phase-13b 정확도 측정 시점",
+        "blocker": false
+      },
+      {
+        "id": "F7",
+        "title": "v10-2 완독 데이터 시각 검증 미진행",
+        "discovered_at": "CP3-c v10-2",
+        "location": "components/home/streak-chart.tsx 막대 채움 분기",
+        "impact": "reading_sessions 0건이라 빈 상태(v10-1)만 검증. 완독 막대 정상 표시 + 오늘 dot + design-system §7.4 토큰 매핑은 시각 미검증",
+        "candidate_validation": "phase-12 책 뷰어 통합 시 자연 발생 reading_sessions 데이터로 검증",
+        "deferred_to": "phase-12 책 뷰어 통합 시 자연 발생 데이터",
+        "blocker": false
+      }
     ]
   },
 
