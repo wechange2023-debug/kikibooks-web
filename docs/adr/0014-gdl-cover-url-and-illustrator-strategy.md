@@ -351,3 +351,50 @@ Amendment #2 §B의 표를 그대로 인용한다(별도 보강 없음):
 ---
 
 *Amendment #4 끝.*
+
+---
+
+## Amendment #5 (2026-05-22 phase-12 CP2)
+
+phase-12 책 뷰어(`/book/[id]/read`)가 블랙리스트 4 UUID를 차단하는 **5번째 표면**으로 합류한다(ADR-0017 D1 iframe 임베드가 블랙리스트 책의 깨진 GitHub Pages를 로드하지 않도록 4-가드 3번 차단 상속). Amendment #3·#4가 박제한 옵션 B 임계("사용처 3개 이상")가 재차 확인되어, 본 Amendment에서 옵션 B(상수 단일 파일 이동)를 실행한다.
+
+### 결정 — `BOOK_DASH_404_SOURCE_IDS`를 `lib/shared/blacklist.ts`로 이동
+
+phase-09b부터 `lib/landing/popular-books.ts`에 정의·export돼 4표면이 import하던 `BOOK_DASH_404_SOURCE_IDS` 상수를 공용 모듈로 추출한다.
+
+1. **`lib/shared/blacklist.ts` 신규** — `BOOK_DASH_404_SOURCE_IDS` 상수 + JSDoc(현 `popular-books.ts`의 박제 주석 — 슬러그↔UUID 매핑·ADR 인용 — 이전).
+2. **`lib/landing/popular-books.ts`** — import로 전환, 상수 본문 제거(`.neq('source_id', ...)` 사용 코드는 유지).
+3. **`lib/home/recommendations.ts` · `lib/home/categories.ts` · `app/book/[id]/page.tsx`** — import 경로를 `@/lib/shared/blacklist`로 변경(각 1줄).
+4. **`app/book/[id]/read/page.tsx`(phase-12 CP3-a 신규)** — 5번째 표면. `@/lib/shared/blacklist`에서 import + `notFound()` 차단(책 상세 가드 상속).
+
+동작 동치 리팩토링이다 — 4표면의 기존 차단 거동은 변하지 않는다(`tasks/phase-12-screen-04-reader.json` v6 회귀 0 검증).
+
+### 영향 범위 (5표면 인벤토리)
+
+| 파일 | 사용 방식 | 단계 |
+|---|---|---|
+| `lib/shared/blacklist.ts` | 정의 (상수 + JSDoc) | phase-12 CP2 신규 (이동 후 단일 진실 공급원) |
+| `lib/landing/popular-books.ts` | import + `.neq('source_id', ...)` | phase-09b → CP2 import 전환 |
+| `lib/home/recommendations.ts` | import + `.neq('source_id', ...)` | phase-10 → CP2 경로 변경 |
+| `lib/home/categories.ts` | import + `.neq('source_id', ...)` | phase-10 → CP2 경로 변경 |
+| `app/book/[id]/page.tsx` | import + `.includes(book.source_id)` + `notFound()` | phase-11 → CP2 경로 변경 |
+| `app/book/[id]/read/page.tsx` | import + `.includes(book.source_id)` + `notFound()` | phase-12 CP3-a 신규 (5번째 표면) |
+
+→ 정의 1 + 사용 5표면. 단일 진실 공급원이 `lib/shared/blacklist.ts`로 확립되어, §6 후속 과제 2(슬러그 정상화 시 블랙리스트 축소)는 본 파일 1곳 갱신으로 6 파일 전파된다.
+
+### 슬러그 ↔ UUID 매핑 (Amendment #2 §B 인용)
+
+Amendment #2 §B의 표를 그대로 인용한다(별도 보강 없음). 이동 후 본 매핑 주석은 `lib/shared/blacklist.ts`에 위치한다.
+
+| 슬러그 | DB `source_id` (UUID) |
+|---|---|
+| `the-lion-who-wouldnt-try` | `9ca00316-fe46-11e5-86aa-5e5517507c66` |
+| `i-can-dress-myself` | `9c9eb452-fe46-11e5-86aa-5e5517507c66` |
+| `hugs-in-the-city` | `9c9eb574-fe46-11e5-86aa-5e5517507c66` |
+| `katiitis-song` | `9c9fffba-fe46-11e5-86aa-5e5517507c66` |
+
+본 Amendment #5는 §1~§7 본문 및 Amendment #1~#4를 변경하지 않는다.
+
+---
+
+*Amendment #5 끝.*

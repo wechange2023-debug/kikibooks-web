@@ -1,0 +1,437 @@
+{
+  "phase_id": "phase-12-screen-04-reader",
+  "name": "Screen 04 책 뷰어 (HTML iframe 단일 경로)",
+  "category": "Phase 1",
+  "version": "1.0",
+  "created_at": "2026-05-22",
+  "depends_on": [
+    "phase-11-screen-03-book-detail"
+  ],
+
+  "cp_progress": {
+    "phase_status": "pending",
+    "phase_completed_at": null,
+    "current_cp": "CP2-blacklist-extract-and-select-expand",
+    "last_successful_cp": "CP1-spec-intent-adrs",
+    "completed_cps": [
+      "CP1-spec-intent-adrs"
+    ],
+    "pending_cps": [
+      "CP2-blacklist-extract-and-select-expand",
+      "CP3-reader-ui",
+      "CP4-verify-and-meta"
+    ],
+    "sub_step_structure": {
+      "CP3-reader-ui": [
+        "CP3-a-reader-page-and-iframe",
+        "CP3-b-finish-button-and-session"
+      ]
+    }
+  },
+
+  "summary": "phase-11에서 자리만 잡았던 ReadButton(/book/[id]/read)이 본 페이즈에서 정식 라우팅으로 자연 활성화된다. 실데이터 측정(2026-05-22)에서 활성 896권 전부 content_type='html'(epub·h5p·pdf 0건)임이 확인되어, PLAN의 3분기(html/epub/h5p)는 베타에서 iframe 단일 경로로 수렴한다. content_url 2종(bookdash.github.io / content.digitallibrary.io) 모두 HEAD 진단에서 X-Frame-Options·CSP frame-ancestors 부재 → iframe 직접 임베드 가능. cross-origin 한계로 페이지 단위 진도 추적은 포기하고, 완독은 명시 '다 읽었어요' 버튼 단독으로 감지한다. reading_sessions는 진입 시 INSERT(미완료 세션 재사용 가드)·완독 클릭 시 UPDATE 양쪽 활성화한다(자동 페이지 갱신 모델 폐기로 dry-run 박제 해소). points·badges·별 애니메이션은 phase-13 전속(본 페이즈 children·child_badges 쓰기 0건). CP1에서 ADR-0017(뷰어 아키텍처) 신규 + ADR-0014 Amendment #5(블랙리스트 lib/shared 추출) + ADR-0016 Amendment #1(어트리뷰션 표시 범위 책 뷰어 확장) 작성 후 코드 0건. DB 스키마 변경 0건(Hard Rule 8). Hard Rule 1·3·6·8·10 무위반.",
+
+  "goals": [
+    "/book/[id]/read 정식 페이지 구현 (현재 부재 → ReadButton 자연 활성화)",
+    "HtmlReader — content_type='html' iframe 단일 경로 실구현 (Epub/H5p는 분기 골격만, ADR-0017 D1·D2)",
+    "책 뷰어 상단 미니 어트리뷰션 바 — author/publisher + CC BY 4.0 + 출처 링크 (ADR-0016 Amendment #1, URL 직접 진입 시 어트리뷰션 누락 0건)",
+    "완독 명시 버튼 + server action — reading_sessions INSERT(진입·재사용 가드)+UPDATE(완독) → /celebrate redirect",
+    "F10 옵션 B 실행 — BOOK_DASH_404_SOURCE_IDS를 lib/shared/blacklist.ts로 추출, 5표면 import 정합 (ADR-0014 Amendment #5)",
+    "getBookById SELECT에 content_url·content_type 추가 + Book 인터페이스 확장 (DB 무변경, fetch 컬럼만)",
+    "/book/[id]/celebrate minimal placeholder — phase-13 정식 구현 착지점 확보",
+    "iframe 보안 — sandbox + CSP frame-src 2호스트 화이트리스트 (middleware.ts 보강)",
+    "ADR-0017 신규 + ADR-0014 Amendment #5 + ADR-0016 Amendment #1 작성",
+    "Hard Rule 1·3·6·8·10 무위반",
+    "phase-13 진입 차단 요소 0건"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 1 — books.attribution_text NOT NULL 트리거 무변경 (books SELECT만, INSERT/UPDATE 0건). 미니 어트리뷰션 바는 attribution_text 표준 포맷 기반",
+    "Hard Rule 3 — CC BY-NC/ND 콘텐츠 노출 0건. iframe src는 books.content_url(이미 cc-by/sa 화이트리스트 통과 적재분)만",
+    "Hard Rule 6 — server action·Server Component에서만 SUPABASE_SECRET_KEY 사용. 완독 server action은 본인 세션 클라이언트(RLS) 사용, 클라이언트 노출 0건",
+    "Hard Rule 8 — DB 스키마 변경 0건. supabase/migrations 신규 0건. reading_sessions는 기존 001 테이블에 RLS 정책대로 INSERT/UPDATE만. getBookById SELECT 컬럼 추가는 스키마 무변경",
+    "Hard Rule 9 — YouTube 임베드 0건. iframe은 books.content_url(Book Dash GitHub Pages · GDL digitallibrary.io)만, 출판사 공식 채널 외 영상 0건",
+    "Hard Rule 10 — 모든 색·간격·폰트는 design-system semantic 토큰만. raw HEX 0건. Reader 토큰은 design-system §7.2 Reader 매핑 사용"
+  ],
+
+  "scope_in": [
+    "tasks/phase-12-screen-04-reader.json (CP1 신규 — 본 파일)",
+    "docs/intent/screen-04-reader.md (CP1 신규)",
+    "docs/adr/0017-book-reader-architecture.md (CP1 신규)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md (CP1 수정 — Amendment #5)",
+    "docs/adr/0016-illustrator-author-publisher-attributionbox.md (CP1 수정 — Amendment #1)",
+    "lib/shared/blacklist.ts (CP2 신규 — BOOK_DASH_404_SOURCE_IDS 추출 + JSDoc 이전)",
+    "lib/landing/popular-books.ts (CP2 수정 — import 전환, 상수 본문 제거)",
+    "lib/home/recommendations.ts (CP2 수정 — import 경로 1줄)",
+    "lib/home/categories.ts (CP2 수정 — import 경로 1줄)",
+    "app/book/[id]/page.tsx (CP2 수정 — import 경로 1줄)",
+    "lib/book/detail.ts (CP2 수정 — getBookById SELECT에 content_url·content_type 추가 + Book 인터페이스 확장)",
+    "lib/book/copy.ts (CP3 수정 — 미니 어트리뷰션 바 + 완독 버튼 + celebrate 카피 추가)",
+    "app/book/[id]/read/page.tsx (CP3-a 신규 — 4-가드 + 블랙리스트 5번째 차단 상속 + HtmlReader 통합)",
+    "components/book/html-reader.tsx (CP3-a 신규 — iframe + sandbox + onError/타임아웃 폴백, 세션 시작 트리거)",
+    "components/book/reader-attribution-bar.tsx (CP3-a 신규 — 미니 어트리뷰션 바, buildAttributionRows 재사용)",
+    "middleware.ts (CP3-a 수정 — CSP frame-src 화이트리스트 보강, phase-07 updateSession 무변경 유지)",
+    "components/book/finish-button.tsx (CP3-b 신규 — 'use client' 완독 버튼)",
+    "lib/book/reading-session.ts (CP3-b 신규 — startReadingSession·completeReadingSession server action)",
+    "app/book/[id]/celebrate/page.tsx (CP3-b 신규 — minimal placeholder)",
+    "tasks/_index.json (CP4 mark_success)"
+  ],
+
+  "scope_out": [
+    "epub.js·h5p-standalone 설치·EpubReader·H5pReader 실구현 — content_type ≠ 'html' 실데이터 0건. ADR-0017 D2 '실데이터 발생 시 도입' 트리거 (분기 골격만)",
+    "페이지 단위 진도 추적 (pages_read UPDATE) — cross-origin 한계로 포기 (ADR-0017 D3). pages_read DEFAULT 0 유지",
+    "자동 마지막-페이지 완독 감지 (스크롤·타이머·postMessage 휴리스틱) — ADR-0017 D4 명시 버튼 단독 채택",
+    "완독 보상 본구현 — 별 3개 SVG 애니메이션·children.points += 50·child_badges INSERT — phase-13 전속 (ADR-0017 D7). 본 페이즈 celebrate는 placeholder",
+    "라이브러리 (/library) — phase-13. celebrate '다른 책 보러 가기' 버튼은 /library로 링크만(목적지는 phase-13 구현)",
+    "즐겨찾기 토글 — phase-13 라이브러리 시점 통합 (phase-11 d4 정합)",
+    "다자녀 모드 — child_id는 phase-10 lib/home/active-child.ts getActiveChild 재사용 (created_at ASC LIMIT 1)",
+    "iframe ToS/핫링크 적법성 확인 — 베타 출시 전 의무 (F13 트리거, phase-12 진행 불방지)",
+    "다크 모드 — design-system §9 Phase 2 이후"
+  ],
+
+  "files_to_create_or_modify": [
+    "tasks/phase-12-screen-04-reader.json (신규 — CP1)",
+    "docs/intent/screen-04-reader.md (신규 — CP1)",
+    "docs/adr/0017-book-reader-architecture.md (신규 — CP1)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md (수정 — CP1, Amendment #5)",
+    "docs/adr/0016-illustrator-author-publisher-attributionbox.md (수정 — CP1, Amendment #1)",
+    "lib/shared/blacklist.ts (신규 — CP2)",
+    "lib/landing/popular-books.ts (수정 — CP2, import 전환)",
+    "lib/home/recommendations.ts (수정 — CP2, import 경로)",
+    "lib/home/categories.ts (수정 — CP2, import 경로)",
+    "app/book/[id]/page.tsx (수정 — CP2, import 경로)",
+    "lib/book/detail.ts (수정 — CP2, SELECT 컬럼 + Book 인터페이스)",
+    "lib/book/copy.ts (수정 — CP3, 미니 바 + 완독 버튼 + celebrate 카피)",
+    "app/book/[id]/read/page.tsx (신규 — CP3-a)",
+    "components/book/html-reader.tsx (신규 — CP3-a)",
+    "components/book/reader-attribution-bar.tsx (신규 — CP3-a)",
+    "middleware.ts (수정 — CP3-a, CSP frame-src)",
+    "components/book/finish-button.tsx (신규 — CP3-b)",
+    "lib/book/reading-session.ts (신규 — CP3-b)",
+    "app/book/[id]/celebrate/page.tsx (신규 — CP3-b)",
+    "tasks/_index.json (수정 — mark_success, CP4)"
+  ],
+
+  "checkpoints": [
+    {
+      "id": "CP1-spec-intent-adrs",
+      "description": "명세 5종 신규/갱신 작성. 코드 수정 0건. (1) 본 spec JSON (2) docs/intent/screen-04-reader.md — PLAN §9 Week 6 인용 + 13 결정 박제 문구 + 미니 어트리뷰션 바 명세 + celebrate placeholder UX + CP3-a/-b 시각 검수 체크리스트 (3) docs/adr/0017-book-reader-architecture.md — Context/Decision D1~D7/Consequences/Trade-offs/후속 트리거 (4) docs/adr/0014 Amendment #5 — 블랙리스트 lib/shared/blacklist.ts 추출 + 5표면 인벤토리, 본문 §1~§7 및 Amendment #1~#4 무변경 명시 (5) docs/adr/0016 Amendment #1 — 어트리뷰션 표시 범위 책 상세+책 뷰어 확장, 결정 1·2·3 무변경 명시 + F9 법무 검토 연계. 파일마다 개별 승인 사이클(spec → intent → ADR-0017 → 0014 Amendment #5 → 0016 Amendment #1). 5개 파일 완료 후 _index.json cp_progress CP1 completed 1회 갱신. CP2 자동 진입 금지.",
+      "status": "pending",
+      "files": [
+        "tasks/phase-12-screen-04-reader.json",
+        "docs/intent/screen-04-reader.md",
+        "docs/adr/0017-book-reader-architecture.md",
+        "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md",
+        "docs/adr/0016-illustrator-author-publisher-attributionbox.md"
+      ]
+    },
+    {
+      "id": "CP2-blacklist-extract-and-select-expand",
+      "description": "F10 옵션 B 실행 + 데이터 레이어 확장. (1) lib/shared/blacklist.ts 신규 — BOOK_DASH_404_SOURCE_IDS 상수 + JSDoc(popular-books.ts 박제 주석 이전) (2) lib/landing/popular-books.ts — import 전환, 상수 본문 제거 (3) lib/home/recommendations.ts·lib/home/categories.ts·app/book/[id]/page.tsx — import 경로 변경 1줄씩 (4) lib/book/detail.ts — getBookById SELECT에 content_url·content_type 추가 + Book 인터페이스 2 컬럼 확장. 동작 동치 리팩토링(기존 4표면 블랙리스트 차단 회귀 0). DB 변경 0건(Hard Rule 8). 2 sub-step 권장(CP2-a 블랙리스트 추출+4표면 import / CP2-b detail SELECT 확장) — 각 단독 커밋 + 멈춤·보고.",
+      "status": "pending",
+      "files": [
+        "lib/shared/blacklist.ts",
+        "lib/landing/popular-books.ts",
+        "lib/home/recommendations.ts",
+        "lib/home/categories.ts",
+        "app/book/[id]/page.tsx",
+        "lib/book/detail.ts"
+      ]
+    },
+    {
+      "id": "CP3-reader-ui",
+      "description": "책 뷰어 UI + 완독 흐름. design-system §7.2 Reader 토큰 100% 사용. raw HEX 0건. 2 sub-step 분할(CP3-a/CP3-b) — 각 단독 커밋 + 시각 검수 (phase-11 CP3-a/-b 패턴 정합).",
+      "status": "pending",
+      "sub_steps": [
+        {
+          "id": "CP3-a-reader-page-and-iframe",
+          "description": "/read 페이지 + iframe 리더 + 미니 어트리뷰션 바 + CSP. (1) app/book/[id]/read/page.tsx — Server Component, 4-가드 상속(UUID 형식·미인증 redirect·블랙리스트 5번째 차단 notFound·book NULL notFound) + getBookById(content_url·content_type 포함) (2) components/book/html-reader.tsx — 'use client', content_type='html' iframe(sandbox=allow-scripts allow-same-origin) + onError·5초 로딩 타임아웃 폴백 UI + 세션 시작 트리거(useEffect 1회 startReadingSession). Epub/H5p는 분기 골격(미구현 안내)만 (3) components/book/reader-attribution-bar.tsx — buildAttributionRows 재사용 1줄 압축(author/publisher + CC BY 4.0 외부링크 + 출처 original_url, rel=noopener noreferrer) + 책 제목 노출(통합 어트리뷰션 단위) (4) middleware.ts — CSP frame-src 'self' bookdash.github.io content.digitallibrary.io 보강, phase-07 updateSession 무변경. (5) lib/book/copy.ts — 미니 바·완독 버튼 라벨 추가. 단독 커밋 + Book Dash·GDL 임베드 + 어트리뷰션 바 + 블랙리스트 404 + 폴백 시각 검수.",
+          "status": "pending",
+          "files": [
+            "app/book/[id]/read/page.tsx",
+            "components/book/html-reader.tsx",
+            "components/book/reader-attribution-bar.tsx",
+            "middleware.ts",
+            "lib/book/copy.ts"
+          ]
+        },
+        {
+          "id": "CP3-b-finish-button-and-session",
+          "description": "완독 버튼 + 세션 server action + celebrate placeholder. (1) lib/book/reading-session.ts — server action 2종: startReadingSession(bookId) — getActiveChild로 child_id 해소 후 child_id+book_id+completed_at IS NULL 행 조회, 있으면 재사용·INSERT 0건, 없으면 INSERT(옵션 Y 중복 가드). completeReadingSession(bookId) — 해당 미완료 세션 completed_at=now·is_completed=true UPDATE 후 redirect (2) components/book/finish-button.tsx — 'use client', completeReadingSession 호출 후 /book/[id]/celebrate redirect. children.points·child_badges 쓰기 0건(phase-13 경계) (3) app/book/[id]/celebrate/page.tsx — minimal placeholder: '🎉 완독 축하해요!' 헤더 + '{자녀 이름}은 {책 제목}을 끝까지 읽었어요!' 1줄 + '다른 책 보러 가기' 버튼(→ /library). 별 애니메이션·points·badges는 phase-13 명시. 단독 커밋 + 완독→celebrate→reading_sessions 행 INSERT/UPDATE + 중복 가드 시각 검수.",
+          "status": "pending",
+          "files": [
+            "lib/book/reading-session.ts",
+            "components/book/finish-button.tsx",
+            "app/book/[id]/celebrate/page.tsx"
+          ]
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "CP4-verify-and-meta",
+      "description": "사용자 클릭 검증 v6~v19 통합 박제 + tasks/_index.json mark_success + spec verification_result 박제 + 메타 커밋 1건. 후속 트리거 F13~F17 누적 박제.",
+      "status": "pending",
+      "files": [
+        "tasks/phase-12-screen-04-reader.json",
+        "tasks/_index.json"
+      ]
+    }
+  ],
+
+  "verification": [
+    { "id": "v1-lint", "description": "린트 에러 0", "method": "pnpm lint", "expected": "에러 0" },
+    { "id": "v2-type-check", "description": "타입 체크 에러 0", "method": "pnpm type-check", "expected": "에러 0" },
+    { "id": "v3-build", "description": "프로덕션 빌드 성공 + /book/[id]/read·/celebrate 라우트 등록", "method": "pnpm build", "expected": "성공 + ƒ /book/[id]/read·/book/[id]/celebrate Dynamic 등록" },
+    { "id": "v4-no-schema-change", "description": "DB 스키마 무변경", "method": "supabase/migrations 디렉토리 확인", "expected": "001_initial_schema.sql 외 0건" },
+    { "id": "v5-no-secret-leak", "description": "app/book·lib/book·components/book·lib/shared에 secret 미노출", "method": "grep SUPABASE_SECRET_KEY 및 service_role", "expected": "0건" },
+    { "id": "v6-blacklist-extract-regression", "description": "F10 옵션 B 추출 후 기존 4표면 블랙리스트 차단 회귀 0 (랜딩·홈추천·홈카테고리·책상세)", "method": "lib/shared/blacklist.ts import 5표면 grep + 랜딩·홈·책상세에서 블랙리스트 4 UUID 미노출/404 확인", "expected": "5표면 모두 단일 상수 import + 차단 동작 동치" },
+    { "id": "v7-read-page-guards", "description": "/read 4-가드 (UUID 형식·미인증·블랙리스트·book NULL)", "method": "(a) 잘못된 UUID /read 404 (b) 미인증 /read → /login redirect (c) 블랙리스트 4 UUID /read → not-found (d) 존재X/비활성 UUID /read → not-found", "expected": "(a)~(d) 모두 통과" },
+    { "id": "v8-html-reader-bookdash", "description": "Book Dash 책 iframe 임베드 정상", "method": "source_platform='book_dash' 책 /read 접속 → iframe에 bookdash.github.io 리더 렌더 시각 확인", "expected": "iframe 콘텐츠 정상 표시" },
+    { "id": "v9-html-reader-gdl", "description": "GDL 책 iframe 임베드 정상", "method": "source_platform='gdl' 책 /read 접속 → iframe에 content.digitallibrary.io 리더 렌더 시각 확인", "expected": "iframe 콘텐츠 정상 표시 (SPA 리더 동작 — sandbox 완전성 F14 검수)" },
+    { "id": "v10-iframe-security", "description": "iframe sandbox 속성 + CSP frame-src 화이트리스트", "method": "(a) html-reader.tsx iframe sandbox=\"allow-scripts allow-same-origin\" 존재 (b) 응답 헤더 Content-Security-Policy frame-src에 self·bookdash.github.io·content.digitallibrary.io 포함 (DevTools Network)", "expected": "(a)·(b) 모두 통과" },
+    { "id": "v11-reader-attribution-bar", "description": "미니 어트리뷰션 바 표시 (ADR-0016 Amendment #1)", "method": "(a) Book Dash → '✍️ {author}' (b) GDL → '🏢 {publisher}' (c) 양쪽 '📜 CC BY 4.0' 외부링크 + '🔗 출처' original_url 외부링크 rel=noopener noreferrer (d) 책 제목 노출", "expected": "(a)~(d) 모두 통과" },
+    { "id": "v12-finish-complete-update", "description": "완독 버튼 → completeReadingSession UPDATE → /celebrate redirect", "method": "완독 버튼 클릭 → reading_sessions 해당 행 completed_at·is_completed=true UPDATE 확인 + /book/[id]/celebrate 이동", "expected": "UPDATE 반영 + redirect 통과" },
+    { "id": "v13-session-start-insert-dedupe", "description": "세션 시작 INSERT + 미완료 세션 재사용 가드 (옵션 Y)", "method": "(a) /read 첫 진입 시 reading_sessions INSERT 1건(started_at·completed_at NULL) (b) 동일 책 재진입/새로고침 시 INSERT 0건(기존 미완료 행 재사용)", "expected": "(a)·(b) 모두 통과" },
+    { "id": "v14-celebrate-placeholder", "description": "/celebrate minimal placeholder 렌더", "method": "완독 후 또는 직접 접속 시 헤더 + '{자녀 이름}은 {책 제목}…' 1줄 + '다른 책 보러 가기'(→/library) 버튼 확인", "expected": "3요소 모두 렌더" },
+    { "id": "v15-phase-13-boundary", "description": "phase-13 경계 — children.points·child_badges 쓰기 0건", "method": "grep children update points / child_badges insert in app/book·lib/book·components/book", "expected": "0건 (완독은 reading_sessions UPDATE만)" },
+    { "id": "v16-iframe-fallback", "description": "iframe onError/타임아웃 폴백 UI", "method": "잘못된/차단된 content_url(또는 네트워크 차단) 시 5초 타임아웃 또는 onError 폴백 UI 노출 확인", "expected": "백지 대신 폴백 UI 표시" },
+    { "id": "v17-hard-rule-10", "description": "Hard Rule 10 raw HEX 0건", "method": "grep -E '#[0-9a-fA-F]{3,8}' components/book/ lib/book/ app/book/ lib/shared/", "expected": "0건" },
+    {
+      "id": "v18-responsive",
+      "description": "모바일·태블릿(세로/가로)·데스크탑 4 viewport 반응형 정상 (iframe 리더 + 미니 바 + 완독 버튼)",
+      "method": "DevTools 또는 실기기로 390px / 768px / 1024px / 1280px 스냅샷 측정",
+      "expected": "iframe 비율·미니 바·완독 버튼 viewport별 정합",
+      "sub_cases": [
+        { "id": "v18-mobile", "description": "390px (모바일)", "expected": "iframe 전체폭, 미니 바 1줄(필요 시 wrap), 완독 버튼 하단 fixed/sticky 가시" },
+        { "id": "v18-tablet-portrait", "description": "768px (태블릿 세로)", "expected": "iframe 중앙 + 가독 비율, 미니 바 1줄" },
+        { "id": "v18-tablet-landscape", "description": "1024px (태블릿 가로) — e-라이브러리 주요 환경(부모+자녀 iPad)", "expected": "iframe 가로 비율 적정, 완독 버튼 가시" },
+        { "id": "v18-desktop", "description": "1280px (데스크탑)", "expected": "iframe max-width 제한 + 중앙 정렬" }
+      ]
+    },
+    { "id": "v19-phase-13-ready", "description": "phase-13 진입 차단 요소 0건", "method": "tasks/phase-13-screen-05-celebrate.json depends_on 충족 확인 + /celebrate placeholder 존재", "expected": "차단 0건" }
+  ],
+
+  "completion_criteria": [
+    "v1~v5 자동 검증 통과",
+    "v6 블랙리스트 추출 회귀 0 통과",
+    "v7 /read 4-가드 통과",
+    "v8 Book Dash iframe 통과",
+    "v9 GDL iframe 통과",
+    "v10 iframe sandbox + CSP frame-src 통과",
+    "v11 미니 어트리뷰션 바 통과",
+    "v12 완독 UPDATE + redirect 통과",
+    "v13 세션 시작 INSERT + 재사용 가드 통과",
+    "v14 celebrate placeholder 통과",
+    "v15 phase-13 경계(points·badges 쓰기 0건) 통과",
+    "v16 iframe 폴백 UI 통과",
+    "v17 Hard Rule 10 raw HEX 0건",
+    "v18 4 viewport 반응형 통과",
+    "v19 phase-13 진입 차단 0건",
+    "tasks/_index.json phase-12 status: pending → success, last_successful_state 갱신, current_phase → phase-13-screen-05-celebrate",
+    "python scripts/run_phase.py --complete phase-12-screen-04-reader 실행"
+  ],
+
+  "user_steps": [
+    "외부 콘솔 설정 불필요 — phase-12는 코드만(DB 스키마 무변경)",
+    "CP2 blacklist 추출 후 기존 4표면(랜딩·홈) 회귀 없음 클릭 확인",
+    "CP3-a Book Dash·GDL 책 각 1권 /read 임베드 + 미니 어트리뷰션 바 + 블랙리스트 404 + 폴백 시각 확인",
+    "CP3-b 완독 버튼 클릭 → /celebrate 이동 + Supabase reading_sessions 행 INSERT/UPDATE 확인 + 재진입 중복 가드 확인",
+    "CP3 반응형 4 viewport 스냅샷",
+    "pnpm lint && pnpm type-check && pnpm build",
+    "python scripts/run_phase.py --complete phase-12-screen-04-reader"
+  ],
+
+  "cp1_decisions": {
+    "context": "CP1에서 박제하고 CP2 이후 구현이 따르는 13건 결정. plan 단계 외부 검토(2026-05-22) + plan 보강(추가결정 3건) 반영. 미결정 잔여 0건, 외부 검토 위험 5건 모두 후속 트리거화(F13~F17).",
+    "decisions": [
+      {
+        "id": "d1-iframe-single-path",
+        "description": "뷰어 아키텍처 = iframe 단일 경로. 실데이터 content_type='html' 896/896(100%) 근거. HtmlReader만 실구현, EpubReader·H5pReader는 분기 골격(미구현 안내)만.",
+        "ref": "docs/adr/0017-book-reader-architecture.md D1 + components/book/html-reader.tsx (CP3-a)"
+      },
+      {
+        "id": "d2-libs-not-installed",
+        "description": "epub.js·h5p-standalone 미설치 (package.json 무변경). 사용처 0건. ADR-0017에 'content_type ≠ html 실데이터 ≥1건 발생 시 도입' 트리거 박제.",
+        "ref": "docs/adr/0017-book-reader-architecture.md D2"
+      },
+      {
+        "id": "d3-page-tracking-abandoned",
+        "description": "페이지 단위 추적 포기. cross-origin iframe 내부 페이지네이션 관측 불가(HEAD 진단 정합). reading_sessions.pages_read DEFAULT 0 유지, UPDATE 0건.",
+        "ref": "docs/adr/0017-book-reader-architecture.md D3"
+      },
+      {
+        "id": "d4-explicit-finish-button",
+        "description": "완독 감지 = 명시 '다 읽었어요' 버튼 단독. 자동 마지막-페이지 감지 불가 → server action으로 완독 처리 후 /celebrate redirect.",
+        "ref": "docs/adr/0017-book-reader-architecture.md D4 + components/book/finish-button.tsx (CP3-b)"
+      },
+      {
+        "id": "d5-reading-sessions-write",
+        "description": "reading_sessions INSERT(진입 세션 시작) + UPDATE(완독 클릭) 양쪽 활성화. 자동 페이지 갱신 모델 폐기로 dry-run 박제 해소 — 두 쓰기 모두 명시적 사용자 행동 1:1 대응. child_id는 getActiveChild 재사용.",
+        "ref": "docs/adr/0017-book-reader-architecture.md D5 + lib/book/reading-session.ts (CP3-b)"
+      },
+      {
+        "id": "d6-iframe-security",
+        "description": "iframe sandbox=\"allow-scripts allow-same-origin\"(same-origin은 iframe 자기 출처 기준이라 부모 탈출 불가) + 부모 CSP frame-src 화이트리스트 bookdash.github.io·content.digitallibrary.io 2호스트. CSP는 middleware.ts에 보강.",
+        "ref": "docs/adr/0017-book-reader-architecture.md D6 + middleware.ts (CP3-a)"
+      },
+      {
+        "id": "d7-f10-option-b",
+        "description": "F10 처리 = 옵션 (b) 선이동. BOOK_DASH_404_SOURCE_IDS를 lib/shared/blacklist.ts로 추출, 기존 4표면 import 갱신, 뷰어가 5번째 표면 합류. ADR-0014 Amendment #5 박제.",
+        "ref": "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md Amendment #5 + lib/shared/blacklist.ts (CP2)"
+      },
+      {
+        "id": "d8-f12-out-of-scope",
+        "description": "F12(Book Dash level/age NULL) = phase-12 무관. 뷰어는 level/age 미사용. phase-13b 또는 별도 sync 보강 phase로 이연 유지.",
+        "ref": "phase-11 phase_11_follow_up_triggers F12 (deferred 유지)"
+      },
+      {
+        "id": "d9-celebrate-placeholder-scope",
+        "description": "/celebrate = minimal placeholder. 별 애니메이션·children.points += 50·child_badges INSERT는 phase-13 전속(본 페이즈 children·child_badges 쓰기 0건, 이중 구현 방지).",
+        "ref": "docs/adr/0017-book-reader-architecture.md D7 + app/book/[id]/celebrate/page.tsx (CP3-b)"
+      },
+      {
+        "id": "d10-new-adrs",
+        "description": "ADR 신규/갱신 = ADR-0017(뷰어 아키텍처) 신규 + ADR-0014 Amendment #5(블랙리스트 추출) + ADR-0016 Amendment #1(어트리뷰션 표시 범위 확장). 모두 CP1 문서 선행.",
+        "ref": "docs/adr/0017·0014 Amendment #5·0016 Amendment #1 (CP1)"
+      },
+      {
+        "id": "d11-session-dedupe-guard",
+        "description": "세션 INSERT 중복 가드 = 옵션 (Y) 미완료 세션 재사용. child_id+book_id+completed_at IS NULL 행 있으면 재사용·INSERT 0건, 없으면 INSERT. 베타 KPI '완독 세션 100건' 통계 위생 + DB 부하 최소화. reading_sessions에 unique 제약 없음 → 애플리케이션 레벨 가드.",
+        "ref": "lib/book/reading-session.ts startReadingSession (CP3-b)"
+      },
+      {
+        "id": "d12-reader-attribution-bar",
+        "description": "책 뷰어 어트리뷰션 = 옵션 (Q) iframe 상단 미니 어트리뷰션 바 1줄. ✍️ author(Book Dash)/🏢 publisher(GDL, ADR-0016 결정 2 분기 재사용) · 📜 CC BY 4.0(외부링크) · 🔗 출처(original_url, rel=noopener noreferrer). 책 제목 노출로 통합 어트리뷰션 단위(결정 3) 유지. buildAttributionRows 재사용(단일 출처). illustrator 생략. URL 직접 진입 시 어트리뷰션 누락 0건. ADR-0016 Amendment #1.",
+        "ref": "docs/adr/0016-illustrator-author-publisher-attributionbox.md Amendment #1 + components/book/reader-attribution-bar.tsx (CP3-a)"
+      },
+      {
+        "id": "d13-celebrate-minimal-ux",
+        "description": "/celebrate placeholder UX = 헤더 '🎉 완독 축하해요!' + '{자녀 이름}은 {책 제목}을 끝까지 읽었어요!' 1줄 + '다른 책 보러 가기' 버튼(→/library). 별 애니메이션·points·badges는 phase-13 명시(d9 경계 구체화). phase-12 단독 베타 검수 시 '시스템 작동 중' 신호.",
+        "ref": "app/book/[id]/celebrate/page.tsx (CP3-b)"
+      }
+    ]
+  },
+
+  "phase_12_follow_up_triggers": {
+    "context": "plan 단계 외부 검토(2026-05-22)에서 사전 박제된 트리거. CP3·CP4 실측에서 추가 트리거 발견 시 본 필드에 누적 박제한다. 전부 baseline 박제(blocker=false). 번호는 phase-11(F8~F12)에 이어 F13~F17 연속.",
+    "triggers": [
+      {
+        "id": "F13",
+        "title": "iframe ToS/핫링크 적법성 — 베타 출시 전 임베드 정책 확인",
+        "discovered_at": "phase-12 plan 단계 외부 검토 (2026-05-22)",
+        "location": "components/book/html-reader.tsx (iframe src = books.content_url) + Book Dash(bookdash.github.io) · GDL(content.digitallibrary.io) 제3자 호스팅 정책",
+        "impact": "CC BY 4.0은 콘텐츠 재사용 라이선스이며, 제3자 호스팅 리더 페이지를 iframe 임베드하는 것은 ToS·핫링크 측면에서 별개 이슈다. phase-12 진행을 막지 않으나(저위험), 베타 출시 전 확인 의무. 임베드 불가 판명 시 ADR-0017 Trade-off에서 기각된 자체 호스팅(콘텐츠 미러) 대안 재논의.",
+        "candidate_validation": "베타 출시 전 Book Dash·GDL ToS 임베드 정책 확인. iframe 임베드 허용/금지 명문 조항 검토 + 핫링크 허용 여부 확인.",
+        "deferred_to": "phase-14 베타 직전 (또는 별도 콘텐츠 적법성 검토)",
+        "blocker": false
+      },
+      {
+        "id": "F14",
+        "title": "GDL SPA sandbox 완전성 — allow-scripts allow-same-origin 충분성",
+        "discovered_at": "phase-12 plan 단계 외부 검토 (2026-05-22)",
+        "location": "components/book/html-reader.tsx iframe sandbox 속성 + content.digitallibrary.io SPA 리더",
+        "impact": "GDL digitallibrary.io는 SPA 리더로 실제 책 콘텐츠가 JS·하위 프레임으로 후속 로드된다. sandbox=\"allow-scripts allow-same-origin\"만으로 정상 동작 안 할 수 있음(팝업·폼·스토리지 의존 시). CP3-a v9 시각 검수에서 실동작 확인.",
+        "candidate_fix": "CP3-a 검수에서 GDL 리더 페이지 넘김·동작 불가 시 allow-forms·allow-popups 최소 보강. 보강 시 ADR-0017 §2(D6)에 사후 박제 + 보안 영향 평가.",
+        "deferred_to": "phase-12 CP3-a 시각 검수 (즉시 검증, 미달 시 D6 갱신)",
+        "blocker": false
+      },
+      {
+        "id": "F15",
+        "title": "iframe 외부 가용성 — bookdash.github.io / digitallibrary.io 다운 대응",
+        "discovered_at": "phase-12 plan 단계 외부 검토 (2026-05-22)",
+        "location": "components/book/html-reader.tsx onError·타임아웃 폴백 + 외부 CDN 가용성",
+        "impact": "외부 호스팅 의존이므로 다운 시 뷰어 백지. CP3-a에서 onError·5초 타임아웃 폴백 UI로 1차 방어. 상시 다운 빈발 시 콘텐츠 미러링 트리거.",
+        "candidate_fix": "베타 모니터링에서 iframe 로드 실패율 집계. 임계 초과 시 GitHub Pages 미러(PLAN §6 콘텐츠 미러 GitHub Pages+jsDelivr) 또는 자체 호스팅 검토.",
+        "deferred_to": "phase-2 또는 베타 운영 모니터링",
+        "blocker": false
+      },
+      {
+        "id": "F16",
+        "title": "완독 자기신고 신뢰도 — 명시 버튼 기반 KPI 정확도",
+        "discovered_at": "phase-12 plan 단계 외부 검토 (2026-05-22)",
+        "location": "components/book/finish-button.tsx + reading_sessions.is_completed",
+        "impact": "완독이 버튼 클릭 단독(cross-origin 페이지 추적 포기, ADR-0017 D3·D4)이라 KPI '완독 세션 100건'이 과대/과소 집계 가능. 옵션 Y 중복 가드(d11)로 통계 위생 일부 보강. 베타 수용.",
+        "candidate_fix": "phase-2 정밀 추적 시 — 외부 리더 postMessage 프로토콜 재조사, 체류 시간·스크롤 휴리스틱 보조 지표 도입 검토.",
+        "deferred_to": "phase-2 분석 정밀화",
+        "blocker": false
+      },
+      {
+        "id": "F17",
+        "title": "어트리뷰션 박제 문안 법무 검토 표면 확장 — 책 상세 + 책 뷰어 (F9 연계)",
+        "discovered_at": "phase-12 plan 단계 외부 검토 (2026-05-22)",
+        "location": "docs/adr/0016 Amendment #1(책 뷰어 미니 바) + 결정 3('통합 어트리뷰션 단위') + license-rules.md §5",
+        "impact": "phase-11 F9(AttributionBox 박제 문안 법무 검토)가 책 상세 단일 표면 전제였으나, ADR-0016 Amendment #1로 책 뷰어 미니 바가 추가됐다. 미니 바의 'reasonable to the medium' 충족(author/publisher + CC BY + 출처 + 제목 노출)도 법무 검토 대상이다.",
+        "candidate_validation": "phase-14 베타 직전 변호사 검토에 책 상세 AttributionBox + 책 뷰어 미니 어트리뷰션 바 양 표면을 함께 포함. 이견 시 ADR-0016 본문 + Amendment #1 + license-rules.md §5 동시 갱신. phase-11 F9와 통합 검토.",
+        "deferred_to": "phase-14 베타 직전 법무 검토 (F9 통합)",
+        "blocker": false
+      }
+    ]
+  },
+
+  "diagnosis": {
+    "measured_at": "2026-05-22 phase-12 plan 단계 (인라인 진단 + iframe 헤더 HEAD 진단)",
+    "content_type_distribution": {
+      "active_total": "896권 (전체 896, 비활성 0)",
+      "by_content_type": "html 896 (100%) — epub·h5p·pdf 0건",
+      "content_type_null": "0건",
+      "content_type_distinct": "['html']",
+      "cross_tab": "book_dash×html 54 · gdl×html 842",
+      "implication": "PLAN §4·§6·§9 3분기(html/epub/h5p)는 베타 데이터상 iframe 단일 경로로 수렴 (ADR-0017 D1·D2)"
+    },
+    "content_url_shape": {
+      "book_dash": "https://bookdash.github.io/bookdash-books/{slug}/en/ (GitHub Pages, 54권)",
+      "gdl": "https://content.digitallibrary.io/en/book/{slug}/ (digitallibrary.io SPA 리더, 842권)",
+      "content_url_null": "0건",
+      "implication": "양쪽 모두 외부 cross-origin 리더 페이지 통째 임베드 — 내부 페이지네이션 관측 불가(ADR-0017 D3 페이지 추적 포기 근거)"
+    },
+    "iframe_embed_probe": {
+      "method": "HEAD→GET 폴백, 2 표본 (2026-05-22)",
+      "book_dash_sample": "a-dancers-tale — status 200 · X-Frame-Options 없음 · CSP frame-ancestors 없음 → 임베드 가능",
+      "gdl_sample": "where-is-my-mother — status 200 · X-Frame-Options 없음 · CSP frame-ancestors 없음 → 임베드 가능",
+      "implication": "프록시/리라이트 불필요. 우리 쪽 sandbox + CSP frame-src로 방어 책임 (ADR-0017 D6). GDL SPA sandbox 완전성은 CP3-a 검수(F14)"
+    },
+    "reading_sessions_columns": {
+      "child_id": "UUID NOT NULL REFERENCES children — getActiveChild(created_at ASC LIMIT 1) 재사용",
+      "book_id": "UUID NOT NULL REFERENCES books",
+      "started_at": "TIMESTAMPTZ DEFAULT NOW() — INSERT 시 자동",
+      "completed_at": "TIMESTAMPTZ NULL — 완독 UPDATE 시 NOW(). 미완료 세션 재사용 가드 키(IS NULL)",
+      "pages_read": "INT DEFAULT 0 — ADR-0017 D3 페이지 추적 포기로 0 유지",
+      "is_completed": "BOOLEAN DEFAULT FALSE — 완독 UPDATE 시 true",
+      "rls": "001 §9.4 parents can insert/update/select own children sessions (child_id IN own children) — 본인 세션 클라이언트로 충족"
+    },
+    "carryover": {
+      "blacklist_extract": "lib/landing/popular-books.ts BOOK_DASH_404_SOURCE_IDS → lib/shared/blacklist.ts 추출(F10 옵션 B, ADR-0014 Amendment #5). /read가 5번째 표면",
+      "read_button": "components/book/read-button.tsx — Link href=/book/[id]/read 자리만(phase-11 d4). 본 페이즈 page.tsx 추가로 자연 활성화, ReadButton 수정 0건",
+      "book_interface_expand": "lib/book/detail.ts Book 인터페이스 — content_url·content_type 미포함 → CP2에서 SELECT + 인터페이스 2 컬럼 확장",
+      "active_child": "lib/home/active-child.ts getActiveChild — reading_sessions.child_id 해소에 재사용"
+    },
+    "design_system_tokens": {
+      "reader_section_7_2": "Reader 토큰 — CP3에서 iframe 컨테이너·미니 바·완독 버튼 매핑 (raw HEX 0건)",
+      "button_section_6_1": "FinishButton primary 변형 + '다른 책 보러 가기' 버튼 재사용"
+    },
+    "intent_doc_screen_04_reader": "CP1에서 신규 작성 (선행: screen-03-book-detail.md 패턴)",
+    "adr_0017": "CP1 신규 — D1~D7 (iframe 단일·라이브러리 미설치·페이지 추적 포기·명시 완독·세션 쓰기·sandbox/CSP·points phase-13 경계)",
+    "adr_0014_amendment_5": "CP1 — ADR-0014 본문 끝에 추가, 블랙리스트 lib/shared 추출 + 5표면",
+    "adr_0016_amendment_1": "CP1 — ADR-0016 본문 끝에 추가, 어트리뷰션 표시 범위 책 상세+책 뷰어 확장"
+  },
+
+  "references": [
+    "claude.md 2절 Hard Rule 1·3·6·8·9·10, 5절 라우팅(Screen 04 + design-system §7.2 Reader 토큰)",
+    "docs/adr/0017-book-reader-architecture.md (본 페이즈 핵심 결정)",
+    "docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md Amendment #5 (블랙리스트 lib/shared 추출)",
+    "docs/adr/0016-illustrator-author-publisher-attributionbox.md Amendment #1 (어트리뷰션 표시 범위 확장)",
+    "docs/intent/screen-04-reader.md (본 페이즈 의도 문서)",
+    "docs/intent/screen-03-book-detail.md (선행 패턴 — 가드 4종·AttributionBox)",
+    "docs/design-system.md §7.2 Reader 토큰 + §6.1 Button",
+    "docs/guidelines/license-rules.md §4·§5·§7.2 (CC BY 4.0 4요소·어트리뷰션·외부 링크 안전 속성)",
+    "lib/landing/popular-books.ts (BOOK_DASH_404_SOURCE_IDS — CP2 lib/shared 추출 대상)",
+    "lib/home/active-child.ts (getActiveChild — reading_sessions.child_id 재사용)",
+    "lib/book/attribution.ts (buildAttributionRows — 미니 바 재사용)",
+    "lib/book/detail.ts (getBookById — content_url·content_type SELECT 확장)",
+    "components/book/read-button.tsx (phase-11 자리 — 본 페이즈 자연 활성화)",
+    "middleware.ts (phase-07 updateSession — CSP frame-src 보강, 인증 로직 무변경)",
+    "supabase/migrations/001_initial_schema.sql (books·reading_sessions·children — 조회/세션 베이스, RLS §9.4)",
+    "PLAN.md 4절 콘텐츠-기술 매트릭스 + 5절 시나리오 C + 6절 기술 스택 + 9절 Week 6 책 뷰어"
+  ]
+}
