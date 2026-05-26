@@ -9,7 +9,7 @@ import { SIGN_IN_PATH } from '@/lib/auth/routes';
 import { buildAttributionRows } from '@/lib/book/attribution';
 import { getBookDetailCopy } from '@/lib/book/copy';
 import { getBookById } from '@/lib/book/detail';
-import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/landing/popular-books';
+import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
 import { createClient } from '@/lib/supabase/server';
 
 /**

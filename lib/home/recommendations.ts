@@ -2,7 +2,7 @@ import 'server-only';
 
 import type { SupabaseClient } from '@supabase/supabase-js';
 
-import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/landing/popular-books';
+import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
 import type { PopularBook } from '@/lib/landing/popular-books';
 
 /**

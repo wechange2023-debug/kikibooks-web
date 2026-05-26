@@ -36,6 +36,14 @@ export interface Book {
   /** 활성 책 896/896 = 100% NULL (ADR-0013 §7, ADR-0016 결정 1-가 행 생략). */
   illustrator: string | null;
   cover_url: string;
+  /** 책 본문 뷰어 iframe src. NOT NULL — 001 §books line 75 `content_url TEXT NOT NULL`. */
+  content_url: string;
+  /**
+   * 뷰어 분기 키 (ADR-0017 D1). NOT NULL — 001 §books line 76~77 CHECK 제약.
+   *   - 실데이터 (2026-05-22 측정): 활성 896권 전부 'html' → iframe 단일 경로로 수렴
+   *   - epub·h5p·pdf는 ADR-0017 D2 분기 골격만 (실데이터 0건, 미구현 안내)
+   */
+  content_type: 'html' | 'epub' | 'h5p' | 'pdf';
   original_url: string;
   license: string;
   /** Hard Rule 1 — NOT NULL 제약. license-rules.md §4.2 표준 포맷. */
@@ -86,7 +94,7 @@ export async function getBookById(
   const { data, error } = await supabase
     .from('books')
     .select(
-      'id, title, author, illustrator, cover_url, original_url, license, attribution_text, source_platform, source_id, level, age_min, age_max, language, is_active',
+      'id, title, author, illustrator, cover_url, content_url, content_type, original_url, license, attribution_text, source_platform, source_id, level, age_min, age_max, language, is_active',
     )
     .eq('id', id)
     .eq('is_active', true)

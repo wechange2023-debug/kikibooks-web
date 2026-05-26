@@ -2,6 +2,8 @@ import 'server-only';
 
 import type { SupabaseClient } from '@supabase/supabase-js';
 
+import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
+
 /**
  * 랜딩 인기 책 섹션 데이터 — books 테이블에서 활성 책 중 일부를 무작위로 고른다.
  *
@@ -34,27 +36,6 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 
 /** 랜딩 인기 책 섹션에 노출하는 책 수. */
 export const POPULAR_BOOKS_COUNT = 6;
-
-/**
- * Book Dash 표지 404 사전 차단 목록 (ADR-0014 결정 2).
- *
- * 다음 슬러그의 cover.jpg가 GitHub Pages에서 404를 반환한다(2026-05-20 측정,
- * Book Dash 영어 54권 중 4건, 87% 정상률). meta.yml에 identifier UUID가
- * 명시되어 있어 DB의 source_id는 UUID로 저장된다(sync_book_dash.py:152).
- *
- * 슬러그 복귀 시 자동 회복 여지를 위해 sync·DB 무변경, 랜딩 쿼리에서만 사전 차단.
- * ADR-0014 §6 후속 과제 2 — 정상화 확인 시 본 목록 축소 검토.
- *
- * ★ phase-10 CP2-b: 옵션 A 채택으로 export 추가 (ADR-0014 Amendment #3).
- *   lib/home/recommendations.ts·categories.ts가 본 상수를 import 재사용한다.
- *   사용처가 3 표면 이상으로 늘어나면 lib/shared/blacklist.ts로 이동 검토.
- */
-export const BOOK_DASH_404_SOURCE_IDS = [
-  '9ca00316-fe46-11e5-86aa-5e5517507c66', // the-lion-who-wouldnt-try
-  '9c9eb452-fe46-11e5-86aa-5e5517507c66', // i-can-dress-myself
-  '9c9eb574-fe46-11e5-86aa-5e5517507c66', // hugs-in-the-city
-  '9c9fffba-fe46-11e5-86aa-5e5517507c66', // katiitis-song
-] as const;
 
 /** 랜딩 표지 카드 1장에 필요한 책 데이터. */
 export interface PopularBook {
