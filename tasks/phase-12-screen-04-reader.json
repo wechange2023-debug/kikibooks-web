@@ -11,14 +11,15 @@
   "cp_progress": {
     "phase_status": "pending",
     "phase_completed_at": null,
-    "current_cp": "CP3-reader-ui",
-    "last_successful_cp": "CP2-blacklist-extract-and-select-expand",
+    "current_cp": "CP3-b-finish-button-and-session",
+    "last_successful_cp": "CP3-a-reader-page-and-iframe",
     "completed_cps": [
       "CP1-spec-intent-adrs",
-      "CP2-blacklist-extract-and-select-expand"
+      "CP2-blacklist-extract-and-select-expand",
+      "CP3-a-reader-page-and-iframe"
     ],
     "pending_cps": [
-      "CP3-reader-ui",
+      "CP3-b-finish-button-and-session",
       "CP4-verify-and-meta"
     ],
     "sub_step_structure": {
@@ -314,7 +315,7 @@
   },
 
   "phase_12_follow_up_triggers": {
-    "context": "plan 단계 외부 검토(2026-05-22)에서 사전 박제된 트리거. CP3·CP4 실측에서 추가 트리거 발견 시 본 필드에 누적 박제한다. 전부 baseline 박제(blocker=false). 번호는 phase-11(F8~F12)에 이어 F13~F17 연속.",
+    "context": "plan 단계 외부 검토(2026-05-22)에서 사전 박제된 트리거. CP3·CP4 실측에서 추가 트리거 발견 시 본 필드에 누적 박제한다. F13~F17은 baseline 박제(blocker=false). F18은 CP3-a 시각 검수(2026-05-27)에서 발견된 phase-11 intent↔spec 갭으로 blocker=true(부분, CP3-a-6 즉시 해소). F19·F20은 CP3-a 시각 검수(2026-05-27)에서 발견된 외부 콘텐츠 의존 이슈로 baseline 박제(blocker=false, 법무·phase-2+ 이연). 번호는 phase-11(F8~F12)에 이어 F13~F20 연속.",
     "triggers": [
       {
         "id": "F13",
@@ -364,6 +365,36 @@
         "impact": "phase-11 F9(AttributionBox 박제 문안 법무 검토)가 책 상세 단일 표면 전제였으나, ADR-0016 Amendment #1로 책 뷰어 미니 바가 추가됐다. 미니 바의 'reasonable to the medium' 충족(author/publisher + CC BY + 출처 + 제목 노출)도 법무 검토 대상이다.",
         "candidate_validation": "phase-14 베타 직전 변호사 검토에 책 상세 AttributionBox + 책 뷰어 미니 어트리뷰션 바 양 표면을 함께 포함. 이견 시 ADR-0016 본문 + Amendment #1 + license-rules.md §5 동시 갱신. phase-11 F9와 통합 검토.",
         "deferred_to": "phase-14 베타 직전 법무 검토 (F9 통합)",
+        "blocker": false
+      },
+      {
+        "id": "F18",
+        "title": "phase-11 intent↔spec 갭: /home 추천 카드 /book/[id] Link 미활성화",
+        "discovered_at": "phase-12 CP3-a 시각 검수 (2026-05-27, 외부 Claude 교차 검토 사이클)",
+        "location": "components/home/recommendation-list.tsx RecommendationCard(L59~99) — 최상위 <article>에 Link 부재. docs/intent/screen-02-home.md L35·L123·L204(phase-11 카드 활성화 배정) vs tasks/phase-11-screen-03-book-detail.json scope/files(recommendation-list.tsx 미포함)",
+        "impact": "screen-02-home intent가 추천·카테고리 결과 카드 클릭의 /book/[id] 활성화를 phase-11에 명시 배정했으나(L204), phase-11 spec이 이 약속을 이월하지 않아 카드가 클릭 비활성으로 잔류. 인증 화면에서 /book/[id]로 가는 유일한 자연 경로가 막혀 phase-12 뷰어의 자연 흐름(홈 카드→상세→읽기) 시각 검수가 차단된다. CP3-a 회귀 아님(build byte 100% 일치, 신규 라우트 정상 등록) — phase-11 종료 시점부터 존재한 intent↔spec 갭. 직접 URL(/book/{uuid}/read)로는 CP3-a 검수 가능.",
+        "candidate_fix": "CP3-a-6에서 흡수(옵션 B). recommendation-list.tsx RecommendationCard 최상위 <article>를 <Link href=`/book/${book.id}` prefetch={false}>로 래핑(components/landing/book-cover-card.tsx L56~59 패턴 정합, group+focus-ring 박제). 신규 데이터·의존성 0건(book.id 가용, next/link import만). 문서 우선: 본 F18 박제 + screen-02-home.md L204 사후 정정 메모 선행.",
+        "deferred_to": "phase-12 CP3-a-6 (즉시 해소 — 시각 검수 재개 차단 해제)",
+        "blocker": true
+      },
+      {
+        "id": "F19",
+        "title": "iframe sandbox 다운로드 차단 → CC BY 4.0 ETM 해석 법무 회부",
+        "discovered_at": "phase-12 CP3-a 시각 검수 (2026-05-27, 외부 Claude 교차 검토 사이클)",
+        "location": "components/book/html-reader.tsx sandbox=\"allow-scripts allow-same-origin\" — allow-downloads 부재. iframe 내부 Download Ebook/Pdf 버튼 무반응. CC BY 4.0 §2(a)(5)(ii) ETM 조항 해석 영역.",
+        "impact": "CC BY 4.0 법전 원문 직접 검증 결과 명백한 위반 아님 — (1) 다운로드 제공 의무 부재 (2) iframe sandbox는 ETM(DRM·안티-서컴벤션) 아님 (3) 미니 바 🔗 출처 직링크로 원본 권리 행사 보장. 단 ETM 해석은 법률 뉘앙스 영역으로 자체 종결 부적합. 베타 단계 사용자 영향 경미(원본 사이트에서 다운로드 가능). MDN 검증: allow-downloads는 정식 표준, 추가 시 origin 권한 상승 0, cross-origin 환경에서 추가 보안 위험 없음.",
+        "candidate_fix": "법무 판단 분기: (가) 현 sandbox 유지 + 원본 보기 링크가 의무 충족 — 코드 무변경 (나) 활성 필요 판정 시 sandbox에 allow-downloads 추가 + ADR-0017 D6 Amendment 박제. 법무 검토 전 코드 수정 금지.",
+        "deferred_to": "phase-14 베타 직전 법무 검토 (F9 어트리뷰션 + F17 표면 + F19 다운로드 통합 배치)",
+        "blocker": false
+      },
+      {
+        "id": "F20",
+        "title": "GDL SPA 내부 헤더(Search/Language/Badges/Account/Menu) iframe 노출 → Closed Environment 충돌",
+        "discovered_at": "phase-12 CP3-a 시각 검수 (2026-05-27, 외부 Claude 교차 검토 사이클)",
+        "location": "iframe 내부 GDL 콘텐츠 자체 헤더(Account → GDL 가입 페이지 등 외부 이탈 경로 노출). iframe sandbox로 콘텐츠 CSS·DOM 제어 불가 (sandbox는 권한 제어, 시각 제어 아님).",
+        "impact": "Closed Environment 원칙(향후 PRH·Brightly Storytime 협상의 핵심 무기) 충돌. 학부모·자녀가 GDL 사이트로 이탈 가능. 베타 단계 영향 경미(소수 학부모, 추적 가능). F13(Book Dash·GDL ToS 임베드 정책)·자체 호스팅 대안과 cross-reference.",
+        "candidate_fix": "phase-2+ 옵션: (가) GDL과 임베드 모드 URL 파라미터 협상 (나) Book Dash 패턴처럼 자체 미러링 인프라(GitHub Pages) (다) GDL 책 자체 e-book HTML 자체 제작 (Beatrix Potter 패턴). 베타 단계는 트리거 박제만, 코드 무변경.",
+        "deferred_to": "phase-2+ Closed Environment 강화 (F13 통합 검토)",
         "blocker": false
       }
     ]

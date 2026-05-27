@@ -202,6 +202,7 @@
 ## 7. phase-10이 끝나면 이어지는 것
 
 - **phase-11**: 책 상세 — 추천 5권·카테고리 결과 카드 클릭이 `/book/[id]`로 활성화. AttributionBox 전체 표시 + GDL author=publisher / illustrator 정책 통합 결정(ADR-0014 결정 3·6).
+  - ※ **사후 정정 (2026-05-27)**: 위 카드 클릭 활성화 약속은 phase-11 spec(`tasks/phase-11-screen-03-book-detail.json`)이 이월하지 않아 phase-11에서 미구현 상태로 잔류했다(추천 카드 `<article>` Link 부재). phase-12 **CP3-a-6에서 활성화**하여 갭을 해소한다. intent↔spec 갭은 `tasks/phase-12-screen-04-reader.json`의 **F18** 트리거에 영구 박제. 본 정정은 메모 append만이며 위 본문은 무변경이다.
 - **phase-12**: 책 뷰어 — 완독 시 `reading_sessions.is_completed=true` 갱신 → 본 페이즈 스트릭 차트에 즉시 반영.
 - **phase-13**: 라이브러리(`/library`) — 카테고리 라우팅을 `/home?cat={slug}`에서 `/library?category={slug}`로 이전(ADR-0015 결정 5 갱신).
 - **phase-13b**: Admin — ADR-0015 결정 7 임계 도달 시 정식 `categories` 컬럼 도입 ADR 신설. 키워드 풀 정확도 측정 도구.

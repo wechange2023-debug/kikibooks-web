@@ -32,6 +32,17 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     return redirectKeepingCookies(request, POST_LOGIN_PATH, response);
   }
 
+  // 책 뷰어(/book/[id]/read) iframe 임베드 방어 — CSP frame-src 화이트리스트
+  // (ADR-0017 D6). Book Dash·GDL 두 호스트만 임베드 허용. 두 외부 사이트 모두
+  // X-Frame-Options·CSP frame-ancestors 부재(2026-05-22 HEAD 진단)라 방어 책임이
+  // 키키북스 쪽에 있어 frame-src 한정이 핵심이다. Hard Rule 9(임의 임베드 금지)와 정합.
+  // ※ frame-src 단일 디렉티브만 추가 — default-src 등 다른 CSP는 phase-12 범위 외.
+  // 리다이렉트 응답(위 2분기)은 본문·iframe이 없어 CSP 미적용으로 충분하다.
+  response.headers.set(
+    'Content-Security-Policy',
+    "frame-src 'self' https://bookdash.github.io https://content.digitallibrary.io",
+  );
+
   return response;
 }
 

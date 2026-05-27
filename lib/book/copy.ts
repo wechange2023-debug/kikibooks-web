@@ -90,6 +90,58 @@ export interface BookDetailCopy {
 }
 
 /**
+ * 책 뷰어 페이지(Screen 04 `/book/[id]/read`) 카피 단일 출처.
+ *
+ * BookDetailCopy와 분리한 사유 (CP3-a-1 결정 2 — 단일 책임):
+ *   책 상세와 책 뷰어는 서로 다른 화면·다른 카피 집합이다. BookDetailCopy를
+ *   확장하지 않고 별도 인터페이스로 둬 각 화면의 카피 변경이 서로를 오염시키지
+ *   않게 한다. phase-13b Admin DB 관리 전환 시에도 두 화면의 카피 테이블을
+ *   독립적으로 다룰 수 있다.
+ *
+ * ★ 미니 어트리뷰션 바 카피는 본 인터페이스에 두지 않는다 (CP3-a-1 옵션 β).
+ *   reader-attribution-bar는 buildAttributionRows(book, BookDetailCopy)의 결과를
+ *   재사용하므로 라이선스('📜 라이선스')·출처('🔗 원본 보기') 라벨이 이미
+ *   BookDetailCopy.attribution.rowLabels에 존재한다. 중복 박제를 피한다
+ *   (ADR-0012 결정 2 단일 출처 + ADR-0016 Amendment #1 "신규 분기·카피 0건").
+ *   read page는 getBookDetailCopy()와 getBookReaderCopy()를 함께 호출한다.
+ *
+ * ⚠️ CP3-b 진입 시 finish(완독 버튼) + celebrate(축하 placeholder) 섹션을
+ *   본 인터페이스에 추가한다 (ADR-0017 D4·D7·d13).
+ */
+export interface BookReaderCopy {
+  /**
+   * HtmlReader iframe 로딩·실패 폴백 카피 (ADR-0017 D1 iframe 단일 경로).
+   *
+   * 외부 호스팅(Book Dash GitHub Pages · GDL digitallibrary.io) 다운·차단 시
+   * 백지 화면 대신 폴백 UI를 노출한다 — phase-12 F15(iframe 외부 가용성) 1차 방어.
+   * 로딩 0초 스피너 → 5초 타임아웃 또는 onError 시 error* 문구 + 돌아가기 버튼.
+   */
+  reader: {
+    /** iframe onLoad 전 로딩 스피너 보조 문구. */
+    loading: string;
+    /** 5초 타임아웃·onError 폴백 헤더. */
+    errorTitle: string;
+    /** 폴백 본문 안내. */
+    errorBody: string;
+    /** 폴백 시 책 상세(`/book/[id]`)로 복귀하는 버튼 라벨. */
+    backToDetailLabel: string;
+  };
+  /**
+   * content_type ≠ 'html' 분기 골격 카피 (ADR-0017 D1·D2).
+   *
+   * 활성 책 896/896 = 100% 'html'이라 실데이터 0건이나, epub·h5p·pdf 분기 지점에
+   * 미구현 안내 + 원본 보기 폴백을 둔다. epub.js·h5p-standalone는 미설치
+   * (실데이터 ≥1건 발생 시 도입 트리거, D2).
+   */
+  unsupportedFormat: {
+    /** 미지원 형식 안내 문구. */
+    notice: string;
+    /** 원본 외부 페이지로 보내는 폴백 링크 라벨. */
+    originalLinkLabel: string;
+  };
+}
+
+/**
  * 책 상세 카피 정본. export하지 않는다(위 주석 — 컴포넌트 직접 import 차단).
  */
 const BOOK_DETAIL_COPY: BookDetailCopy = {
@@ -132,6 +184,23 @@ const BOOK_DETAIL_COPY: BookDetailCopy = {
 };
 
 /**
+ * 책 뷰어 카피 정본. export하지 않는다(BOOK_DETAIL_COPY와 동일 — 컴포넌트 직접
+ * import 차단, ADR-0012 결정 2 패턴).
+ */
+const BOOK_READER_COPY: BookReaderCopy = {
+  reader: {
+    loading: '책을 펼치는 중이에요…',
+    errorTitle: '책을 불러올 수 없어요',
+    errorBody: '잠시 후 다시 시도해주세요.',
+    backToDetailLabel: '책 상세로 돌아가기',
+  },
+  unsupportedFormat: {
+    notice: '아직 지원하지 않는 형식이에요',
+    originalLinkLabel: '원본에서 보기',
+  },
+};
+
+/**
  * 책 상세 페이지 카피를 반환한다.
  *
  * phase-11 — 정적 상수를 그대로 반환한다.
@@ -139,4 +208,14 @@ const BOOK_DETAIL_COPY: BookDetailCopy = {
  */
 export async function getBookDetailCopy(): Promise<BookDetailCopy> {
   return BOOK_DETAIL_COPY;
+}
+
+/**
+ * 책 뷰어 페이지 카피를 반환한다.
+ *
+ * phase-12 — 정적 상수를 그대로 반환한다(getBookDetailCopy와 동일 패턴).
+ * phase-13b — 본문을 book_reader_copy 테이블 조회로 교체한다(시그니처·반환 타입 불변).
+ */
+export async function getBookReaderCopy(): Promise<BookReaderCopy> {
+  return BOOK_READER_COPY;
 }

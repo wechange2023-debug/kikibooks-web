@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
 
 import type { HomeCopy } from '@/lib/home/copy';
@@ -54,15 +55,23 @@ function pickFallbackColor(id: string): (typeof FALLBACK_PALETTE)[number] {
 /**
  * 책 카드 1장. 표지 + 제목 + 저자 캡션 (ADR-0013 §3).
  *
- * phase-10에서는 클릭 비활성 (intent §5.2). phase-11 책 상세 진입 시 <Link>로 활성.
+ * 클릭 → /book/[id] 책 상세. phase-12 CP3-a-6에서 활성화 — book.id href 박제.
+ * (phase-10 클릭 비활성 → intent screen-02-home L204가 phase-11에 활성화를 배정했으나
+ *  phase-11 spec이 미이월 → intent↔spec 갭 정정, F18 박제.) BookCoverCard Link 패턴 정합:
+ *  group + focus-ring + cover group-hover translateY(design-system §6.2 hover 인용 충족).
+ *  prefetch={false} — 추천 5권 동시 prefetch 네트워크 부담 회피, 클릭 시 fetch로 충분.
  */
 function RecommendationCard({ book }: { book: PopularBook }) {
   const [imageError, setImageError] = useState(false);
   const fallback = pickFallbackColor(book.id);
 
   return (
-    <article className="flex w-32 shrink-0 flex-col gap-2 sm:w-36">
-      <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-surface-3 shadow-elev-1">
+    <Link
+      href={`/book/${book.id}`}
+      prefetch={false}
+      className="group flex w-32 shrink-0 flex-col gap-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 sm:w-36"
+    >
+      <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-surface-3 shadow-elev-1 transition-transform duration-200 ease-kiki group-hover:-translate-y-1">
         {imageError ? (
           <div
             className={`flex h-full w-full flex-col items-center justify-center gap-2 p-3 ${fallback.block}`}
@@ -94,7 +103,7 @@ function RecommendationCard({ book }: { book: PopularBook }) {
           <p className="line-clamp-1 text-xs text-text-variant">{book.author}</p>
         ) : null}
       </div>
-    </article>
+    </Link>
   );
 }
 
