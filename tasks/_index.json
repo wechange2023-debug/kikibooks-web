@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "project": "kikibooks",
   "last_updated": "2026-05-27T12:00:00+00:00",
-  "current_phase": "phase-12-screen-04-reader",
+  "current_phase": "phase-13-screen-05-celebrate",
   "total_phases": 16,
-  "completed_phases": 13,
-  "remaining_phases": 3,
-  "last_successful_state": "phase-11-screen-03-book-detail",
+  "completed_phases": 14,
+  "remaining_phases": 2,
+  "last_successful_state": "phase-12-screen-04-reader",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -244,7 +244,7 @@
       "id": "phase-12-screen-04-reader",
       "name": "Screen 04 책 뷰어 (HTML/ePub/H5P 분기)",
       "category": "Phase 1",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-11-screen-03-book-detail"
       ],
@@ -254,7 +254,10 @@
         "GDL H5P 정상",
         "reading_sessions 페이지 단위 업데이트",
         "마지막 페이지 → /book/[id]/celebrate 이동"
-      ]
+      ],
+      "completed_at": "2026-05-27T12:00:00+00:00",
+      "commit_range": "359de0e..4e8e9e2 (CP1 1 + CP2 1 + CP3-a 1 + CP3-b 1 + CP4 메타 1 = 5 커밋)",
+      "verification_result": "v1~v5 자동 검증(lint·type-check·build·schema 무변경·secret 미노출) 통과 + v6~v19 검증 통과(블랙리스트 추출 회귀 0·/read 4-가드·Book Dash/GDL iframe·sandbox+CSP·미니 어트리뷰션 바·완독 UPDATE·세션 INSERT 중복가드·celebrate placeholder·phase-13 경계·iframe 폴백·raw HEX 0·4 viewport·phase-13 진입 차단 0) + 사용자 시각 검수 8/9(9번 /library 404=phase-13 전속, 경계 정합). ADR-0017 신규(D1~D7) + ADR-0014 Amendment #5 + ADR-0016 Amendment #1 작성. 빌드 산출 ƒ /book/[id]/read 2.41 kB / 98.4 kB + ƒ /book/[id]/celebrate 186 B / 96.2 kB Dynamic 정상 등록. 실데이터 content_type='html' 896/896으로 PLAN 3분기(html/epub/h5p)가 iframe 단일 경로로 수렴(ADR-0017 D1·D2 — verification 배열의 'GDL H5P 정상'은 H5P 미구현 골격으로 충족, 'reading_sessions 페이지 단위 업데이트'는 cross-origin 한계로 포기 D3 → 명시 완독 버튼 D4로 대체). DB 실가동 4건(INSERT 08:05:31·중복가드 0·UPDATE 08:11:28·재진입 신규 INSERT 08:12:53). 결정 박제 #1 옵션 A(html-reader useEffect 마운트 1회)·#2 sessionId 미전달·start/complete 가드 키 대칭(child_id+book_id+completed_at IS NULL). 후속 트리거 F13~F20 누적(F18 blocker=true CP3-a-6 해소, F14 GDL SPA 시각 검수 해소, 나머지 blocker=false phase-2+·phase-14 법무 이연). Hard Rule 1·3·6·8·9·10 무위반(DB 스키마·의존성·secret·raw HEX 0건 + iframe 화이트리스트 2호스트만)."
     },
     {
       "id": "phase-13-screen-05-celebrate",

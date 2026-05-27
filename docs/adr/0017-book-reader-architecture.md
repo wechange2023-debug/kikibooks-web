@@ -132,3 +132,17 @@ cross-origin iframe 내부 페이지네이션 관측 불가(§1.3)로 페이지 
 ---
 
 *문서 끝.*
+
+---
+
+## Amendment #1 (2026-05-27 phase-12 CP4 종료)
+
+phase-12 종료 시점 D1~D7 결정은 전부 정합 확인됐다(커밋 `359de0e..4e8e9e2`). 본문 D1~D7은 무수정한다(phase-end ADR 본문 보존 관례 — ADR-0016 Amendment 패턴 정합). 사후 박제 2건:
+
+1. **§5 후속 트리거 요약 정정** — CP1 작성 시점의 "(F13~F17, 전부 blocker=false)"는 CP3-a 시각 검수(2026-05-27)에서 F18·F19·F20이 추가되며 갱신됐다. 최신 범위는 **F13~F20**이다. F18(phase-11 intent↔spec 갭 — `/home` 추천 카드 `/book/[id]` Link 미활성화)은 **blocker=true**였고 CP3-a-6에서 즉시 해소됐다. F14(GDL SPA sandbox 완전성)는 CP3-a 검수에서 `allow-scripts allow-same-origin`만으로 정상 동작이 확인되어 해소됐다(D6 보강 불요). F19(iframe 다운로드 차단 → CC BY 4.0 ETM 해석)·F20(GDL SPA 내부 헤더 → Closed Environment 충돌)은 blocker=false로 각각 phase-14 법무·phase-2+로 이연한다. 트리거 상세 박제의 단일 출처는 `tasks/phase-12-screen-04-reader.json`의 `phase_12_follow_up_triggers`다.
+
+2. **호출 지점·세션 시그니처 확정** — D5의 두 server action(`startReadingSession`·`completeReadingSession`)은 본문 명세대로 모두 `bookId`만 받는다(결정 #2 sessionId 미전달 — D5와 이미 정합, 컴포넌트 간 sessionId threading 0건). `completeReadingSession`은 server에서 `(child_id, book_id, completed_at IS NULL)`로 미완료 세션을 재조회하며, 이는 `startReadingSession`의 중복 가드 키와 대칭이라 StrictMode 2회·재진입·race를 동일 가드로 흡수한다. `startReadingSession` 호출 지점은 `docs/intent/screen-04-reader.md` §5.1 L104의 옵션 A(`html-reader.tsx` `useEffect` 마운트 1회)로 확정했다(결정 #1) — 호출 지점은 구현 세부이므로 D5 본문은 무수정하고 intent에 박제한다. 외부 교차 검토의 옵션 B(Server Component 호출) 권고와의 충돌은 `claude.md` §1(의도→문서→코드)에 따라 옵션 A 정정으로 마무리했다.
+
+---
+
+*Amendment #1 끝.*
