@@ -105,8 +105,11 @@ export interface BookDetailCopy {
  *   (ADR-0012 결정 2 단일 출처 + ADR-0016 Amendment #1 "신규 분기·카피 0건").
  *   read page는 getBookDetailCopy()와 getBookReaderCopy()를 함께 호출한다.
  *
- * ⚠️ CP3-b 진입 시 finish(완독 버튼) + celebrate(축하 placeholder) 섹션을
- *   본 인터페이스에 추가한다 (ADR-0017 D4·D7·d13).
+ * CP3-b — finish(완독 버튼) + celebrate(축하 placeholder) 섹션 추가 완료
+ *   (ADR-0017 D4·D7·d13). celebrate.buildSubtitle은 자녀 이름·책 제목을 받아
+ *   d13 박제 문장을 생성하는 함수다 — 정적 상수 패턴의 유일한 예외(동적 값 의존).
+ *   본 모듈은 server-only이므로 함수는 서버에서만 평가되고, FinishButton('use client')에는
+ *   finish의 문자열 라벨만 props로 내려가 직렬화 문제가 없다.
  */
 export interface BookReaderCopy {
   /**
@@ -138,6 +141,37 @@ export interface BookReaderCopy {
     notice: string;
     /** 원본 외부 페이지로 보내는 폴백 링크 라벨. */
     originalLinkLabel: string;
+  };
+  /**
+   * 완독 버튼(FinishButton, CP3-b) 카피 (ADR-0017 D4 명시 완독).
+   *
+   * '다 읽었어요' 클릭 → completeReadingSession server action → /celebrate redirect.
+   * completingLabel은 useTransition isPending 동안 버튼에 노출돼 중복 클릭을 막는다.
+   */
+  finish: {
+    /** 완독 버튼 기본 라벨 (intent §4.3 '다 읽었어요'). */
+    buttonLabel: string;
+    /** 완독 처리(server action) 진행 중 버튼 라벨 (useTransition isPending). */
+    completingLabel: string;
+  };
+  /**
+   * 완독 축하 placeholder(`/celebrate`, CP3-b) 카피 (ADR-0017 D7·d9·d13 phase-13 경계).
+   *
+   * 별 3개 SVG 애니메이션·children.points += 50·child_badges INSERT는 phase-13 전속이다.
+   * 본 페이즈는 헤더 + 1줄 + /library 버튼만 렌더한다. buildSubtitle은 자녀 이름·책
+   * 제목을 받아 d13 박제 문장을 생성한다(동적 값 의존 — 정적 상수 패턴의 유일한 예외).
+   *
+   * ⚠️ 한국어 조사('은'/'을')는 d13·intent §6 박제 문안 그대로다 — 자녀 이름·책 제목
+   *   말음(받침)에 따라 어색할 수 있으나, 본 페이즈는 placeholder이므로 박제를 우선한다.
+   *   조사 정합(은/는·을/를 자동 선택)은 phase-13 정식 celebrate에서 보강한다.
+   */
+  celebrate: {
+    /** 축하 헤더 (d13 박제). */
+    title: string;
+    /** '{자녀 이름}은 《{책 제목}》을 끝까지 읽었어요!' 생성 (d13·intent §6 박제). */
+    buildSubtitle: (childName: string, bookTitle: string) => string;
+    /** '다른 책 보러 가기' — /library 링크 라벨 (d13·intent §6, 단일 버튼). */
+    libraryLinkLabel: string;
   };
 }
 
@@ -197,6 +231,16 @@ const BOOK_READER_COPY: BookReaderCopy = {
   unsupportedFormat: {
     notice: '아직 지원하지 않는 형식이에요',
     originalLinkLabel: '원본에서 보기',
+  },
+  finish: {
+    buttonLabel: '다 읽었어요',
+    completingLabel: '완독 처리 중…',
+  },
+  celebrate: {
+    title: '🎉 완독 축하해요!',
+    buildSubtitle: (childName, bookTitle) =>
+      `${childName}은 《${bookTitle}》을 끝까지 읽었어요!`,
+    libraryLinkLabel: '다른 책 보러 가기',
   },
 };
 

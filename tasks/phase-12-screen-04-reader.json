@@ -11,15 +11,15 @@
   "cp_progress": {
     "phase_status": "pending",
     "phase_completed_at": null,
-    "current_cp": "CP3-b-finish-button-and-session",
-    "last_successful_cp": "CP3-a-reader-page-and-iframe",
+    "current_cp": "CP4-verify-and-meta",
+    "last_successful_cp": "CP3-b-finish-button-and-session",
     "completed_cps": [
       "CP1-spec-intent-adrs",
       "CP2-blacklist-extract-and-select-expand",
-      "CP3-a-reader-page-and-iframe"
+      "CP3-a-reader-page-and-iframe",
+      "CP3-b-finish-button-and-session"
     ],
     "pending_cps": [
-      "CP3-b-finish-button-and-session",
       "CP4-verify-and-meta"
     ],
     "sub_step_structure": {

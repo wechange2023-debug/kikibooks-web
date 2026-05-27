@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { notFound, redirect } from 'next/navigation';
 
+import { FinishButton } from '@/components/book/finish-button';
 import { HtmlReader } from '@/components/book/html-reader';
 import { ReaderAttributionBar } from '@/components/book/reader-attribution-bar';
 import { SIGN_IN_PATH } from '@/lib/auth/routes';
@@ -45,7 +46,12 @@ import { createClient } from '@/lib/supabase/server';
  * 여백: 본 페이지 root는 px-* 0건 — 뷰어 좌우 여백(§7.2 16/32/64px)은 HtmlReader
  *   외곽 wrapper가 보유한다(CP3-a-3 박제, 중복 적용 방지).
  *
- * 완독 버튼(FinishButton)은 CP3-b에서 본 페이지 하단에 배치한다.
+ * 완독 버튼(FinishButton, CP3-b 통합 완료): iframe 하단 footer에 배치(intent §5.3 —
+ *   "iframe 하단"). HtmlReader(상단 iframe)와 FinishButton(하단)이 동일 book.id를 받지만
+ *   sessionId threading은 0건이다 — HtmlReader는 마운트 시 startReadingSession(bookId)로
+ *   세션을 시작(옵션 A)하고, FinishButton의 completeReadingSession(bookId)은 server에서
+ *   (child_id, book_id, completed_at IS NULL)로 동일 세션을 재조회해 완독 처리한다
+ *   (CP3-b-2 시그니처 확정 — start/complete 가드 키 대칭).
  *
  * Server Component — 가드·fetch·조립. 클라이언트 상태는 HtmlReader('use client')에 한정.
  *
@@ -120,6 +126,7 @@ export default async function ReadPage({ params }: ReadPageProps) {
     case 'html':
       readerBody = (
         <HtmlReader
+          bookId={book.id}
           src={book.content_url}
           title={book.title}
           readerCopy={readerCopy.reader}
@@ -162,7 +169,9 @@ export default async function ReadPage({ params }: ReadPageProps) {
       </h1>
       <ReaderAttributionBar rows={readerRows} />
       <main className="flex-1 overflow-hidden">{readerBody}</main>
-      {/* CP3-b: FinishButton('다 읽었어요') 배치 자리 */}
+      <footer className="border-t border-outline bg-surface px-4 py-3">
+        <FinishButton bookId={book.id} copy={readerCopy.finish} />
+      </footer>
     </div>
   );
 }
