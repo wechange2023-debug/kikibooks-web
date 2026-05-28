@@ -146,3 +146,13 @@ phase-12 종료 시점 D1~D7 결정은 전부 정합 확인됐다(커밋 `359de0
 ---
 
 *Amendment #1 끝.*
+
+---
+
+## Amendment #2 (2026-05-28 phase-13 CP1-adr)
+
+D7(points·badges·별 3개 SVG 애니메이션 phase-13 전속 경계)을 **ADR-0018(완독 보상 + 라이브러리)이 해소**한다. phase-12 완독은 본문 D7대로 `reading_sessions` UPDATE + `/celebrate` redirect까지만 수행했고, `children`·`child_badges` 쓰기 0건을 지켰다. phase-13은 그 경계를 열어 보상 시스템(옵션 B secret 키 child_badges INSERT · 매 완독 +50 누적 · 보상 멱등 앵커 · §7.3 모션)을 구현하며, 그 결정은 ADR-0018 D1~D14에 박제한다. 본 ADR 본문 D1~D7은 무수정한다(phase-end ADR 본문 보존 관례 — Amendment #1 정합). 보상 쓰기 아키텍처의 단일 출처는 ADR-0018이다.
+
+---
+
+*Amendment #2 끝.*

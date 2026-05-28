@@ -1,0 +1,365 @@
+{
+  "phase_id": "phase-13-screen-05-celebrate",
+  "name": "Screen 05 완독 보상 + 라이브러리",
+  "category": "Phase 1",
+  "version": "1.1",
+  "created_at": "2026-05-28",
+  "depends_on": [
+    "phase-12-screen-04-reader"
+  ],
+
+  "cp_progress": {
+    "phase_status": "in_progress",
+    "phase_completed_at": null,
+    "current_cp": "CP2-celebrate-rewards-and-page",
+    "last_successful_cp": "CP1-adr",
+    "completed_cps": [
+      "CP1-spec",
+      "CP1-intent",
+      "CP1-adr"
+    ],
+    "pending_cps": [
+      "CP2-celebrate-rewards-and-page",
+      "CP3-library-page-and-components",
+      "CP4-verify-and-meta"
+    ],
+    "sub_step_structure": {
+      "CP1-spec-intent-adr": [
+        "CP1-spec",
+        "CP1-intent",
+        "CP1-adr"
+      ]
+    },
+    "note": "CP1(spec·intent·adr) 종료(2026-05-28). CP2·CP3 sub-step은 ADR-0018 D14로 확정: CP2-celebrate-rewards-and-page(보상 server action + 멱등 배선 + §7.3 모션 + celebrate 정식 페이지 + 카피 분리), CP3-library-page-and-components(/library 페이지 + 쿼리 + 필터·검색·무한 스크롤·빈 상태). 각 단독 커밋 + 시각 검수(phase-12 CP3-a/-b 패턴). ★ 컴포넌트 세분화 주의: ADR-0018 D14 인벤토리는 intent §5의 단일 컴포넌트(CelebrateRewards·LibraryBrowser)를 모션·기능 단위로 세분화(celebrate: stars-animation/points-count-up/badge-reveal + celebrate-layout / library: filters/search/grid/infinite-scroll/empty-state)한 예상안이다. 단일 vs 분리 최종 형태는 각 구현 CP 착수 시 확정한다. ★ 파일명 박제 우선: awardCompletionRewards는 lib/book/rewards.ts(D14 'awards.ts' 표기 정정), 라이브러리 쿼리는 lib/library/query.ts(D14 'api.ts' 표기 정정) — spec·intent·ADR 3중 박제 정합."
+  },
+
+  "summary": "phase-12에서 minimal placeholder로 착지점만 확보한 /book/[id]/celebrate를 정식 완독 보상 화면으로 확장하고, '다른 책 보러 가기' 버튼의 목적지였던 /library를 신규 구현한다. 완독 보상 3종은 ① design-system §7.3 Celebrate 모션(별 3개 stagger·포인트 count-up·배지 등장) ② children.points += 50(매 완독 누적, 001 §9.3 본인 세션 UPDATE 정책 활용) ③ child_badges INSERT(001 §9.6 'INSERT는 시스템이 책임' 설계 의도 정합 — createServiceRoleClient secret 키, 옵션 B)다. 보상은 /celebrate 페이지 로드 시점이 아니라 completeReadingSession의 1행 UPDATE 성공 직후(완독 전이 시점, reading-session.ts line 176의 0행 가드가 멱등 앵커)에 awardCompletionRewards(신규·분리, 옵션 Y)로 트리거해 재방문 중복 보상을 차단한다. /library는 3-가드(auth·getActiveChild·필터 입력 검증) + 레벨·카테고리 필터 + 키워드 검색 + 무한 스크롤(IntersectionObserver + cursor, 외부 의존 0건)로 구현한다. DB 스키마 변경 0건(Hard Rule 8 — 옵션 B는 기존 secret 키 인프라 사용이지 RLS 정책 추가가 아니다). Hard Rule 1·3·6·8·9·10 무위반. CP1은 spec(본 파일)·intent(screen-05-celebrate.md)·ADR-0018(신규, child_badges 옵션 B + 보상 멱등성·points 누적·awardCompletionRewards 분리 등 D1~D14) + ADR-0017 Amendment #2(D7 경계 해소 박제) 3 sub-step으로 종료(코드 0건).",
+
+  "goals": [
+    "/book/[id]/celebrate 정식 보상 화면 — design-system §7.3 모션 토큰 100% 정합(별 3개·포인트 카운터·배지)",
+    "children.points += 50 — 매 완독 누적(옵션 Y), 001 §9.3 'parents can update own children' 본인 세션 UPDATE 정책 활용",
+    "child_badges INSERT — createServiceRoleClient(옵션 B), 001 §9.6 'INSERT는 시스템이 책임' 설계 의도 정합, UNIQUE(child_id, badge_code) 1회 방어, badge_code='first_completion'(ADR-0018 D6)",
+    "awardCompletionRewards 신규(옵션 Y 분리) — completeReadingSession 1행 UPDATE 성공 직후 트리거(멱등 앵커), /celebrate 페이지 로드 보상 금지(재방문 중복 차단), 인자 0건 시그니처(ADR-0018 D8)",
+    "/library 신규 페이지 — 3-가드 + 레벨·카테고리 필터 + 키워드 검색 + 무한 스크롤(IntersectionObserver + cursor, ADR-0018 D7)",
+    "/library FCP < 2초 (global_verification 정합)",
+    "ADR-0018 신규(D1~D14) + ADR-0017 Amendment #2(D7 해소) 작성 — CP1-adr 종료",
+    "Hard Rule 1·3·6·8·9·10 무위반",
+    "phase-13b(Admin) 진입 차단 요소 0건"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 1 — books.attribution_text NOT NULL 트리거 무변경. /library는 books SELECT만(INSERT/UPDATE 0건). /library 카드도 표지 노출 화면이므로 CC BY 공통 안내(ADR-0013) 정합",
+    "Hard Rule 3 — CC BY-NC/ND 노출 0건. /library 필터·검색은 기존 적재분(cc-by/sa/cc0/pd 화이트리스트 통과분)만 조회",
+    "Hard Rule 6 — child_badges INSERT는 createServiceRoleClient(SUPABASE_SECRET_KEY) server action(awardCompletionRewards) 내부에서만. lib/supabase/server.ts는 import 'server-only'로 클라이언트 번들 포함 시 빌드 실패 강제. 클라이언트 노출 0건. ADR-0003 §2 '서버 전용. cron·시드·관리자 라우트' 정합",
+    "Hard Rule 8 — DB 스키마 변경 0건. supabase/migrations 신규 0건. 옵션 B는 기존 secret 키 인프라(createServiceRoleClient) 사용이며 RLS 정책 추가(옵션 A)가 아니다. children.points UPDATE는 001 §9.3 기존 정책, child_badges INSERT는 §9.6 설계 의도(시스템 책임)대로 secret 키. /library SELECT는 스키마 무변경",
+    "Hard Rule 9 — YouTube·외부 임베드 0건. /celebrate·/library는 iframe 미사용(카탈로그 카드 + 모션만)",
+    "Hard Rule 10 — design-system §7.3 Celebrate 모션 토큰만(별 색상 --color-accent-yellow·텍스트 --color-text-variant 등 semantic). easing cubic-bezier(0.34,1.56,0.64,1)은 색상 아닌 모션 곡선이라 raw HEX 규칙 대상 아님. raw HEX 0건"
+  ],
+
+  "scope_in": [
+    "tasks/phase-13-screen-05-celebrate.json (CP1-spec 신규 — 본 파일, CP1-adr 갱신 v1.1)",
+    "docs/intent/screen-05-celebrate.md (CP1-intent 신규)",
+    "docs/adr/0018-completion-rewards-and-library.md (CP1-adr 신규 — D1~D14)",
+    "docs/adr/0017-book-reader-architecture.md (CP1-adr 수정 — Amendment #2, D7 해소 박제)",
+    "lib/book/rewards.ts (CP2 신규 — awardCompletionRewards server action, createServiceRoleClient, 4.5중 안전망)",
+    "lib/book/reading-session.ts (CP2 수정 — completeReadingSession 1행 UPDATE 성공 직후 awardCompletionRewards 배선, redirect 직전, try-catch 옵션 A)",
+    "lib/book/copy.ts (CP2 수정 — BookReaderCopy.celebrate placeholder → CelebrateCopy 분리, 정식 보상 카피)",
+    "components/book/celebrate-rewards.tsx 또는 components/celebrate/* (CP2 신규 — §7.3 모션. 단일 vs stars-animation/points-count-up/badge-reveal+celebrate-layout 분리는 CP2 착수 확정)",
+    "app/book/[id]/celebrate/page.tsx (CP2 수정 — placeholder → 정식 보상. 본인 세션 읽기 전용 fetch(points·badge·book) + 모션 조립. 보상 쓰기 0건)",
+    "lib/library/query.ts (CP3 신규 — getBooks: cursor 페이지네이션 + 레벨·카테고리 필터 + 키워드 검색, 블랙리스트 제외)",
+    "lib/library/copy.ts (CP3 신규 — LibraryCopy)",
+    "app/library/page.tsx (CP3 신규 — Server Component, 3-가드 + 초기 페이지)",
+    "components/library/library-browser.tsx 또는 components/library/* (CP3 신규 — 필터·검색·무한 스크롤·빈 상태. 단일 vs filters/search/grid/infinite-scroll/empty-state 분리는 CP3 착수 확정)",
+    "tasks/_index.json (CP4 mark_success)"
+  ],
+
+  "scope_out": [
+    "child_badges INSERT용 RLS 정책 추가(옵션 A) — 001 §9.6 'INSERT는 시스템이 책임' 설계 의도 위배 + Hard Rule 8 마이그레이션 002 절차(사용자 사전 승인) 트리거. 옵션 B(secret 키)로 대체 확정(ADR-0018 D1)",
+    "milestone 배지(5권·10권·레벨별 등) — phase-13b 또는 phase-14. 본 페이즈는 완독 배지 단일(badge_code='first_completion', ADR-0018 D6). F22",
+    "즐겨찾기(favorites) 쓰기 토글 — 본 spec 범위는 조회·필터·검색·무한 스크롤. favorites 쓰기는 phase-13b 또는 향후 (CP1-adr 미포함 확정)",
+    "다자녀 모드 — getActiveChild(created_at ASC LIMIT 1) 재사용. 자녀 전환 UI는 phase-13 이후(active-child.ts 박제 정합)",
+    "completeReadingSession 자동 페이지 추적 재도입 — phase-12 ADR-0017 D3 포기 유지. 보상은 명시 완독(D4) 1:1 대응",
+    "Admin 랜딩 카피·큐레이션·사용자 관리 — phase-13b 전속(별도 spec)",
+    "가상 스크롤(react-virtual) — 베타 규모는 IntersectionObserver+cursor 충분(ADR-0018 D7). 대량 카탈로그 성능은 F24",
+    "confetti 외부 라이브러리 도입 — §7.3 'confetti 선택적'. 별·포인트·배지 우선, confetti는 F21 트리거(CP2 시각 검수 시 결정)",
+    "다크 모드 — design-system §9 Phase 2 이후",
+    "한국어 조사(은/는·을/를) 자동 선택 — placeholder 박제 문안 유지(ADR-0018 D10, 과한 엔지니어링 회피)"
+  ],
+
+  "files_to_create_or_modify": [
+    "tasks/phase-13-screen-05-celebrate.json (신규 CP1-spec + 갱신 CP1-adr v1.1)",
+    "docs/intent/screen-05-celebrate.md (신규 — CP1-intent)",
+    "docs/adr/0018-completion-rewards-and-library.md (신규 — CP1-adr)",
+    "docs/adr/0017-book-reader-architecture.md (수정 — CP1-adr, Amendment #2)",
+    "lib/book/rewards.ts (신규 — CP2)",
+    "lib/book/reading-session.ts (수정 — CP2, awardCompletionRewards 배선)",
+    "lib/book/copy.ts (수정 — CP2, CelebrateCopy 분리)",
+    "components/book/celebrate-rewards.tsx 또는 components/celebrate/* (신규 — CP2)",
+    "app/book/[id]/celebrate/page.tsx (수정 — CP2, 정식 보상)",
+    "lib/library/query.ts (신규 — CP3)",
+    "lib/library/copy.ts (신규 — CP3)",
+    "app/library/page.tsx (신규 — CP3)",
+    "components/library/library-browser.tsx 또는 components/library/* (신규 — CP3)",
+    "tasks/_index.json (수정 — mark_success, CP4)"
+  ],
+
+  "checkpoints": [
+    {
+      "id": "CP1-spec",
+      "description": "tasks/phase-13-screen-05-celebrate.json 신규 작성. phase-12 spec 구조 baseline 정합. cp1_decisions d1~d10 박제(d1·d5 사용자 확정, d6·d8·d10은 권고 + CP1-adr 확정). verification 9건. F21~F24 예고. 코드 0건.",
+      "status": "success",
+      "files": [
+        "tasks/phase-13-screen-05-celebrate.json"
+      ]
+    },
+    {
+      "id": "CP1-intent",
+      "description": "docs/intent/screen-05-celebrate.md 신규 작성. screen-04-reader.md 패턴 정합. §1~§10(목적·범위·라우트·흐름·구성요소·카피·§7.3 모션·캐싱/보안·검증·미해소 9건). 핵심 박제: FinishButton·completeReadingSession 무변경 + 보상 서버 측 멱등 앵커. 코드 0건.",
+      "status": "success",
+      "files": [
+        "docs/intent/screen-05-celebrate.md"
+      ]
+    },
+    {
+      "id": "CP1-adr",
+      "description": "ADR-0018 신규(완독 보상 + 라이브러리, D1~D14 — 옵션 B·4.5중 안전망·멱등 앵커·분리·매 완독 누적·badge_code first_completion·IntersectionObserver·인자 0건·실패 옵션 A·카피 분리·robots/dynamic·후속 동선·CP 분할) + ADR-0017 Amendment #2(D7 phase-13 경계 해소 박제, 본문 무변경). spec d6·d8·d10 확정 마크 + cp_progress·scope·files·checkpoints CP2/CP3 sub-step 확정. 코드 0건. ADR-0017 vs ADR-0018 책임 분리(read vs celebrate/library). 외부 Claude 권고 옵션 X(신규 ADR) 채택.",
+      "status": "success",
+      "files": [
+        "docs/adr/0018-completion-rewards-and-library.md",
+        "docs/adr/0017-book-reader-architecture.md"
+      ]
+    },
+    {
+      "id": "CP2-celebrate-rewards-and-page",
+      "description": "완독 보상 정식 구현(ADR-0018 D14). (1) lib/book/rewards.ts 신규 — awardCompletionRewards() server action, 4.5중 안전망(zod·auth·getActiveChild RLS §9.3·createServiceRoleClient), children.points +50 UPDATE + child_badges INSERT(badge_code='first_completion', onConflict ignore), 인자 0건(D8), 실패 옵션 A(D9) (2) lib/book/reading-session.ts 수정 — completeReadingSession 1행 UPDATE 성공 직후·redirect 직전 awardCompletionRewards 호출(try-catch, reading_sessions rollback 0건) (3) lib/book/copy.ts 수정 — BookReaderCopy.celebrate → CelebrateCopy 분리(정식 카피) (4) components/book/celebrate-rewards.tsx(또는 components/celebrate/* 세분화) 신규 — §7.3 모션(별 3개 stagger·포인트 count-up·배지 + prefers-reduced-motion), 'use client' (5) app/book/[id]/celebrate/page.tsx 수정 — placeholder → 정식, 본인 세션 읽기 전용 fetch(points·badge·book) + 모션 조립, 보상 쓰기 0건(D3). 단독 커밋 + 시각 검수(완독→보상 적립→멱등 재방문→reduced-motion→secret 미노출).",
+      "status": "pending",
+      "files": [
+        "lib/book/rewards.ts",
+        "lib/book/reading-session.ts",
+        "lib/book/copy.ts",
+        "components/book/celebrate-rewards.tsx",
+        "app/book/[id]/celebrate/page.tsx"
+      ]
+    },
+    {
+      "id": "CP3-library-page-and-components",
+      "description": "/library 신규(ADR-0018 D14). (1) lib/library/query.ts 신규 — getBooks: cursor 페이지네이션(.range()/.gt(), 안정 정렬) + 레벨·카테고리 필터 + 키워드 검색(title ilike), books is_active=true + lib/shared/blacklist.ts 제외 (2) lib/library/copy.ts 신규 — LibraryCopy(필터·카테고리·검색 placeholder·빈 상태) (3) app/library/page.tsx 신규 — Server Component, 3-가드(미인증·자녀 0명·필터 입력 검증, D7), 초기 페이지 SSR, robots noindex + force-dynamic(D12) (4) components/library/library-browser.tsx(또는 components/library/* 세분화: filters/search/grid/infinite-scroll/empty-state) 신규 — 필터·검색(debounce)·무한 스크롤(IntersectionObserver sentinel, D7)·빈 상태, 책 카드 /book/[id] Link(F18 패턴). 단독 커밋 + 시각 검수(필터·검색·무한 스크롤·빈 상태·블랙리스트 제외·FCP·4 viewport).",
+      "status": "pending",
+      "files": [
+        "lib/library/query.ts",
+        "lib/library/copy.ts",
+        "app/library/page.tsx",
+        "components/library/library-browser.tsx"
+      ]
+    },
+    {
+      "id": "CP4-verify-and-meta",
+      "description": "사용자 클릭 검증 v1~v9 통합 박제 + tasks/_index.json mark_success(phase-13 success, current_phase → phase-13b-admin-system) + spec verification_result 박제 + 메타 커밋 1건 + origin push 1회. phase_13_follow_up_triggers 실측 누적 박제.",
+      "status": "pending",
+      "files": [
+        "tasks/phase-13-screen-05-celebrate.json",
+        "tasks/_index.json"
+      ]
+    }
+  ],
+
+  "verification": [
+    { "id": "v1-stars-animation", "description": "별 3개 SVG 애니메이션 §7.3 모션 토큰 100% 정합", "method": "/celebrate 진입 시 별 3개 0/150/300ms stagger 등장 + scale(0)→(1.2)→(1) bounce + 200ms 지연 후 색상 회색→accent-yellow transition 시각 확인", "expected": "§7.3 표 값 정합 렌더" },
+    { "id": "v2-points-plus-50", "description": "포인트 +50 children.points 반영(매 완독 누적)", "method": "완독 1회 → children.points DB 값 +50 확인. 동일 책 재독(새 세션 완독) → 다시 +50 누적 확인. /celebrate 포인트 카운터 0→50 count-up 600ms 시각 확인", "expected": "DB +50 누적 + 카운터 모션 정합" },
+    { "id": "v3-child-badges-insert", "description": "child_badges INSERT (UNIQUE 1회 방어, 옵션 B)", "method": "첫 완독 → child_badges 행 1건 INSERT(badge_code='first_completion') 확인. 재완독 → UNIQUE(child_id, badge_code)로 INSERT 0건(중복 방어) 확인. createServiceRoleClient 경로 확인", "expected": "최초 1건 INSERT + 재완독 0건" },
+    { "id": "v4-library-filter-search-scroll", "description": "라이브러리 필터·검색·무한 스크롤 작동", "method": "/library 레벨·카테고리 필터 적용 → 결과 갱신. 키워드 검색 → 매칭 결과. 스크롤 하단 도달 → 다음 페이지 자동 로드(IntersectionObserver)", "expected": "필터·검색·무한 스크롤 3종 정상" },
+    { "id": "v5-safety-net", "description": "4.5중 안전망 정합 (zod·auth·getActiveChild·secret INSERT)", "method": "awardCompletionRewards 코드 검토: ①zod ②auth.getUser() ③getActiveChild(본인 세션·RLS §9.3로 child_id 소유권 검증) ④createServiceRoleClient로 검증된 child_id만 사용. 타 사용자 child_id 쓰기 경로 0건", "expected": "4단계 가드 + child_id 출처 RLS 검증 확인" },
+    { "id": "v6-reward-idempotency", "description": "보상 멱등성 (재방문 시 +50 중복 0건)", "method": "완독 후 /celebrate 새로고침·재방문 → children.points 추가 증가 0건(보상은 completeReadingSession 1행 UPDATE 전이 시점에만 트리거, page 로드 보상 0건)", "expected": "재방문 보상 0건" },
+    { "id": "v7-reduced-motion", "description": "prefers-reduced-motion 정합", "method": "OS/브라우저 reduce 설정 시 별·배지 bounce → linear fade, duration 50% 축소 확인", "expected": "§7.3 reduced-motion 대응 정합" },
+    { "id": "v8-hard-rule-10", "description": "Hard Rule 10 raw HEX 0건", "method": "grep -E '#[0-9a-fA-F]{3,8}' components/book/ components/celebrate/ components/library/ app/book/ app/library/ lib/book/ lib/library/", "expected": "0건 (semantic 토큰만, easing cubic-bezier 제외)" },
+    { "id": "v9-library-fcp", "description": "/library FCP < 2초 (global_verification 정합)", "method": "Lighthouse 또는 DevTools로 /library FCP 측정", "expected": "FCP < 2초 + lighthouse perf ≥ 80 / a11y ≥ 90" }
+  ],
+
+  "completion_criteria": [
+    "v1 별 3개 §7.3 모션 통과",
+    "v2 포인트 +50 매 완독 누적 통과",
+    "v3 child_badges INSERT + UNIQUE 1회 방어 통과",
+    "v4 라이브러리 필터·검색·무한 스크롤 통과",
+    "v5 4.5중 안전망 정합 통과",
+    "v6 보상 멱등성(재방문 중복 0건) 통과",
+    "v7 prefers-reduced-motion 통과",
+    "v8 Hard Rule 10 raw HEX 0건",
+    "v9 /library FCP < 2초",
+    "pnpm lint && pnpm type-check && pnpm build 통과 + DB 스키마 무변경 + secret 미노출(server action 내부만)",
+    "tasks/_index.json phase-13 status: pending → success, last_successful_state 갱신, current_phase → phase-13b-admin-system",
+    "python scripts/run_phase.py --complete phase-13-screen-05-celebrate 실행"
+  ],
+
+  "user_steps": [
+    "외부 콘솔 설정 불필요 — SUPABASE_SECRET_KEY는 기존 phase-06 GitHub Secrets·.env.local에 이미 존재(ADR-0003). 신규 발급 0건",
+    "CP2 완독 1회 → /celebrate 별 3개·포인트 +50·배지 시각 확인 + Supabase children.points·child_badges 행 확인",
+    "CP2 재완독 → points 누적(+50) + child_badges 중복 0건 확인",
+    "CP2 완독 후 /celebrate 새로고침 → points 추가 증가 0건(멱등) 확인",
+    "CP3 /library 필터·검색·무한 스크롤 클릭 확인 + 4 viewport 스냅샷",
+    "prefers-reduced-motion 토글 후 모션 축소 확인",
+    "pnpm lint && pnpm type-check && pnpm build",
+    "python scripts/run_phase.py --complete phase-13-screen-05-celebrate"
+  ],
+
+  "cp1_decisions": {
+    "context": "CP1에서 박제하고 구현 CP가 따르는 10건 결정(d1~d10). 사용자 확정 2건(d1 옵션 B·d5 매 완독 누적, 2026-05-28)은 그대로 박제. d6·d8·d10은 CP1-adr(ADR-0018)에서 외부 Claude 권고안으로 최종 확정했다. 박제 우선 근거는 001 마이그레이션 §9.6 주석·ADR-0003 §2·lib/supabase/server.ts·design-system §7.3·reading-session.ts line 176 멱등 앵커. ADR cross-reference: ADR-0018 D6=spec d6, ADR-0018 D7=spec d8, ADR-0018 D8=spec d10. 보상 쓰기 아키텍처 단일 출처는 ADR-0018.",
+    "decisions": [
+      {
+        "id": "d1-child-badges-option-b",
+        "description": "child_badges INSERT 경로 = 옵션 B(createServiceRoleClient secret 키). 사용자 확정(2026-05-28). 근거 박제: 001 §9.6 주석 'child_badges — 본인 자녀의 뱃지만 SELECT (INSERT는 시스템이 책임)'(line 293) — 스키마 설계자가 의도적으로 INSERT 정책을 두지 않고 시스템 쓰기를 전제. ADR-0003 §2 'SUPABASE_SECRET_KEY ★ 서버 전용. cron·시드·관리자 라우트'(line 38). 인프라: lib/supabase/server.ts createServiceRoleClient(line 65, import 'server-only' 강제). 옵션 A(RLS INSERT 정책 추가) 탈락: §9.6 설계 의도 위배 + Hard Rule 8 마이그레이션 002 사용자 사전 승인 절차 트리거. ★ 확정: ADR-0018 D1.",
+        "ref": "supabase/migrations/001_initial_schema.sql §9.6 + docs/adr/0003-supabase-new-api-keys.md §2 + lib/supabase/server.ts createServiceRoleClient + docs/adr/0018 D1"
+      },
+      {
+        "id": "d2-4-5-safety-net",
+        "description": "보상 server action 4.5중 안전망 표준. ①zod 입력 검증 ②auth.getUser() 인증 가드 ③getActiveChild(본인 세션·RLS 001 §9.3로 child_id 소유권 검증) ④createServiceRoleClient로 children.points UPDATE + child_badges INSERT(RLS 우회는 INSERT/UPDATE 문장에 국한, 검증된 child_id만 사용) ⑤(0.5) child 소유권은 ③에서 RLS로 이미 검증되므로 자녀 격리(Hard Rule 6 핵심)는 유지. phase-12 5중 안전망 박제 본질(자녀 격리)과 충돌 0건 — secret 키는 child_id 출처가 아닌 최종 쓰기 문장에만 적용. ★ 확정: ADR-0018 D2(향후 모든 secret 키 쓰기 server action 표준).",
+        "ref": "lib/home/actions.ts(.maybeSingle()+0행 error baseline) + lib/book/reading-session.ts(phase-12 패턴) + lib/home/active-child.ts(getActiveChild) + docs/adr/0018 D2"
+      },
+      {
+        "id": "d3-reward-idempotency-anchor",
+        "description": "보상 멱등성 부착 지점 = completeReadingSession의 1행 UPDATE 성공 직후(완독 전이 시점). /celebrate 페이지 로드 시점 보상 금지 — /celebrate는 재방문 가능하므로 page 로드 보상 시 중복 +50 위험. 근거: completeReadingSession 0행 가드(reading-session.ts line 176)가 멱등 앵커 — in-progress 세션이 있을 때만 1행 UPDATE되고, 이미 완독·세션 없음은 0행이라 보상 미트리거. 1행 UPDATE 성공 = in-progress → completed 전이 = 보상 1회. ★ 확정: ADR-0018 D3.",
+        "ref": "lib/book/reading-session.ts completeReadingSession line 162~178 (1행 UPDATE 성공 분기) + docs/adr/0018 D3"
+      },
+      {
+        "id": "d4-award-rewards-separation",
+        "description": "completeReadingSession + awardCompletionRewards 분리(옵션 Y). completeReadingSession은 phase-12 그대로(본인 세션 createClient + reading_sessions UPDATE). awardCompletionRewards 신규(createServiceRoleClient + children.points UPDATE + child_badges INSERT). 배선: completeReadingSession이 1행 UPDATE 성공 시(d3 앵커) redirect 전에 awardCompletionRewards 호출. FinishButton·completeReadingSession 통신 계약은 phase-12 무변경(성공 redirect·실패 반환). 사유: 클라이언트 분리(본인 세션 vs secret) + 단일 책임 + 보상 트리거 위치 명확. ★ 확정: ADR-0018 D4. 파일: lib/book/rewards.ts.",
+        "ref": "lib/book/reading-session.ts(배선) + lib/book/rewards.ts(awardCompletionRewards) + components/book/finish-button.tsx(무변경) + docs/adr/0018 D4"
+      },
+      {
+        "id": "d5-points-every-completion",
+        "description": "points 누적 정책 = 매 완독 +50(옵션 Y). 사용자 확정(2026-05-28). 근거: 만 3~7세 반복 독서 발달 정합 + 베타 단순성(1행 UPDATE = 항상 +50 단일 분기) + badges가 다양성 KPI 트래커 역할(향후 milestone 배지 확장 여지) + children.points UPDATE는 001 §9.3 본인 세션 정책 활용 가능. 재독 시: 새 reading_session(phase-12 재진입 신규 INSERT 정합) → 새 1행 UPDATE → +50 누적. points 인플레이션 모니터링은 F23 트리거. ★ 확정: ADR-0018 D5.",
+        "ref": "supabase/migrations/001_initial_schema.sql children.points(INT NOT NULL DEFAULT 0 CHECK >= 0, line 44) + §9.3 + docs/adr/0018 D5"
+      },
+      {
+        "id": "d6-badge-code-naming",
+        "description": "badge_code 명명 규칙 = 'first_completion' 단일. ★ 확정(ADR-0018 D6, 외부 Claude 권고 채택). UNIQUE(child_id, badge_code) 자동 1회 방어 + INSERT onConflict ignore(Supabase upsert ignoreDuplicates) 또는 사전 SELECT 가드(옵션 Y 패턴). 근거: 베타 단순성 + 첫 완독 의미 강조. milestone 배지('5books'·'10books'·레벨별)는 별도 badge_code로 F22(phase-13b/14) 확장. 후보 B 'book_{book_id}'(책별 1회)·후보 C 'level_{level}_first'(레벨별 1회) 탈락.",
+        "ref": "supabase/migrations/001_initial_schema.sql child_badges UNIQUE(child_id, badge_code)(line 159) + docs/adr/0018 D6"
+      },
+      {
+        "id": "d7-library-3-guards",
+        "description": "/library 가드 = 3-가드(book uuid 불요). ①auth.getUser() 인증 ②getActiveChild(자녀 0명 → /onboarding) ③필터 입력 검증(level 1~5·category·keyword zod/sanitize). 블랙리스트 가드 제외(개별 책 iframe 미로드, /book/[id]/read 4-가드와 구분 — 단 목록 카드는 lib/shared/blacklist.ts 차단분 제외 노출 정합). PROTECTED_PREFIXES에 /library 이미 등록(phase-12 박제). ★ 확정: ADR-0018 D12(robots/dynamic 동반).",
+        "ref": "lib/home/active-child.ts getActiveChild + app/book/[id]/read/page.tsx(가드 패턴) + lib/shared/blacklist.ts(목록 제외) + docs/adr/0018 D12"
+      },
+      {
+        "id": "d8-infinite-scroll-impl",
+        "description": "무한 스크롤 구현 = IntersectionObserver + cursor 페이지네이션(외부 의존 0건). ★ 확정(ADR-0018 D7, 외부 Claude 권고 채택). 근거: PLAN 명시 외 의존성 임의 추가 금지 정합 + Supabase .range()/.gt() 쿼리 정합 + 베타 100명·900~1,300권 규모 충분. cursor 정렬·키(synced_at DESC 또는 id 안정 정렬)는 구현 CP 확정. 후보 A TanStack Query useInfiniteQuery(client 의존 추가)·후보 C react-virtual + cursor(가상 스크롤 의존 추가) 탈락. 파일: lib/library/query.ts.",
+        "ref": "lib/library/query.ts(.range()/cursor) + components/library/*(IntersectionObserver) + docs/adr/0018 D7"
+      },
+      {
+        "id": "d9-celebrate-motion-tokens",
+        "description": "design-system §7.3 Celebrate 모션 토큰 100% 정합. 별 3개 등장: 0/150/300ms stagger, scale(0)→(1.2)→(1), cubic-bezier(0.34,1.56,0.64,1) bounce. 별 채우기: 등장 후 200ms 지연 + 색상 transition 400ms(회색 → --color-accent-yellow). 포인트 카운터: 0→50 count-up, 600ms ease-out. 포인트 카드: 별 완료 후 100ms 지연 fade-in + translateY(20px→0), 300ms. 배지 등장: 포인트 카드 후 200ms 지연 scale(0.5)→(1), 350ms bounce. confetti: 선택적 1회 2초(F21). prefers-reduced-motion: bounce → linear fade, duration 50% 축소. Hard Rule 10: semantic 토큰만, raw HEX 0건(cubic-bezier는 색상 아님).",
+        "ref": "docs/design-system.md §7.3(line 368~381) + components/book/celebrate-rewards.tsx(또는 components/celebrate/*)"
+      },
+      {
+        "id": "d10-award-signature",
+        "description": "awardCompletionRewards 시그니처 = 인자 0건(내부 auth + getActiveChild 재해소). ★ 확정(ADR-0018 D8, 외부 Claude 권고 채택). 근거: 4.5중 안전망 패턴 정합(server action이 자체 검증 수행) + completeReadingSession 의존성 최소화 + zod 입력 0건(인자 없음, 신뢰 경계 단순). 후보 A (child_id, book_id)·후보 B (reading_session_id)·후보 C (bookId) 탈락: 입력 신뢰 0 원칙상 받은 인자 재검증 필요 → 인자 0건이 더 단순·안전. (완독 책 식별이 배지·로깅에 필요하면 bookId 1개 전달은 후속 미세 조정 여지.) 파일: lib/book/rewards.ts.",
+        "ref": "lib/book/rewards.ts awardCompletionRewards + docs/adr/0018 D8"
+      }
+    ]
+  },
+
+  "phase_13_follow_up_triggers": {
+    "context": "CP1-spec 예고 박제(F21~F24). 번호는 phase-12(F13~F20)에 이어 연속. 구현 CP·시각 검수에서 추가 발견 시 본 필드에 누적 박제한다. 전부 blocker=false 예고(구현 차단 0건). 각 trigger의 blocker 여부·예상 해소 phase는 phase-12 follow_up_triggers 박제 형식 정합. ADR-0018 §5에 요약 박제.",
+    "triggers": [
+      {
+        "id": "F21",
+        "title": "confetti 라이브러리 선택 — §7.3 '선택적 1회 2초'",
+        "discovered_at": "phase-13 CP1-spec 예고 (2026-05-28)",
+        "location": "components/book/celebrate-rewards.tsx(또는 components/celebrate/*) — design-system §7.3 'confetti 선택적, 1회만, 2초 이내'",
+        "impact": "별 3개·포인트·배지는 필수 모션이나 confetti는 §7.3에서 선택적. 외부 confetti 라이브러리(canvas-confetti 등) 도입은 PLAN 명시 외 의존성 추가(임의 추가 금지). 베타 영향 경미(없어도 보상 UX 충족).",
+        "candidate_fix": "CP2(보상) 시각 검수에서 결정: (가) confetti 생략(별·포인트·배지로 충분) (나) CSS 자체 구현(의존 0건) (다) canvas-confetti 도입 + ADR 박제. 기본 권고 (가) 또는 (나).",
+        "deferred_to": "phase-13 CP2 보상 구현 시각 검수 (즉시 결정)",
+        "blocker": false
+      },
+      {
+        "id": "F22",
+        "title": "milestone 배지 확장 — 5권·10권·레벨별 등",
+        "discovered_at": "phase-13 CP1-spec 예고 (2026-05-28)",
+        "location": "child_badges.badge_code (ADR-0018 D6 'first_completion' 단일) + 향후 다양성 KPI",
+        "impact": "본 페이즈는 완독 배지 단일(D6). 누적 완독 수·레벨 달성·연속 스트릭 등 milestone 배지는 동기 부여 강화 여지. badge_code 명명을 단일로 두면 확장 시 코드 분기 필요.",
+        "candidate_fix": "phase-13b 또는 phase-14에서 milestone 정의(badge_code 체계) + awardCompletionRewards에 milestone 판정 분기 추가. UNIQUE(child_id, badge_code)로 각 milestone 1회 보장.",
+        "deferred_to": "phase-13b 또는 phase-14",
+        "blocker": false
+      },
+      {
+        "id": "F23",
+        "title": "points 인플레이션 모니터링 — 매 완독 +50(ADR-0018 D5) 누적 정책 재검토",
+        "discovered_at": "phase-13 CP1-spec 예고 (2026-05-28)",
+        "location": "children.points (D5 매 완독 +50 누적) + 베타 KPI",
+        "impact": "재독마다 +50 누적(D5)이라 동일 책 반복으로 points가 빠르게 증가 가능. 베타 단순성 우선 채택이나, 포인트를 보상 교환·레벨업 등에 연동 시 인플레이션이 설계에 영향.",
+        "candidate_fix": "베타 100명 데이터 수집 후 정책 재검토: (가) 매 완독 유지 (나) 동일 책 1일 1회 상한 (다) 최초 완독만 보상 + 재독 별도 미세 보상. points 용도(교환·레벨) 확정 시 동반 결정.",
+        "deferred_to": "phase-2 또는 베타 운영 데이터 수집 후",
+        "blocker": false
+      },
+      {
+        "id": "F24",
+        "title": "무한 스크롤 성능 — 1,300권 카탈로그 정합(ADR-0018 D7)",
+        "discovered_at": "phase-13 CP1-spec 예고 (2026-05-28)",
+        "location": "components/library/*(IntersectionObserver, D7) + lib/library/query.ts cursor 페이지네이션",
+        "impact": "베타 900권, 정식 1,300권 카탈로그에서 무한 스크롤 누적 DOM·메모리 증가 가능. IntersectionObserver + cursor(D7)는 외부 의존 0건이나 가상 스크롤 미적용이라 대량 누적 시 렌더 비용 증가.",
+        "candidate_fix": "베타 카탈로그 규모에서 /library 스크롤 성능(FCP·INP) 측정. 임계 초과 시 react-virtual 등 가상 스크롤 도입(D7 후보 C) + ADR 박제. 베타 규모는 D7 권고안(IntersectionObserver) 충분 가정.",
+        "deferred_to": "phase-2 또는 카탈로그 확장 시 성능 측정",
+        "blocker": false
+      }
+    ]
+  },
+
+  "diagnosis": {
+    "measured_at": "2026-05-28 phase-13 CP1 선행 점검 (읽기 전용 박제 view)",
+    "children_points_column": {
+      "definition": "children.points INT NOT NULL DEFAULT 0 CHECK (points >= 0) (001 line 44)",
+      "rls": "001 §9.3 'parents can update own children' (parent_id = auth.uid(), line 248~251) — 본인 세션 UPDATE 가능. d5 매 완독 +50 누적은 본인 세션 또는 secret 키 모두 가능하나 d4 분리로 awardCompletionRewards(secret 키)에서 child_badges와 함께 처리(클라이언트 일관성, ADR-0018 D2)"
+    },
+    "child_badges_table": {
+      "definition": "child_badges(id, child_id, badge_code TEXT NOT NULL, earned_at) + UNIQUE(child_id, badge_code) (001 line 153~160)",
+      "rls": "001 §9.6 'parents can view own children badges' — SELECT 1종만. INSERT/UPDATE/DELETE 정책 부재. 주석 line 293 'INSERT는 시스템이 책임' — 본인 세션 INSERT 불가(RLS 거부). 옵션 B(createServiceRoleClient, RLS 우회) 필수 (ADR-0018 D1)",
+      "unique_guard": "UNIQUE(child_id, badge_code)가 중복 배지 DB 레벨 방어. INSERT onConflict ignore 또는 사전 SELECT 가드(옵션 Y 패턴 재사용). badge_code='first_completion'(ADR-0018 D6)"
+    },
+    "secret_key_infra": {
+      "client": "lib/supabase/server.ts createServiceRoleClient (line 65) — SUPABASE_SECRET_KEY ?? SUPABASE_SERVICE_ROLE_KEY(legacy fallback), autoRefreshToken/persistSession false. import 'server-only' 강제(line 1)",
+      "policy": "ADR-0003 §2 표 — SUPABASE_SECRET_KEY '서버 전용. cron·시드·관리자 라우트'(line 38). §5.2 secret 값 문서·커밋·로그 노출 금지(line 103). Hard Rule 6 정합. 신규 키 발급 불요(phase-06 기존 인프라). awardCompletionRewards가 '관리자 라우트' 범주로 secret 키 사용 표면 확장(ADR-0018 §3 Negative)"
+    },
+    "reward_idempotency_anchor": {
+      "anchor": "lib/book/reading-session.ts completeReadingSession line 162~178 — .update(...).eq(child_id).eq(book_id).is(completed_at, null).select('id').maybeSingle(). data 존재(1행)면 in-progress → completed 전이 성공, !data(0행)면 이미 완독·세션 없음·RLS 차단",
+      "implication": "보상은 1행 UPDATE 성공 분기(data 존재)에서만 트리거 → 멱등(ADR-0018 D3). /celebrate page 로드 보상은 재방문 중복 위험으로 금지"
+    },
+    "celebrate_motion_tokens": {
+      "section": "design-system §7.3 (line 368~381)",
+      "tokens": "별 3개 stagger 0/150/300ms·scale(0)→(1.2)→(1)·cubic-bezier(0.34,1.56,0.64,1) / 별 채우기 200ms 지연+400ms transition(--color-accent-yellow) / 포인트 카운터 0→50 600ms ease-out / 포인트 카드 100ms 지연 fade+translateY 300ms / 배지 200ms 지연 scale(0.5)→(1) 350ms bounce / confetti 선택적 1회 2초 / prefers-reduced-motion bounce→linear fade duration 50%",
+      "hard_rule_10": "색상 토큰 semantic(--color-accent-yellow·--color-text-variant). easing cubic-bezier은 색상 아님 → raw HEX 규칙 비대상. raw HEX 0건"
+    },
+    "reading_session_reentry": {
+      "behavior": "phase-12 검증 — 완독 후 재진입 시 신규 reading_sessions INSERT(08:12:53 박제). d5 매 완독 +50은 이 재진입 신규 세션의 완독 전이마다 누적과 정합",
+      "ref": "tasks/phase-12-screen-04-reader.json verification_result v13 + notes"
+    },
+    "books_rls_for_library": {
+      "policy": "001 §9.1 'books are viewable by everyone' USING(true) (line 214~217) — /library SELECT는 본인 세션(또는 anon)으로 정상. 별도 정책 불요. is_active=true 필터 + lib/shared/blacklist.ts 제외는 애플리케이션 레벨",
+      "implication": "intent §5 'books RLS 미결정'은 §9.1로 해소(CP1-intent 자발 발견)"
+    },
+    "library_protected_prefix": {
+      "status": "/library는 phase-12에서 PROTECTED_PREFIXES 등록 완료(celebrate placeholder LIBRARY_PATH='/library' 링크 대상). 현재 404 — phase-13 신규 구현 대상. robots noindex + force-dynamic(ADR-0018 D12)",
+      "ref": "app/book/[id]/celebrate/page.tsx line 57 LIBRARY_PATH"
+    },
+    "intent_doc_screen_05_celebrate": "CP1-intent 신규 작성 완료 (선행 패턴: docs/intent/screen-04-reader.md)",
+    "adr_decision": "CP1-adr 완료 — ADR-0018 신규(D1~D14) + ADR-0017 Amendment #2(D7 해소). 보상 쓰기 아키텍처 단일 출처 = ADR-0018"
+  },
+
+  "references": [
+    "claude.md 2절 Hard Rule 1·3·6·8·9·10, 5절 라우팅(Screen 05 + design-system §7.3 Celebrate 모션)",
+    "docs/adr/0018-completion-rewards-and-library.md (본 페이즈 핵심 결정 D1~D14)",
+    "docs/adr/0017-book-reader-architecture.md Amendment #2 (D7 phase-13 경계 해소)",
+    "supabase/migrations/001_initial_schema.sql §9.1 books viewable + §9.3 children UPDATE 정책 + §9.6 child_badges SELECT만('INSERT는 시스템이 책임') + children.points + child_badges UNIQUE",
+    "docs/adr/0003-supabase-new-api-keys.md §2 secret 키 사용 정책 + §5.2 노출 금지",
+    "docs/design-system.md §7.3 Celebrate 모션 토큰(line 368~381)",
+    "lib/supabase/server.ts createServiceRoleClient (옵션 B 인프라)",
+    "lib/book/reading-session.ts completeReadingSession (멱등 앵커 line 176) + startReadingSession",
+    "lib/home/active-child.ts getActiveChild (child_id 해소 재사용)",
+    "lib/home/actions.ts (.maybeSingle()+0행 명시 error baseline)",
+    "lib/book/copy.ts (CelebrateCopy 분리) + lib/library/copy.ts (LibraryCopy 신규)",
+    "app/book/[id]/celebrate/page.tsx (phase-12 placeholder → 정식 보상 확장)",
+    "components/book/finish-button.tsx (완독 트리거 — phase-12 무변경)",
+    "lib/shared/blacklist.ts (/library 목록 차단분 제외)",
+    "docs/intent/screen-05-celebrate.md (본 페이즈 의도 문서)",
+    "docs/intent/screen-04-reader.md (선행 패턴)",
+    "PLAN.md 9절 Screen 05 완독 보상 + 라이브러리"
+  ]
+}
