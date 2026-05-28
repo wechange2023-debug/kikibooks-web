@@ -16,7 +16,13 @@ import 'server-only';
  *
  * ★ BOOK_DETAIL_COPY 상수는 의도적으로 export하지 않는다 — 컴포넌트가 상수를
  *   직접 import하는 우회로를 컴파일 단계에서 차단한다(ADR-0012 결정 2 패턴).
+ *   BOOK_READER_COPY·CELEBRATE_COPY도 동일.
  * ★ `import 'server-only'` — 이 모듈의 값은 서버에서만 읽힌다.
+ *
+ * 본 모듈의 카피 집합 (각 화면 단일 책임):
+ *   - BookDetailCopy   책 상세(Screen 03)
+ *   - BookReaderCopy   책 뷰어(Screen 04 `/read`) — reader·unsupportedFormat·finish
+ *   - CelebrateCopy    완독 보상(Screen 05 `/celebrate`) — phase-13 CP2-a 분리(ADR-0018 D10)
  *
  * 카피 동기화 주의:
  *   - attribution.ccByNotice는 lib/landing/copy.ts의 footer.attributionNotice와
@@ -105,11 +111,11 @@ export interface BookDetailCopy {
  *   (ADR-0012 결정 2 단일 출처 + ADR-0016 Amendment #1 "신규 분기·카피 0건").
  *   read page는 getBookDetailCopy()와 getBookReaderCopy()를 함께 호출한다.
  *
- * CP3-b — finish(완독 버튼) + celebrate(축하 placeholder) 섹션 추가 완료
- *   (ADR-0017 D4·D7·d13). celebrate.buildSubtitle은 자녀 이름·책 제목을 받아
- *   d13 박제 문장을 생성하는 함수다 — 정적 상수 패턴의 유일한 예외(동적 값 의존).
- *   본 모듈은 server-only이므로 함수는 서버에서만 평가되고, FinishButton('use client')에는
- *   finish의 문자열 라벨만 props로 내려가 직렬화 문제가 없다.
+ * ★ celebrate 분리 (phase-13 CP2-a, ADR-0018 D10):
+ *   phase-12 CP3-b에서 본 인터페이스에 finish + celebrate(placeholder) 섹션을 추가했으나,
+ *   phase-13에서 /celebrate가 정식 보상으로 확장되며 celebrate 섹션을 CelebrateCopy로
+ *   분리했다(책 뷰어 카피 vs 보상 카피 단일 책임). 본 인터페이스는 reader·
+ *   unsupportedFormat·finish만 보유한다. celebrate 페이지는 getCelebrateCopy()를 호출한다.
  */
 export interface BookReaderCopy {
   /**
@@ -154,25 +160,37 @@ export interface BookReaderCopy {
     /** 완독 처리(server action) 진행 중 버튼 라벨 (useTransition isPending). */
     completingLabel: string;
   };
-  /**
-   * 완독 축하 placeholder(`/celebrate`, CP3-b) 카피 (ADR-0017 D7·d9·d13 phase-13 경계).
-   *
-   * 별 3개 SVG 애니메이션·children.points += 50·child_badges INSERT는 phase-13 전속이다.
-   * 본 페이즈는 헤더 + 1줄 + /library 버튼만 렌더한다. buildSubtitle은 자녀 이름·책
-   * 제목을 받아 d13 박제 문장을 생성한다(동적 값 의존 — 정적 상수 패턴의 유일한 예외).
-   *
-   * ⚠️ 한국어 조사('은'/'을')는 d13·intent §6 박제 문안 그대로다 — 자녀 이름·책 제목
-   *   말음(받침)에 따라 어색할 수 있으나, 본 페이즈는 placeholder이므로 박제를 우선한다.
-   *   조사 정합(은/는·을/를 자동 선택)은 phase-13 정식 celebrate에서 보강한다.
-   */
-  celebrate: {
-    /** 축하 헤더 (d13 박제). */
-    title: string;
-    /** '{자녀 이름}은 《{책 제목}》을 끝까지 읽었어요!' 생성 (d13·intent §6 박제). */
-    buildSubtitle: (childName: string, bookTitle: string) => string;
-    /** '다른 책 보러 가기' — /library 링크 라벨 (d13·intent §6, 단일 버튼). */
-    libraryLinkLabel: string;
-  };
+}
+
+/**
+ * 완독 보상 페이지(Screen 05 `/book/[id]/celebrate`) 카피 단일 출처.
+ *
+ * phase-12 BookReaderCopy.celebrate placeholder를 phase-13 CP2-a에서 본 인터페이스로
+ * 분리했다(ADR-0018 D10 — 책 뷰어 카피 vs 보상 카피 단일 책임). /celebrate가 정식
+ * 보상(별 3개·포인트 +50·완독 배지, design-system §7.3 모션)으로 확장되며 카피 집합도
+ * 책 뷰어와 독립한다. phase-13b Admin DB 관리 전환 시 celebrate_copy 테이블을 독립적으로
+ * 다룰 수 있다.
+ *
+ * buildSubtitle은 자녀 이름·책 제목을 받아 문장을 생성하는 함수다 — 본 모듈이
+ * server-only이므로 서버에서만 평가되고, 결과 문자열만 client('use client' 모션
+ * 컴포넌트)에 props로 전달돼 직렬화 문제가 0건이다(정적 상수 패턴의 유일한 함수 예외).
+ *
+ * ⚠️ 한국어 조사('은'/'을')는 placeholder 박제 문안 그대로다(ADR-0018 D10 — 과한
+ *   엔지니어링 회피). 자녀 이름·책 제목 말음(받침)에 따라 어색할 수 있으나 베타 범위 외다.
+ *
+ * 의도 문서: docs/intent/screen-05-celebrate.md §6
+ */
+export interface CelebrateCopy {
+  /** 축하 헤더 (정적, placeholder 박제 유지). */
+  title: string;
+  /** '{자녀 이름}은 《{책 제목}》을 끝까지 읽었어요!' 생성 (server-only 평가). */
+  buildSubtitle: (childName: string, bookTitle: string) => string;
+  /** 포인트 획득 라벨 (정적, intent §6 박제). */
+  pointsLabel: string;
+  /** 완독 배지 라벨 (정적, intent §6 박제). */
+  badgeLabel: string;
+  /** '다른 책 보러 가기' — /library 링크 라벨 (ADR-0018 D13 단일 Link). */
+  libraryLinkLabel: string;
 }
 
 /**
@@ -236,12 +254,23 @@ const BOOK_READER_COPY: BookReaderCopy = {
     buttonLabel: '다 읽었어요',
     completingLabel: '완독 처리 중…',
   },
-  celebrate: {
-    title: '🎉 완독 축하해요!',
-    buildSubtitle: (childName, bookTitle) =>
-      `${childName}은 《${bookTitle}》을 끝까지 읽었어요!`,
-    libraryLinkLabel: '다른 책 보러 가기',
-  },
+};
+
+/**
+ * 완독 보상 카피 정본. export하지 않는다(BOOK_READER_COPY와 동일 — 컴포넌트 직접
+ * import 차단, ADR-0012 결정 2 패턴).
+ *
+ * 문안 박제 출처:
+ *   - title·buildSubtitle·libraryLinkLabel: phase-12 placeholder 박제 유지(박제 우선).
+ *   - pointsLabel·badgeLabel: intent §6 박제(외부 권고 '+50점'·'첫 완독 배지'와 충돌 시 박제 우선).
+ */
+const CELEBRATE_COPY: CelebrateCopy = {
+  title: '🎉 완독 축하해요!',
+  buildSubtitle: (childName, bookTitle) =>
+    `${childName}은 《${bookTitle}》을 끝까지 읽었어요!`,
+  pointsLabel: '+50 포인트',
+  badgeLabel: '완독 배지 획득!',
+  libraryLinkLabel: '다른 책 보러 가기',
 };
 
 /**
@@ -262,4 +291,14 @@ export async function getBookDetailCopy(): Promise<BookDetailCopy> {
  */
 export async function getBookReaderCopy(): Promise<BookReaderCopy> {
   return BOOK_READER_COPY;
+}
+
+/**
+ * 완독 보상 페이지 카피를 반환한다.
+ *
+ * phase-13 — 정적 상수를 그대로 반환한다(getBookReaderCopy와 동일 패턴).
+ * phase-13b — 본문을 celebrate_copy 테이블 조회로 교체한다(시그니처·반환 타입 불변).
+ */
+export async function getCelebrateCopy(): Promise<CelebrateCopy> {
+  return CELEBRATE_COPY;
 }
