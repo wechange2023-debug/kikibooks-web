@@ -185,7 +185,13 @@ export interface CelebrateCopy {
   title: string;
   /** '{자녀 이름}은 《{책 제목}》을 끝까지 읽었어요!' 생성 (server-only 평가). */
   buildSubtitle: (childName: string, bookTitle: string) => string;
-  /** 포인트 획득 라벨 (정적, intent §6 박제). */
+  /**
+   * 포인트 단위 라벨 — CelebrateRewards가 count-up 숫자와 조합해 `+{count} {pointsLabel}`로
+   * 렌더한다. 최종 표시는 '+50 포인트'로 intent §6 결과와 일치한다. design-system §7.3
+   * "포인트 카운터 0→50 count-up"이 동적 숫자를 요구해, CP2-d에서 박제 우선 정정 18로
+   * '+50 포인트'(완성형) → '포인트'(단위)로 재정의했다(컴포넌트 하드코딩 회피, ADR-0012
+   * 결정 2 카피 단일 출처 유지).
+   */
   pointsLabel: string;
   /** 완독 배지 라벨 (정적, intent §6 박제). */
   badgeLabel: string;
@@ -262,13 +268,16 @@ const BOOK_READER_COPY: BookReaderCopy = {
  *
  * 문안 박제 출처:
  *   - title·buildSubtitle·libraryLinkLabel: phase-12 placeholder 박제 유지(박제 우선).
- *   - pointsLabel·badgeLabel: intent §6 박제(외부 권고 '+50점'·'첫 완독 배지'와 충돌 시 박제 우선).
+ *   - badgeLabel: intent §6 박제(외부 권고 '첫 완독 배지'와 충돌 시 박제 우선).
+ *   - pointsLabel: §7.3 count-up(0→50) 모션이 동적 숫자를 요구해 '+50 포인트'(완성형)에서
+ *     '포인트'(단위)로 재정의(CP2-d 박제 우선 정정 18). 컴포넌트가 `+{count} {pointsLabel}`로
+ *     조립해 최종 '+50 포인트'를 렌더 → intent §6 결과 일치, 박제 정신 유지.
  */
 const CELEBRATE_COPY: CelebrateCopy = {
   title: '🎉 완독 축하해요!',
   buildSubtitle: (childName, bookTitle) =>
     `${childName}은 《${bookTitle}》을 끝까지 읽었어요!`,
-  pointsLabel: '+50 포인트',
+  pointsLabel: '포인트',
   badgeLabel: '완독 배지 획득!',
   libraryLinkLabel: '다른 책 보러 가기',
 };
