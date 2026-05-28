@@ -9,10 +9,10 @@
   ],
 
   "cp_progress": {
-    "phase_status": "in_progress",
-    "phase_completed_at": null,
-    "current_cp": "CP3-a-query-and-copy",
-    "last_successful_cp": "CP2-e-celebrate-page",
+    "phase_status": "success",
+    "phase_completed_at": "2026-05-28",
+    "current_cp": null,
+    "last_successful_cp": "CP4-verify-and-meta",
     "completed_cps": [
       "CP1-spec",
       "CP1-intent",
@@ -21,13 +21,12 @@
       "CP2-b-rewards-action",
       "CP2-c-completion-wiring",
       "CP2-d-celebrate-rewards-component",
-      "CP2-e-celebrate-page"
-    ],
-    "pending_cps": [
+      "CP2-e-celebrate-page",
       "CP3-a-query-and-copy",
       "CP3-b-page-and-components",
       "CP4-verify-and-meta"
     ],
+    "pending_cps": [],
     "sub_step_structure": {
       "CP1-spec-intent-adr": [
         "CP1-spec",
@@ -46,7 +45,7 @@
         "CP3-b-page-and-components"
       ]
     },
-    "note": "CP1(spec·intent·adr) 종료(2026-05-28). CP2 종료(2026-05-28) — 5 sub-step 단독 커밋: CP2-a(9ca3412 BookReaderCopy.celebrate → CelebrateCopy 분리)·CP2-b(46db59b lib/book/rewards.ts 신규 awardCompletionRewards)·CP2-c(b8ba912 completeReadingSession에 awardCompletionRewards 배선)·CP2-d(938a40f celebrate-rewards.tsx 신규 §7.3 모션)·CP2-e(4bca1ef celebrate/page.tsx 정식 보상 전환). CP3 sub-step 확정(2026-05-28 외부 Claude 권고 6건 박제 충돌 0건): CP3-a-query-and-copy(lib/library/query.ts + lib/library/copy.ts — 본 갱신 동반), CP3-b-page-and-components(app/library/page.tsx + components/library/library-browser.tsx). CP3-a 결정 6건: Q1 PopularBook 재사용(intent §5.3 정합 + 레벨 배지 F-item), Q2 복합 keyset (synced_at DESC, id ASC) opaque cursor(ADR-0018 D7 구현 CP 위임 채택, Amendment 불요), Q3 카테고리 query.ts 단일 흡수(categories.ts 2단계 패턴 정합), Q4 title ilike만(author F-item), Q5 페이지 24(CATEGORY_BOOKS_CAP 정합), Q6 count 미반환(빈 상태만, 총 N권 F-item). ★ 컴포넌트 세분화 주의: ADR-0018 D14 인벤토리는 intent §5의 단일 컴포넌트(CelebrateRewards·LibraryBrowser)를 모션·기능 단위로 세분화한 예상안이다. CP2 실측 = celebrate-rewards.tsx 단일 채택(세분화 미적용). CP3-b 최종 형태는 착수 시 확정. ★ 파일명 박제: lib/book/rewards.ts(CP2-b 실측), lib/library/query.ts·lib/library/copy.ts(CP3-a 실측) — D14 표기 'awards.ts'·'api.ts' 정정. ★ checkpoints[3] CP2 status pending → success 정합 갱신은 CP4-verify-and-meta에서 일괄."
+    "note": "CP1(spec·intent·adr) 종료(2026-05-28). CP2 종료(2026-05-28) — 5 sub-step 단독 커밋: CP2-a(9ca3412 BookReaderCopy.celebrate → CelebrateCopy 분리)·CP2-b(46db59b lib/book/rewards.ts 신규 awardCompletionRewards)·CP2-c(b8ba912 completeReadingSession에 awardCompletionRewards 배선)·CP2-d(938a40f celebrate-rewards.tsx 신규 §7.3 모션)·CP2-e(4bca1ef celebrate/page.tsx 정식 보상 전환). CP3 sub-step 확정(2026-05-28 외부 Claude 권고 6건 박제 충돌 0건): CP3-a-query-and-copy(d46fb9d lib/library/query.ts + lib/library/copy.ts + cp_progress 실측 갱신), CP3-b-page-and-components(de39afb app/library/page.tsx + components/library/library-browser.tsx + lib/library/actions.ts). CP3-b 내부 2-stage 실측 분할(박제 우선 컴파일 무결성 정정 채택): Stage 1 actions.ts 단독 / Stage 2 page+browser 상호 import 쌍 동시. CP3-a 결정 6건: Q1 PopularBook 재사용(intent §5.3 정합 + 레벨 배지 F-item), Q2 복합 keyset (synced_at DESC, id ASC) opaque cursor(ADR-0018 D7 구현 CP 위임 채택, Amendment 불요), Q3 카테고리 query.ts 단일 흡수(categories.ts 2단계 패턴 정합), Q4 title ilike만(author F-item), Q5 페이지 24(CATEGORY_BOOKS_CAP 정합), Q6 count 미반환(빈 상태만, 총 N권 F-item). CP3-b 결정 6건: Q1 호출 경로=server action(app/api/route.ts 0건·'use server' 5건 100% 패턴 정합, lib/library/actions.ts 신규) + 더블 가드 zod·auth·try, Q2 LibraryBookCard 내부 정의(RecommendationCard 선례), Q3 activeChildId 미주입(books §9.1 USING(true) child 무관), Q4 debounce setTimeout 자체구현(외부 의존 0건), Q5 IntersectionObserver useEffect deps 변경 재observe(key 우회 0건), Q6 SSR 24권 → 클라 필터 변경 흐름 충돌 0건. CP4 종료(2026-05-28): verification_result 박제 + DB 진단(Q1~Q5) 결과 콘텐츠 트랙 사안 3건 F25(F-A)·F26(F-B)·F27(F-C) follow_up 박제 + checkpoints CP2·CP3·CP4 status success + _index mark_success. 화면 코드 결함 0건. push 1회(CP4). ★ 컴포넌트 세분화 주의: ADR-0018 D14 인벤토리는 intent §5의 단일 컴포넌트(CelebrateRewards·LibraryBrowser)를 모션·기능 단위로 세분화한 예상안이다. CP2·CP3-b 실측 = celebrate-rewards.tsx·library-browser.tsx 단일 채택(세분화 미적용). ★ 파일명 박제: lib/book/rewards.ts(CP2-b 실측), lib/library/query.ts·copy.ts(CP3-a 실측), lib/library/actions.ts·app/library/page.tsx·components/library/library-browser.tsx(CP3-b 실측) — D14 표기 'awards.ts'·'api.ts' 정정."
   },
 
   "summary": "phase-12에서 minimal placeholder로 착지점만 확보한 /book/[id]/celebrate를 정식 완독 보상 화면으로 확장하고, '다른 책 보러 가기' 버튼의 목적지였던 /library를 신규 구현한다. 완독 보상 3종은 ① design-system §7.3 Celebrate 모션(별 3개 stagger·포인트 count-up·배지 등장) ② children.points += 50(매 완독 누적, 001 §9.3 본인 세션 UPDATE 정책 활용) ③ child_badges INSERT(001 §9.6 'INSERT는 시스템이 책임' 설계 의도 정합 — createServiceRoleClient secret 키, 옵션 B)다. 보상은 /celebrate 페이지 로드 시점이 아니라 completeReadingSession의 1행 UPDATE 성공 직후(완독 전이 시점, reading-session.ts line 176의 0행 가드가 멱등 앵커)에 awardCompletionRewards(신규·분리, 옵션 Y)로 트리거해 재방문 중복 보상을 차단한다. /library는 3-가드(auth·getActiveChild·필터 입력 검증) + 레벨·카테고리 필터 + 키워드 검색 + 무한 스크롤(IntersectionObserver + cursor, 외부 의존 0건)로 구현한다. DB 스키마 변경 0건(Hard Rule 8 — 옵션 B는 기존 secret 키 인프라 사용이지 RLS 정책 추가가 아니다). Hard Rule 1·3·6·8·9·10 무위반. CP1은 spec(본 파일)·intent(screen-05-celebrate.md)·ADR-0018(신규, child_badges 옵션 B + 보상 멱등성·points 누적·awardCompletionRewards 분리 등 D1~D14) + ADR-0017 Amendment #2(D7 경계 해소 박제) 3 sub-step으로 종료(코드 0건).",
@@ -148,7 +147,7 @@
     {
       "id": "CP2-celebrate-rewards-and-page",
       "description": "완독 보상 정식 구현(ADR-0018 D14). (1) lib/book/rewards.ts 신규 — awardCompletionRewards() server action, 4.5중 안전망(zod·auth·getActiveChild RLS §9.3·createServiceRoleClient), children.points +50 UPDATE + child_badges INSERT(badge_code='first_completion', onConflict ignore), 인자 0건(D8), 실패 옵션 A(D9) (2) lib/book/reading-session.ts 수정 — completeReadingSession 1행 UPDATE 성공 직후·redirect 직전 awardCompletionRewards 호출(try-catch, reading_sessions rollback 0건) (3) lib/book/copy.ts 수정 — BookReaderCopy.celebrate → CelebrateCopy 분리(정식 카피) (4) components/book/celebrate-rewards.tsx(또는 components/celebrate/* 세분화) 신규 — §7.3 모션(별 3개 stagger·포인트 count-up·배지 + prefers-reduced-motion), 'use client' (5) app/book/[id]/celebrate/page.tsx 수정 — placeholder → 정식, 본인 세션 읽기 전용 fetch(points·badge·book) + 모션 조립, 보상 쓰기 0건(D3). 단독 커밋 + 시각 검수(완독→보상 적립→멱등 재방문→reduced-motion→secret 미노출).",
-      "status": "pending",
+      "status": "success",
       "files": [
         "lib/book/rewards.ts",
         "lib/book/reading-session.ts",
@@ -160,7 +159,7 @@
     {
       "id": "CP3-library-page-and-components",
       "description": "/library 신규(ADR-0018 D14). (1) lib/library/query.ts 신규 — getBooks: cursor 페이지네이션(.range()/.gt(), 안정 정렬) + 레벨·카테고리 필터 + 키워드 검색(title ilike), books is_active=true + lib/shared/blacklist.ts 제외 (2) lib/library/copy.ts 신규 — LibraryCopy(필터·카테고리·검색 placeholder·빈 상태) (3) app/library/page.tsx 신규 — Server Component, 3-가드(미인증·자녀 0명·필터 입력 검증, D7), 초기 페이지 SSR, robots noindex + force-dynamic(D12) (4) components/library/library-browser.tsx(또는 components/library/* 세분화: filters/search/grid/infinite-scroll/empty-state) 신규 — 필터·검색(debounce)·무한 스크롤(IntersectionObserver sentinel, D7)·빈 상태, 책 카드 /book/[id] Link(F18 패턴). 단독 커밋 + 시각 검수(필터·검색·무한 스크롤·빈 상태·블랙리스트 제외·FCP·4 viewport).",
-      "status": "pending",
+      "status": "success",
       "files": [
         "lib/library/query.ts",
         "lib/library/copy.ts",
@@ -171,7 +170,7 @@
     {
       "id": "CP4-verify-and-meta",
       "description": "사용자 클릭 검증 v1~v9 통합 박제 + tasks/_index.json mark_success(phase-13 success, current_phase → phase-13b-admin-system) + spec verification_result 박제 + 메타 커밋 1건 + origin push 1회. phase_13_follow_up_triggers 실측 누적 박제.",
-      "status": "pending",
+      "status": "success",
       "files": [
         "tasks/phase-13-screen-05-celebrate.json",
         "tasks/_index.json"
@@ -190,6 +189,8 @@
     { "id": "v8-hard-rule-10", "description": "Hard Rule 10 raw HEX 0건", "method": "grep -E '#[0-9a-fA-F]{3,8}' components/book/ components/celebrate/ components/library/ app/book/ app/library/ lib/book/ lib/library/", "expected": "0건 (semantic 토큰만, easing cubic-bezier 제외)" },
     { "id": "v9-library-fcp", "description": "/library FCP < 2초 (global_verification 정합)", "method": "Lighthouse 또는 DevTools로 /library FCP 측정", "expected": "FCP < 2초 + lighthouse perf ≥ 80 / a11y ≥ 90" }
   ],
+
+  "verification_result": "v1·v5·v7 코드 검토 통과(별 3개 §7.3 모션 토큰 정합·4.5중 안전망·prefers-reduced-motion 대응) + v2·v3·v6 CP2 시각 검수 통과(완독→points +50 누적·child_badges INSERT UNIQUE 1회 방어·재방문 멱등 +0건) + v4·v9 CP3-b 시각 검수 통과(레벨·카테고리 필터 + 키워드 debounce 검색 + IntersectionObserver 무한스크롤·빈 상태·반응형 4 viewport + /library FCP < 2초, 2026-05-28) + v8 raw HEX 0건 grep 통과 + 무한스크롤 D1·D2 keyset cursor 경계 무중복·무누락 시각 검수 통과(2026-05-28) + CP4 DB 진단 Q1~Q5(2026-05-28) 결과: Q1 출처 gdl 842/book_dash 54 = 896 / Q2 활성 레벨 분포 lv1=618(69%)·lv2=205(23%)·lv3=19(2%)·lv4·5=0·NULL=54(book_dash 전량 6%) / Q3 UNIQUE(source_platform, source_id) 정상 0행(무한스크롤 중복 의심은 화면 코드 결함 아님) / Q4 같은 cover_url·다른 title·source_id 그룹 다수(에디션 변형, 별개 레코드 정상) / Q5 언어 en 100% — 화면 코드 결함 0건, 콘텐츠 트랙 사안 3건 F25(F-A)·F26(F-B)·F27(F-C)로 follow_up 박제. ADR-0018 D1~D14 + ADR-0017 Amendment #2 박제. 9 커밋(CP1·CP2-a~e·CP3-a·CP3-b·CP4 메타) 1 push.",
 
   "completion_criteria": [
     "v1 별 3개 §7.3 모션 통과",
@@ -274,7 +275,7 @@
   },
 
   "phase_13_follow_up_triggers": {
-    "context": "CP1-spec 예고 박제(F21~F24). 번호는 phase-12(F13~F20)에 이어 연속. 구현 CP·시각 검수에서 추가 발견 시 본 필드에 누적 박제한다. 전부 blocker=false 예고(구현 차단 0건). 각 trigger의 blocker 여부·예상 해소 phase는 phase-12 follow_up_triggers 박제 형식 정합. ADR-0018 §5에 요약 박제.",
+    "context": "CP1-spec 예고 박제(F21~F24) + CP4 DB 진단 박제(F25~F27, 2026-05-28). 번호는 phase-12(F13~F20)에 이어 연속. 사용자 표기 F-A/F-B/F-C는 본 spec follow_up 형식 정합으로 F25/F26/F27 숫자 ID로 박제(alias 필드에 사용자 표기 보존). 전부 blocker=false. F25·F26은 콘텐츠 트랙(phase-14 또는 phase-2 이연), F27은 phase-13b 또는 phase-14. 출처 현황 메모(CP4 DB 진단 Q1, 2026-05-28): gdl 842 + book_dash 54 = 896. StoryWeaver·African Storybook은 별도 source_platform이 아닌 GDL 재배포(gdl로 통합). 언어 en 100%(Q5). 각 trigger의 blocker 여부·예상 해소 phase는 phase-12 follow_up_triggers 박제 형식 정합. ADR-0018 §5에 요약 박제.",
     "triggers": [
       {
         "id": "F21",
@@ -314,6 +315,39 @@
         "impact": "베타 900권, 정식 1,300권 카탈로그에서 무한 스크롤 누적 DOM·메모리 증가 가능. IntersectionObserver + cursor(D7)는 외부 의존 0건이나 가상 스크롤 미적용이라 대량 누적 시 렌더 비용 증가.",
         "candidate_fix": "베타 카탈로그 규모에서 /library 스크롤 성능(FCP·INP) 측정. 임계 초과 시 react-virtual 등 가상 스크롤 도입(D7 후보 C) + ADR 박제. 베타 규모는 D7 권고안(IntersectionObserver) 충분 가정.",
         "deferred_to": "phase-2 또는 카탈로그 확장 시 성능 측정",
+        "blocker": false
+      },
+      {
+        "id": "F25",
+        "alias": "F-A (사용자 표기 정합)",
+        "title": "레벨 분포 편중 — 활성 896권 중 Level 4·5 0건, NULL 54권(book_dash 전량)",
+        "discovered_at": "phase-13 CP4 DB 진단 (2026-05-28)",
+        "location": "scripts/sync_book_dash.py + scripts/sync_gdl.py 레벨 추정 로직 + GDL 데이터셋 고레벨 메타데이터",
+        "impact": "활성 896권: lv1=618(69%)·lv2=205(23%)·lv3=19(2%)·lv4·5=0·NULL=54(book_dash 전량 6%). 만 3~7세 타겟이라 저레벨 비중은 자연이나 lv4·5 0건 + book_dash 전량 NULL은 sync 레벨 추정 결함. /library 레벨 4·5 필터 결과 영구 0건(사용자 시각 검수 확인).",
+        "candidate_fix": "(가) sync_book_dash.py에 leveling 휴리스틱 추가(제목 길이·단어 수 등) (나) sync_gdl.py에 GDL API 고레벨 메타데이터 활용 (다) 외부 고레벨 CC BY 데이터셋 추가 sync. F26과 동반 검토.",
+        "deferred_to": "phase-14 또는 phase-2 (콘텐츠 트랙)",
+        "blocker": false
+      },
+      {
+        "id": "F26",
+        "alias": "F-B (사용자 표기 정합)",
+        "title": "book_dash 권수 미달 — 활성 54권(PLAN 9·11절 211권 목표 대비 -156권+)",
+        "discovered_at": "phase-13 CP4 DB 진단 (2026-05-28)",
+        "location": "scripts/sync_book_dash.py + Book Dash 원본 카탈로그(GitHub Pages)",
+        "impact": "Book Dash 영어 책 활성 54권. PLAN 211권 목표 대비 156권+ 누락. 원인 후보: (1) sync 페이지네이션·필터 누락 (2) 원본 카탈로그 변화 (3) 블랙리스트 4건 + attribution_text NOT NULL 제약 차단 (4) 비영어 책 제외. 베타 카탈로그 다양성 영향.",
+        "candidate_fix": "scripts/sync_book_dash.py 페이지네이션·필터 점검 + Book Dash manifest 재확인. 누락분 sync 후 attribution_text 100% 확인(Hard Rule 1).",
+        "deferred_to": "phase-14 또는 phase-2 (콘텐츠 트랙)",
+        "blocker": false
+      },
+      {
+        "id": "F27",
+        "alias": "F-C (사용자 표기 정합)",
+        "title": "에디션 변형 표지 중복 — 같은 cover_url·다른 title·다른 source_id",
+        "discovered_at": "phase-13 CP4 DB 진단 (2026-05-28)",
+        "location": "lib/library/query.ts(UI dedup) 또는 scripts/sync_gdl.py(데이터 dedup)",
+        "impact": "DB 진단 Q4: 같은 cover_url에 여러 title·source_id 그룹 다수(예: 'The Ocean Dream' sv 버전 + CAB-sv 버전). UNIQUE(source_platform, source_id)로 DB 무결성 0건이나 /library에서 같은 표지가 다른 제목으로 여러 번 노출돼 사용자 혼란 가능. Q3=0행으로 무한스크롤 중복 0건 = 화면 결함 아닌 콘텐츠 변형.",
+        "candidate_fix": "(가) /library 그리드에 cover_url 기준 그룹핑(첫 에디션만 노출) — UI dedup, 베타 단순성 우선 (나) sync_gdl.py에 cover_url 기준 dedup — 데이터 dedup, 다국어 변형 보존 정책 ADR 필요 (다) 표지 우상단 '에디션 N권' 배지 — 변형 가시화. 권고 (가).",
+        "deferred_to": "phase-13b 또는 phase-14",
         "blocker": false
       }
     ]
