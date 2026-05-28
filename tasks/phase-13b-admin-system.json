@@ -55,7 +55,7 @@
         "CP6-verify-and-meta"
       ]
     },
-    "note": "phase-13b는 ADR-0012 결정 1로 신설된 admin 시스템 페이즈다. _index 박제 verification 4건 중 '랜딩 카피 DB 편집'은 마이그레이션 002 = Hard Rule 8 트리거이므로 phase-13b scope_out으로 이연(follow_up F28)하고, 통계 대시보드(read-only COUNT 4종)를 추가해 4기능으로 정정한다. CP1 3 sub-step(spec·intent·adr) + CP2~CP5 기능별 2 sub-step(query/actions·page+components) + CP6 verify-meta = 12 sub-step. DB 스키마 변경 0건(role CHECK·is_active·level CHECK 모두 기존). 마이그레이션 002 생성 0건. admin 권한 부여는 사용자가 Supabase SQL Editor에서 UPDATE profiles SET role='admin' WHERE id=... 1회 직접 실행(Q2 해소 박제). admin/curator 양쪽 모두 동일 권한(role IN ('admin','curator')) — 큐레이터 세분 권한은 follow_up F30 이연."
+    "note": "phase-13b는 ADR-0012 결정 1로 신설된 admin 시스템 페이즈다. _index 박제 verification 4건 중 '랜딩 카피 DB 편집'은 마이그레이션 002 = Hard Rule 8 트리거이므로 phase-13b scope_out으로 이연(follow_up F28)하고, 통계 대시보드(read-only COUNT 4종)를 추가해 4기능으로 정정한다. CP1 3 sub-step(spec·intent·adr) + CP2~CP5 기능별 2 sub-step(query/actions·page+components) + CP6 verify-meta = 12 sub-step. DB 스키마 변경 0건(role CHECK·is_active·level CHECK 모두 기존). 마이그레이션 002 생성 0건. admin 권한 부여는 사용자가 Supabase SQL Editor에서 UPDATE profiles SET role='admin' WHERE id=... 1회 직접 실행(Q2 해소 박제). admin/curator 양쪽 모두 동일 권한(role IN ('admin','curator')) — 큐레이터 세분 권한은 follow_up F30 이연. ★ D13 정합 정정(2026-05-28, CP1-adr 종료 직후): ADR-0019 D13에 따라 /admin/stats 별도 페이지 미생성 — /admin 홈에 StatsDashboard 통합(CP5-b는 app/admin/page.tsx 수정으로 정정). 라우트 3개(/admin·/admin/books·/admin/users) + 네비 4링크 중 '통계'는 /admin#stats anchor 또는 /admin scroll(CP2-b 착수 미세 확정). 본 정정으로 scope_in 19→18·files_to_create_or_modify 19→18·verification v1·v9·v10·user_steps·checkpoints CP2-b·CP5-stats-dashboard 박제 동기."
   },
 
   "summary": "ADR-0012 결정 1로 신설된 admin 시스템(phase-13b)을 4기능으로 구현한다 — (1) admin 토대: /admin 레이아웃 + 라우트 가드(auth + profiles.role IN ('admin','curator')) + redirect/notFound 분기 + robots noindex (/library 가드 패턴 정합) (2) 콘텐츠 큐레이션: books.is_active 토글 + level 수정(옵션 B createServiceRoleClient + auth + role 검증 트리플 가드) (3) 사용자·자녀 조회 read-only: profiles/children 목록(옵션 B SELECT + role 검증, 편집·삭제 0건) (4) 통계 대시보드 read-only: 사용자 수·자녀 수·완독 세션 수·활성 책 수 단순 COUNT 4종(옵션 B SELECT count). 랜딩 카피 DB 편집(landing_copy 신규 테이블)은 마이그레이션 002 = Hard Rule 8 위반이므로 phase-13b scope_out으로 이연(follow_up F28, 정적 getLandingCopy() 유지). admin 권한 부여는 사용자가 Supabase Dashboard SQL Editor에서 UPDATE profiles SET role='admin' WHERE id=... 1회 직접 실행(승격 UI/트리거 미도입, F29 이연). DB 스키마 변경 0건 — role CHECK('parent','admin','curator')·books.is_active·books.level CHECK 1~5 모두 001 기존. Hard Rule 1·3·6·8·9·10 무위반. CP1은 spec(본 파일)·intent(admin-system.md)·ADR-0019(신규 D1~Dn + ADR-0012 결정 1 Amendment) 3 sub-step으로 종료(코드 0건).",
@@ -98,8 +98,7 @@
     "app/admin/users/page.tsx (CP4-b 신규 — Server Component, requireAdmin + getAdminProfiles·getAdminChildren 첫 페이지 SSR + AdminUsersBrowser 조립)",
     "components/admin/users/admin-users-browser.tsx (CP4-b 신규 — 'use client', tabs(profiles·children) + 목록 테이블 + 무한스크롤 + 검색(email·name). 편집/삭제 버튼 0건 — read-only)",
     "lib/admin/stats/query.ts (CP5-a 신규 — getAdminStats: 4종 단순 COUNT(profiles·children·reading_sessions WHERE is_completed=true·books WHERE is_active=true), 옵션 B + admin 가드. PostgREST count: 'exact' head: true 패턴)",
-    "app/admin/stats/page.tsx (CP5-b 신규 — Server Component, requireAdmin + getAdminStats SSR + StatsDashboard 조립. 또는 /admin/page.tsx에 통합 시 본 파일 0건. CP5 착수 확정)",
-    "components/admin/stats/stats-dashboard.tsx (CP5-b 신규 — Server Component(인터랙션 0건) 또는 단순 dumb component, 4종 카드 그리드(아이콘·라벨·숫자·서브텍스트). design-system Card 토큰 재사용)",
+    "components/admin/stats/stats-dashboard.tsx (CP5-b 신규 — Server Component(인터랙션 0건) 또는 단순 dumb component, 4종 카드 그리드(아이콘·라벨·숫자·서브텍스트). design-system Card 토큰 재사용. ADR-0019 D13: app/admin/page.tsx가 본 컴포넌트를 통합 렌더 — 별도 /admin/stats 페이지 미생성)",
     "tasks/_index.json (CP6 mark_success — phase-13b status pending → success, current_phase 갱신, _index verification 4건 → 본 spec 정정값으로 동기)"
   ],
 
@@ -132,8 +131,8 @@
     "app/admin/users/page.tsx (신규 — CP4-b)",
     "components/admin/users/admin-users-browser.tsx (신규 — CP4-b)",
     "lib/admin/stats/query.ts (신규 — CP5-a)",
-    "app/admin/stats/page.tsx (신규 — CP5-b, /admin 통합 시 0건)",
-    "components/admin/stats/stats-dashboard.tsx (신규 — CP5-b)",
+    "components/admin/stats/stats-dashboard.tsx (신규 — CP5-b, ADR-0019 D13 통합)",
+    "app/admin/page.tsx (수정 — CP5-b, StatsDashboard 통합. CP2-b에서 신규 생성된 본 파일을 CP5-b가 재편집)",
     "tasks/_index.json (수정 — CP6 mark_success, verification 4건 정정 동기)"
   ],
 
@@ -165,7 +164,7 @@
     },
     {
       "id": "CP2-admin-foundation",
-      "description": "admin 토대 신규(ADR-0019). (CP2-a) lib/admin/gate.ts 신규 — requireAdmin(): Promise<{user, profile}> server-only, auth.getUser + profiles.role 조회(본인 세션 §9.2로 본인 행만 SELECT 가능 — admin 본인의 role 조회) + role IN ('admin','curator')이면 통과, 미인증이면 redirect(SIGN_IN_PATH), 비admin이면 redirect('/') 또는 notFound. lib/admin/copy.ts 신규 — AdminCopy. (CP2-b) app/admin/layout.tsx 신규 — Server Component, requireAdmin 호출 + 사이드/탑 네비(홈·책·사용자·통계 4링크) + robots noindex + force-dynamic + metadata. app/admin/page.tsx 신규 — /admin 홈, 통계 카드 4종 미리보기 또는 빠른 링크 4개 카드(CP5에서 통합/분리 확정). 단독 커밋 + 시각 검수(/admin 접근 — admin 통과·parent redirect·미인증 redirect·robots noindex).",
+      "description": "admin 토대 신규(ADR-0019). (CP2-a) lib/admin/gate.ts 신규 — requireAdmin(): Promise<{user, profile}> server-only, auth.getUser + profiles.role 조회(본인 세션 §9.2로 본인 행만 SELECT 가능 — admin 본인의 role 조회) + role IN ('admin','curator')이면 통과, 미인증이면 redirect(SIGN_IN_PATH), 비admin이면 redirect('/') 또는 notFound. lib/admin/copy.ts 신규 — AdminCopy. (CP2-b) app/admin/layout.tsx 신규 — Server Component, requireAdmin 호출 + 사이드/탑 네비(홈·책·사용자·통계 4링크) + robots noindex + force-dynamic + metadata. app/admin/page.tsx 신규 — /admin 홈 placeholder(통계 카드 자리 + 빠른 링크). 통계 본체는 CP5-b가 본 파일 수정으로 StatsDashboard 통합(ADR-0019 D13 — 별도 /admin/stats 페이지 미생성). 단독 커밋 + 시각 검수(/admin 접근 — admin 통과·parent redirect·미인증 redirect·robots noindex).",
       "status": "pending",
       "files": [
         "lib/admin/gate.ts",
@@ -197,12 +196,12 @@
     },
     {
       "id": "CP5-stats-dashboard",
-      "description": "통계 대시보드 read-only 신규(ADR-0019). (CP5-a) lib/admin/stats/query.ts 신규 — getAdminStats(): Promise<AdminStats>. 4종 단순 COUNT 병렬 Promise.all: profiles 전체 / children 전체 / reading_sessions WHERE is_completed=true / books WHERE is_active=true. PostgREST 'select:id, count:exact, head:true' 패턴 활용(데이터 0건 반환·count만 헤더). 옵션 B + admin 가드. (CP5-b) app/admin/stats/page.tsx 신규(또는 /admin/page.tsx 통합 — CP5 착수 확정) — Server Component, requireAdmin + getAdminStats SSR + StatsDashboard 조립. components/admin/stats/stats-dashboard.tsx 신규 — Server Component 또는 dumb client, 4종 카드 그리드(아이콘·라벨·숫자·서브텍스트). design-system Card 토큰 + Recharts 등 외부 의존 0건(차트는 F33 이연). 단독 커밋 + 시각 검수(4종 COUNT 실측값 정합).",
+      "description": "통계 대시보드 read-only 신규(ADR-0019 D13 — /admin 홈 통합). (CP5-a) lib/admin/stats/query.ts 신규 — getAdminStats(): Promise<AdminStats>. 4종 단순 COUNT 병렬 Promise.all: profiles 전체 / children 전체 / reading_sessions WHERE is_completed=true / books WHERE is_active=true. PostgREST 'select:id, count:exact, head:true' 패턴 활용(데이터 0건 반환·count만 헤더). 옵션 B + admin 가드. (CP5-b) components/admin/stats/stats-dashboard.tsx 신규 — Server Component 또는 dumb client, 4종 카드 그리드(아이콘·라벨·숫자·서브텍스트). design-system Card 토큰 + Recharts 등 외부 의존 0건(차트는 F33 이연). app/admin/page.tsx 수정 — CP2-b 신규 placeholder에 getAdminStats SSR + StatsDashboard 통합(ADR-0019 D13 별도 stats 페이지 미생성). layout이 requireAdmin 1회 이미 수행(D16)이라 본 페이지 재호출 0건. 단독 커밋 + 시각 검수(4종 COUNT 실측값 정합).",
       "status": "pending",
       "files": [
         "lib/admin/stats/query.ts",
-        "app/admin/stats/page.tsx",
-        "components/admin/stats/stats-dashboard.tsx"
+        "components/admin/stats/stats-dashboard.tsx",
+        "app/admin/page.tsx"
       ]
     },
     {
@@ -217,7 +216,7 @@
   ],
 
   "verification": [
-    { "id": "v1-admin-route-guard", "description": "/admin/* 라우트 가드 — 미인증/비admin 차단", "method": "(a) 미인증 상태로 /admin·/admin/books·/admin/users·/admin/stats 진입 → SIGN_IN_PATH redirect (b) parent 역할(기본 신규 가입자)로 로그인 후 /admin 진입 → '/' redirect 또는 notFound (c) admin 역할(사용자가 SQL Editor에서 승격)로 로그인 후 /admin 진입 → /admin 정상 렌더", "expected": "3 케이스 전부 정합 — 미인증·비admin·admin" },
+    { "id": "v1-admin-route-guard", "description": "/admin/* 라우트 가드 — 미인증/비admin 차단", "method": "(a) 미인증 상태로 /admin·/admin/books·/admin/users 진입 → SIGN_IN_PATH redirect (b) parent 역할(기본 신규 가입자)로 로그인 후 /admin 진입 → '/' redirect 또는 notFound (c) admin 역할(사용자가 SQL Editor에서 승격)로 로그인 후 /admin 진입 → /admin 정상 렌더(통계 4종 카드 포함, ADR-0019 D13 통합)", "expected": "3 케이스 전부 정합 — 미인증·비admin·admin" },
     { "id": "v2-role-check-source", "description": "profiles.role IN ('admin','curator') 분기 정상", "method": "Supabase SQL Editor에서 UPDATE profiles SET role='curator' WHERE id=... 후 동일 사용자로 /admin 진입 → 정상 통과 확인. role='parent'로 환원 후 redirect 확인", "expected": "admin·curator 양쪽 통과, parent 차단" },
     { "id": "v3-books-is-active-toggle", "description": "books.is_active 토글 — 공개/비공개 전환", "method": "/admin/books에서 임의 책 is_active 스위치 OFF → /home·/library 진입 시 해당 책 미노출 확인. 동일 책 ON 환원 → 노출 환원 확인. Supabase Dashboard에서 DB값 동기 확인", "expected": "토글 ↔ DB ↔ 사용자 화면 3중 정합" },
     { "id": "v4-books-level-update", "description": "books.level 수정 — 1~5 CHECK 정합", "method": "/admin/books에서 임의 책 level=3 → level=5 변경 → DB 확인 + /home 자녀 current_level=5 추천에 반영 확인. level=0/6 등 잘못된 값 시도 → 클라이언트·서버 차단(zod·CHECK)", "expected": "1~5 유효 값 정합, 무효 차단" },
@@ -225,8 +224,8 @@
     { "id": "v6-stats-dashboard-count", "description": "통계 대시보드 4종 COUNT 정합", "method": "/admin/stats 진입 시 표시된 4종(사용자·자녀·완독 세션·활성 책) 숫자가 Supabase SQL Editor의 SELECT COUNT(*) FROM profiles / children / reading_sessions WHERE is_completed=true / books WHERE is_active=true 결과와 일치 확인", "expected": "4종 숫자 DB와 일치" },
     { "id": "v7-triple-guard", "description": "트리플 가드 코드 검토 — zod·auth·requireAdmin", "method": "lib/admin/books/actions.ts toggleBookActive·updateBookLevel 코드 검토: ①zod ②auth.getUser ③requireAdmin(role IN ('admin','curator')) ④createServiceRoleClient UPDATE. 가드 누락 server action 0건 grep", "expected": "트리플 가드 + secret 키 4단 확인" },
     { "id": "v8-secret-key-not-leaked", "description": "secret 키 클라이언트 노출 0건", "method": "pnpm build → .next 산출물에서 SUPABASE_SECRET_KEY 문자열 검색 0건 + 'use client' 파일에서 createServiceRoleClient import 0건 grep", "expected": "0건" },
-    { "id": "v9-robots-noindex", "description": "/admin/* robots noindex", "method": "각 admin 페이지 metadata.robots = { index: false, follow: false } 코드 검토 + 실제 응답 헤더 또는 view-source <meta name='robots'> 확인", "expected": "/admin·/admin/books·/admin/users·/admin/stats 4 경로 모두 noindex" },
-    { "id": "v10-responsive-4-viewport", "description": "4 viewport 반응형 — 모바일(390)·태블릿 세로(768)·태블릿 가로(1024)·데스크탑(1280)", "method": "DevTools 또는 실기기로 4 viewport에서 /admin·/admin/books·/admin/users·/admin/stats 렌더 확인. 사이드 네비 → 모바일 햄버거 또는 탑 네비 전환 + 테이블 → 카드 전환 등 패턴 정합", "expected": "4 viewport 모두 가독성·인터랙션 정합" },
+    { "id": "v9-robots-noindex", "description": "/admin/* robots noindex", "method": "각 admin 페이지 metadata.robots = { index: false, follow: false } 코드 검토 + 실제 응답 헤더 또는 view-source <meta name='robots'> 확인", "expected": "/admin·/admin/books·/admin/users 3 경로 모두 noindex (ADR-0019 D13 — /admin/stats 페이지 미생성)" },
+    { "id": "v10-responsive-4-viewport", "description": "4 viewport 반응형 — 모바일(390)·태블릿 세로(768)·태블릿 가로(1024)·데스크탑(1280)", "method": "DevTools 또는 실기기로 4 viewport에서 /admin·/admin/books·/admin/users 3 경로 렌더 확인(통계는 /admin에 통합 — ADR-0019 D13). 사이드 네비 → 모바일 햄버거 또는 탑 네비 전환 + 테이블 → 카드 전환 등 패턴 정합", "expected": "4 viewport 모두 가독성·인터랙션 정합" },
     { "id": "v11-hard-rule-10-hex", "description": "Hard Rule 10 raw HEX 0건", "method": "grep -E '#[0-9a-fA-F]{3,8}' lib/admin/ app/admin/ components/admin/", "expected": "0건 (semantic 토큰만)" },
     { "id": "v12-build-lint-type", "description": "lint·type-check·build 통과", "method": "pnpm lint && pnpm type-check && pnpm build", "expected": "에러 0건" },
     { "id": "v13-no-migration-002", "description": "DB 스키마 무변경 — 마이그레이션 002 생성 0건", "method": "ls supabase/migrations/ → 001_initial_schema.sql 단일 확인. 신규 002_*.sql 0건", "expected": "마이그레이션 1개 (001만)" }
@@ -243,7 +242,7 @@
     "v6 통계 대시보드 4종 COUNT 실측값 정합",
     "v7 트리플 가드(zod·auth·requireAdmin) + secret 키 4단",
     "v8 secret 키 클라이언트 노출 0건",
-    "v9 /admin/* robots noindex 4경로",
+    "v9 /admin/* robots noindex 3경로 (ADR-0019 D13)",
     "v10 4 viewport 반응형",
     "v11 Hard Rule 10 raw HEX 0건",
     "v12 pnpm lint && pnpm type-check && pnpm build 통과",
@@ -258,7 +257,7 @@
     "CP2 시각 검수: /admin 진입 시 (a) admin 통과·테스트용 parent 계정 redirect·미인증 redirect 3 케이스",
     "CP3 시각 검수: /admin/books is_active 토글 후 /home·/library 노출 변화 + level 수정 후 /home 추천 반영",
     "CP4 시각 검수: /admin/users tabs(profiles·children) 목록·검색·무한스크롤 + 편집 버튼 0건 확인",
-    "CP5 시각 검수: /admin/stats 4종 COUNT를 Supabase SQL Editor SELECT COUNT(*)와 대조",
+    "CP5 시각 검수: /admin 홈에 통합된 4종 COUNT(ADR-0019 D13)를 Supabase SQL Editor SELECT COUNT(*)와 대조",
     "CP6: pnpm lint && pnpm type-check && pnpm build + python scripts/run_phase.py --complete phase-13b-admin-system"
   ],
 
