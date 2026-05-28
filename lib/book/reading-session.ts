@@ -3,6 +3,7 @@
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
 
+import { awardCompletionRewards } from '@/lib/book/rewards';
 import { getActiveChild } from '@/lib/home/active-child';
 import { createClient } from '@/lib/supabase/server';
 
@@ -23,6 +24,7 @@ import { createClient } from '@/lib/supabase/server';
  *
  * 보안 (Hard Rule 6·9):
  *   - createClient()는 **본인 세션 클라이언트** — secret 키 미사용, 클라이언트 노출 0건.
+ *     (보상 적립의 secret 키 쓰기는 awardCompletionRewards에 격리된다 — D4 분리.)
  *   - RLS(001 §9.4)가 1차 방어선, child_id 명시 필터가 2차 방어선:
  *       · "parents can insert own children sessions"
  *           INSERT WITH CHECK (child_id IN (SELECT id FROM children WHERE parent_id = auth.uid()))
@@ -35,13 +37,18 @@ import { createClient } from '@/lib/supabase/server';
  *   - .select('id').maybeSingle() 후 **0행이면 명시 error** — RLS의 묵묵한 실패
  *     (0행 + no error)를 사용자에게 보이는 메시지로 구분한다.
  *
- * phase-13 경계 (ADR-0017 D7·d9):
- *   완독 처리는 reading_sessions UPDATE까지만 한다. children.points += 50·
- *   child_badges INSERT·별 3개 애니메이션은 phase-13 전속이며 본 모듈은 쓰기 0건이다.
- *   (phase-13에서 completeReadingSession에 revalidatePath('/home') 추가 가능 — 현재는
- *    points/badges 미반영이라 불필요.)
+ * phase-13 보상 배선 (ADR-0018 D3·D4·D9 — ADR-0017 D7 경계 해소):
+ *   phase-12에서 본 모듈은 reading_sessions UPDATE까지만 하고 children.points·
+ *   child_badges 쓰기는 0건이었다(ADR-0017 D7 phase-13 경계). phase-13 CP2-c에서
+ *   completeReadingSession의 1행 UPDATE 성공 직후(완독 전이 = 멱등 앵커, D3) redirect
+ *   직전에 awardCompletionRewards()를 호출해 보상을 적립한다. 본 모듈은 여전히
+ *   reading_sessions UPDATE만 **본인 세션**으로 직접 쓰고, children.points +50·
+ *   child_badges INSERT는 awardCompletionRewards(secret 키 옵션 B)에 위임한다
+ *   (D4 분리 — 클라이언트가 다름). 보상 실패 시 reading_sessions는 롤백하지 않고
+ *   (완독 보존, D9 옵션 A) ok:false를 반환해 redirect를 차단한다(FinishButton이 error 노출).
  *
  * 의도 문서: docs/intent/screen-04-reader.md §4.3·§4.4·§5.1·§5.3
+ *            docs/intent/screen-05-celebrate.md §4.1·§4.2 (phase-13 보상 배선)
  * RLS: supabase/migrations/001_initial_schema.sql §9.4 (lines 259~273)
  */
 
@@ -122,17 +129,24 @@ export async function startReadingSession(bookId: string): Promise<SessionAction
 }
 
 /**
- * '다 읽었어요' 클릭 시 완독 처리 후 /celebrate로 이동한다(finish-button.tsx).
+ * '다 읽었어요' 클릭 시 완독 처리 + 보상 적립 후 /celebrate로 이동한다(finish-button.tsx).
  *
  * 동작:
  *   1. getActiveChild로 child_id 해소(없으면 명시 error).
  *   2. 미완료 세션을 completed_at=NOW()·is_completed=true로 UPDATE
  *      (WHERE child_id + book_id + completed_at IS NULL — start의 가드 키와 대칭).
  *   3. .select('id').maybeSingle() 후 0행이면 명시 error(이미 완독했거나 세션 없음).
- *   4. 성공 시 redirect(`/book/${bookId}/celebrate`).
+ *   4. 1행 UPDATE 성공(완독 전이 = 멱등 앵커, ADR-0018 D3) → awardCompletionRewards()로
+ *      보상 적립(children.points +50 + child_badges INSERT, secret 키 옵션 B, D4 분리).
+ *      보상 실패 시 ok:false 반환(완독은 보존, redirect 차단, D9 옵션 A).
+ *   5. 보상 성공 시 redirect(`/book/${bookId}/celebrate`).
  *
- * pages_read는 건드리지 않는다(DEFAULT 0 유지, D3). children.points·child_badges
- * 쓰기 0건(phase-13 경계, D7).
+ * pages_read는 건드리지 않는다(DEFAULT 0 유지, ADR-0017 D3). children.points·
+ * child_badges 직접 쓰기는 0건 — awardCompletionRewards(secret 키)에 위임한다(D4).
+ *
+ * 통신 계약 (phase-12 보존 — FinishButton 무변경):
+ *   성공 시 redirect(never), 실패(완독 실패·보상 실패)에만 { ok:false, error } 반환.
+ *   FinishButton은 반환값이 오면 곧 실패로 처리(setError)하므로 변경이 0건이다.
  */
 export async function completeReadingSession(
   bookId: string,
@@ -175,6 +189,27 @@ export async function completeReadingSession(
   // 0행 — 미완료 세션 없음(세션 미시작·이미 완독) 또는 RLS 차단(다른 사용자 자녀).
   if (!data) {
     return { ok: false, error: '완독할 세션을 찾을 수 없습니다.' };
+  }
+
+  // 보상 적립 (ADR-0018 D3·D4·D9): 1행 UPDATE 성공 = in-progress → completed 전이 =
+  // 멱등 앵커. redirect 직전에 awardCompletionRewards(secret 키 옵션 B)로 children.points
+  // +50 + child_badges INSERT를 적립한다(D4 분리 — 본 함수는 본인 세션). 보상 실패 시
+  // reading_sessions UPDATE는 롤백하지 않고(완독 보존, D9 옵션 A) ok:false를 반환해
+  // redirect를 차단한다 — FinishButton이 error를 노출한다(통신 계약 보존).
+  //
+  // ★ redirect()는 NEXT_REDIRECT를 throw하므로 반드시 try-catch '밖'에 둔다 — 보상만
+  //   try로 감싸 redirect의 정상 흐름 throw가 catch에 오포착되는 것을 막는다.
+  try {
+    const reward = await awardCompletionRewards();
+    if (!reward.ok) {
+      return { ok: false, error: reward.error };
+    }
+    // 성공 결과(pointsAwarded·badgeCode·badgeNewlyEarned)는 여기서 무시한다 —
+    // /celebrate 페이지가 children.points·child_badges를 직접 조회해 표시한다(CP2-e).
+  } catch {
+    // awardCompletionRewards는 모든 분기에서 ok:false를 반환하므로 정상적으로 throw하지
+    // 않는다 — createServiceRoleClient의 env 누락 등 예외만 방어한다.
+    return { ok: false, error: '보상 적립 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.' };
   }
 
   // 성공 — celebrate로 이동(redirect는 never 반환, 이후 코드 도달 불가).
