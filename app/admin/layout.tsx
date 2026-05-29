@@ -70,10 +70,28 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
   return (
     <main className="min-h-screen bg-surface-2 py-6">
       <div className="mx-auto flex max-w-screen-sm flex-col gap-4 px-4 md:max-w-screen-md md:gap-5 md:px-6 lg:max-w-screen-lg">
-        <header className="flex items-center justify-end">
+        <header className="flex items-center justify-end gap-2">
           <span className="rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant">
             {copy.users.roleBadges[ctx.profile.role]}
           </span>
+          {/*
+            로그아웃 form — phase-13b CP3-c hotfix (P0 데모 시연 동선 #1·#2 검증 가능).
+            - 박제 정합: app/auth/sign-out/route.ts:9 "form POST로 호출" + docs/intent/auth-flow.md §4.6
+              4단계 흐름(로그아웃 → 세션 종료 → / 랜딩 → 보호 라우트 재진입 시 /login 차단).
+            - 'use client' 0건 — native HTML form action + POST가 Server Component에서 동작.
+            - 라벨 "로그아웃" hardcoded — AdminCopy.nav 박제 확장 회피(자진 신고 5번).
+              phase-13c follow-up 후보로 AdminCopy.nav.logout 키 박제 확장 + copy.ts 이동 검토.
+            - 시각: role badge와 동일 토큰 패턴(border-outline·bg-surface·rounded-md·text-xs
+              text-text-variant) + button hover/focus 토큰 추가. 신규 토큰 0건.
+          */}
+          <form action="/auth/sign-out" method="post">
+            <button
+              type="submit"
+              className="inline-flex items-center rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            >
+              로그아웃
+            </button>
+          </form>
         </header>
 
         <AdminNav copy={copy.nav} />
