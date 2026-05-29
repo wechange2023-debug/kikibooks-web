@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { StatsDashboard } from '@/components/admin/stats/stats-dashboard';
 import { getAdminCopy } from '@/lib/admin/copy';
+import { getAdminStats } from '@/lib/admin/stats/query';
 
 /**
  * /admin — 관리 홈 + 통계 4종 통합 (phase-13b CP2-b CP2-admin-foundation).
@@ -43,7 +45,8 @@ export const metadata: Metadata = {
 
 export default async function AdminHomePage() {
   // D16 — requireAdmin 재호출 0건. layout이 보증.
-  const copy = await getAdminCopy();
+  // CP5-b — getAdminStats() 실측 통합(D13). getAdminCopy()와 병렬(의존성 0건).
+  const [stats, copy] = await Promise.all([getAdminStats(), getAdminCopy()]);
 
   return (
     <div className="flex flex-col gap-4 md:gap-5">
@@ -53,17 +56,12 @@ export default async function AdminHomePage() {
         </h1>
       </header>
 
-      {/* D13 — stats anchor target. CP5-b가 본 섹션 children을 getAdminStats() 실측으로 교체. */}
+      {/* D13 — stats anchor target. getAdminStats() 실측 4종 COUNT(CP5-b). */}
       <section id="stats" aria-labelledby="stats-heading" className="flex flex-col gap-3">
         <h2 id="stats-heading" className="font-display text-lg font-semibold text-text">
           {copy.nav.stats}
         </h2>
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          <StatsPlaceholderCard label={copy.stats.cards.profilesCount.label} />
-          <StatsPlaceholderCard label={copy.stats.cards.childrenCount.label} />
-          <StatsPlaceholderCard label={copy.stats.cards.completedSessionsCount.label} />
-          <StatsPlaceholderCard label={copy.stats.cards.activeBooksCount.label} />
-        </div>
+        <StatsDashboard stats={stats} copy={copy.stats} />
       </section>
 
       <section className="grid grid-cols-1 gap-3 md:grid-cols-2">
@@ -90,23 +88,6 @@ export default async function AdminHomePage() {
           </span>
         </Link>
       </section>
-    </div>
-  );
-}
-
-interface StatsPlaceholderCardProps {
-  label: string;
-}
-
-/**
- * 통계 카드 placeholder — 값 "—"는 CP5-b에서 실측 COUNT로 교체(D13).
- * 본 CP2-b는 카드 골격·라벨·반응형 그리드만 박제.
- */
-function StatsPlaceholderCard({ label }: StatsPlaceholderCardProps) {
-  return (
-    <div className="rounded-md border border-outline bg-surface px-4 py-3 shadow-elev-1">
-      <div className="text-xs text-text-variant">{label}</div>
-      <div className="mt-1 font-display text-2xl font-bold text-text">—</div>
     </div>
   );
 }
