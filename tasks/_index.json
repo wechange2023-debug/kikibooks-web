@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-05-28T12:00:00+00:00",
+  "last_updated": "2026-05-29T12:00:00+00:00",
   "current_phase": "phase-13b-admin-system",
   "total_phases": 16,
-  "completed_phases": 15,
-  "remaining_phases": 1,
-  "last_successful_state": "phase-13-screen-05-celebrate",
+  "completed_phases": 16,
+  "remaining_phases": 0,
+  "last_successful_state": "phase-13b-admin-system",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -280,21 +280,24 @@
     },
     {
       "id": "phase-13b-admin-system",
-      "name": "Admin 시스템 — 랜딩 카피 관리 + 책 큐레이션 + 사용자 관리",
+      "name": "Admin 시스템 — 토대·큐레이션·조회·통계 (랜딩카피 이연)",
       "category": "Phase 1",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-09a-screen-01-landing-static",
         "phase-13-screen-05-celebrate"
       ],
       "spec_file": "tasks/phase-13b-admin-system.json",
-      "note": "phase-09 분할로 신설(ADR-0012 결정 1). 모든 Screen 화면 완료 후 진행. spec_file은 phase-13b 착수 시 작성한다.",
+      "note": "phase-09 분할로 신설(ADR-0012 결정 1). ADR-0019로 4기능 정정 — 랜딩 카피 DB 편집은 마이그레이션 002=Hard Rule 8 트리거이므로 scope_out 이연(F28), 통계 대시보드 read-only 추가. verification 4건은 spec 4기능 정정값으로 동기(2026-05-29 CP6-b).",
       "verification": [
-        "랜딩 카피 DB 편집 → / 반영 (getLandingCopy() DB 교체)",
-        "책 is_active 토글 큐레이션",
-        "사용자 목록 조회",
-        "admin 전용 보호 라우트 작동"
-      ]
+        "통계 대시보드 read-only — 4종 단순 COUNT(사용자·자녀·완독 세션·활성 책), getAdminStats Promise.all + count:exact head:true (ADR-0019 D9·D13, CP5-a·CP5-b)",
+        "콘텐츠 큐레이션 — books.is_active 토글(공개/비공개) + level 1~5 수정, 트리플 가드(zod·auth·assertAdmin) + createServiceRoleClient UPDATE + revalidatePath 3중 (ADR-0019 D2·D11, CP3-a·CP3-b)",
+        "사용자·자녀 조회 read-only — profiles·children 목록 tabs·검색·무한스크롤, 편집/삭제 server action 0건 + parent_email JOIN (ADR-0019 D7·D21, CP4-a·CP4-b)",
+        "admin 전용 보호 라우트 — middleware PROTECTED_PREFIXES + layout requireAdmin(role IN admin·curator) + redirect 분기 + robots noindex + force-dynamic (ADR-0019 D12·D14·D16, CP2-a·CP2-b)"
+      ],
+      "completed_at": "2026-05-29T12:00:00+00:00",
+      "commit_range": "f027fa8..<CP6_COMMIT_HASH> (CP1-spec/intent/adr 4 + CP2-a/b 2 + CP3-a/b 2 + CP4-a/b 2 + CP5-a/b 2 + CP6 1 + hotfix 58cf4a5·cd51647 + trigger ffff812)",
+      "verification_result": "CP6-a 자동 검증 3건 통과(2026-05-29, exit 0): v12 lint·type-check(tsc --noEmit)·build(next build — 19페이지, admin 3경로 ƒ Dynamic). grep 실측: v8 secret 미노출(.next/static 클라이언트 번들 0건, 서버 번들에만)·v11 raw HEX 0건·v13 마이그레이션 002 0건. 코드 검토: v5 users read-only(actions.ts pagination 2건만·mutation 0건)·v7 트리플 가드 4단·v9 robots noindex 3경로(D13). 사용자 클릭 검증 v1·v2·v3·v4·v6·v10 = pending(베타 출시 후 admin 승격 SQL 1회 후 실측, phase-14). 자진 신고 11건(#1~#9·#11·#12) + 후보 2건(#10·#13). #15 불발(type-check 스크립트명 정합). 상세는 spec verification_result 박제. Hard Rule 1·3·6·8·9·10 무위반."
     }
   ],
   "global_verification": {
