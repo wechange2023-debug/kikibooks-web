@@ -155,3 +155,86 @@ export async function requireAdmin(): Promise<AdminContext> {
     profile: { id: profile.id, role: profile.role },
   };
 }
+
+/**
+ * server action 전용 admin 가드 — requireAdmin의 ok/error 변형 (phase-13b CP3-a 추가).
+ *
+ * ──────────────────────────────────────────────────────────────────────────────
+ * requireAdmin과의 차이
+ * ──────────────────────────────────────────────────────────────────────────────
+ *   - requireAdmin: layout·page Server Component용. 미통과 시 redirect()로 흐름 중단,
+ *     통과 시 AdminContext 단일 반환. 호출자 narrowing 부담 0건.
+ *   - assertAdmin: server action 전용. 미통과 시 { ok: false, error } 반환, 통과 시
+ *     { ok: true, ctx } 반환. server action 호출자(클라이언트 'use client' 컴포넌트)가
+ *     useTransition·낙관적 UI 패턴(ADR-0019 D18)으로 결과 메시지를 받아 처리한다.
+ *
+ * 두 함수 공존 사유:
+ *   - server action 내부에서 redirect()를 호출하면 클라이언트가 server action 반환값에
+ *     도달하지 못한다. useTransition·낙관적 UI 패턴이 깨진다(낙관적 토글 환원 불가).
+ *   - 따라서 server action은 ok/error 시그니처 헬퍼가 필요하다.
+ *   - requireAdmin은 page 진입 시 환원 동선이 redirect라 시그니처 분리는 자연.
+ *
+ * ──────────────────────────────────────────────────────────────────────────────
+ * 가드 4단 (requireAdmin과 동일)
+ * ──────────────────────────────────────────────────────────────────────────────
+ *   ① auth.getUser → 미인증 시 { ok: false, error }
+ *   ② profiles SELECT (본인 세션 §9.2 USING(auth.uid()=id))
+ *   ③ profile 비정상(error or null) → { ok: false, error }
+ *   ④ role narrowing → admin·curator 아니면 { ok: false, error }
+ *
+ * ──────────────────────────────────────────────────────────────────────────────
+ * 자진 신고 — 박제 약화 1건 (phase-13c follow-up 후보)
+ * ──────────────────────────────────────────────────────────────────────────────
+ *   - 본 함수는 ADR-0019 D2/D16 박제에 명시 0건. requireAdmin이 server action 환경에서
+ *     redirect 부적합으로 발생한 실측 사안의 헬퍼다. 박제 확장 옵션 A(코드만, ADR 0건)
+ *     채택 — 사용자 확정(외부 검토 결과).
+ *   - 에러 메시지 한국어 하드코딩 — AdminCopy.errors가 Record<string, never>로 박제
+ *     (CP2-a 박제 메시지 0건)이라 본 함수의 사용자 표시 메시지는 임시 하드코딩이다.
+ *     phase-13c follow-up으로 박제 확장 시 copy.errors로 이동.
+ *
+ * ADR: docs/adr/0019-admin-system.md D2(트리플 가드 ③단 변형)·D16(가드 1중)·D17(role 출처)·D18(낙관적 UI)
+ * 의도 문서: docs/intent/admin-system.md §4.5
+ */
+export type AssertAdminResult =
+  | { ok: true; ctx: AdminContext }
+  | { ok: false; error: string };
+
+export async function assertAdmin(): Promise<AssertAdminResult> {
+  // ① auth — 미인증 차단
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return {
+      ok: false,
+      error: '로그인 정보가 만료되었습니다. 다시 로그인해 주세요.',
+    };
+  }
+
+  // ② profiles SELECT — D17 본인 세션 RLS §9.2 본인 행 SELECT (requireAdmin 동일 출처)
+  const { data: profile, error } = await supabase
+    .from('profiles')
+    .select('id, role')
+    .eq('id', user.id)
+    .maybeSingle<AdminProfileRow>();
+
+  // ③ profile 비정상
+  if (error || !profile) {
+    return { ok: false, error: '권한 확인에 실패했습니다.' };
+  }
+
+  // ④ role narrowing — D8 admin·curator IN list
+  if (profile.role !== 'admin' && profile.role !== 'curator') {
+    return { ok: false, error: '관리자 권한이 필요합니다.' };
+  }
+
+  return {
+    ok: true,
+    ctx: {
+      user,
+      profile: { id: profile.id, role: profile.role },
+    },
+  };
+}
