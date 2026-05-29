@@ -89,11 +89,31 @@ export default async function LibraryPage() {
   return (
     <main className="min-h-screen bg-surface-2 py-6">
       <div className="mx-auto flex max-w-screen-sm flex-col gap-4 px-4 md:max-w-screen-md md:gap-5 md:px-6 lg:max-w-screen-lg">
-        <header className="flex flex-col gap-1">
-          <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
-            {copy.title}
-          </h1>
-          <p className="text-sm text-text-variant">{copy.subtitle}</p>
+        {/*
+          로그아웃 form — phase-13b CP3-c hotfix 확장 (자진 신고 6번 해소).
+          - 박제 정합: admin layout.tsx hotfix 58cf4a5 + /home page.tsx hotfix 토큰·form
+            패턴 100% 정합 + docs/intent/auth-flow.md §4.6 + route.ts:9 form POST 박제.
+          - 'use client' 0건 — native HTML form action + POST가 Server Component에서 동작.
+          - 라벨 "로그아웃" hardcoded — copy.ts(LibraryCopy) 박제 확장 회피 (자진 신고 5번 정합).
+          - 기존 header h1·subtitle 박제 영향 0건 — div 감싸기로 좌측 그룹화 + form 우측 정렬.
+          - header className 변형: flex-col gap-1 → items-start justify-between gap-3
+            (h1 left + form right, shrink-0으로 button 압축 회피).
+        */}
+        <header className="flex items-start justify-between gap-3">
+          <div className="flex flex-col gap-1">
+            <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
+              {copy.title}
+            </h1>
+            <p className="text-sm text-text-variant">{copy.subtitle}</p>
+          </div>
+          <form action="/auth/sign-out" method="post">
+            <button
+              type="submit"
+              className="inline-flex shrink-0 items-center rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            >
+              로그아웃
+            </button>
+          </form>
         </header>
 
         <LibraryBrowser initialPage={initialPage} copy={copy} />
