@@ -6,7 +6,7 @@
  */
 
 /** 로그인해야만 들어갈 수 있는 경로의 접두사 목록. */
-export const PROTECTED_PREFIXES = ['/home', '/onboarding', '/library', '/book'] as const;
+export const PROTECTED_PREFIXES = ['/home', '/onboarding', '/library', '/book', '/admin'] as const;
 
 /** 로그인한 사용자에게는 다시 보여주지 않는 인증 페이지. */
 export const AUTH_PAGES = ['/login', '/signup'] as const;
