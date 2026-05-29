@@ -1,0 +1,199 @@
+{
+  "phase_id": "phase-14-beta-infrastructure",
+  "name": "베타 인프라 — 법적·인증메일·보안·전역에러·사용자 가시 UI 잔여",
+  "category": "Phase 1",
+  "version": "1.0",
+  "created_at": "2026-05-29",
+  "depends_on": [
+    "phase-13b-admin-system"
+  ],
+
+  "cp_progress": {
+    "phase_status": "pending",
+    "phase_completed_at": null,
+    "current_cp": "CP1-spec",
+    "last_successful_cp": null,
+    "completed_cps": [],
+    "pending_cps": [
+      "CP1-spec",
+      "CP2-user-visible-ui",
+      "CP3-global-error-ui",
+      "CP4-og-localization",
+      "CP5-legal-copy",
+      "CP6-smtp-infra",
+      "CP7-secret-key-rotate",
+      "CP8-verify-and-meta"
+    ],
+    "sub_step_structure": {
+      "CP1-spec": ["CP1-spec"],
+      "CP2-user-visible-ui": ["CP2-user-visible-ui"],
+      "CP3-global-error-ui": ["CP3-global-error-ui"],
+      "CP4-og-localization": ["CP4-og-localization"],
+      "CP5-legal-copy": ["CP5-legal-copy"],
+      "CP6-smtp-infra": ["CP6-smtp-infra"],
+      "CP7-secret-key-rotate": ["CP7-secret-key-rotate"],
+      "CP8-verify-and-meta": ["CP8-verify-and-meta"]
+    },
+    "note": "phase-14는 docs/backlog.md(1ae4c19) §3·§4를 실행 spec으로 변환한 베타 차단 인프라 페이즈다. 항목 출처는 phase-13c 종합 진단 ③④. CP2~CP4는 Claude Code 자동 실행 가능(코드), CP5~CP7은 외부 의존·사용자 작업 영역(변호사 문안 제공·Supabase Dashboard 설정·키 rotate)이라 Claude Code는 문서화·코드 배선만 하고 실제 외부 행위 0건. external_dependencies 참조. DB 스키마 변경 0건 가정(마이그레이션 002 = Hard Rule 8, 발생 시 사전 ADR). 자진 신고 #5·#7은 phase-13c 동결 이관분(backlog §3)."
+  },
+
+  "summary": "베타 출시(2026-08, PLAN.md:5) 차단 인프라를 구현한다 — (1) 사용자 가시 UI 잔여: admin layout 로그아웃 라벨 카피 분리(#5 잔여) + /book 트리 로그아웃 UI 추가(#7) (2) 전역 에러 UI: app/global-error.tsx + app/admin/error.tsx 신규(진단 #13, 현재 error.tsx 0건 실측) (3) OG 메타데이터 한글화·정합(현재 app/opengraph-image.tsx + app/page.tsx·layout.tsx openGraph 존재 — refine) (4) 약관·개인정보 정식 문안 적용(현재 app/terms·privacy placeholder 실측, 변호사 문안은 사용자 제공 = 외부 의존) (5) SMTP 인프라(현재 커스텀 메일 발송 코드 0건 실측, Supabase Auth 기본 메일 의존 — ADR-0010 이연분, Dashboard 설정 = 사용자 영역) (6) Supabase secret key rotate(ADR-0003 표준, Supabase·Vercel env = 사용자 영역, Claude 키 노출 0건). Hard Rule 6(secret 노출 금지)·8(스키마 변경 시 ADR 선행) 직역. footer 0건(ADR-0020).",
+
+  "goals": [
+    "사용자 가시 UI 잔여 해소 — #5 admin layout 로그아웃 라벨을 AdminCopy로 분리(home·library는 cd51647 hotfix 완료) + #7 /book 트리 로그아웃 UI 추가",
+    "전역 에러 UI — app/global-error.tsx + app/admin/error.tsx 신규(현재 0건 실측, 진단 #13). Next.js App Router error boundary 패턴, 사용자 친화 한국어 메시지 + 복구 동선",
+    "OG 메타데이터 한글화·정합 — 기존 app/opengraph-image.tsx + openGraph metadata(app/page.tsx·layout.tsx) 한국어·키키북스 브랜드 정합 검토",
+    "약관·개인정보 정식 문안 — 변호사 검토 문안(사용자 제공)을 기존 placeholder(app/terms/page.tsx·app/privacy/page.tsx)에 적용. 문안 작성은 Claude 영역 외(법적 책임)",
+    "SMTP 인프라 — 프로덕션 인증 메일 발송 신뢰성(Supabase 기본 메일 rate limit 회피). Supabase Dashboard SMTP 설정 = 사용자 영역, Claude는 ADR-0010 갱신 + 설정 절차 문서화",
+    "Supabase secret key rotate — ADR-0003 표준 키 교체(Supabase Dashboard + Vercel env). 사용자 영역, Claude는 절차 문서화 + 키 값·이름 노출 0건",
+    "DB 스키마 변경 0건 — 마이그레이션 002 생성 시 사전 ADR(Hard Rule 8)",
+    "Hard Rule 1·3·6·8·9·10 무위반",
+    "phase-14 종료 후 베타 출시 진입 가능"
+  ],
+
+  "current_state_measured": {
+    "measured_at": "2026-05-29",
+    "method": "glob + grep 실측 (추정 0건)",
+    "global_error_ui": "app/error.tsx·app/global-error.tsx·app/admin/error.tsx 전부 부재(glob error*.tsx = 0건). 신규 대상.",
+    "legal_pages": "app/terms/page.tsx·app/privacy/page.tsx 존재(phase-09a placeholder + 베타 임시 배너). 변호사 문안 교체 대상.",
+    "smtp": "커스텀 메일 발송 코드 0건(grep smtp|resend|nodemailer|sendMail|sendEmail = 0 files). Supabase Auth 기본 메일 의존. ADR-0010 이연.",
+    "og": "app/opengraph-image.tsx 존재 + openGraph metadata(app/page.tsx·app/layout.tsx). refine 대상(신규 0건).",
+    "logout_label_5": "app/admin/layout.tsx:92 로그아웃 라벨 하드코딩(home·library는 cd51647 완료).",
+    "book_logout_7": "/book 트리 로그아웃 UI 부재(추가 대상).",
+    "secret_key_rotate": "ADR-0003 표준. 키 값·env 이름 미실측(Hard Rule 6 + 인수인계 §2 준수 — .env 노출 0건). 사용자 Dashboard 영역."
+  },
+
+  "external_dependencies": [
+    "변호사 검토 문안(이용약관·개인정보처리방침) — 사용자가 변호사 통해 확보 후 Claude에 전달. Claude는 문안 작성 0건(법적 책임), 전달받은 문안의 placeholder 적용만(CP5).",
+    "Supabase Dashboard SMTP 설정 — 사용자가 Dashboard에서 직접 설정(SMTP provider 선택·인증). Claude는 ADR·절차 문서화만(CP6).",
+    "Supabase secret key rotate — 사용자가 Supabase Dashboard에서 키 재발급 + Vercel env 갱신. Claude는 절차 문서화만, 키 노출 0건(CP7)."
+  ],
+
+  "scope_in": [
+    "app/admin/layout.tsx 로그아웃 라벨 → AdminCopy 분리 (#5 잔여)",
+    "/book 트리 로그아웃 UI 추가 (#7)",
+    "app/global-error.tsx + app/admin/error.tsx 신규 (#13)",
+    "OG 메타데이터 한글화·정합 (기존 refine)",
+    "app/terms·privacy 변호사 문안 적용 (사용자 제공 후)",
+    "ADR-0010 갱신(SMTP 설정 절차) + SMTP 설정 사용자 가이드 문서",
+    "secret key rotate 절차 문서 (사용자 가이드)"
+  ],
+
+  "scope_out": [
+    "변호사 문안 자체 작성 (법적 책임 — 사용자 영역)",
+    "Supabase Dashboard SMTP 실제 설정 (사용자 영역)",
+    "secret key 실제 재발급·env 갱신 (사용자 영역)",
+    "DB 스키마 변경 (마이그레이션 002 = Hard Rule 8, 미발생 가정)",
+    "phase-13c 동결 코드 품질 항목 #1·#2·#3·#11·#12 (backlog §2, phase-16 이관)"
+  ],
+
+  "hard_rules_applied": [
+    "Hard Rule 6 — secret key 노출 금지. CP7 rotate는 절차 문서화만, 키 값·env 이름 캡처 0건.",
+    "Hard Rule 8 — DB 스키마 변경 시 사전 ADR. phase-14 마이그레이션 002 미발생 가정, 발생 시 ADR 선행.",
+    "Hard Rule 1·3·9·10 — attribution·NC차단·임베드·raw HEX 무관(인프라 페이즈) 무위반 유지."
+  ],
+
+  "checkpoints": [
+    {
+      "id": "CP1-spec",
+      "description": "본 spec(phase-14-beta-infrastructure.json) 작성 + _index.json phase-14 등록(total_phases 16→17·remaining 0→1·current_phase 갱신). 코드 0건. docs/backlog.md §3·§4 직역, 외부 추가 0건.",
+      "status": "pending",
+      "type": "code",
+      "files": [
+        "tasks/phase-14-beta-infrastructure.json",
+        "tasks/_index.json"
+      ]
+    },
+    {
+      "id": "CP2-user-visible-ui",
+      "description": "사용자 가시 UI 잔여 — (a) app/admin/layout.tsx 로그아웃 라벨을 AdminCopy.nav.logout(또는 신규 키)로 분리 (#5 잔여) (b) /book 트리 로그아웃 UI 추가 (#7). 단독 커밋 + 시각 검수.",
+      "status": "pending",
+      "type": "code",
+      "files": [
+        "app/admin/layout.tsx",
+        "lib/admin/copy.ts"
+      ]
+    },
+    {
+      "id": "CP3-global-error-ui",
+      "description": "전역 에러 UI 신규 (#13) — app/global-error.tsx(루트 에러 경계) + app/admin/error.tsx(admin 세그먼트 에러 경계). 'use client' + reset() 복구 동선 + 한국어 메시지(copy 모듈 또는 인라인, Hard Rule 10 semantic 토큰). 현재 error.tsx 0건 실측.",
+      "status": "pending",
+      "type": "code",
+      "files": [
+        "app/global-error.tsx",
+        "app/admin/error.tsx"
+      ]
+    },
+    {
+      "id": "CP4-og-localization",
+      "description": "OG 메타데이터 한글화·정합 — 기존 app/opengraph-image.tsx + openGraph metadata(app/page.tsx·layout.tsx) 한국어·키키북스 브랜드 정합 검토. 신규 파일 0건(기존 refine).",
+      "status": "pending",
+      "type": "code",
+      "files": [
+        "app/opengraph-image.tsx",
+        "app/layout.tsx",
+        "app/page.tsx"
+      ]
+    },
+    {
+      "id": "CP5-legal-copy",
+      "description": "약관·개인정보 정식 문안 적용 — 변호사 문안(사용자 제공)을 app/terms/page.tsx·privacy/page.tsx placeholder에 교체. ★ 외부 의존: 사용자가 문안 전달 전 착수 0건. Claude 문안 작성 0건(법적 책임).",
+      "status": "pending",
+      "type": "external-dependent",
+      "files": [
+        "app/terms/page.tsx",
+        "app/privacy/page.tsx"
+      ]
+    },
+    {
+      "id": "CP6-smtp-infra",
+      "description": "SMTP 인프라 — ADR-0010 갱신(이연 해소 결정) + Supabase Dashboard SMTP 설정 절차 사용자 가이드 문서. ★ 사용자 영역: 실제 Dashboard 설정은 사용자 직접. Claude는 ADR·가이드 문서화만.",
+      "status": "pending",
+      "type": "ops-user-domain",
+      "files": [
+        "docs/adr/0010-email-smtp-deferred.md"
+      ]
+    },
+    {
+      "id": "CP7-secret-key-rotate",
+      "description": "Supabase secret key rotate — ADR-0003 표준 키 교체 절차 사용자 가이드. ★ 사용자 영역: 실제 재발급(Supabase Dashboard)·Vercel env 갱신은 사용자 직접. Claude는 절차 문서화만, 키 값·env 이름 노출 0건(Hard Rule 6).",
+      "status": "pending",
+      "type": "ops-user-domain",
+      "files": []
+    },
+    {
+      "id": "CP8-verify-and-meta",
+      "description": "검증(lint·type-check·build) + _index.json mark_success(phase-14 status pending→success) + spec verification_result + 메타 커밋. push는 사용자 결정.",
+      "status": "pending",
+      "type": "code",
+      "files": [
+        "tasks/_index.json",
+        "tasks/phase-14-beta-infrastructure.json"
+      ]
+    }
+  ],
+
+  "verification": [
+    { "id": "v1-logout-label", "description": "#5 admin 로그아웃 라벨 카피 분리", "method": "grep '로그아웃' app/admin/layout.tsx → 직접 문자열 0건, AdminCopy 참조 확인", "expected": "하드코딩 0건" },
+    { "id": "v2-book-logout", "description": "#7 /book 로그아웃 UI", "method": "/book 트리 페이지에서 로그아웃 버튼 렌더 + 클릭 시 sign-out 동작", "expected": "버튼 존재 + 동작" },
+    { "id": "v3-global-error", "description": "#13 전역 에러 UI", "method": "app/global-error.tsx·app/admin/error.tsx 존재 + 강제 에러 시 한국어 UI + reset 복구", "expected": "에러 경계 렌더 + 복구 동선" },
+    { "id": "v4-og-localized", "description": "OG 한글화", "method": "메타데이터 한국어 + opengraph-image 정합 확인", "expected": "한국어 OG 정합" },
+    { "id": "v5-legal-copy", "description": "약관·개인정보 정식 문안", "method": "사용자 제공 문안 적용 + placeholder 배너 제거 확인", "expected": "정식 문안 (사용자 문안 전달 시)" },
+    { "id": "v6-smtp", "description": "SMTP 설정", "method": "Supabase Dashboard SMTP 설정 후 인증 메일 실제 발송 테스트 (사용자 검증)", "expected": "인증 메일 정상 발송 (사용자 영역)" },
+    { "id": "v7-key-rotate", "description": "secret key rotate", "method": "키 재발급 후 프로덕션 정상 작동 확인 (사용자 검증)", "expected": "rotate 후 정상 (사용자 영역)" },
+    { "id": "v8-build", "description": "lint·type-check·build", "method": "pnpm lint && pnpm type-check && pnpm build", "expected": "에러 0건" },
+    { "id": "v9-no-secret-leak", "description": "Hard Rule 6", "method": "grep secret 키 값·env 이름 클라이언트 번들 노출 0건", "expected": "0건" },
+    { "id": "v10-footer", "description": "ADR-0020 footer 0건", "method": "phase-14 commits trailers 확인", "expected": "trailers [] 전건" }
+  ],
+
+  "completion_criteria": [
+    "v1·v2 사용자 가시 UI 잔여(#5·#7) 통과",
+    "v3 전역 에러 UI(#13) 통과",
+    "v4 OG 한글화 통과",
+    "v5 약관·개인정보 정식 문안 적용(사용자 문안 전달 후)",
+    "v6 SMTP 인증 메일 발송(사용자 Dashboard 설정 후)",
+    "v7 secret key rotate(사용자 실행 후)",
+    "v8 lint·type-check·build 통과",
+    "v9 secret 노출 0건 · v10 footer 0건"
+  ]
+}
