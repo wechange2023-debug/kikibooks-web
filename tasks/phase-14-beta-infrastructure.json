@@ -11,18 +11,18 @@
   "cp_progress": {
     "phase_status": "pending",
     "phase_completed_at": null,
-    "current_cp": "CP1-spec",
-    "last_successful_cp": null,
-    "completed_cps": [],
-    "pending_cps": [
+    "current_cp": "CP5-legal-copy",
+    "last_successful_cp": "CP4-og-localization",
+    "completed_cps": [
       "CP1-spec",
       "CP2-user-visible-ui",
       "CP3-global-error-ui",
-      "CP4-og-localization",
+      "CP4-og-localization"
+    ],
+    "pending_cps": [
       "CP5-legal-copy",
       "CP6-smtp-infra",
-      "CP7-secret-key-rotate",
-      "CP8-verify-and-meta"
+      "CP7-secret-key-rotate"
     ],
     "sub_step_structure": {
       "CP1-spec": ["CP1-spec"],
@@ -34,7 +34,8 @@
       "CP7-secret-key-rotate": ["CP7-secret-key-rotate"],
       "CP8-verify-and-meta": ["CP8-verify-and-meta"]
     },
-    "note": "phase-14는 docs/backlog.md(1ae4c19) §3·§4를 실행 spec으로 변환한 베타 차단 인프라 페이즈다. 항목 출처는 phase-13c 종합 진단 ③④. CP2~CP4는 Claude Code 자동 실행 가능(코드), CP5~CP7은 외부 의존·사용자 작업 영역(변호사 문안 제공·Supabase Dashboard 설정·키 rotate)이라 Claude Code는 문서화·코드 배선만 하고 실제 외부 행위 0건. external_dependencies 참조. DB 스키마 변경 0건 가정(마이그레이션 002 = Hard Rule 8, 발생 시 사전 ADR). 자진 신고 #5·#7은 phase-13c 동결 이관분(backlog §3)."
+    "note": "phase-14는 docs/backlog.md(1ae4c19) §3·§4를 실행 spec으로 변환한 베타 차단 인프라 페이즈다. 항목 출처는 phase-13c 종합 진단 ③④. CP2~CP4는 Claude Code 자동 실행 가능(코드), CP5~CP7은 외부 의존·사용자 작업 영역(변호사 문안 제공·Supabase Dashboard 설정·키 rotate)이라 Claude Code는 문서화·코드 배선만 하고 실제 외부 행위 0건. external_dependencies 참조. DB 스키마 변경 0건 가정(마이그레이션 002 = Hard Rule 8, 발생 시 사전 ADR). 자진 신고 #5·#7은 phase-13c 동결 이관분(backlog §3). CP8 종결 모델링(2026-06-01): CP8은 completed_cps/pending_cps 추적 대상이 아닌 코드 영역 종결 메커니즘이라 checkpoint status만 success로 표기하고, last_successful_cp는 마지막 순차 deliverable인 CP4로 유지한다. phase_status는 CP5~7(외부 의존) 미완으로 pending 유지 — phase 전체 success는 CP5~7 완료 후 별도 commit(phase-13c 부분 종결 선례 직역, Option 1).",
+    "verification_result": "코드 영역(CP1~CP4) 종결 검증 통과(2026-06-01): CP1 spec(bb8e5d4) · CP2 사용자 가시 UI(#5 admin 로그아웃 라벨 c6b8673 · #7 /book 상세 로그아웃 6c30467) · CP3 전역 에러 UI(global-error 6dee36c · admin/error 1bb4604) · CP4 OG 메타데이터 정합(efad6e6, #16 박제). 자동 검증: lint 0 · type-check 0 · build 19/19(매 CP). footer 0건 전건(ADR-0020, trailers [] 검증). 미착수(사용자 영역 외부 의존): CP5 약관·개인정보 정식 문안(변호사 문안 미전달, terms/privacy placeholder 유지) · CP6 SMTP 인프라(ADR-0010 갱신·가이드 미작성, Supabase Dashboard 사용자 영역) · CP7 secret key rotate(절차 가이드 미작성, 사용자 영역). 사용자 시각 검수: #5·#7 production 검수 통과(2026-05-29 이후 배포). Hard Rule 1·3·6·8·9·10 무위반(DB 스키마·secret·raw HEX 0건)."
   },
 
   "summary": "베타 출시(2026-08, PLAN.md:5) 차단 인프라를 구현한다 — (1) 사용자 가시 UI 잔여: admin layout 로그아웃 라벨 카피 분리(#5 잔여) + /book 트리 로그아웃 UI 추가(#7) (2) 전역 에러 UI: app/global-error.tsx + app/admin/error.tsx 신규(진단 #13, 현재 error.tsx 0건 실측) (3) OG 메타데이터 한글화·정합(현재 app/opengraph-image.tsx + app/page.tsx·layout.tsx openGraph 존재 — refine) (4) 약관·개인정보 정식 문안 적용(현재 app/terms·privacy placeholder 실측, 변호사 문안은 사용자 제공 = 외부 의존) (5) SMTP 인프라(현재 커스텀 메일 발송 코드 0건 실측, Supabase Auth 기본 메일 의존 — ADR-0010 이연분, Dashboard 설정 = 사용자 영역) (6) Supabase secret key rotate(ADR-0003 표준, Supabase·Vercel env = 사용자 영역, Claude 키 노출 0건). Hard Rule 6(secret 노출 금지)·8(스키마 변경 시 ADR 선행) 직역. footer 0건(ADR-0020).",
@@ -97,7 +98,7 @@
     {
       "id": "CP1-spec",
       "description": "본 spec(phase-14-beta-infrastructure.json) 작성 + _index.json phase-14 등록(total_phases 16→17·remaining 0→1·current_phase 갱신). 코드 0건. docs/backlog.md §3·§4 직역, 외부 추가 0건.",
-      "status": "pending",
+      "status": "success",
       "type": "code",
       "files": [
         "tasks/phase-14-beta-infrastructure.json",
@@ -107,7 +108,7 @@
     {
       "id": "CP2-user-visible-ui",
       "description": "사용자 가시 UI 잔여 — (a) app/admin/layout.tsx 로그아웃 라벨을 AdminCopy.nav.logout로 분리 (#5 잔여, CP2-a) (b) /book 상세(app/book/[id]/page.tsx) 로그아웃 UI 추가 (#7, CP2-b). 2 commits + 시각 검수. #7 위치는 상세 1곳(리더·완독 제외 — 유아 몰입 화면), home·library 헤더 form 직역.",
-      "status": "pending",
+      "status": "success",
       "type": "code",
       "files": [
         "app/admin/layout.tsx",
@@ -118,7 +119,7 @@
     {
       "id": "CP3-global-error-ui",
       "description": "전역 에러 UI 신규 (#13) — app/global-error.tsx(루트 에러 경계) + app/admin/error.tsx(admin 세그먼트 에러 경계). 'use client' + reset() 복구 동선 + 한국어 메시지(copy 모듈 또는 인라인, Hard Rule 10 semantic 토큰). 현재 error.tsx 0건 실측.",
-      "status": "pending",
+      "status": "success",
       "type": "code",
       "files": [
         "app/global-error.tsx",
@@ -128,7 +129,7 @@
     {
       "id": "CP4-og-localization",
       "description": "OG 메타데이터 한글화·정합 — 기존 app/opengraph-image.tsx + openGraph metadata(app/page.tsx·layout.tsx) 한국어·키키북스 브랜드 정합 검토. 신규 파일 0건(기존 refine).",
-      "status": "pending",
+      "status": "success",
       "type": "code",
       "files": [
         "app/opengraph-image.tsx",
@@ -164,8 +165,8 @@
     },
     {
       "id": "CP8-verify-and-meta",
-      "description": "검증(lint·type-check·build) + _index.json mark_success(phase-14 status pending→success) + spec verification_result + 메타 커밋. push는 사용자 결정.",
-      "status": "pending",
+      "description": "코드 영역(CP1~CP4) 검증(lint·type-check·build) + cp_progress 갱신(completed_cps·status) + spec/_index verification_result 박제 + 메타 커밋. ★ 정정(2026-06-01, 자진 신고 #17): 원안은 'phase-14 status pending→success'였으나 CP5~7(외부 의존)이 미착수라 phase 전체 success는 부정확 → 코드 영역 부분 종결로 정정, phase_status는 pending 유지(phase-13c 부분 종결 선례, Option 1). phase 전체 success는 CP5~7 완료 후 별도 commit. push는 사용자 결정.",
+      "status": "success",
       "type": "code",
       "files": [
         "tasks/_index.json",
