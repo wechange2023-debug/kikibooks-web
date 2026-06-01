@@ -58,12 +58,14 @@ type RoleBadgeKey = AdminRole | 'parent';
 
 /** /admin 화면 텍스트 단일 출처 (D23 박제 — 7 섹션). */
 export interface AdminCopy {
-  /** 사이드/탑 네비 4링크 라벨 (intent §5.2). */
+  /** 사이드/탑 네비 4링크 라벨 (intent §5.2) + 헤더 로그아웃 액션 라벨(#5). */
   nav: {
     home: string;
     books: string;
     users: string;
     stats: string;
+    /** 헤더 로그아웃 버튼 라벨 (#5 — layout.tsx 하드코딩 분리). AdminNav 미참조(고정 4키만). */
+    logout: string;
   };
   /**
    * 각 페이지 h1·subtitle (intent §5.3·§4.2·§4.3).
@@ -180,6 +182,7 @@ const ADMIN_COPY: AdminCopy = {
     books: '책',
     users: '사용자',
     stats: '통계',
+    logout: '로그아웃',
   },
   pageTitles: {
     home: { title: '관리 홈' },
