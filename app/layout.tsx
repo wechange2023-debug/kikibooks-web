@@ -28,6 +28,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: 'Kikibooks',
   description: '한국 유아를 위한 무료 영어 그림책 e-라이브러리',
+  // phase-14 CP4 — 전역 OG 한국어 기본값. openGraph/twitter는 페이지가 정의하면
+  // 그 객체로 전체 덮어쓴다(Next.js metadata는 nested 객체 deep merge 0건). 따라서
+  // 랜딩(app/page.tsx)은 자체 완전 openGraph로 덮어쓰고, 자체 openGraph 미정의 페이지
+  // (home·library 등)는 본 한국어 기본값(siteName·ko_KR·website)을 상속한다.
+  openGraph: {
+    siteName: 'Kikibooks',
+    locale: 'ko_KR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
 
 export default function RootLayout({

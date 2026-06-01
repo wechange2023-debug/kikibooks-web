@@ -5,7 +5,13 @@ import { ImageResponse } from 'next/og';
  *
  * ADR-0012 결정 7 — 외부 이미지 파일 없이 ImageResponse로 동적 생성한다.
  * 베타 한정 영문 브랜드 텍스트("Kikibooks" + 영문 태그라인) — 한글 글리프 폰트
- * 번들링을 피한다. phase-14 정식 출시 시 Noto Sans KR 서브셋으로 한글화한다.
+ * 번들링을 피한다.
+ *
+ * phase-14 CP4 — 한글화 보류 결정. edge ImageResponse에 한글을 렌더하려면 Noto Sans KR
+ * 서브셋 폰트 번들링 + edge 런타임 fetch 로딩이 필요하다(미번들 시 □□□ tofu 렌더). 폰트
+ * 자산 추가 + 빌드 리스크가 CP3 B-1(global-error 폰트 재선언 0건) 정책과 충돌하므로 베타
+ * 범위에서 미이행한다. OG 메타데이터 텍스트(app/page.tsx·layout.tsx)는 이미 한국어 완비이며
+ * 영문 잔존은 본 이미지 비트맵뿐이다. post-beta 이관 — docs/backlog.md #16 박제.
  *
  * ★ Hard Rule 10 예외 — ImageResponse 렌더러는 Tailwind/CSS 변수에 접근할 수
  *   없어 디자인 토큰 클래스를 쓸 수 없다. design-system.md 6.4 "일러스트 예외"에
