@@ -106,12 +106,13 @@
     },
     {
       "id": "CP2-user-visible-ui",
-      "description": "사용자 가시 UI 잔여 — (a) app/admin/layout.tsx 로그아웃 라벨을 AdminCopy.nav.logout(또는 신규 키)로 분리 (#5 잔여) (b) /book 트리 로그아웃 UI 추가 (#7). 단독 커밋 + 시각 검수.",
+      "description": "사용자 가시 UI 잔여 — (a) app/admin/layout.tsx 로그아웃 라벨을 AdminCopy.nav.logout로 분리 (#5 잔여, CP2-a) (b) /book 상세(app/book/[id]/page.tsx) 로그아웃 UI 추가 (#7, CP2-b). 2 commits + 시각 검수. #7 위치는 상세 1곳(리더·완독 제외 — 유아 몰입 화면), home·library 헤더 form 직역.",
       "status": "pending",
       "type": "code",
       "files": [
         "app/admin/layout.tsx",
-        "lib/admin/copy.ts"
+        "lib/admin/copy.ts",
+        "app/book/[id]/page.tsx"
       ]
     },
     {

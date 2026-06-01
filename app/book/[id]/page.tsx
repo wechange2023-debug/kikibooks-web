@@ -94,6 +94,27 @@ export default async function BookDetailPage({ params }: BookDetailPageProps) {
   return (
     <main className="min-h-screen bg-surface-2 py-6">
       <div className="mx-auto flex max-w-screen-sm flex-col gap-5 px-4 md:max-w-screen-md md:gap-6 md:px-6 lg:max-w-screen-lg">
+        {/*
+          로그아웃 form — phase-14 CP2-b #7 해소 (/book 트리 로그아웃 UI 부재 추가).
+          - 박제 직역: app/home/page.tsx·app/library/page.tsx 헤더 form 패턴 100% 정합
+            (border-outline·bg-surface·text-text-variant 토큰 + sign-out POST).
+          - 'use client' 0건 — native HTML form action + POST가 Server Component에서 동작.
+          - 라벨 "로그아웃" hardcoded — home·library 형제 직역(자진 신고 5번 정책 정합,
+            lib/book/copy.ts 박제 확장 회피). admin은 CP2-a에서 별도 중앙화.
+          - 적용 범위: 상세 page.tsx 1곳만. 리더(read)·완독(celebrate)은 유아 몰입 화면이라
+            로그아웃 UI off-pattern으로 제외.
+        */}
+        <header className="flex items-center justify-end">
+          <form action="/auth/sign-out" method="post">
+            <button
+              type="submit"
+              className="inline-flex items-center rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            >
+              로그아웃
+            </button>
+          </form>
+        </header>
+
         <BookCoverHero book={book} />
         <BookMeta book={book} />
         <AttributionBox rows={rows} />
