@@ -317,7 +317,7 @@
         "lint·type-check·build 통과 + footer 0건(ADR-0020)"
       ],
       "completed_at": null,
-      "verification_result": "코드 영역(CP1~CP4) 부분 종결(2026-06-01, CP8 — phase-13c 부분 종결 선례 직역 Option 1): CP1 spec(bb8e5d4) · CP2 사용자 가시 UI(#5 c6b8673·#7 6c30467) · CP3 전역 에러 UI(6dee36c·1bb4604) · CP4 OG 정합(efad6e6) — lint 0·type-check 0·build 19/19·footer 0건(ADR-0020 trailers []) 전건 통과 + #5·#7 production 시각 검수 통과. phase_status는 CP5~7(외부 의존 — 변호사 문안·SMTP 설정·secret key rotate) 미착수로 pending 유지. phase 전체 success는 CP5~7 완료 후 별도 commit에서 status·completed_at·last_successful_state(→phase-14)·completed_phases(16→17)·remaining_phases(1→0) 갱신. 상세는 spec cp_progress.verification_result 박제."
+      "verification_result": "코드 영역(CP1~CP4) 부분 종결(2026-06-01, CP8 — phase-13c 부분 종결 선례 직역 Option 1): CP1 spec(bb8e5d4) · CP2 사용자 가시 UI(#5 c6b8673·#7 6c30467) · CP3 전역 에러 UI(6dee36c·1bb4604) · CP4 OG 정합(efad6e6) — lint 0·type-check 0·build 19/19·footer 0건(ADR-0020 trailers []) 전건 통과 + #5·#7 production 시각 검수 통과. CP6 SMTP 인프라 해소(2026-06-09): ADR-0010 Resolved 전환 + docs/ops/smtp-setup.md 신규. hellokiki.co.kr(Cloudflare DNS, SPF·DKIM·MX·DMARC 전파) / Resend Verified(Tokyo) / Supabase Custom SMTP(smtp.resend.com:465, no-reply@hellokiki.co.kr, 키키북스). v6 검증: 이메일 가입 → Naver 받은편지함 인증메일 정상 도착(스팸 아님). 비밀값 평문 0건. phase_status는 잔여 CP5(변호사 문안)·CP7(secret key rotate) 미착수로 pending 유지. phase 전체 success는 CP5·CP7 완료 후 별도 commit에서 status·completed_at·last_successful_state(→phase-14)·completed_phases(16→17)·remaining_phases(1→0) 갱신. 상세는 spec cp_progress.verification_result 박제."
     }
   ],
   "global_verification": {
