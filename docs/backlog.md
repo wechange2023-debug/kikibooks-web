@@ -54,6 +54,9 @@
 | SUPABASE_SECRET_KEY rotate | 키 교체 | 보안 |
 | `app/admin/error.tsx` | 전역 에러 UI (진단 후보 #13) | 운영 안정 |
 
+> **CP7 갱신(2026-06-09)**: SUPABASE_SECRET_KEY rotate **완료** — 신규 키 1개 교체 + .env.local·GitHub Secrets·Vercel env 3곳 갱신 + 재배포(`0c7f192`) 후 가입·인증·DB·재로그인 전체 검증 통과(ADR-0003 §6 Amendment #1).
+> **잔여(미루지 말 것)**: 노출됐던 옛 `default` secret 키 **폐기(Supabase 대시보드 revoke)**. 새 키 검증 완료로 옛 키 사용처 0건 — PM 보류 중이나 보안상 조속 폐기 필요.
+
 ---
 
 ## 5. 보류 — 영구 또는 phase-16+ 
