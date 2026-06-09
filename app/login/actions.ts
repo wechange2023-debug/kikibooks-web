@@ -51,6 +51,13 @@ export async function signInWithEmail(
   });
 
   if (error || !data.user) {
+    // 진단용 서버 로그 — 민감값(이메일·비밀번호·키)은 절대 남기지 않고 code/status만 기록한다.
+    console.error('[login] auth fail', { code: error?.code, status: error?.status });
+    // 알려진 코드만 사용자 문구를 분기한다. 그 외(invalid_credentials 포함)는
+    // 계정 존재 비노출 정책(auth-flow.md 4.2)에 따라 기존 일반 문구를 유지한다.
+    if (error?.code === 'email_not_confirmed') {
+      return { error: '이메일 인증을 먼저 완료해 주세요.' };
+    }
     return { error: '이메일 또는 비밀번호가 올바르지 않습니다.' };
   }
 
