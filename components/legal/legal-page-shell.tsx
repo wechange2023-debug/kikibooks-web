@@ -4,8 +4,8 @@ import Link from 'next/link';
  * 약관·개인정보처리방침 등 법적 고지 페이지의 공용 레이아웃.
  *
  * 본문 내용은 각 페이지(app/terms·app/privacy)가 LegalDocument 상수로 정의해
- * props로 넘긴다 — 베타 placeholder 텍스트이며 phase-14 정식 출시 전 변호사
- * 검토본으로 통째 교체된다(상단 베타 배너로 명시 — C-4 옵션 1).
+ * props로 넘긴다 — 회사가 작성한 정식 문안이며, 서비스 운영에 따라 개정될 수
+ * 있다(상단 배너로 명시).
  *
  * 서버 컴포넌트. 모든 색·간격은 design-system 토큰 클래스만 사용한다(Hard Rule 10).
  */
@@ -40,7 +40,7 @@ export function LegalPageShell({ doc }: LegalPageShellProps) {
         </Link>
 
         <div className="rounded-md border border-warning bg-surface-2 px-4 py-3 text-sm text-text">
-          베타 임시 문서 — 정식 출시 전 변호사 검토를 거쳐 교체될 예정입니다.
+          본 문서는 회사가 작성한 정식 문서이며, 서비스 운영에 따라 개정될 수 있습니다.
         </div>
 
         <header className="flex flex-col gap-1">
