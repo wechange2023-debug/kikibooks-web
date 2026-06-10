@@ -4,7 +4,8 @@ import type { CategoryDefinition, CategorySlug } from '@/lib/home/categories';
 import type { HomeCopy } from '@/lib/home/copy';
 
 /**
- * 카테고리 그리드 8개 — 2×4 카드. 클릭 시 /home?cat={slug}로 라우팅.
+ * 카테고리 그리드 8개 — 2×4 카드. 클릭 시 /library?category={slug}로 라우팅
+ * (라이브러리 카테고리 결과 — query.ts getBooks 카테고리 모드 재사용).
  *
  * 책임: lib/home/categories.ts의 CATEGORIES 배열을 카드 8장으로 렌더하고,
  * 각 카드에 D11 정적 accent 클래스를 매핑한다.
@@ -24,8 +25,8 @@ import type { HomeCopy } from '@/lib/home/copy';
  *   (CP3-a 작성 시 사전 점검 완료, ADR-0015 §2.1 인용).
  *
  * D19 (cp3_decisions): distribution 호출 없이 8 카드 균등 표시. 0건 카테고리도
- *   카드 노출 + 클릭 가능 — 결과 페이지(/home?cat=…)에서 ADR-0015 결정 6 폴백
- *   메시지로 처리(CP3-b 또는 phase-13b).
+ *   카드 노출 + 클릭 가능 — 결과 0건은 라이브러리(/library?category=…)의 빈 상태
+ *   폴백(library-browser empty)으로 처리.
  *
  * Server Component — <Link> 사용, 핸들러 없음.
  */
@@ -64,7 +65,7 @@ export function CategoryGrid({ categories, copy }: CategoryGridProps) {
           return (
             <li key={category.slug}>
               <Link
-                href={`/home?cat=${category.slug}`}
+                href={`/library?category=${category.slug}`}
                 className="group flex flex-col gap-2 rounded-md border border-outline bg-surface p-3 shadow-elev-1 outline-none transition-transform duration-200 ease-kiki hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-primary/50"
               >
                 <span

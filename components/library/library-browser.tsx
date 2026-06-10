@@ -69,6 +69,12 @@ import { cn } from '@/lib/utils';
 
 interface LibraryBrowserProps {
   initialPage: LibraryPage;
+  /**
+   * 서버에서 SSR한 첫 페이지에 적용된 초기 필터(예: 홈 카테고리 카드 → /library?category=).
+   * initialPage는 이미 이 필터로 조회된 결과이므로, filters state를 같은 값으로
+   * 초기화해야 카테고리 칩 활성 표시·후속 fetch가 정합한다. 미제공 시 빈 필터({}).
+   */
+  initialFilters?: LibraryFilters;
   copy: LibraryCopy;
 }
 
@@ -192,10 +198,18 @@ function FilterChip({
   );
 }
 
-export function LibraryBrowser({ initialPage, copy }: LibraryBrowserProps) {
+export function LibraryBrowser({
+  initialPage,
+  initialFilters,
+  copy,
+}: LibraryBrowserProps) {
   // ── 상태 ───────────────────────────────────────────────────────────────────
-  const [filters, setFilters] = useState<LibraryFilters>({});
-  const [keywordInput, setKeywordInput] = useState<string>('');
+  // initialPage가 initialFilters로 SSR된 결과이므로 filters도 같은 값으로 시작
+  // (미제공 시 빈 필터 — 기존 동작 회귀 방지).
+  const [filters, setFilters] = useState<LibraryFilters>(initialFilters ?? {});
+  const [keywordInput, setKeywordInput] = useState<string>(
+    initialFilters?.keyword ?? '',
+  );
   const [books, setBooks] = useState<PopularBook[]>(initialPage.books);
   const [nextCursor, setNextCursor] = useState<string | null>(initialPage.nextCursor);
   const [hasMore, setHasMore] = useState<boolean>(initialPage.hasMore);

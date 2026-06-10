@@ -39,13 +39,6 @@ export interface HomeCopy {
     /** 결과 0건 카테고리 진입 시 표시 (ADR-0015 결정 6). */
     emptyState: string;
     closeLabel: string;
-    /**
-     * /home?cat={slug} 진입 시 결과 페이지 미구현 안내 카드 카피 (cp3_decisions d23).
-     * `{label}` 자리표시자는 page.tsx에서 CATEGORIES의 labelKo로 1회 치환.
-     * phase-13b 라이브러리 결과 페이지 구현 시 본 카피는 제거 또는 0건 폴백으로 재활용.
-     * ADR-0012 결정 2(카피 단일 출처) 정합 — 컴포넌트가 상수 직접 import 안 함.
-     */
-    comingSoonTemplate: string;
   };
   levelSelector: {
     title: string;
@@ -76,7 +69,6 @@ const HOME_COPY: HomeCopy = {
     title: '카테고리',
     emptyState: '이 카테고리에 아직 책이 없어요. 다른 카테고리를 둘러보세요!',
     closeLabel: '닫기',
-    comingSoonTemplate: '{label} 카테고리 결과는 곧 추가될 예정이에요.',
   },
   levelSelector: {
     title: '레벨',

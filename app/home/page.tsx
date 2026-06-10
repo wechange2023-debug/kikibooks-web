@@ -8,11 +8,11 @@ import { RecommendationList } from '@/components/home/recommendation-list';
 import { StreakChart } from '@/components/home/streak-chart';
 import { ONBOARDING_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getActiveChild } from '@/lib/home/active-child';
-import { CATEGORIES, isCategorySlug } from '@/lib/home/categories';
+import { CATEGORIES } from '@/lib/home/categories';
 import { getHomeCopy } from '@/lib/home/copy';
 import { buildGreeting, getGreetingProfile } from '@/lib/home/greeting';
 import { getRecommendations } from '@/lib/home/recommendations';
-import { getStreakLast7Days } from '@/lib/home/streak';
+import { getStreakThisWeek } from '@/lib/home/streak';
 import { createClient } from '@/lib/supabase/server';
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
  * /home — Screen 02 로그인 후 홈 정식 페이지.
  *
  * intent §4·§5 구성 5요소: 인사 카드 · 레벨 선택 바 · 오늘의 추천 5권 ·
- * 카테고리 그리드 8개 · 최근 7일 스트릭.
+ * 카테고리 그리드 8개 · 이번 주(월~일) 스트릭.
  *
  * 보호·가드 (intent §3·§4.2):
  *   - 비로그인 → /login (미들웨어가 1차 차단, 본 페이지가 안전망)
@@ -35,11 +35,10 @@ export const metadata: Metadata = {
  *   `export const dynamic = 'force-dynamic'` — 자녀별·세션별 데이터 결합으로 캐싱
  *   오작동 위험 회피 + revalidatePath('/home') 작동 보장 (LevelSelector server action).
  *
- * searchParams 처리 (cp3_decisions d20·d21·d23·d24):
- *   - Next.js 14 동기 props 패턴 (d20) — await 없음
- *   - isCategorySlug() 통과 시 CategoryGrid 위에 안내 카드 1장 표시 (d21·d23)
- *   - 잘못된 slug는 너그러운 무시 (d24) — 정상 홈 그대로 렌더
- *   - 결과 페이지 구현은 phase-13b 라이브러리로 이연 (ADR-0015 결정 5b)
+ * 카테고리 라우팅:
+ *   CategoryGrid 카드는 /library?category={slug}로 이동한다(라이브러리 카테고리
+ *   결과 재사용). 과거의 /home?cat= 안내 카드 분기는 제거됨 — 결과·빈 상태는
+ *   라이브러리가 책임(ADR-0015 결정 5b 이연 해소).
  *
  * 데이터 fetch (Promise.all 병렬, intent §4):
  *   1) auth (직렬, 가드 선행)
@@ -52,11 +51,7 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-interface HomePageProps {
-  searchParams?: { cat?: string };
-}
-
-export default async function HomePage({ searchParams }: HomePageProps) {
+export default async function HomePage() {
   const supabase = createClient();
   const {
     data: { user },
@@ -76,21 +71,11 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const [profile, recommendation, streakDays, copy] = await Promise.all([
     getGreetingProfile(supabase, user.id),
     getRecommendations(supabase, activeChild),
-    getStreakLast7Days(supabase, activeChild.id),
+    getStreakThisWeek(supabase, activeChild.id),
     getHomeCopy(),
   ]);
 
   const greeting = buildGreeting(profile, activeChild, copy.greeting);
-
-  // d21·d24 — searchParams.cat 유효성 검사 + 안내 카드 카피 빌드.
-  const requestedCat = searchParams?.cat;
-  const matchedCategory =
-    requestedCat && isCategorySlug(requestedCat)
-      ? CATEGORIES.find((cat) => cat.slug === requestedCat)
-      : undefined;
-  const comingSoonMessage = matchedCategory
-    ? copy.categories.comingSoonTemplate.replace('{label}', matchedCategory.labelKo)
-    : null;
 
   return (
     <main className="min-h-screen bg-surface-2 py-6">
@@ -123,17 +108,6 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           currentLevel={activeChild.current_level}
           copy={copy.levelSelector}
         />
-
-        {/* d21 안내 카드 — searchParams.cat 유효 시 1장 표시. */}
-        {comingSoonMessage && (
-          <aside
-            role="status"
-            aria-live="polite"
-            className="rounded-md border border-outline bg-surface px-5 py-4 text-sm text-text-variant shadow-elev-1"
-          >
-            {comingSoonMessage}
-          </aside>
-        )}
 
         <RecommendationList result={recommendation} copy={copy.recommendations} />
 

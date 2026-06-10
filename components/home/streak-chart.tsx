@@ -1,35 +1,31 @@
 import type { StreakDay } from '@/lib/home/streak';
 import type { HomeCopy } from '@/lib/home/copy';
+import { cn } from '@/lib/utils';
 
 /**
- * 최근 7일 학습 스트릭 막대그래프.
+ * 이번 주(월~일 고정) 학습 스트릭 막대그래프.
  *
- * 책임: lib/home/streak.ts가 반환한 7일 데이터를 design-system §7.4 토큰에
- * 1:1 매핑하여 시각화한다.
+ * 책임: lib/home/streak.ts가 반환한 7일(월→일) 데이터를 design-system §7.4 토큰에
+ * 매핑하여 시각화한다. 데이터 배열 순서가 곧 월~일 고정 순서다.
  *
  * 디자인 인용 (design-system.md §7.4):
- *   - 막대 너비 28px = w-7
- *   - 막대 최대 높이 60px = max-h-[60px] (D15 임의 픽셀 허용 1건)
- *   - 막대 radius = rounded-t-sm (위쪽만, 12px)
- *   - 완료일 색상 = bg-primary
- *   - 미완료일 색상 = bg-surface-3 (트랙 색)
- *   - 오늘 표시 = 막대 위 작은 dot, bg-accent-yellow
- *   - 막대 간 간격 = gap-2 (8px)
- *   - 요일 라벨 = caption (12px), text-text-variant
+ *   - 막대 너비 28px = w-7 / 최대 높이 60px / radius = rounded-t-sm(위쪽만)
+ *   - 완료일 색상 = bg-primary / 미완료일(트랙) = bg-surface-3
+ *   - 막대 간 간격 = gap-2 / 요일 라벨 = caption(12px)
  *
- * D15 (cp3_decisions): SVG 없이 div + Tailwind 클래스로 구현.
+ * PM 결정(2026-06-10) 반영:
+ *   - 월~일 고정 정렬(streak.ts가 보장) — 오늘 기준 회전 제거.
+ *   - 오늘 강조: 트랙 ring-accent-yellow + 요일 라벨/권수 숫자 primary·bold
+ *     (기존 dot을 ring 하이라이트로 강화).
+ *   - 각 막대 위에 완독 권수 숫자 표기. 미래 요일(isFuture)은 칸을 흐림(opacity-40)
+ *     처리하고 숫자 미표시.
+ *   - 독서 시간 표시 없음(과대측정 위험으로 PM 제외).
  *
- * D17 (cp3_decisions): 막대 높이 공식 = Math.min(completedCount * 12, 60) px.
- *   - 완독 1권 = 12px
- *   - 완독 5권 = 60px (상한 도달, max-h-[60px]와 정합)
- *   - completedCount === 0 → 막대 0px (트랙만 표시)
+ * D17 막대 높이 공식 = Math.min(completedCount * 12, 60)px (완독 1권=12px, 5권=60px 상한).
  *
- * 빈 상태 폴백 (intent §5.5): 7일 전체 완독 0건이면 차트 아래에
- * "오늘부터 시작해볼까요?" 카드 1장 표시.
+ * 빈 상태 폴백 (intent §5.5): 이번 주 완독 0건이면 차트 아래 안내 카드 1장 표시.
  *
- * 요일 라벨: StreakDay.date('YYYY-MM-DD')에서 JavaScript Date로 파싱하여
- * ko-KR 짧은 요일(예: '월') 추출. Date 파싱은 UTC로 해석되지만 일자만 사용하므로
- * 시간대 무관(Asia/Seoul 기준 일자가 이미 streak.ts에서 박제됨).
+ * 요일 라벨: StreakDay.date('YYYY-MM-DD')를 Asia/Seoul 기준 ko-KR 짧은 요일로 변환.
  *
  * Server Component — 정적 렌더, 핸들러 없음.
  */
@@ -66,24 +62,36 @@ export function StreakChart({ days, copy }: StreakChartProps) {
     >
       <h2 className="font-display text-base font-semibold text-text">{copy.title}</h2>
 
-      {/* 막대 7개 + 요일 라벨 */}
+      {/* 막대 7개(월→일) + 권수 숫자 + 요일 라벨 */}
       <div className="flex items-end justify-between gap-2">
         {days.map((day) => {
           const barHeight = computeBarHeight(day.completedCount);
           return (
-            <div key={day.date} className="flex flex-col items-center gap-1">
-              {/* 오늘 dot — 막대 위에 표시. 자리 차지 일관성을 위해 항상 8px 공간 */}
-              <div className="flex h-2 w-2 items-center justify-center">
-                {day.isToday && (
-                  <span
-                    aria-hidden="true"
-                    className="block h-2 w-2 rounded-full bg-accent-yellow"
-                  />
+            <div
+              key={day.date}
+              className={cn(
+                'flex flex-col items-center gap-1',
+                day.isFuture && 'opacity-40',
+              )}
+            >
+              {/* 완독 권수 숫자 — 미래 요일은 숨김(공간은 유지). */}
+              <span
+                aria-hidden="true"
+                className={cn(
+                  'h-4 text-xs font-semibold leading-4 tabular-nums',
+                  day.isToday ? 'text-primary' : 'text-text-variant',
                 )}
-              </div>
+              >
+                {day.isFuture ? '' : day.completedCount}
+              </span>
 
-              {/* 트랙(미완료 회색 배경) + 막대(완독 비율) */}
-              <div className="relative flex h-[60px] w-7 items-end overflow-hidden rounded-t-sm bg-surface-3">
+              {/* 트랙(미완료 회색) + 막대(완독). 오늘은 ring으로 강조. */}
+              <div
+                className={cn(
+                  'relative flex h-[60px] w-7 items-end overflow-hidden rounded-t-sm bg-surface-3',
+                  day.isToday && 'ring-2 ring-accent-yellow',
+                )}
+              >
                 <div
                   aria-hidden="true"
                   className="w-full rounded-t-sm bg-primary"
@@ -91,13 +99,22 @@ export function StreakChart({ days, copy }: StreakChartProps) {
                 />
               </div>
 
-              <span className="text-xs font-medium text-text-variant">
+              {/* 요일 라벨 — 오늘 강조(bold primary). */}
+              <span
+                className={cn(
+                  'text-xs',
+                  day.isToday
+                    ? 'font-bold text-primary'
+                    : 'font-medium text-text-variant',
+                )}
+              >
                 {getWeekdayLabel(day.date)}
               </span>
 
-              {/* 스크린리더 — 일자·완독 권수 명시 */}
+              {/* 스크린리더 — 일자·완독 권수·상태 명시 */}
               <span className="sr-only">
-                {day.date}: {day.completedCount}권 완독
+                {day.date}:{' '}
+                {day.isFuture ? '예정' : `${day.completedCount}권 완독`}
                 {day.isToday ? ' (오늘)' : ''}
               </span>
             </div>

@@ -5,7 +5,11 @@ import { LibraryBrowser } from '@/components/library/library-browser';
 import { ONBOARDING_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getActiveChild } from '@/lib/home/active-child';
 import { getLibraryCopy } from '@/lib/library/copy';
-import { getBooks } from '@/lib/library/query';
+import {
+  getBooks,
+  LibraryFiltersSchema,
+  type LibraryFilters,
+} from '@/lib/library/query';
 import { createClient } from '@/lib/supabase/server';
 
 /**
@@ -63,7 +67,11 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function LibraryPage() {
+interface LibraryPageProps {
+  searchParams?: { category?: string };
+}
+
+export default async function LibraryPage({ searchParams }: LibraryPageProps) {
   // 가드 1: 미인증 redirect — 미들웨어 1차, 본 페이지 2차 안전망 (phase-07 정합)
   const supabase = createClient();
   const {
@@ -80,9 +88,19 @@ export default async function LibraryPage() {
     redirect(ONBOARDING_PATH);
   }
 
-  // 초기 페이지 SSR — 빈 필터·cursor null. 2개 fetch 병렬 (의존성 0건).
+  // searchParams.category 검증 — 홈 카테고리 카드(/library?category={slug}) 진입점.
+  // LibraryFiltersSchema(server action과 동일 스키마) 재사용. 잘못된·없는 slug는
+  // safeParse 실패 → 빈 필터로 폴백(너그러운 무시 = 전체 카탈로그, 기존 동작 유지).
+  const parsedFilters = LibraryFiltersSchema.safeParse({
+    category: searchParams?.category,
+  });
+  const initialFilters: LibraryFilters = parsedFilters.success
+    ? parsedFilters.data
+    : {};
+
+  // 초기 페이지 SSR — 초기 필터·cursor null. 2개 fetch 병렬 (의존성 0건).
   const [initialPage, copy] = await Promise.all([
-    getBooks(supabase, {}, null),
+    getBooks(supabase, initialFilters, null),
     getLibraryCopy(),
   ]);
 
@@ -116,7 +134,11 @@ export default async function LibraryPage() {
           </form>
         </header>
 
-        <LibraryBrowser initialPage={initialPage} copy={copy} />
+        <LibraryBrowser
+          initialPage={initialPage}
+          initialFilters={initialFilters}
+          copy={copy}
+        />
       </div>
     </main>
   );
