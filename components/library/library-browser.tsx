@@ -241,6 +241,22 @@ export function LibraryBrowser({
     });
   }, []);
 
+  /**
+   * 카테고리 필터를 주소창에 반영(shallow) — 재요청 없이 URL 문자열만 갱신한다.
+   *
+   * 이 페이지는 force-dynamic이라 router.replace는 주소 변경 시 서버 재SSR을 유발하나,
+   * 필터링은 이미 클라이언트 상태로 끝나 있어 재요청은 불필요하다. Next 14 App Router의
+   * shallow URL 갱신 표준인 window.history.replaceState로 주소창만 맞춘다.
+   *
+   * 서버(app/library/page.tsx)는 searchParams.category만 초기 필터로 복원한다(L71·L94).
+   * 따라서 동기화 대상도 category 하나로 한정한다 — level·keyword를 URL에 쓰면 새로고침
+   * 시 서버가 복원하지 않아 URL과 상태가 어긋난다. 값이 없으면 '/library'로 되돌린다.
+   */
+  const syncCategoryUrl = useCallback((category: LibraryFilters['category']) => {
+    const url = category ? `/library?category=${category}` : '/library';
+    window.history.replaceState(null, '', url);
+  }, []);
+
   // 레벨 칩 — undefined = 전체
   const handleLevelChange = (level: LibraryFilters['level']) => {
     const newFilters: LibraryFilters = { ...filters, level };
@@ -253,6 +269,7 @@ export function LibraryBrowser({
     const newFilters: LibraryFilters = { ...filters, category };
     setFilters(newFilters);
     applyFilters(newFilters);
+    syncCategoryUrl(category);
   };
 
   // 키워드 input — debounce 300ms (Q4 β, 외부 의존 0건)
@@ -281,6 +298,8 @@ export function LibraryBrowser({
     setFilters(newFilters);
     setKeywordInput('');
     applyFilters(newFilters);
+    // 전체 초기화는 category도 비우므로 주소창을 '/library'로 되돌린다.
+    syncCategoryUrl(undefined);
   };
 
   // unmount 시 debounce timer 정리(메모리 누수·stale callback 회피)

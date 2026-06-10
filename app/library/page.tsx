@@ -33,8 +33,10 @@ import { createClient } from '@/lib/supabase/server';
  *   1. auth.getUser → 미인증 redirect(SIGN_IN_PATH) — 미들웨어 1차, 본 페이지 2차 안전망
  *   2. getActiveChild → 자녀 0명 redirect(ONBOARDING_PATH) — "분기는 도착 지점에서"
  *      (phase-08 onboarding-flow + ADR-0011 결정 1 계승)
- *   3. 필터 입력 검증 → /library는 초기 진입 시 빈 필터({}) 시작. searchParams URL 동기화는
- *      F-item(베타 단순성, ADR-0018 D12에 명시 0건). 필터 입력 검증은 fetchLibraryPage
+ *   3. 필터 입력 검증 → /library는 searchParams.category를 초기 필터로 복원(아래 L91~).
+ *      클라→URL 동기화는 category만 구현됨(library-browser.tsx history.replaceState shallow,
+ *      커밋 예정) — level·keyword의 URL 동기화는 여전히 F-item(ADR-0018 D12 명시 0건).
+ *      필터 입력 검증은 fetchLibraryPage
  *      server action(actions.ts) + query.ts LibraryFiltersSchema가 책임 — 본 페이지는
  *      신뢰된 서버 컨텍스트라 직접 getBooks 호출(검증 우회 아닌 신뢰 경계 내부).
  *
