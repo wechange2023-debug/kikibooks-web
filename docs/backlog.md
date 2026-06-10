@@ -78,3 +78,37 @@
 - (외부 가이드 STEP 3은 동결분을 "6건"으로 적었으나 실제 나열은 5건 — 본 문서는 실측 5건으로 정정한다.)
 - 해소 완료분: #4(ADR-0020) · #6(`cd51647` hotfix) · #14(CP1 placeholder) · #15(불발).
 - phase-14 CP4 신규: #16(OG 이미지 한글화) §5 보류 추가. OG 메타데이터 텍스트 정합은 CP4에서 완료(`app/layout.tsx` 전역 한국어 OG 기본값). #14는 기존 점유라 신규는 #16 채번(다음 빈 번호).
+
+---
+
+## 7. 베타 품질개선 트랙 (2026-06-10 연장 세션)
+
+phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선 트랙. phase 재개가 아니라
+출시 전 품질 보강이며, `tasks/_index.json` 진행 카운터는 무변경(이 트랙은 phase 외부).
+
+### 7.1 완료분 (origin/main push 완료)
+
+| 커밋 | 내용 | 핵심 파일 |
+|---|---|---|
+| `48c811c` | ADR-0015 Amendment #2 — 카테고리 라우팅 5b(`/home?cat=`)→5a(`/library?category=`) 박제 | `docs/adr/0015-screen-02-category-strategy.md` |
+| `381b85e` | 작업1 카테고리 URL 동기화 — 칩 클릭 시 shallow `history.replaceState`. **category만**(서버 `app/library/page.tsx`가 category만 복원하는 실측 계약에 맞춤, PM 결정) | `components/library/library-browser.tsx` · `app/library/page.tsx` |
+| `0e3e020` | 작업3 홈 그리드 카테고리별 권수 — `getCategoryDistribution` 연결, 카드에 "N권" | `app/home/page.tsx` · `components/home/category-grid.tsx` |
+| `267f5d8` | 작업3 라이브러리 `totalCount` — 전체·레벨·키워드(keyset count 쿼리)·카테고리(`matched.length`) 전모드 "총 N권" | `lib/library/query.ts` · `components/library/library-browser.tsx` |
+| `29960d0` | D19 spec 결정 정정 — 권수 미표시 결정 철회 박제 | `tasks/phase-10-screen-02-home.json` |
+
+> 직전 배경: `389c7c4`(별도 세션)가 카테고리 카드 → 라이브러리 결과 연결 + 스트릭 월~일 고정을 처리했고, 위 트랙은 그 후속이다.
+
+### 7.2 다음 세션 시작점 — 남은 작업
+
+| 우선 | 작업 | 현황·실측 | 관련 파일 (grep 확인) |
+|---|---|---|---|
+| ★ 1순위 | **작업2 공통 네비게이션** | 로그인 후 화면(`/home`·`/library`·`/book`)에 홈↔라이브러리 이동 메뉴 부재. 공통 앱 헤더 없음(landing-header는 랜딩 전용), 인증영역 그룹레이아웃 부재 → **신설 방향 + 주입 지점 설계 필요, ADR 후보**. 헤더 부재는 직전 실측 확정 | `app/layout.tsx`(헤더 0건) · `components/landing/landing-header.tsx`(랜딩 전용) · 각 페이지 인라인 `<header>`: `app/home/page.tsx:93`·`app/library/page.tsx:120`·`app/book/[id]/page.tsx:107` |
+| ★ 동반 | **stale spec 정정** | `tasks/phase-10-screen-02-home.json`의 D13·D20·D21·D23·D24가 `/home?cat=` 전제로 박제돼 `389c7c4` 이후 부분 stale. 라우팅 1차 출처는 ADR-0015 Amendment #2(박제 완료)라 급하진 않으나 **작업2 네비 박제 시 함께 정정 검토** | `tasks/phase-10-screen-02-home.json` (cp3_decisions) |
+| 무거움 | **작업4 GDL iframe 헤더 노출** | 미착수. 뷰어 외부 콘텐츠 로딩 방식 **실측 선행 필요**. cross-origin 제약이 핵심 난점 | 미실측 (뷰어 컴포넌트 실측 후 확정) |
+
+### 7.3 잔여 F-item (베타 차단 아님)
+
+| 항목 | 내용 | 위치 |
+|---|---|---|
+| keyset count 재쿼리 | 라이브러리 keyset 모드가 무한 스크롤 페이지마다 count 재쿼리(head:true, 행 전송 0, 활성 ~896권 무부담). 대규모 시 첫 페이지(cursor=null)만 count하도록 최적화 | `lib/library/query.ts` `countKeyset` |
+| 작업1 level·keyword URL 미동기화 | URL 동기화는 category만 구현됨. level·keyword는 서버(`app/library/page.tsx`)가 복원하지 않아 의도적 미반영 — 확장하려면 서버 searchParams 계약 동반 확장 필요 | `components/library/library-browser.tsx`(level·keyword 핸들러) · `app/library/page.tsx`(searchParams) |
