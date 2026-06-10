@@ -24,9 +24,12 @@ import type { HomeCopy } from '@/lib/home/copy';
  * D16 (cp3_decisions): 매핑 키 8개가 CategorySlug union 8개와 1:1 정합 확인
  *   (CP3-a 작성 시 사전 점검 완료, ADR-0015 §2.1 인용).
  *
- * D19 (cp3_decisions): distribution 호출 없이 8 카드 균등 표시. 0건 카테고리도
- *   카드 노출 + 클릭 가능 — 결과 0건은 라이브러리(/library?category=…)의 빈 상태
- *   폴백(library-browser empty)으로 처리.
+ * D19 (cp3_decisions, 갱신): 권수 표기 도입으로 getCategoryDistribution 출력을
+ *   distribution prop으로 받아 각 카드 라벨 아래 "N권"을 표시한다(작업3 범위 B).
+ *   0건 카테고리도 "0권"으로 카드 노출 + 클릭 가능 — 결과 0건은 라이브러리
+ *   (/library?category=…) 빈 상태 폴백(library-browser empty)으로 처리(D19 원칙 유지).
+ *   ※ 원 D19 "distribution 호출 없이"는 본 변경으로 정정됨. spec 원본
+ *     (tasks/phase-10-screen-02-home.json) 박제 갱신은 별도 단계.
  *
  * Server Component — <Link> 사용, 핸들러 없음.
  */
@@ -34,6 +37,8 @@ import type { HomeCopy } from '@/lib/home/copy';
 interface CategoryGridProps {
   categories: readonly CategoryDefinition[];
   copy: HomeCopy['categories'];
+  /** 카테고리별 매칭 책 권수(getCategoryDistribution, ADR-0015 Amendment #1). "N권" 표기용. */
+  distribution: Record<CategorySlug, number>;
 }
 
 /**
@@ -51,7 +56,7 @@ const CATEGORY_ACCENT_CLASSES: Record<CategorySlug, string> = {
   bedtime: 'bg-accent-violet',
 };
 
-export function CategoryGrid({ categories, copy }: CategoryGridProps) {
+export function CategoryGrid({ categories, copy, distribution }: CategoryGridProps) {
   return (
     <section
       aria-label={copy.title}
@@ -74,6 +79,9 @@ export function CategoryGrid({ categories, copy }: CategoryGridProps) {
                 />
                 <span className="text-sm font-semibold text-text">
                   {category.labelKo}
+                </span>
+                <span className="text-xs text-text-variant">
+                  {distribution[category.slug]}권
                 </span>
               </Link>
             </li>

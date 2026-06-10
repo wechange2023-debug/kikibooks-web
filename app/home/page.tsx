@@ -8,7 +8,7 @@ import { RecommendationList } from '@/components/home/recommendation-list';
 import { StreakChart } from '@/components/home/streak-chart';
 import { ONBOARDING_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getActiveChild } from '@/lib/home/active-child';
-import { CATEGORIES } from '@/lib/home/categories';
+import { CATEGORIES, getCategoryDistribution } from '@/lib/home/categories';
 import { getHomeCopy } from '@/lib/home/copy';
 import { buildGreeting, getGreetingProfile } from '@/lib/home/greeting';
 import { getRecommendations } from '@/lib/home/recommendations';
@@ -67,12 +67,13 @@ export default async function HomePage() {
     redirect(ONBOARDING_PATH);
   }
 
-  // 4개 fetch를 병렬로 — 서로 의존성 없음.
-  const [profile, recommendation, streakDays, copy] = await Promise.all([
+  // 5개 fetch를 병렬로 — 서로 의존성 없음.
+  const [profile, recommendation, streakDays, copy, distribution] = await Promise.all([
     getGreetingProfile(supabase, user.id),
     getRecommendations(supabase, activeChild),
     getStreakThisWeek(supabase, activeChild.id),
     getHomeCopy(),
+    getCategoryDistribution(supabase),
   ]);
 
   const greeting = buildGreeting(profile, activeChild, copy.greeting);
@@ -111,7 +112,11 @@ export default async function HomePage() {
 
         <RecommendationList result={recommendation} copy={copy.recommendations} />
 
-        <CategoryGrid categories={CATEGORIES} copy={copy.categories} />
+        <CategoryGrid
+          categories={CATEGORIES}
+          copy={copy.categories}
+          distribution={distribution}
+        />
 
         <StreakChart days={streakDays} copy={copy.streak} />
       </div>
