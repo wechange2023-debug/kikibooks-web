@@ -237,3 +237,29 @@ export async function getCategoryDistribution(
 ---
 
 *Amendment #1 끝.*
+
+---
+
+## Amendment #2 (2026-06-10) — 카테고리 라우팅 5a 이전 실행
+
+본 Amendment는 §1~§7 본문 및 Amendment #1을 변경하지 않으며, 결정 5에서
+예고된 라우팅 이전의 실행을 기록한다.
+
+**배경**: 결정 5는 phase-10 당시 5b(`/home?cat={slug}`)를 채택하되,
+"라이브러리 신설 시 5a(`/library?category={slug}`)로 이전한다"고 예고했다
+(결정 5 본문 및 후속 과제 2).
+
+**변경**: 라이브러리 신설에 따라 카테고리 라우팅을 5b → **5a(`/library?category={slug}`)**
+로 이전했다. 홈의 카테고리 카드 클릭 시 `/library?category={slug}`로 이동하며,
+라이브러리가 URL `?category=` 파라미터를 수신해 해당 카테고리 결과를 필터링한다.
+
+**구현 커밋**: 389c7c4
+
+**결정 6(폴백 UI) 영향**: 결정 6 폴백 경로도 5a로 함께 이전됨 — 카테고리 결과
+0건은 더 이상 `/home?cat={slug}` 전용 폴백 UI가 아니라, 라이브러리
+(`/library?category={slug}`)의 빈 상태 폴백(library-browser empty)으로 처리된다
+(`components/home/category-grid.tsx` 주석 및 `href` 실측 확인).
+
+---
+
+*Amendment #2 끝.*
