@@ -102,8 +102,13 @@ export const LibraryFiltersSchema = z.object({
 export type LibraryFilters = z.infer<typeof LibraryFiltersSchema>;
 
 /**
- * 라이브러리 페이지 1건의 응답 — 책 배열·다음 cursor·hasMore 플래그.
- * count(총 권수)는 반환하지 않는다(F-item, 베타 단순성).
+ * 라이브러리 페이지 1건의 응답 — 책 배열·다음 cursor·hasMore·총 권수.
+ *
+ * totalCount: 현재 필터(level·category·keyword) 전체에 매칭되는 총 책 수(화면 "총 N권" 표기).
+ *   - keyset 모드(전체·레벨·키워드): 동일 필터의 count 전용 쿼리(head:true) 결과.
+ *   - 카테고리 모드: JS matchCategories 통과 권수(matched.length).
+ *   모드와 무관하게 같은 의미(필터 적용 후 전체 권수)를 보장한다 — CP3-b 컴포넌트는
+ *   모드 차이를 모른다(단일 계약 정합).
  */
 export interface LibraryPage {
   books: PopularBook[];
@@ -111,6 +116,8 @@ export interface LibraryPage {
   nextCursor: string | null;
   /** UI sentinel 표시용 — nextCursor !== null과 동일. */
   hasMore: boolean;
+  /** 현재 필터 전체에 매칭되는 총 책 수("총 N권" 표기, 모드 무관 단일 계약). */
+  totalCount: number;
 }
 
 /** keyset cursor 디코딩 결과 — synced_at + id로 마지막 책 위치 표시. */
@@ -262,11 +269,55 @@ async function getBooksKeyset(
       ? encodeCursor({ mode: 'keyset', sa: last.synced_at, id: last.id })
       : null;
 
+  const totalCount = await countKeyset(supabase, filters);
+
   return {
     books: page.map(toPopularBook),
     nextCursor,
     hasMore,
+    totalCount,
   };
+}
+
+/**
+ * keyset 모드 총 권수 — 동일 필터(is_active + 블랙리스트 + level + keyword)에 cursor를
+ * 제외한 count 전용 쿼리. select('*', { count:'exact', head:true })로 행 데이터는 받지 않고
+ * count만 받는다.
+ *
+ * cursor를 제외하는 이유: totalCount는 "현재 필터 전체 권수"이지 "현재 페이지 이후 권수"가
+ * 아니다. 페이지네이션과 무관한 모집단 크기를 반환한다.
+ *
+ * 매 페이지 호출마다 재쿼리한다(head:true라 행 전송 0). 베타 규모(활성 약 896권)에서
+ * 부담이 없고, 클라이언트는 첫 페이지 totalCount만 헤더에 쓴다. 대규모 카탈로그에서
+ * 첫 페이지(cursor=null)만 count하도록 최적화하는 것은 F-item.
+ */
+async function countKeyset(
+  supabase: SupabaseClient,
+  filters: LibraryFilters,
+): Promise<number> {
+  let query = supabase
+    .from('books')
+    .select('*', { count: 'exact', head: true })
+    .eq('is_active', true);
+
+  for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
+    query = query.neq('source_id', blockedSourceId);
+  }
+
+  if (filters.level !== undefined) {
+    query = query.eq('level', filters.level);
+  }
+
+  if (filters.keyword && filters.keyword.length > 0) {
+    query = query.ilike('title', `%${escapeIlikePattern(filters.keyword)}%`);
+  }
+
+  const { count, error } = await query;
+  if (error) {
+    throw new Error(`getBooks(keyset): count 조회 실패 — ${error.message}`);
+  }
+
+  return count ?? 0;
 }
 
 /**
@@ -332,6 +383,8 @@ async function getBooksWithCategory(
     books: page.map(toPopularBook),
     nextCursor,
     hasMore,
+    // 카테고리 모드는 후보 전수를 메모리에서 매칭하므로 전체 권수가 이미 확보됨 — 추가 쿼리 0건.
+    totalCount: matched.length,
   };
 }
 

@@ -213,6 +213,7 @@ export function LibraryBrowser({
   const [books, setBooks] = useState<PopularBook[]>(initialPage.books);
   const [nextCursor, setNextCursor] = useState<string | null>(initialPage.nextCursor);
   const [hasMore, setHasMore] = useState<boolean>(initialPage.hasMore);
+  const [totalCount, setTotalCount] = useState<number>(initialPage.totalCount);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -238,6 +239,7 @@ export function LibraryBrowser({
       setBooks(result.page.books);
       setNextCursor(result.page.nextCursor);
       setHasMore(result.page.hasMore);
+      setTotalCount(result.page.totalCount);
     });
   }, []);
 
@@ -337,6 +339,7 @@ export function LibraryBrowser({
           setBooks((prev) => [...prev, ...result.page.books]);
           setNextCursor(result.page.nextCursor);
           setHasMore(result.page.hasMore);
+          setTotalCount(result.page.totalCount);
         });
       },
       { rootMargin: SENTINEL_ROOT_MARGIN },
@@ -449,6 +452,13 @@ export function LibraryBrowser({
       {error && (
         <p role="alert" className="rounded-md bg-surface px-5 py-3 text-sm font-medium text-error shadow-elev-1">
           {error}
+        </p>
+      )}
+
+      {/* 결과 권수 — 전체·레벨·카테고리·키워드 모든 모드 단일 계약(query.ts totalCount). */}
+      {books.length > 0 && (
+        <p className="text-sm font-medium text-text-variant" aria-live="polite">
+          총 {totalCount}권
         </p>
       )}
 
