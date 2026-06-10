@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "project": "kikibooks",
-  "last_updated": "2026-06-01T00:00:00+00:00",
+  "last_updated": "2026-06-10T00:00:00+00:00",
   "current_phase": "phase-14-beta-infrastructure",
   "total_phases": 17,
-  "completed_phases": 16,
-  "remaining_phases": 1,
-  "last_successful_state": "phase-13b-admin-system",
+  "completed_phases": 17,
+  "remaining_phases": 0,
+  "last_successful_state": "phase-14-beta-infrastructure",
   "phases": [
     {
       "id": "phase-00-setup",
@@ -303,7 +303,7 @@
       "id": "phase-14-beta-infrastructure",
       "name": "베타 인프라 — 법적·인증메일·보안·전역에러·UI 잔여",
       "category": "Phase 1",
-      "status": "pending",
+      "status": "success",
       "depends_on": [
         "phase-13b-admin-system"
       ],
@@ -316,8 +316,8 @@
         "SMTP 인프라·secret key rotate(사용자 작업 영역)",
         "lint·type-check·build 통과 + footer 0건(ADR-0020)"
       ],
-      "completed_at": null,
-      "verification_result": "코드 영역(CP1~CP4) 부분 종결(2026-06-01, CP8 — phase-13c 부분 종결 선례 직역 Option 1): CP1 spec(bb8e5d4) · CP2 사용자 가시 UI(#5 c6b8673·#7 6c30467) · CP3 전역 에러 UI(6dee36c·1bb4604) · CP4 OG 정합(efad6e6) — lint 0·type-check 0·build 19/19·footer 0건(ADR-0020 trailers []) 전건 통과 + #5·#7 production 시각 검수 통과. CP6 SMTP 인프라 해소(2026-06-09): ADR-0010 Resolved 전환 + docs/ops/smtp-setup.md 신규. hellokiki.co.kr(Cloudflare DNS, SPF·DKIM·MX·DMARC 전파) / Resend Verified(Tokyo) / Supabase Custom SMTP(smtp.resend.com:465, no-reply@hellokiki.co.kr, 키키북스). v6 검증: 이메일 가입 → Naver 받은편지함 인증메일 정상 도착(스팸 아님). 비밀값 평문 0건. CP7 secret key rotate 완료(2026-06-09): SUPABASE_SECRET_KEY 신규 키 1개 교체 + 3곳(.env.local·GitHub Secrets·Vercel env) 갱신 + 재배포(0c7f192) 후 회원가입·이메일 인증·DB 쓰기·재로그인 전체 검증 통과(ADR-0003 §6 Amendment #1). 옛 default 키 폐기 미완(PM 보류, backlog §4 등재). phase_status는 잔여 CP5(변호사 문안) 단독 미착수로 pending 유지. phase 전체 success는 CP5 완료 후 별도 commit에서 status·completed_at·last_successful_state(→phase-14)·completed_phases(16→17)·remaining_phases(1→0) 갱신. 상세는 spec cp_progress.verification_result 박제."
+      "completed_at": "2026-06-10T00:00:00+00:00",
+      "verification_result": "코드 영역(CP1~CP4) 부분 종결(2026-06-01, CP8 — phase-13c 부분 종결 선례 직역 Option 1): CP1 spec(bb8e5d4) · CP2 사용자 가시 UI(#5 c6b8673·#7 6c30467) · CP3 전역 에러 UI(6dee36c·1bb4604) · CP4 OG 정합(efad6e6) — lint 0·type-check 0·build 19/19·footer 0건(ADR-0020 trailers []) 전건 통과 + #5·#7 production 시각 검수 통과. CP6 SMTP 인프라 해소(2026-06-09): ADR-0010 Resolved 전환 + docs/ops/smtp-setup.md 신규. hellokiki.co.kr(Cloudflare DNS, SPF·DKIM·MX·DMARC 전파) / Resend Verified(Tokyo) / Supabase Custom SMTP(smtp.resend.com:465, no-reply@hellokiki.co.kr, 키키북스). v6 검증: 이메일 가입 → Naver 받은편지함 인증메일 정상 도착(스팸 아님). 비밀값 평문 0건. CP7 secret key rotate 완료(2026-06-09): SUPABASE_SECRET_KEY 신규 키 1개 교체 + 3곳(.env.local·GitHub Secrets·Vercel env) 갱신 + 재배포(0c7f192) 후 회원가입·이메일 인증·DB 쓰기·재로그인 전체 검증 통과(ADR-0003 §6 Amendment #1). 옛 default 키 폐기 완료(2026-06-10, PM Supabase revoke, ADR-0003 §7 Amendment #2 + backlog §4 Resolved, a4b5ac5). CP5 약관·개인정보 정식 문안 적용 완료(2026-06-10): 사용자 제공 정식 문안을 app/terms(이용약관 13개조)·app/privacy(개인정보처리방침 14개조) placeholder에 교체 + legal-page-shell 베타 배너→정식 문구 + 시행일 2026년 7월 1일·metadata 베타 표기 제거(936bdc5), lint·type-check·build 19/19 통과·footer 0건·민감정보 0건. 이로써 phase-14 전 항목 종결 → status success·completed_at 2026-06-10·last_successful_state phase-14·completed_phases 16→17·remaining_phases 1→0 갱신. 상세는 spec cp_progress.verification_result 박제."
     }
   ],
   "global_verification": {

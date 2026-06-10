@@ -9,21 +9,20 @@
   ],
 
   "cp_progress": {
-    "phase_status": "pending",
-    "phase_completed_at": null,
+    "phase_status": "success",
+    "phase_completed_at": "2026-06-10",
     "current_cp": "CP5-legal-copy",
-    "last_successful_cp": "CP4-og-localization",
+    "last_successful_cp": "CP5-legal-copy",
     "completed_cps": [
       "CP1-spec",
       "CP2-user-visible-ui",
       "CP3-global-error-ui",
       "CP4-og-localization",
+      "CP5-legal-copy",
       "CP6-smtp-infra",
       "CP7-secret-key-rotate"
     ],
-    "pending_cps": [
-      "CP5-legal-copy"
-    ],
+    "pending_cps": [],
     "sub_step_structure": {
       "CP1-spec": ["CP1-spec"],
       "CP2-user-visible-ui": ["CP2-user-visible-ui"],
@@ -35,7 +34,7 @@
       "CP8-verify-and-meta": ["CP8-verify-and-meta"]
     },
     "note": "phase-14는 docs/backlog.md(1ae4c19) §3·§4를 실행 spec으로 변환한 베타 차단 인프라 페이즈다. 항목 출처는 phase-13c 종합 진단 ③④. CP2~CP4는 Claude Code 자동 실행 가능(코드), CP5~CP7은 외부 의존·사용자 작업 영역(변호사 문안 제공·Supabase Dashboard 설정·키 rotate)이라 Claude Code는 문서화·코드 배선만 하고 실제 외부 행위 0건. external_dependencies 참조. DB 스키마 변경 0건 가정(마이그레이션 002 = Hard Rule 8, 발생 시 사전 ADR). 자진 신고 #5·#7은 phase-13c 동결 이관분(backlog §3). CP8 종결 모델링(2026-06-01): CP8은 completed_cps/pending_cps 추적 대상이 아닌 코드 영역 종결 메커니즘이라 checkpoint status만 success로 표기하고, last_successful_cp는 마지막 순차 deliverable인 CP4로 유지한다. phase_status는 CP5~7(외부 의존) 미완으로 pending 유지 — phase 전체 success는 CP5~7 완료 후 별도 commit(phase-13c 부분 종결 선례 직역, Option 1).",
-    "verification_result": "코드 영역(CP1~CP4) 종결 검증 통과(2026-06-01): CP1 spec(bb8e5d4) · CP2 사용자 가시 UI(#5 admin 로그아웃 라벨 c6b8673 · #7 /book 상세 로그아웃 6c30467) · CP3 전역 에러 UI(global-error 6dee36c · admin/error 1bb4604) · CP4 OG 메타데이터 정합(efad6e6, #16 박제). 자동 검증: lint 0 · type-check 0 · build 19/19(매 CP). footer 0건 전건(ADR-0020, trailers [] 검증). 미착수(사용자 영역 외부 의존): CP5 약관·개인정보 정식 문안(변호사 문안 미전달, terms/privacy placeholder 유지) · CP7 secret key rotate(절차 가이드 미작성, 사용자 영역). 사용자 시각 검수: #5·#7 production 검수 통과(2026-05-29 이후 배포). Hard Rule 1·3·6·8·9·10 무위반(DB 스키마·secret·raw HEX 0건). | CP6 SMTP 인프라 해소(2026-06-09): ADR-0010 Resolved 전환(§7 Amendment #1) + docs/ops/smtp-setup.md 신규(디렉터리 신설). 확정 구성 — hellokiki.co.kr(NHN 등록·Cloudflare 네임서버 위임, SPF·DKIM·MX·DMARC 전파) / Resend Verified(Tokyo ap-northeast-1) / Supabase Custom SMTP(smtp.resend.com:465, Username resend, no-reply@hellokiki.co.kr, 발신자명 키키북스). v6 검증: 이메일 가입 → Naver 받은편지함 인증메일 정상 도착(스팸 아님). 비밀값 평문 0건(Hard Rule 6, 가이드 전체 플레이스홀더). | CP7 secret key rotate 완료(2026-06-09): 사용자가 SUPABASE_SECRET_KEY 신규 키 1개 재발급 → .env.local·GitHub Secrets·Vercel env 3곳 갱신(동일 표준 이름, 값만 교체) → 재배포(0c7f192) 후 회원가입·이메일 인증·DB 쓰기·재로그인 전체 정상 확인. Claude 기록: ADR-0003 §6 Amendment #1(회전 완료) + backlog §4 잔여 등재. 키 값·평문 노출 0건(Hard Rule 6). 잔여: 옛 secret 키(라벨 default) 폐기 미완(PM 보류). | 잔여 CP5(변호사 문안) 단독 미착수 → phase_status pending 유지, phase 전체 success는 CP5 완료 후 별도 commit."
+    "verification_result": "코드 영역(CP1~CP4) 종결 검증 통과(2026-06-01): CP1 spec(bb8e5d4) · CP2 사용자 가시 UI(#5 admin 로그아웃 라벨 c6b8673 · #7 /book 상세 로그아웃 6c30467) · CP3 전역 에러 UI(global-error 6dee36c · admin/error 1bb4604) · CP4 OG 메타데이터 정합(efad6e6, #16 박제). 자동 검증: lint 0 · type-check 0 · build 19/19(매 CP). footer 0건 전건(ADR-0020, trailers [] 검증). 미착수(사용자 영역 외부 의존): CP5 약관·개인정보 정식 문안(변호사 문안 미전달, terms/privacy placeholder 유지) · CP7 secret key rotate(절차 가이드 미작성, 사용자 영역). 사용자 시각 검수: #5·#7 production 검수 통과(2026-05-29 이후 배포). Hard Rule 1·3·6·8·9·10 무위반(DB 스키마·secret·raw HEX 0건). | CP6 SMTP 인프라 해소(2026-06-09): ADR-0010 Resolved 전환(§7 Amendment #1) + docs/ops/smtp-setup.md 신규(디렉터리 신설). 확정 구성 — hellokiki.co.kr(NHN 등록·Cloudflare 네임서버 위임, SPF·DKIM·MX·DMARC 전파) / Resend Verified(Tokyo ap-northeast-1) / Supabase Custom SMTP(smtp.resend.com:465, Username resend, no-reply@hellokiki.co.kr, 발신자명 키키북스). v6 검증: 이메일 가입 → Naver 받은편지함 인증메일 정상 도착(스팸 아님). 비밀값 평문 0건(Hard Rule 6, 가이드 전체 플레이스홀더). | CP7 secret key rotate 완료(2026-06-09): 사용자가 SUPABASE_SECRET_KEY 신규 키 1개 재발급 → .env.local·GitHub Secrets·Vercel env 3곳 갱신(동일 표준 이름, 값만 교체) → 재배포(0c7f192) 후 회원가입·이메일 인증·DB 쓰기·재로그인 전체 정상 확인. Claude 기록: ADR-0003 §6 Amendment #1(회전 완료) + backlog §4 잔여 등재. 키 값·평문 노출 0건(Hard Rule 6). 잔여 옛 secret 키(라벨 default) 폐기 완료(2026-06-10): PM이 Supabase Dashboard에서 직접 revoke, ADR-0003 §7 Amendment #2 + backlog §4 Resolved 박제(a4b5ac5), 키 값·평문 0건. | CP5 약관·개인정보 정식 문안 적용 완료(2026-06-10): 사용자 제공 정식 문안을 app/terms/page.tsx(이용약관 13개조)·app/privacy/page.tsx(개인정보처리방침 14개조) placeholder에 교체 + components/legal/legal-page-shell.tsx 베타 배너→정식 문구·상단 주석 정합 + 시행일 2026년 7월 1일(베타 표기 제거)·metadata '— 베타.' 제거(936bdc5). 자동 검증 lint·type-check·build 19/19 통과, footer 0건, 키 값·민감정보 0건. 이로써 phase-14 전 CP(코드 CP1~5 + 외부의존 CP6·7) 종결 → phase_status success·phase_completed_at 2026-06-10·last_successful_cp CP5-legal-copy."
   },
 
   "summary": "베타 출시(2026-08, PLAN.md:5) 차단 인프라를 구현한다 — (1) 사용자 가시 UI 잔여: admin layout 로그아웃 라벨 카피 분리(#5 잔여) + /book 트리 로그아웃 UI 추가(#7) (2) 전역 에러 UI: app/global-error.tsx + app/admin/error.tsx 신규(진단 #13, 현재 error.tsx 0건 실측) (3) OG 메타데이터 한글화·정합(현재 app/opengraph-image.tsx + app/page.tsx·layout.tsx openGraph 존재 — refine) (4) 약관·개인정보 정식 문안 적용(현재 app/terms·privacy placeholder 실측, 변호사 문안은 사용자 제공 = 외부 의존) (5) SMTP 인프라(현재 커스텀 메일 발송 코드 0건 실측, Supabase Auth 기본 메일 의존 — ADR-0010 이연분, Dashboard 설정 = 사용자 영역) (6) Supabase secret key rotate(ADR-0003 표준, Supabase·Vercel env = 사용자 영역, Claude 키 노출 0건). Hard Rule 6(secret 노출 금지)·8(스키마 변경 시 ADR 선행) 직역. footer 0건(ADR-0020).",
@@ -139,12 +138,13 @@
     },
     {
       "id": "CP5-legal-copy",
-      "description": "약관·개인정보 정식 문안 적용 — 변호사 문안(사용자 제공)을 app/terms/page.tsx·privacy/page.tsx placeholder에 교체. ★ 외부 의존: 사용자가 문안 전달 전 착수 0건. Claude 문안 작성 0건(법적 책임).",
-      "status": "pending",
+      "description": "약관·개인정보 정식 문안 적용 — 변호사 문안(사용자 제공)을 app/terms/page.tsx·privacy/page.tsx placeholder에 교체. ★ 외부 의존: 사용자가 문안 전달 전 착수 0건. Claude 문안 작성 0건(법적 책임). 적용 완료(2026-06-10, 936bdc5): 사용자 제공 정식 문안 교체(이용약관 13개조·개인정보처리방침 14개조) + components/legal/legal-page-shell.tsx 베타 배너→정식 문구·상단 주석 정합 + 시행일 2026년 7월 1일·metadata 베타 표기 제거. lint·type-check·build 통과, footer 0건, 키 값·민감정보 0건.",
+      "status": "success",
       "type": "external-dependent",
       "files": [
         "app/terms/page.tsx",
-        "app/privacy/page.tsx"
+        "app/privacy/page.tsx",
+        "components/legal/legal-page-shell.tsx"
       ]
     },
     {
