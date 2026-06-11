@@ -106,7 +106,7 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 
 | 우선 | 작업 | 현황·실측 | 관련 파일 (grep 확인) |
 |---|---|---|---|
-| ★ 1순위 | **작업4 GDL iframe 헤더 노출** | 미착수. 뷰어 외부 콘텐츠 로딩 방식 **실측 선행 필요**. cross-origin 제약이 핵심 난점. 조사 후보는 §7.4 인수인계 참조 | 미실측 (뷰어 컴포넌트 실측 후 확정) — 진입점 `app/(reader)/book/[id]/read/page.tsx`(route group 이동 반영) |
+| ★ 1순위 | **작업4 GDL iframe 헤더 노출** | **구현 완료·브라우저 최종 검증 대기**. 원인=GDL content_url이 postLink(사이트 전체 페이지: gdl-header·쿠키배너·Read 랜딩)였음. 해결=B-lite로 content_url을 H5P 전용 embed URL(`admin-ajax.php?action=h5p_embed&id={h5pId}`)로 전환(코드 `12016dc` push + 842권 실 upsert, ADR-0017 Amendment #3). 검증 SELECT 통과(embed 842/postLink 0/BookDash 54 무변경/attribution NULL 0). **남은 것**: H5P embed 풀스크린 렌더·표지 인터랙션 PM 브라우저 확인 | `scripts/sync_gdl.py`(content_url=EMBED_URL_TEMPLATE) · 뷰어/미들웨어 무변경(`html-reader.tsx`·`middleware.ts`) |
 
 ### 7.3 잔여 F-item (베타 차단 아님)
 

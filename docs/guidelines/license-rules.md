@@ -182,6 +182,7 @@ SELECT COUNT(*) FROM books WHERE attribution_text = '' OR LENGTH(attribution_tex
 - GDL API에서 각 책의 현재 라이선스를 다시 조회
 - DB의 `license` 값과 다르면 알림 + 해당 책 `is_active = false`로 즉시 비활성화
 - 변경 로그는 `docs/adr/`에 자동 기록
+- GDL `content_url`(H5P embed URL, ADR-0017 Amendment #3) 생존 표본 확인 — 활성 GDL에서 30권 표본 추출해 `admin-ajax.php?action=h5p_embed` URL을 HEAD, 비-200 발견 시 알림(비공식 엔드포인트라 GDL 사이트와 운명 공유)
 
 ### 6.3 긴급 중단 조건
 

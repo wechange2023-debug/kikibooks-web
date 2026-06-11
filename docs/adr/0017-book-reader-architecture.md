@@ -156,3 +156,32 @@ D7(points·badges·별 3개 SVG 애니메이션 phase-13 전속 경계)을 **ADR
 ---
 
 *Amendment #2 끝.*
+
+---
+
+## Amendment #3 (2026-06-11 베타 품질개선 — GDL content_url을 H5P embed URL로 전환)
+
+**배경.** 본문 §1.2·§1.3·D6은 GDL `content_url`을 사이트 리더 페이지 `https://content.digitallibrary.io/en/book/{slug}/`(=postLink)로 적재한다. 베타 브라우저 실측(2026-06-11, backlog §7.4 작업4)에서 이 URL은 책 본문이 아니라 **GDL 사이트 전체 페이지**임이 확인됐다 — iframe 안에 ① `gdl-header`(로고·검색·언어·메뉴) ② 좌하단 쿠키배너(매 세션 재등장) ③ 'Read' 재클릭 랜딩이 노출돼 Closed Environment(ADR-0013 결정 4)·몰입(ADR-0021 D3)과 충돌했다. 본문 §1.3이 박제한 "외부 cross-origin 리더 페이지를 통째로 임베드"의 부작용이 실증된 것이다(F20 — Amendment #1 §5 GDL SPA 내부 헤더 ↔ Closed Environment 충돌의 구체화).
+
+**결정 (B-lite).** `sync_gdl.py`가 적재하는 GDL `content_url`을 postLink에서 **H5P 전용 embed URL** `https://content.digitallibrary.io/wp-admin/admin-ajax.php?action=h5p_embed&id={h5pId}`로 전환한다. 이 URL은 책 본문 H5P 플레이어만 렌더하며 gdl-header·쿠키배너·Read 랜딩이 전무하다(2026-06-11 curl 실측). `h5pId`는 `sync_gdl.py`의 picture-book 가드(필수 필드 검증)에서 이미 확보되므로 신규 API 의존 0건이다.
+
+**범위·정합.**
+- **D1 무변경** — embed URL도 `text/html` 응답이라 `content_type='html'` 유지, HtmlReader iframe 단일 경로 그대로(뷰어 컴포넌트·미들웨어 수정 0줄).
+- **D6 무변경** — embed URL 도메인이 `content.digitallibrary.io`로 동일해 CSP frame-src 화이트리스트(본문 D6) 수정 불요. sandbox `allow-scripts allow-same-origin` 그대로.
+- **§1.2 표 정정** — GDL content_url 형태가 `/en/book/{slug}/`(postLink)에서 `admin-ajax.php?action=h5p_embed&id={h5pId}`로 바뀐다. 본문 표는 phase-end 보존 관례로 무수정하고 본 Amendment가 사후 박제한다.
+- **`original_url`은 postLink 유지** — 어트리뷰션 '원본 보기'는 사이트 페이지가 맞다(ADR-0016 정합).
+- **A안(부모 레벨 클리핑/오버레이) 기각** — STEP A-0 조사에서 클리핑 단독으로 cross-origin 쿠키배너 제거 불가(부모에서 사전 해제 불가)가 확인돼, content_url 교체(B-lite)가 더 적은 변경으로 근본 해소한다.
+
+**전환 실행 (2026-06-11).** 사전 검증: 활성 GDL 842권 전수 `postId↔h5pId` 매칭 100%, embed URL 전수 HEAD 842/842=200(실패 0). 코드 커밋 `12016dc` push 후 `sync_gdl.py` 1회 실 upsert(842건 update, errors 0). 검증 SELECT: ① admin-ajax embed=842 ② postLink 잔존=0 ③ Book Dash 54 무변경 ④ attribution NULL=0.
+
+**리스크.**
+- `admin-ajax.php?action=h5p_embed`는 H5P 플러그인의 **비공식 임베드 엔드포인트**다 — GDL 사이트와 운명을 공유하며 GDL이 엔드포인트·H5P 버전을 바꾸면 깨질 수 있다. `license-rules.md` §6.2에 월 1회 embed URL 생존 표본 확인을 추가했다(F15 외부 가용성 연계).
+- H5P 진행상태(admin-ajax `h5p_setFinished`)는 본 뷰어에서 사용하지 않는다(완독은 D4 명시 버튼). referrer는 `no-referrer` 유지.
+
+**잔여 검증 (브라우저).** H5P embed iframe이 풀스크린 컨테이너(부모 resizer 없이)에서 높이·페이지 넘김 정상 표시되는지, H5P 자체 표지→시작이 '사이트 헤더'와 구분돼 허용되는지는 PM 브라우저 최종 확인 대상이다(backlog §7.4).
+
+본 ADR 본문 D1~D7은 무수정한다(phase-end ADR 본문 보존 관례 — Amendment #1·#2 정합).
+
+---
+
+*Amendment #3 끝.*
