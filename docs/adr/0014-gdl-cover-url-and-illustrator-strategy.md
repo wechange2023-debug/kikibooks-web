@@ -398,3 +398,33 @@ Amendment #2 §B의 표를 그대로 인용한다(별도 보강 없음). 이동 
 ---
 
 *Amendment #5 끝.*
+
+---
+
+## Amendment #6 (2026-06-11 베타 품질개선 — 본문 이미지 404 차단 사유 확장)
+
+**배경.** 작업4(GDL embed 전환·Book Dash nav-bar 클리핑) PM 검증 중, Book Dash `Little Sock`(724aff4e…)의 본문 이미지가 전부 깨지는 증상이 발견됐다. 실측 결과 원본(bookdash.github.io)의 본문 이미지 `images/NN.jpg`가 404였다 — 결정 2·Amendment #2·#3·#5가 다룬 **표지(cover.jpg) 404와는 별개**인 **본문 이미지 404**다.
+
+**전수 감사 (2026-06-11, 읽기 전용).** Book Dash 활성 54권 전권의 content_url HTML을 받아 `<img>` 전수 HEAD 체크:
+
+| 판정 | 권수 | 패턴 |
+|---|---|---|
+| 정상 | 39 | 본문 이미지 전부 200 (img src = 루트절대 `/bookdash-books/{slug}/en/images/NN.jpg`) |
+| 불량 | **15** | 본문 이미지 12~13장 전부 404 (img src = 상대 `images/NN.jpg` → 원본 미배포). 페이지 자체는 200이라 뷰어에 깨진 이미지로 노출 |
+| 회색·페이지오류 | 0 | content_url 54권 전부 200 |
+
+불량 15권 = 기존 표지 404 블랙리스트 4권(본문 이미지도 404로 확인) + **신규 11권**. 신규 11권은 차단되지 않아 카탈로그에 노출 중이었다.
+
+**결정.** `BOOK_DASH_404_SOURCE_IDS`(`lib/shared/blacklist.ts`)의 차단 사유를 **"표지 404"에서 "원본 이미지 404 (표지 또는 본문)"로 확장**하고, 신규 11건 source_id를 추가한다(코드 `4e574fb`). 차단 표면은 결정 2·Amendment #5 그대로 — 단일 공급원 1곳 갱신으로 6개 표면(랜딩 인기·오늘의 추천·카테고리·라이브러리·책 상세·책 뷰어)에 전파된다.
+
+신규 11건 (slug): hippo-wants-to-dance, it-wasnt-me, little-sock, shongololos-shoes, springloaded, the-elephant-in-the-room, what-is-it, when-i-grow-up, who-is-our-friend, the-best-thing-ever, mrs-penguins-palace.
+
+**is_active=false 대신 블랙리스트 사유.** `sync_book_dash.py`가 `is_active=True`를 무조건 upsert하고 주간 cron(`sync-book-dash.yml`, 일 02:00)이 실행되므로, is_active=false는 다음 cron이 되돌린다. 코드 측 블랙리스트는 sync/DB 무변경이라 cron-proof다(결정 2 "조회 쿼리에서만 사전 차단" 정합).
+
+**결과 / 후속.** 노출 가능 Book Dash = 54 − 15 = 39권. 전체 노출 가능 = GDL 842 + Book Dash 39 = 881권(ADR-0008 베타 목표 900 대비 −19, backlog §7 F-item 등재). 원본 이미지 복구 여부는 분기별 재감사로 확인하고, 복구 시 본 목록에서 해제한다(ADR-0014 §6 후속 과제 2 정합).
+
+본 Amendment #6은 §1~§7 본문 및 Amendment #1~#5를 변경하지 않는다.
+
+---
+
+*Amendment #6 끝.*

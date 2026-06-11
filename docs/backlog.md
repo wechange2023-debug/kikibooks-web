@@ -107,7 +107,8 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 | 우선 | 작업 | 현황·실측 | 관련 파일 (grep 확인) |
 |---|---|---|---|
 | ✅ 종결 | **작업4-GDL iframe 헤더 노출** | **PM 브라우저 검증 통과·종결**. 원인=GDL content_url이 postLink(사이트 전체 페이지: gdl-header·쿠키배너·Read 랜딩)였음. 해결=B-lite로 content_url을 H5P 전용 embed URL(`admin-ajax.php?action=h5p_embed&id={h5pId}`)로 전환(코드 `12016dc` + 842권 실 upsert, ADR-0017 Amendment #3). 검증 SELECT 통과(embed 842/postLink 0/BookDash 54 무변경/attribution NULL 0) + PM 브라우저 확인 완료 | `scripts/sync_gdl.py`(content_url=EMBED_URL_TEMPLATE) · 뷰어/미들웨어 무변경 |
-| ★ 1순위 | **작업4-BookDash nav-bar 띠 노출** | **구현 완료·PM 검증 대기**. Book Dash 54권 외부 페이지 상단 `#nav-bar`(`position:fixed`, breadcrumb 띠) 부모 레벨 클리핑. 실측: 본문 h1이 `#wrapper padding-top:4em`(≈76.8px, 뷰포트 비의존)에서 시작 → iframe을 74px 위로 끌어올려(absolute, 부모 overflow-hidden) 띠만 제거, 본문 무손실(2줄 와핑 64px<74<76.8). 코드 `f8a37c1`. GDL은 embed로 chrome 부재라 클리핑 0. **남은 것**: 최장 제목 모바일 와핑 PM 브라우저 확인 | `app/(reader)/book/[id]/read/page.tsx`(clipNavBar 분기) · `components/book/html-reader.tsx`(CLIP_NAVBAR_CLASS) |
+| ✅ 종결 | **작업4-BookDash nav-bar 띠 노출** | **PM 브라우저 검증 통과·종결**(띠 소멸·본문 무손실). Book Dash 54권 외부 페이지 상단 `#nav-bar`(`position:fixed`, breadcrumb 띠) 부모 레벨 클리핑. 본문 h1이 `#wrapper padding-top:4em`(≈76.8px, 뷰포트 비의존)에서 시작 → iframe 74px 위로(absolute, 부모 overflow-hidden) 띠만 제거(2줄 와핑 64px<74<76.8). 코드 `f8a37c1`. GDL은 embed로 chrome 부재라 클리핑 0 | `app/(reader)/book/[id]/read/page.tsx`(clipNavBar) · `components/book/html-reader.tsx`(CLIP_NAVBAR_CLASS) |
+| ✅ 종결 | **작업4-BookDash 본문 이미지 404** | **차단 완료**. 전수 감사(54권) — 15권 본문 이미지 전부 404(원본 미배포). 기존 표지 블랙리스트 4권 + **신규 11권**을 `BOOK_DASH_404_SOURCE_IDS`에 추가(코드 `4e574fb`, ADR-0014 Amendment #6). is_active=false는 주간 cron이 되돌려 부적합 → 코드 측 블랙리스트(cron-proof). 노출 가능 881권(§7.3 F-item 참조) | `lib/shared/blacklist.ts`(15건) |
 
 ### 7.3 잔여 F-item (베타 차단 아님)
 
@@ -115,6 +116,8 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 |---|---|---|
 | keyset count 재쿼리 | 라이브러리 keyset 모드가 무한 스크롤 페이지마다 count 재쿼리(head:true, 행 전송 0, 활성 ~896권 무부담). 대규모 시 첫 페이지(cursor=null)만 count하도록 최적화 | `lib/library/query.ts` `countKeyset` |
 | 작업1 level·keyword URL 미동기화 | URL 동기화는 category만 구현됨. level·keyword는 서버(`app/library/page.tsx`)가 복원하지 않아 의도적 미반영 — 확장하려면 서버 searchParams 계약 동반 확장 필요 | `components/library/library-browser.tsx`(level·keyword 핸들러) · `app/library/page.tsx`(searchParams) |
+| 노출 가능 881권 (목표 −19) | 작업4 이미지 404 차단 후 노출 가능 = GDL 842 + Book Dash 39 = **881권**. ADR-0008 베타 목표 900권 대비 **−19권**. GDL 추가 소싱(현 license 필터 NC/ND skip 368 중 재검토 여지) 등 보충 검토 | `lib/shared/blacklist.ts`(15 차단) · `scripts/sync_gdl.py` |
+| Book Dash 원본 이미지 404 재감사 | 차단 11권은 원본(bookdash.github.io) 미배포가 원인 — 원본 측 복구 시 블랙리스트 해제 가능. **분기별 전수 이미지 재감사**로 복구 여부 확인(ADR-0014 §6 후속 과제 2, Amendment #6) | `lib/shared/blacklist.ts` · 전수 HEAD 감사 스크립트(리포 외부) |
 
 ### 7.4 새 세션 인수인계 (2026-06-11 종결)
 
