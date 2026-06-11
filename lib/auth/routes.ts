@@ -14,6 +14,16 @@ export const AUTH_PAGES = ['/login', '/signup'] as const;
 /** 로그인 성공 후 자녀가 이미 있을 때의 도착 경로. */
 export const POST_LOGIN_PATH = '/home';
 
+/**
+ * 공통 헤더(components/app/app-header.tsx) 네비 경로 — 홈 화면.
+ * POST_LOGIN_PATH와 값은 같으나 의미가 다르다(리다이렉트 도착지 vs 네비 링크).
+ * ADR-0021 D5 — 네비 경로 중앙화.
+ */
+export const HOME_PATH = '/home';
+
+/** 공통 헤더 네비 경로 — 라이브러리 화면 (ADR-0021 D5). */
+export const LIBRARY_PATH = '/library';
+
 /** 로그인 성공 후 자녀가 없을 때 보내는 온보딩 경로 (phase-08). */
 export const ONBOARDING_PATH = '/onboarding';
 

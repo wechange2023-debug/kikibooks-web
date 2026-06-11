@@ -81,27 +81,7 @@ export default async function HomePage() {
   return (
     <main className="min-h-screen bg-surface-2 py-6">
       <div className="mx-auto flex max-w-screen-sm flex-col gap-4 px-4 md:max-w-screen-md md:gap-5 md:px-6 lg:max-w-screen-lg">
-        {/*
-          로그아웃 form — phase-13b CP3-c hotfix 확장 (자진 신고 6번 해소).
-          - 박제 정합: admin layout.tsx hotfix 58cf4a5 토큰·form 패턴 100% 정합 +
-            docs/intent/auth-flow.md §4.6 4단계 흐름 + app/auth/sign-out/route.ts:9
-            "form POST로 호출" 박제 직역.
-          - 'use client' 0건 — native HTML form action + POST가 Server Component에서 동작.
-          - 라벨 "로그아웃" hardcoded — copy.ts 박제 확장 회피 (자진 신고 5번 정책 정합).
-            phase-13c follow-up 후보로 HomeCopy.signOut 키 박제 확장 검토.
-          - GreetingCard 컴포넌트 수정 0건 — 본 page.tsx 헤더 영역만 신규 추가.
-        */}
-        <header className="flex items-center justify-end">
-          <form action="/auth/sign-out" method="post">
-            <button
-              type="submit"
-              className="inline-flex items-center rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
-            >
-              로그아웃
-            </button>
-          </form>
-        </header>
-
+        {/* 로그아웃·홈↔라이브러리 네비는 공통 헤더(components/app/app-header.tsx)로 수렴 — ADR-0021 D4. */}
         <GreetingCard greeting={greeting} child={activeChild} />
 
         <LevelSelector
