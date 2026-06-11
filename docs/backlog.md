@@ -95,16 +95,18 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 | `0e3e020` | 작업3 홈 그리드 카테고리별 권수 — `getCategoryDistribution` 연결, 카드에 "N권" | `app/home/page.tsx` · `components/home/category-grid.tsx` |
 | `267f5d8` | 작업3 라이브러리 `totalCount` — 전체·레벨·키워드(keyset count 쿼리)·카테고리(`matched.length`) 전모드 "총 N권" | `lib/library/query.ts` · `components/library/library-browser.tsx` |
 | `29960d0` | D19 spec 결정 정정 — 권수 미표시 결정 철회 박제 | `tasks/phase-10-screen-02-home.json` |
+| `c7788b6` | **작업2 공통 네비게이션 완료(2026-06-11)** — 로그인 후 화면 공통 헤더 + `(reader)` route group. 3커밋 묶음: `f575655`(ADR-0021 발행) → `09c4749`(home·library·book → `app/(reader)/` 이동, URL 불변) → `c7788b6`(AppHeader 신설·layout 연결·page 헤더 수렴). usePathname으로 read·celebrate 미렌더, book not-found는 노출(Am#1). routes.ts `HOME_PATH`·`LIBRARY_PATH` 중앙화. Vercel 배포 success | `docs/adr/0021-reader-route-group-and-app-header.md` · `app/(reader)/layout.tsx` · `components/app/app-header.tsx` · `lib/auth/routes.ts` |
+| `954fd80` | **stale spec 정정 완료(2026-06-11)** — phase-10 JSON D13·D20·D21·D23·D24 + v8 로그 2곳 superseded 표기(원문 보존). intent/screen-02-home.md `/home?cat=`→`/library?category=` 현행 갱신(§4.3 재작성). `_index.json` 무변경. Vercel 배포 success | `tasks/phase-10-screen-02-home.json` · `docs/intent/screen-02-home.md` |
 
 > 직전 배경: `389c7c4`(별도 세션)가 카테고리 카드 → 라이브러리 결과 연결 + 스트릭 월~일 고정을 처리했고, 위 트랙은 그 후속이다.
 
 ### 7.2 다음 세션 시작점 — 남은 작업
 
+> 작업2 공통 네비게이션(`c7788b6`)·stale spec 정정(`954fd80`)은 2026-06-11 완료(§7.1 이관). 본 트랙에 남은 작업은 **작업4 1건**.
+
 | 우선 | 작업 | 현황·실측 | 관련 파일 (grep 확인) |
 |---|---|---|---|
-| 🔧 착수(2026-06-11) | **작업2 공통 네비게이션** | **ADR-0021 발행(후보 A route group `app/(reader)/` + 방안 1 usePathname 분기 박제).** STEP 0 문서 선행 완료 → STEP 1 폴더 이동 → STEP 2 `components/app/app-header.tsx` 신설 → STEP 3 그룹 layout + page 정리 → STEP 4 검증 순. 자녀칩 1차 제외·library h1 page 잔류·컨테이너 미수렴(D2~D5) | `docs/adr/0021-reader-route-group-and-app-header.md`(결정) · `app/layout.tsx`(헤더 0건) · `components/landing/landing-header.tsx`(랜딩 전용) · 각 페이지 인라인 `<header>`: `app/home/page.tsx:94`·`app/library/page.tsx:122`·`app/book/[id]/page.tsx:107` |
-| ★ 동반 | **stale spec 정정** | `tasks/phase-10-screen-02-home.json`의 D13·D20·D21·D23·D24가 `/home?cat=` 전제로 박제돼 `389c7c4` 이후 부분 stale. 라우팅 1차 출처는 ADR-0015 Amendment #2(박제 완료)라 급하진 않으나 **작업2 네비 박제 시 함께 정정 검토** | `tasks/phase-10-screen-02-home.json` (cp3_decisions) |
-| 무거움 | **작업4 GDL iframe 헤더 노출** | 미착수. 뷰어 외부 콘텐츠 로딩 방식 **실측 선행 필요**. cross-origin 제약이 핵심 난점 | 미실측 (뷰어 컴포넌트 실측 후 확정) |
+| ★ 1순위 | **작업4 GDL iframe 헤더 노출** | 미착수. 뷰어 외부 콘텐츠 로딩 방식 **실측 선행 필요**. cross-origin 제약이 핵심 난점. 조사 후보는 §7.4 인수인계 참조 | 미실측 (뷰어 컴포넌트 실측 후 확정) — 진입점 `app/(reader)/book/[id]/read/page.tsx`(route group 이동 반영) |
 
 ### 7.3 잔여 F-item (베타 차단 아님)
 
@@ -112,3 +114,14 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 |---|---|---|
 | keyset count 재쿼리 | 라이브러리 keyset 모드가 무한 스크롤 페이지마다 count 재쿼리(head:true, 행 전송 0, 활성 ~896권 무부담). 대규모 시 첫 페이지(cursor=null)만 count하도록 최적화 | `lib/library/query.ts` `countKeyset` |
 | 작업1 level·keyword URL 미동기화 | URL 동기화는 category만 구현됨. level·keyword는 서버(`app/library/page.tsx`)가 복원하지 않아 의도적 미반영 — 확장하려면 서버 searchParams 계약 동반 확장 필요 | `components/library/library-browser.tsx`(level·keyword 핸들러) · `app/library/page.tsx`(searchParams) |
+
+### 7.4 새 세션 인수인계 (2026-06-11 종결)
+
+- **origin/main HEAD**: `954fd80` (working tree clean). 2026-06-11 세션에서 작업2(공통 헤더)·stale spec 정정 종결, 모두 Vercel 배포 success.
+- **구조 변경 주의**: 로그인 후 화면 3종이 `app/(reader)/` route group으로 이동됨(URL 불변). 이후 작업 시 경로는 `app/(reader)/home`·`app/(reader)/library`·`app/(reader)/book/[id]`. 공통 헤더는 `components/app/app-header.tsx`(client, usePathname 분기) + `app/(reader)/layout.tsx`가 주입. ADR-0021 참조.
+- **잔존 작업**: 본 트랙은 **작업4 GDL iframe 헤더 노출 1건**만 남음(무거움, 실측 선행). §7.3 F-item 2건은 베타 차단 아님.
+- **작업4 조사 후보 ①~④** (다음 세션 실측 시작점):
+  - ① **뷰어 컴포넌트 실측** — `app/(reader)/book/[id]/read/page.tsx` + HtmlReader 구조에서 GDL 콘텐츠가 iframe 임베드인지 자체 렌더인지 확정(ADR-0017 book-reader-architecture 교차).
+  - ② **GDL 콘텐츠 로딩 방식** — iframe `src`가 cross-origin GDL 도메인 직접 로드인지, 프록시/자체 호스팅인지. CSP·X-Frame-Options 제약 실측.
+  - ③ **"헤더 노출"의 정의** — read 화면은 현재 공통 헤더 미렌더(몰입 보존, ADR-0021 D3). 작업4의 "헤더"가 공통 AppHeader 재노출인지 뷰어 전용 헤더(닫기·진도 등)인지 PM 정의 선행.
+  - ④ **cross-origin 오버레이 가능성** — iframe 내부에 헤더 주입 불가(cross-origin) 시, iframe 밖 부모 레벨 오버레이 헤더 방식·레이아웃 충돌(read 풀스크린 `<main flex-1 overflow-hidden>`) 영향 범위.
