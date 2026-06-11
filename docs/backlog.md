@@ -102,7 +102,7 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 
 | 우선 | 작업 | 현황·실측 | 관련 파일 (grep 확인) |
 |---|---|---|---|
-| ★ 1순위 | **작업2 공통 네비게이션** | 로그인 후 화면(`/home`·`/library`·`/book`)에 홈↔라이브러리 이동 메뉴 부재. 공통 앱 헤더 없음(landing-header는 랜딩 전용), 인증영역 그룹레이아웃 부재 → **신설 방향 + 주입 지점 설계 필요, ADR 후보**. 헤더 부재는 직전 실측 확정 | `app/layout.tsx`(헤더 0건) · `components/landing/landing-header.tsx`(랜딩 전용) · 각 페이지 인라인 `<header>`: `app/home/page.tsx:93`·`app/library/page.tsx:120`·`app/book/[id]/page.tsx:107` |
+| 🔧 착수(2026-06-11) | **작업2 공통 네비게이션** | **ADR-0021 발행(후보 A route group `app/(reader)/` + 방안 1 usePathname 분기 박제).** STEP 0 문서 선행 완료 → STEP 1 폴더 이동 → STEP 2 `components/app/app-header.tsx` 신설 → STEP 3 그룹 layout + page 정리 → STEP 4 검증 순. 자녀칩 1차 제외·library h1 page 잔류·컨테이너 미수렴(D2~D5) | `docs/adr/0021-reader-route-group-and-app-header.md`(결정) · `app/layout.tsx`(헤더 0건) · `components/landing/landing-header.tsx`(랜딩 전용) · 각 페이지 인라인 `<header>`: `app/home/page.tsx:94`·`app/library/page.tsx:122`·`app/book/[id]/page.tsx:107` |
 | ★ 동반 | **stale spec 정정** | `tasks/phase-10-screen-02-home.json`의 D13·D20·D21·D23·D24가 `/home?cat=` 전제로 박제돼 `389c7c4` 이후 부분 stale. 라우팅 1차 출처는 ADR-0015 Amendment #2(박제 완료)라 급하진 않으나 **작업2 네비 박제 시 함께 정정 검토** | `tasks/phase-10-screen-02-home.json` (cp3_decisions) |
 | 무거움 | **작업4 GDL iframe 헤더 노출** | 미착수. 뷰어 외부 콘텐츠 로딩 방식 **실측 선행 필요**. cross-origin 제약이 핵심 난점 | 미실측 (뷰어 컴포넌트 실측 후 확정) |
 
