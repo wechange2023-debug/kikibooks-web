@@ -74,6 +74,12 @@ API_URL = "https://content.digitallibrary.io/wp-json/content-api/v1/books/en"
 COVER_URL_TEMPLATE = (
     "https://content.digitallibrary.io/wp-content/uploads/h5p/content/{h5pId}/images/coverImage.jpg"
 )
+# B-lite (ADR-0017 amendment 예정): content_url을 postLink(사이트 페이지 — gdl-header·
+# 쿠키배너·Read 재클릭 노출)에서 H5P 전용 embed URL로 전환. 사이트 chrome 없는 책 본문만
+# 임베드된다. h5pId는 picture_book 가드(line 276)에서 이미 필수 검증됨.
+EMBED_URL_TEMPLATE = (
+    "https://content.digitallibrary.io/wp-admin/admin-ajax.php?action=h5p_embed&id={h5pId}"
+)
 SOURCE_PLATFORM = "gdl"
 CONTENT_TYPE = "html"
 LANGUAGE = "en"
@@ -316,7 +322,9 @@ def build_payload(book: dict[str, Any]) -> tuple[Optional[dict[str, Any]], bool]
         "source_id": str(post_id),
         "title": title,
         "cover_url": cover_url,
-        "content_url": post_link,
+        # B-lite: 뷰어 iframe src — H5P 전용 embed URL(사이트 chrome 제거). original_url은
+        # 어트리뷰션 '원본 보기'용이라 postLink(사이트 페이지) 유지(아래 참조).
+        "content_url": EMBED_URL_TEMPLATE.format(h5pId=h5p_id),
         "content_type": CONTENT_TYPE,
         "language": LANGUAGE,
         "level": level,
