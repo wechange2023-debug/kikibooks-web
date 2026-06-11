@@ -131,6 +131,9 @@ export default async function ReadPage({ params }: ReadPageProps) {
           title={book.title}
           readerCopy={readerCopy.reader}
           bookDetailHref={`/book/${book.id}`}
+          // Book Dash만 외부 페이지 상단 #nav-bar(fixed) 클리핑 — 작업4 STEP C.
+          // GDL은 H5P embed로 chrome 부재(ADR-0017 Am#3)라 클리핑 0.
+          clipNavBar={book.source_platform === 'book_dash'}
         />
       );
       break;

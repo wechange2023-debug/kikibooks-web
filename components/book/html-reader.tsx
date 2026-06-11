@@ -67,7 +67,25 @@ interface HtmlReaderProps {
   readerCopy: BookReaderCopy['reader'];
   /** 폴백 '책 상세로 돌아가기' 링크 — `/book/${book.id}`. */
   bookDetailHref: string;
+  /**
+   * Book Dash 외부 페이지 상단 #nav-bar(`position:fixed;top:0`) 클리핑 여부 — 작업4 STEP C.
+   * Book Dash 본문은 `#wrapper{padding-top:4em≈76.8px}` 아래에서 시작하므로, iframe을
+   * CLIP_TOP_PX만큼 위로 끌어올려 부모(overflow-hidden)가 nav-bar 띠만 잘라낸다(본문 무손실).
+   * GDL은 H5P embed로 chrome 부재(ADR-0017 Am#3)라 false.
+   */
+  clipNavBar?: boolean;
 }
+
+/**
+ * Book Dash #nav-bar 클리핑 클래스 (작업4 STEP C). 부모(:relative + overflow-hidden) 안에서
+ * iframe을 absolute로 74px 위로 끌어올리고 높이를 +74px 늘려, 상단 74px(nav-bar 띠)만 잘린다.
+ * 근거(실측): 본문 첫 요소 h1이 `#wrapper padding-top:4em`(≈76.8px, 뷰포트 비의존)에서 시작 →
+ *   nav-bar 모바일 2줄 와핑(≈64px)을 +10px 여유로 제거하면서 본문까지 2.8px 안전마진(무손실).
+ *   값이 뷰포트 비의존이라 단일값(미디어쿼리 불요). Tailwind JIT 정적 검출 위해 리터럴 문자열.
+ */
+const CLIP_NAVBAR_CLASS =
+  'absolute inset-x-0 top-[-74px] h-[calc(100%_+_74px)] w-full border-0';
+const BASE_IFRAME_CLASS = 'h-full w-full border-0';
 
 export function HtmlReader({
   bookId,
@@ -75,6 +93,7 @@ export function HtmlReader({
   title,
   readerCopy,
   bookDetailHref,
+  clipNavBar = false,
 }: HtmlReaderProps) {
   const [status, setStatus] = useState<ReaderStatus>('loading');
 
@@ -128,7 +147,7 @@ export function HtmlReader({
               loading="eager"
               onLoad={handleLoad}
               onError={handleError}
-              className="h-full w-full border-0"
+              className={clipNavBar ? CLIP_NAVBAR_CLASS : BASE_IFRAME_CLASS}
             />
             {status === 'loading' && (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-surface-3">
