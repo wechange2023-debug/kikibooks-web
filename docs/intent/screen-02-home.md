@@ -27,7 +27,7 @@
 - `lib/home/` 신규 데이터 fetch 레이어 (greeting · recommendations · categories · streak)
 - 신규 컴포넌트 5종: `GreetingCard`, `RecommendationList`, `CategoryGrid`, `LevelSelector`, `StreakChart`
 - 레벨 변경 핸들러 — server action + `revalidatePath('/home')`
-- 카테고리 카드 클릭 라우팅 — `/home?cat={slug}` (홈 내부 확장, ADR-0015 결정 5b)
+- 카테고리 카드 클릭 라우팅 — `/library?category={slug}` (라이브러리 결과 페이지, ADR-0015 Amendment #2)
 - 모바일 우선(390px) + 태블릿(768px) + 데스크탑(1280px) 반응형
 
 **phase-10이 다루지 않는 것 (다음으로 연결)**
@@ -50,7 +50,7 @@
 | 경로 | 공개/보호 | 비고 |
 |---|---|---|
 | `/home` | 보호 (로그인 + 자녀 ≥ 1) | 미로그인 → `/login`. 자녀 0명 → `/onboarding` (페이지 컴포넌트 안에서 redirect) |
-| `/home?cat={slug}` | 보호 | 8 slug 중 하나(`animals`·`family`·`abc`·`numbers`·`emotions`·`nature`·`food`·`bedtime`). 그 외 slug는 무시(쿼리 없음과 동일 동작) |
+| 카테고리 라우팅 → `/library?category={slug}` | 보호 | 카테고리 카드 클릭 시 라이브러리로 이동(ADR-0015 Amendment #2). 8 slug 중 하나(`animals`·`family`·`abc`·`numbers`·`emotions`·`nature`·`food`·`bedtime`). 잘못된 slug는 라이브러리가 너그럽게 무시(전체 카탈로그 폴백). `/home`은 더 이상 `?cat=` 파라미터를 수신하지 않는다 |
 
 **routes.ts·middleware.ts는 수정하지 않는다**. `/home`은 phase-07에서 이미 `PROTECTED_PREFIXES`에 등록돼 있고, 미온보딩(자녀 0명) 가드는 페이지 컴포넌트 안에서 처리한다(phase-08 "분기는 도착 지점에서" 원칙 계승).
 
@@ -63,7 +63,7 @@
 1. 학부모가 `/home`에 접속한다(헤더 로고·`/`에서 리다이렉트·앱 첫 진입 등).
 2. 화면 상단에 인사 카드("안녕하세요, [display_name]님 👋")와 자녀 프로필 칩을 본다.
 3. 그 아래 "오늘의 추천 5권" 가로 스크롤 책 카드 줄을 본다. 자녀의 `current_level ±1`을 기준으로 아직 안 읽은 책 5권이다.
-4. 카테고리 그리드 8개(2×4)를 본다. 카드를 누르면 같은 페이지에 `/home?cat={slug}` 쿼리로 카테고리 결과 섹션이 확장 표시된다.
+4. 카테고리 그리드 8개(2×4)를 본다. 카드를 누르면 `/library?category={slug}`로 이동해 해당 카테고리 결과를 라이브러리에서 본다(ADR-0015 Amendment #2).
 5. 레벨 선택 바(Level 1~5)에서 자녀의 현재 레벨을 본다. 다른 레벨을 누르면 server action이 `children.current_level`을 UPDATE하고 `revalidatePath('/home')`로 추천 5권을 재계산한다.
 6. 화면 하단에 최근 7일 스트릭 막대그래프를 본다. 완독한 날은 `--color-primary`, 미완독일은 `--color-surface-3`로 표시된다.
 
@@ -72,12 +72,14 @@
 1. 미로그인 상태로 `/home` 접근 → `middleware.ts`가 `/login`으로 리다이렉트(phase-07 기존 동작, 무변경).
 2. 로그인했으나 자녀 0명 상태로 `/home` 접근 → 페이지 컴포넌트가 `children` 행 개수를 확인하고 0이면 `redirect('/onboarding')`. 미들웨어는 수정하지 않는다.
 
-### 4.3 카테고리 카드 클릭 (확장 흐름)
+### 4.3 카테고리 카드 클릭 (라이브러리 이동 흐름)
 
-1. 사용자가 카테고리 그리드의 "동물" 카드를 누른다 → 브라우저 URL이 `/home?cat=animals`로 바뀐다.
-2. 페이지가 같은 라우트로 다시 렌더링되며, 카테고리 그리드 아래에 "카테고리: 동물 (n권)" 섹션이 표시된다.
-3. 매칭된 책 카드 목록 + 닫기 버튼("닫기"를 누르면 `/home`으로 돌아감).
-4. 매칭 결과 0건이면 폴백 UI("이 카테고리에 아직 책이 없어요. 다른 카테고리를 둘러보세요!")를 표시한다(ADR-0015 결정 6).
+1. 사용자가 카테고리 그리드의 "동물" 카드를 누른다 → `/library?category=animals`로 이동한다.
+2. 라이브러리가 `?category=` 파라미터를 수신해 해당 카테고리로 필터링된 책 목록을 표시한다.
+3. 매칭 결과 0건이면 라이브러리의 빈 상태 폴백(library-browser empty)이 표시된다.
+4. 홈으로 돌아가려면 공통 헤더의 "홈" 링크를 사용한다(ADR-0021 공통 헤더).
+
+> 각주: 본 소절은 ADR-0015 Amendment #2로 갱신됨. phase-10 당시에는 `/home?cat={slug}` 홈 내부 확장 + 닫기 버튼 + home 측 0건 폴백(결정 6) 흐름이었으나, 라이브러리(phase-13) 신설로 카테고리 결과·빈 상태 처리가 모두 `/library`로 이전됐다.
 
 ### 4.4 레벨 변경 흐름
 
@@ -144,7 +146,7 @@
 | 카드 토큰 | Card sm (padding 14px, radius-sm 12px) |
 | 카드 액센트 | ADR-0015 결정 2.1 매핑 컬러 |
 | 카드 안 표시 | 한글 라벨 + 카테고리 아이콘 영역(이모지 또는 단순 SVG 일러스트 — CP3-a에서 확정) |
-| 클릭 동작 | `/home?cat={slug}` 쿼리 추가 (ADR-0015 결정 5b) |
+| 클릭 동작 | `/library?category={slug}`로 이동 (ADR-0015 Amendment #2) |
 | 매칭 알고리즘 | `book.title.toLowerCase().includes(keyword.toLowerCase())` boolean (ADR-0015 결정 1) |
 | 카테고리 결과 권수 캡 | 24권 (CP3-a에서 최종 확정. 본 문서는 캡 존재만 박제) |
 | 결과 0건 폴백 | "이 카테고리에 아직 책이 없어요." 메시지 + 다른 7개 카드 강조 (ADR-0015 결정 6) |
