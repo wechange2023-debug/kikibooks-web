@@ -106,7 +106,8 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 
 | 우선 | 작업 | 현황·실측 | 관련 파일 (grep 확인) |
 |---|---|---|---|
-| ★ 1순위 | **작업4 GDL iframe 헤더 노출** | **구현 완료·브라우저 최종 검증 대기**. 원인=GDL content_url이 postLink(사이트 전체 페이지: gdl-header·쿠키배너·Read 랜딩)였음. 해결=B-lite로 content_url을 H5P 전용 embed URL(`admin-ajax.php?action=h5p_embed&id={h5pId}`)로 전환(코드 `12016dc` push + 842권 실 upsert, ADR-0017 Amendment #3). 검증 SELECT 통과(embed 842/postLink 0/BookDash 54 무변경/attribution NULL 0). **남은 것**: H5P embed 풀스크린 렌더·표지 인터랙션 PM 브라우저 확인 | `scripts/sync_gdl.py`(content_url=EMBED_URL_TEMPLATE) · 뷰어/미들웨어 무변경(`html-reader.tsx`·`middleware.ts`) |
+| ✅ 종결 | **작업4-GDL iframe 헤더 노출** | **PM 브라우저 검증 통과·종결**. 원인=GDL content_url이 postLink(사이트 전체 페이지: gdl-header·쿠키배너·Read 랜딩)였음. 해결=B-lite로 content_url을 H5P 전용 embed URL(`admin-ajax.php?action=h5p_embed&id={h5pId}`)로 전환(코드 `12016dc` + 842권 실 upsert, ADR-0017 Amendment #3). 검증 SELECT 통과(embed 842/postLink 0/BookDash 54 무변경/attribution NULL 0) + PM 브라우저 확인 완료 | `scripts/sync_gdl.py`(content_url=EMBED_URL_TEMPLATE) · 뷰어/미들웨어 무변경 |
+| ★ 1순위 | **작업4-BookDash nav-bar 띠 노출** | **구현 완료·PM 검증 대기**. Book Dash 54권 외부 페이지 상단 `#nav-bar`(`position:fixed`, breadcrumb 띠) 부모 레벨 클리핑. 실측: 본문 h1이 `#wrapper padding-top:4em`(≈76.8px, 뷰포트 비의존)에서 시작 → iframe을 74px 위로 끌어올려(absolute, 부모 overflow-hidden) 띠만 제거, 본문 무손실(2줄 와핑 64px<74<76.8). 코드 `f8a37c1`. GDL은 embed로 chrome 부재라 클리핑 0. **남은 것**: 최장 제목 모바일 와핑 PM 브라우저 확인 | `app/(reader)/book/[id]/read/page.tsx`(clipNavBar 분기) · `components/book/html-reader.tsx`(CLIP_NAVBAR_CLASS) |
 
 ### 7.3 잔여 F-item (베타 차단 아님)
 
