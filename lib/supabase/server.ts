@@ -59,14 +59,10 @@ export function createClient() {
  *   - 명시적 관리자 권한이 필요한 Route Handler
  *
  * 그 외 모든 위치에서는 위 createClient() (RLS 적용)를 사용한다.
- *
- * Legacy fallback: SUPABASE_SECRET_KEY 미설정 시 옛 SUPABASE_SERVICE_ROLE_KEY 사용.
  */
 export function createServiceRoleClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const secretKey =
-    process.env.SUPABASE_SECRET_KEY ??
-    process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const secretKey = process.env.SUPABASE_SECRET_KEY;
 
   if (!url || !secretKey) {
     throw new Error(

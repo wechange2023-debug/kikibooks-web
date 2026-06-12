@@ -84,9 +84,7 @@ def load_env() -> tuple[str, str]:
     if ENV_FILE.exists():
         load_dotenv(ENV_FILE)
     url = os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
-    secret = os.environ.get("SUPABASE_SECRET_KEY") or os.environ.get(
-        "SUPABASE_SERVICE_ROLE_KEY"
-    )
+    secret = os.environ.get("SUPABASE_SECRET_KEY")
     if not url or not secret:
         print(
             "[FAIL] NEXT_PUBLIC_SUPABASE_URL 또는 SUPABASE_SECRET_KEY 누락 "

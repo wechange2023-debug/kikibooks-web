@@ -76,9 +76,7 @@ def load_env() -> Tuple[str, str, str | None]:
         load_dotenv(ENV_FILE)
 
     url = os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
-    secret = os.environ.get("SUPABASE_SECRET_KEY") or os.environ.get(
-        "SUPABASE_SERVICE_ROLE_KEY"
-    )
+    secret = os.environ.get("SUPABASE_SECRET_KEY")
     publishable = os.environ.get(
         "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY"
     ) or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
@@ -87,7 +85,7 @@ def load_env() -> Tuple[str, str, str | None]:
         print(
             "[FAIL] 환경변수 누락:\n"
             "       NEXT_PUBLIC_SUPABASE_URL\n"
-            "       SUPABASE_SECRET_KEY (또는 legacy SUPABASE_SERVICE_ROLE_KEY)\n"
+            "       SUPABASE_SECRET_KEY\n"
             "       로컬은 .env.local, CI는 GitHub Secrets로 설정."
         )
         sys.exit(1)
