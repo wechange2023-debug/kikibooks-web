@@ -185,3 +185,26 @@ D7(points·badges·별 3개 SVG 애니메이션 phase-13 전속 경계)을 **ADR
 ---
 
 *Amendment #3 끝.*
+
+---
+
+## Amendment #4 (2026-06-12 베타 품질개선 — 증상 B: /read 직접 진입 시 폴백 오발동 근본 수정)
+
+**배경(증상).** 베타 실측에서 `/book/{id}/read` URL에 **직접 진입**(주소창 붙여넣기·새로고침·외부 링크)하면 본문 대신 F15 폴백("책을 불러올 수 없어요")이 노출되는 증상이 보고됐다. 책 상세를 **경유**해 들어가면 정상이었다 — 진입 경로에만 의존하는 비결정적 실패였다.
+
+**원인.** `HtmlReader`는 `'use client'`지만 Next.js App Router에서 SSR되어 초기 HTML에 직렬화된다. 본문 D1 구현이 iframe `src`를 SSR 마크업에 인라인하고 `loading="eager"`라, 브라우저가 **hydration 전에 iframe 로드를 완료**할 수 있다. `onLoad`는 React 합성 이벤트라 hydration 시점에야 부착되므로, 그 전에 발화한 load 이벤트가 **유실**된다 → `status`가 `'loading'`에 머물다 본문 §"로딩·실패 폴백"의 5초 타임아웃(`LOAD_TIMEOUT_MS`)이 error 폴백을 **오발동**시킨다. 경유 진입은 클라이언트 네비게이션이라 iframe이 hydration 이후 생성돼 onLoad가 살아남았다(경로 의존성 설명).
+
+**결정(근본 수정, 타임아웃 상향 아님).** "리스너 부착 후 로딩 시작"을 보장한다. `HtmlReader`에 `mounted` 상태를 두고 클라이언트 마운트(`useEffect`) 이후에만 iframe을 렌더한다. iframe DOM 생성 시점에 `onLoad`/`onError`가 이미 부착돼 load 이벤트 유실이 불가능해진다. 5초 타임아웃 타이머도 `mounted` 이후 시작(hydration 지연이 타임아웃 예산을 잠식하지 않도록)한다. `LOAD_TIMEOUT_MS=5000`·sandbox(D6)·clipNavBar(작업4)·폴백 UI 무변경.
+
+**범위·정합.**
+- **D1 무변경** — iframe 단일 경로·`content_type='html'` 그대로. 렌더 게이트만 추가(코드 1파일 `components/book/html-reader.tsx`, 커밋 `04ff946`).
+- **F15 정합** — 본문 F15(외부 CDN 다운 → 폴백)는 유효하다. 본 수정은 "외부 가용성과 무관한 hydration 타이밍 오발동"을 제거해 폴백이 **진짜 실패에만** 뜨도록 정밀화한 것이다.
+- **GDL·Book Dash 공통** — 게이트는 source_platform 무관 전 html 경로에 적용된다.
+
+**검증(PM 프로덕션 5회 통과, 2026-06-12).** Book Dash 직접 진입 3회 + 경유 진입 1회 + GDL 직접 진입 1회 = 전부 본문 정상 렌더(폴백 오발동 0). 빌드: type-check·lint·`next build` 통과.
+
+본 ADR 본문 D1~D7은 무수정한다(phase-end ADR 본문 보존 관례 — Amendment #1·#2·#3 정합).
+
+---
+
+*Amendment #4 끝.*

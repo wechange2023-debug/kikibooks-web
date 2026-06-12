@@ -102,13 +102,14 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 
 ### 7.2 다음 세션 시작점 — 남은 작업
 
-> 작업2 공통 네비게이션(`c7788b6`)·stale spec 정정(`954fd80`)은 2026-06-11 완료(§7.1 이관). 본 트랙에 남은 작업은 **작업4 1건**.
+> 작업2 공통 네비게이션(`c7788b6`)·stale spec 정정(`954fd80`)은 2026-06-11 완료(§7.1 이관). **작업4 트랙은 2026-06-12 완전 종결**(GDL 헤더 · nav-bar 띠 · 이미지 404 · 증상 B 4건 전부 종결, 아래 표). 본 트랙에 베타 차단 잔여 작업 0건 — 잔여는 §7.3 F-item(비차단)뿐.
 
 | 우선 | 작업 | 현황·실측 | 관련 파일 (grep 확인) |
 |---|---|---|---|
 | ✅ 종결 | **작업4-GDL iframe 헤더 노출** | **PM 브라우저 검증 통과·종결**. 원인=GDL content_url이 postLink(사이트 전체 페이지: gdl-header·쿠키배너·Read 랜딩)였음. 해결=B-lite로 content_url을 H5P 전용 embed URL(`admin-ajax.php?action=h5p_embed&id={h5pId}`)로 전환(코드 `12016dc` + 842권 실 upsert, ADR-0017 Amendment #3). 검증 SELECT 통과(embed 842/postLink 0/BookDash 54 무변경/attribution NULL 0) + PM 브라우저 확인 완료 | `scripts/sync_gdl.py`(content_url=EMBED_URL_TEMPLATE) · 뷰어/미들웨어 무변경 |
 | ✅ 종결 | **작업4-BookDash nav-bar 띠 노출** | **PM 브라우저 검증 통과·종결**(띠 소멸·본문 무손실). Book Dash 54권 외부 페이지 상단 `#nav-bar`(`position:fixed`, breadcrumb 띠) 부모 레벨 클리핑. 본문 h1이 `#wrapper padding-top:4em`(≈76.8px, 뷰포트 비의존)에서 시작 → iframe 74px 위로(absolute, 부모 overflow-hidden) 띠만 제거(2줄 와핑 64px<74<76.8). 코드 `f8a37c1`. GDL은 embed로 chrome 부재라 클리핑 0 | `app/(reader)/book/[id]/read/page.tsx`(clipNavBar) · `components/book/html-reader.tsx`(CLIP_NAVBAR_CLASS) |
 | ✅ 종결 | **작업4-BookDash 본문 이미지 404** | **차단 완료**. 전수 감사(54권) — 15권 본문 이미지 전부 404(원본 미배포). 기존 표지 블랙리스트 4권 + **신규 11권**을 `BOOK_DASH_404_SOURCE_IDS`에 추가(코드 `4e574fb`, ADR-0014 Amendment #6). is_active=false는 주간 cron이 되돌려 부적합 → 코드 측 블랙리스트(cron-proof). 노출 가능 881권(§7.3 F-item 참조) | `lib/shared/blacklist.ts`(15건) |
+| ✅ 종결 | **작업4-증상 B: /read 직접 진입 폴백 오발동** | **근본 수정·PM 검증 통과**. 증상=`/book/{id}/read` URL **직접 진입**(주소창·새로고침) 시 본문 대신 "책을 불러올 수 없어요" 폴백 노출(상세 **경유** 진입은 정상). 원인=`HtmlReader`가 SSR되어 iframe `src`가 초기 HTML에 인라인 + `loading="eager"` → 브라우저가 **hydration 전 로드 완료** → `onLoad`(hydration 시 부착)가 load 이벤트 **유실** → 5초 타임아웃이 error 폴백 오발동. 수정=iframe을 `mounted` 게이트로 **클라이언트 마운트 후에만 렌더** + 타이머도 mounted 이후 시작("리스너 부착 후 로딩 시작" 보장, **타임아웃 상향 아님**). 코드 `04ff946`(1파일), ADR-0017 Amendment #4. 검증=PM 프로덕션 5회(Book Dash 직접 3 + 경유 1 + GDL 직접 1) 전부 정상 | `components/book/html-reader.tsx`(mounted 게이트) |
 
 ### 7.3 잔여 F-item (베타 차단 아님)
 
@@ -119,13 +120,13 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 | 노출 가능 881권 (목표 −19) | 작업4 이미지 404 차단 후 노출 가능 = GDL 842 + Book Dash 39 = **881권**. ADR-0008 베타 목표 900권 대비 **−19권**. GDL 추가 소싱(현 license 필터 NC/ND skip 368 중 재검토 여지) 등 보충 검토 | `lib/shared/blacklist.ts`(15 차단) · `scripts/sync_gdl.py` |
 | Book Dash 원본 이미지 404 재감사 | 차단 11권은 원본(bookdash.github.io) 미배포가 원인 — 원본 측 복구 시 블랙리스트 해제 가능. **분기별 전수 이미지 재감사**로 복구 여부 확인(ADR-0014 §6 후속 과제 2, Amendment #6) | `lib/shared/blacklist.ts` · 전수 HEAD 감사 스크립트(리포 외부) |
 
-### 7.4 새 세션 인수인계 (2026-06-11 종결)
+### 7.4 새 세션 인수인계 (2026-06-12 종결)
 
-- **origin/main HEAD**: `954fd80` (working tree clean). 2026-06-11 세션에서 작업2(공통 헤더)·stale spec 정정 종결, 모두 Vercel 배포 success.
-- **구조 변경 주의**: 로그인 후 화면 3종이 `app/(reader)/` route group으로 이동됨(URL 불변). 이후 작업 시 경로는 `app/(reader)/home`·`app/(reader)/library`·`app/(reader)/book/[id]`. 공통 헤더는 `components/app/app-header.tsx`(client, usePathname 분기) + `app/(reader)/layout.tsx`가 주입. ADR-0021 참조.
-- **잔존 작업**: 본 트랙은 **작업4 GDL iframe 헤더 노출 1건**만 남음(무거움, 실측 선행). §7.3 F-item 2건은 베타 차단 아님.
-- **작업4 조사 후보 ①~④** (다음 세션 실측 시작점):
-  - ① **뷰어 컴포넌트 실측** — `app/(reader)/book/[id]/read/page.tsx` + HtmlReader 구조에서 GDL 콘텐츠가 iframe 임베드인지 자체 렌더인지 확정(ADR-0017 book-reader-architecture 교차).
-  - ② **GDL 콘텐츠 로딩 방식** — iframe `src`가 cross-origin GDL 도메인 직접 로드인지, 프록시/자체 호스팅인지. CSP·X-Frame-Options 제약 실측.
-  - ③ **"헤더 노출"의 정의** — read 화면은 현재 공통 헤더 미렌더(몰입 보존, ADR-0021 D3). 작업4의 "헤더"가 공통 AppHeader 재노출인지 뷰어 전용 헤더(닫기·진도 등)인지 PM 정의 선행.
-  - ④ **cross-origin 오버레이 가능성** — iframe 내부에 헤더 주입 불가(cross-origin) 시, iframe 밖 부모 레벨 오버레이 헤더 방식·레이아웃 충돌(read 풀스크린 `<main flex-1 overflow-hidden>`) 영향 범위.
+- **origin/main HEAD**: `04ff946` (working tree clean) — 본 문서 커밋 직후 신규 해시로 갱신 예정. 2026-06-12 세션에서 **작업4 트랙 완전 종결**(증상 B 근본 수정 + PM 프로덕션 5회 검증), Vercel 배포 success.
+- **작업4 트랙 = 완전 종결** (4건 전부 ✅, §7.2 표): ① GDL iframe 헤더 노출(content_url→H5P embed, `12016dc`, ADR-0017 Am#3) ② Book Dash nav-bar 띠(부모 클리핑, `f8a37c1`) ③ Book Dash 본문 이미지 404(블랙리스트 15건, `4e574fb`, ADR-0014 Am#6) ④ **증상 B: /read 직접 진입 폴백 오발동**(mounted 게이트, `04ff946`, ADR-0017 Am#4). 본 트랙 베타 차단 잔여 0건.
+- **구조 변경 주의(유지)**: 로그인 후 화면 3종이 `app/(reader)/` route group(URL 불변). 경로는 `app/(reader)/home`·`app/(reader)/library`·`app/(reader)/book/[id]`. 공통 헤더 `components/app/app-header.tsx`(usePathname 분기) + `app/(reader)/layout.tsx` 주입. ADR-0021 참조.
+- **보류 항목(베타 직전·외부 의존)**:
+  - 이전 기본(legacy) 시크릿 키 폐기 — 키 로테이션 후 구 키 revoke.
+  - `hellokiki.co.kr` Vercel 연결 — 베타 직전 도메인 연결 + `NEXT_PUBLIC_SITE_URL` 설정(robots·sitemap·OG 일괄 정정).
+  - CP5(약관·개인정보) — 자체 작성본 법률 전문가 검토 1회 대기(결제 도입·사용자 증가 전).
+- **잔여 F-item(베타 차단 아님, §7.3)**: 노출 가능 881권(목표 900 대비 −19) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화.
