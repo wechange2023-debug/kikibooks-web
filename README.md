@@ -27,8 +27,9 @@ cp .env.example .env.local
 > Secret 키는 비밀번호 매니저에 보관하고, 직접 타이핑하지 말고 복사해서 붙여넣으세요.
 > 새 API 키 시스템(Publishable / Secret) 채택 배경은 [`docs/adr/0003-supabase-new-api-keys.md`](./docs/adr/0003-supabase-new-api-keys.md).
 >
-> ※ 옛 이름(`NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`)으로 입력해도
-> 코드 fallback 덕분에 당분간 작동하지만, 새 이름으로의 전환을 권장합니다.
+> ※ publishable 키는 옛 이름(`NEXT_PUBLIC_SUPABASE_ANON_KEY`)으로 입력해도 코드 fallback
+> 덕분에 당분간 작동하지만, 새 이름으로의 전환을 권장합니다. (secret 키 옛 이름 fallback은
+> 2026-06-12 제거 — `SUPABASE_SECRET_KEY`만 인식, ADR-0003 Amendment #3.)
 
 ### 3. 개발 서버 실행
 

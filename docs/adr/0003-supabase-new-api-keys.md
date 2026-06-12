@@ -131,4 +131,16 @@ Amendment #1(§6)에서 보류했던 후속 조치, 즉 노출됐던 옛 secret 
 
 ---
 
+## 8. 갱신 (2026-06-12) — Legacy fallback 코드 제거 (Amendment #3)
+
+§3.3가 정의한 fallback 제거 조건을 프로젝트 한정으로 충족하여 `SUPABASE_SERVICE_ROLE_KEY` 2순위 폴백을 코드에서 제거했다.
+
+- **제거 일자**: 2026-06-12
+- **트리거**: Amendment #2(§7)에서 노출됐던 옛 secret 키를 revoke 완료 → 폴백이 읽을 legacy 키 자체가 부재. 전 환경(.env.local·GitHub Secrets·Vercel)이 §2 표준 이름 `SUPABASE_SECRET_KEY`로 단일 통일됨(워크플로 3개 실측). 본 Amendment가 §3.3 조건 3("후속 ADR로 제거 결정 기록")을 충족한다. §3.3 조건 1(Supabase의 Legacy 키 전체 비활성화 발표)은 글로벌 미발표이나, 본 프로젝트 키가 이미 폐기되어 동일 효과.
+- **제거 범위**: `?? / or` 폴백 7건 — `lib/supabase/server.ts` 1 + `scripts/*.py` 6(`sync_gdl`·`sync_book_dash`·`verify_book_dash_sync`·`verify_gdl_sync`·`verify_licenses`·`verify_schema`). 커밋 `170b148`.
+- **제거 후 동작**: 새 이름 미설정 시 명시 실패 — `server.ts`는 `throw Error`, 스크립트는 `[FAIL]` 출력 + `sys.exit(1)`. 따라서 §4가 "fallback 없음" 대안을 기각한 사유였던 "무성 실패 위험"은 발생하지 않는다.
+- **보존**: §2.1 코드 예시는 의사결정 당시 기록으로 원문 유지(역사 보존). publishable 키의 `NEXT_PUBLIC_SUPABASE_ANON_KEY` fallback은 본 제거 범위가 아니며 코드에 잔존한다.
+
+---
+
 *문서 끝. 본 ADR의 변경은 새 ADR로 작성하고, 본 문서는 "Superseded by ADR-XXXX" 표시 후 유지합니다.*
