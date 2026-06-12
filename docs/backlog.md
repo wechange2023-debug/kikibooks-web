@@ -119,14 +119,17 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 | 작업1 level·keyword URL 미동기화 | URL 동기화는 category만 구현됨. level·keyword는 서버(`app/library/page.tsx`)가 복원하지 않아 의도적 미반영 — 확장하려면 서버 searchParams 계약 동반 확장 필요 | `components/library/library-browser.tsx`(level·keyword 핸들러) · `app/library/page.tsx`(searchParams) |
 | 노출 가능 881권 (목표 −19) | 작업4 이미지 404 차단 후 노출 가능 = GDL 842 + Book Dash 39 = **881권**. ADR-0008 베타 목표 900권 대비 **−19권**. GDL 추가 소싱(현 license 필터 NC/ND skip 368 중 재검토 여지) 등 보충 검토 | `lib/shared/blacklist.ts`(15 차단) · `scripts/sync_gdl.py` |
 | Book Dash 원본 이미지 404 재감사 | 차단 11권은 원본(bookdash.github.io) 미배포가 원인 — 원본 측 복구 시 블랙리스트 해제 가능. **분기별 전수 이미지 재감사**로 복구 여부 확인(ADR-0014 §6 후속 과제 2, Amendment #6) | `lib/shared/blacklist.ts` · 전수 HEAD 감사 스크립트(리포 외부) |
+| 구 vercel.app 주소 canonical | `kikibooks-web.vercel.app`가 커스텀 도메인으로 리다이렉트 없이 200 직접 응답(2026-06-12 curl 실측) — SEO/canonical 관점 추후 정리 후보. `metadataBase`는 `hellokiki.co.kr` 선언이라 OG·canonical 정상, 베타 비차단 | Vercel 도메인 설정(리포 외부) · `lib/site.ts`(metadataBase) |
+| legacy 키 환경변수 폴백 정리 | `SUPABASE_SERVICE_ROLE_KEY` 폴백 라인 7건(`?? / or`)은 기능 무해(표준 `SUPABASE_SECRET_KEY` 단일 주입) — 추후 정리 후보 | `lib/supabase/server.ts` · `scripts/*.py`(6종) |
 
 ### 7.4 새 세션 인수인계 (2026-06-12 종결)
 
-- **origin/main HEAD**: `04ff946` (working tree clean) — 본 문서 커밋 직후 신규 해시로 갱신 예정. 2026-06-12 세션에서 **작업4 트랙 완전 종결**(증상 B 근본 수정 + PM 프로덕션 5회 검증), Vercel 배포 success.
+- **origin/main HEAD**: `27a11a7` (working tree clean) — 본 문서 커밋 직후 신규 해시로 갱신 예정. 2026-06-12 세션에서 **작업4 트랙 완전 종결**(증상 B 근본 수정 + PM 프로덕션 5회 검증) 후 **§7.4 정합화**(legacy 키 폐기·도메인 연결 종결 반영), Vercel 배포 success.
 - **작업4 트랙 = 완전 종결** (4건 전부 ✅, §7.2 표): ① GDL iframe 헤더 노출(content_url→H5P embed, `12016dc`, ADR-0017 Am#3) ② Book Dash nav-bar 띠(부모 클리핑, `f8a37c1`) ③ Book Dash 본문 이미지 404(블랙리스트 15건, `4e574fb`, ADR-0014 Am#6) ④ **증상 B: /read 직접 진입 폴백 오발동**(mounted 게이트, `04ff946`, ADR-0017 Am#4). 본 트랙 베타 차단 잔여 0건.
 - **구조 변경 주의(유지)**: 로그인 후 화면 3종이 `app/(reader)/` route group(URL 불변). 경로는 `app/(reader)/home`·`app/(reader)/library`·`app/(reader)/book/[id]`. 공통 헤더 `components/app/app-header.tsx`(usePathname 분기) + `app/(reader)/layout.tsx` 주입. ADR-0021 참조.
-- **보류 항목(베타 직전·외부 의존)**:
-  - 이전 기본(legacy) 시크릿 키 폐기 — 키 로테이션 후 구 키 revoke.
-  - `hellokiki.co.kr` Vercel 연결 — 베타 직전 도메인 연결 + `NEXT_PUBLIC_SITE_URL` 설정(robots·sitemap·OG 일괄 정정).
+- **보류 2건 종결(2026-06-12)** — 직전 핸드오버가 stale 표기하던 2건을 실측으로 정합화(§3 CP 노트와 일치):
+  - ✅ **이전 기본(legacy) 시크릿 키 폐기 종결** — 2026-06-10 revoke 완료(§3 CP7과 정합). 2026-06-12 PM 대시보드 실측으로 secret key는 `hellokiki_prod_server` 단일 키만 존재 확인. 코드/워크플로 legacy 참조는 비활성 `?? / or` 폴백 7건뿐(grep 점검, 무영향), 프로덕션 로그인 정상.
+  - ✅ **`hellokiki.co.kr` Vercel 연결 종결** — 2026-06-10 연결 완료(§3 line 59~60과 정합). 2026-06-12 curl 실측 `www.hellokiki.co.kr` 200 OK·apex 308→www 정규화·Server: Vercel, `NEXT_PUBLIC_SITE_URL` Production 설정 PM 확인.
+- **보류 항목(베타 직전·외부 의존) — 잔여 1건**:
   - CP5(약관·개인정보) — 자체 작성본 법률 전문가 검토 1회 대기(결제 도입·사용자 증가 전).
-- **잔여 F-item(베타 차단 아님, §7.3)**: 노출 가능 881권(목표 900 대비 −19) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화.
+- **잔여 F-item(베타 차단 아님, §7.3)**: 노출 가능 881권(목표 900 대비 −19) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / 구 vercel.app 주소 canonical 정리 / legacy 키 환경변수 폴백 7건 정리.
