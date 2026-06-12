@@ -24,6 +24,9 @@ import { startReadingSession } from '@/lib/book/reading-session';
  *     privacy). 협업으로 referrer가 필요해지면 phase-2+ 재검토.
  *
  * 로딩·실패 폴백 (F15 — iframe 외부 가용성):
+ *   - iframe은 클라이언트 mounted 이후에만 렌더한다(증상 B 근본 수정). SSR된 iframe이
+ *     hydration 전에 load를 끝내면 onLoad가 유실되어 5초 타임아웃 error 폴백이 오발동하는
+ *     문제를 "리스너 부착 후 로딩 시작"으로 차단한다(타임아웃 상향 아님).
  *   - status 'loading' → 'loaded'(onLoad) | 'error'(onError 또는 5초 타임아웃).
  *   - 5초 타임아웃 근거: 일반 네트워크 지연 평균 2~3초 + 안전 여유. 초과 시 백지
  *     화면 대신 폴백 UI(errorTitle·errorBody + 책 상세 돌아가기)를 노출한다.
@@ -96,6 +99,16 @@ export function HtmlReader({
   clipNavBar = false,
 }: HtmlReaderProps) {
   const [status, setStatus] = useState<ReaderStatus>('loading');
+  // 클라이언트 마운트 게이트(증상 B 근본 수정) — false 동안은 iframe을 렌더하지 않는다.
+  // HtmlReader는 'use client'여도 SSR되어 초기 HTML에 직렬화되므로, iframe src를 SSR
+  // 마크업에 인라인하면 브라우저가 hydration 전에 로드를 끝낼 수 있고, hydration으로
+  // 부착되는 onLoad가 그 load 이벤트를 유실 → 5초 타임아웃이 error 폴백을 오발동시킨다.
+  // mounted 이후에만 iframe을 생성하면 onLoad/onError가 이미 부착된 상태가 보장된다.
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // 세션 시작 — 마운트 1회(intent §5.1 L104). 중복 가드는 server action 책임(§4.3).
   useEffect(() => {
@@ -105,13 +118,17 @@ export function HtmlReader({
   }, [bookId]);
 
   useEffect(() => {
+    // 타이머는 mounted(=iframe 생성 + 리스너 부착) 이후에만 시작한다. hydration 지연이
+    // 타임아웃 예산을 잠식하지 않도록 mounted를 deps로 둔다(증상 B 수정).
+    if (!mounted) return;
+
     const timer = setTimeout(() => {
       // 5초 내 onLoad 미발화 시에만 error 전환(이미 loaded/error면 무시).
       setStatus((prev) => (prev === 'loading' ? 'error' : prev));
     }, LOAD_TIMEOUT_MS);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [mounted]);
 
   const handleLoad = () => {
     setStatus((prev) => (prev === 'loading' ? 'loaded' : prev));
@@ -139,16 +156,19 @@ export function HtmlReader({
           </div>
         ) : (
           <>
-            <iframe
-              src={src}
-              title={title}
-              sandbox="allow-scripts allow-same-origin"
-              referrerPolicy="no-referrer"
-              loading="eager"
-              onLoad={handleLoad}
-              onError={handleError}
-              className={clipNavBar ? CLIP_NAVBAR_CLASS : BASE_IFRAME_CLASS}
-            />
+            {/* mounted 이후에만 iframe 생성 — onLoad/onError 부착 후 로딩 시작 보장(증상 B). */}
+            {mounted && (
+              <iframe
+                src={src}
+                title={title}
+                sandbox="allow-scripts allow-same-origin"
+                referrerPolicy="no-referrer"
+                loading="eager"
+                onLoad={handleLoad}
+                onError={handleError}
+                className={clipNavBar ? CLIP_NAVBAR_CLASS : BASE_IFRAME_CLASS}
+              />
+            )}
             {status === 'loading' && (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-surface-3">
                 <div
