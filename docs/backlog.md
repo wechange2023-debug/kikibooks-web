@@ -119,8 +119,9 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 | 작업1 level·keyword URL 미동기화 | URL 동기화는 category만 구현됨. level·keyword는 서버(`app/library/page.tsx`)가 복원하지 않아 의도적 미반영 — 확장하려면 서버 searchParams 계약 동반 확장 필요 | `components/library/library-browser.tsx`(level·keyword 핸들러) · `app/library/page.tsx`(searchParams) |
 | 노출 가능 881권 (목표 −19) | 작업4 이미지 404 차단 후 노출 가능 = GDL 842 + Book Dash 39 = **881권**. ADR-0008 베타 목표 900권 대비 **−19권**. GDL 추가 소싱(현 license 필터 NC/ND skip 368 중 재검토 여지) 등 보충 검토 | `lib/shared/blacklist.ts`(15 차단) · `scripts/sync_gdl.py` |
 | Book Dash 원본 이미지 404 재감사 | 차단 11권은 원본(bookdash.github.io) 미배포가 원인 — 원본 측 복구 시 블랙리스트 해제 가능. **분기별 전수 이미지 재감사**로 복구 여부 확인(ADR-0014 §6 후속 과제 2, Amendment #6) | `lib/shared/blacklist.ts` · 전수 HEAD 감사 스크립트(리포 외부) |
-| 구 vercel.app 주소 canonical | `kikibooks-web.vercel.app`가 커스텀 도메인으로 리다이렉트 없이 200 직접 응답(2026-06-12 curl 실측) — SEO/canonical 관점 추후 정리 후보. `metadataBase`는 `hellokiki.co.kr` 선언이라 OG·canonical 정상, 베타 비차단 | Vercel 도메인 설정(리포 외부) · `lib/site.ts`(metadataBase) |
+| ✅ 종결 — 구 vercel.app 주소 canonical | **리다이렉트 설정 완료(2026-06-12, 코드 0줄)** — PM이 Vercel 대시보드 Settings → Domains에서 `kikibooks-web.vercel.app`을 "Redirect to Another Domain" → `www.hellokiki.co.kr`, **307 Temporary Redirect**로 설정. curl 실측: 루트 `307 → https://www.hellokiki.co.kr/`, `/library` `307 → https://www.hellokiki.co.kr/library`(경로 유지·Server: Vercel). 코드 내 vercel.app 하드코딩 0건(직전 조사) — auth 콜백·redirectTo는 요청 host/`window.location.origin` 상대라 무간섭. **후속 1건**: 307 → 308(영구) 승격 — 수일 운영 후 대시보드 설정 변경만(코드 0줄) | Vercel 도메인 설정(리포 외부) |
 | ✅ 종결 — legacy 키 폴백 제거 | `SUPABASE_SERVICE_ROLE_KEY` 폴백 7건(`?? / or`) **제거 완료(2026-06-12, 커밋 `170b148`)** — server.ts 1 + scripts 6. `SUPABASE_SECRET_KEY` 단독 참조, 미설정 시 명시 실패(throw / [FAIL]+exit). ADR-0003 Amendment #3 | `lib/supabase/server.ts` · `scripts/*.py`(6종) |
+| GitHub Actions Node 20 deprecation | `verify-licenses` 수동 실행(2026-06-12)에서 **Node.js 20 deprecation 경고** 확인 — `checkout@v4`·`setup-python@v5`의 Node 20 런타임이 향후 Node 24로 강제 전환 예정 안내. 현행 3개 워크플로 모두 v4/v5 사용, **현재 동작 정상(비차단)**. `checkout@v5`·`setup-python@v6` 안정화 시 일괄 승격 검토 | `.github/workflows/*.yml`(3종) |
 
 ### 7.4 새 세션 인수인계 (2026-06-12 종결)
 
@@ -132,4 +133,4 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
   - ✅ **`hellokiki.co.kr` Vercel 연결 종결** — 2026-06-10 연결 완료(§3 line 59~60과 정합). 2026-06-12 curl 실측 `www.hellokiki.co.kr` 200 OK·apex 308→www 정규화·Server: Vercel, `NEXT_PUBLIC_SITE_URL` Production 설정 PM 확인.
 - **보류 항목(베타 직전·외부 의존) — 잔여 1건**:
   - CP5(약관·개인정보) — 자체 작성본 법률 전문가 검토 1회 대기(결제 도입·사용자 증가 전).
-- **잔여 F-item(베타 차단 아님, §7.3)**: 노출 가능 881권(목표 900 대비 −19) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / 구 vercel.app 주소 canonical 정리.
+- **잔여 F-item(베타 차단 아님, §7.3)**: 노출 가능 881권(목표 900 대비 −19) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 리다이렉트 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격).
