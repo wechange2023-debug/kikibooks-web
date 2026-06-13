@@ -1,17 +1,19 @@
-# 키키북스 베타 PRD (Product Requirements Document)
+# HelloKiki(헬로키키) 베타 PRD (Product Requirements Document)
 
-> **적용 범위**: 베타 출시(2026-08 목표) 한정. Phase 2 이후는 별도 풀 PRD.
-> **작성**: 2026-06-04
-> **출처**: 리포 내 `PLAN.md`, `docs/intent/*`, `docs/adr/*`, `tasks/phase-14-beta-infrastructure.json`
+> **적용 범위**: 베타 출시(2026-08 목표, 작업량에 따라 조정 가능) 한정. Phase 2 이후는 별도 풀 PRD.
+> **작성**: 2026-06-04 · **개정**: 2026-06-13 (v2)
+> **출처**: 리포 내 `PLAN.md`(v2.0 §3·§4), `docs/intent/*`, `docs/adr/*`(특히 `0022-content-source-expansion.md`·`0023-ai-features-and-tts-policy.md`), `tasks/phase-14-beta-infrastructure.json`
 > **성격**: 베타 한정 경량 PRD(재구성판). 분산된 요구사항 정보를 PRD 구조로 정렬·통합한 문서이며, 신규 창작은 페르소나 절(§2)의 ※ 표시 문장으로 한정한다.
 
 ---
 
 ## 1. 비전
 
-키키북스는 한국 유아(만 3~7세)를 대상으로 한 영어 그림책 e-라이브러리다. 베타는 무료 합법 콘텐츠(CC BY 4.0 / Public Domain) 900권 이상만으로 출시하고, 출시와 동시에 한국 출판사 협상 트랙을 가동한다.
+HelloKiki(헬로키키)는 한국 유아(만 3~7세)를 대상으로 한 영어 그림책 e-라이브러리다. 베타는 무료 합법 콘텐츠(CC BY 4.0 / Public Domain)로 출시하고, 출시와 동시에 한국 출판사 협상 트랙을 가동한다. 콘텐츠 목표는 **900권 하한(ADR-0008) / Phase 1.5로 ~960권 회복(ADR-0022)** 병기.
 
-> 출처: `PLAN.md:L33`, `PLAN.md:L35~L39`, `README.md:L3~L4`, `docs/adr/0008-beta-content-target-900.md`
+> **무료/유료 구분**: 도서 콘텐츠는 **무료 합법(CC BY / PD) 유지**가 정체성이며, Phase 1.5의 AI(LLM)·TTS 기능 **운영비만 유료 진입**한다(콘텐츠 구매가 아님, ADR-0023 §2.8).
+
+> 출처: `PLAN.md:L33`, `PLAN.md:L35~L39`, `README.md:L3~L4`, `docs/adr/0008-beta-content-target-900.md`, `docs/adr/0022-content-source-expansion.md`
 
 ---
 
@@ -90,6 +92,22 @@
 
 > 출처: `PLAN.md:L500~L509`, `tasks/phase-14-beta-infrastructure.json` verification(v8·v9·v10), `docs/adr/0020-footer-policy.md`
 
+### 3.4 Phase 1.5 베타 보강 (AI·TTS·콘텐츠 — 계획 v2 신설)
+
+> 계획 v2(ADR-0022·0023, PLAN.md v2.0 §3 Phase 1.5)로 베타 출시 전 추가되는 DoD. 트랙A(콘텐츠 확장)·트랙B(AI/TTS)는 병렬 진행한다.
+
+**트랙B — AI 기능**
+- **캐릭터 AI 대화 옵션 A**(선택형 대화) 작동 — 자녀는 제시된 선택지(버튼)로만 상호작용, **자유 텍스트 입력 없음**. 책 컨텍스트 기반 이해 확인·캐릭터 반응 (ADR-0023 §2.1)
+- **도서 낭독 TTS**(배치 사전 생성, 실시간 생성 금지) 재생 작동 + **어트리뷰션 표기** — BY/BY-3.0 원본 음성은 어트리뷰션 의무, **CC BY-SA 원본 음성은 BY-SA 동일 라이선스 승계** (ADR-0023 §2.4·§2.6)
+
+**트랙A — 콘텐츠 확장**
+- 노출 **~960권** 달성 — 900 하한(ADR-0008) / ~960 회복(ADR-0022): GDL 심화(842→~937, cc-by-3-0 화이트리스트+slug 매핑) + 자체 e-book 23권. PLAN.md v2.0 §4와 동일 표현
+- 큐레이션 정책: 표본 검수 + 사용자 신고/즉시 차단(`is_active=false`·블랙리스트) 안전망 작동 (ADR-0022 §2.6)
+
+> 참고(비기능·안전): 옵션 A는 **자유 입력 부재로 구조적 저위험**(부적절 입력 유도·PII 유출 경로 차단). AI/TTS는 **베타 월 비용 상한**(토큰·문자 상한 + 배치 사전 생성)으로 통제. AI 대화 로그·이해도 결과 수집 시 개인정보처리방침 정합 + 보호자 열람·파기 (ADR-0023 §2.7·§2.8)
+
+> 출처: `docs/adr/0022-content-source-expansion.md`, `docs/adr/0023-ai-features-and-tts-policy.md`, `PLAN.md`(v2.0 §3·§4·§5·§12)
+
 ---
 
 ## 4. Out of Scope (베타 제외)
@@ -103,11 +121,13 @@
 - 즐겨찾기 ⭐ 토글 UI (phase-13 라이브러리 시점 통합)
 - 결제·학부모 리포트·알림톡 (Phase 3)
 - B2B 학원 대시보드 (Phase 3)
+- 캐릭터 AI **음성 롤플레잉(옵션 C)** = v1.1 유보 (실시간 음성 입출력) / **자유 텍스트 입력(옵션 B)** = 베타 후 단계적 검토 (ADR-0023 §2.1)
 
 **콘텐츠**
 - 유명 작가 미협상 IP (Eric Carle·Browne·Donaldson 등 — 협상 트랙, Phase 2~3)
 - 한국 출판사 협상 콘텐츠 (베타 출시 후 협상 시작)
-- Vooks·Epic·StoryWeaver·LibriVox·Bloom 등 확장 카탈로그 (Phase 2)
+- Vooks·Epic·LibriVox 확장 카탈로그 (Phase 2)
+- ※ **StoryWeaver·Bloom은 베타 제외 아님 → Phase 1.5 트랙A 조건부 포함**: StoryWeaver는 **공식 bulk/파트너 API 확보 선행**(공개 API Cloudflare 403, 스크래핑·우회 금지), Bloom은 **Parse 크리덴셜 + 약관(상업 재배포) 확인** 조건부 (ADR-0022 §2.3·§2.4). African Storybook은 GDL 경유 34권으로 갈음
 
 **인프라**
 - OG 이미지 비트맵 한글화 (#16, post-beta 이관 — 폰트 번들링·edge 런타임 의존)
@@ -127,10 +147,10 @@
 | 어트리뷰션 무결성 | `attribution_text IS NULL` = 0 |
 
 **다음 단계 진입 트리거**
-- 베타 정식 공개: 내부 테스터 5~10명이 가입~완독을 막힘 없이 완료 → Vercel Production 배포 + 초대 링크 공유
+- 베타 정식 공개: **Phase 1.5 완료** — 내부 테스터 5~10명 가입~완독 막힘 없음 + **노출 ~960권** + **디자인 리뉴얼 완료** → Vercel Production 배포 + 초대 링크 공유 (PLAN.md v2.0 §13 동일 기준)
 - Phase 2 진입: 유료 가입 의향 100명 또는 완독 세션 300건
 
-> 출처: `PLAN.md:L102·L411`, `PLAN.md:L483`, `PLAN.md:L619~L620`
+> 출처: `PLAN.md:L102·L411`, `PLAN.md:L483`, `PLAN.md`(v2.0 §13 의사결정 트리거)
 
 ---
 
