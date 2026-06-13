@@ -125,9 +125,9 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
 | GitHub Actions Node 20 deprecation | `verify-licenses` 수동 실행(2026-06-12)에서 **Node.js 20 deprecation 경고** 확인 — `checkout@v4`·`setup-python@v5`의 Node 20 런타임이 향후 Node 24로 강제 전환 예정 안내. 현행 3개 워크플로 모두 v4/v5 사용, **현재 동작 정상(비차단)**. `checkout@v5`·`setup-python@v6` 안정화 시 일괄 승격 검토 | `.github/workflows/*.yml`(3종) |
 | 약관·개인정보처리방침 법률 검토 1회 | **결제 도입·사용자 증가 전 필수.** 베타는 2026-06-12 PM 결정으로 **자체 작성본**(936bdc5, 변호사 미검토)을 그대로 적용해 CP5 종결(§4 CP5 노트). 결제 게이트 도입 또는 사용자 본격 증가 시점 이전에 법률 전문가 검토 1회를 거쳐 문안 보정 | `app/terms/page.tsx` · `app/privacy/page.tsx` |
 
-### 7.4 새 세션 인수인계 (2026-06-12 갱신)
+### 7.4 새 세션 인수인계 (2026-06-13 갱신)
 
-- **origin/main HEAD**: `ef01134` (working tree clean) — 본 문서 커밋 직후 신규 해시로 갱신 예정(기존 관례 유지).
+- **origin/main HEAD**: `7aed470` (working tree clean) — 본 문서 커밋 직후 신규 해시로 갱신 예정(기존 관례 유지).
 - **phase-14 = 완료 / 보류 0건**: tasks JSON 2파일(`tasks/_index.json`·`tasks/phase-14-beta-infrastructure.json`)은 **2026-06-10 시점에 이미 phase-14 `success`·CP1~7 전건 종결로 마킹**됨(`completed_phases: 17`·`remaining_phases: 0`). 마지막 미정합이던 CP5만 본 세션에서 문서 정합화 → **베타 차단 보류 0건**. (옵션 B: 이미 success인 JSON은 무수정, 문서만 정합화.)
 - **2026-06-12 세션 종결 내역**:
   - ✅ **legacy secret 키 폐기 확인** — 2026-06-10 PM revoke 완료분 재확인. secret key는 `SUPABASE_SECRET_KEY` 표준 단일 키만 유효.
@@ -135,9 +135,14 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
   - ✅ **도메인 연결 정합화**(`1b8c80f`) — `hellokiki.co.kr` 연결 종결 반영(§3 도메인 노트·§4와 정합).
   - ✅ **vercel.app 307 리다이렉트**(`ef01134`, 대시보드 설정·코드 0줄) — `kikibooks-web.vercel.app` → `www.hellokiki.co.kr` 307 Temporary Redirect(경로 유지). curl 실측 통과(§7.3).
   - ✅ **CP5 stale 정합화**(이번 커밋) — §4 CP5 종결 노트 + §7.3 법률 검토 후속 F-item 등재. JSON 무수정.
+- **2026-06-13 세션 종결 내역(계획 v2 문서 트랙)**:
+  - ✅ **PLAN.md v2.0 개정**(`a24631b`) — HelloKiki 명칭 + Phase 1.5 베타 보강(트랙A 콘텐츠 확장·트랙B AI/TTS) 신설, §4 cc-by-3-0·StoryWeaver/Bloom/ASB 분리, §5 $0 종료(AI·TTS·스토리지 한정), §12 위험 4행, §13 트리거 Phase 1.5 기준.
+  - ✅ **prd-beta.md v2 개정**(`5e960e5`) — §3.4 Phase 1.5 DoD(AI 옵션 A·낭독 TTS·~960권), §4 Out of Scope 재조정(StoryWeaver·Bloom Phase 1.5 조건부, 옵션 C=v1.1).
+  - ✅ **license-rules v1.1 + ADR-0004 Amendment #1**(`7aed470`) — §1 cc-by-3-0 화이트리스트 추가(DB CHECK 반영은 순서4 대기), §4.4 TTS 음성(2차 저작물) 어트리뷰션 절, ADR-0004 §3.3 StoryWeaver·ASB 보류 해제(enum 값 추가는 미실행).
+  - (선행) ✅ **ADR-0022·0023**(`a796750`) — 콘텐츠 소스 확장 / AI 기능·TTS 정책. 위 3개 문서 트랙의 근거.
 - **구조 변경 주의(유지)**: 로그인 후 화면 3종이 `app/(reader)/` route group(URL 불변). 경로 `app/(reader)/home`·`app/(reader)/library`·`app/(reader)/book/[id]`. 공통 헤더 `components/app/app-header.tsx`(usePathname 분기) + `app/(reader)/layout.tsx` 주입. ADR-0021 참조.
-- **신규 발생 사항(다음 트랙, 미착수)**:
-  - (a) **플랫폼 명칭 변경 결정(2026-06-12): 키키북스 → HelloKiki(헬로키키)** — 코드·문서 전반의 명칭 사용처(브랜드 카피·메타데이터·legal 문안·UI 라벨·design-system 등) **전수 조사 후 반영 필요**. 미착수, 다음 트랙. (도메인 `hellokiki.co.kr`은 이미 명칭과 정합.)
-  - (b) **PM 신규 계획 수립(2026-06-12, 조사 완료·반영 미착수)** — **베타 전**: 내부 테스트 → 피드백 기능 보강 → **디자인 리뉴얼**(출시 가능 수준) + **자체 제작 e-book 23권**(Beatrix Potter PD, 노출 881 + 23 = **904권**). **베타 후**: AI 콘텐츠 develop / 자체 e-book·영상 제작. → **`PLAN.md` 반영 트랙 예정**. 실측 조사 결과(스키마 CHECK·라이선스 공백·Beatrix Potter 미실행 추적 공백 등)는 2026-06-12 조사 보고 참조.
-- **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 881권(목표 900 대비 −19, 자체 e-book 23권 시 904) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
-- **다음 후보 작업**: ① 플랫폼 명칭 HelloKiki 전수 반영(신규 (a)) ② PLAN.md 신규 계획 반영(신규 (b)) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 881→904/900권 회복(자체 e-book 23권).
+- **신규 발생 사항(진행 상태)**:
+  - (a) **플랫폼 명칭 변경 결정(2026-06-12): 키키북스 → HelloKiki(헬로키키)** — **부분 반영**(신규 v2 문서 텍스트는 HelloKiki: PLAN v2.0·PRD v2·license v1.1 신규 문장). **전수 반영 잔여**(backlog·README·UI 라벨·design-system·메타데이터·legal 문안 등) 전수 조사 후 반영 필요. (도메인 `hellokiki.co.kr`은 이미 명칭과 정합.)
+  - (b) **PM 신규 계획 수립(2026-06-12)** — **베타 전**: 내부 테스트 → 피드백 기능 보강 → **디자인 리뉴얼**(출시 가능 수준) + **자체 제작 e-book 23권**(Beatrix Potter PD). **베타 후**: AI 콘텐츠 develop / 자체 e-book·영상 제작. → **✅ `PLAN.md` v2.0 반영 완료(`a24631b`) + PRD v2·license v1.1 동반 완료**. 실측 조사 결과(스키마 CHECK·라이선스 공백·Beatrix Potter 미실행 추적 공백 등)는 2026-06-12 조사 보고 참조.
+- **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 881권(목표 900 대비 −19, 자체 e-book 23권 시 904) **→ 순서4 sync(cc-by-3-0·slug 정규화, 842→~937) 실행 후 재집계 예정** / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
+- **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
