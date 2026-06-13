@@ -72,4 +72,18 @@
 
 ---
 
+## Amendment #1 (2026-06-13) — §3.3 StoryWeaver·ASB "베타 후 검토" 보류 해제
+
+**상태** Accepted · **근거** `docs/adr/0022-content-source-expansion.md` §2.1·§2.3·§2.4
+
+§3.3 원문("African Storybook / Pratham StoryWeaver — 라이선스 혼재. 베타 후 별도 ADR로 검토 예정")은 **원문 그대로 보존**하되, 그 **"베타 후 검토" 보류 상태를 해제**한다.
+
+- **해제 = 트랙 격상**: 두 소스 검토를 **베타 전(Phase 1.5) 트랙A**로 끌어올린다. 사유 — PM 계획 v2 결정 + GDL이 이미 두 소스를 집계함을 실측 확인(라이선스 혼재 우려는 책별 `license` 필드 필터로 해소 가능, ADR-0022 §1.1·§2.1).
+- **단, `source_platform` enum 값 추가는 미실행**: 본 Amendment는 **검토 보류 해제일 뿐**, `storyweaver`(또는 ASB) enum 값을 §2 화이트리스트에 **추가하지 않는다**. StoryWeaver enum 추가는 **공식 bulk/파트너 API 확보를 선행**한 뒤 **별도 ADR 또는 본 ADR 후속 Amendment**로 처리한다(ADR-0022 §2.3, 공개 API Cloudflare 403·우회 금지).
+- **ASB는 갈음**: African Storybook은 공개 REST API 부재로 직접 적재 후순위 — **GDL 경유분 34권으로 갈음**한다(ADR-0022 §2.4).
+
+> 본 Amendment는 문서·결정 기록 전용. `source_platform` CHECK 제약·트리거·마이그레이션 변경 0건(enum 값 추가 시 별도 ADR + ALTER로 처리).
+
+---
+
 *문서 끝.*

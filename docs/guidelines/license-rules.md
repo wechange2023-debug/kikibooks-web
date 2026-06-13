@@ -3,8 +3,8 @@
 > **이 문서의 역할**: 키키북스의 모든 콘텐츠 적재·표시·삭제 작업의 법적 기준점.
 > 콘텐츠 동기화, 책 상세 페이지, 책 뷰어, DB 마이그레이션 작업 시 **반드시** 참조.
 
-**문서 버전** v1.0 · **최종 갱신** 2026-05-13
-**상위 참조** `claude.md` 2절 (Hard Rules), `PLAN.md` 4절·15절
+**문서 버전** v1.1 · **최종 갱신** 2026-06-13
+**상위 참조** `claude.md` 2절 (Hard Rules), `PLAN.md` 4절·15절, `docs/adr/0022-content-source-expansion.md`(cc-by-3-0 추가), `docs/adr/0023-ai-features-and-tts-policy.md`(TTS 음성 어트리뷰션)
 
 ---
 
@@ -18,16 +18,17 @@
 
 ## 1. 허용 라이선스 화이트리스트
 
-키키북스는 다음 4가지 라이선스 콘텐츠만 적재할 수 있다. **그 외는 모두 차단된다.**
+HelloKiki는 다음 5가지 라이선스 콘텐츠만 적재할 수 있다. **그 외는 모두 차단된다.** (단 `cc-by-3-0`는 ADR-0022로 **승인**된 화이트리스트 항목이며, **DB CHECK 반영은 순서4 마이그레이션 대기** — 아래 표 비고·DB 제약 주석 참조.)
 
 | 라이선스 코드 | 영리 사용 | 어트리뷰션 의무 | 변경/2차 저작물 | 비고 |
 |---|---|---|---|---|
 | `cc-by-4-0` | ✅ 가능 | ✅ 필수 | ✅ 가능 | Book Dash, GDL 주력 |
 | `cc-by-sa-4-0` | ✅ 가능 | ✅ 필수 | ✅ 가능 (동일 라이선스 유지) | GDL 일부 |
+| `cc-by-3-0` | ✅ 가능 | ✅ 필수 | ✅ 가능 | GDL 심화(ADR-0022, 842→~937). 어트리뷰션 의무는 CC BY 4.0과 동일. ⏳ **DB CHECK 반영은 순서4 마이그레이션 대기** |
 | `cc0` | ✅ 가능 | ⚠️ 의무 없음 (관례상 표시) | ✅ 가능 | LibriVox 낭독 |
 | `public-domain` | ✅ 가능 | ⚠️ 의무 없음 (관례상 표시) | ✅ 가능 | Beatrix Potter (한국 PD) |
 
-DB 제약: `books.license` 컬럼은 위 4개 값만 CHECK 제약으로 허용한다. 그 외 값은 INSERT 자체가 실패한다.
+DB 제약: `books.license` 컬럼의 **현 CHECK 제약은 4종**(`cc-by-4-0`·`cc-by-sa-4-0`·`cc0`·`public-domain`)만 허용한다. 그 외 값은 INSERT 자체가 실패한다. `cc-by-3-0`는 **ADR-0022 승인분**으로 **순서4 마이그레이션에서 CHECK·트리거 화이트리스트에 ALTER 예정**이며, **그 전까지 INSERT는 4종만 통과**한다(§3.1·§3.2 SQL은 현 구현 그대로 — 문서가 코드를 앞서지 않음).
 
 ---
 
@@ -128,6 +129,20 @@ Original text source: Project Gutenberg (https://www.gutenberg.org/ebooks/14838)
 | `gdl` | `publisher` API 필드 (실측: GDL 응답에 authors/illustrators 미제공, ADR-0007 §4.1·4.2 참조) | (없음) | `license[0].slug` API 필드 (예: `cc-by-4-0`) |
 | `librivox` | `authors[]` 첫 항목 | (없음, "Audio narration by {readers}") | CC0 URL |
 | `pg` (Project Gutenberg) | `author` 필드 | (PD 작품 대부분 없음) | PD 근거 |
+
+### 4.4 TTS 낭독 음성 (2차 저작물) 어트리뷰션
+
+HelloKiki가 도서 텍스트로 **배치 사전 생성**하는 낭독 음성(TTS)은 **원본 텍스트의 2차 저작물(derivative)**이다. 따라서 **원본 라이선스 의무를 그대로 승계**한다.
+
+| 원본 라이선스 | 음성(TTS)에 적용되는 의무 |
+|---|---|
+| `cc-by-4-0` / `cc-by-3-0` | **어트리뷰션 표기 필수** (원작 저작자·제목·라이선스·출처 승계) |
+| `cc-by-sa-4-0` | **어트리뷰션 + BY-SA 동일 라이선스 승계** (share-alike 전파 — 음성도 BY-SA로 배포) |
+| `cc0` / `public-domain` | 법적 의무 없음 (HelloKiki 표준상 관례 표기) |
+
+- **재생 UI / 책 상세 표기 형식**: `낭독: HelloKiki AI 생성 / 원작: {원본 어트리뷰션}` 형태로 **원작 어트리뷰션을 함께 표시**한다.
+- **근거**: `docs/adr/0023-ai-features-and-tts-policy.md` §2.4(배치 사전 생성)·§2.6(2차 저작물 라이선스).
+- **상세 구현은 구현 ADR로 이관**: 오디오 자산 컬럼/테이블(`books.audio_url` vs `book_audio`), `AttributionBox` 음성 분기 표시, BY-SA 음성의 라이선스 코드 기록 방식은 본 문서가 아니라 **TTS 구현 ADR**에서 확정한다(현 단계는 정책 기록 전용).
 
 ---
 
