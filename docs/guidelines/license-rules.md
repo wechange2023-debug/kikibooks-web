@@ -18,17 +18,17 @@
 
 ## 1. 허용 라이선스 화이트리스트
 
-HelloKiki는 다음 5가지 라이선스 콘텐츠만 적재할 수 있다. **그 외는 모두 차단된다.** (단 `cc-by-3-0`는 ADR-0022로 **승인**된 화이트리스트 항목이며, **DB CHECK 반영은 순서4 마이그레이션 대기** — 아래 표 비고·DB 제약 주석 참조.)
+HelloKiki는 다음 5가지 라이선스 콘텐츠만 적재할 수 있다. **그 외는 모두 차단된다.** (`cc-by-3-0`는 ADR-0022로 **승인**된 화이트리스트 항목이며, **002 마이그레이션으로 DB CHECK·트리거 반영 완료(2026-06-15)** — 아래 표 비고·DB 제약 주석 참조.)
 
 | 라이선스 코드 | 영리 사용 | 어트리뷰션 의무 | 변경/2차 저작물 | 비고 |
 |---|---|---|---|---|
 | `cc-by-4-0` | ✅ 가능 | ✅ 필수 | ✅ 가능 | Book Dash, GDL 주력 |
 | `cc-by-sa-4-0` | ✅ 가능 | ✅ 필수 | ✅ 가능 (동일 라이선스 유지) | GDL 일부 |
-| `cc-by-3-0` | ✅ 가능 | ✅ 필수 | ✅ 가능 | GDL 심화(ADR-0022, 842→~937). 어트리뷰션 의무는 CC BY 4.0과 동일. ⏳ **DB CHECK 반영은 순서4 마이그레이션 대기** |
+| `cc-by-3-0` | ✅ 가능 | ✅ 필수 | ✅ 가능 | GDL 심화(ADR-0022, 순서4 실측 GDL 851). 어트리뷰션 의무는 CC BY 4.0과 동일. ✅ **002 마이그레이션 반영 완료 (2026-06-15)** |
 | `cc0` | ✅ 가능 | ⚠️ 의무 없음 (관례상 표시) | ✅ 가능 | LibriVox 낭독 |
 | `public-domain` | ✅ 가능 | ⚠️ 의무 없음 (관례상 표시) | ✅ 가능 | Beatrix Potter (한국 PD) |
 
-DB 제약: `books.license` 컬럼의 **현 CHECK 제약은 4종**(`cc-by-4-0`·`cc-by-sa-4-0`·`cc0`·`public-domain`)만 허용한다. 그 외 값은 INSERT 자체가 실패한다. `cc-by-3-0`는 **ADR-0022 승인분**으로 **순서4 마이그레이션에서 CHECK·트리거 화이트리스트에 ALTER 예정**이며, **그 전까지 INSERT는 4종만 통과**한다(§3.1·§3.2 SQL은 현 구현 그대로 — 문서가 코드를 앞서지 않음).
+DB 제약: `books.license` 컬럼의 **현 CHECK 제약은 5종**(`cc-by-4-0`·`cc-by-sa-4-0`·`cc-by-3-0`·`cc0`·`public-domain`)만 허용한다. 그 외 값은 INSERT 자체가 실패한다. `cc-by-3-0`는 **ADR-0022 승인분**으로 **002 마이그레이션에서 CHECK·트리거 화이트리스트에 ALTER 반영 완료(2026-06-15)** — 순서4 sync에서 cc-by-3-0 4권이 트리거 RAISE 0·errors 0으로 적재됨을 경험적으로 확인(§3.1·§3.2 SQL은 적용 후 현 구현과 일치).
 
 ---
 
@@ -53,11 +53,13 @@ DB 제약: `books.license` 컬럼의 **현 CHECK 제약은 4종**(`cc-by-4-0`·`
 
 다음 SQL 구조는 키키북스의 법적 안전망이다. **`claude.md` 2절 Hard Rule 1, 2번**에 해당하며, 변경은 ADR 작성 + 사용자 사전 승인 없이 불가능하다.
 
+> (순서4: DB 현실=5종에 맞춘 stale 문서 정정. 근거 ADR-0022 Amendment #1. 차단망 완화 아님 — NC/ND 차단 불변.)
+
 ### 3.1 books 테이블 핵심 제약
 
 ```sql
 license TEXT NOT NULL CHECK (license IN
-  ('cc-by-4-0', 'cc-by-sa-4-0', 'cc0', 'public-domain')),
+  ('cc-by-4-0', 'cc-by-sa-4-0', 'cc-by-3-0', 'cc0', 'public-domain')),  -- cc-by-3-0: 002 마이그레이션(2026-06-15)
 attribution_text TEXT NOT NULL,  -- 어트리뷰션 누락 자동 차단
 ```
 
@@ -70,7 +72,7 @@ attribution_text TEXT NOT NULL,  -- 어트리뷰션 누락 자동 차단
 CREATE OR REPLACE FUNCTION enforce_commercial_license()
 RETURNS trigger AS $$
 BEGIN
-  IF NEW.license NOT IN ('cc-by-4-0', 'cc-by-sa-4-0', 'cc0', 'public-domain') THEN
+  IF NEW.license NOT IN ('cc-by-4-0', 'cc-by-sa-4-0', 'cc-by-3-0', 'cc0', 'public-domain') THEN
     RAISE EXCEPTION '상업 사용 불가 라이선스 차단: %', NEW.license;
   END IF;
   RETURN NEW;

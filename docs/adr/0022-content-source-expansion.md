@@ -95,4 +95,18 @@ PM 결정 4번에 따라 큐레이션 정책을 개정한다:
 
 ---
 
+## Amendment #1 (순서4, 2026-06-15)
+
+- **동반 갱신 대상 누락 보정**: §2.2·§83 목록에 `scripts/lib/attribution.py` `LICENSE_LABELS`가 빠져 있었음. 순서4에서 `cc-by-3-0` 적재 차단의 직접 원인이었음(어트리뷰션 라벨 미발급 → `AttributionError` → 미적재).
+- **라이선스 화이트리스트는 실제 4곳에 분산됨을 명시**:
+  - ① `scripts/sync_gdl.py` `ALLOWED_LICENSE_SLUGS`
+  - ② DB CHECK 제약 + `enforce_commercial_license()` 트리거 (002 마이그레이션)
+  - ③ `scripts/lib/attribution.py` `LICENSE_LABELS`
+  - ④ `scripts/verify_gdl_sync.py` `ALLOWED_LICENSES`
+  - 신규 적격 라이선스 추가 시 4곳 모두 동기화 필요.
+- **순서4 실측 결과**: GDL is_active 851 / 전체 is_active 905 (베타 목표 900 +5).
+- **연계 정정**: 본 Amendment를 근거로 `license-rules.md` §1·§3의 stale 기술("DB CHECK 대기"·"4종")을 DB 현실(5종, 002 적용 완료)에 맞춰 정정함.
+
+---
+
 *문서 끝.*
