@@ -84,7 +84,10 @@ SOURCE_PLATFORM = "gdl"
 CONTENT_TYPE = "html"
 LANGUAGE = "en"
 
-ALLOWED_LICENSE_SLUGS = {"cc-by-4-0", "cc-by-sa-4-0"}
+ALLOWED_LICENSE_SLUGS = {"cc-by-4-0", "cc-by-sa-4-0", "cc-by-3-0"}
+# GDL 내부 변형 slug → 표준 slug 정규화 (ADR-0022 §2.2). 실데이터 조사 결과
+# 적격(비-NC) 변형은 cc-by-sa-4-0-2 1종뿐 → 명시 맵으로 충분.
+LICENSE_SLUG_NORMALIZE = {"cc-by-sa-4-0-2": "cc-by-sa-4-0"}
 BOOK_DASH_PUBLISHER = "BookDash"
 
 # 비-그림책 필터 (ADR-0007 §7.8) — 명확한 케이스만 자동 skip
@@ -269,6 +272,7 @@ def build_payload(book: dict[str, Any]) -> tuple[Optional[dict[str, Any]], bool]
     if not (license_arr and isinstance(license_arr, list)):
         return None, False
     license_slug = license_arr[0].get("slug")
+    license_slug = LICENSE_SLUG_NORMALIZE.get(license_slug, license_slug)
     if license_slug not in ALLOWED_LICENSE_SLUGS:
         return None, False
 
@@ -521,6 +525,9 @@ def main() -> int:
 
         if payload is None:
             license_arr = book.get("license") or []
+            # raw slug 사용 OK: 정규화 대상 cc-by-sa-4-0-2 는 정규화 후 화이트리스트
+            # 적격이 되어 이 skip 분기에 도달하지 않음. NC 변형은 raw=정규화값 동일이라
+            # skip 분류 무영향. (ADR-0022 §2.2, 순서4-C recon 실데이터 확인)
             if license_arr and license_arr[0].get("slug") not in ALLOWED_LICENSE_SLUGS:
                 stats["skipped_by_license"] += 1
             else:
