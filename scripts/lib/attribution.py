@@ -21,12 +21,19 @@ from typing import Optional
 
 # ---------------------------------------------------------------------------
 # 라이선스 → 인간 가독 라벨 + URL
+# 라이선스 화이트리스트는 3곳에 분산: ① sync_gdl.py ALLOWED_LICENSE_SLUGS
+#   ② DB CHECK+트리거(002 마이그레이션) ③ 본 LICENSE_LABELS.
+#   신규 적격 라이선스 추가 시 3곳 모두 갱신 필요. (ADR-0022 §2.2·§83, 순서4)
 # ---------------------------------------------------------------------------
 LICENSE_LABELS: dict[str, tuple[str, Optional[str]]] = {
     # license_code: (display_label, license_url)
     "cc-by-4-0": (
         "CC BY 4.0",
         "https://creativecommons.org/licenses/by/4.0/",
+    ),
+    "cc-by-3-0": (
+        "CC BY 3.0",
+        "https://creativecommons.org/licenses/by/3.0/",
     ),
     "cc-by-sa-4-0": (
         "CC BY-SA 4.0",
