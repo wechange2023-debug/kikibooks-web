@@ -21,9 +21,10 @@ from typing import Optional
 
 # ---------------------------------------------------------------------------
 # 라이선스 → 인간 가독 라벨 + URL
-# 라이선스 화이트리스트는 3곳에 분산: ① sync_gdl.py ALLOWED_LICENSE_SLUGS
-#   ② DB CHECK+트리거(002 마이그레이션) ③ 본 LICENSE_LABELS.
-#   신규 적격 라이선스 추가 시 3곳 모두 갱신 필요. (ADR-0022 §2.2·§83, 순서4)
+# 라이선스 화이트리스트는 4곳에 분산: ① sync_gdl.py ALLOWED_LICENSE_SLUGS
+#   ② DB CHECK+트리거(002 마이그레이션) ③ 본 LICENSE_LABELS
+#   ④ verify_gdl_sync.py ALLOWED_LICENSES.
+#   신규 적격 라이선스 추가 시 4곳 모두 갱신 필요. (ADR-0022 §2.2·§83+Amendment#1, 순서4)
 # ---------------------------------------------------------------------------
 LICENSE_LABELS: dict[str, tuple[str, Optional[str]]] = {
     # license_code: (display_label, license_url)
