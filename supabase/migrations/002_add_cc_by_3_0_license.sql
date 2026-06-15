@@ -1,6 +1,6 @@
 -- 목적: books.license 화이트리스트에 cc-by-3-0 추가 (GDL 심화 842→~937)
 -- ADR: docs/adr/0022-content-source-expansion.md 참조 (선행 ADR, §2.2)
--- 적용일: (미정 — 4-B에서 PM이 Supabase 적용 시 기입)
+-- 적용일: 2026-06-15
 -- 주의: 본 마이그레이션은 차단망을 '확장'(적격 1종 추가)하며 완화가 아님.
 --       DROP/DISABLE 없음 — README 후속 체크리스트 무저촉.
 --       (CHECK 제약은 무명→named 재정의이며, 트리거 함수는 OR REPLACE 갱신.)
