@@ -161,5 +161,12 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
     - **② 키 발급 = Enterprise 구독 또는 파트너십 협약 + 이메일 신청**(계정 이메일 선등록 후 `subscriptions@bloomlibrary.org` 문의). 회신·계약 전 자동 측정 불가 → **"실사용 가능 권수 측정"은 키 수령 후로 보류**(현재 (d) 신청 메일 회신 대기와 동일 상태).
     - **③ ★라이선스 서버 필터 없음(Hard Rule 직결)** — 제공 파라미터 7종(`key`·`lang`·`ref`·`tag`·`organizeby`·`minimalnavlinks`·`epub`)에 라이선스 필터 부재. 라이선스는 결과 entry 내 `<dcterms:license>`로만 표기되며, **문서 예시 피드에 `cc-by-nc-nd` 혼입 실증**. 적재 시 **client-side `<dcterms:license>` 파싱 게이트로 NC/ND 전량 배제 필수** → 기존 `enforce_commercial_license` 트리거(Hard Rule 2)와 정합. **ADR-0022 Amendment #2 반영 대상**.
     - **④ 운영 제약**: 언어 필터 `lang=`(BCP47, 예 `lang=en`) 지원. **rate-limit 없음 → "일 1회 캐시" 사용 규약 준수 의무**(썸네일 포함, 문서 명시). → **Bloom 키 수령 시 첫 작업 = `lang=en` + `<dcterms:license>` NC/ND 배제 게이트로 실사용 가능 영어 권수 측정.**
+  - (h) **추가 E-book 확보 실행 플랜 승인(2026-06-16, PM 결정 · 문서 전용·코드 0줄 → ADR-0022 Amendment #2 Proposed)** — 신규 합법 소스 조사 결과를 우리 DB에 적용하는 단계 계획.
+    - **4대 가드레일**: ① 합법 라이선스(CC BY/SA·CC0·PD)만, NC/ND 자동차단(Hard Rule 2·3) 유지 ② illustrator 원본 직접 수집(GDL 경유 누락 265권 회피) ③ GDL 851 중복 제거(소스 전체권수 ≠ 순증) ④ `is_active=false` staging 후 검수 공개.
+    - **Phase A(즉시·회신 무관, 전량 CC BY)**: Book Dash 확대 / Storybooks Canada(텍스트+CC BY 오디오) / StoryWeaver 텍스트(영상 NC-ND 제외). ★계약·회신 없이 라이선스만으로 적재 가능.
+    - **Phase B(필터링 후)**: Let's Read · African Storybook · Literacy Cloud(Room to Read) — CC BY/NC 혼합 → 타이틀 라이선스 파싱 게이트 선행, 영어 권수 직접 측정.
+    - **Phase C(후순위·영상)**: 오픈 영상 e-book 희소(StoryWeaver 영상 = NC-ND 부적격). CC BY 텍스트 + CC BY/PD 음원으로 자체 read-along 제작 우선. Blender/Wikimedia는 ND 제외·연령 검수 후 보조.
+    - **부적격 확인**: Unite for Literacy(비CC 자체저작권), Mustard Seed · 3asafeer · Word Scientists(NC 계열).
+    - **박제 경로**: 본 플랜 → **ADR-0022 Amendment #2**(소스 확장·dedup·staging·라이선스 게이트 확정) → Phase A 순증 측정 → 소스별 sync 작업지시서.
 - **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 **→ 순서4 종결: 재집계 완료(GDL 851 / 전체 905, 목표 900 +5), 2026-06-15** (자체 e-book 23권 추가 시 ~928) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
 - **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
