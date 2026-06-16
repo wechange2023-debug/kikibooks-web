@@ -109,4 +109,28 @@ PM 결정 4번에 따라 큐레이션 정책을 개정한다:
 
 ---
 
+## Amendment #2 — 추가 E-book 확보 플랜(2026-06-16): 소스 확장·dedup·staging·라이선스 게이트 확정
+
+**상태** Proposed (PM 추가도서 확보 실행 플랜 승인 반영 · 실제 적재는 Phase A 순증 측정 후 작업지시서 · 본 Amendment는 설계 확정까지 코드·스키마 0줄)
+**근거** PM 결정(2026-06-16) + Bloom OPDS recon(`backlog.md` §7.4 (g)) + StoryWeaver 회신 recon(§7.4 (e)) + 본 ADR §2.3~§2.5 로드맵. 4대 가드레일: ① 합법 라이선스만(NC/ND 자동차단 유지) ② illustrator 원본 직접 수집 ③ GDL 851 dedup ④ staging 후 검수 공개.
+
+- **D1 — `source_platform` 신규 값 후보 등록** (실제 enum 추가 = 적재 착수 시점, 스키마 마이그레이션 별도):
+  - 후보: `storybooks_canada` · `storyweaver` · `lets_read` · `african_storybook` · `room_to_read`(= Literacy Cloud).
+  - 기존값 `gdl` · `book_dash`는 유지. **StoryWeaver는 신규 직접 적재 경로**로 기존 GDL 경유분(265권)과 `source_platform` 값으로 구분한다.
+  - ★ enum 추가 = **`source_platform` 화이트리스트 2곳 동시 갱신 필수**: ① DB CHECK(`001_initial_schema.sql`) ② `scripts/lib/attribution.py` `PLATFORM_LABELS`. (라이선스 화이트리스트 4곳과는 별개 — Amendment #1 참조.) → Consequences 명시.
+- **D2 — 라이선스 게이트(Phase B 혼합소스 필수)**: 적재 전 타이틀 라이선스를 파싱해 화이트리스트만 통과, **NC/ND 전량 배제**. 기존 `enforce_commercial_license` 트리거(Hard Rule 2 — DROP/DISABLE 금지)와 **이중 정합**(앱 게이트 + DB 트리거).
+  - ⚠️ **정합 단서(실측 차이 보정)**: 초안 화이트리스트 `{cc-by-4-0, cc-by-sa-4-0, cc0, public-domain}`는 **현 DB 라이선스 화이트리스트(5종, `cc-by-3-0` 포함 — Amendment #1)와 불일치**. 적재 착수 시 **파싱 게이트는 DB 현행 5종과 정합**시키고, `cc0`·`public-domain`이 DB CHECK에 미존재면 그 추가 자체가 스키마 변경(Hard Rule 8) → 마이그레이션 ADR 동반.
+- **D3 — dedup**: GDL 851 기존분과 중복 제거. 1차 키 = **제목+저자 정규화**(`sync_gdl` 선례, 본 ADR §2.5). robust 키 필요 시 **`original_source_id` 신규 컬럼 추가 검토**(컬럼 추가 = 스키마 변경 → 본 ADR 결정 후 별도 마이그레이션). 각 소스 적재 전 **"GDL 중복 제외 순증 권수"를 먼저 측정**(StoryWeaver 265 사례 방식).
+- **D4 — staging**: 신규/미검수 행은 **`is_active=false`로 적재**(현 sync의 `is_active=True` 하드코딩 = 수정 대상, `sync_gdl.py:340` 등 — backlog §7.4 (c)). 어린이 적합성·라이선스 검수 통과분만 `is_active=true` 전환.
+- **D5 — illustrator 원본 수집**: GDL 경유 누락(265권 attribution 공백, §7.4 (e)) 회피 위해 **원본 소스에서 글·그림작가 직접 매핑**.
+- **D6 — Phase 순서**: **A**(CC BY 단일·즉시: Book Dash 확대·Storybooks Canada·StoryWeaver 텍스트) → **B**(혼합·필터: Let's Read·ASB·Literacy Cloud) → **C**(영상·자체제작). **Phase A는 외부 회신과 독립** 착수 가능.
+- **D7 — 영상(Phase C) = 별도 트랙**: 저작인접권(음악·실연) 트랙단위 확인, 닫힌환경 스트리밍은 Phase 1.5 TTS 트랙(ADR-0023)과 묶어 설계. **본 ADR 범위 밖**(포인터만).
+
+**Consequences**
+- **스키마 변경 항목**(`source_platform` enum 추가 · `original_source_id` 컬럼 추가 · D2의 `cc0`/`public-domain` 미존재 시 라이선스 CHECK 추가)은 모두 **Hard Rule 8 → 적재 착수 시 마이그레이션 ADR/작업으로 분리**. 본 Amendment는 설계 확정까지(코드·스키마 0줄).
+- 화이트리스트 동기화 부담: source_platform 2곳 + 라이선스 4곳. 신규 소스/라이선스 추가 시 누락 = 적재 차단(Amendment #1 `cc-by-3-0` 선례) → 작업지시서 체크리스트화.
+- **부적격 확정 소스**(재조사 불요): Unite for Literacy(비CC) · Mustard Seed · 3asafeer · Word Scientists(NC 계열).
+
+---
+
 *문서 끝.*
