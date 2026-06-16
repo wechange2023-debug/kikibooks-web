@@ -168,5 +168,12 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
     - **Phase C(후순위·영상)**: 오픈 영상 e-book 희소(StoryWeaver 영상 = NC-ND 부적격). CC BY 텍스트 + CC BY/PD 음원으로 자체 read-along 제작 우선. Blender/Wikimedia는 ND 제외·연령 검수 후 보조.
     - **부적격 확인**: Unite for Literacy(비CC 자체저작권), Mustard Seed · 3asafeer · Word Scientists(NC 계열).
     - **박제 경로**: 본 플랜 → **ADR-0022 Amendment #2**(소스 확장·dedup·staging·라이선스 게이트 확정) → Phase A 순증 측정 → 소스별 sync 작업지시서.
+  - (i) **Phase A/B 순증 측정 recon 완료(2026-06-16, 읽기 전용·다운로드/저장 0 · 코드 0줄)** — (h) 플랜의 소스별 실측. ADR-0022 Amendment #2에 보강 반영.
+    - **Book Dash**: 동결 GitHub repo(`bookdash-books`)는 **2019 스냅샷 54권 = 우리 기존분과 동일 → 순증 0**. 현행 카탈로그(`bookdash.org`, WordPress)는 **WP REST API**(`wp-json/wp/v2/books`)·`books-sitemap` 보유, **영어(택소노미 eng) 206권** 실측 → **순증 상한 152권**. GDL 내 Book Dash 중복 = **0**(SQL 실측) → dedup 손실 거의 없음. illustrator는 REST 기본필드 미노출 → **content 파싱 필요**(가드레일 ②).
+    - **African Storybook**: **순증 잠재력 최대**. `asp-raw-db`(GitHub) 전체 **~12,085권**(전 언어), `asp-source` 큐레이션 2,126권 중 **영어 367권**. ★**라이선스 혼합** — 표본에서 **CC BY-NC 3.0 실증** → **NC/ND 파싱 게이트 필수**(Hard Rule 3). raw-db에 **`artist`(illustrator) 필드 원천 존재** → 가드레일 ② 충족 가능. GitHub raw 무인증 200. GDL 내 ASb 중복 = **33**(SQL 실측). ※ **"영어 AND CC BY(비NC) 정확 권수"는 12k 전수집계 필요 → 측정 보류**(rate-limit 배치로 별도).
+    - **Storybooks Canada**: `global-asp/sbc-source` repo **확정(자동 적재 가능)**, **~40권** 소량. 동일 org에 Global Storybooks 네트워크 다수(향후 확장 후보 풀).
+    - **StoryWeaver 텍스트**: `storyweaver.org.in` **Cloudflare 403**(무인증 차단·우회 금지) → 대량 측정 불가, **회신/계약 경로((e))로만**. 현 GDL 경유 **265 추정분**으로 갈음.
+    - **적재 트랙 언어 = Python**(기존 `sync_*.py` 트랙). 신규 sync는 `sync_<src>.py`, 라이선스 게이트 = `verify_licenses.py` 확장, illustrator = `attribution.py` 확장. **웹앱(TS/Next 14)은 무관**(별 트랙).
+    - **순증 우선순위(현재)**: ① **African Storybook**(NC 제외 후 수백~수천, 본체) ② **Book Dash 현행**(+152 확정) ③ **Storybooks Canada**(~40). StoryWeaver는 회신 대기.
 - **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 **→ 순서4 종결: 재집계 완료(GDL 851 / 전체 905, 목표 900 +5), 2026-06-15** (자체 e-book 23권 추가 시 ~928) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
 - **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
