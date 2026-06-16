@@ -126,6 +126,13 @@ PM 결정 4번에 따라 큐레이션 정책을 개정한다:
 - **D6 — Phase 순서**: **A**(CC BY 단일·즉시: Book Dash 확대·Storybooks Canada·StoryWeaver 텍스트) → **B**(혼합·필터: Let's Read·ASB·Literacy Cloud) → **C**(영상·자체제작). **Phase A는 외부 회신과 독립** 착수 가능.
 - **D7 — 영상(Phase C) = 별도 트랙**: 저작인접권(음악·실연) 트랙단위 확인, 닫힌환경 스트리밍은 Phase 1.5 TTS 트랙(ADR-0023)과 묶어 설계. **본 ADR 범위 밖**(포인터만).
 
+**실측 보강 (2026-06-16 Phase A/B recon — `backlog.md` §7.4 (i))**
+- **D1 보강 — 소스별 실제 sync 경로 확정**: `book_dash` 현행 = **WP REST API**(`bookdash.org/wp-json/wp/v2/books`, **기존 동결 GitHub repo 아님** — 그 repo는 2019 스냅샷 54권) · `african_storybook` = **GitHub `global-asp/asp-raw-db`**(책별 메타 dump) · `storybooks_canada` = **GitHub `global-asp/sbc-source`**(repo 확정) · `storyweaver` = **회신/계약 경로**(무인증 `storyweaver.org.in` = Cloudflare 403).
+- **D2 보강 — 게이트 구현체 = `verify_licenses.py`(Python) 확장**: ASb 표본에서 **CC BY-NC 3.0 실증**으로 게이트 필수성 확인. African Storybook은 raw-db **`lic` 필드 파싱**해 **비-NC만 통과**. (웹앱 TS/Next 무관 — 적재는 기존 Python `sync_*.py` 트랙.)
+- **D3 보강 — GDL dedup 실측값**: Book Dash 중복 **0** · StoryWeaver/Pratham **265** · African Storybook **33**(SQL 실측). 각 소스 적재 시 이 값 차감.
+- **D5 보강 — illustrator 원본수집 경로(소스별 상이)**: ASb = raw-db **`artist` 필드**(원천 보유) · Book Dash = 현행 WP REST에 전용 필드 미노출 → **`content` 파싱** 필요. (구현은 `attribution.py` 확장.)
+- **측정 보류 명시**: African Storybook **"영어 × CC BY(비-NC) 정확 권수"는 미측정** — raw-db 12,085권 `lic`·`lang` 전수집계(rate-limit 배치) 필요. **차기 측정 대상**. 현 확정치: Book Dash 영어 현행 206(순증 상한 152) · ASb 큐레이션 영어 367(라이선스 혼합) · SBC ~40.
+
 **Consequences**
 - **스키마 변경 항목**(`source_platform` enum 추가 · `original_source_id` 컬럼 추가 · D2의 `cc0`/`public-domain` 미존재 시 라이선스 CHECK 추가)은 모두 **Hard Rule 8 → 적재 착수 시 마이그레이션 ADR/작업으로 분리**. 본 Amendment는 설계 확정까지(코드·스키마 0줄).
 - 화이트리스트 동기화 부담: source_platform 2곳 + 라이선스 4곳. 신규 소스/라이선스 추가 시 누락 = 적재 차단(Amendment #1 `cc-by-3-0` 선례) → 작업지시서 체크리스트화.
