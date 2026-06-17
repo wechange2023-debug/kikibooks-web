@@ -184,5 +184,14 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
     - **illustrator(`artist`) 누락 232권(8.3%)** = 가드레일 ② 보완 대상.
     - lic 값이 SPDX 코드 아닌 **자연어 문자열** → NC/ND 게이트는 **부분문자열 매칭**으로 설계.
     - **순증 우선순위 갱신**: ① **ASb ≈2,762**(압도적) ② **Book Dash +152** ③ **SBC ~40**.
+  - (k) **ASb 적재 완료(2026-06-17, ADR-0025 D4~D7 전량 staging 적재)** — (j) 측정분을 실제 DB에 적재.
+    - **`sync_asb.py` 신설**(커밋 `031ad9d`): codeload tarball 1회 + 다필드 헤더 파서 + `normalize_asb_license`(공용 모듈) 재사용 + `is_active=false` staging + 제목정규화 dedup + illustrator '미상'.
+    - **적용 마이그레이션**: `003`(source_platform += `african_storybook`), `004`(content_type += `asb_native`) — 둘 다 Supabase 적용·검증 완료.
+    - **실적재 확정 수치(DB SELECT 검증)**: **적재 2,750권 전건 성공**(오류 0), 전부 **`is_active=false` staging**.
+    - **라이선스 내역**: `cc-by-4-0` = **2,504** / `cc-by-3-0` = **246**, **NC/ND 누수 0**(Hard Rule 3 준수), **attribution 누락 0**(Hard Rule 1 준수).
+    - **illustrator '미상'** = **232권**(artist 원천 누락분, Amd#4 A3).
+    - **dedup skip = 45권**(GDL ASb 33제목 정규화 매칭, Amd#4 A2 오skip 수용 — measure '≈2762' 1:1추정 대비 **실측 2,750**).
+    - ★**공개 미완**: 자체 렌더 뷰어(웹앱 TS/Next 트랙, Amd#3 A5) 완성 + 검수 후 책별 `is_active=true` 전환 필요. **현재는 비공개.**
+    - **전체 콘텐츠**: 905 → **3,655권**(GDL 851 + Book Dash 54 + ASb 2,750), ASb는 **staging 비공개분**.
 - **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 **→ 순서4 종결: 재집계 완료(GDL 851 / 전체 905, 목표 900 +5), 2026-06-15** (자체 e-book 23권 추가 시 ~928) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
 - **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
