@@ -175,5 +175,14 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
     - **StoryWeaver 텍스트**: `storyweaver.org.in` **Cloudflare 403**(무인증 차단·우회 금지) → 대량 측정 불가, **회신/계약 경로((e))로만**. 현 GDL 경유 **265 추정분**으로 갈음.
     - **적재 트랙 언어 = Python**(기존 `sync_*.py` 트랙). 신규 sync는 `sync_<src>.py`, 라이선스 게이트 = `verify_licenses.py` 확장, illustrator = `attribution.py` 확장. **웹앱(TS/Next 14)은 무관**(별 트랙).
     - **순증 우선순위(현재)**: ① **African Storybook**(NC 제외 후 수백~수천, 본체) ② **Book Dash 현행**(+152 확정) ③ **Storybooks Canada**(~40). StoryWeaver는 회신 대기.
+  - (j) **African Storybook 정밀측정 확정(2026-06-17, codeload archive 1회 GET·헤더만 파싱·/tmp 처리·영구파일 0·코드 0줄)** — (i)의 ASb "측정 보류"분을 전수 집계로 확정.
+    - **`asp-raw-db` 전수 12,085권 파싱 100%** (`global-asp/asp-raw-db`, default branch `master`, `data/<id>.txt` 평면 단일 txt, 메타 헤더 탭구분 key:value).
+    - **영어 전체 2,880권**.
+    - **영어 lic 5종**: CC BY 4.0 = **2,537** / CC BY 3.0 = **258** → **적격 합 2,795** / NC 변종 4표기 합 **85** = 배제.
+    - ★ **English AND 적격(NC/ND 제외) = 2,795권** (PM 핵심 숫자, 검산 2,880−85=2,795).
+    - **GDL 중복 33 적용 시 순증 상한 ≈ 2,762권**.
+    - **illustrator(`artist`) 누락 232권(8.3%)** = 가드레일 ② 보완 대상.
+    - lic 값이 SPDX 코드 아닌 **자연어 문자열** → NC/ND 게이트는 **부분문자열 매칭**으로 설계.
+    - **순증 우선순위 갱신**: ① **ASb ≈2,762**(압도적) ② **Book Dash +152** ③ **SBC ~40**.
 - **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 **→ 순서4 종결: 재집계 완료(GDL 851 / 전체 905, 목표 900 +5), 2026-06-15** (자체 e-book 23권 추가 시 ~928) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
 - **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
