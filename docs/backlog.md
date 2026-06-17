@@ -200,5 +200,12 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
     - **이미지 URL 규칙**: `https://africanstorybook.org/illustrations/pages/<n>.png`(상대경로+도메인, http→https 승격).
     - **다음 단계**: `asb_native` 뷰어 컴포넌트 구현 — `lib/book/detail.ts` content_type 유니온에 `'asb_native'` 추가 + `app/(reader)/book/[id]/read/page.tsx` switch에 `case` 추가 + 신규 `AsbReader` 컴포넌트.
     - **공개 시점**: ASb **2,750권**은 뷰어 완성·검수 후 책별 `is_active=true` 전환으로 공개 예정. **현재는 staging 유지(비공개).**
+  - (m) **ASb 자체 렌더 뷰어 구현 완료(2026-06-17, 커밋 `da9cbbf` 뷰어 묶음 + `2c2f7cb` 파서)** — (l) 트랙의 구현 종결. ADR-0025 Amd#6 규칙대로 `asb_native` 책을 자체 렌더.
+    - **구성**: `lib/book/detail.ts` content_type 유니온에 `'asb_native'` 추가 / `lib/book/asb-parser.ts`(신규 순수 파서 — 섹션 분리 + 짝짓기 `max(N,M)` + 이미지 절대 URL + `@@`→줄바꿈 정규화) / `components/book/asb-reader.tsx`(신규 뷰어 — 인접 ±2 이미지 프리로드, `key=imageUrl` 캐시 재사용, 로딩 placeholder·잔상 제거, 개별 이미지 onError 격리) / `read/page.tsx` switch에 `case 'asb_native'` 연결(never 가드 정합).
+    - **검증**: 실데이터 다권(`11079`/`12685`/`13201`) 파서 회귀 **PASS** — 짝짓기 `max(N,M)` 무파손, `@@` 잔존 **0**, `pnpm type-check` 통과. PM 육안 검증("My lovely dogs", 9면) — 표지·페이지 넘김·이미지 로딩·텍스트 줄바꿈 정상 확인.
+    - **후속 과제(미해결)**:
+      - ASb **2,750권 책별 검수 후 `is_active=true` 공개 전환**(현재 전량 staging 유지). 검수용 임시 `is_active=true` 책 1건(`c5762aae`)은 PM이 staging(`is_active=false`) 원복·검증 완료(2026-06-17).
+      - **`cover_url` 비정상 2건**(`http` 미시작) — sync 단계 원인 점검 필요(별도 트랙).
+      - **정밀 페이지 동기화 한계**(Amd#6) — 텍스트·이미지 page 정합 미보장(근사) → 검수 수기 보정 또는 ASb reader 페이지 구조 추가 조사.
 - **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 **→ 순서4 종결: 재집계 완료(GDL 851 / 전체 905, 목표 900 +5), 2026-06-15** (자체 e-book 23권 추가 시 ~928) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
 - **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
