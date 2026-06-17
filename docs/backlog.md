@@ -193,5 +193,12 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
     - **dedup skip = 45권**(GDL ASb 33제목 정규화 매칭, Amd#4 A2 오skip 수용 — measure '≈2762' 1:1추정 대비 **실측 2,750**).
     - ★**공개 미완**: 자체 렌더 뷰어(웹앱 TS/Next 트랙, Amd#3 A5) 완성 + 검수 후 책별 `is_active=true` 전환 필요. **현재는 비공개.**
     - **전체 콘텐츠**: 905 → **3,655권**(GDL 851 + Book Dash 54 + ASb 2,750), ASb는 **staging 비공개분**.
+  - (l) **ASb 자체 렌더 뷰어 트랙 착수(2026-06-17, 문서 전용·코드 0줄 → ADR-0025 Amendment #6 Accepted)** — (k) staging분을 공개하기 위한 뷰어 트랙(Amd#3 A5) 착수.
+    - **본문 파싱 방식**: 렌더 시점 파싱(**A방식**) 확정 — DB는 `content_url`(raw `.txt` URL)만 보유, 뷰어가 렌더 시점에 `.txt`의 `page_text`/`images` 섹션을 직접 파싱.
+    - **페이지 짝짓기 규칙 박제**: ADR-0025 **Amendment #6**(Accepted, 커밋 `db58751`). 읽기 전용 recon(raw `.txt` 표본 GET·본문 미저장) 실측 근거 기반.
+    - **규칙 요지**: 표지 = `cover_url` 단독 1면 / 본문 = text·image **독립 스트림 느슨 인덱스 정렬**(`max(N,M)` 면) / 개수 불일치(±·0) **정상 흡수** / **강제 1:1·번호정렬 매핑 금지**(중복·비순차 실측).
+    - **이미지 URL 규칙**: `https://africanstorybook.org/illustrations/pages/<n>.png`(상대경로+도메인, http→https 승격).
+    - **다음 단계**: `asb_native` 뷰어 컴포넌트 구현 — `lib/book/detail.ts` content_type 유니온에 `'asb_native'` 추가 + `app/(reader)/book/[id]/read/page.tsx` switch에 `case` 추가 + 신규 `AsbReader` 컴포넌트.
+    - **공개 시점**: ASb **2,750권**은 뷰어 완성·검수 후 책별 `is_active=true` 전환으로 공개 예정. **현재는 staging 유지(비공개).**
 - **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 **→ 순서4 종결: 재집계 완료(GDL 851 / 전체 905, 목표 900 +5), 2026-06-15** (자체 e-book 23권 추가 시 ~928) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
 - **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
