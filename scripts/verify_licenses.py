@@ -41,6 +41,11 @@ from typing import Any, Optional
 import requests
 import yaml
 
+# 로컬 lib 모듈 임포트 — scripts/를 sys.path에 추가 (sync_*.py와 동일 관례)
+_SCRIPT_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(_SCRIPT_DIR))
+from lib.license_normalize import normalize_asb_license  # noqa: E402
+
 # stdout/stderr UTF-8 강제 (Windows cp949 호환)
 for _stream in (sys.stdout, sys.stderr):
     if hasattr(_stream, "reconfigure"):
@@ -69,8 +74,10 @@ BOOK_DASH_META_URL = (
     "https://raw.githubusercontent.com/bookdash/bookdash-books/master/_data/meta.yml"
 )
 GDL_API_URL = "https://content.digitallibrary.io/wp-json/content-api/v1/books/en"
+# African Storybook 원천 — asp-raw-db 책별 메타 dump (data/<id>.txt). 적재는 sync_asb.py(D4) 몫.
+ASB_RAW_BASE = "https://raw.githubusercontent.com/global-asp/asp-raw-db/master/data"
 
-ALLOWED_LICENSE_SLUGS = {"cc-by-4-0", "cc-by-sa-4-0", "cc0", "public-domain"}
+ALLOWED_LICENSE_SLUGS = {"cc-by-4-0", "cc-by-sa-4-0", "cc0", "public-domain", "cc-by-3-0"}
 
 HTTP_TIMEOUT = 120
 RETRY_MAX = 3
@@ -252,6 +259,60 @@ def build_gdl_index(
 
 
 # ---------------------------------------------------------------------------
+# African Storybook — raw-db data/<id>.txt 의 lic 파싱 + 정규화
+# ---------------------------------------------------------------------------
+def parse_asb_lic(text: str) -> Optional[str]:
+    """raw-db data/<id>.txt 헤더에서 'lic' 값만 추출 (page_text/images 이전). 네트워크 없음."""
+    for line in text.splitlines():
+        if line.strip().lower().startswith(("page_text:", "images:")):
+            break
+        if line.startswith("lic:"):
+            return line.split(":", 1)[1].strip()
+    return None
+
+
+def fetch_asb_lic(source_id: str) -> Optional[str]:
+    """
+    단일 ASb 책 메타(data/<id>.txt) 1회 fetch → 원시 lic 문자열. 실패/404 시 None.
+
+    ★ 감시 cron(verify_licenses.py) 전용. 적재(sync_asb.py, D4)와 별개다.
+    """
+    url = f"{ASB_RAW_BASE}/{source_id}.txt"
+    last_exc: Optional[Exception] = None
+    for attempt in range(1, RETRY_MAX + 1):
+        try:
+            resp = requests.get(url, timeout=HTTP_TIMEOUT)
+            if resp.status_code == 200:
+                return parse_asb_lic(resp.text)
+            if resp.status_code == 404:
+                return None
+            if resp.status_code in (429, 502, 503, 504):
+                time.sleep(RETRY_BACKOFF * attempt)
+                continue
+            return None
+        except Exception as exc:
+            last_exc = exc
+            time.sleep(RETRY_BACKOFF * attempt)
+    print(f"  ⚠ ASb {source_id} 가져오기 실패 (최종): {last_exc}")
+    return None
+
+
+def build_asb_index(source_ids: list[str]) -> dict[str, Optional[str]]:
+    """
+    source_id → upstream_license_slug 사전.
+    각 source_id의 data/<id>.txt 'lic'을 normalize_asb_license로 정규화한다(NC/ND→None).
+
+    ★ 본 함수는 verify_licenses.py(감시 cron)에서 호출하며 적재가 아니다.
+      실제 책 적재·대량 fetch는 sync_asb.py(D4) 몫이다.
+    """
+    index: dict[str, Optional[str]] = {}
+    for sid in source_ids:
+        raw = fetch_asb_lic(sid)
+        index[sid] = normalize_asb_license(raw)
+    return index
+
+
+# ---------------------------------------------------------------------------
 # 메인 비교 루프
 # ---------------------------------------------------------------------------
 def verify(
@@ -268,6 +329,7 @@ def verify(
     # 원천 fetch
     bd_index: Optional[dict[str, Optional[str]]] = None
     gdl_index: Optional[dict[str, Optional[str]]] = None
+    asb_index: Optional[dict[str, Optional[str]]] = None
 
     if "book_dash" in platforms:
         print(f"[INFO] Book Dash meta.yml fetch: {BOOK_DASH_META_URL}")
@@ -290,6 +352,13 @@ def verify(
         else:
             gdl_index = build_gdl_index(gdl_books)
             print(f"  ✓ GDL 인덱스 {len(gdl_index)} 항목 (응답 {len(gdl_books)}권)")
+
+    if "african_storybook" in platforms:
+        # DB에 적재된 ASb 책의 source_id만 raw-db에서 개별 조회(감시 cron 전용, 적재 아님).
+        asb_ids = [b["source_id"] for b in db_books if b["source_platform"] == "african_storybook"]
+        print(f"[INFO] African Storybook raw-db fetch: {ASB_RAW_BASE}/<id>.txt ({len(asb_ids)}건)")
+        asb_index = build_asb_index(asb_ids)
+        print(f"  ✓ ASb 인덱스 {len(asb_index)} 항목")
 
     # 분류 버킷
     no_change: list[dict] = []
@@ -319,6 +388,14 @@ def verify(
                 disappeared.append(book)
                 continue
             upstream = gdl_index[src_id]
+        elif plat == "african_storybook":
+            if asb_index is None:
+                lookup_failures.append({**book, "reason": "원천 통째 실패"})
+                continue
+            if src_id not in asb_index:
+                disappeared.append(book)
+                continue
+            upstream = asb_index[src_id]
         else:
             lookup_failures.append({**book, "reason": f"미지원 platform: {plat}"})
             continue
@@ -472,7 +549,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--platform",
-        choices=["book_dash", "gdl", "all"],
+        choices=["book_dash", "gdl", "african_storybook", "all"],
         default="all",
         help="검증 대상 출처 (기본: all)",
     )
@@ -489,7 +566,7 @@ def main() -> int:
     args = parser.parse_args()
 
     if args.platform == "all":
-        platforms = ["book_dash", "gdl"]
+        platforms = ["book_dash", "gdl", "african_storybook"]
     else:
         platforms = [args.platform]
 
