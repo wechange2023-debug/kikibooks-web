@@ -43,7 +43,7 @@ export interface Book {
    *   - 실데이터 (2026-05-22 측정): 활성 896권 전부 'html' → iframe 단일 경로로 수렴
    *   - epub·h5p·pdf는 ADR-0017 D2 분기 골격만 (실데이터 0건, 미구현 안내)
    */
-  content_type: 'html' | 'epub' | 'h5p' | 'pdf';
+  content_type: 'html' | 'epub' | 'h5p' | 'pdf' | 'asb_native';
   original_url: string;
   license: string;
   /** Hard Rule 1 — NOT NULL 제약. license-rules.md §4.2 표준 포맷. */

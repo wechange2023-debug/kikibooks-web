@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { notFound, redirect } from 'next/navigation';
 
+import { AsbReader } from '@/components/book/asb-reader';
 import { FinishButton } from '@/components/book/finish-button';
 import { HtmlReader } from '@/components/book/html-reader';
 import { ReaderAttributionBar } from '@/components/book/reader-attribution-bar';
@@ -134,6 +135,21 @@ export default async function ReadPage({ params }: ReadPageProps) {
           // Book Dash만 외부 페이지 상단 #nav-bar(fixed) 클리핑 — 작업4 STEP C.
           // GDL은 H5P embed로 chrome 부재(ADR-0017 Am#3)라 클리핑 0.
           clipNavBar={book.source_platform === 'book_dash'}
+        />
+      );
+      break;
+    case 'asb_native':
+      // ASb 자체 렌더 — content_url(.txt) fetch + parseAsbText(ADR-0025 Amd#3·#6).
+      readerBody = (
+        <AsbReader
+          bookId={book.id}
+          contentUrl={book.content_url}
+          coverUrl={book.cover_url}
+          title={book.title}
+          originalUrl={book.original_url}
+          originalLinkLabel={readerCopy.unsupportedFormat.originalLinkLabel}
+          readerCopy={readerCopy.reader}
+          bookDetailHref={`/book/${book.id}`}
         />
       );
       break;

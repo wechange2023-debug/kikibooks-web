@@ -51,6 +51,18 @@ function toAbsoluteImageUrl(path: string): string {
 }
 
 /**
+ * page_text 1문장 정규화 — ASb 줄바꿈 마커 "@@"를 실제 줄바꿈("\n")으로 치환.
+ * "@@" · "@ @"(사이 공백) · 주변 공백을 모두 한 줄바꿈으로 흡수하고, 과도한 빈 줄은
+ * 1줄로 접은 뒤 trim. page_text 텍스트에만 적용(이미지/헤더/translations 무관).
+ */
+function normalizePageText(text: string): string {
+  return text
+    .replace(/\s*@\s*@\s*/g, '\n')
+    .replace(/\n{2,}/g, '\n')
+    .trim();
+}
+
+/**
  * ASb raw-db .txt 원문을 페이지 구조(AsbBook)로 파싱한다.
  *
  * @param raw      raw-db data/<id>.txt 원문 전체.
@@ -87,7 +99,8 @@ export function parseAsbText(raw: string, coverUrl: string | null): AsbBook {
       // "P<n>\t<문장>" — 첫 탭 이후 전부를 텍스트로(문장 내부 탭 보존). 순서 유지.
       if (/^P\d+\t/.test(line)) {
         const tab = line.indexOf('\t');
-        texts.push(line.slice(tab + 1).trim());
+        // "@@" 줄바꿈 마커를 \n으로 치환(normalizePageText가 trim도 수행).
+        texts.push(normalizePageText(line.slice(tab + 1)));
       }
       continue;
     }
