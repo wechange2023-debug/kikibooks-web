@@ -219,5 +219,12 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
     - **다음 세션 핵심 트랙**: "전량 공개"가 아니라 **"품질 필터 설계 → 공개 후보 선별"**. 필터 기준 초안: 글 N줄 이상 AND 유효 이미지 M장 이상 AND 표지 200. **ADR 선행 권장**.
     - **미해결**: `36768`(How The Elephant) 표본 추출 결과엔 있었으나 PM 조회 시 DB에 해당 id **없음(0 rows)** — 표본 id 정합성 재확인 필요(경미).
     - **원복 필요**: 검수용 임시 공개 **20권**(2026-06-17 표본)은 staging(`is_active=false`) 원복 필요 — PM 확인 사항.
+  - (o) **ASb 품질 필터 ADR-0026 Accepted(2026-06-18)** — "전량 공개"→"선별 공개" 정책 확정.
+    - **공개 게이트**: `text_lines≥3 AND image_count≥3`. **표지 `cover_http≠200`(404·ERR·타임아웃)은 뷰어 표지면 폴백** 선행(없으면 791권 빈 표지) → `asb-reader.tsx` 표지 폴백이 공개 필수 선행 코드.
+    - **bucket(DB 실재 2,750)**: `candidate_cover_ok` 1,416 / `candidate_cover_404` 791 → 공개 후보. `empty_dummy` 173(글0&그림≤1, 영구제외) / `no_text_picture` 49(무텍스트, 이번 범위 제외·PM 정책) / `grey` 321(게이트 미달 경계, 보류·별도 상태 보존).
+    - **공개 가능 모수 = 1,416+791 = 2,207권(80.3%)**. 공개 전환(`is_active=true`)은 검수 후 별도 SQL 단계(ADR은 정책만, DB 미변경).
+    - **근거 산출물**: 신호 스캔 `scripts/scan_asb_quality.py`(`classify_bucket` SSOT, `--all --csv`), 대조 `scripts/out/asb_db_reconcile.csv`·`asb_quality_scan.csv`(로컬·미커밋).
+    - **후속(범위 밖)**: ① 표지 404 폴백 코드 트랙 ② 공개 전환 SQL ③ grey 321 베타 후 개별 검토(필요 시 Amendment).
+  - (p) **[경미] dedup 권수 차이 규명** — ADR-0025 D5 dedup 누락 **33권(적재 전 추정)** ↔ ADR-0026 reconcile **45권(적재 후 실측)**, 12권 차이. 적재 전 추정 vs 적재 후 실측 편차로 추정. **결론(의도된 정상 누락)은 동일**, 우선순위 낮음. 원인(로직/GDL 데이터 변동 여부) 규명은 별도 경미 트랙. ADR-0026 D5 각주 참조.
 - **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 **→ 순서4 종결: 재집계 완료(GDL 851 / 전체 905, 목표 900 +5), 2026-06-15** (자체 e-book 23권 추가 시 ~928) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
 - **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
