@@ -31,6 +31,11 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 
+# Python (스크립트 캐시·로컬 산출물 — scripts/out/ 은 위 out/ 규칙에도 잡히나 명시)
+__pycache__/
+*.pyc
+scripts/out/
+
 # Tests / coverage
 coverage/
 
