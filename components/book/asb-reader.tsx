@@ -98,7 +98,16 @@ type ImagePhase = 'loading' | 'loaded' | 'failed';
  *   - failed(onError): 자기 자리만 비운다(텍스트는 부모가 유지) — 깨진 이미지 1장이 전체
  *     리더를 막지 않게 한다(Amd#6 실패 격리).
  */
-function PageImage({ src, alt }: { src: string; alt: string }) {
+function PageImage({
+  src,
+  alt,
+  onLoadError,
+}: {
+  src: string;
+  alt: string;
+  /** 이미지 로드 실패 시 부모에 올리는 신호(표지면 폴백용). 본문면은 미연결. */
+  onLoadError?: () => void;
+}) {
   const [phase, setPhase] = useState<ImagePhase>('loading');
   if (phase === 'failed') {
     return null;
@@ -120,7 +129,10 @@ function PageImage({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         onLoad={() => setPhase('loaded')}
-        onError={() => setPhase('failed')}
+        onError={() => {
+          setPhase('failed');
+          onLoadError?.();
+        }}
         className={`max-h-full max-w-full object-contain transition-opacity duration-200 ease-kiki ${
           phase === 'loaded' ? 'opacity-100' : 'opacity-0'
         }`}
@@ -248,6 +260,16 @@ export function AsbReader({
   const goPrev = () => setIndex((i) => Math.max(0, i - 1));
   const goNext = () => setIndex((i) => Math.min(total - 1, i + 1));
 
+  // 표지 이미지 로드 실패(404 등) → 표지면(항상 index 0)을 faces에서 제거(Amd#6 표지 폴백).
+  // 첫 본문 이미지가 자연히 첫 장이 되고, total = faces.length 라 "현재/전체"도 자동 보정.
+  // isCover 면에만 연결되므로 본문 이미지 깨짐은 이 로직을 타지 않는다(기존 거동 유지).
+  // filter는 멱등이라 중복 호출도 무해(별도 플래그 불필요). 표지 제거 시 인덱스가 밀리지
+  // 않게 index도 한 칸 당긴다(표지는 대개 index 0에서 즉시 깨져 0 유지).
+  const handleCoverError = () => {
+    setFaces((prev) => prev.filter((f) => !f.isCover));
+    setIndex((i) => Math.max(0, i - 1));
+  };
+
   return (
     <div className="flex h-full w-full flex-col gap-3 px-4 py-4 md:px-8 lg:px-16">
       {/* 본문 면 — 큰 이미지 + 큰 텍스트(유아 대상). */}
@@ -260,6 +282,7 @@ export function AsbReader({
               key={face.imageUrl}
               src={face.imageUrl}
               alt={face.isCover ? title : ''}
+              onLoadError={face.isCover ? handleCoverError : undefined}
             />
           </div>
         )}
