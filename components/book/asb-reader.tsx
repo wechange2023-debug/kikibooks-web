@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import type { BookReaderCopy } from '@/lib/book/copy';
 import { parseAsbText, type AsbBook } from '@/lib/book/asb-parser';
@@ -87,6 +87,9 @@ function toFaces(book: AsbBook): Face[] {
 /** 현재 면 기준 앞뒤로 미리 받아둘 면 수(인접 프리로드 반경, ±N). 초기 폭주 방지. */
 const PREFETCH_RADIUS = 2;
 
+/** 스와이프 넘김 최소 수평 이동량(px) — 이 미만이거나 수직 이동이 더 크면 무시(§8.1). */
+const SWIPE_THRESHOLD = 50;
+
 type ImagePhase = 'loading' | 'loaded' | 'failed';
 
 /**
@@ -155,6 +158,9 @@ export function AsbReader({
   const [faces, setFaces] = useState<Face[]>([]);
   const [index, setIndex] = useState(0);
 
+  // 터치 스와이프 시작 좌표(§8.1) — touchStart에서 기록, touchEnd에서 비교 후 비운다.
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+
   // 세션 시작 — 마운트 1회(HtmlReader와 동일, intent §5.1). 실패는 silent(읽기 흐름 유지).
   useEffect(() => {
     startReadingSession(bookId).catch(() => {
@@ -208,6 +214,37 @@ export function AsbReader({
     }
   }, [index, faces]);
 
+  // 페이지 넘김 — 양 끝 클램프는 setIndex 함수형 업데이트에 내장(버튼·키보드·스와이프 공용,
+  // 중복 가드 없음). 첫 면에서 이전·끝 면에서 다음은 자연히 무효 처리된다.
+  const goPrev = useCallback(() => setIndex((i) => Math.max(0, i - 1)), []);
+  const goNext = useCallback(
+    () => setIndex((i) => Math.min(faces.length - 1, i + 1)),
+    [faces.length],
+  );
+
+  // §8.1 키보드 넘김 — window keydown(←=이전 / →=다음). 언마운트 시 해제.
+  // loaded 상태에서만 동작(loading·error 면엔 페이지가 없음). 입력 요소 포커스 시 무시
+  // (이 뷰어엔 입력창이 없지만 방어적으로 input/textarea면 return).
+  useEffect(() => {
+    if (status !== 'loaded') return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target;
+      if (
+        target instanceof HTMLElement &&
+        (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA')
+      ) {
+        return;
+      }
+      if (e.key === 'ArrowLeft') {
+        goPrev();
+      } else if (e.key === 'ArrowRight') {
+        goNext();
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [status, goPrev, goNext]);
+
   if (status === 'loading') {
     return (
       <div className="flex h-full w-full flex-col px-4 py-4 md:px-8 lg:px-16">
@@ -257,8 +294,27 @@ export function AsbReader({
   const isFirst = index === 0;
   const isLast = index === total - 1;
 
-  const goPrev = () => setIndex((i) => Math.max(0, i - 1));
-  const goNext = () => setIndex((i) => Math.min(total - 1, i + 1));
+  // §8.1 터치 스와이프 — 수평 이동이 임계값↑ 이고 수직 이동보다 클 때만 넘김(세로 스크롤
+  // 오작동 방지). 좌로 밀기(dx>0)=다음, 우로 밀기=이전. 양 끝 가드는 goNext/goPrev에 내장.
+  const onTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touchStartRef.current = { x: t.clientX, y: t.clientY };
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const start = touchStartRef.current;
+    touchStartRef.current = null;
+    if (!start) return;
+    const t = e.changedTouches[0];
+    const dx = start.x - t.clientX;
+    const dy = start.y - t.clientY;
+    if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+      if (dx > 0) {
+        goNext();
+      } else {
+        goPrev();
+      }
+    }
+  };
 
   // 표지 이미지 로드 실패(404 등) → 표지면(항상 index 0)을 faces에서 제거(Amd#6 표지 폴백).
   // 첫 본문 이미지가 자연히 첫 장이 되고, total = faces.length 라 "현재/전체"도 자동 보정.
@@ -272,8 +328,12 @@ export function AsbReader({
 
   return (
     <div className="flex h-full w-full flex-col gap-3 px-4 py-4 md:px-8 lg:px-16">
-      {/* 본문 면 — 큰 이미지 + 큰 텍스트(유아 대상). */}
-      <div className="flex w-full flex-1 flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-surface-3 p-4 shadow-elev-2 md:p-6">
+      {/* 본문 면 — 큰 이미지 + 큰 텍스트(유아 대상). 터치 스와이프 넘김 부착(§8.1). */}
+      <div
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        className="flex w-full flex-1 flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-surface-3 p-4 shadow-elev-2 md:p-6"
+      >
         {face.imageUrl && (
           <div className="flex min-h-0 flex-1 items-center justify-center">
             {/* key=imageUrl: src 변경 시 새 노드(잔상 제거), 같은 URL 재방문 시 재마운트
@@ -281,7 +341,7 @@ export function AsbReader({
             <PageImage
               key={face.imageUrl}
               src={face.imageUrl}
-              alt={face.isCover ? title : ''}
+              alt={face.isCover ? title : `${title} 삽화`}
               onLoadError={face.isCover ? handleCoverError : undefined}
             />
           </div>
