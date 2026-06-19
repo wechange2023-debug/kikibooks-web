@@ -232,5 +232,6 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
     - **현재 active ASb = 2,141권**(baseline 1,397 + clean 744).
     - **보류 = minor_gap 37(probe 11932 "Ekai's First Day In School" 포함) + broken 10 = 47권** — PM 판단 대기.
     - **게이트 한계(중요)**: HEAD는 이미지 HTTP 생사만 판정 → 이미지 중복·그림체 불일치 등 내용 결함은 못 거름(probe 11932가 실증, ADR-0026 Amd#1). **정적 중복 의심 9권은 clean에 일부 포함 가능 → 베타 후 grey 321 검토 트랙에서 함께 재점검.**
+  - (r) 라이브러리 ASb 표지 미표시 해결 (2026-06-19): 원인=cover_url 404 아님(200 생존), next/image remotePatterns에 africanstorybook.org 누락이 진짜 원인(PM 실측 반전). 해결=next.config.js 호스트 1행 추가(23e77d2) + ADR-0026 Amd#2(1d97ac1). 백필/재sync 불필요. broken 등 실제 표지깨짐 책은 onError 폴백 잔존이 정상.
 - **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 **→ 순서4 종결: 재집계 완료(GDL 851 / 전체 905, 목표 900 +5), 2026-06-15** (자체 e-book 23권 추가 시 ~928) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
 - **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
