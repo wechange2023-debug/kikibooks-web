@@ -7,6 +7,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'bookdash.github.io' },
       { protocol: 'https', hostname: 'content.digitallibrary.io' },
+      { protocol: 'https', hostname: 'africanstorybook.org' },
     ],
   },
 };
