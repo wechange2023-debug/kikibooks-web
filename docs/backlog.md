@@ -226,5 +226,11 @@ phase-14 종결(17/17) 이후 시작한 홈·라이브러리 화면군 UX 개선
     - **근거 산출물**: 신호 스캔 `scripts/scan_asb_quality.py`(`classify_bucket` SSOT, `--all --csv`), 대조 `scripts/out/asb_db_reconcile.csv`·`asb_quality_scan.csv`(로컬·미커밋).
     - **후속(범위 밖)**: ① 표지 404 폴백 코드 트랙 ② 공개 전환 SQL ③ grey 321 베타 후 개별 검토(필요 시 Amendment).
   - (p) **[경미] dedup 권수 차이 규명** — ADR-0025 D5 dedup 누락 **33권(적재 전 추정)** ↔ ADR-0026 reconcile **45권(적재 후 실측)**, 12권 차이. 적재 전 추정 vs 적재 후 실측 편차로 추정. **결론(의도된 정상 누락)은 동일**, 우선순위 낮음. 원인(로직/GDL 데이터 변동 여부) 규명은 별도 경미 트랙. ADR-0026 D5 각주 참조.
+  - (q) **ASb cover_404 본문이미지 HEAD 게이트 + clean 744권 공개 완료(2026-06-19, 근거 ADR-0026 Amendment #1)** — (o) 정책의 cover_404 791권을 본문 이미지 생사로 2차 선별 후 1차 공개 실행.
+    - **본문이미지 HEAD 정찰 완료(2026-06-19)**: cover_404 791권의 표지 제외 본문 페이지 이미지 전체(6,915장)에 HEAD 요청(GET 본문 없음, 동시성 10). 권별 비200 이미지 수로 분류: **clean 744 / minor_gap 37 / broken 10**(중 50%↑ 깨짐 4권). 비200 이미지 70/6,915(1.01%), ERR 오염 없음. 산출물 `scripts/out/asb_cover404_page_http.csv`(로컬·미커밋).
+    - **clean 744권 `is_active=true` 공개 완료** — PM이 Supabase에서 직접 실행. 진단 SELECT 확인: **matched 744 / active 744 / inactive 0**(전건 정상 반영). SQL 산출물 `scripts/out/enable_asb_clean744.sql`·`diag_clean744.sql`(로컬·미커밋).
+    - **현재 active ASb = 2,141권**(baseline 1,397 + clean 744).
+    - **보류 = minor_gap 37(probe 11932 "Ekai's First Day In School" 포함) + broken 10 = 47권** — PM 판단 대기.
+    - **게이트 한계(중요)**: HEAD는 이미지 HTTP 생사만 판정 → 이미지 중복·그림체 불일치 등 내용 결함은 못 거름(probe 11932가 실증, ADR-0026 Amd#1). **정적 중복 의심 9권은 clean에 일부 포함 가능 → 베타 후 grey 321 검토 트랙에서 함께 재점검.**
 - **잔여 F-item·후속(베타 차단 아님, §7.3)**: 노출 가능 **→ 순서4 종결: 재집계 완료(GDL 851 / 전체 905, 목표 900 +5), 2026-06-15** (자체 e-book 23권 추가 시 ~928) / Book Dash 이미지 분기별 재감사 / keyset count 재쿼리 최적화 / 작업1 level·keyword URL 미동기화 / vercel.app 307→308 승격(수일 운영 후) / GitHub Actions Node 20 deprecation(v5/v6 안정화 시 일괄 승격) / **약관·개인정보 법률 검토 1회**(결제 도입·사용자 증가 전).
 - **다음 후보 작업**: ① **【착수】순서4 스키마 마이그레이션**(`002_*.sql`: CHECK+트리거에 `cc-by-3-0` 추가, ADR-0022 선행) + **GDL 심화 sync**(`sync_gdl` ALLOWED에 cc-by-3-0 추가·`cc-by-sa-4-0-2` 정규화 → 842→~937) ② HelloKiki 명칭 **전수 반영 잔여**(backlog·README·UI 등) ③ 작업1 level·keyword URL 동기화(코드) ④ 307→308 승격(대시보드, 수일 후) ⑤ 자체 e-book 23권(~960권) ⑥ Phase 1.5 트랙B **TTS·캐릭터 AI 구현 ADR**(ADR-0023 후속).
