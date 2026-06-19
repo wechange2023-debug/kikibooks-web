@@ -160,6 +160,8 @@ export function AsbReader({
 
   // 터치 스와이프 시작 좌표(§8.1) — touchStart에서 기록, touchEnd에서 비교 후 비운다.
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+  // 스와이프 컨테이너 — 가로 제스처 기본동작 차단용 native touchmove 리스너 부착 대상.
+  const swipeContainerRef = useRef<HTMLDivElement>(null);
 
   // 세션 시작 — 마운트 1회(HtmlReader와 동일, intent §5.1). 실패는 silent(읽기 흐름 유지).
   useEffect(() => {
@@ -245,6 +247,30 @@ export function AsbReader({
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [status, goPrev, goNext]);
 
+  // §8.1 가로 스와이프 시 브라우저 기본 제스처(뒤로가기·오버스크롤·새로고침) 차단.
+  // touch-action: pan-y(아래 className)가 1차 차단이나, 일부 브라우저 보강을 위해
+  // 가로 우세 제스처일 때만 native touchmove에서 preventDefault한다. React 합성 핸들러는
+  // 루트에 passive로 등록돼 preventDefault가 무시되므로 native { passive: false } 등록이 필요.
+  // 세로 우세(수직 스크롤)일 땐 preventDefault하지 않아 스크롤은 그대로 동작한다.
+  // 컨테이너는 loaded 분기에서만 렌더되므로 status 의존으로 마운트 후 부착한다.
+  useEffect(() => {
+    if (status !== 'loaded') return;
+    const el = swipeContainerRef.current;
+    if (!el) return;
+    const onTouchMove = (e: TouchEvent) => {
+      const start = touchStartRef.current;
+      if (!start) return;
+      const t = e.touches[0];
+      const dx = Math.abs(start.x - t.clientX);
+      const dy = Math.abs(start.y - t.clientY);
+      if (dx > dy) {
+        e.preventDefault();
+      }
+    };
+    el.addEventListener('touchmove', onTouchMove, { passive: false });
+    return () => el.removeEventListener('touchmove', onTouchMove);
+  }, [status]);
+
   if (status === 'loading') {
     return (
       <div className="flex h-full w-full flex-col px-4 py-4 md:px-8 lg:px-16">
@@ -328,11 +354,13 @@ export function AsbReader({
 
   return (
     <div className="flex h-full w-full flex-col gap-3 px-4 py-4 md:px-8 lg:px-16">
-      {/* 본문 면 — 큰 이미지 + 큰 텍스트(유아 대상). 터치 스와이프 넘김 부착(§8.1). */}
+      {/* 본문 면 — 큰 이미지 + 큰 텍스트(유아 대상). 터치 스와이프 넘김 부착(§8.1).
+          touch-pan-y: 세로 스크롤만 허용, 가로 제스처는 브라우저 기본동작(뒤로가기·새로고침) 차단. */}
       <div
+        ref={swipeContainerRef}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
-        className="flex w-full flex-1 flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-surface-3 p-4 shadow-elev-2 md:p-6"
+        className="flex w-full flex-1 touch-pan-y flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-surface-3 p-4 shadow-elev-2 md:p-6"
       >
         {face.imageUrl && (
           <div className="flex min-h-0 flex-1 items-center justify-center">
