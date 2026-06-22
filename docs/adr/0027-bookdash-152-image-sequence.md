@@ -134,3 +134,31 @@
 - 업로드 권한: sync 스크립트가 **service_role 키로 업로드**(Storage 정책 우회). 읽기는 Public 버킷이라 정책 불요. → 별도 Storage Policy 설정 없이 진행, 업로드 차단 시 정책 추가로 대응.
 
 **불변**: D1~D6, parser .jpg 확장, asb_native 재사용, 이미지 CloudFront 핫링크 모두 유효.
+
+### Amendment #3 (2026-06-22) — 전량 드라이런으로 Scheme A/B 분리 발견, A 21권 우선 적재로 범위 조정
+
+**배경**: 206 전량 드라이런(`--dry-run --limit 206 --existing-slugs <54>`)에서 표본(5~10권)에선 안 보이던 두 사실 발견. ADR 본문 D1/D3의 "CloudFront 단일 경로" 가정이 일부 깨짐.
+
+**발견 1 — 본문 경로 2종(Scheme A/B) [실측, CloudFront page1 전수 분류]**:
+- **Scheme A = 21권**: CloudFront `{slug}/e-book/en_english/images/{slug}_en_page{N}.jpg` → 200/206. 본 ADR 본문 D1 공식 그대로 적용 가능. slug 목록:
+  `aaaaahhh-mmawe, banzis-busy-bees, best-friends, going-places, grumpy-cloud, how-do-you-eat, i-hate-winter, its-my-book, jock-and-me, julia-loves-books, khaya-wants-to-row, little-shoots, mazi-learns-to-play, moms-hands, oyisa-and-the-giant-tree, samoosas, tata-comes-home, the-window-seat, thulis-tissue, whats-happened-to-our-water, why-the-owl-never-sleeps`
+- **Scheme B = 185권(대다수)**: 위 CloudFront 경로 → 404. 본문이 `wp-content/uploads/{년}/{월}/{slug}_english_pdf-ebook_{date}_Page_{NN}.jpg` 류 별도 구조에 존재(zero-pad·날짜·년월폴더 변수). 경로 예시: `https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_pdf-ebook_20140909_Page_01.jpg`. 현 v2 스크립트로는 0장 수집. → 별도 경로 파서 필요.
+- 정찰 표본 3권(the-window-seat·khaya-wants-to-row·moms-hands)이 모두 Scheme A였던 표본 편향이 원인(전부 2025 신간).
+
+**발견 2 — slug drift로 dedup 불완전(이중적재 위험) [실측]**:
+- 기존 54 ↔ WP 206 대조 시 5건 불일치:
+  - slug 변경(같은 책, 신규 slug): `maddy-moona`→`maddy-moonas-menagerie`, `mrs-penguins-palace`→`mrs-penguins-perfect-palace`, `little-sock`→`little-sock-and-the-tiny-creatures`
+  - WP 부재: `i-can-dress-myself`, `springloaded`
+- slug 기준 dedup(D4/D6)은 49권만 매칭, drift 3권은 신규 slug로 들어와 기존 UUID 행과 이중적재 위험. 실제 overlap=52(49+3), 진짜 순신규≈154(206−52)로 본 ADR 본문 +152(Amd#2)와도 상이.
+
+**정정**:
+- 본문 D1/D3의 CloudFront 경로는 **Scheme A에만 유효**. Scheme B는 미해결(아래 결정).
+- 순증 수치 +152(Amd#2)는 Scheme/drift 미반영 추정치였음 → 정정: 전량 시 순신규≈154이나, 본 Amendment로 **적재 범위를 Scheme A 21권으로 한정**.
+
+**결정**:
+1. **Scheme A 21권만 우선 적재**(--execute 1차 범위). 파이프라인(매니페스트→Storage 업로드→asb_native 적재→자체뷰어 렌더) 전 과정을 A로 실증.
+2. **Scheme B 185권은 별도 후속 트랙**으로 분리. B 경로 공식(zero-pad·날짜·년월 변수) 확정 정찰 후 별도 Amendment/구현.
+3. **drift 3권 처리**: 신규 slug로 적재 시 기존 UUID 행과 중복 → 적재 전 drift 책은 skip 목록에 포함(기존 행 유지). 통합 정리는 후속. (단 drift 3권 중 Scheme A 해당분만 1차 범위에서 의미 있음.)
+4. 작가 정규식 입자 보강(van/de/du 등)은 성공 검증 완료(best-friends=van Wyk, du Plessis, de Klerk 온전). 잔여 성 1토큰 10건은 책 페이지 표기 자체 한계(후속 점검).
+
+**불변**: asb_native 재사용·parser .jpg 확장·CloudFront 핫링크(A 한정)·매니페스트 book-manifests 버킷·license 화이트리스트 4곳 무변경.
