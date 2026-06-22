@@ -94,3 +94,25 @@
 - **dedup 실측**: D4 SELECT 초안으로 기존 54권 slug ↔ 신간 206권 slug 차집합, GDL 경유 title 중복은 PM이 SQL Editor에서 사전 확인.
 - **실제 sync 스크립트 구현**: 다음 트랙(본 ADR 승인 후). WP API 페이지네이션·작가 HTML 파서·매니페스트 생성·parser `.jpg` 확장·dedup SELECT 검증 포함.
 - **PDF 경로**: 현 PDF 뷰어 미구현 → 이미지 시퀀스 채택. 향후 PDF 뷰어 도입 시 5.6MB/권 PDF 단일 자산 대안 재검토 가능(별도 ADR).
+
+---
+
+## 5. Amendments
+
+### Amendment #1 (2026-06-22) — 매니페스트 호스팅 위치 확정 + 대안 ③ 폐기
+
+**배경**: §4 "합성 `.txt` 매니페스트 호스팅 위치 미결" 및 D2 대안으로 거론된 ③(페이지 목록을 DB에 직접 저장, parser 우회)의 경량성 여부를 읽기전용 RECON으로 검증.
+
+**RECON 결과 [실측]**:
+- **Q1 — AsbReader 입구**: `read/page.tsx`는 `content_url`/`cover_url` 단일 값만 props 전달. `AsbReader`는 클라이언트에서 `fetch(contentUrl) → res.text() → parseAsbText`로 faces 생성(자체 fetch 고정). 페이지 배열 prop 미수용.
+- **Q2 — books 스키마**: 컬럼 = id, source_platform, source_id, title, cover_url, content_url, content_type, language, level, age_min, age_max, license, author, illustrator, original_url, attribution_text, is_active, synced_at. 001~004 통틀어 **JSON/JSONB·자유형 컬럼 없음, ADD COLUMN 0건**. 페이지 URL 배열을 담을 기존 칸 없음(content_url 오버로드는 의미 오염).
+- **Q3 — parser**: `parseAsbText(raw: string, ...)` 문자열 전용. 단 `AsbBook={coverUrl,pages[]}` 타입·`toFaces()` 존재로 parser 우회 구성은 타입상 가능.
+
+**판정**: 대안 ③(DB 직접 저장)은 **스키마 변경(JSONB 컬럼 ADD + 마이그레이션 + ADR) + 리더 2곳(page.tsx prop 주입 + AsbReader fetch-skip 분기) 변경**을 동반 → ①(현 D2 .txt 매니페스트: parser `.jpg` 1줄 + 스키마·리더·page.tsx 무변경)보다 변경 지점이 많고 무겁다. ③의 유일 이점(외부 호스팅 의존 제거)은 ①에서 매니페스트를 Supabase Storage 텍스트로 두면 동일 흡수됨.
+
+**결정**:
+1. 대안 ③ **폐기**. D2의 `.txt` 매니페스트 방식을 **확정 유지**.
+2. §4 미결이던 **매니페스트 호스팅 위치 = Supabase Storage(텍스트, ~수 KB/권 × 152 = 무시 가능)** 로 확정. (이미지 무복사 원칙 D3과 무저촉 — 매니페스트는 텍스트이며, 본문 이미지는 여전히 CloudFront 핫링크.)
+3. 본 Amendment로 §4 "매니페스트 호스팅 위치 미결" 항목 **종결(closed)**.
+
+**불변 사항**: D1·D3·D4·D5·D6 및 parser `.jpg` 1줄 확장(D2) 전제는 그대로 유효. 스키마 변경 없음(`asb_native` 재사용) 재확인.
