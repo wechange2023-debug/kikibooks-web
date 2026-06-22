@@ -116,3 +116,21 @@
 3. 본 Amendment로 §4 "매니페스트 호스팅 위치 미결" 항목 **종결(closed)**.
 
 **불변 사항**: D1·D3·D4·D5·D6 및 parser `.jpg` 1줄 확장(D2) 전제는 그대로 유효. 스키마 변경 없음(`asb_native` 재사용) 재확인.
+
+### Amendment #2 (2026-06-22) — 순증 +152 확정 + 매니페스트 버킷 경로 확정
+
+**dedup 사전 점검 [실측, PM Supabase SQL Editor 실행]**:
+- source_platform별 권수: african_storybook 활성 2,161 / 비활성 589, gdl 851, **book_dash 54**.
+- 기존 book_dash 54권 slug 목록 확보(original_url에서 추출, source_id=UUID 형식 `9c9e...`).
+- GDL 경유 Book Dash 중복: original_url·attribution_text에 bookdash 흔적 검색 → **0건**.
+- **순증 확정 = 206(WP API 영어) − 54(기존 book_dash) − 0(GDL 중복) = +152**.
+- 잔여 검산: WP 206권 실제 slug를 기존 54 slug와 정밀 차집합 대조는 **드라이런 단계에서 수행**(slug 표기 미세차 대비).
+
+**매니페스트 호스팅 확정 [실측]**:
+- 기존 Supabase Storage 버킷 0개(ASb .txt·이미지는 모두 외부 호스팅이었음) → 신규 생성.
+- **버킷 = `book-manifests` (Public)**. File size limit Unset(50MB), MIME Any.
+- **경로 규칙 [제안] = `book-manifests/{slug}_en.txt`** (영어 단일 언어이므로 `_en` 접미. 향후 다국어 시 `{slug}_{lang}.txt`로 확장).
+- content_url = 해당 객체의 Public URL(`.../storage/v1/object/public/book-manifests/{slug}_en.txt`).
+- 업로드 권한: sync 스크립트가 **service_role 키로 업로드**(Storage 정책 우회). 읽기는 Public 버킷이라 정책 불요. → 별도 Storage Policy 설정 없이 진행, 업로드 차단 시 정책 추가로 대응.
+
+**불변**: D1~D6, parser .jpg 확장, asb_native 재사용, 이미지 CloudFront 핫링크 모두 유효.
