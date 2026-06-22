@@ -111,7 +111,14 @@ export function parseAsbText(raw: string, coverUrl: string | null): AsbBook {
         continue;
       }
       // 상대경로(illustrations/...) 또는 .png 라인만 수집. 순서·중복 그대로(Amd#6 A4).
-      if (stripped && (stripped.includes('illustrations/') || low.endsWith('.png'))) {
+      // Book Dash CloudFront 이미지(.jpg/.jpeg) 수용 — ADR-0027 D2.
+      if (
+        stripped &&
+        (stripped.includes('illustrations/') ||
+          low.endsWith('.png') ||
+          low.endsWith('.jpg') ||
+          low.endsWith('.jpeg'))
+      ) {
         images.push(toAbsoluteImageUrl(stripped));
       }
       continue;
