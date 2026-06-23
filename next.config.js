@@ -6,6 +6,7 @@ const nextConfig = {
     // next/image 최적화를 위해 등록한다 (docs/adr/0012-landing-page-static.md 결정 6).
     remotePatterns: [
       { protocol: 'https', hostname: 'bookdash.github.io' },
+      { protocol: 'https', hostname: 'bookdash.org' },
       { protocol: 'https', hostname: 'content.digitallibrary.io' },
       { protocol: 'https', hostname: 'africanstorybook.org' },
     ],
