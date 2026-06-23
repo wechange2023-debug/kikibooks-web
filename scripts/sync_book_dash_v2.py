@@ -280,6 +280,26 @@ def fetch_scheme_b_pages(slug: str) -> list[str]:
     return _dedup_first_set(full)
 
 
+def apply_cover_dedup(
+    slug: str, cover_url: Optional[str], body_urls: list[str]
+) -> tuple[list[str], str]:
+    """게이트③(Amd#6): 본문 첫 이미지가 표지(cover_url=featured_media)와 동일 그림이면
+    첫 1장만 제외(판정방식 a: stem 비교 — _page_key 재사용). 둘째 장 이후는 보존.
+
+    반환 (조정 body_urls, 상태) where 상태 ∈ {"kept","removed","warn"}.
+    안전장치: 제외 시 본문이 ≤1장으로 떨어지면 원본 유지+"warn"(과잉제거 방지).
+    Scheme A는 표지 stem({slug}_en_cover)≠첫장({slug}_en_page1)이라 자연히 "kept"(무변동).
+    """
+    if not cover_url or not body_urls:
+        return body_urls, "kept"
+    if _page_key(cover_url) != _page_key(body_urls[0]):
+        return body_urls, "kept"
+    trimmed = body_urls[1:]
+    if len(trimmed) <= 1:
+        return body_urls, "warn"  # 과잉제거 방지 — 원본 유지
+    return trimmed, "removed"
+
+
 # ---------------------------------------------------------------------------
 # 4. 책 페이지 HTML — 작가/그린이 (역할 분리, 정찰 실측)
 # ---------------------------------------------------------------------------
@@ -538,6 +558,8 @@ def main() -> int:
         "scheme_a": 0,
         "scheme_b": 0,
         "gate1_skip": 0,
+        "gate3_removed": 0,
+        "gate3_warn": 0,
     }
     page_counts: list[int] = []
     page_outliers: list[str] = []  # 17 외 예외 권
@@ -576,6 +598,14 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001
                 print(f"  ! {slug}: scheme B 추출 실패 — {exc}")
                 body_urls = []
+        # 게이트③(Amd#6): 본문 첫 장이 표지와 동일하면 제외(stem 비교, 첫 1장만).
+        body_urls, _g3 = apply_cover_dedup(slug, c.get("cover_url"), body_urls)
+        if _g3 == "removed":
+            stats["gate3_removed"] += 1
+            print(f"     ✂ gate3_cover_dedup: {slug} removed first page (cover match)")
+        elif _g3 == "warn":
+            stats["gate3_warn"] += 1
+            print(f"     ⚠ gate3_cover_dedup: {slug} 첫 장 표지일치이나 제외 시 본문 과소 → 원본 유지(과잉제거 방지)")
         n_body = len(body_urls)
         creators = fetch_creators(slug)
         time.sleep(0.3)  # 외부 예의
@@ -690,6 +720,7 @@ def main() -> int:
     print(f"  총 후보            : {stats['total']}")
     print(f"  Scheme A / B       : {stats['scheme_a']} / {stats['scheme_b']}")
     print(f"  게이트① skip(≤1장) : {stats['gate1_skip']}")
+    print(f"  게이트③ 표지중복제거: {stats['gate3_removed']} (warn 원본유지: {stats['gate3_warn']})")
     if existing_slugs is None:
         print(f"  기존중복 추정      : unknown(--existing-slugs 미지정)")
         print(f"  순신규 추정        : unknown")
