@@ -194,6 +194,93 @@ def fetch_page_list(slug: str) -> list[int]:
 
 
 # ---------------------------------------------------------------------------
+# 3-B. Scheme B 본문 추출 (ADR-0027 Amd#4 레시피 + Amd#5 게이트② dedup)
+# ---------------------------------------------------------------------------
+# Scheme B = CloudFront _en_page 경로 404. 파일명 공식화 불가(책마다 stem·날짜·
+# zero-pad 상이) → 책페이지 HTML #read-book 모달에서 img[data-src] 직접 파싱.
+_THUMB_SUFFIX_RE = re.compile(r"-\d+x\d+(\.(?:jpg|jpeg|png))$", re.I)
+_DIV_TOKEN_RE = re.compile(r"<div\b|</div>", re.I)
+_DATASRC_RE = re.compile(r'data-src=["\']([^"\']+)["\']', re.I)
+_COLLISION_RE = re.compile(r"-\d+$")  # WP 충돌접미사 -N
+_DATE_RE = re.compile(r"\d{8}(\d*)")  # 8자리 날짜 제거(글자붙은 페이지번호는 보존)
+
+
+def _isolate_read_book(html_text: str) -> Optional[str]:
+    """<div id="read-book" ...> 의 매칭 닫는 </div> 까지를 div 깊이 카운팅으로 격리.
+
+    매칭 실패(구조 다름) 시 None. (드라이런 dryrun_book_dash_scheme_b.py 검증분)
+    """
+    m = re.search(r'<div\b[^>]*\bid=["\']read-book["\']', html_text, re.I)
+    if not m:
+        return None
+    start = m.start()
+    depth = 0
+    seen_open = False
+    for tok in _DIV_TOKEN_RE.finditer(html_text, start):
+        if tok.group(0).lower().startswith("<div"):
+            depth += 1
+            seen_open = True
+        else:
+            depth -= 1
+        if seen_open and depth == 0:
+            return html_text[start:tok.end()]
+    return html_text[start:]  # 닫힘 미발견 — 끝까지(비정상이나 추출 시도)
+
+
+def _page_key(url: str) -> str:
+    """순서기반 dedup용 페이지 키. 파일명 공식을 신뢰하지 않되, 동일 본문의 재등장을
+    감지할 수 있게 썸네일·WP 충돌접미사(-N)·8자리 날짜를 정규화한다(Amd#5 게이트②).
+    """
+    base = url.rsplit("/", 1)[-1]
+    base = _THUMB_SUFFIX_RE.sub(r"\1", base)          # -WxH.jpg → .jpg
+    base = re.sub(r"\.(?:jpe?g|png)$", "", base, flags=re.I)  # 확장자 제거
+    base = _COLLISION_RE.sub("", base)                # -1/-3 등 충돌접미사 제거
+    base = _DATE_RE.sub(r"\1", base)                  # 날짜 제거(붙은 번호 보존)
+    return base.lower()
+
+
+def _dedup_first_set(urls: list[str]) -> list[str]:
+    """게이트② 'dedup 방식 A — 첫 세트만 채택'(Amd#5, PM 확정).
+
+    문서 순서대로 보다가 이미 본 페이지 키가 다시 등장(=세트 되감기)하면 거기서 절단.
+    파일명 규칙이 아니라 '시퀀스가 다시 시작되는가'로 판정.
+    """
+    seen: set[str] = set()
+    out: list[str] = []
+    for u in urls:
+        k = _page_key(u)
+        if k in seen:
+            break  # 본문 세트 재시작 → 첫 세트에서 종료
+        seen.add(k)
+        out.append(u)
+    return out
+
+
+def fetch_scheme_b_pages(slug: str) -> list[str]:
+    """Scheme B 본문 풀사이즈 이미지 URL 목록(Amd#4 레시피 + Amd#5 게이트②).
+
+    책페이지 HTML GET → #read-book 격리 → img[data-src] → uploads 필터 →
+    -WxH 접미사 제거 → 중복 제거(첫 세트만). 표지는 수집 안 함(featured_media 사용).
+    컨테이너 부재·본문 없음이면 [].
+    """
+    resp = requests.get(f"{BOOK_PAGE_BASE}/{slug}/", timeout=HTTP_TIMEOUT)
+    resp.raise_for_status()
+    seg = _isolate_read_book(resp.text)
+    if seg is None:
+        return []
+    srcs = _DATASRC_RE.findall(seg)
+    uploads = [s for s in srcs if "wp-content/uploads" in s]
+    full: list[str] = []
+    seen: set[str] = set()
+    for u in uploads:
+        f = _THUMB_SUFFIX_RE.sub(r"\1", u)  # 풀사이즈 stem
+        if f not in seen:
+            seen.add(f)
+            full.append(f)
+    return _dedup_first_set(full)
+
+
+# ---------------------------------------------------------------------------
 # 4. 책 페이지 HTML — 작가/그린이 (역할 분리, 정찰 실측)
 # ---------------------------------------------------------------------------
 # "Name (Writer)" / "Name (Illustrator)" 패턴. 역할 표기 + 이미지 파일명(_writer 등) 병용.
@@ -244,12 +331,11 @@ def fetch_creators(slug: str) -> dict[str, Optional[str]]:
 # ---------------------------------------------------------------------------
 # 5. 매니페스트 .txt 생성 (asb-parser 문법, 이미지-only)
 # ---------------------------------------------------------------------------
-def build_manifest_text(slug: str, title: str, pages: list[int]) -> str:
+def build_manifest_from_urls(slug: str, title: str, image_urls: list[str]) -> str:
     """
-    asb-parser.ts 가 읽는 문법으로 합성 .txt 생성.
-      헤더(key:\\tvalue, 파서 무시) → page_text:(비움) → images:(CloudFront URL 순서) → translations:
-    CloudFront URL = {CLOUDFRONT}/{slug}/e-book/en_english/images/{slug}_en_page{N}.jpg
-    parser 의 .jpg 수용분(ADR-0027 D2) 으로 그대로 수집됨.
+    asb-parser.ts 가 읽는 문법으로 합성 .txt 생성(이미지 URL 직접 수신).
+      헤더(key:\\tvalue, 파서 무시) → page_text:(비움) → images:(URL 순서) → translations:
+    Scheme A(CloudFront)·B(uploads HTML 파싱) 공용. parser 의 .jpg 수용분(ADR-0027 D2).
     """
     lines: list[str] = [
         f"id:\t{slug}",
@@ -261,12 +347,22 @@ def build_manifest_text(slug: str, title: str, pages: list[int]) -> str:
         "images:",
         "",
     ]
-    for n in pages:
-        lines.append(
-            f"{CLOUDFRONT}/{slug}/e-book/en_english/images/{slug}_en_page{n}.jpg"
-        )
+    lines.extend(image_urls)
     lines += ["", "translations:", ""]
     return "\n".join(lines)
+
+
+def build_manifest_text(slug: str, title: str, pages: list[int]) -> str:
+    """
+    Scheme A 전용: 페이지 번호(list[int]) → CloudFront URL 조립 → 공용 빌더 위임.
+    CloudFront URL = {CLOUDFRONT}/{slug}/e-book/en_english/images/{slug}_en_page{N}.jpg
+    (기존 A 경로 동작·출력 불변. B는 build_manifest_from_urls 직접 호출.)
+    """
+    urls = [
+        f"{CLOUDFRONT}/{slug}/e-book/en_english/images/{slug}_en_page{n}.jpg"
+        for n in pages
+    ]
+    return build_manifest_from_urls(slug, title, urls)
 
 
 # ---------------------------------------------------------------------------
@@ -439,6 +535,9 @@ def main() -> int:
         "no_attribution": 0,
         "dup_existing": 0,
         "net_new": 0,
+        "scheme_a": 0,
+        "scheme_b": 0,
+        "gate1_skip": 0,
     }
     page_counts: list[int] = []
     page_outliers: list[str] = []  # 17 외 예외 권
@@ -449,7 +548,7 @@ def main() -> int:
     exec_skip_dup = 0  # 실적재: 기존중복 skip
 
     header = (
-        f"{'slug':24} | {'title':26} | {'pg':>3} | "
+        f"{'slug':24} | {'title':26} | S | {'pg':>3} | "
         f"{'writer':16} | {'illustrator':16} | cov | dup | attribution preview"
     )
     print(header)
@@ -457,21 +556,38 @@ def main() -> int:
 
     for c in candidates:
         slug = c["slug"]
+        # Scheme 판정: 폴더리스팅(A)에 페이지가 있으면 A(기존 경로 불변),
+        # 비면 B 레시피(Amd#4)로 본문 URL 직접 추출. body_urls 가 단일 진실원.
+        scheme = "B"
         try:
-            pages = fetch_page_list(slug)
+            page_nums = fetch_page_list(slug)
         except Exception as exc:  # noqa: BLE001
             print(f"  ! {slug}: page list 실패 — {exc}")
-            pages = []
+            page_nums = []
+        if page_nums:
+            scheme = "A"
+            body_urls = [
+                f"{CLOUDFRONT}/{slug}/e-book/en_english/images/{slug}_en_page{n}.jpg"
+                for n in page_nums
+            ]
+        else:
+            try:
+                body_urls = fetch_scheme_b_pages(slug)
+            except Exception as exc:  # noqa: BLE001
+                print(f"  ! {slug}: scheme B 추출 실패 — {exc}")
+                body_urls = []
+        n_body = len(body_urls)
         creators = fetch_creators(slug)
         time.sleep(0.3)  # 외부 예의
 
         stats["total"] += 1
-        if not pages:
+        stats["scheme_a" if scheme == "A" else "scheme_b"] += 1
+        if n_body == 0:
             stats["zero_pages"] += 1
         else:
-            page_counts.append(len(pages))
-            if len(pages) != 17:
-                page_outliers.append(f"{slug}({len(pages)}p)")
+            page_counts.append(n_body)
+            if n_body != 17:
+                page_outliers.append(f"{slug}({n_body}p/{scheme})")
         if not creators.get("writer") and not creators.get("illustrator"):
             stats["no_creator"] += 1
         # 성 1토큰(공백 없음) 의심 — 추가 잘림 점검용
@@ -504,11 +620,11 @@ def main() -> int:
             stats["no_attribution"] += 1
             print(f"  ⊘ attribution 실패: {slug} — {exc}")
 
-        manifest = build_manifest_text(slug, c["title"], pages)
+        manifest = build_manifest_from_urls(slug, c["title"], body_urls)
         attr_preview = (attr_text.replace("\n", " ⏎ ")[:60]) if attr_text else "(실패)"
 
         print(
-            f"  {slug[:23]:23} | {c['title'][:25]:25} | {len(pages):>3} | "
+            f"  {slug[:23]:23} | {c['title'][:25]:25} | {scheme} | {n_body:>3} | "
             f"{(creators.get('writer') or '-')[:15]:15} | "
             f"{(creators.get('illustrator') or '-')[:15]:15} | "
             f"{'Y' if cover_ok else 'N':>3} | {dup_flag:>3} | {attr_preview}"
@@ -519,11 +635,12 @@ def main() -> int:
             exec_skip_dup += 1
             print(f"     ↷ skip(기존 중복): {slug}")
             continue
-        if not pages:
-            # 페이지 0장(Scheme B/오류) → 적재 안 함(빈 책 방지)
+        # 게이트①(Amd#5): 본문 ≤1장 → skip(빈 책/표지뿐 제외). dry-run에서도 표시.
+        if n_body <= 1:
+            stats["gate1_skip"] += 1
+            print(f"     ⊘ scheme_{scheme.lower()}_skip: {slug} body_pages={n_body} (게이트① ≤1장)")
             if not dry_run:
-                exec_fail.append(f"{slug}: 페이지 0장(Scheme B 또는 폴더 부재)")
-                print(f"     ✗ {slug}: 페이지 0장 → 적재 skip")
+                exec_fail.append(f"{slug}: 게이트①(본문 {n_body}장) skip")
             continue
         # 실패해도 멈추지 않음: Storage 업로드 → DB upsert 순서, 각 단계 try.
         content_url = ""
@@ -559,7 +676,7 @@ def main() -> int:
         if not dry_run:
             if ok:
                 exec_db_ok += 1
-                print(f"     ✓ {slug}: Storage={'OK' if storage_ok else '-'} DB=OK ({len(pages)}p)")
+                print(f"     ✓ {slug}: Storage={'OK' if storage_ok else '-'} DB=OK ({n_body}p/{scheme})")
             else:
                 # Storage는 됐는데 DB 실패 = 부분상태
                 exec_fail.append(f"{slug}: DB 실패(Storage 업로드됨, 부분상태) — {msg}")
@@ -571,6 +688,8 @@ def main() -> int:
     print(" 집계")
     print("=" * 64)
     print(f"  총 후보            : {stats['total']}")
+    print(f"  Scheme A / B       : {stats['scheme_a']} / {stats['scheme_b']}")
+    print(f"  게이트① skip(≤1장) : {stats['gate1_skip']}")
     if existing_slugs is None:
         print(f"  기존중복 추정      : unknown(--existing-slugs 미지정)")
         print(f"  순신규 추정        : unknown")
