@@ -162,3 +162,39 @@
 4. 작가 정규식 입자 보강(van/de/du 등)은 성공 검증 완료(best-friends=van Wyk, du Plessis, de Klerk 온전). 잔여 성 1토큰 10건은 책 페이지 표기 자체 한계(후속 점검).
 
 **불변**: asb_native 재사용·parser .jpg 확장·CloudFront 핫링크(A 한정)·매니페스트 book-manifests 버킷·license 화이트리스트 4곳 무변경.
+
+### Amendment #4 (2026-06-23) — Scheme B 본문 추출 방식 확정 (HTML 컨테이너 파싱)
+
+**배경**: Amd#3에서 Scheme B(약 185권)는 CloudFront `_en_page` 경로가 404이고 본문이 `wp-content/uploads/{년}/{월}/{slug}_english_pdf-ebook_{date}_Page_{NN}.jpg` 류 별도 경로에 있다고 **[추정]**했다(`come-back-cat` 예시 1건 한정). 이 추정이 전권에 일반화 가능한 "파일명 공식"인지 4차 정찰(읽기전용 GET)로 검증.
+
+**정찰 결론 — 파일명 공식 맞히기 불가 [실측, 표본 3권]**:
+- 표본 3권의 본문 파일명 규약이 **전부 다름**:
+  - `maddy-moonas-menagerie`: `maddy-moona_interior-spreads_<날짜><번호>` (zero-pad 없음, slug≠파일stem)
+  - `mrs-penguins-perfect-palace`: `mrs-penguins-perfect-palace_en_<날짜>_page{N}-scaled` (slug=stem, `_en_`)
+  - `little-sock-and-the-tiny-creatures`: `little-sock_english_<날짜>_Page_{NN}` (zero-pad 있음, slug≠stem)
+- → Amd#3의 `_english_pdf-ebook_Page_{NN}` 추정 경로는 **일부 코호트의 한 변형일 뿐**이며, stem·날짜·zero-pad·표지명이 책마다 달라 **공식화(formula) 불가**. Amd#3의 "B 경로 공식 확정 정찰" 방향은 본 Amendment로 **HTML 파싱 방식으로 대체**한다.
+
+**확정된 추출 레시피 [실측, 3/3 표본 검증]**:
+1. 책 페이지 HTML GET: `https://bookdash.org/books/{slug}/`
+2. `div#read-book` 컨테이너(모달, class `expose_content modal jsExposeContent...`) 격리.
+3. 컨테이너 내부 `img`의 **`data-src` 속성** 수집. ※ `src`가 아님 — `src`는 lazy-load 플레이스홀더(`preload-16x9.svg`)이고 실제 URL은 `data-src`에 있다.
+4. `wp-content/uploads` 만 통과(`themes/` svg 닫기버튼 등 제거). ※ `data-src`만 수집하면 닫기버튼(`x.svg`, `src` 사용)은 자동 배제되므로 사실상 여분의 안전망.
+5. `-WxH` 썸네일 접미사 제거 → 풀사이즈 stem 확보.
+6. 중복 제거 → 본문 이미지 목록. **발견된 것만 원문 순서대로** 사용(번호 연속성 가정 금지 — penguin은 page4~17에 page16 결손 관찰).
+- 검증 실측: 3/3 표본에서 컨테이너 매칭 성공, 컨테이너 내 non-uploads 노이즈 0건, 본문 추출 **13/14/18장**(0장 결손 없음).
+
+**표지 처리 결정 [제안, PM 합의]**:
+- 표지는 매니페스트 본문에서 **제외**. WP `featured_media`의 표지를 `cover_url`로 사용(Scheme A·기존 75권과 동일 방식, 검증됨).
+- 근거: `#read-book` 컨테이너의 "첫 이미지=표지" 규칙은 책마다 결과가 달라 채택 불가(penguin 첫 본문이 `_page4`, maddy는 표지가 목록 중간/말미에 혼입).
+- **미결(드라이런 집계 대상)**: `little-sock`처럼 `Page_01`이 표지를 겸하는(별도 cover 파일 없는) 케이스가 185권 중 몇 권인지 집계 후 별도 판단. 소수면 현행 유지, 다수면 후속 처리.
+
+**구현 영향 (다음 트랙 예고 — 본 Amendment 범위 아님)**:
+- `sync_book_dash_v2.py`의 `fetch_page_list`(현재 `/book-source-files/?folder=...` 정적 폴더 리스팅, Scheme A 전용)를 **B용 HTML 컨테이너 파싱 분기로 대체/병행**.
+- `build_manifest_text`를 CloudFront URL 자체조립이 아닌 **URL 직접 수신** 형태로 소폭 일반화.
+- 페이지 0장 skip(현 `525`행 부근)이 B를 거르던 경계 → B 분기 통과하도록 조정.
+
+**다음 단계 (별도 지시서)**:
+- 읽기전용 **전량 드라이런**: 185권 후보 전체에 레시피 적용 → (a) 컨테이너 매칭 실패율 (b) 본문 0장 책 (c) `Page_01` 표지혼입 분포 (d) drift 3권 통합 영향 집계. 적재 전 게이트.
+- (Scheme A 교훈: 소량 표본 일반화 금지 → 전수 분류. Amd#3에서 표본 3권이 전부 Scheme A였던 편향을 재발 방지.)
+
+**불변**: asb_native 재사용·parser .jpg 확장·매니페스트 book-manifests 버킷·license 화이트리스트 4곳 무변경. Scheme A 21권 적재분(Amd#3 결정)도 그대로 유효. 본 Amendment는 **추출 방식만** 확정하며 코드·DB 변경은 동반하지 않는다.
