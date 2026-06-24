@@ -1,0 +1,407 @@
+[INFO] 기존 slug 75개 로드(차집합 대조용)
+================================================================
+ Book Dash v2 동기화 (ADR-0027) — 수집·드라이런
+================================================================
+  WP API     : https://bookdash.org/wp-json/wp/v2/books?languages=621
+  CloudFront : https://d3qawc7yl9x4zs.cloudfront.net
+  bucket     : book-manifests (Public)
+  content_type: asb_native / license: cc-by-4-0
+  dry_run    : True / limit: 210
+
+[INFO] WP API 영어책 X-WP-Total=206 X-WP-TotalPages=3
+[INFO] 후보 206권 수집(limit=210)
+
+slug                     | title                      | S |  pg | writer           | illustrator      | cov | dup | attribution preview
+---------------------------------------------------------------------------------------------------------------------------------------
+  the-window-seat         | The Window Seat           | A |  17 | Sindeka Mandoyi | Chloe Veldsman  |   Y | DUP | "The Window Seat" by Sindeka Mandoyi (illustrated by Chloe V
+  khaya-wants-to-row      | Khaya Wants to Row        | A |  17 | Zandile Mnisi L | Maria Lebedeva  |   Y | DUP | "Khaya Wants to Row" by Zandile Mnisi LaMvuleni (illustrated
+  moms-hands              | Mom’s hands               | A |  17 | Ayesha Ramjuger | Lenka Knoetze   |   Y | DUP | "Mom’s hands" by Ayesha Ramjugernath (illustrated by Lenka K
+  banzis-busy-bees        | Banzi’s Busy Bees         | A |  17 | Siphosethu Zaze | Danielle Shay   |   Y | DUP | "Banzi’s Busy Bees" by Siphosethu Zazela (illustrated by Dan
+  whats-happened-to-our-w | What’s happened to our wa | A |  17 | Sue Adams       | Megan Naude     |   Y | DUP | "What’s happened to our water?" by Sue Adams (illustrated by
+  going-places            | Going Places              | A |  17 | Andie Reeves    | Josephine Versf |   Y | DUP | "Going Places" by Andie Reeves (illustrated by Josephine Ver
+  best-friends            | Best Friends              | A |  17 | Julia Smuts Lou | Gerhard van Wyk |   Y | DUP | "Best Friends" by Julia Smuts Louw (illustrated by Gerhard v
+  samoosas                | Samoosas!                 | A |  17 | Matthew Kalil   | Subi Bosa       |   Y | DUP | "Samoosas!" by Matthew Kalil (illustrated by Subi Bosa), Boo
+  thulis-tissue           | Thuli’s Tissue            | A |  17 | Jacqueline Samu | Nicolene Louw   |   Y | DUP | "Thuli’s Tissue" by Jacqueline Samuels (illustrated by Nicol
+  how-do-you-eat          | How do you eat?           | A |  17 | Diane Awerbuck  | Alex Latimer    |   Y | DUP | "How do you eat?" by Diane Awerbuck (illustrated by Alex Lat
+  its-my-book             | It’s MY book!             | A |  17 | Corinne Rosmari | Anya Klopper    |   Y | DUP | "It’s MY book!" by Corinne Rosmarin (illustrated by Anya Klo
+  why-the-owl-never-sleep | Why the owl never sleeps  | A |  17 | Wandile Mathe   | Gerald Bedeker  |   Y | DUP | "Why the owl never sleeps" by Wandile Mathe (illustrated by 
+  julia-loves-books       | Julia Loves Books         | A |  17 | Diane Awerbuck  | Jess Jardim-Wed |   Y | DUP | "Julia Loves Books" by Diane Awerbuck (illustrated by Jess J
+  aaaaahhh-mmawe          | AAAAAHHH!!!! Mmawe!       | A |  17 | Sarah McGregor  | Dumisani Jere   |   Y | DUP | "AAAAAHHH!!!! Mmawe!" by Sarah McGregor (illustrated by Dumi
+  tata-comes-home         | Tata comes home           | A |  17 | Sewela Langeni  | Heleen Steyn va |   Y | DUP | "Tata comes home" by Sewela Langeni (illustrated by Heleen S
+  grumpy-cloud            | Grumpy Cloud              | A |  17 | Oarabetse Ditlh | Neil Badenhorst |   Y | DUP | "Grumpy Cloud" by Oarabetse Ditlhareng (illustrated by Neil 
+  mazi-learns-to-play     | Mazi Learns to Play!      | A |  17 | Tumisang Shongw | Liam Longland   |   Y | DUP | "Mazi Learns to Play!" by Tumisang Shongwe (illustrated by L
+  oyisa-and-the-giant-tre | Oyisa and the Giant Tree  | A |  17 | Vuyolwethu Mada | Kaylyn Taljaard |   Y | DUP | "Oyisa and the Giant Tree" by Vuyolwethu Madanda (illustrate
+  i-hate-winter           | I Hate Winter             | A |  17 | Kristien Potgie | Linta Anish Kad |   Y | DUP | "I Hate Winter" by Kristien Potgieter (illustrated by Linta 
+  jock-and-me             | Jock and Me               | A |  17 | Nathalie Koenig | Rebecca Pottert |   Y | DUP | "Jock and Me" by Nathalie Koenig (illustrated by Rebecca Pot
+  the-one-in-the-middle   | The one in the middle     | B |  14 | Kirsty Paxton   | Neeske Alexande |   Y | new | "The one in the middle" by Kirsty Paxton (illustrated by Nee
+  the-monster-must-go     | The monster must go!      | B |  14 | Murray Hunter   | Nicola Anne Smi |   Y | new | "The monster must go!" by Murray Hunter (illustrated by Nico
+  oumas-amazing-flowers   | Ouma’s amazing flowers    | B |  14 | Laurie Janey    | Amber Tak       |   Y | new | "Ouma’s amazing flowers" by Laurie Janey (illustrated by Amb
+  open-the-door           | Open the door             | B |  14 | Jen Thorpe      | Gabriella Jardi |   Y | new | "Open the door" by Jen Thorpe (illustrated by Gabriella Jard
+  lets-go-on-a-litter-hun | Let’s go on a litter hunt | B |  14 | Sue Adams       | Lyn Leventhorpe |   Y | new | "Let’s go on a litter hunt" by Sue Adams (illustrated by Lyn
+  its-my-birthday         | It’s my birthday!         | B |  14 | Sinovuyo Mcunuk | Josephine Versf |   Y | new | "It’s my birthday!" by Sinovuyo Mcunukelwa (illustrated by J
+  how-do-you-want-your-eg | How do you want your eggs | B |  14 | Tania Kliphuis  | Richard Bolland |   Y | new | "How do you want your eggs?" by Tania Kliphuis (illustrated 
+  a-trip-to-the-tap       | A trip to the tap         | B |  14 | Sindeka Mandoyi | Phumle April    |   Y | new | "A trip to the tap" by Sindeka Mandoyi (illustrated by Phuml
+  monkey-business         | Monkey business           | B |  14 | Magriet Kruger  | Brice Reignier  |   Y | new | "Monkey business" by Magriet Kruger (illustrated by Brice Re
+  lets-party              | Let’s Party!              | B |  14 | Liora Friedland | Karen Vermeulen |   Y | new | "Let’s Party!" by Liora Friedland (illustrated by Karen Verm
+  amahle-wants-to-help    | Amahle wants to help!     | B |  14 | Refilwe Nsiband | Kelly Brown     |   Y | new | "Amahle wants to help!" by Refilwe Nsibande (illustrated by 
+  mud                     | MUD!                      | B |  14 | Penny Waterkeyn | Thea Nicole de  |   Y | new | "MUD!" by Penny Waterkeyn (illustrated by Thea Nicole de Kle
+  dance-khuzwayo-dance    | Dance, Khuzwayo, dance!   | B |  14 | Fiske Serah Nyi | Jess Jardim-Wed |   Y | new | "Dance, Khuzwayo, dance!" by Fiske Serah Nyirongo (illustrat
+  baby-talk               | Baby Talk                 | B |  14 | Sope Martins    | Alex Latimer    |   Y | new | "Baby Talk" by Sope Martins (illustrated by Alex Latimer), B
+     ⚠ gate3_cover_dedup: the-memory-tree 첫 장 표지일치이나 제외 시 본문 과소 → 원본 유지(과잉제거 방지)
+  the-memory-tree         | The Memory Tree           | B |   2 | Savnola Goldrid | Agrippa Hlophe  |   Y | new | "The Memory Tree" by Savnola Goldridge (illustrated by Agrip
+     ✂ gate3_cover_dedup: lebo-and-gogos-tea-party removed first page (cover match)
+  lebo-and-gogos-tea-part | Lebo and Gogo’s Tea Party | B |  12 | Siphosethu Zant | Elizabeth Sparg |   Y | new | "Lebo and Gogo’s Tea Party" by Siphosethu Zantsi (illustrate
+     ✂ gate3_cover_dedup: the-sausage-dog removed first page (cover match)
+  the-sausage-dog         | The Sausage Dog           | B |  12 | Brenda Daniels  | Cristy Zinn     |   Y | new | "The Sausage Dog" by Brenda Daniels (illustrated by Cristy Z
+     ✂ gate3_cover_dedup: moms-red-coat removed first page (cover match)
+  moms-red-coat           | Mom’s Red Coat            | B |  12 | Chrissie Kritzi | Brad Cuzen      |   Y | new | "Mom’s Red Coat" by Chrissie Kritzinger (illustrated by Brad
+     ✂ gate3_cover_dedup: look-out-luthando removed first page (cover match)
+  look-out-luthando       | Look out, Luthando!       | B |  12 | Suzanne Boucher | Hylton Warburto |   Y | new | "Look out, Luthando!" by Suzanne Boucher (illustrated by Hyl
+     ⚠ gate3_cover_dedup: zenandes-helping-hands 첫 장 표지일치이나 제외 시 본문 과소 → 원본 유지(과잉제거 방지)
+  zenandes-helping-hands  | Zenande’s helping hands   | B |   2 | Wendy Shelembe  | Sibusiso Khumal |   Y | new | "Zenande’s helping hands" by Wendy Shelembe (illustrated by 
+     ✂ gate3_cover_dedup: who-took-my-shoe removed first page (cover match)
+  who-took-my-shoe        | Who Took My Shoe?         | B |  12 | Elana Bregin    | Nicki Blackbear |   Y | new | "Who Took My Shoe?" by Elana Bregin (illustrated by Nicki Bl
+     ✂ gate3_cover_dedup: fifi-and-teddy removed first page (cover match)
+  fifi-and-teddy          | Fifi and Teddy            | B |  12 | Tshepo Letsapa  | Alison de Villi |   Y | new | "Fifi and Teddy" by Tshepo Letsapa (illustrated by Alison de
+  matthew-is-up           | Matthew is up!            | B |  14 | Nicole Copley   | Asanda Buthelez |   Y | new | "Matthew is up!" by Nicole Copley (illustrated by Asanda But
+  catch-that-cat          | Catch That Cat!           | B |  14 | Megan Pirie     | Lindy Pelzl     |   Y | new | "Catch That Cat!" by Megan Pirie (illustrated by Lindy Pelzl
+     ✂ gate3_cover_dedup: zibu-and-zizo removed first page (cover match)
+  zibu-and-zizo           | Zibu and Zizo             | B |  13 | Refilwe Nsiband | Josephine Versf |   Y | new | "Zibu and Zizo" by Refilwe Nsibande (illustrated by Josephin
+     ✂ gate3_cover_dedup: whats-next removed first page (cover match)
+  whats-next              | What’s next?              | B |  13 | Rayhaanah Willi | Clyde Beech     |   Y | new | "What’s next?" by Rayhaanah Williams (illustrated by Clyde B
+     ✂ gate3_cover_dedup: the-box removed first page (cover match)
+  the-box                 | The Box                   | B |  13 | Tania Kliphuis  | Nicola Anne Smi |   Y | new | "The Box" by Tania Kliphuis (illustrated by Nicola Anne Smit
+     ✂ gate3_cover_dedup: alexs-super-medicine removed first page (cover match)
+  alexs-super-medicine    | Alex’s Super Medicine     | B |  13 | Kim Rex         | Heather Jenkins |   Y | new | "Alex’s Super Medicine" by Kim Rex (illustrated by Heather J
+     ✂ gate3_cover_dedup: sams-treasures removed first page (cover match)
+  sams-treasures          | Sam’s Treasures           | B |  13 | Jon Keevy       | Princess Kabeya |   Y | new | "Sam’s Treasures" by Jon Keevy (illustrated by Princess Kabe
+     ✂ gate3_cover_dedup: lets-be-friends removed first page (cover match)
+  lets-be-friends         | Let’s be Friends          | B |  13 | Murray Hunter   | Emma Bosman     |   Y | new | "Let’s be Friends" by Murray Hunter (illustrated by Emma Bos
+     ✂ gate3_cover_dedup: joannas-grannies removed first page (cover match)
+  joannas-grannies        | Joanna’s Grannies         | B |  13 | Dawn Garisch    | Richard Bolland |   Y | new | "Joanna’s Grannies" by Dawn Garisch (illustrated by Richard 
+     ✂ gate3_cover_dedup: tikky-boom-tish removed first page (cover match)
+  tikky-boom-tish         | Tikky! Boom! Tish!        | B |  13 | Sam Wilson      | Xanele Puren    |   Y | new | "Tikky! Boom! Tish!" by Sam Wilson (illustrated by Xanele Pu
+     ✂ gate3_cover_dedup: how-do-you-sleep removed first page (cover match)
+  how-do-you-sleep        | How do you sleep?         | B |  13 | Alex Latimer    | Alex Latimer    |   Y | new | "How do you sleep?" by Alex Latimer, Book Dash. ⏎ Licensed u
+     ✂ gate3_cover_dedup: meerkat-magic removed first page (cover match)
+  meerkat-magic           | Meerkat magic             | B |  13 | Tumisang Shongw | Isabella Kuijer |   Y | new | "Meerkat magic" by Tumisang Shongwe (illustrated by Isabella
+     ✂ gate3_cover_dedup: look-up removed first page (cover match)
+  look-up                 | Look up!                  | B |  13 | Jen Thorpe      | Lauren Nel      |   Y | new | "Look up!" by Jen Thorpe (illustrated by Lauren Nel), Book D
+     ✂ gate3_cover_dedup: brave-bora removed first page (cover match)
+  brave-bora              | Brave Bora                | B |  13 | Edna Gicovi     | Ellen Heydenryc |   Y | new | "Brave Bora" by Edna Gicovi (illustrated by Ellen Heydenrych
+     ✂ gate3_cover_dedup: the-best-nest removed first page (cover match)
+  the-best-nest           | The Best Nest             | B |  13 | Crystal Warren  | Megan Naude     |   Y | new | "The Best Nest" by Crystal Warren (illustrated by Megan Naud
+     ✂ gate3_cover_dedup: mama-whats-for-lunch removed first page (cover match)
+  mama-whats-for-lunch    | Mama, What’s For Lunch?   | B |  13 | Sally Partridge | Heather Jenkins |   Y | new | "Mama, What’s For Lunch?" by Sally Partridge (illustrated by
+     ✂ gate3_cover_dedup: whose-shoe-is-this removed first page (cover match)
+  whose-shoe-is-this      | Whose shoe is this?       | B |  13 | Siphiliselwe Ma | Alicia van Zyl  |   Y | new | "Whose shoe is this?" by Siphiliselwe Makhanya (illustrated 
+     ✂ gate3_cover_dedup: the-boy-who-only-ate-pancakes removed first page (cover match)
+  the-boy-who-only-ate-pa | The boy who only ate panc | B |  14 | Kristen Dembare | Ulrike Mieke Ma |   Y | new | "The boy who only ate pancakes" by Kristen Dembaremba (illus
+     ✂ gate3_cover_dedup: the-best-gift removed first page (cover match)
+  the-best-gift           | The Best Gift             | B |  13 | Hani du Toit    | Burgen Thorne   |   Y | new | "The Best Gift" by Hani du Toit (illustrated by Burgen Thorn
+     ✂ gate3_cover_dedup: pako-the-pigeon-disappears removed first page (cover match)
+  pako-the-pigeon-disappe | Pako the Pigeon Disappear | B |  13 | Tukupashya Ally | Cristy Zinn     |   Y | new | "Pako the Pigeon Disappears" by Tukupashya Ally Kasongo (ill
+     ✂ gate3_cover_dedup: shaka-and-mazi removed first page (cover match)
+  shaka-and-mazi          | Shaka and Mazi            | B |  13 | Zulaikhah Agoro | Heather Jenkins |   Y | new | "Shaka and Mazi" by Zulaikhah Agoro (illustrated by Heather 
+     ✂ gate3_cover_dedup: yes-you-can removed first page (cover match)
+  yes-you-can             | Yes you can!              | B |  13 | Xolile Sepuru   | Subi Bosa       |   Y | new | "Yes you can!" by Xolile Sepuru (illustrated by Subi Bosa), 
+     ✂ gate3_cover_dedup: theres-a-fire-on-the-mountain removed first page (cover match)
+  theres-a-fire-on-the-mo | There’s a Fire on the Mou | B |  13 | Kirsty Paxton   | Julie Smith-Bel |   Y | new | "There’s a Fire on the Mountain" by Kirsty Paxton (illustrat
+  little-shoots           | Little Shoots             | A |  17 | Sope Martins    | Wiehan de Jager |   Y | DUP | "Little Shoots" by Sope Martins (illustrated by Wiehan de Ja
+     ✂ gate3_cover_dedup: tlotlegos-tea-party removed first page (cover match)
+  tlotlegos-tea-party     | Tlotlego’s Tea Party      | B |  13 | Laura de Lange  | Nicolene Louw   |   Y | new | "Tlotlego’s Tea Party" by Laura de Lange (illustrated by Nic
+     ✂ gate3_cover_dedup: how-to-tame-a-monster removed first page (cover match)
+  how-to-tame-a-monster   | How to Tame a Monster     | B |  13 | Sam Beckbessing | Anja Venter     |   Y | new | "How to Tame a Monster" by Sam Beckbessinger (illustrated by
+     ✂ gate3_cover_dedup: o-rain-come removed first page (cover match)
+  o-rain-come             | O Rain Come               | B |  13 | Fiske Serah Nyi | Eidin Griffin   |   Y | new | "O Rain Come" by Fiske Serah Nyirongo (illustrated by Eidin 
+     ✂ gate3_cover_dedup: yapo-saves-the-day removed first page (cover match)
+  yapo-saves-the-day      | Yapo Saves The Day        | B |  13 | Rujeko Moyo     | Liam Longland   |   Y | new | "Yapo Saves The Day" by Rujeko Moyo (illustrated by Liam Lon
+     ✂ gate3_cover_dedup: a-day-out removed first page (cover match)
+  a-day-out               | A Day Out                 | B |  13 | Helen Brain     | El Marto        |   Y | new | "A Day Out" by Helen Brain (illustrated by El Marto), Book D
+     ✂ gate3_cover_dedup: egg removed first page (cover match)
+  egg                     | Egg                       | B |  13 | Mirna Lawrence  | Megan Naude     |   Y | new | "Egg" by Mirna Lawrence (illustrated by Megan Naude), Book D
+     ✂ gate3_cover_dedup: lesedis-sandbox removed first page (cover match)
+  lesedis-sandbox         | Lesedi’s Sandbox          | B |  13 | Mathapelo Mabas | Jess Jardim-Wed |   Y | new | "Lesedi’s Sandbox" by Mathapelo Mabaso (illustrated by Jess 
+     ✂ gate3_cover_dedup: the-things-that-really-matter removed first page (cover match)
+  the-things-that-really- | The Things That Really Ma | B |  13 | Refiloe Moahlol | Subi Bosa       |   Y | new | "The Things That Really Matter" by Refiloe Moahloli (illustr
+     ✂ gate3_cover_dedup: a-very-busy-day removed first page (cover match)
+  a-very-busy-day         | A very busy day!          | B |  14 | Chisanga Mukuka | El Marto        |   Y | new | "A very busy day!" by Chisanga Mukuka (illustrated by El Mar
+     ✂ gate3_cover_dedup: im-the-colour-of-honey removed first page (cover match)
+  im-the-colour-of-honey  | I’m the Colour of Honey   | B |  14 | Maimouna Jallow | Caroline Faysse |   Y | new | "I’m the Colour of Honey" by Maimouna Jallow (illustrated by
+     ✂ gate3_cover_dedup: why-birds-sing-at-dawn removed first page (cover match)
+  why-birds-sing-at-dawn  | Why Birds Sing at Dawn    | B |  13 | Zanele Dlamini  | Emmanuel Grebo  |   Y | new | "Why Birds Sing at Dawn" by Zanele Dlamini (illustrated by E
+     ✂ gate3_cover_dedup: come-stay-with-me removed first page (cover match)
+  come-stay-with-me       | Come stay with me         | B |  14 | Nasrin Siege    | Subi Bosa       |   Y | new | "Come stay with me" by Nasrin Siege (illustrated by Subi Bos
+     ✂ gate3_cover_dedup: the-new-road removed first page (cover match)
+  the-new-road            | The New Road              | B |  14 | Fiske Serah Nyi | Nicodemus Silin |   Y | new | "The New Road" by Fiske Serah Nyirongo (illustrated by Nicod
+     ✂ gate3_cover_dedup: mama-antelopes-house removed first page (cover match)
+  mama-antelopes-house    | Mama Antelope’s House     | B |  13 | Florence Marund | Barbara Nascimb |   Y | new | "Mama Antelope’s House" by Florence Marundu (illustrated by 
+     ✂ gate3_cover_dedup: tejus-shadow removed first page (cover match)
+  tejus-shadow            | Teju’s Shadow             | B |  13 | Sope Martins    | Ndumiso Nyoni   |   Y | new | "Teju’s Shadow" by Sope Martins (illustrated by Ndumiso Nyon
+  theres-an-alien-in-my-h | There’s an alien in my ho | B |  14 | Refiloe Moahlol | Nadine          |   Y | new | "There’s an alien in my house!" by Refiloe Moahloli (illustr
+     ✂ gate3_cover_dedup: wiggle-jiggle removed first page (cover match)
+  wiggle-jiggle           | Wiggle Jiggle             | B |  17 | Mathapelo Mabas | Megan Naude     |   Y | new | "Wiggle Jiggle" by Mathapelo Mabaso (illustrated by Megan Na
+     ✂ gate3_cover_dedup: the-great-tidy-up removed first page (cover match)
+  the-great-tidy-up       | The Great Tidy Up         | B |  13 | Corinne Rosmari | Jess Jardim-Wed |   Y | new | "The Great Tidy Up" by Corinne Rosmarin (illustrated by Jess
+     ✂ gate3_cover_dedup: dudus-hat removed first page (cover match)
+  dudus-hat               | Dudu’s Hat                | B |  13 | Sarah McGregor  | Stephen Wallace |   Y | new | "Dudu’s Hat" by Sarah McGregor (illustrated by Stephen Walla
+     ✂ gate3_cover_dedup: baby-babble removed first page (cover match)
+  baby-babble             | Baby Babble               | B |  17 | Katherine Graha | Nicola Anne Smi |   Y | new | "Baby Babble" by Katherine Graham (illustrated by Nicola Ann
+     ✂ gate3_cover_dedup: sing-to-me removed first page (cover match)
+  sing-to-me              | Sing to me                | B |  13 | Nicole Levin    | Lauren Nel      |   Y | new | "Sing to me" by Nicole Levin (illustrated by Lauren Nel), Bo
+     ✂ gate3_cover_dedup: hello-baby removed first page (cover match)
+  hello-baby              | Hello, baby!              | B |  17 | Diane Awerbuck  | Demi-Sue Meyer  |   Y | new | "Hello, baby!" by Diane Awerbuck (illustrated by Demi-Sue Me
+     ✂ gate3_cover_dedup: babys-first-family-photo removed first page (cover match)
+  babys-first-family-phot | Baby’s First Family Photo | B |  17 | Edem Torkornoo  | Megan Andrews   |   Y | new | "Baby’s First Family Photo" by Edem Torkornoo (illustrated b
+     ✂ gate3_cover_dedup: my-special-blankie removed first page (cover match)
+  my-special-blankie      | My Special Blankie        | B |  17 | Melissa Fagan   | Kobie Nieuwoudt |   Y | new | "My Special Blankie" by Melissa Fagan (illustrated by Kobie 
+     ✂ gate3_cover_dedup: i-want-to removed first page (cover match)
+  i-want-to               | I want to!                | B |  17 | Sam Wilson      | Mary-Anne Hampt |   Y | new | "I want to!" by Sam Wilson (illustrated by Mary-Anne Hampton
+     ✂ gate3_cover_dedup: woof-woof removed first page (cover match)
+  woof-woof               | Woof-woof!                | B |  15 | Sindiwe Magona  | Nicolene Louw   |   Y | new | "Woof-woof!" by Sindiwe Magona (illustrated by Nicolene Louw
+     ✂ gate3_cover_dedup: shhhhh removed first page (cover match)
+  shhhhh                  | Shhhhh!                   | B |  13 | Sam Wilson      | Alex Latimer    |   Y | new | "Shhhhh!" by Sam Wilson (illustrated by Alex Latimer), Book 
+     ✂ gate3_cover_dedup: whos-that-baby removed first page (cover match)
+  whos-that-baby          | Who’s that baby?          | B |  17 | Chisanga Mukuka | Tamsin Hinrichs |   Y | new | "Who’s that baby?" by Chisanga Mukuka (illustrated by Tamsin
+     ✂ gate3_cover_dedup: i-dont-want-to-go-to-sleep removed first page (cover match)
+  i-dont-want-to-go-to-sl | I don’t want to go to sle | B |  17 | Sarah McGregor  | Subi Bosa       |   Y | new | "I don’t want to go to sleep!" by Sarah McGregor (illustrate
+     ✂ gate3_cover_dedup: lions-are-always-brave removed first page (cover match)
+  lions-are-always-brave  | Lions are Always Brave    | B |  17 | Daniel Browde   | Carlos Amato    |   Y | new | "Lions are Always Brave" by Daniel Browde (illustrated by Ca
+  dance-mihlali           | Dance, Mihlali!           | B |  14 | Matona Fatman   | Aimee Ayres     |   Y | new | "Dance, Mihlali!" by Matona Fatman (illustrated by Aimee Ayr
+     ✂ gate3_cover_dedup: auntie-bois-gift removed first page (cover match)
+  auntie-bois-gift        | Auntie Boi’s Gift         | B |  13 | Baeletsi Tsatsi | Ndumiso Nyoni   |   Y | new | "Auntie Boi’s Gift" by Baeletsi Tsatsi (illustrated by Ndumi
+     ✂ gate3_cover_dedup: the-great-cake-contest removed first page (cover match)
+  the-great-cake-contest  | The Great Cake Contest    | B |  13 | Lebohang Masang | Nompumelelo Mdl |   Y | new | "The Great Cake Contest" by Lebohang Masango (illustrated by
+     ✂ gate3_cover_dedup: whats-at-the-park removed first page (cover match)
+  whats-at-the-park       | What’s at the Park?       | B |  13 | David Mann      | -               |   Y | new | "What’s at the Park?" by David Mann, Book Dash. ⏎ Licensed u
+     ✂ gate3_cover_dedup: lets-have-an-inside-day removed first page (cover match)
+  lets-have-an-inside-day | Let’s have an inside day! | B |  13 | Lerato Mbangeni | Alicia van Zyl  |   Y | new | "Let’s have an inside day!" by Lerato Mbangeni (illustrated 
+     ✂ gate3_cover_dedup: the-very-tired-lioness removed first page (cover match)
+  the-very-tired-lioness  | The Very Tired Lioness    | B |  13 | Maren Bodenstei | Imile Wepener   |   Y | new | "The Very Tired Lioness" by Maren Bodenstein (illustrated by
+     ✂ gate3_cover_dedup: malis-friend removed first page (cover match)
+  malis-friend            | Mali’s Friend             | B |  13 | Rujeko Moyo     | Ellen Heydenryc |   Y | new | "Mali’s Friend" by Rujeko Moyo (illustrated by Ellen Heydenr
+  grandpa-farouks-garden  | Grandpa Farouk’s Garden   | B |  14 | Matthew Kalil   | Sam van Riet    |   Y | new | "Grandpa Farouk’s Garden" by Matthew Kalil (illustrated by S
+     ✂ gate3_cover_dedup: the-fish-that-couldnt-swim removed first page (cover match)
+  the-fish-that-couldnt-s | The fish that couldn’t sw | B |  13 | Sarah Gaylard   | Thulisizwe Mamb |   Y | new | "The fish that couldn’t swim" by Sarah Gaylard (illustrated 
+     ✂ gate3_cover_dedup: who-takes-the-train removed first page (cover match)
+  who-takes-the-train     | Who takes the train?      | B |  16 | Mabel Mnensa    | Ntembiso Velema |   Y | new | "Who takes the train?" by Mabel Mnensa (illustrated by Ntemb
+     ✂ gate3_cover_dedup: zandi-and-birdy-monster removed first page (cover match)
+  zandi-and-birdy-monster | Zandi and Birdy Monster   | B |  14 | Marie-Louise Ro | Simeon van den  |   Y | new | "Zandi and Birdy Monster" by Marie-Louise Rouget (illustrate
+     ✂ gate3_cover_dedup: where-is-lulu removed first page (cover match)
+  where-is-lulu           | Where is Lulu?            | B |  15 | Mohale Mashigo  | Clyde Beech     |   Y | new | "Where is Lulu?" by Mohale Mashigo (illustrated by Clyde Bee
+     ✂ gate3_cover_dedup: the-dream-pillow removed first page (cover match)
+  the-dream-pillow        | The Dream Pillow          | B |  14 | Nadia Davids    | Lutfia Kamish-E |   Y | new | "The Dream Pillow" by Nadia Davids (illustrated by Lutfia Ka
+     ✂ gate3_cover_dedup: you-yes-you removed first page (cover match)
+  you-yes-you             | You! Yes You!             | B |  17 | Sam Wilson      | Annika Brandow  |   Y | new | "You! Yes You!" by Sam Wilson (illustrated by Annika Brandow
+  ann-nem-oh-nee-finds-ad | Ann-Nem-Oh-Nee finds Adve | B |  13 | Matthew Griffit | Jessica Boswort |   Y | new | "Ann-Nem-Oh-Nee finds Adventure" by Matthew Griffiths (illus
+     ✂ gate3_cover_dedup: the-pumpkin-chase removed first page (cover match)
+  the-pumpkin-chase       | The Pumpkin Chase         | B |  16 | Smangaliso Sime | Amy-Jane Harkes |   Y | new | "The Pumpkin Chase" by Smangaliso Simelane (illustrated by A
+     ✂ gate3_cover_dedup: tigs-world removed first page (cover match)
+  tigs-world              | Tig’s World               | B |  13 | Sam Wilson      | Dorian Dutrieux |   Y | new | "Tig’s World" by Sam Wilson (illustrated by Dorian Dutrieux)
+     ✂ gate3_cover_dedup: feathered-friends removed first page (cover match)
+  feathered-friends       | Feathered Friends         | B |  15 | Ange            | Daniela Hammond |   Y | new | "Feathered Friends" by Ange (illustrated by Daniela Hammond)
+     ✂ gate3_cover_dedup: the-lost-laugh removed first page (cover match)
+  the-lost-laugh          | The lost laugh            | B |  13 | Michelle Preen  | Karen Lilje     |   Y | new | "The lost laugh" by Michelle Preen (illustrated by Karen Lil
+     ✂ gate3_cover_dedup: the-bounce removed first page (cover match)
+  the-bounce              | The Bounce                | B |  16 | Liza Esterhuyse | Candice Botha   |   Y | new | "The Bounce" by Liza Esterhuyse (illustrated by Candice Both
+     ✂ gate3_cover_dedup: knight-times removed first page (cover match)
+  knight-times            | Knight Times              | B |  15 | Dianne Makings  | Nicola Anne Smi |   Y | new | "Knight Times" by Dianne Makings (illustrated by Nicola Anne
+     ✂ gate3_cover_dedup: my-inside-weather removed first page (cover match)
+  my-inside-weather       | My inside weather         | B |  15 | Jen Thorpe      | Lara Berge      |   Y | new | "My inside weather" by Jen Thorpe (illustrated by Lara Berge
+     ✂ gate3_cover_dedup: circles removed first page (cover match)
+  circles                 | Circles                   | B |  16 | Alex Latimer    | Patrick Latimer |   Y | new | "Circles" by Alex Latimer (illustrated by Patrick Latimer), 
+     ✂ gate3_cover_dedup: no removed first page (cover match)
+  no                      | No!                       | B |  16 | Liora Friedland | Karen Vermeulen |   Y | new | "No!" by Liora Friedland (illustrated by Karen Vermeulen), B
+     ✂ gate3_cover_dedup: thats-not-thabi-thats-a-hippopotamus removed first page (cover match)
+  thats-not-thabi-thats-a | That’s not Thabi, That’s  | B |  13 | Jon Keevy       | Mbongeni Fongoq |   Y | new | "That’s not Thabi, That’s a hippopotamus" by Jon Keevy (illu
+     ✂ gate3_cover_dedup: just-like-me removed first page (cover match)
+  just-like-me            | Just Like Me              | B |  16 | Hani du Toit    | Mary-Anne Hampt |   Y | new | "Just Like Me" by Hani du Toit (illustrated by Mary-Anne Ham
+     ✂ gate3_cover_dedup: and-also removed first page (cover match)
+  and-also                | And Also!                 | B |  12 | Lauren Beukes   | Anja Venter     |   Y | new | "And Also!" by Lauren Beukes (illustrated by Anja Venter), B
+     ✂ gate3_cover_dedup: the-cottonwool-doctor removed first page (cover match)
+  the-cottonwool-doctor   | The Cottonwool Doctor     | B |  13 | Michelle Matthe | Jean de Wet     |   Y | new | "The Cottonwool Doctor" by Michelle Matthews (illustrated by
+     ✂ gate3_cover_dedup: lonwabos-recipes removed first page (cover match)
+  lonwabos-recipes        | Lonwabo’s Recipes         | B |  13 | Mihlali Kumalo  | Sarah-Rose de V |   Y | new | "Lonwabo’s Recipes" by Mihlali Kumalo (illustrated by Sarah-
+     ⚠ gate3_cover_dedup: the-baby-book 첫 장 표지일치이나 제외 시 본문 과소 → 원본 유지(과잉제거 방지)
+  the-baby-book           | The Baby Book             | B |   1 | Diane Awerbuck  | Alex Latimer    |   Y | new | "The Baby Book" by Diane Awerbuck (illustrated by Alex Latim
+     ⊘ scheme_b_skip: the-baby-book body_pages=1 (게이트① ≤1장)
+     ✂ gate3_cover_dedup: mina-and-the-birthday-dress removed first page (cover match)
+  mina-and-the-birthday-d | Mina and the Birthday Dre | B |  16 | Ndidi Chiazor-E | Nicci Nathanson |   Y | new | "Mina and the Birthday Dress" by Ndidi Chiazor-Enenmor (illu
+  mogaus-gift             | Mogau’s Gift              | B |   1 | Lorato Trok     | Shadrack Munene |   Y | new | "Mogau’s Gift" by Lorato Trok (illustrated by Shadrack Munen
+     ⊘ scheme_b_skip: mogaus-gift body_pages=1 (게이트① ≤1장)
+     ✂ gate3_cover_dedup: miss-tiny-chef removed first page (cover match)
+  miss-tiny-chef          | Miss Tiny Chef            | B |  15 | Linda Nabasa    | Raymond Diby    |   Y | new | "Miss Tiny Chef" by Linda Nabasa (illustrated by Raymond Dib
+     ✂ gate3_cover_dedup: nomvundla-and-the-chilli-eating-contest removed first page (cover match)
+  nomvundla-and-the-chill | Nomvundla and the Chilli- | B |  17 | Fortune Tazvivi | Adrien Folly-No |   Y | new | "Nomvundla and the Chilli-Eating Contest" by Fortune Tazvivi
+     ✂ gate3_cover_dedup: senzo-and-the-sun removed first page (cover match)
+  senzo-and-the-sun       | Senzo and the Sun         | B |  17 | Sarah McGregor  | Adrie Le Roux   |   Y | new | "Senzo and the Sun" by Sarah McGregor (illustrated by Adrie 
+     ✂ gate3_cover_dedup: whats-in-the-pot removed first page (cover match)
+  whats-in-the-pot        | What’s In The Pot?        | B |  15 | Crystal Warren  | Hayley Alonzo   |   Y | new | "What’s In The Pot?" by Crystal Warren (illustrated by Hayle
+     ✂ gate3_cover_dedup: foxy-joxy-plays-a-trick removed first page (cover match)
+  foxy-joxy-plays-a-trick | Foxy Joxy Plays a Trick   | B |  16 | Nahida Esmail   | Mdu Ntuli       |   Y | new | "Foxy Joxy Plays a Trick" by Nahida Esmail (illustrated by M
+     ✂ gate3_cover_dedup: thuli-special-and-the-secret removed first page (cover match)
+  thuli-special-and-the-s | Thuli, Special and the Se | B |  16 | Baeletsi Tsatsi | Yihenew Worku   |   Y | new | "Thuli, Special and the Secret" by Baeletsi Tsatsi (illustra
+     ✂ gate3_cover_dedup: tumi-goes-to-the-park removed first page (cover match)
+  tumi-goes-to-the-park   | Tumi Goes to the Park     | B |  16 | Paballo Rampa   | Nyambura Kariuk |   Y | new | "Tumi Goes to the Park" by Paballo Rampa (illustrated by Nya
+     ✂ gate3_cover_dedup: my-special-hair removed first page (cover match)
+  my-special-hair         | My Special Hair           | B |  16 | Candice Dingwal | Jess Jardim-Wed |   Y | new | "My Special Hair" by Candice Dingwall (illustrated by Jess J
+     ✂ gate3_cover_dedup: the-three-doof-doofs removed first page (cover match)
+  the-three-doof-doofs    | The 3 Doof-Doofs          | B |  17 | Claudi Potter   | Stephen Wallace |   Y | new | "The 3 Doof-Doofs" by Claudi Potter (illustrated by Stephen 
+  tones-big-drop          | Tone’s Big Drop           | B |  14 | Edna Gicovi     | Musonda Kabwe   |   Y | new | "Tone’s Big Drop" by Edna Gicovi (illustrated by Musonda Kab
+     ✂ gate3_cover_dedup: hello removed first page (cover match)
+  hello                   | Hello                     | B |  16 | Jennie Marima   | Imile Wepener   |   Y | new | "Hello" by Jennie Marima (illustrated by Imile Wepener), Boo
+     ⚠ gate3_cover_dedup: the-fish-and-chickens-wedding 첫 장 표지일치이나 제외 시 본문 과소 → 원본 유지(과잉제거 방지)
+  the-fish-and-chickens-w | The fish and chicken’s we | B |   2 | Madoda Ndlakuse | Siyasanga Madyi |   Y | new | "The fish and chicken’s wedding" by Madoda Ndlakuse (illustr
+  the-lion-who-wouldnt-tr | The Lion who Wouldn’t Try | B |   1 | Liza Esterhuyse | Kieswetter      |   Y | DUP | "The Lion who Wouldn’t Try" by Liza Esterhuyse (illustrated 
+     ⊘ scheme_b_skip: the-lion-who-wouldnt-try body_pages=1 (게이트① ≤1장)
+     ✂ gate3_cover_dedup: the-lazy-ant removed first page (cover match)
+  the-lazy-ant            | The Lazy Ant              | B |  13 | Cebo Solombela  | Unathi Dyani    |   Y | new | "The Lazy Ant" by Cebo Solombela (illustrated by Unathi Dyan
+     ✂ gate3_cover_dedup: zanele-sees-numbers removed first page (cover match)
+  zanele-sees-numbers     | Zanele sees numbers       | B |  17 | Laura de Lange  | Hanrie Coetzee  |   Y | new | "Zanele sees numbers" by Laura de Lange (illustrated by Hanr
+     ✂ gate3_cover_dedup: little-goat removed first page (cover match)
+  little-goat             | Little Goat               | B |  17 | Mirna Lawrence  | Nicola Anne Smi |   Y | new | "Little Goat" by Mirna Lawrence (illustrated by Nicola Anne 
+  clever-pig              | Clever Pig                | B |  14 | Nathalie Koenig | Josh Morgan     |   Y | new | "Clever Pig" by Nathalie Koenig (illustrated by Josh Morgan)
+     ✂ gate3_cover_dedup: why-is-there-a-hole-in-the-wall removed first page (cover match)
+  why-is-there-a-hole-in- | Why is there a hole in th | B |  13 | Kirsty Paxton   | Amy Slatem      |   Y | new | "Why is there a hole in the wall?" by Kirsty Paxton (illustr
+     ✂ gate3_cover_dedup: the-biscuit-jar-must-fall removed first page (cover match)
+  the-biscuit-jar-must-fa | The Biscuit Jar Must Fall | B |  17 | Nozizwe Herero  | Siya Masuku     |   Y | new | "The Biscuit Jar Must Fall" by Nozizwe Herero (illustrated b
+     ✂ gate3_cover_dedup: the-rainbow-cloud removed first page (cover match)
+  the-rainbow-cloud       | The Rainbow Cloud         | B |  17 | Zanele Dlamini  | Selina Morulane |   Y | new | "The Rainbow Cloud" by Zanele Dlamini (illustrated by Selina
+     ✂ gate3_cover_dedup: small-birds-big-adventure removed first page (cover match)
+  small-birds-big-adventu | Small Bird’s Big Adventur | B |  17 | Nick Mulgrew    | Wesley van Eede |   Y | new | "Small Bird’s Big Adventure" by Nick Mulgrew (illustrated by
+     ✂ gate3_cover_dedup: where-is-thabo removed first page (cover match)
+  where-is-thabo          | Where is Thabo?           | B |  17 | Melissa Fagan   | Ndumiso Nyoni   |   Y | new | "Where is Thabo?" by Melissa Fagan (illustrated by Ndumiso N
+     ✂ gate3_cover_dedup: scared-tumi removed first page (cover match)
+  scared-tumi             | Scared Tumi               | B |  17 | Mohale Mashigo  | Nicola Anne Smi |   Y | new | "Scared Tumi" by Mohale Mashigo (illustrated by Nicola Anne 
+     ✂ gate3_cover_dedup: unathi-and-the-dirty-smelly-beast removed first page (cover match)
+  unathi-and-the-dirty-sm | Unathi and the Dirty, Sme | B |  13 | Jon Keevy       | Jess Jardim-Wed |   Y | new | "Unathi and the Dirty, Smelly Beast" by Jon Keevy (illustrat
+     ✂ gate3_cover_dedup: palesa-can-walk removed first page (cover match)
+  palesa-can-walk         | Palesa Can Walk!          | B |  17 | Sindiwe Magona  | Sinomonde Ngwan |   Y | new | "Palesa Can Walk!" by Sindiwe Magona (illustrated by Sinomon
+     ✂ gate3_cover_dedup: my-dream-in-the-drawer removed first page (cover match)
+  my-dream-in-the-drawer  | My Dream in the Drawer    | B |  17 | Fred Strydom    | Megan Lotter    |   Y | new | "My Dream in the Drawer" by Fred Strydom (illustrated by Meg
+     ✂ gate3_cover_dedup: the-sea removed first page (cover match)
+  the-sea                 | The Sea                   | B |  17 | Nicola Rijsdijk | Lauren Nel      |   Y | new | "The Sea" by Nicola Rijsdijk (illustrated by Lauren Nel), Bo
+  hugs-in-the-city        | Hugs in the City          | B |  14 | Milly Brouard   | JP Brouard      |   Y | DUP | "Hugs in the City" by Milly Brouard (illustrated by JP Broua
+     ✂ gate3_cover_dedup: katiitis-song removed first page (cover match)
+  katiitis-song           | Katiiti’s Song            | B |  14 | Philippa Kabali | Mary Marble     |   Y | DUP | "Katiiti’s Song" by Philippa Kabali-Kagwa (illustrated by Ma
+     ✂ gate3_cover_dedup: it-wasnt-me removed first page (cover match)
+  it-wasnt-me             | It Wasn’t Me!             | B |  13 | Lesley Beake    | Gwendolene van  |   Y | DUP | "It Wasn’t Me!" by Lesley Beake (illustrated by Gwendolene v
+     ✂ gate3_cover_dedup: what-is-it removed first page (cover match)
+  what-is-it              | What is it?               | B |  17 | Kate Sidley     | Robyn Penn      |   Y | DUP | "What is it?" by Kate Sidley (illustrated by Robyn Penn), Bo
+     ✂ gate3_cover_dedup: mrs-penguins-perfect-palace removed first page (cover match)
+  mrs-penguins-perfect-pa | Mrs Penguin’s Perfect Pal | B |  13 | Helen Brain     | Celeste         |   Y | new | "Mrs Penguin’s Perfect Palace" by Helen Brain (illustrated b
+     ✂ gate3_cover_dedup: the-best-thing-ever removed first page (cover match)
+  the-best-thing-ever     | The best thing ever       | B |  13 | Melissa Fagan   | Lauren Nel      |   Y | DUP | "The best thing ever" by Melissa Fagan (illustrated by Laure
+     ✂ gate3_cover_dedup: lara-the-yellow-ladybird removed first page (cover match)
+  lara-the-yellow-ladybir | Lara the Yellow Ladybird  | B |  17 | Martha Evans    | Catherine Holtz |   Y | DUP | "Lara the Yellow Ladybird" by Martha Evans (illustrated by C
+     ✂ gate3_cover_dedup: little-sock-and-the-tiny-creatures removed first page (cover match)
+  little-sock-and-the-tin | Little Sock and the tiny  | B |  17 | Jon Keevy       | Lili Probart    |   Y | new | "Little Sock and the tiny creatures" by Jon Keevy (illustrat
+     ✂ gate3_cover_dedup: hippo-wants-to-dance removed first page (cover match)
+  hippo-wants-to-dance    | Hippo Wants to Dance      | B |  14 | Sam Beckbessing | Megan Andrews   |   Y | DUP | "Hippo Wants to Dance" by Sam Beckbessinger (illustrated by 
+     ✂ gate3_cover_dedup: who-is-our-friend removed first page (cover match)
+  who-is-our-friend       | Who is our friend?        | B |  17 | Jade Mathieson  | Gerhard van Wyk |   Y | DUP | "Who is our friend?" by Jade Mathieson (illustrated by Gerha
+     ✂ gate3_cover_dedup: when-i-grow-up removed first page (cover match)
+  when-i-grow-up          | When I grow up            | B |  17 | Michele Fry     | Spuy            |   Y | DUP | "When I grow up" by Michele Fry (illustrated by Spuy), Book 
+     ✂ gate3_cover_dedup: the-elephant-in-the-room removed first page (cover match)
+  the-elephant-in-the-roo | The Elephant in the Room  | B |  13 | Sam Wilson      | -               |   Y | DUP | "The Elephant in the Room" by Sam Wilson, Book Dash. ⏎ Licen
+     ✂ gate3_cover_dedup: shongololos-shoes removed first page (cover match)
+  shongololos-shoes       | Shongololo’s shoes        | B |  13 | Ange            | Megan Lotter    |   Y | DUP | "Shongololo’s shoes" by Ange (illustrated by Megan Lotter), 
+     ✂ gate3_cover_dedup: thatos-birthday-surprise removed first page (cover match)
+  thatos-birthday-surpris | Thato’s Birthday Surprise | B |  12 | Corinne Rosmari | Brad Cuzen      |   Y | DUP | "Thato’s Birthday Surprise" by Corinne Rosmarin (illustrated
+     ✂ gate3_cover_dedup: what-if removed first page (cover match)
+  what-if                 | What if…?                 | B |  17 | Cristy Zinn     | Mary-Anne Hampt |   Y | DUP | "What if…?" by Cristy Zinn (illustrated by Mary-Anne Hampton
+     ✂ gate3_cover_dedup: sbus-special-shoes removed first page (cover match)
+  sbus-special-shoes      | Sbu’s Special Shoes       | B |  17 | Megan Pirie     | Eidin Griffin   |   Y | DUP | "Sbu’s Special Shoes" by Megan Pirie (illustrated by Eidin G
+     ✂ gate3_cover_dedup: sima-and-siza removed first page (cover match)
+  sima-and-siza           | Sima and Siza             | B |  13 | Lwando Xaso     | Claire Ingram   |   Y | DUP | "Sima and Siza" by Lwando Xaso (illustrated by Claire Ingram
+     ✂ gate3_cover_dedup: there-must-be-a-rainbow removed first page (cover match)
+  there-must-be-a-rainbow | There Must be a Rainbow   | B |  14 | Nerissa Govende | Sinomonde Ngwan |   Y | DUP | "There Must be a Rainbow" by Nerissa Govender (illustrated b
+     ✂ gate3_cover_dedup: sindi-and-the-moon removed first page (cover match)
+  sindi-and-the-moon      | Sindi and the Moon        | B |  17 | Zanele Dlamini  | Wesley van Eede |   Y | DUP | "Sindi and the Moon" by Zanele Dlamini (illustrated by Wesle
+     ✂ gate3_cover_dedup: a-beautiful-day removed first page (cover match)
+  a-beautiful-day         | A Beautiful Day           | B |  13 | Elana Bregin    | Lindy Pelzl     |   Y | DUP | "A Beautiful Day" by Elana Bregin (illustrated by Lindy Pelz
+     ✂ gate3_cover_dedup: i-will-help-you removed first page (cover match)
+  i-will-help-you         | I Will Help You           | B |  13 | Andrea Abbott   | Olivia Villet   |   Y | DUP | "I Will Help You" by Andrea Abbott (illustrated by Olivia Vi
+     ✂ gate3_cover_dedup: londi-the-dreaming-girl removed first page (cover match)
+  londi-the-dreaming-girl | Londi the Dreaming Girl   | B |  13 | Nathalie Koenig | Lauren Holliday |   Y | DUP | "Londi the Dreaming Girl" by Nathalie Koenig (illustrated by
+     ✂ gate3_cover_dedup: searching-for-the-spirit-of-spring removed first page (cover match)
+  searching-for-the-spiri | Searching for the Spirit  | B |  13 | Mosa Mahlaba    | Selina Morulane |   Y | DUP | "Searching for the Spirit of Spring" by Mosa Mahlaba (illust
+     ✂ gate3_cover_dedup: whose-button-is-this removed first page (cover match)
+  whose-button-is-this    | Whose button is this?     | B |  14 | Paul Kennedy    | James Woolley   |   Y | DUP | "Whose button is this?" by Paul Kennedy (illustrated by Jame
+     ✂ gate3_cover_dedup: why-is-nita-upside-down removed first page (cover match)
+  why-is-nita-upside-down | Why is Nita Upside Down?  | B |  14 | Roxana Bouwer   | Sarah Bouwer    |   Y | DUP | "Why is Nita Upside Down?" by Roxana Bouwer (illustrated by 
+     ✂ gate3_cover_dedup: rafikis-style removed first page (cover match)
+  rafikis-style           | Rafiki’s Style            | B |  13 | Louis Greenberg | Audrey Anderson |   Y | DUP | "Rafiki’s Style" by Louis Greenberg (illustrated by Audrey A
+     ✂ gate3_cover_dedup: grandpas-gold removed first page (cover match)
+  grandpas-gold           | Grandpa’s Gold            | B |  14 | Kerry Saadien-R | Milandri        |   Y | DUP | "Grandpa’s Gold" by Kerry Saadien-Raad (illustrated by Milan
+     ✂ gate3_cover_dedup: karabos-question removed first page (cover match)
+  karabos-question        | Karabo’s Question         | B |  12 | Liesl Jobson    | Natalie Propa   |   Y | DUP | "Karabo’s Question" by Liesl Jobson (illustrated by Natalie 
+     ✂ gate3_cover_dedup: walking-together removed first page (cover match)
+  walking-together        | Walking Together          | B |  15 | Jade Mathieson  | Louwrisa Blaauw |   Y | DUP | "Walking Together" by Jade Mathieson (illustrated by Louwris
+     ✂ gate3_cover_dedup: is-there-anyone-like-me removed first page (cover match)
+  is-there-anyone-like-me | Is There Anyone Like Me?  | B |  13 | Fred Strydom    | Jess Jardim-Wed |   Y | DUP | "Is There Anyone Like Me?" by Fred Strydom (illustrated by J
+     ✂ gate3_cover_dedup: how-about-you removed first page (cover match)
+  how-about-you           | How About You?            | B |  14 | Margot Bertelsm | Renate van Rens |   Y | DUP | "How About You?" by Margot Bertelsmann (illustrated by Renat
+     ✂ gate3_cover_dedup: amazing-daisy removed first page (cover match)
+  amazing-daisy           | Amazing Daisy!            | B |  13 | Nozizwe Herero  | Siya Masuku     |   Y | DUP | "Amazing Daisy!" by Nozizwe Herero (illustrated by Siya Masu
+     ✂ gate3_cover_dedup: little-ants-big-plan removed first page (cover match)
+  little-ants-big-plan    | Little Ant’s Big Plan     | B |  13 | Candice Dingwal | Steven McKimmie |   Y | DUP | "Little Ant’s Big Plan" by Candice Dingwall (illustrated by 
+     ✂ gate3_cover_dedup: lory-dory removed first page (cover match)
+  lory-dory               | Lory Dory                 | B |  16 | Neill           | Sonia Dearling  |   Y | DUP | "Lory Dory" by Neill (illustrated by Sonia Dearling), Book D
+  a-tiny-seed             | A Tiny Seed               | B |  14 | Nicola Rijsdijk | Maya Marshak    |   Y | DUP | "A Tiny Seed" by Nicola Rijsdijk (illustrated by Maya Marsha
+  bathtub-safari          | Bathtub Safari            | B |  14 | Tracy Lynn Chem | Robert McEwan   |   Y | DUP | "Bathtub Safari" by Tracy Lynn Chemaly (illustrated by Rober
+     ✂ gate3_cover_dedup: tortoise-finds-his-home removed first page (cover match)
+  tortoise-finds-his-home | Tortoise finds his home   | B |  13 | Maya Fowler     | Katrin Coetzer  |   Y | DUP | "Tortoise finds his home" by Maya Fowler (illustrated by Kat
+     ✂ gate3_cover_dedup: miss-helens-magical-world removed first page (cover match)
+  miss-helens-magical-wor | Miss Helen’s Magical Worl | B |  13 | Ange            | Wendy Morison   |   Y | DUP | "Miss Helen’s Magical World" by Ange (illustrated by Wendy M
+  a-dancers-tale          | A Dancer’s Tale           | B |  14 | Thea Nicole de  | Samantha Cutler |   Y | DUP | "A Dancer’s Tale" by Thea Nicole de Klerk (illustrated by Sa
+     ✂ gate3_cover_dedup: zanele-situ-my-story removed first page (cover match)
+  zanele-situ-my-story    | Zanele Situ: My Story     | B |  13 | Liz Sparg       | Jesse Breytenba |   Y | DUP | "Zanele Situ: My Story" by Liz Sparg (illustrated by Jesse B
+     ✂ gate3_cover_dedup: singing-the-truth removed first page (cover match)
+  singing-the-truth       | Singing the Truth         | B |  13 | Jade Mathieson  | Louwrisa Blaauw |   Y | DUP | "Singing the Truth" by Jade Mathieson (illustrated by Louwri
+  sindiwe-and-the-firefli | Sindiwe and the Fireflies | B |  14 | Pienaar         | Jano Strydom    |   Y | DUP | "Sindiwe and the Fireflies" by Pienaar (illustrated by Jano 
+  queen-of-soweto         | Queen of Soweto           | B |  14 | Jessica Taylor  | Mia du Plessis  |   Y | DUP | "Queen of Soweto" by Jessica Taylor (illustrated by Mia du P
+  gracas-dream            | Graca’s Dream             | B |  14 | Melissa Fagan   | Karlien de Vill |   Y | DUP | "Graca’s Dream" by Melissa Fagan (illustrated by Karlien de 
+  together-were-strong    | Together We’re Strong     | B |  14 | Liesl Jobson    | Alice Toich     |   Y | DUP | "Together We’re Strong" by Liesl Jobson (illustrated by Alic
+     ✂ gate3_cover_dedup: sizwes-smile removed first page (cover match)
+  sizwes-smile            | Sizwe’s Smile             | B |  13 | Vianne Venter   | Genevieve Terbl |   Y | DUP | "Sizwe’s Smile" by Vianne Venter (illustrated by Genevieve T
+  a-house-for-mouse       | A house for Mouse         | B |  14 | Michele Fry     | Amy Uzzell      |   Y | DUP | "A house for Mouse" by Michele Fry (illustrated by Amy Uzzel
+     ✂ gate3_cover_dedup: maddy-moonas-menagerie removed first page (cover match)
+  maddy-moonas-menagerie  | Maddy Moona’s Menagerie   | B |  12 | Rachel Zadok    | Candace Di Tala |   Y | new | "Maddy Moona’s Menagerie" by Rachel Zadok (illustrated by Ca
+  a-fish-and-a-gift       | A Fish and a Gift         | B |   2 | Liesl Jobson    | Jesse Breytenba |   Y | DUP | "A Fish and a Gift" by Liesl Jobson (illustrated by Jesse Br
+  come-back-cat           | Come back, cat!           | B |  14 | Nicola Rijsdijk | Karen Lilje     |   Y | DUP | "Come back, cat!" by Nicola Rijsdijk (illustrated by Karen L
+     ✂ gate3_cover_dedup: sleepy-mr-sloth removed first page (cover match)
+  sleepy-mr-sloth         | Sleepy Mr Sloth           | B |  13 | Paul Kennedy    | Graham Paterson |   Y | DUP | "Sleepy Mr Sloth" by Paul Kennedy (illustrated by Graham Pat
+
+================================================================
+ 집계
+================================================================
+  총 후보            : 206
+  Scheme A / B       : 21 / 185
+  게이트① skip(≤1장) : 3
+  게이트③ 표지중복제거: 146 (warn 원본유지: 4)
+  기존중복(DUP)      : 70
+  순신규(new)        : 136
+  페이지 0장 경고    : 0
+  작가 결측          : 0
+  표지 결측          : 0
+  attribution 결측   : 0 (0이어야 함)
+  page수 분포        : min=1 max=17 최빈=13(71건)
+  page 17 예외(154) : the-one-in-the-middle(14p/B), the-monster-must-go(14p/B), oumas-amazing-flowers(14p/B), open-the-door(14p/B), lets-go-on-a-litter-hunt(14p/B), its-my-birthday(14p/B), how-do-you-want-your-eggs(14p/B), a-trip-to-the-tap(14p/B), monkey-business(14p/B), lets-party(14p/B), amahle-wants-to-help(14p/B), mud(14p/B), dance-khuzwayo-dance(14p/B), baby-talk(14p/B), the-memory-tree(2p/B), lebo-and-gogos-tea-party(12p/B), the-sausage-dog(12p/B), moms-red-coat(12p/B), look-out-luthando(12p/B), zenandes-helping-hands(2p/B), who-took-my-shoe(12p/B), fifi-and-teddy(12p/B), matthew-is-up(14p/B), catch-that-cat(14p/B), zibu-and-zizo(13p/B), whats-next(13p/B), the-box(13p/B), alexs-super-medicine(13p/B), sams-treasures(13p/B), lets-be-friends(13p/B), joannas-grannies(13p/B), tikky-boom-tish(13p/B), how-do-you-sleep(13p/B), meerkat-magic(13p/B), look-up(13p/B), brave-bora(13p/B), the-best-nest(13p/B), mama-whats-for-lunch(13p/B), whose-shoe-is-this(13p/B), the-boy-who-only-ate-pancakes(14p/B), the-best-gift(13p/B), pako-the-pigeon-disappears(13p/B), shaka-and-mazi(13p/B), yes-you-can(13p/B), theres-a-fire-on-the-mountain(13p/B), tlotlegos-tea-party(13p/B), how-to-tame-a-monster(13p/B), o-rain-come(13p/B), yapo-saves-the-day(13p/B), a-day-out(13p/B), egg(13p/B), lesedis-sandbox(13p/B), the-things-that-really-matter(13p/B), a-very-busy-day(14p/B), im-the-colour-of-honey(14p/B), why-birds-sing-at-dawn(13p/B), come-stay-with-me(14p/B), the-new-road(14p/B), mama-antelopes-house(13p/B), tejus-shadow(13p/B), theres-an-alien-in-my-house(14p/B), the-great-tidy-up(13p/B), dudus-hat(13p/B), sing-to-me(13p/B), woof-woof(15p/B), shhhhh(13p/B), dance-mihlali(14p/B), auntie-bois-gift(13p/B), the-great-cake-contest(13p/B), whats-at-the-park(13p/B), lets-have-an-inside-day(13p/B), the-very-tired-lioness(13p/B), malis-friend(13p/B), grandpa-farouks-garden(14p/B), the-fish-that-couldnt-swim(13p/B), who-takes-the-train(16p/B), zandi-and-birdy-monster(14p/B), where-is-lulu(15p/B), the-dream-pillow(14p/B), ann-nem-oh-nee-finds-adventure(13p/B), the-pumpkin-chase(16p/B), tigs-world(13p/B), feathered-friends(15p/B), the-lost-laugh(13p/B), the-bounce(16p/B), knight-times(15p/B), my-inside-weather(15p/B), circles(16p/B), no(16p/B), thats-not-thabi-thats-a-hippopotamus(13p/B), just-like-me(16p/B), and-also(12p/B), the-cottonwool-doctor(13p/B), lonwabos-recipes(13p/B), the-baby-book(1p/B), mina-and-the-birthday-dress(16p/B), mogaus-gift(1p/B), miss-tiny-chef(15p/B), whats-in-the-pot(15p/B), foxy-joxy-plays-a-trick(16p/B), thuli-special-and-the-secret(16p/B), tumi-goes-to-the-park(16p/B), my-special-hair(16p/B), tones-big-drop(14p/B), hello(16p/B), the-fish-and-chickens-wedding(2p/B), the-lion-who-wouldnt-try(1p/B), the-lazy-ant(13p/B), clever-pig(14p/B), why-is-there-a-hole-in-the-wall(13p/B), unathi-and-the-dirty-smelly-beast(13p/B), hugs-in-the-city(14p/B), katiitis-song(14p/B), it-wasnt-me(13p/B), mrs-penguins-perfect-palace(13p/B), the-best-thing-ever(13p/B), hippo-wants-to-dance(14p/B), the-elephant-in-the-room(13p/B), shongololos-shoes(13p/B), thatos-birthday-surprise(12p/B), sima-and-siza(13p/B), there-must-be-a-rainbow(14p/B), a-beautiful-day(13p/B), i-will-help-you(13p/B), londi-the-dreaming-girl(13p/B), searching-for-the-spirit-of-spring(13p/B), whose-button-is-this(14p/B), why-is-nita-upside-down(14p/B), rafikis-style(13p/B), grandpas-gold(14p/B), karabos-question(12p/B), walking-together(15p/B), is-there-anyone-like-me(13p/B), how-about-you(14p/B), amazing-daisy(13p/B), little-ants-big-plan(13p/B), lory-dory(16p/B), a-tiny-seed(14p/B), bathtub-safari(14p/B), tortoise-finds-his-home(13p/B), miss-helens-magical-world(13p/B), a-dancers-tale(14p/B), zanele-situ-my-story(13p/B), singing-the-truth(13p/B), sindiwe-and-the-fireflies(14p/B), queen-of-soweto(14p/B), gracas-dream(14p/B), together-were-strong(14p/B), sizwes-smile(13p/B), a-house-for-mouse(14p/B), maddy-moonas-menagerie(12p/B), a-fish-and-a-gift(2p/B), come-back-cat(14p/B), sleepy-mr-sloth(13p/B)
+  성 1토큰 의심(10):
+    - theres-an-alien-in-my-house:illustrator=Nadine
+    - feathered-friends:writer=Ange
+    - the-lion-who-wouldnt-try:illustrator=Kieswetter
+    - mrs-penguins-perfect-palace:illustrator=Celeste
+    - when-i-grow-up:illustrator=Spuy
+    - shongololos-shoes:writer=Ange
+    - grandpas-gold:illustrator=Milandri
+    - lory-dory:writer=Neill
+    - miss-helens-magical-world:writer=Ange
+    - sindiwe-and-the-fireflies:writer=Pienaar
+
+  ⚠️ 키 체계 경고: 기존 54권 source_id=UUID, 신규 source_id=slug(D6).
+     같은 책이 UUID·slug 두 키로 '중복 적재'될 위험 → 신규 slug가 기존
+     book_dash slug와 겹치면 그 책은 skip(실제 skip은 --execute 단계).
+     --existing-slugs 로 54 slug 넘기면 dry-run에서 DUP/new 집계 반영.
+  ※ dry-run — DB·Storage에 아무것도 쓰지 않았습니다.

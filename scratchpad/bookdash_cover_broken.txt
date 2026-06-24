@@ -1,0 +1,2 @@
+slug	current_cover_url	candidate_wp_cover	candidate_head
+theres-an-alien-in-my-house	https://d3qawc7yl9x4zs.cloudfront.net/theres-an-alien-in-my-house/e-book/en_english/images/theres-an-alien-in-my-house_en_cover.jpg	https://bookdash.org/wp-content/uploads/2019/11/theres-an-alien-in-my-house_20191114_cover.jpg	200
