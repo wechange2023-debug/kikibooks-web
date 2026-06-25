@@ -113,3 +113,58 @@ ADR-0028 본문 D2·D3 작성 시점에는 Bloom의 license 필드가 버전 없
   attribution.py LICENSE_LABELS / verify_licenses.py)는 이미 cc-by-4-0·
   cc-by-sa-4-0·cc0를 포함하므로 라이선스 슬러그 추가 갱신은 불요.
   (source_platform 'bloom' 추가만 별도 후속 작업)
+
+## Amendment #2 (2026-06-25) — sync_bloom 수집·적재 파이프라인 설계
+
+### 배경
+정찰(STEP3~9) 완료로 Bloom 수집·적재 설계 재료가 확정됐다. 본 Amendment는
+sync_bloom 스크립트가 따를 파이프라인을 박제한다. 핵심: 신규 발명 없이
+Book Dash Scheme B 파이프라인(asb_native 재사용)을 그대로 재적용한다.
+
+### 1. 수집 (Parse API)
+- 엔드포인트: bloom-parse-server-production.azurewebsites.net/parse/classes/books
+  인증 헤더: X-Parse-Application-Id (Bloom 공개 App-Id, 비밀키 불요).
+- 필터(서버측 where):
+  - 언어: langPointers $inQuery {isoCode:"en"} (영어 표제 objectId가 번역명으로
+    분산되므로 단일 ID 금지, $inQuery 필수).
+  - 라이선스: cc-by / cc-by-sa / cc0 만 통과. NC·ND·custom 전부 제외.
+  - custom(약 1,429 전체)은 licenseNotes 개별판정 필요 → 1차 적재 제외(베타 후 별도 트랙).
+- 1차 배치 범위: 영어 + cc-by + tags="computedLevel:1" 또는 "computedLevel:2"
+  (유아 타깃, 약 1,056권). 레벨 3·4·cc-by-sa·cc0는 후속 배치로 단계 확장.
+
+### 2. 라이선스 매핑 (Amendment #1 연계)
+- cc-by → cc-by-4-0, cc-by-sa → cc-by-sa-4-0, cc0 → cc0.
+- 안전장치: 각 책 HTML(index.htm 또는 {title}.htm)의 실제 라이선스 URL을
+  파싱해 /by/4.0/ (또는 /by-sa/4.0/) 확인. 불일치(/by/3.0/·IGO 등) 시 스킵+로그.
+
+### 3. 교차중복 제거 (2단 필터)
+- 1단: tags의 list:Book Dash / list:African Storybook 제외(기존 보유 사본).
+- 2단: 정규화 title 교차대조(기존 ASb·Book Dash sync 방식 재사용) —
+  태그 없는 사본 및 GDL 중복(list 태그 0건)까지 포착.
+- ※ list:Pratham(약 366)은 우리 미보유 → 중복 아님, 적재 대상.
+
+### 4. 매니페스트 합성 (asb_native 재사용 — AsbReader/parser 변경 0건)
+- Book Dash Scheme B와 동형 파이프라인:
+  bloomdigital/ 페이지 이미지 URL을 index.htm DOM 순서로 추출
+  → build_manifest_from_urls 류로 합성 .txt 매니페스트 생성(images: 섹션)
+  → book-manifests Storage 업로드 → content_url = 그 Public URL.
+- 페이지 순서: 파일명 숫자정렬이 아니라 index.htm DOM 순서를 권위로 사용
+  (ASb 교훈: 강제 정렬 금지·원본 순서 보존).
+- 표지: coverImage200.jpg 등 별도 → cover_url에 매핑(pages에 미포함).
+- content_type = 'asb_native'.
+
+### 5. source_platform 'bloom' 추가
+- ADR-0028 D2 결정대로 9번째 소스. 코드·DB 반영 필요 개소:
+  DB CHECK 제약(+트리거 화이트리스트) / attribution.py PLATFORM_LABELS.
+  ※ 라이선스 화이트리스트(4개소)는 cc-by-4-0·sa-4-0·cc0 이미 포함 → 추가 불요.
+  ※ source_platform 추가는 스키마 변경 → 본 ADR이 그 근거(Hard Rule 8 충족).
+
+### 6. 적재 절차
+- is_active=false 스테이징 → 시각 검수 강화(품질 편차 큼) → 일괄 is_active=true.
+- 1권 정찰 적재 → 눈으로 확인 → 나머지 배치 패턴 준수.
+- 어트리뷰션 4요소(제목·저자·라이선스·출처 URL) 필수, attribution_text NULL 불가.
+
+### 미해결 / 후속
+- index.htm DOM 파싱의 전권 정합성은 1차 배치 드라이런으로 검증(표본 1권만 확인됨).
+- custom 라이선스 영어분 규모·판정: 베타 후 별도 트랙.
+- ePUB/PDF 경로는 본 설계에서 미사용(이미지 시퀀스 채택). 향후 필요 시 재검토.
