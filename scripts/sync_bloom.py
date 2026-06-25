@@ -32,9 +32,15 @@ import json
 import re
 import sys
 import time
+from collections import Counter
+from pathlib import Path
 from typing import Any, Optional
 
 import requests
+
+# 리포트 출력 경로(리포 scratchpad/ — 세션 유실 방지).
+ROOT = Path(__file__).resolve().parent.parent
+REPORT_PATH = ROOT / "scratchpad" / "bloom_dryrun_report.txt"
 
 # Windows 콘솔(cp949) 한글·이모지·키릴 깨짐 방지 (기존 sync 스크립트 패턴)
 for _stream in (sys.stdout, sys.stderr):
@@ -95,6 +101,15 @@ _BG_IMAGE_RE = re.compile(
 )
 # bloom-page 블록 분할 마커(캡처).
 _PAGE_SPLIT_RE = re.compile(r'(<div class="[^"]*bloom-page)', re.I)
+# 비그림책 의심 시그널(자동제외 아님 — 검수 보조). 제목 단어 + 비스토리 주제 태그.
+_NONSTORY_TITLE_RE = re.compile(
+    r"\b(unit|phase|game|lesson|test|quiz|worksheet)\b", re.I
+)
+_NONSTORY_TOPIC_TAGS = (
+    "topic:Math",
+    "topic:Mathematics",
+    "topic:Science",
+)
 # 책 라이선스 CC URL(by / by-sa 만; nc·nd 변종은 책 레벨 아님 → 무시).
 _CC_URL_RE = re.compile(
     r"creativecommons\.org/licenses/(by|by-sa)/(\d+\.\d+)", re.I
@@ -294,7 +309,9 @@ def _split_pages(index_html: str) -> list[str]:
     return pages
 
 
-def extract_page_images(index_html: str, base: str) -> list[str]:
+def extract_page_images(
+    index_html: str, base: str
+) -> tuple[list[str], dict[str, int]]:
     """
     index.htm DOM 순서로 본문 페이지 이미지 절대 URL 추출 (Amd#2 §4).
     - bloom-page 블록 중 'numberedPage'(본문 페이지)만 채택 → xmatter(표지·크레딧·
@@ -302,22 +319,38 @@ def extract_page_images(index_html: str, base: str) -> list[str]:
     - 각 본문 페이지의 background-image url()을 DOM 등장 순서로 수집(순서 = 권위).
     - 파일명은 임의(image3.png 등)이고 번호순≠페이지순이라 숫자 정렬 금지(ASb 교훈).
     - 표지·브랜딩·레벨차트 명칭 이미지는 이름 필터로 2차 배제. 연속 중복명은 1개로 접음.
+    → (이미지 URL 리스트, 분포 통계 stats). stats = numbered_pages·multi_image_pages·
+      collapsed_dups (조각3 드라이런 집계용).
     """
     urls: list[str] = []
     prev: Optional[str] = None
+    numbered = 0
+    multi_image_pages = 0
+    collapsed_dups = 0
     for page in _split_pages(index_html):
         opening = page[: page.find(">") + 1] if ">" in page else page[:400]
         if "numberedPage" not in opening:
             continue
+        numbered += 1
+        page_imgs = 0
         for m in _BG_IMAGE_RE.finditer(page):
             fname = m.group(1).strip().split("/")[-1]  # 상대 파일명만
             if not fname or _NON_PAGE_IMG_RE.search(fname):
                 continue
             if fname == prev:  # 직전과 동일 파일명(중복 레이어 등) → 스킵
+                collapsed_dups += 1
                 continue
             prev = fname
             urls.append(base + fname)
-    return urls
+            page_imgs += 1
+        if page_imgs >= 2:
+            multi_image_pages += 1
+    stats = {
+        "numbered_pages": numbered,
+        "multi_image_pages": multi_image_pages,
+        "collapsed_dups": collapsed_dups,
+    }
+    return urls, stats
 
 
 # ---------------------------------------------------------------------------
@@ -388,7 +421,7 @@ def build_bloom_manifest(book: dict[str, Any]) -> dict[str, Any]:
     if not ok:
         return {"ok": False, "reason": f"라이선스 검증 실패({version})", "slug": slug}
 
-    image_urls = extract_page_images(index_html, base)
+    image_urls, img_stats = extract_page_images(index_html, base)
     if not image_urls:
         return {"ok": False, "reason": "본문 이미지 0장", "slug": slug}
 
@@ -401,7 +434,145 @@ def build_bloom_manifest(book: dict[str, Any]) -> dict[str, Any]:
         "page_count": len(image_urls),
         "image_urls": image_urls,
         "manifest": manifest,
+        "stats": img_stats,
+        "nonstory": nonstory_signals(book, title),
     }
+
+
+# ---------------------------------------------------------------------------
+# 비그림책 시그널 (검수 보조 — 자동제외 아님)
+# ---------------------------------------------------------------------------
+def nonstory_signals(book: dict[str, Any], title: str) -> list[str]:
+    """제목/태그에 비그림책(학습·테스트·수학과학) 시그널이 있으면 사유 목록 반환."""
+    sigs: list[str] = []
+    if _NONSTORY_TITLE_RE.search(title):
+        sigs.append("title")
+    for t in book.get("tags") or []:
+        if t in _NONSTORY_TOPIC_TAGS:
+            sigs.append(t)
+    return sigs
+
+
+# ---------------------------------------------------------------------------
+# 조각3 — 전량 드라이런 + 분포 리포트 (DB·Storage 없음)
+# ---------------------------------------------------------------------------
+def _page_bucket(n: int) -> str:
+    if n <= 1:
+        return "1p (gate① 후보)"
+    if n <= 4:
+        return "2-4p"
+    if n <= 9:
+        return "5-9p"
+    return "10p+"
+
+
+def run_full_dryrun(sleep: float = 0.1) -> str:
+    """
+    1차 배치 모수 전량을 조각1·2 파이프라인으로 끝까지 드라이런(DB·Storage 무접근).
+    집계 리포트 문자열 반환 + REPORT_PATH에 저장. 네트워크 에러는 건당 기록 후 계속.
+    """
+    where = build_where()
+    total_count = fetch_count(where)
+    print(f"[INFO] 서버측 모수 count = {total_count} — 전량 수집 시작")
+    collected = fetch_books(where, limit=None)
+    print(f"[INFO] 수집 완료 = {len(collected)}건")
+
+    after_tag, tag_excluded = apply_tag_dedup(collected)
+    candidates, no_en, bad_json = apply_english_filter(after_tag)
+    print(f"[INFO] 태그 dedup 후 {len(after_tag)} → 영어필터 후 후보 {len(candidates)}")
+
+    # 매니페스트 합성 전수(index.htm 1건/책) — 진행 로그 + 에러 계속.
+    ok_results: list[dict[str, Any]] = []
+    skip_reasons: Counter = Counter()
+    net_errors = 0
+    n = len(candidates)
+    for i, b in enumerate(candidates, 1):
+        try:
+            res = build_bloom_manifest(b)
+        except requests.RequestException as e:
+            net_errors += 1
+            skip_reasons["네트워크 에러"] += 1
+            print(f"  [{i}/{n}] NET ERR: {e}")
+            time.sleep(sleep)
+            continue
+        if res.get("ok"):
+            ok_results.append(res)
+        else:
+            reason = res.get("reason", "기타")
+            # 사유 카테고리화
+            if "fetch 실패" in reason:
+                skip_reasons["index.htm fetch 실패"] += 1
+            elif "CC URL 부재" in reason:
+                skip_reasons["라이선스 URL 부재"] += 1
+            elif "불일치" in reason:
+                skip_reasons["라이선스 버전 불일치"] += 1
+            elif "이미지 0장" in reason:
+                skip_reasons["본문 이미지 0장"] += 1
+            else:
+                skip_reasons[reason] += 1
+        if i % 25 == 0 or i == n:
+            print(f"  [{i}/{n}] ok={len(ok_results)} skip={sum(skip_reasons.values())}")
+        time.sleep(sleep)
+
+    # --- 집계 ---
+    page_hist: Counter = Counter()
+    multi_books = 0
+    collapsed_books = 0
+    nonstory: list[dict[str, Any]] = []
+    for r in ok_results:
+        page_hist[_page_bucket(r["page_count"])] += 1
+        st = r.get("stats") or {}
+        if st.get("multi_image_pages", 0) > 0:
+            multi_books += 1
+        if st.get("collapsed_dups", 0) > 0:
+            collapsed_books += 1
+        if r.get("nonstory"):
+            nonstory.append(r)
+
+    # --- 리포트 작성 ---
+    L: list[str] = []
+    L.append("=" * 64)
+    L.append(" Bloom 1차 배치 전량 드라이런 리포트 (ADR-0028, DB·Storage 무접근)")
+    L.append("=" * 64)
+    L.append(f"  필터: license={FIRST_BATCH_LICENSE} tags$in={FIRST_BATCH_LEVELS} lang=en")
+    L.append("")
+    L.append("(a) 깔때기 카운트")
+    L.append(f"  서버측 모수                     : {total_count}")
+    L.append(f"  실제 수집                       : {len(collected)}")
+    L.append(f"  − 1단 dedup(list 태그) 제외     : {tag_excluded}")
+    L.append(f"  − 영어필터 제외(en 없음)        : {no_en}")
+    L.append(f"  − allTitles 파싱 실패 제외      : {bad_json}")
+    L.append(f"  = 매니페스트 합성 대상 후보     : {len(candidates)}")
+    for reason, cnt in skip_reasons.most_common():
+        L.append(f"    − 스킵[{reason}]            : {cnt}")
+    L.append(f"  = 최종 적재 후보               : {len(ok_results)}")
+    L.append(f"  (네트워크 에러 건수: {net_errors})")
+    L.append("")
+    L.append("(b) 페이지 수 분포 (최종 후보)")
+    for bucket in ["1p (gate① 후보)", "2-4p", "5-9p", "10p+"]:
+        L.append(f"  {bucket:18s}: {page_hist.get(bucket, 0)}")
+    L.append("")
+    L.append("(c) 다중 background-image / 표지중복 의심")
+    L.append(f"  페이지당 이미지 2장+ 발생 책 수 : {multi_books}")
+    L.append(f"  연속중복 접은 책 수             : {collapsed_books}")
+    L.append("")
+    L.append("(d) 비그림책 의심 플래그 (자동제외 아님 — 검수 보조)")
+    L.append(f"  시그널 포함 책 수: {len(nonstory)} / 최종 후보 {len(ok_results)}")
+    L.append("  제목 표본(최대 20):")
+    for r in nonstory[:20]:
+        L.append(f"    - {r['title'][:60]!r}  sig={r['nonstory']}")
+    L.append("")
+    L.append("(e) 라이선스 분포 (최종 후보)")
+    ver_hist: Counter = Counter(r["version"] for r in ok_results)
+    for ver, cnt in ver_hist.most_common():
+        L.append(f"  {ver:10s}: {cnt}")
+    L.append("  (스킵 라이선스 사유는 (a) 깔때기 참조)")
+    L.append("")
+
+    report = "\n".join(L)
+    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    REPORT_PATH.write_text(report, encoding="utf-8")
+    return report
 
 
 # ---------------------------------------------------------------------------
@@ -455,10 +626,29 @@ def main() -> int:
         default=5,
         help="수집 후보 수 상한 (기본 5, 외부 부하 방지)",
     )
+    parser.add_argument(
+        "--full-dryrun",
+        action="store_true",
+        help="전량(1차 배치 모수 전체) 드라이런 + 분포 리포트 저장(조각3). DB·Storage 없음.",
+    )
     args = parser.parse_args()
 
     if args.execute:
         print("[STOP] --execute 미구현(조각4 예정). 본 단계는 수집·합성·드라이런만.")
+        return 0
+
+    if args.full_dryrun:
+        print("=" * 64)
+        print(" Bloom 전량 드라이런 (조각3) — DB·Storage 무접근")
+        print("=" * 64)
+        try:
+            report = run_full_dryrun()
+        except requests.RequestException as e:
+            print(f"[FAIL] 수집 단계 요청 실패: {e}")
+            return 1
+        print()
+        print(report)
+        print(f"[INFO] 리포트 저장: {REPORT_PATH}")
         return 0
 
     dry_run = True
