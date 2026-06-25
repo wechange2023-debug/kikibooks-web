@@ -118,6 +118,10 @@ _BG_IMAGE_RE = re.compile(
 )
 # bloom-page 블록 분할 마커(캡처).
 _PAGE_SPLIT_RE = re.compile(r'(<div class="[^"]*bloom-page)', re.I)
+# bloom-editable 요소(속성 순서 무관) — lang="en" 영어 텍스트 추출용(Amd#4 ①).
+_EDITABLE_RE = re.compile(
+    r"<div\b([^>]*\bbloom-editable\b[^>]*)>(.*?)</div>", re.S | re.I
+)
 # 검수 리스트 시그널(자동제외 아님 — D5 시각검수, Amd#3 ②). 제목 단어 + 비스토리 주제 태그.
 _REVIEW_TITLE_RE = re.compile(
     r"\b(unit|phase|game|lesson|quiz|worksheet)\b", re.I
@@ -333,20 +337,30 @@ def _split_pages(index_html: str) -> list[str]:
     return pages
 
 
-def extract_page_images(
+def extract_en_text(page_html: str) -> str:
+    """numberedPage 블록의 lang="en" bloom-editable 텍스트(Amd#4 ①). 없으면 ""."""
+    for attrs, inner in _EDITABLE_RE.findall(page_html):
+        if re.search(r'\blang="en"', attrs, re.I):
+            t = re.sub(r"<[^>]+>", " ", inner)
+            t = re.sub(r"\s+", " ", t).strip()
+            if t:
+                return t
+    return ""
+
+
+def extract_pages(
     index_html: str, base: str
-) -> tuple[list[str], dict[str, int]]:
+) -> tuple[list[tuple[str, str]], dict[str, int]]:
     """
-    index.htm DOM 순서로 본문 페이지 이미지 절대 URL 추출 (Amd#2 §4).
-    - bloom-page 블록 중 'numberedPage'(본문 페이지)만 채택 → xmatter(표지·크레딧·
-      LevelChart·branding 페이지)는 자연 배제(실측: 신간은 비-본문 배경이미지 혼재).
-    - 각 본문 페이지의 background-image url()을 DOM 등장 순서로 수집(순서 = 권위).
-    - 파일명은 임의(image3.png 등)이고 번호순≠페이지순이라 숫자 정렬 금지(ASb 교훈).
-    - 표지·브랜딩·레벨차트 명칭 이미지는 이름 필터로 2차 배제. 연속 중복명은 1개로 접음.
-    → (이미지 URL 리스트, 분포 통계 stats). stats = numbered_pages·multi_image_pages·
-      collapsed_dups (조각3 드라이런 집계용).
+    index.htm DOM 순서로 (본문 이미지 URL, 영어 텍스트) 짝 추출 (Amd#2 §4 + Amd#4 ①).
+    - bloom-page 블록 중 'numberedPage'(본문)만 채택 → xmatter는 자연 배제.
+    - 각 본문 페이지: background-image url() DOM 순서 이미지 + lang="en" 텍스트.
+      · 페이지 첫 이미지에 그 페이지 영어 텍스트를 부여, 같은 페이지 추가 이미지는 ""(이미지만).
+    - 파일명은 임의·비순차라 숫자 정렬 금지(ASb 교훈). 연속 중복명은 1개로 접음.
+    - 이미지 0장 페이지(텍스트만)는 스킵 — 이미지 시퀀스 정렬 보존(드묾, 미해결 Amd#4).
+    → (짝 리스트[(url, text)], stats). stats = numbered_pages·multi_image_pages·collapsed_dups.
     """
-    urls: list[str] = []
+    pairs: list[tuple[str, str]] = []
     prev: Optional[str] = None
     numbered = 0
     multi_image_pages = 0
@@ -356,6 +370,7 @@ def extract_page_images(
         if "numberedPage" not in opening:
             continue
         numbered += 1
+        en_text = extract_en_text(page)
         page_imgs = 0
         for m in _BG_IMAGE_RE.finditer(page):
             raw = m.group(1) or m.group(2) or m.group(3) or ""  # dquote/squote/unquoted
@@ -366,7 +381,8 @@ def extract_page_images(
                 collapsed_dups += 1
                 continue
             prev = fname
-            urls.append(base + fname)
+            # 페이지 첫 이미지에만 텍스트 부여(추가 이미지는 이미지-only 면).
+            pairs.append((base + fname, en_text if page_imgs == 0 else ""))
             page_imgs += 1
         if page_imgs >= 2:
             multi_image_pages += 1
@@ -375,7 +391,7 @@ def extract_page_images(
         "multi_image_pages": multi_image_pages,
         "collapsed_dups": collapsed_dups,
     }
-    return urls, stats
+    return pairs, stats
 
 
 # ---------------------------------------------------------------------------
@@ -427,6 +443,35 @@ def build_manifest_from_urls(slug: str, title: str, image_urls: list[str]) -> st
     return "\n".join(lines)
 
 
+def build_bloom_manifest_text(
+    slug: str, title: str, pairs: list[tuple[str, str]]
+) -> str:
+    """
+    asb-parser 문법 매니페스트 — page_text(P<n>\\t<영어>) + images 인덱스 정렬(Amd#4 ①).
+    pairs[i] = (이미지 URL, 영어 텍스트). 텍스트 없으면 P<n>\\t(공란) — 이미지-only 면.
+    asb-parser가 texts[i]·images[i]를 같은 인덱스로 짝지으므로 길이·순서 1:1 보장.
+    """
+    text_lines = [f"P{i + 1}\t{t}" for i, (_, t) in enumerate(pairs)]
+    image_lines = [u for u, _ in pairs]
+    lines: list[str] = [
+        f"id:\t{slug}",
+        f"title:\t{title}",
+        f"source:\t{SOURCE_PLATFORM}",
+        "",
+        "page_text:",
+        "",
+        *text_lines,
+        "",
+        "images:",
+        "",
+        *image_lines,
+        "",
+        "translations:",
+        "",
+    ]
+    return "\n".join(lines)
+
+
 def build_bloom_manifest(book: dict[str, Any]) -> dict[str, Any]:
     """
     책 1권 → 매니페스트 합성 결과 dict.
@@ -446,18 +491,21 @@ def build_bloom_manifest(book: dict[str, Any]) -> dict[str, Any]:
     if not ok:
         return {"ok": False, "reason": f"라이선스 검증 실패({version})", "slug": slug}
 
-    image_urls, img_stats = extract_page_images(index_html, base)
-    if not image_urls:
+    pairs, img_stats = extract_pages(index_html, base)
+    if not pairs:
         return {"ok": False, "reason": "본문 이미지 0장", "slug": slug}
 
-    manifest = build_manifest_from_urls(slug, title, image_urls)
+    image_urls = [u for u, _ in pairs]
+    text_count = sum(1 for _, t in pairs if t)
+    manifest = build_bloom_manifest_text(slug, title, pairs)
     return {
         "ok": True,
         "slug": slug,
         "title": title,
         "version": version,
-        "page_count": len(image_urls),
+        "page_count": len(pairs),
         "image_urls": image_urls,
+        "text_count": text_count,
         "manifest": manifest,
         "stats": img_stats,
         "review": flag_review_list(book, title),

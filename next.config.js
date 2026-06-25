@@ -10,6 +10,17 @@ const nextConfig = {
       { protocol: 'https', hostname: 'd3qawc7yl9x4zs.cloudfront.net' },
       { protocol: 'https', hostname: 'content.digitallibrary.io' },
       { protocol: 'https', hostname: 'africanstorybook.org' },
+      // Bloom Library 표지·이미지 S3 (ADR-0028 Amd#4) — 버킷 경로로 제한.
+      {
+        protocol: 'https',
+        hostname: 's3.amazonaws.com',
+        pathname: '/bloomharvest/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 's3.amazonaws.com',
+        pathname: '/BloomLibraryBooks/**',
+      },
     ],
   },
 };
