@@ -64,6 +64,7 @@ PLATFORM_LABELS: dict[str, str] = {
     "wjjr": "Woongjin Junior",
     "magic_light": "Magic Light Pictures",
     "african_storybook": "African Storybook",
+    "bloom": "Bloom Library",
 }
 
 
