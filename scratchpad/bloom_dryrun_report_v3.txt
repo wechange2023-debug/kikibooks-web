@@ -1,0 +1,81 @@
+================================================================
+ Bloom 1차 배치 전량 드라이런 리포트 (ADR-0028, DB·Storage 무접근)
+================================================================
+  필터: license=cc-by tags$in=['computedLevel:1', 'computedLevel:2'] lang=en
+
+(a) 깔때기 카운트
+  서버측 모수                     : 1059
+  실제 수집                       : 1059
+  − 1단 dedup(list 태그) 제외     : 163
+  − 영어필터 제외(en 없음)        : 58
+  − allTitles 파싱 실패 제외      : 30
+  = 매니페스트 합성 대상 후보     : 808
+    − 스킵[index.htm fetch 실패]            : 15
+    − 스킵[본문 이미지 0장]            : 9
+    − 스킵[라이선스 URL 부재]            : 1
+    − 자동제외[AI생성] (Amd#3①·#5②): 11
+    − 자동제외[테스트물] (Amd#3①)  : 9
+    − gate②[무텍스트] (Amd#5③)     : 13
+  = 최종 적재 후보(게이트 반영)   : 750
+  (네트워크 에러 건수: 0)
+
+(b) 페이지 수 분포 (최종 후보)
+  1p (gate① 후보)     : 4
+  2-4p              : 25
+  5-9p              : 217
+  10p+              : 504
+
+(c) 다중 background-image / 표지중복 의심
+  페이지당 이미지 2장+ 발생 책 수 : 73
+  연속중복 접은 책 수             : 6
+
+(d) 검수 리스트 분리 (Amd#3② — 자동제외 아님, D5 시각검수)
+  검수 플래그 책 수: 64 / 최종 후보 750
+  제목 표본(최대 20):
+    - 'One Two Three'  sig=['topic:Math']
+    - 'More than a Pretty Face. Phase 1, Unit 5, Game 1B Mvskoke Gr'  sig=['title']
+    - 'Count to Ten'  sig=['topic:Math']
+    - 'How to Catch the Wind'  sig=['topic:Science']
+    - 'Useful Phrases 02 Phase 1, Unit 02 05 Mvskoke Growing Biling'  sig=['title']
+    - 'One Two Three'  sig=['topic:Math']
+    - 'One, Two, Three'  sig=['topic:Math']
+    - 'How to Catch the Wind'  sig=['topic:Science']
+    - 'Hold and Touch Phase 1, Unit 3, Game 6 Mvskoke Growing Bilin'  sig=['title']
+    - "Let's Count Birds"  sig=['topic:Math']
+    - 'Meet More Family. Phase 1, Unit 5, Game 5B Mvskoke Growing B'  sig=['title']
+    - 'Action Commands 1 Phase 1, Unit 01, Game 02a Mvskoke Growing'  sig=['title']
+    - 'One Two Three'  sig=['topic:Math']
+    - 'One Two Three'  sig=['topic:Math']
+    - 'Common Objects Phase 1, Unit 4, Game 4 Mvskoke Growing Bilin'  sig=['title']
+    - 'One Two Three'  sig=['topic:Math']
+    - 'Cuenta hasta diez'  sig=['topic:Math']
+    - 'Lizard and Her Friends'  sig=['topic:Math']
+    - 'Count to Ten'  sig=['topic:Math']
+    - 'Objects in the kitchen; more Animals Phase 1, Unit 03, Game '  sig=['title']
+
+(d-2) 자동제외 표본 (검증용)
+  AI생성 제외 11건 — 제목 표본(최대 10):
+    - 'Animals in Action 1 Phase 1, Unit 01, Game 02b Mvskoke '  author='Stephen Echerd and Google Gemini AI'
+    - 'THE WHISPERS OF BLUE FOG'  author='AI'
+    - 'THE FLAMES OF TOAFA'  author='AI'
+    - 'A NAME FOR MY ISLAND'  author='AI'
+    - 'THE CUB LEFT IN THE RAIN'  author='AI'
+    - 'THE LITTLE SHOOTING STAR'  author='AI'
+    - 'Where Is My Dog?'  author='ChatGPT'
+    - 'Car Back Cover - Big Book'  author='sils'
+    - 'THE INVISIBLE WAVE'  author='AI'
+    - 'Windy Day (AI Experiment)'  author='AI (bing.com/create)'
+  테스트물 제외 9건 — 제목 표본(최대 10):
+    - 'Testing Book'
+    - 'Test Bloom Games'
+    - 'Story Primer Test'
+    - 'Six Games Test'
+    - 'test ypmd'
+    - 'Full Screen Activities - TEST'
+    - 'Test Alpha'
+    - 'Test Video'
+    - 'Test Comic'
+
+(e) 라이선스 분포 (최종 후보)
+  by/4.0    : 750
+  (스킵 라이선스 사유는 (a) 깔때기 참조)
