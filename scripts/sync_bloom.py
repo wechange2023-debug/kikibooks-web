@@ -112,8 +112,9 @@ _NON_PAGE_IMG_RE = re.compile(
     re.I,
 )
 # 본문 페이지 이미지: background-image url() (요소 무관, numberedPage 내부만 채택).
+# 따옴표 안 내용은 따옴표 문자만 종결자 — 파일명에 괄호 '( )'가 있어도 안전(실측 버그).
 _BG_IMAGE_RE = re.compile(
-    r"background-image:\s*url\(['\"]?([^'\")]+)['\"]?\)", re.I
+    r"background-image:\s*url\(\s*(?:\"([^\"]*)\"|'([^']*)'|([^)]*?))\s*\)", re.I
 )
 # bloom-page 블록 분할 마커(캡처).
 _PAGE_SPLIT_RE = re.compile(r'(<div class="[^"]*bloom-page)', re.I)
@@ -357,7 +358,8 @@ def extract_page_images(
         numbered += 1
         page_imgs = 0
         for m in _BG_IMAGE_RE.finditer(page):
-            fname = m.group(1).strip().split("/")[-1]  # 상대 파일명만
+            raw = m.group(1) or m.group(2) or m.group(3) or ""  # dquote/squote/unquoted
+            fname = raw.strip().split("/")[-1]  # 상대 파일명만
             if not fname or _NON_PAGE_IMG_RE.search(fname):
                 continue
             if fname == prev:  # 직전과 동일 파일명(중복 레이어 등) → 스킵
@@ -765,14 +767,17 @@ def verify_inserted(client: Any, source_id: str) -> Optional[dict[str, Any]]:
     return rows[0] if rows else None
 
 
-def run_execute(client: Any, supabase_url: str, max_insert: int) -> int:
+def run_execute(
+    client: Any, supabase_url: str, max_insert: int, skip_review: bool = False
+) -> int:
     """
     파이프라인 통과분을 최대 max_insert 권만 실제 적재(Storage + DB).
     gate①·dedup 2단(정규화 title) 포함. is_active=false 스테이징.
+    skip_review=True 면 검수리스트 플래그 책도 스킵(깨끗한 표본 적재용 — 배치 시엔 False).
     """
     where = build_where()
     # 후보 확보용 풀(필터 통과율 고려해 넉넉히, 단 상한). 실제 INSERT는 max_insert에서 멈춤.
-    pool = min(max_insert * 30, 60)
+    pool = min(max(max_insert * 30, 40), 200)
     print(f"[INFO] 후보 풀 수집(limit={pool}) — 실제 INSERT는 정확히 {max_insert}권에서 중단")
     collected = fetch_books(where, limit=pool)
     after_tag, tag_excluded = apply_tag_dedup(collected)
@@ -804,8 +809,11 @@ def run_execute(client: Any, supabase_url: str, max_insert: int) -> int:
         if res["page_count"] < GATE1_MIN_PAGES:
             print(f"  skip(gate① 본문 {res['page_count']}장) slug={res['slug']!r}")
             continue
-        # 검수 리스트 플래그(Amd#3 ② — 제외 아님, 로그만).
+        # 검수 리스트 플래그(Amd#3 ② — 기본은 제외 아님, 로그만).
         if res.get("review"):
+            if skip_review:
+                print(f"  skip(검수리스트 --skip-review) slug={res['slug']!r} sig={res['review']}")
+                continue
             print(f"  [검수리스트] slug={res['slug']!r} sig={res['review']} (적재는 진행)")
         # dedup 2단: 정규화 title 교차대조
         if _norm_title(res["title"]) in existing:
@@ -908,6 +916,11 @@ def main() -> int:
         action="store_true",
         help="전량(1차 배치 모수 전체) 드라이런 + 분포 리포트 저장(조각3). DB·Storage 없음.",
     )
+    parser.add_argument(
+        "--skip-review",
+        action="store_true",
+        help="검수리스트 플래그 책도 스킵(깨끗한 표본 적재 검증용). 배치 적재 시엔 미사용.",
+    )
     args = parser.parse_args()
 
     if args.execute:
@@ -917,7 +930,10 @@ def main() -> int:
         client, supabase_url = init_supabase()
         print(f"[INFO] Supabase 연결: {supabase_url}")
         try:
-            return run_execute(client, supabase_url, max_insert=args.limit)
+            return run_execute(
+                client, supabase_url, max_insert=args.limit,
+                skip_review=args.skip_review,
+            )
         except requests.RequestException as e:
             print(f"[FAIL] 수집 단계 요청 실패: {e}")
             return 1
