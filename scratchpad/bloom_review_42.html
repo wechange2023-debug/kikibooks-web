@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom 42권 인앱 검수 체크리스트</title>
+<style>
+  :root {
+    --green: #2e7d32;
+    --red: #c62828;
+    --gray: #757575;
+    --bg: #f5f5f5;
+    --line: #e0e0e0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+    background: var(--bg);
+    color: #222;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    border-bottom: 2px solid var(--line);
+    padding: 12px 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+  .counters {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .counters .pass { color: var(--green); }
+  .counters .fail { color: var(--red); }
+  .counters .undecided { color: var(--gray); }
+  .counters .total { color: #444; }
+  .copy-btn {
+    margin-left: auto;
+    background: #1565c0;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .copy-btn:hover { background: #0d47a1; }
+  .notice {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--red);
+    font-weight: 600;
+  }
+  .wrap { padding: 16px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  th {
+    background: #fafafa;
+    font-size: 13px;
+    position: sticky;
+    top: 86px;
+    z-index: 5;
+  }
+  td.num { width: 40px; text-align: center; color: #888; }
+  td.title { font-size: 14px; }
+  .open-btn {
+    display: inline-block;
+    background: #eef3fb;
+    color: #1565c0;
+    border: 1px solid #bcd0ee;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .open-btn:hover { background: #dde9f8; }
+  .verdict-btn {
+    min-width: 90px;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+  }
+  .verdict-btn.v0 { background: var(--gray); }
+  .verdict-btn.v1 { background: var(--green); }
+  .verdict-btn.v2 { background: var(--red); }
+  .reason {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="counters">
+      <span class="total">전체 <b id="c-total">42</b></span>
+      <span class="pass">통과 <b id="c-pass">0</b></span>
+      <span class="fail">탈락 <b id="c-fail">0</b></span>
+      <span class="undecided">미정 <b id="c-undecided">42</b></span>
+      <button class="copy-btn" id="copyBtn">결과 복사</button>
+    </div>
+    <div class="notice">새로고침하면 입력이 초기화됩니다. 끝나면 반드시 [결과 복사].</div>
+  </div>
+
+  <div class="wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>제목</th>
+          <th>리더 열기</th>
+          <th>판정</th>
+          <th>사유</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+<script>
+  var BASE = "https://hellokiki.co.kr";
+  var BOOKS = [
+    ["c1a54083-43ea-4676-b15a-35faf15d76af", "02 - Cat and Dog and the Ball"],
+    ["1d9952e8-5fd3-4885-abd7-354b36b7404d", "02 - Cat and Dog: Words"],
+    ["6d62d996-ee93-4b29-b2e7-e75f4689a0ce", "A Street, or a Zoo?"],
+    ["170b90b7-454c-420e-9feb-679b1658e748", "A very tall man"],
+    ["16f9a05e-b587-4c74-9fe8-e13afaf3a134", "A5-Colours of a Rainbow"],
+    ["ea42ef99-a9ce-439b-82c6-a13b07d62669", "Animals"],
+    ["e0eb4795-c156-473b-afcb-1774a1ae669b", "Anna's Adventure"],
+    ["c0592a7e-ed4b-4266-b215-9f42e7036cd3", "Can and Cannot"],
+    ["4fae1c08-2bb7-40dd-a88f-f496a965adc4", "Clothing"],
+    ["57282144-97ca-452d-a656-57296777de17", "Count to Ten"],
+    ["f2d18625-af56-4203-a499-c51a299b2df4", "Didi's knowledge"],
+    ["f742c2db-e748-44c3-95c9-2c10be6f8850", "Domestic animals"],
+    ["d1263207-27b6-4d13-884f-02e77e247a17", "Farm Animals"],
+    ["90949946-5d5f-42a8-ac25-960578b3197b", "Have You Seen These Birds?"],
+    ["2dd818e1-4b4f-45eb-8730-d6a7ed40793c", "How to Catch the Wind"],
+    ["2a47209a-1481-4d89-b0d0-2a20890fe0d3", "I Feel"],
+    ["375ecd04-48e0-478a-83d8-3adf180f64e2", "Jacob and the Fish"],
+    ["9a64e1eb-9b98-4061-90b5-dd814a218b4f", "Jobs"],
+    ["0ad980a2-0c63-4f59-b796-2a7d6fa2e90f", "Land Animals"],
+    ["f160eb33-7386-4ae9-a587-011ed0109522", "Let's go"],
+    ["0801ac81-4994-44cb-8182-42ca2147bac7", "Little and big"],
+    ["89f644b6-8414-4e5e-ace9-c176f4003d38", "Look in the sky. What do you see?"],
+    ["28920d2b-40b3-415c-bda6-6c4719e8bca6", "Maria's Family"],
+    ["2aaa6272-b8a0-4a89-a418-07e39979a9e0", "Noakawir and the Beans"],
+    ["f8f51d1f-44db-43d4-9aac-8f2ae9ec34e3", "One"],
+    ["7b8b45d1-2b92-459e-90ba-5872141fc0a0", "One Two Three"],
+    ["af499017-841b-4bda-91b7-c3f82db65157", "Parts of the Body"],
+    ["fc1297c4-2d6c-476e-90dc-af65880db95c", "Parts of the Face"],
+    ["f38a6ef5-54d6-42ef-bc3f-ab9f2a31be69", "The Moon and the Hat"],
+    ["6460a2b4-baff-4480-9846-92bb643b9652", "The Three Little Kittens"],
+    ["5b8ba876-b408-42c5-b2e9-0b0d1f32fa87", "The Widow and the Judge"],
+    ["dfb4d13f-0eb1-48c6-a2ec-ad2b7d93fac4", "The Young Child"],
+    ["0c26d08b-7e8b-434d-88a0-2e542c45d61f", "They Can Do Many Things"],
+    ["a9a70a16-fdb8-4e91-8baa-ec2670e5cf7b", "Things we Can Do"],
+    ["c3bd90fb-593e-4258-9f44-2dee69819125", "Timmi's dream"],
+    ["1120dbb4-ffcf-4ccf-80d6-c8fa7dacd9dd", "Timmy and Pepe"],
+    ["8b6cc55e-93f3-4844-80ab-fa597f0c7043", "Tortoise Finds his House"],
+    ["a2ee929e-b31a-4d1f-864a-8a59af1ce3ad", "Wewak Boy"],
+    ["4a88290f-0961-4434-94c9-f994ec38fcef", "Where Is It?"],
+    ["1c304aa3-8292-4eb4-9f7a-ec663dd12de5", "Where is my bat?"],
+    ["8beb641a-3005-4c33-9c74-cfb05107bc4b", "Where the Pet Sat?"],
+    ["20d860ff-334a-4dde-9edd-7b8002f76f28", "Wild Animals"]
+  ];
+
+  // 판정 상태: 0=미정, 1=통과(O), 2=탈락(X)
+  var verdicts = BOOKS.map(function () { return 0; });
+
+  var VLABEL = ["미정", "통과 O", "탈락 X"];
+  var VCLASS = ["v0", "v1", "v2"];
+
+  function esc(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function buildRows() {
+    var tbody = document.getElementById("tbody");
+    var html = "";
+    for (var i = 0; i < BOOKS.length; i++) {
+      var id = BOOKS[i][0];
+      var title = BOOKS[i][1];
+      var url = BASE + "/book/" + id + "/read";
+      html += "<tr>" +
+        "<td class='num'>" + (i + 1) + "</td>" +
+        "<td class='title'>" + esc(title) + "</td>" +
+        "<td><a class='open-btn' href='" + url + "' target='_blank' rel='noopener'>리더 열기 ↗</a></td>" +
+        "<td><button class='verdict-btn v0' data-i='" + i + "'>미정</button></td>" +
+        "<td><input class='reason' type='text' data-i='" + i + "' placeholder='탈락 시 사유 메모'></td>" +
+        "</tr>";
+    }
+    tbody.innerHTML = html;
+
+    var btns = tbody.querySelectorAll(".verdict-btn");
+    for (var b = 0; b < btns.length; b++) {
+      btns[b].addEventListener("click", onToggle);
+    }
+  }
+
+  function onToggle(e) {
+    var i = parseInt(e.target.getAttribute("data-i"), 10);
+    verdicts[i] = (verdicts[i] + 1) % 3;
+    e.target.className = "verdict-btn " + VCLASS[verdicts[i]];
+    e.target.textContent = VLABEL[verdicts[i]];
+    updateCounters();
+  }
+
+  function updateCounters() {
+    var pass = 0, fail = 0, und = 0;
+    for (var i = 0; i < verdicts.length; i++) {
+      if (verdicts[i] === 1) pass++;
+      else if (verdicts[i] === 2) fail++;
+      else und++;
+    }
+    document.getElementById("c-pass").textContent = pass;
+    document.getElementById("c-fail").textContent = fail;
+    document.getElementById("c-undecided").textContent = und;
+  }
+
+  function copyResults() {
+    var inputs = document.querySelectorAll(".reason");
+    var lines = [];
+    for (var i = 0; i < BOOKS.length; i++) {
+      var mark = verdicts[i] === 1 ? "O" : verdicts[i] === 2 ? "X" : "-";
+      var reason = inputs[i] ? inputs[i].value.trim() : "";
+      lines.push(BOOKS[i][1] + " | " + mark + " | " + reason);
+    }
+    var text = lines.join("\n");
+
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try { document.execCommand("copy"); } catch (err) {}
+      document.body.removeChild(ta);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        flash();
+      }, function () {
+        fallback();
+        flash();
+      });
+    } else {
+      fallback();
+      flash();
+    }
+  }
+
+  function flash() {
+    var btn = document.getElementById("copyBtn");
+    var old = btn.textContent;
+    btn.textContent = "복사됨 ✓";
+    setTimeout(function () { btn.textContent = old; }, 1500);
+  }
+
+  document.getElementById("copyBtn").addEventListener("click", copyResults);
+  buildRows();
+  updateCounters();
+</script>
+</body>
+</html>
