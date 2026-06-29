@@ -106,7 +106,7 @@ _DATA_CREATOR_RE = re.compile(r'data-creator=["\']([^"\']+)["\']', re.I)
 EXISTING_SOURCE_LIST_TAGS = ("list:Book Dash", "list:African Storybook")
 
 # 응답 페이로드 축소용 keys(Parse).
-FETCH_KEYS = "title,license,baseUrl,tags,bookInstanceId,langPointers,allTitles"
+FETCH_KEYS = "title,license,baseUrl,tags,bookInstanceId,langPointers,allTitles,createdAt"  # createdAt: ADR-0030 D5 dedup 키
 PARSE_PAGE_SIZE = 200  # skip/limit 페이지네이션 단위
 
 # 매니페스트 본문에서 제외할 비-본문 이미지(표지·썸네일·브랜딩·레벨차트 등).
@@ -273,6 +273,51 @@ def apply_english_filter(
         else:
             excluded_no_en += 1
     return kept, excluded_no_en, excluded_bad
+
+
+# ---------------------------------------------------------------------------
+# 2-C. 배치 내 source_id 중복 제거 — 최신 판본 1건만 (ADR-0030 D5)
+# ---------------------------------------------------------------------------
+def _book_source_id(book: dict[str, Any]) -> str:
+    """payload source_id 규칙과 동일(bookInstanceId 우선, 없으면 objectId)."""
+    return book.get("bookInstanceId") or book.get("objectId") or ""
+
+
+def _recency_key(book: dict[str, Any]) -> tuple[str, str]:
+    """최신 판본 판정 키 (createdAt, objectId). ISO8601 문자열 비교 = 시간순.
+
+    중복 6쌍 실측: createdAt은 결측 없이 모든 쌍에서 갈리며 lastUploaded(있을 때)와 100% 일치.
+    updatedAt은 초 미만 동률·하우스키핑 반영으로 신뢰 낮음(1쌍 역전) → createdAt 채택.
+    동률 시 objectId 사전순으로 결정적 tiebreak(실측 6쌍에선 동률 없음).
+    """
+    return (book.get("createdAt") or "", book.get("objectId") or "")
+
+
+def dedup_latest_by_source_id(
+    books: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], int]:
+    """동일 source_id(bookInstanceId) 중복 → createdAt 최신 1건만 (ADR-0030 D5).
+
+    Parse 카탈로그에 동일 bookInstanceId 레코드가 2개 이상(판본/언어 변종) 존재하여,
+    UNIQUE(source_platform, source_id) upsert가 처리 순서에 따라 비결정적으로 덮어쓰는 문제를
+    적재 전에 차단한다. 결정적(동일 입력→동일 출력)이며 첫 등장 순서를 보존한다.
+    → (잔여 후보, 제거된 중복 수).
+    """
+    best: dict[str, dict[str, Any]] = {}
+    for b in books:
+        sid = _book_source_id(b)
+        if not sid:
+            continue
+        if sid not in best or _recency_key(b) > _recency_key(best[sid]):
+            best[sid] = b
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for b in books:
+        sid = _book_source_id(b)
+        if sid and sid not in seen:
+            seen.add(sid)
+            out.append(best[sid])
+    return out, len(books) - len(out)
 
 
 # ---------------------------------------------------------------------------
@@ -904,6 +949,9 @@ def run_execute(
     after_tag, tag_excluded = apply_tag_dedup(collected)
     candidates, no_en, bad_json = apply_english_filter(after_tag)
     print(f"[INFO] 풀 {len(collected)} → 태그dedup {len(after_tag)} → 영어필터 {len(candidates)}")
+    candidates, dup_removed = dedup_latest_by_source_id(candidates)  # ADR-0030 D5
+    if dup_removed:
+        print(f"[INFO] source_id 중복 제거(D5, createdAt 최신): -{dup_removed} → {len(candidates)}")
 
     print("[INFO] 기존 books 제목 로드(dedup 2단)...")
     existing = fetch_existing_titles(client)
