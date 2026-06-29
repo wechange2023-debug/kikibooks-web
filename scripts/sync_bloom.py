@@ -36,6 +36,7 @@ import time
 from collections import Counter
 from pathlib import Path
 from typing import Any, Optional
+from urllib.parse import quote, unquote
 
 import requests
 
@@ -129,9 +130,11 @@ _REVIEW_TITLE_RE = re.compile(
     r"\b(unit|phase|game|lesson|quiz|worksheet)\b", re.I
 )
 _NONSTORY_TOPIC_TAGS = (
+    # ADR-0030 D1: 검수 플래그 멤버 정정 — Science 제거(양서 오탈락: How to Catch the Wind),
+    # Dictionary 추가(0 FP, picture-dictionary 마커). 용도는 검수 신호 그대로(자동제외 아님).
     "topic:Math",
     "topic:Mathematics",
-    "topic:Science",
+    "topic:Dictionary",
 )
 # 자동제외 시그널(Amd#3 ①). AI생성 이미지명/저자 + 테스트물 제목.
 _AI_IMG_RE = re.compile(
@@ -767,9 +770,45 @@ def fetch_existing_titles(client: Any) -> set[str]:
 
 
 def bloom_cover_url(res: dict[str, Any]) -> Optional[str]:
-    """harvester bloomdigital base + coverImage200.jpg → 표지 절대 URL."""
+    """첫 페이지 본문 이미지 → 고해상도 표지 URL (ADR-0030 D2).
+
+    prefix(harvester bloomdigital base, source_id 아님) + quote(unquote(filename))로
+    조립한다. unquote→quote 정규화로 이미 %-인코딩된 파일명의 이중인코딩(%20→%2520, 404)을
+    방지한다. base는 %2f를 포함한 채 그대로 두고 파일명만 재인코딩한다.
+
+    폴백(ADR-0030 D2): 첫 본문 이미지가 없으면 기존 coverImage200.jpg로 폴백(표지 결측 방지).
+    적재 대상(ok=True) 책은 본문 이미지가 보장되므로 실사용상 폴백은 거의 발생하지 않으나,
+    방어적으로 둔다. 폴백 여부는 res['cover_fallback']에 기록(dry-run 집계용).
+    """
     base = res.get("base")
-    return (base + COVER_FILENAME) if base else None
+    if not base:
+        res["cover_fallback"] = True
+        return None
+    img_urls = res.get("image_urls") or []
+    if img_urls:
+        first = img_urls[0]
+        fname = first[len(base):] if first.startswith(base) else first.rsplit("/", 1)[-1]
+        res["cover_fallback"] = False
+        return base + quote(unquote(fname))
+    res["cover_fallback"] = True
+    print(f"  ⚠ cover fallback(coverImage200): base={base[:60]}…", file=sys.stderr)
+    return base + COVER_FILENAME
+
+
+def bloom_level(book: dict[str, Any]) -> Optional[int]:
+    """computedLevel:N 태그 → our level (ADR-0030 D3, 1:1 매핑, 1~5).
+
+    값 부재·파싱 실패·범위 밖(books.level CHECK 1~5)이면 None(level=NULL 허용).
+    본 배치는 L1·L2만 대상이나, L3·L4가 섞여도 1:1로 그대로 부여하고 깨지지 않게 둔다.
+    """
+    for t in book.get("tags") or []:
+        if t.startswith("computedLevel:"):
+            try:
+                n = int(t.split(":", 1)[1])
+            except (ValueError, IndexError):
+                return None
+            return n if 1 <= n <= 5 else None
+    return None
 
 
 def build_book_payload(
@@ -798,6 +837,7 @@ def build_book_payload(
         "content_url": content_url,
         "content_type": CONTENT_TYPE,
         "language": "en",
+        "level": bloom_level(book),  # ADR-0030 D3: computedLevel→level 1:1, 없으면 NULL
         "license": our_license,
         "author": author,
         "illustrator": None,
