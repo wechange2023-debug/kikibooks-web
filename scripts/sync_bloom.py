@@ -814,6 +814,20 @@ def fetch_existing_titles(client: Any) -> set[str]:
     return {_norm_title(r.get("title", "")) for r in rows if r.get("title")}
 
 
+def fetch_existing_source_ids(client: Any) -> set[str]:
+    """기존 books의 bloom source_id 집합 (ADR-0030 load-plan [A] 가드).
+
+    배치에 이미 적재된 source_id가 있으면 upsert가 기존 행(cover_url·is_active 등)을
+    덮어쓰므로(특히 is_active=False 강제 → 활성책 비활성화), 적재 전 명시 제외용.
+    읽기 전용 SELECT(DB write 아님).
+    """
+    rows = (
+        client.table("books").select("source_id")
+        .eq("source_platform", SOURCE_PLATFORM).execute().data or []
+    )
+    return {r.get("source_id") for r in rows if r.get("source_id")}
+
+
 def bloom_cover_url(res: dict[str, Any]) -> Optional[str]:
     """첫 페이지 본문 이미지 → 고해상도 표지 URL (ADR-0030 D2).
 
@@ -934,16 +948,21 @@ def verify_inserted(client: Any, source_id: str) -> Optional[dict[str, Any]]:
 
 
 def run_execute(
-    client: Any, supabase_url: str, max_insert: int, skip_review: bool = False
+    client: Any, supabase_url: str, max_insert: int, skip_review: bool = False,
+    commit: bool = False,
 ) -> int:
     """
-    파이프라인 통과분을 최대 max_insert 권만 실제 적재(Storage + DB).
-    gate①·dedup 2단(정규화 title) 포함. is_active=false 스테이징.
+    파이프라인 통과분을 최대 max_insert 권 적재(Storage + DB). is_active=false 스테이징.
+    gate①·dedup 2단(정규화 title)·source_id 가드(ADR-0030 [A], 기존 bloom 행 보호) 포함.
     skip_review=True 면 검수리스트 플래그 책도 스킵(깨끗한 표본 적재용 — 배치 시엔 False).
+
+    commit=False(기본): **쓰기 없이** INSERT 대상 집계만(게이트 보고) 후 중단 — Storage·DB 무변경.
+    commit=True: 실제 적재(팀장 승인 후 --commit). 기존 50건은 어떤 경우에도 미터치.
     """
     where = build_where()
-    # 후보 확보용 풀(필터 통과율 고려해 넉넉히, 단 상한). 실제 INSERT는 max_insert에서 멈춤.
-    pool = min(max(max_insert * 30, 40), 200)
+    # 후보 풀: 표본(작은 max_insert)은 외부 부하 방지 상한 200. 전량 배치(--limit≥500)는
+    # 전수 수집(pool=None) — 742 배치를 200에서 잘리지 않게(ADR-0030 load-plan).
+    pool = None if max_insert >= 500 else min(max(max_insert * 30, 40), 200)
     print(f"[INFO] 후보 풀 수집(limit={pool}) — 실제 INSERT는 정확히 {max_insert}권에서 중단")
     collected = fetch_books(where, limit=pool)
     after_tag, tag_excluded = apply_tag_dedup(collected)
@@ -956,9 +975,15 @@ def run_execute(
     print("[INFO] 기존 books 제목 로드(dedup 2단)...")
     existing = fetch_existing_titles(client)
     print(f"[INFO] 기존 제목 {len(existing)}개 로드")
+    existing_ids = fetch_existing_source_ids(client)  # ADR-0030 [A] source_id 가드
+    print(f"[INFO] 기존 bloom source_id {len(existing_ids)}개 로드 (보호 대상)")
+    mode = "COMMIT(실적재)" if commit else "REPORT(쓰기 없음)"
+    print(f"[INFO] 실행 모드: {mode}")
 
-    inserted = 0
+    inserted = 0          # commit=True: 실제 적재 수 / commit=False: INSERT 예정 수
     review_flagged = 0
+    plan_level: Counter = Counter()   # INSERT 대상 level 분포
+    plan_cover_fb = 0                 # INSERT 대상 표지 폴백 건수
     skip: Counter = Counter()
     samples: list[tuple[dict[str, Any], str]] = []  # 표본 5권 (row, manifest_url)
     clean_books: list[tuple[str, str, str]] = []  # 검수리스트 비해당 (id, title, manifest_url)
@@ -969,6 +994,11 @@ def run_execute(
         # 자동제외 ①-a: 테스트물(Amd#3 ①) — fetch 전.
         if is_test_artifact(title):
             skip["자동제외:테스트물"] += 1
+            continue
+        # ADR-0030 [A] source_id 가드: 기존 bloom 행은 절대 미터치(upsert 덮어쓰기 방지). fetch 전 차단.
+        source_id = _book_source_id(b)
+        if source_id in existing_ids:
+            skip["기존source_id(보호·미터치)"] += 1
             continue
         try:
             res = build_bloom_manifest(b)
@@ -1006,7 +1036,24 @@ def run_execute(
             skip["dedup2:기존제목"] += 1
             continue
 
-        source_id = b.get("bookInstanceId") or b.get("objectId") or ""
+        # --- INSERT 대상 확정 (source_id 가드·dedup2·게이트 모두 통과) ---
+        # report 모드(commit=False): Storage·DB 쓰기 없이 집계만.
+        if not commit:
+            try:
+                preview = build_book_payload(b, res, content_url="(report-dry)")
+            except AttributionError:
+                skip["attribution실패"] += 1
+                continue
+            inserted += 1
+            plan_level["NULL" if preview["level"] is None else preview["level"]] += 1
+            if res.get("cover_fallback"):
+                plan_cover_fb += 1
+            existing.add(_norm_title(res["title"]))  # 배치 내 동일제목 중복 집계 방지
+            if is_review:
+                review_flagged += 1
+            continue
+
+        # commit 모드: 실제 적재(Storage + DB).
         try:
             content_url = upload_manifest(client, supabase_url, source_id, res["manifest"])
         except Exception as exc:  # noqa: BLE001
@@ -1026,6 +1073,9 @@ def run_execute(
 
         existing.add(_norm_title(res["title"]))  # 같은 배치 내 동일제목 재적재 방지
         inserted += 1
+        plan_level["NULL" if payload["level"] is None else payload["level"]] += 1
+        if res.get("cover_fallback"):
+            plan_cover_fb += 1
         if is_review:
             review_flagged += 1
         row = verify_inserted(client, source_id)
@@ -1037,11 +1087,21 @@ def run_execute(
             print(f"  [{inserted}/{max_insert}] 적재 진행 (스킵 누계 {sum(skip.values())})")
 
     # --- 요약 ---
+    verb = "적재" if commit else "INSERT 예정(쓰기 없음)"
     print()
     print("=" * 64)
-    print(f" 배치 적재 요약 — 총 적재 {inserted}권 (상한 {max_insert}, 전부 is_active=false)")
+    print(f" 배치 {verb} 요약 — {inserted}권 (상한 {max_insert}, 전부 is_active=false)")
     print("=" * 64)
-    print(f"  검수리스트 플래그 포함 적재: {review_flagged}")
+    print(f"  실행 모드                  : {mode}")
+    print(f"  기존 bloom source_id(보호) : {len(existing_ids)}")
+    print(f"  source_id 가드 skip        : {skip.get('기존source_id(보호·미터치)', 0)}")
+    print(f"  INSERT 대상 level 분포     : "
+          + ", ".join(f"L{k}={v}" for k, v in sorted(plan_level.items(), key=lambda x: str(x[0]))))
+    print(f"  INSERT 대상 표지 폴백      : {plan_cover_fb}")
+    print(f"  검수리스트 플래그 포함     : {review_flagged}")
+    if not commit:
+        print()
+        print("  ⚠ REPORT 모드 — Storage·DB 무변경. 실적재는 팀장 승인 후 --execute --commit.")
     print("  스킵 사유별:")
     for reason, cnt in skip.most_common():
         print(f"    - {reason}: {cnt}")
@@ -1123,18 +1183,28 @@ def main() -> int:
         action="store_true",
         help="검수리스트 플래그 책도 스킵(깨끗한 표본 적재 검증용). 배치 적재 시엔 미사용.",
     )
+    parser.add_argument(
+        "--commit",
+        action="store_true",
+        help="--execute와 함께 줄 때만 실제 Storage·DB 적재. 미지정 시 REPORT 모드(쓰기 없음).",
+    )
     args = parser.parse_args()
 
     if args.execute:
+        banner = (
+            f"Storage+DB 적재(COMMIT), is_active=FALSE, 상한 {args.limit}권"
+            if args.commit else
+            f"REPORT 모드(쓰기 없음) — INSERT 대상 집계만, 상한 {args.limit}권"
+        )
         print("=" * 64)
-        print(f" Bloom 실제 적재 (조각4) — Storage+DB, is_active=FALSE, 상한 {args.limit}권")
+        print(f" Bloom {banner}")
         print("=" * 64)
         client, supabase_url = init_supabase()
         print(f"[INFO] Supabase 연결: {supabase_url}")
         try:
             return run_execute(
                 client, supabase_url, max_insert=args.limit,
-                skip_review=args.skip_review,
+                skip_review=args.skip_review, commit=args.commit,
             )
         except requests.RequestException as e:
             print(f"[FAIL] 수집 단계 요청 실패: {e}")
