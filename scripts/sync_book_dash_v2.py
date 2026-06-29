@@ -336,7 +336,8 @@ def fetch_creators(slug: str) -> dict[str, Optional[str]]:
     for name, role in _ROLE_RE.findall(txt):
         key = role.lower()
         if result.get(key) is None:
-            result[key] = name.strip()
+            # ADR-0029 D1: ingestion 경계에서 HTML 엔티티 디코딩
+            result[key] = html.unescape(name).strip()
 
     # 보강: 표기에서 못 찾은 역할을 이미지 파일명 슬러그로(언더스코어→공백·타이틀케이스)
     if result["writer"] is None or result["illustrator"] is None:

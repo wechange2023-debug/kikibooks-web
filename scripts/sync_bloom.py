@@ -284,9 +284,10 @@ def pick_english_title(book: dict[str, Any]) -> str:
     """allTitles["en"] 우선. 없으면 book["title"] 폴백(방어적). 공백 정규화 적용."""
     d = parse_all_titles(book) or {}
     en = d.get("en")
+    # ADR-0029 D1: ingestion 경계에서 HTML 엔티티 디코딩
     if isinstance(en, str) and en.strip():
-        return _normalize_title(en)
-    return _normalize_title(book.get("title") or "")
+        return _normalize_title(html.unescape(en))
+    return _normalize_title(html.unescape(book.get("title") or ""))
 
 
 def slugify(title: str, fallback: str) -> str:
@@ -525,7 +526,9 @@ def build_bloom_manifest(book: dict[str, Any]) -> dict[str, Any]:
 
 def extract_author(index_html: str) -> Optional[str]:
     """책 HTML data-creator 속성 중 최빈값을 author 신호로 채택(없으면 None)."""
-    creators = [c.strip() for c in _DATA_CREATOR_RE.findall(index_html) if c.strip()]
+    # ADR-0029 D1: ingestion 경계에서 HTML 엔티티 디코딩
+    decoded = (html.unescape(c).strip() for c in _DATA_CREATOR_RE.findall(index_html))
+    creators = [c for c in decoded if c]
     if not creators:
         return None
     return Counter(creators).most_common(1)[0][0]

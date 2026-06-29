@@ -41,6 +41,7 @@ Hard Rule 보호:
 from __future__ import annotations
 
 import argparse
+import html
 import io
 import os
 import sys
@@ -270,7 +271,8 @@ def build_payload(header: dict[str, Any]) -> tuple[Optional[dict[str, Any]], boo
     license None(NC/ND·미매칭)·필수필드 결측 시 None. AttributionError는 호출자가 캐치.
     """
     source_id = (header.get("id") or "").strip()
-    title = (header.get("title") or "").strip()
+    # ADR-0029 D1: ingestion 경계에서 HTML 엔티티 디코딩(메타필드 단일 출처)
+    title = html.unescape(header.get("title") or "").strip()
     url = (header.get("url") or "").strip()
     if not source_id or not title or not url:
         return None, False
@@ -279,10 +281,13 @@ def build_payload(header: dict[str, Any]) -> tuple[Optional[dict[str, Any]], boo
     if license_code is None:
         return None, False  # NC/ND·미매칭 차단 (호출자가 license skip 집계)
 
+    author = html.unescape(header.get("author") or "").strip() or None
+    artist = html.unescape(header.get("artist") or "").strip()
+
     attribution_text, illustrator_unknown = build_asb_attribution(
         title=title,
-        author=header.get("author"),
-        artist=header.get("artist"),
+        author=author,
+        artist=artist,
         license_code=license_code,
         url=url,
     )
@@ -300,8 +305,8 @@ def build_payload(header: dict[str, Any]) -> tuple[Optional[dict[str, Any]], boo
         "language": LANGUAGE,
         # level/age는 후속(검수 단계)에서 보강
         "license": license_code,
-        "author": (header.get("author") or "").strip() or None,
-        "illustrator": ILLUSTRATOR_UNKNOWN if illustrator_unknown else (header.get("artist") or "").strip(),
+        "author": author,
+        "illustrator": ILLUSTRATOR_UNKNOWN if illustrator_unknown else artist,
         "original_url": url,
         "attribution_text": attribution_text,
         "is_active": False,  # ★ staging (Amd#3 A6) — 기존 sync의 True와 정반대
