@@ -3,7 +3,7 @@
 > 파일명은 `0030-bloom-700-batch-load-policy.md`로 유지(git 이력 단순화). 확정 배치 규모는 **L1·L2 1,060권**이며 본문 제목·요약을 정본으로 한다.
 
 **날짜** 2026-06-29
-**상태** Accepted (팀장 결정 2026-06-29)
+**상태** Accepted (팀장 결정 2026-06-29) · D5 added 2026-06-29
 **관련** `docs/adr/0028-bloom-library-free-download.md`(Bloom 도입) · `docs/adr/0029-html-entity-decoding-at-ingestion.md`(디코딩) · `docs/adr/0026-asb-quality-filter.md`(선별공개·검수큐 선례) · `docs/adr/0013-cover-attribution-policy.md`·`docs/adr/0014-gdl-cover-url-and-illustrator-strategy.md`(표지 정책) · `scratchpad/bloom_exclusion_signals.md`(자동제외 신호 정찰) · `claude.md` 2절 Hard Rule 1·2·3
 
 > 본 ADR은 **방침 확정용 초안**이다. 실제 코드 수정(`sync_bloom.py`)은 승인 후 별도 작업지시서에서 수행한다. 본 작업은 문서 전용 — 코드 무변경. 모든 라인번호·태그·분포는 grep/Parse API 실측.
@@ -115,6 +115,36 @@ computedLevel:2→level 2). 본 배치는 L1·L2만이므로 우리 레벨 **1~2
 - **전량 dry-run 게이트는 불변** — dry-run 통과분만 적재.
 - 적재 후 팀원 **인앱 시각검수**로 부적합책을 **사후 `is_active=false` 전환**하는 운영 흐름.
 - Hard Rule 1·2(attribution NOT NULL / NC·ND 차단)는 불변 — is_active와 무관.
+
+### D5 — 배치 내 source_id 중복: createdAt 최신 1건만 적재 (added 2026-06-29)
+
+**발견**(전량 dry-run, `scratchpad/bloom_1060_dryrun.md`): 적재가능 748행 중 **distinct source_id 742**
+— 동일 `bookInstanceId`를 가진 Parse 레코드가 2개씩 존재하는 **중복 6쌍**. UNIQUE(source_platform,
+source_id) upsert가 처리 순서에 따라 어느 판본을 남길지 **비결정적**.
+
+**판정 필드 실측**(6쌍 12레코드, Parse API): 후보 `createdAt`·`updatedAt`·`lastUploaded`·
+`harvestStartTime`·`version` 중 —
+- `harvestStartTime`·`version`: 전건 **null**(미사용 필드) → 제외.
+- `updatedAt`: 쌍 내 차이가 초 미만(하우스키핑/분석 갱신 반영), 1쌍(`b8b72cfb`)에서 createdAt과
+  **역전** → 신뢰 낮음.
+- `lastUploaded`: 5쌍은 createdAt과 일치하나 1쌍(`03e2da8f`) **양쪽 null** → 결측.
+- **`createdAt`: 6쌍 전수 결측 없이 갈리고, lastUploaded가 있는 5쌍과 100% 일치** → 채택.
+
+**결정**: 배치 내 동일 source_id 중복은 **`createdAt` 최신 1건만** 적재한다.
+동률 tiebreak = **`objectId` 사전순**(결정적; 실측 6쌍엔 동률 없음). 적재 전(upsert 전)
+`dedup_latest_by_source_id`로 결정적 제거하여 비결정적 덮어쓰기를 차단한다.
+
+**6쌍 실측 — createdAt과 생존 판본**:
+| source_id(8) | 생존 objectId | createdAt(생존) | 탈락 objectId | createdAt(탈락) |
+|---|---|---|---|---|
+| `b30c4a5a` | `4rhdAHEH7f` | 2024-04-11 | `g2LP7lgl3X` | 2022-04-21 |
+| `fc3c3c3f` | `HvWwJYX64B` | 2024-05-23T11:22 | `q9gK5C8gA9` | 2024-05-23T09:45 |
+| `b8b72cfb` | `hKvaEUjJby` | 2023-06-20 | `KJ5YCwnMYg` | 2023-04-19 |
+| `6130da01` | `PszTBsGCsG` | 2024-04-11 | `c4WzYf2Vac` | 2023-04-20 |
+| `37029e41` | `TVZrgv19gy` | 2023-04-27 | `rSltvjCheB` | 2023-04-18 |
+| `03e2da8f` | `ZJafHFAI5s` | 2018-10-15 | `yJBZ53JJ8O` | 2018-01-03 |
+
+검증: `scratchpad/bloom_dedup_verify.md`(6쌍→각1건, 생존 판본 일치, 역순·회전 입력 결정성 PASS).
 
 ---
 
