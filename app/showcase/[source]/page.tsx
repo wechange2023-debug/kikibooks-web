@@ -2,25 +2,35 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 
+import type { SupabaseClient } from '@supabase/supabase-js';
+
 import { SIGN_IN_PATH } from '@/lib/auth/routes';
 import type { PopularBook } from '@/lib/landing/popular-books';
 import { createClient } from '@/lib/supabase/server';
 
-import { ShowcaseBookCard } from '../showcase-book-card';
-import { isKnownSource, SHOWCASE_LIMIT, sourceLabel } from '../sources';
+import { ShowcaseGrid } from '../showcase-grid';
+import { isKnownSource, sourceLabel } from '../sources';
 
 /**
- * /showcase/[source] — 임시 시연 메뉴: 한 출처의 공개 도서 그리드.
+ * /showcase/[source] — 임시 시연 메뉴: 한 출처의 공개 도서 그리드(무한 스크롤).
  *
  * 임시·격리. 가드는 로그인만(/showcase 정합). [source]는 source_platform DB 값이며
  * 화이트리스트(SOURCE_LABELS 키)에 없으면 not-found.
  *
- * 쿼리: WHERE source_platform=[source] AND is_active=true ORDER BY title LIMIT 100.
+ * 쿼리: WHERE source_platform=[source] AND is_active=true ORDER BY title, id (전량).
  *   - is_active=true 필수 — 비공개(staging) 누출 차단(Hard Rule 3 정합).
- *   - 대량 출처(African Storybook 2,160 등)는 LIMIT 100 + 안내문(★추천 채택안).
+ *   - Supabase 기본 1000행 cap이 있어 range 청크 루프로 전량 조회한다.
+ *   - 정렬은 (title, id) — id tiebreak로 동명 책의 slice 경계 흔들림(중복·누락) 방지.
+ *   - 전량을 ShowcaseGrid(클라)에 넘겨 IntersectionObserver로 점진 렌더(후보 B 채택).
+ *     ASb 2,160행 전량 조회 ~0.3s 실측, server action 없이 단순. (필터 0이라 가능.)
  *   - 카드 클릭 → 기존 책 경로 /book/[id] (새 뷰어 미생성).
  *   - SELECT only. INSERT/UPDATE 0건.
  */
+
+/** range 청크 크기 — Supabase 기본 max rows(1000)와 정합. */
+const FETCH_CHUNK = 1000;
+/** 폭주 방지 안전 상한(현재 최대 출처 ASb 2,160 << 이 값). */
+const FETCH_MAX = 10000;
 
 export const dynamic = 'force-dynamic';
 
@@ -43,6 +53,37 @@ function toPopularBook(row: BookRow): PopularBook {
     author: row.author,
     coverUrl: row.cover_url,
   };
+}
+
+/**
+ * 한 출처의 공개 도서 전량을 (title, id) 안정 정렬로 조회한다.
+ *
+ * Supabase 기본 1000행 cap 때문에 .range()로 청크 반복한다. 동일 ORDER BY 위에서의
+ * offset 페이지네이션이라 청크 경계에 중복·누락이 없다(시연 중 동시 쓰기 없음 전제).
+ */
+async function fetchAllBySource(
+  supabase: SupabaseClient,
+  source: string,
+): Promise<PopularBook[]> {
+  const out: BookRow[] = [];
+  for (let start = 0; start < FETCH_MAX; start += FETCH_CHUNK) {
+    const { data, error } = await supabase
+      .from('books')
+      .select('id, title, author, cover_url')
+      .eq('is_active', true)
+      .eq('source_platform', source)
+      .order('title', { ascending: true })
+      .order('id', { ascending: true })
+      .range(start, start + FETCH_CHUNK - 1)
+      .returns<BookRow[]>();
+    if (error) {
+      throw new Error(`/showcase/${source}: books 조회 실패 — ${error.message}`);
+    }
+    const rows = data ?? [];
+    out.push(...rows);
+    if (rows.length < FETCH_CHUNK) break;
+  }
+  return out.map(toPopularBook);
 }
 
 interface ShowcaseSourcePageProps {
@@ -68,32 +109,8 @@ export default async function ShowcaseSourcePage({
     redirect(SIGN_IN_PATH);
   }
 
-  // 목록(LIMIT) + 전체 권수(head count)를 병렬 조회.
-  const [listResult, countResult] = await Promise.all([
-    supabase
-      .from('books')
-      .select('id, title, author, cover_url')
-      .eq('is_active', true)
-      .eq('source_platform', source)
-      .order('title', { ascending: true })
-      .limit(SHOWCASE_LIMIT)
-      .returns<BookRow[]>(),
-    supabase
-      .from('books')
-      .select('id', { count: 'exact', head: true })
-      .eq('is_active', true)
-      .eq('source_platform', source),
-  ]);
-
-  if (listResult.error) {
-    throw new Error(
-      `/showcase/${source}: books 조회 실패 — ${listResult.error.message}`,
-    );
-  }
-
-  const books = (listResult.data ?? []).map(toPopularBook);
-  const total = countResult.count ?? books.length;
-  const capped = total > SHOWCASE_LIMIT;
+  // 해당 출처의 공개 도서 전량(is_active=true)을 (title, id) 안정 정렬로 조회.
+  const books = await fetchAllBySource(supabase, source);
 
   return (
     <main className="min-h-screen bg-surface-2 py-6">
@@ -108,11 +125,7 @@ export default async function ShowcaseSourcePage({
           <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
             {sourceLabel(source)}
           </h1>
-          <p className="text-sm text-text-variant" aria-live="polite">
-            {capped
-              ? `시연용 — 전체 ${total}권 중 ${SHOWCASE_LIMIT}권 표시`
-              : `총 ${total}권`}
-          </p>
+          <p className="text-sm text-text-variant">총 {books.length}권</p>
         </header>
 
         {books.length === 0 ? (
@@ -125,13 +138,7 @@ export default async function ShowcaseSourcePage({
             </p>
           </div>
         ) : (
-          <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {books.map((book) => (
-              <li key={book.id}>
-                <ShowcaseBookCard book={book} />
-              </li>
-            ))}
-          </ul>
+          <ShowcaseGrid books={books} />
         )}
       </div>
     </main>

@@ -35,11 +35,12 @@ export function sourceLabel(source: string): string {
 }
 
 /**
- * 출처별 그리드 1회 표시 상한(시연용). 초과 출처는 안내문 노출.
+ * 클라이언트 점진 렌더(무한 스크롤) 배치 크기.
  *
- * ★추천 채택안: 출처 무관 단일 LIMIT 100 + 안내문. African Storybook(2,160권) 등 대량
- * 출처를 한 번에 렌더하면 무거우므로 일괄 100권으로 컷한다. /library의 cursor 무한스크롤
- * (LibraryBrowser + server action)은 source_platform 필터를 지원하지 않고 copy/필터에
- * 강결합이라, 격리·임시 시연 목적에는 순수 Server Component + 단일 LIMIT가 더 단순·안전하다.
+ * 채택: 후보 B(클라이언트 점진 렌더). 서버(page.tsx)가 해당 출처 전량(is_active=true)을
+ * range 청크로 조회해 넘기고, ShowcaseGrid가 IntersectionObserver로 이 크기만큼씩 끊어
+ * 렌더한다(끝까지 스크롤 시 전량 표시). /library의 cursor 무한스크롤(server action)은
+ * source_platform 필터 미지원 + copy/필터 강결합이라, 필터 0인 showcase에는 server action
+ * 없이 전량 조회 + 클라 slice가 더 단순하다(ASb 2,160행 전량 조회 ~0.3s 실측, 부담 없음).
  */
-export const SHOWCASE_LIMIT = 100;
+export const SHOWCASE_BATCH = 100;
