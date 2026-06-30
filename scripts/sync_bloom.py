@@ -1040,7 +1040,8 @@ def write_staging_insert_sql(
 def run_execute(
     client: Any, supabase_url: str, max_insert: int, skip_review: bool = False,
     commit: bool = False, recovery_ids: Optional[set[str]] = None,
-    sql_out: Optional[Path] = None,
+    sql_out: Optional[Path] = None, upload_only: bool = False,
+    plan_only: bool = False,
 ) -> int:
     """
     파이프라인 통과분을 최대 max_insert 권 적재(Storage + DB). is_active=false 스테이징.
@@ -1077,13 +1078,20 @@ def run_execute(
     print(f"[INFO] 기존 bloom source_id {len(existing_ids)}개 로드 (보호 대상)")
     if recovery_ids:
         print(f"[INFO] 회수 allowlist {len(recovery_ids)}건 (ADR-0031, dedup2 drop 되살림)")
-    mode = "COMMIT(실적재)" if commit else (
-        "REPORT+SQL산출" if sql_out is not None else "REPORT(쓰기 없음)")
+    mode = (
+        ("UPLOAD-ONLY:PLAN(쓰기 0)" if plan_only else "UPLOAD-ONLY(Storage 쓰기)")
+        if upload_only
+        else "COMMIT(실적재)" if commit
+        else "REPORT+SQL산출" if sql_out is not None
+        else "REPORT(쓰기 없음)"
+    )
     print(f"[INFO] 실행 모드: {mode}")
 
     inserted = 0          # commit=True: 실제 적재 수 / commit=False: INSERT 예정 수
     recovered = 0         # ADR-0031 회수로 되살린 건수(inserted에 포함)
     sql_rows: list[dict[str, Any]] = []  # sql_out 지정 시 INSERT payload 수집
+    upload_failures: list[str] = []      # upload_only 실패 source_id
+    plan_targets: list[tuple[str, str]] = []  # upload_only plan_only 대상 (source_id, content_url)
     review_flagged = 0
     plan_level: Counter = Counter()   # INSERT 대상 level 분포
     plan_cover_fb = 0                 # INSERT 대상 표지 폴백 건수
@@ -1145,6 +1153,33 @@ def run_execute(
                 skip["dedup2:기존제목"] += 1
                 continue
 
+        # --- upload-only 모드: Storage(book-manifests)에만 업로드, DB 무접근 ---
+        # 동일 게이트 시퀀스를 거친 413(신규 281 + 회수 132)의 매니페스트만 업로드한다.
+        # plan_only: 쓰기 없이 대상(source_id, content_url)만 수집. DB upsert·SQL 산출 0.
+        if upload_only:
+            cu = f"{supabase_url}/storage/v1/object/public/{BUCKET}/bloom-{source_id}.txt"
+            if plan_only:
+                plan_targets.append((source_id, cu))
+                inserted += 1
+                if recovered_here:
+                    recovered += 1
+                existing.add(_norm_title(res["title"]))
+                continue
+            try:
+                upload_manifest(client, supabase_url, source_id, res["manifest"])
+            except Exception as exc:  # noqa: BLE001
+                # 실패는 existing에 등록하지 않음(commit Storage 실패 동작과 동형, 재시도 여지).
+                upload_failures.append(source_id)
+                print(f"  [업로드 실패] {source_id}: {type(exc).__name__}: {str(exc)[:120]}")
+                continue
+            inserted += 1
+            if recovered_here:
+                recovered += 1
+            existing.add(_norm_title(res["title"]))  # 배치 내 동일제목 중복 처리 방지
+            if inserted % 25 == 0:
+                print(f"  [{inserted}] 업로드 진행 (실패 누계 {len(upload_failures)})")
+            continue
+
         # --- INSERT 대상 확정 (게이트 통과한 신규 또는 ADR-0031 회수) ---
         # report 모드(commit=False): Storage·DB 쓰기 없이 집계만(sql_out 지정 시 SQL 산출).
         if not commit:
@@ -1205,6 +1240,30 @@ def run_execute(
             clean_books.append((row.get("id", "?"), res["title"], content_url))
         if inserted % 10 == 0 or inserted == max_insert:
             print(f"  [{inserted}/{max_insert}] 적재 진행 (스킵 누계 {sum(skip.values())})")
+
+    # --- upload-only 전용 요약 (early return, 일반 요약·SQL 산출 미적용) ---
+    if upload_only:
+        verb = "업로드 대상 PLAN(쓰기 0)" if plan_only else "Storage 업로드"
+        print()
+        print("=" * 64)
+        print(f" Bloom {verb} 요약 — {inserted}건 (신규 {inserted - recovered} + 회수 {recovered})")
+        print("=" * 64)
+        print(f"  기존 bloom source_id(보호) : {len(existing_ids)} "
+              f"(가드 skip {skip.get('기존source_id(보호·미터치)', 0)})")
+        print("  게이트 skip 사유별:")
+        for reason, cnt in skip.most_common():
+            print(f"    - {reason}: {cnt}")
+        if plan_only:
+            for sid, target_url in plan_targets:
+                print(f"  PLAN\t{sid}\t{target_url}")
+            print(f"  [PLAN] 업로드 대상 총 {len(plan_targets)}건 — Storage·DB 쓰기 0.")
+        else:
+            print(f"  업로드 성공 : {inserted}")
+            print(f"  업로드 실패 : {len(upload_failures)}")
+            for sid in upload_failures:
+                print(f"    - FAIL {sid}")
+            print("  ⚠ Storage(book-manifests)에만 업로드 — DB upsert 0건(books 무변경).")
+        return 0
 
     # --- 요약 ---
     verb = "적재" if commit else "INSERT 예정(쓰기 없음)"
@@ -1338,11 +1397,45 @@ def main() -> int:
         default=None,
         help="INSERT SQL 산출 경로(REPORT 모드 전용, DB·Storage 무접근). --commit과 동시 불가.",
     )
+    parser.add_argument(
+        "--upload-only",
+        action="store_true",
+        help="매니페스트만 Storage(book-manifests)에 업로드(DB 무접근). --commit·--emit-sql과 동시 불가.",
+    )
+    parser.add_argument(
+        "--plan-only",
+        action="store_true",
+        help="--upload-only와 함께: 업로드 대상(source_id·content_url)만 출력하고 Storage 쓰기 0.",
+    )
     args = parser.parse_args()
 
     if args.emit_sql and args.commit:
         print("[FAIL] --emit-sql 은 REPORT 모드 전용입니다. --commit 과 동시 사용 불가.")
         return 1
+
+    if args.upload_only:
+        if args.commit or args.emit_sql:
+            print("[FAIL] --upload-only 는 Storage 전용입니다. --commit/--emit-sql 과 동시 사용 불가.")
+            return 1
+        banner = (
+            "UPLOAD-ONLY PLAN(쓰기 0) — 업로드 대상만 출력"
+            if args.plan_only else
+            f"UPLOAD-ONLY(Storage 쓰기) — 매니페스트 업로드, DB 무접근, 상한 {args.limit}"
+        )
+        print("=" * 64)
+        print(f" Bloom {banner}")
+        print("=" * 64)
+        client, supabase_url = init_supabase()
+        print(f"[INFO] Supabase 연결: {supabase_url}")
+        recovery_ids = load_recovery_ids(args.recovery_ids)
+        try:
+            return run_execute(
+                client, supabase_url, max_insert=args.limit,
+                recovery_ids=recovery_ids, upload_only=True, plan_only=args.plan_only,
+            )
+        except requests.RequestException as e:
+            print(f"[FAIL] 수집 단계 요청 실패: {e}")
+            return 1
 
     if args.execute:
         banner = (
