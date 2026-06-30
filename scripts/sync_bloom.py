@@ -34,6 +34,7 @@ import re
 import sys
 import time
 from collections import Counter
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Optional
 from urllib.parse import quote, unquote
@@ -947,9 +948,99 @@ def verify_inserted(client: Any, source_id: str) -> Optional[dict[str, Any]]:
     return rows[0] if rows else None
 
 
+# ---------------------------------------------------------------------------
+# ADR-0031 — dedup2 회수 allowlist + INSERT SQL 산출 (DB 직접 쓰기 금지)
+# ---------------------------------------------------------------------------
+def load_recovery_ids(path: Optional[str]) -> set[str]:
+    """회수 allowlist 파일(한 줄당 source_id) → set. 미지정/빈값이면 빈 set(회수 0)."""
+    if not path:
+        return set()
+    p = Path(path)
+    if not p.exists():
+        print(f"[FAIL] recovery-ids 파일 없음: {path}")
+        sys.exit(1)
+    ids = {ln.strip() for ln in p.read_text(encoding="utf-8").splitlines() if ln.strip()}
+    print(f"[INFO] 회수 allowlist 로드: {len(ids)}건 ({path})")
+    return ids
+
+
+# books INSERT 컬럼 순서(build_book_payload 키와 1:1, 스키마 NOT NULL 충족).
+_SQL_COLUMNS = [
+    "source_platform", "source_id", "title", "cover_url", "content_url",
+    "content_type", "language", "level", "license", "author", "illustrator",
+    "original_url", "attribution_text", "is_active",
+]
+
+
+def _sql_val(v: Any) -> str:
+    """Postgres 리터럴 변환 — None→NULL, bool→TRUE/FALSE, int→그대로, 그 외 '..'(작은따옴표 '' 이스케이프)."""
+    if v is None:
+        return "NULL"
+    if isinstance(v, bool):
+        return "TRUE" if v else "FALSE"
+    if isinstance(v, int):
+        return str(v)
+    return "'" + str(v).replace("'", "''") + "'"
+
+
+def write_staging_insert_sql(
+    path: Path, rows: list[dict[str, Any]], new_count: int, recovered_count: int
+) -> dict[str, int]:
+    """
+    payload 리스트 → books staging INSERT SQL 파일(전건 is_active=false).
+    게이트: attribution_text 빈값 제외, 라이선스 화이트리스트 점검, cover_url 빈값·
+    %2520(이중인코딩)·HTML 엔티티 잔존 점검. DB·Storage 무접근(파일만 산출).
+    → 게이트 통계 dict 반환.
+    """
+    allowed_lic = {"cc-by-4-0", "cc-by-sa-4-0", "cc0", "public-domain"}
+    kept: list[dict[str, Any]] = []
+    stats = {"attr_empty": 0, "bad_license": 0, "cover_empty": 0,
+             "double_encoded": 0, "entity_residue": 0}
+    for r in rows:
+        if not (r.get("attribution_text") or "").strip():
+            stats["attr_empty"] += 1
+            continue  # attribution NULL/빈값은 Hard Rule 1 위반 → 제외
+        if r.get("license") not in allowed_lic:
+            stats["bad_license"] += 1
+        if not (r.get("cover_url") or "").strip():
+            stats["cover_empty"] += 1
+        for k in ("cover_url", "content_url"):
+            if "%2520" in (r.get(k) or ""):
+                stats["double_encoded"] += 1
+        for k in ("title", "author"):
+            v = r.get(k) or ""
+            if any(t in v for t in ("&#", "&amp;", "&lt;", "&gt;", "&quot;")):
+                stats["entity_residue"] += 1
+        kept.append(r)
+
+    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    header = [
+        "-- Bloom 1차 배치 staging INSERT (ADR-0031)",
+        f"-- 생성일시: {ts}",
+        f"-- 총건수: {len(kept)}  (신규 {new_count} + 회수 {recovered_count})",
+        "-- 전건 is_active=false (staging). 공개(is_active=true)는 인앱검수 통과분에",
+        "--   한해 팀장이 별도 SQL로 전환.",
+        "-- 기존 bloom source_id 50건은 source_id 가드로 제외됨(본 파일 미포함).",
+        "-- content_url = 결정적 매니페스트 Public URL. 매니페스트 Storage 업로드는",
+        "--   본 SQL 적재와 별개의 선행 단계(미수행 시 활성화 전 업로드 필요).",
+        "-- attribution_text NOT NULL(Hard Rule 1) — 빈값 건은 산출에서 제외.",
+        "",
+        f"INSERT INTO books ({', '.join(_SQL_COLUMNS)}) VALUES",
+    ]
+    value_lines = []
+    for i, r in enumerate(kept):
+        tup = "(" + ", ".join(_sql_val(r.get(c)) for c in _SQL_COLUMNS) + ")"
+        value_lines.append(tup + ("," if i < len(kept) - 1 else ";"))
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(header + value_lines) + "\n", encoding="utf-8")
+    stats["written"] = len(kept)
+    return stats
+
+
 def run_execute(
     client: Any, supabase_url: str, max_insert: int, skip_review: bool = False,
-    commit: bool = False,
+    commit: bool = False, recovery_ids: Optional[set[str]] = None,
+    sql_out: Optional[Path] = None,
 ) -> int:
     """
     파이프라인 통과분을 최대 max_insert 권 적재(Storage + DB). is_active=false 스테이징.
@@ -958,7 +1049,14 @@ def run_execute(
 
     commit=False(기본): **쓰기 없이** INSERT 대상 집계만(게이트 보고) 후 중단 — Storage·DB 무변경.
     commit=True: 실제 적재(팀장 승인 후 --commit). 기존 50건은 어떤 경우에도 미터치.
+
+    recovery_ids(ADR-0031): dedup2 drop 대상이라도 source_id가 allowlist에 있으면 INSERT로
+      되살림(회수). 미지정 시 빈 set → 기존 동작 유지(회수 0). source_id 가드(기존 50건)는
+      회수보다 우선(가드가 먼저 continue).
+    sql_out: 지정 시 REPORT 모드에서 INSERT SQL 파일 산출(DB·Storage 무접근). content_url은
+      결정적 매니페스트 Public URL로 채움. commit=True와 동시 사용 불가.
     """
+    recovery_ids = recovery_ids or set()
     where = build_where()
     # 후보 풀: 표본(작은 max_insert)은 외부 부하 방지 상한 200. 전량 배치(--limit≥500)는
     # 전수 수집(pool=None) — 742 배치를 200에서 잘리지 않게(ADR-0030 load-plan).
@@ -977,10 +1075,15 @@ def run_execute(
     print(f"[INFO] 기존 제목 {len(existing)}개 로드")
     existing_ids = fetch_existing_source_ids(client)  # ADR-0030 [A] source_id 가드
     print(f"[INFO] 기존 bloom source_id {len(existing_ids)}개 로드 (보호 대상)")
-    mode = "COMMIT(실적재)" if commit else "REPORT(쓰기 없음)"
+    if recovery_ids:
+        print(f"[INFO] 회수 allowlist {len(recovery_ids)}건 (ADR-0031, dedup2 drop 되살림)")
+    mode = "COMMIT(실적재)" if commit else (
+        "REPORT+SQL산출" if sql_out is not None else "REPORT(쓰기 없음)")
     print(f"[INFO] 실행 모드: {mode}")
 
     inserted = 0          # commit=True: 실제 적재 수 / commit=False: INSERT 예정 수
+    recovered = 0         # ADR-0031 회수로 되살린 건수(inserted에 포함)
+    sql_rows: list[dict[str, Any]] = []  # sql_out 지정 시 INSERT payload 수집
     review_flagged = 0
     plan_level: Counter = Counter()   # INSERT 대상 level 분포
     plan_cover_fb = 0                 # INSERT 대상 표지 폴백 건수
@@ -1032,19 +1135,34 @@ def run_execute(
             skip["검수리스트(skip)"] += 1
             continue
         # dedup 2단: 정규화 title 교차대조(배치 내 동일제목도 누적 반영).
+        recovered_here = False
         if _norm_title(res["title"]) in existing:
-            skip["dedup2:기존제목"] += 1
-            continue
+            # ADR-0031 회수: drop 대상이라도 allowlist에 있으면 INSERT로 되살림.
+            # (source_id 가드는 위에서 이미 continue → 기존 50건은 회수 대상 아님.)
+            if source_id in recovery_ids:
+                recovered_here = True
+            else:
+                skip["dedup2:기존제목"] += 1
+                continue
 
-        # --- INSERT 대상 확정 (source_id 가드·dedup2·게이트 모두 통과) ---
-        # report 모드(commit=False): Storage·DB 쓰기 없이 집계만.
+        # --- INSERT 대상 확정 (게이트 통과한 신규 또는 ADR-0031 회수) ---
+        # report 모드(commit=False): Storage·DB 쓰기 없이 집계만(sql_out 지정 시 SQL 산출).
         if not commit:
+            # sql_out 모드: content_url = 결정적 매니페스트 Public URL(업로드는 별도 선행 단계).
+            cu = (
+                f"{supabase_url}/storage/v1/object/public/{BUCKET}/bloom-{source_id}.txt"
+                if sql_out is not None else "(report-dry)"
+            )
             try:
-                preview = build_book_payload(b, res, content_url="(report-dry)")
+                preview = build_book_payload(b, res, content_url=cu)
             except AttributionError:
                 skip["attribution실패"] += 1
                 continue
             inserted += 1
+            if recovered_here:
+                recovered += 1
+            if sql_out is not None:
+                sql_rows.append(preview)
             plan_level["NULL" if preview["level"] is None else preview["level"]] += 1
             if res.get("cover_fallback"):
                 plan_cover_fb += 1
@@ -1073,6 +1191,8 @@ def run_execute(
 
         existing.add(_norm_title(res["title"]))  # 같은 배치 내 동일제목 재적재 방지
         inserted += 1
+        if recovered_here:
+            recovered += 1
         plan_level["NULL" if payload["level"] is None else payload["level"]] += 1
         if res.get("cover_fallback"):
             plan_cover_fb += 1
@@ -1095,6 +1215,7 @@ def run_execute(
     print(f"  실행 모드                  : {mode}")
     print(f"  기존 bloom source_id(보호) : {len(existing_ids)}")
     print(f"  source_id 가드 skip        : {skip.get('기존source_id(보호·미터치)', 0)}")
+    print(f"  INSERT 내역                : 신규 {inserted - recovered} + 회수(ADR-0031) {recovered}")
     print(f"  INSERT 대상 level 분포     : "
           + ", ".join(f"L{k}={v}" for k, v in sorted(plan_level.items(), key=lambda x: str(x[0]))))
     print(f"  INSERT 대상 표지 폴백      : {plan_cover_fb}")
@@ -1119,6 +1240,23 @@ def run_execute(
         print(f"    · books.id={bid}")
         print(f"      title={title[:55]!r}")
         print(f"      manifest={murl}")
+
+    # --- INSERT SQL 산출(ADR-0031 #5 — DB 직접 쓰기 금지, 파일만) ---
+    if sql_out is not None:
+        gate = write_staging_insert_sql(
+            sql_out, sql_rows, new_count=inserted - recovered, recovered_count=recovered
+        )
+        print()
+        print("=" * 64)
+        print(f" INSERT SQL 산출 — {sql_out}")
+        print("=" * 64)
+        print(f"  수집 payload                : {len(sql_rows)}")
+        print(f"  게이트[attribution 빈값 제외] : {gate['attr_empty']}")
+        print(f"  게이트[라이선스 비화이트리스트] : {gate['bad_license']}")
+        print(f"  게이트[cover_url 빈값]        : {gate['cover_empty']}")
+        print(f"  게이트[%2520 이중인코딩]      : {gate['double_encoded']}")
+        print(f"  게이트[HTML 엔티티 잔존]      : {gate['entity_residue']}")
+        print(f"  최종 SQL 기록 행수            : {gate['written']}")
     return 0
 
 
@@ -1188,7 +1326,23 @@ def main() -> int:
         action="store_true",
         help="--execute와 함께 줄 때만 실제 Storage·DB 적재. 미지정 시 REPORT 모드(쓰기 없음).",
     )
+    parser.add_argument(
+        "--recovery-ids",
+        type=str,
+        default=None,
+        help="ADR-0031 회수 allowlist 파일(한 줄당 source_id). dedup2 drop을 되살림. 미지정 시 회수 0.",
+    )
+    parser.add_argument(
+        "--emit-sql",
+        type=str,
+        default=None,
+        help="INSERT SQL 산출 경로(REPORT 모드 전용, DB·Storage 무접근). --commit과 동시 불가.",
+    )
     args = parser.parse_args()
+
+    if args.emit_sql and args.commit:
+        print("[FAIL] --emit-sql 은 REPORT 모드 전용입니다. --commit 과 동시 사용 불가.")
+        return 1
 
     if args.execute:
         banner = (
@@ -1201,10 +1355,13 @@ def main() -> int:
         print("=" * 64)
         client, supabase_url = init_supabase()
         print(f"[INFO] Supabase 연결: {supabase_url}")
+        recovery_ids = load_recovery_ids(args.recovery_ids)
         try:
             return run_execute(
                 client, supabase_url, max_insert=args.limit,
                 skip_review=args.skip_review, commit=args.commit,
+                recovery_ids=recovery_ids,
+                sql_out=Path(args.emit_sql) if args.emit_sql else None,
             )
         except requests.RequestException as e:
             print(f"[FAIL] 수집 단계 요청 실패: {e}")
