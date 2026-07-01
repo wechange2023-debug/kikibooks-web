@@ -1,6 +1,10 @@
 import 'server-only';
 
-import type { SupabaseClient } from '@supabase/supabase-js';
+import { unstable_cache } from 'next/cache';
+import {
+  createClient as createSupabaseClient,
+  type SupabaseClient,
+} from '@supabase/supabase-js';
 
 /**
  * 책 상세 페이지 데이터 fetch — books.id UUID 단일 조회.
@@ -78,31 +82,84 @@ export interface Book {
 }
 
 /**
+ * 카탈로그 캐시 전용 — 쿠키 없는 publishable 클라이언트 (ADR-0033 P0-1 안전 원칙).
+ *
+ * unstable_cache 내부는 요청 스코프 동적 API(cookies())를 쓸 수 없어 세션 클라이언트
+ * (lib/supabase/server.ts createClient)를 쓰지 못한다. books RLS는 §9.1 USING(true) 공개라
+ * 세션 없이도 활성 책을 조회할 수 있으므로, 세션 없는 publishable 클라이언트를 생성한다.
+ *   - publishable 키만 사용 — secret 키 아님(RLS 우회 아님, Hard Rule 6 무위반).
+ *   - 사용자·자녀 스코프 데이터 접근 경로가 구조적으로 차단된다(개인 데이터 혼입 불가).
+ */
+function createCatalogClient(): SupabaseClient {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const publishableKey =
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!url || !publishableKey) {
+    throw new Error(
+      'getBookById(cache): Supabase 환경변수 누락 — NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY',
+    );
+  }
+
+  return createSupabaseClient(url, publishableKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
+
+/**
+ * getBookById 캐시 코어 (ADR-0033 P0-1 파일럿).
+ *
+ * Next.js unstable_cache로 공용 카탈로그 조회 결과를 캐시한다.
+ *   - 캐시 키: ['getBookById', id] (id는 함수 인자로 키에 포함).
+ *   - tag: 'books-catalog' (admin 토글 시 revalidateTag로 즉시 무효화 — ADR-0033 무효화 전략).
+ *   - revalidate: 3600초(1시간) — out-of-band sync(GDL 매일·Book Dash 주간)를 결국 반영하는
+ *     시간 기반 안전망.
+ * 반환 Book은 순수 JSON 직렬화 가능(문자열·숫자·불리언·null)이라 캐시 왕복에도 값 불변.
+ */
+const getBookByIdCached = unstable_cache(
+  async (id: string): Promise<Book | null> => {
+    const supabase = createCatalogClient();
+    const { data, error } = await supabase
+      .from('books')
+      .select(
+        'id, title, author, illustrator, cover_url, content_url, content_type, original_url, license, attribution_text, source_platform, source_id, level, age_min, age_max, language, is_active',
+      )
+      .eq('id', id)
+      .eq('is_active', true)
+      .maybeSingle<Book>();
+
+    if (error) {
+      throw new Error(`getBookById: books 조회 실패 (id=${id}) — ${error.message}`);
+    }
+
+    return data ?? null;
+  },
+  ['getBookById'],
+  { tags: ['books-catalog'], revalidate: 3600 },
+);
+
+/**
  * books.id로 책 1권을 조회한다. 없거나 is_active=false면 null.
  *
  * 호출 측은 null을 받으면 next/navigation.notFound()를 호출해야 한다 —
  * 본 함수는 throw하지 않고 null 반환만 한다(NULL과 진짜 에러의 명확한 분리).
  * 진짜 DB 에러(네트워크·권한 등)는 throw로 호출 측에 전달된다.
  *
- * @param supabase 호출자가 만든 본인 세션 Supabase 클라이언트.
+ * ★ ADR-0033 P0-1 파일럿 — 공용 카탈로그 캐싱(getBookByIdCached). 반환 데이터는 캐싱 전과
+ *   완전히 동일하다: books RLS §9.1 USING(true)라 세션 유무와 무관하게 같은 행을 반환한다.
+ *
+ * @param supabase 호출자의 본인 세션 Supabase 클라이언트.
+ *   ★캐시 경로에서는 사용하지 않는다 — getBookByIdCached가 쿠키 없는 publishable 클라이언트를
+ *   내부 생성해 공용 카탈로그를 조회한다(ADR-0033 안전 원칙: 개인 데이터 혼입 구조적 차단).
+ *   인자는 호출부 시그니처 안정성을 위해 유지하며, 향후 getBooks·getCategoryDistribution
+ *   이관 시 일괄 정리한다(ADR-0033 롤아웃).
  * @param id       books.id UUID. 형식 검증은 호출 측 책임(잘못된 UUID는 DB가 0행 반환).
  */
 export async function getBookById(
   supabase: SupabaseClient,
   id: string,
 ): Promise<Book | null> {
-  const { data, error } = await supabase
-    .from('books')
-    .select(
-      'id, title, author, illustrator, cover_url, content_url, content_type, original_url, license, attribution_text, source_platform, source_id, level, age_min, age_max, language, is_active',
-    )
-    .eq('id', id)
-    .eq('is_active', true)
-    .maybeSingle<Book>();
-
-  if (error) {
-    throw new Error(`getBookById: books 조회 실패 (id=${id}) — ${error.message}`);
-  }
-
-  return data ?? null;
+  void supabase; // 캐시 경로 미사용(ADR-0033) — 시그니처 안정성 위해 인자만 유지.
+  return getBookByIdCached(id);
 }
