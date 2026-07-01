@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
+
+// Supabase Storage 호스트는 NEXT_PUBLIC_SUPABASE_URL에서 파생(하드코딩 금지, ADR-0032 STEP 3).
+// book-covers 버킷 이관 표지(Book Dash)를 next/image로 최적화하기 위함.
+const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL
+  ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).hostname
+  : undefined;
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -21,6 +28,16 @@ const nextConfig = {
         hostname: 's3.amazonaws.com',
         pathname: '/BloomLibraryBooks/**',
       },
+      // Supabase Storage(book-covers 등 public 버킷) — 이관 표지 (ADR-0032 STEP 3).
+      ...(supabaseHost
+        ? [
+            {
+              protocol: 'https',
+              hostname: supabaseHost,
+              pathname: '/storage/v1/object/public/**',
+            },
+          ]
+        : []),
     ],
   },
 };
