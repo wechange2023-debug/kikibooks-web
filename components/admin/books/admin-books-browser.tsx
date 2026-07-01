@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { BookOpen } from 'lucide-react';
 
 import {
+  clearCatalogCache,
   fetchAdminBooksPage,
   toggleBookActive,
   updateBookLevel,
@@ -268,6 +269,25 @@ export function AdminBooksBrowser({ initialPage, copy }: AdminBooksBrowserProps)
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
+  // 카탈로그 캐시 비우기 (ADR-0033 Amendment #1 (b)) — 목록 로딩(isPending)과 분리한 별도 상태.
+  const [cacheClearing, startCacheClear] = useTransition();
+  const [cacheMsg, setCacheMsg] = useState<string | null>(null);
+
+  /**
+   * 공용 카탈로그 데이터 캐시('books-catalog')를 즉시 비운다(ADR-0033 Amendment #1 (b)).
+   * 팀장이 SQL Editor에서 is_active를 직접 토글한 뒤 이 버튼으로 최대 1시간 지연 없이 반영한다.
+   * clearCatalogCache는 서버에서 assertAdmin() 가드 뒤에서만 실행된다(권한 강제).
+   */
+  const handleClearCache = () => {
+    setCacheMsg(null);
+    startCacheClear(async () => {
+      const result = await clearCatalogCache();
+      setCacheMsg(
+        result.ok ? '카탈로그 캐시를 비웠습니다.' : result.error,
+      );
+    });
+  };
+
   // debounce·sentinel ref (library-browser 정합)
   const debounceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
@@ -416,6 +436,23 @@ export function AdminBooksBrowser({ initialPage, copy }: AdminBooksBrowserProps)
   // ── 렌더 ──────────────────────────────────────────────────────────────────
   return (
     <div className="flex flex-col gap-5">
+      {/* 카탈로그 캐시 비우기 (ADR-0033 Amd#1 (b)) — SQL 직접 토글 후 즉시 반영용 */}
+      <div className="flex flex-wrap items-center justify-end gap-3">
+        {cacheMsg && (
+          <span role="status" aria-live="polite" className="text-sm text-text-variant">
+            {cacheMsg}
+          </span>
+        )}
+        <button
+          type="button"
+          onClick={handleClearCache}
+          disabled={cacheClearing}
+          className="inline-flex h-[38px] items-center rounded-pill border border-outline bg-surface px-4 text-sm font-medium text-text-variant transition-colors hover:bg-surface-2 disabled:opacity-[0.38]"
+        >
+          {cacheClearing ? '비우는 중…' : '카탈로그 캐시 비우기'}
+        </button>
+      </div>
+
       {/* 필터 바 */}
       <section
         aria-label={copy.search.label}
