@@ -40,11 +40,13 @@ export const metadata: Metadata = {
  *   결과 재사용). 과거의 /home?cat= 안내 카드 분기는 제거됨 — 결과·빈 상태는
  *   라이브러리가 책임(ADR-0015 결정 5b 이연 해소).
  *
- * 데이터 fetch (Promise.all 병렬, intent §4):
+ * 데이터 fetch (P0-3(A) 왕복 병렬화, intent §4 + docs/intent/performance-track.md §3):
  *   1) auth (직렬, 가드 선행)
- *   2) activeChild (직렬, d4 가드)
- *   3) [profile, recommendation, streakDays, copy] 병렬
- *   4) buildGreeting() 순수 호출
+ *   2) activeChild-무관 fetch(profile·distribution)를 activeChild 가드와 겹쳐 착수
+ *      — 두 쿼리는 user.id만·무의존이라 activeChild 조회를 기다릴 이유가 없다(왕복 1회 절감).
+ *   3) activeChild (직렬 가드, d4) — null이면 redirect
+ *   4) Promise.all — 겹쳐 착수한 promise를 activeChild 의존 쿼리(recommendation·streak)와 함께 수확
+ *   5) buildGreeting() 순수 호출
  *
  * Server Component — 'use client' 없음. server action 호출은 LevelSelector(client) 책임.
  */
@@ -61,19 +63,26 @@ export default async function HomePage() {
     redirect(SIGN_IN_PATH);
   }
 
+  // P0-3(A): activeChild-무관 fetch를 가드와 겹쳐 착수한다. profile(user.id)·distribution은
+  // activeChild에 의존하지 않으므로 getActiveChild 왕복을 기다리지 않는다(왕복 1회 절감).
+  // getHomeCopy는 정적(DB 미접근)이라 왕복 아님 — 참여시켜도 무해.
+  const profilePromise = getGreetingProfile(supabase, user.id);
+  const copyPromise = getHomeCopy();
+  const distributionPromise = getCategoryDistribution(supabase);
+
   // 자녀 0명 → 온보딩 (d4). middleware는 본 분기를 하지 않음.
   const activeChild = await getActiveChild(supabase, user.id);
   if (!activeChild) {
     redirect(ONBOARDING_PATH);
   }
 
-  // 5개 fetch를 병렬로 — 서로 의존성 없음.
+  // 겹쳐 착수한 promise + activeChild 의존 쿼리(recommendation·streak)를 함께 수확.
   const [profile, recommendation, streakDays, copy, distribution] = await Promise.all([
-    getGreetingProfile(supabase, user.id),
+    profilePromise,
     getRecommendations(supabase, activeChild),
     getStreakThisWeek(supabase, activeChild.id),
-    getHomeCopy(),
-    getCategoryDistribution(supabase),
+    copyPromise,
+    distributionPromise,
   ]);
 
   const greeting = buildGreeting(profile, activeChild, copy.greeting);
