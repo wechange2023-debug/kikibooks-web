@@ -1,6 +1,6 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 import { z } from 'zod';
 
 import { assertAdmin } from '@/lib/admin/gate';
@@ -93,10 +93,20 @@ const ADMIN_MUTATION_REVALIDATE_PATHS = [
   '/library',
 ] as const;
 
+/**
+ * 공용 카탈로그 데이터 캐시 태그 (ADR-0033). getBookById(lib/book/detail.ts)가 이 태그로
+ * unstable_cache된다. books 행 변경(is_active·level) 시 무효화해야 캐시가 최신 행을 반영한다.
+ */
+const CATALOG_CACHE_TAG = 'books-catalog';
+
 function revalidateAdminMutationTargets(): void {
   for (const path of ADMIN_MUTATION_REVALIDATE_PATHS) {
     revalidatePath(path);
   }
+  // ADR-0033 Amendment #1 (a): books 행 변경(is_active·level)은 카탈로그 데이터 캐시도
+  // 무효화한다. toggleBookActive·updateBookLevel이 공용으로 호출하므로 두 mutation 모두 커버.
+  // revalidatePath(라우트 캐시)와 revalidateTag(데이터 캐시 태그)는 서로 다른 메커니즘이라 중복 아님.
+  revalidateTag(CATALOG_CACHE_TAG);
 }
 
 // =============================================================================
@@ -191,6 +201,35 @@ export async function updateBookLevel(input: unknown): Promise<MutationResult> {
   // D11 — 3중 revalidatePath
   revalidateAdminMutationTargets();
 
+  return { ok: true };
+}
+
+// =============================================================================
+// clearCatalogCache — 카탈로그 데이터 캐시 즉시 비우기 (ADR-0033 Amendment #1 (b))
+// =============================================================================
+
+/**
+ * 공용 카탈로그 데이터 캐시('books-catalog' 태그)를 즉시 무효화한다.
+ *
+ * 용도(docs/ops/emergency-takedown.md): 팀장이 Supabase SQL Editor에서 books.is_active를
+ * 직접 토글하면 앱을 거치지 않아 자동 무효화가 걸리지 않는다. 이 액션을 admin UI 버튼으로
+ * 호출해 캐시를 즉시 비워, 최대 1시간(revalidate 3600초) 지연 없이 반영한다.
+ *
+ * ★권한: assertAdmin() 가드 뒤에서만 실행된다 — server action은 독립 호출 표면이라
+ * 페이지 가드(admin/layout)와 별개로 본 액션이 스스로 관리자 인증을 강제한다(일반 사용자의
+ * 무단 캐시 무효화 차단, ADR-0033 리스크 방지책).
+ *
+ * ★데이터 불변: revalidateTag는 캐시를 비울 뿐 DB·데이터를 바꾸지 않는다. 다음 조회 시
+ * 동일 데이터가 재계산될 뿐 화면 출력은 불변이다(캐시 미스로 인한 신선도만 갱신).
+ */
+export async function clearCatalogCache(): Promise<MutationResult> {
+  // 권한 가드 — 관리자만
+  const adminCheck = await assertAdmin();
+  if (!adminCheck.ok) {
+    return adminCheck;
+  }
+
+  revalidateTag(CATALOG_CACHE_TAG);
   return { ok: true };
 }
 
