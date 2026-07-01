@@ -24,6 +24,13 @@ export const HOME_PATH = '/home';
 /** 공통 헤더 네비 경로 — 라이브러리 화면 (ADR-0021 D5). */
 export const LIBRARY_PATH = '/library';
 
+/**
+ * 공통 헤더 네비 경로 — 쇼케이스(검수용) 화면.
+ * 내부 검수 편의용 임시 메뉴 — 서비스 전환 시 제거 대상(app/showcase 삭제와 함께).
+ * /showcase는 자체 로그인 가드만 두므로 PROTECTED_PREFIXES에는 추가하지 않는다.
+ */
+export const SHOWCASE_PATH = '/showcase';
+
 /** 로그인 성공 후 자녀가 없을 때 보내는 온보딩 경로 (phase-08). */
 export const ONBOARDING_PATH = '/onboarding';
 
