@@ -109,6 +109,14 @@ export type LibraryFilters = z.infer<typeof LibraryFiltersSchema>;
  *   - 카테고리 모드: JS matchCategories 통과 권수(matched.length).
  *   모드와 무관하게 같은 의미(필터 적용 후 전체 권수)를 보장한다 — CP3-b 컴포넌트는
  *   모드 차이를 모른다(단일 계약 정합).
+ *
+ *   ★ P0-4 (performance-track.md §2): totalCount는 **첫 페이지(cursor=null)에서만** 정확하다.
+ *     count 전용 쿼리(countKeyset)는 cursor 무관 = 모든 페이지에서 값이 불변이므로, 무한
+ *     스크롤 후속 페이지(cursor≠null)의 keyset 모드는 재계산을 생략하고 0을 반환한다.
+ *     클라이언트(LibraryBrowser)는 첫 페이지 totalCount만 상태로 보관하고 후속 페이지에서는
+ *     덮어쓰지 않는다(query.ts 원래 주석 "클라이언트는 첫 페이지 totalCount만 헤더에 쓴다"
+ *     정합). 카테고리 모드는 matched.length가 전량 매칭에서 무료로 나오므로 모든 페이지에서
+ *     실제 값을 유지한다(추가 쿼리 0).
  */
 export interface LibraryPage {
   books: PopularBook[];
@@ -116,7 +124,10 @@ export interface LibraryPage {
   nextCursor: string | null;
   /** UI sentinel 표시용 — nextCursor !== null과 동일. */
   hasMore: boolean;
-  /** 현재 필터 전체에 매칭되는 총 책 수("총 N권" 표기, 모드 무관 단일 계약). */
+  /**
+   * 현재 필터 전체에 매칭되는 총 책 수("총 N권" 표기, 모드 무관 단일 계약).
+   * keyset 모드는 첫 페이지(cursor=null)에서만 정확하며, 후속 페이지는 0(P0-4 — 위 주석 참조).
+   */
   totalCount: number;
 }
 
@@ -136,12 +147,16 @@ interface IndexCursor {
   i: number;
 }
 
-/** books 테이블에서 카드·정렬에 필요한 5 컬럼. */
-interface BookRow {
+/** 책 카드 렌더에 필요한 4 컬럼 (표지·캡션). 카테고리 모드·toPopularBook 공용. */
+interface CardRow {
   id: string;
   title: string;
   author: string | null;
   cover_url: string;
+}
+
+/** keyset 모드 조회 행 — 카드 4컬럼 + cursor 인코딩용 synced_at. */
+interface BookRow extends CardRow {
   synced_at: string;
 }
 
@@ -269,7 +284,9 @@ async function getBooksKeyset(
       ? encodeCursor({ mode: 'keyset', sa: last.synced_at, id: last.id })
       : null;
 
-  const totalCount = await countKeyset(supabase, filters);
+  // P0-4: count 전용 쿼리는 cursor 무관 = 페이지 불변. 첫 페이지(cursor=null)에서만 계산하고
+  // 후속 페이지는 재조회를 생략한다(0 반환 — 클라이언트가 첫 페이지 값 유지, LibraryPage 주석).
+  const totalCount = cursor === null ? await countKeyset(supabase, filters) : 0;
 
   return {
     books: page.map(toPopularBook),
@@ -332,9 +349,12 @@ async function getBooksWithCategory(
   filters: LibraryFilters,
   cursor: string | null,
 ): Promise<LibraryPage> {
+  // P0-4: 카테고리 모드는 정렬을 DB측(synced_at DESC, id ASC)이 하고 JS는 synced_at을 쓰지
+  // 않는다(index cursor·toPopularBook 모두 미사용). 미사용 컬럼 synced_at을 select에서 제외해
+  // payload를 줄인다(정렬 절 자체는 synced_at 컬럼값 없이도 DB가 수행 — 결과 순서 불변).
   let query = supabase
     .from('books')
-    .select('id, title, author, cover_url, synced_at')
+    .select('id, title, author, cover_url')
     .eq('is_active', true);
 
   for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
@@ -353,7 +373,7 @@ async function getBooksWithCategory(
     .order('synced_at', { ascending: false })
     .order('id', { ascending: true });
 
-  const { data, error } = await query.returns<BookRow[]>();
+  const { data, error } = await query.returns<CardRow[]>();
   if (error) {
     throw new Error(`getBooks(category): books 조회 실패 — ${error.message}`);
   }
@@ -388,8 +408,8 @@ async function getBooksWithCategory(
   };
 }
 
-/** BookRow → PopularBook 변환 (cover_url → coverUrl camelCase, synced_at 미노출). */
-function toPopularBook(row: BookRow): PopularBook {
+/** CardRow → PopularBook 변환 (cover_url → coverUrl camelCase). BookRow(상위형)도 수용. */
+function toPopularBook(row: CardRow): PopularBook {
   return {
     id: row.id,
     title: row.title,
