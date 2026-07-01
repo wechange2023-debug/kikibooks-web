@@ -191,16 +191,18 @@ export async function completeReadingSession(
     return { ok: false, error: '완독할 세션을 찾을 수 없습니다.' };
   }
 
-  // 보상 적립 (ADR-0018 D3·D4·D9): 1행 UPDATE 성공 = in-progress → completed 전이 =
-  // 멱등 앵커. redirect 직전에 awardCompletionRewards(secret 키 옵션 B)로 children.points
-  // +50 + child_badges INSERT를 적립한다(D4 분리 — 본 함수는 본인 세션). 보상 실패 시
+  // 보상 적립 (ADR-0018 D3·D4·D9 + Amendment #1): 1행 UPDATE 성공 = in-progress → completed
+  // 전이 = 멱등 앵커. redirect 직전에 awardCompletionRewards(secret 키 옵션 B)로 children.points
+  // +50 + child_badges INSERT를 적립한다(D4 분리 — 본 함수는 본인 세션). 위 :168에서 RLS로
+  // 검증한 child.id를 인자로 넘긴다(Amendment #1 — awardCompletionRewards의 auth·getActiveChild
+  // 재해소 중복 제거). 보상 실패 시
   // reading_sessions UPDATE는 롤백하지 않고(완독 보존, D9 옵션 A) ok:false를 반환해
   // redirect를 차단한다 — FinishButton이 error를 노출한다(통신 계약 보존).
   //
   // ★ redirect()는 NEXT_REDIRECT를 throw하므로 반드시 try-catch '밖'에 둔다 — 보상만
   //   try로 감싸 redirect의 정상 흐름 throw가 catch에 오포착되는 것을 막는다.
   try {
-    const reward = await awardCompletionRewards();
+    const reward = await awardCompletionRewards(child.id);
     if (!reward.ok) {
       return { ok: false, error: reward.error };
     }
