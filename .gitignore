@@ -47,3 +47,6 @@ coverage/
 gdl_sample_diag.json
 bookdash_meta_diag.yml
 dry_run_*.txt
+
+# STEP 3 표지 변환물 (ADR-0032) — 206장 webp, 버킷에 실물 업로드 완료. 재현 가능.
+scratchpad/step3_out/
