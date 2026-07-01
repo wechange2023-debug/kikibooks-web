@@ -224,11 +224,29 @@ const CATEGORIES_BY_SLUG: Record<CategorySlug, CategoryDefinition> = Object.from
 export const CATEGORY_BOOKS_CAP = 24;
 
 /**
+ * matchCategories 핫루프용 소문자 키워드 사전 계산 (P0-3(B), performance-track.md §3).
+ *
+ * 기존 matchCategories는 책마다 `kw.toLowerCase()`를 반복 호출했다 —
+ * getCategoryDistribution이 활성 전권(~880) × 키워드(~108)를 매 홈 로드마다 돌리므로
+ * 요청당 ~95,000회의 중복 소문자화가 발생했다. 키워드는 값이 불변이므로 모듈 로드 시
+ * 1회만 소문자화해 재사용한다(안전망 toLowerCase는 유지 — 여기서 1회 적용).
+ *
+ * 배열 순서 = CATEGORIES 순서를 그대로 보존한다(matched 배열 순서 = 분포 카운트 불변).
+ */
+const CATEGORY_LOWER_KEYWORDS: readonly {
+  slug: CategorySlug;
+  keywords: readonly string[];
+}[] = CATEGORIES.map((cat) => ({
+  slug: cat.slug,
+  keywords: cat.keywords.map((kw) => kw.toLowerCase()),
+}));
+
+/**
  * 주어진 책 제목과 매칭되는 카테고리 slug 목록을 반환한다.
  *
- * 알고리즘: `book.title.toLowerCase().includes(keyword.toLowerCase())` boolean
- * (ADR-0015 결정 1). 키워드 풀은 이미 lowercase 보관이지만 `.toLowerCase()`를
- * 한 번 더 호출하여 안전망을 둔다.
+ * 알고리즘: `book.title.toLowerCase().includes(keyword)` boolean (ADR-0015 결정 1).
+ * 키워드는 CATEGORY_LOWER_KEYWORDS에 사전 소문자화되어 있다(모듈 로드 1회, 안전망 유지).
+ * 결과는 기존과 완전히 동일하다 — 소문자화 시점만 책당 반복에서 로드 1회로 이동(P0-3(B)).
  *
  * 다중 매칭 허용 (결정 4) — 한 책이 여러 카테고리에 들어갈 수 있다.
  * 매칭 0건이면 빈 배열을 반환 (결정 3 (β) — 카테고리 그리드에서만 미노출).
@@ -238,8 +256,8 @@ export const CATEGORY_BOOKS_CAP = 24;
 export function matchCategories(book: { title: string }): CategorySlug[] {
   const lowerTitle = book.title.toLowerCase();
   const matched: CategorySlug[] = [];
-  for (const cat of CATEGORIES) {
-    if (cat.keywords.some((kw) => lowerTitle.includes(kw.toLowerCase()))) {
+  for (const cat of CATEGORY_LOWER_KEYWORDS) {
+    if (cat.keywords.some((kw) => lowerTitle.includes(kw))) {
       matched.push(cat.slug);
     }
   }
@@ -391,16 +409,17 @@ async function fetchCompletedBookIds(
 export async function getCategoryDistribution(
   supabase: SupabaseClient,
 ): Promise<Record<CategorySlug, number>> {
+  // P0-3(B): 분포 카운트는 title만 사용한다(id 미사용) — payload 축소.
   let query = supabase
     .from('books')
-    .select('id, title')
+    .select('title')
     .eq('is_active', true);
 
   for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
     query = query.neq('source_id', blockedSourceId);
   }
 
-  const { data, error } = await query.returns<{ id: string; title: string }[]>();
+  const { data, error } = await query.returns<{ title: string }[]>();
   if (error) {
     throw new Error(`getCategoryDistribution: books 조회 실패 — ${error.message}`);
   }
