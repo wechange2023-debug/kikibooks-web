@@ -10,27 +10,42 @@ STEP 3에서 206건 일괄 변환 + book-covers 버킷 업로드에 재사용한
 없으면 CloudFront 폴백. 본 스크립트는 출처 무관하게 입력 cover_url을 그대로 GET한다.
 (STEP 3에서는 DB 현재 cover_url 목록을 입력으로 사용 — 어느 origin이든 처리.)
 
-이번 단계(표본): WP API ?slug= 로 표본 slug의 cover_url을 받아 변환.
+표본 모드(STEP 2): WP API ?slug= 로 표본 slug의 cover_url을 받아 변환.
   - 변환만 한다. Storage 업로드·DB UPDATE 0건(ADR-0032 STEP 2 범위).
-  - 원본(__orig.jpg)·변환본(bookdash-{slug}.webp) 둘 다 OUT_DIR에 보존.
+  - 원본(__orig.jpg)·변환본(bookdash-{slug}.webp) 둘 다 SAMPLE_DIR에 보존.
+
+STEP 3 모드(--step3): scratchpad/step3_manifest.csv 의 old_cover_url을 입력으로 206건 일괄 변환.
+  - 입력 origin(bookdash.org / bookdash.github.io) 무관하게 old_cover_url을 그대로 GET.
+  - 변환본만 STEP3_OUT/{target_key}(=bookdash-{source_id}.webp)에 저장. 원본 미보존(용량).
+  - 변환만 한다. 업로드는 step3_upload.py(Storage 전용), DB UPDATE는 팀장 SQL 실행.
 
 변환 사양(ADR-0032 결정 2, STEP 2 표본 확정):
   - 가로 TARGET_W(600px) 리사이즈, 비율 유지(세로 비례). 600px 미만 원본은 확대 안 함.
   - WebP, 품질 Q(80), method=6(최고 압축).
   - 표본 실측: 원본 평균 3.3MB → 변환 평균 ~48KB(약 98% 감소), 600x600.
 
-사용(표본):
-    python scripts/convert_bookdash_covers.py
+사용:
+    python scratchpad/convert_bookdash_covers.py           # 표본 5건(STEP 2)
+    python scratchpad/convert_bookdash_covers.py --step3    # 매니페스트 206건(STEP 3)
 """
 
 from __future__ import annotations
 
+import csv
 import io
 import os
 import sys
+from pathlib import Path
 
 import requests
 from PIL import Image
+
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8")
+
+_ROOT = Path(__file__).resolve().parent.parent
+STEP3_MANIFEST = _ROOT / "scratchpad" / "step3_manifest.csv"
+STEP3_OUT = _ROOT / "scratchpad" / "step3_out"
 
 # ---------------------------------------------------------------------------
 # 변환 사양 (ADR-0032 결정 2 — q80은 STEP 2 표본 검증값. 조정 시 본 상수만 변경)
@@ -88,7 +103,56 @@ def convert_to_webp(raw: bytes) -> tuple[bytes, tuple[int, int], tuple[int, int]
     return buf.getvalue(), (ow, oh), (nw, nh)
 
 
+def run_step3() -> int:
+    """step3_manifest.csv(old_cover_url) 206건을 일괄 변환 → STEP3_OUT/{target_key}.
+
+    변환 성공/실패를 집계한다. 실패 건이 있으면 목록 출력 후 non-zero 반환(정지 신호).
+    """
+    if not STEP3_MANIFEST.exists():
+        print(f"[FAIL] 매니페스트 없음: {STEP3_MANIFEST} (먼저 step3_recon.py 실행)")
+        return 1
+    STEP3_OUT.mkdir(parents=True, exist_ok=True)
+    with STEP3_MANIFEST.open(encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+
+    print(f"STEP 3 변환 시작: {len(rows)}건 → {STEP3_OUT}\n")
+    ok = 0
+    failed: list[tuple[str, str]] = []
+    total_orig = total_webp = 0
+    for i, r in enumerate(rows, 1):
+        sid = r["source_id"]
+        url = r["old_cover_url"]
+        key = r["target_key"]  # bookdash-{source_id}.webp
+        try:
+            raw = requests.get(url, timeout=HTTP_TIMEOUT).content
+            webp, (ow, oh), (nw, nh) = convert_to_webp(raw)
+            (STEP3_OUT / key).write_bytes(webp)
+            total_orig += len(raw)
+            total_webp += len(webp)
+            ok += 1
+            print(f"  [{i:3}/{len(rows)}] OK  {sid:40} {len(raw)/1024/1024:5.2f}MB→{len(webp)/1024:6.1f}KB {nw}x{nh}")
+        except Exception as e:  # noqa: BLE001
+            failed.append((sid, f"{type(e).__name__}: {e}"))
+            print(f"  [{i:3}/{len(rows)}] XX  {sid:40} {type(e).__name__}: {e}")
+
+    print(f"\n변환 성공 {ok}/{len(rows)}")
+    if ok:
+        print(
+            f"합계 원본 {total_orig/1024/1024:.1f}MB → 변환 {total_webp/1024/1024:.1f}MB "
+            f"(감소 {100*(1-total_webp/total_orig):.1f}%)"
+        )
+    if failed:
+        print("\n[FAIL] 변환 실패 목록:")
+        for sid, err in failed:
+            print(f"  - {sid}: {err}")
+        return 1
+    print(f"OUT: {STEP3_OUT}")
+    return 0
+
+
 def main() -> int:
+    if "--step3" in sys.argv[1:]:
+        return run_step3()
     out_dir = os.path.join(os.path.dirname(__file__), "..", "scratchpad", "cover_samples")
     out_dir = os.path.abspath(out_dir)
     os.makedirs(out_dir, exist_ok=True)
