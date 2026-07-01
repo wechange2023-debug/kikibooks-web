@@ -1,9 +1,13 @@
 # ADR-0033 — 공용 카탈로그 데이터 캐싱 전략 (P0-1)
 
 ## Status
-Proposed (2026-07-01)
+Accepted (2026-07-01) — 팀장 승인. 롤아웃 1단계(`getBookById` 캐시) 반영 완료(커밋 `f7b3b9e`).
+이전: Proposed(2026-07-01).
+**Amendment #1 (2026-07-01, Proposed)** — 즉시 무효화 수단. 아래 「## Amendment #1」 참조.
+팀장이 후보 선택 후 확정한다. 확정 전까지 캐시 확대(롤아웃 2·3단계)는 진행하지 않는다.
 
-> 본 ADR은 **초안(Proposed)**이다. 팀장 승인 전까지 코드에 착수하지 않는다. 성능 개선 트랙
+> 본 ADR의 본문 결정은 Accepted다. 단 **Amendment #1(즉시 무효화)은 Proposed** — 팀장이
+> 후보 (a)/(b)/(c) 중 선택하기 전까지 관련 코드에 착수하지 않는다. 성능 개선 트랙
 > (`docs/intent/performance-track.md`)의 마지막 항목 P0-1을 다룬다. 근거 진단은
 > `docs/review/2026-07-01-senior-code-review-performance.md` P0-1.
 
@@ -162,5 +166,63 @@ sync가 앱 밖(GitHub Actions)에서 DB를 바꾸는 비대칭 때문에 **2중
 
 ---
 
-*ADR 끝. **Proposed** 상태로만 둔다. 팀장 승인 시 Accepted로 전환하고, §단계적 롤아웃의
-파일럿(책 상세 `getBookById`)부터 별도 지시서로 착수한다.*
+## Amendment #1 — 즉시 무효화 수단 (2026-07-01, Proposed)
+
+### 문제 정의 (파일럿 후 실측)
+
+롤아웃 1단계(`getBookById` 캐시, 커밋 `f7b3b9e`) 반영 후 실측한 결과, **즉시 무효화 배선이
+전혀 없다**:
+- 코드베이스에 `revalidateTag` 호출 **0건**(`grep` 실측). `books-catalog` 태그를 무효화하는
+  경로가 없다.
+- admin `is_active` 토글(`lib/admin/books/actions.ts:114` `toggleBookActive` → service-role
+  UPDATE → `revalidatePath('/admin/books','/home','/library')`)은 **path 기반**이라
+  `getBookById`의 **태그 캐시를 건드리지 않고**, `/book/[id]`도 대상 경로에 없다.
+- 앱이 SQL 직접 변경(Supabase SQL Editor)을 인지할 수단(webhook·revalidate 라우트)이 **없다**
+  (route handler는 `auth/callback`·`auth/sign-out` 2개뿐, 실측).
+
+**결과 = 긴급 내림 지연 구멍**: 문제 도서를 `is_active=false`로 내려도(admin UI든 SQL이든)
+`/book/[id]`가 **최대 1시간(revalidate 3600초)** 노출된다. 이는 라이선스·콘텐츠 안전 규율과
+충돌한다 — `verify-licenses.yml`(월간) 등으로 라이선스 위반이 감지되면 즉시 `is_active=false`로
+차단해야 하는데(claude.md Hard Rule 3·4, `docs/guidelines/license-rules.md`), 캐시가 그 차단의
+가시성을 최대 1시간 늦춘다. **캐시를 더 확대(2·3단계)하기 전에 이 즉시 무효화 수단을 먼저
+갖춰야 한다.**
+
+### 결정 후보 (택1 아님 — 팀장 선택용)
+
+| 후보 | 내용 | **SQL 직접 토글도 즉시 커버?** | 구현 범위 | 리스크 |
+|---|---|---|---|---|
+| **(a)** admin UI 토글에 `revalidateTag('books-catalog')` 추가 | `toggleBookActive`(및 level 변경)에 revalidateTag 1줄 병행 | ❌ **아니오** — admin UI 경로만 즉시. SQL Editor 직접 토글은 앱 미경유라 **여전히 타이머(≤1h)로만** | 소 (`lib/admin/books/actions.ts` 1함수 +1줄) | 낮음. 단 **긴급 내림 주경로(SQL)를 못 막음** |
+| **(b)** admin에 "카탈로그 캐시 지금 비우기" 수동 버튼 | `revalidateTag('books-catalog')` 호출 server action + admin UI 버튼(assertAdmin 가드) | ✅ **예** — SQL로 내린 뒤 이 버튼 클릭 시 즉시 반영 | 중 (server action + UI 버튼 + admin 게이트) | 낮음~중. **사람이 눌러야** 발동(수동 절차 의존) |
+| **(c)** 긴급 내림 표준 절차 문서화(코드 0) | "SQL로 `is_active=false` → **재배포**(데이터 캐시 초기화)로 즉시 반영" 절차를 운영 문서에 박제 | ✅ **예** — 재배포 완료 시 즉시(전 캐시 초기화) | **없음**(문서만) | 재배포 소요(수 분)·부담, 절차 누락 위험. **지금 당장** 쓸 수 있는 유일 수단 |
+
+**커버리지 정직성**:
+- (a)는 **admin UI 토글만** 즉시. 팀장의 긴급 내림 주경로인 **SQL 직접 토글은 미해결**(타이머만).
+- (b)는 SQL 경로를 커버하되 **운영자가 버튼을 눌러야** 한다(자동 아님). 클릭 시 즉시.
+- (c)는 SQL 경로를 **재배포로** 커버(재배포 완료 시 즉시). 코드 0이라 **오늘 당장 가능**.
+- 어느 것도 "SQL 토글 = 자동 즉시 반영"은 아니다(그건 DB webhook → revalidate 라우트가 필요하며,
+  신규 공개 엔드포인트 = 표면 확대라 본 Amendment 범위 밖. 필요 시 별도 ADR).
+
+### ★권고 (워커 추천안)
+
+**(c)를 즉시 채택(문서화)하여 오늘부터 긴급 내림 수단을 확보하고, (b)를 캐시 확대의 선행
+안전 게이트로 구현한다. (a)는 (b)와 같은 `revalidateTag` 호출이라 (b) 구현 시 함께 넣어 admin
+UI 일관성까지 확보한다.**
+
+근거:
+1. **주경로가 SQL이다** — 팀장이 DB 직접 쓰기(SQL Editor)로 토글하는 구조(3자 운영). 따라서 (a)
+   단독은 긴급 내림을 못 막는다. SQL 경로를 커버하는 (b)/(c)가 핵심.
+2. **베타 전 안전 게이트** — 라이선스 위반 도서의 즉시 차단은 타협 불가(Hard Rule 3·4). 캐시 확대
+   전에 즉시 내림 수단이 반드시 있어야 한다. (c)는 코드 0으로 **지금 즉시** 그 최소선을 제공한다.
+3. **(b)는 SQL 경로의 상시 수단** — 재배포보다 가볍고 빠르며(버튼 1클릭), 팀장이 SQL 내림 직후
+   바로 반영할 수 있다. 캐시 확대(2·3단계)의 **선행 조건**으로 삼는다.
+
+### 순서 명문화 (본 ADR 롤아웃 갱신)
+
+- **캐시 확대(2단계 `getCategoryDistribution`, 3단계 `getBooks`)는 즉시 무효화 수단(위 (b) 또는
+  동등)이 갖춰진 뒤에만 진행한다.** 사유: 캐시 표면을 넓힐수록 긴급 내림 지연 노출이 커지므로,
+  즉시 무효화 레버를 먼저 확보한다.
+- 파일럿(`getBookById`)은 이미 반영됐고 현재 타이머(≤1h)로만 무효화된다 — 그동안의 긴급 내림은
+  후보 (c)(재배포)로 대응한다(팀장 고지 완료).
+
+*Amendment #1 끝. (a)/(b)/(c) 중 팀장 선택 후 Accepted로 전환하고, 선택된 수단을 별도 지시서로
+구현한다. 선택·구현 전까지 캐시 확대는 착수하지 않는다.*
