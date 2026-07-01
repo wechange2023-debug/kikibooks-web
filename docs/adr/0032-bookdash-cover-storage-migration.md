@@ -1,7 +1,8 @@
 # ADR-0032 — Book Dash 표지 자산 Storage 이관 및 cover_url 재지정
 
 ## Status
-Proposed
+Accepted (2026-07-01) — STEP 3 이관 완료·DB UPDATE 206 후검증 통과. 이전: Proposed(2026-06-30).
+실행 결과·사실 정정은 아래 「## 실행 결과 및 정정 (STEP 3, 2026-07-01)」 참조.
 
 ## Context
 - `/showcase`에서 Book Dash 도서(ADR-0027 v2, 206권)를 검수할 때 표지 로딩이 느리다는 보고.
@@ -22,6 +23,10 @@ Proposed
      옵티마이저가 수 MB 원본을 느린 origin에서 먼저 끌어와야 함.
 - 표지 출처 조립(sync_book_dash_v2.py:159-166): featured_media(`bookdash.org`) 우선,
   없으면 CloudFront 폴백(`d3qawc7yl9x4zs.cloudfront.net/.../{slug}_en_cover.jpg`).
+  > **[정정 2026-07-01]** 이 서술이 함의한 origin 분포(bookdash.org 절대다수 + CloudFront 소수)는
+  > STEP 3 Phase A 정찰 실측과 달랐다. 실제 DB `cover_url` 분포 = **bookdash.org 152 /
+  > bookdash.github.io 54 / CloudFront 0**. `bookdash.github.io`(GitHub Pages 미러)는 본
+  > Context가 예상하지 못한 출처였다. 상세·영향은 아래 「실행 결과 및 정정」 참조.
 - 본문(content_url)은 이미 우리 Supabase Storage(`book-manifests/{slug}_en.txt`) 매니페스트라
   본 ADR 범위가 아니다. 본 ADR은 **표지 한정**.
 
@@ -82,3 +87,45 @@ Proposed
 - cover_url만 바뀌고 원본·어트리뷰션 무변동이라 라이선스·법적 리스크 0.
 - 이관 후 origin(bookdash.org/CloudFront) 표지 가용성 변동에 무관해짐(우리 사본 의존).
 - 후속: GDL·기타 출처 표지도 동일 패턴 확장 검토 가능(본 회차는 Book Dash 한정).
+
+## 실행 결과 및 정정 (STEP 3, 2026-07-01)
+
+STEP 3(206건 일괄 이관)을 완료하고, 이관 후 확정된 사실로 본 ADR을 정정한다.
+기존 결정 사항은 삭제하지 않고, 근거가 틀렸던 부분만 정정 주석으로 남겨 감사 추적을 유지한다.
+
+### (b) 호스트 분포 정정
+- STEP 3 정찰의 전제였던 ~~"bookdash.org 205 / CloudFront 1"~~ 분포는 **실제와 달랐다**.
+- **실제(Phase A 정찰 실측, 206건 DB `cover_url` 기준)** = `bookdash.org` **152** /
+  `bookdash.github.io` **54** / CloudFront **0**.
+- **변환·이관에는 영향 없었음**: 변환 루틴이 origin 무관하게 입력 `cover_url`을 그대로 GET하므로
+  두 호스트 모두 정상 변환·이관됨(업로드 검증 표본에 github.io 출신 2건 포함해 확인).
+
+### (c) 재소싱 5건 감사기록
+- `bookdash.github.io` 미러 경로가 **죽은 링크(HTTP 404, GitHub Pages 404 HTML 반환)** 였던 5건은
+  `bookdash.org` **WP featured_media**(기존 152건과 **동일 origin**)에서 정상 표지(200 image/jpeg)를
+  재소싱하여 변환했다. `original_url`·`attribution_text`·`license` 미터치(라이선스 영향 0).
+- 5건 목록·죽은 URL→사용 URL 상세는 **`scratchpad/step3_resourced.csv`** 참조.
+- 이 중 3건(`hugs-in-the-city`, `it-wasnt-me`, `katiitis-song`)은 WP가 표지 대신
+  **1페이지 이미지(`_Page_01`)** 를 featured_media로 지정 — `sync_book_dash_v2`의 featured_media
+  우선 규칙과 동일 동작이며 표지로 유효.
+- 부수 효과: 이 5권은 이관 전 라이브 사이트에서도 표지가 깨진 상태였으므로, 이관으로 **표지가 복구**됨.
+
+### (d) 실행 결과
+- **변환 206/206** (직접 201 + 재소싱 5), 합계 **208.5MB → 6.4MB (96.9%↓)**.
+- **변환 사양 확정**: 가로 **600px · WebP · 품질 80**(STEP 2 표본 화질 팀장 승인). 결정 2의 잠정값 확정.
+- **업로드**: `book-covers` public 버킷에 206개 객체 업로드, 버킷 객체 수 206 검증.
+- **DB 반영**: 팀장이 `step3_update_cover_url.sql` 실행 → `books.cover_url` **206건 UPDATE**,
+  후검증(`cover_url LIKE '%/storage/v1/object/public/book-covers/%'`) **206 통과**.
+  `original_url`·`attribution_text`·`license` 미터치.
+
+### (e) 롤백 자산
+- **`scratchpad/step3_rollback_cover_url.sql`** / **`step3_rollback_cover_url.csv`** —
+  이관 직전 실제 DB값(`old_cover_url`)으로 `cover_url`을 복원하는 VALUES 기반 UPDATE(206행).
+- **baseline 원칙**: 이전 실제 DB값 그대로 보존. **재소싱 5건도 죽은 `bookdash.github.io` URL을
+  baseline으로 유지**(롤백은 이전 상태를 그대로 복원하는 것이 원칙 — 비록 그게 깨진 링크라도).
+- 매핑 원장: `scratchpad/step3_manifest.csv`(id·source_id·old_cover_url·target_key·target_public_url).
+- Storage 사본은 롤백 시에도 그대로 두어도 무방(참조만 끊어짐).
+
+### next.config.js
+- Supabase Storage 호스트를 `images.remotePatterns`에 등록(이전 미등록). 하드코딩 없이
+  `NEXT_PUBLIC_SUPABASE_URL`에서 파생, `pathname: '/storage/v1/object/public/**'`로 제한.
