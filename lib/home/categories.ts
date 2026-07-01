@@ -1,6 +1,10 @@
 import 'server-only';
 
-import type { SupabaseClient } from '@supabase/supabase-js';
+import { unstable_cache } from 'next/cache';
+import {
+  createClient as createSupabaseClient,
+  type SupabaseClient,
+} from '@supabase/supabase-js';
 
 import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
 import type { PopularBook } from '@/lib/landing/popular-books';
@@ -406,41 +410,92 @@ async function fetchCompletedBookIds(
  *
  * 블랙리스트는 적용하나 미독 필터는 적용하지 않는다(자녀 무관, 카탈로그 분포).
  */
+/**
+ * 카탈로그 캐시 전용 — 쿠키 없는 publishable 클라이언트 (ADR-0033 P0-1, 롤아웃 2단계).
+ *
+ * lib/book/detail.ts createCatalogClient와 동일 패턴(의도된 임시 중복 — 3단계 getBooks 이관 시
+ * 공용 헬퍼로 일괄 dedup). unstable_cache 내부는 cookies() 등 동적 API를 쓸 수 없어 세션
+ * 클라이언트를 못 쓴다. books RLS §9.1 USING(true) 공개라 세션 없이도 활성 책 조회 가능.
+ *   - publishable 키만 — secret 키 아님(RLS 우회 아님, Hard Rule 6 무위반).
+ *   - 사용자·자녀 스코프 데이터 접근이 구조적으로 차단된다(개인 데이터 혼입 불가).
+ */
+function createCatalogClient(): SupabaseClient {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const publishableKey =
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!url || !publishableKey) {
+    throw new Error(
+      'getCategoryDistribution(cache): Supabase 환경변수 누락 — NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY',
+    );
+  }
+
+  return createSupabaseClient(url, publishableKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
+
+/**
+ * getCategoryDistribution 캐시 코어 (ADR-0033 P0-1 롤아웃 2단계).
+ *
+ * Next.js unstable_cache로 공용 카탈로그 분포 계산 결과를 캐시한다.
+ *   - 캐시 키: ['getCategoryDistribution'] (인자 없음 → 단일 엔트리).
+ *   - tag: 'books-catalog' (파일럿 getBookById와 공유 — admin 토글/캐시비우기 버튼의
+ *     revalidateTag가 둘 다 즉시 무효화. is_active 변경이 분포 count에도 영향).
+ *   - revalidate: 3600초(1시간) — 파일럿과 동일. out-of-band sync를 결국 반영하는 안전망.
+ * P0-3(B) 최적화(키워드 소문자화 선계산·title만 조회)는 캐시 코어 안에 그대로 유지된다 —
+ * 캐싱은 그 계산의 결과를 메모이즈하므로 ~95k 매칭이 캐시 미스 시(시간당 1회)만 실행된다.
+ * 반환 Record<CategorySlug, number>는 순수 JSON 직렬화 가능이라 캐시 왕복에도 값 불변.
+ */
+const getCategoryDistributionCached = unstable_cache(
+  async (): Promise<Record<CategorySlug, number>> => {
+    // P0-3(B): 분포 카운트는 title만 사용한다(id 미사용) — payload 축소.
+    let query = createCatalogClient()
+      .from('books')
+      .select('title')
+      .eq('is_active', true);
+
+    for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
+      query = query.neq('source_id', blockedSourceId);
+    }
+
+    const { data, error } = await query.returns<{ title: string }[]>();
+    if (error) {
+      throw new Error(`getCategoryDistribution: books 조회 실패 — ${error.message}`);
+    }
+
+    const counts: Record<CategorySlug, number> = {
+      animals: 0,
+      family: 0,
+      abc: 0,
+      numbers: 0,
+      emotions: 0,
+      nature: 0,
+      food: 0,
+      bedtime: 0,
+    };
+
+    for (const row of data ?? []) {
+      const matched = matchCategories({ title: row.title });
+      for (const slug of matched) {
+        counts[slug] += 1;
+      }
+    }
+
+    return counts;
+  },
+  ['getCategoryDistribution'],
+  { tags: ['books-catalog'], revalidate: 3600 },
+);
+
 export async function getCategoryDistribution(
   supabase: SupabaseClient,
 ): Promise<Record<CategorySlug, number>> {
-  // P0-3(B): 분포 카운트는 title만 사용한다(id 미사용) — payload 축소.
-  let query = supabase
-    .from('books')
-    .select('title')
-    .eq('is_active', true);
-
-  for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
-    query = query.neq('source_id', blockedSourceId);
-  }
-
-  const { data, error } = await query.returns<{ title: string }[]>();
-  if (error) {
-    throw new Error(`getCategoryDistribution: books 조회 실패 — ${error.message}`);
-  }
-
-  const counts: Record<CategorySlug, number> = {
-    animals: 0,
-    family: 0,
-    abc: 0,
-    numbers: 0,
-    emotions: 0,
-    nature: 0,
-    food: 0,
-    bedtime: 0,
-  };
-
-  for (const row of data ?? []) {
-    const matched = matchCategories({ title: row.title });
-    for (const slug of matched) {
-      counts[slug] += 1;
-    }
-  }
-
-  return counts;
+  // ★ ADR-0033 P0-1 롤아웃 2단계 — 공용 카탈로그 캐싱(getCategoryDistributionCached).
+  //   supabase 인자는 캐시 경로에서 사용하지 않는다 — 캐시 코어가 쿠키 없는 publishable
+  //   클라이언트를 내부 생성한다(파일럿 getBookById와 동일, ADR-0033 안전 원칙). 인자는
+  //   호출부 시그니처 안정성을 위해 유지하며, 3단계 getBooks 이관 시 일괄 정리한다.
+  void supabase;
+  return getCategoryDistributionCached();
 }
