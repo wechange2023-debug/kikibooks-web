@@ -119,6 +119,8 @@ function createCatalogClient(): SupabaseClient {
  */
 const getBookByIdCached = unstable_cache(
   async (id: string): Promise<Book | null> => {
+    // [TEMP-DIAG] 캐시 적중 계측 — 캐시 미스로 실제 DB를 칠 때만 찍힘. 측정 후 제거(원복).
+    console.log('[CACHE-MISS] getBookById DB hit', id, Date.now());
     const supabase = createCatalogClient();
     const { data, error } = await supabase
       .from('books')
@@ -161,5 +163,7 @@ export async function getBookById(
   id: string,
 ): Promise<Book | null> {
   void supabase; // 캐시 경로 미사용(ADR-0033) — 시그니처 안정성 위해 인자만 유지.
+  // [TEMP-DIAG] 캐시 적중 계측 — 매 호출마다 찍힘(CALL 수 - MISS 수 = 적중 수). 측정 후 제거(원복).
+  console.log('[CACHE-CALL] getBookById called', id);
   return getBookByIdCached(id);
 }
