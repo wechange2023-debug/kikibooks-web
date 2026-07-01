@@ -10,7 +10,8 @@ import { SOURCE_LABELS, sourceLabel } from './sources';
 /**
  * /showcase — 임시 시연 메뉴: 출처(source_platform)별 공개 도서 진입 화면.
  *
- * 임시·격리. 전역 네비 미노출(시연자는 URL로 직접 진입). 시연 후 app/showcase 삭제로 제거.
+ * 임시·격리. 공통 헤더에 '쇼케이스(검수용)' 메뉴로 노출(검수 편의, SHOWCASE_PATH).
+ * 시연 후 app/showcase 삭제 + 헤더 NAV_LINKS 항목 제거로 함께 정리.
  *
  * 가드: 로그인만(getUser → SIGN_IN_PATH). /showcase는 PROTECTED_PREFIXES에 미등록이라
  *   미들웨어가 가드하지 않으므로 본 페이지가 직접 가드한다. 자녀(온보딩) 가드는 시연

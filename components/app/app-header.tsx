@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { HOME_PATH, LIBRARY_PATH } from '@/lib/auth/routes';
+import { HOME_PATH, LIBRARY_PATH, SHOWCASE_PATH } from '@/lib/auth/routes';
 
 /**
  * 공통 앱 헤더 — 로그인 후 화면(/home·/library·/book 상세)의 홈↔라이브러리 네비 + 로그아웃.
@@ -59,6 +59,12 @@ const NAV_LINKS: NavLink[] = [
     href: LIBRARY_PATH,
     label: '라이브러리',
     isActive: (p) => p === LIBRARY_PATH || p.startsWith(`${LIBRARY_PATH}/`),
+  },
+  // 검수용 임시 메뉴 — 서비스 전환 시 제거 대상(app/showcase 삭제와 함께). 기존 항목 불변.
+  {
+    href: SHOWCASE_PATH,
+    label: '쇼케이스(검수용)',
+    isActive: (p) => p === SHOWCASE_PATH || p.startsWith(`${SHOWCASE_PATH}/`),
   },
 ];
 
