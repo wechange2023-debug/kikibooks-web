@@ -339,7 +339,10 @@ export function LibraryBrowser({
           setBooks((prev) => [...prev, ...result.page.books]);
           setNextCursor(result.page.nextCursor);
           setHasMore(result.page.hasMore);
-          setTotalCount(result.page.totalCount);
+          // P0-4: 후속 페이지(append)에서는 totalCount를 덮어쓰지 않는다. 총계는 현재 필터의
+          // 모집단 크기라 페이지 간 불변이므로 첫 페이지(applyFilters) 값을 그대로 유지한다.
+          // keyset 모드는 서버가 후속 페이지에서 count 재조회를 생략(0 반환)하므로, 여기서
+          // 덮어쓰면 "총 0권"으로 잘못 표시된다 — 유지가 곧 표시 불변(query.ts LibraryPage 주석).
         });
       },
       { rootMargin: SENTINEL_ROOT_MARGIN },
