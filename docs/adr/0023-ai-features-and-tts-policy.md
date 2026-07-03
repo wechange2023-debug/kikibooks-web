@@ -1,7 +1,7 @@
 # ADR-0023: AI 기능·정책 통합 — 캐릭터 AI(옵션 A) + 낭독 TTS
 
 **날짜** 2026-06-12
-**상태** Accepted (계획 v2 1단계 · phase 외부 · 상세 설계·SDK 선정은 구현 ADR로 후속 분리)
+**상태** Accepted (계획 v2 1단계 · phase 외부 · 상세 설계·SDK 선정은 구현 ADR로 후속 분리) · **Amendment #1 (2026-07-03, Accepted)** — TTS 산출물 저장 위치 = Supabase Storage 확정(§2.5 대체) + 파일럿 검증 결과 반영. 아래 「## Amendment #1」 참조.
 **관련** `docs/adr/0001-tech-stack.md`(기술 스택 — 본 ADR로 LLM/TTS 의존성 확장), `docs/adr/0003-supabase-new-api-keys.md`(비밀 키 서버 전용 원칙 — AI API 키에 동일 적용), `docs/adr/0017-book-reader-architecture.md`(뷰어 구조 — 오디오 재생 결합점), `docs/adr/0018-completion-rewards-and-library.md`(완독 동선 — AI 대화 진입점), `docs/adr/0011-onboarding-flow.md`·`docs/intent/onboarding-flow.md`(자녀 프로필·법정대리인 동의), `docs/guidelines/license-rules.md`(2차 저작물 어트리뷰션 — 동반 갱신 예고), `app/privacy/page.tsx`(개인정보처리방침 — 개정 예고), `docs/backlog.md` §7.3(법률 검토 1회 F-item — AI 항목 추가 연계), `PLAN.md` 5절(인프라)·6절(기술 스택)·12절(위험 요소), `claude.md` 2절 Hard Rule 6·8
 
 ---
@@ -112,3 +112,35 @@ PM이 계획 v2를 확정(2026-06-12)하며 베타 상품성 강화를 위해 **
 ---
 
 *문서 끝.*
+
+---
+
+## Amendment #1 (2026-07-03) — TTS 산출물 저장 위치 = Supabase Storage 확정 (§2.5 대체) + 파일럿 검증 결과
+
+### A. 결정 — 저장 위치
+
+- **TTS 오디오(mp3)·단어 타이밍(word speech marks JSON) 저장 위치 = Supabase Storage 확정.** §2.5의 "Cloudflare R2 우선 검토"는 본 Amendment로 **대체(superseded)** 된다.
+- **근거**:
+  1. **기존 파이프라인 재사용** — §1.1 실측(2026-06-12) 당시 Supabase Storage 사용 0건이었으나, 이후 ADR-0032(Book Dash 표지 Storage 마이그레이션)로 `book-covers`·`book-manifests` 버킷을 이미 운영 중. 업로드·공개 URL 발급 패턴이 확보되어 신규 서비스 학습·연동 비용 0.
+  2. **베타 규모 충분** — 대상 코호트 Book Dash v1 39권(§B) 기준 용량이 무료 한도(1GB) 내로 충분. 파일럿 실측: 1권(12장면) mp3+marks 약 0.5MB → 39권 외삽 약 20MB 수준.
+  3. **되돌리기 쉬운 결정** — 트래픽이 대규모로 커질 경우 Cloudflare R2로 이전 가능(ADR-0032 이미지 마이그레이션과 동일 방식). 지금 R2 미도입은 잠금(lock-in)을 만들지 않는다.
+- **기각안: Cloudflare R2** — 전송비(egress) 무료가 강점이나, 신규 서비스 도입 복잡도(계정 연동·업로드 파이프라인·권한 체계 신설)가 현 단계 편익을 초과. 사용자 규모가 커져 egress 비용이 체감되는 시점의 후속 카드로 보류(§2.5의 근거 자체는 유효 — 채택 시점만 이연).
+
+### B. 파일럿 검증 결과 (a-beautiful-day 1권, 2026-07-03 완료)
+
+- **엔진·보이스·속도 확정**: Amazon Polly **Neural** · 보이스 **Ruth**(성인 여성 — Joanna·Kendra 샘플 비교 청취 후 확정) · 기본 속도 **78% 자연낭독**(SSML `<prosody rate="78%">` + 문장부호 기반 `<break>` 끊어읽기).
+- **word speech marks 정합 검증**: SSML 태그·이스케이프로 밀리는 바이트 오프셋을 원문 텍스트 기준으로 보정하고 `<break>` 태그가 word 마크로 반환되는 현상을 필터링 — 전 페이지 단어 수가 평문 원본과 일치함을 확인. read-along 단어 단위 동기화 실증(§5 "read-along 문장 단위 타임스탬프" 검토 항목을 **단어 단위로 상회 달성**).
+- **프리뷰 검증**(`scripts/tts_pilot/preview.html`, 로컬 전용): 단어 카라오케 하이라이트 · 전체 자동재생(무텍스트 페이지 자동 통과) · 재생 배속 0.75~1.25× 동작 확인.
+- **대상 코호트**: Book Dash **v1 html 39권**(텍스트 추출 가능 — §1.1). v2 asb_native 206권은 **OCR 별도 2차 트랙**(본 Amendment 범위 외).
+- **비용 기준(§2.8 정합)**: 배치 사전 생성(§2.4)·Polly Neural 문자 과금, 1권 698자 — 39권 외삽 시 수만 자 규모로 베타 상한 내 통제 가능.
+- 파일럿 산출물은 로컬 전용(미커밋)이며 Storage 업로드는 후속 구현 단계에서 수행.
+
+### C. 미결 유지 (후속 구현 ADR 대상 — 본 Amendment에서 결정하지 않음)
+
+- **DB 저장 형태** — §2.3의 (a) `books.audio_url` 컬럼 vs (b) `book_audio` 테이블 양안 그대로 유지.
+- **Storage 버킷 구조·경로 네이밍** (버킷명·`{slug}/p{N}.mp3` 류 경로 규칙).
+- **업로드 시 Content-Type/charset 헤더** (mp3·marks JSON).
+
+> 본 Amendment는 §1~§5 본문을 변경하지 않는다(§2.5는 본 Amendment가 대체함을 상태 라인과 본 절로 기록). 코드·스키마·Storage 업로드 0건 — 문서 전용.
+
+*Amendment #1 끝.*
