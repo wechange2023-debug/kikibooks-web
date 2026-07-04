@@ -1,8 +1,9 @@
 # ADR-0034 — TTS 오디오 저장 구조 구현 (book_audio 테이블 · book-audio 버킷 · 헤더 정책)
 
 ## Status
-Proposed (2026-07-04) — 코드·스키마 변경 전, 팀장 승인 대기.
-승인 후 진행 순서는 아래 「## 다음 단계」 참조. 본 ADR은 문서 전용, 코드·스키마 0줄.
+Accepted (2026-07-04) — 팀장 승인 + 스키마 실행 완료. 이전: Proposed (2026-07-04).
+결정 ①의 스키마는 2026-07-04 팀장이 Supabase SQL Editor에서 직접 실행·성공(아래 결정 ① 「실제
+실행된 SQL」 참조). 남은 단계는 아래 「## 다음 단계」 참조.
 
 ## 관련
 - `docs/adr/0023-ai-features-and-tts-policy.md`(TTS 정책 상위 결정) 및 그 **Amendment #1**
@@ -60,23 +61,25 @@ ID) + 플랫폼 접두사**다. book-audio도 이 정본을 계승하되, 다중
 ### 결정 ① DB 저장 형태 — `book_audio` 별도 테이블 채택
 - **사유**: 오디오가 책 단위가 아니라 **페이지 단위**(예: `a-beautiful-day` = 10페이지 → mp3 10 +
   marks 10). `books.audio_url` 컬럼 1개로는 표현 불가.
-- **제안 스키마(초안, 실행 금지)**:
+- **실제 실행된 SQL** (2026-07-04 팀장이 Supabase SQL Editor에서 직접 실행, 성공):
 
   ```sql
-  -- ⚠️ 초안. 실행하지 말 것. 팀장이 승인 후 Supabase SQL Editor에서 직접 실행.
-  CREATE TABLE book_audio (
-    id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    book_id     UUID NOT NULL REFERENCES books(id) ON DELETE CASCADE,
-    page_index  INT  NOT NULL,          -- 0-based 페이지 인덱스(경로 p00..과 정합)
-    audio_path  TEXT NOT NULL,          -- book-audio 버킷 내 mp3 객체 키
-    marks_path  TEXT NOT NULL,          -- 동 word speech-marks JSON 객체 키
-    voice       TEXT NOT NULL,          -- 예: 'Ruth'
-    engine      TEXT NOT NULL,          -- 예: 'neural'
-    rate        INT  NOT NULL,          -- 말하기 속도 % (예: 78)
-    duration_ms INT,                    -- 오디오 길이(마지막 word mark 프록시 또는 실측)
-    created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
-    UNIQUE (book_id, page_index, voice)
+  create table if not exists public.book_audio (
+    id           uuid primary key default gen_random_uuid(),
+    book_id      uuid not null references public.books(id) on delete cascade,
+    page_index   int  not null check (page_index >= 0),  -- 0-based 페이지 인덱스(경로 p00..과 정합)
+    audio_path   text not null,                          -- book-audio 버킷 내 mp3 객체 키
+    marks_path   text,                                   -- 동 word speech-marks JSON 객체 키
+    voice        text not null,                          -- 예: 'Ruth'
+    engine       text not null,                          -- 예: 'neural'
+    rate         int  check (rate between 1 and 300),    -- 말하기 속도 % (예: 78)
+    duration_ms  int  check (duration_ms >= 0),          -- 오디오 길이(마지막 word mark 프록시 또는 실측)
+    created_at   timestamptz not null default now(),
+    unique (book_id, page_index, voice)
   );
+  alter table public.books
+    add column if not exists has_audio boolean not null default false;
+  -- RLS: enable + anon/authenticated SELECT 공개읽기, 쓰기 정책 없음(service_role 전용)
   ```
 
   - **`voice`를 UNIQUE에 포함**하는 이유: 향후 멀티보이스 트랙(같은 책·페이지의 다른 성우
@@ -86,13 +89,17 @@ ID) + 플랫폼 접두사**다. book-audio도 이 정본을 계승하되, 다중
   - **사유**: "오디오 있는 책만" 카탈로그 필터를 `book_audio` 조인 없이 싸게 처리. 공개 카탈로그
     캐시 원칙(ADR-0033)과 정합(카탈로그 응답에 이미 포함된 books 컬럼으로 필터).
 
-  ```sql
-  -- ⚠️ 초안. 실행 금지.
-  ALTER TABLE books ADD COLUMN has_audio BOOLEAN NOT NULL DEFAULT false;
-  ```
-
-- ⚠️ **CREATE/ALTER는 이 ADR에 '초안'으로만 적고 실행하지 않는다.** 스키마 변경이므로(Hard Rule 8:
-  스키마 변경 시 ADR 선행 — 본 ADR이 그 선행) **본 ADR 승인 후** 팀장이 SQL Editor에서 직접 실행.
+- **초안(Proposed) 대비 실제 반영 변경점**:
+  - (a) **idempotent 실행**: `create table if not exists` / `add column if not exists`로 재실행 안전화.
+  - (b) **CHECK 제약 추가**: `page_index >= 0`(음수 페이지 차단), `rate between 1 and 300`(속도 범위
+    가드), `duration_ms >= 0`(음수 길이 차단). 초안엔 없던 데이터 무결성 가드.
+  - (c) **`marks_path` NOT NULL 해제**: 빈 텍스트 페이지(파일럿 관찰 — page 4·12 등 음성 스킵)는
+    marks가 없을 수 있어 NULL 허용으로 완화. `audio_path`는 NOT NULL 유지.
+  - (d) **RLS 공개읽기 정책 추가**: RLS enable + `anon`/`authenticated` SELECT 공개읽기, 쓰기 정책
+    없음(service_role 전용). 초안엔 RLS 언급 없었음 → 공개 리더 재생 + 쓰기 차단 정합.
+- **Hard Rule 8 준수 확인**: 스키마 변경(테이블·컬럼 추가)에 앞서 본 ADR(문서)이 선행됐고, 승인 후
+  팀장이 SQL Editor에서 직접 실행(워커 DB 직접 쓰기 금지). 기존 제약·트리거
+  (`enforce_commercial_license`)·`attribution_text` NOT NULL(Hard Rule 1) 미접촉.
 
 ### 결정 ② Storage 버킷·경로
 - **신규 버킷**: **`book-audio`** (기존 `book-covers`·`book-manifests`의 `book-*` 네이밍 컨벤션 계승).
@@ -144,12 +151,15 @@ ID) + 플랫폼 접두사**다. book-audio도 이 정본을 계승하되, 다중
 
 ---
 
-## 5. 다음 단계 (이 ADR 승인 후)
-1. **39권 배치 생성** — `Ruth · rate 78 · natural`로 배치 TTS 생성(파일럿 스크립트 확장).
-2. **Storage 업로드** — `book-audio` 버킷에 `{book_key}/pNN.mp3` + `pNN.marks.json` 업로드
-   (contentType 명시, DB write 0건 — `step3_upload.py` 패턴 계승).
-3. **DB 연결 + 뷰어 통합** — 팀장이 `book_audio` 테이블 생성 + `books.has_audio` 추가(SQL Editor),
-   워커는 INSERT SQL 산출만. 이어서 뷰어 `AsbReader`에 오디오 재생·word 하이라이트 통합(ADR-0017 결합점).
+## 5. 다음 단계
+- [x] **(1) 스키마 생성** — `book_audio` 테이블 + `books.has_audio` 컬럼 생성 **완료**
+  (2026-07-04 팀장 SQL Editor 직접 실행·성공. 결정 ① 「실제 실행된 SQL」).
+- [ ] **(2) 39권 배치 생성** — `Ruth · rate 78 · natural`로 배치 TTS 생성(파일럿 스크립트 확장).
+- [ ] **(3) Storage 업로드** — `book-audio` 버킷에 `{book_key}/pNN.mp3` + `pNN.marks.json` 업로드
+  (contentType 명시, DB write 0건 — `step3_upload.py` 패턴 계승).
+- [ ] **(4) DB 연결** — `book_audio` INSERT SQL을 워커가 산출, 팀장이 SQL Editor에서 실행.
+  오디오 적재된 책은 `books.has_audio = true` 반영.
+- [ ] **(5) 뷰어 통합** — 뷰어 `AsbReader`에 오디오 재생·word 하이라이트 통합(ADR-0017 결합점).
 
 ---
 
