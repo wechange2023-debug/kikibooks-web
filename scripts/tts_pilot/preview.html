@@ -1,695 +1,284 @@
 <!DOCTYPE html>
 <!--
-  preview.html — TTS 파일럿 격리 프리뷰 (서비스 코드·DB 무접촉, 로컬 검증 전용)
-
-  ★ 실행 방법 (브라우저 보안 정책상 file:// 더블클릭으로는 fetch가 차단될 수 있음):
-      1) 터미널에서:  cd scripts/tts_pilot
-      2) 실행:        python -m http.server 8000
-      3) 브라우저:    http://localhost:8000/preview.html
-
-  데이터 소스 (같은 폴더 상대경로, fetch로 로드):
-    - out/a-beautiful-day_{Ruth|Joanna|Kendra}_r78.tts.json … 성인 여성 자연낭독 샘플(p1–2)
-    - out/a-beautiful-day.tts.json              … Ivy 100% 매니페스트 (전권)
-    - out/a-beautiful-day_r{85|75|65}.tts.json  … Ivy 저속(SSML prosody) 매니페스트 (전권)
-    - out/audio/a-beautiful-day_pN[_Voice][_rNN].mp3        … Polly 음성
-    - out/audio/a-beautiful-day_pN[_Voice][_rNN].marks.json … word speech marks (원문 오프셋 보정본)
-
-  기능:
-    (A) 원본 오디오 전환 — 보이스·생성속도별 매니페스트·mp3·marks 분기 로드.
-        기본 = 성인 여성(Ruth) 78% 자연낭독 샘플. Ivy(아동) 기존 파일은 선택지로 유지.
-    (B) 재생 배속 0.75/0.85/1.0/1.15/1.25 — audio.playbackRate (A와 독립, 동시 적용 가능)
-    (C) 전체 자동재생 — 페이지 오디오 종료 시 자동 넘김·연속 재생,
-        그림만 있는 페이지는 2.5초 표시 후 자동 진행
-
-  ※ marks의 start/end는 UTF-8 "바이트" 오프셋 → JS 문자 오프셋으로 변환 후 하이라이트.
-  ※ git 커밋 금지 대상(로컬 검증용). 저장 위치는 ADR-0023 미결.
+  preview.html — TTS 파일럿 표본 청취 페이지 (배치 STEP 4c, 로컬 검증 전용)
+  ★ file:// 더블클릭으로 바로 재생됨 (fetch 미사용, <audio> 상대경로만 사용).
+  ★ 서비스 코드·DB·Storage 무접촉. 표본 8권의 [표지]+[본문] 오디오를 브라우저에서 청취.
+  ★ 데이터는 아래 BOOKS 배열에 임베드(생성 시점 out/ 매니페스트 기준). git 커밋 대상 아님.
 -->
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TTS 파일럿 프리뷰 — a beautiful day</title>
+<title>TTS 표본 청취 — v1 html 배치 8권</title>
 <style>
   * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: #ffffff;
-    color: #222;
-    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  header {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 12px 20px;
-    border-bottom: 1px solid #eee;
-  }
-  .bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-  header h1 { font-size: 16px; font-weight: 600; margin: 0 12px 0 0; color: #555; }
-  button {
-    font-size: 16px;
-    padding: 8px 18px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background: #fafafa;
-    cursor: pointer;
-  }
-  button:hover:not(:disabled) { background: #f0f0f0; }
-  button:disabled { opacity: 0.4; cursor: default; }
-  #autoBtn { border-color: #7aa7e8; color: #1c4fa0; }
-  #autoBtn.running { background: #fdecea; border-color: #e8a09a; color: #a02018; }
-  select { font-size: 15px; padding: 6px 8px; border: 1px solid #ccc; border-radius: 8px; background: #fff; }
-  #pageIndicator { font-size: 16px; font-weight: 600; min-width: 70px; text-align: center; }
-  label.opt { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #555; cursor: pointer; }
-  #speedInfo { font-size: 14px; color: #1c4fa0; background: #eef4fd; padding: 5px 12px; border-radius: 16px; }
-  #timeLabel { font-size: 13px; color: #999; min-width: 90px; }
-
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 24px 16px 40px;
-    gap: 20px;
-  }
-  #stage {
-    width: 100%;
-    max-width: 860px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  #sceneImage {
-    max-width: 100%;
-    max-height: 58vh;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  }
-  /* 자막 스트립: 이미지 "아래" 별도 영역 (오버레이 아님) */
-  #captionStrip {
-    width: 100%;
-    background: #f7f7f9;
-    border: 1px solid #ececf0;
-    border-radius: 12px;
-    padding: 20px 26px;
-    font-size: 26px;
-    line-height: 1.7;
-    white-space: pre-wrap;
-    word-break: keep-all;
-  }
-  #captionStrip .word { border-radius: 5px; padding: 1px 2px; transition: background 0.08s linear; }
-  body.hl-on #captionStrip .word.active { background: #ffd54d; }
-  #captionStrip.no-text {
-    text-align: center;
-    color: #888;
-    font-size: 20px;
-  }
-
-  #errorBox {
-    display: none;
-    max-width: 860px;
-    margin: 20px auto 0;
-    padding: 20px 24px;
-    background: #fdecea;
-    border: 1px solid #f5c6c0;
-    border-radius: 10px;
-    color: #8a2018;
-    font-size: 15px;
-    line-height: 1.7;
-    white-space: pre-wrap;
-  }
-  #errorBox code { background: #fff; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+  body { margin:0; background:#f6f7f9; color:#1c2024;
+    font-family:"Segoe UI","Malgun Gothic",sans-serif; padding:24px 16px 64px; }
+  .wrap { max-width:760px; margin:0 auto; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { color:#6b7280; font-size:13px; margin:0 0 20px; }
+  .now { position:sticky; top:0; background:#111827; color:#fff; border-radius:10px;
+    padding:10px 14px; font-size:13px; margin-bottom:18px; min-height:40px;
+    display:flex; align-items:center; gap:10px; }
+  .now b { color:#fbbf24; }
+  .card { background:#fff; border:1px solid #e5e7eb; border-radius:12px;
+    padding:16px 18px; margin-bottom:12px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  .title { font-size:16px; font-weight:600; }
+  .meta { color:#6b7280; font-size:12px; margin:2px 0 4px; }
+  .sent { color:#374151; font-size:12.5px; font-style:italic; margin:0 0 12px;
+    background:#f9fafb; border-left:3px solid #d1d5db; padding:6px 10px; border-radius:4px; }
+  .btns { display:flex; gap:8px; flex-wrap:wrap; }
+  button { font:inherit; font-size:13px; cursor:pointer; border:1px solid #d1d5db;
+    background:#fff; border-radius:8px; padding:8px 14px; }
+  button:hover { background:#f3f4f6; }
+  button.cover { border-color:#c7d2fe; background:#eef2ff; color:#3730a3; }
+  button.body  { border-color:#bbf7d0; background:#ecfdf5; color:#065f46; }
+  button.stop  { border-color:#fecaca; background:#fef2f2; color:#991b1b; }
+  button.playing { outline:2px solid #fbbf24; outline-offset:1px; }
+  .idx { color:#9ca3af; font-size:12px; font-variant-numeric:tabular-nums; }
 </style>
 </head>
-<body class="hl-on">
-
-<header>
-  <div class="bar">
-    <h1>TTS 파일럿 프리뷰</h1>
-    <button id="prevBtn">◀ 이전</button>
-    <span id="pageIndicator">–/–</span>
-    <button id="nextBtn">다음 ▶</button>
-    <button id="playBtn">▶ 재생</button>
-    <button id="autoBtn">전체 듣기 ▶</button>
-    <span id="timeLabel"></span>
-  </div>
-  <div class="bar">
-    <label class="opt">책 선택
-      <select id="bookSel"></select>
-    </label>
-    <label class="opt">원본 오디오
-      <select id="srcSel"></select>
-    </label>
-    <label class="opt">재생 배속
-      <select id="pbSel">
-        <option value="0.75">0.75× 느리게</option>
-        <option value="0.85">0.85× 느리게</option>
-        <option value="1" selected>1.0× 기본</option>
-        <option value="1.15">1.15× 빠르게</option>
-        <option value="1.25">1.25× 빠르게</option>
-      </select>
-    </label>
-    <span id="speedInfo"></span>
-    <label class="opt"><input type="checkbox" id="autoNavToggle" checked> Auto Play(페이지 이동 시 자동재생)</label>
-    <label class="opt">전환 텀
-      <input type="range" id="turnDelay" min="0" max="3000" step="100" value="1200">
-      <span id="turnDelayVal">1200ms</span>
-    </label>
-    <label class="opt"><input type="checkbox" id="hlToggle" checked> 단어 하이라이트</label>
-  </div>
-</header>
-
-<div id="errorBox"></div>
-
-<main>
-  <div id="stage">
-    <img id="sceneImage" alt="장면 그림">
-    <div id="captionStrip"></div>
-  </div>
-</main>
-
-<audio id="audio"></audio>
-
+<body>
+<div class="wrap">
+  <h1>TTS 표본 청취 — v1 html 배치 (Ruth / rate 78 / natural)</h1>
+  <p class="sub">표본 8권. 표지·본문 오디오를 눌러 확인하세요. 본문은 페이지 순서대로 자동 연결 재생됩니다.</p>
+  <div class="now" id="now">준비됨 — 버튼을 누르면 재생됩니다.</div>
+  <div id="list"></div>
+</div>
 <script>
-"use strict";
-
-const PIC_ONLY_MS = 2500;   // 그림만 있는 페이지 자동재생 대기 시간
-
-// 책 목록 — 첫 항목이 기본 로드. 신규 소배치 4권 + 파일럿 1권(보이스 비교용).
 const BOOKS = [
-  { slug: "a-dancers-tale",    label: "A Dancer's Tale (신규)" },
-  { slug: "a-fish-and-a-gift", label: "A Fish and a Gift (신규)" },
-  { slug: "a-house-for-mouse", label: "A House for Mouse (신규)" },
-  { slug: "a-tiny-seed",       label: "A Tiny Seed (신규)" },
-  { slug: "a-beautiful-day",   label: "A Beautiful Day (파일럿·보이스 비교)" },
+  {
+    "slug": "springloaded",
+    "title": "Springloaded",
+    "author": "Thea Nicole de Klerk, Sam Wilson, Chenél Ferreira",
+    "note": "오타 수정본 (bounces)",
+    "cover": "out/audio/springloaded-cover.mp3",
+    "pages": [
+      "out/audio/springloaded_p1_Ruth_r78.mp3",
+      "out/audio/springloaded_p2_Ruth_r78.mp3",
+      "out/audio/springloaded_p3_Ruth_r78.mp3",
+      "out/audio/springloaded_p4_Ruth_r78.mp3",
+      "out/audio/springloaded_p5_Ruth_r78.mp3",
+      "out/audio/springloaded_p6_Ruth_r78.mp3",
+      "out/audio/springloaded_p7_Ruth_r78.mp3",
+      "out/audio/springloaded_p8_Ruth_r78.mp3",
+      "out/audio/springloaded_p9_Ruth_r78.mp3",
+      "out/audio/springloaded_p10_Ruth_r78.mp3",
+      "out/audio/springloaded_p11_Ruth_r78.mp3",
+      "out/audio/springloaded_p12_Ruth_r78.mp3"
+    ],
+    "cover_sentence": "Springloaded. Created by Thea Nicole de Klerk, Sam Wilson, Chenél Ferreira."
+  },
+  {
+    "slug": "sima-and-siza",
+    "title": "Sima and Siza",
+    "author": "Lwando Xaso, Claire Ingram",
+    "note": "저자 표기 확인",
+    "cover": "out/audio/sima-and-siza-cover.mp3",
+    "pages": [
+      "out/audio/sima-and-siza_p1_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p2_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p3_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p4_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p5_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p6_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p7_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p8_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p9_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p10_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p11_Ruth_r78.mp3",
+      "out/audio/sima-and-siza_p12_Ruth_r78.mp3"
+    ],
+    "cover_sentence": "Sima and Siza. Created by Lwando Xaso, Claire Ingram."
+  },
+  {
+    "slug": "sindiwe-and-the-fireflies",
+    "title": "Sindiwe & the Fireflies",
+    "author": "Cheréne Pienaar, Jano Strydom, Tess Gadd",
+    "note": "제목 \"&\" 낭독",
+    "cover": "out/audio/sindiwe-and-the-fireflies-cover.mp3",
+    "pages": [
+      "out/audio/sindiwe-and-the-fireflies_p1_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p2_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p3_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p4_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p5_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p6_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p7_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p8_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p9_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p10_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p11_Ruth_r78.mp3",
+      "out/audio/sindiwe-and-the-fireflies_p12_Ruth_r78.mp3"
+    ],
+    "cover_sentence": "Sindiwe & the Fireflies. Created by Cheréne Pienaar, Jano Strydom, Tess Gadd."
+  },
+  {
+    "slug": "come-back-cat",
+    "title": "Come Back, Cat!",
+    "author": "Nicola Rijsdijk, Karen Lilje, Sam Scarborough",
+    "note": "제목 ! 종결 대표",
+    "cover": "out/audio/come-back-cat-cover.mp3",
+    "pages": [
+      "out/audio/come-back-cat_p1_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p2_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p3_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p4_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p5_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p6_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p7_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p8_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p9_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p10_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p11_Ruth_r78.mp3",
+      "out/audio/come-back-cat_p12_Ruth_r78.mp3"
+    ],
+    "cover_sentence": "Come Back, Cat!. Created by Nicola Rijsdijk, Karen Lilje, Sam Scarborough."
+  },
+  {
+    "slug": "how-about-you",
+    "title": "How About You?",
+    "author": "Renate van Rensburg, Margot Bertelsmann, Ronèll Botes",
+    "note": "제목 ? 종결 대표",
+    "cover": "out/audio/how-about-you-cover.mp3",
+    "pages": [
+      "out/audio/how-about-you_p1_Ruth_r78.mp3",
+      "out/audio/how-about-you_p2_Ruth_r78.mp3",
+      "out/audio/how-about-you_p3_Ruth_r78.mp3",
+      "out/audio/how-about-you_p4_Ruth_r78.mp3",
+      "out/audio/how-about-you_p5_Ruth_r78.mp3",
+      "out/audio/how-about-you_p6_Ruth_r78.mp3",
+      "out/audio/how-about-you_p7_Ruth_r78.mp3",
+      "out/audio/how-about-you_p8_Ruth_r78.mp3",
+      "out/audio/how-about-you_p9_Ruth_r78.mp3",
+      "out/audio/how-about-you_p10_Ruth_r78.mp3",
+      "out/audio/how-about-you_p11_Ruth_r78.mp3",
+      "out/audio/how-about-you_p12_Ruth_r78.mp3"
+    ],
+    "cover_sentence": "How About You?. Created by Renate van Rensburg, Margot Bertelsmann, Ronèll Botes."
+  },
+  {
+    "slug": "sbus-special-shoes",
+    "title": "Sbu's Special Shoes",
+    "author": "Mark Hardie, Eidin Griffin, Megan Pirie",
+    "note": "정상본문 최단",
+    "cover": "out/audio/sbus-special-shoes-cover.mp3",
+    "pages": [
+      "out/audio/sbus-special-shoes_p1_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p2_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p3_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p4_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p5_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p6_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p7_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p8_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p9_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p10_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p11_Ruth_r78.mp3",
+      "out/audio/sbus-special-shoes_p12_Ruth_r78.mp3"
+    ],
+    "cover_sentence": "Sbu's Special Shoes. Created by Mark Hardie, Eidin Griffin, Megan Pirie."
+  },
+  {
+    "slug": "walking-together",
+    "title": "Walking Together",
+    "author": "Jade Mathieson, Louwrisa Blaauw, Bianca de Jong",
+    "note": "정상본문 중간",
+    "cover": "out/audio/walking-together-cover.mp3",
+    "pages": [
+      "out/audio/walking-together_p1_Ruth_r78.mp3",
+      "out/audio/walking-together_p2_Ruth_r78.mp3",
+      "out/audio/walking-together_p3_Ruth_r78.mp3",
+      "out/audio/walking-together_p4_Ruth_r78.mp3",
+      "out/audio/walking-together_p5_Ruth_r78.mp3",
+      "out/audio/walking-together_p6_Ruth_r78.mp3",
+      "out/audio/walking-together_p7_Ruth_r78.mp3",
+      "out/audio/walking-together_p8_Ruth_r78.mp3",
+      "out/audio/walking-together_p9_Ruth_r78.mp3",
+      "out/audio/walking-together_p10_Ruth_r78.mp3",
+      "out/audio/walking-together_p11_Ruth_r78.mp3",
+      "out/audio/walking-together_p12_Ruth_r78.mp3"
+    ],
+    "cover_sentence": "Walking Together. Created by Jade Mathieson, Louwrisa Blaauw, Bianca de Jong."
+  },
+  {
+    "slug": "together-were-strong",
+    "title": "Together We're Strong",
+    "author": "Liesl Jobson, Alice Toich, Nazli Jacobs",
+    "note": "정상본문 최장",
+    "cover": "out/audio/together-were-strong-cover.mp3",
+    "pages": [
+      "out/audio/together-were-strong_p1_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p2_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p3_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p4_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p5_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p6_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p7_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p8_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p9_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p10_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p11_Ruth_r78.mp3",
+      "out/audio/together-were-strong_p12_Ruth_r78.mp3"
+    ],
+    "cover_sentence": "Together We're Strong. Created by Liesl Jobson, Alice Toich, Nazli Jacobs."
+  }
 ];
+const nowEl = document.getElementById('now');
+const audio = new Audio();
+let queue = [];          // 남은 재생 목록
+let curBtn = null;       // 현재 재생 버튼
+let curLabel = '';
 
-// (A) 책별 원본 오디오 소스 목록 — 첫 항목이 기본 로드.
-// 신규 4권은 확정 파라미터(Ruth·78·natural) 단일. a-beautiful-day는 기존 보이스·속도 비교 세트 유지.
-function sourcesFor(slug) {
-  if (slug === "a-beautiful-day") {
-    return [
-      { label: "Ruth · 성인여성 · 78% 자연낭독 (전권) ★기본", path: `out/${slug}_Ruth_r78.tts.json` },
-      { label: "Joanna · 성인여성 · 78% 자연낭독 (샘플 p1–2)",     path: `out/${slug}_Joanna_r78.tts.json` },
-      { label: "Kendra · 성인여성 · 78% 자연낭독 (샘플 p1–2)",     path: `out/${slug}_Kendra_r78.tts.json` },
-      { label: "Ivy · 아동 · 100% (전권)", path: `out/${slug}.tts.json` },
-      { label: "Ivy · 아동 · 85% (전권)",  path: `out/${slug}_r85.tts.json` },
-      { label: "Ivy · 아동 · 75% (전권)",  path: `out/${slug}_r75.tts.json` },
-      { label: "Ivy · 아동 · 65% (전권)",  path: `out/${slug}_r65.tts.json` },
-    ];
-  }
-  return [
-    { label: "Ruth · 성인여성 · 78% 자연낭독 (전권) ★확정", path: `out/${slug}_Ruth_r78.tts.json` },
-  ];
+function setNow(t){ nowEl.innerHTML = t; }
+function clearPlaying(){ if(curBtn){ curBtn.classList.remove('playing'); curBtn=null; } }
+
+function stopAll(){
+  audio.pause(); audio.removeAttribute('src'); queue=[];
+  clearPlaying(); setNow('정지됨.');
 }
 
-let bookIdx = 0;                       // 현재 책 (BOOKS 인덱스)
-let SOURCES = sourcesFor(BOOKS[0].slug);
-
-const el = {
-  prev: document.getElementById("prevBtn"),
-  next: document.getElementById("nextBtn"),
-  play: document.getElementById("playBtn"),
-  auto: document.getElementById("autoBtn"),
-  indicator: document.getElementById("pageIndicator"),
-  time: document.getElementById("timeLabel"),
-  toggle: document.getElementById("hlToggle"),
-  autoNav: document.getElementById("autoNavToggle"),
-  turnDelay: document.getElementById("turnDelay"),
-  turnDelayVal: document.getElementById("turnDelayVal"),
-  bookSel: document.getElementById("bookSel"),
-  srcSel: document.getElementById("srcSel"),
-  pbSel: document.getElementById("pbSel"),
-  speedInfo: document.getElementById("speedInfo"),
-  image: document.getElementById("sceneImage"),
-  caption: document.getElementById("captionStrip"),
-  error: document.getElementById("errorBox"),
-  audio: document.getElementById("audio"),
-};
-
-let scenes = [];          // 현재 원본 속도의 매니페스트 scenes[]
-let idx = 0;              // 현재 장면 인덱스
-let marks = [];           // 현재 장면 word marks
-let wordSpans = [];       // 현재 장면 단어 span (marks와 1:1)
-let activeWord = -1;
-let rafId = null;
-let srcIdx = 0;           // (A) 현재 원본 오디오 소스 (SOURCES 인덱스)
-let originalRate = 100;   // 현재 소스의 Polly 생성 속도 % (매니페스트에서 갱신)
-let voiceName = "–";      // 현재 소스의 보이스명 (매니페스트에서 갱신)
-let playbackRate = 1.0;   // (B) 브라우저 재생 배속
-let autoplay = false;     // (C) 전체 자동재생 모드
-let autoPlayOnNav = true; // (D) 수동 페이지 이동 시 자동재생 토글 (기본 ON)
-let autoDone = false;     // 마지막 페이지까지 완주 여부 → "다시 듣기" 상태
-let picTimer = null;      // 그림-only 페이지 자동 넘김 타이머 (오디오 없는 장면, PIC_ONLY_MS)
-let turnTimer = null;     // (전체듣기) 오디오 종료 후 '장면 전환 텀' 타이머
-// pageTurnDelay: 추후 page-flip(종이책 넘김) 애니메이션 지속시간과 연동 예정.
-// 전체듣기 자동 진행에서만 오디오 종료 후 이 텀만큼 대기. 이미지 전용 대기(PIC_ONLY_MS)와 별개.
-let pageTurnDelay = 1200; // ms (조절 컨트롤 범위 0~3000, 기본 1200)
-const marksCache = new Map();
-const manifestCache = new Map();
-
-function showError(msg) {
-  el.error.style.display = "block";
-  el.error.innerHTML =
-    "<b>데이터를 불러오지 못했습니다.</b>\n" + msg + "\n\n" +
-    "파일을 더블클릭(file://)으로 열면 브라우저가 fetch를 차단합니다.\n" +
-    "터미널에서 <code>scripts/tts_pilot</code> 폴더로 이동해 아래를 실행한 뒤 다시 여세요:\n" +
-    "<code>python -m http.server 8000</code> → 브라우저에서 " +
-    "<code>http://localhost:8000/preview.html</code>";
-}
-function clearError() { el.error.style.display = "none"; }
-
-// Windows 역슬래시 경로("out\\audio\\x.mp3") → URL 상대경로("out/audio/x.mp3")
-function toUrl(p) { return p.replace(/\\/g, "/"); }
-
-async function fetchOk(path) {
-  const r = await fetch(path);
-  if (!r.ok) throw new Error(path + " → HTTP " + r.status);
-  return r;
+function playQueue(){
+  if(queue.length===0){ clearPlaying(); setNow('재생 완료 — <b>'+curLabel+'</b>'); return; }
+  const item = queue.shift();
+  audio.src = item.src;
+  audio.play().catch(e=>setNow('재생 실패: '+e.message+' (경로: '+item.src+')'));
+  setNow('재생 중 — <b>'+curLabel+'</b> '+item.tag);
 }
 
-async function loadManifest(src) {
-  if (manifestCache.has(src.path)) return manifestCache.get(src.path);
-  const man = await (await fetchOk(src.path)).json();
-  if (!man.scenes || !man.scenes.length) throw new Error(src.path + " 에 scenes가 비어 있음");
-  manifestCache.set(src.path, man);
-  return man;
+audio.addEventListener('ended', playQueue);
+
+function playCover(b, btn){
+  stopAll(); curBtn=btn; btn.classList.add('playing'); curLabel=b.title+' — 표지';
+  queue=[{src:b.cover, tag:''}];
+  playQueue();
+}
+function playBody(b, btn){
+  stopAll(); curBtn=btn; btn.classList.add('playing'); curLabel=b.title+' — 본문';
+  queue = b.pages.map((p,i)=>({src:p, tag:'('+(i+1)+'/'+b.pages.length+')'}));
+  playQueue();
 }
 
-// 표지 낭독(2026-07-04 팀장 확정, 'Created by'). 신규 4권만 대상. a-beautiful-day 제외.
-const GH_BASE = "https://bookdash.github.io/bookdash-books";
-const COVER_TEXT = {
-  "a-dancers-tale": "A Dancer’s Tale. Created by Samantha Cutler, Thea Nicole De Klerk, Roberto Pita.",
-  "a-fish-and-a-gift": "A Fish and a Gift. Created by Liesl Jobson, Jesse Breytenbach, Andy Thesen.",
-  "a-house-for-mouse": "A House for Mouse. Created by Michele Fry, Amy Uzzell, Jennifer Jacobs.",
-  "a-tiny-seed": "A Tiny Seed. Created by Nicola Rijsdijk, Maya Marshak, Karen Lilje.",
-};
-
-// 표지 장면 객체(오디오 있는 장면). 대상 아니면 null.
-function coverSceneFor(slug) {
-  if (!COVER_TEXT[slug]) return null;
-  return {
-    page: 0,
-    image_url: `${GH_BASE}/${slug}/en/images/cover.jpg`,
-    text: COVER_TEXT[slug],
-    audio: `out/audio/${slug}-cover.mp3`,
-    marks: `out/audio/${slug}-cover.marks.json`,
-  };
-}
-
-// 이미지 preload 캐시(url → HTMLImageElement). GC로 수거되지 않게 참조 유지.
-const imgPreload = new Map();
-
-// 장면 목록의 모든 이미지(표지 cover.jpg 포함)를 백그라운드 선(先)로드.
-// 프리뷰 책은 장면 수가 적어(10~13) 부담 없음. 이미 로드된 이미지는 브라우저 캐시로 즉시 표시.
-function preloadImages(sceneList) {
-  for (const s of sceneList) {
-    const url = s.image_url;
-    if (!url || imgPreload.has(url)) continue;
-    const im = new Image();
-    im.src = url;
-    imgPreload.set(url, im);
-  }
-}
-
-// 로드된 매니페스트를 현재 상태로 반영 (scenes·보이스·원본 속도)
-// 신규 4권은 표지 장면을 scenes 맨 앞에 prepend. 본문 장면은 각자 audio/marks를 지녀 매핑 불변.
-function applyManifest(man) {
-  const cover = coverSceneFor(man.slug);
-  scenes = cover ? [cover, ...man.scenes] : man.scenes;
-  voiceName = man.voice || "–";
-  originalRate = (typeof man.rate === "number") ? man.rate : 100;
-  updateSpeedInfo();
-  preloadImages(scenes);   // 책 진입 즉시 전 장면 이미지 preload
-}
-
-// Polly marks의 start/end는 UTF-8 바이트 오프셋 → 문자 오프셋 변환표 생성
-function buildByteToCharMap(text) {
-  const enc = new TextEncoder();
-  const map = new Map();
-  let byteIdx = 0, charIdx = 0;
-  for (const ch of text) {              // 코드포인트 단위 순회(서로게이트 안전)
-    map.set(byteIdx, charIdx);
-    byteIdx += enc.encode(ch).length;
-    charIdx += ch.length;
-  }
-  map.set(byteIdx, charIdx);
-  return map;
-}
-
-// 장면 텍스트를 marks 기준 span으로 분해해 자막 스트립에 렌더
-function renderCaption(text, sceneMarks) {
-  el.caption.classList.remove("no-text");
-  el.caption.textContent = "";
-  wordSpans = [];
-  const b2c = buildByteToCharMap(text);
-  let cursor = 0;
-  for (const m of sceneMarks) {
-    const s = b2c.get(m.start);
-    const e = b2c.get(m.end);
-    if (s === undefined || e === undefined) {
-      // 오프셋 변환 실패 시 하이라이트만 포기하고 진행 (텍스트는 온전히 표시)
-      continue;
-    }
-    if (s > cursor) el.caption.appendChild(document.createTextNode(text.slice(cursor, s)));
-    const span = document.createElement("span");
-    span.className = "word";
-    span.textContent = text.slice(s, e);
-    el.caption.appendChild(span);
-    wordSpans.push(span);
-    cursor = e;
-  }
-  if (cursor < text.length) el.caption.appendChild(document.createTextNode(text.slice(cursor)));
-}
-
-async function loadMarks(path) {
-  if (marksCache.has(path)) return marksCache.get(path);
-  const raw = await (await fetchOk(path)).text();
-  const parsed = raw.split("\n").map(l => l.trim()).filter(Boolean)
-    .map(l => JSON.parse(l)).filter(m => m.type === "word");
-  marksCache.set(path, parsed);
-  return parsed;
-}
-
-function setActiveWord(i) {
-  if (i === activeWord) return;
-  if (activeWord >= 0 && wordSpans[activeWord]) wordSpans[activeWord].classList.remove("active");
-  activeWord = i;
-  if (i >= 0 && wordSpans[i]) wordSpans[i].classList.add("active");
-}
-
-function syncHighlight() {
-  const tMs = el.audio.currentTime * 1000;
-  let cur = -1;
-  for (let i = 0; i < marks.length; i++) {
-    if (marks[i].time <= tMs) cur = i; else break;
-  }
-  setActiveWord(cur);
-  el.time.textContent = el.audio.duration
-    ? el.audio.currentTime.toFixed(1) + "s / " + el.audio.duration.toFixed(1) + "s"
-    : "";
-}
-
-function rafLoop() {
-  syncHighlight();
-  if (!el.audio.paused && !el.audio.ended) rafId = requestAnimationFrame(rafLoop);
-}
-
-function updateSpeedInfo() {
-  const eff = Math.round(originalRate * playbackRate);
-  el.speedInfo.textContent =
-    `보이스: ${voiceName} / 원본 ${originalRate}% × 재생 ${playbackRate}배 = 실효 약 ${eff}%`;
-}
-
-function clearAutoTimers() {
-  if (picTimer !== null) { clearTimeout(picTimer); picTimer = null; }
-  if (turnTimer !== null) { clearTimeout(turnTimer); turnTimer = null; }
-}
-
-// 장면 이미지 노출. preload 캐시 우선. 미완료면 decode를 최대 300ms만 대기해
-// '글 먼저, 그림 늦게' 어긋남을 줄이되, 대기가 길어지지 않게 상한을 둔다(초과 시 그냥 표시).
-async function setSceneImage(url) {
-  el.image.style.display = "";
-  let im = imgPreload.get(url);
-  if (!im) { im = new Image(); im.src = url; imgPreload.set(url, im); }
-  if (!im.complete) {
-    const decoded = im.decode ? im.decode().catch(() => {}) : Promise.resolve();
-    await Promise.race([decoded, new Promise((r) => setTimeout(r, 300))]);
-  }
-  el.image.src = url;
-}
-
-async function showScene(i) {
-  idx = i;
-  clearAutoTimers();
-  el.audio.pause();
-  el.audio.removeAttribute("src");
-  setActiveWord(-1);
-  marks = [];
-  wordSpans = [];
-
-  const s = scenes[i];
-  el.indicator.textContent = (i + 1) + "/" + scenes.length;
-  el.prev.disabled = i === 0;
-  el.next.disabled = i === scenes.length - 1;
-
-  if (s.image_url) {
-    await setSceneImage(s.image_url);
-  } else {
-    el.image.style.display = "none";
-  }
-
-  if (!s.text || !s.audio) {
-    el.caption.classList.add("no-text");
-    el.caption.textContent = "이 페이지는 그림만 있어요 (음성 없음)";
-    el.play.disabled = true;
-    el.time.textContent = "";
-    return;
-  }
-
-  el.play.disabled = false;
-  el.play.textContent = "▶ 재생";
-  el.time.textContent = "";
-  el.audio.src = toUrl(s.audio);
-  el.audio.defaultPlaybackRate = playbackRate;
-  el.audio.playbackRate = playbackRate;
-
-  try {
-    marks = await loadMarks(toUrl(s.marks));
-    renderCaption(s.text, marks);
-  } catch (e) {
-    // marks 로드 실패 → 하이라이트 없이 텍스트·오디오만 제공
-    el.caption.classList.remove("no-text");
-    el.caption.textContent = s.text;
-    showError("워드마크 로드 실패 (page " + s.page + "): " + e.message);
-  }
-}
-
-/* ---------- (C) 전체 자동재생 ---------- */
-
-function setAutoButton() {
-  if (autoplay) {
-    el.auto.textContent = "■ 정지";
-    el.auto.classList.add("running");
-  } else {
-    el.auto.textContent = autoDone ? "다시 듣기 ▶" : "전체 듣기 ▶";
-    el.auto.classList.remove("running");
-  }
-}
-
-function playCurrentInAuto() {
-  if (!autoplay) return;
-  const s = scenes[idx];
-  if (s.audio) {
-    el.audio.play().catch(e => { stopAutoplay(); showError("오디오 재생 실패: " + e.message); });
-  } else {
-    // 그림만 있는 페이지: 잠깐 보여주고 자동으로 다음
-    picTimer = setTimeout(autoAdvance, PIC_ONLY_MS);
-  }
-}
-
-async function autoAdvance() {
-  picTimer = null;
-  turnTimer = null;
-  if (!autoplay) return;
-  if (idx < scenes.length - 1) {
-    await showScene(idx + 1);
-    playCurrentInAuto();
-  } else {
-    autoDone = true;        // 완주 → "다시 듣기" 상태로 복귀
-    stopAutoplay();
-  }
-}
-
-async function startAutoplay() {
-  clearError();
-  if (autoDone) {           // 완주 후 재시작은 처음부터
-    autoDone = false;
-    await showScene(0);
-  }
-  autoplay = true;
-  setAutoButton();
-  playCurrentInAuto();
-}
-
-function stopAutoplay() {
-  autoplay = false;
-  clearAutoTimers();
-  el.audio.pause();
-  setAutoButton();
-}
-
-/* ---------- 이벤트 ---------- */
-
-// (D) 수동 페이지 이동. 전체 듣기 모드는 중단하고, Auto Play 토글 ON이면 새 장면 오디오 자동재생.
-async function navTo(i) {
-  if (autoplay) stopAutoplay();          // 수동 넘김은 전체 듣기 모드 중단
-  await showScene(i);
-  if (autoPlayOnNav && scenes[idx] && scenes[idx].audio) {
-    // prev/next 클릭·키보드는 사용자 제스처라 재생 허용됨. 혹시 차단되면 조용히 무시.
-    el.audio.play().catch(() => {});
-  }
-}
-
-el.prev.addEventListener("click", () => {
-  if (idx > 0) navTo(idx - 1);
-});
-el.next.addEventListener("click", () => {
-  if (idx < scenes.length - 1) navTo(idx + 1);
+const list = document.getElementById('list');
+BOOKS.forEach(b=>{
+  const card=document.createElement('div'); card.className='card';
+  const t=document.createElement('div'); t.className='title'; t.textContent=b.title; card.appendChild(t);
+  const m=document.createElement('div'); m.className='meta';
+  m.textContent = b.slug+'  ·  '+b.note+'  ·  본문 '+b.pages.length+'쪽';
+  card.appendChild(m);
+  const s=document.createElement('div'); s.className='sent'; s.textContent='표지 낭독: "'+b.cover_sentence+'"'; card.appendChild(s);
+  const btns=document.createElement('div'); btns.className='btns';
+  const bc=document.createElement('button'); bc.className='cover'; bc.textContent='🔊 표지 재생';
+  bc.onclick=()=>playCover(b,bc);
+  const bb=document.createElement('button'); bb.className='body'; bb.textContent='📖 본문 재생 ('+b.pages.length+'쪽)';
+  bb.onclick=()=>playBody(b,bb);
+  btns.appendChild(bc); btns.appendChild(bb); card.appendChild(btns);
+  list.appendChild(card);
 });
 
-el.play.addEventListener("click", () => {
-  if (el.audio.paused) {
-    el.audio.play().catch(e => showError("오디오 재생 실패: " + e.message));
-  } else {
-    el.audio.pause();
-  }
-});
-
-el.auto.addEventListener("click", () => {
-  if (autoplay) stopAutoplay();
-  else startAutoplay();
-});
-
-el.audio.addEventListener("play", () => {
-  el.play.textContent = "❚❚ 일시정지";
-  cancelAnimationFrame(rafId);
-  rafId = requestAnimationFrame(rafLoop);
-});
-el.audio.addEventListener("pause", () => {
-  el.play.textContent = "▶ 재생";
-  cancelAnimationFrame(rafId);
-});
-el.audio.addEventListener("ended", () => {
-  el.play.textContent = "▶ 재생";
-  cancelAnimationFrame(rafId);
-  setActiveWord(-1);
-  if (autoplay) {
-    // (C) 전체듣기: 오디오 종료 후 '장면 전환 텀'(pageTurnDelay)만큼 대기 후 다음 장면.
-    // pageTurnDelay: 추후 page-flip(종이책 넘김) 애니메이션 지속시간과 연동 예정.
-    // 이미지 전용 대기(PIC_ONLY_MS)와 별개. 수동 이동(navTo)에는 이 텀 미적용.
-    clearAutoTimers();
-    turnTimer = setTimeout(autoAdvance, pageTurnDelay);
-  }
-});
-el.audio.addEventListener("timeupdate", syncHighlight);
-el.audio.addEventListener("error", () => {
-  if (el.audio.getAttribute("src")) showError("오디오 파일 로드 실패: " + el.audio.getAttribute("src"));
-});
-
-// 현재 SOURCES로 원본 오디오 드롭다운 재구성
-function populateSrcSel() {
-  el.srcSel.textContent = "";
-  SOURCES.forEach((s, i) => {
-    const opt = document.createElement("option");
-    opt.value = String(i);
-    opt.textContent = s.label;
-    el.srcSel.appendChild(opt);
-  });
-  el.srcSel.value = "0";
-  srcIdx = 0;
-}
-
-// 책 전환 — SOURCES 교체 후 첫 소스(Ruth·78)부터 로드, 첫 페이지로 이동
-el.bookSel.addEventListener("change", async () => {
-  const i = parseInt(el.bookSel.value, 10);
-  if (autoplay) stopAutoplay();
-  const slug = BOOKS[i].slug;
-  const nextSources = sourcesFor(slug);
-  try {
-    const man = await loadManifest(nextSources[0]);
-    clearError();
-    bookIdx = i;
-    SOURCES = nextSources;
-    populateSrcSel();
-    autoDone = false;
-    idx = 0;
-    document.title = "TTS 파일럿 프리뷰 — " + man.slug;
-    applyManifest(man);
-    setAutoButton();
-    await showScene(0);
-  } catch (e) {
-    el.bookSel.value = String(bookIdx);   // 실패 시 이전 책으로 복귀
-    showError("책 로드 실패 (" + BOOKS[i].label + "): " + (e.message || e));
-  }
-});
-
-// (A) 원본 오디오 전환 — 보이스·속도별 매니페스트로 교체, 같은 페이지 인덱스 유지
-el.srcSel.addEventListener("change", async () => {
-  const i = parseInt(el.srcSel.value, 10);
-  const wasAuto = autoplay;
-  if (autoplay) stopAutoplay();
-  try {
-    const man = await loadManifest(SOURCES[i]);
-    clearError();
-    srcIdx = i;
-    applyManifest(man);
-    await showScene(Math.min(idx, scenes.length - 1));
-    if (wasAuto) startAutoplay();        // 자동재생 중이었다면 현재 페이지부터 재개
-  } catch (e) {
-    el.srcSel.value = String(srcIdx);    // 실패 시 이전 선택으로 복귀
-    showError("원본 오디오 로드 실패 (" + SOURCES[i].label + "): " + (e.message || e));
-  }
-});
-
-// (B) 재생 배속 — 즉시 반영 (하이라이트는 currentTime 기반이라 자동 동기 유지)
-el.pbSel.addEventListener("change", () => {
-  playbackRate = parseFloat(el.pbSel.value);
-  el.audio.defaultPlaybackRate = playbackRate;
-  el.audio.playbackRate = playbackRate;
-  updateSpeedInfo();
-});
-
-el.toggle.addEventListener("change", () => {
-  document.body.classList.toggle("hl-on", el.toggle.checked);
-});
-
-// (D) Auto Play 토글 — 수동 페이지 이동 시 자동재생 여부
-el.autoNav.addEventListener("change", () => {
-  autoPlayOnNav = el.autoNav.checked;
-});
-
-// (C) 전체듣기 장면 전환 텀 조절 — 즉시 반영(진행 중 다음 텀부터 적용)
-el.turnDelay.addEventListener("input", () => {
-  pageTurnDelay = parseInt(el.turnDelay.value, 10);
-  el.turnDelayVal.textContent = pageTurnDelay + "ms";
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowLeft") el.prev.click();
-  else if (e.key === "ArrowRight") el.next.click();
-  else if (e.key === " ") { e.preventDefault(); el.play.click(); }
-});
-
-(async function init() {
-  BOOKS.forEach((b, i) => {
-    const opt = document.createElement("option");
-    opt.value = String(i);
-    opt.textContent = b.label;
-    el.bookSel.appendChild(opt);
-  });
-  el.bookSel.value = "0";
-  populateSrcSel();
-  try {
-    const manifest = await loadManifest(SOURCES[0]);
-    document.title = "TTS 파일럿 프리뷰 — " + manifest.slug;
-    applyManifest(manifest);
-    setAutoButton();
-    await showScene(0);
-  } catch (e) {
-    showError(String(e.message || e));
-  }
-})();
+const stop=document.createElement('button'); stop.className='stop'; stop.textContent='⏹ 정지';
+stop.style.marginTop='8px'; stop.onclick=stopAll;
+document.querySelector('.wrap').appendChild(stop);
 </script>
 </body>
 </html>

@@ -49,9 +49,10 @@ HTTP_TIMEOUT = 30
 
 OUT_DIR = Path(__file__).resolve().parent / "out"
 
-# <p>...</p> 블록(내부 개행 포함), <img src>, 태그 제거용 정규식
+# <p>...</p> 블록(내부 개행 포함), <img src>, <img alt>, 태그 제거용 정규식
 _P_BLOCK_RE = re.compile(r"<p\b[^>]*>(.*?)</p>", re.I | re.S)
 _IMG_SRC_RE = re.compile(r"<img\b[^>]*\bsrc=[\"']([^\"']+)[\"']", re.I)
+_IMG_ALT_RE = re.compile(r"<img\b[^>]*?\balt=([\"'])(.*?)\1", re.I | re.S)
 _TAG_RE = re.compile(r"<[^>]+>")
 
 
@@ -100,6 +101,7 @@ def extract_scenes(slug: str, html_text: str) -> list[dict]:
 
     이미지 <p>를 만나면 새 장면 시작. 이후 텍스트 <p>는 현재 장면에 누적.
     첫 이미지 이전의 텍스트(<h1> 제목 등)는 장면에 넣지 않는다.
+    장면 이미지의 alt는 <p> 본문이 없는 책(예: springloaded)을 위한 폴백으로 함께 수집.
     """
     body = isolate_body(html_text)
     scenes: list[dict] = []
@@ -112,10 +114,12 @@ def extract_scenes(slug: str, html_text: str) -> list[dict]:
             # 새 장면 시작 — 직전 장면을 확정(있으면).
             if cur is not None:
                 scenes.append(cur)
+            alts = [clean_text(a.group(2)) for a in _IMG_ALT_RE.finditer(inner)]
             cur = {
                 "page": len(scenes) + 1,
                 "image_url": to_abs_image_url(slug, img.group(1)),
                 "_lines": [],
+                "_alts": [a for a in alts if a],  # alt 폴백 후보(문서 순서)
             }
         else:
             text = clean_text(inner)
@@ -129,11 +133,16 @@ def extract_scenes(slug: str, html_text: str) -> list[dict]:
     # _lines → text(줄바꿈 결합), 내부 키 정리
     out: list[dict] = []
     for s in scenes:
+        text = "\n".join(s["_lines"])
+        if not text.strip() and s["_alts"]:
+            # <p> 본문이 비어 있을 때만 이미지 alt를 문서 순서로 이어붙여 사용
+            # (<p>가 있으면 alt 무시 — 이중 텍스트 방지). clean_text가 html.unescape 적용.
+            text = "\n".join(s["_alts"])
         out.append(
             {
                 "page": s["page"],
                 "image_url": s["image_url"],
-                "text": "\n".join(s["_lines"]),
+                "text": text,
             }
         )
     return out
