@@ -169,3 +169,51 @@ ID) + 플랫폼 접두사**다. book-audio도 이 정본을 계승하되, 다중
 - book-audio 키가 `(source_platform, source_id)` 정본을 계승해 교차 플랫폼 충돌 없음. 단 커버와
   접두사 철자 표준(`book_dash-` vs `bookdash-`)이 갈리므로, 향후 통일 여부는 후속 카드로 남김.
 - 헤더 명시 지정으로 Storage charset/캐시 이슈를 업로드 시점에 원천 차단.
+
+---
+
+## Amendment #1 (2026-07-07, Accepted) — 표지 오디오를 `book_audio`에 수용 (`kind` 컬럼)
+
+### 맥락
+- 배치 트랙에서 책마다 **표지 낭독**(`"{title}. Created by {author}."`) 산출물(`cover.mp3` +
+  `cover.marks.json`)이 추가됐다. 원 스키마(결정 ①)는 `page_index`(0-based, `CHECK >= 0`)만 있어
+  **표지 슬롯이 없다**.
+- v1 html 배치 **44권 표지**는 이미 `book-audio` 버킷 `{book_key}/cover.mp3`(+`.marks.json`)로
+  **업로드 완료**. 이를 DB에 수용하는 방식을 확정한다(팀장 결정: 안 A — `book_audio`에 표지 구분 칸).
+
+### 결정 — `kind TEXT` 컬럼 추가
+```sql
+ALTER TABLE public.book_audio
+  ADD COLUMN kind text NOT NULL DEFAULT 'page';           -- 기존 행 자동 백필
+ALTER TABLE public.book_audio
+  ADD CONSTRAINT book_audio_kind_check CHECK (kind IN ('page','cover'));
+-- UNIQUE 재정의: (book_id, page_index, voice) → (book_id, kind, page_index, voice)
+```
+- **표지 행**: `kind='cover'`, `page_index = 0` 고정 placeholder. 표지 경로는 `audio_path`에
+  `.../cover.mp3`로 **명시 저장**되므로 `page_index`가 표지 경로를 만들지 않는다. `CHECK(page_index>=0)`
+  **유지**(완화 불필요).
+- **UNIQUE에 `kind` 포함이 필수**: 표지(`cover`,`0`,`voice`)와 첫 페이지(`page`,`0`,`voice`)가
+  `page_index=0`으로 **충돌하는 것을 방지**하고, 책·보이스당 표지 1행을 보장.
+- **기존 `page` 행 영향 0**: `DEFAULT 'page'` 백필로 `(book_id,'page',page_index,voice)` 유일성 유지.
+
+### 선택 근거 — `kind TEXT` vs `is_cover BOOLEAN`
+- 채택(`kind TEXT` + CHECK): 기존 설계가 멀티보이스 확장을 위해 `voice`를 UNIQUE에 포함한 것과
+  **동일한 정규화·확장 방향**. 향후 트랙 유형(intro/outro/question 등) 확장 시 **컬럼 추가·백필 없이
+  CHECK만 확장**하면 됨.
+- 기각(`is_cover BOOLEAN`): 더 단순하나 **이진**이라 3번째 유형에서 재마이그레이션 필요.
+- 기각(B: `page_index=-1` 예약): `CHECK(page_index>=0)` 완화 필요 + 음수 인덱스 의미 불명확.
+- 기각(C: `books.cover_audio_path` 별도 컬럼): 오디오가 `book_audio`로 정규화된 설계와 **이원화**되고
+  멀티보이스 표지 확장이 막힘.
+
+### 마이그레이션 · 롤백
+- `book_audio`는 **아직 INSERT 전(빈 테이블)** → UNIQUE 재정의 무위험. 데이터가 있어도 `page` 행은
+  새 UNIQUE를 자동 충족.
+- 실행 SQL: `scratchpad/step7_book_audio_cover_schema.sql`(팀장 SQL Editor 실행, 전 구간 트랜잭션·
+  DO 블록 가드로 재실행 안전). 선/후검증 `information_schema`·`pg_constraint` 조회 포함.
+- 롤백: 표지 행 적재 **전**이면 UNIQUE를 원복 후 `kind` DROP 가능. 표지 행 적재 **후**엔 표지 행
+  삭제가 선행돼야 옛 UNIQUE에서 `p00`과 충돌하지 않음(SQL 파일 하단 롤백 블록 참조).
+
+### 다음 단계(예고)
+- 스키마 반영 후, `book_audio` INSERT SQL 초안(본문 `kind='page'` × 각 페이지 + 표지 `kind='cover'`
+  1행/책, `voice='Ruth' engine='neural' rate=78`, `audio_path`=업로드 키, `duration_ms`=마지막 mark
+  프록시)과 오디오 적재된 책 `books.has_audio = true` 반영을 워커가 산출 → 팀장 실행.
