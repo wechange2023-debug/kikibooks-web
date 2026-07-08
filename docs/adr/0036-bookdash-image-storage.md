@@ -19,7 +19,8 @@ ADR-0035 D3은 book_dash 자체 뷰어의 본문 이미지를 **Supabase Storage
 
 확정의 전제가 된 사실은 **읽기전용 전권 드라이런**(`scratchpad/bookdash_image_dryrun.md`, 2026-07-08, GH Pages HTML 54권 GET·이미지 미다운로드)으로 실측됐다:
 
-- **이미지 저장 구조 = 54/54 전권 표준**: 원본 `images/NN.jpg` — **2자리 zero-pad · 1-based · 연속(gap 없음)** · 확장자 **`.jpg`** · 첫 이미지 `01.jpg`(본문 page1, 표지 아님). 개수는 12장 52권 / 13장 2권(who-is-our-friend·whose-button-is-this) 외 편차 없음.
+- **이미지 명명 규칙 = 54/54 전권 표준**: 원본 `images/NN.jpg` — **2자리 zero-pad · 1-based · 연속(gap 없음)** · 확장자 **`.jpg`** · 첫 이미지 `01.jpg`(본문 page1, 표지 아님). 개수는 12장 52권 / 13장 2권(who-is-our-friend·whose-button-is-this) 외 편차 없음.
+  - ⚠️ **Amendment #1 정정(2026-07-08)**: 위 "54/54 표준"은 **HTML `<img>` 참조 기준**이며, **원본 파일의 실제 존재는 39/54**다. 실복사 시 15권의 본문 `images/NN.jpg`가 GH Pages에 **실재하지 않음(HTTP 404)** 을 확인. 상세·목록은 **§7 Amendment #1** 참조.
 - **표지 = 54/54 전권 별도 `images/cover.jpg`**(본문 `01.jpg`과 구분). GH Pages 리딩 페이지 `<img>`엔 미노출 — DB `cover_url`·기존 `book-covers` 버킷에만 존재.
 - **source_id = 54/54 UUID**(`9c9e…` 형식). 이형 3권(little-sock·maddy-moona·mrs-penguins-palace)도 장부 `source_id`가 **UUID로 확인**됨(팀장 Supabase SQL 실행 — 아래 쿼리, **No rows returned** = full-slug source_id 행 없음). → 이미지 키 예외 처리 불필요.
 
@@ -101,7 +102,35 @@ ADR-0035 D3은 book_dash 자체 뷰어의 본문 이미지를 **Supabase Storage
 ---
 
 ## 6. 후속 (구현 트랙 예고 — 본 ADR 범위 아님)
-- [ ] `book-images` 버킷 생성(팀장 Dashboard).
-- [ ] 이미지 복사 파이프라인: 원본 `images/NN.jpg`·`cover.jpg` 다운로드 → `book-images/book_dash-{UUID}/` 업로드(contentType 명시, D4). extract_text의 image_url 목록 + upload_audio의 업로드/키/헤더 패턴 결합.
+- [x] `book-images` 버킷 생성(팀장 Dashboard) — **완료**.
+- [x] 이미지 복사 파이프라인 — `scripts/copy_bookdash_images.py`(스로틀 백오프 + 완결성 게이트). **정예 39권 업로드 완료(508객체)** — Amd#1.
 - [ ] 뷰어 경로 조립: `getBookById` 기반 `source_id`로 이미지 URL 규칙 조립(D5), 실 파일 200 확인(ADR-0035 G4).
 - [ ] (뷰어 트랙) §5 이월 사실 반영 — 면 3종 판별·alt 처리·gap 정정.
+- [ ] (선택) 결손 15권 원본을 다른 소스(bookdash.org WP/CloudFront, ADR-0027 경로)에서 확보 재시도 — 별도 트랙(Amd#1 §미결).
+
+---
+
+## 7. Amendment #1 (2026-07-08, Accepted) — 원본 이미지 실존 39/54 정정 · 정예 39권 확정
+
+### 배경
+§1은 이미지 명명 규칙을 "54/54 표준"으로 기록했으나, 이는 **정찰(HTML `<img>` 참조) 기준**이었다. 실제 복사(다운로드) 단계에서 **15권의 본문 이미지가 GH Pages 2019 스냅샷에 실재하지 않음**(HTTP 404, HTML은 죽은 링크를 참조)을 확인했다. 근거 정찰이 HTML 파싱만 하고 실제 파일 존재를 다운로드로 검증하지 않은 것이 원인.
+
+### 실측 (2026-07-08, cache-bust + 대조군 통과 · 대체 경로 전부 404로 확정)
+- **원본 이미지 결손 15권** (본문 `images/NN.jpg` = 404):
+  - **표지만 존재(본문 결손) 10권**: hippo-wants-to-dance, little-sock, mrs-penguins-palace, shongololos-shoes, springloaded, the-best-thing-ever, the-elephant-in-the-room, what-is-it, when-i-grow-up, who-is-our-friend (`images/cover.jpg`만 200).
+  - **이미지 전무 5권(무텍스트책, cover도 404)**: hugs-in-the-city, i-can-dress-myself, it-wasnt-me, katiitis-song, the-lion-who-wouldnt-try.
+- **정예 39권** = 54 − 결손 15. 원본 이미지 실존 확인.
+- 검증 confound 3종을 실측으로 분리: (1) GH Pages/Fastly **레이트리밋**(무지연 연속요청이 404 유발), (2) 그 404의 **엣지 네거티브 캐싱**(bare URL 재요청도 404, cache-bust로 우회 시 origin 실상 노출), (3) 그 아래 **진짜 원본 결손 15권**(cache-bust·대조군·대체경로로도 404 = 영구). a-fish-and-a-gift는 (1)(2)의 피해였을 뿐 원본 실존 → 별도 페이스 업로드로 완비.
+
+### 결정 (팀장 확정)
+1. **자체 뷰어 정예 코호트 = 39권**(원본 이미지 실존). 결손 15권은 이미지가 없어 렌더 불가이므로 **제외**(무텍스트 5권은 오디오·형광펜 대상도 아님). 본 ADR D3 "복사 범위"는 **정예 39권**에 적용된다(전 54권 아님).
+2. **복사 스크립트 기본 대상 = 39권**. `scripts/copy_bookdash_images.py`에 결손 15권 상수(`IMAGELESS_BOOKS`) 추가·기본 제외, `--include-imageless`로만 포함. 원본 재확보 재시도용 여지 보존.
+3. **완결성 게이트 기대치 = 정예 39권 기준(508 객체 = 38권×13 + whose-button-is-this 14)**. 미달 시 스크립트가 실패(exit 1)로 종료. **현재 39/39 완비 = 508/508 업로드 확인**(Supabase 실측).
+4. 이전 "704"(HTML 참조 기준)는 폐기. 실존 상한 = 정예 39권 = 508 이미지(+결손책 잔여 커버 10 = 버킷 총 518).
+
+### 불변
+D1(book-images 버킷)·D2(키 `book_dash-{UUID}/NN.jpg`·접두사)·D4(헤더)·D5(무장부 규칙 조립)는 유효. 본 Amendment는 **적용 범위를 39권으로 좁히고** 결손 사실을 박제할 뿐 스키마·키 규칙은 미변경.
+
+### 미결(별도 트랙)
+- 결손 15권 원본을 bookdash.org WP/CloudFront(ADR-0027 신간 경로)에서 확보 가능한지 정찰 → 가능 시 `--include-imageless` + 해당 경로 파서로 복사, 불가 시 영구 제외.
+- 결손 10권(표지만 존재)의 현행 프로덕션 iframe 렌더 품질(본문 이미지 죽은 링크) 점검.
