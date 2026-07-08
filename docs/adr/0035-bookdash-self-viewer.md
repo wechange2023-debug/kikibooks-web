@@ -1,7 +1,7 @@
 # ADR-0035 — Book Dash 자체 뷰어 전환 (iframe 폐기 · 이미지+텍스트 직접 렌더 · 자막 하이라이트)
 
 ## Status
-Proposed (2026-07-08) — 팀장 승인 후 Accepted. 본 문서는 설계 확정만 담고, 코드·DB·이미지 복사·적재는 후속 트랙에서 수행한다.
+Accepted (2026-07-08). 본 문서는 설계 확정만 담고, 코드·DB·이미지 복사·적재는 후속 트랙에서 수행한다.
 
 ## 관련
 - `docs/adr/0017-book-reader-architecture.md`(뷰어 아키텍처 — HtmlReader iframe 단일 경로 D1. 본 ADR이 book_dash 도서군에서 이를 대체).
