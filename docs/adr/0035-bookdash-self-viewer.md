@@ -93,3 +93,61 @@ marks의 `start/end` char-offset은 **Polly 입력 문자열 기준**이다. 뷰
 ADR-0027(Proposed)은 book_dash **신간 152권**을 **CloudFront `.jpg`** 이미지 시퀀스 + `asb_native` 매니페스트로 적재한다. 본 ADR은 **기존 54권 코호트**(= `source_platform='book_dash' AND content_type='html'` 전체. 이 중 오디오 생성 대상은 텍스트 있는 **44권** — 코호트 54 − 완료 5 − 무텍스트 5 = 44, §1 "44권 오디오"와 세는 대상이 다름. 근거: `docs/handoff/2026-07-07-tts-v1-html-44-audio.md` L7)의 **GH Pages `.jpg`** 이미지를 대상으로 한다.
 - **호환**: "외부 `.jpg` 이미지 시퀀스를 자체 뷰어로 그린다"는 골격이 동일. ADR-0027 D2의 parser `.jpg` 필터 확장(`asb-parser.ts:114`)이 GH Pages `.jpg`에도 적용 가능.
 - **차이**: (a)이미지 호스트(CloudFront vs GH Pages), (b)텍스트 층 — 신간은 "텍스트가 이미지에 인쇄"(텍스트 레이어 없음) 가정, **기존 54권 코호트 중 텍스트 있는 44권은 `<p>` 본문 텍스트 실재**(형광펜 대상 O. 무텍스트 면·무텍스트 책은 그림만 렌더 — D2). 본 ADR은 이 텍스트 층 + marks 정렬(D4)을 추가로 다룬다.
+
+---
+
+## Amendment #1 (2026-07-09) — 렌더링 방식 확정(A안)·이미지 전제 명시·면 모델 정정 [**Proposed** — 팀장 승인 대기]
+
+근거 정찰: `docs/recon/2026-07-09-viewer-architecture-evidence.md`(버킷 39권 전수 무텍스트 실측·좌표
+원천 부재 판정 C-PART), `docs/recon/2026-07-09-ghpages-and-viewer-decision.md`(원본 레이아웃·GH 결손
+재확인), `docs/recon/2026-07-09-recovery-dryrun-and-audio-alignment.md`(pNN 정렬 ALIGN 5/5).
+
+### A1 — 렌더링 방식 = A안: 무텍스트 이미지 + 우리가 렌더한 텍스트(형광펜 레이어)
+
+본문 D2가 미규정으로 남긴 텍스트 배치를 확정한다. **텍스트는 이미지 위에 겹치지 않고, 이미지
+아래 별도 영역에 흐름(flow)으로 렌더한다** — 원본 GH Pages 레이아웃과 동일(2026-07-09 실측:
+`<p><img …NN.jpg></p>` 다음에 `<p>본문</p>` 문단이 이어지는 순수 플로우 DOM. `web.css` 실측
+`#wrapper{max-width:40em;margin:auto}`, `p{margin:0;text-indent:1em}`, `img{max-width:100%;
+max-height:50vh}` — 콘텐츠에 position:absolute/overlay 0건, 텍스트 배경색 별도 지정 없음(흰 바탕)).
+"오버레이"는 이미지 픽셀 위 겹침이 아니라 **이미지와 분리된 우리 소유 텍스트 레이어**를 뜻한다.
+
+### A2 — 이미지 전제: 서비스 대상 이미지는 무텍스트다
+
+- 근거: 2026-07-09 `book-images` 버킷 **39권 전수 실측 — 무텍스트 39 / baked-in 0 / 애매 0**
+  (에지 밀도 지표 + 상위 3권 육안 교차).
+- 예외: WP(bookdash.org) 재확보분은 본문 텍스트가 이미지에 인쇄(baked-in)되어 **A안 부적합**.
+  결손 15권의 GH Pages 무텍스트 본문은 **0/15 생존**(2026-07-09 HEAD 재확인, 판정 I — 표지만
+  10권 200, 본문 01.jpg부터 전멸) → **결손 15권은 A안 코호트에 편입 불가**(처분: ADR-0036 Amd#2).
+
+### A3 — 하이라이트 데이터 소스: 좌표 미사용, marks(time+char offset)만 사용
+
+- 단어별 화면 좌표(bounding box)는 **사용하지 않는다**(원천 자체가 없음 — 원본은 좌표 없는 플로우
+  HTML + 래스터 JPEG, 2026-07-09 판정 C-PART).
+- 하이라이트 = 우리가 렌더한 `<span>`에 `out/audio/{slug}_p{N}*.marks.json`의
+  `time`(단어 **시작** ms) + `start/end`(char offset)를 매핑(D4 원칙 그대로).
+- **단어 종료 시각 필드는 marks에 없다**(Polly word mark 사양) — 종료 경계는 **다음 마크의 time**
+  에서 유도한다(마지막 단어는 오디오 길이로 폴백).
+
+### A4 — 면(face) 모델 정정: 2종이 아니라 3종(body / alt / empty)
+
+본문 D2의 "면 2종" 모델을 정정한다. 실제 taxonomy는 **body(본문 텍스트) / alt(img alt 폴백 텍스트)
+/ empty(둘 다 없음)** 3종이다(ADR-0036 §5-2). alt 면은 추출 단계에서 alt가 text로 병합되므로
+뷰어 입장에서는 body와 동일하게 텍스트·오디오·형광펜 대상이다.
+**empty 면은 오디오가 없는 것이 정상이다** — 뷰어는 이를 로딩 실패로 처리하지 말 것.
+근거 실측: a-beautiful-day p4·p12, a-house-for-mouse p10(empty 면 = mp3 정확히 부재, 그 외
+불일치 0건 — 2026-07-09 5권 3소스 대조 ALIGN).
+
+### A5 — "빈 면 = pNN gap" 전제 폐기
+
+본문 D2의 gap 서술("텍스트 없는 면에서 번호가 비고 재번호하지 않음")을 **일반 전제로 삼지 않는다**.
+ADR-0036 §5-1 판정을 인용한다: "현 배치의 오디오 pNN gap은 **추출 버전 drift 산물**로,
+a-beautiful-day(page 4·12)·a-house-for-mouse(page 10) 2권만 잔존… 진짜 '그림만 면'(본문·alt 모두
+없음)은 무텍스트 5권뿐". 번호 체계 자체(pNN = 실제 장면 번호, 재번호 없음)는 유효하며
+2026-07-09 ALIGN 5/5로 재검증됨 — 폐기되는 것은 "빈 면이 일반적으로 존재한다"는 가정이다.
+
+### A6 — 뷰어 전제 조건: has_audio가 아직 SELECT되지 않음
+
+`getBookById`의 SELECT(`lib/book/detail.ts:126`)에 **has_audio가 없음**(2026-07-09 원문 확인 —
+source_platform·source_id는 포함, has_audio만 부재). D6 구현(SELECT 추가 + 뷰어 전달)이
+본 Amendment 적용의 전제 조건이다. (DB에는 has_audio=true 44권이 팀장 SQL로 반영된 기록 —
+`scratchpad/step8_book_audio_insert.sql:639`.)

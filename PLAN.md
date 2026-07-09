@@ -131,7 +131,7 @@ Phase 1.5 (가변)      트랙A 콘텐츠 확장(GDL심화→StoryWeaver→Bloom
 
 | 콘텐츠 소스 | 권리 상태 | 권 수 | 기술 통합 방법 | 베타 포함 |
 |---|---|---|---|---|
-| Book Dash | CC BY 4.0 — 영리 사용 가능, 어트리뷰션 의무 | 211권+ | GitHub Pages CDN → iframe 임베드 | ✅ |
+| Book Dash | CC BY 4.0 — 영리 사용 가능, 어트리뷰션 의무 | 211권+ | ~~GitHub Pages CDN → iframe 임베드~~ (구 계획, ADR-0035로 대체) → **자체 뷰어**: book-images 창고 복사 이미지 + 별도 렌더 텍스트 + 오디오·자막 하이라이트 | ✅ |
 | Global Digital Library | CC BY 4.0 / CC BY-SA 4.0 / **CC BY 3.0** — 영리 사용 가능 (NC/ND는 트리거 차단). **GDL은 aggregator**: StoryWeaver 289·African Storybook 34·BookDash 33 등 집계 | 적격 약 937권 (842 적재 → slug 매핑 + cc-by-3-0 화이트리스트로 **~937 회복**) | REST API 동기화 → h5p-standalone | ✅ |
 | Beatrix Potter | 한국 Public Domain(1943 사망). 단 `Peter Rabbit™` 상표 미사용 | 23권 | 자체 e-book 제작 (HTML/ePub) | ✅ (Phase 1 후반) |
 | LibriVox | CC0(퍼블릭 도메인 낭독) — 자유 사용 | MP3 다수 | MP3 + Beatrix Potter 낭독 결합 | △ Phase 2 |
@@ -197,6 +197,15 @@ Phase 1.5 (가변)      트랙A 콘텐츠 확장(GDL심화→StoryWeaver→Bloom
 └─────────────────────────────────────────┘
 ```
 
+**Supabase Storage 버킷 운용 (2026-07 실측 기준 추가 — ADR-0035/0036/0034/0027)**
+
+| 버킷 | 용도 | 근거 |
+|---|---|---|
+| `book-covers` | 표지 이미지(마이그레이션 코호트) | ADR-0032 |
+| `book-images` | book_dash 자체 뷰어 본문 이미지(정예 39권, 508객체 + 잔여 커버 10) | ADR-0036 |
+| `book-audio` | TTS 오디오(mp3)+marks(json), `book_dash-{UUID}/pNN.mp3`(0-based)+cover | ADR-0034 |
+| `book-manifests` | asb_native 매니페스트 텍스트 | ADR-0027 Amd#2 |
+
 ### 데이터 흐름 — 핵심 3가지 시나리오
 
 **시나리오 A — 콘텐츠 자동 동기화 (매일 새벽)**
@@ -222,7 +231,7 @@ GitHub Actions
 ```
 GET /book/[id]/read
   └─ content_type에 따라 분기
-       HTML → iframe 임베드
+       HTML(book_dash) → 자체 뷰어(이미지+텍스트+오디오 하이라이트)   ※ 구 계획 "iframe 임베드"는 ADR-0035로 대체
        ePub  → epub.js
        H5P   → h5p-standalone
   └─ 페이지 넘김마다 reading_sessions 업데이트
@@ -257,7 +266,7 @@ GET /book/[id]/read
 | 프레임워크 | **Next.js 14 (App Router) + TypeScript** | React 표준, Vercel 최적, Server Components로 SEO·성능 동시 확보 |
 | 스타일링 | **Tailwind CSS** | 빠른 개발, Claude Design 산출물과 호환 |
 | UI 컴포넌트 | **shadcn/ui + Radix UI** | 무료, 커스터마이즈 가능, 접근성 보장 |
-| 책 뷰어 | **epub.js + iframe + h5p-standalone** | HTML(Book Dash) → iframe, ePub → epub.js, H5P(GDL) → h5p-standalone |
+| 책 뷰어 | **자체 뷰어(Book Dash) + epub.js + h5p-standalone** | ~~HTML(Book Dash) → iframe~~ (구 계획, ADR-0035로 대체) → 자체 뷰어(A안: 무텍스트 이미지 + 렌더 텍스트 + marks 하이라이트), ePub → epub.js, H5P(GDL) → h5p-standalone |
 | 상태 관리 | **Zustand + React Query** | 글로벌 상태 + 서버 상태 분리 |
 | 폼 처리 | **React Hook Form + Zod** | 표준 검증 조합 |
 | 아이콘 | **Lucide React** | 둥근 outline 스타일, shadcn과 호환 |
@@ -479,7 +488,7 @@ app/page.tsx를 구현해줘:
 **책 뷰어 — content_type별 분기**
 
 ```
-content_type === 'html'  → HtmlReader (iframe + sandbox)
+content_type === 'html'  → 자체 뷰어(book_dash, ADR-0035 A안)   ※ 구 HtmlReader(iframe + sandbox)는 전환 완료 후 폐기 예정
 content_type === 'epub'  → EpubReader (epub.js)
 content_type === 'h5p'   → H5pReader (h5p-standalone)
 
@@ -509,7 +518,7 @@ content_type === 'h5p'   → H5pReader (h5p-standalone)
 - [ ] 첫 로그인 → 온보딩 → 자녀 등록 → /home
 - [ ] 가입~완독까지 막힘 없이 진행 가능
 - [ ] **책 상세 페이지 어트리뷰션 박스 100% 표시** (CC BY 4.0 법적 의무)
-- [ ] Book Dash HTML iframe 정상, GDL H5P 정상
+- [ ] Book Dash 자체 뷰어 정상(~~HTML iframe~~ 구 계획, ADR-0035로 대체), GDL H5P 정상
 - [ ] 완독 시 포인트 +50, 첫 배지 부여
 - [ ] 로그아웃 → 랜딩으로 복귀
 
@@ -620,7 +629,7 @@ content_type === 'h5p'   → H5pReader (h5p-standalone)
 | AI/TTS 비용 폭주 | 중 | 중 | **베타 월 비용 상한** + **배치 사전 생성**(실시간 TTS 금지) + 토큰·문자 상한 (ADR-0023 §2.8) |
 | 큐레이션 표본 검수 누락 | 중 | 중 | 사용자 **신고 + admin 즉시 차단**(`is_active=false`)·블랙리스트 안전망으로 표본 검수 공백 보완 |
 | TTS 2차 저작물 라이선스 | 큼 | 낮 | TTS 음성=원본 derivative: **CC BY-SA 원본 음성은 BY-SA 승계**, BY/BY-3.0 음성은 어트리뷰션 의무, 재생 UI에 원작 표기 (ADR-0023 §2.6) |
-| Book Dash HTML iframe 호환성 | 중 | 중 | GitHub Pages는 X-Frame-Options 미설정 → 대부분 OK. 안 되면 자체 미러로 복사 |
+| ~~Book Dash HTML iframe 호환성~~ (구 계획, ADR-0035로 대체 — 자체 뷰어 전환으로 iframe 위험 소멸) | ~~중~~ | ~~중~~ | 이미지는 book-images 버킷 창고 복사(ADR-0036)로 외부 종속 제거 |
 | GDL API 다운 | 작음 | 낮 | 1주 단위 캐시 유지. 다운 시에도 기존 데이터로 서비스 가능 |
 | Supabase 무료 한도 초과 | 중 | 낮 | 베타 100명까지 충분. 1,000명 넘으면 Pro $25/월 |
 | OAuth 설정 실패 | 중 (가입 차단) | 낮 | 이메일 가입 우선 살리고, OAuth는 나중에 추가 |

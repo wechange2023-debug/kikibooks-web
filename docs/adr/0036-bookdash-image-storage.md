@@ -134,3 +134,43 @@ D1(book-images 버킷)·D2(키 `book_dash-{UUID}/NN.jpg`·접두사)·D4(헤더)
 ### 미결(별도 트랙)
 - 결손 15권 원본을 bookdash.org WP/CloudFront(ADR-0027 신간 경로)에서 확보 가능한지 정찰 → 가능 시 `--include-imageless` + 해당 경로 파서로 복사, 불가 시 영구 제외.
 - 결손 10권(표지만 존재)의 현행 프로덕션 iframe 렌더 품질(본문 이미지 죽은 링크) 점검.
+
+---
+
+## 8. Amendment #2 (2026-07-09) — cover-only 폴더 10개 박제 · 결손 15권 지위 확정 [**Proposed** — 팀장 승인 대기]
+
+### 8.1 cover-only 폴더 10개 (버킷 실측, 2026-07-09)
+
+`book-images` 버킷의 `book_dash-*` 프리픽스는 총 **49개** = 본문 보유 39권(508객체) +
+**`cover.jpg` 1개만 있는 폴더 10개**. Amd#1 §129의 "결손책 잔여 커버 10(버킷 총 518)"의 실체를
+UUID 단위로 박제한다. 10개 전부 **결손 15권 중 "표지만 존재" 10권**(Amd#1 §119 첫째 그룹)과
+정확히 일치한다:
+
+| UUID (book_dash- 접두사 생략) | slug |
+|---|---|
+| 9c9eb7e0-fe46-11e5-86aa-5e5517507c66 | mrs-penguins-palace |
+| 9c9ebdc6-fe46-11e5-86aa-5e5517507c66 | what-is-it |
+| 9c9ec05a-fe46-11e5-86aa-5e5517507c66 | the-elephant-in-the-room |
+| 9c9f41f6-fe46-11e5-86aa-5e5517507c66 | shongololos-shoes |
+| 9c9f450c-fe46-11e5-86aa-5e5517507c66 | springloaded |
+| 9c9f471e-fe46-11e5-86aa-5e5517507c66 | when-i-grow-up |
+| 9c9f485e-fe46-11e5-86aa-5e5517507c66 | who-is-our-friend |
+| 9c9f4976-fe46-11e5-86aa-5e5517507c66 | hippo-wants-to-dance |
+| 9c9f4da4-fe46-11e5-86aa-5e5517507c66 | little-sock |
+| 9c9f5790-fe46-11e5-86aa-5e5517507c66 | the-best-thing-ever |
+
+처분 **제안**(결정 아님 — 팀장 판단): (i) 유지 — 표지는 유효 자산이며 향후 재확보 시 폴더 재사용,
+저장비 무시 가능 / (ii) 정리 — 뷰어 무장부 규칙 조립(D5)이 "폴더 존재 = 본문 존재"로 오인할
+위험 예방. 어느 쪽이든 D5 조립 로직은 **본문 01.jpg 존재 기준**으로 판별해야 안전.
+
+### 8.2 결손 15권의 지위 (2026-07-09 재확인 — 판정 I)
+
+- GH Pages HEAD 재확인(대조군 a-tiny-seed cover+01~12 전부 200 PASS 후 15권 실행):
+  **본문 01.jpg부터 15권 전멸(0/15)**, 표지만 10권 200(위 표와 동일 집합), 5권은 cover도 404.
+  Amd#1 실측(2026-07-08)과 완전 재현 일치.
+- 한편 bookdash.org **WP에는 15/15 원본 생존**(2026-07-09 전수 드라이런,
+  `docs/recon/2026-07-09-recovery-dryrun-and-audio-alignment.md`) — 단 WP판은 본문 텍스트가
+  이미지에 인쇄(baked-in)되어 **ADR-0035 Amd#1 A2(무텍스트 전제)에 부적합**.
+- **지위**: 결손 15권은 (a) 무텍스트 소스 부재로 자체 뷰어(A안) 코호트 편입 불가,
+  (b) WP baked-in 원본은 생존하므로 "영구 소실"은 아님. 편입하려면 별도 결정(baked-in 수용
+  또는 다른 무텍스트 소스 발굴)이 필요하다 — 본 Amendment는 지위 기록만 하고 결정하지 않는다.
