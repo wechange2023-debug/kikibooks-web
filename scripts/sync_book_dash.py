@@ -170,7 +170,7 @@ def build_payload(slug: str, entry: dict[str, Any]) -> Optional[dict[str, Any]]:
         "illustrator": None,  # Book Dash는 creator 단일 필드 (ADR-0005, attribution.py)
         "original_url": f"{ORG_BASE}/{slug}/",
         "attribution_text": attribution_text,
-        "is_active": True,
+        # is_active는 cron이 관리하지 않는다 — 신규 행은 DB DEFAULT TRUE, 기존 행 보존 (ADR-0037 D1·D2)
     }
 
 

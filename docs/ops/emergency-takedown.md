@@ -9,6 +9,13 @@
 > ⚠️ **DB 직접 쓰기는 팀장만** — 워커는 DB write 불가. 아래 SQL은 팀장이 Supabase Dashboard
 > → SQL Editor에서 직접 실행한다(워커는 텍스트만 제공).
 
+> ⚠️ 이력 (ADR-0037, 2026-07-09)
+> 2026-07-09 이전에는 gdl·book_dash sync cron이 upsert 시 is_active를 TRUE로 원복했다.
+> 이 절차로 내린 책이 다음 cron(gdl 매일 03:00 UTC / book_dash 주간 일 02:00 UTC)에
+> 자동 부활했다. ADR-0037로 cron payload에서 is_active를 제거해 해결했다.
+> 2026-07-09 실측 기준 gdl 비활성 0건 — 실제 피해 사례는 확인되지 않았다.
+> lib/shared/blacklist.ts는 이중 방어로 유지되므로 제거하지 말 것.
+
 ---
 
 ## 1. 언제 쓰는가
@@ -76,6 +83,19 @@ UPDATE books SET is_active = false WHERE id = '<BOOK_ID>';
 
 캐시 비우기를 생략하면 최대 1시간 뒤 시간 기반 revalidate로 결국 반영되나, **긴급 시에는 반드시
 2단계를 수행**한다(Hard Rule 3·4 — 즉시 차단 규율).
+
+## 복구 (내린 책을 다시 올릴 때)
+
+ADR-0037 이후 cron은 is_active를 자동 복구하지 않는다. 사람이 명시적으로 되돌린다.
+
+```sql
+UPDATE books SET is_active = TRUE
+WHERE source_platform = '<platform>' AND source_id = '<source_id>';
+```
+
+복구 전 확인: 내림 사유가 해소됐는가 / license가 Hard Rule 3을 만족하는가 /
+blacklist.ts에 해당 항목이 남아 있지 않은가(있으면 코드 차단이 우선한다).
+복구 후에도 캐시 즉시 반영이 필요하면 위 2단계(캐시 비우기)를 동일하게 수행한다.
 
 ---
 

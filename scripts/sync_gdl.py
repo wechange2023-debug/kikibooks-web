@@ -337,7 +337,7 @@ def build_payload(book: dict[str, Any]) -> tuple[Optional[dict[str, Any]], bool]
         "illustrator": None,
         "original_url": post_link,
         "attribution_text": attribution_text,
-        "is_active": True,
+        # is_active는 cron이 관리하지 않는다 — 신규 행은 DB DEFAULT TRUE, 기존 행 보존 (ADR-0037 D1·D2)
     }
     return payload, used_fallback
 
