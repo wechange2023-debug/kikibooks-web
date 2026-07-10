@@ -122,9 +122,9 @@ def harvest_one(slug, cache_dir):
         nsubs, nfiles, nerr = browse(slug, nt[0])
         if not nerr:
             nt_count = len(nfiles)
-    # 영어 폴더 → PDF
+    # 영어 폴더 → PDF 후보 목록(복수 가능 — 본문 PDF 검증은 다운로드 후 페이지 수로)
     eng = [s for s in subs if ENG_RE.search(s.rsplit("/", 1)[-1])]
-    pdf_link, eng_used = None, None
+    pdf_candidates, eng_used = [], None
     for sub in eng + [None]:
         if sub is None:
             files = direct_files
@@ -135,28 +135,43 @@ def harvest_one(slug, cache_dir):
         pdfs = [u for u in (files or []) if u.lower().endswith(".pdf")]
         if pdfs:
             if len(pdfs) > 1:
-                pref = [u for u in pdfs if re.search(r"(_|-)en", u.lower()) or slug in u.lower()]
-                pdfs = pref or pdfs
-                log(f"  PDF 복수({len(pdfs)}건) — 첫 항목 채택")
-            pdf_link = pdfs[0]
+                # 파일명 힌트로 정렬만 하고 전 후보 유지 — 1페이지짜리(포스터 등)를
+                # 골랐던 사고(how-about-you·why-is-nita) 재발 방지: 페이지 수로 최종 검증
+                pdfs.sort(key=lambda u: (0 if re.search(r"(_|-)en|ebook", u.lower()) else 1, len(u)))
+                log(f"  PDF 복수({len(pdfs)}건) — 페이지 수 검증으로 선택")
+            pdf_candidates = pdfs
             eng_used = sub or ebook
             break
-    if pdf_link is None:
+    if not pdf_candidates:
         return None, f"pdf_missing(ebook={ebook}, 하위={subs})"
     if eng_used and eng_used.rsplit("/", 1)[-1] not in KNOWN_ENG and eng_used != ebook:
         log(f"  ★ 새 영어 폴더 변형: {eng_used}")
-    # PDF 다운로드 (권당 1회 — 캐시 재사용)
-    dest = cache_dir / f"{slug}.pdf"
-    if not dest.exists():
-        r = get_retry(BASE + pdf_link, timeout=300)
-        if r.status_code != 200:
-            return None, f"pdf_download:HTTP {r.status_code}"
-        dest.write_bytes(r.content)
-    data = dest.read_bytes()
-    if data[:5] != b"%PDF-":
-        return None, f"pdf_invalid(매직 {data[:5]!r})"
+    # PDF 다운로드 (후보별 1회 — 캐시 재사용). 페이지 수 5 미만이면 본문 PDF가
+    # 아닌 것(포스터·표지 단면)으로 보고 다음 후보를 시도한다.
+    pdf_link = reader = None
+    rejected = []
+    for ci, cand in enumerate(pdf_candidates):
+        dest = cache_dir / (f"{slug}.pdf" if ci == 0 else f"{slug}.cand{ci}.pdf")
+        if not dest.exists():
+            r = get_retry(BASE + cand, timeout=300)
+            if r.status_code != 200:
+                rejected.append((cand, f"HTTP {r.status_code}"))
+                continue
+            dest.write_bytes(r.content)
+        data = dest.read_bytes()
+        if data[:5] != b"%PDF-":
+            rejected.append((cand, f"매직 {data[:5]!r}"))
+            continue
+        rd = PdfReader(str(dest))
+        if len(rd.pages) < 5 and ci + 1 < len(pdf_candidates):
+            rejected.append((cand, f"{len(rd.pages)}페이지 — 본문 PDF 아님 추정"))
+            log(f"  후보 기각({len(rd.pages)}p): {cand.rsplit('/', 1)[-1]}")
+            continue
+        pdf_link, reader = cand, rd
+        break
+    if reader is None:
+        return None, f"pdf_invalid(전 후보 기각: {rejected})"
     # 텍스트 추출 + 매핑 재판정
-    reader = PdfReader(str(dest))
     texts = [norm_ws(p.extract_text() or "") for p in reader.pages]
     n_pages = len(texts)
     offset, deviant = None, None
