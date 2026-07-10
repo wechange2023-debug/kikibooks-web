@@ -1,0 +1,1623 @@
+{
+ "slug": "hugs-in-the-city",
+ "role": "no-text-4",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "hugs-in-the-city_english_20161230_cover.jpg",
+   "reason": "cover"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page4.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page4.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "Today, I hugged most of the cats in town!",
+   "char_count": 41,
+   "word_count": 9,
+   "mean_conf": 94.2,
+   "words": [
+    {
+     "t": "Today,",
+     "x": 683,
+     "y": 67,
+     "w": 54,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "I",
+     "x": 744,
+     "y": 68,
+     "w": 3,
+     "h": 15,
+     "conf": 75.1
+    },
+    {
+     "t": "hugged",
+     "x": 754,
+     "y": 67,
+     "w": 61,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "most",
+     "x": 821,
+     "y": 71,
+     "w": 40,
+     "h": 12,
+     "conf": 96.6
+    },
+    {
+     "t": "of",
+     "x": 865,
+     "y": 67,
+     "w": 17,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 886,
+     "y": 67,
+     "w": 26,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "cats",
+     "x": 917,
+     "y": 71,
+     "w": 32,
+     "h": 12,
+     "conf": 96.5
+    },
+    {
+     "t": "in",
+     "x": 954,
+     "y": 70,
+     "w": 14,
+     "h": 13,
+     "conf": 96.8
+    },
+    {
+     "t": "town!",
+     "x": 973,
+     "y": 68,
+     "w": 44,
+     "h": 15,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page5.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page5.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "I hugged the neighbor's cat, Ben.\nBen said, \"Meow?\"\nalley, MEOW?",
+   "char_count": 64,
+   "word_count": 11,
+   "mean_conf": 84.2,
+   "words": [
+    {
+     "t": "I",
+     "x": 151,
+     "y": 91,
+     "w": 3,
+     "h": 15,
+     "conf": 55.1
+    },
+    {
+     "t": "hugged",
+     "x": 161,
+     "y": 90,
+     "w": 61,
+     "h": 20,
+     "conf": 95.0
+    },
+    {
+     "t": "the",
+     "x": 228,
+     "y": 90,
+     "w": 26,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "neighbor's",
+     "x": 259,
+     "y": 90,
+     "w": 83,
+     "h": 20,
+     "conf": 89.8
+    },
+    {
+     "t": "cat,",
+     "x": 347,
+     "y": 94,
+     "w": 28,
+     "h": 14,
+     "conf": 96.7
+    },
+    {
+     "t": "Ben.",
+     "x": 383,
+     "y": 91,
+     "w": 33,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "Ben",
+     "x": 777,
+     "y": 228,
+     "w": 29,
+     "h": 15,
+     "conf": 96.7
+    },
+    {
+     "t": "said,",
+     "x": 812,
+     "y": 227,
+     "w": 37,
+     "h": 18,
+     "conf": 96.2
+    },
+    {
+     "t": "\"Meow?\"",
+     "x": 855,
+     "y": 228,
+     "w": 70,
+     "h": 15,
+     "conf": 72.7
+    },
+    {
+     "t": "alley,",
+     "x": 289,
+     "y": 248,
+     "w": 306,
+     "h": 73,
+     "conf": 38.7
+    },
+    {
+     "t": "MEOW?",
+     "x": 742,
+     "y": 259,
+     "w": 220,
+     "h": 49,
+     "conf": 91.2
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page6.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page6.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "I hugged the old cat who lives\nunder the park bench.\nHe squiggled and he wriggled.",
+   "char_count": 82,
+   "word_count": 16,
+   "mean_conf": 77.2,
+   "words": [
+    {
+     "t": "I",
+     "x": 731,
+     "y": 252,
+     "w": 4,
+     "h": 15,
+     "conf": 0.0
+    },
+    {
+     "t": "hugged",
+     "x": 741,
+     "y": 251,
+     "w": 62,
+     "h": 20,
+     "conf": 0.0
+    },
+    {
+     "t": "the",
+     "x": 808,
+     "y": 251,
+     "w": 26,
+     "h": 16,
+     "conf": 92.7
+    },
+    {
+     "t": "old",
+     "x": 839,
+     "y": 251,
+     "w": 25,
+     "h": 16,
+     "conf": 95.9
+    },
+    {
+     "t": "cat",
+     "x": 869,
+     "y": 255,
+     "w": 26,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "who",
+     "x": 898,
+     "y": 251,
+     "w": 34,
+     "h": 16,
+     "conf": 88.5
+    },
+    {
+     "t": "lives",
+     "x": 937,
+     "y": 251,
+     "w": 34,
+     "h": 16,
+     "conf": 88.5
+    },
+    {
+     "t": "under",
+     "x": 761,
+     "y": 275,
+     "w": 48,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 813,
+     "y": 275,
+     "w": 26,
+     "h": 16,
+     "conf": 97.0
+    },
+    {
+     "t": "park",
+     "x": 844,
+     "y": 275,
+     "w": 37,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "bench.",
+     "x": 886,
+     "y": 275,
+     "w": 53,
+     "h": 16,
+     "conf": 96.5
+    },
+    {
+     "t": "He",
+     "x": 727,
+     "y": 300,
+     "w": 23,
+     "h": 15,
+     "conf": 93.3
+    },
+    {
+     "t": "squiggled",
+     "x": 755,
+     "y": 299,
+     "w": 78,
+     "h": 20,
+     "conf": 59.1
+    },
+    {
+     "t": "and",
+     "x": 839,
+     "y": 299,
+     "w": 31,
+     "h": 16,
+     "conf": 95.4
+    },
+    {
+     "t": "he",
+     "x": 876,
+     "y": 299,
+     "w": 19,
+     "h": 16,
+     "conf": 93.1
+    },
+    {
+     "t": "wriggled.",
+     "x": 900,
+     "y": 299,
+     "w": 74,
+     "h": 20,
+     "conf": 45.7
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page7.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page7.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "I hugged Mrs Lilly's He licked my face.\ntubby, ginger cat. “Slurp, slurp, slurp.”\nSLURP!",
+   "char_count": 88,
+   "word_count": 15,
+   "mean_conf": 87.5,
+   "words": [
+    {
+     "t": "I",
+     "x": 292,
+     "y": 264,
+     "w": 3,
+     "h": 15,
+     "conf": 62.8
+    },
+    {
+     "t": "hugged",
+     "x": 302,
+     "y": 263,
+     "w": 62,
+     "h": 20,
+     "conf": 62.8
+    },
+    {
+     "t": "Mrs",
+     "x": 371,
+     "y": 264,
+     "w": 29,
+     "h": 15,
+     "conf": 78.3
+    },
+    {
+     "t": "Lilly's",
+     "x": 406,
+     "y": 263,
+     "w": 43,
+     "h": 20,
+     "conf": 68.0
+    },
+    {
+     "t": "He",
+     "x": 646,
+     "y": 262,
+     "w": 23,
+     "h": 15,
+     "conf": 95.8
+    },
+    {
+     "t": "licked",
+     "x": 675,
+     "y": 261,
+     "w": 45,
+     "h": 16,
+     "conf": 95.8
+    },
+    {
+     "t": "my",
+     "x": 726,
+     "y": 268,
+     "w": 25,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "face.",
+     "x": 755,
+     "y": 261,
+     "w": 39,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "tubby,",
+     "x": 299,
+     "y": 287,
+     "w": 51,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "ginger",
+     "x": 356,
+     "y": 290,
+     "w": 52,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "cat.",
+     "x": 413,
+     "y": 291,
+     "w": 28,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "“Slurp,",
+     "x": 643,
+     "y": 285,
+     "w": 53,
+     "h": 20,
+     "conf": 79.4
+    },
+    {
+     "t": "slurp,",
+     "x": 702,
+     "y": 285,
+     "w": 43,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "slurp.”",
+     "x": 751,
+     "y": 285,
+     "w": 46,
+     "h": 20,
+     "conf": 92.6
+    },
+    {
+     "t": "SLURP!",
+     "x": 619,
+     "y": 372,
+     "w": 198,
+     "h": 49,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page8.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page8.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "I hugged the cat who eats outside\n‘ the fish and chips shop. e\ne e He went,\nOM, —\nNOM,\nNOM. —",
+   "char_count": 93,
+   "word_count": 23,
+   "mean_conf": 76.0,
+   "words": [
+    {
+     "t": "I",
+     "x": 148,
+     "y": 151,
+     "w": 3,
+     "h": 15,
+     "conf": 72.3
+    },
+    {
+     "t": "hugged",
+     "x": 158,
+     "y": 150,
+     "w": 61,
+     "h": 20,
+     "conf": 86.1
+    },
+    {
+     "t": "the",
+     "x": 225,
+     "y": 150,
+     "w": 26,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "cat",
+     "x": 256,
+     "y": 154,
+     "w": 25,
+     "h": 12,
+     "conf": 95.2
+    },
+    {
+     "t": "who",
+     "x": 285,
+     "y": 150,
+     "w": 34,
+     "h": 16,
+     "conf": 95.2
+    },
+    {
+     "t": "eats",
+     "x": 323,
+     "y": 154,
+     "w": 34,
+     "h": 12,
+     "conf": 97.0
+    },
+    {
+     "t": "outside",
+     "x": 362,
+     "y": 150,
+     "w": 58,
+     "h": 16,
+     "conf": 93.9
+    },
+    {
+     "t": "‘",
+     "x": 84,
+     "y": 184,
+     "w": 10,
+     "h": 10,
+     "conf": 7.3
+    },
+    {
+     "t": "the",
+     "x": 188,
+     "y": 174,
+     "w": 26,
+     "h": 16,
+     "conf": 96.7
+    },
+    {
+     "t": "fish",
+     "x": 219,
+     "y": 174,
+     "w": 29,
+     "h": 16,
+     "conf": 94.0
+    },
+    {
+     "t": "and",
+     "x": 253,
+     "y": 174,
+     "w": 31,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "chips",
+     "x": 290,
+     "y": 174,
+     "w": 41,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "shop.",
+     "x": 336,
+     "y": 174,
+     "w": 42,
+     "h": 20,
+     "conf": 93.7
+    },
+    {
+     "t": "e",
+     "x": 486,
+     "y": 181,
+     "w": 15,
+     "h": 16,
+     "conf": 81.8
+    },
+    {
+     "t": "e",
+     "x": 57,
+     "y": 227,
+     "w": 15,
+     "h": 15,
+     "conf": 77.9
+    },
+    {
+     "t": "e",
+     "x": 145,
+     "y": 220,
+     "w": 16,
+     "h": 16,
+     "conf": 74.7
+    },
+    {
+     "t": "He",
+     "x": 248,
+     "y": 223,
+     "w": 24,
+     "h": 15,
+     "conf": 96.6
+    },
+    {
+     "t": "went,",
+     "x": 276,
+     "y": 226,
+     "w": 43,
+     "h": 14,
+     "conf": 96.3
+    },
+    {
+     "t": "OM,",
+     "x": 224,
+     "y": 249,
+     "w": 113,
+     "h": 55,
+     "conf": 76.1
+    },
+    {
+     "t": "—",
+     "x": 441,
+     "y": 257,
+     "w": 10,
+     "h": 10,
+     "conf": 26.0
+    },
+    {
+     "t": "NOM,",
+     "x": 202,
+     "y": 309,
+     "w": 160,
+     "h": 55,
+     "conf": 96.5
+    },
+    {
+     "t": "NOM.",
+     "x": 54,
+     "y": 366,
+     "w": 309,
+     "h": 52,
+     "conf": 0.0
+    },
+    {
+     "t": "—",
+     "x": 438,
+     "y": 387,
+     "w": 16,
+     "h": 16,
+     "conf": 0.0
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page9.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page9.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "leven hugged\nthe grumpy cat\nwho doesn't like hugs!\nHe yowled and yowled!\nYOWL!",
+   "char_count": 78,
+   "word_count": 14,
+   "mean_conf": 92.7,
+   "words": [
+    {
+     "t": "leven",
+     "x": 83,
+     "y": 89,
+     "w": 46,
+     "h": 15,
+     "conf": 83.9
+    },
+    {
+     "t": "hugged",
+     "x": 135,
+     "y": 88,
+     "w": 61,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 77,
+     "y": 112,
+     "w": 26,
+     "h": 16,
+     "conf": 96.3
+    },
+    {
+     "t": "grumpy",
+     "x": 108,
+     "y": 119,
+     "w": 65,
+     "h": 13,
+     "conf": 96.7
+    },
+    {
+     "t": "cat",
+     "x": 177,
+     "y": 116,
+     "w": 25,
+     "h": 12,
+     "conf": 96.6
+    },
+    {
+     "t": "who",
+     "x": 52,
+     "y": 136,
+     "w": 33,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "doesn't",
+     "x": 90,
+     "y": 136,
+     "w": 58,
+     "h": 16,
+     "conf": 89.5
+    },
+    {
+     "t": "like",
+     "x": 153,
+     "y": 136,
+     "w": 25,
+     "h": 16,
+     "conf": 92.8
+    },
+    {
+     "t": "hugs!",
+     "x": 184,
+     "y": 136,
+     "w": 42,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "He",
+     "x": 857,
+     "y": 255,
+     "w": 22,
+     "h": 15,
+     "conf": 93.3
+    },
+    {
+     "t": "yowled",
+     "x": 884,
+     "y": 254,
+     "w": 56,
+     "h": 20,
+     "conf": 93.2
+    },
+    {
+     "t": "and",
+     "x": 946,
+     "y": 254,
+     "w": 31,
+     "h": 16,
+     "conf": 92.2
+    },
+    {
+     "t": "yowled!",
+     "x": 982,
+     "y": 254,
+     "w": 62,
+     "h": 20,
+     "conf": 83.5
+    },
+    {
+     "t": "YOWL!",
+     "x": 853,
+     "y": 322,
+     "w": 190,
+     "h": 50,
+     "conf": 90.8
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page10.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page10.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "2 Ron!\non Z I hugged an old cat. oS\nfey an Riis =a\n“ A\nI hugged a short cat. B\nI hugged a young cat.",
+   "char_count": 100,
+   "word_count": 27,
+   "mean_conf": 57.3,
+   "words": [
+    {
+     "t": "2",
+     "x": 350,
+     "y": 96,
+     "w": 13,
+     "h": 7,
+     "conf": 28.0
+    },
+    {
+     "t": "Ron!",
+     "x": 918,
+     "y": 88,
+     "w": 24,
+     "h": 18,
+     "conf": 30.3
+    },
+    {
+     "t": "on",
+     "x": 84,
+     "y": 110,
+     "w": 161,
+     "h": 20,
+     "conf": 0.0
+    },
+    {
+     "t": "Z",
+     "x": 362,
+     "y": 104,
+     "w": 21,
+     "h": 45,
+     "conf": 21.1
+    },
+    {
+     "t": "I",
+     "x": 689,
+     "y": 97,
+     "w": 3,
+     "h": 15,
+     "conf": 0.0
+    },
+    {
+     "t": "hugged",
+     "x": 699,
+     "y": 96,
+     "w": 62,
+     "h": 20,
+     "conf": 0.0
+    },
+    {
+     "t": "an",
+     "x": 767,
+     "y": 103,
+     "w": 20,
+     "h": 9,
+     "conf": 96.7
+    },
+    {
+     "t": "old",
+     "x": 792,
+     "y": 96,
+     "w": 25,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "cat.",
+     "x": 823,
+     "y": 100,
+     "w": 28,
+     "h": 12,
+     "conf": 94.1
+    },
+    {
+     "t": "oS",
+     "x": 925,
+     "y": 101,
+     "w": 37,
+     "h": 13,
+     "conf": 6.1
+    },
+    {
+     "t": "fey",
+     "x": 168,
+     "y": 293,
+     "w": 22,
+     "h": 29,
+     "conf": 54.5
+    },
+    {
+     "t": "an",
+     "x": 338,
+     "y": 296,
+     "w": 56,
+     "h": 17,
+     "conf": 70.1
+    },
+    {
+     "t": "Riis",
+     "x": 709,
+     "y": 304,
+     "w": 52,
+     "h": 9,
+     "conf": 40.7
+    },
+    {
+     "t": "=a",
+     "x": 891,
+     "y": 300,
+     "w": 64,
+     "h": 11,
+     "conf": 5.6
+    },
+    {
+     "t": "“",
+     "x": 114,
+     "y": 349,
+     "w": 24,
+     "h": 17,
+     "conf": 0.0
+    },
+    {
+     "t": "A",
+     "x": 711,
+     "y": 330,
+     "w": 33,
+     "h": 48,
+     "conf": 88.0
+    },
+    {
+     "t": "I",
+     "x": 326,
+     "y": 419,
+     "w": 4,
+     "h": 15,
+     "conf": 60.9
+    },
+    {
+     "t": "hugged",
+     "x": 336,
+     "y": 418,
+     "w": 62,
+     "h": 20,
+     "conf": 83.9
+    },
+    {
+     "t": "a",
+     "x": 403,
+     "y": 425,
+     "w": 10,
+     "h": 9,
+     "conf": 93.0
+    },
+    {
+     "t": "short",
+     "x": 419,
+     "y": 418,
+     "w": 40,
+     "h": 16,
+     "conf": 93.0
+    },
+    {
+     "t": "cat.",
+     "x": 464,
+     "y": 422,
+     "w": 28,
+     "h": 12,
+     "conf": 94.9
+    },
+    {
+     "t": "B",
+     "x": 697,
+     "y": 385,
+     "w": 39,
+     "h": 53,
+     "conf": 53.7
+    },
+    {
+     "t": "I",
+     "x": 850,
+     "y": 450,
+     "w": 3,
+     "h": 15,
+     "conf": 61.9
+    },
+    {
+     "t": "hugged",
+     "x": 860,
+     "y": 449,
+     "w": 62,
+     "h": 20,
+     "conf": 83.0
+    },
+    {
+     "t": "a",
+     "x": 927,
+     "y": 456,
+     "w": 10,
+     "h": 9,
+     "conf": 96.8
+    },
+    {
+     "t": "young",
+     "x": 942,
+     "y": 456,
+     "w": 51,
+     "h": 13,
+     "conf": 96.7
+    },
+    {
+     "t": "cat.",
+     "x": 999,
+     "y": 453,
+     "w": 28,
+     "h": 12,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page11.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page11.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "I hugged a Mommy cat, and every kitten she had.",
+   "char_count": 47,
+   "word_count": 10,
+   "mean_conf": 91.2,
+   "words": [
+    {
+     "t": "I",
+     "x": 314,
+     "y": 91,
+     "w": 3,
+     "h": 15,
+     "conf": 67.5
+    },
+    {
+     "t": "hugged",
+     "x": 324,
+     "y": 90,
+     "w": 61,
+     "h": 20,
+     "conf": 91.7
+    },
+    {
+     "t": "a",
+     "x": 391,
+     "y": 97,
+     "w": 10,
+     "h": 9,
+     "conf": 96.4
+    },
+    {
+     "t": "Mommy",
+     "x": 407,
+     "y": 91,
+     "w": 69,
+     "h": 19,
+     "conf": 89.4
+    },
+    {
+     "t": "cat,",
+     "x": 481,
+     "y": 94,
+     "w": 28,
+     "h": 14,
+     "conf": 89.4
+    },
+    {
+     "t": "and",
+     "x": 627,
+     "y": 90,
+     "w": 32,
+     "h": 16,
+     "conf": 94.7
+    },
+    {
+     "t": "every",
+     "x": 664,
+     "y": 97,
+     "w": 44,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "kitten",
+     "x": 713,
+     "y": 90,
+     "w": 44,
+     "h": 16,
+     "conf": 94.7
+    },
+    {
+     "t": "she",
+     "x": 763,
+     "y": 90,
+     "w": 26,
+     "h": 16,
+     "conf": 94.7
+    },
+    {
+     "t": "had.",
+     "x": 795,
+     "y": 90,
+     "w": 35,
+     "h": 16,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page12.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page12.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "I tried to hug the\nbig cats at the zoo,",
+   "char_count": 39,
+   "word_count": 10,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "I",
+     "x": 66,
+     "y": 189,
+     "w": 3,
+     "h": 15,
+     "conf": 92.5
+    },
+    {
+     "t": "tried",
+     "x": 75,
+     "y": 188,
+     "w": 37,
+     "h": 16,
+     "conf": 93.8
+    },
+    {
+     "t": "to",
+     "x": 118,
+     "y": 192,
+     "w": 15,
+     "h": 12,
+     "conf": 95.7
+    },
+    {
+     "t": "hug",
+     "x": 139,
+     "y": 188,
+     "w": 30,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 175,
+     "y": 188,
+     "w": 25,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "big",
+     "x": 56,
+     "y": 212,
+     "w": 25,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "cats",
+     "x": 87,
+     "y": 216,
+     "w": 31,
+     "h": 12,
+     "conf": 96.2
+    },
+    {
+     "t": "at",
+     "x": 126,
+     "y": 216,
+     "w": 15,
+     "h": 12,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 145,
+     "y": 212,
+     "w": 26,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "zoo,",
+     "x": 176,
+     "y": 219,
+     "w": 33,
+     "h": 11,
+     "conf": 95.6
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page13.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page13.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "I climbed on the bus and hugged\nthe cat that was hiding in\nan old lady's bag.\nThe old lady shrieked!\nSHRIEK!",
+   "char_count": 108,
+   "word_count": 22,
+   "mean_conf": 90.1,
+   "words": [
+    {
+     "t": "I",
+     "x": 150,
+     "y": 103,
+     "w": 3,
+     "h": 15,
+     "conf": 85.8
+    },
+    {
+     "t": "climbed",
+     "x": 160,
+     "y": 102,
+     "w": 63,
+     "h": 16,
+     "conf": 85.8
+    },
+    {
+     "t": "on",
+     "x": 229,
+     "y": 109,
+     "w": 20,
+     "h": 9,
+     "conf": 96.1
+    },
+    {
+     "t": "the",
+     "x": 254,
+     "y": 102,
+     "w": 26,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "bus",
+     "x": 286,
+     "y": 102,
+     "w": 27,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "and",
+     "x": 318,
+     "y": 102,
+     "w": 31,
+     "h": 16,
+     "conf": 95.6
+    },
+    {
+     "t": "hugged",
+     "x": 356,
+     "y": 102,
+     "w": 61,
+     "h": 20,
+     "conf": 95.6
+    },
+    {
+     "t": "the",
+     "x": 182,
+     "y": 126,
+     "w": 25,
+     "h": 16,
+     "conf": 96.7
+    },
+    {
+     "t": "cat",
+     "x": 212,
+     "y": 122,
+     "w": 22,
+     "h": 28,
+     "conf": 96.7
+    },
+    {
+     "t": "that",
+     "x": 243,
+     "y": 126,
+     "w": 31,
+     "h": 16,
+     "conf": 96.4
+    },
+    {
+     "t": "was",
+     "x": 280,
+     "y": 122,
+     "w": 22,
+     "h": 28,
+     "conf": 96.4
+    },
+    {
+     "t": "hiding",
+     "x": 316,
+     "y": 126,
+     "w": 49,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "in",
+     "x": 372,
+     "y": 129,
+     "w": 13,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "an",
+     "x": 212,
+     "y": 157,
+     "w": 20,
+     "h": 9,
+     "conf": 94.8
+    },
+    {
+     "t": "old",
+     "x": 238,
+     "y": 150,
+     "w": 24,
+     "h": 16,
+     "conf": 92.6
+    },
+    {
+     "t": "lady's",
+     "x": 268,
+     "y": 150,
+     "w": 45,
+     "h": 20,
+     "conf": 26.3
+    },
+    {
+     "t": "bag.",
+     "x": 319,
+     "y": 150,
+     "w": 36,
+     "h": 20,
+     "conf": 86.1
+    },
+    {
+     "t": "The",
+     "x": 762,
+     "y": 245,
+     "w": 30,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "old",
+     "x": 797,
+     "y": 245,
+     "w": 24,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "lady",
+     "x": 828,
+     "y": 245,
+     "w": 35,
+     "h": 20,
+     "conf": 92.3
+    },
+    {
+     "t": "shrieked!",
+     "x": 868,
+     "y": 245,
+     "w": 70,
+     "h": 16,
+     "conf": 91.2
+    },
+    {
+     "t": "SHRIEK!",
+     "x": 736,
+     "y": 273,
+     "w": 225,
+     "h": 49,
+     "conf": 71.9
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page14.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page14.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "I went home and got into bed.\nYAWN! >",
+   "char_count": 37,
+   "word_count": 9,
+   "mean_conf": 78.9,
+   "words": [
+    {
+     "t": "I",
+     "x": 162,
+     "y": 236,
+     "w": 4,
+     "h": 15,
+     "conf": 73.2
+    },
+    {
+     "t": "went",
+     "x": 171,
+     "y": 239,
+     "w": 40,
+     "h": 12,
+     "conf": 85.1
+    },
+    {
+     "t": "home",
+     "x": 215,
+     "y": 235,
+     "w": 46,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "and",
+     "x": 266,
+     "y": 235,
+     "w": 31,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "got",
+     "x": 303,
+     "y": 239,
+     "w": 27,
+     "h": 16,
+     "conf": 96.1
+    },
+    {
+     "t": "into",
+     "x": 335,
+     "y": 238,
+     "w": 30,
+     "h": 13,
+     "conf": 96.1
+    },
+    {
+     "t": "bed.",
+     "x": 370,
+     "y": 235,
+     "w": 35,
+     "h": 16,
+     "conf": 96.2
+    },
+    {
+     "t": "YAWN!",
+     "x": 186,
+     "y": 268,
+     "w": 191,
+     "h": 50,
+     "conf": 55.8
+    },
+    {
+     "t": ">",
+     "x": 516,
+     "y": 267,
+     "w": 17,
+     "h": 17,
+     "conf": 14.2
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page15.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page15.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "Some furry things and hugged me.\nsnuck in...",
+   "char_count": 44,
+   "word_count": 8,
+   "mean_conf": 94.1,
+   "words": [
+    {
+     "t": "Some",
+     "x": 211,
+     "y": 80,
+     "w": 47,
+     "h": 15,
+     "conf": 96.3
+    },
+    {
+     "t": "furry",
+     "x": 260,
+     "y": 67,
+     "w": 39,
+     "h": 38,
+     "conf": 96.4
+    },
+    {
+     "t": "things",
+     "x": 308,
+     "y": 67,
+     "w": 48,
+     "h": 38,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 783,
+     "y": 79,
+     "w": 31,
+     "h": 16,
+     "conf": 83.9
+    },
+    {
+     "t": "hugged",
+     "x": 820,
+     "y": 79,
+     "w": 62,
+     "h": 20,
+     "conf": 93.7
+    },
+    {
+     "t": "me.",
+     "x": 888,
+     "y": 86,
+     "w": 29,
+     "h": 9,
+     "conf": 95.7
+    },
+    {
+     "t": "snuck",
+     "x": 245,
+     "y": 103,
+     "w": 45,
+     "h": 16,
+     "conf": 95.6
+    },
+    {
+     "t": "in...",
+     "x": 295,
+     "y": 106,
+     "w": 27,
+     "h": 13,
+     "conf": 94.5
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161230_page17.jpg",
+   "image_file": "hugs-in-the-city_english_20161230_page17.jpg",
+   "image_width": 567,
+   "image_height": 567,
+   "ocr_text": "al\n¥",
+   "char_count": 4,
+   "word_count": 2,
+   "mean_conf": 50.7,
+   "words": [
+    {
+     "t": "al",
+     "x": 190,
+     "y": 268,
+     "w": 49,
+     "h": 55,
+     "conf": 20.9
+    },
+    {
+     "t": "¥",
+     "x": 331,
+     "y": 265,
+     "w": 34,
+     "h": 52,
+     "conf": 80.4
+    }
+   ]
+  }
+ ]
+}

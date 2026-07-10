@@ -1,0 +1,1833 @@
+{
+ "slug": "the-lion-who-wouldnt-try",
+ "role": "no-text-4(extra)",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "the-lion-who-wouldnt-try_english_20170208-1.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-5.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-5.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "Tt was a sunny day in the jungle.\nAll the animals were out playing.",
+   "char_count": 67,
+   "word_count": 14,
+   "mean_conf": 94.5,
+   "words": [
+    {
+     "t": "Tt",
+     "x": 624,
+     "y": 247,
+     "w": 16,
+     "h": 16,
+     "conf": 85.7
+    },
+    {
+     "t": "was",
+     "x": 644,
+     "y": 253,
+     "w": 33,
+     "h": 10,
+     "conf": 85.7
+    },
+    {
+     "t": "a",
+     "x": 683,
+     "y": 253,
+     "w": 9,
+     "h": 10,
+     "conf": 95.1
+    },
+    {
+     "t": "sunny",
+     "x": 698,
+     "y": 253,
+     "w": 55,
+     "h": 17,
+     "conf": 95.1
+    },
+    {
+     "t": "day",
+     "x": 758,
+     "y": 246,
+     "w": 32,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "in",
+     "x": 795,
+     "y": 248,
+     "w": 17,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 818,
+     "y": 246,
+     "w": 28,
+     "h": 17,
+     "conf": 95.6
+    },
+    {
+     "t": "jungle.",
+     "x": 851,
+     "y": 246,
+     "w": 61,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "All",
+     "x": 623,
+     "y": 304,
+     "w": 28,
+     "h": 17,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 657,
+     "y": 304,
+     "w": 28,
+     "h": 17,
+     "conf": 96.3
+    },
+    {
+     "t": "animals",
+     "x": 691,
+     "y": 304,
+     "w": 69,
+     "h": 17,
+     "conf": 95.4
+    },
+    {
+     "t": "were",
+     "x": 766,
+     "y": 311,
+     "w": 42,
+     "h": 10,
+     "conf": 95.4
+    },
+    {
+     "t": "out",
+     "x": 814,
+     "y": 310,
+     "w": 31,
+     "h": 11,
+     "conf": 96.9
+    },
+    {
+     "t": "playing.",
+     "x": 850,
+     "y": 304,
+     "w": 71,
+     "h": 24,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-6.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-6.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "“Come play with me, Lion,” said Cheetah.\n“Catch me if you can!”\nZ00M-ZOOM! went Cheetah.\n“T don’t want to play,” said Lion. “T'll lose.”",
+   "char_count": 136,
+   "word_count": 24,
+   "mean_conf": 91.7,
+   "words": [
+    {
+     "t": "“Come",
+     "x": 624,
+     "y": 203,
+     "w": 64,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "play",
+     "x": 694,
+     "y": 203,
+     "w": 38,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "with",
+     "x": 737,
+     "y": 203,
+     "w": 41,
+     "h": 17,
+     "conf": 97.0
+    },
+    {
+     "t": "me,",
+     "x": 784,
+     "y": 210,
+     "w": 32,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "Lion,”",
+     "x": 823,
+     "y": 203,
+     "w": 58,
+     "h": 20,
+     "conf": 92.3
+    },
+    {
+     "t": "said",
+     "x": 888,
+     "y": 203,
+     "w": 34,
+     "h": 17,
+     "conf": 95.6
+    },
+    {
+     "t": "Cheetah.",
+     "x": 928,
+     "y": 203,
+     "w": 79,
+     "h": 17,
+     "conf": 95.6
+    },
+    {
+     "t": "“Catch",
+     "x": 624,
+     "y": 232,
+     "w": 63,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "me",
+     "x": 693,
+     "y": 239,
+     "w": 27,
+     "h": 10,
+     "conf": 96.0
+    },
+    {
+     "t": "if",
+     "x": 726,
+     "y": 232,
+     "w": 15,
+     "h": 17,
+     "conf": 95.8
+    },
+    {
+     "t": "you",
+     "x": 744,
+     "y": 239,
+     "w": 34,
+     "h": 17,
+     "conf": 95.8
+    },
+    {
+     "t": "can!”",
+     "x": 784,
+     "y": 232,
+     "w": 47,
+     "h": 17,
+     "conf": 96.3
+    },
+    {
+     "t": "Z00M-ZOOM!",
+     "x": 624,
+     "y": 290,
+     "w": 126,
+     "h": 17,
+     "conf": 70.6
+    },
+    {
+     "t": "went",
+     "x": 754,
+     "y": 294,
+     "w": 46,
+     "h": 12,
+     "conf": 96.8
+    },
+    {
+     "t": "Cheetah.",
+     "x": 805,
+     "y": 289,
+     "w": 79,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "“T",
+     "x": 624,
+     "y": 347,
+     "w": 17,
+     "h": 17,
+     "conf": 65.5
+    },
+    {
+     "t": "don’t",
+     "x": 647,
+     "y": 347,
+     "w": 50,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "want",
+     "x": 702,
+     "y": 352,
+     "w": 46,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 753,
+     "y": 352,
+     "w": 18,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "play,”",
+     "x": 777,
+     "y": 347,
+     "w": 51,
+     "h": 24,
+     "conf": 95.3
+    },
+    {
+     "t": "said",
+     "x": 834,
+     "y": 347,
+     "w": 35,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "Lion.",
+     "x": 874,
+     "y": 348,
+     "w": 48,
+     "h": 16,
+     "conf": 93.3
+    },
+    {
+     "t": "“T'll",
+     "x": 929,
+     "y": 347,
+     "w": 34,
+     "h": 17,
+     "conf": 47.2
+    },
+    {
+     "t": "lose.”",
+     "x": 969,
+     "y": 347,
+     "w": 49,
+     "h": 17,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-7.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-7.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "“Come play with me, Lion,” said Elephant.\n“We can throw rocks!”\nK4-pow! KA-pow! went Elephant.\n“T don’t want to play,” said Lion. “T'll lose.”",
+   "char_count": 142,
+   "word_count": 24,
+   "mean_conf": 86.4,
+   "words": [
+    {
+     "t": "“Come",
+     "x": 624,
+     "y": 203,
+     "w": 64,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "play",
+     "x": 694,
+     "y": 203,
+     "w": 38,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "with",
+     "x": 737,
+     "y": 203,
+     "w": 41,
+     "h": 17,
+     "conf": 97.0
+    },
+    {
+     "t": "me,",
+     "x": 784,
+     "y": 210,
+     "w": 32,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "Lion,”",
+     "x": 823,
+     "y": 203,
+     "w": 58,
+     "h": 20,
+     "conf": 93.9
+    },
+    {
+     "t": "said",
+     "x": 888,
+     "y": 203,
+     "w": 34,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "Elephant.",
+     "x": 927,
+     "y": 203,
+     "w": 87,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "“We",
+     "x": 624,
+     "y": 232,
+     "w": 38,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "can",
+     "x": 668,
+     "y": 239,
+     "w": 30,
+     "h": 10,
+     "conf": 96.5
+    },
+    {
+     "t": "throw",
+     "x": 704,
+     "y": 232,
+     "w": 56,
+     "h": 17,
+     "conf": 95.6
+    },
+    {
+     "t": "rocks!”",
+     "x": 765,
+     "y": 232,
+     "w": 63,
+     "h": 17,
+     "conf": 96.4
+    },
+    {
+     "t": "K4-pow!",
+     "x": 624,
+     "y": 290,
+     "w": 88,
+     "h": 17,
+     "conf": 34.4
+    },
+    {
+     "t": "KA-pow!",
+     "x": 715,
+     "y": 290,
+     "w": 88,
+     "h": 17,
+     "conf": 0.0
+    },
+    {
+     "t": "went",
+     "x": 807,
+     "y": 295,
+     "w": 45,
+     "h": 11,
+     "conf": 97.0
+    },
+    {
+     "t": "Elephant.",
+     "x": 857,
+     "y": 289,
+     "w": 87,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "“T",
+     "x": 624,
+     "y": 347,
+     "w": 17,
+     "h": 17,
+     "conf": 65.5
+    },
+    {
+     "t": "don’t",
+     "x": 647,
+     "y": 347,
+     "w": 50,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "want",
+     "x": 702,
+     "y": 352,
+     "w": 46,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 753,
+     "y": 352,
+     "w": 18,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "play,”",
+     "x": 777,
+     "y": 347,
+     "w": 51,
+     "h": 24,
+     "conf": 95.3
+    },
+    {
+     "t": "said",
+     "x": 833,
+     "y": 347,
+     "w": 36,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "Lion.",
+     "x": 874,
+     "y": 348,
+     "w": 48,
+     "h": 16,
+     "conf": 93.3
+    },
+    {
+     "t": "“T'll",
+     "x": 929,
+     "y": 347,
+     "w": 34,
+     "h": 17,
+     "conf": 47.2
+    },
+    {
+     "t": "lose.”",
+     "x": 969,
+     "y": 347,
+     "w": 49,
+     "h": 17,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-8.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-8.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "“Come play with us, Lion!” said the monkeys.\n“Who can eat the most bananas?”\nPop! pop! pop! went the monkeys.\n“T don’t want to play,” said Lion. “T'll lose.”",
+   "char_count": 157,
+   "word_count": 29,
+   "mean_conf": 91.8,
+   "words": [
+    {
+     "t": "“Come",
+     "x": 624,
+     "y": 203,
+     "w": 64,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "play",
+     "x": 694,
+     "y": 203,
+     "w": 38,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "with",
+     "x": 737,
+     "y": 203,
+     "w": 41,
+     "h": 17,
+     "conf": 97.0
+    },
+    {
+     "t": "us,",
+     "x": 784,
+     "y": 210,
+     "w": 25,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "Lion!”",
+     "x": 815,
+     "y": 203,
+     "w": 60,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "said",
+     "x": 881,
+     "y": 203,
+     "w": 35,
+     "h": 17,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 921,
+     "y": 203,
+     "w": 28,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "monkeys.",
+     "x": 955,
+     "y": 203,
+     "w": 85,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "“Who",
+     "x": 624,
+     "y": 232,
+     "w": 55,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "can",
+     "x": 685,
+     "y": 239,
+     "w": 31,
+     "h": 10,
+     "conf": 96.8
+    },
+    {
+     "t": "eat",
+     "x": 722,
+     "y": 237,
+     "w": 25,
+     "h": 12,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 753,
+     "y": 232,
+     "w": 28,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "most",
+     "x": 787,
+     "y": 238,
+     "w": 45,
+     "h": 11,
+     "conf": 96.9
+    },
+    {
+     "t": "bananas?”",
+     "x": 838,
+     "y": 232,
+     "w": 92,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "Pop!",
+     "x": 624,
+     "y": 290,
+     "w": 44,
+     "h": 17,
+     "conf": 63.3
+    },
+    {
+     "t": "pop!",
+     "x": 672,
+     "y": 290,
+     "w": 44,
+     "h": 17,
+     "conf": 85.8
+    },
+    {
+     "t": "pop!",
+     "x": 720,
+     "y": 290,
+     "w": 44,
+     "h": 17,
+     "conf": 83.1
+    },
+    {
+     "t": "went",
+     "x": 768,
+     "y": 294,
+     "w": 45,
+     "h": 12,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 819,
+     "y": 289,
+     "w": 28,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "monkeys.",
+     "x": 853,
+     "y": 289,
+     "w": 85,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "“T",
+     "x": 624,
+     "y": 347,
+     "w": 17,
+     "h": 17,
+     "conf": 65.5
+    },
+    {
+     "t": "don’t",
+     "x": 647,
+     "y": 347,
+     "w": 49,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "want",
+     "x": 702,
+     "y": 352,
+     "w": 45,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 753,
+     "y": 352,
+     "w": 18,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "play,”",
+     "x": 777,
+     "y": 347,
+     "w": 51,
+     "h": 24,
+     "conf": 95.3
+    },
+    {
+     "t": "said",
+     "x": 834,
+     "y": 347,
+     "w": 35,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "Lion.",
+     "x": 874,
+     "y": 348,
+     "w": 48,
+     "h": 16,
+     "conf": 93.3
+    },
+    {
+     "t": "“T'll",
+     "x": 929,
+     "y": 347,
+     "w": 34,
+     "h": 17,
+     "conf": 47.2
+    },
+    {
+     "t": "lose.”",
+     "x": 969,
+     "y": 347,
+     "w": 49,
+     "h": 17,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-9.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-9.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "“Come play with me, Lion,\" said Springbok.\n“Let's jump high!”\nzoop! zooP! zooP! went Springbok.\n“T don’t want to play,” said Lion. “T'll lose.”",
+   "char_count": 143,
+   "word_count": 24,
+   "mean_conf": 86.2,
+   "words": [
+    {
+     "t": "“Come",
+     "x": 624,
+     "y": 203,
+     "w": 64,
+     "h": 17,
+     "conf": 96.7
+    },
+    {
+     "t": "play",
+     "x": 694,
+     "y": 203,
+     "w": 38,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "with",
+     "x": 737,
+     "y": 203,
+     "w": 41,
+     "h": 17,
+     "conf": 97.0
+    },
+    {
+     "t": "me,",
+     "x": 784,
+     "y": 210,
+     "w": 32,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "Lion,\"",
+     "x": 823,
+     "y": 204,
+     "w": 56,
+     "h": 19,
+     "conf": 90.4
+    },
+    {
+     "t": "said",
+     "x": 885,
+     "y": 203,
+     "w": 35,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "Springbok.",
+     "x": 925,
+     "y": 203,
+     "w": 100,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "“Let's",
+     "x": 624,
+     "y": 232,
+     "w": 51,
+     "h": 17,
+     "conf": 22.6
+    },
+    {
+     "t": "jump",
+     "x": 680,
+     "y": 234,
+     "w": 49,
+     "h": 22,
+     "conf": 95.1
+    },
+    {
+     "t": "high!”",
+     "x": 735,
+     "y": 232,
+     "w": 57,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "zoop!",
+     "x": 624,
+     "y": 290,
+     "w": 56,
+     "h": 16,
+     "conf": 61.2
+    },
+    {
+     "t": "zooP!",
+     "x": 684,
+     "y": 290,
+     "w": 56,
+     "h": 17,
+     "conf": 64.5
+    },
+    {
+     "t": "zooP!",
+     "x": 743,
+     "y": 290,
+     "w": 57,
+     "h": 17,
+     "conf": 78.7
+    },
+    {
+     "t": "went",
+     "x": 803,
+     "y": 294,
+     "w": 45,
+     "h": 12,
+     "conf": 96.8
+    },
+    {
+     "t": "Springbok.",
+     "x": 854,
+     "y": 289,
+     "w": 100,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "“T",
+     "x": 624,
+     "y": 347,
+     "w": 17,
+     "h": 17,
+     "conf": 65.5
+    },
+    {
+     "t": "don’t",
+     "x": 647,
+     "y": 347,
+     "w": 49,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "want",
+     "x": 702,
+     "y": 352,
+     "w": 45,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 753,
+     "y": 352,
+     "w": 18,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "play,”",
+     "x": 777,
+     "y": 347,
+     "w": 51,
+     "h": 24,
+     "conf": 95.3
+    },
+    {
+     "t": "said",
+     "x": 834,
+     "y": 347,
+     "w": 35,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "Lion.",
+     "x": 874,
+     "y": 348,
+     "w": 48,
+     "h": 16,
+     "conf": 93.3
+    },
+    {
+     "t": "“T'll",
+     "x": 929,
+     "y": 347,
+     "w": 34,
+     "h": 17,
+     "conf": 47.2
+    },
+    {
+     "t": "lose.”",
+     "x": 969,
+     "y": 347,
+     "w": 49,
+     "h": 17,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-10.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-10.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "“Come play with me, Lion,” said Crocodile.\n“It’s a swimming competition!”\nSPLASH! SPLASH! went Crocodile.\n“T don’t want to play,” said Lion. “T'll lose.”",
+   "char_count": 153,
+   "word_count": 24,
+   "mean_conf": 90.6,
+   "words": [
+    {
+     "t": "“Come",
+     "x": 624,
+     "y": 203,
+     "w": 64,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "play",
+     "x": 694,
+     "y": 203,
+     "w": 38,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "with",
+     "x": 737,
+     "y": 203,
+     "w": 41,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "me,",
+     "x": 784,
+     "y": 210,
+     "w": 32,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "Lion,”",
+     "x": 823,
+     "y": 203,
+     "w": 58,
+     "h": 20,
+     "conf": 89.4
+    },
+    {
+     "t": "said",
+     "x": 888,
+     "y": 203,
+     "w": 34,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "Crocodile.",
+     "x": 928,
+     "y": 203,
+     "w": 92,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "“It’s",
+     "x": 624,
+     "y": 232,
+     "w": 36,
+     "h": 17,
+     "conf": 69.5
+    },
+    {
+     "t": "a",
+     "x": 666,
+     "y": 239,
+     "w": 9,
+     "h": 10,
+     "conf": 91.4
+    },
+    {
+     "t": "swimming",
+     "x": 680,
+     "y": 234,
+     "w": 97,
+     "h": 22,
+     "conf": 91.4
+    },
+    {
+     "t": "competition!”",
+     "x": 782,
+     "y": 232,
+     "w": 128,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "SPLASH!",
+     "x": 624,
+     "y": 290,
+     "w": 82,
+     "h": 17,
+     "conf": 96.3
+    },
+    {
+     "t": "SPLASH!",
+     "x": 710,
+     "y": 290,
+     "w": 82,
+     "h": 17,
+     "conf": 91.4
+    },
+    {
+     "t": "went",
+     "x": 795,
+     "y": 295,
+     "w": 45,
+     "h": 11,
+     "conf": 91.4
+    },
+    {
+     "t": "Crocodile.",
+     "x": 846,
+     "y": 289,
+     "w": 93,
+     "h": 17,
+     "conf": 90.8
+    },
+    {
+     "t": "“T",
+     "x": 624,
+     "y": 347,
+     "w": 17,
+     "h": 17,
+     "conf": 65.5
+    },
+    {
+     "t": "don’t",
+     "x": 647,
+     "y": 347,
+     "w": 50,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "want",
+     "x": 702,
+     "y": 352,
+     "w": 46,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 753,
+     "y": 352,
+     "w": 18,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "play,”",
+     "x": 777,
+     "y": 347,
+     "w": 51,
+     "h": 24,
+     "conf": 95.3
+    },
+    {
+     "t": "said",
+     "x": 833,
+     "y": 347,
+     "w": 36,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "Lion.",
+     "x": 874,
+     "y": 348,
+     "w": 48,
+     "h": 16,
+     "conf": 93.3
+    },
+    {
+     "t": "“T'll",
+     "x": 929,
+     "y": 347,
+     "w": 34,
+     "h": 17,
+     "conf": 47.2
+    },
+    {
+     "t": "lose.”",
+     "x": 969,
+     "y": 347,
+     "w": 49,
+     "h": 17,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-11.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-11.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "Crocodile was quicker than Elephant, Wy\nbut each time Crocodile got ahead,\nElephant tickled him!\nTEE-HEE-HEE! went Elephant and\nCrocodile.\nElephant and Crocodile had the swimming\ncompetition without Lion.",
+   "char_count": 204,
+   "word_count": 29,
+   "mean_conf": 94.6,
+   "words": [
+    {
+     "t": "Crocodile",
+     "x": 624,
+     "y": 129,
+     "w": 88,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "was",
+     "x": 718,
+     "y": 136,
+     "w": 33,
+     "h": 10,
+     "conf": 96.8
+    },
+    {
+     "t": "quicker",
+     "x": 757,
+     "y": 129,
+     "w": 68,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "than",
+     "x": 830,
+     "y": 129,
+     "w": 41,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "Elephant,",
+     "x": 877,
+     "y": 129,
+     "w": 87,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "Wy",
+     "x": 968,
+     "y": 81,
+     "w": 122,
+     "h": 91,
+     "conf": 57.8
+    },
+    {
+     "t": "but",
+     "x": 624,
+     "y": 158,
+     "w": 32,
+     "h": 17,
+     "conf": 93.9
+    },
+    {
+     "t": "each",
+     "x": 661,
+     "y": 158,
+     "w": 40,
+     "h": 17,
+     "conf": 93.9
+    },
+    {
+     "t": "time",
+     "x": 707,
+     "y": 160,
+     "w": 40,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "Crocodile",
+     "x": 753,
+     "y": 158,
+     "w": 88,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "got",
+     "x": 846,
+     "y": 163,
+     "w": 31,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "ahead,",
+     "x": 882,
+     "y": 158,
+     "w": 57,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "Elephant",
+     "x": 624,
+     "y": 187,
+     "w": 82,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "tickled",
+     "x": 712,
+     "y": 187,
+     "w": 60,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "him!",
+     "x": 777,
+     "y": 187,
+     "w": 42,
+     "h": 17,
+     "conf": 96.3
+    },
+    {
+     "t": "TEE-HEE-HEE!",
+     "x": 625,
+     "y": 245,
+     "w": 137,
+     "h": 16,
+     "conf": 85.2
+    },
+    {
+     "t": "went",
+     "x": 765,
+     "y": 250,
+     "w": 46,
+     "h": 11,
+     "conf": 96.8
+    },
+    {
+     "t": "Elephant",
+     "x": 816,
+     "y": 244,
+     "w": 82,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "and",
+     "x": 904,
+     "y": 244,
+     "w": 33,
+     "h": 17,
+     "conf": 96.2
+    },
+    {
+     "t": "Crocodile.",
+     "x": 624,
+     "y": 273,
+     "w": 93,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "Elephant",
+     "x": 57,
+     "y": 453,
+     "w": 82,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 145,
+     "y": 453,
+     "w": 34,
+     "h": 17,
+     "conf": 96.7
+    },
+    {
+     "t": "Crocodile",
+     "x": 184,
+     "y": 453,
+     "w": 88,
+     "h": 17,
+     "conf": 95.9
+    },
+    {
+     "t": "had",
+     "x": 278,
+     "y": 453,
+     "w": 34,
+     "h": 17,
+     "conf": 95.9
+    },
+    {
+     "t": "the",
+     "x": 317,
+     "y": 453,
+     "w": 28,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "swimming",
+     "x": 351,
+     "y": 455,
+     "w": 96,
+     "h": 22,
+     "conf": 95.6
+    },
+    {
+     "t": "competition",
+     "x": 57,
+     "y": 483,
+     "w": 112,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "without",
+     "x": 175,
+     "y": 481,
+     "w": 74,
+     "h": 17,
+     "conf": 96.4
+    },
+    {
+     "t": "Lion.",
+     "x": 254,
+     "y": 482,
+     "w": 48,
+     "h": 16,
+     "conf": 94.5
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-12.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-12.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-13.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-13.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "“Why are you sad, Lion?” asked Mouse.\n“Because I don't want to play,” said Lion.\n“TIL lose.\"",
+   "char_count": 92,
+   "word_count": 17,
+   "mean_conf": 88.5,
+   "words": [
+    {
+     "t": "“Why",
+     "x": 624,
+     "y": 232,
+     "w": 54,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "are",
+     "x": 683,
+     "y": 239,
+     "w": 26,
+     "h": 10,
+     "conf": 96.8
+    },
+    {
+     "t": "you",
+     "x": 714,
+     "y": 238,
+     "w": 34,
+     "h": 18,
+     "conf": 97.0
+    },
+    {
+     "t": "sad,",
+     "x": 754,
+     "y": 232,
+     "w": 34,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "Lion?”",
+     "x": 794,
+     "y": 232,
+     "w": 62,
+     "h": 17,
+     "conf": 96.1
+    },
+    {
+     "t": "asked",
+     "x": 863,
+     "y": 232,
+     "w": 49,
+     "h": 17,
+     "conf": 94.4
+    },
+    {
+     "t": "Mouse.",
+     "x": 918,
+     "y": 233,
+     "w": 66,
+     "h": 16,
+     "conf": 96.4
+    },
+    {
+     "t": "“Because",
+     "x": 624,
+     "y": 290,
+     "w": 80,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "I",
+     "x": 710,
+     "y": 291,
+     "w": 7,
+     "h": 16,
+     "conf": 94.8
+    },
+    {
+     "t": "don't",
+     "x": 723,
+     "y": 290,
+     "w": 48,
+     "h": 17,
+     "conf": 82.8
+    },
+    {
+     "t": "want",
+     "x": 776,
+     "y": 295,
+     "w": 45,
+     "h": 12,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 827,
+     "y": 296,
+     "w": 18,
+     "h": 11,
+     "conf": 96.9
+    },
+    {
+     "t": "play,”",
+     "x": 851,
+     "y": 290,
+     "w": 51,
+     "h": 24,
+     "conf": 95.4
+    },
+    {
+     "t": "said",
+     "x": 908,
+     "y": 290,
+     "w": 35,
+     "h": 17,
+     "conf": 97.0
+    },
+    {
+     "t": "Lion.",
+     "x": 948,
+     "y": 291,
+     "w": 48,
+     "h": 16,
+     "conf": 96.4
+    },
+    {
+     "t": "“TIL",
+     "x": 624,
+     "y": 319,
+     "w": 32,
+     "h": 17,
+     "conf": 12.8
+    },
+    {
+     "t": "lose.\"",
+     "x": 662,
+     "y": 319,
+     "w": 47,
+     "h": 17,
+     "conf": 61.2
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-14.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-14.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-15.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-15.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "Lion slipped on a banana peel!\nWHEEEEEE! went Lion.\n“That looks like fun!” said all the other animals.",
+   "char_count": 102,
+   "word_count": 18,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "Lion",
+     "x": 57,
+     "y": 206,
+     "w": 44,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "slipped",
+     "x": 107,
+     "y": 205,
+     "w": 65,
+     "h": 24,
+     "conf": 95.5
+    },
+    {
+     "t": "on",
+     "x": 177,
+     "y": 212,
+     "w": 24,
+     "h": 10,
+     "conf": 95.0
+    },
+    {
+     "t": "a",
+     "x": 207,
+     "y": 212,
+     "w": 9,
+     "h": 10,
+     "conf": 95.0
+    },
+    {
+     "t": "banana",
+     "x": 221,
+     "y": 205,
+     "w": 66,
+     "h": 17,
+     "conf": 95.4
+    },
+    {
+     "t": "peel!",
+     "x": 292,
+     "y": 205,
+     "w": 42,
+     "h": 24,
+     "conf": 96.0
+    },
+    {
+     "t": "WHEEEEEE!",
+     "x": 59,
+     "y": 264,
+     "w": 115,
+     "h": 17,
+     "conf": 91.1
+    },
+    {
+     "t": "went",
+     "x": 177,
+     "y": 269,
+     "w": 46,
+     "h": 11,
+     "conf": 96.8
+    },
+    {
+     "t": "Lion.",
+     "x": 228,
+     "y": 264,
+     "w": 48,
+     "h": 16,
+     "conf": 96.0
+    },
+    {
+     "t": "“That",
+     "x": 57,
+     "y": 320,
+     "w": 56,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "looks",
+     "x": 117,
+     "y": 320,
+     "w": 48,
+     "h": 17,
+     "conf": 96.0
+    },
+    {
+     "t": "like",
+     "x": 171,
+     "y": 320,
+     "w": 31,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "fun!”",
+     "x": 208,
+     "y": 320,
+     "w": 49,
+     "h": 17,
+     "conf": 95.5
+    },
+    {
+     "t": "said",
+     "x": 263,
+     "y": 320,
+     "w": 35,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "all",
+     "x": 303,
+     "y": 320,
+     "w": 20,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 329,
+     "y": 320,
+     "w": 28,
+     "h": 17,
+     "conf": 96.7
+    },
+    {
+     "t": "other",
+     "x": 363,
+     "y": 320,
+     "w": 49,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "animals.",
+     "x": 417,
+     "y": 320,
+     "w": 73,
+     "h": 17,
+     "conf": 95.8
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-16.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-16.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208-17.jpg",
+   "image_file": "the-lion-who-wouldnt-try_english_20170208-17.jpg",
+   "image_width": 567,
+   "image_height": 567,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

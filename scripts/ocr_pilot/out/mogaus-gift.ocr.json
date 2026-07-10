@@ -1,0 +1,1292 @@
+{
+ "slug": "mogaus-gift",
+ "role": "wp-repaired",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "mogaus-gift_english_20170331-1.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-5.jpg",
+   "image_file": "mogaus-gift_english_20170331-5.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "Batloung village was a dull African village,\nwhere nothing interesting had happened before",
+   "char_count": 90,
+   "word_count": 13,
+   "mean_conf": 94.1,
+   "words": [
+    {
+     "t": "Batloung",
+     "x": 704,
+     "y": 98,
+     "w": 61,
+     "h": 19,
+     "conf": 91.5
+    },
+    {
+     "t": "village",
+     "x": 771,
+     "y": 98,
+     "w": 45,
+     "h": 19,
+     "conf": 93.1
+    },
+    {
+     "t": "was",
+     "x": 820,
+     "y": 105,
+     "w": 26,
+     "h": 8,
+     "conf": 90.2
+    },
+    {
+     "t": "a",
+     "x": 852,
+     "y": 105,
+     "w": 8,
+     "h": 8,
+     "conf": 96.3
+    },
+    {
+     "t": "dull",
+     "x": 866,
+     "y": 98,
+     "w": 24,
+     "h": 15,
+     "conf": 94.2
+    },
+    {
+     "t": "African",
+     "x": 895,
+     "y": 98,
+     "w": 49,
+     "h": 15,
+     "conf": 94.3
+    },
+    {
+     "t": "village,",
+     "x": 949,
+     "y": 98,
+     "w": 48,
+     "h": 19,
+     "conf": 91.1
+    },
+    {
+     "t": "where",
+     "x": 677,
+     "y": 120,
+     "w": 41,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "nothing",
+     "x": 724,
+     "y": 120,
+     "w": 51,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "interesting",
+     "x": 781,
+     "y": 124,
+     "w": 70,
+     "h": 15,
+     "conf": 96.3
+    },
+    {
+     "t": "had",
+     "x": 857,
+     "y": 120,
+     "w": 26,
+     "h": 15,
+     "conf": 94.1
+    },
+    {
+     "t": "happened",
+     "x": 889,
+     "y": 120,
+     "w": 70,
+     "h": 19,
+     "conf": 92.0
+    },
+    {
+     "t": "before",
+     "x": 966,
+     "y": 120,
+     "w": 44,
+     "h": 15,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-6.jpg",
+   "image_file": "mogaus-gift_english_20170331-6.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "Rrnnerecay vhertcninceuet chic twas bor sear\nMogau had a full set of teeth!",
+   "char_count": 75,
+   "word_count": 13,
+   "mean_conf": 55.2,
+   "words": [
+    {
+     "t": "Rrnnerecay",
+     "x": 108,
+     "y": 106,
+     "w": 93,
+     "h": 19,
+     "conf": 0.0
+    },
+    {
+     "t": "vhertcninceuet",
+     "x": 206,
+     "y": 106,
+     "w": 117,
+     "h": 15,
+     "conf": 0.0
+    },
+    {
+     "t": "chic",
+     "x": 329,
+     "y": 106,
+     "w": 31,
+     "h": 15,
+     "conf": 24.8
+    },
+    {
+     "t": "twas",
+     "x": 365,
+     "y": 113,
+     "w": 27,
+     "h": 8,
+     "conf": 8.5
+    },
+    {
+     "t": "bor",
+     "x": 397,
+     "y": 106,
+     "w": 31,
+     "h": 15,
+     "conf": 22.5
+    },
+    {
+     "t": "sear",
+     "x": 439,
+     "y": 106,
+     "w": 35,
+     "h": 19,
+     "conf": 15.6
+    },
+    {
+     "t": "Mogau",
+     "x": 180,
+     "y": 129,
+     "w": 51,
+     "h": 18,
+     "conf": 93.0
+    },
+    {
+     "t": "had",
+     "x": 236,
+     "y": 128,
+     "w": 27,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "a",
+     "x": 263,
+     "y": 124,
+     "w": 8,
+     "h": 27,
+     "conf": 88.8
+    },
+    {
+     "t": "full",
+     "x": 282,
+     "y": 128,
+     "w": 20,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "set",
+     "x": 308,
+     "y": 132,
+     "w": 19,
+     "h": 11,
+     "conf": 89.8
+    },
+    {
+     "t": "of",
+     "x": 331,
+     "y": 128,
+     "w": 14,
+     "h": 15,
+     "conf": 89.8
+    },
+    {
+     "t": "teeth!",
+     "x": 348,
+     "y": 128,
+     "w": 39,
+     "h": 15,
+     "conf": 90.6
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-7.jpg",
+   "image_file": "mogaus-gift_english_20170331-7.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "eecly lonersfecteditai reel iogade\nhome to witness this miracle.",
+   "char_count": 64,
+   "word_count": 9,
+   "mean_conf": 51.4,
+   "words": [
+    {
+     "t": "eecly",
+     "x": 711,
+     "y": 282,
+     "w": 36,
+     "h": 15,
+     "conf": 0.0
+    },
+    {
+     "t": "lonersfecteditai",
+     "x": 752,
+     "y": 282,
+     "w": 129,
+     "h": 19,
+     "conf": 0.0
+    },
+    {
+     "t": "reel",
+     "x": 888,
+     "y": 283,
+     "w": 37,
+     "h": 14,
+     "conf": 0.0
+    },
+    {
+     "t": "iogade",
+     "x": 932,
+     "y": 283,
+     "w": 59,
+     "h": 18,
+     "conf": 0.0
+    },
+    {
+     "t": "home",
+     "x": 752,
+     "y": 304,
+     "w": 39,
+     "h": 15,
+     "conf": 96.2
+    },
+    {
+     "t": "to",
+     "x": 796,
+     "y": 308,
+     "w": 13,
+     "h": 11,
+     "conf": 90.3
+    },
+    {
+     "t": "witness",
+     "x": 814,
+     "y": 308,
+     "w": 48,
+     "h": 11,
+     "conf": 87.5
+    },
+    {
+     "t": "this",
+     "x": 867,
+     "y": 304,
+     "w": 23,
+     "h": 15,
+     "conf": 94.3
+    },
+    {
+     "t": "miracle.",
+     "x": 895,
+     "y": 304,
+     "w": 50,
+     "h": 15,
+     "conf": 94.3
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-8.jpg",
+   "image_file": "mogaus-gift_english_20170331-8.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "With his big smile, Mogau brought happ\nto the village.",
+   "char_count": 54,
+   "word_count": 10,
+   "mean_conf": 94.2,
+   "words": [
+    {
+     "t": "With",
+     "x": 125,
+     "y": 101,
+     "w": 32,
+     "h": 16,
+     "conf": 95.8
+    },
+    {
+     "t": "his",
+     "x": 164,
+     "y": 101,
+     "w": 16,
+     "h": 15,
+     "conf": 96.3
+    },
+    {
+     "t": "big",
+     "x": 186,
+     "y": 101,
+     "w": 22,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "smile,",
+     "x": 213,
+     "y": 101,
+     "w": 37,
+     "h": 18,
+     "conf": 93.2
+    },
+    {
+     "t": "Mogau",
+     "x": 257,
+     "y": 102,
+     "w": 50,
+     "h": 18,
+     "conf": 93.1
+    },
+    {
+     "t": "brought",
+     "x": 314,
+     "y": 101,
+     "w": 54,
+     "h": 19,
+     "conf": 88.5
+    },
+    {
+     "t": "happ",
+     "x": 381,
+     "y": 108,
+     "w": 27,
+     "h": 8,
+     "conf": 88.5
+    },
+    {
+     "t": "to",
+     "x": 237,
+     "y": 127,
+     "w": 13,
+     "h": 11,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 255,
+     "y": 123,
+     "w": 22,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "village.",
+     "x": 281,
+     "y": 123,
+     "w": 50,
+     "h": 19,
+     "conf": 95.8
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-9.jpg",
+   "image_file": "mogaus-gift_english_20170331-9.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-10.jpg",
+   "image_file": "mogaus-gift_english_20170331-10.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-11.jpg",
+   "image_file": "mogaus-gift_english_20170331-11.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "They left the village and started their journey. The villagers\nwho loved Mogau’s smile decided to follow them.",
+   "char_count": 110,
+   "word_count": 18,
+   "mean_conf": 91.6,
+   "words": [
+    {
+     "t": "They",
+     "x": 82,
+     "y": 132,
+     "w": 33,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "left",
+     "x": 120,
+     "y": 132,
+     "w": 22,
+     "h": 15,
+     "conf": 96.0
+    },
+    {
+     "t": "the",
+     "x": 146,
+     "y": 132,
+     "w": 21,
+     "h": 15,
+     "conf": 96.0
+    },
+    {
+     "t": "village",
+     "x": 171,
+     "y": 132,
+     "w": 27,
+     "h": 15,
+     "conf": 91.0
+    },
+    {
+     "t": "and",
+     "x": 222,
+     "y": 132,
+     "w": 26,
+     "h": 15,
+     "conf": 97.0
+    },
+    {
+     "t": "started",
+     "x": 254,
+     "y": 132,
+     "w": 47,
+     "h": 15,
+     "conf": 96.6
+    },
+    {
+     "t": "their",
+     "x": 306,
+     "y": 132,
+     "w": 29,
+     "h": 15,
+     "conf": 96.5
+    },
+    {
+     "t": "journey.",
+     "x": 342,
+     "y": 139,
+     "w": 50,
+     "h": 12,
+     "conf": 95.7
+    },
+    {
+     "t": "The",
+     "x": 399,
+     "y": 133,
+     "w": 26,
+     "h": 14,
+     "conf": 94.7
+    },
+    {
+     "t": "villagers",
+     "x": 429,
+     "y": 132,
+     "w": 56,
+     "h": 19,
+     "conf": 85.2
+    },
+    {
+     "t": "who",
+     "x": 111,
+     "y": 154,
+     "w": 29,
+     "h": 15,
+     "conf": 95.3
+    },
+    {
+     "t": "loved",
+     "x": 146,
+     "y": 154,
+     "w": 35,
+     "h": 15,
+     "conf": 93.3
+    },
+    {
+     "t": "Mogau’s",
+     "x": 188,
+     "y": 155,
+     "w": 60,
+     "h": 18,
+     "conf": 34.9
+    },
+    {
+     "t": "smile",
+     "x": 254,
+     "y": 154,
+     "w": 34,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "decided",
+     "x": 293,
+     "y": 154,
+     "w": 55,
+     "h": 15,
+     "conf": 96.2
+    },
+    {
+     "t": "to",
+     "x": 353,
+     "y": 158,
+     "w": 13,
+     "h": 11,
+     "conf": 95.9
+    },
+    {
+     "t": "follow",
+     "x": 371,
+     "y": 154,
+     "w": 41,
+     "h": 15,
+     "conf": 95.9
+    },
+    {
+     "t": "them.",
+     "x": 416,
+     "y": 155,
+     "w": 35,
+     "h": 14,
+     "conf": 94.7
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-12.jpg",
+   "image_file": "mogaus-gift_english_20170331-12.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "They travelled for many days, over streams\nwalking through forests,",
+   "char_count": 67,
+   "word_count": 10,
+   "mean_conf": 93.2,
+   "words": [
+    {
+     "t": "They",
+     "x": 222,
+     "y": 99,
+     "w": 33,
+     "h": 19,
+     "conf": 88.2
+    },
+    {
+     "t": "travelled",
+     "x": 259,
+     "y": 99,
+     "w": 59,
+     "h": 15,
+     "conf": 88.2
+    },
+    {
+     "t": "for",
+     "x": 323,
+     "y": 99,
+     "w": 20,
+     "h": 15,
+     "conf": 93.5
+    },
+    {
+     "t": "many",
+     "x": 353,
+     "y": 106,
+     "w": 32,
+     "h": 12,
+     "conf": 95.5
+    },
+    {
+     "t": "days,",
+     "x": 393,
+     "y": 87,
+     "w": 34,
+     "h": 37,
+     "conf": 96.9
+    },
+    {
+     "t": "over",
+     "x": 930,
+     "y": 87,
+     "w": 27,
+     "h": 37,
+     "conf": 89.9
+    },
+    {
+     "t": "streams",
+     "x": 963,
+     "y": 103,
+     "w": 53,
+     "h": 11,
+     "conf": 89.9
+    },
+    {
+     "t": "walking",
+     "x": 242,
+     "y": 121,
+     "w": 53,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "through",
+     "x": 299,
+     "y": 121,
+     "w": 54,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "forests,",
+     "x": 359,
+     "y": 121,
+     "w": 47,
+     "h": 17,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-13.jpg",
+   "image_file": "mogaus-gift_english_20170331-13.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "and past big mountains.",
+   "char_count": 23,
+   "word_count": 4,
+   "mean_conf": 96.4,
+   "words": [
+    {
+     "t": "and",
+     "x": 768,
+     "y": 69,
+     "w": 26,
+     "h": 15,
+     "conf": 95.1
+    },
+    {
+     "t": "past",
+     "x": 801,
+     "y": 73,
+     "w": 29,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "big",
+     "x": 835,
+     "y": 69,
+     "w": 21,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "mountains.",
+     "x": 862,
+     "y": 73,
+     "w": 72,
+     "h": 11,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-14.jpg",
+   "image_file": "mogaus-gift_english_20170331-14.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "Finally, they reached Mogau's special place.\nIt looked exactly like his paintings!",
+   "char_count": 82,
+   "word_count": 12,
+   "mean_conf": 89.9,
+   "words": [
+    {
+     "t": "Finally,",
+     "x": 698,
+     "y": 152,
+     "w": 46,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "they",
+     "x": 750,
+     "y": 152,
+     "w": 29,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "reached",
+     "x": 785,
+     "y": 152,
+     "w": 54,
+     "h": 15,
+     "conf": 93.3
+    },
+    {
+     "t": "Mogau's",
+     "x": 847,
+     "y": 154,
+     "w": 59,
+     "h": 17,
+     "conf": 57.3
+    },
+    {
+     "t": "special",
+     "x": 912,
+     "y": 153,
+     "w": 46,
+     "h": 18,
+     "conf": 89.4
+    },
+    {
+     "t": "place.",
+     "x": 964,
+     "y": 152,
+     "w": 37,
+     "h": 19,
+     "conf": 75.7
+    },
+    {
+     "t": "It",
+     "x": 734,
+     "y": 175,
+     "w": 8,
+     "h": 14,
+     "conf": 91.4
+    },
+    {
+     "t": "looked",
+     "x": 748,
+     "y": 174,
+     "w": 44,
+     "h": 15,
+     "conf": 95.2
+    },
+    {
+     "t": "exactly",
+     "x": 798,
+     "y": 175,
+     "w": 48,
+     "h": 18,
+     "conf": 96.6
+    },
+    {
+     "t": "like",
+     "x": 851,
+     "y": 175,
+     "w": 21,
+     "h": 14,
+     "conf": 96.8
+    },
+    {
+     "t": "his",
+     "x": 878,
+     "y": 174,
+     "w": 16,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "paintings!",
+     "x": 901,
+     "y": 175,
+     "w": 66,
+     "h": 18,
+     "conf": 92.8
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-15.jpg",
+   "image_file": "mogaus-gift_english_20170331-15.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "They got to work, setting up a new village -\nBee pentneeeverione eeciepry",
+   "char_count": 73,
+   "word_count": 13,
+   "mean_conf": 71.8,
+   "words": [
+    {
+     "t": "They",
+     "x": 133,
+     "y": 98,
+     "w": 33,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "got",
+     "x": 171,
+     "y": 102,
+     "w": 23,
+     "h": 15,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 198,
+     "y": 102,
+     "w": 13,
+     "h": 11,
+     "conf": 76.6
+    },
+    {
+     "t": "work,",
+     "x": 216,
+     "y": 98,
+     "w": 36,
+     "h": 17,
+     "conf": 94.2
+    },
+    {
+     "t": "setting",
+     "x": 258,
+     "y": 102,
+     "w": 45,
+     "h": 15,
+     "conf": 90.4
+    },
+    {
+     "t": "up",
+     "x": 309,
+     "y": 105,
+     "w": 17,
+     "h": 12,
+     "conf": 96.2
+    },
+    {
+     "t": "a",
+     "x": 331,
+     "y": 105,
+     "w": 8,
+     "h": 8,
+     "conf": 96.1
+    },
+    {
+     "t": "new",
+     "x": 346,
+     "y": 105,
+     "w": 27,
+     "h": 8,
+     "conf": 96.1
+    },
+    {
+     "t": "village",
+     "x": 377,
+     "y": 98,
+     "w": 45,
+     "h": 19,
+     "conf": 91.7
+    },
+    {
+     "t": "-",
+     "x": 427,
+     "y": 109,
+     "w": 6,
+     "h": 1,
+     "conf": 84.1
+    },
+    {
+     "t": "Bee",
+     "x": 156,
+     "y": 127,
+     "w": 8,
+     "h": 8,
+     "conf": 14.3
+    },
+    {
+     "t": "pentneeeverione",
+     "x": 169,
+     "y": 120,
+     "w": 159,
+     "h": 19,
+     "conf": 0.0
+    },
+    {
+     "t": "eeciepry",
+     "x": 332,
+     "y": 120,
+     "w": 76,
+     "h": 19,
+     "conf": 0.0
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-16.jpg",
+   "image_file": "mogaus-gift_english_20170331-16.jpg",
+   "image_width": 1134,
+   "image_height": 567,
+   "ocr_text": "When Mogau was old enough, Mogau’s kingdom of happiness grew and became known, near\nhe became the king of this and far. He was the king who made his people smile!\ncolourful village.",
+   "char_count": 181,
+   "word_count": 33,
+   "mean_conf": 90.6,
+   "words": [
+    {
+     "t": "When",
+     "x": 61,
+     "y": 56,
+     "w": 41,
+     "h": 14,
+     "conf": 83.7
+    },
+    {
+     "t": "Mogau",
+     "x": 109,
+     "y": 56,
+     "w": 50,
+     "h": 18,
+     "conf": 85.6
+    },
+    {
+     "t": "was",
+     "x": 164,
+     "y": 62,
+     "w": 26,
+     "h": 8,
+     "conf": 96.9
+    },
+    {
+     "t": "old",
+     "x": 196,
+     "y": 55,
+     "w": 20,
+     "h": 15,
+     "conf": 96.1
+    },
+    {
+     "t": "enough,",
+     "x": 222,
+     "y": 55,
+     "w": 55,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "Mogau’s",
+     "x": 631,
+     "y": 56,
+     "w": 60,
+     "h": 18,
+     "conf": 46.3
+    },
+    {
+     "t": "kingdom",
+     "x": 697,
+     "y": 56,
+     "w": 60,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "of",
+     "x": 763,
+     "y": 55,
+     "w": 13,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "happiness",
+     "x": 781,
+     "y": 56,
+     "w": 68,
+     "h": 18,
+     "conf": 93.9
+    },
+    {
+     "t": "grew",
+     "x": 855,
+     "y": 62,
+     "w": 33,
+     "h": 12,
+     "conf": 90.7
+    },
+    {
+     "t": "and",
+     "x": 893,
+     "y": 55,
+     "w": 26,
+     "h": 15,
+     "conf": 96.7
+    },
+    {
+     "t": "became",
+     "x": 926,
+     "y": 55,
+     "w": 55,
+     "h": 15,
+     "conf": 94.0
+    },
+    {
+     "t": "known,",
+     "x": 987,
+     "y": 55,
+     "w": 47,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "near",
+     "x": 1041,
+     "y": 62,
+     "w": 30,
+     "h": 8,
+     "conf": 96.7
+    },
+    {
+     "t": "he",
+     "x": 79,
+     "y": 77,
+     "w": 15,
+     "h": 15,
+     "conf": 96.1
+    },
+    {
+     "t": "became",
+     "x": 100,
+     "y": 77,
+     "w": 55,
+     "h": 15,
+     "conf": 88.7
+    },
+    {
+     "t": "the",
+     "x": 160,
+     "y": 77,
+     "w": 22,
+     "h": 15,
+     "conf": 88.7
+    },
+    {
+     "t": "king",
+     "x": 187,
+     "y": 77,
+     "w": 27,
+     "h": 19,
+     "conf": 95.9
+    },
+    {
+     "t": "of",
+     "x": 220,
+     "y": 77,
+     "w": 13,
+     "h": 15,
+     "conf": 83.9
+    },
+    {
+     "t": "this",
+     "x": 238,
+     "y": 77,
+     "w": 23,
+     "h": 15,
+     "conf": 83.9
+    },
+    {
+     "t": "and",
+     "x": 666,
+     "y": 77,
+     "w": 26,
+     "h": 15,
+     "conf": 60.7
+    },
+    {
+     "t": "far.",
+     "x": 698,
+     "y": 77,
+     "w": 18,
+     "h": 15,
+     "conf": 94.1
+    },
+    {
+     "t": "He",
+     "x": 727,
+     "y": 78,
+     "w": 19,
+     "h": 14,
+     "conf": 96.7
+    },
+    {
+     "t": "was",
+     "x": 751,
+     "y": 84,
+     "w": 26,
+     "h": 8,
+     "conf": 96.3
+    },
+    {
+     "t": "the",
+     "x": 782,
+     "y": 77,
+     "w": 21,
+     "h": 15,
+     "conf": 95.8
+    },
+    {
+     "t": "king",
+     "x": 809,
+     "y": 78,
+     "w": 27,
+     "h": 18,
+     "conf": 96.2
+    },
+    {
+     "t": "who",
+     "x": 842,
+     "y": 77,
+     "w": 28,
+     "h": 15,
+     "conf": 96.7
+    },
+    {
+     "t": "made",
+     "x": 876,
+     "y": 77,
+     "w": 40,
+     "h": 15,
+     "conf": 96.7
+    },
+    {
+     "t": "his",
+     "x": 922,
+     "y": 77,
+     "w": 16,
+     "h": 15,
+     "conf": 95.4
+    },
+    {
+     "t": "people",
+     "x": 944,
+     "y": 77,
+     "w": 47,
+     "h": 19,
+     "conf": 91.8
+    },
+    {
+     "t": "smile!",
+     "x": 996,
+     "y": 77,
+     "w": 38,
+     "h": 15,
+     "conf": 91.8
+    },
+    {
+     "t": "colourful",
+     "x": 113,
+     "y": 99,
+     "w": 59,
+     "h": 15,
+     "conf": 93.1
+    },
+    {
+     "t": "village.",
+     "x": 177,
+     "y": 99,
+     "w": 45,
+     "h": 19,
+     "conf": 80.3
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_date-n",
+   "image_url": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-18.jpg",
+   "image_file": "mogaus-gift_english_20170331-18.jpg",
+   "image_width": 567,
+   "image_height": 567,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

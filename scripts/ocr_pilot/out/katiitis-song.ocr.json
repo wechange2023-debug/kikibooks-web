@@ -1,0 +1,1098 @@
+{
+ "slug": "katiitis-song",
+ "role": "no-text-4(extra)",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "katiitis-song_english_20160910_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_05.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Katiiti lived in a village next to a forest.",
+   "char_count": 44,
+   "word_count": 9,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "Katiiti",
+     "x": 140,
+     "y": 385,
+     "w": 81,
+     "h": 21,
+     "conf": 92.4
+    },
+    {
+     "t": "lived",
+     "x": 229,
+     "y": 384,
+     "w": 63,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "in",
+     "x": 301,
+     "y": 385,
+     "w": 25,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "a",
+     "x": 335,
+     "y": 392,
+     "w": 12,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "village",
+     "x": 355,
+     "y": 384,
+     "w": 83,
+     "h": 29,
+     "conf": 96.9
+    },
+    {
+     "t": "next",
+     "x": 448,
+     "y": 389,
+     "w": 56,
+     "h": 17,
+     "conf": 95.9
+    },
+    {
+     "t": "to",
+     "x": 512,
+     "y": 389,
+     "w": 25,
+     "h": 17,
+     "conf": 93.4
+    },
+    {
+     "t": "a",
+     "x": 547,
+     "y": 392,
+     "w": 12,
+     "h": 14,
+     "conf": 93.4
+    },
+    {
+     "t": "forest.",
+     "x": 568,
+     "y": 384,
+     "w": 80,
+     "h": 22,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_06.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "She loved playing in the forest.\nMaama told her to be careful.",
+   "char_count": 62,
+   "word_count": 12,
+   "mean_conf": 96.3,
+   "words": [
+    {
+     "t": "She",
+     "x": 194,
+     "y": 359,
+     "w": 46,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "loved",
+     "x": 248,
+     "y": 359,
+     "w": 71,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "playing",
+     "x": 327,
+     "y": 359,
+     "w": 93,
+     "h": 29,
+     "conf": 96.8
+    },
+    {
+     "t": "in",
+     "x": 430,
+     "y": 360,
+     "w": 25,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 464,
+     "y": 359,
+     "w": 40,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "forest.",
+     "x": 513,
+     "y": 359,
+     "w": 80,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "Maama",
+     "x": 204,
+     "y": 410,
+     "w": 95,
+     "h": 21,
+     "conf": 92.4
+    },
+    {
+     "t": "told",
+     "x": 308,
+     "y": 409,
+     "w": 50,
+     "h": 22,
+     "conf": 95.9
+    },
+    {
+     "t": "her",
+     "x": 367,
+     "y": 409,
+     "w": 42,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "to",
+     "x": 418,
+     "y": 414,
+     "w": 24,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "be",
+     "x": 451,
+     "y": 409,
+     "w": 30,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "careful.",
+     "x": 490,
+     "y": 409,
+     "w": 93,
+     "h": 22,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_07.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Every day Maama would sing\ntheir special song to call her.",
+   "char_count": 58,
+   "word_count": 11,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "Every",
+     "x": 203,
+     "y": 360,
+     "w": 75,
+     "h": 28,
+     "conf": 96.3
+    },
+    {
+     "t": "day",
+     "x": 287,
+     "y": 359,
+     "w": 44,
+     "h": 29,
+     "conf": 93.3
+    },
+    {
+     "t": "Maama",
+     "x": 339,
+     "y": 360,
+     "w": 95,
+     "h": 21,
+     "conf": 92.4
+    },
+    {
+     "t": "would",
+     "x": 442,
+     "y": 359,
+     "w": 82,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "sing",
+     "x": 532,
+     "y": 360,
+     "w": 52,
+     "h": 28,
+     "conf": 96.6
+    },
+    {
+     "t": "their",
+     "x": 210,
+     "y": 409,
+     "w": 62,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "special",
+     "x": 280,
+     "y": 409,
+     "w": 86,
+     "h": 29,
+     "conf": 96.9
+    },
+    {
+     "t": "song",
+     "x": 374,
+     "y": 417,
+     "w": 59,
+     "h": 21,
+     "conf": 97.0
+    },
+    {
+     "t": "to",
+     "x": 443,
+     "y": 414,
+     "w": 24,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "call",
+     "x": 477,
+     "y": 409,
+     "w": 42,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "her.",
+     "x": 528,
+     "y": 409,
+     "w": 49,
+     "h": 22,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_08.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "One day, Katiiti bumped into a gorilla.",
+   "char_count": 39,
+   "word_count": 7,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "One",
+     "x": 145,
+     "y": 385,
+     "w": 53,
+     "h": 21,
+     "conf": 96.4
+    },
+    {
+     "t": "day,",
+     "x": 208,
+     "y": 384,
+     "w": 50,
+     "h": 29,
+     "conf": 92.7
+    },
+    {
+     "t": "Katiiti",
+     "x": 268,
+     "y": 385,
+     "w": 81,
+     "h": 21,
+     "conf": 92.7
+    },
+    {
+     "t": "bumped",
+     "x": 357,
+     "y": 384,
+     "w": 106,
+     "h": 29,
+     "conf": 96.5
+    },
+    {
+     "t": "into",
+     "x": 472,
+     "y": 385,
+     "w": 50,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "a",
+     "x": 532,
+     "y": 392,
+     "w": 12,
+     "h": 14,
+     "conf": 96.8
+    },
+    {
+     "t": "gorilla.",
+     "x": 554,
+     "y": 384,
+     "w": 88,
+     "h": 29,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_09.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "She ran and hid in a cave.",
+   "char_count": 26,
+   "word_count": 7,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "She",
+     "x": 230,
+     "y": 384,
+     "w": 45,
+     "h": 22,
+     "conf": 95.9
+    },
+    {
+     "t": "ran",
+     "x": 284,
+     "y": 392,
+     "w": 42,
+     "h": 14,
+     "conf": 95.9
+    },
+    {
+     "t": "and",
+     "x": 336,
+     "y": 384,
+     "w": 46,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "hid",
+     "x": 391,
+     "y": 384,
+     "w": 41,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "in",
+     "x": 440,
+     "y": 385,
+     "w": 25,
+     "h": 21,
+     "conf": 95.4
+    },
+    {
+     "t": "a",
+     "x": 474,
+     "y": 392,
+     "w": 12,
+     "h": 14,
+     "conf": 93.9
+    },
+    {
+     "t": "cave.",
+     "x": 495,
+     "y": 392,
+     "w": 62,
+     "h": 14,
+     "conf": 93.9
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_10.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Gorilla came and sang Maama’s\nsong in a gruff voice.",
+   "char_count": 52,
+   "word_count": 10,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "Gorilla",
+     "x": 191,
+     "y": 359,
+     "w": 89,
+     "h": 22,
+     "conf": 95.2
+    },
+    {
+     "t": "came",
+     "x": 289,
+     "y": 367,
+     "w": 65,
+     "h": 14,
+     "conf": 96.8
+    },
+    {
+     "t": "and",
+     "x": 364,
+     "y": 359,
+     "w": 46,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "sang",
+     "x": 419,
+     "y": 367,
+     "w": 56,
+     "h": 21,
+     "conf": 93.3
+    },
+    {
+     "t": "Maama’s",
+     "x": 485,
+     "y": 358,
+     "w": 112,
+     "h": 23,
+     "conf": 92.2
+    },
+    {
+     "t": "song",
+     "x": 259,
+     "y": 417,
+     "w": 59,
+     "h": 21,
+     "conf": 96.3
+    },
+    {
+     "t": "in",
+     "x": 328,
+     "y": 410,
+     "w": 24,
+     "h": 21,
+     "conf": 95.6
+    },
+    {
+     "t": "a",
+     "x": 362,
+     "y": 417,
+     "w": 12,
+     "h": 14,
+     "conf": 95.6
+    },
+    {
+     "t": "gruff",
+     "x": 383,
+     "y": 409,
+     "w": 66,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "voice.",
+     "x": 454,
+     "y": 410,
+     "w": 74,
+     "h": 21,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_11.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Gorilla ate lots of bananas to ( 4\nmake his voice sweeter.",
+   "char_count": 58,
+   "word_count": 12,
+   "mean_conf": 91.2,
+   "words": [
+    {
+     "t": "Gorilla",
+     "x": 209,
+     "y": 359,
+     "w": 90,
+     "h": 22,
+     "conf": 94.6
+    },
+    {
+     "t": "ate",
+     "x": 308,
+     "y": 364,
+     "w": 36,
+     "h": 17,
+     "conf": 96.3
+    },
+    {
+     "t": "lots",
+     "x": 352,
+     "y": 359,
+     "w": 46,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "of",
+     "x": 408,
+     "y": 359,
+     "w": 28,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "bananas",
+     "x": 440,
+     "y": 359,
+     "w": 104,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 553,
+     "y": 364,
+     "w": 25,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "(",
+     "x": 1162,
+     "y": 280,
+     "w": 76,
+     "h": 152,
+     "conf": 69.1
+    },
+    {
+     "t": "4",
+     "x": 1350,
+     "y": 288,
+     "w": 82,
+     "h": 139,
+     "conf": 63.8
+    },
+    {
+     "t": "make",
+     "x": 242,
+     "y": 409,
+     "w": 67,
+     "h": 22,
+     "conf": 95.3
+    },
+    {
+     "t": "his",
+     "x": 319,
+     "y": 409,
+     "w": 36,
+     "h": 22,
+     "conf": 95.3
+    },
+    {
+     "t": "voice",
+     "x": 363,
+     "y": 410,
+     "w": 68,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "sweeter.",
+     "x": 440,
+     "y": 414,
+     "w": 105,
+     "h": 17,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_12.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Gorilla sang sweetishly.",
+   "char_count": 24,
+   "word_count": 3,
+   "mean_conf": 93.9,
+   "words": [
+    {
+     "t": "Gorilla",
+     "x": 241,
+     "y": 384,
+     "w": 90,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "sang",
+     "x": 340,
+     "y": 392,
+     "w": 56,
+     "h": 21,
+     "conf": 92.5
+    },
+    {
+     "t": "sweetishly.",
+     "x": 406,
+     "y": 384,
+     "w": 140,
+     "h": 29,
+     "conf": 92.5
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_13.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Gorilla went away and ate lots of honey\nto make his voice even sweeter.",
+   "char_count": 71,
+   "word_count": 14,
+   "mean_conf": 96.4,
+   "words": [
+    {
+     "t": "Gorilla",
+     "x": 138,
+     "y": 359,
+     "w": 89,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "went",
+     "x": 235,
+     "y": 364,
+     "w": 66,
+     "h": 17,
+     "conf": 96.7
+    },
+    {
+     "t": "away",
+     "x": 309,
+     "y": 367,
+     "w": 66,
+     "h": 21,
+     "conf": 95.9
+    },
+    {
+     "t": "and",
+     "x": 383,
+     "y": 359,
+     "w": 47,
+     "h": 22,
+     "conf": 95.9
+    },
+    {
+     "t": "ate",
+     "x": 438,
+     "y": 364,
+     "w": 36,
+     "h": 17,
+     "conf": 95.7
+    },
+    {
+     "t": "lots",
+     "x": 483,
+     "y": 359,
+     "w": 46,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "of",
+     "x": 538,
+     "y": 359,
+     "w": 28,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "honey",
+     "x": 572,
+     "y": 359,
+     "w": 79,
+     "h": 29,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 190,
+     "y": 414,
+     "w": 24,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "make",
+     "x": 224,
+     "y": 409,
+     "w": 68,
+     "h": 22,
+     "conf": 95.9
+    },
+    {
+     "t": "his",
+     "x": 302,
+     "y": 409,
+     "w": 36,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "voice",
+     "x": 346,
+     "y": 410,
+     "w": 67,
+     "h": 21,
+     "conf": 96.3
+    },
+    {
+     "t": "even",
+     "x": 423,
+     "y": 417,
+     "w": 60,
+     "h": 14,
+     "conf": 96.6
+    },
+    {
+     "t": "sweeter.",
+     "x": 492,
+     "y": 414,
+     "w": 105,
+     "h": 17,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_14.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Gorilla sang as sweetly as Maama.",
+   "char_count": 33,
+   "word_count": 6,
+   "mean_conf": 95.1,
+   "words": [
+    {
+     "t": "Gorilla",
+     "x": 175,
+     "y": 384,
+     "w": 89,
+     "h": 22,
+     "conf": 95.9
+    },
+    {
+     "t": "sang",
+     "x": 274,
+     "y": 392,
+     "w": 56,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "as",
+     "x": 340,
+     "y": 392,
+     "w": 24,
+     "h": 14,
+     "conf": 97.0
+    },
+    {
+     "t": "sweetly",
+     "x": 373,
+     "y": 384,
+     "w": 96,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "as",
+     "x": 477,
+     "y": 392,
+     "w": 24,
+     "h": 14,
+     "conf": 93.0
+    },
+    {
+     "t": "Maama.",
+     "x": 510,
+     "y": 385,
+     "w": 102,
+     "h": 21,
+     "conf": 91.2
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_15.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Maama came just in time to chase away Gorilla.",
+   "char_count": 46,
+   "word_count": 9,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "Maama",
+     "x": 86,
+     "y": 385,
+     "w": 95,
+     "h": 21,
+     "conf": 92.9
+    },
+    {
+     "t": "came",
+     "x": 191,
+     "y": 392,
+     "w": 65,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "just",
+     "x": 264,
+     "y": 385,
+     "w": 46,
+     "h": 28,
+     "conf": 96.9
+    },
+    {
+     "t": "in",
+     "x": 319,
+     "y": 385,
+     "w": 25,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "time",
+     "x": 353,
+     "y": 385,
+     "w": 57,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 419,
+     "y": 389,
+     "w": 25,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "chase",
+     "x": 454,
+     "y": 384,
+     "w": 68,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "away",
+     "x": 531,
+     "y": 392,
+     "w": 66,
+     "h": 21,
+     "conf": 96.3
+    },
+    {
+     "t": "Gorilla.",
+     "x": 605,
+     "y": 384,
+     "w": 96,
+     "h": 22,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_16.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Katiiti and Maama sang all the way back home.",
+   "char_count": 45,
+   "word_count": 9,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "Katiiti",
+     "x": 89,
+     "y": 385,
+     "w": 82,
+     "h": 21,
+     "conf": 93.1
+    },
+    {
+     "t": "and",
+     "x": 180,
+     "y": 384,
+     "w": 46,
+     "h": 22,
+     "conf": 93.2
+    },
+    {
+     "t": "Maama",
+     "x": 235,
+     "y": 385,
+     "w": 95,
+     "h": 21,
+     "conf": 92.5
+    },
+    {
+     "t": "sang",
+     "x": 339,
+     "y": 392,
+     "w": 57,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "all",
+     "x": 406,
+     "y": 384,
+     "w": 28,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 443,
+     "y": 384,
+     "w": 40,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "way",
+     "x": 491,
+     "y": 392,
+     "w": 53,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "back",
+     "x": 551,
+     "y": 384,
+     "w": 59,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "home.",
+     "x": 619,
+     "y": 384,
+     "w": 79,
+     "h": 22,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_17.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_17.jpg",
+   "image_width": 1578,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_18.jpg",
+   "image_file": "katiitis-song_english_20160910_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

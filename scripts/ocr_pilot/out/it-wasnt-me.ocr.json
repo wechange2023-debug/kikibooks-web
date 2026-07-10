@@ -1,0 +1,228 @@
+{
+ "slug": "it-wasnt-me",
+ "role": "no-text-4",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "it-wasnt-me_english_20160724_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_05.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_06.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_07.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Oh, no!",
+   "char_count": 7,
+   "word_count": 2,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "Oh,",
+     "x": 204,
+     "y": 378,
+     "w": 78,
+     "h": 43,
+     "conf": 94.7
+    },
+    {
+     "t": "no!",
+     "x": 300,
+     "y": 379,
+     "w": 64,
+     "h": 35,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_08.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_09.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_10.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_11.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_12.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Hiss!",
+   "char_count": 5,
+   "word_count": 1,
+   "mean_conf": 95.6,
+   "words": [
+    {
+     "t": "Hiss!",
+     "x": 563,
+     "y": 379,
+     "w": 100,
+     "h": 35,
+     "conf": 95.6
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_13.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_14.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_15.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_16.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/07/it-wasnt-me_english_20160724_Page_18.jpg",
+   "image_file": "it-wasnt-me_english_20160724_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

@@ -1,0 +1,1541 @@
+{
+ "slug": "the-window-seat",
+ "role": "new-157",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "the-window-seat_en_cover-1.jpg",
+   "reason": "cover"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page4.jpg",
+   "image_file": "the-window-seat_en_page4.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page5.jpg",
+   "image_file": "the-window-seat_en_page5.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“This year I’m taking the\nwindow seat!” says Cici.\n“Not fair! You had it last year,”\nGugu shouts.",
+   "char_count": 97,
+   "word_count": 18,
+   "mean_conf": 92.6,
+   "words": [
+    {
+     "t": "“This",
+     "x": 640,
+     "y": 530,
+     "w": 186,
+     "h": 66,
+     "conf": 96.3
+    },
+    {
+     "t": "year",
+     "x": 861,
+     "y": 549,
+     "w": 177,
+     "h": 64,
+     "conf": 97.0
+    },
+    {
+     "t": "I’m",
+     "x": 1072,
+     "y": 533,
+     "w": 104,
+     "h": 62,
+     "conf": 71.6
+    },
+    {
+     "t": "taking",
+     "x": 1207,
+     "y": 530,
+     "w": 246,
+     "h": 83,
+     "conf": 95.5
+    },
+    {
+     "t": "the",
+     "x": 1485,
+     "y": 530,
+     "w": 123,
+     "h": 66,
+     "conf": 96.8
+    },
+    {
+     "t": "window",
+     "x": 659,
+     "y": 651,
+     "w": 301,
+     "h": 66,
+     "conf": 96.3
+    },
+    {
+     "t": "seat!”",
+     "x": 990,
+     "y": 654,
+     "w": 213,
+     "h": 63,
+     "conf": 95.0
+    },
+    {
+     "t": "says",
+     "x": 1234,
+     "y": 670,
+     "w": 177,
+     "h": 64,
+     "conf": 93.3
+    },
+    {
+     "t": "Cici.",
+     "x": 1443,
+     "y": 654,
+     "w": 147,
+     "h": 63,
+     "conf": 78.1
+    },
+    {
+     "t": "“Not",
+     "x": 529,
+     "y": 822,
+     "w": 171,
+     "h": 63,
+     "conf": 96.2
+    },
+    {
+     "t": "fair!",
+     "x": 727,
+     "y": 819,
+     "w": 147,
+     "h": 66,
+     "conf": 88.9
+    },
+    {
+     "t": "You",
+     "x": 903,
+     "y": 822,
+     "w": 143,
+     "h": 63,
+     "conf": 95.7
+    },
+    {
+     "t": "had",
+     "x": 1082,
+     "y": 819,
+     "w": 142,
+     "h": 66,
+     "conf": 95.7
+    },
+    {
+     "t": "it",
+     "x": 1258,
+     "y": 825,
+     "w": 41,
+     "h": 59,
+     "conf": 96.7
+    },
+    {
+     "t": "last",
+     "x": 1332,
+     "y": 819,
+     "w": 134,
+     "h": 66,
+     "conf": 96.8
+    },
+    {
+     "t": "year,”",
+     "x": 1498,
+     "y": 822,
+     "w": 223,
+     "h": 80,
+     "conf": 95.7
+    },
+    {
+     "t": "Gugu",
+     "x": 870,
+     "y": 943,
+     "w": 204,
+     "h": 80,
+     "conf": 89.7
+    },
+    {
+     "t": "shouts.",
+     "x": 1108,
+     "y": 940,
+     "w": 272,
+     "h": 66,
+     "conf": 91.8
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page6.jpg",
+   "image_file": "the-window-seat_en_page6.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“Race!” says Gugu.\nOff they go, running\ndown the platform.\nCici reaches it first.",
+   "char_count": 81,
+   "word_count": 14,
+   "mean_conf": 92.0,
+   "words": [
+    {
+     "t": "“Race!”",
+     "x": 811,
+     "y": 565,
+     "w": 277,
+     "h": 63,
+     "conf": 90.3
+    },
+    {
+     "t": "says",
+     "x": 1119,
+     "y": 581,
+     "w": 177,
+     "h": 64,
+     "conf": 93.3
+    },
+    {
+     "t": "Gugu.",
+     "x": 1328,
+     "y": 565,
+     "w": 222,
+     "h": 80,
+     "conf": 53.7
+    },
+    {
+     "t": "Off",
+     "x": 779,
+     "y": 730,
+     "w": 124,
+     "h": 66,
+     "conf": 96.7
+    },
+    {
+     "t": "they",
+     "x": 929,
+     "y": 730,
+     "w": 171,
+     "h": 83,
+     "conf": 96.9
+    },
+    {
+     "t": "go,",
+     "x": 1135,
+     "y": 749,
+     "w": 117,
+     "h": 64,
+     "conf": 96.4
+    },
+    {
+     "t": "running",
+     "x": 1286,
+     "y": 736,
+     "w": 295,
+     "h": 77,
+     "conf": 95.9
+    },
+    {
+     "t": "down",
+     "x": 801,
+     "y": 851,
+     "w": 212,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 1044,
+     "y": 851,
+     "w": 123,
+     "h": 66,
+     "conf": 96.0
+    },
+    {
+     "t": "platform.",
+     "x": 1203,
+     "y": 851,
+     "w": 357,
+     "h": 83,
+     "conf": 92.3
+    },
+    {
+     "t": "Cici",
+     "x": 809,
+     "y": 1022,
+     "w": 130,
+     "h": 63,
+     "conf": 92.7
+    },
+    {
+     "t": "reaches",
+     "x": 976,
+     "y": 1019,
+     "w": 311,
+     "h": 66,
+     "conf": 95.5
+    },
+    {
+     "t": "it",
+     "x": 1319,
+     "y": 1025,
+     "w": 41,
+     "h": 59,
+     "conf": 95.5
+    },
+    {
+     "t": "first.",
+     "x": 1389,
+     "y": 1019,
+     "w": 163,
+     "h": 66,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page7.jpg",
+   "image_file": "the-window-seat_en_page7.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“Rock, paper, scissors!”\nsays Cici.\nThis time, Gugu wins.",
+   "char_count": 57,
+   "word_count": 9,
+   "mean_conf": 86.6,
+   "words": [
+    {
+     "t": "“Rock,",
+     "x": 2744,
+     "y": 1660,
+     "w": 245,
+     "h": 76,
+     "conf": 96.6
+    },
+    {
+     "t": "paper,",
+     "x": 3023,
+     "y": 1679,
+     "w": 249,
+     "h": 64,
+     "conf": 96.5
+    },
+    {
+     "t": "scissors!”",
+     "x": 3303,
+     "y": 1663,
+     "w": 354,
+     "h": 63,
+     "conf": 96.1
+    },
+    {
+     "t": "says",
+     "x": 3023,
+     "y": 1800,
+     "w": 176,
+     "h": 64,
+     "conf": 88.5
+    },
+    {
+     "t": "Cici.",
+     "x": 3231,
+     "y": 1784,
+     "w": 147,
+     "h": 63,
+     "conf": 23.9
+    },
+    {
+     "t": "This",
+     "x": 2786,
+     "y": 1949,
+     "w": 155,
+     "h": 66,
+     "conf": 96.5
+    },
+    {
+     "t": "time,",
+     "x": 2970,
+     "y": 1955,
+     "w": 191,
+     "h": 70,
+     "conf": 93.3
+    },
+    {
+     "t": "Gugu",
+     "x": 3192,
+     "y": 1952,
+     "w": 204,
+     "h": 80,
+     "conf": 92.0
+    },
+    {
+     "t": "wins.",
+     "x": 3430,
+     "y": 1955,
+     "w": 184,
+     "h": 60,
+     "conf": 96.0
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page8.jpg",
+   "image_file": "the-window-seat_en_page8.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "-——~\nLd\nll\now\n—\na,\nMom decides, “You'll share the\nwindow. Half the trip is for Gugu,\nhalf for Cici.”",
+   "char_count": 100,
+   "word_count": 21,
+   "mean_conf": 73.0,
+   "words": [
+    {
+     "t": "-——~",
+     "x": 3727,
+     "y": 553,
+     "w": 347,
+     "h": 112,
+     "conf": 0.0
+    },
+    {
+     "t": "Ld",
+     "x": 3728,
+     "y": 898,
+     "w": 358,
+     "h": 111,
+     "conf": 31.1
+    },
+    {
+     "t": "ll",
+     "x": 3223,
+     "y": 562,
+     "w": 336,
+     "h": 94,
+     "conf": 0.0
+    },
+    {
+     "t": "ow",
+     "x": 3223,
+     "y": 906,
+     "w": 331,
+     "h": 130,
+     "conf": 31.5
+    },
+    {
+     "t": "—",
+     "x": 2683,
+     "y": 584,
+     "w": 316,
+     "h": 89,
+     "conf": 59.7
+    },
+    {
+     "t": "a,",
+     "x": 2683,
+     "y": 956,
+     "w": 315,
+     "h": 98,
+     "conf": 21.4
+    },
+    {
+     "t": "Mom",
+     "x": 2940,
+     "y": 1697,
+     "w": 190,
+     "h": 63,
+     "conf": 96.4
+    },
+    {
+     "t": "decides,",
+     "x": 3165,
+     "y": 1694,
+     "w": 320,
+     "h": 76,
+     "conf": 96.1
+    },
+    {
+     "t": "“You'll",
+     "x": 3515,
+     "y": 1694,
+     "w": 229,
+     "h": 66,
+     "conf": 68.2
+    },
+    {
+     "t": "share",
+     "x": 3778,
+     "y": 1694,
+     "w": 219,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 4027,
+     "y": 1694,
+     "w": 123,
+     "h": 66,
+     "conf": 96.6
+    },
+    {
+     "t": "window.",
+     "x": 2893,
+     "y": 1815,
+     "w": 315,
+     "h": 66,
+     "conf": 96.7
+    },
+    {
+     "t": "Half",
+     "x": 3244,
+     "y": 1815,
+     "w": 158,
+     "h": 66,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 3429,
+     "y": 1815,
+     "w": 123,
+     "h": 66,
+     "conf": 96.5
+    },
+    {
+     "t": "trip",
+     "x": 3581,
+     "y": 1821,
+     "w": 130,
+     "h": 77,
+     "conf": 94.5
+    },
+    {
+     "t": "is",
+     "x": 3744,
+     "y": 1821,
+     "w": 52,
+     "h": 60,
+     "conf": 96.8
+    },
+    {
+     "t": "for",
+     "x": 3825,
+     "y": 1815,
+     "w": 115,
+     "h": 66,
+     "conf": 90.4
+    },
+    {
+     "t": "Gugu,",
+     "x": 3969,
+     "y": 1818,
+     "w": 225,
+     "h": 80,
+     "conf": 90.4
+    },
+    {
+     "t": "half",
+     "x": 3296,
+     "y": 1935,
+     "w": 147,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "for",
+     "x": 3470,
+     "y": 1935,
+     "w": 116,
+     "h": 66,
+     "conf": 93.3
+    },
+    {
+     "t": "Cici.”",
+     "x": 3614,
+     "y": 1938,
+     "w": 179,
+     "h": 63,
+     "conf": 83.0
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page9.jpg",
+   "image_file": "the-window-seat_en_page9.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "They get on the train.\nNo! Every window seat\nis taken.",
+   "char_count": 54,
+   "word_count": 11,
+   "mean_conf": 95.9,
+   "words": [
+    {
+     "t": "They",
+     "x": 3152,
+     "y": 1538,
+     "w": 191,
+     "h": 83,
+     "conf": 96.7
+    },
+    {
+     "t": "get",
+     "x": 3378,
+     "y": 1546,
+     "w": 127,
+     "h": 75,
+     "conf": 96.5
+    },
+    {
+     "t": "on",
+     "x": 3536,
+     "y": 1557,
+     "w": 93,
+     "h": 47,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 3660,
+     "y": 1538,
+     "w": 123,
+     "h": 66,
+     "conf": 95.5
+    },
+    {
+     "t": "train.",
+     "x": 3813,
+     "y": 1544,
+     "w": 195,
+     "h": 60,
+     "conf": 96.1
+    },
+    {
+     "t": "No!",
+     "x": 3120,
+     "y": 1710,
+     "w": 121,
+     "h": 62,
+     "conf": 95.4
+    },
+    {
+     "t": "Every",
+     "x": 3277,
+     "y": 1710,
+     "w": 214,
+     "h": 79,
+     "conf": 96.6
+    },
+    {
+     "t": "window",
+     "x": 3525,
+     "y": 1706,
+     "w": 301,
+     "h": 66,
+     "conf": 96.8
+    },
+    {
+     "t": "seat",
+     "x": 3856,
+     "y": 1714,
+     "w": 167,
+     "h": 58,
+     "conf": 96.8
+    },
+    {
+     "t": "is",
+     "x": 3410,
+     "y": 1823,
+     "w": 65,
+     "h": 92,
+     "conf": 96.5
+    },
+    {
+     "t": "taken.",
+     "x": 3489,
+     "y": 1827,
+     "w": 240,
+     "h": 66,
+     "conf": 91.7
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page10.jpg",
+   "image_file": "the-window-seat_en_page10.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "The sisters sit in the aisle seats.\nThey peek at the window. They\nwish they could see the view.",
+   "char_count": 95,
+   "word_count": 19,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "The",
+     "x": 2972,
+     "y": 1018,
+     "w": 144,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "sisters",
+     "x": 3148,
+     "y": 1024,
+     "w": 247,
+     "h": 60,
+     "conf": 96.4
+    },
+    {
+     "t": "sit",
+     "x": 3427,
+     "y": 1024,
+     "w": 83,
+     "h": 60,
+     "conf": 96.2
+    },
+    {
+     "t": "in",
+     "x": 3541,
+     "y": 1024,
+     "w": 58,
+     "h": 59,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 3630,
+     "y": 1018,
+     "w": 124,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "aisle",
+     "x": 3786,
+     "y": 1018,
+     "w": 174,
+     "h": 66,
+     "conf": 96.2
+    },
+    {
+     "t": "seats.",
+     "x": 3992,
+     "y": 1026,
+     "w": 222,
+     "h": 58,
+     "conf": 96.1
+    },
+    {
+     "t": "They",
+     "x": 2969,
+     "y": 1139,
+     "w": 192,
+     "h": 83,
+     "conf": 96.4
+    },
+    {
+     "t": "peek",
+     "x": 3198,
+     "y": 1139,
+     "w": 188,
+     "h": 83,
+     "conf": 96.4
+    },
+    {
+     "t": "at",
+     "x": 3418,
+     "y": 1147,
+     "w": 76,
+     "h": 58,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 3521,
+     "y": 1139,
+     "w": 124,
+     "h": 66,
+     "conf": 95.9
+    },
+    {
+     "t": "window.",
+     "x": 3676,
+     "y": 1139,
+     "w": 315,
+     "h": 66,
+     "conf": 96.1
+    },
+    {
+     "t": "They",
+     "x": 4023,
+     "y": 1139,
+     "w": 192,
+     "h": 83,
+     "conf": 96.8
+    },
+    {
+     "t": "wish",
+     "x": 3017,
+     "y": 1260,
+     "w": 166,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "they",
+     "x": 3214,
+     "y": 1260,
+     "w": 171,
+     "h": 83,
+     "conf": 96.1
+    },
+    {
+     "t": "could",
+     "x": 3419,
+     "y": 1260,
+     "w": 211,
+     "h": 66,
+     "conf": 96.1
+    },
+    {
+     "t": "see",
+     "x": 3664,
+     "y": 1279,
+     "w": 132,
+     "h": 47,
+     "conf": 95.2
+    },
+    {
+     "t": "the",
+     "x": 3825,
+     "y": 1260,
+     "w": 124,
+     "h": 66,
+     "conf": 95.6
+    },
+    {
+     "t": "view.",
+     "x": 3980,
+     "y": 1266,
+     "w": 188,
+     "h": 60,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page11.jpg",
+   "image_file": "the-window-seat_en_page11.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "The lady sitting in the window seat\ndrops her handbag.\nThe sisters pick it up and\nhand it back.",
+   "char_count": 95,
+   "word_count": 19,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "The",
+     "x": 379,
+     "y": 1168,
+     "w": 144,
+     "h": 66,
+     "conf": 96.5
+    },
+    {
+     "t": "lady",
+     "x": 560,
+     "y": 1168,
+     "w": 161,
+     "h": 82,
+     "conf": 95.0
+    },
+    {
+     "t": "sitting",
+     "x": 755,
+     "y": 1174,
+     "w": 233,
+     "h": 76,
+     "conf": 95.7
+    },
+    {
+     "t": "in",
+     "x": 1024,
+     "y": 1174,
+     "w": 57,
+     "h": 59,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 1113,
+     "y": 1168,
+     "w": 123,
+     "h": 66,
+     "conf": 96.7
+    },
+    {
+     "t": "window",
+     "x": 1267,
+     "y": 1168,
+     "w": 301,
+     "h": 66,
+     "conf": 96.8
+    },
+    {
+     "t": "seat",
+     "x": 1599,
+     "y": 1176,
+     "w": 166,
+     "h": 58,
+     "conf": 96.8
+    },
+    {
+     "t": "drops",
+     "x": 677,
+     "y": 1289,
+     "w": 226,
+     "h": 82,
+     "conf": 96.4
+    },
+    {
+     "t": "her",
+     "x": 938,
+     "y": 1289,
+     "w": 124,
+     "h": 66,
+     "conf": 96.3
+    },
+    {
+     "t": "handbag.",
+     "x": 1095,
+     "y": 1289,
+     "w": 371,
+     "h": 82,
+     "conf": 95.3
+    },
+    {
+     "t": "The",
+     "x": 576,
+     "y": 1457,
+     "w": 145,
+     "h": 66,
+     "conf": 95.9
+    },
+    {
+     "t": "sisters",
+     "x": 753,
+     "y": 1463,
+     "w": 246,
+     "h": 60,
+     "conf": 96.4
+    },
+    {
+     "t": "pick",
+     "x": 1034,
+     "y": 1457,
+     "w": 153,
+     "h": 82,
+     "conf": 96.6
+    },
+    {
+     "t": "it",
+     "x": 1221,
+     "y": 1463,
+     "w": 40,
+     "h": 59,
+     "conf": 96.2
+    },
+    {
+     "t": "up",
+     "x": 1294,
+     "y": 1477,
+     "w": 92,
+     "h": 62,
+     "conf": 91.1
+    },
+    {
+     "t": "and",
+     "x": 1418,
+     "y": 1457,
+     "w": 146,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "hand",
+     "x": 821,
+     "y": 1578,
+     "w": 192,
+     "h": 66,
+     "conf": 96.8
+    },
+    {
+     "t": "it",
+     "x": 1050,
+     "y": 1584,
+     "w": 40,
+     "h": 59,
+     "conf": 96.6
+    },
+    {
+     "t": "back.",
+     "x": 1123,
+     "y": 1578,
+     "w": 202,
+     "h": 66,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page12.jpg",
+   "image_file": "the-window-seat_en_page12.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“Thank you, girls. Would you\nlike to sit here by\nthe window?”\n“Yes!”",
+   "char_count": 68,
+   "word_count": 13,
+   "mean_conf": 95.2,
+   "words": [
+    {
+     "t": "“Thank",
+     "x": 2983,
+     "y": 1410,
+     "w": 276,
+     "h": 66,
+     "conf": 96.2
+    },
+    {
+     "t": "you,",
+     "x": 3294,
+     "y": 1429,
+     "w": 160,
+     "h": 64,
+     "conf": 95.6
+    },
+    {
+     "t": "girls.",
+     "x": 3484,
+     "y": 1410,
+     "w": 176,
+     "h": 83,
+     "conf": 94.7
+    },
+    {
+     "t": "Would",
+     "x": 3690,
+     "y": 1410,
+     "w": 252,
+     "h": 66,
+     "conf": 94.7
+    },
+    {
+     "t": "you",
+     "x": 3979,
+     "y": 1429,
+     "w": 139,
+     "h": 64,
+     "conf": 96.4
+    },
+    {
+     "t": "like",
+     "x": 3204,
+     "y": 1531,
+     "w": 123,
+     "h": 66,
+     "conf": 96.3
+    },
+    {
+     "t": "to",
+     "x": 3357,
+     "y": 1539,
+     "w": 77,
+     "h": 58,
+     "conf": 96.6
+    },
+    {
+     "t": "sit",
+     "x": 3466,
+     "y": 1537,
+     "w": 83,
+     "h": 60,
+     "conf": 96.6
+    },
+    {
+     "t": "here",
+     "x": 3582,
+     "y": 1531,
+     "w": 171,
+     "h": 66,
+     "conf": 96.0
+    },
+    {
+     "t": "by",
+     "x": 3788,
+     "y": 1531,
+     "w": 89,
+     "h": 83,
+     "conf": 96.0
+    },
+    {
+     "t": "the",
+     "x": 3275,
+     "y": 1652,
+     "w": 124,
+     "h": 66,
+     "conf": 96.6
+    },
+    {
+     "t": "window?”",
+     "x": 3430,
+     "y": 1652,
+     "w": 373,
+     "h": 66,
+     "conf": 91.7
+    },
+    {
+     "t": "“Yes!”",
+     "x": 3347,
+     "y": 1813,
+     "w": 385,
+     "h": 99,
+     "conf": 90.5
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page13.jpg",
+   "image_file": "the-window-seat_en_page13.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "Gugu leans\nclose to the\nwindow.\n“Into the\ntunnel!” she\nyells.",
+   "char_count": 61,
+   "word_count": 11,
+   "mean_conf": 92.3,
+   "words": [
+    {
+     "t": "Gugu",
+     "x": 2798,
+     "y": 1029,
+     "w": 186,
+     "h": 80,
+     "conf": 87.3
+    },
+    {
+     "t": "leans",
+     "x": 3040,
+     "y": 1026,
+     "w": 204,
+     "h": 66,
+     "conf": 95.4
+    },
+    {
+     "t": "close",
+     "x": 2779,
+     "y": 1147,
+     "w": 459,
+     "h": 66,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 3007,
+     "y": 1143,
+     "w": 76,
+     "h": 90,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 3120,
+     "y": 1147,
+     "w": 118,
+     "h": 66,
+     "conf": 97.0
+    },
+    {
+     "t": "window.",
+     "x": 2851,
+     "y": 1268,
+     "w": 315,
+     "h": 66,
+     "conf": 96.0
+    },
+    {
+     "t": "“Into",
+     "x": 2843,
+     "y": 1392,
+     "w": 174,
+     "h": 63,
+     "conf": 94.6
+    },
+    {
+     "t": "the",
+     "x": 3054,
+     "y": 1389,
+     "w": 119,
+     "h": 66,
+     "conf": 96.2
+    },
+    {
+     "t": "tunnel!”",
+     "x": 2779,
+     "y": 1506,
+     "w": 293,
+     "h": 89,
+     "conf": 62.7
+    },
+    {
+     "t": "she",
+     "x": 3108,
+     "y": 1510,
+     "w": 127,
+     "h": 66,
+     "conf": 96.5
+    },
+    {
+     "t": "yells.",
+     "x": 2917,
+     "y": 1631,
+     "w": 186,
+     "h": 83,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page14.jpg",
+   "image_file": "the-window-seat_en_page14.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "Out comes the sun again.\nCici jumps into the\nwindow seat.\n“Look!”",
+   "char_count": 65,
+   "word_count": 12,
+   "mean_conf": 91.7,
+   "words": [
+    {
+     "t": "Out",
+     "x": 3093,
+     "y": 726,
+     "w": 140,
+     "h": 63,
+     "conf": 94.8
+    },
+    {
+     "t": "comes",
+     "x": 3264,
+     "y": 742,
+     "w": 260,
+     "h": 47,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 3554,
+     "y": 723,
+     "w": 122,
+     "h": 66,
+     "conf": 96.2
+    },
+    {
+     "t": "sun",
+     "x": 3709,
+     "y": 742,
+     "w": 130,
+     "h": 47,
+     "conf": 96.4
+    },
+    {
+     "t": "again.",
+     "x": 3874,
+     "y": 729,
+     "w": 237,
+     "h": 76,
+     "conf": 96.2
+    },
+    {
+     "t": "Cici",
+     "x": 3237,
+     "y": 1219,
+     "w": 130,
+     "h": 63,
+     "conf": 92.1
+    },
+    {
+     "t": "jumps",
+     "x": 3394,
+     "y": 1222,
+     "w": 246,
+     "h": 76,
+     "conf": 47.2
+    },
+    {
+     "t": "into",
+     "x": 3674,
+     "y": 1222,
+     "w": 142,
+     "h": 60,
+     "conf": 96.3
+    },
+    {
+     "t": "the",
+     "x": 3844,
+     "y": 1216,
+     "w": 124,
+     "h": 66,
+     "conf": 96.7
+    },
+    {
+     "t": "window",
+     "x": 3346,
+     "y": 1337,
+     "w": 301,
+     "h": 66,
+     "conf": 96.1
+    },
+    {
+     "t": "seat.",
+     "x": 3677,
+     "y": 1345,
+     "w": 180,
+     "h": 58,
+     "conf": 96.0
+    },
+    {
+     "t": "“Look!”",
+     "x": 3360,
+     "y": 1493,
+     "w": 483,
+     "h": 104,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page15.jpg",
+   "image_file": "the-window-seat_en_page15.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "Finally they fall asleep.\nThey will wake up\nin Joburg.\nThey can’t wait to tell\nTata what they saw.",
+   "char_count": 98,
+   "word_count": 19,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "Finally",
+     "x": 3092,
+     "y": 815,
+     "w": 247,
+     "h": 83,
+     "conf": 96.4
+    },
+    {
+     "t": "they",
+     "x": 3371,
+     "y": 815,
+     "w": 170,
+     "h": 83,
+     "conf": 96.4
+    },
+    {
+     "t": "fall",
+     "x": 3574,
+     "y": 815,
+     "w": 116,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "asleep.",
+     "x": 3725,
+     "y": 815,
+     "w": 273,
+     "h": 83,
+     "conf": 96.1
+    },
+    {
+     "t": "They",
+     "x": 3188,
+     "y": 936,
+     "w": 192,
+     "h": 83,
+     "conf": 96.7
+    },
+    {
+     "t": "will",
+     "x": 3414,
+     "y": 936,
+     "w": 115,
+     "h": 65,
+     "conf": 95.3
+    },
+    {
+     "t": "wake",
+     "x": 3563,
+     "y": 936,
+     "w": 207,
+     "h": 66,
+     "conf": 95.3
+    },
+    {
+     "t": "up",
+     "x": 3805,
+     "y": 956,
+     "w": 92,
+     "h": 63,
+     "conf": 96.7
+    },
+    {
+     "t": "in",
+     "x": 3347,
+     "y": 1063,
+     "w": 58,
+     "h": 59,
+     "conf": 96.3
+    },
+    {
+     "t": "Joburg.",
+     "x": 3441,
+     "y": 1057,
+     "w": 299,
+     "h": 83,
+     "conf": 96.0
+    },
+    {
+     "t": "They",
+     "x": 3115,
+     "y": 1225,
+     "w": 192,
+     "h": 83,
+     "conf": 96.7
+    },
+    {
+     "t": "can’t",
+     "x": 3342,
+     "y": 1228,
+     "w": 189,
+     "h": 63,
+     "conf": 94.4
+    },
+    {
+     "t": "wait",
+     "x": 3560,
+     "y": 1231,
+     "w": 162,
+     "h": 60,
+     "conf": 96.3
+    },
+    {
+     "t": "to",
+     "x": 3749,
+     "y": 1233,
+     "w": 78,
+     "h": 58,
+     "conf": 96.2
+    },
+    {
+     "t": "tell",
+     "x": 3856,
+     "y": 1225,
+     "w": 111,
+     "h": 66,
+     "conf": 96.2
+    },
+    {
+     "t": "Tata",
+     "x": 3140,
+     "y": 1349,
+     "w": 179,
+     "h": 62,
+     "conf": 96.3
+    },
+    {
+     "t": "what",
+     "x": 3352,
+     "y": 1345,
+     "w": 193,
+     "h": 66,
+     "conf": 96.3
+    },
+    {
+     "t": "they",
+     "x": 3573,
+     "y": 1345,
+     "w": 170,
+     "h": 83,
+     "conf": 95.9
+    },
+    {
+     "t": "saw.",
+     "x": 3778,
+     "y": 1364,
+     "w": 167,
+     "h": 47,
+     "conf": 96.0
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_page17.jpg",
+   "image_file": "the-window-seat_en_page17.jpg",
+   "image_width": 2362,
+   "image_height": 2362,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}
