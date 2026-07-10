@@ -1,0 +1,3511 @@
+{
+ "slug": "sindiwe-and-the-fireflies",
+ "wp_slug": "sindiwe-and-the-fireflies",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_05.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "One day a very clever baby was born\nin Gungululu in the Eastern Cape.\nHer name was Sindiwe Magona.\nShe was the oldest of eight children.",
+   "char_count": 136,
+   "word_count": 26,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "One",
+     "x": 176,
+     "y": 237,
+     "w": 50,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "day",
+     "x": 236,
+     "y": 237,
+     "w": 38,
+     "h": 27,
+     "conf": 96.1
+    },
+    {
+     "t": "a",
+     "x": 283,
+     "y": 244,
+     "w": 11,
+     "h": 13,
+     "conf": 96.1
+    },
+    {
+     "t": "very",
+     "x": 303,
+     "y": 244,
+     "w": 51,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "clever",
+     "x": 363,
+     "y": 237,
+     "w": 69,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "baby",
+     "x": 443,
+     "y": 237,
+     "w": 51,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "was",
+     "x": 503,
+     "y": 244,
+     "w": 44,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "born",
+     "x": 558,
+     "y": 237,
+     "w": 53,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "in",
+     "x": 199,
+     "y": 280,
+     "w": 17,
+     "h": 18,
+     "conf": 93.2
+    },
+    {
+     "t": "Gungululu",
+     "x": 227,
+     "y": 278,
+     "w": 117,
+     "h": 27,
+     "conf": 92.8
+    },
+    {
+     "t": "in",
+     "x": 356,
+     "y": 280,
+     "w": 17,
+     "h": 18,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 384,
+     "y": 278,
+     "w": 36,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "Eastern",
+     "x": 431,
+     "y": 278,
+     "w": 85,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "Cape.",
+     "x": 526,
+     "y": 278,
+     "w": 66,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "Her",
+     "x": 210,
+     "y": 359,
+     "w": 44,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "name",
+     "x": 265,
+     "y": 366,
+     "w": 60,
+     "h": 13,
+     "conf": 95.4
+    },
+    {
+     "t": "was",
+     "x": 335,
+     "y": 366,
+     "w": 43,
+     "h": 13,
+     "conf": 93.3
+    },
+    {
+     "t": "Sindiwe",
+     "x": 388,
+     "y": 359,
+     "w": 88,
+     "h": 20,
+     "conf": 91.3
+    },
+    {
+     "t": "Magona.",
+     "x": 487,
+     "y": 359,
+     "w": 94,
+     "h": 27,
+     "conf": 90.3
+    },
+    {
+     "t": "She",
+     "x": 183,
+     "y": 440,
+     "w": 40,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "was",
+     "x": 232,
+     "y": 447,
+     "w": 43,
+     "h": 13,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 285,
+     "y": 440,
+     "w": 37,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "oldest",
+     "x": 332,
+     "y": 440,
+     "w": 71,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "of",
+     "x": 412,
+     "y": 440,
+     "w": 24,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "eight",
+     "x": 444,
+     "y": 440,
+     "w": 56,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "children.",
+     "x": 509,
+     "y": 440,
+     "w": 98,
+     "h": 20,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_06.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "At night, her grandmother told\nmagical stories about ogres and giants,\nanimals of the forests, great beasts,\nand little creatures of the veld.\nIt was Sindiwe’s favourite time.",
+   "char_count": 175,
+   "word_count": 28,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "At",
+     "x": 188,
+     "y": 221,
+     "w": 29,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "night,",
+     "x": 227,
+     "y": 221,
+     "w": 61,
+     "h": 27,
+     "conf": 96.8
+    },
+    {
+     "t": "her",
+     "x": 297,
+     "y": 221,
+     "w": 37,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "grandmother",
+     "x": 343,
+     "y": 221,
+     "w": 154,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "told",
+     "x": 506,
+     "y": 221,
+     "w": 44,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "magical",
+     "x": 147,
+     "y": 263,
+     "w": 81,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "stories",
+     "x": 239,
+     "y": 265,
+     "w": 78,
+     "h": 18,
+     "conf": 96.6
+    },
+    {
+     "t": "about",
+     "x": 328,
+     "y": 263,
+     "w": 66,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "ogres",
+     "x": 403,
+     "y": 270,
+     "w": 63,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "and",
+     "x": 476,
+     "y": 263,
+     "w": 39,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "giants,",
+     "x": 525,
+     "y": 265,
+     "w": 72,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "animals",
+     "x": 167,
+     "y": 304,
+     "w": 84,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "of",
+     "x": 261,
+     "y": 304,
+     "w": 24,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 293,
+     "y": 304,
+     "w": 36,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "forests,",
+     "x": 338,
+     "y": 304,
+     "w": 85,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "great",
+     "x": 430,
+     "y": 309,
+     "w": 60,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "beasts,",
+     "x": 500,
+     "y": 304,
+     "w": 76,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 192,
+     "y": 346,
+     "w": 39,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "little",
+     "x": 243,
+     "y": 346,
+     "w": 50,
+     "h": 20,
+     "conf": 94.5
+    },
+    {
+     "t": "creatures",
+     "x": 303,
+     "y": 351,
+     "w": 108,
+     "h": 15,
+     "conf": 96.4
+    },
+    {
+     "t": "of",
+     "x": 421,
+     "y": 346,
+     "w": 25,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "the",
+     "x": 453,
+     "y": 346,
+     "w": 36,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "veld.",
+     "x": 498,
+     "y": 346,
+     "w": 53,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "It",
+     "x": 193,
+     "y": 427,
+     "w": 15,
+     "h": 20,
+     "conf": 94.7
+    },
+    {
+     "t": "was",
+     "x": 216,
+     "y": 434,
+     "w": 43,
+     "h": 13,
+     "conf": 93.3
+    },
+    {
+     "t": "Sindiwe’s",
+     "x": 269,
+     "y": 427,
+     "w": 103,
+     "h": 20,
+     "conf": 86.6
+    },
+    {
+     "t": "favourite",
+     "x": 382,
+     "y": 427,
+     "w": 102,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "time.",
+     "x": 494,
+     "y": 429,
+     "w": 57,
+     "h": 18,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_07.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Sindiwe loved school and she\ndreamed about being a teacher.",
+   "char_count": 59,
+   "word_count": 10,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "Sindiwe",
+     "x": 223,
+     "y": 281,
+     "w": 88,
+     "h": 20,
+     "conf": 92.7
+    },
+    {
+     "t": "loved",
+     "x": 322,
+     "y": 281,
+     "w": 59,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "school",
+     "x": 392,
+     "y": 281,
+     "w": 74,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "and",
+     "x": 477,
+     "y": 281,
+     "w": 39,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "she",
+     "x": 527,
+     "y": 281,
+     "w": 38,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "dreamed",
+     "x": 211,
+     "y": 323,
+     "w": 101,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "about",
+     "x": 323,
+     "y": 323,
+     "w": 66,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "being",
+     "x": 399,
+     "y": 323,
+     "w": 60,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "a",
+     "x": 468,
+     "y": 330,
+     "w": 11,
+     "h": 13,
+     "conf": 96.2
+    },
+    {
+     "t": "teacher.",
+     "x": 489,
+     "y": 323,
+     "w": 90,
+     "h": 20,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_08.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "When Sindiwe became a teenager,\nher family organised a feast to celebrate.\nShe was given special things to wear and\na wise old man sang a praise song to her.\n(Blessings, long life!\nMay your ancestors guard you!)",
+   "char_count": 211,
+   "word_count": 38,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "When",
+     "x": 193,
+     "y": 186,
+     "w": 72,
+     "h": 20,
+     "conf": 93.1
+    },
+    {
+     "t": "Sindiwe",
+     "x": 275,
+     "y": 186,
+     "w": 88,
+     "h": 20,
+     "conf": 91.6
+    },
+    {
+     "t": "became",
+     "x": 375,
+     "y": 186,
+     "w": 87,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "a",
+     "x": 472,
+     "y": 193,
+     "w": 11,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "teenager,",
+     "x": 492,
+     "y": 191,
+     "w": 104,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "her",
+     "x": 158,
+     "y": 228,
+     "w": 37,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "family",
+     "x": 204,
+     "y": 228,
+     "w": 67,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "organised",
+     "x": 281,
+     "y": 228,
+     "w": 110,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "a",
+     "x": 402,
+     "y": 235,
+     "w": 11,
+     "h": 13,
+     "conf": 96.8
+    },
+    {
+     "t": "feast",
+     "x": 422,
+     "y": 228,
+     "w": 55,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 485,
+     "y": 233,
+     "w": 24,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "celebrate.",
+     "x": 519,
+     "y": 228,
+     "w": 114,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "She",
+     "x": 157,
+     "y": 309,
+     "w": 40,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "was",
+     "x": 206,
+     "y": 316,
+     "w": 43,
+     "h": 13,
+     "conf": 96.7
+    },
+    {
+     "t": "given",
+     "x": 259,
+     "y": 311,
+     "w": 58,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "special",
+     "x": 327,
+     "y": 309,
+     "w": 75,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "things",
+     "x": 413,
+     "y": 309,
+     "w": 67,
+     "h": 27,
+     "conf": 97.0
+    },
+    {
+     "t": "to",
+     "x": 490,
+     "y": 314,
+     "w": 24,
+     "h": 15,
+     "conf": 96.7
+    },
+    {
+     "t": "wear",
+     "x": 523,
+     "y": 316,
+     "w": 58,
+     "h": 13,
+     "conf": 96.8
+    },
+    {
+     "t": "and",
+     "x": 591,
+     "y": 309,
+     "w": 39,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "a",
+     "x": 155,
+     "y": 358,
+     "w": 11,
+     "h": 13,
+     "conf": 96.2
+    },
+    {
+     "t": "wise",
+     "x": 175,
+     "y": 353,
+     "w": 51,
+     "h": 18,
+     "conf": 96.2
+    },
+    {
+     "t": "old",
+     "x": 236,
+     "y": 351,
+     "w": 35,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "man",
+     "x": 283,
+     "y": 358,
+     "w": 46,
+     "h": 13,
+     "conf": 96.5
+    },
+    {
+     "t": "sang",
+     "x": 340,
+     "y": 358,
+     "w": 49,
+     "h": 20,
+     "conf": 95.0
+    },
+    {
+     "t": "a",
+     "x": 398,
+     "y": 358,
+     "w": 11,
+     "h": 13,
+     "conf": 95.0
+    },
+    {
+     "t": "praise",
+     "x": 420,
+     "y": 353,
+     "w": 67,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "song",
+     "x": 497,
+     "y": 358,
+     "w": 53,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 560,
+     "y": 356,
+     "w": 23,
+     "h": 15,
+     "conf": 97.0
+    },
+    {
+     "t": "her.",
+     "x": 595,
+     "y": 351,
+     "w": 40,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "(Blessings,",
+     "x": 284,
+     "y": 432,
+     "w": 116,
+     "h": 27,
+     "conf": 96.1
+    },
+    {
+     "t": "long",
+     "x": 408,
+     "y": 432,
+     "w": 48,
+     "h": 27,
+     "conf": 95.2
+    },
+    {
+     "t": "life!",
+     "x": 466,
+     "y": 432,
+     "w": 38,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "May",
+     "x": 209,
+     "y": 474,
+     "w": 44,
+     "h": 27,
+     "conf": 96.8
+    },
+    {
+     "t": "your",
+     "x": 262,
+     "y": 481,
+     "w": 54,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "ancestors",
+     "x": 326,
+     "y": 479,
+     "w": 111,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "guard",
+     "x": 446,
+     "y": 474,
+     "w": 64,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "you!)",
+     "x": 520,
+     "y": 474,
+     "w": 58,
+     "h": 27,
+     "conf": 88.5
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_09.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Sindiwe trained to be a teacher. She was\nvery excited to teach at her first school.\nBut there weren’t enough schools for\nblack children and they had no desks or\nbooks to write in.\nThis made Sindiwe feel scared.\nHow could she be a good teacher when\nthe children had nowhere to sit?",
+   "char_count": 280,
+   "word_count": 53,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "Sindiwe",
+     "x": 88,
+     "y": 184,
+     "w": 88,
+     "h": 20,
+     "conf": 92.3
+    },
+    {
+     "t": "trained",
+     "x": 186,
+     "y": 184,
+     "w": 81,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 278,
+     "y": 189,
+     "w": 24,
+     "h": 15,
+     "conf": 96.7
+    },
+    {
+     "t": "be",
+     "x": 313,
+     "y": 184,
+     "w": 26,
+     "h": 20,
+     "conf": 93.1
+    },
+    {
+     "t": "a",
+     "x": 349,
+     "y": 191,
+     "w": 11,
+     "h": 13,
+     "conf": 93.1
+    },
+    {
+     "t": "teacher.",
+     "x": 369,
+     "y": 184,
+     "w": 90,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "She",
+     "x": 467,
+     "y": 184,
+     "w": 40,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "was",
+     "x": 516,
+     "y": 191,
+     "w": 43,
+     "h": 13,
+     "conf": 95.4
+    },
+    {
+     "t": "very",
+     "x": 87,
+     "y": 233,
+     "w": 51,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "excited",
+     "x": 147,
+     "y": 226,
+     "w": 84,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "to",
+     "x": 242,
+     "y": 231,
+     "w": 24,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "teach",
+     "x": 276,
+     "y": 226,
+     "w": 61,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "at",
+     "x": 347,
+     "y": 231,
+     "w": 22,
+     "h": 15,
+     "conf": 96.2
+    },
+    {
+     "t": "her",
+     "x": 379,
+     "y": 226,
+     "w": 37,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "first",
+     "x": 425,
+     "y": 226,
+     "w": 47,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "school.",
+     "x": 481,
+     "y": 226,
+     "w": 81,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "But",
+     "x": 105,
+     "y": 315,
+     "w": 39,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "there",
+     "x": 152,
+     "y": 315,
+     "w": 62,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "weren’t",
+     "x": 223,
+     "y": 315,
+     "w": 89,
+     "h": 20,
+     "conf": 91.2
+    },
+    {
+     "t": "enough",
+     "x": 321,
+     "y": 315,
+     "w": 83,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "schools",
+     "x": 415,
+     "y": 315,
+     "w": 86,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "for",
+     "x": 511,
+     "y": 315,
+     "w": 34,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "black",
+     "x": 91,
+     "y": 356,
+     "w": 58,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "children",
+     "x": 158,
+     "y": 356,
+     "w": 92,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "and",
+     "x": 261,
+     "y": 356,
+     "w": 39,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "they",
+     "x": 311,
+     "y": 356,
+     "w": 49,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "had",
+     "x": 371,
+     "y": 356,
+     "w": 38,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "no",
+     "x": 421,
+     "y": 363,
+     "w": 27,
+     "h": 13,
+     "conf": 96.2
+    },
+    {
+     "t": "desks",
+     "x": 459,
+     "y": 356,
+     "w": 63,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "or",
+     "x": 532,
+     "y": 363,
+     "w": 26,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "books",
+     "x": 221,
+     "y": 398,
+     "w": 69,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 300,
+     "y": 403,
+     "w": 24,
+     "h": 15,
+     "conf": 96.5
+    },
+    {
+     "t": "write",
+     "x": 333,
+     "y": 400,
+     "w": 62,
+     "h": 18,
+     "conf": 96.9
+    },
+    {
+     "t": "in.",
+     "x": 406,
+     "y": 400,
+     "w": 24,
+     "h": 18,
+     "conf": 96.7
+    },
+    {
+     "t": "This",
+     "x": 145,
+     "y": 487,
+     "w": 49,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "made",
+     "x": 205,
+     "y": 487,
+     "w": 61,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Sindiwe",
+     "x": 276,
+     "y": 487,
+     "w": 88,
+     "h": 20,
+     "conf": 92.7
+    },
+    {
+     "t": "feel",
+     "x": 373,
+     "y": 487,
+     "w": 39,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "scared.",
+     "x": 424,
+     "y": 487,
+     "w": 80,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "How",
+     "x": 90,
+     "y": 529,
+     "w": 56,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "could",
+     "x": 155,
+     "y": 529,
+     "w": 62,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "she",
+     "x": 228,
+     "y": 529,
+     "w": 37,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "be",
+     "x": 276,
+     "y": 529,
+     "w": 26,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "a",
+     "x": 312,
+     "y": 536,
+     "w": 11,
+     "h": 13,
+     "conf": 96.4
+    },
+    {
+     "t": "good",
+     "x": 332,
+     "y": 529,
+     "w": 57,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "teacher",
+     "x": 400,
+     "y": 529,
+     "w": 87,
+     "h": 20,
+     "conf": 95.8
+    },
+    {
+     "t": "when",
+     "x": 496,
+     "y": 529,
+     "w": 63,
+     "h": 20,
+     "conf": 95.8
+    },
+    {
+     "t": "the",
+     "x": 133,
+     "y": 570,
+     "w": 37,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "children",
+     "x": 180,
+     "y": 570,
+     "w": 92,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "had",
+     "x": 283,
+     "y": 570,
+     "w": 38,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "nowhere",
+     "x": 333,
+     "y": 570,
+     "w": 102,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 445,
+     "y": 575,
+     "w": 24,
+     "h": 15,
+     "conf": 96.4
+    },
+    {
+     "t": "sit?",
+     "x": 479,
+     "y": 570,
+     "w": 35,
+     "h": 20,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_10.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "She left the school to work as a cleaner.\nShe worked in four different houses.\nSometimes the people there treated her |\nbadly and Sindiwe became very unhappy.",
+   "char_count": 158,
+   "word_count": 28,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "She",
+     "x": 140,
+     "y": 181,
+     "w": 40,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "left",
+     "x": 191,
+     "y": 181,
+     "w": 35,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "the",
+     "x": 235,
+     "y": 181,
+     "w": 36,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "school",
+     "x": 282,
+     "y": 181,
+     "w": 73,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 367,
+     "y": 186,
+     "w": 24,
+     "h": 15,
+     "conf": 95.8
+    },
+    {
+     "t": "work",
+     "x": 400,
+     "y": 181,
+     "w": 62,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "as",
+     "x": 471,
+     "y": 188,
+     "w": 21,
+     "h": 13,
+     "conf": 94.0
+    },
+    {
+     "t": "a",
+     "x": 503,
+     "y": 188,
+     "w": 11,
+     "h": 13,
+     "conf": 94.0
+    },
+    {
+     "t": "cleaner.",
+     "x": 523,
+     "y": 181,
+     "w": 87,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "She",
+     "x": 161,
+     "y": 262,
+     "w": 40,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "worked",
+     "x": 210,
+     "y": 262,
+     "w": 88,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "in",
+     "x": 310,
+     "y": 264,
+     "w": 18,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "four",
+     "x": 337,
+     "y": 262,
+     "w": 49,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "different",
+     "x": 396,
+     "y": 262,
+     "w": 98,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "houses.",
+     "x": 504,
+     "y": 262,
+     "w": 84,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "Sometimes",
+     "x": 136,
+     "y": 304,
+     "w": 127,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 274,
+     "y": 304,
+     "w": 36,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "people",
+     "x": 321,
+     "y": 304,
+     "w": 77,
+     "h": 27,
+     "conf": 96.3
+    },
+    {
+     "t": "there",
+     "x": 408,
+     "y": 304,
+     "w": 61,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "treated",
+     "x": 479,
+     "y": 304,
+     "w": 83,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "her",
+     "x": 574,
+     "y": 304,
+     "w": 38,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "|",
+     "x": 1094,
+     "y": 311,
+     "w": 4,
+     "h": 23,
+     "conf": 96.4
+    },
+    {
+     "t": "badly",
+     "x": 139,
+     "y": 346,
+     "w": 58,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 207,
+     "y": 346,
+     "w": 39,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Sindiwe",
+     "x": 257,
+     "y": 346,
+     "w": 88,
+     "h": 20,
+     "conf": 92.5
+    },
+    {
+     "t": "became",
+     "x": 356,
+     "y": 346,
+     "w": 87,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "very",
+     "x": 453,
+     "y": 353,
+     "w": 50,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "unhappy.",
+     "x": 514,
+     "y": 346,
+     "w": 97,
+     "h": 27,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_11.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "All this time Sindiwe studied.\nHer hard work paid offt\nShe won a scholarship to study\nat a university in New York.\nShe and her three small\nchildren packed their bags\nand flew across the sea to the\nUnited States of America.",
+   "char_count": 222,
+   "word_count": 42,
+   "mean_conf": 94.6,
+   "words": [
+    {
+     "t": "All",
+     "x": 113,
+     "y": 110,
+     "w": 30,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "this",
+     "x": 155,
+     "y": 110,
+     "w": 39,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "time",
+     "x": 205,
+     "y": 112,
+     "w": 50,
+     "h": 18,
+     "conf": 93.3
+    },
+    {
+     "t": "Sindiwe",
+     "x": 265,
+     "y": 110,
+     "w": 88,
+     "h": 20,
+     "conf": 92.7
+    },
+    {
+     "t": "studied.",
+     "x": 364,
+     "y": 110,
+     "w": 89,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "Her",
+     "x": 144,
+     "y": 192,
+     "w": 44,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "hard",
+     "x": 199,
+     "y": 192,
+     "w": 49,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "work",
+     "x": 258,
+     "y": 192,
+     "w": 62,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "paid",
+     "x": 330,
+     "y": 192,
+     "w": 45,
+     "h": 27,
+     "conf": 93.3
+    },
+    {
+     "t": "offt",
+     "x": 386,
+     "y": 192,
+     "w": 35,
+     "h": 20,
+     "conf": 88.3
+    },
+    {
+     "t": "She",
+     "x": 100,
+     "y": 233,
+     "w": 40,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "won",
+     "x": 149,
+     "y": 240,
+     "w": 50,
+     "h": 13,
+     "conf": 69.2
+    },
+    {
+     "t": "a",
+     "x": 200,
+     "y": 229,
+     "w": 10,
+     "h": 35,
+     "conf": 69.2
+    },
+    {
+     "t": "scholarship",
+     "x": 230,
+     "y": 233,
+     "w": 130,
+     "h": 27,
+     "conf": 96.1
+    },
+    {
+     "t": "to",
+     "x": 370,
+     "y": 238,
+     "w": 24,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "study",
+     "x": 404,
+     "y": 233,
+     "w": 61,
+     "h": 27,
+     "conf": 96.3
+    },
+    {
+     "t": "at",
+     "x": 123,
+     "y": 280,
+     "w": 21,
+     "h": 15,
+     "conf": 95.7
+    },
+    {
+     "t": "a",
+     "x": 153,
+     "y": 282,
+     "w": 11,
+     "h": 13,
+     "conf": 93.9
+    },
+    {
+     "t": "university",
+     "x": 175,
+     "y": 277,
+     "w": 110,
+     "h": 25,
+     "conf": 93.9
+    },
+    {
+     "t": "in",
+     "x": 296,
+     "y": 277,
+     "w": 18,
+     "h": 18,
+     "conf": 96.3
+    },
+    {
+     "t": "New",
+     "x": 334,
+     "y": 275,
+     "w": 39,
+     "h": 20,
+     "conf": 95.6
+    },
+    {
+     "t": "York.",
+     "x": 384,
+     "y": 271,
+     "w": 61,
+     "h": 35,
+     "conf": 95.6
+    },
+    {
+     "t": "She",
+     "x": 144,
+     "y": 356,
+     "w": 40,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 194,
+     "y": 356,
+     "w": 39,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "her",
+     "x": 245,
+     "y": 356,
+     "w": 38,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "three",
+     "x": 293,
+     "y": 356,
+     "w": 61,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "small",
+     "x": 364,
+     "y": 356,
+     "w": 55,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "children",
+     "x": 130,
+     "y": 398,
+     "w": 92,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "packed",
+     "x": 233,
+     "y": 398,
+     "w": 78,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "their",
+     "x": 322,
+     "y": 398,
+     "w": 55,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "bags",
+     "x": 388,
+     "y": 398,
+     "w": 47,
+     "h": 27,
+     "conf": 96.3
+    },
+    {
+     "t": "and",
+     "x": 106,
+     "y": 440,
+     "w": 39,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "flew",
+     "x": 155,
+     "y": 440,
+     "w": 49,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "across",
+     "x": 214,
+     "y": 447,
+     "w": 72,
+     "h": 13,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 296,
+     "y": 440,
+     "w": 37,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "sea",
+     "x": 343,
+     "y": 447,
+     "w": 36,
+     "h": 13,
+     "conf": 95.9
+    },
+    {
+     "t": "to",
+     "x": 388,
+     "y": 445,
+     "w": 24,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 422,
+     "y": 440,
+     "w": 37,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "United",
+     "x": 135,
+     "y": 481,
+     "w": 77,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "States",
+     "x": 223,
+     "y": 481,
+     "w": 68,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "of",
+     "x": 303,
+     "y": 481,
+     "w": 22,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "America.",
+     "x": 329,
+     "y": 481,
+     "w": 104,
+     "h": 20,
+     "conf": 95.7
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_12.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "In New York, Sindiwe studied\nto become a social worker.\nShe wanted to help families\nmake their lives better.",
+   "char_count": 108,
+   "word_count": 19,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "In",
+     "x": 225,
+     "y": 284,
+     "w": 18,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "New",
+     "x": 259,
+     "y": 280,
+     "w": 40,
+     "h": 31,
+     "conf": 94.9
+    },
+    {
+     "t": "York,",
+     "x": 311,
+     "y": 280,
+     "w": 58,
+     "h": 31,
+     "conf": 93.3
+    },
+    {
+     "t": "Sindiwe",
+     "x": 382,
+     "y": 284,
+     "w": 88,
+     "h": 20,
+     "conf": 92.3
+    },
+    {
+     "t": "studied",
+     "x": 480,
+     "y": 284,
+     "w": 83,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "to",
+     "x": 236,
+     "y": 331,
+     "w": 24,
+     "h": 15,
+     "conf": 96.1
+    },
+    {
+     "t": "become",
+     "x": 271,
+     "y": 326,
+     "w": 91,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "a",
+     "x": 365,
+     "y": 322,
+     "w": 12,
+     "h": 34,
+     "conf": 96.9
+    },
+    {
+     "t": "social",
+     "x": 393,
+     "y": 326,
+     "w": 62,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "worker.",
+     "x": 465,
+     "y": 326,
+     "w": 89,
+     "h": 20,
+     "conf": 95.8
+    },
+    {
+     "t": "She",
+     "x": 233,
+     "y": 367,
+     "w": 40,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "wanted",
+     "x": 282,
+     "y": 367,
+     "w": 85,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 378,
+     "y": 372,
+     "w": 24,
+     "h": 15,
+     "conf": 96.7
+    },
+    {
+     "t": "help",
+     "x": 413,
+     "y": 367,
+     "w": 47,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "families",
+     "x": 469,
+     "y": 367,
+     "w": 85,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "make",
+     "x": 262,
+     "y": 408,
+     "w": 59,
+     "h": 21,
+     "conf": 95.8
+    },
+    {
+     "t": "their",
+     "x": 331,
+     "y": 409,
+     "w": 55,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "lives",
+     "x": 397,
+     "y": 408,
+     "w": 47,
+     "h": 21,
+     "conf": 96.3
+    },
+    {
+     "t": "better.",
+     "x": 455,
+     "y": 409,
+     "w": 74,
+     "h": 21,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_13.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "When she finished studying, the\nUnited Nations gave Sindiwe a job.\nMost of the countries in the world\nmeet at the United Nations to talk\nabout their problems.",
+   "char_count": 158,
+   "word_count": 28,
+   "mean_conf": 96.3,
+   "words": [
+    {
+     "t": "When",
+     "x": 207,
+     "y": 176,
+     "w": 72,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "she",
+     "x": 289,
+     "y": 176,
+     "w": 38,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "finished",
+     "x": 336,
+     "y": 176,
+     "w": 88,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "studying,",
+     "x": 435,
+     "y": 176,
+     "w": 101,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 544,
+     "y": 176,
+     "w": 36,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "United",
+     "x": 192,
+     "y": 217,
+     "w": 77,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "Nations",
+     "x": 281,
+     "y": 217,
+     "w": 90,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "gave",
+     "x": 380,
+     "y": 224,
+     "w": 49,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Sindiwe",
+     "x": 439,
+     "y": 217,
+     "w": 88,
+     "h": 20,
+     "conf": 91.9
+    },
+    {
+     "t": "a",
+     "x": 537,
+     "y": 224,
+     "w": 11,
+     "h": 13,
+     "conf": 96.5
+    },
+    {
+     "t": "job.",
+     "x": 557,
+     "y": 217,
+     "w": 42,
+     "h": 26,
+     "conf": 96.5
+    },
+    {
+     "t": "Most",
+     "x": 191,
+     "y": 298,
+     "w": 58,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "of",
+     "x": 258,
+     "y": 298,
+     "w": 24,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 289,
+     "y": 298,
+     "w": 37,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "countries",
+     "x": 336,
+     "y": 300,
+     "w": 108,
+     "h": 18,
+     "conf": 96.2
+    },
+    {
+     "t": "in",
+     "x": 456,
+     "y": 300,
+     "w": 17,
+     "h": 18,
+     "conf": 96.1
+    },
+    {
+     "t": "the",
+     "x": 484,
+     "y": 298,
+     "w": 36,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "world",
+     "x": 529,
+     "y": 298,
+     "w": 68,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "meet",
+     "x": 190,
+     "y": 345,
+     "w": 59,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "at",
+     "x": 258,
+     "y": 345,
+     "w": 21,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 288,
+     "y": 340,
+     "w": 36,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "United",
+     "x": 335,
+     "y": 340,
+     "w": 77,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "Nations",
+     "x": 423,
+     "y": 340,
+     "w": 91,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 524,
+     "y": 345,
+     "w": 24,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "talk",
+     "x": 558,
+     "y": 340,
+     "w": 41,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "about",
+     "x": 268,
+     "y": 382,
+     "w": 67,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "their",
+     "x": 344,
+     "y": 382,
+     "w": 54,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "problems.",
+     "x": 409,
+     "y": 382,
+     "w": 113,
+     "h": 27,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_14.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Sindiwe told the world about\nSouth Africa, and how hard it was\nfor black people living there.\nThe people at the United Nations\nloved to listen to Sindiwe’s stories.\nThey wanted to learn more and\nmore about South Africans.\nPerhaps, together, they could help\nto change things in South Africa.",
+   "char_count": 290,
+   "word_count": 50,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "Sindiwe",
+     "x": 223,
+     "y": 166,
+     "w": 88,
+     "h": 20,
+     "conf": 91.9
+    },
+    {
+     "t": "told",
+     "x": 321,
+     "y": 166,
+     "w": 44,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 376,
+     "y": 166,
+     "w": 36,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "world",
+     "x": 421,
+     "y": 166,
+     "w": 68,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "about",
+     "x": 500,
+     "y": 166,
+     "w": 66,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "South",
+     "x": 198,
+     "y": 207,
+     "w": 65,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "Africa,",
+     "x": 270,
+     "y": 207,
+     "w": 75,
+     "h": 23,
+     "conf": 94.8
+    },
+    {
+     "t": "and",
+     "x": 353,
+     "y": 207,
+     "w": 39,
+     "h": 20,
+     "conf": 94.8
+    },
+    {
+     "t": "how",
+     "x": 404,
+     "y": 207,
+     "w": 49,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "hard",
+     "x": 463,
+     "y": 207,
+     "w": 49,
+     "h": 20,
+     "conf": 95.3
+    },
+    {
+     "t": "it",
+     "x": 524,
+     "y": 209,
+     "w": 15,
+     "h": 18,
+     "conf": 95.3
+    },
+    {
+     "t": "was",
+     "x": 546,
+     "y": 214,
+     "w": 44,
+     "h": 13,
+     "conf": 95.4
+    },
+    {
+     "t": "for",
+     "x": 227,
+     "y": 249,
+     "w": 34,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "black",
+     "x": 272,
+     "y": 249,
+     "w": 58,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "people",
+     "x": 340,
+     "y": 249,
+     "w": 77,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "living",
+     "x": 428,
+     "y": 249,
+     "w": 56,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "there.",
+     "x": 494,
+     "y": 249,
+     "w": 68,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "The",
+     "x": 194,
+     "y": 330,
+     "w": 45,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "people",
+     "x": 250,
+     "y": 330,
+     "w": 77,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "at",
+     "x": 337,
+     "y": 335,
+     "w": 21,
+     "h": 15,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 367,
+     "y": 330,
+     "w": 36,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "United",
+     "x": 414,
+     "y": 330,
+     "w": 77,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "Nations",
+     "x": 503,
+     "y": 330,
+     "w": 90,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "loved",
+     "x": 192,
+     "y": 372,
+     "w": 60,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "to",
+     "x": 263,
+     "y": 377,
+     "w": 24,
+     "h": 15,
+     "conf": 96.2
+    },
+    {
+     "t": "listen",
+     "x": 298,
+     "y": 372,
+     "w": 58,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 367,
+     "y": 377,
+     "w": 24,
+     "h": 15,
+     "conf": 93.3
+    },
+    {
+     "t": "Sindiwe’s",
+     "x": 401,
+     "y": 372,
+     "w": 103,
+     "h": 20,
+     "conf": 90.7
+    },
+    {
+     "t": "stories.",
+     "x": 514,
+     "y": 374,
+     "w": 85,
+     "h": 18,
+     "conf": 96.5
+    },
+    {
+     "t": "They",
+     "x": 206,
+     "y": 414,
+     "w": 58,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "wanted",
+     "x": 272,
+     "y": 414,
+     "w": 85,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 368,
+     "y": 419,
+     "w": 24,
+     "h": 15,
+     "conf": 95.8
+    },
+    {
+     "t": "learn",
+     "x": 403,
+     "y": 414,
+     "w": 55,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "more",
+     "x": 470,
+     "y": 421,
+     "w": 61,
+     "h": 13,
+     "conf": 96.0
+    },
+    {
+     "t": "and",
+     "x": 541,
+     "y": 414,
+     "w": 39,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "more",
+     "x": 236,
+     "y": 462,
+     "w": 60,
+     "h": 13,
+     "conf": 96.4
+    },
+    {
+     "t": "about",
+     "x": 306,
+     "y": 455,
+     "w": 67,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "South",
+     "x": 382,
+     "y": 455,
+     "w": 66,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "Africans.",
+     "x": 455,
+     "y": 455,
+     "w": 100,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "Perhaps,",
+     "x": 198,
+     "y": 536,
+     "w": 95,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "together,",
+     "x": 301,
+     "y": 536,
+     "w": 103,
+     "h": 27,
+     "conf": 96.8
+    },
+    {
+     "t": "they",
+     "x": 411,
+     "y": 536,
+     "w": 49,
+     "h": 27,
+     "conf": 96.3
+    },
+    {
+     "t": "could",
+     "x": 470,
+     "y": 536,
+     "w": 62,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "help",
+     "x": 544,
+     "y": 536,
+     "w": 47,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 207,
+     "y": 583,
+     "w": 24,
+     "h": 15,
+     "conf": 96.4
+    },
+    {
+     "t": "change",
+     "x": 241,
+     "y": 578,
+     "w": 79,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "things",
+     "x": 330,
+     "y": 578,
+     "w": 66,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "in",
+     "x": 408,
+     "y": 580,
+     "w": 17,
+     "h": 18,
+     "conf": 97.0
+    },
+    {
+     "t": "South",
+     "x": 436,
+     "y": 578,
+     "w": 66,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "Africa.",
+     "x": 508,
+     "y": 578,
+     "w": 75,
+     "h": 20,
+     "conf": 95.9
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_15.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "She worked at the United\n~ Nations for twenty years while\nher children grew into adults.\nBut Sindiwe missed the country\nwhere she was born.\nShe wanted to tell her stories\nto the people at home.\nSo she packed her luggage,\ngot ona plane and flew back\nover the sea to Cape Town.",
+   "char_count": 275,
+   "word_count": 53,
+   "mean_conf": 95.1,
+   "words": [
+    {
+     "t": "She",
+     "x": 116,
+     "y": 148,
+     "w": 40,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "worked",
+     "x": 165,
+     "y": 148,
+     "w": 88,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "at",
+     "x": 264,
+     "y": 153,
+     "w": 22,
+     "h": 15,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 295,
+     "y": 148,
+     "w": 36,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "United",
+     "x": 342,
+     "y": 148,
+     "w": 76,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "~",
+     "x": 71,
+     "y": 198,
+     "w": 4,
+     "h": 5,
+     "conf": 30.2
+    },
+    {
+     "t": "Nations",
+     "x": 87,
+     "y": 190,
+     "w": 90,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "for",
+     "x": 187,
+     "y": 190,
+     "w": 34,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "twenty",
+     "x": 230,
+     "y": 195,
+     "w": 80,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "years",
+     "x": 319,
+     "y": 197,
+     "w": 60,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "while",
+     "x": 388,
+     "y": 190,
+     "w": 61,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "her",
+     "x": 97,
+     "y": 232,
+     "w": 38,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "children",
+     "x": 145,
+     "y": 232,
+     "w": 92,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "grew",
+     "x": 246,
+     "y": 239,
+     "w": 58,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "into",
+     "x": 314,
+     "y": 234,
+     "w": 44,
+     "h": 18,
+     "conf": 97.0
+    },
+    {
+     "t": "adults.",
+     "x": 368,
+     "y": 232,
+     "w": 74,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "But",
+     "x": 83,
+     "y": 321,
+     "w": 39,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Sindiwe",
+     "x": 130,
+     "y": 321,
+     "w": 88,
+     "h": 20,
+     "conf": 92.4
+    },
+    {
+     "t": "missed",
+     "x": 229,
+     "y": 321,
+     "w": 77,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 317,
+     "y": 321,
+     "w": 36,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "country",
+     "x": 363,
+     "y": 326,
+     "w": 91,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "where",
+     "x": 146,
+     "y": 362,
+     "w": 73,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "she",
+     "x": 230,
+     "y": 362,
+     "w": 37,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "was",
+     "x": 276,
+     "y": 369,
+     "w": 44,
+     "h": 13,
+     "conf": 96.8
+    },
+    {
+     "t": "born.",
+     "x": 331,
+     "y": 362,
+     "w": 60,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "She",
+     "x": 93,
+     "y": 404,
+     "w": 40,
+     "h": 20,
+     "conf": 95.8
+    },
+    {
+     "t": "wanted",
+     "x": 142,
+     "y": 404,
+     "w": 85,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "to",
+     "x": 238,
+     "y": 409,
+     "w": 23,
+     "h": 15,
+     "conf": 97.0
+    },
+    {
+     "t": "tell",
+     "x": 272,
+     "y": 404,
+     "w": 33,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "her",
+     "x": 317,
+     "y": 404,
+     "w": 38,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "stories",
+     "x": 364,
+     "y": 406,
+     "w": 78,
+     "h": 18,
+     "conf": 96.1
+    },
+    {
+     "t": "to",
+     "x": 134,
+     "y": 451,
+     "w": 24,
+     "h": 15,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 168,
+     "y": 446,
+     "w": 36,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "people",
+     "x": 215,
+     "y": 446,
+     "w": 77,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "at",
+     "x": 302,
+     "y": 451,
+     "w": 21,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "home.",
+     "x": 333,
+     "y": 446,
+     "w": 71,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "So",
+     "x": 113,
+     "y": 535,
+     "w": 27,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "she",
+     "x": 150,
+     "y": 535,
+     "w": 38,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "packed",
+     "x": 199,
+     "y": 535,
+     "w": 78,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "her",
+     "x": 289,
+     "y": 535,
+     "w": 37,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "luggage,",
+     "x": 337,
+     "y": 535,
+     "w": 88,
+     "h": 27,
+     "conf": 97.0
+    },
+    {
+     "t": "got",
+     "x": 99,
+     "y": 582,
+     "w": 39,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "ona",
+     "x": 147,
+     "y": 584,
+     "w": 28,
+     "h": 13,
+     "conf": 94.3
+    },
+    {
+     "t": "plane",
+     "x": 207,
+     "y": 577,
+     "w": 59,
+     "h": 27,
+     "conf": 94.8
+    },
+    {
+     "t": "and",
+     "x": 276,
+     "y": 577,
+     "w": 39,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "flew",
+     "x": 325,
+     "y": 577,
+     "w": 49,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "back",
+     "x": 384,
+     "y": 577,
+     "w": 52,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "over",
+     "x": 108,
+     "y": 625,
+     "w": 52,
+     "h": 13,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 170,
+     "y": 618,
+     "w": 36,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "sea",
+     "x": 216,
+     "y": 625,
+     "w": 36,
+     "h": 13,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 262,
+     "y": 623,
+     "w": 23,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "Cape",
+     "x": 296,
+     "y": 618,
+     "w": 59,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "Town.",
+     "x": 360,
+     "y": 618,
+     "w": 70,
+     "h": 20,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_16.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Sindiwe’s love for books and\nstories have helped her write\npiles and piles of books.\nAnd children and grown-ups love\nto read her stories.\nMany people call her Nomabali\nbecause she’s always writing,\ntelling and reading stories.",
+   "char_count": 226,
+   "word_count": 37,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "Sindiwe’s",
+     "x": 205,
+     "y": 181,
+     "w": 103,
+     "h": 20,
+     "conf": 77.3
+    },
+    {
+     "t": "love",
+     "x": 319,
+     "y": 181,
+     "w": 46,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "for",
+     "x": 374,
+     "y": 181,
+     "w": 34,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "books",
+     "x": 418,
+     "y": 180,
+     "w": 69,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 498,
+     "y": 181,
+     "w": 39,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "stories",
+     "x": 199,
+     "y": 225,
+     "w": 78,
+     "h": 18,
+     "conf": 96.9
+    },
+    {
+     "t": "have",
+     "x": 288,
+     "y": 223,
+     "w": 50,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "helped",
+     "x": 349,
+     "y": 223,
+     "w": 74,
+     "h": 27,
+     "conf": 96.3
+    },
+    {
+     "t": "her",
+     "x": 435,
+     "y": 223,
+     "w": 38,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "write",
+     "x": 481,
+     "y": 225,
+     "w": 62,
+     "h": 18,
+     "conf": 96.6
+    },
+    {
+     "t": "piles",
+     "x": 234,
+     "y": 265,
+     "w": 49,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 294,
+     "y": 265,
+     "w": 39,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "piles",
+     "x": 345,
+     "y": 265,
+     "w": 49,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "of",
+     "x": 404,
+     "y": 265,
+     "w": 24,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "books.",
+     "x": 437,
+     "y": 264,
+     "w": 75,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "And",
+     "x": 176,
+     "y": 307,
+     "w": 47,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "children",
+     "x": 234,
+     "y": 307,
+     "w": 92,
+     "h": 21,
+     "conf": 96.0
+    },
+    {
+     "t": "and",
+     "x": 336,
+     "y": 307,
+     "w": 39,
+     "h": 21,
+     "conf": 96.0
+    },
+    {
+     "t": "grown-ups",
+     "x": 385,
+     "y": 314,
+     "w": 124,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "love",
+     "x": 520,
+     "y": 307,
+     "w": 45,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 259,
+     "y": 353,
+     "w": 24,
+     "h": 15,
+     "conf": 96.2
+    },
+    {
+     "t": "read",
+     "x": 294,
+     "y": 348,
+     "w": 48,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "her",
+     "x": 354,
+     "y": 348,
+     "w": 38,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "stories.",
+     "x": 402,
+     "y": 350,
+     "w": 84,
+     "h": 18,
+     "conf": 97.0
+    },
+    {
+     "t": "Many",
+     "x": 190,
+     "y": 429,
+     "w": 59,
+     "h": 27,
+     "conf": 96.4
+    },
+    {
+     "t": "people",
+     "x": 260,
+     "y": 429,
+     "w": 77,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "call",
+     "x": 347,
+     "y": 429,
+     "w": 35,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "her",
+     "x": 394,
+     "y": 429,
+     "w": 38,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Nomabali",
+     "x": 442,
+     "y": 429,
+     "w": 111,
+     "h": 20,
+     "conf": 92.4
+    },
+    {
+     "t": "because",
+     "x": 206,
+     "y": 471,
+     "w": 91,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "she’s",
+     "x": 307,
+     "y": 471,
+     "w": 53,
+     "h": 20,
+     "conf": 91.2
+    },
+    {
+     "t": "always",
+     "x": 370,
+     "y": 471,
+     "w": 73,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "writing,",
+     "x": 452,
+     "y": 473,
+     "w": 87,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "telling",
+     "x": 219,
+     "y": 513,
+     "w": 69,
+     "h": 27,
+     "conf": 97.0
+    },
+    {
+     "t": "and",
+     "x": 297,
+     "y": 513,
+     "w": 39,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "reading",
+     "x": 348,
+     "y": 513,
+     "w": 84,
+     "h": 27,
+     "conf": 97.0
+    },
+    {
+     "t": "stories.",
+     "x": 441,
+     "y": 515,
+     "w": 84,
+     "h": 18,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_18.jpg",
+   "image_file": "sindiwe-and-the-fireflies_pdf-ebook_20140922_Page_18.jpg",
+   "image_width": 791,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

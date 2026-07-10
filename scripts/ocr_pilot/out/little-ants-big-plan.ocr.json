@@ -1,0 +1,1909 @@
+{
+ "slug": "little-ants-big-plan",
+ "wp_slug": "little-ants-big-plan",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "little-ants-big-plan_20150712_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_05.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_05.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "Little Ant loved to read.\nLittle Ant was often teased.\n“Ants don't read. Ants must feed.\nAnts collect the food they need.”",
+   "char_count": 122,
+   "word_count": 22,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "Little",
+     "x": 504,
+     "y": 630,
+     "w": 120,
+     "h": 43,
+     "conf": 96.3
+    },
+    {
+     "t": "Ant",
+     "x": 639,
+     "y": 632,
+     "w": 84,
+     "h": 41,
+     "conf": 95.9
+    },
+    {
+     "t": "loved",
+     "x": 742,
+     "y": 630,
+     "w": 127,
+     "h": 43,
+     "conf": 95.9
+    },
+    {
+     "t": "to",
+     "x": 886,
+     "y": 635,
+     "w": 47,
+     "h": 38,
+     "conf": 96.7
+    },
+    {
+     "t": "read.",
+     "x": 953,
+     "y": 630,
+     "w": 118,
+     "h": 43,
+     "conf": 96.9
+    },
+    {
+     "t": "Little",
+     "x": 452,
+     "y": 702,
+     "w": 119,
+     "h": 43,
+     "conf": 95.6
+    },
+    {
+     "t": "Ant",
+     "x": 587,
+     "y": 704,
+     "w": 83,
+     "h": 41,
+     "conf": 96.6
+    },
+    {
+     "t": "was",
+     "x": 687,
+     "y": 714,
+     "w": 97,
+     "h": 31,
+     "conf": 96.1
+    },
+    {
+     "t": "often",
+     "x": 801,
+     "y": 701,
+     "w": 126,
+     "h": 44,
+     "conf": 96.5
+    },
+    {
+     "t": "teased.",
+     "x": 944,
+     "y": 702,
+     "w": 180,
+     "h": 43,
+     "conf": 96.1
+    },
+    {
+     "t": "“Ants",
+     "x": 384,
+     "y": 846,
+     "w": 127,
+     "h": 44,
+     "conf": 96.5
+    },
+    {
+     "t": "don't",
+     "x": 528,
+     "y": 847,
+     "w": 118,
+     "h": 43,
+     "conf": 80.9
+    },
+    {
+     "t": "read.",
+     "x": 665,
+     "y": 847,
+     "w": 119,
+     "h": 43,
+     "conf": 96.9
+    },
+    {
+     "t": "Ants",
+     "x": 801,
+     "y": 849,
+     "w": 112,
+     "h": 41,
+     "conf": 96.4
+    },
+    {
+     "t": "must",
+     "x": 933,
+     "y": 852,
+     "w": 120,
+     "h": 38,
+     "conf": 95.6
+    },
+    {
+     "t": "feed.",
+     "x": 1070,
+     "y": 846,
+     "w": 121,
+     "h": 44,
+     "conf": 95.6
+    },
+    {
+     "t": "Ants",
+     "x": 388,
+     "y": 921,
+     "w": 112,
+     "h": 41,
+     "conf": 96.8
+    },
+    {
+     "t": "collect",
+     "x": 517,
+     "y": 919,
+     "w": 163,
+     "h": 43,
+     "conf": 95.5
+    },
+    {
+     "t": "the",
+     "x": 695,
+     "y": 919,
+     "w": 78,
+     "h": 43,
+     "conf": 96.3
+    },
+    {
+     "t": "food",
+     "x": 789,
+     "y": 918,
+     "w": 110,
+     "h": 44,
+     "conf": 96.2
+    },
+    {
+     "t": "they",
+     "x": 916,
+     "y": 919,
+     "w": 106,
+     "h": 54,
+     "conf": 96.6
+    },
+    {
+     "t": "need.”",
+     "x": 1039,
+     "y": 919,
+     "w": 146,
+     "h": 43,
+     "conf": 95.9
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_06.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_06.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "Little Ant would read all day,\nhe'd read and read the day away.\nThe other ants took what they found\nto store for winter underground.\nae = Ni,\nWAN i",
+   "char_count": 147,
+   "word_count": 30,
+   "mean_conf": 83.8,
+   "words": [
+    {
+     "t": "Little",
+     "x": 2020,
+     "y": 373,
+     "w": 119,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "Ant",
+     "x": 2155,
+     "y": 375,
+     "w": 83,
+     "h": 41,
+     "conf": 96.6
+    },
+    {
+     "t": "would",
+     "x": 2255,
+     "y": 373,
+     "w": 145,
+     "h": 43,
+     "conf": 96.4
+    },
+    {
+     "t": "read",
+     "x": 2421,
+     "y": 373,
+     "w": 103,
+     "h": 43,
+     "conf": 96.4
+    },
+    {
+     "t": "all",
+     "x": 2543,
+     "y": 373,
+     "w": 52,
+     "h": 43,
+     "conf": 96.5
+    },
+    {
+     "t": "day,",
+     "x": 2615,
+     "y": 373,
+     "w": 91,
+     "h": 54,
+     "conf": 96.6
+    },
+    {
+     "t": "he'd",
+     "x": 1965,
+     "y": 445,
+     "w": 93,
+     "h": 43,
+     "conf": 49.4
+    },
+    {
+     "t": "read",
+     "x": 2079,
+     "y": 445,
+     "w": 103,
+     "h": 43,
+     "conf": 96.2
+    },
+    {
+     "t": "and",
+     "x": 2201,
+     "y": 445,
+     "w": 87,
+     "h": 43,
+     "conf": 96.7
+    },
+    {
+     "t": "read",
+     "x": 2309,
+     "y": 445,
+     "w": 103,
+     "h": 43,
+     "conf": 95.7
+    },
+    {
+     "t": "the",
+     "x": 2429,
+     "y": 445,
+     "w": 78,
+     "h": 43,
+     "conf": 96.1
+    },
+    {
+     "t": "day",
+     "x": 2524,
+     "y": 445,
+     "w": 86,
+     "h": 54,
+     "conf": 96.4
+    },
+    {
+     "t": "away.",
+     "x": 2626,
+     "y": 457,
+     "w": 134,
+     "h": 42,
+     "conf": 95.3
+    },
+    {
+     "t": "The",
+     "x": 1915,
+     "y": 517,
+     "w": 92,
+     "h": 43,
+     "conf": 94.9
+    },
+    {
+     "t": "other",
+     "x": 2024,
+     "y": 517,
+     "w": 128,
+     "h": 43,
+     "conf": 95.2
+    },
+    {
+     "t": "ants",
+     "x": 2169,
+     "y": 522,
+     "w": 104,
+     "h": 38,
+     "conf": 95.2
+    },
+    {
+     "t": "took",
+     "x": 2289,
+     "y": 517,
+     "w": 109,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "what",
+     "x": 2413,
+     "y": 517,
+     "w": 118,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "they",
+     "x": 2547,
+     "y": 517,
+     "w": 106,
+     "h": 54,
+     "conf": 95.6
+    },
+    {
+     "t": "found",
+     "x": 2667,
+     "y": 516,
+     "w": 140,
+     "h": 44,
+     "conf": 95.6
+    },
+    {
+     "t": "to",
+     "x": 1968,
+     "y": 594,
+     "w": 48,
+     "h": 38,
+     "conf": 96.3
+    },
+    {
+     "t": "store",
+     "x": 2033,
+     "y": 594,
+     "w": 123,
+     "h": 38,
+     "conf": 96.3
+    },
+    {
+     "t": "for",
+     "x": 2173,
+     "y": 588,
+     "w": 69,
+     "h": 44,
+     "conf": 95.4
+    },
+    {
+     "t": "winter",
+     "x": 2258,
+     "y": 590,
+     "w": 152,
+     "h": 42,
+     "conf": 96.5
+    },
+    {
+     "t": "underground.",
+     "x": 2428,
+     "y": 589,
+     "w": 325,
+     "h": 54,
+     "conf": 96.1
+    },
+    {
+     "t": "ae",
+     "x": 1767,
+     "y": 1050,
+     "w": 346,
+     "h": 323,
+     "conf": 49.2
+    },
+    {
+     "t": "=",
+     "x": 2235,
+     "y": 1056,
+     "w": 255,
+     "h": 329,
+     "conf": 8.1
+    },
+    {
+     "t": "Ni,",
+     "x": 2706,
+     "y": 1249,
+     "w": 254,
+     "h": 112,
+     "conf": 46.6
+    },
+    {
+     "t": "WAN",
+     "x": 2062,
+     "y": 1397,
+     "w": 86,
+     "h": 54,
+     "conf": 43.6
+    },
+    {
+     "t": "i",
+     "x": 2575,
+     "y": 1377,
+     "w": 30,
+     "h": 47,
+     "conf": 10.2
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_07.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_07.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "His mum and dad got really mad,\nand Little Ant felt really bad.",
+   "char_count": 63,
+   "word_count": 13,
+   "mean_conf": 96.5,
+   "words": [
+    {
+     "t": "His",
+     "x": 384,
+     "y": 739,
+     "w": 76,
+     "h": 42,
+     "conf": 96.8
+    },
+    {
+     "t": "mum",
+     "x": 480,
+     "y": 750,
+     "w": 120,
+     "h": 31,
+     "conf": 96.3
+    },
+    {
+     "t": "and",
+     "x": 619,
+     "y": 738,
+     "w": 87,
+     "h": 43,
+     "conf": 96.4
+    },
+    {
+     "t": "dad",
+     "x": 725,
+     "y": 738,
+     "w": 88,
+     "h": 43,
+     "conf": 95.6
+    },
+    {
+     "t": "got",
+     "x": 832,
+     "y": 743,
+     "w": 78,
+     "h": 49,
+     "conf": 96.9
+    },
+    {
+     "t": "really",
+     "x": 929,
+     "y": 738,
+     "w": 131,
+     "h": 54,
+     "conf": 96.2
+    },
+    {
+     "t": "mad,",
+     "x": 1077,
+     "y": 738,
+     "w": 115,
+     "h": 50,
+     "conf": 96.2
+    },
+    {
+     "t": "and",
+     "x": 442,
+     "y": 811,
+     "w": 87,
+     "h": 43,
+     "conf": 96.8
+    },
+    {
+     "t": "Little",
+     "x": 550,
+     "y": 811,
+     "w": 119,
+     "h": 43,
+     "conf": 96.3
+    },
+    {
+     "t": "Ant",
+     "x": 685,
+     "y": 813,
+     "w": 83,
+     "h": 41,
+     "conf": 96.3
+    },
+    {
+     "t": "felt",
+     "x": 785,
+     "y": 810,
+     "w": 79,
+     "h": 44,
+     "conf": 96.8
+    },
+    {
+     "t": "really",
+     "x": 883,
+     "y": 811,
+     "w": 130,
+     "h": 54,
+     "conf": 96.6
+    },
+    {
+     "t": "bad.",
+     "x": 1031,
+     "y": 811,
+     "w": 101,
+     "h": 43,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_08.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_08.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "e fe\nIn autumn when the leaves fall down,\nthe ants must keep food underground.\na\ne",
+   "char_count": 82,
+   "word_count": 17,
+   "mean_conf": 85.0,
+   "words": [
+    {
+     "t": "e",
+     "x": 2176,
+     "y": 604,
+     "w": 38,
+     "h": 22,
+     "conf": 72.5
+    },
+    {
+     "t": "fe",
+     "x": 2278,
+     "y": 600,
+     "w": 51,
+     "h": 51,
+     "conf": 0.0
+    },
+    {
+     "t": "In",
+     "x": 1909,
+     "y": 740,
+     "w": 39,
+     "h": 40,
+     "conf": 83.1
+    },
+    {
+     "t": "autumn",
+     "x": 1967,
+     "y": 743,
+     "w": 185,
+     "h": 38,
+     "conf": 96.2
+    },
+    {
+     "t": "when",
+     "x": 2169,
+     "y": 738,
+     "w": 129,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 2315,
+     "y": 738,
+     "w": 77,
+     "h": 43,
+     "conf": 96.5
+    },
+    {
+     "t": "leaves",
+     "x": 2412,
+     "y": 738,
+     "w": 154,
+     "h": 43,
+     "conf": 96.7
+    },
+    {
+     "t": "fall",
+     "x": 2582,
+     "y": 737,
+     "w": 73,
+     "h": 44,
+     "conf": 95.8
+    },
+    {
+     "t": "down,",
+     "x": 2675,
+     "y": 738,
+     "w": 142,
+     "h": 50,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 1888,
+     "y": 811,
+     "w": 77,
+     "h": 43,
+     "conf": 96.1
+    },
+    {
+     "t": "ants",
+     "x": 1983,
+     "y": 816,
+     "w": 105,
+     "h": 38,
+     "conf": 96.6
+    },
+    {
+     "t": "must",
+     "x": 2107,
+     "y": 816,
+     "w": 121,
+     "h": 38,
+     "conf": 96.6
+    },
+    {
+     "t": "keep",
+     "x": 2246,
+     "y": 811,
+     "w": 115,
+     "h": 53,
+     "conf": 96.4
+    },
+    {
+     "t": "food",
+     "x": 2377,
+     "y": 810,
+     "w": 110,
+     "h": 44,
+     "conf": 96.1
+    },
+    {
+     "t": "underground.",
+     "x": 2508,
+     "y": 811,
+     "w": 325,
+     "h": 54,
+     "conf": 96.0
+    },
+    {
+     "t": "a",
+     "x": 2603,
+     "y": 960,
+     "w": 25,
+     "h": 19,
+     "conf": 75.7
+    },
+    {
+     "t": "e",
+     "x": 2622,
+     "y": 1015,
+     "w": 25,
+     "h": 19,
+     "conf": 57.3
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_09.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_09.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "The Queen wants food to fill the store,\nso all the ants must work some more.",
+   "char_count": 76,
+   "word_count": 16,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "The",
+     "x": 317,
+     "y": 738,
+     "w": 92,
+     "h": 43,
+     "conf": 96.4
+    },
+    {
+     "t": "Queen",
+     "x": 427,
+     "y": 740,
+     "w": 154,
+     "h": 47,
+     "conf": 96.7
+    },
+    {
+     "t": "wants",
+     "x": 599,
+     "y": 743,
+     "w": 147,
+     "h": 38,
+     "conf": 94.7
+    },
+    {
+     "t": "food",
+     "x": 762,
+     "y": 737,
+     "w": 110,
+     "h": 44,
+     "conf": 94.7
+    },
+    {
+     "t": "to",
+     "x": 889,
+     "y": 743,
+     "w": 48,
+     "h": 38,
+     "conf": 96.5
+    },
+    {
+     "t": "fill",
+     "x": 953,
+     "y": 737,
+     "w": 56,
+     "h": 43,
+     "conf": 95.5
+    },
+    {
+     "t": "the",
+     "x": 1027,
+     "y": 738,
+     "w": 77,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "store,",
+     "x": 1122,
+     "y": 743,
+     "w": 134,
+     "h": 45,
+     "conf": 96.7
+    },
+    {
+     "t": "so",
+     "x": 323,
+     "y": 823,
+     "w": 56,
+     "h": 31,
+     "conf": 95.6
+    },
+    {
+     "t": "all",
+     "x": 397,
+     "y": 811,
+     "w": 52,
+     "h": 43,
+     "conf": 96.3
+    },
+    {
+     "t": "the",
+     "x": 467,
+     "y": 811,
+     "w": 77,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "ants",
+     "x": 562,
+     "y": 816,
+     "w": 105,
+     "h": 38,
+     "conf": 95.9
+    },
+    {
+     "t": "must",
+     "x": 686,
+     "y": 816,
+     "w": 121,
+     "h": 38,
+     "conf": 96.1
+    },
+    {
+     "t": "work",
+     "x": 823,
+     "y": 811,
+     "w": 121,
+     "h": 43,
+     "conf": 96.1
+    },
+    {
+     "t": "some",
+     "x": 960,
+     "y": 823,
+     "w": 134,
+     "h": 31,
+     "conf": 96.2
+    },
+    {
+     "t": "more.",
+     "x": 1114,
+     "y": 823,
+     "w": 137,
+     "h": 31,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_10.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_10.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "Little Ant begins to shout\nabout a place he read about.\n“A restaurant is what we need,\na place where people go to feed.\nIt says so in the books | read.”",
+   "char_count": 152,
+   "word_count": 32,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "Little",
+     "x": 2056,
+     "y": 594,
+     "w": 119,
+     "h": 43,
+     "conf": 96.2
+    },
+    {
+     "t": "Ant",
+     "x": 2191,
+     "y": 596,
+     "w": 83,
+     "h": 41,
+     "conf": 96.3
+    },
+    {
+     "t": "begins",
+     "x": 2294,
+     "y": 594,
+     "w": 160,
+     "h": 54,
+     "conf": 96.3
+    },
+    {
+     "t": "to",
+     "x": 2470,
+     "y": 599,
+     "w": 47,
+     "h": 38,
+     "conf": 96.5
+    },
+    {
+     "t": "shout",
+     "x": 2535,
+     "y": 594,
+     "w": 137,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "about",
+     "x": 2012,
+     "y": 666,
+     "w": 139,
+     "h": 43,
+     "conf": 96.0
+    },
+    {
+     "t": "a",
+     "x": 2168,
+     "y": 678,
+     "w": 26,
+     "h": 31,
+     "conf": 96.5
+    },
+    {
+     "t": "place",
+     "x": 2214,
+     "y": 666,
+     "w": 129,
+     "h": 53,
+     "conf": 95.6
+    },
+    {
+     "t": "he",
+     "x": 2361,
+     "y": 666,
+     "w": 56,
+     "h": 43,
+     "conf": 96.4
+    },
+    {
+     "t": "read",
+     "x": 2437,
+     "y": 666,
+     "w": 103,
+     "h": 43,
+     "conf": 95.9
+    },
+    {
+     "t": "about.",
+     "x": 2559,
+     "y": 666,
+     "w": 152,
+     "h": 43,
+     "conf": 95.9
+    },
+    {
+     "t": "“A",
+     "x": 1991,
+     "y": 810,
+     "w": 53,
+     "h": 43,
+     "conf": 96.2
+    },
+    {
+     "t": "restaurant",
+     "x": 2061,
+     "y": 816,
+     "w": 250,
+     "h": 38,
+     "conf": 95.9
+    },
+    {
+     "t": "is",
+     "x": 2329,
+     "y": 812,
+     "w": 38,
+     "h": 42,
+     "conf": 96.6
+    },
+    {
+     "t": "what",
+     "x": 2384,
+     "y": 811,
+     "w": 118,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "we",
+     "x": 2518,
+     "y": 823,
+     "w": 69,
+     "h": 31,
+     "conf": 96.7
+    },
+    {
+     "t": "need,",
+     "x": 2605,
+     "y": 811,
+     "w": 128,
+     "h": 50,
+     "conf": 96.5
+    },
+    {
+     "t": "a",
+     "x": 1962,
+     "y": 895,
+     "w": 26,
+     "h": 31,
+     "conf": 95.6
+    },
+    {
+     "t": "place",
+     "x": 2008,
+     "y": 883,
+     "w": 129,
+     "h": 53,
+     "conf": 95.6
+    },
+    {
+     "t": "where",
+     "x": 2153,
+     "y": 883,
+     "w": 148,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "people",
+     "x": 2321,
+     "y": 883,
+     "w": 162,
+     "h": 53,
+     "conf": 96.8
+    },
+    {
+     "t": "go",
+     "x": 2501,
+     "y": 895,
+     "w": 59,
+     "h": 42,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 2576,
+     "y": 888,
+     "w": 48,
+     "h": 38,
+     "conf": 97.0
+    },
+    {
+     "t": "feed.",
+     "x": 2640,
+     "y": 882,
+     "w": 121,
+     "h": 44,
+     "conf": 96.7
+    },
+    {
+     "t": "It",
+     "x": 1998,
+     "y": 957,
+     "w": 29,
+     "h": 41,
+     "conf": 95.2
+    },
+    {
+     "t": "says",
+     "x": 2044,
+     "y": 967,
+     "w": 110,
+     "h": 42,
+     "conf": 96.5
+    },
+    {
+     "t": "so",
+     "x": 2172,
+     "y": 967,
+     "w": 56,
+     "h": 31,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 2247,
+     "y": 956,
+     "w": 39,
+     "h": 41,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 2303,
+     "y": 955,
+     "w": 77,
+     "h": 43,
+     "conf": 96.4
+    },
+    {
+     "t": "books",
+     "x": 2400,
+     "y": 955,
+     "w": 146,
+     "h": 43,
+     "conf": 96.5
+    },
+    {
+     "t": "|",
+     "x": 2546,
+     "y": 951,
+     "w": 22,
+     "h": 62,
+     "conf": 94.2
+    },
+    {
+     "t": "read.”",
+     "x": 2595,
+     "y": 955,
+     "w": 133,
+     "h": 43,
+     "conf": 69.2
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_11.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_11.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "The ants go marching one by one.\nThey march into the setting sun.",
+   "char_count": 65,
+   "word_count": 13,
+   "mean_conf": 96.4,
+   "words": [
+    {
+     "t": "The",
+     "x": 368,
+     "y": 738,
+     "w": 92,
+     "h": 43,
+     "conf": 96.5
+    },
+    {
+     "t": "ants",
+     "x": 477,
+     "y": 743,
+     "w": 105,
+     "h": 38,
+     "conf": 96.1
+    },
+    {
+     "t": "go",
+     "x": 599,
+     "y": 750,
+     "w": 60,
+     "h": 42,
+     "conf": 96.6
+    },
+    {
+     "t": "marching",
+     "x": 678,
+     "y": 738,
+     "w": 227,
+     "h": 54,
+     "conf": 96.8
+    },
+    {
+     "t": "one",
+     "x": 924,
+     "y": 750,
+     "w": 88,
+     "h": 31,
+     "conf": 96.4
+    },
+    {
+     "t": "by",
+     "x": 1032,
+     "y": 738,
+     "w": 54,
+     "h": 54,
+     "conf": 96.7
+    },
+    {
+     "t": "one.",
+     "x": 1102,
+     "y": 750,
+     "w": 102,
+     "h": 31,
+     "conf": 96.8
+    },
+    {
+     "t": "They",
+     "x": 389,
+     "y": 811,
+     "w": 120,
+     "h": 54,
+     "conf": 96.9
+    },
+    {
+     "t": "march",
+     "x": 527,
+     "y": 811,
+     "w": 150,
+     "h": 43,
+     "conf": 95.7
+    },
+    {
+     "t": "into",
+     "x": 697,
+     "y": 812,
+     "w": 90,
+     "h": 42,
+     "conf": 95.7
+    },
+    {
+     "t": "the",
+     "x": 802,
+     "y": 811,
+     "w": 78,
+     "h": 43,
+     "conf": 96.3
+    },
+    {
+     "t": "setting",
+     "x": 897,
+     "y": 812,
+     "w": 167,
+     "h": 53,
+     "conf": 96.6
+    },
+    {
+     "t": "sun.",
+     "x": 1083,
+     "y": 823,
+     "w": 101,
+     "h": 31,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_12.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_12.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "And Little Ant said\n“Hey, there's one!”",
+   "char_count": 39,
+   "word_count": 7,
+   "mean_conf": 86.6,
+   "words": [
+    {
+     "t": "And",
+     "x": 2136,
+     "y": 1026,
+     "w": 94,
+     "h": 43,
+     "conf": 96.9
+    },
+    {
+     "t": "Little",
+     "x": 2251,
+     "y": 1026,
+     "w": 120,
+     "h": 43,
+     "conf": 96.0
+    },
+    {
+     "t": "Ant",
+     "x": 2386,
+     "y": 1028,
+     "w": 84,
+     "h": 41,
+     "conf": 96.6
+    },
+    {
+     "t": "said",
+     "x": 2487,
+     "y": 1026,
+     "w": 99,
+     "h": 43,
+     "conf": 96.7
+    },
+    {
+     "t": "“Hey,",
+     "x": 2144,
+     "y": 1097,
+     "w": 119,
+     "h": 55,
+     "conf": 96.1
+    },
+    {
+     "t": "there's",
+     "x": 2280,
+     "y": 1098,
+     "w": 159,
+     "h": 43,
+     "conf": 27.9
+    },
+    {
+     "t": "one!”",
+     "x": 2457,
+     "y": 1098,
+     "w": 124,
+     "h": 43,
+     "conf": 95.9
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_13.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_13.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "The ants go marching one by one,\ncarrying a burger, carrying a bun.",
+   "char_count": 67,
+   "word_count": 13,
+   "mean_conf": 96.4,
+   "words": [
+    {
+     "t": "The",
+     "x": 1945,
+     "y": 738,
+     "w": 91,
+     "h": 43,
+     "conf": 96.5
+    },
+    {
+     "t": "ants",
+     "x": 2054,
+     "y": 743,
+     "w": 104,
+     "h": 38,
+     "conf": 95.6
+    },
+    {
+     "t": "go",
+     "x": 2176,
+     "y": 750,
+     "w": 59,
+     "h": 42,
+     "conf": 95.6
+    },
+    {
+     "t": "marching",
+     "x": 2255,
+     "y": 738,
+     "w": 226,
+     "h": 54,
+     "conf": 96.6
+    },
+    {
+     "t": "one",
+     "x": 2501,
+     "y": 750,
+     "w": 88,
+     "h": 31,
+     "conf": 96.5
+    },
+    {
+     "t": "by",
+     "x": 2609,
+     "y": 738,
+     "w": 54,
+     "h": 54,
+     "conf": 96.7
+    },
+    {
+     "t": "one,",
+     "x": 2679,
+     "y": 750,
+     "w": 99,
+     "h": 38,
+     "conf": 96.8
+    },
+    {
+     "t": "carrying",
+     "x": 1958,
+     "y": 812,
+     "w": 197,
+     "h": 53,
+     "conf": 95.9
+    },
+    {
+     "t": "a",
+     "x": 2175,
+     "y": 823,
+     "w": 26,
+     "h": 31,
+     "conf": 97.0
+    },
+    {
+     "t": "burger,",
+     "x": 2221,
+     "y": 811,
+     "w": 162,
+     "h": 54,
+     "conf": 96.3
+    },
+    {
+     "t": "carrying",
+     "x": 2402,
+     "y": 812,
+     "w": 197,
+     "h": 53,
+     "conf": 96.4
+    },
+    {
+     "t": "a",
+     "x": 2618,
+     "y": 823,
+     "w": 26,
+     "h": 31,
+     "conf": 96.4
+    },
+    {
+     "t": "bun.",
+     "x": 2664,
+     "y": 811,
+     "w": 101,
+     "h": 43,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_14.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_14.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "When they return the Queen is glad.\nThe stores are full. They cheer like mad.",
+   "char_count": 77,
+   "word_count": 15,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "When",
+     "x": 347,
+     "y": 520,
+     "w": 137,
+     "h": 43,
+     "conf": 96.0
+    },
+    {
+     "t": "they",
+     "x": 501,
+     "y": 520,
+     "w": 105,
+     "h": 54,
+     "conf": 94.8
+    },
+    {
+     "t": "return",
+     "x": 624,
+     "y": 525,
+     "w": 142,
+     "h": 38,
+     "conf": 95.8
+    },
+    {
+     "t": "the",
+     "x": 783,
+     "y": 520,
+     "w": 77,
+     "h": 43,
+     "conf": 96.5
+    },
+    {
+     "t": "Queen",
+     "x": 879,
+     "y": 522,
+     "w": 154,
+     "h": 47,
+     "conf": 96.3
+    },
+    {
+     "t": "is",
+     "x": 1052,
+     "y": 521,
+     "w": 39,
+     "h": 42,
+     "conf": 94.7
+    },
+    {
+     "t": "glad.",
+     "x": 1108,
+     "y": 520,
+     "w": 117,
+     "h": 54,
+     "conf": 96.3
+    },
+    {
+     "t": "The",
+     "x": 293,
+     "y": 592,
+     "w": 92,
+     "h": 43,
+     "conf": 96.7
+    },
+    {
+     "t": "stores",
+     "x": 402,
+     "y": 597,
+     "w": 152,
+     "h": 38,
+     "conf": 96.7
+    },
+    {
+     "t": "are",
+     "x": 572,
+     "y": 604,
+     "w": 75,
+     "h": 31,
+     "conf": 95.7
+    },
+    {
+     "t": "full.",
+     "x": 664,
+     "y": 591,
+     "w": 89,
+     "h": 44,
+     "conf": 96.9
+    },
+    {
+     "t": "They",
+     "x": 770,
+     "y": 592,
+     "w": 120,
+     "h": 54,
+     "conf": 96.4
+    },
+    {
+     "t": "cheer",
+     "x": 906,
+     "y": 592,
+     "w": 137,
+     "h": 43,
+     "conf": 96.4
+    },
+    {
+     "t": "like",
+     "x": 1061,
+     "y": 592,
+     "w": 81,
+     "h": 43,
+     "conf": 96.5
+    },
+    {
+     "t": "mad.",
+     "x": 1162,
+     "y": 592,
+     "w": 117,
+     "h": 43,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_15.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_15.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "Ant gets hugs from mum and dad.",
+   "char_count": 31,
+   "word_count": 7,
+   "mean_conf": 96.4,
+   "words": [
+    {
+     "t": "Ant",
+     "x": 1940,
+     "y": 777,
+     "w": 84,
+     "h": 41,
+     "conf": 96.4
+    },
+    {
+     "t": "gets",
+     "x": 2041,
+     "y": 780,
+     "w": 105,
+     "h": 49,
+     "conf": 96.0
+    },
+    {
+     "t": "hugs",
+     "x": 2164,
+     "y": 775,
+     "w": 118,
+     "h": 54,
+     "conf": 96.5
+    },
+    {
+     "t": "from",
+     "x": 2298,
+     "y": 774,
+     "w": 114,
+     "h": 44,
+     "conf": 96.0
+    },
+    {
+     "t": "mum",
+     "x": 2433,
+     "y": 787,
+     "w": 120,
+     "h": 31,
+     "conf": 96.6
+    },
+    {
+     "t": "and",
+     "x": 2572,
+     "y": 775,
+     "w": 87,
+     "h": 43,
+     "conf": 96.8
+    },
+    {
+     "t": "dad.",
+     "x": 2679,
+     "y": 775,
+     "w": 102,
+     "h": 43,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_16.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_16.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "His baby sister takes his hand\n“Now | think | understand.”\n“The way you love to read a book ...\nMakes me want to take a look.”",
+   "char_count": 126,
+   "word_count": 27,
+   "mean_conf": 92.7,
+   "words": [
+    {
+     "t": "His",
+     "x": 420,
+     "y": 631,
+     "w": 77,
+     "h": 42,
+     "conf": 96.6
+    },
+    {
+     "t": "baby",
+     "x": 516,
+     "y": 630,
+     "w": 116,
+     "h": 54,
+     "conf": 96.8
+    },
+    {
+     "t": "sister",
+     "x": 648,
+     "y": 631,
+     "w": 136,
+     "h": 42,
+     "conf": 96.8
+    },
+    {
+     "t": "takes",
+     "x": 799,
+     "y": 630,
+     "w": 134,
+     "h": 43,
+     "conf": 96.1
+    },
+    {
+     "t": "his",
+     "x": 951,
+     "y": 630,
+     "w": 69,
+     "h": 43,
+     "conf": 96.1
+    },
+    {
+     "t": "hand",
+     "x": 1039,
+     "y": 630,
+     "w": 116,
+     "h": 43,
+     "conf": 96.8
+    },
+    {
+     "t": "“Now",
+     "x": 470,
+     "y": 701,
+     "w": 130,
+     "h": 44,
+     "conf": 96.7
+    },
+    {
+     "t": "|",
+     "x": 597,
+     "y": 697,
+     "w": 22,
+     "h": 63,
+     "conf": 90.9
+    },
+    {
+     "t": "think",
+     "x": 644,
+     "y": 702,
+     "w": 123,
+     "h": 43,
+     "conf": 93.4
+    },
+    {
+     "t": "|",
+     "x": 785,
+     "y": 704,
+     "w": 7,
+     "h": 40,
+     "conf": 70.0
+    },
+    {
+     "t": "understand.”",
+     "x": 814,
+     "y": 702,
+     "w": 305,
+     "h": 43,
+     "conf": 91.3
+    },
+    {
+     "t": "“The",
+     "x": 356,
+     "y": 846,
+     "w": 111,
+     "h": 44,
+     "conf": 96.5
+    },
+    {
+     "t": "way",
+     "x": 484,
+     "y": 859,
+     "w": 97,
+     "h": 42,
+     "conf": 95.9
+    },
+    {
+     "t": "you",
+     "x": 595,
+     "y": 859,
+     "w": 86,
+     "h": 42,
+     "conf": 96.4
+    },
+    {
+     "t": "love",
+     "x": 702,
+     "y": 847,
+     "w": 96,
+     "h": 43,
+     "conf": 96.0
+    },
+    {
+     "t": "to",
+     "x": 814,
+     "y": 852,
+     "w": 48,
+     "h": 38,
+     "conf": 96.0
+    },
+    {
+     "t": "read",
+     "x": 881,
+     "y": 847,
+     "w": 103,
+     "h": 43,
+     "conf": 96.7
+    },
+    {
+     "t": "a",
+     "x": 1003,
+     "y": 859,
+     "w": 26,
+     "h": 31,
+     "conf": 95.8
+    },
+    {
+     "t": "book",
+     "x": 1049,
+     "y": 847,
+     "w": 120,
+     "h": 43,
+     "conf": 76.5
+    },
+    {
+     "t": "...",
+     "x": 1186,
+     "y": 882,
+     "w": 33,
+     "h": 7,
+     "conf": 69.3
+    },
+    {
+     "t": "Makes",
+     "x": 414,
+     "y": 919,
+     "w": 160,
+     "h": 43,
+     "conf": 95.8
+    },
+    {
+     "t": "me",
+     "x": 593,
+     "y": 931,
+     "w": 72,
+     "h": 31,
+     "conf": 95.7
+    },
+    {
+     "t": "want",
+     "x": 682,
+     "y": 924,
+     "w": 118,
+     "h": 38,
+     "conf": 95.5
+    },
+    {
+     "t": "to",
+     "x": 816,
+     "y": 924,
+     "w": 47,
+     "h": 38,
+     "conf": 96.1
+    },
+    {
+     "t": "take",
+     "x": 879,
+     "y": 919,
+     "w": 105,
+     "h": 43,
+     "conf": 96.1
+    },
+    {
+     "t": "a",
+     "x": 1001,
+     "y": 931,
+     "w": 26,
+     "h": 31,
+     "conf": 95.7
+    },
+    {
+     "t": "look.”",
+     "x": 1047,
+     "y": 919,
+     "w": 130,
+     "h": 43,
+     "conf": 87.0
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_17.jpg",
+   "image_file": "little-ants-big-plan_20150712_Page_17.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

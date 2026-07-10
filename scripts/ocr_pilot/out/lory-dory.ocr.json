@@ -1,0 +1,1803 @@
+{
+ "slug": "lory-dory",
+ "wp_slug": "lory-dory",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "lory-dory_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  },
+  {
+   "file": "lory-dory_Page_02.jpg",
+   "reason": "front-matter(PDF 2)"
+  },
+  {
+   "file": "lory-dory_Page_03.jpg",
+   "reason": "front-matter(PDF 3)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_05.jpg",
+   "image_file": "lory-dory_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "One night Grandpa was tucking me in.\nHis hands were soft and his hair was thin.",
+   "char_count": 79,
+   "word_count": 16,
+   "mean_conf": 96.4,
+   "words": [
+    {
+     "t": "One",
+     "x": 961,
+     "y": 372,
+     "w": 40,
+     "h": 17,
+     "conf": 95.0
+    },
+    {
+     "t": "night",
+     "x": 1010,
+     "y": 370,
+     "w": 55,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "Grandpa",
+     "x": 1071,
+     "y": 370,
+     "w": 89,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "was",
+     "x": 1167,
+     "y": 376,
+     "w": 39,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "tucking",
+     "x": 1214,
+     "y": 370,
+     "w": 78,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "me",
+     "x": 1301,
+     "y": 376,
+     "w": 29,
+     "h": 13,
+     "conf": 96.7
+    },
+    {
+     "t": "in.",
+     "x": 1338,
+     "y": 370,
+     "w": 25,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "His",
+     "x": 962,
+     "y": 404,
+     "w": 32,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "hands",
+     "x": 1002,
+     "y": 403,
+     "w": 62,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "were",
+     "x": 1071,
+     "y": 409,
+     "w": 49,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "soft",
+     "x": 1128,
+     "y": 403,
+     "w": 40,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 1174,
+     "y": 403,
+     "w": 38,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "his",
+     "x": 1220,
+     "y": 403,
+     "w": 29,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "hair",
+     "x": 1257,
+     "y": 403,
+     "w": 40,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "was",
+     "x": 1304,
+     "y": 409,
+     "w": 40,
+     "h": 13,
+     "conf": 95.3
+    },
+    {
+     "t": "thin.",
+     "x": 1351,
+     "y": 403,
+     "w": 48,
+     "h": 19,
+     "conf": 95.3
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_06.jpg",
+   "image_file": "lory-dory_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "‘I’m going to tell you a special story,\nabout a girl named Lory Dory.’",
+   "char_count": 70,
+   "word_count": 14,
+   "mean_conf": 93.5,
+   "words": [
+    {
+     "t": "‘I’m",
+     "x": 80,
+     "y": 657,
+     "w": 35,
+     "h": 19,
+     "conf": 86.6
+    },
+    {
+     "t": "going",
+     "x": 124,
+     "y": 658,
+     "w": 58,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 189,
+     "y": 659,
+     "w": 21,
+     "h": 17,
+     "conf": 96.4
+    },
+    {
+     "t": "tell",
+     "x": 216,
+     "y": 657,
+     "w": 34,
+     "h": 20,
+     "conf": 95.3
+    },
+    {
+     "t": "you",
+     "x": 256,
+     "y": 663,
+     "w": 38,
+     "h": 18,
+     "conf": 96.2
+    },
+    {
+     "t": "a",
+     "x": 301,
+     "y": 663,
+     "w": 11,
+     "h": 13,
+     "conf": 96.4
+    },
+    {
+     "t": "special",
+     "x": 319,
+     "y": 656,
+     "w": 74,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "story,",
+     "x": 400,
+     "y": 659,
+     "w": 58,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "about",
+     "x": 80,
+     "y": 690,
+     "w": 60,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "a",
+     "x": 147,
+     "y": 696,
+     "w": 11,
+     "h": 13,
+     "conf": 94.0
+    },
+    {
+     "t": "girl",
+     "x": 165,
+     "y": 690,
+     "w": 35,
+     "h": 24,
+     "conf": 94.0
+    },
+    {
+     "t": "named",
+     "x": 208,
+     "y": 690,
+     "w": 68,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "Lory",
+     "x": 285,
+     "y": 692,
+     "w": 45,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "Dory.’",
+     "x": 338,
+     "y": 690,
+     "w": 59,
+     "h": 25,
+     "conf": 69.4
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_07.jpg",
+   "image_file": "lory-dory_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "You couldn’t see Lory Dory at all\nbecause she was born invisible.",
+   "char_count": 65,
+   "word_count": 12,
+   "mean_conf": 94.8,
+   "words": [
+    {
+     "t": "You",
+     "x": 220,
+     "y": 372,
+     "w": 38,
+     "h": 17,
+     "conf": 93.3
+    },
+    {
+     "t": "couldn’t",
+     "x": 265,
+     "y": 370,
+     "w": 86,
+     "h": 19,
+     "conf": 90.9
+    },
+    {
+     "t": "see",
+     "x": 357,
+     "y": 376,
+     "w": 34,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "Lory",
+     "x": 400,
+     "y": 372,
+     "w": 45,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "Dory",
+     "x": 452,
+     "y": 372,
+     "w": 49,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "at",
+     "x": 507,
+     "y": 372,
+     "w": 21,
+     "h": 17,
+     "conf": 89.3
+    },
+    {
+     "t": "all",
+     "x": 534,
+     "y": 370,
+     "w": 26,
+     "h": 19,
+     "conf": 89.3
+    },
+    {
+     "t": "because",
+     "x": 222,
+     "y": 403,
+     "w": 84,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "she",
+     "x": 314,
+     "y": 403,
+     "w": 35,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "was",
+     "x": 357,
+     "y": 409,
+     "w": 39,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "born",
+     "x": 405,
+     "y": 403,
+     "w": 45,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "invisible.",
+     "x": 458,
+     "y": 403,
+     "w": 94,
+     "h": 19,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_08.jpg",
+   "image_file": "lory-dory_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "or when she was curled under blankets in bed.",
+   "char_count": 45,
+   "word_count": 9,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "or",
+     "x": 939,
+     "y": 692,
+     "w": 21,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "when",
+     "x": 966,
+     "y": 686,
+     "w": 55,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "she",
+     "x": 1030,
+     "y": 686,
+     "w": 34,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "was",
+     "x": 1072,
+     "y": 692,
+     "w": 40,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "curled",
+     "x": 1119,
+     "y": 686,
+     "w": 65,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "under",
+     "x": 1193,
+     "y": 686,
+     "w": 60,
+     "h": 19,
+     "conf": 96.0
+    },
+    {
+     "t": "blankets",
+     "x": 1261,
+     "y": 686,
+     "w": 88,
+     "h": 19,
+     "conf": 94.9
+    },
+    {
+     "t": "in",
+     "x": 1356,
+     "y": 687,
+     "w": 18,
+     "h": 18,
+     "conf": 94.9
+    },
+    {
+     "t": "bed.",
+     "x": 1383,
+     "y": 686,
+     "w": 43,
+     "h": 19,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_09.jpg",
+   "image_file": "lory-dory_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "ae\n‘Look, it’s Lory. The Imaginary Friend!\nShe’s not like us, she’s just pretend!’",
+   "char_count": 82,
+   "word_count": 14,
+   "mean_conf": 92.5,
+   "words": [
+    {
+     "t": "ae",
+     "x": 1119,
+     "y": 45,
+     "w": 68,
+     "h": 57,
+     "conf": 49.7
+    },
+    {
+     "t": "‘Look,",
+     "x": 1101,
+     "y": 117,
+     "w": 61,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "it’s",
+     "x": 1169,
+     "y": 117,
+     "w": 29,
+     "h": 19,
+     "conf": 94.3
+    },
+    {
+     "t": "Lory.",
+     "x": 1207,
+     "y": 119,
+     "w": 49,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "The",
+     "x": 1264,
+     "y": 117,
+     "w": 35,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "Imaginary",
+     "x": 1308,
+     "y": 118,
+     "w": 106,
+     "h": 23,
+     "conf": 95.8
+    },
+    {
+     "t": "Friend!",
+     "x": 1421,
+     "y": 117,
+     "w": 72,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "She’s",
+     "x": 1101,
+     "y": 150,
+     "w": 53,
+     "h": 19,
+     "conf": 90.3
+    },
+    {
+     "t": "not",
+     "x": 1163,
+     "y": 152,
+     "w": 33,
+     "h": 17,
+     "conf": 95.9
+    },
+    {
+     "t": "like",
+     "x": 1203,
+     "y": 150,
+     "w": 35,
+     "h": 19,
+     "conf": 96.3
+    },
+    {
+     "t": "us,",
+     "x": 1247,
+     "y": 156,
+     "w": 29,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "she’s",
+     "x": 1283,
+     "y": 150,
+     "w": 51,
+     "h": 19,
+     "conf": 95.9
+    },
+    {
+     "t": "just",
+     "x": 1341,
+     "y": 151,
+     "w": 40,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "pretend!’",
+     "x": 1388,
+     "y": 150,
+     "w": 93,
+     "h": 24,
+     "conf": 95.7
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_10.jpg",
+   "image_file": "lory-dory_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "One day at school, a boy wanted to know:\n‘How do you look? | only see you in snow.’",
+   "char_count": 83,
+   "word_count": 19,
+   "mean_conf": 94.3,
+   "words": [
+    {
+     "t": "One",
+     "x": 95,
+     "y": 372,
+     "w": 40,
+     "h": 17,
+     "conf": 96.2
+    },
+    {
+     "t": "day",
+     "x": 143,
+     "y": 370,
+     "w": 36,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "at",
+     "x": 185,
+     "y": 372,
+     "w": 21,
+     "h": 17,
+     "conf": 96.2
+    },
+    {
+     "t": "school,",
+     "x": 212,
+     "y": 370,
+     "w": 75,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "a",
+     "x": 294,
+     "y": 376,
+     "w": 11,
+     "h": 13,
+     "conf": 96.8
+    },
+    {
+     "t": "boy",
+     "x": 313,
+     "y": 370,
+     "w": 36,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "wanted",
+     "x": 355,
+     "y": 370,
+     "w": 76,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 439,
+     "y": 372,
+     "w": 20,
+     "h": 17,
+     "conf": 96.2
+    },
+    {
+     "t": "know:",
+     "x": 467,
+     "y": 370,
+     "w": 61,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "‘How",
+     "x": 95,
+     "y": 403,
+     "w": 52,
+     "h": 19,
+     "conf": 80.2
+    },
+    {
+     "t": "do",
+     "x": 153,
+     "y": 403,
+     "w": 25,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "you",
+     "x": 184,
+     "y": 409,
+     "w": 38,
+     "h": 18,
+     "conf": 96.9
+    },
+    {
+     "t": "look?",
+     "x": 230,
+     "y": 403,
+     "w": 53,
+     "h": 19,
+     "conf": 95.0
+    },
+    {
+     "t": "|",
+     "x": 291,
+     "y": 405,
+     "w": 3,
+     "h": 17,
+     "conf": 95.0
+    },
+    {
+     "t": "only",
+     "x": 303,
+     "y": 403,
+     "w": 44,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "see",
+     "x": 354,
+     "y": 409,
+     "w": 33,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "you",
+     "x": 394,
+     "y": 409,
+     "w": 37,
+     "h": 18,
+     "conf": 97.0
+    },
+    {
+     "t": "in",
+     "x": 439,
+     "y": 404,
+     "w": 17,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "snow.’",
+     "x": 465,
+     "y": 403,
+     "w": 64,
+     "h": 19,
+     "conf": 72.1
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_11.jpg",
+   "image_file": "lory-dory_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "‘Can you paint yourself?’\nLory knew that she could.\nBut notin the same way\nthe boy thought she would.",
+   "char_count": 101,
+   "word_count": 19,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "‘Can",
+     "x": 254,
+     "y": 83,
+     "w": 44,
+     "h": 19,
+     "conf": 92.2
+    },
+    {
+     "t": "you",
+     "x": 305,
+     "y": 89,
+     "w": 38,
+     "h": 18,
+     "conf": 96.3
+    },
+    {
+     "t": "paint",
+     "x": 351,
+     "y": 84,
+     "w": 53,
+     "h": 23,
+     "conf": 97.0
+    },
+    {
+     "t": "yourself?’",
+     "x": 410,
+     "y": 83,
+     "w": 102,
+     "h": 24,
+     "conf": 92.0
+    },
+    {
+     "t": "Lory",
+     "x": 255,
+     "y": 119,
+     "w": 45,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "knew",
+     "x": 307,
+     "y": 117,
+     "w": 55,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "that",
+     "x": 368,
+     "y": 117,
+     "w": 43,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "she",
+     "x": 417,
+     "y": 117,
+     "w": 35,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "could.",
+     "x": 460,
+     "y": 117,
+     "w": 64,
+     "h": 19,
+     "conf": 96.0
+    },
+    {
+     "t": "But",
+     "x": 1046,
+     "y": 635,
+     "w": 36,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "notin",
+     "x": 1089,
+     "y": 634,
+     "w": 58,
+     "h": 18,
+     "conf": 94.2
+    },
+    {
+     "t": "the",
+     "x": 1155,
+     "y": 633,
+     "w": 32,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "same",
+     "x": 1195,
+     "y": 639,
+     "w": 54,
+     "h": 13,
+     "conf": 95.7
+    },
+    {
+     "t": "way",
+     "x": 1257,
+     "y": 639,
+     "w": 41,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 1045,
+     "y": 666,
+     "w": 33,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "boy",
+     "x": 1087,
+     "y": 666,
+     "w": 36,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "thought",
+     "x": 1129,
+     "y": 666,
+     "w": 84,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "she",
+     "x": 1219,
+     "y": 666,
+     "w": 34,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "would.",
+     "x": 1261,
+     "y": 666,
+     "w": 70,
+     "h": 19,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_12.jpg",
+   "image_file": "lory-dory_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Lory painted her body\nwith all that she loved\nfrom the world all around\nand the sky up above.",
+   "char_count": 93,
+   "word_count": 19,
+   "mean_conf": 96.4,
+   "words": [
+    {
+     "t": "Lory",
+     "x": 344,
+     "y": 361,
+     "w": 45,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "painted",
+     "x": 396,
+     "y": 359,
+     "w": 77,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "her",
+     "x": 482,
+     "y": 359,
+     "w": 33,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "body",
+     "x": 523,
+     "y": 359,
+     "w": 49,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "with",
+     "x": 343,
+     "y": 392,
+     "w": 44,
+     "h": 19,
+     "conf": 96.3
+    },
+    {
+     "t": "all",
+     "x": 395,
+     "y": 392,
+     "w": 26,
+     "h": 19,
+     "conf": 95.3
+    },
+    {
+     "t": "that",
+     "x": 428,
+     "y": 392,
+     "w": 43,
+     "h": 19,
+     "conf": 95.3
+    },
+    {
+     "t": "she",
+     "x": 477,
+     "y": 392,
+     "w": 35,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "loved",
+     "x": 521,
+     "y": 392,
+     "w": 53,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "from",
+     "x": 342,
+     "y": 426,
+     "w": 47,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 399,
+     "y": 426,
+     "w": 32,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "world",
+     "x": 439,
+     "y": 426,
+     "w": 58,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "all",
+     "x": 505,
+     "y": 426,
+     "w": 26,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "around",
+     "x": 537,
+     "y": 426,
+     "w": 73,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "and",
+     "x": 343,
+     "y": 459,
+     "w": 37,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 388,
+     "y": 459,
+     "w": 32,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "sky",
+     "x": 428,
+     "y": 459,
+     "w": 35,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "up",
+     "x": 470,
+     "y": 465,
+     "w": 23,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "above.",
+     "x": 501,
+     "y": 459,
+     "w": 67,
+     "h": 19,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_13.jpg",
+   "image_file": "lory-dory_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "She painted herself every day with such pride,\nto bring out the person who she was inside.",
+   "char_count": 90,
+   "word_count": 17,
+   "mean_conf": 96.7,
+   "words": [
+    {
+     "t": "She",
+     "x": 934,
+     "y": 370,
+     "w": 38,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "painted",
+     "x": 981,
+     "y": 370,
+     "w": 77,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "herself",
+     "x": 1067,
+     "y": 370,
+     "w": 73,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "every",
+     "x": 1146,
+     "y": 376,
+     "w": 57,
+     "h": 18,
+     "conf": 96.3
+    },
+    {
+     "t": "day",
+     "x": 1209,
+     "y": 370,
+     "w": 36,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "with",
+     "x": 1252,
+     "y": 370,
+     "w": 44,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "such",
+     "x": 1304,
+     "y": 370,
+     "w": 48,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "pride,",
+     "x": 1361,
+     "y": 370,
+     "w": 59,
+     "h": 24,
+     "conf": 95.9
+    },
+    {
+     "t": "to",
+     "x": 934,
+     "y": 405,
+     "w": 20,
+     "h": 17,
+     "conf": 97.0
+    },
+    {
+     "t": "bring",
+     "x": 962,
+     "y": 403,
+     "w": 54,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "out",
+     "x": 1023,
+     "y": 405,
+     "w": 35,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 1064,
+     "y": 403,
+     "w": 33,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "person",
+     "x": 1106,
+     "y": 409,
+     "w": 69,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "who",
+     "x": 1183,
+     "y": 403,
+     "w": 42,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "she",
+     "x": 1233,
+     "y": 403,
+     "w": 34,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "was",
+     "x": 1275,
+     "y": 409,
+     "w": 40,
+     "h": 13,
+     "conf": 96.4
+    },
+    {
+     "t": "inside.",
+     "x": 1322,
+     "y": 403,
+     "w": 69,
+     "h": 19,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_14.jpg",
+   "image_file": "lory-dory_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "‘| know I’m invisible\nand hard to see.\nSo | painted these pictures\nto show the real me.’",
+   "char_count": 88,
+   "word_count": 18,
+   "mean_conf": 89.5,
+   "words": [
+    {
+     "t": "‘|",
+     "x": 80,
+     "y": 590,
+     "w": 9,
+     "h": 19,
+     "conf": 67.4
+    },
+    {
+     "t": "know",
+     "x": 99,
+     "y": 590,
+     "w": 55,
+     "h": 19,
+     "conf": 92.0
+    },
+    {
+     "t": "I’m",
+     "x": 162,
+     "y": 590,
+     "w": 28,
+     "h": 19,
+     "conf": 85.8
+    },
+    {
+     "t": "invisible",
+     "x": 199,
+     "y": 590,
+     "w": 87,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "and",
+     "x": 80,
+     "y": 623,
+     "w": 37,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "hard",
+     "x": 126,
+     "y": 623,
+     "w": 45,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 179,
+     "y": 625,
+     "w": 19,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "see.",
+     "x": 206,
+     "y": 629,
+     "w": 41,
+     "h": 13,
+     "conf": 96.8
+    },
+    {
+     "t": "So",
+     "x": 80,
+     "y": 659,
+     "w": 25,
+     "h": 17,
+     "conf": 59.0
+    },
+    {
+     "t": "|",
+     "x": 113,
+     "y": 659,
+     "w": 3,
+     "h": 17,
+     "conf": 59.0
+    },
+    {
+     "t": "painted",
+     "x": 126,
+     "y": 657,
+     "w": 77,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "these",
+     "x": 211,
+     "y": 657,
+     "w": 56,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "pictures",
+     "x": 276,
+     "y": 658,
+     "w": 83,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 80,
+     "y": 692,
+     "w": 19,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "show",
+     "x": 107,
+     "y": 690,
+     "w": 54,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 168,
+     "y": 690,
+     "w": 32,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "real",
+     "x": 208,
+     "y": 690,
+     "w": 40,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "me.’",
+     "x": 256,
+     "y": 690,
+     "w": 42,
+     "h": 19,
+     "conf": 85.2
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_15.jpg",
+   "image_file": "lory-dory_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "‘Are you making this up, Gramps? Is this story true?”\n‘Lory is real - real as me, real as you.’",
+   "char_count": 95,
+   "word_count": 20,
+   "mean_conf": 93.5,
+   "words": [
+    {
+     "t": "‘Are",
+     "x": 127,
+     "y": 370,
+     "w": 38,
+     "h": 19,
+     "conf": 96.0
+    },
+    {
+     "t": "you",
+     "x": 172,
+     "y": 376,
+     "w": 38,
+     "h": 18,
+     "conf": 96.5
+    },
+    {
+     "t": "making",
+     "x": 218,
+     "y": 370,
+     "w": 75,
+     "h": 25,
+     "conf": 97.0
+    },
+    {
+     "t": "this",
+     "x": 301,
+     "y": 370,
+     "w": 38,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "up,",
+     "x": 347,
+     "y": 376,
+     "w": 31,
+     "h": 18,
+     "conf": 96.9
+    },
+    {
+     "t": "Gramps?",
+     "x": 386,
+     "y": 372,
+     "w": 92,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "Is",
+     "x": 484,
+     "y": 372,
+     "w": 15,
+     "h": 17,
+     "conf": 95.5
+    },
+    {
+     "t": "this",
+     "x": 507,
+     "y": 370,
+     "w": 38,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "story",
+     "x": 552,
+     "y": 372,
+     "w": 54,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "true?”",
+     "x": 612,
+     "y": 370,
+     "w": 58,
+     "h": 20,
+     "conf": 89.2
+    },
+    {
+     "t": "‘Lory",
+     "x": 126,
+     "y": 403,
+     "w": 53,
+     "h": 24,
+     "conf": 70.4
+    },
+    {
+     "t": "is",
+     "x": 185,
+     "y": 404,
+     "w": 16,
+     "h": 19,
+     "conf": 95.3
+    },
+    {
+     "t": "real",
+     "x": 208,
+     "y": 403,
+     "w": 40,
+     "h": 21,
+     "conf": 93.3
+    },
+    {
+     "t": "-",
+     "x": 256,
+     "y": 414,
+     "w": 10,
+     "h": 2,
+     "conf": 86.9
+    },
+    {
+     "t": "real",
+     "x": 274,
+     "y": 403,
+     "w": 40,
+     "h": 19,
+     "conf": 92.3
+    },
+    {
+     "t": "as",
+     "x": 321,
+     "y": 409,
+     "w": 21,
+     "h": 13,
+     "conf": 92.3
+    },
+    {
+     "t": "me,",
+     "x": 351,
+     "y": 409,
+     "w": 36,
+     "h": 17,
+     "conf": 96.2
+    },
+    {
+     "t": "real",
+     "x": 394,
+     "y": 403,
+     "w": 40,
+     "h": 20,
+     "conf": 94.8
+    },
+    {
+     "t": "as",
+     "x": 441,
+     "y": 409,
+     "w": 22,
+     "h": 13,
+     "conf": 94.8
+    },
+    {
+     "t": "you.’",
+     "x": 469,
+     "y": 403,
+     "w": 50,
+     "h": 24,
+     "conf": 96.0
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_16.jpg",
+   "image_file": "lory-dory_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "When Grandpa had left me, | can’t quite be sure,\nbut think | saw Lory just outside my door.",
+   "char_count": 91,
+   "word_count": 19,
+   "mean_conf": 93.0,
+   "words": [
+    {
+     "t": "When",
+     "x": 80,
+     "y": 657,
+     "w": 58,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "Grandpa",
+     "x": 146,
+     "y": 657,
+     "w": 89,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "had",
+     "x": 243,
+     "y": 657,
+     "w": 36,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "left",
+     "x": 288,
+     "y": 656,
+     "w": 35,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "me,",
+     "x": 330,
+     "y": 663,
+     "w": 37,
+     "h": 17,
+     "conf": 95.9
+    },
+    {
+     "t": "|",
+     "x": 375,
+     "y": 659,
+     "w": 3,
+     "h": 17,
+     "conf": 95.2
+    },
+    {
+     "t": "can’t",
+     "x": 387,
+     "y": 657,
+     "w": 52,
+     "h": 22,
+     "conf": 95.6
+    },
+    {
+     "t": "quite",
+     "x": 445,
+     "y": 658,
+     "w": 52,
+     "h": 23,
+     "conf": 97.0
+    },
+    {
+     "t": "be",
+     "x": 506,
+     "y": 657,
+     "w": 22,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "sure,",
+     "x": 536,
+     "y": 663,
+     "w": 51,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "but",
+     "x": 81,
+     "y": 690,
+     "w": 34,
+     "h": 20,
+     "conf": 40.6
+    },
+    {
+     "t": "think",
+     "x": 134,
+     "y": 689,
+     "w": 55,
+     "h": 20,
+     "conf": 94.4
+    },
+    {
+     "t": "|",
+     "x": 196,
+     "y": 692,
+     "w": 3,
+     "h": 17,
+     "conf": 94.4
+    },
+    {
+     "t": "saw",
+     "x": 207,
+     "y": 696,
+     "w": 41,
+     "h": 13,
+     "conf": 96.0
+    },
+    {
+     "t": "Lory",
+     "x": 255,
+     "y": 692,
+     "w": 46,
+     "h": 22,
+     "conf": 94.2
+    },
+    {
+     "t": "just",
+     "x": 307,
+     "y": 691,
+     "w": 39,
+     "h": 23,
+     "conf": 94.2
+    },
+    {
+     "t": "outside",
+     "x": 353,
+     "y": 690,
+     "w": 76,
+     "h": 19,
+     "conf": 95.4
+    },
+    {
+     "t": "my",
+     "x": 438,
+     "y": 696,
+     "w": 30,
+     "h": 18,
+     "conf": 96.7
+    },
+    {
+     "t": "door.",
+     "x": 474,
+     "y": 690,
+     "w": 52,
+     "h": 19,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_17.jpg",
+   "image_file": "lory-dory_Page_17.jpg",
+   "image_width": 1578,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_18.jpg",
+   "image_file": "lory-dory_Page_18.jpg",
+   "image_width": 791,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

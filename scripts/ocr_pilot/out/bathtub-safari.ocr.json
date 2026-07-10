@@ -1,0 +1,826 @@
+{
+ "slug": "bathtub-safari",
+ "wp_slug": "bathtub-safari",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "bathtub-safari_pdf-ebook_20141202_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_05.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Bathtime is Jack's\nfavourite part of\nthe day.\n‘ll be back ina\nfew moments,’\nsays his mom.\n‘Make sure to clean behind your ears:",
+   "char_count": 127,
+   "word_count": 24,
+   "mean_conf": 80.2,
+   "words": [
+    {
+     "t": "Bathtime",
+     "x": 445,
+     "y": 139,
+     "w": 139,
+     "h": 24,
+     "conf": 95.7
+    },
+    {
+     "t": "is",
+     "x": 595,
+     "y": 139,
+     "w": 21,
+     "h": 24,
+     "conf": 95.7
+    },
+    {
+     "t": "Jack's",
+     "x": 626,
+     "y": 140,
+     "w": 89,
+     "h": 23,
+     "conf": 10.6
+    },
+    {
+     "t": "favourite",
+     "x": 443,
+     "y": 178,
+     "w": 137,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "part",
+     "x": 592,
+     "y": 180,
+     "w": 60,
+     "h": 28,
+     "conf": 96.0
+    },
+    {
+     "t": "of",
+     "x": 662,
+     "y": 179,
+     "w": 31,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 443,
+     "y": 217,
+     "w": 49,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "day.",
+     "x": 503,
+     "y": 217,
+     "w": 60,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "‘ll",
+     "x": 52,
+     "y": 571,
+     "w": 36,
+     "h": 23,
+     "conf": 37.2
+    },
+    {
+     "t": "be",
+     "x": 102,
+     "y": 571,
+     "w": 36,
+     "h": 23,
+     "conf": 62.6
+    },
+    {
+     "t": "back",
+     "x": 150,
+     "y": 571,
+     "w": 71,
+     "h": 23,
+     "conf": 0.0
+    },
+    {
+     "t": "ina",
+     "x": 231,
+     "y": 570,
+     "w": 51,
+     "h": 24,
+     "conf": 0.0
+    },
+    {
+     "t": "few",
+     "x": 52,
+     "y": 609,
+     "w": 58,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "moments,’",
+     "x": 121,
+     "y": 610,
+     "w": 159,
+     "h": 25,
+     "conf": 82.1
+    },
+    {
+     "t": "says",
+     "x": 52,
+     "y": 654,
+     "w": 64,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "his",
+     "x": 129,
+     "y": 647,
+     "w": 39,
+     "h": 24,
+     "conf": 96.0
+    },
+    {
+     "t": "mom.",
+     "x": 181,
+     "y": 654,
+     "w": 85,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "‘Make",
+     "x": 895,
+     "y": 672,
+     "w": 89,
+     "h": 23,
+     "conf": 96.4
+    },
+    {
+     "t": "sure",
+     "x": 994,
+     "y": 678,
+     "w": 65,
+     "h": 17,
+     "conf": 96.3
+    },
+    {
+     "t": "to",
+     "x": 1069,
+     "y": 673,
+     "w": 31,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "clean",
+     "x": 1110,
+     "y": 672,
+     "w": 80,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "behind",
+     "x": 1203,
+     "y": 671,
+     "w": 102,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "your",
+     "x": 1316,
+     "y": 678,
+     "w": 68,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "ears:",
+     "x": 1394,
+     "y": 673,
+     "w": 73,
+     "h": 22,
+     "conf": 95.4
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_06.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_07.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Jack’s bathtub safari\nbegins!",
+   "char_count": 29,
+   "word_count": 4,
+   "mean_conf": 95.0,
+   "words": [
+    {
+     "t": "Jack’s",
+     "x": 117,
+     "y": 168,
+     "w": 89,
+     "h": 23,
+     "conf": 90.5
+    },
+    {
+     "t": "bathtub",
+     "x": 219,
+     "y": 168,
+     "w": 119,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "safari",
+     "x": 349,
+     "y": 167,
+     "w": 80,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "begins!",
+     "x": 119,
+     "y": 201,
+     "w": 107,
+     "h": 31,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_08.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "There’s a twist\nand a turn...\nSomething’s\nLook at what’s growing...\ncoming!\nIt’s a...",
+   "char_count": 85,
+   "word_count": 14,
+   "mean_conf": 93.3,
+   "words": [
+    {
+     "t": "There’s",
+     "x": 867,
+     "y": 85,
+     "w": 107,
+     "h": 23,
+     "conf": 90.0
+    },
+    {
+     "t": "a",
+     "x": 984,
+     "y": 91,
+     "w": 15,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "twist",
+     "x": 1011,
+     "y": 84,
+     "w": 76,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "and",
+     "x": 867,
+     "y": 119,
+     "w": 55,
+     "h": 23,
+     "conf": 96.4
+    },
+    {
+     "t": "a",
+     "x": 934,
+     "y": 125,
+     "w": 15,
+     "h": 17,
+     "conf": 96.2
+    },
+    {
+     "t": "turn...",
+     "x": 960,
+     "y": 120,
+     "w": 88,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "Something’s",
+     "x": 1293,
+     "y": 413,
+     "w": 188,
+     "h": 31,
+     "conf": 91.1
+    },
+    {
+     "t": "Look",
+     "x": 82,
+     "y": 448,
+     "w": 72,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "at",
+     "x": 163,
+     "y": 449,
+     "w": 30,
+     "h": 22,
+     "conf": 93.2
+    },
+    {
+     "t": "what’s",
+     "x": 202,
+     "y": 448,
+     "w": 97,
+     "h": 23,
+     "conf": 89.2
+    },
+    {
+     "t": "growing...",
+     "x": 1293,
+     "y": 447,
+     "w": 150,
+     "h": 31,
+     "conf": 94.9
+    },
+    {
+     "t": "coming!",
+     "x": 80,
+     "y": 480,
+     "w": 122,
+     "h": 31,
+     "conf": 96.4
+    },
+    {
+     "t": "It’s",
+     "x": 1295,
+     "y": 549,
+     "w": 38,
+     "h": 22,
+     "conf": 82.7
+    },
+    {
+     "t": "a...",
+     "x": 1344,
+     "y": 554,
+     "w": 41,
+     "h": 17,
+     "conf": 89.4
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_09.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_10.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "There’s a RUMBLE! and...\nUP\nUP\nIt's going up",
+   "char_count": 44,
+   "word_count": 9,
+   "mean_conf": 93.9,
+   "words": [
+    {
+     "t": "There’s",
+     "x": 80,
+     "y": 86,
+     "w": 106,
+     "h": 23,
+     "conf": 91.5
+    },
+    {
+     "t": "a",
+     "x": 208,
+     "y": 92,
+     "w": 4,
+     "h": 17,
+     "conf": 94.1
+    },
+    {
+     "t": "RUMBLE!",
+     "x": 225,
+     "y": 87,
+     "w": 139,
+     "h": 22,
+     "conf": 94.1
+    },
+    {
+     "t": "and...",
+     "x": 1403,
+     "y": 86,
+     "w": 81,
+     "h": 23,
+     "conf": 95.6
+    },
+    {
+     "t": "UP",
+     "x": 630,
+     "y": 574,
+     "w": 55,
+     "h": 29,
+     "conf": 96.8
+    },
+    {
+     "t": "UP",
+     "x": 592,
+     "y": 633,
+     "w": 44,
+     "h": 23,
+     "conf": 96.0
+    },
+    {
+     "t": "It's",
+     "x": 411,
+     "y": 679,
+     "w": 38,
+     "h": 22,
+     "conf": 84.6
+    },
+    {
+     "t": "going",
+     "x": 460,
+     "y": 677,
+     "w": 85,
+     "h": 31,
+     "conf": 96.4
+    },
+    {
+     "t": "up",
+     "x": 558,
+     "y": 684,
+     "w": 36,
+     "h": 23,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_11.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_12.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "There’s a SPLOSH.\nSomething bubbles. It’s time to...",
+   "char_count": 52,
+   "word_count": 8,
+   "mean_conf": 89.3,
+   "words": [
+    {
+     "t": "There’s",
+     "x": 80,
+     "y": 130,
+     "w": 106,
+     "h": 23,
+     "conf": 89.7
+    },
+    {
+     "t": "a",
+     "x": 205,
+     "y": 136,
+     "w": 7,
+     "h": 17,
+     "conf": 90.6
+    },
+    {
+     "t": "SPLOSH.",
+     "x": 223,
+     "y": 131,
+     "w": 132,
+     "h": 22,
+     "conf": 90.6
+    },
+    {
+     "t": "Something",
+     "x": 390,
+     "y": 668,
+     "w": 166,
+     "h": 31,
+     "conf": 96.6
+    },
+    {
+     "t": "bubbles.",
+     "x": 570,
+     "y": 669,
+     "w": 128,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "It’s",
+     "x": 1302,
+     "y": 673,
+     "w": 39,
+     "h": 22,
+     "conf": 58.7
+    },
+    {
+     "t": "time",
+     "x": 1352,
+     "y": 671,
+     "w": 69,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "to...",
+     "x": 1432,
+     "y": 673,
+     "w": 55,
+     "h": 22,
+     "conf": 95.7
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_13.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "But something's lurking in the\nbackground...",
+   "char_count": 44,
+   "word_count": 6,
+   "mean_conf": 87.1,
+   "words": [
+    {
+     "t": "But",
+     "x": 869,
+     "y": 86,
+     "w": 52,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "something's",
+     "x": 930,
+     "y": 84,
+     "w": 184,
+     "h": 31,
+     "conf": 40.3
+    },
+    {
+     "t": "lurking",
+     "x": 1127,
+     "y": 84,
+     "w": 101,
+     "h": 31,
+     "conf": 96.4
+    },
+    {
+     "t": "in",
+     "x": 1241,
+     "y": 84,
+     "w": 24,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "the",
+     "x": 1276,
+     "y": 85,
+     "w": 50,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "background...",
+     "x": 869,
+     "y": 119,
+     "w": 207,
+     "h": 30,
+     "conf": 95.9
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_14.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_15.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "‘Time to get out. | hope you're clean and\nready for bed?",
+   "char_count": 56,
+   "word_count": 12,
+   "mean_conf": 88.1,
+   "words": [
+    {
+     "t": "‘Time",
+     "x": 80,
+     "y": 642,
+     "w": 81,
+     "h": 24,
+     "conf": 95.5
+    },
+    {
+     "t": "to",
+     "x": 171,
+     "y": 644,
+     "w": 31,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "get",
+     "x": 212,
+     "y": 644,
+     "w": 51,
+     "h": 29,
+     "conf": 96.2
+    },
+    {
+     "t": "out.",
+     "x": 272,
+     "y": 644,
+     "w": 59,
+     "h": 22,
+     "conf": 94.7
+    },
+    {
+     "t": "|",
+     "x": 345,
+     "y": 644,
+     "w": 2,
+     "h": 22,
+     "conf": 94.7
+    },
+    {
+     "t": "hope",
+     "x": 361,
+     "y": 643,
+     "w": 76,
+     "h": 29,
+     "conf": 96.2
+    },
+    {
+     "t": "you're",
+     "x": 446,
+     "y": 644,
+     "w": 94,
+     "h": 29,
+     "conf": 23.0
+    },
+    {
+     "t": "clean",
+     "x": 550,
+     "y": 643,
+     "w": 80,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "and",
+     "x": 641,
+     "y": 643,
+     "w": 54,
+     "h": 23,
+     "conf": 96.4
+    },
+    {
+     "t": "ready",
+     "x": 82,
+     "y": 676,
+     "w": 84,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "for",
+     "x": 175,
+     "y": 676,
+     "w": 41,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "bed?",
+     "x": 229,
+     "y": 676,
+     "w": 66,
+     "h": 23,
+     "conf": 74.8
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_16.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_pdf-ebook_20141202_Page_18.jpg",
+   "image_file": "bathtub-safari_pdf-ebook_20141202_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

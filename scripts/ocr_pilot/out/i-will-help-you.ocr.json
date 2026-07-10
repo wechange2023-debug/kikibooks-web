@@ -1,0 +1,1134 @@
+{
+ "slug": "i-will-help-you",
+ "wp_slug": "i-will-help-you",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "i-will-help-you-cover.jpg",
+   "reason": "cover"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_201512064.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_201512064.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“Ouch!”\nMama Heron hurts her wing\nand leg on barbed wire.",
+   "char_count": 57,
+   "word_count": 11,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "“Ouch!”",
+     "x": 239,
+     "y": 235,
+     "w": 520,
+     "h": 123,
+     "conf": 93.0
+    },
+    {
+     "t": "Mama",
+     "x": 785,
+     "y": 341,
+     "w": 247,
+     "h": 65,
+     "conf": 97.0
+    },
+    {
+     "t": "Heron",
+     "x": 1058,
+     "y": 340,
+     "w": 245,
+     "h": 66,
+     "conf": 95.7
+    },
+    {
+     "t": "hurts",
+     "x": 1330,
+     "y": 337,
+     "w": 200,
+     "h": 69,
+     "conf": 95.5
+    },
+    {
+     "t": "her",
+     "x": 1557,
+     "y": 338,
+     "w": 128,
+     "h": 67,
+     "conf": 96.4
+    },
+    {
+     "t": "wing",
+     "x": 1709,
+     "y": 342,
+     "w": 193,
+     "h": 85,
+     "conf": 96.5
+    },
+    {
+     "t": "and",
+     "x": 786,
+     "y": 446,
+     "w": 138,
+     "h": 68,
+     "conf": 96.7
+    },
+    {
+     "t": "leg",
+     "x": 950,
+     "y": 446,
+     "w": 107,
+     "h": 89,
+     "conf": 96.4
+    },
+    {
+     "t": "on",
+     "x": 1087,
+     "y": 470,
+     "w": 97,
+     "h": 44,
+     "conf": 96.9
+    },
+    {
+     "t": "barbed",
+     "x": 1209,
+     "y": 446,
+     "w": 264,
+     "h": 68,
+     "conf": 96.1
+    },
+    {
+     "t": "wire.",
+     "x": 1498,
+     "y": 450,
+     "w": 193,
+     "h": 64,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_201512065.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_201512065.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“Iam hurt. I can't get home to my children.”",
+   "char_count": 44,
+   "word_count": 9,
+   "mean_conf": 88.2,
+   "words": [
+    {
+     "t": "“Iam",
+     "x": 238,
+     "y": 237,
+     "w": 199,
+     "h": 70,
+     "conf": 69.7
+    },
+    {
+     "t": "hurt.",
+     "x": 464,
+     "y": 239,
+     "w": 185,
+     "h": 68,
+     "conf": 95.7
+    },
+    {
+     "t": "I",
+     "x": 681,
+     "y": 241,
+     "w": 23,
+     "h": 65,
+     "conf": 85.3
+    },
+    {
+     "t": "can't",
+     "x": 734,
+     "y": 237,
+     "w": 176,
+     "h": 70,
+     "conf": 68.4
+    },
+    {
+     "t": "get",
+     "x": 936,
+     "y": 255,
+     "w": 115,
+     "h": 73,
+     "conf": 96.5
+    },
+    {
+     "t": "home",
+     "x": 1076,
+     "y": 239,
+     "w": 217,
+     "h": 68,
+     "conf": 94.7
+    },
+    {
+     "t": "to",
+     "x": 1320,
+     "y": 255,
+     "w": 75,
+     "h": 52,
+     "conf": 94.7
+    },
+    {
+     "t": "my",
+     "x": 1424,
+     "y": 263,
+     "w": 121,
+     "h": 65,
+     "conf": 96.6
+    },
+    {
+     "t": "children.”",
+     "x": 1570,
+     "y": 237,
+     "w": 369,
+     "h": 70,
+     "conf": 92.4
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_201512066.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_201512066.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "\\\n“Why are you crying Mama Heron?” “I can't get home to my children.”",
+   "char_count": 69,
+   "word_count": 14,
+   "mean_conf": 91.9,
+   "words": [
+    {
+     "t": "\\",
+     "x": 3620,
+     "y": 181,
+     "w": 8,
+     "h": 38,
+     "conf": 92.7
+    },
+    {
+     "t": "“Why",
+     "x": 237,
+     "y": 237,
+     "w": 232,
+     "h": 91,
+     "conf": 96.1
+    },
+    {
+     "t": "are",
+     "x": 494,
+     "y": 263,
+     "w": 114,
+     "h": 44,
+     "conf": 96.4
+    },
+    {
+     "t": "you",
+     "x": 633,
+     "y": 263,
+     "w": 143,
+     "h": 65,
+     "conf": 96.9
+    },
+    {
+     "t": "crying",
+     "x": 804,
+     "y": 243,
+     "w": 240,
+     "h": 85,
+     "conf": 96.7
+    },
+    {
+     "t": "Mama",
+     "x": 1071,
+     "y": 241,
+     "w": 247,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "Heron?”",
+     "x": 1344,
+     "y": 237,
+     "w": 312,
+     "h": 70,
+     "conf": 82.8
+    },
+    {
+     "t": "“I",
+     "x": 2599,
+     "y": 237,
+     "w": 57,
+     "h": 70,
+     "conf": 70.6
+    },
+    {
+     "t": "can't",
+     "x": 2686,
+     "y": 237,
+     "w": 176,
+     "h": 70,
+     "conf": 81.7
+    },
+    {
+     "t": "get",
+     "x": 2888,
+     "y": 255,
+     "w": 115,
+     "h": 73,
+     "conf": 96.5
+    },
+    {
+     "t": "home",
+     "x": 3028,
+     "y": 238,
+     "w": 218,
+     "h": 69,
+     "conf": 95.4
+    },
+    {
+     "t": "to",
+     "x": 3272,
+     "y": 255,
+     "w": 75,
+     "h": 52,
+     "conf": 95.4
+    },
+    {
+     "t": "my",
+     "x": 3376,
+     "y": 263,
+     "w": 121,
+     "h": 65,
+     "conf": 96.6
+    },
+    {
+     "t": "children.”",
+     "x": 3522,
+     "y": 237,
+     "w": 370,
+     "h": 71,
+     "conf": 92.9
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_201512067.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_201512067.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“T will help you,’ says Lungile.",
+   "char_count": 32,
+   "word_count": 6,
+   "mean_conf": 89.7,
+   "words": [
+    {
+     "t": "“T",
+     "x": 601,
+     "y": 1053,
+     "w": 57,
+     "h": 70,
+     "conf": 86.2
+    },
+    {
+     "t": "will",
+     "x": 684,
+     "y": 1054,
+     "w": 145,
+     "h": 69,
+     "conf": 96.7
+    },
+    {
+     "t": "help",
+     "x": 854,
+     "y": 1054,
+     "w": 163,
+     "h": 90,
+     "conf": 96.5
+    },
+    {
+     "t": "you,’",
+     "x": 1043,
+     "y": 1053,
+     "w": 197,
+     "h": 91,
+     "conf": 74.3
+    },
+    {
+     "t": "says",
+     "x": 1268,
+     "y": 1079,
+     "w": 148,
+     "h": 65,
+     "conf": 93.3
+    },
+    {
+     "t": "Lungile.",
+     "x": 1445,
+     "y": 1054,
+     "w": 312,
+     "h": 90,
+     "conf": 91.1
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_201512068.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_201512068.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“Thank you, Lungile!”",
+   "char_count": 21,
+   "word_count": 3,
+   "mean_conf": 90.0,
+   "words": [
+    {
+     "t": "“Thank",
+     "x": 3072,
+     "y": 1053,
+     "w": 289,
+     "h": 70,
+     "conf": 87.2
+    },
+    {
+     "t": "you,",
+     "x": 3383,
+     "y": 1079,
+     "w": 164,
+     "h": 65,
+     "conf": 93.2
+    },
+    {
+     "t": "Lungile!”",
+     "x": 3577,
+     "y": 1053,
+     "w": 351,
+     "h": 91,
+     "conf": 89.6
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_201512069.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_201512069.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "The next day, Gogo sends Lungile On the way, he stops to play with\nto the shop to buy bread. his friends in the river.",
+   "char_count": 118,
+   "word_count": 25,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "The",
+     "x": 239,
+     "y": 239,
+     "w": 153,
+     "h": 68,
+     "conf": 95.7
+    },
+    {
+     "t": "next",
+     "x": 421,
+     "y": 255,
+     "w": 167,
+     "h": 52,
+     "conf": 96.5
+    },
+    {
+     "t": "day,",
+     "x": 615,
+     "y": 238,
+     "w": 149,
+     "h": 90,
+     "conf": 96.0
+    },
+    {
+     "t": "Gogo",
+     "x": 795,
+     "y": 241,
+     "w": 208,
+     "h": 87,
+     "conf": 96.0
+    },
+    {
+     "t": "sends",
+     "x": 1033,
+     "y": 238,
+     "w": 207,
+     "h": 69,
+     "conf": 93.3
+    },
+    {
+     "t": "Lungile",
+     "x": 1268,
+     "y": 238,
+     "w": 292,
+     "h": 90,
+     "conf": 91.8
+    },
+    {
+     "t": "On",
+     "x": 2602,
+     "y": 241,
+     "w": 119,
+     "h": 66,
+     "conf": 95.5
+    },
+    {
+     "t": "the",
+     "x": 2747,
+     "y": 238,
+     "w": 119,
+     "h": 69,
+     "conf": 95.5
+    },
+    {
+     "t": "way,",
+     "x": 2893,
+     "y": 264,
+     "w": 175,
+     "h": 64,
+     "conf": 96.4
+    },
+    {
+     "t": "he",
+     "x": 3097,
+     "y": 238,
+     "w": 89,
+     "h": 68,
+     "conf": 96.4
+    },
+    {
+     "t": "stops",
+     "x": 3215,
+     "y": 255,
+     "w": 193,
+     "h": 73,
+     "conf": 95.8
+    },
+    {
+     "t": "to",
+     "x": 3436,
+     "y": 255,
+     "w": 74,
+     "h": 52,
+     "conf": 96.5
+    },
+    {
+     "t": "play",
+     "x": 3539,
+     "y": 238,
+     "w": 159,
+     "h": 90,
+     "conf": 96.4
+    },
+    {
+     "t": "with",
+     "x": 3720,
+     "y": 238,
+     "w": 178,
+     "h": 69,
+     "conf": 96.4
+    },
+    {
+     "t": "to",
+     "x": 238,
+     "y": 364,
+     "w": 75,
+     "h": 52,
+     "conf": 95.9
+    },
+    {
+     "t": "the",
+     "x": 341,
+     "y": 348,
+     "w": 119,
+     "h": 68,
+     "conf": 96.7
+    },
+    {
+     "t": "shop",
+     "x": 490,
+     "y": 347,
+     "w": 178,
+     "h": 90,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 697,
+     "y": 364,
+     "w": 74,
+     "h": 52,
+     "conf": 96.5
+    },
+    {
+     "t": "buy",
+     "x": 799,
+     "y": 347,
+     "w": 144,
+     "h": 90,
+     "conf": 95.7
+    },
+    {
+     "t": "bread.",
+     "x": 964,
+     "y": 347,
+     "w": 234,
+     "h": 69,
+     "conf": 95.7
+    },
+    {
+     "t": "his",
+     "x": 2600,
+     "y": 347,
+     "w": 108,
+     "h": 69,
+     "conf": 96.6
+    },
+    {
+     "t": "friends",
+     "x": 2737,
+     "y": 347,
+     "w": 265,
+     "h": 69,
+     "conf": 95.9
+    },
+    {
+     "t": "in",
+     "x": 3031,
+     "y": 352,
+     "w": 74,
+     "h": 63,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 3131,
+     "y": 347,
+     "w": 120,
+     "h": 69,
+     "conf": 95.5
+    },
+    {
+     "t": "river.",
+     "x": 3279,
+     "y": 352,
+     "w": 205,
+     "h": 64,
+     "conf": 95.9
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_2015120610.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_2015120610.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "Eish! The money is gone.",
+   "char_count": 24,
+   "word_count": 5,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "Eish!",
+     "x": 3053,
+     "y": 328,
+     "w": 185,
+     "h": 68,
+     "conf": 92.2
+    },
+    {
+     "t": "The",
+     "x": 3271,
+     "y": 328,
+     "w": 153,
+     "h": 67,
+     "conf": 95.7
+    },
+    {
+     "t": "money",
+     "x": 3453,
+     "y": 352,
+     "w": 266,
+     "h": 65,
+     "conf": 96.4
+    },
+    {
+     "t": "is",
+     "x": 3742,
+     "y": 332,
+     "w": 56,
+     "h": 64,
+     "conf": 96.4
+    },
+    {
+     "t": "gone.",
+     "x": 3826,
+     "y": 352,
+     "w": 205,
+     "h": 65,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_2015120611.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_2015120611.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“Don't come home\nuntil you find that money!”",
+   "char_count": 44,
+   "word_count": 8,
+   "mean_conf": 95.2,
+   "words": [
+    {
+     "t": "“Don't",
+     "x": 1033,
+     "y": 344,
+     "w": 247,
+     "h": 70,
+     "conf": 90.4
+    },
+    {
+     "t": "come",
+     "x": 1307,
+     "y": 370,
+     "w": 202,
+     "h": 44,
+     "conf": 95.9
+    },
+    {
+     "t": "home",
+     "x": 1537,
+     "y": 345,
+     "w": 217,
+     "h": 69,
+     "conf": 95.9
+    },
+    {
+     "t": "until",
+     "x": 1034,
+     "y": 454,
+     "w": 180,
+     "h": 68,
+     "conf": 96.3
+    },
+    {
+     "t": "you",
+     "x": 1238,
+     "y": 478,
+     "w": 143,
+     "h": 65,
+     "conf": 96.8
+    },
+    {
+     "t": "find",
+     "x": 1408,
+     "y": 453,
+     "w": 154,
+     "h": 68,
+     "conf": 96.0
+    },
+    {
+     "t": "that",
+     "x": 1586,
+     "y": 454,
+     "w": 152,
+     "h": 68,
+     "conf": 96.6
+    },
+    {
+     "t": "money!”",
+     "x": 1764,
+     "y": 452,
+     "w": 321,
+     "h": 91,
+     "conf": 94.0
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_2015120612.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_2015120612.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_2015120613.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_2015120613.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“I lost the money Gogo gave me to buy bread.\nWe have no supper now.”\n“I will help you.”",
+   "char_count": 87,
+   "word_count": 19,
+   "mean_conf": 90.7,
+   "words": [
+    {
+     "t": "“I",
+     "x": 238,
+     "y": 237,
+     "w": 55,
+     "h": 69,
+     "conf": 87.2
+    },
+    {
+     "t": "lost",
+     "x": 321,
+     "y": 238,
+     "w": 138,
+     "h": 69,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 484,
+     "y": 238,
+     "w": 120,
+     "h": 69,
+     "conf": 96.6
+    },
+    {
+     "t": "money",
+     "x": 632,
+     "y": 263,
+     "w": 266,
+     "h": 65,
+     "conf": 96.5
+    },
+    {
+     "t": "Gogo",
+     "x": 923,
+     "y": 241,
+     "w": 208,
+     "h": 87,
+     "conf": 96.8
+    },
+    {
+     "t": "gave",
+     "x": 1160,
+     "y": 264,
+     "w": 172,
+     "h": 64,
+     "conf": 95.8
+    },
+    {
+     "t": "me",
+     "x": 1360,
+     "y": 263,
+     "w": 114,
+     "h": 43,
+     "conf": 92.6
+    },
+    {
+     "t": "to",
+     "x": 1501,
+     "y": 255,
+     "w": 75,
+     "h": 52,
+     "conf": 92.6
+    },
+    {
+     "t": "buy",
+     "x": 1603,
+     "y": 238,
+     "w": 144,
+     "h": 90,
+     "conf": 96.9
+    },
+    {
+     "t": "bread.",
+     "x": 1769,
+     "y": 238,
+     "w": 234,
+     "h": 69,
+     "conf": 96.8
+    },
+    {
+     "t": "We",
+     "x": 237,
+     "y": 350,
+     "w": 135,
+     "h": 66,
+     "conf": 96.9
+    },
+    {
+     "t": "have",
+     "x": 400,
+     "y": 347,
+     "w": 178,
+     "h": 69,
+     "conf": 95.4
+    },
+    {
+     "t": "no",
+     "x": 606,
+     "y": 372,
+     "w": 96,
+     "h": 44,
+     "conf": 96.4
+    },
+    {
+     "t": "supper",
+     "x": 733,
+     "y": 372,
+     "w": 259,
+     "h": 65,
+     "conf": 96.6
+    },
+    {
+     "t": "now.”",
+     "x": 1018,
+     "y": 346,
+     "w": 223,
+     "h": 70,
+     "conf": 56.9
+    },
+    {
+     "t": "“I",
+     "x": 3169,
+     "y": 775,
+     "w": 55,
+     "h": 69,
+     "conf": 44.6
+    },
+    {
+     "t": "will",
+     "x": 3251,
+     "y": 776,
+     "w": 145,
+     "h": 69,
+     "conf": 96.6
+    },
+    {
+     "t": "help",
+     "x": 3422,
+     "y": 776,
+     "w": 162,
+     "h": 90,
+     "conf": 96.6
+    },
+    {
+     "t": "you.”",
+     "x": 3610,
+     "y": 775,
+     "w": 195,
+     "h": 91,
+     "conf": 95.4
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_2015120614.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_2015120614.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "Mama Heron's sharp eyes see the coins\nshining in the water.",
+   "char_count": 59,
+   "word_count": 11,
+   "mean_conf": 92.4,
+   "words": [
+    {
+     "t": "Mama",
+     "x": 2601,
+     "y": 241,
+     "w": 247,
+     "h": 66,
+     "conf": 95.5
+    },
+    {
+     "t": "Heron's",
+     "x": 2874,
+     "y": 237,
+     "w": 295,
+     "h": 70,
+     "conf": 53.9
+    },
+    {
+     "t": "sharp",
+     "x": 3198,
+     "y": 239,
+     "w": 208,
+     "h": 89,
+     "conf": 96.1
+    },
+    {
+     "t": "eyes",
+     "x": 3436,
+     "y": 263,
+     "w": 156,
+     "h": 65,
+     "conf": 95.5
+    },
+    {
+     "t": "see",
+     "x": 3622,
+     "y": 263,
+     "w": 112,
+     "h": 44,
+     "conf": 95.5
+    },
+    {
+     "t": "the",
+     "x": 3761,
+     "y": 239,
+     "w": 119,
+     "h": 68,
+     "conf": 96.7
+    },
+    {
+     "t": "coins",
+     "x": 3910,
+     "y": 243,
+     "w": 196,
+     "h": 64,
+     "conf": 96.8
+    },
+    {
+     "t": "shining",
+     "x": 2602,
+     "y": 348,
+     "w": 286,
+     "h": 89,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 2915,
+     "y": 352,
+     "w": 75,
+     "h": 63,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 3016,
+     "y": 348,
+     "w": 120,
+     "h": 68,
+     "conf": 96.9
+    },
+    {
+     "t": "water.",
+     "x": 3162,
+     "y": 364,
+     "w": 239,
+     "h": 52,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_2015120615.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_2015120615.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“Thank you, Mama Heron.”",
+   "char_count": 24,
+   "word_count": 4,
+   "mean_conf": 92.9,
+   "words": [
+    {
+     "t": "“Thank",
+     "x": 643,
+     "y": 1053,
+     "w": 289,
+     "h": 70,
+     "conf": 89.0
+    },
+    {
+     "t": "you,",
+     "x": 954,
+     "y": 1079,
+     "w": 165,
+     "h": 65,
+     "conf": 96.0
+    },
+    {
+     "t": "Mama",
+     "x": 1146,
+     "y": 1057,
+     "w": 248,
+     "h": 66,
+     "conf": 96.0
+    },
+    {
+     "t": "Heron.”",
+     "x": 1419,
+     "y": 1053,
+     "w": 300,
+     "h": 71,
+     "conf": 90.7
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you_interior-spreds-text_2015120617.jpg",
+   "image_file": "i-will-help-you_interior-spreds-text_2015120617.jpg",
+   "image_width": 2362,
+   "image_height": 2362,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

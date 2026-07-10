@@ -1,0 +1,1691 @@
+{
+ "slug": "grandpas-gold",
+ "wp_slug": "grandpas-gold",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "grandpas-gold-pdf-ebook-20150919_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_05.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "The children were talking\nabout their Grandpas.",
+   "char_count": 47,
+   "word_count": 7,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "The",
+     "x": 180,
+     "y": 583,
+     "w": 55,
+     "h": 26,
+     "conf": 96.4
+    },
+    {
+     "t": "children",
+     "x": 248,
+     "y": 583,
+     "w": 121,
+     "h": 26,
+     "conf": 96.9
+    },
+    {
+     "t": "were",
+     "x": 381,
+     "y": 593,
+     "w": 73,
+     "h": 16,
+     "conf": 96.4
+    },
+    {
+     "t": "talking",
+     "x": 466,
+     "y": 583,
+     "w": 102,
+     "h": 34,
+     "conf": 96.6
+    },
+    {
+     "t": "about",
+     "x": 182,
+     "y": 623,
+     "w": 86,
+     "h": 26,
+     "conf": 96.7
+    },
+    {
+     "t": "their",
+     "x": 279,
+     "y": 623,
+     "w": 73,
+     "h": 26,
+     "conf": 93.3
+    },
+    {
+     "t": "Grandpas.",
+     "x": 363,
+     "y": 623,
+     "w": 153,
+     "h": 34,
+     "conf": 91.5
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_06.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "My Grandpa can build a tower\nto the sky, said Giraffe.\nOnce he built a skyscraper for\na king.",
+   "char_count": 93,
+   "word_count": 19,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "My",
+     "x": 153,
+     "y": 291,
+     "w": 43,
+     "h": 31,
+     "conf": 96.6
+    },
+    {
+     "t": "Grandpa",
+     "x": 208,
+     "y": 288,
+     "w": 129,
+     "h": 34,
+     "conf": 95.5
+    },
+    {
+     "t": "can",
+     "x": 349,
+     "y": 298,
+     "w": 51,
+     "h": 16,
+     "conf": 95.5
+    },
+    {
+     "t": "build",
+     "x": 413,
+     "y": 288,
+     "w": 72,
+     "h": 26,
+     "conf": 96.2
+    },
+    {
+     "t": "a",
+     "x": 498,
+     "y": 298,
+     "w": 15,
+     "h": 16,
+     "conf": 95.8
+    },
+    {
+     "t": "tower",
+     "x": 524,
+     "y": 293,
+     "w": 90,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 151,
+     "y": 333,
+     "w": 30,
+     "h": 21,
+     "conf": 95.8
+    },
+    {
+     "t": "the",
+     "x": 192,
+     "y": 328,
+     "w": 48,
+     "h": 26,
+     "conf": 96.4
+    },
+    {
+     "t": "sky,",
+     "x": 253,
+     "y": 328,
+     "w": 56,
+     "h": 34,
+     "conf": 96.9
+    },
+    {
+     "t": "said",
+     "x": 322,
+     "y": 328,
+     "w": 60,
+     "h": 26,
+     "conf": 96.2
+    },
+    {
+     "t": "Giraffe.",
+     "x": 394,
+     "y": 328,
+     "w": 110,
+     "h": 26,
+     "conf": 95.0
+    },
+    {
+     "t": "Once",
+     "x": 152,
+     "y": 411,
+     "w": 74,
+     "h": 23,
+     "conf": 95.6
+    },
+    {
+     "t": "he",
+     "x": 239,
+     "y": 408,
+     "w": 33,
+     "h": 26,
+     "conf": 95.6
+    },
+    {
+     "t": "built",
+     "x": 285,
+     "y": 408,
+     "w": 67,
+     "h": 26,
+     "conf": 96.6
+    },
+    {
+     "t": "a",
+     "x": 364,
+     "y": 418,
+     "w": 15,
+     "h": 16,
+     "conf": 95.4
+    },
+    {
+     "t": "skyscraper",
+     "x": 391,
+     "y": 408,
+     "w": 166,
+     "h": 34,
+     "conf": 96.1
+    },
+    {
+     "t": "for",
+     "x": 566,
+     "y": 408,
+     "w": 45,
+     "h": 26,
+     "conf": 96.6
+    },
+    {
+     "t": "a",
+     "x": 152,
+     "y": 458,
+     "w": 15,
+     "h": 16,
+     "conf": 92.9
+    },
+    {
+     "t": "king.",
+     "x": 180,
+     "y": 448,
+     "w": 68,
+     "h": 34,
+     "conf": 92.9
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_07.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "My Grandpa can fish for\nanything in the sea, said\nCheetah.\nOnce he caught a whale\nand kept it in his bath.",
+   "char_count": 106,
+   "word_count": 22,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "My",
+     "x": 139,
+     "y": 261,
+     "w": 43,
+     "h": 31,
+     "conf": 96.8
+    },
+    {
+     "t": "Grandpa",
+     "x": 193,
+     "y": 258,
+     "w": 129,
+     "h": 34,
+     "conf": 95.1
+    },
+    {
+     "t": "can",
+     "x": 335,
+     "y": 268,
+     "w": 50,
+     "h": 16,
+     "conf": 95.3
+    },
+    {
+     "t": "fish",
+     "x": 397,
+     "y": 258,
+     "w": 52,
+     "h": 26,
+     "conf": 96.3
+    },
+    {
+     "t": "for",
+     "x": 461,
+     "y": 258,
+     "w": 45,
+     "h": 26,
+     "conf": 96.5
+    },
+    {
+     "t": "anything",
+     "x": 138,
+     "y": 298,
+     "w": 130,
+     "h": 34,
+     "conf": 96.5
+    },
+    {
+     "t": "in",
+     "x": 282,
+     "y": 301,
+     "w": 24,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 318,
+     "y": 298,
+     "w": 48,
+     "h": 26,
+     "conf": 96.1
+    },
+    {
+     "t": "sea,",
+     "x": 378,
+     "y": 308,
+     "w": 59,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "said",
+     "x": 450,
+     "y": 298,
+     "w": 60,
+     "h": 26,
+     "conf": 96.8
+    },
+    {
+     "t": "Cheetah.",
+     "x": 138,
+     "y": 338,
+     "w": 133,
+     "h": 26,
+     "conf": 96.7
+    },
+    {
+     "t": "Once",
+     "x": 138,
+     "y": 421,
+     "w": 73,
+     "h": 23,
+     "conf": 95.1
+    },
+    {
+     "t": "he",
+     "x": 224,
+     "y": 418,
+     "w": 33,
+     "h": 26,
+     "conf": 95.1
+    },
+    {
+     "t": "caught",
+     "x": 270,
+     "y": 418,
+     "w": 103,
+     "h": 34,
+     "conf": 95.9
+    },
+    {
+     "t": "a",
+     "x": 385,
+     "y": 428,
+     "w": 15,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "whale",
+     "x": 411,
+     "y": 418,
+     "w": 88,
+     "h": 26,
+     "conf": 96.1
+    },
+    {
+     "t": "and",
+     "x": 138,
+     "y": 458,
+     "w": 54,
+     "h": 26,
+     "conf": 96.7
+    },
+    {
+     "t": "kept",
+     "x": 204,
+     "y": 458,
+     "w": 65,
+     "h": 34,
+     "conf": 96.7
+    },
+    {
+     "t": "it",
+     "x": 281,
+     "y": 461,
+     "w": 19,
+     "h": 23,
+     "conf": 96.0
+    },
+    {
+     "t": "in",
+     "x": 313,
+     "y": 461,
+     "w": 23,
+     "h": 23,
+     "conf": 96.0
+    },
+    {
+     "t": "his",
+     "x": 349,
+     "y": 458,
+     "w": 41,
+     "h": 26,
+     "conf": 96.2
+    },
+    {
+     "t": "bath.",
+     "x": 402,
+     "y": 458,
+     "w": 76,
+     "h": 26,
+     "conf": 95.8
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_08.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "My Grandpa can climb to\nthe clouds in the sky, said\nMountain Goat.\nHe climbed the tallest\nmountain in the world,\nin just four hours.",
+   "char_count": 132,
+   "word_count": 25,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "My",
+     "x": 181,
+     "y": 251,
+     "w": 43,
+     "h": 31,
+     "conf": 96.7
+    },
+    {
+     "t": "Grandpa",
+     "x": 236,
+     "y": 248,
+     "w": 129,
+     "h": 34,
+     "conf": 94.3
+    },
+    {
+     "t": "can",
+     "x": 377,
+     "y": 258,
+     "w": 51,
+     "h": 16,
+     "conf": 94.3
+    },
+    {
+     "t": "climb",
+     "x": 441,
+     "y": 248,
+     "w": 77,
+     "h": 26,
+     "conf": 94.7
+    },
+    {
+     "t": "to",
+     "x": 530,
+     "y": 253,
+     "w": 30,
+     "h": 21,
+     "conf": 94.7
+    },
+    {
+     "t": "the",
+     "x": 179,
+     "y": 288,
+     "w": 48,
+     "h": 26,
+     "conf": 96.8
+    },
+    {
+     "t": "clouds",
+     "x": 240,
+     "y": 288,
+     "w": 95,
+     "h": 26,
+     "conf": 96.8
+    },
+    {
+     "t": "in",
+     "x": 348,
+     "y": 291,
+     "w": 24,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 384,
+     "y": 288,
+     "w": 48,
+     "h": 26,
+     "conf": 96.6
+    },
+    {
+     "t": "sky,",
+     "x": 444,
+     "y": 288,
+     "w": 56,
+     "h": 34,
+     "conf": 96.8
+    },
+    {
+     "t": "said",
+     "x": 514,
+     "y": 288,
+     "w": 59,
+     "h": 26,
+     "conf": 96.4
+    },
+    {
+     "t": "Mountain",
+     "x": 181,
+     "y": 331,
+     "w": 142,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "Goat.",
+     "x": 336,
+     "y": 331,
+     "w": 79,
+     "h": 23,
+     "conf": 96.3
+    },
+    {
+     "t": "He",
+     "x": 181,
+     "y": 411,
+     "w": 37,
+     "h": 23,
+     "conf": 97.0
+    },
+    {
+     "t": "climbed",
+     "x": 231,
+     "y": 408,
+     "w": 115,
+     "h": 26,
+     "conf": 96.3
+    },
+    {
+     "t": "the",
+     "x": 357,
+     "y": 408,
+     "w": 48,
+     "h": 26,
+     "conf": 96.6
+    },
+    {
+     "t": "tallest",
+     "x": 417,
+     "y": 408,
+     "w": 96,
+     "h": 26,
+     "conf": 96.6
+    },
+    {
+     "t": "mountain",
+     "x": 180,
+     "y": 451,
+     "w": 141,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "in",
+     "x": 336,
+     "y": 451,
+     "w": 23,
+     "h": 23,
+     "conf": 95.9
+    },
+    {
+     "t": "the",
+     "x": 371,
+     "y": 448,
+     "w": 48,
+     "h": 26,
+     "conf": 96.7
+    },
+    {
+     "t": "world,",
+     "x": 431,
+     "y": 448,
+     "w": 93,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 181,
+     "y": 491,
+     "w": 23,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "just",
+     "x": 213,
+     "y": 491,
+     "w": 60,
+     "h": 31,
+     "conf": 96.5
+    },
+    {
+     "t": "four",
+     "x": 284,
+     "y": 488,
+     "w": 64,
+     "h": 26,
+     "conf": 96.4
+    },
+    {
+     "t": "hours.",
+     "x": 358,
+     "y": 488,
+     "w": 93,
+     "h": 26,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_09.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "My Grandpa can cook a\nfeast, said Elephant.\nOnce he cooked a meal\nfor a president’s birthday\nparty. All by himself.",
+   "char_count": 115,
+   "word_count": 21,
+   "mean_conf": 94.9,
+   "words": [
+    {
+     "t": "My",
+     "x": 196,
+     "y": 271,
+     "w": 43,
+     "h": 31,
+     "conf": 96.7
+    },
+    {
+     "t": "Grandpa",
+     "x": 250,
+     "y": 268,
+     "w": 129,
+     "h": 34,
+     "conf": 95.6
+    },
+    {
+     "t": "can",
+     "x": 392,
+     "y": 278,
+     "w": 50,
+     "h": 16,
+     "conf": 95.6
+    },
+    {
+     "t": "cook",
+     "x": 456,
+     "y": 268,
+     "w": 67,
+     "h": 26,
+     "conf": 96.3
+    },
+    {
+     "t": "a",
+     "x": 535,
+     "y": 278,
+     "w": 15,
+     "h": 16,
+     "conf": 96.7
+    },
+    {
+     "t": "feast,",
+     "x": 194,
+     "y": 308,
+     "w": 85,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "said",
+     "x": 293,
+     "y": 308,
+     "w": 59,
+     "h": 26,
+     "conf": 96.7
+    },
+    {
+     "t": "Elephant.",
+     "x": 366,
+     "y": 308,
+     "w": 139,
+     "h": 34,
+     "conf": 96.5
+    },
+    {
+     "t": "Once",
+     "x": 195,
+     "y": 391,
+     "w": 74,
+     "h": 23,
+     "conf": 92.4
+    },
+    {
+     "t": "he",
+     "x": 281,
+     "y": 388,
+     "w": 34,
+     "h": 26,
+     "conf": 92.4
+    },
+    {
+     "t": "cooked",
+     "x": 327,
+     "y": 388,
+     "w": 105,
+     "h": 26,
+     "conf": 96.2
+    },
+    {
+     "t": "a",
+     "x": 444,
+     "y": 398,
+     "w": 15,
+     "h": 16,
+     "conf": 96.5
+    },
+    {
+     "t": "meal",
+     "x": 472,
+     "y": 388,
+     "w": 68,
+     "h": 26,
+     "conf": 96.5
+    },
+    {
+     "t": "for",
+     "x": 194,
+     "y": 428,
+     "w": 45,
+     "h": 26,
+     "conf": 89.2
+    },
+    {
+     "t": "a",
+     "x": 249,
+     "y": 438,
+     "w": 15,
+     "h": 16,
+     "conf": 89.2
+    },
+    {
+     "t": "president’s",
+     "x": 277,
+     "y": 428,
+     "w": 167,
+     "h": 34,
+     "conf": 91.0
+    },
+    {
+     "t": "birthday",
+     "x": 457,
+     "y": 428,
+     "w": 128,
+     "h": 34,
+     "conf": 96.5
+    },
+    {
+     "t": "party.",
+     "x": 195,
+     "y": 473,
+     "w": 88,
+     "h": 29,
+     "conf": 95.4
+    },
+    {
+     "t": "All",
+     "x": 296,
+     "y": 468,
+     "w": 37,
+     "h": 26,
+     "conf": 96.6
+    },
+    {
+     "t": "by",
+     "x": 348,
+     "y": 468,
+     "w": 33,
+     "h": 34,
+     "conf": 96.6
+    },
+    {
+     "t": "himself.",
+     "x": 393,
+     "y": 468,
+     "w": 115,
+     "h": 26,
+     "conf": 93.2
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_10.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Well my Grandpa doesn’t build\nor fish or climb or cook, said\nMonkey. But he owns gold!\nHe hides it in his mouth. And\nat night he soaks it ina glass\nof water.",
+   "char_count": 157,
+   "word_count": 33,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "Well",
+     "x": 159,
+     "y": 268,
+     "w": 66,
+     "h": 26,
+     "conf": 96.0
+    },
+    {
+     "t": "my",
+     "x": 239,
+     "y": 278,
+     "w": 42,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "Grandpa",
+     "x": 292,
+     "y": 268,
+     "w": 129,
+     "h": 34,
+     "conf": 96.6
+    },
+    {
+     "t": "doesn’t",
+     "x": 434,
+     "y": 268,
+     "w": 110,
+     "h": 26,
+     "conf": 96.0
+    },
+    {
+     "t": "build",
+     "x": 556,
+     "y": 268,
+     "w": 72,
+     "h": 26,
+     "conf": 96.9
+    },
+    {
+     "t": "or",
+     "x": 160,
+     "y": 318,
+     "w": 32,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "fish",
+     "x": 201,
+     "y": 308,
+     "w": 52,
+     "h": 26,
+     "conf": 96.3
+    },
+    {
+     "t": "or",
+     "x": 266,
+     "y": 318,
+     "w": 31,
+     "h": 16,
+     "conf": 96.7
+    },
+    {
+     "t": "climb",
+     "x": 308,
+     "y": 308,
+     "w": 77,
+     "h": 26,
+     "conf": 96.7
+    },
+    {
+     "t": "or",
+     "x": 398,
+     "y": 318,
+     "w": 31,
+     "h": 16,
+     "conf": 96.0
+    },
+    {
+     "t": "cook,",
+     "x": 440,
+     "y": 308,
+     "w": 76,
+     "h": 30,
+     "conf": 96.0
+    },
+    {
+     "t": "said",
+     "x": 530,
+     "y": 308,
+     "w": 60,
+     "h": 26,
+     "conf": 96.0
+    },
+    {
+     "t": "Monkey.",
+     "x": 161,
+     "y": 348,
+     "w": 123,
+     "h": 34,
+     "conf": 96.1
+    },
+    {
+     "t": "But",
+     "x": 299,
+     "y": 351,
+     "w": 51,
+     "h": 23,
+     "conf": 95.5
+    },
+    {
+     "t": "he",
+     "x": 361,
+     "y": 348,
+     "w": 33,
+     "h": 26,
+     "conf": 96.7
+    },
+    {
+     "t": "owns",
+     "x": 407,
+     "y": 358,
+     "w": 75,
+     "h": 16,
+     "conf": 96.4
+    },
+    {
+     "t": "gold!",
+     "x": 495,
+     "y": 348,
+     "w": 72,
+     "h": 34,
+     "conf": 96.1
+    },
+    {
+     "t": "He",
+     "x": 161,
+     "y": 431,
+     "w": 37,
+     "h": 23,
+     "conf": 96.0
+    },
+    {
+     "t": "hides",
+     "x": 211,
+     "y": 428,
+     "w": 77,
+     "h": 26,
+     "conf": 95.1
+    },
+    {
+     "t": "it",
+     "x": 302,
+     "y": 431,
+     "w": 19,
+     "h": 23,
+     "conf": 96.3
+    },
+    {
+     "t": "in",
+     "x": 334,
+     "y": 431,
+     "w": 23,
+     "h": 23,
+     "conf": 94.9
+    },
+    {
+     "t": "his",
+     "x": 370,
+     "y": 428,
+     "w": 41,
+     "h": 26,
+     "conf": 94.9
+    },
+    {
+     "t": "mouth.",
+     "x": 423,
+     "y": 428,
+     "w": 103,
+     "h": 26,
+     "conf": 96.8
+    },
+    {
+     "t": "And",
+     "x": 540,
+     "y": 428,
+     "w": 59,
+     "h": 26,
+     "conf": 96.9
+    },
+    {
+     "t": "at",
+     "x": 160,
+     "y": 473,
+     "w": 30,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "night",
+     "x": 201,
+     "y": 468,
+     "w": 77,
+     "h": 34,
+     "conf": 96.5
+    },
+    {
+     "t": "he",
+     "x": 290,
+     "y": 468,
+     "w": 33,
+     "h": 26,
+     "conf": 96.4
+    },
+    {
+     "t": "soaks",
+     "x": 336,
+     "y": 468,
+     "w": 82,
+     "h": 26,
+     "conf": 96.3
+    },
+    {
+     "t": "it",
+     "x": 431,
+     "y": 471,
+     "w": 19,
+     "h": 23,
+     "conf": 95.1
+    },
+    {
+     "t": "ina",
+     "x": 463,
+     "y": 471,
+     "w": 51,
+     "h": 23,
+     "conf": 79.7
+    },
+    {
+     "t": "glass",
+     "x": 527,
+     "y": 468,
+     "w": 74,
+     "h": 34,
+     "conf": 96.4
+    },
+    {
+     "t": "of",
+     "x": 160,
+     "y": 508,
+     "w": 30,
+     "h": 26,
+     "conf": 96.9
+    },
+    {
+     "t": "water.",
+     "x": 199,
+     "y": 513,
+     "w": 96,
+     "h": 21,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_11.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "No, he doesnt!\nYes, he does!\nNo, he doesn’t!\nWell, come and see if you don’t\nbelieve me, said Monkey.",
+   "char_count": 101,
+   "word_count": 20,
+   "mean_conf": 93.3,
+   "words": [
+    {
+     "t": "No,",
+     "x": 102,
+     "y": 187,
+     "w": 120,
+     "h": 70,
+     "conf": 95.8
+    },
+    {
+     "t": "he",
+     "x": 257,
+     "y": 181,
+     "w": 83,
+     "h": 66,
+     "conf": 95.8
+    },
+    {
+     "t": "doesnt!",
+     "x": 371,
+     "y": 181,
+     "w": 299,
+     "h": 66,
+     "conf": 56.7
+    },
+    {
+     "t": "Yes,",
+     "x": 97,
+     "y": 278,
+     "w": 156,
+     "h": 70,
+     "conf": 96.6
+    },
+    {
+     "t": "he",
+     "x": 287,
+     "y": 272,
+     "w": 83,
+     "h": 66,
+     "conf": 96.1
+    },
+    {
+     "t": "does!",
+     "x": 401,
+     "y": 272,
+     "w": 195,
+     "h": 66,
+     "conf": 96.1
+    },
+    {
+     "t": "No,",
+     "x": 102,
+     "y": 368,
+     "w": 120,
+     "h": 70,
+     "conf": 96.3
+    },
+    {
+     "t": "he",
+     "x": 257,
+     "y": 362,
+     "w": 83,
+     "h": 66,
+     "conf": 95.8
+    },
+    {
+     "t": "doesn’t!",
+     "x": 371,
+     "y": 362,
+     "w": 299,
+     "h": 66,
+     "conf": 77.9
+    },
+    {
+     "t": "Well,",
+     "x": 939,
+     "y": 624,
+     "w": 77,
+     "h": 30,
+     "conf": 95.9
+    },
+    {
+     "t": "come",
+     "x": 1029,
+     "y": 634,
+     "w": 77,
+     "h": 16,
+     "conf": 95.7
+    },
+    {
+     "t": "and",
+     "x": 1119,
+     "y": 624,
+     "w": 54,
+     "h": 26,
+     "conf": 95.7
+    },
+    {
+     "t": "see",
+     "x": 1185,
+     "y": 634,
+     "w": 48,
+     "h": 16,
+     "conf": 95.7
+    },
+    {
+     "t": "if",
+     "x": 1246,
+     "y": 624,
+     "w": 20,
+     "h": 26,
+     "conf": 96.8
+    },
+    {
+     "t": "you",
+     "x": 1274,
+     "y": 634,
+     "w": 54,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "don’t",
+     "x": 1340,
+     "y": 624,
+     "w": 77,
+     "h": 26,
+     "conf": 96.7
+    },
+    {
+     "t": "believe",
+     "x": 940,
+     "y": 664,
+     "w": 104,
+     "h": 26,
+     "conf": 96.2
+    },
+    {
+     "t": "me,",
+     "x": 1057,
+     "y": 674,
+     "w": 51,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "said",
+     "x": 1121,
+     "y": 664,
+     "w": 60,
+     "h": 26,
+     "conf": 96.6
+    },
+    {
+     "t": "Monkey.",
+     "x": 1194,
+     "y": 664,
+     "w": 123,
+     "h": 34,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_12.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "So the children went to see\nMonkey’s Grandpa.",
+   "char_count": 45,
+   "word_count": 8,
+   "mean_conf": 95.3,
+   "words": [
+    {
+     "t": "So",
+     "x": 185,
+     "y": 195,
+     "w": 35,
+     "h": 23,
+     "conf": 94.9
+    },
+    {
+     "t": "the",
+     "x": 232,
+     "y": 192,
+     "w": 47,
+     "h": 26,
+     "conf": 94.9
+    },
+    {
+     "t": "children",
+     "x": 292,
+     "y": 192,
+     "w": 121,
+     "h": 26,
+     "conf": 96.1
+    },
+    {
+     "t": "went",
+     "x": 425,
+     "y": 197,
+     "w": 75,
+     "h": 21,
+     "conf": 96.4
+    },
+    {
+     "t": "to",
+     "x": 510,
+     "y": 197,
+     "w": 30,
+     "h": 21,
+     "conf": 95.5
+    },
+    {
+     "t": "see",
+     "x": 552,
+     "y": 202,
+     "w": 48,
+     "h": 16,
+     "conf": 95.5
+    },
+    {
+     "t": "Monkey’s",
+     "x": 187,
+     "y": 232,
+     "w": 139,
+     "h": 34,
+     "conf": 92.8
+    },
+    {
+     "t": "Grandpa.",
+     "x": 339,
+     "y": 232,
+     "w": 137,
+     "h": 34,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_13.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "You see? said Monkey.\nAnd he can take them out.",
+   "char_count": 47,
+   "word_count": 10,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "You",
+     "x": 194,
+     "y": 446,
+     "w": 58,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "see?",
+     "x": 264,
+     "y": 444,
+     "w": 62,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "said",
+     "x": 341,
+     "y": 443,
+     "w": 60,
+     "h": 26,
+     "conf": 96.4
+    },
+    {
+     "t": "Monkey.",
+     "x": 414,
+     "y": 443,
+     "w": 123,
+     "h": 34,
+     "conf": 94.1
+    },
+    {
+     "t": "And",
+     "x": 194,
+     "y": 483,
+     "w": 59,
+     "h": 26,
+     "conf": 96.7
+    },
+    {
+     "t": "he",
+     "x": 266,
+     "y": 483,
+     "w": 33,
+     "h": 26,
+     "conf": 95.9
+    },
+    {
+     "t": "can",
+     "x": 312,
+     "y": 493,
+     "w": 50,
+     "h": 16,
+     "conf": 94.1
+    },
+    {
+     "t": "take",
+     "x": 374,
+     "y": 483,
+     "w": 64,
+     "h": 26,
+     "conf": 94.1
+    },
+    {
+     "t": "them",
+     "x": 450,
+     "y": 483,
+     "w": 74,
+     "h": 26,
+     "conf": 96.5
+    },
+    {
+     "t": "out.",
+     "x": 538,
+     "y": 488,
+     "w": 57,
+     "h": 21,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_14.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "No, he can’t! cried the animals.",
+   "char_count": 32,
+   "word_count": 6,
+   "mean_conf": 96.5,
+   "words": [
+    {
+     "t": "No,",
+     "x": 153,
+     "y": 371,
+     "w": 48,
+     "h": 27,
+     "conf": 96.4
+    },
+    {
+     "t": "he",
+     "x": 215,
+     "y": 368,
+     "w": 33,
+     "h": 26,
+     "conf": 96.6
+    },
+    {
+     "t": "can’t!",
+     "x": 261,
+     "y": 369,
+     "w": 84,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "cried",
+     "x": 359,
+     "y": 368,
+     "w": 74,
+     "h": 26,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 445,
+     "y": 368,
+     "w": 47,
+     "h": 26,
+     "conf": 96.5
+    },
+    {
+     "t": "animals.",
+     "x": 505,
+     "y": 368,
+     "w": 123,
+     "h": 26,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_15.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Waaah! said Grandpa Monkey.\nAnd there are enough...",
+   "char_count": 51,
+   "word_count": 8,
+   "mean_conf": 91.8,
+   "words": [
+    {
+     "t": "Waaah!",
+     "x": 145,
+     "y": 275,
+     "w": 117,
+     "h": 26,
+     "conf": 89.7
+    },
+    {
+     "t": "said",
+     "x": 277,
+     "y": 275,
+     "w": 59,
+     "h": 26,
+     "conf": 96.6
+    },
+    {
+     "t": "Grandpa",
+     "x": 349,
+     "y": 275,
+     "w": 129,
+     "h": 34,
+     "conf": 96.6
+    },
+    {
+     "t": "Monkey.",
+     "x": 492,
+     "y": 275,
+     "w": 123,
+     "h": 34,
+     "conf": 95.1
+    },
+    {
+     "t": "And",
+     "x": 145,
+     "y": 315,
+     "w": 59,
+     "h": 26,
+     "conf": 96.1
+    },
+    {
+     "t": "there",
+     "x": 216,
+     "y": 315,
+     "w": 80,
+     "h": 26,
+     "conf": 96.1
+    },
+    {
+     "t": "are",
+     "x": 308,
+     "y": 325,
+     "w": 48,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "enough...",
+     "x": 368,
+     "y": 315,
+     "w": 143,
+     "h": 34,
+     "conf": 67.6
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_16.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "V7\n... for everyone!",
+   "char_count": 20,
+   "word_count": 4,
+   "mean_conf": 81.9,
+   "words": [
+    {
+     "t": "V7",
+     "x": 1295,
+     "y": 421,
+     "w": 16,
+     "h": 18,
+     "conf": 53.9
+    },
+    {
+     "t": "...",
+     "x": 152,
+     "y": 217,
+     "w": 22,
+     "h": 4,
+     "conf": 82.1
+    },
+    {
+     "t": "for",
+     "x": 184,
+     "y": 195,
+     "w": 45,
+     "h": 26,
+     "conf": 96.2
+    },
+    {
+     "t": "everyone!",
+     "x": 240,
+     "y": 197,
+     "w": 147,
+     "h": 32,
+     "conf": 95.3
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_17.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_17.jpg",
+   "image_width": 1579,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_18.jpg",
+   "image_file": "grandpas-gold-pdf-ebook-20150919_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

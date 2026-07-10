@@ -1,0 +1,998 @@
+{
+ "slug": "sbus-special-shoes",
+ "wp_slug": "sbus-special-shoes",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "sbus-special-shoes_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  },
+  {
+   "file": "sbus-special-shoes_Page_02.jpg",
+   "reason": "front-matter(PDF 2)"
+  },
+  {
+   "file": "sbus-special-shoes_Page_03.jpg",
+   "reason": "front-matter(PDF 3)"
+  },
+  {
+   "file": "sbus-special-shoes_Page_04.jpg",
+   "reason": "front-matter(PDF 4)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_05.jpg",
+   "image_file": "sbus-special-shoes_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "These are my big\nbrother Sbu’'s shoes.",
+   "char_count": 38,
+   "word_count": 7,
+   "mean_conf": 86.6,
+   "words": [
+    {
+     "t": "These",
+     "x": 113,
+     "y": 328,
+     "w": 145,
+     "h": 52,
+     "conf": 96.7
+    },
+    {
+     "t": "are",
+     "x": 278,
+     "y": 351,
+     "w": 80,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "my",
+     "x": 381,
+     "y": 353,
+     "w": 75,
+     "h": 39,
+     "conf": 96.3
+    },
+    {
+     "t": "big",
+     "x": 477,
+     "y": 328,
+     "w": 74,
+     "h": 64,
+     "conf": 96.1
+    },
+    {
+     "t": "brother",
+     "x": 115,
+     "y": 408,
+     "w": 183,
+     "h": 52,
+     "conf": 91.8
+    },
+    {
+     "t": "Sbu’'s",
+     "x": 315,
+     "y": 408,
+     "w": 134,
+     "h": 52,
+     "conf": 31.9
+    },
+    {
+     "t": "shoes.",
+     "x": 470,
+     "y": 408,
+     "w": 148,
+     "h": 52,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_06.jpg",
+   "image_file": "sbus-special-shoes_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Look what | can do\nin them.",
+   "char_count": 27,
+   "word_count": 7,
+   "mean_conf": 96.3,
+   "words": [
+    {
+     "t": "Look",
+     "x": 117,
+     "y": 328,
+     "w": 122,
+     "h": 52,
+     "conf": 96.3
+    },
+    {
+     "t": "what",
+     "x": 256,
+     "y": 328,
+     "w": 127,
+     "h": 53,
+     "conf": 96.3
+    },
+    {
+     "t": "|",
+     "x": 407,
+     "y": 332,
+     "w": 4,
+     "h": 47,
+     "conf": 95.2
+    },
+    {
+     "t": "can",
+     "x": 437,
+     "y": 351,
+     "w": 87,
+     "h": 29,
+     "conf": 95.8
+    },
+    {
+     "t": "do",
+     "x": 548,
+     "y": 328,
+     "w": 63,
+     "h": 52,
+     "conf": 96.8
+    },
+    {
+     "t": "in",
+     "x": 114,
+     "y": 420,
+     "w": 37,
+     "h": 39,
+     "conf": 96.7
+    },
+    {
+     "t": "them.",
+     "x": 172,
+     "y": 408,
+     "w": 142,
+     "h": 52,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_07.jpg",
+   "image_file": "sbus-special-shoes_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "| can race cars!",
+   "char_count": 16,
+   "word_count": 4,
+   "mean_conf": 87.2,
+   "words": [
+    {
+     "t": "|",
+     "x": 117,
+     "y": 372,
+     "w": 4,
+     "h": 47,
+     "conf": 89.7
+    },
+    {
+     "t": "can",
+     "x": 148,
+     "y": 391,
+     "w": 87,
+     "h": 29,
+     "conf": 89.7
+    },
+    {
+     "t": "race",
+     "x": 261,
+     "y": 391,
+     "w": 104,
+     "h": 29,
+     "conf": 96.0
+    },
+    {
+     "t": "cars!",
+     "x": 386,
+     "y": 370,
+     "w": 112,
+     "h": 50,
+     "conf": 73.4
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_08.jpg",
+   "image_file": "sbus-special-shoes_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Sometimes, | even\nrace our bouncy dog.",
+   "char_count": 38,
+   "word_count": 7,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "Sometimes,",
+     "x": 900,
+     "y": 190,
+     "w": 295,
+     "h": 55,
+     "conf": 96.4
+    },
+    {
+     "t": "|",
+     "x": 1223,
+     "y": 190,
+     "w": 4,
+     "h": 47,
+     "conf": 95.4
+    },
+    {
+     "t": "even",
+     "x": 1254,
+     "y": 209,
+     "w": 113,
+     "h": 30,
+     "conf": 95.4
+    },
+    {
+     "t": "race",
+     "x": 903,
+     "y": 289,
+     "w": 104,
+     "h": 29,
+     "conf": 96.2
+    },
+    {
+     "t": "our",
+     "x": 1028,
+     "y": 289,
+     "w": 82,
+     "h": 29,
+     "conf": 96.8
+    },
+    {
+     "t": "bouncy",
+     "x": 1130,
+     "y": 266,
+     "w": 185,
+     "h": 64,
+     "conf": 96.0
+    },
+    {
+     "t": "dog.",
+     "x": 1334,
+     "y": 266,
+     "w": 111,
+     "h": 64,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_09.jpg",
+   "image_file": "sbus-special-shoes_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "With Sbu’s shoes\n| win every time.\n4\n—= }f\nfin\na |\n| |\n| we\nen",
+   "char_count": 62,
+   "word_count": 18,
+   "mean_conf": 68.3,
+   "words": [
+    {
+     "t": "With",
+     "x": 111,
+     "y": 328,
+     "w": 119,
+     "h": 53,
+     "conf": 93.3
+    },
+    {
+     "t": "Sbu’s",
+     "x": 252,
+     "y": 328,
+     "w": 134,
+     "h": 52,
+     "conf": 54.0
+    },
+    {
+     "t": "shoes",
+     "x": 406,
+     "y": 328,
+     "w": 136,
+     "h": 52,
+     "conf": 96.5
+    },
+    {
+     "t": "|",
+     "x": 117,
+     "y": 412,
+     "w": 4,
+     "h": 47,
+     "conf": 79.9
+    },
+    {
+     "t": "win",
+     "x": 144,
+     "y": 420,
+     "w": 83,
+     "h": 41,
+     "conf": 96.3
+    },
+    {
+     "t": "every",
+     "x": 251,
+     "y": 431,
+     "w": 133,
+     "h": 41,
+     "conf": 96.7
+    },
+    {
+     "t": "time.",
+     "x": 400,
+     "y": 420,
+     "w": 123,
+     "h": 40,
+     "conf": 95.8
+    },
+    {
+     "t": "4",
+     "x": 1191,
+     "y": 188,
+     "w": 3,
+     "h": 8,
+     "conf": 59.3
+    },
+    {
+     "t": "—=",
+     "x": 1149,
+     "y": 236,
+     "w": 11,
+     "h": 2,
+     "conf": 13.4
+    },
+    {
+     "t": "}f",
+     "x": 1196,
+     "y": 222,
+     "w": 7,
+     "h": 17,
+     "conf": 42.9
+    },
+    {
+     "t": "fin",
+     "x": 1184,
+     "y": 256,
+     "w": 22,
+     "h": 10,
+     "conf": 29.9
+    },
+    {
+     "t": "a",
+     "x": 1111,
+     "y": 360,
+     "w": 9,
+     "h": 16,
+     "conf": 63.4
+    },
+    {
+     "t": "|",
+     "x": 1217,
+     "y": 368,
+     "w": 2,
+     "h": 8,
+     "conf": 89.9
+    },
+    {
+     "t": "|",
+     "x": 1119,
+     "y": 397,
+     "w": 1,
+     "h": 3,
+     "conf": 89.1
+    },
+    {
+     "t": "|",
+     "x": 1217,
+     "y": 384,
+     "w": 1,
+     "h": 20,
+     "conf": 79.3
+    },
+    {
+     "t": "|",
+     "x": 1116,
+     "y": 419,
+     "w": 2,
+     "h": 12,
+     "conf": 95.7
+    },
+    {
+     "t": "we",
+     "x": 1183,
+     "y": 415,
+     "w": 36,
+     "h": 16,
+     "conf": 23.4
+    },
+    {
+     "t": "en",
+     "x": 1114,
+     "y": 447,
+     "w": 35,
+     "h": 14,
+     "conf": 31.5
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_10.jpg",
+   "image_file": "sbus-special-shoes_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Wait!\nLet me show you\none more thing.",
+   "char_count": 37,
+   "word_count": 8,
+   "mean_conf": 94.7,
+   "words": [
+    {
+     "t": "Wait!",
+     "x": 900,
+     "y": 237,
+     "w": 200,
+     "h": 77,
+     "conf": 83.4
+    },
+    {
+     "t": "Let",
+     "x": 905,
+     "y": 425,
+     "w": 77,
+     "h": 48,
+     "conf": 96.5
+    },
+    {
+     "t": "me",
+     "x": 1003,
+     "y": 444,
+     "w": 75,
+     "h": 29,
+     "conf": 96.4
+    },
+    {
+     "t": "show",
+     "x": 1098,
+     "y": 421,
+     "w": 127,
+     "h": 53,
+     "conf": 96.7
+    },
+    {
+     "t": "you",
+     "x": 1240,
+     "y": 444,
+     "w": 90,
+     "h": 41,
+     "conf": 96.5
+    },
+    {
+     "t": "one",
+     "x": 901,
+     "y": 524,
+     "w": 91,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "more",
+     "x": 1015,
+     "y": 524,
+     "w": 127,
+     "h": 29,
+     "conf": 96.7
+    },
+    {
+     "t": "thing.",
+     "x": 1160,
+     "y": 501,
+     "w": 141,
+     "h": 64,
+     "conf": 95.0
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_11.jpg",
+   "image_file": "sbus-special-shoes_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Watch me dance\nand spin.",
+   "char_count": 24,
+   "word_count": 5,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "Watch",
+     "x": 110,
+     "y": 328,
+     "w": 166,
+     "h": 53,
+     "conf": 95.8
+    },
+    {
+     "t": "me",
+     "x": 301,
+     "y": 351,
+     "w": 76,
+     "h": 29,
+     "conf": 95.5
+    },
+    {
+     "t": "dance",
+     "x": 397,
+     "y": 328,
+     "w": 156,
+     "h": 52,
+     "conf": 95.5
+    },
+    {
+     "t": "and",
+     "x": 113,
+     "y": 408,
+     "w": 96,
+     "h": 51,
+     "conf": 96.6
+    },
+    {
+     "t": "spin.",
+     "x": 232,
+     "y": 420,
+     "w": 110,
+     "h": 52,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_12.jpg",
+   "image_file": "sbus-special-shoes_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "| can cartwheel over\nand over.",
+   "char_count": 30,
+   "word_count": 6,
+   "mean_conf": 94.8,
+   "words": [
+    {
+     "t": "|",
+     "x": 117,
+     "y": 332,
+     "w": 4,
+     "h": 47,
+     "conf": 92.4
+    },
+    {
+     "t": "can",
+     "x": 148,
+     "y": 351,
+     "w": 87,
+     "h": 29,
+     "conf": 92.4
+    },
+    {
+     "t": "cartwheel",
+     "x": 259,
+     "y": 328,
+     "w": 241,
+     "h": 53,
+     "conf": 94.3
+    },
+    {
+     "t": "over",
+     "x": 525,
+     "y": 351,
+     "w": 106,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "and",
+     "x": 113,
+     "y": 408,
+     "w": 96,
+     "h": 51,
+     "conf": 97.0
+    },
+    {
+     "t": "over.",
+     "x": 233,
+     "y": 431,
+     "w": 114,
+     "h": 30,
+     "conf": 95.6
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_13.jpg",
+   "image_file": "sbus-special-shoes_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "I'm a monkey!\nLook at me hang\nupside down.",
+   "char_count": 42,
+   "word_count": 9,
+   "mean_conf": 93.2,
+   "words": [
+    {
+     "t": "I'm",
+     "x": 905,
+     "y": 292,
+     "w": 70,
+     "h": 47,
+     "conf": 76.9
+    },
+    {
+     "t": "a",
+     "x": 999,
+     "y": 311,
+     "w": 28,
+     "h": 28,
+     "conf": 90.0
+    },
+    {
+     "t": "monkey!",
+     "x": 1053,
+     "y": 288,
+     "w": 209,
+     "h": 64,
+     "conf": 96.3
+    },
+    {
+     "t": "Look",
+     "x": 905,
+     "y": 368,
+     "w": 122,
+     "h": 52,
+     "conf": 95.7
+    },
+    {
+     "t": "at",
+     "x": 1047,
+     "y": 381,
+     "w": 50,
+     "h": 38,
+     "conf": 95.7
+    },
+    {
+     "t": "me",
+     "x": 1118,
+     "y": 391,
+     "w": 76,
+     "h": 29,
+     "conf": 95.2
+    },
+    {
+     "t": "hang",
+     "x": 1217,
+     "y": 368,
+     "w": 125,
+     "h": 64,
+     "conf": 96.7
+    },
+    {
+     "t": "upside",
+     "x": 902,
+     "y": 448,
+     "w": 163,
+     "h": 64,
+     "conf": 96.9
+    },
+    {
+     "t": "down.",
+     "x": 1085,
+     "y": 448,
+     "w": 150,
+     "h": 53,
+     "conf": 95.4
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_14.jpg",
+   "image_file": "sbus-special-shoes_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_15.jpg",
+   "image_file": "sbus-special-shoes_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Here, try them on!",
+   "char_count": 18,
+   "word_count": 4,
+   "mean_conf": 94.9,
+   "words": [
+    {
+     "t": "Here,",
+     "x": 905,
+     "y": 372,
+     "w": 131,
+     "h": 55,
+     "conf": 96.8
+    },
+    {
+     "t": "try",
+     "x": 1058,
+     "y": 381,
+     "w": 66,
+     "h": 51,
+     "conf": 96.9
+    },
+    {
+     "t": "them",
+     "x": 1140,
+     "y": 368,
+     "w": 128,
+     "h": 52,
+     "conf": 96.6
+    },
+    {
+     "t": "on!",
+     "x": 1292,
+     "y": 370,
+     "w": 73,
+     "h": 50,
+     "conf": 89.4
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_16.jpg",
+   "image_file": "sbus-special-shoes_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "See what you can do\nwi\nLe)\nOo\nCc\nwn\nRe\nUO\nLe)\n(on\n[7p)\n4\n|\n©\nY)\n&",
+   "char_count": 65,
+   "word_count": 20,
+   "mean_conf": 52.3,
+   "words": [
+    {
+     "t": "See",
+     "x": 112,
+     "y": 332,
+     "w": 94,
+     "h": 48,
+     "conf": 96.4
+    },
+    {
+     "t": "what",
+     "x": 222,
+     "y": 328,
+     "w": 129,
+     "h": 53,
+     "conf": 96.1
+    },
+    {
+     "t": "you",
+     "x": 368,
+     "y": 349,
+     "w": 94,
+     "h": 44,
+     "conf": 96.7
+    },
+    {
+     "t": "can",
+     "x": 485,
+     "y": 351,
+     "w": 87,
+     "h": 29,
+     "conf": 96.2
+    },
+    {
+     "t": "do",
+     "x": 595,
+     "y": 328,
+     "w": 64,
+     "h": 52,
+     "conf": 97.0
+    },
+    {
+     "t": "wi",
+     "x": 639,
+     "y": 431,
+     "w": 30,
+     "h": 29,
+     "conf": 56.7
+    },
+    {
+     "t": "Le)",
+     "x": 609,
+     "y": 431,
+     "w": 26,
+     "h": 29,
+     "conf": 0.0
+    },
+    {
+     "t": "Oo",
+     "x": 576,
+     "y": 431,
+     "w": 28,
+     "h": 29,
+     "conf": 43.8
+    },
+    {
+     "t": "Cc",
+     "x": 546,
+     "y": 408,
+     "w": 23,
+     "h": 51,
+     "conf": 40.2
+    },
+    {
+     "t": "wn",
+     "x": 521,
+     "y": 431,
+     "w": 18,
+     "h": 29,
+     "conf": 1.5
+    },
+    {
+     "t": "Re",
+     "x": 445,
+     "y": 408,
+     "w": 53,
+     "h": 51,
+     "conf": 68.3
+    },
+    {
+     "t": "UO",
+     "x": 417,
+     "y": 431,
+     "w": 23,
+     "h": 29,
+     "conf": 37.4
+    },
+    {
+     "t": "Le)",
+     "x": 386,
+     "y": 431,
+     "w": 26,
+     "h": 29,
+     "conf": 0.8
+    },
+    {
+     "t": "(on",
+     "x": 353,
+     "y": 431,
+     "w": 28,
+     "h": 41,
+     "conf": 33.4
+    },
+    {
+     "t": "[7p)",
+     "x": 328,
+     "y": 431,
+     "w": 18,
+     "h": 29,
+     "conf": 0.0
+    },
+    {
+     "t": "4",
+     "x": 278,
+     "y": 412,
+     "w": 29,
+     "h": 48,
+     "conf": 58.4
+    },
+    {
+     "t": "|",
+     "x": 247,
+     "y": 432,
+     "w": 24,
+     "h": 28,
+     "conf": 62.9
+    },
+    {
+     "t": "©",
+     "x": 213,
+     "y": 408,
+     "w": 28,
+     "h": 52,
+     "conf": 18.3
+    },
+    {
+     "t": "Y)",
+     "x": 174,
+     "y": 412,
+     "w": 32,
+     "h": 48,
+     "conf": 90.6
+    },
+    {
+     "t": "&",
+     "x": 114,
+     "y": 420,
+     "w": 37,
+     "h": 39,
+     "conf": 51.3
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_17.jpg",
+   "image_file": "sbus-special-shoes_Page_17.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_18.jpg",
+   "image_file": "sbus-special-shoes_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

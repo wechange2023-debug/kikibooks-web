@@ -1,0 +1,1205 @@
+{
+ "slug": "rafikis-style",
+ "wp_slug": "rafikis-style",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "rafikis-style_pdf-ebook_20150920_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_05.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_06.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "On Monday, the Cool Cat Crew strutted by.",
+   "char_count": 41,
+   "word_count": 8,
+   "mean_conf": 96.6,
+   "words": [
+    {
+     "t": "On",
+     "x": 80,
+     "y": 80,
+     "w": 37,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "Monday,",
+     "x": 126,
+     "y": 80,
+     "w": 109,
+     "h": 28,
+     "conf": 95.9
+    },
+    {
+     "t": "the",
+     "x": 245,
+     "y": 80,
+     "w": 38,
+     "h": 21,
+     "conf": 96.4
+    },
+    {
+     "t": "Cool",
+     "x": 291,
+     "y": 80,
+     "w": 59,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "Cat",
+     "x": 358,
+     "y": 80,
+     "w": 42,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "Crew",
+     "x": 409,
+     "y": 80,
+     "w": 68,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "strutted",
+     "x": 484,
+     "y": 80,
+     "w": 96,
+     "h": 21,
+     "conf": 96.2
+    },
+    {
+     "t": "by.",
+     "x": 588,
+     "y": 79,
+     "w": 34,
+     "h": 29,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_07.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Hey, Rafiki, where’s your zebra hair?\nYour hair’s so plain, like you don’t care.”",
+   "char_count": 82,
+   "word_count": 14,
+   "mean_conf": 88.8,
+   "words": [
+    {
+     "t": "“Hey,",
+     "x": 80,
+     "y": 82,
+     "w": 64,
+     "h": 29,
+     "conf": 93.3
+    },
+    {
+     "t": "Rafiki,",
+     "x": 153,
+     "y": 82,
+     "w": 81,
+     "h": 27,
+     "conf": 93.0
+    },
+    {
+     "t": "where’s",
+     "x": 242,
+     "y": 82,
+     "w": 93,
+     "h": 22,
+     "conf": 85.1
+    },
+    {
+     "t": "your",
+     "x": 343,
+     "y": 90,
+     "w": 58,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "zebra",
+     "x": 409,
+     "y": 82,
+     "w": 66,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "hair?",
+     "x": 483,
+     "y": 83,
+     "w": 59,
+     "h": 21,
+     "conf": 97.0
+    },
+    {
+     "t": "Your",
+     "x": 80,
+     "y": 121,
+     "w": 60,
+     "h": 21,
+     "conf": 93.3
+    },
+    {
+     "t": "hair’s",
+     "x": 148,
+     "y": 120,
+     "w": 64,
+     "h": 22,
+     "conf": 41.1
+    },
+    {
+     "t": "so",
+     "x": 221,
+     "y": 128,
+     "w": 26,
+     "h": 14,
+     "conf": 97.0
+    },
+    {
+     "t": "plain,",
+     "x": 256,
+     "y": 121,
+     "w": 67,
+     "h": 28,
+     "conf": 96.5
+    },
+    {
+     "t": "like",
+     "x": 331,
+     "y": 121,
+     "w": 45,
+     "h": 21,
+     "conf": 96.0
+    },
+    {
+     "t": "you",
+     "x": 383,
+     "y": 128,
+     "w": 45,
+     "h": 21,
+     "conf": 96.0
+    },
+    {
+     "t": "don’t",
+     "x": 437,
+     "y": 120,
+     "w": 62,
+     "h": 22,
+     "conf": 66.1
+    },
+    {
+     "t": "care.”",
+     "x": 507,
+     "y": 120,
+     "w": 67,
+     "h": 22,
+     "conf": 95.9
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_08.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Hey, Rafiki, where’s your fake tattoo?\nYour skin’s so boring. You are too.”",
+   "char_count": 76,
+   "word_count": 13,
+   "mean_conf": 94.6,
+   "words": [
+    {
+     "t": "“Hey,",
+     "x": 80,
+     "y": 82,
+     "w": 64,
+     "h": 29,
+     "conf": 93.3
+    },
+    {
+     "t": "Rafiki,",
+     "x": 153,
+     "y": 82,
+     "w": 81,
+     "h": 27,
+     "conf": 92.7
+    },
+    {
+     "t": "where’s",
+     "x": 242,
+     "y": 82,
+     "w": 93,
+     "h": 22,
+     "conf": 84.6
+    },
+    {
+     "t": "your",
+     "x": 343,
+     "y": 90,
+     "w": 58,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "fake",
+     "x": 409,
+     "y": 82,
+     "w": 50,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "tattoo?",
+     "x": 468,
+     "y": 84,
+     "w": 83,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "Your",
+     "x": 80,
+     "y": 121,
+     "w": 60,
+     "h": 21,
+     "conf": 93.3
+    },
+    {
+     "t": "skin’s",
+     "x": 148,
+     "y": 120,
+     "w": 66,
+     "h": 22,
+     "conf": 91.3
+    },
+    {
+     "t": "so",
+     "x": 223,
+     "y": 128,
+     "w": 26,
+     "h": 14,
+     "conf": 97.0
+    },
+    {
+     "t": "boring.",
+     "x": 257,
+     "y": 120,
+     "w": 88,
+     "h": 29,
+     "conf": 96.1
+    },
+    {
+     "t": "You",
+     "x": 355,
+     "y": 121,
+     "w": 48,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "are",
+     "x": 412,
+     "y": 128,
+     "w": 37,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "too.”",
+     "x": 457,
+     "y": 120,
+     "w": 57,
+     "h": 22,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_09.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Hey, Rafiki, where’s your bling?\nYour teeth are wonky, that’s the thing.”",
+   "char_count": 74,
+   "word_count": 12,
+   "mean_conf": 94.9,
+   "words": [
+    {
+     "t": "“Hey,",
+     "x": 80,
+     "y": 82,
+     "w": 64,
+     "h": 29,
+     "conf": 93.3
+    },
+    {
+     "t": "Rafiki,",
+     "x": 153,
+     "y": 82,
+     "w": 81,
+     "h": 27,
+     "conf": 92.7
+    },
+    {
+     "t": "where’s",
+     "x": 242,
+     "y": 82,
+     "w": 93,
+     "h": 22,
+     "conf": 85.8
+    },
+    {
+     "t": "your",
+     "x": 343,
+     "y": 90,
+     "w": 58,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "bling?",
+     "x": 408,
+     "y": 82,
+     "w": 73,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "Your",
+     "x": 80,
+     "y": 121,
+     "w": 60,
+     "h": 21,
+     "conf": 97.0
+    },
+    {
+     "t": "teeth",
+     "x": 148,
+     "y": 121,
+     "w": 62,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "are",
+     "x": 218,
+     "y": 128,
+     "w": 37,
+     "h": 14,
+     "conf": 96.7
+    },
+    {
+     "t": "wonky,",
+     "x": 263,
+     "y": 121,
+     "w": 91,
+     "h": 28,
+     "conf": 96.0
+    },
+    {
+     "t": "that’s",
+     "x": 363,
+     "y": 120,
+     "w": 63,
+     "h": 22,
+     "conf": 93.7
+    },
+    {
+     "t": "the",
+     "x": 436,
+     "y": 121,
+     "w": 38,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "thing.”",
+     "x": 483,
+     "y": 120,
+     "w": 81,
+     "h": 29,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_10.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "That day, Rafiki walked home slowly.",
+   "char_count": 36,
+   "word_count": 6,
+   "mean_conf": 95.3,
+   "words": [
+    {
+     "t": "That",
+     "x": 80,
+     "y": 80,
+     "w": 58,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "day,",
+     "x": 147,
+     "y": 80,
+     "w": 48,
+     "h": 28,
+     "conf": 93.3
+    },
+    {
+     "t": "Rafiki",
+     "x": 204,
+     "y": 79,
+     "w": 74,
+     "h": 22,
+     "conf": 93.0
+    },
+    {
+     "t": "walked",
+     "x": 286,
+     "y": 80,
+     "w": 87,
+     "h": 21,
+     "conf": 96.2
+    },
+    {
+     "t": "home",
+     "x": 382,
+     "y": 80,
+     "w": 69,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "slowly.",
+     "x": 459,
+     "y": 80,
+     "w": 84,
+     "h": 28,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_11.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Auntie, can I have zebra hair?”\n“I can’t cut you zebra hair.\nActually, I wouldn’t dare.”",
+   "char_count": 89,
+   "word_count": 16,
+   "mean_conf": 92.1,
+   "words": [
+    {
+     "t": "“Auntie,",
+     "x": 899,
+     "y": 262,
+     "w": 100,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "can",
+     "x": 1009,
+     "y": 270,
+     "w": 40,
+     "h": 14,
+     "conf": 96.0
+    },
+    {
+     "t": "I",
+     "x": 1058,
+     "y": 263,
+     "w": 8,
+     "h": 21,
+     "conf": 96.0
+    },
+    {
+     "t": "have",
+     "x": 1075,
+     "y": 263,
+     "w": 57,
+     "h": 21,
+     "conf": 96.3
+    },
+    {
+     "t": "zebra",
+     "x": 1141,
+     "y": 262,
+     "w": 65,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "hair?”",
+     "x": 1215,
+     "y": 262,
+     "w": 69,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "“I",
+     "x": 899,
+     "y": 315,
+     "w": 17,
+     "h": 22,
+     "conf": 47.9
+    },
+    {
+     "t": "can’t",
+     "x": 925,
+     "y": 315,
+     "w": 56,
+     "h": 22,
+     "conf": 91.9
+    },
+    {
+     "t": "cut",
+     "x": 990,
+     "y": 321,
+     "w": 37,
+     "h": 16,
+     "conf": 95.8
+    },
+    {
+     "t": "you",
+     "x": 1034,
+     "y": 323,
+     "w": 45,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "zebra",
+     "x": 1089,
+     "y": 315,
+     "w": 65,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "hair.",
+     "x": 1162,
+     "y": 316,
+     "w": 54,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "Actually,",
+     "x": 899,
+     "y": 354,
+     "w": 107,
+     "h": 28,
+     "conf": 95.8
+    },
+    {
+     "t": "I",
+     "x": 1016,
+     "y": 354,
+     "w": 8,
+     "h": 21,
+     "conf": 89.3
+    },
+    {
+     "t": "wouldn’t",
+     "x": 1032,
+     "y": 353,
+     "w": 109,
+     "h": 22,
+     "conf": 87.4
+    },
+    {
+     "t": "dare.”",
+     "x": 1150,
+     "y": 353,
+     "w": 69,
+     "h": 22,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_12.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“My skin’s so boring, Sisi. Can you make a fake\ntattoo?”\n“You don’t need one to look like you.”",
+   "char_count": 95,
+   "word_count": 19,
+   "mean_conf": 94.3,
+   "words": [
+    {
+     "t": "“My",
+     "x": 80,
+     "y": 79,
+     "w": 52,
+     "h": 29,
+     "conf": 93.3
+    },
+    {
+     "t": "skin’s",
+     "x": 139,
+     "y": 79,
+     "w": 66,
+     "h": 22,
+     "conf": 86.5
+    },
+    {
+     "t": "so",
+     "x": 214,
+     "y": 87,
+     "w": 25,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "boring,",
+     "x": 247,
+     "y": 79,
+     "w": 89,
+     "h": 29,
+     "conf": 93.3
+    },
+    {
+     "t": "Sisi.",
+     "x": 346,
+     "y": 80,
+     "w": 47,
+     "h": 21,
+     "conf": 90.5
+    },
+    {
+     "t": "Can",
+     "x": 403,
+     "y": 80,
+     "w": 49,
+     "h": 21,
+     "conf": 95.6
+    },
+    {
+     "t": "you",
+     "x": 460,
+     "y": 87,
+     "w": 45,
+     "h": 21,
+     "conf": 96.2
+    },
+    {
+     "t": "make",
+     "x": 514,
+     "y": 80,
+     "w": 66,
+     "h": 21,
+     "conf": 94.8
+    },
+    {
+     "t": "a",
+     "x": 584,
+     "y": 75,
+     "w": 10,
+     "h": 37,
+     "conf": 94.8
+    },
+    {
+     "t": "fake",
+     "x": 608,
+     "y": 79,
+     "w": 50,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "tattoo?”",
+     "x": 80,
+     "y": 117,
+     "w": 93,
+     "h": 22,
+     "conf": 91.9
+    },
+    {
+     "t": "“You",
+     "x": 80,
+     "y": 169,
+     "w": 57,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "don’t",
+     "x": 146,
+     "y": 169,
+     "w": 61,
+     "h": 22,
+     "conf": 83.0
+    },
+    {
+     "t": "need",
+     "x": 216,
+     "y": 170,
+     "w": 58,
+     "h": 21,
+     "conf": 97.0
+    },
+    {
+     "t": "one",
+     "x": 282,
+     "y": 177,
+     "w": 45,
+     "h": 14,
+     "conf": 97.0
+    },
+    {
+     "t": "to",
+     "x": 336,
+     "y": 175,
+     "w": 23,
+     "h": 16,
+     "conf": 97.0
+    },
+    {
+     "t": "look",
+     "x": 367,
+     "y": 170,
+     "w": 56,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "like",
+     "x": 429,
+     "y": 170,
+     "w": 45,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "you.”",
+     "x": 481,
+     "y": 169,
+     "w": 63,
+     "h": 29,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_13.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Mkhulu, I wish I had some bling.”\n“Bling, my child, don’t mean a thing.”",
+   "char_count": 73,
+   "word_count": 14,
+   "mean_conf": 94.4,
+   "words": [
+    {
+     "t": "“Mkhulu,",
+     "x": 909,
+     "y": 443,
+     "w": 114,
+     "h": 33,
+     "conf": 77.2
+    },
+    {
+     "t": "I",
+     "x": 1033,
+     "y": 450,
+     "w": 8,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "wish",
+     "x": 1049,
+     "y": 450,
+     "w": 58,
+     "h": 21,
+     "conf": 97.0
+    },
+    {
+     "t": "I",
+     "x": 1116,
+     "y": 450,
+     "w": 8,
+     "h": 21,
+     "conf": 95.6
+    },
+    {
+     "t": "had",
+     "x": 1133,
+     "y": 450,
+     "w": 44,
+     "h": 21,
+     "conf": 95.6
+    },
+    {
+     "t": "some",
+     "x": 1185,
+     "y": 457,
+     "w": 64,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "bling.”",
+     "x": 1257,
+     "y": 449,
+     "w": 79,
+     "h": 29,
+     "conf": 96.4
+    },
+    {
+     "t": "“Bling,",
+     "x": 909,
+     "y": 502,
+     "w": 80,
+     "h": 29,
+     "conf": 90.4
+    },
+    {
+     "t": "my",
+     "x": 999,
+     "y": 510,
+     "w": 39,
+     "h": 21,
+     "conf": 96.4
+    },
+    {
+     "t": "child,",
+     "x": 1045,
+     "y": 503,
+     "w": 66,
+     "h": 26,
+     "conf": 96.4
+    },
+    {
+     "t": "don’t",
+     "x": 1120,
+     "y": 502,
+     "w": 61,
+     "h": 22,
+     "conf": 94.3
+    },
+    {
+     "t": "mean",
+     "x": 1190,
+     "y": 510,
+     "w": 67,
+     "h": 14,
+     "conf": 96.8
+    },
+    {
+     "t": "a",
+     "x": 1259,
+     "y": 498,
+     "w": 13,
+     "h": 37,
+     "conf": 96.0
+    },
+    {
+     "t": "thing.”",
+     "x": 1286,
+     "y": 502,
+     "w": 81,
+     "h": 29,
+     "conf": 96.0
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_14.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": ", Santi Ramires scored the\nThe next weekend\nwinning goal.",
+   "char_count": 57,
+   "word_count": 10,
+   "mean_conf": 90.3,
+   "words": [
+    {
+     "t": ",",
+     "x": 310,
+     "y": 97,
+     "w": 5,
+     "h": 9,
+     "conf": 92.5
+    },
+    {
+     "t": "Santi",
+     "x": 324,
+     "y": 80,
+     "w": 62,
+     "h": 21,
+     "conf": 43.7
+    },
+    {
+     "t": "Ramires",
+     "x": 395,
+     "y": 80,
+     "w": 101,
+     "h": 21,
+     "conf": 92.3
+    },
+    {
+     "t": "scored",
+     "x": 505,
+     "y": 80,
+     "w": 79,
+     "h": 21,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 593,
+     "y": 80,
+     "w": 38,
+     "h": 21,
+     "conf": 96.1
+    },
+    {
+     "t": "The",
+     "x": 80,
+     "y": 80,
+     "w": 49,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "next",
+     "x": 138,
+     "y": 85,
+     "w": 52,
+     "h": 16,
+     "conf": 96.2
+    },
+    {
+     "t": "weekend",
+     "x": 198,
+     "y": 80,
+     "w": 110,
+     "h": 21,
+     "conf": 96.1
+    },
+    {
+     "t": "winning",
+     "x": 79,
+     "y": 119,
+     "w": 104,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "goal.",
+     "x": 192,
+     "y": 118,
+     "w": 55,
+     "h": 28,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_15.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "On Monday, the\nCool Cat Crew\nstrutted by.\n“Hey, Rafiki! Looking fine!”",
+   "char_count": 70,
+   "word_count": 12,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "On",
+     "x": 80,
+     "y": 80,
+     "w": 37,
+     "h": 21,
+     "conf": 96.2
+    },
+    {
+     "t": "Monday,",
+     "x": 126,
+     "y": 80,
+     "w": 109,
+     "h": 28,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 245,
+     "y": 80,
+     "w": 38,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "Cool",
+     "x": 80,
+     "y": 118,
+     "w": 58,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "Cat",
+     "x": 147,
+     "y": 118,
+     "w": 41,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "Crew",
+     "x": 197,
+     "y": 118,
+     "w": 68,
+     "h": 21,
+     "conf": 95.8
+    },
+    {
+     "t": "strutted",
+     "x": 80,
+     "y": 157,
+     "w": 96,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "by.",
+     "x": 183,
+     "y": 156,
+     "w": 35,
+     "h": 29,
+     "conf": 96.8
+    },
+    {
+     "t": "“Hey,",
+     "x": 1154,
+     "y": 79,
+     "w": 64,
+     "h": 29,
+     "conf": 93.3
+    },
+    {
+     "t": "Rafiki!",
+     "x": 1228,
+     "y": 79,
+     "w": 80,
+     "h": 22,
+     "conf": 93.2
+    },
+    {
+     "t": "Looking",
+     "x": 1319,
+     "y": 80,
+     "w": 103,
+     "h": 28,
+     "conf": 96.4
+    },
+    {
+     "t": "fine!”",
+     "x": 1431,
+     "y": 79,
+     "w": 65,
+     "h": 22,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_16.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_18.jpg",
+   "image_file": "rafikis-style_pdf-ebook_20150920_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

@@ -1,0 +1,1991 @@
+{
+ "slug": "sleepy-mr-sloth",
+ "wp_slug": "sleepy-mr-sloth",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "sleepy-mr-sloth.jpg",
+   "reason": "unmapped"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_201411114.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_201411114.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "One day, Mr Sloth came\nto visit. He said:\nI'm sleepy! I need a good\nbranch for a bed!",
+   "char_count": 85,
+   "word_count": 19,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "One",
+     "x": 184,
+     "y": 730,
+     "w": 266,
+     "h": 111,
+     "conf": 96.6
+    },
+    {
+     "t": "day,",
+     "x": 497,
+     "y": 726,
+     "w": 250,
+     "h": 150,
+     "conf": 96.5
+    },
+    {
+     "t": "Mr",
+     "x": 795,
+     "y": 731,
+     "w": 205,
+     "h": 109,
+     "conf": 96.4
+    },
+    {
+     "t": "Sloth",
+     "x": 1044,
+     "y": 726,
+     "w": 332,
+     "h": 115,
+     "conf": 96.4
+    },
+    {
+     "t": "came",
+     "x": 1423,
+     "y": 767,
+     "w": 325,
+     "h": 73,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 180,
+     "y": 953,
+     "w": 125,
+     "h": 87,
+     "conf": 96.3
+    },
+    {
+     "t": "visit.",
+     "x": 348,
+     "y": 934,
+     "w": 307,
+     "h": 108,
+     "conf": 96.4
+    },
+    {
+     "t": "He",
+     "x": 707,
+     "y": 931,
+     "w": 175,
+     "h": 109,
+     "conf": 96.4
+    },
+    {
+     "t": "said:",
+     "x": 929,
+     "y": 926,
+     "w": 275,
+     "h": 116,
+     "conf": 95.9
+    },
+    {
+     "t": "I'm",
+     "x": 183,
+     "y": 1323,
+     "w": 199,
+     "h": 117,
+     "conf": 88.4
+    },
+    {
+     "t": "sleepy!",
+     "x": 428,
+     "y": 1326,
+     "w": 423,
+     "h": 150,
+     "conf": 95.4
+    },
+    {
+     "t": "I",
+     "x": 908,
+     "y": 1331,
+     "w": 40,
+     "h": 109,
+     "conf": 96.7
+    },
+    {
+     "t": "need",
+     "x": 995,
+     "y": 1326,
+     "w": 304,
+     "h": 114,
+     "conf": 96.1
+    },
+    {
+     "t": "a",
+     "x": 1343,
+     "y": 1368,
+     "w": 62,
+     "h": 72,
+     "conf": 96.1
+    },
+    {
+     "t": "good",
+     "x": 1447,
+     "y": 1326,
+     "w": 319,
+     "h": 150,
+     "conf": 97.0
+    },
+    {
+     "t": "branch",
+     "x": 178,
+     "y": 1526,
+     "w": 448,
+     "h": 114,
+     "conf": 96.4
+    },
+    {
+     "t": "for",
+     "x": 671,
+     "y": 1525,
+     "w": 189,
+     "h": 115,
+     "conf": 95.5
+    },
+    {
+     "t": "a",
+     "x": 904,
+     "y": 1568,
+     "w": 62,
+     "h": 72,
+     "conf": 95.1
+    },
+    {
+     "t": "bed!",
+     "x": 1005,
+     "y": 1526,
+     "w": 263,
+     "h": 116,
+     "conf": 95.1
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_201411115.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_201411115.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "I'm quite good at climbing.\nI know how to swing.\nBut sleeping’s my favourite,\nfavourite thing!",
+   "char_count": 94,
+   "word_count": 16,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "I'm",
+     "x": 183,
+     "y": 723,
+     "w": 199,
+     "h": 117,
+     "conf": 92.3
+    },
+    {
+     "t": "quite",
+     "x": 428,
+     "y": 734,
+     "w": 319,
+     "h": 142,
+     "conf": 96.8
+    },
+    {
+     "t": "good",
+     "x": 792,
+     "y": 726,
+     "w": 319,
+     "h": 150,
+     "conf": 96.8
+    },
+    {
+     "t": "at",
+     "x": 1156,
+     "y": 753,
+     "w": 113,
+     "h": 87,
+     "conf": 96.7
+    },
+    {
+     "t": "climbing.",
+     "x": 1313,
+     "y": 726,
+     "w": 594,
+     "h": 150,
+     "conf": 96.7
+    },
+    {
+     "t": "I",
+     "x": 183,
+     "y": 931,
+     "w": 40,
+     "h": 109,
+     "conf": 95.9
+    },
+    {
+     "t": "know",
+     "x": 268,
+     "y": 926,
+     "w": 372,
+     "h": 115,
+     "conf": 96.2
+    },
+    {
+     "t": "how",
+     "x": 678,
+     "y": 926,
+     "w": 288,
+     "h": 115,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 1004,
+     "y": 953,
+     "w": 125,
+     "h": 87,
+     "conf": 96.6
+    },
+    {
+     "t": "swing.",
+     "x": 1178,
+     "y": 934,
+     "w": 411,
+     "h": 142,
+     "conf": 96.2
+    },
+    {
+     "t": "But",
+     "x": 183,
+     "y": 1331,
+     "w": 225,
+     "h": 109,
+     "conf": 93.3
+    },
+    {
+     "t": "sleeping’s",
+     "x": 452,
+     "y": 1323,
+     "w": 606,
+     "h": 153,
+     "conf": 86.5
+    },
+    {
+     "t": "my",
+     "x": 1104,
+     "y": 1367,
+     "w": 203,
+     "h": 109,
+     "conf": 96.4
+    },
+    {
+     "t": "favourite,",
+     "x": 1345,
+     "y": 1325,
+     "w": 620,
+     "h": 141,
+     "conf": 96.4
+    },
+    {
+     "t": "favourite",
+     "x": 181,
+     "y": 1525,
+     "w": 584,
+     "h": 116,
+     "conf": 96.2
+    },
+    {
+     "t": "thing!",
+     "x": 809,
+     "y": 1526,
+     "w": 376,
+     "h": 150,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_201411116.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_201411116.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "This branch looks lovely!\nI think I'll sleep here.\nAnd you? Dont you think\nthat’s a splendid idea?",
+   "char_count": 98,
+   "word_count": 18,
+   "mean_conf": 94.0,
+   "words": [
+    {
+     "t": "This",
+     "x": 181,
+     "y": 726,
+     "w": 289,
+     "h": 115,
+     "conf": 94.3
+    },
+    {
+     "t": "branch",
+     "x": 513,
+     "y": 726,
+     "w": 448,
+     "h": 114,
+     "conf": 96.6
+    },
+    {
+     "t": "looks",
+     "x": 1004,
+     "y": 726,
+     "w": 339,
+     "h": 115,
+     "conf": 96.7
+    },
+    {
+     "t": "lovely!",
+     "x": 1387,
+     "y": 726,
+     "w": 419,
+     "h": 150,
+     "conf": 91.3
+    },
+    {
+     "t": "I",
+     "x": 183,
+     "y": 931,
+     "w": 40,
+     "h": 109,
+     "conf": 95.5
+    },
+    {
+     "t": "think",
+     "x": 269,
+     "y": 926,
+     "w": 349,
+     "h": 114,
+     "conf": 95.9
+    },
+    {
+     "t": "I'll",
+     "x": 660,
+     "y": 923,
+     "w": 151,
+     "h": 117,
+     "conf": 82.4
+    },
+    {
+     "t": "sleep",
+     "x": 857,
+     "y": 926,
+     "w": 310,
+     "h": 150,
+     "conf": 95.8
+    },
+    {
+     "t": "here.",
+     "x": 1213,
+     "y": 926,
+     "w": 314,
+     "h": 116,
+     "conf": 96.9
+    },
+    {
+     "t": "And",
+     "x": 180,
+     "y": 1326,
+     "w": 277,
+     "h": 114,
+     "conf": 96.9
+    },
+    {
+     "t": "you?",
+     "x": 495,
+     "y": 1334,
+     "w": 293,
+     "h": 142,
+     "conf": 96.5
+    },
+    {
+     "t": "Dont",
+     "x": 838,
+     "y": 1323,
+     "w": 360,
+     "h": 117,
+     "conf": 76.8
+    },
+    {
+     "t": "you",
+     "x": 1236,
+     "y": 1367,
+     "w": 239,
+     "h": 109,
+     "conf": 96.4
+    },
+    {
+     "t": "think",
+     "x": 1518,
+     "y": 1326,
+     "w": 348,
+     "h": 114,
+     "conf": 96.2
+    },
+    {
+     "t": "that’s",
+     "x": 180,
+     "y": 1523,
+     "w": 335,
+     "h": 118,
+     "conf": 93.1
+    },
+    {
+     "t": "a",
+     "x": 562,
+     "y": 1568,
+     "w": 62,
+     "h": 72,
+     "conf": 96.9
+    },
+    {
+     "t": "splendid",
+     "x": 668,
+     "y": 1526,
+     "w": 540,
+     "h": 150,
+     "conf": 96.5
+    },
+    {
+     "t": "idea?",
+     "x": 1251,
+     "y": 1526,
+     "w": 311,
+     "h": 116,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_201411117.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_201411117.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Oh no, Mr Sloth! A giraffe's\neating there!\nHe might think youre lunch\nand start nibbling your hair!",
+   "char_count": 99,
+   "word_count": 18,
+   "mean_conf": 94.4,
+   "words": [
+    {
+     "t": "Oh",
+     "x": 184,
+     "y": 726,
+     "w": 195,
+     "h": 115,
+     "conf": 96.5
+    },
+    {
+     "t": "no,",
+     "x": 423,
+     "y": 767,
+     "w": 200,
+     "h": 99,
+     "conf": 95.3
+    },
+    {
+     "t": "Mr",
+     "x": 671,
+     "y": 731,
+     "w": 205,
+     "h": 109,
+     "conf": 94.7
+    },
+    {
+     "t": "Sloth!",
+     "x": 920,
+     "y": 726,
+     "w": 367,
+     "h": 116,
+     "conf": 96.4
+    },
+    {
+     "t": "A",
+     "x": 1341,
+     "y": 731,
+     "w": 106,
+     "h": 109,
+     "conf": 93.3
+    },
+    {
+     "t": "giraffe's",
+     "x": 1491,
+     "y": 723,
+     "w": 495,
+     "h": 153,
+     "conf": 70.7
+    },
+    {
+     "t": "eating",
+     "x": 183,
+     "y": 934,
+     "w": 389,
+     "h": 142,
+     "conf": 95.9
+    },
+    {
+     "t": "there!",
+     "x": 617,
+     "y": 926,
+     "w": 368,
+     "h": 116,
+     "conf": 96.4
+    },
+    {
+     "t": "He",
+     "x": 183,
+     "y": 1331,
+     "w": 175,
+     "h": 109,
+     "conf": 96.5
+    },
+    {
+     "t": "might",
+     "x": 403,
+     "y": 1326,
+     "w": 384,
+     "h": 150,
+     "conf": 94.3
+    },
+    {
+     "t": "think",
+     "x": 828,
+     "y": 1326,
+     "w": 349,
+     "h": 114,
+     "conf": 96.2
+    },
+    {
+     "t": "youre",
+     "x": 1213,
+     "y": 1323,
+     "w": 395,
+     "h": 153,
+     "conf": 94.4
+    },
+    {
+     "t": "lunch",
+     "x": 1651,
+     "y": 1326,
+     "w": 360,
+     "h": 115,
+     "conf": 96.4
+    },
+    {
+     "t": "and",
+     "x": 183,
+     "y": 1526,
+     "w": 231,
+     "h": 114,
+     "conf": 96.8
+    },
+    {
+     "t": "start",
+     "x": 459,
+     "y": 1553,
+     "w": 284,
+     "h": 88,
+     "conf": 96.5
+    },
+    {
+     "t": "nibbling",
+     "x": 785,
+     "y": 1526,
+     "w": 537,
+     "h": 150,
+     "conf": 96.7
+    },
+    {
+     "t": "your",
+     "x": 1363,
+     "y": 1567,
+     "w": 302,
+     "h": 109,
+     "conf": 96.3
+    },
+    {
+     "t": "hair!",
+     "x": 1706,
+     "y": 1526,
+     "w": 290,
+     "h": 116,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_201411118.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_201411118.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "This branch looks lovely!\nI think I'll sleep here.\nAnd you? Dont you think\nthat’s a splendid idea?",
+   "char_count": 98,
+   "word_count": 18,
+   "mean_conf": 94.0,
+   "words": [
+    {
+     "t": "This",
+     "x": 181,
+     "y": 726,
+     "w": 289,
+     "h": 115,
+     "conf": 94.3
+    },
+    {
+     "t": "branch",
+     "x": 513,
+     "y": 726,
+     "w": 448,
+     "h": 114,
+     "conf": 96.6
+    },
+    {
+     "t": "looks",
+     "x": 1004,
+     "y": 726,
+     "w": 339,
+     "h": 115,
+     "conf": 96.7
+    },
+    {
+     "t": "lovely!",
+     "x": 1387,
+     "y": 726,
+     "w": 419,
+     "h": 150,
+     "conf": 91.3
+    },
+    {
+     "t": "I",
+     "x": 183,
+     "y": 931,
+     "w": 40,
+     "h": 109,
+     "conf": 95.5
+    },
+    {
+     "t": "think",
+     "x": 269,
+     "y": 926,
+     "w": 349,
+     "h": 114,
+     "conf": 95.9
+    },
+    {
+     "t": "I'll",
+     "x": 660,
+     "y": 923,
+     "w": 151,
+     "h": 117,
+     "conf": 82.4
+    },
+    {
+     "t": "sleep",
+     "x": 857,
+     "y": 926,
+     "w": 310,
+     "h": 150,
+     "conf": 95.8
+    },
+    {
+     "t": "here.",
+     "x": 1213,
+     "y": 926,
+     "w": 314,
+     "h": 116,
+     "conf": 96.9
+    },
+    {
+     "t": "And",
+     "x": 180,
+     "y": 1326,
+     "w": 277,
+     "h": 114,
+     "conf": 96.9
+    },
+    {
+     "t": "you?",
+     "x": 495,
+     "y": 1334,
+     "w": 293,
+     "h": 142,
+     "conf": 96.5
+    },
+    {
+     "t": "Dont",
+     "x": 838,
+     "y": 1323,
+     "w": 360,
+     "h": 117,
+     "conf": 76.8
+    },
+    {
+     "t": "you",
+     "x": 1236,
+     "y": 1367,
+     "w": 239,
+     "h": 109,
+     "conf": 96.4
+    },
+    {
+     "t": "think",
+     "x": 1518,
+     "y": 1326,
+     "w": 348,
+     "h": 114,
+     "conf": 96.2
+    },
+    {
+     "t": "that’s",
+     "x": 180,
+     "y": 1523,
+     "w": 335,
+     "h": 118,
+     "conf": 93.1
+    },
+    {
+     "t": "a",
+     "x": 562,
+     "y": 1568,
+     "w": 62,
+     "h": 72,
+     "conf": 96.9
+    },
+    {
+     "t": "splendid",
+     "x": 668,
+     "y": 1526,
+     "w": 540,
+     "h": 150,
+     "conf": 96.5
+    },
+    {
+     "t": "idea?",
+     "x": 1251,
+     "y": 1526,
+     "w": 311,
+     "h": 116,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_201411119.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_201411119.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Oh no, Mr Sloth! There's\na beehive right there!\nYoull never get sleep with\nthose bees everywhere!",
+   "char_count": 97,
+   "word_count": 17,
+   "mean_conf": 92.9,
+   "words": [
+    {
+     "t": "Oh",
+     "x": 184,
+     "y": 726,
+     "w": 195,
+     "h": 115,
+     "conf": 94.9
+    },
+    {
+     "t": "no,",
+     "x": 423,
+     "y": 767,
+     "w": 200,
+     "h": 99,
+     "conf": 94.9
+    },
+    {
+     "t": "Mr",
+     "x": 671,
+     "y": 731,
+     "w": 205,
+     "h": 109,
+     "conf": 94.7
+    },
+    {
+     "t": "Sloth!",
+     "x": 920,
+     "y": 726,
+     "w": 367,
+     "h": 116,
+     "conf": 94.7
+    },
+    {
+     "t": "There's",
+     "x": 1342,
+     "y": 723,
+     "w": 473,
+     "h": 118,
+     "conf": 46.9
+    },
+    {
+     "t": "a",
+     "x": 183,
+     "y": 968,
+     "w": 62,
+     "h": 72,
+     "conf": 94.6
+    },
+    {
+     "t": "beehive",
+     "x": 284,
+     "y": 926,
+     "w": 497,
+     "h": 115,
+     "conf": 94.6
+    },
+    {
+     "t": "right",
+     "x": 827,
+     "y": 926,
+     "w": 314,
+     "h": 150,
+     "conf": 96.5
+    },
+    {
+     "t": "there!",
+     "x": 1182,
+     "y": 926,
+     "w": 369,
+     "h": 116,
+     "conf": 96.7
+    },
+    {
+     "t": "Youll",
+     "x": 179,
+     "y": 1323,
+     "w": 364,
+     "h": 117,
+     "conf": 95.5
+    },
+    {
+     "t": "never",
+     "x": 586,
+     "y": 1367,
+     "w": 366,
+     "h": 74,
+     "conf": 96.8
+    },
+    {
+     "t": "get",
+     "x": 994,
+     "y": 1353,
+     "w": 193,
+     "h": 123,
+     "conf": 96.2
+    },
+    {
+     "t": "sleep",
+     "x": 1231,
+     "y": 1326,
+     "w": 310,
+     "h": 150,
+     "conf": 96.2
+    },
+    {
+     "t": "with",
+     "x": 1586,
+     "y": 1326,
+     "w": 296,
+     "h": 115,
+     "conf": 95.9
+    },
+    {
+     "t": "those",
+     "x": 180,
+     "y": 1526,
+     "w": 342,
+     "h": 115,
+     "conf": 96.9
+    },
+    {
+     "t": "bees",
+     "x": 564,
+     "y": 1526,
+     "w": 274,
+     "h": 115,
+     "conf": 96.7
+    },
+    {
+     "t": "everywhere!",
+     "x": 886,
+     "y": 1526,
+     "w": 790,
+     "h": 150,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_2014111110.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_2014111110.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "This branch looks lovely!\nI think I'll sleep here.\nAnd you? Dont you think\nthat’s a splendid idea?",
+   "char_count": 98,
+   "word_count": 18,
+   "mean_conf": 94.0,
+   "words": [
+    {
+     "t": "This",
+     "x": 181,
+     "y": 726,
+     "w": 289,
+     "h": 115,
+     "conf": 94.3
+    },
+    {
+     "t": "branch",
+     "x": 513,
+     "y": 726,
+     "w": 448,
+     "h": 114,
+     "conf": 96.6
+    },
+    {
+     "t": "looks",
+     "x": 1004,
+     "y": 726,
+     "w": 339,
+     "h": 115,
+     "conf": 96.7
+    },
+    {
+     "t": "lovely!",
+     "x": 1387,
+     "y": 726,
+     "w": 419,
+     "h": 150,
+     "conf": 91.3
+    },
+    {
+     "t": "I",
+     "x": 183,
+     "y": 931,
+     "w": 40,
+     "h": 109,
+     "conf": 95.5
+    },
+    {
+     "t": "think",
+     "x": 269,
+     "y": 926,
+     "w": 349,
+     "h": 114,
+     "conf": 95.9
+    },
+    {
+     "t": "I'll",
+     "x": 660,
+     "y": 923,
+     "w": 151,
+     "h": 117,
+     "conf": 82.4
+    },
+    {
+     "t": "sleep",
+     "x": 857,
+     "y": 926,
+     "w": 310,
+     "h": 150,
+     "conf": 95.8
+    },
+    {
+     "t": "here.",
+     "x": 1213,
+     "y": 926,
+     "w": 314,
+     "h": 116,
+     "conf": 96.9
+    },
+    {
+     "t": "And",
+     "x": 180,
+     "y": 1326,
+     "w": 277,
+     "h": 114,
+     "conf": 96.9
+    },
+    {
+     "t": "you?",
+     "x": 495,
+     "y": 1334,
+     "w": 293,
+     "h": 142,
+     "conf": 96.5
+    },
+    {
+     "t": "Dont",
+     "x": 838,
+     "y": 1323,
+     "w": 360,
+     "h": 117,
+     "conf": 76.8
+    },
+    {
+     "t": "you",
+     "x": 1236,
+     "y": 1367,
+     "w": 239,
+     "h": 109,
+     "conf": 96.4
+    },
+    {
+     "t": "think",
+     "x": 1518,
+     "y": 1326,
+     "w": 348,
+     "h": 114,
+     "conf": 96.2
+    },
+    {
+     "t": "that’s",
+     "x": 180,
+     "y": 1523,
+     "w": 335,
+     "h": 118,
+     "conf": 93.1
+    },
+    {
+     "t": "a",
+     "x": 562,
+     "y": 1568,
+     "w": 62,
+     "h": 72,
+     "conf": 96.9
+    },
+    {
+     "t": "splendid",
+     "x": 668,
+     "y": 1526,
+     "w": 540,
+     "h": 150,
+     "conf": 96.5
+    },
+    {
+     "t": "idea?",
+     "x": 1251,
+     "y": 1526,
+     "w": 311,
+     "h": 116,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_2014111111.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_2014111111.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Oh no, Mr Sloth, that’s\na snake over there!\nNot a branch! Poor old snake.\nYou gave him quite a scare.",
+   "char_count": 101,
+   "word_count": 21,
+   "mean_conf": 94.9,
+   "words": [
+    {
+     "t": "Oh",
+     "x": 184,
+     "y": 726,
+     "w": 195,
+     "h": 115,
+     "conf": 94.0
+    },
+    {
+     "t": "no,",
+     "x": 423,
+     "y": 767,
+     "w": 200,
+     "h": 99,
+     "conf": 94.0
+    },
+    {
+     "t": "Mr",
+     "x": 671,
+     "y": 731,
+     "w": 205,
+     "h": 109,
+     "conf": 95.1
+    },
+    {
+     "t": "Sloth,",
+     "x": 920,
+     "y": 726,
+     "w": 367,
+     "h": 140,
+     "conf": 96.0
+    },
+    {
+     "t": "that’s",
+     "x": 1334,
+     "y": 723,
+     "w": 335,
+     "h": 118,
+     "conf": 94.4
+    },
+    {
+     "t": "a",
+     "x": 183,
+     "y": 968,
+     "w": 62,
+     "h": 72,
+     "conf": 96.0
+    },
+    {
+     "t": "snake",
+     "x": 289,
+     "y": 926,
+     "w": 357,
+     "h": 115,
+     "conf": 96.0
+    },
+    {
+     "t": "over",
+     "x": 693,
+     "y": 967,
+     "w": 288,
+     "h": 74,
+     "conf": 96.3
+    },
+    {
+     "t": "there!",
+     "x": 1022,
+     "y": 926,
+     "w": 368,
+     "h": 116,
+     "conf": 96.2
+    },
+    {
+     "t": "Not",
+     "x": 180,
+     "y": 1331,
+     "w": 248,
+     "h": 109,
+     "conf": 85.2
+    },
+    {
+     "t": "a",
+     "x": 472,
+     "y": 1368,
+     "w": 62,
+     "h": 72,
+     "conf": 85.2
+    },
+    {
+     "t": "branch!",
+     "x": 573,
+     "y": 1326,
+     "w": 483,
+     "h": 116,
+     "conf": 96.2
+    },
+    {
+     "t": "Poor",
+     "x": 1113,
+     "y": 1331,
+     "w": 310,
+     "h": 109,
+     "conf": 95.6
+    },
+    {
+     "t": "old",
+     "x": 1467,
+     "y": 1326,
+     "w": 198,
+     "h": 114,
+     "conf": 96.8
+    },
+    {
+     "t": "snake.",
+     "x": 1709,
+     "y": 1326,
+     "w": 390,
+     "h": 116,
+     "conf": 96.3
+    },
+    {
+     "t": "You",
+     "x": 179,
+     "y": 1531,
+     "w": 256,
+     "h": 110,
+     "conf": 96.5
+    },
+    {
+     "t": "gave",
+     "x": 478,
+     "y": 1568,
+     "w": 288,
+     "h": 108,
+     "conf": 96.6
+    },
+    {
+     "t": "him",
+     "x": 811,
+     "y": 1526,
+     "w": 254,
+     "h": 114,
+     "conf": 96.3
+    },
+    {
+     "t": "quite",
+     "x": 1111,
+     "y": 1534,
+     "w": 319,
+     "h": 142,
+     "conf": 96.4
+    },
+    {
+     "t": "a",
+     "x": 1447,
+     "y": 1522,
+     "w": 53,
+     "h": 159,
+     "conf": 96.6
+    },
+    {
+     "t": "scare.",
+     "x": 1583,
+     "y": 1567,
+     "w": 348,
+     "h": 75,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_2014111112.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_2014111112.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "This branch looks lovely!\nI think I'll sleep here.\nAnd you? Dont you think\nthat’s a splendid idea?",
+   "char_count": 98,
+   "word_count": 18,
+   "mean_conf": 94.0,
+   "words": [
+    {
+     "t": "This",
+     "x": 181,
+     "y": 726,
+     "w": 289,
+     "h": 115,
+     "conf": 94.3
+    },
+    {
+     "t": "branch",
+     "x": 513,
+     "y": 726,
+     "w": 448,
+     "h": 114,
+     "conf": 96.6
+    },
+    {
+     "t": "looks",
+     "x": 1004,
+     "y": 726,
+     "w": 339,
+     "h": 115,
+     "conf": 96.7
+    },
+    {
+     "t": "lovely!",
+     "x": 1387,
+     "y": 726,
+     "w": 419,
+     "h": 150,
+     "conf": 91.3
+    },
+    {
+     "t": "I",
+     "x": 183,
+     "y": 931,
+     "w": 40,
+     "h": 109,
+     "conf": 95.5
+    },
+    {
+     "t": "think",
+     "x": 269,
+     "y": 926,
+     "w": 349,
+     "h": 114,
+     "conf": 95.9
+    },
+    {
+     "t": "I'll",
+     "x": 660,
+     "y": 923,
+     "w": 151,
+     "h": 117,
+     "conf": 82.4
+    },
+    {
+     "t": "sleep",
+     "x": 857,
+     "y": 926,
+     "w": 310,
+     "h": 150,
+     "conf": 95.8
+    },
+    {
+     "t": "here.",
+     "x": 1213,
+     "y": 926,
+     "w": 314,
+     "h": 116,
+     "conf": 96.9
+    },
+    {
+     "t": "And",
+     "x": 180,
+     "y": 1326,
+     "w": 277,
+     "h": 114,
+     "conf": 96.9
+    },
+    {
+     "t": "you?",
+     "x": 495,
+     "y": 1334,
+     "w": 293,
+     "h": 142,
+     "conf": 96.5
+    },
+    {
+     "t": "Dont",
+     "x": 838,
+     "y": 1323,
+     "w": 360,
+     "h": 117,
+     "conf": 76.8
+    },
+    {
+     "t": "you",
+     "x": 1236,
+     "y": 1367,
+     "w": 239,
+     "h": 109,
+     "conf": 96.4
+    },
+    {
+     "t": "think",
+     "x": 1518,
+     "y": 1326,
+     "w": 348,
+     "h": 114,
+     "conf": 96.2
+    },
+    {
+     "t": "that’s",
+     "x": 180,
+     "y": 1523,
+     "w": 335,
+     "h": 118,
+     "conf": 93.1
+    },
+    {
+     "t": "a",
+     "x": 562,
+     "y": 1568,
+     "w": 62,
+     "h": 72,
+     "conf": 96.9
+    },
+    {
+     "t": "splendid",
+     "x": 668,
+     "y": 1526,
+     "w": 540,
+     "h": 150,
+     "conf": 96.5
+    },
+    {
+     "t": "idea?",
+     "x": 1251,
+     "y": 1526,
+     "w": 311,
+     "h": 116,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_2014111113.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_2014111113.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Oh no, Mr Sloth! There's\na bird squawking there!\nYoull never get sleep with that\nnoise in the air!",
+   "char_count": 98,
+   "word_count": 19,
+   "mean_conf": 92.9,
+   "words": [
+    {
+     "t": "Oh",
+     "x": 184,
+     "y": 726,
+     "w": 195,
+     "h": 115,
+     "conf": 94.9
+    },
+    {
+     "t": "no,",
+     "x": 423,
+     "y": 767,
+     "w": 200,
+     "h": 99,
+     "conf": 94.9
+    },
+    {
+     "t": "Mr",
+     "x": 671,
+     "y": 731,
+     "w": 205,
+     "h": 109,
+     "conf": 94.7
+    },
+    {
+     "t": "Sloth!",
+     "x": 920,
+     "y": 726,
+     "w": 367,
+     "h": 116,
+     "conf": 94.7
+    },
+    {
+     "t": "There's",
+     "x": 1342,
+     "y": 723,
+     "w": 473,
+     "h": 118,
+     "conf": 46.9
+    },
+    {
+     "t": "a",
+     "x": 183,
+     "y": 968,
+     "w": 62,
+     "h": 72,
+     "conf": 95.0
+    },
+    {
+     "t": "bird",
+     "x": 284,
+     "y": 926,
+     "w": 266,
+     "h": 114,
+     "conf": 93.3
+    },
+    {
+     "t": "squawking",
+     "x": 594,
+     "y": 926,
+     "w": 691,
+     "h": 150,
+     "conf": 92.5
+    },
+    {
+     "t": "there!",
+     "x": 1329,
+     "y": 926,
+     "w": 368,
+     "h": 116,
+     "conf": 96.8
+    },
+    {
+     "t": "Youll",
+     "x": 179,
+     "y": 1323,
+     "w": 364,
+     "h": 117,
+     "conf": 95.3
+    },
+    {
+     "t": "never",
+     "x": 586,
+     "y": 1367,
+     "w": 366,
+     "h": 74,
+     "conf": 96.7
+    },
+    {
+     "t": "get",
+     "x": 994,
+     "y": 1353,
+     "w": 193,
+     "h": 123,
+     "conf": 96.2
+    },
+    {
+     "t": "sleep",
+     "x": 1231,
+     "y": 1326,
+     "w": 310,
+     "h": 150,
+     "conf": 96.2
+    },
+    {
+     "t": "with",
+     "x": 1586,
+     "y": 1326,
+     "w": 296,
+     "h": 115,
+     "conf": 96.3
+    },
+    {
+     "t": "that",
+     "x": 1926,
+     "y": 1326,
+     "w": 253,
+     "h": 114,
+     "conf": 96.4
+    },
+    {
+     "t": "noise",
+     "x": 181,
+     "y": 1534,
+     "w": 336,
+     "h": 107,
+     "conf": 96.7
+    },
+    {
+     "t": "in",
+     "x": 563,
+     "y": 1534,
+     "w": 124,
+     "h": 106,
+     "conf": 95.1
+    },
+    {
+     "t": "the",
+     "x": 730,
+     "y": 1526,
+     "w": 201,
+     "h": 114,
+     "conf": 95.8
+    },
+    {
+     "t": "air!",
+     "x": 978,
+     "y": 1534,
+     "w": 201,
+     "h": 108,
+     "conf": 95.8
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_2014111114.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_2014111114.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Try climb one more branch,\nMr Sloth! they all said.\nAnd that branch was just the\nright one for his bed.",
+   "char_count": 103,
+   "word_count": 21,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "Try",
+     "x": 181,
+     "y": 729,
+     "w": 244,
+     "h": 147,
+     "conf": 96.0
+    },
+    {
+     "t": "climb",
+     "x": 465,
+     "y": 726,
+     "w": 350,
+     "h": 114,
+     "conf": 96.2
+    },
+    {
+     "t": "one",
+     "x": 864,
+     "y": 767,
+     "w": 232,
+     "h": 73,
+     "conf": 96.3
+    },
+    {
+     "t": "more",
+     "x": 1141,
+     "y": 767,
+     "w": 337,
+     "h": 73,
+     "conf": 96.3
+    },
+    {
+     "t": "branch,",
+     "x": 1520,
+     "y": 726,
+     "w": 484,
+     "h": 140,
+     "conf": 96.9
+    },
+    {
+     "t": "Mr",
+     "x": 181,
+     "y": 931,
+     "w": 205,
+     "h": 109,
+     "conf": 96.9
+    },
+    {
+     "t": "Sloth!",
+     "x": 430,
+     "y": 926,
+     "w": 368,
+     "h": 116,
+     "conf": 96.1
+    },
+    {
+     "t": "they",
+     "x": 851,
+     "y": 926,
+     "w": 282,
+     "h": 150,
+     "conf": 94.6
+    },
+    {
+     "t": "all",
+     "x": 1173,
+     "y": 926,
+     "w": 143,
+     "h": 114,
+     "conf": 96.3
+    },
+    {
+     "t": "said.",
+     "x": 1361,
+     "y": 926,
+     "w": 275,
+     "h": 116,
+     "conf": 96.3
+    },
+    {
+     "t": "And",
+     "x": 180,
+     "y": 1326,
+     "w": 277,
+     "h": 114,
+     "conf": 95.9
+    },
+    {
+     "t": "that",
+     "x": 498,
+     "y": 1326,
+     "w": 253,
+     "h": 114,
+     "conf": 96.7
+    },
+    {
+     "t": "branch",
+     "x": 791,
+     "y": 1326,
+     "w": 448,
+     "h": 114,
+     "conf": 96.9
+    },
+    {
+     "t": "was",
+     "x": 1280,
+     "y": 1367,
+     "w": 242,
+     "h": 74,
+     "conf": 96.8
+    },
+    {
+     "t": "just",
+     "x": 1559,
+     "y": 1334,
+     "w": 236,
+     "h": 143,
+     "conf": 94.6
+    },
+    {
+     "t": "the",
+     "x": 1836,
+     "y": 1326,
+     "w": 200,
+     "h": 114,
+     "conf": 96.9
+    },
+    {
+     "t": "right",
+     "x": 182,
+     "y": 1526,
+     "w": 314,
+     "h": 150,
+     "conf": 95.9
+    },
+    {
+     "t": "one",
+     "x": 541,
+     "y": 1567,
+     "w": 231,
+     "h": 73,
+     "conf": 95.9
+    },
+    {
+     "t": "for",
+     "x": 817,
+     "y": 1525,
+     "w": 189,
+     "h": 115,
+     "conf": 96.9
+    },
+    {
+     "t": "his",
+     "x": 1047,
+     "y": 1526,
+     "w": 181,
+     "h": 115,
+     "conf": 96.2
+    },
+    {
+     "t": "bed.",
+     "x": 1271,
+     "y": 1526,
+     "w": 260,
+     "h": 116,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_interior-spreads_2014111115.jpg",
+   "image_file": "sleepy-mr-sloth_interior-spreads_2014111115.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "The bird and the snake,\nthe giraffe and each bee\nwere happy to have Mr Sloth\nin their tree.",
+   "char_count": 91,
+   "word_count": 19,
+   "mean_conf": 96.3,
+   "words": [
+    {
+     "t": "The",
+     "x": 181,
+     "y": 726,
+     "w": 257,
+     "h": 114,
+     "conf": 95.1
+    },
+    {
+     "t": "bird",
+     "x": 481,
+     "y": 726,
+     "w": 265,
+     "h": 114,
+     "conf": 95.7
+    },
+    {
+     "t": "and",
+     "x": 791,
+     "y": 726,
+     "w": 231,
+     "h": 114,
+     "conf": 95.7
+    },
+    {
+     "t": "the",
+     "x": 1063,
+     "y": 726,
+     "w": 200,
+     "h": 114,
+     "conf": 94.9
+    },
+    {
+     "t": "snake,",
+     "x": 1311,
+     "y": 726,
+     "w": 392,
+     "h": 140,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 180,
+     "y": 926,
+     "w": 201,
+     "h": 114,
+     "conf": 96.3
+    },
+    {
+     "t": "giraffe",
+     "x": 426,
+     "y": 925,
+     "w": 411,
+     "h": 151,
+     "conf": 96.1
+    },
+    {
+     "t": "and",
+     "x": 885,
+     "y": 926,
+     "w": 231,
+     "h": 114,
+     "conf": 96.1
+    },
+    {
+     "t": "each",
+     "x": 1160,
+     "y": 926,
+     "w": 282,
+     "h": 114,
+     "conf": 96.6
+    },
+    {
+     "t": "bee",
+     "x": 1483,
+     "y": 926,
+     "w": 217,
+     "h": 114,
+     "conf": 96.9
+    },
+    {
+     "t": "were",
+     "x": 178,
+     "y": 1367,
+     "w": 316,
+     "h": 74,
+     "conf": 96.8
+    },
+    {
+     "t": "happy",
+     "x": 539,
+     "y": 1326,
+     "w": 395,
+     "h": 150,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 971,
+     "y": 1353,
+     "w": 125,
+     "h": 87,
+     "conf": 96.9
+    },
+    {
+     "t": "have",
+     "x": 1143,
+     "y": 1326,
+     "w": 298,
+     "h": 115,
+     "conf": 96.7
+    },
+    {
+     "t": "Mr",
+     "x": 1486,
+     "y": 1331,
+     "w": 205,
+     "h": 109,
+     "conf": 96.8
+    },
+    {
+     "t": "Sloth",
+     "x": 1736,
+     "y": 1326,
+     "w": 331,
+     "h": 115,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 182,
+     "y": 1534,
+     "w": 124,
+     "h": 106,
+     "conf": 96.2
+    },
+    {
+     "t": "their",
+     "x": 350,
+     "y": 1526,
+     "w": 309,
+     "h": 114,
+     "conf": 96.2
+    },
+    {
+     "t": "tree.",
+     "x": 700,
+     "y": 1553,
+     "w": 279,
+     "h": 89,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth_english_pdf-ebook_20140708_Page_18.jpg",
+   "image_file": "sleepy-mr-sloth_english_pdf-ebook_20140708_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

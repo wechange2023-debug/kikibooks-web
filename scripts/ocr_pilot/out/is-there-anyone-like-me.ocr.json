@@ -1,0 +1,1014 @@
+{
+ "slug": "is-there-anyone-like-me",
+ "wp_slug": "is-there-anyone-like-me",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "anyone-like-me_front-cover_20150811.jpg",
+   "reason": "cover"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_201508044.jpg",
+   "image_file": "anyone-like-me_interior-spreads_201508044.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "I wonder if there's another me\nsomewhere in the world. , =",
+   "char_count": 58,
+   "word_count": 12,
+   "mean_conf": 75.8,
+   "words": [
+    {
+     "t": "I",
+     "x": 595,
+     "y": 433,
+     "w": 23,
+     "h": 65,
+     "conf": 90.0
+    },
+    {
+     "t": "wonder",
+     "x": 645,
+     "y": 430,
+     "w": 300,
+     "h": 69,
+     "conf": 96.5
+    },
+    {
+     "t": "if",
+     "x": 972,
+     "y": 430,
+     "w": 61,
+     "h": 68,
+     "conf": 96.6
+    },
+    {
+     "t": "there's",
+     "x": 1049,
+     "y": 429,
+     "w": 249,
+     "h": 70,
+     "conf": 10.8
+    },
+    {
+     "t": "another",
+     "x": 1327,
+     "y": 430,
+     "w": 301,
+     "h": 69,
+     "conf": 96.6
+    },
+    {
+     "t": "me",
+     "x": 1654,
+     "y": 455,
+     "w": 115,
+     "h": 44,
+     "conf": 97.0
+    },
+    {
+     "t": "somewhere",
+     "x": 698,
+     "y": 555,
+     "w": 443,
+     "h": 69,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 1169,
+     "y": 560,
+     "w": 74,
+     "h": 63,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 1269,
+     "y": 555,
+     "w": 121,
+     "h": 69,
+     "conf": 96.5
+    },
+    {
+     "t": "world.",
+     "x": 1415,
+     "y": 555,
+     "w": 248,
+     "h": 70,
+     "conf": 96.6
+    },
+    {
+     "t": ",",
+     "x": 1852,
+     "y": 592,
+     "w": 3,
+     "h": 2,
+     "conf": 0.0
+    },
+    {
+     "t": "=",
+     "x": 2109,
+     "y": 552,
+     "w": 43,
+     "h": 86,
+     "conf": 36.4
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_201508045.jpg",
+   "image_file": "anyone-like-me_interior-spreads_201508045.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "en ae eee\nWho looks the same. .\nAnd talks tha same.",
+   "char_count": 51,
+   "word_count": 12,
+   "mean_conf": 67.0,
+   "words": [
+    {
+     "t": "en",
+     "x": 3504,
+     "y": 146,
+     "w": 304,
+     "h": 12,
+     "conf": 10.9
+    },
+    {
+     "t": "ae",
+     "x": 3661,
+     "y": 134,
+     "w": 33,
+     "h": 29,
+     "conf": 28.3
+    },
+    {
+     "t": "eee",
+     "x": 3710,
+     "y": 146,
+     "w": 166,
+     "h": 13,
+     "conf": 12.7
+    },
+    {
+     "t": "Who",
+     "x": 770,
+     "y": 383,
+     "w": 201,
+     "h": 69,
+     "conf": 92.7
+    },
+    {
+     "t": "looks",
+     "x": 999,
+     "y": 383,
+     "w": 203,
+     "h": 69,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 1230,
+     "y": 383,
+     "w": 120,
+     "h": 69,
+     "conf": 96.6
+    },
+    {
+     "t": "same.",
+     "x": 1378,
+     "y": 408,
+     "w": 210,
+     "h": 45,
+     "conf": 96.8
+    },
+    {
+     "t": ".",
+     "x": 2274,
+     "y": 443,
+     "w": 25,
+     "h": 23,
+     "conf": 17.7
+    },
+    {
+     "t": "And",
+     "x": 3166,
+     "y": 1880,
+     "w": 166,
+     "h": 69,
+     "conf": 96.5
+    },
+    {
+     "t": "talks",
+     "x": 3355,
+     "y": 1880,
+     "w": 176,
+     "h": 69,
+     "conf": 96.5
+    },
+    {
+     "t": "tha",
+     "x": 3558,
+     "y": 1830,
+     "w": 131,
+     "h": 119,
+     "conf": 63.5
+    },
+    {
+     "t": "same.",
+     "x": 3708,
+     "y": 1838,
+     "w": 218,
+     "h": 140,
+     "conf": 95.5
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_201508046.jpg",
+   "image_file": "anyone-like-me_interior-spreads_201508046.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "And even has my curls.",
+   "char_count": 22,
+   "word_count": 5,
+   "mean_conf": 96.7,
+   "words": [
+    {
+     "t": "And",
+     "x": 732,
+     "y": 953,
+     "w": 165,
+     "h": 69,
+     "conf": 96.7
+    },
+    {
+     "t": "even",
+     "x": 923,
+     "y": 978,
+     "w": 180,
+     "h": 44,
+     "conf": 96.6
+    },
+    {
+     "t": "has",
+     "x": 1129,
+     "y": 953,
+     "w": 124,
+     "h": 69,
+     "conf": 96.9
+    },
+    {
+     "t": "my",
+     "x": 1280,
+     "y": 978,
+     "w": 123,
+     "h": 66,
+     "conf": 96.5
+    },
+    {
+     "t": "curls.",
+     "x": 1426,
+     "y": 953,
+     "w": 201,
+     "h": 70,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_201508047.jpg",
+   "image_file": "anyone-like-me_interior-spreads_201508047.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Who even has my laugh.",
+   "char_count": 22,
+   "word_count": 5,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "Who",
+     "x": 3060,
+     "y": 297,
+     "w": 202,
+     "h": 69,
+     "conf": 95.9
+    },
+    {
+     "t": "even",
+     "x": 3291,
+     "y": 322,
+     "w": 180,
+     "h": 44,
+     "conf": 95.9
+    },
+    {
+     "t": "has",
+     "x": 3497,
+     "y": 297,
+     "w": 123,
+     "h": 69,
+     "conf": 97.0
+    },
+    {
+     "t": "my",
+     "x": 3649,
+     "y": 322,
+     "w": 121,
+     "h": 65,
+     "conf": 95.4
+    },
+    {
+     "t": "laugh.",
+     "x": 3792,
+     "y": 297,
+     "w": 230,
+     "h": 90,
+     "conf": 95.6
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_201508048.jpg",
+   "image_file": "anyone-like-me_interior-spreads_201508048.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Who can d",
+   "char_count": 9,
+   "word_count": 3,
+   "mean_conf": 92.9,
+   "words": [
+    {
+     "t": "Who",
+     "x": 616,
+     "y": 792,
+     "w": 154,
+     "h": 98,
+     "conf": 96.3
+    },
+    {
+     "t": "can",
+     "x": 832,
+     "y": 801,
+     "w": 132,
+     "h": 85,
+     "conf": 91.2
+    },
+    {
+     "t": "d",
+     "x": 1004,
+     "y": 796,
+     "w": 44,
+     "h": 69,
+     "conf": 91.2
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_201508049.jpg",
+   "image_file": "anyone-like-me_interior-spreads_201508049.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "... and can’t do what I can't.",
+   "char_count": 30,
+   "word_count": 7,
+   "mean_conf": 77.8,
+   "words": [
+    {
+     "t": "...",
+     "x": 651,
+     "y": 878,
+     "w": 73,
+     "h": 11,
+     "conf": 43.7
+    },
+    {
+     "t": "and",
+     "x": 754,
+     "y": 820,
+     "w": 139,
+     "h": 69,
+     "conf": 43.7
+    },
+    {
+     "t": "can’t",
+     "x": 918,
+     "y": 819,
+     "w": 177,
+     "h": 70,
+     "conf": 93.0
+    },
+    {
+     "t": "do",
+     "x": 1122,
+     "y": 820,
+     "w": 91,
+     "h": 69,
+     "conf": 96.9
+    },
+    {
+     "t": "what",
+     "x": 1240,
+     "y": 820,
+     "w": 193,
+     "h": 69,
+     "conf": 96.7
+    },
+    {
+     "t": "I",
+     "x": 1460,
+     "y": 823,
+     "w": 23,
+     "h": 65,
+     "conf": 94.3
+    },
+    {
+     "t": "can't.",
+     "x": 1513,
+     "y": 819,
+     "w": 194,
+     "h": 70,
+     "conf": 76.3
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_2015080410.jpg",
+   "image_file": "anyone-like-me_interior-spreads_2015080410.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "I've looked and looked everywhere\nto find another me.\nI went down to the park\nand looked behind the trees.",
+   "char_count": 106,
+   "word_count": 20,
+   "mean_conf": 95.9,
+   "words": [
+    {
+     "t": "I've",
+     "x": 508,
+     "y": 736,
+     "w": 131,
+     "h": 70,
+     "conf": 92.9
+    },
+    {
+     "t": "looked",
+     "x": 665,
+     "y": 737,
+     "w": 261,
+     "h": 69,
+     "conf": 96.1
+    },
+    {
+     "t": "and",
+     "x": 952,
+     "y": 737,
+     "w": 139,
+     "h": 69,
+     "conf": 96.1
+    },
+    {
+     "t": "looked",
+     "x": 1115,
+     "y": 737,
+     "w": 262,
+     "h": 69,
+     "conf": 96.1
+    },
+    {
+     "t": "everywhere",
+     "x": 1403,
+     "y": 737,
+     "w": 453,
+     "h": 91,
+     "conf": 95.8
+    },
+    {
+     "t": "to",
+     "x": 806,
+     "y": 879,
+     "w": 75,
+     "h": 52,
+     "conf": 96.8
+    },
+    {
+     "t": "find",
+     "x": 909,
+     "y": 862,
+     "w": 155,
+     "h": 69,
+     "conf": 95.5
+    },
+    {
+     "t": "another",
+     "x": 1090,
+     "y": 862,
+     "w": 302,
+     "h": 69,
+     "conf": 96.7
+    },
+    {
+     "t": "me.",
+     "x": 1417,
+     "y": 887,
+     "w": 135,
+     "h": 44,
+     "conf": 96.6
+    },
+    {
+     "t": "I",
+     "x": 713,
+     "y": 1115,
+     "w": 23,
+     "h": 65,
+     "conf": 94.8
+    },
+    {
+     "t": "went",
+     "x": 763,
+     "y": 1129,
+     "w": 196,
+     "h": 52,
+     "conf": 96.1
+    },
+    {
+     "t": "down",
+     "x": 986,
+     "y": 1112,
+     "w": 217,
+     "h": 69,
+     "conf": 96.1
+    },
+    {
+     "t": "to",
+     "x": 1229,
+     "y": 1129,
+     "w": 75,
+     "h": 52,
+     "conf": 95.6
+    },
+    {
+     "t": "the",
+     "x": 1332,
+     "y": 1112,
+     "w": 120,
+     "h": 69,
+     "conf": 95.6
+    },
+    {
+     "t": "park",
+     "x": 1479,
+     "y": 1112,
+     "w": 175,
+     "h": 90,
+     "conf": 96.5
+    },
+    {
+     "t": "and",
+     "x": 635,
+     "y": 1237,
+     "w": 139,
+     "h": 69,
+     "conf": 96.2
+    },
+    {
+     "t": "looked",
+     "x": 797,
+     "y": 1237,
+     "w": 262,
+     "h": 69,
+     "conf": 95.1
+    },
+    {
+     "t": "behind",
+     "x": 1083,
+     "y": 1237,
+     "w": 269,
+     "h": 69,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 1377,
+     "y": 1237,
+     "w": 120,
+     "h": 69,
+     "conf": 96.4
+    },
+    {
+     "t": "trees.",
+     "x": 1523,
+     "y": 1254,
+     "w": 202,
+     "h": 52,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_2015080411.jpg",
+   "image_file": "anyone-like-me_interior-spreads_2015080411.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "I looked around, up and down...",
+   "char_count": 31,
+   "word_count": 6,
+   "mean_conf": 92.4,
+   "words": [
+    {
+     "t": "I",
+     "x": 2909,
+     "y": 1895,
+     "w": 23,
+     "h": 65,
+     "conf": 74.7
+    },
+    {
+     "t": "looked",
+     "x": 2959,
+     "y": 1892,
+     "w": 262,
+     "h": 69,
+     "conf": 95.8
+    },
+    {
+     "t": "around,",
+     "x": 3248,
+     "y": 1892,
+     "w": 295,
+     "h": 84,
+     "conf": 96.1
+    },
+    {
+     "t": "up",
+     "x": 3573,
+     "y": 1917,
+     "w": 93,
+     "h": 65,
+     "conf": 96.2
+    },
+    {
+     "t": "and",
+     "x": 3697,
+     "y": 1892,
+     "w": 138,
+     "h": 69,
+     "conf": 96.5
+    },
+    {
+     "t": "down...",
+     "x": 3862,
+     "y": 1892,
+     "w": 316,
+     "h": 69,
+     "conf": 94.9
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_2015080412.jpg",
+   "image_file": "anyone-like-me_interior-spreads_2015080412.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_2015080413.jpg",
+   "image_file": "anyone-like-me_interior-spreads_2015080413.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Fi\n4\nz\n£\nI couldn't find another me\nin any single place.",
+   "char_count": 56,
+   "word_count": 13,
+   "mean_conf": 78.1,
+   "words": [
+    {
+     "t": "Fi",
+     "x": 2469,
+     "y": 196,
+     "w": 8,
+     "h": 18,
+     "conf": 60.9
+    },
+    {
+     "t": "4",
+     "x": 2465,
+     "y": 279,
+     "w": 7,
+     "h": 15,
+     "conf": 92.5
+    },
+    {
+     "t": "z",
+     "x": 2463,
+     "y": 334,
+     "w": 7,
+     "h": 17,
+     "conf": 0.0
+    },
+    {
+     "t": "£",
+     "x": 2463,
+     "y": 351,
+     "w": 6,
+     "h": 9,
+     "conf": 0.0
+    },
+    {
+     "t": "I",
+     "x": 677,
+     "y": 418,
+     "w": 23,
+     "h": 65,
+     "conf": 96.2
+    },
+    {
+     "t": "couldn't",
+     "x": 730,
+     "y": 414,
+     "w": 308,
+     "h": 70,
+     "conf": 92.1
+    },
+    {
+     "t": "find",
+     "x": 1063,
+     "y": 415,
+     "w": 155,
+     "h": 69,
+     "conf": 96.3
+    },
+    {
+     "t": "another",
+     "x": 1245,
+     "y": 415,
+     "w": 300,
+     "h": 69,
+     "conf": 96.2
+    },
+    {
+     "t": "me",
+     "x": 1571,
+     "y": 440,
+     "w": 116,
+     "h": 44,
+     "conf": 96.4
+    },
+    {
+     "t": "in",
+     "x": 818,
+     "y": 545,
+     "w": 74,
+     "h": 64,
+     "conf": 95.7
+    },
+    {
+     "t": "any",
+     "x": 920,
+     "y": 565,
+     "w": 138,
+     "h": 66,
+     "conf": 96.2
+    },
+    {
+     "t": "single",
+     "x": 1082,
+     "y": 540,
+     "w": 221,
+     "h": 91,
+     "conf": 96.4
+    },
+    {
+     "t": "place.",
+     "x": 1328,
+     "y": 540,
+     "w": 213,
+     "h": 90,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_2015080414.jpg",
+   "image_file": "anyone-like-me_interior-spreads_2015080414.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "I'm special, oh it's true",
+   "char_count": 25,
+   "word_count": 5,
+   "mean_conf": 91.6,
+   "words": [
+    {
+     "t": "I'm",
+     "x": 739,
+     "y": 935,
+     "w": 118,
+     "h": 69,
+     "conf": 93.1
+    },
+    {
+     "t": "special,",
+     "x": 886,
+     "y": 936,
+     "w": 273,
+     "h": 90,
+     "conf": 96.0
+    },
+    {
+     "t": "oh",
+     "x": 1189,
+     "y": 936,
+     "w": 97,
+     "h": 69,
+     "conf": 96.0
+    },
+    {
+     "t": "it's",
+     "x": 1313,
+     "y": 930,
+     "w": 101,
+     "h": 118,
+     "conf": 76.6
+    },
+    {
+     "t": "true",
+     "x": 1338,
+     "y": 935,
+     "w": 250,
+     "h": 109,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_interior-spreads_2015080415.jpg",
+   "image_file": "anyone-like-me_interior-spreads_2015080415.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "But not just me, don't you see?\nThere's only one of you!",
+   "char_count": 56,
+   "word_count": 12,
+   "mean_conf": 92.8,
+   "words": [
+    {
+     "t": "But",
+     "x": 597,
+     "y": 812,
+     "w": 135,
+     "h": 65,
+     "conf": 96.5
+    },
+    {
+     "t": "not",
+     "x": 758,
+     "y": 825,
+     "w": 130,
+     "h": 52,
+     "conf": 95.7
+    },
+    {
+     "t": "just",
+     "x": 909,
+     "y": 813,
+     "w": 141,
+     "h": 85,
+     "conf": 96.5
+    },
+    {
+     "t": "me,",
+     "x": 1076,
+     "y": 833,
+     "w": 136,
+     "h": 59,
+     "conf": 96.4
+    },
+    {
+     "t": "don't",
+     "x": 1243,
+     "y": 807,
+     "w": 193,
+     "h": 70,
+     "conf": 95.3
+    },
+    {
+     "t": "you",
+     "x": 1459,
+     "y": 833,
+     "w": 143,
+     "h": 65,
+     "conf": 96.6
+    },
+    {
+     "t": "see?",
+     "x": 1630,
+     "y": 813,
+     "w": 146,
+     "h": 64,
+     "conf": 96.8
+    },
+    {
+     "t": "There's",
+     "x": 727,
+     "y": 932,
+     "w": 283,
+     "h": 70,
+     "conf": 54.2
+    },
+    {
+     "t": "only",
+     "x": 1039,
+     "y": 933,
+     "w": 170,
+     "h": 90,
+     "conf": 96.2
+    },
+    {
+     "t": "one",
+     "x": 1233,
+     "y": 958,
+     "w": 139,
+     "h": 44,
+     "conf": 96.2
+    },
+    {
+     "t": "of",
+     "x": 1400,
+     "y": 933,
+     "w": 85,
+     "h": 69,
+     "conf": 96.7
+    },
+    {
+     "t": "you!",
+     "x": 1495,
+     "y": 939,
+     "w": 163,
+     "h": 85,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_page(n)+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_en_20200616_page17.jpg",
+   "image_file": "anyone-like-me_en_20200616_page17.jpg",
+   "image_width": 1969,
+   "image_height": 1969,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

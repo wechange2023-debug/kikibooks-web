@@ -1,0 +1,884 @@
+{
+ "slug": "come-back-cat",
+ "wp_slug": "come-back-cat",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "come-back-cat_english_front-cover_20140909.jpg",
+   "reason": "cover"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_201409094.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_201409094.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Come b",
+   "char_count": 6,
+   "word_count": 2,
+   "mean_conf": 90.3,
+   "words": [
+    {
+     "t": "Come",
+     "x": 483,
+     "y": 708,
+     "w": 231,
+     "h": 67,
+     "conf": 92.5
+    },
+    {
+     "t": "b",
+     "x": 743,
+     "y": 704,
+     "w": 46,
+     "h": 71,
+     "conf": 88.2
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_201409095.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_201409095.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Sit in your basket. Stay right here!",
+   "char_count": 36,
+   "word_count": 7,
+   "mean_conf": 96.7,
+   "words": [
+    {
+     "t": "Sit",
+     "x": 2848,
+     "y": 1057,
+     "w": 103,
+     "h": 67,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 2979,
+     "y": 1058,
+     "w": 78,
+     "h": 65,
+     "conf": 96.8
+    },
+    {
+     "t": "your",
+     "x": 3084,
+     "y": 1079,
+     "w": 190,
+     "h": 67,
+     "conf": 96.9
+    },
+    {
+     "t": "basket.",
+     "x": 3301,
+     "y": 1053,
+     "w": 275,
+     "h": 71,
+     "conf": 96.6
+    },
+    {
+     "t": "Stay",
+     "x": 3609,
+     "y": 1057,
+     "w": 174,
+     "h": 89,
+     "conf": 96.8
+    },
+    {
+     "t": "right",
+     "x": 3811,
+     "y": 1053,
+     "w": 196,
+     "h": 94,
+     "conf": 96.1
+    },
+    {
+     "t": "here!",
+     "x": 4034,
+     "y": 1053,
+     "w": 199,
+     "h": 71,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_201409096.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_201409096.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Aa hppa\n- 7\nro\nPovrmemet=\nite ton oat Gi\nWi Myst 9 any\ni\nCome back, cat!\nThat's way too high.\nABC Mone",
+   "char_count": 102,
+   "word_count": 24,
+   "mean_conf": 38.0,
+   "words": [
+    {
+     "t": "Aa",
+     "x": 4414,
+     "y": 135,
+     "w": 7,
+     "h": 19,
+     "conf": 11.9
+    },
+    {
+     "t": "hppa",
+     "x": 4411,
+     "y": 169,
+     "w": 14,
+     "h": 143,
+     "conf": 3.1
+    },
+    {
+     "t": "-",
+     "x": 4404,
+     "y": 187,
+     "w": 16,
+     "h": 23,
+     "conf": 0.0
+    },
+    {
+     "t": "7",
+     "x": 4408,
+     "y": 300,
+     "w": 3,
+     "h": 3,
+     "conf": 59.3
+    },
+    {
+     "t": "ro",
+     "x": 4351,
+     "y": 278,
+     "w": 13,
+     "h": 26,
+     "conf": 35.1
+    },
+    {
+     "t": "Povrmemet=",
+     "x": 4337,
+     "y": 312,
+     "w": 77,
+     "h": 13,
+     "conf": 0.0
+    },
+    {
+     "t": "ite",
+     "x": 4417,
+     "y": 343,
+     "w": 8,
+     "h": 52,
+     "conf": 13.7
+    },
+    {
+     "t": "ton",
+     "x": 4397,
+     "y": 437,
+     "w": 38,
+     "h": 26,
+     "conf": 2.6
+    },
+    {
+     "t": "oat",
+     "x": 4397,
+     "y": 472,
+     "w": 38,
+     "h": 26,
+     "conf": 16.0
+    },
+    {
+     "t": "Gi",
+     "x": 4397,
+     "y": 503,
+     "w": 38,
+     "h": 17,
+     "conf": 33.6
+    },
+    {
+     "t": "Wi",
+     "x": 3935,
+     "y": 365,
+     "w": 14,
+     "h": 58,
+     "conf": 15.5
+    },
+    {
+     "t": "Myst",
+     "x": 3923,
+     "y": 432,
+     "w": 26,
+     "h": 114,
+     "conf": 0.0
+    },
+    {
+     "t": "9",
+     "x": 3927,
+     "y": 571,
+     "w": 6,
+     "h": 4,
+     "conf": 24.9
+    },
+    {
+     "t": "any",
+     "x": 3929,
+     "y": 583,
+     "w": 11,
+     "h": 23,
+     "conf": 36.9
+    },
+    {
+     "t": "i",
+     "x": 3920,
+     "y": 554,
+     "w": 7,
+     "h": 17,
+     "conf": 24.5
+    },
+    {
+     "t": "Come",
+     "x": 240,
+     "y": 980,
+     "w": 231,
+     "h": 67,
+     "conf": 96.6
+    },
+    {
+     "t": "back,",
+     "x": 501,
+     "y": 976,
+     "w": 205,
+     "h": 83,
+     "conf": 96.8
+    },
+    {
+     "t": "cat!",
+     "x": 740,
+     "y": 980,
+     "w": 136,
+     "h": 67,
+     "conf": 96.5
+    },
+    {
+     "t": "That's",
+     "x": 386,
+     "y": 1122,
+     "w": 244,
+     "h": 71,
+     "conf": 22.9
+    },
+    {
+     "t": "way",
+     "x": 660,
+     "y": 1148,
+     "w": 170,
+     "h": 67,
+     "conf": 96.7
+    },
+    {
+     "t": "too",
+     "x": 858,
+     "y": 1134,
+     "w": 126,
+     "h": 59,
+     "conf": 96.9
+    },
+    {
+     "t": "high.",
+     "x": 1015,
+     "y": 1122,
+     "w": 199,
+     "h": 94,
+     "conf": 96.6
+    },
+    {
+     "t": "ABC",
+     "x": 2428,
+     "y": 2256,
+     "w": 9,
+     "h": 23,
+     "conf": 18.7
+    },
+    {
+     "t": "Mone",
+     "x": 2424,
+     "y": 2285,
+     "w": 12,
+     "h": 42,
+     "conf": 12.1
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_201409097.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_201409097.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "t go outs\nde.\n1\n3\nDon\n!\nb)\nCome back,",
+   "char_count": 37,
+   "word_count": 11,
+   "mean_conf": 77.7,
+   "words": [
+    {
+     "t": "t",
+     "x": 3991,
+     "y": 1443,
+     "w": 29,
+     "h": 59,
+     "conf": 93.1
+    },
+    {
+     "t": "go",
+     "x": 4036,
+     "y": 1455,
+     "w": 106,
+     "h": 70,
+     "conf": 96.9
+    },
+    {
+     "t": "outs",
+     "x": 4175,
+     "y": 1443,
+     "w": 166,
+     "h": 59,
+     "conf": 96.6
+    },
+    {
+     "t": "de.",
+     "x": 4376,
+     "y": 1431,
+     "w": 107,
+     "h": 71,
+     "conf": 96.0
+    },
+    {
+     "t": "1",
+     "x": 4347,
+     "y": 1436,
+     "w": 24,
+     "h": 65,
+     "conf": 85.5
+    },
+    {
+     "t": "3",
+     "x": 3970,
+     "y": 1431,
+     "w": 14,
+     "h": 23,
+     "conf": 55.2
+    },
+    {
+     "t": "Don",
+     "x": 3757,
+     "y": 1436,
+     "w": 223,
+     "h": 69,
+     "conf": 49.4
+    },
+    {
+     "t": "!",
+     "x": 3737,
+     "y": 1435,
+     "w": 18,
+     "h": 67,
+     "conf": 41.6
+    },
+    {
+     "t": "b)",
+     "x": 3572,
+     "y": 1492,
+     "w": 13,
+     "h": 22,
+     "conf": 48.3
+    },
+    {
+     "t": "Come",
+     "x": 3118,
+     "y": 1435,
+     "w": 232,
+     "h": 67,
+     "conf": 96.3
+    },
+    {
+     "t": "back,",
+     "x": 3379,
+     "y": 1431,
+     "w": 209,
+     "h": 71,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_201409098.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_201409098.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_201409099.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_201409099.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Come back, cat! That’s not yours.",
+   "char_count": 33,
+   "word_count": 6,
+   "mean_conf": 94.7,
+   "words": [
+    {
+     "t": "Come",
+     "x": 505,
+     "y": 915,
+     "w": 231,
+     "h": 67,
+     "conf": 96.5
+    },
+    {
+     "t": "back,",
+     "x": 765,
+     "y": 911,
+     "w": 206,
+     "h": 83,
+     "conf": 96.4
+    },
+    {
+     "t": "cat!",
+     "x": 1004,
+     "y": 915,
+     "w": 139,
+     "h": 67,
+     "conf": 93.1
+    },
+    {
+     "t": "That’s",
+     "x": 1175,
+     "y": 911,
+     "w": 243,
+     "h": 71,
+     "conf": 89.4
+    },
+    {
+     "t": "not",
+     "x": 1449,
+     "y": 923,
+     "w": 133,
+     "h": 59,
+     "conf": 96.8
+    },
+    {
+     "t": "yours.",
+     "x": 1609,
+     "y": 937,
+     "w": 246,
+     "h": 67,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_2014090910.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_2014090910.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Come back, cat!\nWhat have you got?",
+   "char_count": 34,
+   "word_count": 7,
+   "mean_conf": 96.6,
+   "words": [
+    {
+     "t": "Come",
+     "x": 3641,
+     "y": 348,
+     "w": 232,
+     "h": 67,
+     "conf": 96.7
+    },
+    {
+     "t": "back,",
+     "x": 3902,
+     "y": 344,
+     "w": 206,
+     "h": 83,
+     "conf": 96.3
+    },
+    {
+     "t": "cat!",
+     "x": 4142,
+     "y": 348,
+     "w": 136,
+     "h": 67,
+     "conf": 96.7
+    },
+    {
+     "t": "What",
+     "x": 3551,
+     "y": 490,
+     "w": 225,
+     "h": 71,
+     "conf": 96.8
+    },
+    {
+     "t": "have",
+     "x": 3804,
+     "y": 486,
+     "w": 147,
+     "h": 116,
+     "conf": 96.5
+    },
+    {
+     "t": "you",
+     "x": 4011,
+     "y": 486,
+     "w": 126,
+     "h": 116,
+     "conf": 96.5
+    },
+    {
+     "t": "got?",
+     "x": 4203,
+     "y": 493,
+     "w": 166,
+     "h": 91,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_2014090911.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_2014090911.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "~Come back, c : 3 ur friend!",
+   "char_count": 28,
+   "word_count": 7,
+   "mean_conf": 52.9,
+   "words": [
+    {
+     "t": "~Come",
+     "x": 753,
+     "y": 2045,
+     "w": 285,
+     "h": 90,
+     "conf": 14.4
+    },
+    {
+     "t": "back,",
+     "x": 1064,
+     "y": 2039,
+     "w": 277,
+     "h": 104,
+     "conf": 92.9
+    },
+    {
+     "t": "c",
+     "x": 1299,
+     "y": 2035,
+     "w": 48,
+     "h": 112,
+     "conf": 86.0
+    },
+    {
+     "t": ":",
+     "x": 1898,
+     "y": 2136,
+     "w": 4,
+     "h": 4,
+     "conf": 37.1
+    },
+    {
+     "t": "3",
+     "x": 2264,
+     "y": 2135,
+     "w": 5,
+     "h": 1,
+     "conf": 74.0
+    },
+    {
+     "t": "ur",
+     "x": 3678,
+     "y": 2049,
+     "w": 87,
+     "h": 73,
+     "conf": 50.0
+    },
+    {
+     "t": "friend!",
+     "x": 3792,
+     "y": 2042,
+     "w": 324,
+     "h": 102,
+     "conf": 16.2
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_2014090912.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_2014090912.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "2\nHello, cat! Are you back",
+   "char_count": 26,
+   "word_count": 6,
+   "mean_conf": 85.8,
+   "words": [
+    {
+     "t": "2",
+     "x": 4018,
+     "y": 1038,
+     "w": 35,
+     "h": 68,
+     "conf": 36.9
+    },
+    {
+     "t": "Hello,",
+     "x": 3031,
+     "y": 990,
+     "w": 233,
+     "h": 142,
+     "conf": 92.3
+    },
+    {
+     "t": "cat!",
+     "x": 3299,
+     "y": 1039,
+     "w": 137,
+     "h": 68,
+     "conf": 96.0
+    },
+    {
+     "t": "Are",
+     "x": 3470,
+     "y": 1039,
+     "w": 147,
+     "h": 67,
+     "conf": 96.0
+    },
+    {
+     "t": "you",
+     "x": 3647,
+     "y": 1038,
+     "w": 152,
+     "h": 90,
+     "conf": 96.6
+    },
+    {
+     "t": "back",
+     "x": 3825,
+     "y": 1035,
+     "w": 188,
+     "h": 71,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_2014090913.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_2014090913.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_2014090914.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_2014090914.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_interior-spreads_2014090915.jpg",
+   "image_file": "come-back-cat_english_interior-spreads_2014090915.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "ie\nPOD cami raw Bt prions ise\nyrannsn he!\nENA\nAbe aaciaal\nANS\noat",
+   "char_count": 65,
+   "word_count": 14,
+   "mean_conf": 21.3,
+   "words": [
+    {
+     "t": "ie",
+     "x": 4472,
+     "y": 1008,
+     "w": 25,
+     "h": 8,
+     "conf": 37.0
+    },
+    {
+     "t": "POD",
+     "x": 4196,
+     "y": 995,
+     "w": 26,
+     "h": 9,
+     "conf": 24.9
+    },
+    {
+     "t": "cami",
+     "x": 4250,
+     "y": 988,
+     "w": 34,
+     "h": 28,
+     "conf": 0.0
+    },
+    {
+     "t": "raw",
+     "x": 4297,
+     "y": 1001,
+     "w": 26,
+     "h": 6,
+     "conf": 20.1
+    },
+    {
+     "t": "Bt",
+     "x": 4336,
+     "y": 1000,
+     "w": 24,
+     "h": 8,
+     "conf": 20.1
+    },
+    {
+     "t": "prions",
+     "x": 4367,
+     "y": 988,
+     "w": 40,
+     "h": 28,
+     "conf": 0.0
+    },
+    {
+     "t": "ise",
+     "x": 4411,
+     "y": 988,
+     "w": 26,
+     "h": 28,
+     "conf": 51.0
+    },
+    {
+     "t": "yrannsn",
+     "x": 182,
+     "y": 1964,
+     "w": 13,
+     "h": 44,
+     "conf": 0.0
+    },
+    {
+     "t": "he!",
+     "x": 176,
+     "y": 1998,
+     "w": 23,
+     "h": 14,
+     "conf": 34.9
+    },
+    {
+     "t": "ENA",
+     "x": 164,
+     "y": 1896,
+     "w": 28,
+     "h": 80,
+     "conf": 25.3
+    },
+    {
+     "t": "Abe",
+     "x": 103,
+     "y": 1899,
+     "w": 28,
+     "h": 28,
+     "conf": 0.0
+    },
+    {
+     "t": "aaciaal",
+     "x": 103,
+     "y": 1936,
+     "w": 28,
+     "h": 40,
+     "conf": 0.0
+    },
+    {
+     "t": "ANS",
+     "x": 157,
+     "y": 1975,
+     "w": 20,
+     "h": 77,
+     "conf": 44.4
+    },
+    {
+     "t": "oat",
+     "x": 108,
+     "y": 2262,
+     "w": 14,
+     "h": 51,
+     "conf": 40.5
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_pdf-ebook_20140909_Page_18.jpg",
+   "image_file": "come-back-cat_english_pdf-ebook_20140909_Page_18.jpg",
+   "image_width": 1575,
+   "image_height": 1575,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

@@ -1,0 +1,1792 @@
+{
+ "slug": "a-house-for-mouse",
+ "wp_slug": "a-house-for-mouse",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "a-house-for-mouse_pdf-ebook_20140908_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_201409084.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_201409084.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Mouse was looking for a new house.",
+   "char_count": 34,
+   "word_count": 7,
+   "mean_conf": 96.3,
+   "words": [
+    {
+     "t": "Mouse",
+     "x": 518,
+     "y": 1139,
+     "w": 245,
+     "h": 69,
+     "conf": 96.5
+    },
+    {
+     "t": "was",
+     "x": 786,
+     "y": 1166,
+     "w": 145,
+     "h": 42,
+     "conf": 96.8
+    },
+    {
+     "t": "looking",
+     "x": 955,
+     "y": 1133,
+     "w": 277,
+     "h": 99,
+     "conf": 96.7
+    },
+    {
+     "t": "for",
+     "x": 1256,
+     "y": 1133,
+     "w": 101,
+     "h": 74,
+     "conf": 96.8
+    },
+    {
+     "t": "a",
+     "x": 1381,
+     "y": 1167,
+     "w": 34,
+     "h": 41,
+     "conf": 95.4
+    },
+    {
+     "t": "new",
+     "x": 1436,
+     "y": 1166,
+     "w": 158,
+     "h": 42,
+     "conf": 95.4
+    },
+    {
+     "t": "house.",
+     "x": 1616,
+     "y": 1133,
+     "w": 224,
+     "h": 75,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_201409085.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_201409085.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "This looks like a nice house.\nEe lweey,\nSeeeer eres ee\nevreste yo Rahey SBE 4y\ntaceer *\nrarer:\nmyc cacse\nAodinks\ncorereree sie\nseeie Se isisteralgogias\nen\nSaat",
+   "char_count": 159,
+   "word_count": 29,
+   "mean_conf": 26.5,
+   "words": [
+    {
+     "t": "This",
+     "x": 669,
+     "y": 1136,
+     "w": 165,
+     "h": 75,
+     "conf": 96.8
+    },
+    {
+     "t": "looks",
+     "x": 859,
+     "y": 1136,
+     "w": 192,
+     "h": 75,
+     "conf": 94.9
+    },
+    {
+     "t": "like",
+     "x": 1076,
+     "y": 1136,
+     "w": 136,
+     "h": 74,
+     "conf": 96.6
+    },
+    {
+     "t": "a",
+     "x": 1236,
+     "y": 1170,
+     "w": 34,
+     "h": 40,
+     "conf": 96.1
+    },
+    {
+     "t": "nice",
+     "x": 1291,
+     "y": 1146,
+     "w": 150,
+     "h": 64,
+     "conf": 96.1
+    },
+    {
+     "t": "house.",
+     "x": 1463,
+     "y": 1136,
+     "w": 224,
+     "h": 75,
+     "conf": 96.3
+    },
+    {
+     "t": "Ee",
+     "x": 2523,
+     "y": 1512,
+     "w": 21,
+     "h": 28,
+     "conf": 16.2
+    },
+    {
+     "t": "lweey,",
+     "x": 2546,
+     "y": 1512,
+     "w": 47,
+     "h": 28,
+     "conf": 0.0
+    },
+    {
+     "t": "Seeeer",
+     "x": 2532,
+     "y": 1520,
+     "w": 56,
+     "h": 28,
+     "conf": 0.0
+    },
+    {
+     "t": "eres",
+     "x": 2592,
+     "y": 1530,
+     "w": 40,
+     "h": 9,
+     "conf": 21.5
+    },
+    {
+     "t": "ee",
+     "x": 2655,
+     "y": 1531,
+     "w": 4,
+     "h": 5,
+     "conf": 21.5
+    },
+    {
+     "t": "evreste",
+     "x": 2519,
+     "y": 1540,
+     "w": 28,
+     "h": 10,
+     "conf": 0.0
+    },
+    {
+     "t": "yo",
+     "x": 2575,
+     "y": 1541,
+     "w": 23,
+     "h": 9,
+     "conf": 6.5
+    },
+    {
+     "t": "Rahey",
+     "x": 2602,
+     "y": 1539,
+     "w": 50,
+     "h": 10,
+     "conf": 0.0
+    },
+    {
+     "t": "SBE",
+     "x": 2645,
+     "y": 1531,
+     "w": 29,
+     "h": 28,
+     "conf": 0.0
+    },
+    {
+     "t": "4y",
+     "x": 2682,
+     "y": 1539,
+     "w": 15,
+     "h": 7,
+     "conf": 0.0
+    },
+    {
+     "t": "taceer",
+     "x": 2531,
+     "y": 1537,
+     "w": 56,
+     "h": 31,
+     "conf": 0.0
+    },
+    {
+     "t": "*",
+     "x": 2627,
+     "y": 1551,
+     "w": 8,
+     "h": 8,
+     "conf": 44.0
+    },
+    {
+     "t": "rarer:",
+     "x": 2654,
+     "y": 1529,
+     "w": 98,
+     "h": 20,
+     "conf": 0.0
+    },
+    {
+     "t": "myc",
+     "x": 2657,
+     "y": 1548,
+     "w": 31,
+     "h": 20,
+     "conf": 3.8
+    },
+    {
+     "t": "cacse",
+     "x": 2697,
+     "y": 1534,
+     "w": 46,
+     "h": 38,
+     "conf": 0.0
+    },
+    {
+     "t": "Aodinks",
+     "x": 2782,
+     "y": 1540,
+     "w": 43,
+     "h": 11,
+     "conf": 0.0
+    },
+    {
+     "t": "corereree",
+     "x": 2746,
+     "y": 1545,
+     "w": 111,
+     "h": 19,
+     "conf": 0.0
+    },
+    {
+     "t": "sie",
+     "x": 2830,
+     "y": 1538,
+     "w": 31,
+     "h": 33,
+     "conf": 0.0
+    },
+    {
+     "t": "seeie",
+     "x": 2630,
+     "y": 1569,
+     "w": 62,
+     "h": 9,
+     "conf": 0.0
+    },
+    {
+     "t": "Se",
+     "x": 2687,
+     "y": 1556,
+     "w": 23,
+     "h": 37,
+     "conf": 12.6
+    },
+    {
+     "t": "isisteralgogias",
+     "x": 2714,
+     "y": 1560,
+     "w": 133,
+     "h": 29,
+     "conf": 0.0
+    },
+    {
+     "t": "en",
+     "x": 2723,
+     "y": 1582,
+     "w": 23,
+     "h": 8,
+     "conf": 38.4
+    },
+    {
+     "t": "Saat",
+     "x": 3149,
+     "y": 2027,
+     "w": 9,
+     "h": 47,
+     "conf": 25.9
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_201409086.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_201409086.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "“You can come and sleep with me,’ said Puppy.\n“Thank you,” said Mouse.",
+   "char_count": 70,
+   "word_count": 13,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "“You",
+     "x": 332,
+     "y": 1033,
+     "w": 177,
+     "h": 70,
+     "conf": 95.0
+    },
+    {
+     "t": "can",
+     "x": 532,
+     "y": 1061,
+     "w": 120,
+     "h": 42,
+     "conf": 96.5
+    },
+    {
+     "t": "come",
+     "x": 675,
+     "y": 1061,
+     "w": 191,
+     "h": 41,
+     "conf": 96.1
+    },
+    {
+     "t": "and",
+     "x": 889,
+     "y": 1028,
+     "w": 131,
+     "h": 75,
+     "conf": 96.5
+    },
+    {
+     "t": "sleep",
+     "x": 1041,
+     "y": 1028,
+     "w": 185,
+     "h": 99,
+     "conf": 96.8
+    },
+    {
+     "t": "with",
+     "x": 1249,
+     "y": 1028,
+     "w": 179,
+     "h": 75,
+     "conf": 96.6
+    },
+    {
+     "t": "me,’",
+     "x": 1449,
+     "y": 1033,
+     "w": 149,
+     "h": 82,
+     "conf": 91.1
+    },
+    {
+     "t": "said",
+     "x": 1614,
+     "y": 1028,
+     "w": 147,
+     "h": 75,
+     "conf": 95.9
+    },
+    {
+     "t": "Puppy.",
+     "x": 1783,
+     "y": 1034,
+     "w": 248,
+     "h": 93,
+     "conf": 95.3
+    },
+    {
+     "t": "“Thank",
+     "x": 722,
+     "y": 1261,
+     "w": 275,
+     "h": 75,
+     "conf": 95.6
+    },
+    {
+     "t": "you,”",
+     "x": 1017,
+     "y": 1266,
+     "w": 178,
+     "h": 94,
+     "conf": 96.1
+    },
+    {
+     "t": "said",
+     "x": 1211,
+     "y": 1261,
+     "w": 147,
+     "h": 75,
+     "conf": 96.6
+    },
+    {
+     "t": "Mouse.",
+     "x": 1381,
+     "y": 1267,
+     "w": 259,
+     "h": 69,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_201409087.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_201409087.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "~\nme)\nme)\n5\n&\nme)\nc\nfae}\nPN\n(So)\nc\naj\nO\n—O\n0)\no\nS\n~n\n&\nfas}\n0)\na\nme)\na\n0)\nval\naj\nS\nThat night,",
+   "char_count": 94,
+   "word_count": 30,
+   "mean_conf": 45.8,
+   "words": [
+    {
+     "t": "~",
+     "x": 2073,
+     "y": 1179,
+     "w": 52,
+     "h": 65,
+     "conf": 57.9
+    },
+    {
+     "t": "me)",
+     "x": 2024,
+     "y": 1145,
+     "w": 48,
+     "h": 75,
+     "conf": 51.0
+    },
+    {
+     "t": "me)",
+     "x": 1974,
+     "y": 1145,
+     "w": 48,
+     "h": 76,
+     "conf": 57.2
+    },
+    {
+     "t": "5",
+     "x": 1928,
+     "y": 1178,
+     "w": 43,
+     "h": 42,
+     "conf": 92.8
+    },
+    {
+     "t": "&",
+     "x": 1861,
+     "y": 1178,
+     "w": 66,
+     "h": 40,
+     "conf": 56.0
+    },
+    {
+     "t": "me)",
+     "x": 1792,
+     "y": 1145,
+     "w": 47,
+     "h": 75,
+     "conf": 24.1
+    },
+    {
+     "t": "c",
+     "x": 1745,
+     "y": 1178,
+     "w": 43,
+     "h": 40,
+     "conf": 45.6
+    },
+    {
+     "t": "fae}",
+     "x": 1709,
+     "y": 1179,
+     "w": 34,
+     "h": 41,
+     "conf": 45.3
+    },
+    {
+     "t": "PN",
+     "x": 1641,
+     "y": 1179,
+     "w": 44,
+     "h": 65,
+     "conf": 77.1
+    },
+    {
+     "t": "(So)",
+     "x": 1603,
+     "y": 1179,
+     "w": 36,
+     "h": 40,
+     "conf": 0.0
+    },
+    {
+     "t": "c",
+     "x": 1556,
+     "y": 1178,
+     "w": 43,
+     "h": 40,
+     "conf": 45.3
+    },
+    {
+     "t": "aj",
+     "x": 1511,
+     "y": 1178,
+     "w": 42,
+     "h": 42,
+     "conf": 23.8
+    },
+    {
+     "t": "O",
+     "x": 1466,
+     "y": 1179,
+     "w": 42,
+     "h": 40,
+     "conf": 71.4
+    },
+    {
+     "t": "—O",
+     "x": 1415,
+     "y": 1145,
+     "w": 46,
+     "h": 74,
+     "conf": 52.9
+    },
+    {
+     "t": "0)",
+     "x": 1355,
+     "y": 1179,
+     "w": 37,
+     "h": 40,
+     "conf": 66.7
+    },
+    {
+     "t": "o",
+     "x": 1280,
+     "y": 1178,
+     "w": 71,
+     "h": 41,
+     "conf": 25.1
+    },
+    {
+     "t": "S",
+     "x": 1205,
+     "y": 1179,
+     "w": 75,
+     "h": 41,
+     "conf": 16.0
+    },
+    {
+     "t": "~n",
+     "x": 1152,
+     "y": 1178,
+     "w": 29,
+     "h": 42,
+     "conf": 4.8
+    },
+    {
+     "t": "&",
+     "x": 1083,
+     "y": 1178,
+     "w": 66,
+     "h": 40,
+     "conf": 44.9
+    },
+    {
+     "t": "fas}",
+     "x": 1046,
+     "y": 1179,
+     "w": 34,
+     "h": 41,
+     "conf": 40.7
+    },
+    {
+     "t": "0)",
+     "x": 1004,
+     "y": 1179,
+     "w": 37,
+     "h": 40,
+     "conf": 45.1
+    },
+    {
+     "t": "a",
+     "x": 969,
+     "y": 1178,
+     "w": 31,
+     "h": 40,
+     "conf": 24.7
+    },
+    {
+     "t": "me)",
+     "x": 918,
+     "y": 1145,
+     "w": 48,
+     "h": 76,
+     "conf": 12.0
+    },
+    {
+     "t": "a",
+     "x": 846,
+     "y": 1150,
+     "w": 48,
+     "h": 70,
+     "conf": 52.7
+    },
+    {
+     "t": "0)",
+     "x": 800,
+     "y": 1179,
+     "w": 37,
+     "h": 40,
+     "conf": 65.4
+    },
+    {
+     "t": "val",
+     "x": 765,
+     "y": 1178,
+     "w": 29,
+     "h": 42,
+     "conf": 48.2
+    },
+    {
+     "t": "aj",
+     "x": 719,
+     "y": 1178,
+     "w": 43,
+     "h": 42,
+     "conf": 22.7
+    },
+    {
+     "t": "S",
+     "x": 592,
+     "y": 1151,
+     "w": 123,
+     "h": 68,
+     "conf": 10.6
+    },
+    {
+     "t": "That",
+     "x": 160,
+     "y": 1145,
+     "w": 175,
+     "h": 75,
+     "conf": 96.8
+    },
+    {
+     "t": "night,",
+     "x": 356,
+     "y": 1145,
+     "w": 208,
+     "h": 99,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_201409088.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_201409088.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "“You can come and sleep with me,’ said Parrot.\n“Thank you,” said Mouse.\nieee i\na, i, j i | !\nHitt:\nrf,\nFi\nire\ni iJ\ni\nHH\n,\nHine\nIa\n'",
+   "char_count": 131,
+   "word_count": 33,
+   "mean_conf": 55.3,
+   "words": [
+    {
+     "t": "“You",
+     "x": 329,
+     "y": 1033,
+     "w": 178,
+     "h": 70,
+     "conf": 95.9
+    },
+    {
+     "t": "can",
+     "x": 529,
+     "y": 1061,
+     "w": 121,
+     "h": 42,
+     "conf": 96.7
+    },
+    {
+     "t": "come",
+     "x": 672,
+     "y": 1061,
+     "w": 191,
+     "h": 41,
+     "conf": 96.5
+    },
+    {
+     "t": "and",
+     "x": 887,
+     "y": 1028,
+     "w": 130,
+     "h": 75,
+     "conf": 96.3
+    },
+    {
+     "t": "sleep",
+     "x": 1039,
+     "y": 1028,
+     "w": 185,
+     "h": 99,
+     "conf": 96.8
+    },
+    {
+     "t": "with",
+     "x": 1247,
+     "y": 1028,
+     "w": 178,
+     "h": 75,
+     "conf": 96.8
+    },
+    {
+     "t": "me,’",
+     "x": 1447,
+     "y": 1033,
+     "w": 149,
+     "h": 82,
+     "conf": 86.7
+    },
+    {
+     "t": "said",
+     "x": 1611,
+     "y": 1028,
+     "w": 148,
+     "h": 75,
+     "conf": 93.5
+    },
+    {
+     "t": "Parrot.",
+     "x": 1780,
+     "y": 1034,
+     "w": 254,
+     "h": 69,
+     "conf": 95.7
+    },
+    {
+     "t": "“Thank",
+     "x": 722,
+     "y": 1261,
+     "w": 275,
+     "h": 75,
+     "conf": 94.5
+    },
+    {
+     "t": "you,”",
+     "x": 1017,
+     "y": 1266,
+     "w": 178,
+     "h": 94,
+     "conf": 96.5
+    },
+    {
+     "t": "said",
+     "x": 1211,
+     "y": 1261,
+     "w": 147,
+     "h": 75,
+     "conf": 96.6
+    },
+    {
+     "t": "Mouse.",
+     "x": 1381,
+     "y": 1267,
+     "w": 259,
+     "h": 69,
+     "conf": 96.7
+    },
+    {
+     "t": "ieee",
+     "x": 3234,
+     "y": 1767,
+     "w": 138,
+     "h": 43,
+     "conf": 11.2
+    },
+    {
+     "t": "i",
+     "x": 3378,
+     "y": 1773,
+     "w": 18,
+     "h": 61,
+     "conf": 59.1
+    },
+    {
+     "t": "a,",
+     "x": 3163,
+     "y": 1816,
+     "w": 242,
+     "h": 126,
+     "conf": 38.8
+    },
+    {
+     "t": "i,",
+     "x": 3432,
+     "y": 1876,
+     "w": 37,
+     "h": 66,
+     "conf": 50.5
+    },
+    {
+     "t": "j",
+     "x": 3492,
+     "y": 1942,
+     "w": 9,
+     "h": 24,
+     "conf": 0.0
+    },
+    {
+     "t": "i",
+     "x": 3538,
+     "y": 1867,
+     "w": 42,
+     "h": 100,
+     "conf": 42.5
+    },
+    {
+     "t": "|",
+     "x": 3607,
+     "y": 1874,
+     "w": 7,
+     "h": 22,
+     "conf": 81.8
+    },
+    {
+     "t": "!",
+     "x": 3712,
+     "y": 1901,
+     "w": 6,
+     "h": 13,
+     "conf": 2.3
+    },
+    {
+     "t": "Hitt:",
+     "x": 3666,
+     "y": 1814,
+     "w": 44,
+     "h": 21,
+     "conf": 30.3
+    },
+    {
+     "t": "rf,",
+     "x": 3701,
+     "y": 1841,
+     "w": 7,
+     "h": 14,
+     "conf": 0.0
+    },
+    {
+     "t": "Fi",
+     "x": 3670,
+     "y": 1859,
+     "w": 9,
+     "h": 13,
+     "conf": 29.2
+    },
+    {
+     "t": "ire",
+     "x": 3724,
+     "y": 1732,
+     "w": 36,
+     "h": 42,
+     "conf": 22.3
+    },
+    {
+     "t": "i",
+     "x": 3725,
+     "y": 1774,
+     "w": 2,
+     "h": 2,
+     "conf": 52.8
+    },
+    {
+     "t": "iJ",
+     "x": 3734,
+     "y": 1788,
+     "w": 12,
+     "h": 24,
+     "conf": 72.0
+    },
+    {
+     "t": "i",
+     "x": 3655,
+     "y": 1771,
+     "w": 12,
+     "h": 31,
+     "conf": 62.7
+    },
+    {
+     "t": "HH",
+     "x": 3608,
+     "y": 1855,
+     "w": 9,
+     "h": 16,
+     "conf": 11.6
+    },
+    {
+     "t": ",",
+     "x": 3662,
+     "y": 1890,
+     "w": 8,
+     "h": 14,
+     "conf": 0.0
+    },
+    {
+     "t": "Hine",
+     "x": 3636,
+     "y": 1935,
+     "w": 112,
+     "h": 33,
+     "conf": 0.0
+    },
+    {
+     "t": "Ia",
+     "x": 3614,
+     "y": 1993,
+     "w": 47,
+     "h": 20,
+     "conf": 19.1
+    },
+    {
+     "t": "'",
+     "x": 3262,
+     "y": 2019,
+     "w": 9,
+     "h": 36,
+     "conf": 0.0
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_201409089.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_201409089.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "That night, Mouse’s dreams were noisy and wild.",
+   "char_count": 47,
+   "word_count": 8,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "That",
+     "x": 268,
+     "y": 1134,
+     "w": 174,
+     "h": 74,
+     "conf": 96.9
+    },
+    {
+     "t": "night,",
+     "x": 465,
+     "y": 1134,
+     "w": 207,
+     "h": 99,
+     "conf": 93.2
+    },
+    {
+     "t": "Mouse’s",
+     "x": 701,
+     "y": 1139,
+     "w": 300,
+     "h": 70,
+     "conf": 91.4
+    },
+    {
+     "t": "dreams",
+     "x": 1027,
+     "y": 1134,
+     "w": 260,
+     "h": 75,
+     "conf": 96.4
+    },
+    {
+     "t": "were",
+     "x": 1312,
+     "y": 1168,
+     "w": 188,
+     "h": 41,
+     "conf": 96.0
+    },
+    {
+     "t": "noisy",
+     "x": 1522,
+     "y": 1144,
+     "w": 196,
+     "h": 89,
+     "conf": 96.0
+    },
+    {
+     "t": "and",
+     "x": 1741,
+     "y": 1134,
+     "w": 129,
+     "h": 75,
+     "conf": 96.9
+    },
+    {
+     "t": "wild.",
+     "x": 1893,
+     "y": 1134,
+     "w": 195,
+     "h": 75,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_2014090810.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_2014090810.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "“You can come and sleep with me,’ said Fish.\n“Thank you,” said Mouse.",
+   "char_count": 69,
+   "word_count": 13,
+   "mean_conf": 95.6,
+   "words": [
+    {
+     "t": "“You",
+     "x": 367,
+     "y": 1033,
+     "w": 179,
+     "h": 70,
+     "conf": 93.7
+    },
+    {
+     "t": "can",
+     "x": 568,
+     "y": 1061,
+     "w": 120,
+     "h": 42,
+     "conf": 96.4
+    },
+    {
+     "t": "come",
+     "x": 711,
+     "y": 1061,
+     "w": 191,
+     "h": 41,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 924,
+     "y": 1028,
+     "w": 132,
+     "h": 76,
+     "conf": 96.5
+    },
+    {
+     "t": "sleep",
+     "x": 1077,
+     "y": 1028,
+     "w": 185,
+     "h": 99,
+     "conf": 96.9
+    },
+    {
+     "t": "with",
+     "x": 1284,
+     "y": 1028,
+     "w": 179,
+     "h": 75,
+     "conf": 96.3
+    },
+    {
+     "t": "me,’",
+     "x": 1485,
+     "y": 1033,
+     "w": 149,
+     "h": 83,
+     "conf": 91.9
+    },
+    {
+     "t": "said",
+     "x": 1650,
+     "y": 1028,
+     "w": 147,
+     "h": 76,
+     "conf": 93.8
+    },
+    {
+     "t": "Fish.",
+     "x": 1819,
+     "y": 1028,
+     "w": 176,
+     "h": 76,
+     "conf": 96.5
+    },
+    {
+     "t": "“Thank",
+     "x": 722,
+     "y": 1261,
+     "w": 275,
+     "h": 75,
+     "conf": 94.5
+    },
+    {
+     "t": "you,”",
+     "x": 1016,
+     "y": 1266,
+     "w": 179,
+     "h": 94,
+     "conf": 96.5
+    },
+    {
+     "t": "said",
+     "x": 1211,
+     "y": 1261,
+     "w": 147,
+     "h": 76,
+     "conf": 96.6
+    },
+    {
+     "t": "Mouse.",
+     "x": 1381,
+     "y": 1267,
+     "w": 259,
+     "h": 69,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_2014090811.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_2014090811.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "That night, Mouse’s dreams were cold and wet.",
+   "char_count": 45,
+   "word_count": 8,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "That",
+     "x": 305,
+     "y": 1144,
+     "w": 174,
+     "h": 74,
+     "conf": 94.5
+    },
+    {
+     "t": "night,",
+     "x": 502,
+     "y": 1140,
+     "w": 207,
+     "h": 107,
+     "conf": 96.3
+    },
+    {
+     "t": "Mouse’s",
+     "x": 737,
+     "y": 1149,
+     "w": 300,
+     "h": 70,
+     "conf": 92.5
+    },
+    {
+     "t": "dreams",
+     "x": 1064,
+     "y": 1144,
+     "w": 260,
+     "h": 75,
+     "conf": 96.0
+    },
+    {
+     "t": "were",
+     "x": 1349,
+     "y": 1177,
+     "w": 188,
+     "h": 42,
+     "conf": 95.8
+    },
+    {
+     "t": "cold",
+     "x": 1559,
+     "y": 1144,
+     "w": 157,
+     "h": 75,
+     "conf": 96.6
+    },
+    {
+     "t": "and",
+     "x": 1740,
+     "y": 1144,
+     "w": 129,
+     "h": 75,
+     "conf": 96.2
+    },
+    {
+     "t": "wet.",
+     "x": 1892,
+     "y": 1169,
+     "w": 159,
+     "h": 50,
+     "conf": 95.7
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_2014090812.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_2014090812.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Mouse needed somewhere warm and dry.",
+   "char_count": 36,
+   "word_count": 6,
+   "mean_conf": 95.6,
+   "words": [
+    {
+     "t": "Mouse",
+     "x": 415,
+     "y": 1146,
+     "w": 244,
+     "h": 91,
+     "conf": 96.8
+    },
+    {
+     "t": "needed",
+     "x": 681,
+     "y": 1144,
+     "w": 268,
+     "h": 75,
+     "conf": 96.7
+    },
+    {
+     "t": "somewhere",
+     "x": 970,
+     "y": 1140,
+     "w": 423,
+     "h": 96,
+     "conf": 96.8
+    },
+    {
+     "t": "warm",
+     "x": 1416,
+     "y": 1177,
+     "w": 217,
+     "h": 42,
+     "conf": 92.2
+    },
+    {
+     "t": "and",
+     "x": 1655,
+     "y": 1144,
+     "w": 131,
+     "h": 75,
+     "conf": 96.3
+    },
+    {
+     "t": "dry.",
+     "x": 1808,
+     "y": 1140,
+     "w": 136,
+     "h": 107,
+     "conf": 94.6
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_2014090813.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_2014090813.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Pyotr\nwe\nA\ni Biv rf we § we Pee\n“alg @ ate '.\nEa\nSw,\n%\nte\nagi\nCC\nBES See\nA",
+   "char_count": 74,
+   "word_count": 23,
+   "mean_conf": 32.2,
+   "words": [
+    {
+     "t": "Pyotr",
+     "x": 3887,
+     "y": 312,
+     "w": 89,
+     "h": 377,
+     "conf": 0.0
+    },
+    {
+     "t": "we",
+     "x": 3657,
+     "y": 201,
+     "w": 39,
+     "h": 81,
+     "conf": 34.3
+    },
+    {
+     "t": "A",
+     "x": 3591,
+     "y": 259,
+     "w": 25,
+     "h": 23,
+     "conf": 31.2
+    },
+    {
+     "t": "i",
+     "x": 3665,
+     "y": 415,
+     "w": 3,
+     "h": 2,
+     "conf": 9.9
+    },
+    {
+     "t": "Biv",
+     "x": 3658,
+     "y": 515,
+     "w": 2,
+     "h": 12,
+     "conf": 41.7
+    },
+    {
+     "t": "rf",
+     "x": 3653,
+     "y": 804,
+     "w": 64,
+     "h": 59,
+     "conf": 38.8
+    },
+    {
+     "t": "we",
+     "x": 3653,
+     "y": 889,
+     "w": 64,
+     "h": 65,
+     "conf": 67.7
+    },
+    {
+     "t": "§",
+     "x": 3670,
+     "y": 980,
+     "w": 40,
+     "h": 18,
+     "conf": 21.8
+    },
+    {
+     "t": "we",
+     "x": 3671,
+     "y": 1022,
+     "w": 28,
+     "h": 65,
+     "conf": 67.5
+    },
+    {
+     "t": "Pee",
+     "x": 3670,
+     "y": 1172,
+     "w": 34,
+     "h": 86,
+     "conf": 24.0
+    },
+    {
+     "t": "“alg",
+     "x": 3576,
+     "y": 285,
+     "w": 5,
+     "h": 49,
+     "conf": 53.1
+    },
+    {
+     "t": "@",
+     "x": 3567,
+     "y": 395,
+     "w": 15,
+     "h": 2,
+     "conf": 35.9
+    },
+    {
+     "t": "ate",
+     "x": 3566,
+     "y": 413,
+     "w": 45,
+     "h": 105,
+     "conf": 38.1
+    },
+    {
+     "t": "'.",
+     "x": 3590,
+     "y": 559,
+     "w": 2,
+     "h": 2,
+     "conf": 0.0
+    },
+    {
+     "t": "Ea",
+     "x": 1806,
+     "y": 389,
+     "w": 29,
+     "h": 18,
+     "conf": 0.0
+    },
+    {
+     "t": "Sw,",
+     "x": 1724,
+     "y": 390,
+     "w": 36,
+     "h": 38,
+     "conf": 1.1
+    },
+    {
+     "t": "%",
+     "x": 1706,
+     "y": 402,
+     "w": 16,
+     "h": 18,
+     "conf": 67.7
+    },
+    {
+     "t": "te",
+     "x": 1687,
+     "y": 422,
+     "w": 85,
+     "h": 85,
+     "conf": 67.0
+    },
+    {
+     "t": "agi",
+     "x": 1719,
+     "y": 347,
+     "w": 23,
+     "h": 37,
+     "conf": 36.4
+    },
+    {
+     "t": "CC",
+     "x": 1590,
+     "y": 304,
+     "w": 119,
+     "h": 930,
+     "conf": 34.2
+    },
+    {
+     "t": "BES",
+     "x": 1352,
+     "y": 560,
+     "w": 158,
+     "h": 270,
+     "conf": 11.6
+    },
+    {
+     "t": "See",
+     "x": 1293,
+     "y": 916,
+     "w": 219,
+     "h": 340,
+     "conf": 9.3
+    },
+    {
+     "t": "A",
+     "x": 1208,
+     "y": 796,
+     "w": 24,
+     "h": 21,
+     "conf": 48.3
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_2014090814.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_2014090814.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "Mouse found a bookshelf nearby.\naE a OE SE LPL\nMe\nEg",
+   "char_count": 52,
+   "word_count": 12,
+   "mean_conf": 59.8,
+   "words": [
+    {
+     "t": "Mouse",
+     "x": 584,
+     "y": 1142,
+     "w": 243,
+     "h": 69,
+     "conf": 95.8
+    },
+    {
+     "t": "found",
+     "x": 850,
+     "y": 1136,
+     "w": 210,
+     "h": 75,
+     "conf": 97.0
+    },
+    {
+     "t": "a",
+     "x": 1083,
+     "y": 1170,
+     "w": 34,
+     "h": 40,
+     "conf": 96.1
+    },
+    {
+     "t": "bookshelf",
+     "x": 1139,
+     "y": 1136,
+     "w": 367,
+     "h": 75,
+     "conf": 96.1
+    },
+    {
+     "t": "nearby.",
+     "x": 1520,
+     "y": 1136,
+     "w": 255,
+     "h": 99,
+     "conf": 96.7
+    },
+    {
+     "t": "aE",
+     "x": 3439,
+     "y": 1451,
+     "w": 97,
+     "h": 313,
+     "conf": 21.0
+    },
+    {
+     "t": "a",
+     "x": 3438,
+     "y": 1310,
+     "w": 91,
+     "h": 109,
+     "conf": 25.1
+    },
+    {
+     "t": "OE",
+     "x": 3439,
+     "y": 1020,
+     "w": 93,
+     "h": 237,
+     "conf": 40.4
+    },
+    {
+     "t": "SE",
+     "x": 3453,
+     "y": 867,
+     "w": 75,
+     "h": 111,
+     "conf": 32.4
+    },
+    {
+     "t": "LPL",
+     "x": 3440,
+     "y": 204,
+     "w": 90,
+     "h": 496,
+     "conf": 24.6
+    },
+    {
+     "t": "Me",
+     "x": 3206,
+     "y": 1854,
+     "w": 36,
+     "h": 40,
+     "conf": 53.4
+    },
+    {
+     "t": "Eg",
+     "x": 3332,
+     "y": 1886,
+     "w": 34,
+     "h": 37,
+     "conf": 39.1
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_interior-spreads_2014090815.jpg",
+   "image_file": "a-house-for-mouse_interior-spreads_2014090815.jpg",
+   "image_width": 4725,
+   "image_height": 2363,
+   "ocr_text": "a\nte.\nfe\nbid\nThat night, Mouse had warm and cosy dreams.",
+   "char_count": 56,
+   "word_count": 12,
+   "mean_conf": 78.1,
+   "words": [
+    {
+     "t": "a",
+     "x": 2427,
+     "y": 671,
+     "w": 22,
+     "h": 27,
+     "conf": 18.8
+    },
+    {
+     "t": "te.",
+     "x": 3805,
+     "y": 880,
+     "w": 24,
+     "h": 22,
+     "conf": 51.3
+    },
+    {
+     "t": "fe",
+     "x": 3781,
+     "y": 916,
+     "w": 25,
+     "h": 16,
+     "conf": 42.7
+    },
+    {
+     "t": "bid",
+     "x": 3788,
+     "y": 934,
+     "w": 24,
+     "h": 18,
+     "conf": 51.1
+    },
+    {
+     "t": "That",
+     "x": 323,
+     "y": 1144,
+     "w": 175,
+     "h": 74,
+     "conf": 96.8
+    },
+    {
+     "t": "night,",
+     "x": 520,
+     "y": 1144,
+     "w": 207,
+     "h": 99,
+     "conf": 96.7
+    },
+    {
+     "t": "Mouse",
+     "x": 756,
+     "y": 1150,
+     "w": 244,
+     "h": 69,
+     "conf": 96.4
+    },
+    {
+     "t": "had",
+     "x": 1021,
+     "y": 1144,
+     "w": 133,
+     "h": 75,
+     "conf": 97.0
+    },
+    {
+     "t": "warm",
+     "x": 1177,
+     "y": 1177,
+     "w": 216,
+     "h": 42,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 1416,
+     "y": 1144,
+     "w": 129,
+     "h": 75,
+     "conf": 96.4
+    },
+    {
+     "t": "cosy",
+     "x": 1568,
+     "y": 1177,
+     "w": 163,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "dreams.",
+     "x": 1755,
+     "y": 1144,
+     "w": 277,
+     "h": 75,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2019/11/a-house-for-mouse_pdf-ebook_20140908_Page_18.jpg",
+   "image_file": "a-house-for-mouse_pdf-ebook_20140908_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "Good night, Mouse.",
+   "char_count": 18,
+   "word_count": 3,
+   "mean_conf": 96.9,
+   "words": [
+    {
+     "t": "Good",
+     "x": 278,
+     "y": 466,
+     "w": 71,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "night,",
+     "x": 357,
+     "y": 466,
+     "w": 69,
+     "h": 33,
+     "conf": 97.0
+    },
+    {
+     "t": "Mouse.",
+     "x": 435,
+     "y": 467,
+     "w": 87,
+     "h": 23,
+     "conf": 97.0
+    }
+   ]
+  }
+ ]
+}

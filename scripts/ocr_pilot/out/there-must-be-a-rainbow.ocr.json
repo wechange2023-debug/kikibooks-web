@@ -1,0 +1,2475 @@
+{
+ "slug": "there-must-be-a-rainbow",
+ "wp_slug": "there-must-be-a-rainbow",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "there-must-be-a-rainbow_front-cover.jpg",
+   "reason": "cover"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_05.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Nestled in the Kingdom of the Zulu is\na magnificent place called the Valley.",
+   "char_count": 76,
+   "word_count": 14,
+   "mean_conf": 92.8,
+   "words": [
+    {
+     "t": "Nestled",
+     "x": 80,
+     "y": 364,
+     "w": 96,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "in",
+     "x": 185,
+     "y": 365,
+     "w": 25,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 219,
+     "y": 364,
+     "w": 39,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "Kingdom",
+     "x": 268,
+     "y": 364,
+     "w": 121,
+     "h": 29,
+     "conf": 95.6
+    },
+    {
+     "t": "of",
+     "x": 399,
+     "y": 364,
+     "w": 28,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 432,
+     "y": 364,
+     "w": 40,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "Zulu",
+     "x": 481,
+     "y": 364,
+     "w": 60,
+     "h": 22,
+     "conf": 96.0
+    },
+    {
+     "t": "is",
+     "x": 550,
+     "y": 365,
+     "w": 19,
+     "h": 21,
+     "conf": 97.0
+    },
+    {
+     "t": "a",
+     "x": 80,
+     "y": 412,
+     "w": 12,
+     "h": 14,
+     "conf": 70.3
+    },
+    {
+     "t": "magnificent",
+     "x": 101,
+     "y": 404,
+     "w": 154,
+     "h": 29,
+     "conf": 70.3
+    },
+    {
+     "t": "place",
+     "x": 264,
+     "y": 404,
+     "w": 64,
+     "h": 29,
+     "conf": 96.9
+    },
+    {
+     "t": "called",
+     "x": 337,
+     "y": 404,
+     "w": 72,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 418,
+     "y": 404,
+     "w": 39,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "Valley.",
+     "x": 467,
+     "y": 404,
+     "w": 87,
+     "h": 29,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_06.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "A little girl called Jabulile lives here. Jabulile\nwas always a happy child. She was also\ncurious, and full of questions about life.\nEverything fascinated her.",
+   "char_count": 159,
+   "word_count": 26,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "A",
+     "x": 76,
+     "y": 300,
+     "w": 13,
+     "h": 37,
+     "conf": 94.1
+    },
+    {
+     "t": "little",
+     "x": 108,
+     "y": 304,
+     "w": 59,
+     "h": 22,
+     "conf": 94.1
+    },
+    {
+     "t": "girl",
+     "x": 177,
+     "y": 304,
+     "w": 43,
+     "h": 29,
+     "conf": 96.9
+    },
+    {
+     "t": "called",
+     "x": 229,
+     "y": 304,
+     "w": 72,
+     "h": 22,
+     "conf": 93.2
+    },
+    {
+     "t": "Jabulile",
+     "x": 306,
+     "y": 304,
+     "w": 98,
+     "h": 29,
+     "conf": 93.1
+    },
+    {
+     "t": "lives",
+     "x": 413,
+     "y": 304,
+     "w": 58,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "here.",
+     "x": 480,
+     "y": 304,
+     "w": 62,
+     "h": 22,
+     "conf": 93.1
+    },
+    {
+     "t": "Jabulile",
+     "x": 548,
+     "y": 304,
+     "w": 99,
+     "h": 29,
+     "conf": 93.0
+    },
+    {
+     "t": "was",
+     "x": 79,
+     "y": 352,
+     "w": 48,
+     "h": 14,
+     "conf": 92.6
+    },
+    {
+     "t": "always",
+     "x": 137,
+     "y": 344,
+     "w": 84,
+     "h": 29,
+     "conf": 96.2
+    },
+    {
+     "t": "a",
+     "x": 230,
+     "y": 352,
+     "w": 12,
+     "h": 14,
+     "conf": 96.2
+    },
+    {
+     "t": "happy",
+     "x": 251,
+     "y": 344,
+     "w": 79,
+     "h": 29,
+     "conf": 96.5
+    },
+    {
+     "t": "child.",
+     "x": 338,
+     "y": 344,
+     "w": 68,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "She",
+     "x": 417,
+     "y": 344,
+     "w": 45,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "was",
+     "x": 470,
+     "y": 352,
+     "w": 49,
+     "h": 14,
+     "conf": 96.4
+    },
+    {
+     "t": "also",
+     "x": 528,
+     "y": 344,
+     "w": 48,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "curious,",
+     "x": 80,
+     "y": 385,
+     "w": 101,
+     "h": 26,
+     "conf": 96.1
+    },
+    {
+     "t": "and",
+     "x": 191,
+     "y": 384,
+     "w": 47,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "full",
+     "x": 246,
+     "y": 384,
+     "w": 42,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "of",
+     "x": 297,
+     "y": 384,
+     "w": 28,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "questions",
+     "x": 331,
+     "y": 385,
+     "w": 121,
+     "h": 28,
+     "conf": 96.2
+    },
+    {
+     "t": "about",
+     "x": 462,
+     "y": 384,
+     "w": 72,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "life.",
+     "x": 542,
+     "y": 384,
+     "w": 46,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "Everything",
+     "x": 80,
+     "y": 464,
+     "w": 142,
+     "h": 29,
+     "conf": 96.7
+    },
+    {
+     "t": "fascinated",
+     "x": 232,
+     "y": 464,
+     "w": 128,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "her.",
+     "x": 369,
+     "y": 464,
+     "w": 49,
+     "h": 22,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_07.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Jabulile’s father was a mielie farmer.\nHer mother was a teacher. They taught\nher to dream big dreams. Jabulile’s\nbiggest dream was to help people.",
+   "char_count": 146,
+   "word_count": 25,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "Jabulile’s",
+     "x": 76,
+     "y": 323,
+     "w": 115,
+     "h": 30,
+     "conf": 89.8
+    },
+    {
+     "t": "father",
+     "x": 201,
+     "y": 324,
+     "w": 76,
+     "h": 22,
+     "conf": 96.0
+    },
+    {
+     "t": "was",
+     "x": 284,
+     "y": 332,
+     "w": 49,
+     "h": 14,
+     "conf": 95.9
+    },
+    {
+     "t": "a",
+     "x": 342,
+     "y": 332,
+     "w": 12,
+     "h": 14,
+     "conf": 93.2
+    },
+    {
+     "t": "mielie",
+     "x": 364,
+     "y": 324,
+     "w": 77,
+     "h": 22,
+     "conf": 92.7
+    },
+    {
+     "t": "farmer.",
+     "x": 451,
+     "y": 324,
+     "w": 93,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "Her",
+     "x": 80,
+     "y": 365,
+     "w": 48,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "mother",
+     "x": 137,
+     "y": 364,
+     "w": 95,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "was",
+     "x": 240,
+     "y": 371,
+     "w": 48,
+     "h": 15,
+     "conf": 96.5
+    },
+    {
+     "t": "a",
+     "x": 297,
+     "y": 372,
+     "w": 12,
+     "h": 14,
+     "conf": 95.8
+    },
+    {
+     "t": "teacher.",
+     "x": 319,
+     "y": 364,
+     "w": 99,
+     "h": 23,
+     "conf": 95.8
+    },
+    {
+     "t": "They",
+     "x": 429,
+     "y": 364,
+     "w": 67,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "taught",
+     "x": 504,
+     "y": 364,
+     "w": 82,
+     "h": 29,
+     "conf": 96.9
+    },
+    {
+     "t": "her",
+     "x": 80,
+     "y": 404,
+     "w": 42,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "to",
+     "x": 131,
+     "y": 409,
+     "w": 24,
+     "h": 17,
+     "conf": 97.0
+    },
+    {
+     "t": "dream",
+     "x": 165,
+     "y": 404,
+     "w": 80,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "big",
+     "x": 254,
+     "y": 404,
+     "w": 40,
+     "h": 29,
+     "conf": 97.0
+    },
+    {
+     "t": "dreams.",
+     "x": 303,
+     "y": 404,
+     "w": 99,
+     "h": 23,
+     "conf": 92.6
+    },
+    {
+     "t": "Jabulile’s",
+     "x": 408,
+     "y": 403,
+     "w": 116,
+     "h": 30,
+     "conf": 86.2
+    },
+    {
+     "t": "biggest",
+     "x": 78,
+     "y": 444,
+     "w": 92,
+     "h": 29,
+     "conf": 96.5
+    },
+    {
+     "t": "dream",
+     "x": 179,
+     "y": 444,
+     "w": 80,
+     "h": 23,
+     "conf": 96.0
+    },
+    {
+     "t": "was",
+     "x": 268,
+     "y": 452,
+     "w": 49,
+     "h": 14,
+     "conf": 97.0
+    },
+    {
+     "t": "to",
+     "x": 326,
+     "y": 449,
+     "w": 24,
+     "h": 17,
+     "conf": 97.0
+    },
+    {
+     "t": "help",
+     "x": 360,
+     "y": 444,
+     "w": 53,
+     "h": 29,
+     "conf": 97.0
+    },
+    {
+     "t": "people.",
+     "x": 424,
+     "y": 444,
+     "w": 91,
+     "h": 29,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_08.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Everyone in the village was Jabulile’s friend,\nespecially the elders. They taught her about\nthe wise men and women who once lived in\nthe Valley. Jabulile also wanted to be wise.",
+   "char_count": 177,
+   "word_count": 31,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "Everyone",
+     "x": 80,
+     "y": 325,
+     "w": 122,
+     "h": 28,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 211,
+     "y": 325,
+     "w": 25,
+     "h": 21,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 245,
+     "y": 324,
+     "w": 40,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "village",
+     "x": 293,
+     "y": 324,
+     "w": 83,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "was",
+     "x": 385,
+     "y": 332,
+     "w": 49,
+     "h": 14,
+     "conf": 93.2
+    },
+    {
+     "t": "Jabulile’s",
+     "x": 439,
+     "y": 323,
+     "w": 115,
+     "h": 30,
+     "conf": 91.3
+    },
+    {
+     "t": "friend,",
+     "x": 564,
+     "y": 324,
+     "w": 83,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "especially",
+     "x": 80,
+     "y": 364,
+     "w": 122,
+     "h": 29,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 210,
+     "y": 364,
+     "w": 40,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "elders.",
+     "x": 259,
+     "y": 364,
+     "w": 82,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "They",
+     "x": 351,
+     "y": 364,
+     "w": 67,
+     "h": 29,
+     "conf": 96.9
+    },
+    {
+     "t": "taught",
+     "x": 426,
+     "y": 364,
+     "w": 83,
+     "h": 29,
+     "conf": 96.4
+    },
+    {
+     "t": "her",
+     "x": 517,
+     "y": 364,
+     "w": 43,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "about",
+     "x": 568,
+     "y": 364,
+     "w": 73,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "the",
+     "x": 80,
+     "y": 404,
+     "w": 39,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "wise",
+     "x": 128,
+     "y": 405,
+     "w": 57,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "men",
+     "x": 195,
+     "y": 412,
+     "w": 56,
+     "h": 14,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 260,
+     "y": 404,
+     "w": 46,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "women",
+     "x": 314,
+     "y": 412,
+     "w": 97,
+     "h": 14,
+     "conf": 95.8
+    },
+    {
+     "t": "who",
+     "x": 419,
+     "y": 404,
+     "w": 57,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "once",
+     "x": 486,
+     "y": 412,
+     "w": 59,
+     "h": 14,
+     "conf": 96.2
+    },
+    {
+     "t": "lived",
+     "x": 554,
+     "y": 404,
+     "w": 63,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "in",
+     "x": 625,
+     "y": 405,
+     "w": 26,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 80,
+     "y": 444,
+     "w": 39,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "Valley.",
+     "x": 129,
+     "y": 444,
+     "w": 87,
+     "h": 30,
+     "conf": 93.3
+    },
+    {
+     "t": "Jabulile",
+     "x": 221,
+     "y": 444,
+     "w": 99,
+     "h": 29,
+     "conf": 93.2
+    },
+    {
+     "t": "also",
+     "x": 330,
+     "y": 444,
+     "w": 47,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "wanted",
+     "x": 386,
+     "y": 444,
+     "w": 96,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 491,
+     "y": 449,
+     "w": 24,
+     "h": 17,
+     "conf": 96.7
+    },
+    {
+     "t": "be",
+     "x": 524,
+     "y": 444,
+     "w": 29,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "wise.",
+     "x": 562,
+     "y": 445,
+     "w": 64,
+     "h": 21,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_09.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "One awful day, the clouds began to gather\nover the Valley. Everything grew dark and\ngrey. An ugly storm swept over the land.",
+   "char_count": 124,
+   "word_count": 23,
+   "mean_conf": 96.5,
+   "words": [
+    {
+     "t": "One",
+     "x": 80,
+     "y": 345,
+     "w": 53,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "awful",
+     "x": 142,
+     "y": 344,
+     "w": 72,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "day,",
+     "x": 223,
+     "y": 344,
+     "w": 49,
+     "h": 29,
+     "conf": 96.1
+    },
+    {
+     "t": "the",
+     "x": 282,
+     "y": 344,
+     "w": 40,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "clouds",
+     "x": 331,
+     "y": 344,
+     "w": 81,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "began",
+     "x": 421,
+     "y": 344,
+     "w": 77,
+     "h": 29,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 506,
+     "y": 349,
+     "w": 24,
+     "h": 19,
+     "conf": 96.3
+    },
+    {
+     "t": "gather",
+     "x": 540,
+     "y": 344,
+     "w": 82,
+     "h": 29,
+     "conf": 96.8
+    },
+    {
+     "t": "over",
+     "x": 80,
+     "y": 392,
+     "w": 57,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 146,
+     "y": 384,
+     "w": 40,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "Valley.",
+     "x": 195,
+     "y": 384,
+     "w": 87,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "Everything",
+     "x": 292,
+     "y": 384,
+     "w": 143,
+     "h": 29,
+     "conf": 96.7
+    },
+    {
+     "t": "grew",
+     "x": 445,
+     "y": 392,
+     "w": 65,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "dark",
+     "x": 518,
+     "y": 384,
+     "w": 57,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "and",
+     "x": 584,
+     "y": 384,
+     "w": 46,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "grey.",
+     "x": 80,
+     "y": 432,
+     "w": 61,
+     "h": 21,
+     "conf": 96.2
+    },
+    {
+     "t": "An",
+     "x": 150,
+     "y": 425,
+     "w": 41,
+     "h": 21,
+     "conf": 95.2
+    },
+    {
+     "t": "ugly",
+     "x": 198,
+     "y": 424,
+     "w": 55,
+     "h": 29,
+     "conf": 95.2
+    },
+    {
+     "t": "storm",
+     "x": 261,
+     "y": 428,
+     "w": 75,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "swept",
+     "x": 345,
+     "y": 429,
+     "w": 76,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "over",
+     "x": 430,
+     "y": 432,
+     "w": 57,
+     "h": 14,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 496,
+     "y": 424,
+     "w": 40,
+     "h": 23,
+     "conf": 97.0
+    },
+    {
+     "t": "land.",
+     "x": 544,
+     "y": 424,
+     "w": 62,
+     "h": 22,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_10.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Great gusts of wind blew the roofs\noff the huts. All the animals lost their\nhomes. It was a very sad day.",
+   "char_count": 105,
+   "word_count": 22,
+   "mean_conf": 96.6,
+   "words": [
+    {
+     "t": "Great",
+     "x": 80,
+     "y": 345,
+     "w": 72,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "gusts",
+     "x": 160,
+     "y": 349,
+     "w": 66,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "of",
+     "x": 234,
+     "y": 344,
+     "w": 29,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "wind",
+     "x": 267,
+     "y": 344,
+     "w": 68,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "blew",
+     "x": 340,
+     "y": 344,
+     "w": 63,
+     "h": 23,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 412,
+     "y": 344,
+     "w": 40,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "roofs",
+     "x": 459,
+     "y": 344,
+     "w": 68,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "off",
+     "x": 80,
+     "y": 384,
+     "w": 38,
+     "h": 23,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 122,
+     "y": 384,
+     "w": 42,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "huts.",
+     "x": 171,
+     "y": 384,
+     "w": 63,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "All",
+     "x": 244,
+     "y": 384,
+     "w": 38,
+     "h": 23,
+     "conf": 95.4
+    },
+    {
+     "t": "the",
+     "x": 288,
+     "y": 384,
+     "w": 41,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "animals",
+     "x": 339,
+     "y": 384,
+     "w": 98,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "lost",
+     "x": 444,
+     "y": 384,
+     "w": 48,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "their",
+     "x": 500,
+     "y": 384,
+     "w": 61,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "homes.",
+     "x": 80,
+     "y": 424,
+     "w": 90,
+     "h": 24,
+     "conf": 95.0
+    },
+    {
+     "t": "It",
+     "x": 180,
+     "y": 425,
+     "w": 20,
+     "h": 22,
+     "conf": 94.8
+    },
+    {
+     "t": "was",
+     "x": 206,
+     "y": 432,
+     "w": 50,
+     "h": 15,
+     "conf": 96.5
+    },
+    {
+     "t": "a",
+     "x": 264,
+     "y": 432,
+     "w": 13,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "very",
+     "x": 285,
+     "y": 432,
+     "w": 59,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "sad",
+     "x": 350,
+     "y": 424,
+     "w": 42,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "day.",
+     "x": 400,
+     "y": 424,
+     "w": 50,
+     "h": 29,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_11.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "The village folk cried, “What shall we do now?”\n“All the crops are ruined!” cried the farmers.\n“Our homes are gone!” said the elders.\nAll hope seemed lost. But Jabulile remembered\nsomething her wise father once told her.",
+   "char_count": 220,
+   "word_count": 38,
+   "mean_conf": 96.4,
+   "words": [
+    {
+     "t": "The",
+     "x": 80,
+     "y": 284,
+     "w": 52,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "village",
+     "x": 139,
+     "y": 283,
+     "w": 84,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "folk",
+     "x": 232,
+     "y": 283,
+     "w": 50,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "cried,",
+     "x": 290,
+     "y": 284,
+     "w": 70,
+     "h": 28,
+     "conf": 96.3
+    },
+    {
+     "t": "“What",
+     "x": 370,
+     "y": 283,
+     "w": 85,
+     "h": 24,
+     "conf": 95.0
+    },
+    {
+     "t": "shall",
+     "x": 464,
+     "y": 283,
+     "w": 58,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "we",
+     "x": 529,
+     "y": 291,
+     "w": 38,
+     "h": 16,
+     "conf": 96.5
+    },
+    {
+     "t": "do",
+     "x": 576,
+     "y": 284,
+     "w": 31,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "now?”",
+     "x": 616,
+     "y": 283,
+     "w": 78,
+     "h": 24,
+     "conf": 95.6
+    },
+    {
+     "t": "“All",
+     "x": 80,
+     "y": 323,
+     "w": 47,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 136,
+     "y": 324,
+     "w": 39,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "crops",
+     "x": 185,
+     "y": 331,
+     "w": 70,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "are",
+     "x": 263,
+     "y": 332,
+     "w": 38,
+     "h": 15,
+     "conf": 96.2
+    },
+    {
+     "t": "ruined!”",
+     "x": 310,
+     "y": 323,
+     "w": 103,
+     "h": 24,
+     "conf": 96.0
+    },
+    {
+     "t": "cried",
+     "x": 423,
+     "y": 324,
+     "w": 63,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 495,
+     "y": 323,
+     "w": 39,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "farmers.",
+     "x": 544,
+     "y": 324,
+     "w": 105,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "“Our",
+     "x": 80,
+     "y": 363,
+     "w": 61,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "homes",
+     "x": 150,
+     "y": 364,
+     "w": 84,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "are",
+     "x": 242,
+     "y": 371,
+     "w": 39,
+     "h": 16,
+     "conf": 96.3
+    },
+    {
+     "t": "gone!”",
+     "x": 291,
+     "y": 363,
+     "w": 81,
+     "h": 30,
+     "conf": 96.2
+    },
+    {
+     "t": "said",
+     "x": 380,
+     "y": 364,
+     "w": 51,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 439,
+     "y": 363,
+     "w": 40,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "elders.",
+     "x": 488,
+     "y": 363,
+     "w": 82,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "All",
+     "x": 80,
+     "y": 444,
+     "w": 37,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "hope",
+     "x": 126,
+     "y": 444,
+     "w": 62,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "seemed",
+     "x": 198,
+     "y": 444,
+     "w": 95,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "lost.",
+     "x": 300,
+     "y": 444,
+     "w": 53,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "But",
+     "x": 363,
+     "y": 445,
+     "w": 45,
+     "h": 22,
+     "conf": 93.2
+    },
+    {
+     "t": "Jabulile",
+     "x": 413,
+     "y": 443,
+     "w": 98,
+     "h": 30,
+     "conf": 93.2
+    },
+    {
+     "t": "remembered",
+     "x": 521,
+     "y": 444,
+     "w": 164,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "something",
+     "x": 80,
+     "y": 484,
+     "w": 135,
+     "h": 29,
+     "conf": 96.7
+    },
+    {
+     "t": "her",
+     "x": 225,
+     "y": 483,
+     "w": 42,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "wise",
+     "x": 274,
+     "y": 485,
+     "w": 58,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "father",
+     "x": 342,
+     "y": 484,
+     "w": 77,
+     "h": 23,
+     "conf": 97.0
+    },
+    {
+     "t": "once",
+     "x": 427,
+     "y": 491,
+     "w": 59,
+     "h": 16,
+     "conf": 97.0
+    },
+    {
+     "t": "told",
+     "x": 496,
+     "y": 484,
+     "w": 50,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "her.",
+     "x": 554,
+     "y": 484,
+     "w": 49,
+     "h": 23,
+     "conf": 97.0
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_12.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Jabulile started speaking to the villagers.\n“The storm only hurts us,” she said, “because\nof the way we choose to see it. If you look\nup the sun is shining again. It is a new day.\n“After every storm, there must bea\nrainbow!” she shouted excitedly.",
+   "char_count": 247,
+   "word_count": 46,
+   "mean_conf": 95.9,
+   "words": [
+    {
+     "t": "Jabulile",
+     "x": 76,
+     "y": 264,
+     "w": 98,
+     "h": 29,
+     "conf": 92.9
+    },
+    {
+     "t": "started",
+     "x": 184,
+     "y": 264,
+     "w": 87,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "speaking",
+     "x": 280,
+     "y": 264,
+     "w": 111,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 401,
+     "y": 269,
+     "w": 24,
+     "h": 17,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 435,
+     "y": 264,
+     "w": 40,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "villagers.",
+     "x": 483,
+     "y": 264,
+     "w": 115,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "“The",
+     "x": 80,
+     "y": 303,
+     "w": 61,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "storm",
+     "x": 150,
+     "y": 309,
+     "w": 75,
+     "h": 17,
+     "conf": 96.7
+    },
+    {
+     "t": "only",
+     "x": 235,
+     "y": 304,
+     "w": 56,
+     "h": 29,
+     "conf": 96.4
+    },
+    {
+     "t": "hurts",
+     "x": 299,
+     "y": 304,
+     "w": 67,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "us,”",
+     "x": 375,
+     "y": 303,
+     "w": 45,
+     "h": 28,
+     "conf": 94.3
+    },
+    {
+     "t": "she",
+     "x": 429,
+     "y": 304,
+     "w": 41,
+     "h": 22,
+     "conf": 95.1
+    },
+    {
+     "t": "said,",
+     "x": 480,
+     "y": 304,
+     "w": 55,
+     "h": 27,
+     "conf": 96.8
+    },
+    {
+     "t": "“because",
+     "x": 545,
+     "y": 303,
+     "w": 108,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "of",
+     "x": 80,
+     "y": 344,
+     "w": 28,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 114,
+     "y": 344,
+     "w": 39,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "way",
+     "x": 162,
+     "y": 352,
+     "w": 52,
+     "h": 21,
+     "conf": 96.4
+    },
+    {
+     "t": "we",
+     "x": 221,
+     "y": 352,
+     "w": 37,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "choose",
+     "x": 268,
+     "y": 344,
+     "w": 87,
+     "h": 23,
+     "conf": 96.3
+    },
+    {
+     "t": "to",
+     "x": 365,
+     "y": 349,
+     "w": 24,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "see",
+     "x": 398,
+     "y": 352,
+     "w": 39,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "it.",
+     "x": 446,
+     "y": 345,
+     "w": 24,
+     "h": 21,
+     "conf": 95.2
+    },
+    {
+     "t": "If",
+     "x": 484,
+     "y": 344,
+     "w": 19,
+     "h": 22,
+     "conf": 95.2
+    },
+    {
+     "t": "you",
+     "x": 507,
+     "y": 352,
+     "w": 47,
+     "h": 21,
+     "conf": 95.9
+    },
+    {
+     "t": "look",
+     "x": 563,
+     "y": 344,
+     "w": 57,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "up",
+     "x": 80,
+     "y": 392,
+     "w": 31,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 121,
+     "y": 384,
+     "w": 39,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "sun",
+     "x": 170,
+     "y": 392,
+     "w": 44,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "is",
+     "x": 223,
+     "y": 385,
+     "w": 19,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "shining",
+     "x": 251,
+     "y": 384,
+     "w": 95,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "again.",
+     "x": 356,
+     "y": 385,
+     "w": 74,
+     "h": 29,
+     "conf": 95.8
+    },
+    {
+     "t": "It",
+     "x": 440,
+     "y": 385,
+     "w": 20,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "is",
+     "x": 469,
+     "y": 385,
+     "w": 18,
+     "h": 21,
+     "conf": 95.1
+    },
+    {
+     "t": "a",
+     "x": 503,
+     "y": 392,
+     "w": 5,
+     "h": 14,
+     "conf": 92.6
+    },
+    {
+     "t": "new",
+     "x": 518,
+     "y": 392,
+     "w": 54,
+     "h": 14,
+     "conf": 92.6
+    },
+    {
+     "t": "day.",
+     "x": 581,
+     "y": 384,
+     "w": 49,
+     "h": 29,
+     "conf": 95.6
+    },
+    {
+     "t": "“After",
+     "x": 80,
+     "y": 463,
+     "w": 77,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "every",
+     "x": 166,
+     "y": 472,
+     "w": 70,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "storm,",
+     "x": 245,
+     "y": 469,
+     "w": 82,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "there",
+     "x": 337,
+     "y": 464,
+     "w": 66,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "must",
+     "x": 412,
+     "y": 469,
+     "w": 64,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "bea",
+     "x": 483,
+     "y": 464,
+     "w": 51,
+     "h": 22,
+     "conf": 85.6
+    },
+    {
+     "t": "rainbow!”",
+     "x": 80,
+     "y": 503,
+     "w": 126,
+     "h": 23,
+     "conf": 94.7
+    },
+    {
+     "t": "she",
+     "x": 216,
+     "y": 504,
+     "w": 41,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "shouted",
+     "x": 266,
+     "y": 504,
+     "w": 102,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "excitedly.",
+     "x": 376,
+     "y": 504,
+     "w": 120,
+     "h": 29,
+     "conf": 93.7
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_13.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Just then a glorious rainbow\nappeared in the sky.",
+   "char_count": 49,
+   "word_count": 9,
+   "mean_conf": 96.5,
+   "words": [
+    {
+     "t": "Just",
+     "x": 76,
+     "y": 365,
+     "w": 52,
+     "h": 28,
+     "conf": 96.3
+    },
+    {
+     "t": "then",
+     "x": 136,
+     "y": 364,
+     "w": 58,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "a",
+     "x": 203,
+     "y": 372,
+     "w": 12,
+     "h": 14,
+     "conf": 96.7
+    },
+    {
+     "t": "glorious",
+     "x": 224,
+     "y": 364,
+     "w": 105,
+     "h": 29,
+     "conf": 96.7
+    },
+    {
+     "t": "rainbow",
+     "x": 338,
+     "y": 364,
+     "w": 109,
+     "h": 22,
+     "conf": 96.0
+    },
+    {
+     "t": "appeared",
+     "x": 80,
+     "y": 404,
+     "w": 116,
+     "h": 29,
+     "conf": 96.9
+    },
+    {
+     "t": "in",
+     "x": 204,
+     "y": 405,
+     "w": 25,
+     "h": 21,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 238,
+     "y": 404,
+     "w": 40,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "sky.",
+     "x": 287,
+     "y": 404,
+     "w": 48,
+     "h": 29,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_14.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "The villagers saw the rainbow and\nthey began to smile. It stood as a\npromise that the storm was over.",
+   "char_count": 101,
+   "word_count": 20,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "The",
+     "x": 80,
+     "y": 344,
+     "w": 51,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "villagers",
+     "x": 139,
+     "y": 344,
+     "w": 108,
+     "h": 29,
+     "conf": 97.0
+    },
+    {
+     "t": "saw",
+     "x": 256,
+     "y": 352,
+     "w": 49,
+     "h": 14,
+     "conf": 96.3
+    },
+    {
+     "t": "the",
+     "x": 313,
+     "y": 344,
+     "w": 39,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "rainbow",
+     "x": 362,
+     "y": 344,
+     "w": 108,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "and",
+     "x": 478,
+     "y": 344,
+     "w": 47,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "they",
+     "x": 80,
+     "y": 384,
+     "w": 55,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "began",
+     "x": 142,
+     "y": 384,
+     "w": 77,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 228,
+     "y": 389,
+     "w": 24,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "smile.",
+     "x": 262,
+     "y": 384,
+     "w": 74,
+     "h": 23,
+     "conf": 96.4
+    },
+    {
+     "t": "It",
+     "x": 346,
+     "y": 385,
+     "w": 19,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "stood",
+     "x": 374,
+     "y": 384,
+     "w": 70,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "as",
+     "x": 453,
+     "y": 392,
+     "w": 24,
+     "h": 14,
+     "conf": 85.2
+    },
+    {
+     "t": "a",
+     "x": 486,
+     "y": 392,
+     "w": 12,
+     "h": 14,
+     "conf": 85.2
+    },
+    {
+     "t": "promise",
+     "x": 80,
+     "y": 425,
+     "w": 104,
+     "h": 28,
+     "conf": 96.9
+    },
+    {
+     "t": "that",
+     "x": 193,
+     "y": 424,
+     "w": 51,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 252,
+     "y": 424,
+     "w": 40,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "storm",
+     "x": 301,
+     "y": 429,
+     "w": 75,
+     "h": 17,
+     "conf": 95.9
+    },
+    {
+     "t": "was",
+     "x": 385,
+     "y": 432,
+     "w": 48,
+     "h": 14,
+     "conf": 96.8
+    },
+    {
+     "t": "over.",
+     "x": 443,
+     "y": 432,
+     "w": 64,
+     "h": 14,
+     "conf": 96.0
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_15.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "The villagers rebuilt their homes.\nFarmers planted new crops. The grass\ngrew greener than ever before. eee",
+   "char_count": 106,
+   "word_count": 17,
+   "mean_conf": 93.2,
+   "words": [
+    {
+     "t": "The",
+     "x": 80,
+     "y": 344,
+     "w": 51,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "villagers",
+     "x": 139,
+     "y": 344,
+     "w": 108,
+     "h": 29,
+     "conf": 95.4
+    },
+    {
+     "t": "rebuilt",
+     "x": 256,
+     "y": 344,
+     "w": 87,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "their",
+     "x": 350,
+     "y": 344,
+     "w": 61,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "homes.",
+     "x": 420,
+     "y": 344,
+     "w": 91,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "Farmers",
+     "x": 80,
+     "y": 385,
+     "w": 106,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "planted",
+     "x": 195,
+     "y": 384,
+     "w": 96,
+     "h": 29,
+     "conf": 96.4
+    },
+    {
+     "t": "new",
+     "x": 300,
+     "y": 392,
+     "w": 55,
+     "h": 14,
+     "conf": 96.7
+    },
+    {
+     "t": "crops.",
+     "x": 363,
+     "y": 392,
+     "w": 75,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "The",
+     "x": 448,
+     "y": 384,
+     "w": 51,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "grass",
+     "x": 509,
+     "y": 392,
+     "w": 63,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "grew",
+     "x": 80,
+     "y": 432,
+     "w": 66,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "greener",
+     "x": 153,
+     "y": 432,
+     "w": 98,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "than",
+     "x": 260,
+     "y": 424,
+     "w": 58,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "ever",
+     "x": 327,
+     "y": 432,
+     "w": 55,
+     "h": 14,
+     "conf": 97.0
+    },
+    {
+     "t": "before.",
+     "x": 390,
+     "y": 424,
+     "w": 89,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "eee",
+     "x": 571,
+     "y": 430,
+     "w": 87,
+     "h": 23,
+     "conf": 38.8
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_16.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Once again there was hope and\nhappiness in the Valley.",
+   "char_count": 54,
+   "word_count": 10,
+   "mean_conf": 96.7,
+   "words": [
+    {
+     "t": "Once",
+     "x": 80,
+     "y": 365,
+     "w": 66,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "again",
+     "x": 156,
+     "y": 365,
+     "w": 68,
+     "h": 28,
+     "conf": 96.4
+    },
+    {
+     "t": "there",
+     "x": 233,
+     "y": 364,
+     "w": 66,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "was",
+     "x": 307,
+     "y": 372,
+     "w": 49,
+     "h": 14,
+     "conf": 96.1
+    },
+    {
+     "t": "hope",
+     "x": 365,
+     "y": 364,
+     "w": 62,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "and",
+     "x": 437,
+     "y": 364,
+     "w": 46,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "happiness",
+     "x": 80,
+     "y": 404,
+     "w": 126,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 215,
+     "y": 405,
+     "w": 25,
+     "h": 21,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 249,
+     "y": 404,
+     "w": 40,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "Valley.",
+     "x": 298,
+     "y": 404,
+     "w": 87,
+     "h": 29,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_17.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_17.jpg",
+   "image_width": 1579,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_Page_18.jpg",
+   "image_file": "there-must-be-a-rainbow_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

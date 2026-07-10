@@ -1,0 +1,1503 @@
+{
+ "slug": "what-if",
+ "wp_slug": "what-if",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "what-if_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  },
+  {
+   "file": "what-if_Page_02.jpg",
+   "reason": "front-matter(PDF 2)"
+  },
+  {
+   "file": "what-if_Page_03.jpg",
+   "reason": "front-matter(PDF 3)"
+  },
+  {
+   "file": "what-if_Page_04.jpg",
+   "reason": "front-matter(PDF 4)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_05.jpg",
+   "image_file": "what-if_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Nandi sat on\nthe blue steps of her house.",
+   "char_count": 41,
+   "word_count": 9,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "Nandi",
+     "x": 305,
+     "y": 181,
+     "w": 85,
+     "h": 28,
+     "conf": 96.4
+    },
+    {
+     "t": "sat",
+     "x": 402,
+     "y": 187,
+     "w": 40,
+     "h": 21,
+     "conf": 95.1
+    },
+    {
+     "t": "on",
+     "x": 452,
+     "y": 193,
+     "w": 32,
+     "h": 15,
+     "conf": 95.1
+    },
+    {
+     "t": "the",
+     "x": 206,
+     "y": 225,
+     "w": 42,
+     "h": 27,
+     "conf": 97.0
+    },
+    {
+     "t": "blue",
+     "x": 260,
+     "y": 224,
+     "w": 57,
+     "h": 28,
+     "conf": 96.1
+    },
+    {
+     "t": "steps",
+     "x": 328,
+     "y": 231,
+     "w": 67,
+     "h": 28,
+     "conf": 96.1
+    },
+    {
+     "t": "of",
+     "x": 406,
+     "y": 225,
+     "w": 28,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "her",
+     "x": 444,
+     "y": 225,
+     "w": 41,
+     "h": 27,
+     "conf": 96.8
+    },
+    {
+     "t": "house.",
+     "x": 496,
+     "y": 225,
+     "w": 84,
+     "h": 27,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_06.jpg",
+   "image_file": "what-if_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "She was wondering...",
+   "char_count": 20,
+   "word_count": 3,
+   "mean_conf": 93.8,
+   "words": [
+    {
+     "t": "She",
+     "x": 1035,
+     "y": 315,
+     "w": 52,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "was",
+     "x": 1097,
+     "y": 327,
+     "w": 52,
+     "h": 16,
+     "conf": 96.0
+    },
+    {
+     "t": "wondering...",
+     "x": 1159,
+     "y": 315,
+     "w": 167,
+     "h": 34,
+     "conf": 88.9
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_07.jpg",
+   "image_file": "what-if_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "What if jelly beans made you jump\nreally high?\nYou could get to school\nin one big leap!\ngt",
+   "char_count": 90,
+   "word_count": 19,
+   "mean_conf": 89.7,
+   "words": [
+    {
+     "t": "What",
+     "x": 937,
+     "y": 168,
+     "w": 79,
+     "h": 28,
+     "conf": 92.6
+    },
+    {
+     "t": "if",
+     "x": 1026,
+     "y": 168,
+     "w": 16,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "jelly",
+     "x": 1050,
+     "y": 168,
+     "w": 54,
+     "h": 34,
+     "conf": 96.7
+    },
+    {
+     "t": "beans",
+     "x": 1114,
+     "y": 167,
+     "w": 81,
+     "h": 28,
+     "conf": 96.7
+    },
+    {
+     "t": "made",
+     "x": 1207,
+     "y": 168,
+     "w": 80,
+     "h": 27,
+     "conf": 96.4
+    },
+    {
+     "t": "you",
+     "x": 1296,
+     "y": 180,
+     "w": 48,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "jump",
+     "x": 1356,
+     "y": 174,
+     "w": 70,
+     "h": 28,
+     "conf": 96.3
+    },
+    {
+     "t": "really",
+     "x": 1103,
+     "y": 211,
+     "w": 74,
+     "h": 34,
+     "conf": 96.3
+    },
+    {
+     "t": "high?",
+     "x": 1187,
+     "y": 211,
+     "w": 73,
+     "h": 34,
+     "conf": 96.5
+    },
+    {
+     "t": "You",
+     "x": 1020,
+     "y": 300,
+     "w": 49,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "could",
+     "x": 1082,
+     "y": 298,
+     "w": 73,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "get",
+     "x": 1167,
+     "y": 304,
+     "w": 44,
+     "h": 28,
+     "conf": 95.7
+    },
+    {
+     "t": "to",
+     "x": 1220,
+     "y": 304,
+     "w": 26,
+     "h": 21,
+     "conf": 95.7
+    },
+    {
+     "t": "school",
+     "x": 1257,
+     "y": 298,
+     "w": 85,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 1074,
+     "y": 347,
+     "w": 20,
+     "h": 21,
+     "conf": 95.9
+    },
+    {
+     "t": "one",
+     "x": 1106,
+     "y": 353,
+     "w": 50,
+     "h": 15,
+     "conf": 95.9
+    },
+    {
+     "t": "big",
+     "x": 1168,
+     "y": 340,
+     "w": 41,
+     "h": 35,
+     "conf": 96.3
+    },
+    {
+     "t": "leap!",
+     "x": 1223,
+     "y": 341,
+     "w": 65,
+     "h": 34,
+     "conf": 60.8
+    },
+    {
+     "t": "gt",
+     "x": 1167,
+     "y": 405,
+     "w": 384,
+     "h": 319,
+     "conf": 10.9
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_08.jpg",
+   "image_file": "what-if_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "What if goats and chickens could talk?\nWould they tell good jokes?",
+   "char_count": 66,
+   "word_count": 12,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "What",
+     "x": 911,
+     "y": 128,
+     "w": 80,
+     "h": 28,
+     "conf": 91.5
+    },
+    {
+     "t": "if",
+     "x": 1001,
+     "y": 128,
+     "w": 16,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "goats",
+     "x": 1026,
+     "y": 134,
+     "w": 76,
+     "h": 28,
+     "conf": 96.2
+    },
+    {
+     "t": "and",
+     "x": 1113,
+     "y": 128,
+     "w": 53,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "chickens",
+     "x": 1178,
+     "y": 128,
+     "w": 112,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "could",
+     "x": 1301,
+     "y": 128,
+     "w": 73,
+     "h": 27,
+     "conf": 96.8
+    },
+    {
+     "t": "talk?",
+     "x": 1386,
+     "y": 128,
+     "w": 64,
+     "h": 27,
+     "conf": 97.0
+    },
+    {
+     "t": "Would",
+     "x": 990,
+     "y": 215,
+     "w": 89,
+     "h": 28,
+     "conf": 96.7
+    },
+    {
+     "t": "they",
+     "x": 1090,
+     "y": 215,
+     "w": 59,
+     "h": 34,
+     "conf": 96.7
+    },
+    {
+     "t": "tell",
+     "x": 1158,
+     "y": 215,
+     "w": 38,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "good",
+     "x": 1208,
+     "y": 215,
+     "w": 71,
+     "h": 34,
+     "conf": 96.5
+    },
+    {
+     "t": "jokes?",
+     "x": 1290,
+     "y": 215,
+     "w": 81,
+     "h": 33,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_09.jpg",
+   "image_file": "what-if_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "What if houses were rocket ships?\nYour family could go on holidays\nto the moon!",
+   "char_count": 79,
+   "word_count": 15,
+   "mean_conf": 93.4,
+   "words": [
+    {
+     "t": "What",
+     "x": 949,
+     "y": 305,
+     "w": 79,
+     "h": 28,
+     "conf": 91.9
+    },
+    {
+     "t": "if",
+     "x": 1039,
+     "y": 305,
+     "w": 16,
+     "h": 27,
+     "conf": 96.8
+    },
+    {
+     "t": "houses",
+     "x": 1064,
+     "y": 305,
+     "w": 91,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "were",
+     "x": 1165,
+     "y": 317,
+     "w": 64,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "rocket",
+     "x": 1241,
+     "y": 305,
+     "w": 81,
+     "h": 27,
+     "conf": 95.8
+    },
+    {
+     "t": "ships?",
+     "x": 1332,
+     "y": 305,
+     "w": 80,
+     "h": 34,
+     "conf": 95.8
+    },
+    {
+     "t": "Your",
+     "x": 953,
+     "y": 394,
+     "w": 62,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "family",
+     "x": 1025,
+     "y": 392,
+     "w": 86,
+     "h": 34,
+     "conf": 97.0
+    },
+    {
+     "t": "could",
+     "x": 1120,
+     "y": 392,
+     "w": 73,
+     "h": 27,
+     "conf": 97.0
+    },
+    {
+     "t": "go",
+     "x": 1205,
+     "y": 404,
+     "w": 35,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "on",
+     "x": 1251,
+     "y": 404,
+     "w": 32,
+     "h": 15,
+     "conf": 97.0
+    },
+    {
+     "t": "holidays",
+     "x": 1297,
+     "y": 392,
+     "w": 112,
+     "h": 34,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 1092,
+     "y": 442,
+     "w": 26,
+     "h": 21,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 1129,
+     "y": 436,
+     "w": 42,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "moon!",
+     "x": 1183,
+     "y": 436,
+     "w": 85,
+     "h": 27,
+     "conf": 52.4
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_10.jpg",
+   "image_file": "what-if_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "What if no one had to cook?\nWhat if supper just arrived on the table?\n(And it was always your favourite.)",
+   "char_count": 105,
+   "word_count": 21,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "What",
+     "x": 981,
+     "y": 217,
+     "w": 79,
+     "h": 28,
+     "conf": 96.5
+    },
+    {
+     "t": "if",
+     "x": 1071,
+     "y": 217,
+     "w": 16,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "no",
+     "x": 1097,
+     "y": 229,
+     "w": 33,
+     "h": 15,
+     "conf": 96.7
+    },
+    {
+     "t": "one",
+     "x": 1140,
+     "y": 229,
+     "w": 50,
+     "h": 15,
+     "conf": 95.9
+    },
+    {
+     "t": "had",
+     "x": 1202,
+     "y": 217,
+     "w": 51,
+     "h": 28,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 1265,
+     "y": 223,
+     "w": 26,
+     "h": 21,
+     "conf": 95.7
+    },
+    {
+     "t": "cook?",
+     "x": 1302,
+     "y": 217,
+     "w": 78,
+     "h": 28,
+     "conf": 95.7
+    },
+    {
+     "t": "What",
+     "x": 900,
+     "y": 304,
+     "w": 80,
+     "h": 28,
+     "conf": 95.4
+    },
+    {
+     "t": "if",
+     "x": 989,
+     "y": 304,
+     "w": 17,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "supper",
+     "x": 1014,
+     "y": 316,
+     "w": 94,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "just",
+     "x": 1117,
+     "y": 310,
+     "w": 46,
+     "h": 27,
+     "conf": 96.3
+    },
+    {
+     "t": "arrived",
+     "x": 1173,
+     "y": 304,
+     "w": 94,
+     "h": 28,
+     "conf": 96.8
+    },
+    {
+     "t": "on",
+     "x": 1280,
+     "y": 316,
+     "w": 32,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 1324,
+     "y": 304,
+     "w": 42,
+     "h": 28,
+     "conf": 95.8
+    },
+    {
+     "t": "table?",
+     "x": 1376,
+     "y": 303,
+     "w": 85,
+     "h": 29,
+     "conf": 95.8
+    },
+    {
+     "t": "(And",
+     "x": 943,
+     "y": 347,
+     "w": 65,
+     "h": 33,
+     "conf": 96.0
+    },
+    {
+     "t": "it",
+     "x": 1021,
+     "y": 353,
+     "w": 15,
+     "h": 21,
+     "conf": 96.0
+    },
+    {
+     "t": "was",
+     "x": 1045,
+     "y": 359,
+     "w": 52,
+     "h": 16,
+     "conf": 96.0
+    },
+    {
+     "t": "always",
+     "x": 1108,
+     "y": 347,
+     "w": 94,
+     "h": 34,
+     "conf": 96.0
+    },
+    {
+     "t": "your",
+     "x": 1211,
+     "y": 359,
+     "w": 61,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "favourite.)",
+     "x": 1282,
+     "y": 347,
+     "w": 138,
+     "h": 33,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_11.jpg",
+   "image_file": "what-if_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "What if ice-lollies never melted?\nThey could last all summer.",
+   "char_count": 61,
+   "word_count": 10,
+   "mean_conf": 93.4,
+   "words": [
+    {
+     "t": "What",
+     "x": 172,
+     "y": 264,
+     "w": 79,
+     "h": 28,
+     "conf": 95.8
+    },
+    {
+     "t": "if",
+     "x": 259,
+     "y": 264,
+     "w": 19,
+     "h": 28,
+     "conf": 92.5
+    },
+    {
+     "t": "ice-lollies",
+     "x": 288,
+     "y": 264,
+     "w": 120,
+     "h": 31,
+     "conf": 90.2
+    },
+    {
+     "t": "never",
+     "x": 420,
+     "y": 276,
+     "w": 73,
+     "h": 17,
+     "conf": 96.3
+    },
+    {
+     "t": "melted?",
+     "x": 504,
+     "y": 264,
+     "w": 111,
+     "h": 29,
+     "conf": 75.8
+    },
+    {
+     "t": "They",
+     "x": 207,
+     "y": 351,
+     "w": 65,
+     "h": 34,
+     "conf": 96.5
+    },
+    {
+     "t": "could",
+     "x": 281,
+     "y": 351,
+     "w": 74,
+     "h": 29,
+     "conf": 96.9
+    },
+    {
+     "t": "last",
+     "x": 368,
+     "y": 351,
+     "w": 46,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "all",
+     "x": 422,
+     "y": 351,
+     "w": 32,
+     "h": 28,
+     "conf": 96.6
+    },
+    {
+     "t": "summer.",
+     "x": 466,
+     "y": 362,
+     "w": 115,
+     "h": 17,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_12.jpg",
+   "image_file": "what-if_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "What if the\npictures in\nbooks flew\naround your\nhead when\nDad read to\nyou?",
+   "char_count": 73,
+   "word_count": 15,
+   "mean_conf": 95.1,
+   "words": [
+    {
+     "t": "What",
+     "x": 111,
+     "y": 215,
+     "w": 79,
+     "h": 28,
+     "conf": 93.9
+    },
+    {
+     "t": "if",
+     "x": 201,
+     "y": 215,
+     "w": 15,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 225,
+     "y": 215,
+     "w": 43,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "pictures",
+     "x": 121,
+     "y": 264,
+     "w": 104,
+     "h": 28,
+     "conf": 96.4
+    },
+    {
+     "t": "in",
+     "x": 237,
+     "y": 264,
+     "w": 20,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "books",
+     "x": 117,
+     "y": 297,
+     "w": 75,
+     "h": 43,
+     "conf": 96.5
+    },
+    {
+     "t": "flew",
+     "x": 207,
+     "y": 297,
+     "w": 57,
+     "h": 43,
+     "conf": 96.6
+    },
+    {
+     "t": "around",
+     "x": 105,
+     "y": 345,
+     "w": 98,
+     "h": 27,
+     "conf": 96.4
+    },
+    {
+     "t": "your",
+     "x": 213,
+     "y": 357,
+     "w": 61,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "head",
+     "x": 114,
+     "y": 388,
+     "w": 68,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "when",
+     "x": 193,
+     "y": 388,
+     "w": 71,
+     "h": 28,
+     "conf": 96.8
+    },
+    {
+     "t": "Dad",
+     "x": 106,
+     "y": 432,
+     "w": 57,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "read",
+     "x": 177,
+     "y": 432,
+     "w": 60,
+     "h": 27,
+     "conf": 96.0
+    },
+    {
+     "t": "to",
+     "x": 249,
+     "y": 438,
+     "w": 26,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "you?",
+     "x": 155,
+     "y": 477,
+     "w": 66,
+     "h": 32,
+     "conf": 77.3
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_13.jpg",
+   "image_file": "what-if_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "What if my pink gumboots were magical?\n| could run faster than my big brother!",
+   "char_count": 78,
+   "word_count": 15,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "What",
+     "x": 100,
+     "y": 500,
+     "w": 79,
+     "h": 28,
+     "conf": 96.2
+    },
+    {
+     "t": "if",
+     "x": 190,
+     "y": 500,
+     "w": 16,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "my",
+     "x": 216,
+     "y": 513,
+     "w": 41,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "pink",
+     "x": 268,
+     "y": 500,
+     "w": 55,
+     "h": 34,
+     "conf": 93.3
+    },
+    {
+     "t": "gumboots",
+     "x": 334,
+     "y": 499,
+     "w": 140,
+     "h": 35,
+     "conf": 92.3
+    },
+    {
+     "t": "were",
+     "x": 484,
+     "y": 512,
+     "w": 64,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "magical?",
+     "x": 559,
+     "y": 500,
+     "w": 127,
+     "h": 34,
+     "conf": 96.8
+    },
+    {
+     "t": "|",
+     "x": 131,
+     "y": 589,
+     "w": 2,
+     "h": 25,
+     "conf": 95.1
+    },
+    {
+     "t": "could",
+     "x": 146,
+     "y": 587,
+     "w": 73,
+     "h": 27,
+     "conf": 95.8
+    },
+    {
+     "t": "run",
+     "x": 232,
+     "y": 599,
+     "w": 41,
+     "h": 15,
+     "conf": 95.9
+    },
+    {
+     "t": "faster",
+     "x": 286,
+     "y": 587,
+     "w": 76,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "than",
+     "x": 372,
+     "y": 587,
+     "w": 61,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "my",
+     "x": 446,
+     "y": 600,
+     "w": 42,
+     "h": 21,
+     "conf": 96.2
+    },
+    {
+     "t": "big",
+     "x": 498,
+     "y": 586,
+     "w": 41,
+     "h": 35,
+     "conf": 96.8
+    },
+    {
+     "t": "brother!",
+     "x": 552,
+     "y": 586,
+     "w": 106,
+     "h": 28,
+     "conf": 95.6
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_14.jpg",
+   "image_file": "what-if_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": ". ) / What if you squeezed\n\\ oe your eyes shut and...",
+   "char_count": 53,
+   "word_count": 13,
+   "mean_conf": 77.8,
+   "words": [
+    {
+     "t": ".",
+     "x": 648,
+     "y": 154,
+     "w": 2,
+     "h": 2,
+     "conf": 39.2
+    },
+    {
+     "t": ")",
+     "x": 762,
+     "y": 105,
+     "w": 17,
+     "h": 85,
+     "conf": 92.0
+    },
+    {
+     "t": "/",
+     "x": 874,
+     "y": 80,
+     "w": 35,
+     "h": 115,
+     "conf": 50.9
+    },
+    {
+     "t": "What",
+     "x": 1175,
+     "y": 132,
+     "w": 80,
+     "h": 28,
+     "conf": 90.7
+    },
+    {
+     "t": "if",
+     "x": 1265,
+     "y": 132,
+     "w": 16,
+     "h": 27,
+     "conf": 95.6
+    },
+    {
+     "t": "you",
+     "x": 1288,
+     "y": 144,
+     "w": 49,
+     "h": 22,
+     "conf": 95.6
+    },
+    {
+     "t": "squeezed",
+     "x": 1349,
+     "y": 132,
+     "w": 128,
+     "h": 34,
+     "conf": 96.7
+    },
+    {
+     "t": "\\",
+     "x": 550,
+     "y": 148,
+     "w": 61,
+     "h": 95,
+     "conf": 92.0
+    },
+    {
+     "t": "oe",
+     "x": 959,
+     "y": 134,
+     "w": 80,
+     "h": 96,
+     "conf": 20.3
+    },
+    {
+     "t": "your",
+     "x": 1186,
+     "y": 187,
+     "w": 61,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "eyes",
+     "x": 1256,
+     "y": 187,
+     "w": 59,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "shut",
+     "x": 1326,
+     "y": 175,
+     "w": 55,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "and...",
+     "x": 1391,
+     "y": 175,
+     "w": 75,
+     "h": 27,
+     "conf": 49.7
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_15.jpg",
+   "image_file": "what-if_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Nandi, what are you doing?”\nasked Nandi’s big brother.\nNandi sat back on the step with a\nbig smile on her face.",
+   "char_count": 112,
+   "word_count": 22,
+   "mean_conf": 93.6,
+   "words": [
+    {
+     "t": "“Nandi,",
+     "x": 188,
+     "y": 295,
+     "w": 105,
+     "h": 31,
+     "conf": 86.9
+    },
+    {
+     "t": "what",
+     "x": 305,
+     "y": 295,
+     "w": 68,
+     "h": 28,
+     "conf": 96.9
+    },
+    {
+     "t": "are",
+     "x": 383,
+     "y": 307,
+     "w": 44,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "you",
+     "x": 436,
+     "y": 307,
+     "w": 48,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "doing?”",
+     "x": 497,
+     "y": 295,
+     "w": 104,
+     "h": 34,
+     "conf": 95.1
+    },
+    {
+     "t": "asked",
+     "x": 209,
+     "y": 338,
+     "w": 78,
+     "h": 27,
+     "conf": 93.3
+    },
+    {
+     "t": "Nandi’s",
+     "x": 302,
+     "y": 338,
+     "w": 105,
+     "h": 28,
+     "conf": 59.6
+    },
+    {
+     "t": "big",
+     "x": 419,
+     "y": 337,
+     "w": 41,
+     "h": 35,
+     "conf": 96.9
+    },
+    {
+     "t": "brother.",
+     "x": 473,
+     "y": 337,
+     "w": 104,
+     "h": 28,
+     "conf": 96.4
+    },
+    {
+     "t": "Nandi",
+     "x": 160,
+     "y": 425,
+     "w": 85,
+     "h": 28,
+     "conf": 94.6
+    },
+    {
+     "t": "sat",
+     "x": 257,
+     "y": 431,
+     "w": 40,
+     "h": 21,
+     "conf": 95.6
+    },
+    {
+     "t": "back",
+     "x": 308,
+     "y": 424,
+     "w": 65,
+     "h": 28,
+     "conf": 96.2
+    },
+    {
+     "t": "on",
+     "x": 384,
+     "y": 437,
+     "w": 32,
+     "h": 15,
+     "conf": 95.4
+    },
+    {
+     "t": "the",
+     "x": 428,
+     "y": 425,
+     "w": 42,
+     "h": 27,
+     "conf": 95.4
+    },
+    {
+     "t": "step",
+     "x": 481,
+     "y": 431,
+     "w": 55,
+     "h": 28,
+     "conf": 96.5
+    },
+    {
+     "t": "with",
+     "x": 546,
+     "y": 425,
+     "w": 55,
+     "h": 28,
+     "conf": 94.3
+    },
+    {
+     "t": "a",
+     "x": 613,
+     "y": 437,
+     "w": 16,
+     "h": 15,
+     "conf": 94.3
+    },
+    {
+     "t": "big",
+     "x": 247,
+     "y": 467,
+     "w": 41,
+     "h": 35,
+     "conf": 96.7
+    },
+    {
+     "t": "smile",
+     "x": 300,
+     "y": 468,
+     "w": 69,
+     "h": 27,
+     "conf": 94.8
+    },
+    {
+     "t": "on",
+     "x": 379,
+     "y": 480,
+     "w": 32,
+     "h": 15,
+     "conf": 94.8
+    },
+    {
+     "t": "her",
+     "x": 424,
+     "y": 468,
+     "w": 42,
+     "h": 27,
+     "conf": 96.0
+    },
+    {
+     "t": "face.",
+     "x": 476,
+     "y": 468,
+     "w": 64,
+     "h": 27,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_16.jpg",
+   "image_file": "what-if_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Just wondering,’ she said.",
+   "char_count": 27,
+   "word_count": 4,
+   "mean_conf": 92.9,
+   "words": [
+    {
+     "t": "“Just",
+     "x": 1004,
+     "y": 278,
+     "w": 58,
+     "h": 30,
+     "conf": 84.7
+    },
+    {
+     "t": "wondering,’",
+     "x": 1071,
+     "y": 276,
+     "w": 160,
+     "h": 34,
+     "conf": 94.4
+    },
+    {
+     "t": "she",
+     "x": 1242,
+     "y": 276,
+     "w": 44,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "said.",
+     "x": 1297,
+     "y": 276,
+     "w": 61,
+     "h": 27,
+     "conf": 95.6
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_17.jpg",
+   "image_file": "what-if_Page_17.jpg",
+   "image_width": 1578,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_18.jpg",
+   "image_file": "what-if_Page_18.jpg",
+   "image_width": 791,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

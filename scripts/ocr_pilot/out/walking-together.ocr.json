@@ -1,0 +1,1983 @@
+{
+ "slug": "walking-together",
+ "wp_slug": "walking-together",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "walking-together_20150827_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  },
+  {
+   "file": "walking-together_20150827_Page_03.jpg",
+   "reason": "front-matter(PDF 3)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_05.jpg",
+   "image_file": "walking-together_20150827_Page_05.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "When we go walking\nand the road is long,\nwe'll walk together\nsinging a song.",
+   "char_count": 76,
+   "word_count": 15,
+   "mean_conf": 94.7,
+   "words": [
+    {
+     "t": "When",
+     "x": 213,
+     "y": 264,
+     "w": 88,
+     "h": 22,
+     "conf": 95.7
+    },
+    {
+     "t": "we",
+     "x": 317,
+     "y": 270,
+     "w": 42,
+     "h": 16,
+     "conf": 94.6
+    },
+    {
+     "t": "go",
+     "x": 373,
+     "y": 270,
+     "w": 36,
+     "h": 22,
+     "conf": 94.6
+    },
+    {
+     "t": "walking",
+     "x": 424,
+     "y": 264,
+     "w": 117,
+     "h": 28,
+     "conf": 96.1
+    },
+    {
+     "t": "and",
+     "x": 220,
+     "y": 303,
+     "w": 56,
+     "h": 22,
+     "conf": 94.8
+    },
+    {
+     "t": "the",
+     "x": 291,
+     "y": 303,
+     "w": 48,
+     "h": 22,
+     "conf": 96.0
+    },
+    {
+     "t": "road",
+     "x": 354,
+     "y": 303,
+     "w": 68,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "is",
+     "x": 439,
+     "y": 304,
+     "w": 19,
+     "h": 21,
+     "conf": 94.7
+    },
+    {
+     "t": "long,",
+     "x": 473,
+     "y": 303,
+     "w": 71,
+     "h": 28,
+     "conf": 96.5
+    },
+    {
+     "t": "we'll",
+     "x": 229,
+     "y": 341,
+     "w": 65,
+     "h": 22,
+     "conf": 93.3
+    },
+    {
+     "t": "walk",
+     "x": 309,
+     "y": 341,
+     "w": 68,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "together",
+     "x": 391,
+     "y": 341,
+     "w": 136,
+     "h": 28,
+     "conf": 95.9
+    },
+    {
+     "t": "singing",
+     "x": 266,
+     "y": 381,
+     "w": 109,
+     "h": 27,
+     "conf": 96.3
+    },
+    {
+     "t": "a",
+     "x": 390,
+     "y": 386,
+     "w": 15,
+     "h": 16,
+     "conf": 89.0
+    },
+    {
+     "t": "song.",
+     "x": 420,
+     "y": 386,
+     "w": 80,
+     "h": 22,
+     "conf": 89.0
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_06.jpg",
+   "image_file": "walking-together_20150827_Page_06.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "Lam with you\nand you are with me.\nA journey is fun\nwith our family.",
+   "char_count": 67,
+   "word_count": 15,
+   "mean_conf": 93.4,
+   "words": [
+    {
+     "t": "Lam",
+     "x": 279,
+     "y": 236,
+     "w": 62,
+     "h": 22,
+     "conf": 69.1
+    },
+    {
+     "t": "with",
+     "x": 356,
+     "y": 236,
+     "w": 63,
+     "h": 22,
+     "conf": 95.5
+    },
+    {
+     "t": "you",
+     "x": 434,
+     "y": 242,
+     "w": 52,
+     "h": 22,
+     "conf": 95.5
+    },
+    {
+     "t": "and",
+     "x": 215,
+     "y": 274,
+     "w": 56,
+     "h": 22,
+     "conf": 95.6
+    },
+    {
+     "t": "you",
+     "x": 286,
+     "y": 280,
+     "w": 52,
+     "h": 22,
+     "conf": 95.6
+    },
+    {
+     "t": "are",
+     "x": 353,
+     "y": 280,
+     "w": 50,
+     "h": 16,
+     "conf": 96.3
+    },
+    {
+     "t": "with",
+     "x": 417,
+     "y": 274,
+     "w": 64,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "me.",
+     "x": 497,
+     "y": 280,
+     "w": 53,
+     "h": 16,
+     "conf": 96.2
+    },
+    {
+     "t": "A",
+     "x": 262,
+     "y": 313,
+     "w": 17,
+     "h": 22,
+     "conf": 93.8
+    },
+    {
+     "t": "journey",
+     "x": 291,
+     "y": 319,
+     "w": 115,
+     "h": 22,
+     "conf": 90.6
+    },
+    {
+     "t": "is",
+     "x": 423,
+     "y": 314,
+     "w": 19,
+     "h": 21,
+     "conf": 95.1
+    },
+    {
+     "t": "fun",
+     "x": 456,
+     "y": 313,
+     "w": 45,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "with",
+     "x": 261,
+     "y": 351,
+     "w": 64,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "our",
+     "x": 340,
+     "y": 357,
+     "w": 50,
+     "h": 16,
+     "conf": 96.2
+    },
+    {
+     "t": "family.",
+     "x": 403,
+     "y": 351,
+     "w": 102,
+     "h": 28,
+     "conf": 92.6
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_07.jpg",
+   "image_file": "walking-together_20150827_Page_07.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "rl keep you cosy\nlike a mother hen.\nShe keeps her chicks warm\nunder her wing.",
+   "char_count": 77,
+   "word_count": 16,
+   "mean_conf": 89.9,
+   "words": [
+    {
+     "t": "rl",
+     "x": 246,
+     "y": 236,
+     "w": 27,
+     "h": 22,
+     "conf": 17.4
+    },
+    {
+     "t": "keep",
+     "x": 288,
+     "y": 236,
+     "w": 72,
+     "h": 29,
+     "conf": 77.1
+    },
+    {
+     "t": "you",
+     "x": 375,
+     "y": 242,
+     "w": 52,
+     "h": 22,
+     "conf": 95.6
+    },
+    {
+     "t": "cosy",
+     "x": 443,
+     "y": 242,
+     "w": 66,
+     "h": 22,
+     "conf": 95.6
+    },
+    {
+     "t": "like",
+     "x": 243,
+     "y": 274,
+     "w": 49,
+     "h": 22,
+     "conf": 95.4
+    },
+    {
+     "t": "a",
+     "x": 313,
+     "y": 280,
+     "w": 7,
+     "h": 16,
+     "conf": 96.0
+    },
+    {
+     "t": "mother",
+     "x": 336,
+     "y": 274,
+     "w": 112,
+     "h": 22,
+     "conf": 96.0
+    },
+    {
+     "t": "hen.",
+     "x": 462,
+     "y": 274,
+     "w": 62,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "She",
+     "x": 167,
+     "y": 312,
+     "w": 56,
+     "h": 23,
+     "conf": 95.6
+    },
+    {
+     "t": "keeps",
+     "x": 238,
+     "y": 313,
+     "w": 88,
+     "h": 29,
+     "conf": 95.3
+    },
+    {
+     "t": "her",
+     "x": 341,
+     "y": 313,
+     "w": 48,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "chicks",
+     "x": 403,
+     "y": 313,
+     "w": 94,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "warm",
+     "x": 511,
+     "y": 319,
+     "w": 87,
+     "h": 16,
+     "conf": 96.4
+    },
+    {
+     "t": "under",
+     "x": 260,
+     "y": 351,
+     "w": 89,
+     "h": 22,
+     "conf": 95.5
+    },
+    {
+     "t": "her",
+     "x": 364,
+     "y": 351,
+     "w": 48,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "wing.",
+     "x": 426,
+     "y": 352,
+     "w": 81,
+     "h": 27,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_08.jpg",
+   "image_file": "walking-together_20150827_Page_08.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "If the rain starts to fall\ndown from the sky,\nlike that good hat\nll keep your face dry.",
+   "char_count": 87,
+   "word_count": 19,
+   "mean_conf": 88.6,
+   "words": [
+    {
+     "t": "If",
+     "x": 205,
+     "y": 236,
+     "w": 15,
+     "h": 22,
+     "conf": 65.0
+    },
+    {
+     "t": "the",
+     "x": 233,
+     "y": 236,
+     "w": 48,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "rain",
+     "x": 296,
+     "y": 237,
+     "w": 56,
+     "h": 21,
+     "conf": 96.3
+    },
+    {
+     "t": "starts",
+     "x": 367,
+     "y": 236,
+     "w": 86,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "to",
+     "x": 467,
+     "y": 236,
+     "w": 28,
+     "h": 22,
+     "conf": 94.9
+    },
+    {
+     "t": "fall",
+     "x": 510,
+     "y": 236,
+     "w": 42,
+     "h": 22,
+     "conf": 94.9
+    },
+    {
+     "t": "down",
+     "x": 228,
+     "y": 274,
+     "w": 82,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "from",
+     "x": 325,
+     "y": 274,
+     "w": 71,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 410,
+     "y": 274,
+     "w": 49,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "sky,",
+     "x": 473,
+     "y": 274,
+     "w": 55,
+     "h": 28,
+     "conf": 96.2
+    },
+    {
+     "t": "like",
+     "x": 244,
+     "y": 313,
+     "w": 49,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "that",
+     "x": 306,
+     "y": 313,
+     "w": 60,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "good",
+     "x": 382,
+     "y": 313,
+     "w": 76,
+     "h": 28,
+     "conf": 89.9
+    },
+    {
+     "t": "hat",
+     "x": 475,
+     "y": 313,
+     "w": 44,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "ll",
+     "x": 211,
+     "y": 351,
+     "w": 26,
+     "h": 22,
+     "conf": 0.0
+    },
+    {
+     "t": "keep",
+     "x": 252,
+     "y": 351,
+     "w": 72,
+     "h": 29,
+     "conf": 91.9
+    },
+    {
+     "t": "your",
+     "x": 339,
+     "y": 357,
+     "w": 68,
+     "h": 22,
+     "conf": 94.4
+    },
+    {
+     "t": "face",
+     "x": 421,
+     "y": 351,
+     "w": 65,
+     "h": 22,
+     "conf": 95.7
+    },
+    {
+     "t": "dry.",
+     "x": 500,
+     "y": 351,
+     "w": 58,
+     "h": 28,
+     "conf": 93.1
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_09.jpg",
+   "image_file": "walking-together_20150827_Page_09.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "If storm clouds get angry\nand grumble and moan,\nbe brave, why cry?\nYou're not alone.",
+   "char_count": 84,
+   "word_count": 16,
+   "mean_conf": 89.7,
+   "words": [
+    {
+     "t": "If",
+     "x": 181,
+     "y": 236,
+     "w": 16,
+     "h": 22,
+     "conf": 74.4
+    },
+    {
+     "t": "storm",
+     "x": 210,
+     "y": 236,
+     "w": 87,
+     "h": 22,
+     "conf": 93.6
+    },
+    {
+     "t": "clouds",
+     "x": 312,
+     "y": 236,
+     "w": 98,
+     "h": 22,
+     "conf": 93.6
+    },
+    {
+     "t": "get",
+     "x": 425,
+     "y": 236,
+     "w": 46,
+     "h": 28,
+     "conf": 96.5
+    },
+    {
+     "t": "angry",
+     "x": 487,
+     "y": 242,
+     "w": 87,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 193,
+     "y": 274,
+     "w": 56,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "grumble",
+     "x": 265,
+     "y": 274,
+     "w": 129,
+     "h": 28,
+     "conf": 95.8
+    },
+    {
+     "t": "and",
+     "x": 407,
+     "y": 274,
+     "w": 55,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "moan,",
+     "x": 479,
+     "y": 280,
+     "w": 92,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "be",
+     "x": 234,
+     "y": 313,
+     "w": 35,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "brave,",
+     "x": 284,
+     "y": 313,
+     "w": 95,
+     "h": 25,
+     "conf": 95.3
+    },
+    {
+     "t": "why",
+     "x": 393,
+     "y": 313,
+     "w": 59,
+     "h": 28,
+     "conf": 95.3
+    },
+    {
+     "t": "cry?",
+     "x": 469,
+     "y": 313,
+     "w": 63,
+     "h": 28,
+     "conf": 96.4
+    },
+    {
+     "t": "You're",
+     "x": 252,
+     "y": 351,
+     "w": 95,
+     "h": 22,
+     "conf": 21.1
+    },
+    {
+     "t": "not",
+     "x": 362,
+     "y": 351,
+     "w": 45,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "alone.",
+     "x": 422,
+     "y": 351,
+     "w": 92,
+     "h": 22,
+     "conf": 95.6
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_10.jpg",
+   "image_file": "walking-together_20150827_Page_10.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "We're walking together\nso we never get bored.\nLook up! Look around!\nSee where we've explored!",
+   "char_count": 93,
+   "word_count": 16,
+   "mean_conf": 90.2,
+   "words": [
+    {
+     "t": "We're",
+     "x": 191,
+     "y": 236,
+     "w": 92,
+     "h": 22,
+     "conf": 34.8
+    },
+    {
+     "t": "walking",
+     "x": 297,
+     "y": 236,
+     "w": 117,
+     "h": 28,
+     "conf": 96.5
+    },
+    {
+     "t": "together",
+     "x": 428,
+     "y": 236,
+     "w": 137,
+     "h": 28,
+     "conf": 96.1
+    },
+    {
+     "t": "so",
+     "x": 200,
+     "y": 280,
+     "w": 31,
+     "h": 16,
+     "conf": 96.2
+    },
+    {
+     "t": "we",
+     "x": 246,
+     "y": 280,
+     "w": 42,
+     "h": 16,
+     "conf": 95.8
+    },
+    {
+     "t": "never",
+     "x": 303,
+     "y": 280,
+     "w": 87,
+     "h": 16,
+     "conf": 96.2
+    },
+    {
+     "t": "get",
+     "x": 403,
+     "y": 274,
+     "w": 47,
+     "h": 28,
+     "conf": 96.1
+    },
+    {
+     "t": "bored.",
+     "x": 467,
+     "y": 274,
+     "w": 99,
+     "h": 22,
+     "conf": 95.7
+    },
+    {
+     "t": "Look",
+     "x": 210,
+     "y": 313,
+     "w": 70,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "up!",
+     "x": 295,
+     "y": 313,
+     "w": 43,
+     "h": 29,
+     "conf": 93.7
+    },
+    {
+     "t": "Look",
+     "x": 354,
+     "y": 313,
+     "w": 70,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "around!",
+     "x": 437,
+     "y": 313,
+     "w": 119,
+     "h": 22,
+     "conf": 83.7
+    },
+    {
+     "t": "See",
+     "x": 169,
+     "y": 350,
+     "w": 56,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "where",
+     "x": 239,
+     "y": 351,
+     "w": 96,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "we've",
+     "x": 349,
+     "y": 351,
+     "w": 88,
+     "h": 22,
+     "conf": 76.6
+    },
+    {
+     "t": "explored!",
+     "x": 451,
+     "y": 351,
+     "w": 144,
+     "h": 29,
+     "conf": 95.0
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_11.jpg",
+   "image_file": "walking-together_20150827_Page_11.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "If you see something\nthat’s funny to see,\n| don’t want to miss it.\nPlease share it with me!",
+   "char_count": 91,
+   "word_count": 19,
+   "mean_conf": 93.8,
+   "words": [
+    {
+     "t": "If",
+     "x": 216,
+     "y": 236,
+     "w": 16,
+     "h": 22,
+     "conf": 85.9
+    },
+    {
+     "t": "you",
+     "x": 245,
+     "y": 242,
+     "w": 52,
+     "h": 22,
+     "conf": 95.9
+    },
+    {
+     "t": "see",
+     "x": 313,
+     "y": 242,
+     "w": 51,
+     "h": 16,
+     "conf": 96.3
+    },
+    {
+     "t": "something",
+     "x": 378,
+     "y": 236,
+     "w": 161,
+     "h": 28,
+     "conf": 96.0
+    },
+    {
+     "t": "that’s",
+     "x": 233,
+     "y": 274,
+     "w": 85,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "funny",
+     "x": 332,
+     "y": 274,
+     "w": 82,
+     "h": 28,
+     "conf": 95.8
+    },
+    {
+     "t": "to",
+     "x": 430,
+     "y": 274,
+     "w": 29,
+     "h": 22,
+     "conf": 95.2
+    },
+    {
+     "t": "see,",
+     "x": 473,
+     "y": 280,
+     "w": 58,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "|",
+     "x": 211,
+     "y": 313,
+     "w": 1,
+     "h": 22,
+     "conf": 90.8
+    },
+    {
+     "t": "don’t",
+     "x": 229,
+     "y": 313,
+     "w": 74,
+     "h": 22,
+     "conf": 86.6
+    },
+    {
+     "t": "want",
+     "x": 319,
+     "y": 313,
+     "w": 73,
+     "h": 22,
+     "conf": 95.2
+    },
+    {
+     "t": "to",
+     "x": 407,
+     "y": 313,
+     "w": 29,
+     "h": 22,
+     "conf": 95.4
+    },
+    {
+     "t": "miss",
+     "x": 452,
+     "y": 314,
+     "w": 65,
+     "h": 21,
+     "conf": 95.4
+    },
+    {
+     "t": "it.",
+     "x": 532,
+     "y": 313,
+     "w": 25,
+     "h": 22,
+     "conf": 94.7
+    },
+    {
+     "t": "Please",
+     "x": 197,
+     "y": 351,
+     "w": 96,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "share",
+     "x": 307,
+     "y": 351,
+     "w": 84,
+     "h": 22,
+     "conf": 96.0
+    },
+    {
+     "t": "it",
+     "x": 406,
+     "y": 351,
+     "w": 14,
+     "h": 22,
+     "conf": 96.0
+    },
+    {
+     "t": "with",
+     "x": 437,
+     "y": 351,
+     "w": 63,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "me!",
+     "x": 516,
+     "y": 351,
+     "w": 52,
+     "h": 22,
+     "conf": 82.1
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_12.jpg",
+   "image_file": "walking-together_20150827_Page_12.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "lf your feet start to hurt\nfrom the distance we’ve passed,\ndon’t worry, we've made it!\nHere’s the clinic at last.",
+   "char_count": 113,
+   "word_count": 21,
+   "mean_conf": 90.7,
+   "words": [
+    {
+     "t": "lf",
+     "x": 192,
+     "y": 236,
+     "w": 16,
+     "h": 22,
+     "conf": 77.3
+    },
+    {
+     "t": "your",
+     "x": 221,
+     "y": 242,
+     "w": 69,
+     "h": 22,
+     "conf": 95.1
+    },
+    {
+     "t": "feet",
+     "x": 303,
+     "y": 236,
+     "w": 57,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "start",
+     "x": 376,
+     "y": 236,
+     "w": 69,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 460,
+     "y": 236,
+     "w": 29,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "hurt",
+     "x": 505,
+     "y": 236,
+     "w": 58,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "from",
+     "x": 127,
+     "y": 274,
+     "w": 71,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 212,
+     "y": 274,
+     "w": 48,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "distance",
+     "x": 274,
+     "y": 274,
+     "w": 132,
+     "h": 22,
+     "conf": 93.3
+    },
+    {
+     "t": "we’ve",
+     "x": 420,
+     "y": 274,
+     "w": 88,
+     "h": 22,
+     "conf": 85.8
+    },
+    {
+     "t": "passed,",
+     "x": 523,
+     "y": 274,
+     "w": 115,
+     "h": 29,
+     "conf": 95.6
+    },
+    {
+     "t": "don’t",
+     "x": 168,
+     "y": 313,
+     "w": 74,
+     "h": 22,
+     "conf": 81.9
+    },
+    {
+     "t": "worry,",
+     "x": 258,
+     "y": 319,
+     "w": 98,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "we've",
+     "x": 370,
+     "y": 313,
+     "w": 88,
+     "h": 22,
+     "conf": 60.5
+    },
+    {
+     "t": "made",
+     "x": 473,
+     "y": 313,
+     "w": 85,
+     "h": 22,
+     "conf": 83.5
+    },
+    {
+     "t": "it!",
+     "x": 573,
+     "y": 313,
+     "w": 24,
+     "h": 22,
+     "conf": 83.5
+    },
+    {
+     "t": "Here’s",
+     "x": 202,
+     "y": 351,
+     "w": 93,
+     "h": 22,
+     "conf": 91.9
+    },
+    {
+     "t": "the",
+     "x": 308,
+     "y": 351,
+     "w": 49,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "clinic",
+     "x": 371,
+     "y": 351,
+     "w": 77,
+     "h": 22,
+     "conf": 94.8
+    },
+    {
+     "t": "at",
+     "x": 462,
+     "y": 351,
+     "w": 27,
+     "h": 22,
+     "conf": 95.6
+    },
+    {
+     "t": "last.",
+     "x": 506,
+     "y": 351,
+     "w": 59,
+     "h": 22,
+     "conf": 95.5
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_13.jpg",
+   "image_file": "walking-together_20150827_Page_13.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "We all need to check\nour throat, lungs and ears.\nGet strong as you grow,\nit’s no reason for tears.",
+   "char_count": 98,
+   "word_count": 20,
+   "mean_conf": 94.7,
+   "words": [
+    {
+     "t": "We",
+     "x": 212,
+     "y": 236,
+     "w": 51,
+     "h": 22,
+     "conf": 95.7
+    },
+    {
+     "t": "all",
+     "x": 276,
+     "y": 236,
+     "w": 32,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "need",
+     "x": 323,
+     "y": 236,
+     "w": 73,
+     "h": 22,
+     "conf": 95.2
+    },
+    {
+     "t": "to",
+     "x": 411,
+     "y": 236,
+     "w": 28,
+     "h": 22,
+     "conf": 95.2
+    },
+    {
+     "t": "check",
+     "x": 454,
+     "y": 236,
+     "w": 89,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "our",
+     "x": 175,
+     "y": 280,
+     "w": 50,
+     "h": 16,
+     "conf": 95.1
+    },
+    {
+     "t": "throat,",
+     "x": 237,
+     "y": 274,
+     "w": 103,
+     "h": 25,
+     "conf": 95.1
+    },
+    {
+     "t": "lungs",
+     "x": 355,
+     "y": 274,
+     "w": 79,
+     "h": 28,
+     "conf": 95.7
+    },
+    {
+     "t": "and",
+     "x": 447,
+     "y": 274,
+     "w": 55,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "ears.",
+     "x": 518,
+     "y": 280,
+     "w": 73,
+     "h": 16,
+     "conf": 95.3
+    },
+    {
+     "t": "Get",
+     "x": 193,
+     "y": 312,
+     "w": 51,
+     "h": 23,
+     "conf": 96.4
+    },
+    {
+     "t": "strong",
+     "x": 261,
+     "y": 313,
+     "w": 97,
+     "h": 28,
+     "conf": 96.0
+    },
+    {
+     "t": "as",
+     "x": 373,
+     "y": 319,
+     "w": 31,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "you",
+     "x": 419,
+     "y": 319,
+     "w": 52,
+     "h": 22,
+     "conf": 95.7
+    },
+    {
+     "t": "grow,",
+     "x": 487,
+     "y": 319,
+     "w": 86,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "it’s",
+     "x": 203,
+     "y": 351,
+     "w": 39,
+     "h": 22,
+     "conf": 72.1
+    },
+    {
+     "t": "no",
+     "x": 257,
+     "y": 357,
+     "w": 34,
+     "h": 16,
+     "conf": 96.7
+    },
+    {
+     "t": "reason",
+     "x": 306,
+     "y": 357,
+     "w": 102,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "for",
+     "x": 424,
+     "y": 351,
+     "w": 41,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "tears.",
+     "x": 478,
+     "y": 351,
+     "w": 87,
+     "h": 22,
+     "conf": 95.1
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_14.jpg",
+   "image_file": "walking-together_20150827_Page_14.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "Do you think it’s scary?\nHere, hold my hand.\nShe'll check your blood pressure\nwith this clever armband.",
+   "char_count": 103,
+   "word_count": 18,
+   "mean_conf": 92.7,
+   "words": [
+    {
+     "t": "Do",
+     "x": 197,
+     "y": 254,
+     "w": 37,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "you",
+     "x": 249,
+     "y": 260,
+     "w": 52,
+     "h": 22,
+     "conf": 95.3
+    },
+    {
+     "t": "think",
+     "x": 316,
+     "y": 254,
+     "w": 75,
+     "h": 22,
+     "conf": 95.3
+    },
+    {
+     "t": "it’s",
+     "x": 406,
+     "y": 254,
+     "w": 40,
+     "h": 22,
+     "conf": 95.6
+    },
+    {
+     "t": "scary?",
+     "x": 460,
+     "y": 254,
+     "w": 99,
+     "h": 28,
+     "conf": 96.6
+    },
+    {
+     "t": "Here,",
+     "x": 227,
+     "y": 292,
+     "w": 78,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "hold",
+     "x": 320,
+     "y": 292,
+     "w": 61,
+     "h": 22,
+     "conf": 65.9
+    },
+    {
+     "t": "my",
+     "x": 398,
+     "y": 298,
+     "w": 42,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "hand.",
+     "x": 457,
+     "y": 292,
+     "w": 83,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "She'll",
+     "x": 126,
+     "y": 330,
+     "w": 79,
+     "h": 23,
+     "conf": 65.6
+    },
+    {
+     "t": "check",
+     "x": 219,
+     "y": 331,
+     "w": 89,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "your",
+     "x": 322,
+     "y": 337,
+     "w": 69,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "blood",
+     "x": 406,
+     "y": 331,
+     "w": 83,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "pressure",
+     "x": 505,
+     "y": 337,
+     "w": 134,
+     "h": 23,
+     "conf": 95.4
+    },
+    {
+     "t": "with",
+     "x": 182,
+     "y": 369,
+     "w": 63,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "this",
+     "x": 259,
+     "y": 369,
+     "w": 54,
+     "h": 22,
+     "conf": 96.0
+    },
+    {
+     "t": "clever",
+     "x": 327,
+     "y": 369,
+     "w": 94,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "armband.",
+     "x": 434,
+     "y": 369,
+     "w": 151,
+     "h": 22,
+     "conf": 95.3
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_15.jpg",
+   "image_file": "walking-together_20150827_Page_15.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "|\nHH\n]\nHh\nPE\nThey give us our medicine,\ntellus what we should know,\nto keep us all healthy.\nNow back home we go.",
+   "char_count": 112,
+   "word_count": 25,
+   "mean_conf": 83.8,
+   "words": [
+    {
+     "t": "|",
+     "x": 1299,
+     "y": 100,
+     "w": 87,
+     "h": 23,
+     "conf": 40.2
+    },
+    {
+     "t": "HH",
+     "x": 1288,
+     "y": 112,
+     "w": 76,
+     "h": 31,
+     "conf": 25.2
+    },
+    {
+     "t": "]",
+     "x": 1387,
+     "y": 103,
+     "w": 6,
+     "h": 31,
+     "conf": 41.1
+    },
+    {
+     "t": "Hh",
+     "x": 1367,
+     "y": 113,
+     "w": 21,
+     "h": 30,
+     "conf": 60.3
+    },
+    {
+     "t": "PE",
+     "x": 1395,
+     "y": 99,
+     "w": 117,
+     "h": 44,
+     "conf": 11.0
+    },
+    {
+     "t": "They",
+     "x": 166,
+     "y": 236,
+     "w": 72,
+     "h": 28,
+     "conf": 96.5
+    },
+    {
+     "t": "give",
+     "x": 254,
+     "y": 237,
+     "w": 64,
+     "h": 27,
+     "conf": 96.4
+    },
+    {
+     "t": "us",
+     "x": 333,
+     "y": 242,
+     "w": 30,
+     "h": 16,
+     "conf": 96.3
+    },
+    {
+     "t": "our",
+     "x": 377,
+     "y": 242,
+     "w": 50,
+     "h": 16,
+     "conf": 95.6
+    },
+    {
+     "t": "medicine,",
+     "x": 441,
+     "y": 236,
+     "w": 149,
+     "h": 25,
+     "conf": 95.8
+    },
+    {
+     "t": "tellus",
+     "x": 156,
+     "y": 274,
+     "w": 90,
+     "h": 22,
+     "conf": 95.5
+    },
+    {
+     "t": "what",
+     "x": 260,
+     "y": 274,
+     "w": 73,
+     "h": 22,
+     "conf": 96.2
+    },
+    {
+     "t": "we",
+     "x": 350,
+     "y": 280,
+     "w": 42,
+     "h": 16,
+     "conf": 96.3
+    },
+    {
+     "t": "should",
+     "x": 406,
+     "y": 274,
+     "w": 98,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "know,",
+     "x": 521,
+     "y": 274,
+     "w": 87,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "to",
+     "x": 211,
+     "y": 313,
+     "w": 29,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "keep",
+     "x": 255,
+     "y": 313,
+     "w": 72,
+     "h": 29,
+     "conf": 95.7
+    },
+    {
+     "t": "us",
+     "x": 343,
+     "y": 319,
+     "w": 30,
+     "h": 16,
+     "conf": 94.9
+    },
+    {
+     "t": "all",
+     "x": 386,
+     "y": 313,
+     "w": 32,
+     "h": 22,
+     "conf": 94.9
+    },
+    {
+     "t": "healthy.",
+     "x": 433,
+     "y": 313,
+     "w": 121,
+     "h": 28,
+     "conf": 93.9
+    },
+    {
+     "t": "Now",
+     "x": 199,
+     "y": 351,
+     "w": 66,
+     "h": 22,
+     "conf": 96.7
+    },
+    {
+     "t": "back",
+     "x": 281,
+     "y": 351,
+     "w": 71,
+     "h": 22,
+     "conf": 95.8
+    },
+    {
+     "t": "home",
+     "x": 368,
+     "y": 351,
+     "w": 84,
+     "h": 22,
+     "conf": 95.7
+    },
+    {
+     "t": "we",
+     "x": 466,
+     "y": 357,
+     "w": 43,
+     "h": 16,
+     "conf": 96.7
+    },
+    {
+     "t": "go.",
+     "x": 523,
+     "y": 357,
+     "w": 45,
+     "h": 22,
+     "conf": 96.0
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_16.jpg",
+   "image_file": "walking-together_20150827_Page_16.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "It’s okay to be tired,\nthere’s so much we've seen.\nNow it’s your bedtime.\nSleep well and sweet dreams.",
+   "char_count": 102,
+   "word_count": 19,
+   "mean_conf": 90.9,
+   "words": [
+    {
+     "t": "It’s",
+     "x": 223,
+     "y": 203,
+     "w": 39,
+     "h": 22,
+     "conf": 80.2
+    },
+    {
+     "t": "okay",
+     "x": 276,
+     "y": 203,
+     "w": 70,
+     "h": 28,
+     "conf": 95.0
+    },
+    {
+     "t": "to",
+     "x": 361,
+     "y": 203,
+     "w": 29,
+     "h": 22,
+     "conf": 95.0
+    },
+    {
+     "t": "be",
+     "x": 406,
+     "y": 203,
+     "w": 35,
+     "h": 22,
+     "conf": 94.7
+    },
+    {
+     "t": "tired,",
+     "x": 454,
+     "y": 203,
+     "w": 81,
+     "h": 25,
+     "conf": 94.7
+    },
+    {
+     "t": "there’s",
+     "x": 161,
+     "y": 241,
+     "w": 105,
+     "h": 22,
+     "conf": 92.3
+    },
+    {
+     "t": "so",
+     "x": 281,
+     "y": 247,
+     "w": 30,
+     "h": 16,
+     "conf": 96.7
+    },
+    {
+     "t": "much",
+     "x": 327,
+     "y": 241,
+     "w": 81,
+     "h": 22,
+     "conf": 94.8
+    },
+    {
+     "t": "we've",
+     "x": 423,
+     "y": 241,
+     "w": 88,
+     "h": 22,
+     "conf": 28.1
+    },
+    {
+     "t": "seen.",
+     "x": 526,
+     "y": 247,
+     "w": 78,
+     "h": 16,
+     "conf": 96.1
+    },
+    {
+     "t": "Now",
+     "x": 206,
+     "y": 280,
+     "w": 66,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "it’s",
+     "x": 288,
+     "y": 280,
+     "w": 39,
+     "h": 22,
+     "conf": 94.5
+    },
+    {
+     "t": "your",
+     "x": 342,
+     "y": 286,
+     "w": 68,
+     "h": 22,
+     "conf": 96.4
+    },
+    {
+     "t": "bedtime.",
+     "x": 425,
+     "y": 280,
+     "w": 136,
+     "h": 22,
+     "conf": 96.0
+    },
+    {
+     "t": "Sleep",
+     "x": 148,
+     "y": 317,
+     "w": 84,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "well",
+     "x": 247,
+     "y": 318,
+     "w": 58,
+     "h": 22,
+     "conf": 93.5
+    },
+    {
+     "t": "and",
+     "x": 318,
+     "y": 318,
+     "w": 56,
+     "h": 22,
+     "conf": 93.5
+    },
+    {
+     "t": "sweet",
+     "x": 389,
+     "y": 318,
+     "w": 89,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "dreams.",
+     "x": 494,
+     "y": 318,
+     "w": 125,
+     "h": 22,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_17.jpg",
+   "image_file": "walking-together_20150827_Page_17.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_18.jpg",
+   "image_file": "walking-together_20150827_Page_18.jpg",
+   "image_width": 756,
+   "image_height": 756,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

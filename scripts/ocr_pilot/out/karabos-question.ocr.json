@@ -1,0 +1,1767 @@
+{
+ "slug": "karabos-question",
+ "wp_slug": "karabos-question",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "karabos-question-20150827_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_05.jpg",
+   "image_file": "karabos-question-20150827_Page_05.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "My sister Kifue\nchases roosters that crow.\nWhat do I do?\nWhat do I know?",
+   "char_count": 72,
+   "word_count": 15,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "My",
+     "x": 164,
+     "y": 297,
+     "w": 42,
+     "h": 31,
+     "conf": 96.8
+    },
+    {
+     "t": "sister",
+     "x": 218,
+     "y": 297,
+     "w": 81,
+     "h": 23,
+     "conf": 93.3
+    },
+    {
+     "t": "Kifue",
+     "x": 310,
+     "y": 295,
+     "w": 73,
+     "h": 25,
+     "conf": 92.9
+    },
+    {
+     "t": "chases",
+     "x": 201,
+     "y": 335,
+     "w": 98,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "roosters",
+     "x": 309,
+     "y": 340,
+     "w": 122,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "that",
+     "x": 442,
+     "y": 335,
+     "w": 60,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "crow.",
+     "x": 513,
+     "y": 344,
+     "w": 78,
+     "h": 16,
+     "conf": 96.3
+    },
+    {
+     "t": "What",
+     "x": 163,
+     "y": 411,
+     "w": 80,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "do",
+     "x": 255,
+     "y": 411,
+     "w": 32,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "I",
+     "x": 300,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 95.9
+    },
+    {
+     "t": "do?",
+     "x": 324,
+     "y": 411,
+     "w": 47,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "What",
+     "x": 201,
+     "y": 451,
+     "w": 80,
+     "h": 25,
+     "conf": 95.5
+    },
+    {
+     "t": "do",
+     "x": 293,
+     "y": 451,
+     "w": 32,
+     "h": 25,
+     "conf": 94.9
+    },
+    {
+     "t": "I",
+     "x": 338,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "know?",
+     "x": 362,
+     "y": 451,
+     "w": 87,
+     "h": 25,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_06.jpg",
+   "image_file": "karabos-question-20150827_Page_06.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "My brother Katleho\nhas a ball to throw.\nWhat do I do?\nWhat do I know?",
+   "char_count": 69,
+   "word_count": 16,
+   "mean_conf": 95.3,
+   "words": [
+    {
+     "t": "My",
+     "x": 218,
+     "y": 297,
+     "w": 42,
+     "h": 31,
+     "conf": 96.7
+    },
+    {
+     "t": "brother",
+     "x": 271,
+     "y": 295,
+     "w": 110,
+     "h": 25,
+     "conf": 91.6
+    },
+    {
+     "t": "Katleho",
+     "x": 393,
+     "y": 295,
+     "w": 109,
+     "h": 25,
+     "conf": 91.6
+    },
+    {
+     "t": "has",
+     "x": 256,
+     "y": 335,
+     "w": 48,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "a",
+     "x": 316,
+     "y": 344,
+     "w": 15,
+     "h": 16,
+     "conf": 92.8
+    },
+    {
+     "t": "ball",
+     "x": 342,
+     "y": 335,
+     "w": 49,
+     "h": 25,
+     "conf": 92.8
+    },
+    {
+     "t": "to",
+     "x": 404,
+     "y": 340,
+     "w": 28,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "throw.",
+     "x": 443,
+     "y": 335,
+     "w": 93,
+     "h": 25,
+     "conf": 95.7
+    },
+    {
+     "t": "What",
+     "x": 217,
+     "y": 411,
+     "w": 80,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "do",
+     "x": 308,
+     "y": 411,
+     "w": 33,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "I",
+     "x": 353,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "do?",
+     "x": 377,
+     "y": 411,
+     "w": 48,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "What",
+     "x": 255,
+     "y": 451,
+     "w": 79,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "do",
+     "x": 346,
+     "y": 451,
+     "w": 33,
+     "h": 25,
+     "conf": 95.8
+    },
+    {
+     "t": "I",
+     "x": 391,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 95.4
+    },
+    {
+     "t": "know?",
+     "x": 415,
+     "y": 451,
+     "w": 88,
+     "h": 25,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_07.jpg",
+   "image_file": "karabos-question-20150827_Page_07.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "My cousin Kutloano\nplants seeds in a row.\nWhat do I do?\nWhat do I know?",
+   "char_count": 71,
+   "word_count": 16,
+   "mean_conf": 93.8,
+   "words": [
+    {
+     "t": "My",
+     "x": 199,
+     "y": 297,
+     "w": 42,
+     "h": 31,
+     "conf": 96.6
+    },
+    {
+     "t": "cousin",
+     "x": 251,
+     "y": 297,
+     "w": 92,
+     "h": 23,
+     "conf": 93.3
+    },
+    {
+     "t": "Kutloano",
+     "x": 356,
+     "y": 295,
+     "w": 129,
+     "h": 25,
+     "conf": 91.3
+    },
+    {
+     "t": "plants",
+     "x": 236,
+     "y": 335,
+     "w": 89,
+     "h": 33,
+     "conf": 96.6
+    },
+    {
+     "t": "seeds",
+     "x": 337,
+     "y": 335,
+     "w": 80,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "in",
+     "x": 429,
+     "y": 337,
+     "w": 23,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "a",
+     "x": 465,
+     "y": 344,
+     "w": 15,
+     "h": 16,
+     "conf": 80.2
+    },
+    {
+     "t": "row.",
+     "x": 490,
+     "y": 344,
+     "w": 62,
+     "h": 16,
+     "conf": 80.2
+    },
+    {
+     "t": "What",
+     "x": 198,
+     "y": 411,
+     "w": 80,
+     "h": 25,
+     "conf": 95.5
+    },
+    {
+     "t": "do",
+     "x": 289,
+     "y": 411,
+     "w": 33,
+     "h": 25,
+     "conf": 95.1
+    },
+    {
+     "t": "I",
+     "x": 334,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 95.4
+    },
+    {
+     "t": "do?",
+     "x": 358,
+     "y": 411,
+     "w": 48,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "What",
+     "x": 236,
+     "y": 451,
+     "w": 79,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "do",
+     "x": 327,
+     "y": 451,
+     "w": 33,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "I",
+     "x": 372,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 96.3
+    },
+    {
+     "t": "know?",
+     "x": 396,
+     "y": 451,
+     "w": 88,
+     "h": 25,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_08.jpg",
+   "image_file": "karabos-question-20150827_Page_08.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "My cousin Kamohelo\nleans on her hoe.\nWhat do I do?\nWhat do I know?",
+   "char_count": 66,
+   "word_count": 15,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "My",
+     "x": 218,
+     "y": 297,
+     "w": 42,
+     "h": 31,
+     "conf": 96.0
+    },
+    {
+     "t": "cousin",
+     "x": 270,
+     "y": 297,
+     "w": 92,
+     "h": 23,
+     "conf": 93.3
+    },
+    {
+     "t": "Kamohelo",
+     "x": 375,
+     "y": 295,
+     "w": 140,
+     "h": 25,
+     "conf": 92.4
+    },
+    {
+     "t": "leans",
+     "x": 257,
+     "y": 335,
+     "w": 73,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "on",
+     "x": 341,
+     "y": 344,
+     "w": 34,
+     "h": 16,
+     "conf": 95.9
+    },
+    {
+     "t": "her",
+     "x": 387,
+     "y": 335,
+     "w": 47,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "hoe.",
+     "x": 445,
+     "y": 335,
+     "w": 58,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "What",
+     "x": 217,
+     "y": 411,
+     "w": 80,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "do",
+     "x": 308,
+     "y": 411,
+     "w": 33,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "I",
+     "x": 353,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "do?",
+     "x": 377,
+     "y": 411,
+     "w": 48,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "What",
+     "x": 255,
+     "y": 451,
+     "w": 79,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "do",
+     "x": 346,
+     "y": 451,
+     "w": 33,
+     "h": 25,
+     "conf": 95.8
+    },
+    {
+     "t": "I",
+     "x": 391,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 95.4
+    },
+    {
+     "t": "know?",
+     "x": 415,
+     "y": 451,
+     "w": 88,
+     "h": 25,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_09.jpg",
+   "image_file": "karabos-question-20150827_Page_09.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "My aunt Keromang\nhas a dress to sew.\nWhat do I do?\nWhat do I know?",
+   "char_count": 66,
+   "word_count": 16,
+   "mean_conf": 93.5,
+   "words": [
+    {
+     "t": "My",
+     "x": 218,
+     "y": 297,
+     "w": 42,
+     "h": 31,
+     "conf": 96.6
+    },
+    {
+     "t": "aunt",
+     "x": 271,
+     "y": 300,
+     "w": 65,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Keromang",
+     "x": 349,
+     "y": 297,
+     "w": 145,
+     "h": 31,
+     "conf": 92.1
+    },
+    {
+     "t": "has",
+     "x": 256,
+     "y": 335,
+     "w": 48,
+     "h": 25,
+     "conf": 97.0
+    },
+    {
+     "t": "a",
+     "x": 316,
+     "y": 344,
+     "w": 15,
+     "h": 16,
+     "conf": 76.7
+    },
+    {
+     "t": "dress",
+     "x": 342,
+     "y": 335,
+     "w": 77,
+     "h": 25,
+     "conf": 76.7
+    },
+    {
+     "t": "to",
+     "x": 430,
+     "y": 340,
+     "w": 28,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "sew.",
+     "x": 470,
+     "y": 344,
+     "w": 62,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "What",
+     "x": 217,
+     "y": 411,
+     "w": 80,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "do",
+     "x": 308,
+     "y": 411,
+     "w": 33,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "I",
+     "x": 353,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "do?",
+     "x": 377,
+     "y": 411,
+     "w": 48,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "What",
+     "x": 255,
+     "y": 451,
+     "w": 79,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "do",
+     "x": 346,
+     "y": 451,
+     "w": 33,
+     "h": 25,
+     "conf": 95.8
+    },
+    {
+     "t": "I",
+     "x": 391,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 95.4
+    },
+    {
+     "t": "know?",
+     "x": 415,
+     "y": 451,
+     "w": 88,
+     "h": 25,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_10.jpg",
+   "image_file": "karabos-question-20150827_Page_10.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "My uncle Khotso\nherds the cattle that low.\nWhat do I do?\nWhat do I know?",
+   "char_count": 72,
+   "word_count": 16,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "My",
+     "x": 170,
+     "y": 297,
+     "w": 42,
+     "h": 31,
+     "conf": 96.6
+    },
+    {
+     "t": "uncle",
+     "x": 223,
+     "y": 295,
+     "w": 76,
+     "h": 25,
+     "conf": 93.3
+    },
+    {
+     "t": "Khotso",
+     "x": 312,
+     "y": 295,
+     "w": 97,
+     "h": 25,
+     "conf": 92.0
+    },
+    {
+     "t": "herds",
+     "x": 208,
+     "y": 335,
+     "w": 80,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 298,
+     "y": 335,
+     "w": 47,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "cattle",
+     "x": 355,
+     "y": 335,
+     "w": 84,
+     "h": 25,
+     "conf": 96.2
+    },
+    {
+     "t": "that",
+     "x": 450,
+     "y": 335,
+     "w": 60,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "low.",
+     "x": 523,
+     "y": 335,
+     "w": 55,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "What",
+     "x": 169,
+     "y": 411,
+     "w": 80,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "do",
+     "x": 260,
+     "y": 411,
+     "w": 33,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "I",
+     "x": 305,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "do?",
+     "x": 329,
+     "y": 411,
+     "w": 48,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "What",
+     "x": 207,
+     "y": 451,
+     "w": 79,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "do",
+     "x": 298,
+     "y": 451,
+     "w": 33,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "I",
+     "x": 343,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "know?",
+     "x": 367,
+     "y": 451,
+     "w": 88,
+     "h": 25,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_11.jpg",
+   "image_file": "karabos-question-20150827_Page_11.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "Mama dries wheat\nwhen the wind does not blow.\nWhat do I do?\nWhat do I know?",
+   "char_count": 75,
+   "word_count": 17,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "Mama",
+     "x": 139,
+     "y": 297,
+     "w": 88,
+     "h": 23,
+     "conf": 96.2
+    },
+    {
+     "t": "dries",
+     "x": 238,
+     "y": 295,
+     "w": 71,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "wheat",
+     "x": 320,
+     "y": 295,
+     "w": 88,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "when",
+     "x": 176,
+     "y": 335,
+     "w": 76,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 263,
+     "y": 335,
+     "w": 47,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "wind",
+     "x": 320,
+     "y": 335,
+     "w": 68,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "does",
+     "x": 400,
+     "y": 335,
+     "w": 66,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "not",
+     "x": 476,
+     "y": 340,
+     "w": 48,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "blow.",
+     "x": 535,
+     "y": 335,
+     "w": 74,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "What",
+     "x": 138,
+     "y": 411,
+     "w": 80,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "do",
+     "x": 230,
+     "y": 411,
+     "w": 33,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "I",
+     "x": 275,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 96.0
+    },
+    {
+     "t": "do?",
+     "x": 299,
+     "y": 411,
+     "w": 47,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "What",
+     "x": 176,
+     "y": 451,
+     "w": 80,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "do",
+     "x": 268,
+     "y": 451,
+     "w": 32,
+     "h": 25,
+     "conf": 94.7
+    },
+    {
+     "t": "I",
+     "x": 313,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 94.7
+    },
+    {
+     "t": "know?",
+     "x": 337,
+     "y": 451,
+     "w": 87,
+     "h": 25,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_12.jpg",
+   "image_file": "karabos-question-20150827_Page_12.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "Papa rides a horse\nover mountains in snow.\nWhat do I do?\nWhat do I know?",
+   "char_count": 72,
+   "word_count": 16,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "Papa",
+     "x": 182,
+     "y": 297,
+     "w": 69,
+     "h": 31,
+     "conf": 94.2
+    },
+    {
+     "t": "rides",
+     "x": 261,
+     "y": 295,
+     "w": 72,
+     "h": 25,
+     "conf": 94.2
+    },
+    {
+     "t": "a",
+     "x": 344,
+     "y": 304,
+     "w": 15,
+     "h": 16,
+     "conf": 95.9
+    },
+    {
+     "t": "horse",
+     "x": 371,
+     "y": 295,
+     "w": 79,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "over",
+     "x": 217,
+     "y": 344,
+     "w": 65,
+     "h": 16,
+     "conf": 96.5
+    },
+    {
+     "t": "mountains",
+     "x": 293,
+     "y": 337,
+     "w": 151,
+     "h": 23,
+     "conf": 96.1
+    },
+    {
+     "t": "in",
+     "x": 456,
+     "y": 337,
+     "w": 24,
+     "h": 23,
+     "conf": 95.2
+    },
+    {
+     "t": "snow.",
+     "x": 492,
+     "y": 344,
+     "w": 81,
+     "h": 16,
+     "conf": 96.5
+    },
+    {
+     "t": "What",
+     "x": 180,
+     "y": 411,
+     "w": 79,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "do",
+     "x": 271,
+     "y": 411,
+     "w": 33,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "I",
+     "x": 316,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "do?",
+     "x": 340,
+     "y": 411,
+     "w": 47,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "What",
+     "x": 217,
+     "y": 451,
+     "w": 80,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "do",
+     "x": 309,
+     "y": 451,
+     "w": 33,
+     "h": 25,
+     "conf": 95.8
+    },
+    {
+     "t": "I",
+     "x": 354,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 96.3
+    },
+    {
+     "t": "know?",
+     "x": 378,
+     "y": 451,
+     "w": 88,
+     "h": 25,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_13.jpg",
+   "image_file": "karabos-question-20150827_Page_13.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "Grandpa’s slow donkey\nwalks to and fro.\nWhat do I do?\nWhat do I know?",
+   "char_count": 69,
+   "word_count": 15,
+   "mean_conf": 95.9,
+   "words": [
+    {
+     "t": "Grandpa’s",
+     "x": 202,
+     "y": 295,
+     "w": 149,
+     "h": 33,
+     "conf": 91.6
+    },
+    {
+     "t": "slow",
+     "x": 362,
+     "y": 295,
+     "w": 64,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "donkey",
+     "x": 437,
+     "y": 295,
+     "w": 102,
+     "h": 33,
+     "conf": 96.2
+    },
+    {
+     "t": "walks",
+     "x": 240,
+     "y": 335,
+     "w": 80,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 330,
+     "y": 340,
+     "w": 29,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 371,
+     "y": 335,
+     "w": 52,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "fro.",
+     "x": 434,
+     "y": 335,
+     "w": 49,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "What",
+     "x": 202,
+     "y": 411,
+     "w": 80,
+     "h": 25,
+     "conf": 95.4
+    },
+    {
+     "t": "do",
+     "x": 293,
+     "y": 411,
+     "w": 33,
+     "h": 25,
+     "conf": 95.0
+    },
+    {
+     "t": "I",
+     "x": 338,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 95.2
+    },
+    {
+     "t": "do?",
+     "x": 362,
+     "y": 411,
+     "w": 48,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "What",
+     "x": 240,
+     "y": 451,
+     "w": 79,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "do",
+     "x": 331,
+     "y": 451,
+     "w": 33,
+     "h": 25,
+     "conf": 95.7
+    },
+    {
+     "t": "I",
+     "x": 376,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 95.7
+    },
+    {
+     "t": "know?",
+     "x": 400,
+     "y": 451,
+     "w": 88,
+     "h": 25,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/karabos-question-20150827_Page_14.jpg",
+   "image_file": "karabos-question-20150827_Page_14.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "Grandma sings songs\ntill the fire burns low.\nWhat do I do?\nWhat do I know?",
+   "char_count": 74,
+   "word_count": 16,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "Grandma",
+     "x": 194,
+     "y": 295,
+     "w": 133,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "sings",
+     "x": 339,
+     "y": 297,
+     "w": 72,
+     "h": 31,
+     "conf": 96.4
+    },
+    {
+     "t": "songs",
+     "x": 423,
+     "y": 304,
+     "w": 81,
+     "h": 24,
+     "conf": 95.9
+    },
+    {
+     "t": "till",
+     "x": 232,
+     "y": 335,
+     "w": 35,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 280,
+     "y": 335,
+     "w": 46,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "fire",
+     "x": 336,
+     "y": 335,
+     "w": 49,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "burns",
+     "x": 397,
+     "y": 335,
+     "w": 81,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "low.",
+     "x": 490,
+     "y": 335,
+     "w": 55,
+     "h": 25,
+     "conf": 95.8
+    },
+    {
+     "t": "What",
+     "x": 194,
+     "y": 411,
+     "w": 80,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "do",
+     "x": 285,
+     "y": 411,
+     "w": 33,
+     "h": 25,
+     "conf": 94.5
+    },
+    {
+     "t": "I",
+     "x": 330,
+     "y": 413,
+     "w": 11,
+     "h": 23,
+     "conf": 95.1
+    },
+    {
+     "t": "do?",
+     "x": 354,
+     "y": 411,
+     "w": 48,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "What",
+     "x": 232,
+     "y": 451,
+     "w": 80,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "do",
+     "x": 323,
+     "y": 451,
+     "w": 33,
+     "h": 25,
+     "conf": 94.1
+    },
+    {
+     "t": "I",
+     "x": 368,
+     "y": 453,
+     "w": 11,
+     "h": 23,
+     "conf": 94.1
+    },
+    {
+     "t": "know?",
+     "x": 392,
+     "y": 451,
+     "w": 88,
+     "h": 25,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_15.jpg",
+   "image_file": "karabos-question-20150827_Page_15.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "You know how to say yes.\nYou know how to say no.\nThat’s what you do!\nThat’s what you know!",
+   "char_count": 90,
+   "word_count": 20,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "You",
+     "x": 171,
+     "y": 297,
+     "w": 55,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "know",
+     "x": 238,
+     "y": 295,
+     "w": 74,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "how",
+     "x": 323,
+     "y": 295,
+     "w": 58,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "to",
+     "x": 391,
+     "y": 300,
+     "w": 28,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "say",
+     "x": 432,
+     "y": 304,
+     "w": 47,
+     "h": 24,
+     "conf": 95.8
+    },
+    {
+     "t": "yes.",
+     "x": 488,
+     "y": 304,
+     "w": 56,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "You",
+     "x": 209,
+     "y": 337,
+     "w": 55,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "know",
+     "x": 276,
+     "y": 335,
+     "w": 74,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "how",
+     "x": 361,
+     "y": 335,
+     "w": 58,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "to",
+     "x": 429,
+     "y": 340,
+     "w": 28,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "say",
+     "x": 470,
+     "y": 344,
+     "w": 47,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "no.",
+     "x": 527,
+     "y": 344,
+     "w": 42,
+     "h": 16,
+     "conf": 95.9
+    },
+    {
+     "t": "That’s",
+     "x": 170,
+     "y": 411,
+     "w": 92,
+     "h": 25,
+     "conf": 92.5
+    },
+    {
+     "t": "what",
+     "x": 273,
+     "y": 411,
+     "w": 71,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "you",
+     "x": 354,
+     "y": 420,
+     "w": 51,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "do!",
+     "x": 417,
+     "y": 411,
+     "w": 44,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "That’s",
+     "x": 208,
+     "y": 451,
+     "w": 92,
+     "h": 25,
+     "conf": 92.6
+    },
+    {
+     "t": "what",
+     "x": 310,
+     "y": 451,
+     "w": 72,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "you",
+     "x": 392,
+     "y": 460,
+     "w": 51,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "know!",
+     "x": 455,
+     "y": 451,
+     "w": 84,
+     "h": 25,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_16.jpg",
+   "image_file": "karabos-question-20150827_Page_16.jpg",
+   "image_width": 1512,
+   "image_height": 756,
+   "ocr_text": "Everyone laughs\nwhen you put on a show.\nYour work is to play.\nYour work is to grow.",
+   "char_count": 83,
+   "word_count": 18,
+   "mean_conf": 96.3,
+   "words": [
+    {
+     "t": "Everyone",
+     "x": 174,
+     "y": 297,
+     "w": 132,
+     "h": 31,
+     "conf": 96.8
+    },
+    {
+     "t": "laughs",
+     "x": 319,
+     "y": 295,
+     "w": 92,
+     "h": 33,
+     "conf": 96.4
+    },
+    {
+     "t": "when",
+     "x": 210,
+     "y": 335,
+     "w": 76,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "you",
+     "x": 296,
+     "y": 344,
+     "w": 51,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "put",
+     "x": 358,
+     "y": 340,
+     "w": 48,
+     "h": 28,
+     "conf": 96.0
+    },
+    {
+     "t": "on",
+     "x": 417,
+     "y": 344,
+     "w": 34,
+     "h": 16,
+     "conf": 95.9
+    },
+    {
+     "t": "a",
+     "x": 463,
+     "y": 344,
+     "w": 15,
+     "h": 16,
+     "conf": 95.2
+    },
+    {
+     "t": "show.",
+     "x": 489,
+     "y": 335,
+     "w": 81,
+     "h": 25,
+     "conf": 95.2
+    },
+    {
+     "t": "Your",
+     "x": 172,
+     "y": 413,
+     "w": 70,
+     "h": 23,
+     "conf": 96.3
+    },
+    {
+     "t": "work",
+     "x": 252,
+     "y": 411,
+     "w": 71,
+     "h": 25,
+     "conf": 95.4
+    },
+    {
+     "t": "is",
+     "x": 333,
+     "y": 413,
+     "w": 21,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 365,
+     "y": 416,
+     "w": 28,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "play.",
+     "x": 404,
+     "y": 411,
+     "w": 68,
+     "h": 33,
+     "conf": 96.7
+    },
+    {
+     "t": "Your",
+     "x": 210,
+     "y": 453,
+     "w": 70,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "work",
+     "x": 289,
+     "y": 451,
+     "w": 71,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "is",
+     "x": 371,
+     "y": 453,
+     "w": 21,
+     "h": 23,
+     "conf": 97.0
+    },
+    {
+     "t": "to",
+     "x": 403,
+     "y": 456,
+     "w": 28,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "grow.",
+     "x": 443,
+     "y": 460,
+     "w": 79,
+     "h": 24,
+     "conf": 96.0
+    }
+   ]
+  }
+ ]
+}

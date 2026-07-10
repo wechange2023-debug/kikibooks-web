@@ -1,0 +1,1959 @@
+{
+ "slug": "thatos-birthday-surprise",
+ "wp_slug": "thatos-birthday-surprise",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "thatos-birthday-surprise_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_05.jpg",
+   "image_file": "thatos-birthday-surprise_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "It is one week until\nThato’s birthday.\nThat’s seven whole days!",
+   "char_count": 63,
+   "word_count": 11,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "It",
+     "x": 231,
+     "y": 197,
+     "w": 28,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "is",
+     "x": 275,
+     "y": 197,
+     "w": 23,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "one",
+     "x": 312,
+     "y": 205,
+     "w": 58,
+     "h": 19,
+     "conf": 95.7
+    },
+    {
+     "t": "week",
+     "x": 383,
+     "y": 194,
+     "w": 87,
+     "h": 30,
+     "conf": 95.7
+    },
+    {
+     "t": "until",
+     "x": 483,
+     "y": 194,
+     "w": 73,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "Thato’s",
+     "x": 246,
+     "y": 245,
+     "w": 127,
+     "h": 30,
+     "conf": 91.6
+    },
+    {
+     "t": "birthday.",
+     "x": 387,
+     "y": 245,
+     "w": 152,
+     "h": 39,
+     "conf": 95.9
+    },
+    {
+     "t": "That’s",
+     "x": 178,
+     "y": 348,
+     "w": 106,
+     "h": 30,
+     "conf": 92.6
+    },
+    {
+     "t": "seven",
+     "x": 298,
+     "y": 359,
+     "w": 94,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "whole",
+     "x": 406,
+     "y": 348,
+     "w": 98,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "days!",
+     "x": 519,
+     "y": 348,
+     "w": 86,
+     "h": 39,
+     "conf": 96.8
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_06.jpg",
+   "image_file": "thatos-birthday-surprise_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "His mama says: “Your birthday\npresent will be a BIG surprise!”\nThato wonders: what will it be?\nSs",
+   "char_count": 97,
+   "word_count": 18,
+   "mean_conf": 92.9,
+   "words": [
+    {
+     "t": "His",
+     "x": 129,
+     "y": 218,
+     "w": 50,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "mama",
+     "x": 193,
+     "y": 226,
+     "w": 100,
+     "h": 19,
+     "conf": 96.3
+    },
+    {
+     "t": "says:",
+     "x": 307,
+     "y": 226,
+     "w": 82,
+     "h": 28,
+     "conf": 96.7
+    },
+    {
+     "t": "“Your",
+     "x": 407,
+     "y": 216,
+     "w": 98,
+     "h": 29,
+     "conf": 96.6
+    },
+    {
+     "t": "birthday",
+     "x": 518,
+     "y": 215,
+     "w": 144,
+     "h": 39,
+     "conf": 96.6
+    },
+    {
+     "t": "present",
+     "x": 123,
+     "y": 272,
+     "w": 128,
+     "h": 34,
+     "conf": 96.7
+    },
+    {
+     "t": "will",
+     "x": 264,
+     "y": 267,
+     "w": 56,
+     "h": 30,
+     "conf": 96.3
+    },
+    {
+     "t": "be",
+     "x": 336,
+     "y": 267,
+     "w": 36,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "a",
+     "x": 386,
+     "y": 278,
+     "w": 17,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "BIG",
+     "x": 418,
+     "y": 270,
+     "w": 63,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "surprise!”",
+     "x": 495,
+     "y": 268,
+     "w": 170,
+     "h": 38,
+     "conf": 96.5
+    },
+    {
+     "t": "Thato",
+     "x": 123,
+     "y": 370,
+     "w": 100,
+     "h": 30,
+     "conf": 92.4
+    },
+    {
+     "t": "wonders:",
+     "x": 236,
+     "y": 370,
+     "w": 153,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "what",
+     "x": 404,
+     "y": 370,
+     "w": 83,
+     "h": 30,
+     "conf": 96.1
+    },
+    {
+     "t": "will",
+     "x": 501,
+     "y": 370,
+     "w": 55,
+     "h": 30,
+     "conf": 95.8
+    },
+    {
+     "t": "it",
+     "x": 572,
+     "y": 373,
+     "w": 20,
+     "h": 27,
+     "conf": 95.7
+    },
+    {
+     "t": "be?",
+     "x": 608,
+     "y": 370,
+     "w": 54,
+     "h": 30,
+     "conf": 97.0
+    },
+    {
+     "t": "Ss",
+     "x": 251,
+     "y": 536,
+     "w": 268,
+     "h": 114,
+     "conf": 36.9
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_07.jpg",
+   "image_file": "thatos-birthday-surprise_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "On Monday Thato thinks:\n“Maybe I will get giant wings\nso I can fly high in the sky\nlike a bird...”",
+   "char_count": 98,
+   "word_count": 21,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "On",
+     "x": 178,
+     "y": 184,
+     "w": 44,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "Monday",
+     "x": 238,
+     "y": 181,
+     "w": 134,
+     "h": 39,
+     "conf": 92.7
+    },
+    {
+     "t": "Thato",
+     "x": 383,
+     "y": 181,
+     "w": 99,
+     "h": 30,
+     "conf": 92.8
+    },
+    {
+     "t": "thinks:",
+     "x": 494,
+     "y": 181,
+     "w": 114,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "“Maybe",
+     "x": 145,
+     "y": 233,
+     "w": 128,
+     "h": 39,
+     "conf": 96.7
+    },
+    {
+     "t": "I",
+     "x": 278,
+     "y": 229,
+     "w": 16,
+     "h": 47,
+     "conf": 96.8
+    },
+    {
+     "t": "will",
+     "x": 314,
+     "y": 233,
+     "w": 55,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "get",
+     "x": 385,
+     "y": 238,
+     "w": 51,
+     "h": 34,
+     "conf": 96.7
+    },
+    {
+     "t": "giant",
+     "x": 451,
+     "y": 236,
+     "w": 84,
+     "h": 36,
+     "conf": 96.3
+    },
+    {
+     "t": "wings",
+     "x": 549,
+     "y": 236,
+     "w": 96,
+     "h": 36,
+     "conf": 96.5
+    },
+    {
+     "t": "so",
+     "x": 171,
+     "y": 295,
+     "w": 35,
+     "h": 19,
+     "conf": 94.4
+    },
+    {
+     "t": "I",
+     "x": 221,
+     "y": 287,
+     "w": 13,
+     "h": 27,
+     "conf": 94.4
+    },
+    {
+     "t": "can",
+     "x": 248,
+     "y": 295,
+     "w": 57,
+     "h": 19,
+     "conf": 94.5
+    },
+    {
+     "t": "fly",
+     "x": 317,
+     "y": 284,
+     "w": 42,
+     "h": 39,
+     "conf": 94.5
+    },
+    {
+     "t": "high",
+     "x": 372,
+     "y": 284,
+     "w": 69,
+     "h": 39,
+     "conf": 96.8
+    },
+    {
+     "t": "in",
+     "x": 456,
+     "y": 287,
+     "w": 27,
+     "h": 27,
+     "conf": 96.1
+    },
+    {
+     "t": "the",
+     "x": 495,
+     "y": 284,
+     "w": 55,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "sky",
+     "x": 564,
+     "y": 284,
+     "w": 54,
+     "h": 39,
+     "conf": 96.6
+    },
+    {
+     "t": "like",
+     "x": 287,
+     "y": 336,
+     "w": 54,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "a",
+     "x": 355,
+     "y": 347,
+     "w": 17,
+     "h": 19,
+     "conf": 93.0
+    },
+    {
+     "t": "bird...”",
+     "x": 387,
+     "y": 336,
+     "w": 116,
+     "h": 30,
+     "conf": 93.5
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_08.jpg",
+   "image_file": "thatos-birthday-surprise_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "lll sl\nOn Tuesday Thato thinks: <= xx a ZO\n“Maybe I will have a birthday\ncake as big as a house!”\n6004",
+   "char_count": 102,
+   "word_count": 23,
+   "mean_conf": 75.4,
+   "words": [
+    {
+     "t": "lll",
+     "x": 991,
+     "y": 103,
+     "w": 259,
+     "h": 74,
+     "conf": 47.0
+    },
+    {
+     "t": "sl",
+     "x": 1269,
+     "y": 103,
+     "w": 85,
+     "h": 86,
+     "conf": 16.7
+    },
+    {
+     "t": "On",
+     "x": 174,
+     "y": 210,
+     "w": 44,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "Tuesday",
+     "x": 232,
+     "y": 207,
+     "w": 143,
+     "h": 39,
+     "conf": 93.3
+    },
+    {
+     "t": "Thato",
+     "x": 387,
+     "y": 207,
+     "w": 99,
+     "h": 30,
+     "conf": 92.9
+    },
+    {
+     "t": "thinks:",
+     "x": 498,
+     "y": 207,
+     "w": 114,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "<=",
+     "x": 865,
+     "y": 155,
+     "w": 167,
+     "h": 128,
+     "conf": 45.6
+    },
+    {
+     "t": "xx",
+     "x": 1119,
+     "y": 203,
+     "w": 26,
+     "h": 47,
+     "conf": 32.2
+    },
+    {
+     "t": "a",
+     "x": 1235,
+     "y": 196,
+     "w": 28,
+     "h": 11,
+     "conf": 12.5
+    },
+    {
+     "t": "ZO",
+     "x": 1317,
+     "y": 142,
+     "w": 160,
+     "h": 108,
+     "conf": 13.7
+    },
+    {
+     "t": "“Maybe",
+     "x": 142,
+     "y": 258,
+     "w": 128,
+     "h": 39,
+     "conf": 95.7
+    },
+    {
+     "t": "I",
+     "x": 275,
+     "y": 254,
+     "w": 16,
+     "h": 47,
+     "conf": 96.3
+    },
+    {
+     "t": "will",
+     "x": 311,
+     "y": 258,
+     "w": 55,
+     "h": 30,
+     "conf": 95.6
+    },
+    {
+     "t": "have",
+     "x": 382,
+     "y": 258,
+     "w": 78,
+     "h": 30,
+     "conf": 96.0
+    },
+    {
+     "t": "a",
+     "x": 474,
+     "y": 269,
+     "w": 17,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "birthday",
+     "x": 506,
+     "y": 258,
+     "w": 143,
+     "h": 39,
+     "conf": 95.3
+    },
+    {
+     "t": "cake",
+     "x": 189,
+     "y": 310,
+     "w": 74,
+     "h": 30,
+     "conf": 95.6
+    },
+    {
+     "t": "as",
+     "x": 278,
+     "y": 321,
+     "w": 35,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "big",
+     "x": 327,
+     "y": 310,
+     "w": 47,
+     "h": 39,
+     "conf": 95.8
+    },
+    {
+     "t": "as",
+     "x": 389,
+     "y": 321,
+     "w": 35,
+     "h": 19,
+     "conf": 95.7
+    },
+    {
+     "t": "a",
+     "x": 437,
+     "y": 321,
+     "w": 17,
+     "h": 19,
+     "conf": 95.3
+    },
+    {
+     "t": "house!”",
+     "x": 470,
+     "y": 310,
+     "w": 129,
+     "h": 30,
+     "conf": 95.3
+    },
+    {
+     "t": "6004",
+     "x": 341,
+     "y": 510,
+     "w": 88,
+     "h": 18,
+     "conf": 36.8
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_09.jpg",
+   "image_file": "thatos-birthday-surprise_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "On Wednesday Thato thinks:\n“Maybe I will get a rocket ship\nto whizz up to the moon.”",
+   "char_count": 84,
+   "word_count": 17,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "On",
+     "x": 146,
+     "y": 232,
+     "w": 44,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "Wednesday",
+     "x": 204,
+     "y": 229,
+     "w": 200,
+     "h": 39,
+     "conf": 93.3
+    },
+    {
+     "t": "Thato",
+     "x": 415,
+     "y": 229,
+     "w": 99,
+     "h": 30,
+     "conf": 92.7
+    },
+    {
+     "t": "thinks:",
+     "x": 526,
+     "y": 229,
+     "w": 114,
+     "h": 30,
+     "conf": 96.3
+    },
+    {
+     "t": "“Maybe",
+     "x": 133,
+     "y": 280,
+     "w": 128,
+     "h": 39,
+     "conf": 96.7
+    },
+    {
+     "t": "I",
+     "x": 266,
+     "y": 276,
+     "w": 16,
+     "h": 47,
+     "conf": 96.6
+    },
+    {
+     "t": "will",
+     "x": 302,
+     "y": 280,
+     "w": 55,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "get",
+     "x": 372,
+     "y": 285,
+     "w": 52,
+     "h": 34,
+     "conf": 96.6
+    },
+    {
+     "t": "a",
+     "x": 438,
+     "y": 291,
+     "w": 17,
+     "h": 19,
+     "conf": 96.3
+    },
+    {
+     "t": "rocket",
+     "x": 470,
+     "y": 280,
+     "w": 105,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "ship",
+     "x": 590,
+     "y": 280,
+     "w": 67,
+     "h": 39,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 171,
+     "y": 336,
+     "w": 34,
+     "h": 25,
+     "conf": 97.0
+    },
+    {
+     "t": "whizz",
+     "x": 218,
+     "y": 331,
+     "w": 97,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "up",
+     "x": 329,
+     "y": 342,
+     "w": 38,
+     "h": 28,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 379,
+     "y": 336,
+     "w": 34,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "the",
+     "x": 425,
+     "y": 331,
+     "w": 55,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "moon.”",
+     "x": 494,
+     "y": 332,
+     "w": 121,
+     "h": 29,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_10.jpg",
+   "image_file": "thatos-birthday-surprise_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "On Thursday Thato thinks:\n“Maybe I will get fins so I can swim\nunder the water like a fish.”",
+   "char_count": 92,
+   "word_count": 19,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "On",
+     "x": 166,
+     "y": 235,
+     "w": 43,
+     "h": 27,
+     "conf": 96.8
+    },
+    {
+     "t": "Thursday",
+     "x": 223,
+     "y": 232,
+     "w": 161,
+     "h": 39,
+     "conf": 93.3
+    },
+    {
+     "t": "Thato",
+     "x": 396,
+     "y": 232,
+     "w": 99,
+     "h": 30,
+     "conf": 93.0
+    },
+    {
+     "t": "thinks:",
+     "x": 507,
+     "y": 232,
+     "w": 113,
+     "h": 30,
+     "conf": 95.3
+    },
+    {
+     "t": "“Maybe",
+     "x": 91,
+     "y": 283,
+     "w": 127,
+     "h": 39,
+     "conf": 90.3
+    },
+    {
+     "t": "I",
+     "x": 224,
+     "y": 279,
+     "w": 16,
+     "h": 47,
+     "conf": 96.5
+    },
+    {
+     "t": "will",
+     "x": 259,
+     "y": 283,
+     "w": 56,
+     "h": 30,
+     "conf": 96.3
+    },
+    {
+     "t": "get",
+     "x": 330,
+     "y": 288,
+     "w": 52,
+     "h": 34,
+     "conf": 97.0
+    },
+    {
+     "t": "fins",
+     "x": 394,
+     "y": 283,
+     "w": 60,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "so",
+     "x": 468,
+     "y": 294,
+     "w": 34,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "I",
+     "x": 517,
+     "y": 286,
+     "w": 13,
+     "h": 27,
+     "conf": 96.1
+    },
+    {
+     "t": "can",
+     "x": 544,
+     "y": 294,
+     "w": 57,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "swim",
+     "x": 616,
+     "y": 286,
+     "w": 82,
+     "h": 27,
+     "conf": 95.8
+    },
+    {
+     "t": "under",
+     "x": 156,
+     "y": 334,
+     "w": 98,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 264,
+     "y": 334,
+     "w": 55,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "water",
+     "x": 332,
+     "y": 339,
+     "w": 100,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "like",
+     "x": 447,
+     "y": 334,
+     "w": 53,
+     "h": 30,
+     "conf": 96.1
+    },
+    {
+     "t": "a",
+     "x": 514,
+     "y": 345,
+     "w": 17,
+     "h": 19,
+     "conf": 94.2
+    },
+    {
+     "t": "fish.”",
+     "x": 543,
+     "y": 334,
+     "w": 91,
+     "h": 30,
+     "conf": 94.2
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_11.jpg",
+   "image_file": "thatos-birthday-surprise_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "On Friday Thato thinks:\n“Maybe I will get magic soccer\nboots and score a thousand goals!”",
+   "char_count": 89,
+   "word_count": 16,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "On",
+     "x": 192,
+     "y": 322,
+     "w": 44,
+     "h": 27,
+     "conf": 96.2
+    },
+    {
+     "t": "Friday",
+     "x": 251,
+     "y": 319,
+     "w": 107,
+     "h": 39,
+     "conf": 93.3
+    },
+    {
+     "t": "Thato",
+     "x": 370,
+     "y": 319,
+     "w": 99,
+     "h": 30,
+     "conf": 91.5
+    },
+    {
+     "t": "thinks:",
+     "x": 481,
+     "y": 319,
+     "w": 113,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "“Maybe",
+     "x": 132,
+     "y": 371,
+     "w": 128,
+     "h": 39,
+     "conf": 96.3
+    },
+    {
+     "t": "I",
+     "x": 265,
+     "y": 367,
+     "w": 16,
+     "h": 47,
+     "conf": 96.9
+    },
+    {
+     "t": "will",
+     "x": 301,
+     "y": 371,
+     "w": 55,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "get",
+     "x": 372,
+     "y": 376,
+     "w": 51,
+     "h": 34,
+     "conf": 96.6
+    },
+    {
+     "t": "magic",
+     "x": 438,
+     "y": 374,
+     "w": 98,
+     "h": 36,
+     "conf": 96.0
+    },
+    {
+     "t": "soccer",
+     "x": 549,
+     "y": 382,
+     "w": 110,
+     "h": 19,
+     "conf": 96.0
+    },
+    {
+     "t": "boots",
+     "x": 92,
+     "y": 422,
+     "w": 91,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "and",
+     "x": 197,
+     "y": 422,
+     "w": 60,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "score",
+     "x": 271,
+     "y": 433,
+     "w": 90,
+     "h": 19,
+     "conf": 96.0
+    },
+    {
+     "t": "a",
+     "x": 375,
+     "y": 433,
+     "w": 17,
+     "h": 19,
+     "conf": 94.1
+    },
+    {
+     "t": "thousand",
+     "x": 404,
+     "y": 422,
+     "w": 160,
+     "h": 30,
+     "conf": 96.2
+    },
+    {
+     "t": "goals!”",
+     "x": 578,
+     "y": 422,
+     "w": 120,
+     "h": 39,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_12.jpg",
+   "image_file": "thatos-birthday-surprise_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "On Saturday Thato thinks:\n“Maybe I will get a key that opens\na box filled with treasure!”",
+   "char_count": 89,
+   "word_count": 17,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "On",
+     "x": 168,
+     "y": 338,
+     "w": 44,
+     "h": 27,
+     "conf": 95.7
+    },
+    {
+     "t": "Saturday",
+     "x": 226,
+     "y": 335,
+     "w": 156,
+     "h": 39,
+     "conf": 93.3
+    },
+    {
+     "t": "Thato",
+     "x": 394,
+     "y": 335,
+     "w": 99,
+     "h": 30,
+     "conf": 92.2
+    },
+    {
+     "t": "thinks:",
+     "x": 505,
+     "y": 335,
+     "w": 113,
+     "h": 30,
+     "conf": 97.0
+    },
+    {
+     "t": "“Maybe",
+     "x": 102,
+     "y": 387,
+     "w": 128,
+     "h": 39,
+     "conf": 93.8
+    },
+    {
+     "t": "I",
+     "x": 235,
+     "y": 383,
+     "w": 16,
+     "h": 47,
+     "conf": 96.7
+    },
+    {
+     "t": "will",
+     "x": 271,
+     "y": 387,
+     "w": 55,
+     "h": 30,
+     "conf": 95.9
+    },
+    {
+     "t": "get",
+     "x": 341,
+     "y": 392,
+     "w": 52,
+     "h": 34,
+     "conf": 96.6
+    },
+    {
+     "t": "a",
+     "x": 407,
+     "y": 398,
+     "w": 17,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "key",
+     "x": 439,
+     "y": 387,
+     "w": 55,
+     "h": 39,
+     "conf": 96.3
+    },
+    {
+     "t": "that",
+     "x": 505,
+     "y": 387,
+     "w": 71,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "opens",
+     "x": 590,
+     "y": 398,
+     "w": 98,
+     "h": 28,
+     "conf": 96.8
+    },
+    {
+     "t": "a",
+     "x": 164,
+     "y": 449,
+     "w": 17,
+     "h": 19,
+     "conf": 95.7
+    },
+    {
+     "t": "box",
+     "x": 196,
+     "y": 438,
+     "w": 58,
+     "h": 30,
+     "conf": 96.3
+    },
+    {
+     "t": "filled",
+     "x": 265,
+     "y": 438,
+     "w": 83,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "with",
+     "x": 361,
+     "y": 438,
+     "w": 72,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "treasure!”",
+     "x": 445,
+     "y": 439,
+     "w": 180,
+     "h": 29,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_13.jpg",
+   "image_file": "thatos-birthday-surprise_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "On Sunday it is Thato’s birthday.\nMama smiles and says:\n“Come and see your surprise!”",
+   "char_count": 85,
+   "word_count": 15,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "On",
+     "x": 112,
+     "y": 338,
+     "w": 44,
+     "h": 27,
+     "conf": 96.4
+    },
+    {
+     "t": "Sunday",
+     "x": 170,
+     "y": 335,
+     "w": 125,
+     "h": 39,
+     "conf": 96.3
+    },
+    {
+     "t": "it",
+     "x": 309,
+     "y": 338,
+     "w": 20,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "is",
+     "x": 344,
+     "y": 338,
+     "w": 24,
+     "h": 27,
+     "conf": 93.2
+    },
+    {
+     "t": "Thato’s",
+     "x": 381,
+     "y": 335,
+     "w": 127,
+     "h": 30,
+     "conf": 93.1
+    },
+    {
+     "t": "birthday.",
+     "x": 522,
+     "y": 335,
+     "w": 152,
+     "h": 39,
+     "conf": 95.7
+    },
+    {
+     "t": "Mama",
+     "x": 199,
+     "y": 390,
+     "w": 101,
+     "h": 27,
+     "conf": 96.3
+    },
+    {
+     "t": "smiles",
+     "x": 314,
+     "y": 387,
+     "w": 103,
+     "h": 30,
+     "conf": 96.3
+    },
+    {
+     "t": "and",
+     "x": 431,
+     "y": 387,
+     "w": 61,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "says:",
+     "x": 506,
+     "y": 398,
+     "w": 82,
+     "h": 28,
+     "conf": 96.8
+    },
+    {
+     "t": "“Come",
+     "x": 132,
+     "y": 439,
+     "w": 110,
+     "h": 29,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 256,
+     "y": 438,
+     "w": 61,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "see",
+     "x": 331,
+     "y": 449,
+     "w": 54,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "your",
+     "x": 397,
+     "y": 449,
+     "w": 78,
+     "h": 28,
+     "conf": 97.0
+    },
+    {
+     "t": "surprise!”",
+     "x": 487,
+     "y": 439,
+     "w": 171,
+     "h": 38,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_14.jpg",
+   "image_file": "thatos-birthday-surprise_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "It is the best present ever.\nThato’s big brother Kudzai has\ncome to visit all the way from\nthe big city!",
+   "char_count": 104,
+   "word_count": 21,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "It",
+     "x": 165,
+     "y": 313,
+     "w": 28,
+     "h": 27,
+     "conf": 97.0
+    },
+    {
+     "t": "is",
+     "x": 209,
+     "y": 313,
+     "w": 23,
+     "h": 27,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 244,
+     "y": 310,
+     "w": 55,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "best",
+     "x": 314,
+     "y": 310,
+     "w": 69,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "present",
+     "x": 397,
+     "y": 315,
+     "w": 128,
+     "h": 34,
+     "conf": 96.5
+    },
+    {
+     "t": "ever.",
+     "x": 539,
+     "y": 321,
+     "w": 83,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "Thato’s",
+     "x": 129,
+     "y": 361,
+     "w": 127,
+     "h": 30,
+     "conf": 92.9
+    },
+    {
+     "t": "big",
+     "x": 271,
+     "y": 361,
+     "w": 46,
+     "h": 39,
+     "conf": 96.9
+    },
+    {
+     "t": "brother",
+     "x": 333,
+     "y": 361,
+     "w": 128,
+     "h": 30,
+     "conf": 93.3
+    },
+    {
+     "t": "Kudzai",
+     "x": 474,
+     "y": 361,
+     "w": 113,
+     "h": 30,
+     "conf": 92.2
+    },
+    {
+     "t": "has",
+     "x": 603,
+     "y": 361,
+     "w": 55,
+     "h": 30,
+     "conf": 97.0
+    },
+    {
+     "t": "come",
+     "x": 141,
+     "y": 424,
+     "w": 86,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 240,
+     "y": 418,
+     "w": 34,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "visit",
+     "x": 286,
+     "y": 416,
+     "w": 71,
+     "h": 27,
+     "conf": 96.5
+    },
+    {
+     "t": "all",
+     "x": 371,
+     "y": 413,
+     "w": 37,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 421,
+     "y": 413,
+     "w": 55,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "way",
+     "x": 489,
+     "y": 424,
+     "w": 67,
+     "h": 28,
+     "conf": 96.4
+    },
+    {
+     "t": "from",
+     "x": 568,
+     "y": 413,
+     "w": 78,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 290,
+     "y": 464,
+     "w": 55,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "big",
+     "x": 360,
+     "y": 464,
+     "w": 47,
+     "h": 39,
+     "conf": 97.0
+    },
+    {
+     "t": "city!",
+     "x": 422,
+     "y": 466,
+     "w": 70,
+     "h": 37,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_15.jpg",
+   "image_file": "thatos-birthday-surprise_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Thato smiles and smiles and his\nbig brother lifts him up in the air\nand hugs him.\nKudzai asks:\n“What do you want to do for your\nbirthday, little brother?”",
+   "char_count": 154,
+   "word_count": 30,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "Thato",
+     "x": 122,
+     "y": 233,
+     "w": 99,
+     "h": 30,
+     "conf": 93.0
+    },
+    {
+     "t": "smiles",
+     "x": 235,
+     "y": 233,
+     "w": 104,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "and",
+     "x": 352,
+     "y": 233,
+     "w": 61,
+     "h": 30,
+     "conf": 96.1
+    },
+    {
+     "t": "smiles",
+     "x": 427,
+     "y": 233,
+     "w": 103,
+     "h": 30,
+     "conf": 96.1
+    },
+    {
+     "t": "and",
+     "x": 544,
+     "y": 233,
+     "w": 61,
+     "h": 30,
+     "conf": 96.9
+    },
+    {
+     "t": "his",
+     "x": 620,
+     "y": 233,
+     "w": 45,
+     "h": 30,
+     "conf": 96.0
+    },
+    {
+     "t": "big",
+     "x": 115,
+     "y": 284,
+     "w": 46,
+     "h": 39,
+     "conf": 96.5
+    },
+    {
+     "t": "brother",
+     "x": 177,
+     "y": 284,
+     "w": 128,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "lifts",
+     "x": 320,
+     "y": 284,
+     "w": 61,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "him",
+     "x": 396,
+     "y": 284,
+     "w": 57,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "up",
+     "x": 469,
+     "y": 295,
+     "w": 39,
+     "h": 28,
+     "conf": 96.9
+    },
+    {
+     "t": "in",
+     "x": 522,
+     "y": 287,
+     "w": 27,
+     "h": 27,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 561,
+     "y": 284,
+     "w": 55,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "air",
+     "x": 630,
+     "y": 287,
+     "w": 46,
+     "h": 27,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 275,
+     "y": 335,
+     "w": 61,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "hugs",
+     "x": 351,
+     "y": 335,
+     "w": 77,
+     "h": 39,
+     "conf": 95.9
+    },
+    {
+     "t": "him.",
+     "x": 443,
+     "y": 335,
+     "w": 67,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "Kudzai",
+     "x": 289,
+     "y": 438,
+     "w": 113,
+     "h": 30,
+     "conf": 91.7
+    },
+    {
+     "t": "asks:",
+     "x": 416,
+     "y": 438,
+     "w": 82,
+     "h": 30,
+     "conf": 97.0
+    },
+    {
+     "t": "“What",
+     "x": 105,
+     "y": 490,
+     "w": 109,
+     "h": 30,
+     "conf": 88.4
+    },
+    {
+     "t": "do",
+     "x": 229,
+     "y": 490,
+     "w": 38,
+     "h": 30,
+     "conf": 95.9
+    },
+    {
+     "t": "you",
+     "x": 279,
+     "y": 501,
+     "w": 61,
+     "h": 28,
+     "conf": 96.6
+    },
+    {
+     "t": "want",
+     "x": 353,
+     "y": 495,
+     "w": 83,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 448,
+     "y": 495,
+     "w": 34,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "do",
+     "x": 496,
+     "y": 490,
+     "w": 39,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "for",
+     "x": 548,
+     "y": 490,
+     "w": 50,
+     "h": 30,
+     "conf": 96.3
+    },
+    {
+     "t": "your",
+     "x": 608,
+     "y": 501,
+     "w": 78,
+     "h": 28,
+     "conf": 96.3
+    },
+    {
+     "t": "birthday,",
+     "x": 182,
+     "y": 541,
+     "w": 153,
+     "h": 39,
+     "conf": 96.4
+    },
+    {
+     "t": "little",
+     "x": 352,
+     "y": 541,
+     "w": 75,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "brother?”",
+     "x": 443,
+     "y": 541,
+     "w": 164,
+     "h": 30,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/thatos-birthday-surprise_Page_16.jpg",
+   "image_file": "thatos-birthday-surprise_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "And Thato knows exactly what they\nwill do the whole day long.",
+   "char_count": 61,
+   "word_count": 12,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "And",
+     "x": 87,
+     "y": 364,
+     "w": 66,
+     "h": 30,
+     "conf": 92.1
+    },
+    {
+     "t": "Thato",
+     "x": 166,
+     "y": 364,
+     "w": 99,
+     "h": 30,
+     "conf": 92.1
+    },
+    {
+     "t": "knows",
+     "x": 280,
+     "y": 364,
+     "w": 103,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "exactly",
+     "x": 396,
+     "y": 364,
+     "w": 123,
+     "h": 39,
+     "conf": 96.6
+    },
+    {
+     "t": "what",
+     "x": 530,
+     "y": 364,
+     "w": 83,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "they",
+     "x": 626,
+     "y": 364,
+     "w": 76,
+     "h": 39,
+     "conf": 96.7
+    },
+    {
+     "t": "will",
+     "x": 166,
+     "y": 416,
+     "w": 55,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "do",
+     "x": 236,
+     "y": 416,
+     "w": 39,
+     "h": 30,
+     "conf": 95.4
+    },
+    {
+     "t": "the",
+     "x": 287,
+     "y": 416,
+     "w": 55,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "whole",
+     "x": 355,
+     "y": 416,
+     "w": 98,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "day",
+     "x": 467,
+     "y": 416,
+     "w": 60,
+     "h": 39,
+     "conf": 96.5
+    },
+    {
+     "t": "long.",
+     "x": 542,
+     "y": 416,
+     "w": 77,
+     "h": 39,
+     "conf": 96.4
+    }
+   ]
+  }
+ ]
+}

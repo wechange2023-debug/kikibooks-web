@@ -1,0 +1,1645 @@
+{
+ "slug": "lara-the-yellow-ladybird",
+ "wp_slug": "lara-the-yellow-ladybird",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "the-yellow-ladybird_english_20160409_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  },
+  {
+   "file": "the-yellow-ladybird_english_20160409_Page_02.jpg",
+   "reason": "front-matter(PDF 2)"
+  },
+  {
+   "file": "the-yellow-ladybird_english_20160409_Page_03.jpg",
+   "reason": "front-matter(PDF 3)"
+  },
+  {
+   "file": "the-yellow-ladybird_english_20160409_Page_04.jpg",
+   "reason": "front-matter(PDF 4)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_05.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Lara the ladybird was a special bug.\nUnlike all her friends, she had\nbright yellow wings.",
+   "char_count": 89,
+   "word_count": 16,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "Lara",
+     "x": 953,
+     "y": 336,
+     "w": 54,
+     "h": 22,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 1018,
+     "y": 334,
+     "w": 38,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "ladybird",
+     "x": 1069,
+     "y": 329,
+     "w": 99,
+     "h": 40,
+     "conf": 96.5
+    },
+    {
+     "t": "was",
+     "x": 1179,
+     "y": 345,
+     "w": 46,
+     "h": 14,
+     "conf": 96.4
+    },
+    {
+     "t": "a",
+     "x": 1237,
+     "y": 345,
+     "w": 13,
+     "h": 13,
+     "conf": 89.5
+    },
+    {
+     "t": "special",
+     "x": 1263,
+     "y": 334,
+     "w": 81,
+     "h": 30,
+     "conf": 93.9
+    },
+    {
+     "t": "bug.",
+     "x": 1359,
+     "y": 329,
+     "w": 51,
+     "h": 40,
+     "conf": 95.4
+    },
+    {
+     "t": "Unlike",
+     "x": 999,
+     "y": 381,
+     "w": 72,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "all",
+     "x": 1083,
+     "y": 381,
+     "w": 26,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "her",
+     "x": 1123,
+     "y": 381,
+     "w": 36,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "friends,",
+     "x": 1170,
+     "y": 380,
+     "w": 87,
+     "h": 29,
+     "conf": 96.7
+    },
+    {
+     "t": "she",
+     "x": 1270,
+     "y": 381,
+     "w": 38,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "had",
+     "x": 1321,
+     "y": 380,
+     "w": 44,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "bright",
+     "x": 1061,
+     "y": 428,
+     "w": 71,
+     "h": 31,
+     "conf": 96.6
+    },
+    {
+     "t": "yellow",
+     "x": 1141,
+     "y": 429,
+     "w": 77,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "wings.",
+     "x": 1227,
+     "y": 435,
+     "w": 74,
+     "h": 24,
+     "conf": 95.9
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_06.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Each morning, Bibi Butterfly said hello.\nEveryone loved her yellow wings.\nAnd Manto Mantis always waved.",
+   "char_count": 104,
+   "word_count": 16,
+   "mean_conf": 96.2,
+   "words": [
+    {
+     "t": "Each",
+     "x": 939,
+     "y": 555,
+     "w": 58,
+     "h": 24,
+     "conf": 95.9
+    },
+    {
+     "t": "morning,",
+     "x": 1011,
+     "y": 561,
+     "w": 107,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "Bibi",
+     "x": 1133,
+     "y": 554,
+     "w": 42,
+     "h": 25,
+     "conf": 97.0
+    },
+    {
+     "t": "Butterfly",
+     "x": 1190,
+     "y": 555,
+     "w": 101,
+     "h": 30,
+     "conf": 95.7
+    },
+    {
+     "t": "said",
+     "x": 1302,
+     "y": 554,
+     "w": 47,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "hello.",
+     "x": 1363,
+     "y": 555,
+     "w": 62,
+     "h": 24,
+     "conf": 94.2
+    },
+    {
+     "t": "Everyone",
+     "x": 192,
+     "y": 580,
+     "w": 111,
+     "h": 28,
+     "conf": 96.8
+    },
+    {
+     "t": "loved",
+     "x": 316,
+     "y": 577,
+     "w": 62,
+     "h": 26,
+     "conf": 96.9
+    },
+    {
+     "t": "her",
+     "x": 392,
+     "y": 578,
+     "w": 36,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "yellow",
+     "x": 437,
+     "y": 578,
+     "w": 76,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "wings.",
+     "x": 523,
+     "y": 584,
+     "w": 74,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "And",
+     "x": 966,
+     "y": 601,
+     "w": 48,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "Manto",
+     "x": 1029,
+     "y": 603,
+     "w": 80,
+     "h": 23,
+     "conf": 94.8
+    },
+    {
+     "t": "Mantis",
+     "x": 1123,
+     "y": 603,
+     "w": 82,
+     "h": 23,
+     "conf": 94.8
+    },
+    {
+     "t": "always",
+     "x": 1217,
+     "y": 602,
+     "w": 83,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "waved.",
+     "x": 1310,
+     "y": 601,
+     "w": 86,
+     "h": 26,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_07.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "aoailt\nAt school, she played\nwith lots of friends.\nEven Sesa, the sulky spider,\nwas happy to see her.",
+   "char_count": 101,
+   "word_count": 19,
+   "mean_conf": 90.8,
+   "words": [
+    {
+     "t": "aoailt",
+     "x": 788,
+     "y": 0,
+     "w": 177,
+     "h": 88,
+     "conf": 0.0
+    },
+    {
+     "t": "At",
+     "x": 975,
+     "y": 105,
+     "w": 27,
+     "h": 23,
+     "conf": 96.4
+    },
+    {
+     "t": "school,",
+     "x": 1013,
+     "y": 104,
+     "w": 82,
+     "h": 28,
+     "conf": 96.1
+    },
+    {
+     "t": "she",
+     "x": 1108,
+     "y": 104,
+     "w": 38,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "played",
+     "x": 1159,
+     "y": 103,
+     "w": 81,
+     "h": 31,
+     "conf": 96.9
+    },
+    {
+     "t": "with",
+     "x": 990,
+     "y": 152,
+     "w": 49,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "lots",
+     "x": 1053,
+     "y": 152,
+     "w": 39,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "of",
+     "x": 1104,
+     "y": 152,
+     "w": 24,
+     "h": 24,
+     "conf": 94.5
+    },
+    {
+     "t": "friends.",
+     "x": 1137,
+     "y": 151,
+     "w": 87,
+     "h": 25,
+     "conf": 94.5
+    },
+    {
+     "t": "Even",
+     "x": 224,
+     "y": 557,
+     "w": 56,
+     "h": 23,
+     "conf": 93.3
+    },
+    {
+     "t": "Sesa,",
+     "x": 293,
+     "y": 557,
+     "w": 64,
+     "h": 26,
+     "conf": 92.2
+    },
+    {
+     "t": "the",
+     "x": 368,
+     "y": 555,
+     "w": 38,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "sulky",
+     "x": 418,
+     "y": 555,
+     "w": 58,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "spider,",
+     "x": 486,
+     "y": 554,
+     "w": 78,
+     "h": 31,
+     "conf": 95.4
+    },
+    {
+     "t": "was",
+     "x": 258,
+     "y": 613,
+     "w": 46,
+     "h": 14,
+     "conf": 96.8
+    },
+    {
+     "t": "happy",
+     "x": 317,
+     "y": 602,
+     "w": 76,
+     "h": 30,
+     "conf": 97.0
+    },
+    {
+     "t": "to",
+     "x": 402,
+     "y": 608,
+     "w": 23,
+     "h": 18,
+     "conf": 96.0
+    },
+    {
+     "t": "see",
+     "x": 437,
+     "y": 613,
+     "w": 38,
+     "h": 13,
+     "conf": 96.0
+    },
+    {
+     "t": "her.",
+     "x": 488,
+     "y": 602,
+     "w": 40,
+     "h": 24,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_08.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "But Lara wanted to be like the other\nladybirds. “I wish | had red wings\nlike you, Mama,’ she cried.",
+   "char_count": 99,
+   "word_count": 20,
+   "mean_conf": 94.2,
+   "words": [
+    {
+     "t": "But",
+     "x": 169,
+     "y": 336,
+     "w": 39,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "Lara",
+     "x": 220,
+     "y": 336,
+     "w": 54,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "wanted",
+     "x": 285,
+     "y": 333,
+     "w": 90,
+     "h": 26,
+     "conf": 96.2
+    },
+    {
+     "t": "to",
+     "x": 387,
+     "y": 340,
+     "w": 23,
+     "h": 18,
+     "conf": 96.6
+    },
+    {
+     "t": "be",
+     "x": 423,
+     "y": 333,
+     "w": 28,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "like",
+     "x": 463,
+     "y": 334,
+     "w": 37,
+     "h": 24,
+     "conf": 95.5
+    },
+    {
+     "t": "the",
+     "x": 510,
+     "y": 334,
+     "w": 38,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "other",
+     "x": 559,
+     "y": 334,
+     "w": 62,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "ladybirds.",
+     "x": 188,
+     "y": 380,
+     "w": 118,
+     "h": 31,
+     "conf": 91.2
+    },
+    {
+     "t": "“I",
+     "x": 320,
+     "y": 382,
+     "w": 12,
+     "h": 23,
+     "conf": 85.9
+    },
+    {
+     "t": "wish",
+     "x": 345,
+     "y": 381,
+     "w": 50,
+     "h": 25,
+     "conf": 94.8
+    },
+    {
+     "t": "|",
+     "x": 410,
+     "y": 383,
+     "w": 2,
+     "h": 22,
+     "conf": 92.1
+    },
+    {
+     "t": "had",
+     "x": 427,
+     "y": 380,
+     "w": 44,
+     "h": 25,
+     "conf": 93.8
+    },
+    {
+     "t": "red",
+     "x": 485,
+     "y": 380,
+     "w": 36,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "wings",
+     "x": 532,
+     "y": 387,
+     "w": 68,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "like",
+     "x": 228,
+     "y": 429,
+     "w": 37,
+     "h": 24,
+     "conf": 95.8
+    },
+    {
+     "t": "you,",
+     "x": 274,
+     "y": 440,
+     "w": 50,
+     "h": 19,
+     "conf": 95.8
+    },
+    {
+     "t": "Mama,’",
+     "x": 339,
+     "y": 430,
+     "w": 95,
+     "h": 27,
+     "conf": 76.9
+    },
+    {
+     "t": "she",
+     "x": 446,
+     "y": 429,
+     "w": 38,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "cried.",
+     "x": 496,
+     "y": 428,
+     "w": 64,
+     "h": 25,
+     "conf": 95.7
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_09.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "So one day, to cheer her up, Lara's\nmother painted her wings bright red.",
+   "char_count": 72,
+   "word_count": 14,
+   "mean_conf": 92.0,
+   "words": [
+    {
+     "t": "So",
+     "x": 173,
+     "y": 360,
+     "w": 31,
+     "h": 22,
+     "conf": 94.2
+    },
+    {
+     "t": "one",
+     "x": 216,
+     "y": 369,
+     "w": 43,
+     "h": 13,
+     "conf": 94.2
+    },
+    {
+     "t": "day,",
+     "x": 270,
+     "y": 357,
+     "w": 51,
+     "h": 31,
+     "conf": 95.9
+    },
+    {
+     "t": "to",
+     "x": 333,
+     "y": 364,
+     "w": 23,
+     "h": 18,
+     "conf": 97.0
+    },
+    {
+     "t": "cheer",
+     "x": 368,
+     "y": 358,
+     "w": 65,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "her",
+     "x": 445,
+     "y": 358,
+     "w": 36,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "up,",
+     "x": 492,
+     "y": 369,
+     "w": 35,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "Lara's",
+     "x": 542,
+     "y": 359,
+     "w": 73,
+     "h": 23,
+     "conf": 43.6
+    },
+    {
+     "t": "mother",
+     "x": 167,
+     "y": 401,
+     "w": 85,
+     "h": 39,
+     "conf": 96.7
+    },
+    {
+     "t": "painted",
+     "x": 264,
+     "y": 400,
+     "w": 91,
+     "h": 40,
+     "conf": 96.0
+    },
+    {
+     "t": "her",
+     "x": 369,
+     "y": 405,
+     "w": 36,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "wings",
+     "x": 414,
+     "y": 411,
+     "w": 68,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "bright",
+     "x": 495,
+     "y": 404,
+     "w": 71,
+     "h": 31,
+     "conf": 96.4
+    },
+    {
+     "t": "red.",
+     "x": 578,
+     "y": 404,
+     "w": 43,
+     "h": 25,
+     "conf": 89.3
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_10.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "The next morning,\nnobody greeted Lara\non her way to school.",
+   "char_count": 59,
+   "word_count": 11,
+   "mean_conf": 93.4,
+   "words": [
+    {
+     "t": "The",
+     "x": 964,
+     "y": 456,
+     "w": 42,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "next",
+     "x": 1019,
+     "y": 462,
+     "w": 48,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "morning,",
+     "x": 1079,
+     "y": 462,
+     "w": 106,
+     "h": 24,
+     "conf": 67.1
+    },
+    {
+     "t": "nobody",
+     "x": 944,
+     "y": 503,
+     "w": 92,
+     "h": 31,
+     "conf": 95.5
+    },
+    {
+     "t": "greeted",
+     "x": 1046,
+     "y": 503,
+     "w": 92,
+     "h": 31,
+     "conf": 96.7
+    },
+    {
+     "t": "Lara",
+     "x": 1153,
+     "y": 506,
+     "w": 54,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "on",
+     "x": 944,
+     "y": 562,
+     "w": 27,
+     "h": 13,
+     "conf": 96.6
+    },
+    {
+     "t": "her",
+     "x": 985,
+     "y": 551,
+     "w": 36,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "way",
+     "x": 1030,
+     "y": 562,
+     "w": 50,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "to",
+     "x": 1089,
+     "y": 557,
+     "w": 23,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "school.",
+     "x": 1124,
+     "y": 551,
+     "w": 81,
+     "h": 24,
+     "conf": 90.9
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_11.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_12.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "i\na) [ Lara sat all alone. No one\nj\ny noticed her new red wings.\nUntil Miss Miya spotted her and said:\n“You've painted your lovely yellow wings!”",
+   "char_count": 145,
+   "word_count": 29,
+   "mean_conf": 85.7,
+   "words": [
+    {
+     "t": "i",
+     "x": 179,
+     "y": 114,
+     "w": 2,
+     "h": 8,
+     "conf": 26.0
+    },
+    {
+     "t": "a)",
+     "x": 130,
+     "y": 136,
+     "w": 38,
+     "h": 22,
+     "conf": 33.2
+    },
+    {
+     "t": "[",
+     "x": 180,
+     "y": 140,
+     "w": 5,
+     "h": 29,
+     "conf": 34.2
+    },
+    {
+     "t": "Lara",
+     "x": 330,
+     "y": 139,
+     "w": 53,
+     "h": 22,
+     "conf": 95.9
+    },
+    {
+     "t": "sat",
+     "x": 396,
+     "y": 143,
+     "w": 35,
+     "h": 18,
+     "conf": 95.9
+    },
+    {
+     "t": "all",
+     "x": 442,
+     "y": 137,
+     "w": 25,
+     "h": 24,
+     "conf": 95.2
+    },
+    {
+     "t": "alone.",
+     "x": 481,
+     "y": 137,
+     "w": 73,
+     "h": 24,
+     "conf": 95.2
+    },
+    {
+     "t": "No",
+     "x": 569,
+     "y": 138,
+     "w": 36,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "one",
+     "x": 617,
+     "y": 148,
+     "w": 43,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "j",
+     "x": 181,
+     "y": 180,
+     "w": 2,
+     "h": 8,
+     "conf": 42.6
+    },
+    {
+     "t": "y",
+     "x": 143,
+     "y": 196,
+     "w": 5,
+     "h": 15,
+     "conf": 51.4
+    },
+    {
+     "t": "noticed",
+     "x": 330,
+     "y": 184,
+     "w": 87,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "her",
+     "x": 430,
+     "y": 185,
+     "w": 36,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "new",
+     "x": 478,
+     "y": 196,
+     "w": 47,
+     "h": 14,
+     "conf": 96.8
+    },
+    {
+     "t": "red",
+     "x": 537,
+     "y": 184,
+     "w": 35,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "wings.",
+     "x": 583,
+     "y": 191,
+     "w": 75,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "Until",
+     "x": 160,
+     "y": 555,
+     "w": 53,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "Miss",
+     "x": 228,
+     "y": 556,
+     "w": 52,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "Miya",
+     "x": 294,
+     "y": 556,
+     "w": 59,
+     "h": 29,
+     "conf": 96.5
+    },
+    {
+     "t": "spotted",
+     "x": 366,
+     "y": 554,
+     "w": 90,
+     "h": 31,
+     "conf": 96.9
+    },
+    {
+     "t": "her",
+     "x": 470,
+     "y": 555,
+     "w": 36,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 516,
+     "y": 554,
+     "w": 45,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "said:",
+     "x": 574,
+     "y": 554,
+     "w": 55,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "“You've",
+     "x": 137,
+     "y": 603,
+     "w": 87,
+     "h": 24,
+     "conf": 91.0
+    },
+    {
+     "t": "painted",
+     "x": 237,
+     "y": 601,
+     "w": 91,
+     "h": 31,
+     "conf": 96.8
+    },
+    {
+     "t": "your",
+     "x": 339,
+     "y": 613,
+     "w": 53,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "lovely",
+     "x": 404,
+     "y": 602,
+     "w": 68,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "yellow",
+     "x": 481,
+     "y": 602,
+     "w": 76,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "wings!”",
+     "x": 567,
+     "y": 602,
+     "w": 85,
+     "h": 30,
+     "conf": 85.9
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_13.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_14.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Lara,” Miss Miya said, “your yellow\nwings are what make you you.\nLike Sipho's spot ... and Sally's legs.”",
+   "char_count": 106,
+   "word_count": 19,
+   "mean_conf": 88.1,
+   "words": [
+    {
+     "t": "“Lara,”",
+     "x": 171,
+     "y": 335,
+     "w": 80,
+     "h": 27,
+     "conf": 56.6
+    },
+    {
+     "t": "Miss",
+     "x": 265,
+     "y": 335,
+     "w": 51,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "Miya",
+     "x": 330,
+     "y": 335,
+     "w": 60,
+     "h": 29,
+     "conf": 96.1
+    },
+    {
+     "t": "said,",
+     "x": 402,
+     "y": 333,
+     "w": 56,
+     "h": 29,
+     "conf": 96.8
+    },
+    {
+     "t": "“your",
+     "x": 472,
+     "y": 335,
+     "w": 59,
+     "h": 29,
+     "conf": 86.1
+    },
+    {
+     "t": "yellow",
+     "x": 543,
+     "y": 334,
+     "w": 76,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "wings",
+     "x": 205,
+     "y": 387,
+     "w": 68,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "are",
+     "x": 285,
+     "y": 392,
+     "w": 38,
+     "h": 13,
+     "conf": 97.0
+    },
+    {
+     "t": "what",
+     "x": 332,
+     "y": 381,
+     "w": 61,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "make",
+     "x": 405,
+     "y": 381,
+     "w": 64,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "you",
+     "x": 479,
+     "y": 392,
+     "w": 42,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "you.",
+     "x": 532,
+     "y": 392,
+     "w": 49,
+     "h": 19,
+     "conf": 95.5
+    },
+    {
+     "t": "Like",
+     "x": 169,
+     "y": 429,
+     "w": 47,
+     "h": 24,
+     "conf": 93.3
+    },
+    {
+     "t": "Sipho's",
+     "x": 228,
+     "y": 429,
+     "w": 87,
+     "h": 30,
+     "conf": 67.9
+    },
+    {
+     "t": "spot",
+     "x": 326,
+     "y": 435,
+     "w": 51,
+     "h": 24,
+     "conf": 92.7
+    },
+    {
+     "t": "...",
+     "x": 389,
+     "y": 451,
+     "w": 12,
+     "h": 2,
+     "conf": 56.2
+    },
+    {
+     "t": "and",
+     "x": 414,
+     "y": 428,
+     "w": 45,
+     "h": 25,
+     "conf": 97.0
+    },
+    {
+     "t": "Sally's",
+     "x": 472,
+     "y": 429,
+     "w": 77,
+     "h": 30,
+     "conf": 62.1
+    },
+    {
+     "t": "legs.”",
+     "x": 562,
+     "y": 429,
+     "w": 59,
+     "h": 30,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_15.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "\"I'll never paint my wings again!\"\nshe thought. Except, maybe once or twice ...",
+   "char_count": 79,
+   "word_count": 14,
+   "mean_conf": 90.9,
+   "words": [
+    {
+     "t": "\"I'll",
+     "x": 978,
+     "y": 604,
+     "w": 34,
+     "h": 24,
+     "conf": 60.7
+    },
+    {
+     "t": "never",
+     "x": 1027,
+     "y": 615,
+     "w": 63,
+     "h": 14,
+     "conf": 95.1
+    },
+    {
+     "t": "paint",
+     "x": 1102,
+     "y": 610,
+     "w": 62,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "my",
+     "x": 1175,
+     "y": 615,
+     "w": 35,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "wings",
+     "x": 1219,
+     "y": 610,
+     "w": 68,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "again!\"",
+     "x": 1299,
+     "y": 604,
+     "w": 87,
+     "h": 30,
+     "conf": 84.8
+    },
+    {
+     "t": "she",
+     "x": 907,
+     "y": 652,
+     "w": 38,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "thought.",
+     "x": 956,
+     "y": 652,
+     "w": 100,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "Except,",
+     "x": 1071,
+     "y": 654,
+     "w": 88,
+     "h": 28,
+     "conf": 96.7
+    },
+    {
+     "t": "maybe",
+     "x": 1173,
+     "y": 651,
+     "w": 82,
+     "h": 31,
+     "conf": 96.6
+    },
+    {
+     "t": "once",
+     "x": 1267,
+     "y": 663,
+     "w": 56,
+     "h": 13,
+     "conf": 96.5
+    },
+    {
+     "t": "or",
+     "x": 1335,
+     "y": 663,
+     "w": 23,
+     "h": 13,
+     "conf": 95.0
+    },
+    {
+     "t": "twice",
+     "x": 1367,
+     "y": 658,
+     "w": 63,
+     "h": 19,
+     "conf": 93.3
+    },
+    {
+     "t": "...",
+     "x": 1442,
+     "y": 674,
+     "w": 12,
+     "h": 2,
+     "conf": 69.2
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_16.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "To try a bit of purple ...\nor something nice.\nBut not for ever and just for fun.",
+   "char_count": 80,
+   "word_count": 18,
+   "mean_conf": 92.9,
+   "words": [
+    {
+     "t": "To",
+     "x": 252,
+     "y": 533,
+     "w": 27,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "try",
+     "x": 289,
+     "y": 537,
+     "w": 32,
+     "h": 24,
+     "conf": 91.6
+    },
+    {
+     "t": "a",
+     "x": 331,
+     "y": 542,
+     "w": 13,
+     "h": 13,
+     "conf": 91.6
+    },
+    {
+     "t": "bit",
+     "x": 358,
+     "y": 530,
+     "w": 30,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "of",
+     "x": 399,
+     "y": 531,
+     "w": 23,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "purple",
+     "x": 433,
+     "y": 531,
+     "w": 77,
+     "h": 30,
+     "conf": 93.1
+    },
+    {
+     "t": "...",
+     "x": 522,
+     "y": 553,
+     "w": 12,
+     "h": 2,
+     "conf": 50.3
+    },
+    {
+     "t": "or",
+     "x": 281,
+     "y": 589,
+     "w": 23,
+     "h": 13,
+     "conf": 95.2
+    },
+    {
+     "t": "something",
+     "x": 315,
+     "y": 578,
+     "w": 125,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "nice.",
+     "x": 454,
+     "y": 584,
+     "w": 51,
+     "h": 18,
+     "conf": 96.7
+    },
+    {
+     "t": "But",
+     "x": 197,
+     "y": 628,
+     "w": 38,
+     "h": 22,
+     "conf": 96.5
+    },
+    {
+     "t": "not",
+     "x": 247,
+     "y": 632,
+     "w": 37,
+     "h": 18,
+     "conf": 96.6
+    },
+    {
+     "t": "for",
+     "x": 295,
+     "y": 626,
+     "w": 32,
+     "h": 24,
+     "conf": 95.6
+    },
+    {
+     "t": "ever",
+     "x": 337,
+     "y": 637,
+     "w": 50,
+     "h": 14,
+     "conf": 95.6
+    },
+    {
+     "t": "and",
+     "x": 398,
+     "y": 625,
+     "w": 45,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "just",
+     "x": 455,
+     "y": 632,
+     "w": 40,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "for",
+     "x": 506,
+     "y": 626,
+     "w": 32,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "fun.",
+     "x": 549,
+     "y": 626,
+     "w": 43,
+     "h": 24,
+     "conf": 93.7
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_17.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_17.jpg",
+   "image_width": 1578,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_18.jpg",
+   "image_file": "the-yellow-ladybird_english_20160409_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

@@ -1,0 +1,2215 @@
+{
+ "slug": "londi-the-dreaming-girl",
+ "wp_slug": "londi-the-dreaming-girl",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "londi-the-dreaming-girl_cover_pdf-ebook_20160104.jpg",
+   "reason": "cover"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_201601044.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_201601044.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "Londi was a dreaming girl.\nUp in the sky, she didn’t see clouds.",
+   "char_count": 64,
+   "word_count": 13,
+   "mean_conf": 95.6,
+   "words": [
+    {
+     "t": "Londi",
+     "x": 2784,
+     "y": 1102,
+     "w": 236,
+     "h": 79,
+     "conf": 92.3
+    },
+    {
+     "t": "was",
+     "x": 3056,
+     "y": 1129,
+     "w": 173,
+     "h": 52,
+     "conf": 95.2
+    },
+    {
+     "t": "a",
+     "x": 3265,
+     "y": 1129,
+     "w": 47,
+     "h": 52,
+     "conf": 96.0
+    },
+    {
+     "t": "dreaming",
+     "x": 3348,
+     "y": 1102,
+     "w": 423,
+     "h": 101,
+     "conf": 96.5
+    },
+    {
+     "t": "girl.",
+     "x": 3809,
+     "y": 1102,
+     "w": 170,
+     "h": 101,
+     "conf": 95.6
+    },
+    {
+     "t": "Up",
+     "x": 2784,
+     "y": 1234,
+     "w": 115,
+     "h": 95,
+     "conf": 94.6
+    },
+    {
+     "t": "in",
+     "x": 2937,
+     "y": 1233,
+     "w": 72,
+     "h": 72,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 3043,
+     "y": 1227,
+     "w": 146,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "sky,",
+     "x": 3226,
+     "y": 1227,
+     "w": 167,
+     "h": 101,
+     "conf": 96.4
+    },
+    {
+     "t": "she",
+     "x": 3434,
+     "y": 1227,
+     "w": 148,
+     "h": 79,
+     "conf": 96.8
+    },
+    {
+     "t": "didn’t",
+     "x": 3618,
+     "y": 1227,
+     "w": 261,
+     "h": 79,
+     "conf": 93.6
+    },
+    {
+     "t": "see",
+     "x": 3914,
+     "y": 1254,
+     "w": 145,
+     "h": 52,
+     "conf": 96.8
+    },
+    {
+     "t": "clouds.",
+     "x": 4095,
+     "y": 1227,
+     "w": 313,
+     "h": 79,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_201601045.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_201601045.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "%\naaog\nRae\nc —\nf %\n{ é\nInstead Londi saw flying\ngeese, jumping fish, and\nfluffy sheep running home.\nead\n\"",
+   "char_count": 105,
+   "word_count": 23,
+   "mean_conf": 54.4,
+   "words": [
+    {
+     "t": "%",
+     "x": 939,
+     "y": 1144,
+     "w": 16,
+     "h": 23,
+     "conf": 42.2
+    },
+    {
+     "t": "aaog",
+     "x": 959,
+     "y": 1171,
+     "w": 52,
+     "h": 17,
+     "conf": 0.0
+    },
+    {
+     "t": "Rae",
+     "x": 1032,
+     "y": 1243,
+     "w": 50,
+     "h": 16,
+     "conf": 5.7
+    },
+    {
+     "t": "c",
+     "x": 1058,
+     "y": 1261,
+     "w": 4,
+     "h": 2,
+     "conf": 6.5
+    },
+    {
+     "t": "—",
+     "x": 1146,
+     "y": 1261,
+     "w": 38,
+     "h": 20,
+     "conf": 0.0
+    },
+    {
+     "t": "f",
+     "x": 1153,
+     "y": 1352,
+     "w": 8,
+     "h": 26,
+     "conf": 0.0
+    },
+    {
+     "t": "%",
+     "x": 1336,
+     "y": 1365,
+     "w": 13,
+     "h": 16,
+     "conf": 0.0
+    },
+    {
+     "t": "{",
+     "x": 1151,
+     "y": 1380,
+     "w": 8,
+     "h": 30,
+     "conf": 0.0
+    },
+    {
+     "t": "é",
+     "x": 1330,
+     "y": 1384,
+     "w": 12,
+     "h": 25,
+     "conf": 20.9
+    },
+    {
+     "t": "Instead",
+     "x": 243,
+     "y": 1798,
+     "w": 349,
+     "h": 79,
+     "conf": 93.3
+    },
+    {
+     "t": "Londi",
+     "x": 632,
+     "y": 1798,
+     "w": 237,
+     "h": 79,
+     "conf": 93.1
+    },
+    {
+     "t": "saw",
+     "x": 909,
+     "y": 1825,
+     "w": 170,
+     "h": 52,
+     "conf": 96.9
+    },
+    {
+     "t": "flying",
+     "x": 1110,
+     "y": 1797,
+     "w": 243,
+     "h": 102,
+     "conf": 96.0
+    },
+    {
+     "t": "geese,",
+     "x": 241,
+     "y": 1950,
+     "w": 280,
+     "h": 74,
+     "conf": 96.4
+    },
+    {
+     "t": "jumping",
+     "x": 548,
+     "y": 1929,
+     "w": 369,
+     "h": 96,
+     "conf": 96.4
+    },
+    {
+     "t": "fish,",
+     "x": 952,
+     "y": 1922,
+     "w": 185,
+     "h": 91,
+     "conf": 96.1
+    },
+    {
+     "t": "and",
+     "x": 1178,
+     "y": 1923,
+     "w": 163,
+     "h": 79,
+     "conf": 96.7
+    },
+    {
+     "t": "fluffy",
+     "x": 237,
+     "y": 2047,
+     "w": 231,
+     "h": 102,
+     "conf": 95.6
+    },
+    {
+     "t": "sheep",
+     "x": 503,
+     "y": 2048,
+     "w": 257,
+     "h": 102,
+     "conf": 95.6
+    },
+    {
+     "t": "running",
+     "x": 797,
+     "y": 2054,
+     "w": 345,
+     "h": 95,
+     "conf": 96.1
+    },
+    {
+     "t": "home.",
+     "x": 1183,
+     "y": 2048,
+     "w": 264,
+     "h": 79,
+     "conf": 95.7
+    },
+    {
+     "t": "ead",
+     "x": 3537,
+     "y": 1224,
+     "w": 12,
+     "h": 73,
+     "conf": 28.1
+    },
+    {
+     "t": "\"",
+     "x": 3599,
+     "y": 1223,
+     "w": 7,
+     "h": 3,
+     "conf": 0.0
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_201601046.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_201601046.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "One afternoon, Gogo came outside,\nlooking tired.\n“Londi, stop dreaming!” she said.\n“It’s time to go and fetch the water.”",
+   "char_count": 121,
+   "word_count": 20,
+   "mean_conf": 95.9,
+   "words": [
+    {
+     "t": "One",
+     "x": 241,
+     "y": 957,
+     "w": 173,
+     "h": 74,
+     "conf": 96.4
+    },
+    {
+     "t": "afternoon,",
+     "x": 451,
+     "y": 951,
+     "w": 475,
+     "h": 91,
+     "conf": 96.4
+    },
+    {
+     "t": "Gogo",
+     "x": 967,
+     "y": 957,
+     "w": 226,
+     "h": 96,
+     "conf": 96.9
+    },
+    {
+     "t": "came",
+     "x": 1229,
+     "y": 979,
+     "w": 232,
+     "h": 52,
+     "conf": 96.5
+    },
+    {
+     "t": "outside,",
+     "x": 1498,
+     "y": 952,
+     "w": 358,
+     "h": 90,
+     "conf": 95.3
+    },
+    {
+     "t": "looking",
+     "x": 244,
+     "y": 1077,
+     "w": 315,
+     "h": 101,
+     "conf": 96.6
+    },
+    {
+     "t": "tired.",
+     "x": 594,
+     "y": 1077,
+     "w": 244,
+     "h": 79,
+     "conf": 96.7
+    },
+    {
+     "t": "“Londi,",
+     "x": 246,
+     "y": 1252,
+     "w": 316,
+     "h": 91,
+     "conf": 89.3
+    },
+    {
+     "t": "stop",
+     "x": 604,
+     "y": 1265,
+     "w": 190,
+     "h": 89,
+     "conf": 96.1
+    },
+    {
+     "t": "dreaming!”",
+     "x": 831,
+     "y": 1252,
+     "w": 511,
+     "h": 101,
+     "conf": 96.1
+    },
+    {
+     "t": "she",
+     "x": 1379,
+     "y": 1252,
+     "w": 146,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "said.",
+     "x": 1564,
+     "y": 1252,
+     "w": 205,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "“It’s",
+     "x": 246,
+     "y": 1378,
+     "w": 199,
+     "h": 78,
+     "conf": 96.3
+    },
+    {
+     "t": "time",
+     "x": 477,
+     "y": 1383,
+     "w": 198,
+     "h": 73,
+     "conf": 96.2
+    },
+    {
+     "t": "to",
+     "x": 708,
+     "y": 1390,
+     "w": 91,
+     "h": 66,
+     "conf": 96.2
+    },
+    {
+     "t": "go",
+     "x": 836,
+     "y": 1404,
+     "w": 101,
+     "h": 74,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 973,
+     "y": 1377,
+     "w": 163,
+     "h": 79,
+     "conf": 96.3
+    },
+    {
+     "t": "fetch",
+     "x": 1169,
+     "y": 1376,
+     "w": 230,
+     "h": 80,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 1433,
+     "y": 1377,
+     "w": 145,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "water.”",
+     "x": 1612,
+     "y": 1378,
+     "w": 344,
+     "h": 78,
+     "conf": 95.6
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_201601047.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_201601047.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "|\n)\nLondi stood up and smiled\nat her feet.\n\\\n“Let's go, feet! You know\nthe way there!” 7 f",
+   "char_count": 90,
+   "word_count": 21,
+   "mean_conf": 77.9,
+   "words": [
+    {
+     "t": "|",
+     "x": 104,
+     "y": 217,
+     "w": 26,
+     "h": 108,
+     "conf": 40.9
+    },
+    {
+     "t": ")",
+     "x": 1427,
+     "y": 44,
+     "w": 24,
+     "h": 76,
+     "conf": 84.5
+    },
+    {
+     "t": "Londi",
+     "x": 243,
+     "y": 276,
+     "w": 237,
+     "h": 152,
+     "conf": 93.2
+    },
+    {
+     "t": "stood",
+     "x": 520,
+     "y": 280,
+     "w": 248,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "up",
+     "x": 805,
+     "y": 306,
+     "w": 105,
+     "h": 77,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 946,
+     "y": 280,
+     "w": 161,
+     "h": 132,
+     "conf": 96.9
+    },
+    {
+     "t": "smiled",
+     "x": 1144,
+     "y": 280,
+     "w": 288,
+     "h": 96,
+     "conf": 0.0
+    },
+    {
+     "t": "at",
+     "x": 241,
+     "y": 366,
+     "w": 104,
+     "h": 118,
+     "conf": 96.1
+    },
+    {
+     "t": "her",
+     "x": 366,
+     "y": 405,
+     "w": 148,
+     "h": 79,
+     "conf": 96.1
+    },
+    {
+     "t": "feet.",
+     "x": 543,
+     "y": 388,
+     "w": 206,
+     "h": 97,
+     "conf": 96.7
+    },
+    {
+     "t": "\\",
+     "x": 574,
+     "y": 500,
+     "w": 39,
+     "h": 99,
+     "conf": 78.4
+    },
+    {
+     "t": "“Let's",
+     "x": 246,
+     "y": 581,
+     "w": 258,
+     "h": 115,
+     "conf": 6.7
+    },
+    {
+     "t": "go,",
+     "x": 539,
+     "y": 590,
+     "w": 130,
+     "h": 93,
+     "conf": 96.7
+    },
+    {
+     "t": "feet!",
+     "x": 687,
+     "y": 578,
+     "w": 230,
+     "h": 85,
+     "conf": 96.0
+    },
+    {
+     "t": "You",
+     "x": 954,
+     "y": 585,
+     "w": 177,
+     "h": 79,
+     "conf": 96.0
+    },
+    {
+     "t": "know",
+     "x": 1163,
+     "y": 579,
+     "w": 247,
+     "h": 93,
+     "conf": 94.4
+    },
+    {
+     "t": "the",
+     "x": 237,
+     "y": 704,
+     "w": 146,
+     "h": 80,
+     "conf": 96.6
+    },
+    {
+     "t": "way",
+     "x": 417,
+     "y": 731,
+     "w": 165,
+     "h": 117,
+     "conf": 96.8
+    },
+    {
+     "t": "there!”",
+     "x": 631,
+     "y": 672,
+     "w": 326,
+     "h": 194,
+     "conf": 90.9
+    },
+    {
+     "t": "7",
+     "x": 1058,
+     "y": 694,
+     "w": 57,
+     "h": 112,
+     "conf": 63.7
+    },
+    {
+     "t": "f",
+     "x": 1194,
+     "y": 705,
+     "w": 38,
+     "h": 136,
+     "conf": 21.3
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_201601048.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_201601048.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "Londi started walking to the tap. She crept past Mama Neli’s house.\nShe hopped over the rocks. She dashed down the path.",
+   "char_count": 120,
+   "word_count": 22,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "Londi",
+     "x": 243,
+     "y": 1923,
+     "w": 238,
+     "h": 79,
+     "conf": 93.0
+    },
+    {
+     "t": "started",
+     "x": 520,
+     "y": 1923,
+     "w": 331,
+     "h": 79,
+     "conf": 95.7
+    },
+    {
+     "t": "walking",
+     "x": 884,
+     "y": 1923,
+     "w": 342,
+     "h": 101,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 1260,
+     "y": 1936,
+     "w": 91,
+     "h": 66,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 1383,
+     "y": 1923,
+     "w": 146,
+     "h": 79,
+     "conf": 96.3
+    },
+    {
+     "t": "tap.",
+     "x": 1562,
+     "y": 1936,
+     "w": 175,
+     "h": 89,
+     "conf": 95.9
+    },
+    {
+     "t": "She",
+     "x": 2602,
+     "y": 1923,
+     "w": 160,
+     "h": 79,
+     "conf": 96.6
+    },
+    {
+     "t": "crept",
+     "x": 2797,
+     "y": 1936,
+     "w": 238,
+     "h": 89,
+     "conf": 96.3
+    },
+    {
+     "t": "past",
+     "x": 3070,
+     "y": 1936,
+     "w": 192,
+     "h": 89,
+     "conf": 96.3
+    },
+    {
+     "t": "Mama",
+     "x": 3300,
+     "y": 1930,
+     "w": 272,
+     "h": 72,
+     "conf": 91.7
+    },
+    {
+     "t": "Neli’s",
+     "x": 3609,
+     "y": 1923,
+     "w": 245,
+     "h": 79,
+     "conf": 91.7
+    },
+    {
+     "t": "house.",
+     "x": 3891,
+     "y": 1923,
+     "w": 287,
+     "h": 79,
+     "conf": 96.5
+    },
+    {
+     "t": "She",
+     "x": 241,
+     "y": 2048,
+     "w": 159,
+     "h": 79,
+     "conf": 96.3
+    },
+    {
+     "t": "hopped",
+     "x": 437,
+     "y": 2048,
+     "w": 329,
+     "h": 102,
+     "conf": 94.8
+    },
+    {
+     "t": "over",
+     "x": 801,
+     "y": 2075,
+     "w": 200,
+     "h": 52,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 1030,
+     "y": 2048,
+     "w": 146,
+     "h": 79,
+     "conf": 96.8
+    },
+    {
+     "t": "rocks.",
+     "x": 1212,
+     "y": 2048,
+     "w": 265,
+     "h": 79,
+     "conf": 96.8
+    },
+    {
+     "t": "She",
+     "x": 2602,
+     "y": 2048,
+     "w": 160,
+     "h": 79,
+     "conf": 96.7
+    },
+    {
+     "t": "dashed",
+     "x": 2798,
+     "y": 2048,
+     "w": 322,
+     "h": 79,
+     "conf": 96.5
+    },
+    {
+     "t": "down",
+     "x": 3156,
+     "y": 2048,
+     "w": 236,
+     "h": 79,
+     "conf": 94.5
+    },
+    {
+     "t": "the",
+     "x": 3426,
+     "y": 2048,
+     "w": 146,
+     "h": 79,
+     "conf": 96.7
+    },
+    {
+     "t": "path.",
+     "x": 3608,
+     "y": 2048,
+     "w": 229,
+     "h": 102,
+     "conf": 96.9
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_201601049.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_201601049.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“We'll have to wait.\nLet’s stay in line.\nNo dreaming away!”\n| The line at the\ntap was long.\n| — “Oh no!” Londi\nsaid to her feet.",
+   "char_count": 128,
+   "word_count": 28,
+   "mean_conf": 90.6,
+   "words": [
+    {
+     "t": "“We'll",
+     "x": 3657,
+     "y": 422,
+     "w": 269,
+     "h": 79,
+     "conf": 94.7
+    },
+    {
+     "t": "have",
+     "x": 3968,
+     "y": 422,
+     "w": 208,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "to",
+     "x": 4209,
+     "y": 435,
+     "w": 90,
+     "h": 66,
+     "conf": 96.2
+    },
+    {
+     "t": "wait.",
+     "x": 4333,
+     "y": 428,
+     "w": 220,
+     "h": 73,
+     "conf": 96.4
+    },
+    {
+     "t": "Let’s",
+     "x": 3654,
+     "y": 548,
+     "w": 209,
+     "h": 78,
+     "conf": 91.9
+    },
+    {
+     "t": "stay",
+     "x": 3899,
+     "y": 560,
+     "w": 189,
+     "h": 88,
+     "conf": 96.9
+    },
+    {
+     "t": "in",
+     "x": 4124,
+     "y": 553,
+     "w": 72,
+     "h": 72,
+     "conf": 96.3
+    },
+    {
+     "t": "line.",
+     "x": 4237,
+     "y": 547,
+     "w": 181,
+     "h": 79,
+     "conf": 96.3
+    },
+    {
+     "t": "No",
+     "x": 3654,
+     "y": 679,
+     "w": 117,
+     "h": 72,
+     "conf": 96.6
+    },
+    {
+     "t": "dreaming",
+     "x": 3807,
+     "y": 672,
+     "w": 423,
+     "h": 101,
+     "conf": 96.4
+    },
+    {
+     "t": "away!”",
+     "x": 4268,
+     "y": 673,
+     "w": 317,
+     "h": 100,
+     "conf": 93.8
+    },
+    {
+     "t": "|",
+     "x": 227,
+     "y": 1170,
+     "w": 17,
+     "h": 213,
+     "conf": 92.5
+    },
+    {
+     "t": "The",
+     "x": 516,
+     "y": 1322,
+     "w": 165,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "line",
+     "x": 721,
+     "y": 1322,
+     "w": 153,
+     "h": 79,
+     "conf": 96.1
+    },
+    {
+     "t": "at",
+     "x": 912,
+     "y": 1335,
+     "w": 88,
+     "h": 66,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 1031,
+     "y": 1322,
+     "w": 146,
+     "h": 79,
+     "conf": 97.0
+    },
+    {
+     "t": "tap",
+     "x": 515,
+     "y": 1460,
+     "w": 149,
+     "h": 89,
+     "conf": 97.0
+    },
+    {
+     "t": "was",
+     "x": 697,
+     "y": 1474,
+     "w": 173,
+     "h": 52,
+     "conf": 94.9
+    },
+    {
+     "t": "long.",
+     "x": 908,
+     "y": 1447,
+     "w": 211,
+     "h": 101,
+     "conf": 94.9
+    },
+    {
+     "t": "|",
+     "x": 11,
+     "y": 1640,
+     "w": 1,
+     "h": 8,
+     "conf": 54.6
+    },
+    {
+     "t": "—",
+     "x": 54,
+     "y": 1507,
+     "w": 158,
+     "h": 159,
+     "conf": 0.0
+    },
+    {
+     "t": "“Oh",
+     "x": 524,
+     "y": 1572,
+     "w": 163,
+     "h": 79,
+     "conf": 96.3
+    },
+    {
+     "t": "no!”",
+     "x": 726,
+     "y": 1573,
+     "w": 190,
+     "h": 78,
+     "conf": 93.3
+    },
+    {
+     "t": "Londi",
+     "x": 956,
+     "y": 1572,
+     "w": 236,
+     "h": 79,
+     "conf": 91.0
+    },
+    {
+     "t": "said",
+     "x": 520,
+     "y": 1697,
+     "w": 179,
+     "h": 79,
+     "conf": 94.8
+    },
+    {
+     "t": "to",
+     "x": 731,
+     "y": 1710,
+     "w": 90,
+     "h": 66,
+     "conf": 96.6
+    },
+    {
+     "t": "her",
+     "x": 859,
+     "y": 1697,
+     "w": 148,
+     "h": 79,
+     "conf": 96.1
+    },
+    {
+     "t": "feet.",
+     "x": 1036,
+     "y": 1696,
+     "w": 204,
+     "h": 80,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_2016010410.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_2016010410.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "Ooh! Londi thought. But what’s that\nshining over there?\nI wonder who lost their shoe?\n4 4\n; me Asis\nWh\nMh ay vy Step\nNil 1)",
+   "char_count": 123,
+   "word_count": 27,
+   "mean_conf": 70.0,
+   "words": [
+    {
+     "t": "Ooh!",
+     "x": 241,
+     "y": 1014,
+     "w": 204,
+     "h": 79,
+     "conf": 92.5
+    },
+    {
+     "t": "Londi",
+     "x": 493,
+     "y": 1014,
+     "w": 236,
+     "h": 79,
+     "conf": 92.0
+    },
+    {
+     "t": "thought.",
+     "x": 765,
+     "y": 1014,
+     "w": 385,
+     "h": 101,
+     "conf": 96.2
+    },
+    {
+     "t": "But",
+     "x": 1194,
+     "y": 1020,
+     "w": 150,
+     "h": 73,
+     "conf": 93.0
+    },
+    {
+     "t": "what’s",
+     "x": 1378,
+     "y": 1014,
+     "w": 296,
+     "h": 79,
+     "conf": 90.2
+    },
+    {
+     "t": "that",
+     "x": 1706,
+     "y": 1014,
+     "w": 190,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "shining",
+     "x": 242,
+     "y": 1139,
+     "w": 318,
+     "h": 101,
+     "conf": 96.2
+    },
+    {
+     "t": "over",
+     "x": 598,
+     "y": 1166,
+     "w": 200,
+     "h": 52,
+     "conf": 96.2
+    },
+    {
+     "t": "there?",
+     "x": 827,
+     "y": 1139,
+     "w": 287,
+     "h": 79,
+     "conf": 96.0
+    },
+    {
+     "t": "I",
+     "x": 243,
+     "y": 1321,
+     "w": 33,
+     "h": 71,
+     "conf": 96.2
+    },
+    {
+     "t": "wonder",
+     "x": 313,
+     "y": 1314,
+     "w": 341,
+     "h": 79,
+     "conf": 95.4
+    },
+    {
+     "t": "who",
+     "x": 684,
+     "y": 1314,
+     "w": 182,
+     "h": 79,
+     "conf": 94.9
+    },
+    {
+     "t": "lost",
+     "x": 905,
+     "y": 1314,
+     "w": 160,
+     "h": 79,
+     "conf": 94.9
+    },
+    {
+     "t": "their",
+     "x": 1096,
+     "y": 1314,
+     "w": 222,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "shoe?",
+     "x": 1351,
+     "y": 1314,
+     "w": 247,
+     "h": 79,
+     "conf": 96.3
+    },
+    {
+     "t": "4",
+     "x": 189,
+     "y": 1947,
+     "w": 8,
+     "h": 7,
+     "conf": 83.6
+    },
+    {
+     "t": "4",
+     "x": 713,
+     "y": 1943,
+     "w": 7,
+     "h": 14,
+     "conf": 91.8
+    },
+    {
+     "t": ";",
+     "x": 0,
+     "y": 2008,
+     "w": 21,
+     "h": 70,
+     "conf": 5.7
+    },
+    {
+     "t": "me",
+     "x": 102,
+     "y": 2002,
+     "w": 123,
+     "h": 23,
+     "conf": 23.8
+    },
+    {
+     "t": "Asis",
+     "x": 263,
+     "y": 1966,
+     "w": 581,
+     "h": 315,
+     "conf": 27.6
+    },
+    {
+     "t": "Wh",
+     "x": 456,
+     "y": 2024,
+     "w": 534,
+     "h": 338,
+     "conf": 47.6
+    },
+    {
+     "t": "Mh",
+     "x": 1056,
+     "y": 2150,
+     "w": 146,
+     "h": 212,
+     "conf": 35.0
+    },
+    {
+     "t": "ay",
+     "x": 1046,
+     "y": 1989,
+     "w": 648,
+     "h": 373,
+     "conf": 23.0
+    },
+    {
+     "t": "vy",
+     "x": 1763,
+     "y": 2021,
+     "w": 428,
+     "h": 341,
+     "conf": 13.7
+    },
+    {
+     "t": "Step",
+     "x": 2045,
+     "y": 2261,
+     "w": 72,
+     "h": 101,
+     "conf": 25.8
+    },
+    {
+     "t": "Nil",
+     "x": 17,
+     "y": 2156,
+     "w": 204,
+     "h": 196,
+     "conf": 56.6
+    },
+    {
+     "t": "1)",
+     "x": 218,
+     "y": 2240,
+     "w": 164,
+     "h": 122,
+     "conf": 34.3
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_2016010411.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_2016010411.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "Did it belong to\na girl like me?",
+   "char_count": 32,
+   "word_count": 8,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "Did",
+     "x": 329,
+     "y": 824,
+     "w": 146,
+     "h": 79,
+     "conf": 94.6
+    },
+    {
+     "t": "it",
+     "x": 511,
+     "y": 830,
+     "w": 59,
+     "h": 73,
+     "conf": 96.7
+    },
+    {
+     "t": "belong",
+     "x": 606,
+     "y": 824,
+     "w": 294,
+     "h": 101,
+     "conf": 96.1
+    },
+    {
+     "t": "to",
+     "x": 933,
+     "y": 836,
+     "w": 91,
+     "h": 67,
+     "conf": 96.8
+    },
+    {
+     "t": "a",
+     "x": 327,
+     "y": 976,
+     "w": 48,
+     "h": 52,
+     "conf": 91.8
+    },
+    {
+     "t": "girl",
+     "x": 410,
+     "y": 948,
+     "w": 141,
+     "h": 102,
+     "conf": 95.3
+    },
+    {
+     "t": "like",
+     "x": 593,
+     "y": 949,
+     "w": 147,
+     "h": 79,
+     "conf": 96.4
+    },
+    {
+     "t": "me?",
+     "x": 776,
+     "y": 952,
+     "w": 172,
+     "h": 76,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_2016010412.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_2016010412.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "And what’s that under there?\nCheep! Cheep!",
+   "char_count": 42,
+   "word_count": 7,
+   "mean_conf": 95.2,
+   "words": [
+    {
+     "t": "And",
+     "x": 238,
+     "y": 1102,
+     "w": 178,
+     "h": 79,
+     "conf": 93.0
+    },
+    {
+     "t": "what’s",
+     "x": 449,
+     "y": 1102,
+     "w": 298,
+     "h": 79,
+     "conf": 91.3
+    },
+    {
+     "t": "that",
+     "x": 779,
+     "y": 1102,
+     "w": 190,
+     "h": 79,
+     "conf": 96.9
+    },
+    {
+     "t": "under",
+     "x": 1007,
+     "y": 1102,
+     "w": 263,
+     "h": 79,
+     "conf": 96.1
+    },
+    {
+     "t": "there?",
+     "x": 1298,
+     "y": 1102,
+     "w": 288,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "Cheep!",
+     "x": 241,
+     "y": 1227,
+     "w": 307,
+     "h": 102,
+     "conf": 96.7
+    },
+    {
+     "t": "Cheep!",
+     "x": 603,
+     "y": 1223,
+     "w": 294,
+     "h": 110,
+     "conf": 96.1
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_2016010413.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_2016010413.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "And what’s that big shadow?\nUh oh, it’s Gogo!\n“Londi, your bucket nearly\nrolled away!”\n“Sorry, Gogo. I dreamed too\nfar, again.”",
+   "char_count": 127,
+   "word_count": 22,
+   "mean_conf": 95.1,
+   "words": [
+    {
+     "t": "And",
+     "x": 2878,
+     "y": 802,
+     "w": 178,
+     "h": 79,
+     "conf": 92.9
+    },
+    {
+     "t": "what’s",
+     "x": 3089,
+     "y": 802,
+     "w": 298,
+     "h": 79,
+     "conf": 90.7
+    },
+    {
+     "t": "that",
+     "x": 3418,
+     "y": 802,
+     "w": 191,
+     "h": 79,
+     "conf": 96.5
+    },
+    {
+     "t": "big",
+     "x": 3645,
+     "y": 802,
+     "w": 127,
+     "h": 101,
+     "conf": 96.5
+    },
+    {
+     "t": "shadow?",
+     "x": 3810,
+     "y": 802,
+     "w": 386,
+     "h": 79,
+     "conf": 96.1
+    },
+    {
+     "t": "Uh",
+     "x": 2884,
+     "y": 927,
+     "w": 113,
+     "h": 79,
+     "conf": 95.2
+    },
+    {
+     "t": "oh,",
+     "x": 3036,
+     "y": 927,
+     "w": 131,
+     "h": 90,
+     "conf": 95.2
+    },
+    {
+     "t": "it’s",
+     "x": 3209,
+     "y": 928,
+     "w": 131,
+     "h": 78,
+     "conf": 95.6
+    },
+    {
+     "t": "Gogo!",
+     "x": 3375,
+     "y": 931,
+     "w": 256,
+     "h": 97,
+     "conf": 96.6
+    },
+    {
+     "t": "“Londi,",
+     "x": 2886,
+     "y": 1102,
+     "w": 316,
+     "h": 90,
+     "conf": 89.2
+    },
+    {
+     "t": "your",
+     "x": 3237,
+     "y": 1129,
+     "w": 209,
+     "h": 74,
+     "conf": 96.4
+    },
+    {
+     "t": "bucket",
+     "x": 3480,
+     "y": 1102,
+     "w": 298,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "nearly",
+     "x": 3814,
+     "y": 1102,
+     "w": 285,
+     "h": 101,
+     "conf": 96.2
+    },
+    {
+     "t": "rolled",
+     "x": 2881,
+     "y": 1227,
+     "w": 257,
+     "h": 79,
+     "conf": 96.5
+    },
+    {
+     "t": "away!”",
+     "x": 3174,
+     "y": 1228,
+     "w": 317,
+     "h": 100,
+     "conf": 94.6
+    },
+    {
+     "t": "“Sorry,",
+     "x": 2886,
+     "y": 1404,
+     "w": 316,
+     "h": 99,
+     "conf": 95.4
+    },
+    {
+     "t": "Gogo.",
+     "x": 3243,
+     "y": 1407,
+     "w": 252,
+     "h": 96,
+     "conf": 96.3
+    },
+    {
+     "t": "I",
+     "x": 3538,
+     "y": 1409,
+     "w": 33,
+     "h": 71,
+     "conf": 96.5
+    },
+    {
+     "t": "dreamed",
+     "x": 3611,
+     "y": 1402,
+     "w": 396,
+     "h": 79,
+     "conf": 96.1
+    },
+    {
+     "t": "too",
+     "x": 4039,
+     "y": 1415,
+     "w": 146,
+     "h": 66,
+     "conf": 96.9
+    },
+    {
+     "t": "far,",
+     "x": 2878,
+     "y": 1526,
+     "w": 157,
+     "h": 91,
+     "conf": 96.2
+    },
+    {
+     "t": "again.”",
+     "x": 3076,
+     "y": 1528,
+     "w": 324,
+     "h": 100,
+     "conf": 90.9
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_2016010414.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_2016010414.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "“Come let’s go,\nmy dreaming girl,”\nsaid Gogo.\nThey filled up the bucket\ntogether. Londi watched\nthe big sun sink into the hills.",
+   "char_count": 128,
+   "word_count": 23,
+   "mean_conf": 95.6,
+   "words": [
+    {
+     "t": "“Come",
+     "x": 3798,
+     "y": 448,
+     "w": 294,
+     "h": 77,
+     "conf": 93.3
+    },
+    {
+     "t": "let’s",
+     "x": 4131,
+     "y": 446,
+     "w": 184,
+     "h": 79,
+     "conf": 91.6
+    },
+    {
+     "t": "go,",
+     "x": 4351,
+     "y": 473,
+     "w": 128,
+     "h": 74,
+     "conf": 96.7
+    },
+    {
+     "t": "my",
+     "x": 3638,
+     "y": 598,
+     "w": 127,
+     "h": 74,
+     "conf": 96.8
+    },
+    {
+     "t": "dreaming",
+     "x": 3798,
+     "y": 571,
+     "w": 423,
+     "h": 101,
+     "conf": 96.5
+    },
+    {
+     "t": "girl,”",
+     "x": 4259,
+     "y": 571,
+     "w": 225,
+     "h": 101,
+     "conf": 92.9
+    },
+    {
+     "t": "said",
+     "x": 4011,
+     "y": 696,
+     "w": 179,
+     "h": 79,
+     "conf": 96.2
+    },
+    {
+     "t": "Gogo.",
+     "x": 4225,
+     "y": 701,
+     "w": 254,
+     "h": 96,
+     "conf": 96.1
+    },
+    {
+     "t": "They",
+     "x": 238,
+     "y": 1334,
+     "w": 222,
+     "h": 101,
+     "conf": 96.8
+    },
+    {
+     "t": "filled",
+     "x": 488,
+     "y": 1333,
+     "w": 221,
+     "h": 80,
+     "conf": 96.5
+    },
+    {
+     "t": "up",
+     "x": 747,
+     "y": 1361,
+     "w": 104,
+     "h": 75,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 883,
+     "y": 1334,
+     "w": 146,
+     "h": 79,
+     "conf": 96.5
+    },
+    {
+     "t": "bucket",
+     "x": 1067,
+     "y": 1334,
+     "w": 299,
+     "h": 79,
+     "conf": 96.9
+    },
+    {
+     "t": "together.",
+     "x": 237,
+     "y": 1459,
+     "w": 421,
+     "h": 101,
+     "conf": 93.3
+    },
+    {
+     "t": "Londi",
+     "x": 702,
+     "y": 1459,
+     "w": 237,
+     "h": 79,
+     "conf": 91.9
+    },
+    {
+     "t": "watched",
+     "x": 975,
+     "y": 1459,
+     "w": 385,
+     "h": 79,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 237,
+     "y": 1584,
+     "w": 146,
+     "h": 79,
+     "conf": 96.7
+    },
+    {
+     "t": "big",
+     "x": 421,
+     "y": 1584,
+     "w": 127,
+     "h": 101,
+     "conf": 95.9
+    },
+    {
+     "t": "sun",
+     "x": 585,
+     "y": 1611,
+     "w": 151,
+     "h": 52,
+     "conf": 95.9
+    },
+    {
+     "t": "sink",
+     "x": 775,
+     "y": 1584,
+     "w": 177,
+     "h": 79,
+     "conf": 96.9
+    },
+    {
+     "t": "into",
+     "x": 987,
+     "y": 1590,
+     "w": 170,
+     "h": 73,
+     "conf": 95.8
+    },
+    {
+     "t": "the",
+     "x": 1190,
+     "y": 1584,
+     "w": 146,
+     "h": 79,
+     "conf": 96.9
+    },
+    {
+     "t": "hills.",
+     "x": 1373,
+     "y": 1584,
+     "w": 204,
+     "h": 79,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_2016010415.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_2016010415.jpg",
+   "image_width": 4724,
+   "image_height": 2362,
+   "ocr_text": "~ ee att te keel\na . thigh\n“Look, Gogo! There’sapink pig»\nin the sky!” °\n“Oh Londi... It’s just a cloud,”\nGogo sighed. hae\nLondi took Gogo’s hand and\nthey walked home together Ki\nhappily.",
+   "char_count": 187,
+   "word_count": 36,
+   "mean_conf": 72.9,
+   "words": [
+    {
+     "t": "~",
+     "x": 560,
+     "y": 973,
+     "w": 23,
+     "h": 14,
+     "conf": 23.4
+    },
+    {
+     "t": "ee",
+     "x": 876,
+     "y": 959,
+     "w": 15,
+     "h": 5,
+     "conf": 39.1
+    },
+    {
+     "t": "att",
+     "x": 907,
+     "y": 963,
+     "w": 32,
+     "h": 10,
+     "conf": 0.0
+    },
+    {
+     "t": "te",
+     "x": 955,
+     "y": 958,
+     "w": 56,
+     "h": 11,
+     "conf": 26.9
+    },
+    {
+     "t": "keel",
+     "x": 1022,
+     "y": 958,
+     "w": 13,
+     "h": 6,
+     "conf": 23.4
+    },
+    {
+     "t": "a",
+     "x": 504,
+     "y": 986,
+     "w": 67,
+     "h": 28,
+     "conf": 28.3
+    },
+    {
+     "t": ".",
+     "x": 864,
+     "y": 1000,
+     "w": 2,
+     "h": 4,
+     "conf": 23.2
+    },
+    {
+     "t": "thigh",
+     "x": 1056,
+     "y": 989,
+     "w": 38,
+     "h": 13,
+     "conf": 7.4
+    },
+    {
+     "t": "“Look,",
+     "x": 246,
+     "y": 1198,
+     "w": 279,
+     "h": 90,
+     "conf": 95.8
+    },
+    {
+     "t": "Gogo!",
+     "x": 566,
+     "y": 1202,
+     "w": 254,
+     "h": 97,
+     "conf": 92.8
+    },
+    {
+     "t": "There’sapink",
+     "x": 862,
+     "y": 1198,
+     "w": 644,
+     "h": 102,
+     "conf": 65.4
+    },
+    {
+     "t": "pig»",
+     "x": 1539,
+     "y": 1204,
+     "w": 355,
+     "h": 96,
+     "conf": 65.2
+    },
+    {
+     "t": "in",
+     "x": 243,
+     "y": 1329,
+     "w": 73,
+     "h": 72,
+     "conf": 93.6
+    },
+    {
+     "t": "the",
+     "x": 350,
+     "y": 1323,
+     "w": 146,
+     "h": 79,
+     "conf": 95.7
+    },
+    {
+     "t": "sky!”",
+     "x": 532,
+     "y": 1323,
+     "w": 227,
+     "h": 101,
+     "conf": 94.8
+    },
+    {
+     "t": "°",
+     "x": 1769,
+     "y": 1348,
+     "w": 31,
+     "h": 15,
+     "conf": 81.2
+    },
+    {
+     "t": "“Oh",
+     "x": 246,
+     "y": 1498,
+     "w": 164,
+     "h": 79,
+     "conf": 93.2
+    },
+    {
+     "t": "Londi...",
+     "x": 451,
+     "y": 1498,
+     "w": 319,
+     "h": 79,
+     "conf": 91.9
+    },
+    {
+     "t": "It’s",
+     "x": 819,
+     "y": 1499,
+     "w": 145,
+     "h": 78,
+     "conf": 93.8
+    },
+    {
+     "t": "just",
+     "x": 1012,
+     "y": 1504,
+     "w": 154,
+     "h": 95,
+     "conf": 96.8
+    },
+    {
+     "t": "a",
+     "x": 1202,
+     "y": 1525,
+     "w": 47,
+     "h": 52,
+     "conf": 93.8
+    },
+    {
+     "t": "cloud,”",
+     "x": 1284,
+     "y": 1498,
+     "w": 321,
+     "h": 90,
+     "conf": 93.8
+    },
+    {
+     "t": "Gogo",
+     "x": 241,
+     "y": 1628,
+     "w": 226,
+     "h": 96,
+     "conf": 96.9
+    },
+    {
+     "t": "sighed.",
+     "x": 504,
+     "y": 1623,
+     "w": 315,
+     "h": 101,
+     "conf": 95.6
+    },
+    {
+     "t": "hae",
+     "x": 1677,
+     "y": 1622,
+     "w": 124,
+     "h": 102,
+     "conf": 28.9
+    },
+    {
+     "t": "Londi",
+     "x": 244,
+     "y": 1798,
+     "w": 237,
+     "h": 79,
+     "conf": 92.1
+    },
+    {
+     "t": "took",
+     "x": 516,
+     "y": 1798,
+     "w": 200,
+     "h": 79,
+     "conf": 93.2
+    },
+    {
+     "t": "Gogo’s",
+     "x": 750,
+     "y": 1799,
+     "w": 300,
+     "h": 100,
+     "conf": 91.5
+    },
+    {
+     "t": "hand",
+     "x": 1087,
+     "y": 1798,
+     "w": 219,
+     "h": 79,
+     "conf": 96.6
+    },
+    {
+     "t": "and",
+     "x": 1342,
+     "y": 1798,
+     "w": 163,
+     "h": 79,
+     "conf": 96.6
+    },
+    {
+     "t": "they",
+     "x": 237,
+     "y": 1923,
+     "w": 202,
+     "h": 101,
+     "conf": 96.4
+    },
+    {
+     "t": "walked",
+     "x": 468,
+     "y": 1923,
+     "w": 316,
+     "h": 79,
+     "conf": 96.7
+    },
+    {
+     "t": "home",
+     "x": 821,
+     "y": 1923,
+     "w": 238,
+     "h": 79,
+     "conf": 96.7
+    },
+    {
+     "t": "together",
+     "x": 1091,
+     "y": 1923,
+     "w": 399,
+     "h": 101,
+     "conf": 96.4
+    },
+    {
+     "t": "Ki",
+     "x": 2326,
+     "y": 1965,
+     "w": 18,
+     "h": 35,
+     "conf": 32.2
+    },
+    {
+     "t": "happily.",
+     "x": 242,
+     "y": 2048,
+     "w": 351,
+     "h": 102,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_date{n}+1",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_interior-spreads_2016010417.jpg",
+   "image_file": "londi-the-dreaming-girl_interior-spreads_2016010417.jpg",
+   "image_width": 2362,
+   "image_height": 2362,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

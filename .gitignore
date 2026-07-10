@@ -8,6 +8,10 @@ out/
 build/
 dist/
 
+# 예외: OCR 초벌 산출물은 커밋 대상 (ADR-0039 D5 bbox 보존 — 전역 out/ 규칙의 예외)
+!scripts/ocr_pilot/out/
+!scripts/ocr_pilot/out/**
+
 # Vercel
 .vercel/
 

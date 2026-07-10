@@ -1,0 +1,2437 @@
+{
+ "slug": "sima-and-siza",
+ "wp_slug": "sima-and-siza",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "sima-and-siza_Page_01-3.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_05-3.jpg",
+   "image_file": "sima-and-siza_Page_05-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Simamkele loves dolls. Mama buys him lots.\nThey keep his loneliness away. Sima’s favourite\ndoll is Siza. Sima wants to be a nurse when he\ngrows up.",
+   "char_count": 147,
+   "word_count": 27,
+   "mean_conf": 91.1,
+   "words": [
+    {
+     "t": "Simamkele",
+     "x": 158,
+     "y": 337,
+     "w": 107,
+     "h": 20,
+     "conf": 90.9
+    },
+    {
+     "t": "loves",
+     "x": 273,
+     "y": 337,
+     "w": 44,
+     "h": 21,
+     "conf": 94.3
+    },
+    {
+     "t": "dolls.",
+     "x": 325,
+     "y": 337,
+     "w": 47,
+     "h": 20,
+     "conf": 58.8
+    },
+    {
+     "t": "Mama",
+     "x": 383,
+     "y": 338,
+     "w": 63,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "buys",
+     "x": 455,
+     "y": 337,
+     "w": 42,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "him",
+     "x": 506,
+     "y": 337,
+     "w": 33,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "lots.",
+     "x": 548,
+     "y": 337,
+     "w": 35,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "They",
+     "x": 158,
+     "y": 367,
+     "w": 46,
+     "h": 25,
+     "conf": 97.0
+    },
+    {
+     "t": "keep",
+     "x": 212,
+     "y": 367,
+     "w": 43,
+     "h": 25,
+     "conf": 94.7
+    },
+    {
+     "t": "his",
+     "x": 264,
+     "y": 367,
+     "w": 22,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "loneliness",
+     "x": 296,
+     "y": 367,
+     "w": 87,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "away.",
+     "x": 391,
+     "y": 376,
+     "w": 56,
+     "h": 16,
+     "conf": 93.3
+    },
+    {
+     "t": "Sima’s",
+     "x": 455,
+     "y": 368,
+     "w": 62,
+     "h": 19,
+     "conf": 58.1
+    },
+    {
+     "t": "favourite",
+     "x": 525,
+     "y": 367,
+     "w": 84,
+     "h": 21,
+     "conf": 95.6
+    },
+    {
+     "t": "doll",
+     "x": 158,
+     "y": 398,
+     "w": 33,
+     "h": 20,
+     "conf": 94.6
+    },
+    {
+     "t": "is",
+     "x": 200,
+     "y": 403,
+     "w": 11,
+     "h": 15,
+     "conf": 93.1
+    },
+    {
+     "t": "Siza.",
+     "x": 219,
+     "y": 399,
+     "w": 45,
+     "h": 19,
+     "conf": 81.7
+    },
+    {
+     "t": "Sima",
+     "x": 272,
+     "y": 399,
+     "w": 49,
+     "h": 19,
+     "conf": 91.7
+    },
+    {
+     "t": "wants",
+     "x": 327,
+     "y": 403,
+     "w": 56,
+     "h": 16,
+     "conf": 91.7
+    },
+    {
+     "t": "to",
+     "x": 390,
+     "y": 403,
+     "w": 18,
+     "h": 15,
+     "conf": 95.6
+    },
+    {
+     "t": "be",
+     "x": 417,
+     "y": 398,
+     "w": 23,
+     "h": 20,
+     "conf": 94.0
+    },
+    {
+     "t": "a",
+     "x": 447,
+     "y": 407,
+     "w": 11,
+     "h": 11,
+     "conf": 86.2
+    },
+    {
+     "t": "nurse",
+     "x": 468,
+     "y": 406,
+     "w": 48,
+     "h": 12,
+     "conf": 86.2
+    },
+    {
+     "t": "when",
+     "x": 522,
+     "y": 398,
+     "w": 50,
+     "h": 21,
+     "conf": 95.5
+    },
+    {
+     "t": "he",
+     "x": 582,
+     "y": 398,
+     "w": 21,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "grows",
+     "x": 158,
+     "y": 437,
+     "w": 55,
+     "h": 16,
+     "conf": 95.9
+    },
+    {
+     "t": "up.",
+     "x": 222,
+     "y": 437,
+     "w": 28,
+     "h": 16,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_06-3.jpg",
+   "image_file": "sima-and-siza_Page_06-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "He loves to put on Mama's skirt, and twirl. Like\nmagic, he suddenly becomes Sima the nurse.\nHe plays hospital-hospital and makes sickly Siza\nand all his dolls better.",
+   "char_count": 166,
+   "word_count": 29,
+   "mean_conf": 93.3,
+   "words": [
+    {
+     "t": "He",
+     "x": 948,
+     "y": 339,
+     "w": 26,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "loves",
+     "x": 983,
+     "y": 338,
+     "w": 43,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 1034,
+     "y": 343,
+     "w": 17,
+     "h": 15,
+     "conf": 96.5
+    },
+    {
+     "t": "put",
+     "x": 1061,
+     "y": 343,
+     "w": 30,
+     "h": 20,
+     "conf": 93.9
+    },
+    {
+     "t": "on",
+     "x": 1098,
+     "y": 347,
+     "w": 22,
+     "h": 11,
+     "conf": 93.9
+    },
+    {
+     "t": "Mama's",
+     "x": 1131,
+     "y": 339,
+     "w": 76,
+     "h": 19,
+     "conf": 61.5
+    },
+    {
+     "t": "skirt,",
+     "x": 1216,
+     "y": 338,
+     "w": 40,
+     "h": 23,
+     "conf": 94.2
+    },
+    {
+     "t": "and",
+     "x": 1265,
+     "y": 338,
+     "w": 36,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "twirl.",
+     "x": 1308,
+     "y": 338,
+     "w": 45,
+     "h": 21,
+     "conf": 93.3
+    },
+    {
+     "t": "Like",
+     "x": 1363,
+     "y": 338,
+     "w": 37,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "magic,",
+     "x": 947,
+     "y": 373,
+     "w": 63,
+     "h": 20,
+     "conf": 94.5
+    },
+    {
+     "t": "he",
+     "x": 1020,
+     "y": 368,
+     "w": 21,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "suddenly",
+     "x": 1048,
+     "y": 368,
+     "w": 86,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "becomes",
+     "x": 1141,
+     "y": 368,
+     "w": 83,
+     "h": 20,
+     "conf": 87.5
+    },
+    {
+     "t": "Sima",
+     "x": 1233,
+     "y": 369,
+     "w": 48,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 1288,
+     "y": 368,
+     "w": 31,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "nurse.",
+     "x": 1327,
+     "y": 377,
+     "w": 53,
+     "h": 11,
+     "conf": 96.8
+    },
+    {
+     "t": "He",
+     "x": 948,
+     "y": 400,
+     "w": 26,
+     "h": 19,
+     "conf": 95.6
+    },
+    {
+     "t": "plays",
+     "x": 983,
+     "y": 399,
+     "w": 47,
+     "h": 25,
+     "conf": 92.2
+    },
+    {
+     "t": "hospital-hospital",
+     "x": 1040,
+     "y": 399,
+     "w": 155,
+     "h": 25,
+     "conf": 90.6
+    },
+    {
+     "t": "and",
+     "x": 1204,
+     "y": 399,
+     "w": 37,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "makes",
+     "x": 1250,
+     "y": 399,
+     "w": 59,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "sickly",
+     "x": 1317,
+     "y": 399,
+     "w": 49,
+     "h": 25,
+     "conf": 92.6
+    },
+    {
+     "t": "Siza",
+     "x": 1373,
+     "y": 400,
+     "w": 39,
+     "h": 19,
+     "conf": 92.6
+    },
+    {
+     "t": "and",
+     "x": 946,
+     "y": 429,
+     "w": 36,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "all",
+     "x": 991,
+     "y": 429,
+     "w": 20,
+     "h": 20,
+     "conf": 81.6
+    },
+    {
+     "t": "his",
+     "x": 1021,
+     "y": 429,
+     "w": 22,
+     "h": 20,
+     "conf": 95.1
+    },
+    {
+     "t": "dolls",
+     "x": 1051,
+     "y": 429,
+     "w": 42,
+     "h": 20,
+     "conf": 92.6
+    },
+    {
+     "t": "better.",
+     "x": 1102,
+     "y": 429,
+     "w": 59,
+     "h": 20,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_07-3.jpg",
+   "image_file": "sima-and-siza_Page_07-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Wherever Sima is, Siza is there too.",
+   "char_count": 36,
+   "word_count": 7,
+   "mean_conf": 95.0,
+   "words": [
+    {
+     "t": "Wherever",
+     "x": 157,
+     "y": 383,
+     "w": 94,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "Sima",
+     "x": 258,
+     "y": 384,
+     "w": 49,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "is,",
+     "x": 315,
+     "y": 388,
+     "w": 16,
+     "h": 18,
+     "conf": 93.3
+    },
+    {
+     "t": "Siza",
+     "x": 340,
+     "y": 384,
+     "w": 39,
+     "h": 19,
+     "conf": 93.1
+    },
+    {
+     "t": "is",
+     "x": 388,
+     "y": 388,
+     "w": 10,
+     "h": 15,
+     "conf": 95.3
+    },
+    {
+     "t": "there",
+     "x": 406,
+     "y": 383,
+     "w": 48,
+     "h": 20,
+     "conf": 95.3
+    },
+    {
+     "t": "too.",
+     "x": 461,
+     "y": 388,
+     "w": 35,
+     "h": 15,
+     "conf": 94.7
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_08-3.jpg",
+   "image_file": "sima-and-siza_Page_08-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "But Sima'’s friends do not like Siza. One day, they\ntook him away and stuck his head in the toilet.",
+   "char_count": 99,
+   "word_count": 20,
+   "mean_conf": 91.7,
+   "words": [
+    {
+     "t": "But",
+     "x": 948,
+     "y": 369,
+     "w": 30,
+     "h": 19,
+     "conf": 93.3
+    },
+    {
+     "t": "Sima'’s",
+     "x": 985,
+     "y": 369,
+     "w": 61,
+     "h": 19,
+     "conf": 41.2
+    },
+    {
+     "t": "friends",
+     "x": 1055,
+     "y": 368,
+     "w": 62,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "do",
+     "x": 1125,
+     "y": 368,
+     "w": 24,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "not",
+     "x": 1158,
+     "y": 373,
+     "w": 30,
+     "h": 15,
+     "conf": 92.4
+    },
+    {
+     "t": "like",
+     "x": 1196,
+     "y": 368,
+     "w": 28,
+     "h": 20,
+     "conf": 93.0
+    },
+    {
+     "t": "Siza.",
+     "x": 1232,
+     "y": 369,
+     "w": 44,
+     "h": 19,
+     "conf": 69.0
+    },
+    {
+     "t": "One",
+     "x": 1284,
+     "y": 369,
+     "w": 43,
+     "h": 19,
+     "conf": 95.8
+    },
+    {
+     "t": "day,",
+     "x": 1334,
+     "y": 368,
+     "w": 40,
+     "h": 25,
+     "conf": 94.4
+    },
+    {
+     "t": "they",
+     "x": 1382,
+     "y": 368,
+     "w": 41,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "took",
+     "x": 945,
+     "y": 399,
+     "w": 42,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "him",
+     "x": 995,
+     "y": 399,
+     "w": 33,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "away",
+     "x": 1036,
+     "y": 408,
+     "w": 53,
+     "h": 16,
+     "conf": 95.9
+    },
+    {
+     "t": "and",
+     "x": 1096,
+     "y": 399,
+     "w": 36,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "stuck",
+     "x": 1140,
+     "y": 399,
+     "w": 47,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "his",
+     "x": 1196,
+     "y": 399,
+     "w": 21,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "head",
+     "x": 1227,
+     "y": 399,
+     "w": 47,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "in",
+     "x": 1282,
+     "y": 404,
+     "w": 14,
+     "h": 15,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 1304,
+     "y": 399,
+     "w": 30,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "toilet.",
+     "x": 1340,
+     "y": 399,
+     "w": 51,
+     "h": 20,
+     "conf": 95.2
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_09-3.jpg",
+   "image_file": "sima-and-siza_Page_09-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "When Papa came home, Sima was nursing Siza.\n“What are you doing?’ asked Papa.\n‘I'm being a nurse; said Sima, ‘Will you play with\nme?”\n‘Yes. But we will go to the park and play soccer,\nsaid Papa.",
+   "char_count": 194,
+   "word_count": 38,
+   "mean_conf": 90.6,
+   "words": [
+    {
+     "t": "When",
+     "x": 157,
+     "y": 284,
+     "w": 57,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "Papa",
+     "x": 226,
+     "y": 285,
+     "w": 47,
+     "h": 24,
+     "conf": 95.6
+    },
+    {
+     "t": "came",
+     "x": 281,
+     "y": 293,
+     "w": 53,
+     "h": 11,
+     "conf": 95.7
+    },
+    {
+     "t": "home,",
+     "x": 342,
+     "y": 284,
+     "w": 57,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "Sima",
+     "x": 408,
+     "y": 285,
+     "w": 49,
+     "h": 19,
+     "conf": 94.5
+    },
+    {
+     "t": "was",
+     "x": 464,
+     "y": 293,
+     "w": 36,
+     "h": 12,
+     "conf": 94.5
+    },
+    {
+     "t": "nursing",
+     "x": 509,
+     "y": 289,
+     "w": 67,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Siza.",
+     "x": 584,
+     "y": 285,
+     "w": 45,
+     "h": 19,
+     "conf": 89.3
+    },
+    {
+     "t": "“What",
+     "x": 158,
+     "y": 330,
+     "w": 60,
+     "h": 20,
+     "conf": 72.9
+    },
+    {
+     "t": "are",
+     "x": 225,
+     "y": 339,
+     "w": 30,
+     "h": 11,
+     "conf": 96.5
+    },
+    {
+     "t": "you",
+     "x": 261,
+     "y": 339,
+     "w": 33,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "doing?’",
+     "x": 303,
+     "y": 330,
+     "w": 70,
+     "h": 25,
+     "conf": 86.2
+    },
+    {
+     "t": "asked",
+     "x": 380,
+     "y": 330,
+     "w": 54,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "Papa.",
+     "x": 445,
+     "y": 331,
+     "w": 52,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "‘I'm",
+     "x": 158,
+     "y": 377,
+     "w": 34,
+     "h": 19,
+     "conf": 82.7
+    },
+    {
+     "t": "being",
+     "x": 201,
+     "y": 376,
+     "w": 52,
+     "h": 25,
+     "conf": 91.7
+    },
+    {
+     "t": "a",
+     "x": 261,
+     "y": 385,
+     "w": 11,
+     "h": 11,
+     "conf": 91.7
+    },
+    {
+     "t": "nurse;",
+     "x": 281,
+     "y": 377,
+     "w": 56,
+     "h": 22,
+     "conf": 78.9
+    },
+    {
+     "t": "said",
+     "x": 345,
+     "y": 376,
+     "w": 37,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "Sima,",
+     "x": 391,
+     "y": 377,
+     "w": 53,
+     "h": 19,
+     "conf": 78.8
+    },
+    {
+     "t": "‘Will",
+     "x": 453,
+     "y": 376,
+     "w": 38,
+     "h": 20,
+     "conf": 59.5
+    },
+    {
+     "t": "you",
+     "x": 499,
+     "y": 385,
+     "w": 33,
+     "h": 16,
+     "conf": 96.4
+    },
+    {
+     "t": "play",
+     "x": 542,
+     "y": 376,
+     "w": 37,
+     "h": 25,
+     "conf": 95.5
+    },
+    {
+     "t": "with",
+     "x": 590,
+     "y": 376,
+     "w": 36,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "me?”",
+     "x": 159,
+     "y": 407,
+     "w": 43,
+     "h": 19,
+     "conf": 83.3
+    },
+    {
+     "t": "‘Yes.",
+     "x": 158,
+     "y": 453,
+     "w": 40,
+     "h": 19,
+     "conf": 63.0
+    },
+    {
+     "t": "But",
+     "x": 208,
+     "y": 453,
+     "w": 30,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "we",
+     "x": 244,
+     "y": 461,
+     "w": 27,
+     "h": 12,
+     "conf": 96.7
+    },
+    {
+     "t": "will",
+     "x": 277,
+     "y": 452,
+     "w": 28,
+     "h": 21,
+     "conf": 93.5
+    },
+    {
+     "t": "go",
+     "x": 314,
+     "y": 461,
+     "w": 24,
+     "h": 16,
+     "conf": 93.5
+    },
+    {
+     "t": "to",
+     "x": 345,
+     "y": 457,
+     "w": 18,
+     "h": 15,
+     "conf": 94.4
+    },
+    {
+     "t": "the",
+     "x": 370,
+     "y": 452,
+     "w": 30,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "park",
+     "x": 409,
+     "y": 452,
+     "w": 42,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 458,
+     "y": 452,
+     "w": 37,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "play",
+     "x": 504,
+     "y": 452,
+     "w": 40,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "soccer,",
+     "x": 551,
+     "y": 453,
+     "w": 64,
+     "h": 22,
+     "conf": 70.2
+    },
+    {
+     "t": "said",
+     "x": 158,
+     "y": 483,
+     "w": 38,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "Papa.",
+     "x": 206,
+     "y": 484,
+     "w": 53,
+     "h": 24,
+     "conf": 97.0
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_10-3.jpg",
+   "image_file": "sima-and-siza_Page_10-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "His friends saw Sima and Papa playing soccer.\nThey joined in. Sima and Papa often play soccer\nnow. But they still haven't played with dolls.",
+   "char_count": 140,
+   "word_count": 25,
+   "mean_conf": 95.0,
+   "words": [
+    {
+     "t": "His",
+     "x": 948,
+     "y": 354,
+     "w": 27,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "friends",
+     "x": 984,
+     "y": 353,
+     "w": 62,
+     "h": 20,
+     "conf": 94.4
+    },
+    {
+     "t": "saw",
+     "x": 1054,
+     "y": 362,
+     "w": 37,
+     "h": 12,
+     "conf": 96.8
+    },
+    {
+     "t": "Sima",
+     "x": 1098,
+     "y": 354,
+     "w": 48,
+     "h": 19,
+     "conf": 94.5
+    },
+    {
+     "t": "and",
+     "x": 1155,
+     "y": 353,
+     "w": 36,
+     "h": 20,
+     "conf": 94.5
+    },
+    {
+     "t": "Papa",
+     "x": 1201,
+     "y": 354,
+     "w": 48,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "playing",
+     "x": 1258,
+     "y": 353,
+     "w": 70,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "soccer.",
+     "x": 1336,
+     "y": 362,
+     "w": 62,
+     "h": 11,
+     "conf": 93.7
+    },
+    {
+     "t": "They",
+     "x": 946,
+     "y": 383,
+     "w": 46,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "joined",
+     "x": 998,
+     "y": 383,
+     "w": 57,
+     "h": 25,
+     "conf": 95.5
+    },
+    {
+     "t": "in.",
+     "x": 1064,
+     "y": 388,
+     "w": 19,
+     "h": 15,
+     "conf": 94.7
+    },
+    {
+     "t": "Sima",
+     "x": 1092,
+     "y": 384,
+     "w": 48,
+     "h": 19,
+     "conf": 94.7
+    },
+    {
+     "t": "and",
+     "x": 1149,
+     "y": 383,
+     "w": 36,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "Papa",
+     "x": 1195,
+     "y": 384,
+     "w": 48,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "often",
+     "x": 1251,
+     "y": 383,
+     "w": 47,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "play",
+     "x": 1308,
+     "y": 383,
+     "w": 41,
+     "h": 25,
+     "conf": 95.6
+    },
+    {
+     "t": "soccer",
+     "x": 1355,
+     "y": 392,
+     "w": 59,
+     "h": 11,
+     "conf": 94.4
+    },
+    {
+     "t": "now.",
+     "x": 947,
+     "y": 423,
+     "w": 42,
+     "h": 12,
+     "conf": 96.1
+    },
+    {
+     "t": "But",
+     "x": 999,
+     "y": 415,
+     "w": 30,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "they",
+     "x": 1035,
+     "y": 414,
+     "w": 41,
+     "h": 25,
+     "conf": 95.5
+    },
+    {
+     "t": "still",
+     "x": 1083,
+     "y": 414,
+     "w": 27,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "haven't",
+     "x": 1120,
+     "y": 414,
+     "w": 68,
+     "h": 21,
+     "conf": 86.2
+    },
+    {
+     "t": "played",
+     "x": 1196,
+     "y": 414,
+     "w": 64,
+     "h": 25,
+     "conf": 89.3
+    },
+    {
+     "t": "with",
+     "x": 1267,
+     "y": 414,
+     "w": 38,
+     "h": 21,
+     "conf": 96.0
+    },
+    {
+     "t": "dolls.",
+     "x": 1314,
+     "y": 414,
+     "w": 47,
+     "h": 20,
+     "conf": 95.2
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_11-3.jpg",
+   "image_file": "sima-and-siza_Page_11-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "One day, Sima was playing hospital-hospital\nwith his dolls. He heard Mama shout. ‘Sima! Run!\nPapa is waiting to play with you at the park:",
+   "char_count": 138,
+   "word_count": 25,
+   "mean_conf": 91.6,
+   "words": [
+    {
+     "t": "One",
+     "x": 158,
+     "y": 354,
+     "w": 43,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "day,",
+     "x": 208,
+     "y": 353,
+     "w": 40,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "Sima",
+     "x": 257,
+     "y": 354,
+     "w": 49,
+     "h": 19,
+     "conf": 74.6
+    },
+    {
+     "t": "was",
+     "x": 312,
+     "y": 362,
+     "w": 37,
+     "h": 12,
+     "conf": 74.6
+    },
+    {
+     "t": "playing",
+     "x": 358,
+     "y": 353,
+     "w": 69,
+     "h": 25,
+     "conf": 93.3
+    },
+    {
+     "t": "hospital-hospital",
+     "x": 437,
+     "y": 353,
+     "w": 156,
+     "h": 25,
+     "conf": 89.2
+    },
+    {
+     "t": "with",
+     "x": 157,
+     "y": 383,
+     "w": 39,
+     "h": 21,
+     "conf": 97.0
+    },
+    {
+     "t": "his",
+     "x": 206,
+     "y": 383,
+     "w": 22,
+     "h": 20,
+     "conf": 95.3
+    },
+    {
+     "t": "dolls.",
+     "x": 236,
+     "y": 383,
+     "w": 47,
+     "h": 20,
+     "conf": 95.2
+    },
+    {
+     "t": "He",
+     "x": 293,
+     "y": 384,
+     "w": 26,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "heard",
+     "x": 328,
+     "y": 383,
+     "w": 54,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "Mama",
+     "x": 392,
+     "y": 384,
+     "w": 63,
+     "h": 19,
+     "conf": 94.6
+    },
+    {
+     "t": "shout.",
+     "x": 464,
+     "y": 383,
+     "w": 54,
+     "h": 20,
+     "conf": 89.9
+    },
+    {
+     "t": "‘Sima!",
+     "x": 527,
+     "y": 383,
+     "w": 58,
+     "h": 20,
+     "conf": 87.8
+    },
+    {
+     "t": "Run!",
+     "x": 596,
+     "y": 383,
+     "w": 40,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "Papa",
+     "x": 160,
+     "y": 415,
+     "w": 48,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "is",
+     "x": 216,
+     "y": 419,
+     "w": 11,
+     "h": 15,
+     "conf": 96.2
+    },
+    {
+     "t": "waiting",
+     "x": 234,
+     "y": 419,
+     "w": 70,
+     "h": 20,
+     "conf": 91.5
+    },
+    {
+     "t": "to",
+     "x": 311,
+     "y": 419,
+     "w": 18,
+     "h": 15,
+     "conf": 92.7
+    },
+    {
+     "t": "play",
+     "x": 338,
+     "y": 414,
+     "w": 41,
+     "h": 25,
+     "conf": 92.7
+    },
+    {
+     "t": "with",
+     "x": 384,
+     "y": 414,
+     "w": 38,
+     "h": 21,
+     "conf": 95.3
+    },
+    {
+     "t": "you",
+     "x": 430,
+     "y": 423,
+     "w": 33,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "at",
+     "x": 472,
+     "y": 419,
+     "w": 20,
+     "h": 15,
+     "conf": 94.3
+    },
+    {
+     "t": "the",
+     "x": 497,
+     "y": 414,
+     "w": 30,
+     "h": 20,
+     "conf": 94.3
+    },
+    {
+     "t": "park:",
+     "x": 536,
+     "y": 414,
+     "w": 48,
+     "h": 25,
+     "conf": 65.6
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_12-3.jpg",
+   "image_file": "sima-and-siza_Page_12-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Why on earth are you wearing a dress?’ said\nPapa in an angry voice. Just then a ball flew out\nof nowhere and ...",
+   "char_count": 113,
+   "word_count": 24,
+   "mean_conf": 92.4,
+   "words": [
+    {
+     "t": "“Why",
+     "x": 946,
+     "y": 330,
+     "w": 50,
+     "h": 25,
+     "conf": 57.2
+    },
+    {
+     "t": "on",
+     "x": 1003,
+     "y": 339,
+     "w": 21,
+     "h": 11,
+     "conf": 96.1
+    },
+    {
+     "t": "earth",
+     "x": 1033,
+     "y": 330,
+     "w": 48,
+     "h": 20,
+     "conf": 95.6
+    },
+    {
+     "t": "are",
+     "x": 1091,
+     "y": 339,
+     "w": 30,
+     "h": 11,
+     "conf": 96.6
+    },
+    {
+     "t": "you",
+     "x": 1127,
+     "y": 339,
+     "w": 33,
+     "h": 16,
+     "conf": 96.7
+    },
+    {
+     "t": "wearing",
+     "x": 1168,
+     "y": 335,
+     "w": 77,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "a",
+     "x": 1253,
+     "y": 339,
+     "w": 11,
+     "h": 11,
+     "conf": 96.0
+    },
+    {
+     "t": "dress?’",
+     "x": 1272,
+     "y": 330,
+     "w": 62,
+     "h": 20,
+     "conf": 91.8
+    },
+    {
+     "t": "said",
+     "x": 1342,
+     "y": 330,
+     "w": 37,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "Papa",
+     "x": 948,
+     "y": 361,
+     "w": 47,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "in",
+     "x": 1004,
+     "y": 365,
+     "w": 14,
+     "h": 15,
+     "conf": 92.6
+    },
+    {
+     "t": "an",
+     "x": 1027,
+     "y": 369,
+     "w": 22,
+     "h": 11,
+     "conf": 92.6
+    },
+    {
+     "t": "angry",
+     "x": 1058,
+     "y": 356,
+     "w": 54,
+     "h": 34,
+     "conf": 96.1
+    },
+    {
+     "t": "voice.",
+     "x": 1119,
+     "y": 356,
+     "w": 49,
+     "h": 34,
+     "conf": 93.8
+    },
+    {
+     "t": "Just",
+     "x": 1179,
+     "y": 361,
+     "w": 34,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "then",
+     "x": 1219,
+     "y": 360,
+     "w": 40,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "a",
+     "x": 1268,
+     "y": 369,
+     "w": 11,
+     "h": 11,
+     "conf": 95.6
+    },
+    {
+     "t": "ball",
+     "x": 1289,
+     "y": 360,
+     "w": 32,
+     "h": 20,
+     "conf": 94.1
+    },
+    {
+     "t": "flew",
+     "x": 1330,
+     "y": 360,
+     "w": 39,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "out",
+     "x": 1376,
+     "y": 365,
+     "w": 31,
+     "h": 15,
+     "conf": 96.9
+    },
+    {
+     "t": "of",
+     "x": 946,
+     "y": 391,
+     "w": 19,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "nowhere",
+     "x": 972,
+     "y": 391,
+     "w": 80,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "and",
+     "x": 1060,
+     "y": 391,
+     "w": 36,
+     "h": 20,
+     "conf": 76.7
+    },
+    {
+     "t": "...",
+     "x": 1105,
+     "y": 409,
+     "w": 10,
+     "h": 2,
+     "conf": 76.7
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_13-3.jpg",
+   "image_file": "sima-and-siza_Page_13-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": ".. knocked Papa down. Everyone panicked.\nExcept Sima. He knelt and tied his blanket\naround Papa's bleeding head.\n‘Call an ambulancel’ he shouted.",
+   "char_count": 145,
+   "word_count": 23,
+   "mean_conf": 87.6,
+   "words": [
+    {
+     "t": "..",
+     "x": 159,
+     "y": 348,
+     "w": 10,
+     "h": 2,
+     "conf": 29.7
+    },
+    {
+     "t": "knocked",
+     "x": 179,
+     "y": 330,
+     "w": 77,
+     "h": 20,
+     "conf": 89.0
+    },
+    {
+     "t": "Papa",
+     "x": 266,
+     "y": 331,
+     "w": 47,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "down.",
+     "x": 322,
+     "y": 330,
+     "w": 56,
+     "h": 21,
+     "conf": 88.1
+    },
+    {
+     "t": "Everyone",
+     "x": 389,
+     "y": 331,
+     "w": 87,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "panicked.",
+     "x": 484,
+     "y": 330,
+     "w": 91,
+     "h": 25,
+     "conf": 94.4
+    },
+    {
+     "t": "Except",
+     "x": 160,
+     "y": 361,
+     "w": 64,
+     "h": 24,
+     "conf": 92.5
+    },
+    {
+     "t": "Sima.",
+     "x": 231,
+     "y": 361,
+     "w": 53,
+     "h": 19,
+     "conf": 94.4
+    },
+    {
+     "t": "He",
+     "x": 295,
+     "y": 361,
+     "w": 26,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "knelt",
+     "x": 330,
+     "y": 360,
+     "w": 43,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "and",
+     "x": 380,
+     "y": 360,
+     "w": 36,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "tied",
+     "x": 424,
+     "y": 360,
+     "w": 35,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "his",
+     "x": 468,
+     "y": 360,
+     "w": 22,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "blanket",
+     "x": 500,
+     "y": 360,
+     "w": 69,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "around",
+     "x": 158,
+     "y": 391,
+     "w": 68,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "Papa's",
+     "x": 237,
+     "y": 392,
+     "w": 60,
+     "h": 24,
+     "conf": 55.3
+    },
+    {
+     "t": "bleeding",
+     "x": 306,
+     "y": 391,
+     "w": 81,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "head.",
+     "x": 397,
+     "y": 391,
+     "w": 52,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "‘Call",
+     "x": 158,
+     "y": 437,
+     "w": 41,
+     "h": 20,
+     "conf": 91.3
+    },
+    {
+     "t": "an",
+     "x": 208,
+     "y": 446,
+     "w": 22,
+     "h": 11,
+     "conf": 92.7
+    },
+    {
+     "t": "ambulancel’",
+     "x": 239,
+     "y": 437,
+     "w": 118,
+     "h": 20,
+     "conf": 38.4
+    },
+    {
+     "t": "he",
+     "x": 366,
+     "y": 437,
+     "w": 21,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "shouted.",
+     "x": 395,
+     "y": 437,
+     "w": 79,
+     "h": 20,
+     "conf": 94.9
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_14-3.jpg",
+   "image_file": "sima-and-siza_Page_14-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“He needs stiches in his head. You did just the\nright thing, said the nurse. Sima was proud.",
+   "char_count": 92,
+   "word_count": 18,
+   "mean_conf": 93.4,
+   "words": [
+    {
+     "t": "“He",
+     "x": 946,
+     "y": 369,
+     "w": 33,
+     "h": 19,
+     "conf": 72.5
+    },
+    {
+     "t": "needs",
+     "x": 987,
+     "y": 368,
+     "w": 53,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "stiches",
+     "x": 1049,
+     "y": 368,
+     "w": 60,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "in",
+     "x": 1117,
+     "y": 373,
+     "w": 14,
+     "h": 15,
+     "conf": 95.8
+    },
+    {
+     "t": "his",
+     "x": 1141,
+     "y": 368,
+     "w": 22,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "head.",
+     "x": 1178,
+     "y": 368,
+     "w": 47,
+     "h": 20,
+     "conf": 95.4
+    },
+    {
+     "t": "You",
+     "x": 1236,
+     "y": 369,
+     "w": 28,
+     "h": 19,
+     "conf": 96.3
+    },
+    {
+     "t": "did",
+     "x": 1275,
+     "y": 368,
+     "w": 29,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "just",
+     "x": 1311,
+     "y": 373,
+     "w": 32,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "the",
+     "x": 1349,
+     "y": 368,
+     "w": 30,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "right",
+     "x": 947,
+     "y": 399,
+     "w": 42,
+     "h": 25,
+     "conf": 94.9
+    },
+    {
+     "t": "thing,",
+     "x": 995,
+     "y": 399,
+     "w": 56,
+     "h": 25,
+     "conf": 87.0
+    },
+    {
+     "t": "said",
+     "x": 1059,
+     "y": 399,
+     "w": 37,
+     "h": 20,
+     "conf": 92.6
+    },
+    {
+     "t": "the",
+     "x": 1103,
+     "y": 399,
+     "w": 30,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "nurse.",
+     "x": 1142,
+     "y": 408,
+     "w": 53,
+     "h": 11,
+     "conf": 96.6
+    },
+    {
+     "t": "Sima",
+     "x": 1204,
+     "y": 400,
+     "w": 48,
+     "h": 19,
+     "conf": 95.3
+    },
+    {
+     "t": "was",
+     "x": 1259,
+     "y": 408,
+     "w": 36,
+     "h": 12,
+     "conf": 95.3
+    },
+    {
+     "t": "proud.",
+     "x": 1304,
+     "y": 399,
+     "w": 60,
+     "h": 25,
+     "conf": 85.6
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_15-3.jpg",
+   "image_file": "sima-and-siza_Page_15-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“You're a hero. You'll make a great doctor one day.\n‘But | want to be a nurse, just like you; said Sima.",
+   "char_count": 104,
+   "word_count": 22,
+   "mean_conf": 90.1,
+   "words": [
+    {
+     "t": "“You're",
+     "x": 158,
+     "y": 361,
+     "w": 63,
+     "h": 19,
+     "conf": 55.9
+    },
+    {
+     "t": "a",
+     "x": 229,
+     "y": 369,
+     "w": 11,
+     "h": 11,
+     "conf": 89.7
+    },
+    {
+     "t": "hero.",
+     "x": 249,
+     "y": 360,
+     "w": 45,
+     "h": 20,
+     "conf": 89.7
+    },
+    {
+     "t": "You'll",
+     "x": 301,
+     "y": 360,
+     "w": 49,
+     "h": 20,
+     "conf": 92.0
+    },
+    {
+     "t": "make",
+     "x": 360,
+     "y": 360,
+     "w": 51,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "a",
+     "x": 419,
+     "y": 369,
+     "w": 11,
+     "h": 11,
+     "conf": 95.5
+    },
+    {
+     "t": "great",
+     "x": 438,
+     "y": 365,
+     "w": 51,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "doctor",
+     "x": 496,
+     "y": 360,
+     "w": 61,
+     "h": 20,
+     "conf": 85.1
+    },
+    {
+     "t": "one",
+     "x": 564,
+     "y": 369,
+     "w": 35,
+     "h": 11,
+     "conf": 96.6
+    },
+    {
+     "t": "day.",
+     "x": 606,
+     "y": 360,
+     "w": 42,
+     "h": 25,
+     "conf": 72.9
+    },
+    {
+     "t": "‘But",
+     "x": 158,
+     "y": 407,
+     "w": 37,
+     "h": 19,
+     "conf": 65.9
+    },
+    {
+     "t": "|",
+     "x": 204,
+     "y": 407,
+     "w": 1,
+     "h": 19,
+     "conf": 93.9
+    },
+    {
+     "t": "want",
+     "x": 213,
+     "y": 411,
+     "w": 72,
+     "h": 16,
+     "conf": 93.9
+    },
+    {
+     "t": "to",
+     "x": 269,
+     "y": 402,
+     "w": 17,
+     "h": 33,
+     "conf": 95.1
+    },
+    {
+     "t": "be",
+     "x": 295,
+     "y": 406,
+     "w": 22,
+     "h": 20,
+     "conf": 95.1
+    },
+    {
+     "t": "a",
+     "x": 325,
+     "y": 415,
+     "w": 11,
+     "h": 11,
+     "conf": 94.4
+    },
+    {
+     "t": "nurse,",
+     "x": 345,
+     "y": 415,
+     "w": 53,
+     "h": 14,
+     "conf": 95.0
+    },
+    {
+     "t": "just",
+     "x": 406,
+     "y": 411,
+     "w": 32,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "like",
+     "x": 446,
+     "y": 406,
+     "w": 28,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "you;",
+     "x": 480,
+     "y": 407,
+     "w": 42,
+     "h": 24,
+     "conf": 94.6
+    },
+    {
+     "t": "said",
+     "x": 530,
+     "y": 406,
+     "w": 38,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "Sima.",
+     "x": 576,
+     "y": 407,
+     "w": 54,
+     "h": 19,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_16-3.jpg",
+   "image_file": "sima-and-siza_Page_16-3.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "“Thank you, Nurse Sima, said Papa.\nNow Sima and Papa play hospital-hospital and\nsoccer - and his friends do too.",
+   "char_count": 112,
+   "word_count": 20,
+   "mean_conf": 90.1,
+   "words": [
+    {
+     "t": "“Thank",
+     "x": 946,
+     "y": 345,
+     "w": 62,
+     "h": 20,
+     "conf": 75.1
+    },
+    {
+     "t": "you,",
+     "x": 1016,
+     "y": 354,
+     "w": 39,
+     "h": 16,
+     "conf": 95.9
+    },
+    {
+     "t": "Nurse",
+     "x": 1066,
+     "y": 345,
+     "w": 55,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "Sima,",
+     "x": 1129,
+     "y": 346,
+     "w": 56,
+     "h": 22,
+     "conf": 69.2
+    },
+    {
+     "t": "said",
+     "x": 1193,
+     "y": 345,
+     "w": 37,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "Papa.",
+     "x": 1241,
+     "y": 346,
+     "w": 53,
+     "h": 24,
+     "conf": 96.0
+    },
+    {
+     "t": "Now",
+     "x": 948,
+     "y": 391,
+     "w": 45,
+     "h": 21,
+     "conf": 97.0
+    },
+    {
+     "t": "Sima",
+     "x": 1000,
+     "y": 392,
+     "w": 48,
+     "h": 19,
+     "conf": 94.9
+    },
+    {
+     "t": "and",
+     "x": 1057,
+     "y": 391,
+     "w": 36,
+     "h": 20,
+     "conf": 94.9
+    },
+    {
+     "t": "Papa",
+     "x": 1103,
+     "y": 392,
+     "w": 48,
+     "h": 24,
+     "conf": 96.0
+    },
+    {
+     "t": "play",
+     "x": 1160,
+     "y": 391,
+     "w": 40,
+     "h": 25,
+     "conf": 93.2
+    },
+    {
+     "t": "hospital-hospital",
+     "x": 1208,
+     "y": 391,
+     "w": 156,
+     "h": 25,
+     "conf": 89.1
+    },
+    {
+     "t": "and",
+     "x": 1373,
+     "y": 391,
+     "w": 36,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "soccer",
+     "x": 946,
+     "y": 431,
+     "w": 58,
+     "h": 11,
+     "conf": 92.0
+    },
+    {
+     "t": "-",
+     "x": 1012,
+     "y": 436,
+     "w": 7,
+     "h": 1,
+     "conf": 57.7
+    },
+    {
+     "t": "and",
+     "x": 1028,
+     "y": 422,
+     "w": 37,
+     "h": 20,
+     "conf": 92.6
+    },
+    {
+     "t": "his",
+     "x": 1074,
+     "y": 422,
+     "w": 22,
+     "h": 20,
+     "conf": 92.6
+    },
+    {
+     "t": "friends",
+     "x": 1104,
+     "y": 422,
+     "w": 63,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "do",
+     "x": 1175,
+     "y": 422,
+     "w": 23,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "too.",
+     "x": 1206,
+     "y": 427,
+     "w": 35,
+     "h": 15,
+     "conf": 82.9
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N(dedup제거)",
+   "image_url": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_17-2.jpg",
+   "image_file": "sima-and-siza_Page_17-2.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

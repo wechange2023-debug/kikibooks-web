@@ -1,0 +1,5006 @@
+{
+ "slug": "searching-for-the-spirit-of-spring",
+ "wp_slug": "searching-for-the-spirit-of-spring",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [
+  13
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_05.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "The Winter cold had passed.\nSpring was coming to Nkanyezi’s village.\nSoon the villagers would gather to celebrate\nthe new season. Nkanyezi looked forward to\nthe Spring festival more than any other day\nin the year.",
+   "char_count": 213,
+   "word_count": 36,
+   "mean_conf": 94.6,
+   "words": [
+    {
+     "t": "The",
+     "x": 78,
+     "y": 453,
+     "w": 45,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "Winter",
+     "x": 134,
+     "y": 453,
+     "w": 78,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "cold",
+     "x": 223,
+     "y": 453,
+     "w": 49,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "had",
+     "x": 285,
+     "y": 453,
+     "w": 41,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "passed.",
+     "x": 340,
+     "y": 453,
+     "w": 92,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "Spring",
+     "x": 79,
+     "y": 522,
+     "w": 79,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "was",
+     "x": 169,
+     "y": 528,
+     "w": 47,
+     "h": 14,
+     "conf": 96.1
+    },
+    {
+     "t": "coming",
+     "x": 227,
+     "y": 522,
+     "w": 89,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "to",
+     "x": 328,
+     "y": 524,
+     "w": 21,
+     "h": 18,
+     "conf": 92.6
+    },
+    {
+     "t": "Nkanyezi’s",
+     "x": 362,
+     "y": 522,
+     "w": 132,
+     "h": 25,
+     "conf": 48.7
+    },
+    {
+     "t": "village.",
+     "x": 505,
+     "y": 522,
+     "w": 86,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "Soon",
+     "x": 79,
+     "y": 558,
+     "w": 60,
+     "h": 19,
+     "conf": 93.8
+    },
+    {
+     "t": "the",
+     "x": 151,
+     "y": 557,
+     "w": 37,
+     "h": 20,
+     "conf": 93.8
+    },
+    {
+     "t": "villagers",
+     "x": 199,
+     "y": 557,
+     "w": 104,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "would",
+     "x": 314,
+     "y": 557,
+     "w": 71,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "gather",
+     "x": 397,
+     "y": 557,
+     "w": 79,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "to",
+     "x": 487,
+     "y": 559,
+     "w": 22,
+     "h": 18,
+     "conf": 96.5
+    },
+    {
+     "t": "celebrate",
+     "x": 520,
+     "y": 557,
+     "w": 114,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 79,
+     "y": 592,
+     "w": 37,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "new",
+     "x": 128,
+     "y": 598,
+     "w": 47,
+     "h": 14,
+     "conf": 96.5
+    },
+    {
+     "t": "season.",
+     "x": 186,
+     "y": 598,
+     "w": 93,
+     "h": 14,
+     "conf": 93.3
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 293,
+     "y": 592,
+     "w": 109,
+     "h": 25,
+     "conf": 91.4
+    },
+    {
+     "t": "looked",
+     "x": 415,
+     "y": 592,
+     "w": 78,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "forward",
+     "x": 506,
+     "y": 592,
+     "w": 93,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 611,
+     "y": 594,
+     "w": 22,
+     "h": 18,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 79,
+     "y": 626,
+     "w": 37,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "Spring",
+     "x": 127,
+     "y": 626,
+     "w": 79,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "festival",
+     "x": 217,
+     "y": 626,
+     "w": 88,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "more",
+     "x": 319,
+     "y": 632,
+     "w": 59,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "than",
+     "x": 389,
+     "y": 626,
+     "w": 52,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "any",
+     "x": 454,
+     "y": 632,
+     "w": 42,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "other",
+     "x": 506,
+     "y": 626,
+     "w": 63,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "day",
+     "x": 580,
+     "y": 626,
+     "w": 42,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "in",
+     "x": 80,
+     "y": 661,
+     "w": 18,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "the",
+     "x": 111,
+     "y": 661,
+     "w": 36,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "year.",
+     "x": 158,
+     "y": 667,
+     "w": 56,
+     "h": 19,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_06.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "One warm morning, Nkanyezi overheard two\nvillage elders talking about the festival.\n“The people of Ndlovu have lost their spirit\nof celebration,” one sighed.\n“How can we have a Spring festival in a village\nthat has forgotten how to celebrate?” asked\nanother.",
+   "char_count": 258,
+   "word_count": 42,
+   "mean_conf": 95.7,
+   "words": [
+    {
+     "t": "One",
+     "x": 80,
+     "y": 245,
+     "w": 45,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "warm",
+     "x": 136,
+     "y": 250,
+     "w": 65,
+     "h": 14,
+     "conf": 96.1
+    },
+    {
+     "t": "morning,",
+     "x": 214,
+     "y": 244,
+     "w": 107,
+     "h": 25,
+     "conf": 93.3
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 333,
+     "y": 244,
+     "w": 109,
+     "h": 25,
+     "conf": 91.5
+    },
+    {
+     "t": "overheard",
+     "x": 454,
+     "y": 244,
+     "w": 121,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "two",
+     "x": 587,
+     "y": 246,
+     "w": 43,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "village",
+     "x": 80,
+     "y": 279,
+     "w": 79,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "elders",
+     "x": 170,
+     "y": 279,
+     "w": 74,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "talking",
+     "x": 256,
+     "y": 279,
+     "w": 82,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "about",
+     "x": 350,
+     "y": 279,
+     "w": 69,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 430,
+     "y": 279,
+     "w": 37,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "festival.",
+     "x": 478,
+     "y": 279,
+     "w": 96,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "“The",
+     "x": 81,
+     "y": 349,
+     "w": 53,
+     "h": 20,
+     "conf": 90.6
+    },
+    {
+     "t": "people",
+     "x": 146,
+     "y": 349,
+     "w": 80,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "of",
+     "x": 237,
+     "y": 349,
+     "w": 24,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Ndlovu",
+     "x": 271,
+     "y": 349,
+     "w": 82,
+     "h": 20,
+     "conf": 92.9
+    },
+    {
+     "t": "have",
+     "x": 367,
+     "y": 349,
+     "w": 55,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "lost",
+     "x": 434,
+     "y": 349,
+     "w": 44,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "their",
+     "x": 489,
+     "y": 349,
+     "w": 55,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "spirit",
+     "x": 555,
+     "y": 349,
+     "w": 63,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "of",
+     "x": 80,
+     "y": 383,
+     "w": 23,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "celebration,”",
+     "x": 113,
+     "y": 383,
+     "w": 155,
+     "h": 23,
+     "conf": 95.6
+    },
+    {
+     "t": "one",
+     "x": 280,
+     "y": 389,
+     "w": 42,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "sighed.",
+     "x": 333,
+     "y": 383,
+     "w": 88,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "“How",
+     "x": 81,
+     "y": 454,
+     "w": 62,
+     "h": 19,
+     "conf": 96.0
+    },
+    {
+     "t": "can",
+     "x": 154,
+     "y": 459,
+     "w": 41,
+     "h": 14,
+     "conf": 96.0
+    },
+    {
+     "t": "we",
+     "x": 207,
+     "y": 459,
+     "w": 32,
+     "h": 14,
+     "conf": 94.1
+    },
+    {
+     "t": "have",
+     "x": 251,
+     "y": 453,
+     "w": 54,
+     "h": 20,
+     "conf": 94.1
+    },
+    {
+     "t": "a",
+     "x": 317,
+     "y": 459,
+     "w": 11,
+     "h": 14,
+     "conf": 97.0
+    },
+    {
+     "t": "Spring",
+     "x": 340,
+     "y": 453,
+     "w": 78,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "festival",
+     "x": 429,
+     "y": 453,
+     "w": 89,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "in",
+     "x": 531,
+     "y": 453,
+     "w": 18,
+     "h": 20,
+     "conf": 95.4
+    },
+    {
+     "t": "a",
+     "x": 562,
+     "y": 459,
+     "w": 11,
+     "h": 14,
+     "conf": 95.4
+    },
+    {
+     "t": "village",
+     "x": 585,
+     "y": 453,
+     "w": 79,
+     "h": 25,
+     "conf": 95.4
+    },
+    {
+     "t": "that",
+     "x": 80,
+     "y": 488,
+     "w": 48,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "has",
+     "x": 139,
+     "y": 488,
+     "w": 41,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "forgotten",
+     "x": 192,
+     "y": 488,
+     "w": 112,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "how",
+     "x": 317,
+     "y": 488,
+     "w": 48,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "to",
+     "x": 376,
+     "y": 490,
+     "w": 22,
+     "h": 18,
+     "conf": 96.4
+    },
+    {
+     "t": "celebrate?”",
+     "x": 409,
+     "y": 488,
+     "w": 138,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "asked",
+     "x": 558,
+     "y": 488,
+     "w": 70,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "another.",
+     "x": 80,
+     "y": 522,
+     "w": 98,
+     "h": 20,
+     "conf": 94.3
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_07.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Nkanyezi was worried.\n“How will the sun shine again unless we sing\nto wake it from its winter slumber?” she asked\nherself.\nNkanyezi thought for a long time.\n“| must find what we have lost,” she decided.\n“I must go in search of things that will bring back\nthe spirit of celebration to my village.”",
+   "char_count": 296,
+   "word_count": 55,
+   "mean_conf": 95.2,
+   "words": [
+    {
+     "t": "Nkanyezi",
+     "x": 868,
+     "y": 192,
+     "w": 109,
+     "h": 25,
+     "conf": 91.4
+    },
+    {
+     "t": "was",
+     "x": 990,
+     "y": 198,
+     "w": 46,
+     "h": 14,
+     "conf": 96.1
+    },
+    {
+     "t": "worried.",
+     "x": 1048,
+     "y": 192,
+     "w": 97,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "“How",
+     "x": 868,
+     "y": 263,
+     "w": 62,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "will",
+     "x": 941,
+     "y": 262,
+     "w": 39,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 993,
+     "y": 262,
+     "w": 36,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "sun",
+     "x": 1041,
+     "y": 268,
+     "w": 41,
+     "h": 14,
+     "conf": 96.3
+    },
+    {
+     "t": "shine",
+     "x": 1094,
+     "y": 262,
+     "w": 65,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "again",
+     "x": 1171,
+     "y": 262,
+     "w": 65,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "unless",
+     "x": 1249,
+     "y": 262,
+     "w": 78,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "we",
+     "x": 1339,
+     "y": 268,
+     "w": 31,
+     "h": 14,
+     "conf": 96.6
+    },
+    {
+     "t": "sing",
+     "x": 1381,
+     "y": 262,
+     "w": 50,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "to",
+     "x": 867,
+     "y": 299,
+     "w": 22,
+     "h": 18,
+     "conf": 97.0
+    },
+    {
+     "t": "wake",
+     "x": 901,
+     "y": 297,
+     "w": 60,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "it",
+     "x": 974,
+     "y": 297,
+     "w": 13,
+     "h": 20,
+     "conf": 95.4
+    },
+    {
+     "t": "from",
+     "x": 998,
+     "y": 297,
+     "w": 55,
+     "h": 20,
+     "conf": 95.4
+    },
+    {
+     "t": "its",
+     "x": 1066,
+     "y": 297,
+     "w": 27,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "winter",
+     "x": 1105,
+     "y": 297,
+     "w": 75,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "slumber?”",
+     "x": 1191,
+     "y": 297,
+     "w": 122,
+     "h": 20,
+     "conf": 94.9
+    },
+    {
+     "t": "she",
+     "x": 1325,
+     "y": 297,
+     "w": 41,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "asked",
+     "x": 1378,
+     "y": 297,
+     "w": 69,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "herself.",
+     "x": 868,
+     "y": 331,
+     "w": 89,
+     "h": 20,
+     "conf": 88.6
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 868,
+     "y": 401,
+     "w": 109,
+     "h": 25,
+     "conf": 92.5
+    },
+    {
+     "t": "thought",
+     "x": 990,
+     "y": 401,
+     "w": 95,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "for",
+     "x": 1096,
+     "y": 401,
+     "w": 32,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "a",
+     "x": 1139,
+     "y": 407,
+     "w": 11,
+     "h": 14,
+     "conf": 95.5
+    },
+    {
+     "t": "long",
+     "x": 1163,
+     "y": 401,
+     "w": 50,
+     "h": 25,
+     "conf": 95.5
+    },
+    {
+     "t": "time.",
+     "x": 1225,
+     "y": 401,
+     "w": 58,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "“|",
+     "x": 868,
+     "y": 471,
+     "w": 14,
+     "h": 19,
+     "conf": 94.2
+    },
+    {
+     "t": "must",
+     "x": 896,
+     "y": 472,
+     "w": 59,
+     "h": 18,
+     "conf": 96.4
+    },
+    {
+     "t": "find",
+     "x": 966,
+     "y": 470,
+     "w": 44,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "what",
+     "x": 1023,
+     "y": 470,
+     "w": 58,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "we",
+     "x": 1092,
+     "y": 476,
+     "w": 31,
+     "h": 14,
+     "conf": 96.3
+    },
+    {
+     "t": "have",
+     "x": 1135,
+     "y": 470,
+     "w": 55,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "lost,”",
+     "x": 1202,
+     "y": 470,
+     "w": 61,
+     "h": 23,
+     "conf": 86.8
+    },
+    {
+     "t": "she",
+     "x": 1274,
+     "y": 470,
+     "w": 42,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "decided.",
+     "x": 1327,
+     "y": 470,
+     "w": 102,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "“I",
+     "x": 868,
+     "y": 541,
+     "w": 14,
+     "h": 19,
+     "conf": 64.2
+    },
+    {
+     "t": "must",
+     "x": 896,
+     "y": 542,
+     "w": 59,
+     "h": 18,
+     "conf": 96.1
+    },
+    {
+     "t": "go",
+     "x": 966,
+     "y": 546,
+     "w": 28,
+     "h": 19,
+     "conf": 95.3
+    },
+    {
+     "t": "in",
+     "x": 1006,
+     "y": 540,
+     "w": 18,
+     "h": 20,
+     "conf": 95.3
+    },
+    {
+     "t": "search",
+     "x": 1036,
+     "y": 540,
+     "w": 81,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "of",
+     "x": 1129,
+     "y": 540,
+     "w": 23,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "things",
+     "x": 1162,
+     "y": 540,
+     "w": 76,
+     "h": 25,
+     "conf": 96.2
+    },
+    {
+     "t": "that",
+     "x": 1249,
+     "y": 540,
+     "w": 48,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "will",
+     "x": 1307,
+     "y": 540,
+     "w": 40,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "bring",
+     "x": 1360,
+     "y": 540,
+     "w": 60,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "back",
+     "x": 1433,
+     "y": 540,
+     "w": 55,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 867,
+     "y": 575,
+     "w": 37,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "spirit",
+     "x": 915,
+     "y": 575,
+     "w": 63,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "of",
+     "x": 989,
+     "y": 575,
+     "w": 24,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "celebration",
+     "x": 1022,
+     "y": 575,
+     "w": 137,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 1172,
+     "y": 577,
+     "w": 22,
+     "h": 18,
+     "conf": 96.2
+    },
+    {
+     "t": "my",
+     "x": 1206,
+     "y": 581,
+     "w": 33,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "village.”",
+     "x": 1250,
+     "y": 575,
+     "w": 98,
+     "h": 25,
+     "conf": 94.8
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_08.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "The elders gave Nkanyezi their blessing for the\njourney. They gave her a bag to carry the things\nshe would find.\nNkanyezi was afraid, but she believed she\nwould succeed.",
+   "char_count": 169,
+   "word_count": 30,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "The",
+     "x": 79,
+     "y": 297,
+     "w": 44,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "elders",
+     "x": 134,
+     "y": 297,
+     "w": 74,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "gave",
+     "x": 219,
+     "y": 303,
+     "w": 56,
+     "h": 19,
+     "conf": 93.3
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 287,
+     "y": 297,
+     "w": 109,
+     "h": 25,
+     "conf": 92.2
+    },
+    {
+     "t": "their",
+     "x": 409,
+     "y": 297,
+     "w": 55,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "blessing",
+     "x": 476,
+     "y": 297,
+     "w": 102,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "for",
+     "x": 589,
+     "y": 297,
+     "w": 32,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 632,
+     "y": 297,
+     "w": 37,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "journey.",
+     "x": 78,
+     "y": 331,
+     "w": 97,
+     "h": 25,
+     "conf": 79.8
+    },
+    {
+     "t": "They",
+     "x": 187,
+     "y": 331,
+     "w": 59,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "gave",
+     "x": 257,
+     "y": 337,
+     "w": 55,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "her",
+     "x": 325,
+     "y": 331,
+     "w": 36,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "a",
+     "x": 372,
+     "y": 337,
+     "w": 11,
+     "h": 14,
+     "conf": 96.4
+    },
+    {
+     "t": "bag",
+     "x": 396,
+     "y": 331,
+     "w": 42,
+     "h": 25,
+     "conf": 95.1
+    },
+    {
+     "t": "to",
+     "x": 449,
+     "y": 333,
+     "w": 22,
+     "h": 18,
+     "conf": 95.7
+    },
+    {
+     "t": "carry",
+     "x": 482,
+     "y": 337,
+     "w": 62,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "the",
+     "x": 555,
+     "y": 331,
+     "w": 36,
+     "h": 20,
+     "conf": 95.6
+    },
+    {
+     "t": "things",
+     "x": 603,
+     "y": 331,
+     "w": 76,
+     "h": 25,
+     "conf": 95.6
+    },
+    {
+     "t": "she",
+     "x": 80,
+     "y": 366,
+     "w": 41,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "would",
+     "x": 132,
+     "y": 366,
+     "w": 71,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "find.",
+     "x": 215,
+     "y": 366,
+     "w": 52,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 81,
+     "y": 436,
+     "w": 109,
+     "h": 25,
+     "conf": 92.5
+    },
+    {
+     "t": "was",
+     "x": 202,
+     "y": 442,
+     "w": 47,
+     "h": 14,
+     "conf": 96.0
+    },
+    {
+     "t": "afraid,",
+     "x": 260,
+     "y": 436,
+     "w": 77,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "but",
+     "x": 349,
+     "y": 436,
+     "w": 38,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "she",
+     "x": 397,
+     "y": 436,
+     "w": 42,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "believed",
+     "x": 451,
+     "y": 436,
+     "w": 99,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "she",
+     "x": 562,
+     "y": 436,
+     "w": 41,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "would",
+     "x": 80,
+     "y": 470,
+     "w": 70,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "succeed.",
+     "x": 163,
+     "y": 470,
+     "w": 107,
+     "h": 20,
+     "conf": 95.2
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_09.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_09.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Nkanyezi walked all day. She hiked up a hill, and\ndown into a valley. She sailed across the great\nriver, and climbed between sharp rocks. She\nmarched across the plains until she reached the\nshadow of the red mountains.",
+   "char_count": 218,
+   "word_count": 39,
+   "mean_conf": 95.9,
+   "words": [
+    {
+     "t": "Nkanyezi",
+     "x": 868,
+     "y": 314,
+     "w": 109,
+     "h": 25,
+     "conf": 92.1
+    },
+    {
+     "t": "walked",
+     "x": 990,
+     "y": 314,
+     "w": 83,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "all",
+     "x": 1085,
+     "y": 314,
+     "w": 26,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "day.",
+     "x": 1124,
+     "y": 314,
+     "w": 46,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "She",
+     "x": 1183,
+     "y": 314,
+     "w": 44,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "hiked",
+     "x": 1239,
+     "y": 314,
+     "w": 62,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "up",
+     "x": 1315,
+     "y": 320,
+     "w": 26,
+     "h": 19,
+     "conf": 95.1
+    },
+    {
+     "t": "a",
+     "x": 1353,
+     "y": 320,
+     "w": 11,
+     "h": 14,
+     "conf": 88.7
+    },
+    {
+     "t": "hill,",
+     "x": 1377,
+     "y": 314,
+     "w": 41,
+     "h": 23,
+     "conf": 88.7
+    },
+    {
+     "t": "and",
+     "x": 1429,
+     "y": 314,
+     "w": 42,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "down",
+     "x": 867,
+     "y": 349,
+     "w": 63,
+     "h": 20,
+     "conf": 95.3
+    },
+    {
+     "t": "into",
+     "x": 944,
+     "y": 349,
+     "w": 44,
+     "h": 20,
+     "conf": 95.3
+    },
+    {
+     "t": "a",
+     "x": 999,
+     "y": 355,
+     "w": 11,
+     "h": 14,
+     "conf": 95.9
+    },
+    {
+     "t": "valley.",
+     "x": 1022,
+     "y": 349,
+     "w": 75,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "She",
+     "x": 1110,
+     "y": 349,
+     "w": 44,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "sailed",
+     "x": 1165,
+     "y": 349,
+     "w": 71,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "across",
+     "x": 1248,
+     "y": 355,
+     "w": 81,
+     "h": 14,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 1341,
+     "y": 349,
+     "w": 36,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "great",
+     "x": 1389,
+     "y": 351,
+     "w": 62,
+     "h": 23,
+     "conf": 97.0
+    },
+    {
+     "t": "river,",
+     "x": 868,
+     "y": 383,
+     "w": 58,
+     "h": 23,
+     "conf": 94.5
+    },
+    {
+     "t": "and",
+     "x": 937,
+     "y": 383,
+     "w": 42,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "climbed",
+     "x": 991,
+     "y": 383,
+     "w": 95,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "between",
+     "x": 1099,
+     "y": 383,
+     "w": 100,
+     "h": 20,
+     "conf": 95.8
+    },
+    {
+     "t": "sharp",
+     "x": 1211,
+     "y": 383,
+     "w": 68,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "rocks.",
+     "x": 1292,
+     "y": 383,
+     "w": 71,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "She",
+     "x": 1376,
+     "y": 383,
+     "w": 43,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "marched",
+     "x": 868,
+     "y": 418,
+     "w": 104,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "across",
+     "x": 984,
+     "y": 424,
+     "w": 81,
+     "h": 14,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 1077,
+     "y": 418,
+     "w": 36,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "plains",
+     "x": 1125,
+     "y": 418,
+     "w": 73,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "until",
+     "x": 1210,
+     "y": 418,
+     "w": 51,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "she",
+     "x": 1274,
+     "y": 418,
+     "w": 41,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "reached",
+     "x": 1327,
+     "y": 418,
+     "w": 95,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 1434,
+     "y": 418,
+     "w": 37,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "shadow",
+     "x": 867,
+     "y": 453,
+     "w": 94,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "of",
+     "x": 972,
+     "y": 453,
+     "w": 24,
+     "h": 20,
+     "conf": 95.0
+    },
+    {
+     "t": "the",
+     "x": 1005,
+     "y": 453,
+     "w": 37,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "red",
+     "x": 1054,
+     "y": 453,
+     "w": 35,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "mountains.",
+     "x": 1102,
+     "y": 453,
+     "w": 136,
+     "h": 20,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_10.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "As night was closing in, Nkanyezi arrived at\na village of patterns and colours as she had never\nseen before. She told the village elders about her\njourney to bring back the spirit of celebration to\nher people.\nThe mother of this tribe gave Nkanyezi a gift.\nShe told the girl, “With love we give to you this\npaint to restore colour to a village that has gone\ndull.”\nNkanyezi thanked the elders and put the paint in\nher bag.\nEarly the next morning she went on her way\nagain, excited with this gift of colour.",
+   "char_count": 506,
+   "word_count": 96,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "As",
+     "x": 80,
+     "y": 106,
+     "w": 28,
+     "h": 19,
+     "conf": 95.6
+    },
+    {
+     "t": "night",
+     "x": 120,
+     "y": 105,
+     "w": 61,
+     "h": 25,
+     "conf": 95.6
+    },
+    {
+     "t": "was",
+     "x": 192,
+     "y": 111,
+     "w": 47,
+     "h": 14,
+     "conf": 95.7
+    },
+    {
+     "t": "closing",
+     "x": 250,
+     "y": 105,
+     "w": 88,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "in,",
+     "x": 350,
+     "y": 105,
+     "w": 26,
+     "h": 23,
+     "conf": 93.3
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 388,
+     "y": 105,
+     "w": 109,
+     "h": 25,
+     "conf": 89.4
+    },
+    {
+     "t": "arrived",
+     "x": 510,
+     "y": 105,
+     "w": 83,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "at",
+     "x": 605,
+     "y": 107,
+     "w": 22,
+     "h": 18,
+     "conf": 97.0
+    },
+    {
+     "t": "a",
+     "x": 80,
+     "y": 146,
+     "w": 11,
+     "h": 14,
+     "conf": 95.4
+    },
+    {
+     "t": "village",
+     "x": 103,
+     "y": 140,
+     "w": 79,
+     "h": 25,
+     "conf": 95.4
+    },
+    {
+     "t": "of",
+     "x": 193,
+     "y": 140,
+     "w": 24,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "patterns",
+     "x": 228,
+     "y": 142,
+     "w": 101,
+     "h": 23,
+     "conf": 96.3
+    },
+    {
+     "t": "and",
+     "x": 340,
+     "y": 140,
+     "w": 42,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "colours",
+     "x": 395,
+     "y": 140,
+     "w": 90,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "as",
+     "x": 497,
+     "y": 146,
+     "w": 26,
+     "h": 14,
+     "conf": 96.7
+    },
+    {
+     "t": "she",
+     "x": 534,
+     "y": 140,
+     "w": 41,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "had",
+     "x": 588,
+     "y": 140,
+     "w": 41,
+     "h": 20,
+     "conf": 95.9
+    },
+    {
+     "t": "never",
+     "x": 642,
+     "y": 146,
+     "w": 65,
+     "h": 14,
+     "conf": 95.9
+    },
+    {
+     "t": "seen",
+     "x": 80,
+     "y": 181,
+     "w": 54,
+     "h": 14,
+     "conf": 96.3
+    },
+    {
+     "t": "before.",
+     "x": 148,
+     "y": 175,
+     "w": 82,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "She",
+     "x": 243,
+     "y": 175,
+     "w": 44,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "told",
+     "x": 298,
+     "y": 175,
+     "w": 44,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 355,
+     "y": 175,
+     "w": 36,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "village",
+     "x": 403,
+     "y": 175,
+     "w": 79,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "elders",
+     "x": 493,
+     "y": 175,
+     "w": 74,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "about",
+     "x": 579,
+     "y": 175,
+     "w": 69,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "her",
+     "x": 660,
+     "y": 175,
+     "w": 36,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "journey",
+     "x": 78,
+     "y": 210,
+     "w": 93,
+     "h": 25,
+     "conf": 88.8
+    },
+    {
+     "t": "to",
+     "x": 181,
+     "y": 212,
+     "w": 22,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "bring",
+     "x": 216,
+     "y": 210,
+     "w": 60,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "back",
+     "x": 289,
+     "y": 210,
+     "w": 55,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 355,
+     "y": 210,
+     "w": 37,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "spirit",
+     "x": 403,
+     "y": 210,
+     "w": 63,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "of",
+     "x": 477,
+     "y": 210,
+     "w": 23,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "celebration",
+     "x": 510,
+     "y": 210,
+     "w": 137,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 660,
+     "y": 212,
+     "w": 21,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "her",
+     "x": 81,
+     "y": 244,
+     "w": 36,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "people.",
+     "x": 129,
+     "y": 244,
+     "w": 86,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "The",
+     "x": 79,
+     "y": 314,
+     "w": 44,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "mother",
+     "x": 135,
+     "y": 314,
+     "w": 85,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "of",
+     "x": 231,
+     "y": 314,
+     "w": 24,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "this",
+     "x": 265,
+     "y": 314,
+     "w": 44,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "tribe",
+     "x": 320,
+     "y": 314,
+     "w": 55,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "gave",
+     "x": 386,
+     "y": 320,
+     "w": 56,
+     "h": 19,
+     "conf": 93.3
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 454,
+     "y": 314,
+     "w": 109,
+     "h": 25,
+     "conf": 92.3
+    },
+    {
+     "t": "a",
+     "x": 570,
+     "y": 310,
+     "w": 11,
+     "h": 33,
+     "conf": 96.2
+    },
+    {
+     "t": "gift.",
+     "x": 599,
+     "y": 314,
+     "w": 46,
+     "h": 25,
+     "conf": 95.4
+    },
+    {
+     "t": "She",
+     "x": 80,
+     "y": 383,
+     "w": 43,
+     "h": 20,
+     "conf": 95.4
+    },
+    {
+     "t": "told",
+     "x": 135,
+     "y": 383,
+     "w": 44,
+     "h": 20,
+     "conf": 95.4
+    },
+    {
+     "t": "the",
+     "x": 191,
+     "y": 383,
+     "w": 37,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "girl,",
+     "x": 239,
+     "y": 383,
+     "w": 45,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "“With",
+     "x": 296,
+     "y": 383,
+     "w": 63,
+     "h": 20,
+     "conf": 95.6
+    },
+    {
+     "t": "love",
+     "x": 371,
+     "y": 383,
+     "w": 48,
+     "h": 20,
+     "conf": 95.6
+    },
+    {
+     "t": "we",
+     "x": 430,
+     "y": 389,
+     "w": 31,
+     "h": 14,
+     "conf": 97.0
+    },
+    {
+     "t": "give",
+     "x": 473,
+     "y": 383,
+     "w": 48,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 532,
+     "y": 385,
+     "w": 22,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "you",
+     "x": 565,
+     "y": 389,
+     "w": 41,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "this",
+     "x": 619,
+     "y": 383,
+     "w": 44,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "paint",
+     "x": 81,
+     "y": 418,
+     "w": 60,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 152,
+     "y": 420,
+     "w": 22,
+     "h": 18,
+     "conf": 96.3
+    },
+    {
+     "t": "restore",
+     "x": 186,
+     "y": 420,
+     "w": 85,
+     "h": 18,
+     "conf": 96.5
+    },
+    {
+     "t": "colour",
+     "x": 282,
+     "y": 418,
+     "w": 77,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 370,
+     "y": 420,
+     "w": 22,
+     "h": 18,
+     "conf": 96.4
+    },
+    {
+     "t": "a",
+     "x": 403,
+     "y": 424,
+     "w": 11,
+     "h": 14,
+     "conf": 96.4
+    },
+    {
+     "t": "village",
+     "x": 426,
+     "y": 418,
+     "w": 80,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "that",
+     "x": 517,
+     "y": 418,
+     "w": 48,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "has",
+     "x": 576,
+     "y": 418,
+     "w": 41,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "gone",
+     "x": 629,
+     "y": 424,
+     "w": 58,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "dull.”",
+     "x": 80,
+     "y": 453,
+     "w": 62,
+     "h": 20,
+     "conf": 83.8
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 81,
+     "y": 522,
+     "w": 109,
+     "h": 25,
+     "conf": 92.4
+    },
+    {
+     "t": "thanked",
+     "x": 202,
+     "y": 522,
+     "w": 96,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "the",
+     "x": 311,
+     "y": 522,
+     "w": 36,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "elders",
+     "x": 359,
+     "y": 522,
+     "w": 74,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "and",
+     "x": 444,
+     "y": 522,
+     "w": 42,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "put",
+     "x": 499,
+     "y": 524,
+     "w": 38,
+     "h": 23,
+     "conf": 96.0
+    },
+    {
+     "t": "the",
+     "x": 547,
+     "y": 522,
+     "w": 37,
+     "h": 20,
+     "conf": 95.4
+    },
+    {
+     "t": "paint",
+     "x": 596,
+     "y": 522,
+     "w": 61,
+     "h": 25,
+     "conf": 95.4
+    },
+    {
+     "t": "in",
+     "x": 668,
+     "y": 522,
+     "w": 18,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "her",
+     "x": 81,
+     "y": 557,
+     "w": 36,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "bag.",
+     "x": 129,
+     "y": 557,
+     "w": 49,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "Early",
+     "x": 81,
+     "y": 627,
+     "w": 58,
+     "h": 25,
+     "conf": 95.8
+    },
+    {
+     "t": "the",
+     "x": 150,
+     "y": 627,
+     "w": 37,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "next",
+     "x": 199,
+     "y": 629,
+     "w": 50,
+     "h": 18,
+     "conf": 96.7
+    },
+    {
+     "t": "morning",
+     "x": 261,
+     "y": 627,
+     "w": 100,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "she",
+     "x": 372,
+     "y": 627,
+     "w": 41,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "went",
+     "x": 425,
+     "y": 629,
+     "w": 57,
+     "h": 18,
+     "conf": 96.4
+    },
+    {
+     "t": "on",
+     "x": 493,
+     "y": 633,
+     "w": 27,
+     "h": 14,
+     "conf": 95.3
+    },
+    {
+     "t": "her",
+     "x": 533,
+     "y": 627,
+     "w": 36,
+     "h": 20,
+     "conf": 95.3
+    },
+    {
+     "t": "way",
+     "x": 580,
+     "y": 633,
+     "w": 47,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "again,",
+     "x": 80,
+     "y": 661,
+     "w": 72,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "excited",
+     "x": 164,
+     "y": 661,
+     "w": 86,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "with",
+     "x": 262,
+     "y": 661,
+     "w": 50,
+     "h": 20,
+     "conf": 95.6
+    },
+    {
+     "t": "this",
+     "x": 324,
+     "y": 661,
+     "w": 44,
+     "h": 20,
+     "conf": 95.6
+    },
+    {
+     "t": "gift",
+     "x": 380,
+     "y": 661,
+     "w": 40,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "of",
+     "x": 430,
+     "y": 661,
+     "w": 24,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "colour.",
+     "x": 464,
+     "y": 661,
+     "w": 81,
+     "h": 20,
+     "conf": 96.7
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_11.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_11.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Nkanyezi walked all day, through a vast forest of\ngiant trees. As the sky became too dark for her to\nsee, she heard the sound of beating drums. She\nhurried towards the drumming, feeling the spirit\nof dance coming to her tired feet.",
+   "char_count": 231,
+   "word_count": 43,
+   "mean_conf": 96.1,
+   "words": [
+    {
+     "t": "Nkanyezi",
+     "x": 868,
+     "y": 314,
+     "w": 109,
+     "h": 25,
+     "conf": 91.9
+    },
+    {
+     "t": "walked",
+     "x": 990,
+     "y": 314,
+     "w": 83,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "all",
+     "x": 1085,
+     "y": 314,
+     "w": 26,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "day,",
+     "x": 1124,
+     "y": 314,
+     "w": 46,
+     "h": 25,
+     "conf": 96.2
+    },
+    {
+     "t": "through",
+     "x": 1181,
+     "y": 314,
+     "w": 95,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "a",
+     "x": 1288,
+     "y": 320,
+     "w": 11,
+     "h": 14,
+     "conf": 96.7
+    },
+    {
+     "t": "vast",
+     "x": 1311,
+     "y": 316,
+     "w": 50,
+     "h": 18,
+     "conf": 96.7
+    },
+    {
+     "t": "forest",
+     "x": 1372,
+     "y": 314,
+     "w": 72,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "of",
+     "x": 1454,
+     "y": 314,
+     "w": 24,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "giant",
+     "x": 867,
+     "y": 349,
+     "w": 62,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "trees.",
+     "x": 939,
+     "y": 351,
+     "w": 67,
+     "h": 18,
+     "conf": 90.5
+    },
+    {
+     "t": "As",
+     "x": 1019,
+     "y": 350,
+     "w": 28,
+     "h": 19,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 1059,
+     "y": 349,
+     "w": 36,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "sky",
+     "x": 1106,
+     "y": 349,
+     "w": 40,
+     "h": 25,
+     "conf": 96.2
+    },
+    {
+     "t": "became",
+     "x": 1158,
+     "y": 349,
+     "w": 94,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "too",
+     "x": 1263,
+     "y": 351,
+     "w": 38,
+     "h": 18,
+     "conf": 95.6
+    },
+    {
+     "t": "dark",
+     "x": 1312,
+     "y": 349,
+     "w": 52,
+     "h": 20,
+     "conf": 95.6
+    },
+    {
+     "t": "for",
+     "x": 1375,
+     "y": 349,
+     "w": 33,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "her",
+     "x": 1420,
+     "y": 349,
+     "w": 36,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "to",
+     "x": 1467,
+     "y": 351,
+     "w": 22,
+     "h": 18,
+     "conf": 96.2
+    },
+    {
+     "t": "see,",
+     "x": 867,
+     "y": 389,
+     "w": 47,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "she",
+     "x": 925,
+     "y": 383,
+     "w": 41,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "heard",
+     "x": 979,
+     "y": 383,
+     "w": 65,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 1057,
+     "y": 383,
+     "w": 36,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "sound",
+     "x": 1105,
+     "y": 383,
+     "w": 72,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "of",
+     "x": 1190,
+     "y": 383,
+     "w": 23,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "beating",
+     "x": 1224,
+     "y": 383,
+     "w": 90,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "drums.",
+     "x": 1325,
+     "y": 383,
+     "w": 83,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "She",
+     "x": 1421,
+     "y": 383,
+     "w": 43,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "hurried",
+     "x": 868,
+     "y": 418,
+     "w": 85,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "towards",
+     "x": 965,
+     "y": 418,
+     "w": 98,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 1074,
+     "y": 418,
+     "w": 37,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "drumming,",
+     "x": 1122,
+     "y": 418,
+     "w": 131,
+     "h": 25,
+     "conf": 95.0
+    },
+    {
+     "t": "feeling",
+     "x": 1264,
+     "y": 418,
+     "w": 82,
+     "h": 25,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 1357,
+     "y": 418,
+     "w": 37,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "spirit",
+     "x": 1405,
+     "y": 418,
+     "w": 63,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "of",
+     "x": 867,
+     "y": 453,
+     "w": 24,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "dance",
+     "x": 900,
+     "y": 453,
+     "w": 73,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "coming",
+     "x": 984,
+     "y": 453,
+     "w": 89,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 1084,
+     "y": 455,
+     "w": 22,
+     "h": 18,
+     "conf": 95.9
+    },
+    {
+     "t": "her",
+     "x": 1119,
+     "y": 453,
+     "w": 36,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "tired",
+     "x": 1166,
+     "y": 453,
+     "w": 53,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "feet.",
+     "x": 1232,
+     "y": 453,
+     "w": 51,
+     "h": 20,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_12.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Nkanyezi found herself in the village of the\nBhubezi. People were sitting around a fire,\ndrumming and singing. She had never before\nheard such wonderful music.\nShe told the village elders about her journey to\nbring back the spirit of celebration to her people.\nThe Bhubezi invited her to rest and stay the night.",
+   "char_count": 312,
+   "word_count": 54,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "Nkanyezi",
+     "x": 81,
+     "y": 262,
+     "w": 109,
+     "h": 25,
+     "conf": 91.2
+    },
+    {
+     "t": "found",
+     "x": 202,
+     "y": 262,
+     "w": 68,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "herself",
+     "x": 283,
+     "y": 262,
+     "w": 85,
+     "h": 20,
+     "conf": 94.9
+    },
+    {
+     "t": "in",
+     "x": 378,
+     "y": 262,
+     "w": 18,
+     "h": 20,
+     "conf": 94.9
+    },
+    {
+     "t": "the",
+     "x": 409,
+     "y": 262,
+     "w": 36,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "village",
+     "x": 457,
+     "y": 262,
+     "w": 79,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "of",
+     "x": 547,
+     "y": 262,
+     "w": 24,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 580,
+     "y": 262,
+     "w": 37,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "Bhubezi.",
+     "x": 81,
+     "y": 297,
+     "w": 103,
+     "h": 20,
+     "conf": 92.3
+    },
+    {
+     "t": "People",
+     "x": 198,
+     "y": 297,
+     "w": 81,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "were",
+     "x": 290,
+     "y": 303,
+     "w": 56,
+     "h": 14,
+     "conf": 96.0
+    },
+    {
+     "t": "sitting",
+     "x": 357,
+     "y": 297,
+     "w": 78,
+     "h": 25,
+     "conf": 96.2
+    },
+    {
+     "t": "around",
+     "x": 446,
+     "y": 297,
+     "w": 84,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "a",
+     "x": 533,
+     "y": 293,
+     "w": 12,
+     "h": 33,
+     "conf": 95.3
+    },
+    {
+     "t": "fire,",
+     "x": 565,
+     "y": 297,
+     "w": 45,
+     "h": 23,
+     "conf": 95.3
+    },
+    {
+     "t": "drumming",
+     "x": 80,
+     "y": 331,
+     "w": 124,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 215,
+     "y": 331,
+     "w": 42,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "singing.",
+     "x": 269,
+     "y": 331,
+     "w": 96,
+     "h": 25,
+     "conf": 96.2
+    },
+    {
+     "t": "She",
+     "x": 378,
+     "y": 331,
+     "w": 44,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "had",
+     "x": 434,
+     "y": 331,
+     "w": 41,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "never",
+     "x": 488,
+     "y": 337,
+     "w": 65,
+     "h": 14,
+     "conf": 96.3
+    },
+    {
+     "t": "before",
+     "x": 565,
+     "y": 331,
+     "w": 76,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "heard",
+     "x": 81,
+     "y": 366,
+     "w": 65,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "such",
+     "x": 159,
+     "y": 366,
+     "w": 57,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "wonderful",
+     "x": 227,
+     "y": 366,
+     "w": 121,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "music.",
+     "x": 361,
+     "y": 366,
+     "w": 78,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "She",
+     "x": 80,
+     "y": 436,
+     "w": 43,
+     "h": 20,
+     "conf": 95.8
+    },
+    {
+     "t": "told",
+     "x": 135,
+     "y": 436,
+     "w": 44,
+     "h": 20,
+     "conf": 95.8
+    },
+    {
+     "t": "the",
+     "x": 191,
+     "y": 436,
+     "w": 37,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "village",
+     "x": 239,
+     "y": 436,
+     "w": 80,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "elders",
+     "x": 330,
+     "y": 436,
+     "w": 74,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "about",
+     "x": 415,
+     "y": 436,
+     "w": 70,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "her",
+     "x": 496,
+     "y": 436,
+     "w": 36,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "journey",
+     "x": 541,
+     "y": 436,
+     "w": 93,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 645,
+     "y": 438,
+     "w": 22,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "bring",
+     "x": 81,
+     "y": 470,
+     "w": 60,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "back",
+     "x": 154,
+     "y": 470,
+     "w": 55,
+     "h": 20,
+     "conf": 95.8
+    },
+    {
+     "t": "the",
+     "x": 220,
+     "y": 470,
+     "w": 37,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "spirit",
+     "x": 268,
+     "y": 470,
+     "w": 63,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "of",
+     "x": 342,
+     "y": 470,
+     "w": 24,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "celebration",
+     "x": 375,
+     "y": 470,
+     "w": 137,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "to",
+     "x": 525,
+     "y": 472,
+     "w": 22,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "her",
+     "x": 559,
+     "y": 470,
+     "w": 36,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "people.",
+     "x": 607,
+     "y": 470,
+     "w": 86,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "The",
+     "x": 79,
+     "y": 505,
+     "w": 44,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Bhubezi",
+     "x": 135,
+     "y": 505,
+     "w": 95,
+     "h": 20,
+     "conf": 93.1
+    },
+    {
+     "t": "invited",
+     "x": 244,
+     "y": 505,
+     "w": 80,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "her",
+     "x": 337,
+     "y": 505,
+     "w": 36,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "to",
+     "x": 384,
+     "y": 507,
+     "w": 22,
+     "h": 18,
+     "conf": 96.7
+    },
+    {
+     "t": "rest",
+     "x": 419,
+     "y": 507,
+     "w": 45,
+     "h": 18,
+     "conf": 96.8
+    },
+    {
+     "t": "and",
+     "x": 474,
+     "y": 505,
+     "w": 42,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "stay",
+     "x": 529,
+     "y": 507,
+     "w": 50,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 590,
+     "y": 505,
+     "w": 37,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "night.",
+     "x": 639,
+     "y": 505,
+     "w": 67,
+     "h": 25,
+     "conf": 96.4
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_13.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "In the morning the chief called on Nkanyezi.\n“My child,” he said, “here is a special drum.\nIt plays a new song every time you beat it.”\nNkanyezi thanked the elders and put the drum\nin her bag. She went on her way again, delighted\nwith this gift of music and dance.",
+   "char_count": 264,
+   "word_count": 52,
+   "mean_conf": 95.8,
+   "words": [
+    {
+     "t": "In",
+     "x": 868,
+     "y": 263,
+     "w": 19,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 899,
+     "y": 262,
+     "w": 37,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "morning",
+     "x": 948,
+     "y": 262,
+     "w": 100,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "the",
+     "x": 1059,
+     "y": 262,
+     "w": 37,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "chief",
+     "x": 1107,
+     "y": 262,
+     "w": 61,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "called",
+     "x": 1177,
+     "y": 262,
+     "w": 71,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "on",
+     "x": 1261,
+     "y": 268,
+     "w": 26,
+     "h": 14,
+     "conf": 93.3
+    },
+    {
+     "t": "Nkanyezi.",
+     "x": 1301,
+     "y": 262,
+     "w": 116,
+     "h": 25,
+     "conf": 91.2
+    },
+    {
+     "t": "“My",
+     "x": 868,
+     "y": 332,
+     "w": 45,
+     "h": 24,
+     "conf": 90.6
+    },
+    {
+     "t": "child,”",
+     "x": 923,
+     "y": 331,
+     "w": 75,
+     "h": 23,
+     "conf": 93.1
+    },
+    {
+     "t": "he",
+     "x": 1011,
+     "y": 331,
+     "w": 26,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "said,",
+     "x": 1048,
+     "y": 331,
+     "w": 56,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "“here",
+     "x": 1116,
+     "y": 331,
+     "w": 62,
+     "h": 20,
+     "conf": 92.1
+    },
+    {
+     "t": "is",
+     "x": 1190,
+     "y": 331,
+     "w": 18,
+     "h": 20,
+     "conf": 92.1
+    },
+    {
+     "t": "a",
+     "x": 1219,
+     "y": 337,
+     "w": 11,
+     "h": 14,
+     "conf": 95.6
+    },
+    {
+     "t": "special",
+     "x": 1242,
+     "y": 331,
+     "w": 86,
+     "h": 25,
+     "conf": 95.8
+    },
+    {
+     "t": "drum.",
+     "x": 1340,
+     "y": 331,
+     "w": 68,
+     "h": 20,
+     "conf": 95.8
+    },
+    {
+     "t": "It",
+     "x": 868,
+     "y": 367,
+     "w": 15,
+     "h": 19,
+     "conf": 96.3
+    },
+    {
+     "t": "plays",
+     "x": 894,
+     "y": 366,
+     "w": 63,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "a",
+     "x": 968,
+     "y": 372,
+     "w": 11,
+     "h": 14,
+     "conf": 96.9
+    },
+    {
+     "t": "new",
+     "x": 992,
+     "y": 372,
+     "w": 47,
+     "h": 14,
+     "conf": 96.2
+    },
+    {
+     "t": "song",
+     "x": 1050,
+     "y": 372,
+     "w": 58,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "every",
+     "x": 1119,
+     "y": 372,
+     "w": 65,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "time",
+     "x": 1194,
+     "y": 366,
+     "w": 52,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "you",
+     "x": 1257,
+     "y": 372,
+     "w": 41,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "beat",
+     "x": 1312,
+     "y": 366,
+     "w": 51,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "it.”",
+     "x": 1375,
+     "y": 366,
+     "w": 32,
+     "h": 20,
+     "conf": 95.1
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 868,
+     "y": 436,
+     "w": 109,
+     "h": 25,
+     "conf": 92.8
+    },
+    {
+     "t": "thanked",
+     "x": 990,
+     "y": 436,
+     "w": 96,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 1098,
+     "y": 436,
+     "w": 37,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "elders",
+     "x": 1146,
+     "y": 436,
+     "w": 74,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "and",
+     "x": 1231,
+     "y": 436,
+     "w": 42,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "put",
+     "x": 1287,
+     "y": 438,
+     "w": 37,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 1335,
+     "y": 436,
+     "w": 37,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "drum",
+     "x": 1383,
+     "y": 436,
+     "w": 60,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "in",
+     "x": 868,
+     "y": 470,
+     "w": 18,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "her",
+     "x": 899,
+     "y": 470,
+     "w": 37,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "bag.",
+     "x": 948,
+     "y": 470,
+     "w": 48,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "She",
+     "x": 1009,
+     "y": 470,
+     "w": 44,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "went",
+     "x": 1064,
+     "y": 472,
+     "w": 58,
+     "h": 18,
+     "conf": 96.2
+    },
+    {
+     "t": "on",
+     "x": 1132,
+     "y": 476,
+     "w": 27,
+     "h": 14,
+     "conf": 95.3
+    },
+    {
+     "t": "her",
+     "x": 1173,
+     "y": 470,
+     "w": 36,
+     "h": 20,
+     "conf": 95.3
+    },
+    {
+     "t": "way",
+     "x": 1220,
+     "y": 476,
+     "w": 46,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "again,",
+     "x": 1277,
+     "y": 470,
+     "w": 73,
+     "h": 25,
+     "conf": 96.0
+    },
+    {
+     "t": "delighted",
+     "x": 1361,
+     "y": 470,
+     "w": 113,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "with",
+     "x": 867,
+     "y": 505,
+     "w": 50,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "this",
+     "x": 929,
+     "y": 505,
+     "w": 44,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "gift",
+     "x": 985,
+     "y": 505,
+     "w": 40,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "of",
+     "x": 1035,
+     "y": 505,
+     "w": 24,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "music",
+     "x": 1070,
+     "y": 505,
+     "w": 71,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "and",
+     "x": 1152,
+     "y": 505,
+     "w": 42,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "dance.",
+     "x": 1207,
+     "y": 505,
+     "w": 78,
+     "h": 20,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20160521_Page_14.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20160521_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "On the third day of her journey, as she passed\na field of fat cows, her nose started to tingle.\nAn aroma tickled her taste buds and her mouth\nstarted to water. She followed the scent, and\narrived in a village to find people standing over\nsteaming pots of stew.\nThis tribe was famous for its feasts and Nkanyezi\nhad never before tasted such flavours. After she\nhad eaten her fill, she told the village elders about\nher journey to bring back the spirit of celebration\nto her people.",
+   "char_count": 480,
+   "word_count": 89,
+   "mean_conf": 96.3,
+   "words": [
+    {
+     "t": "On",
+     "x": 80,
+     "y": 194,
+     "w": 29,
+     "h": 18,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 120,
+     "y": 193,
+     "w": 37,
+     "h": 19,
+     "conf": 94.3
+    },
+    {
+     "t": "third",
+     "x": 168,
+     "y": 193,
+     "w": 54,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "day",
+     "x": 234,
+     "y": 193,
+     "w": 42,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "of",
+     "x": 286,
+     "y": 193,
+     "w": 24,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "her",
+     "x": 321,
+     "y": 193,
+     "w": 35,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "journey,",
+     "x": 365,
+     "y": 194,
+     "w": 96,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "as",
+     "x": 473,
+     "y": 199,
+     "w": 25,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "she",
+     "x": 509,
+     "y": 193,
+     "w": 41,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "passed",
+     "x": 562,
+     "y": 193,
+     "w": 84,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "a",
+     "x": 81,
+     "y": 234,
+     "w": 10,
+     "h": 13,
+     "conf": 95.9
+    },
+    {
+     "t": "field",
+     "x": 103,
+     "y": 228,
+     "w": 51,
+     "h": 19,
+     "conf": 95.9
+    },
+    {
+     "t": "of",
+     "x": 166,
+     "y": 228,
+     "w": 24,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "fat",
+     "x": 200,
+     "y": 228,
+     "w": 31,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "cows,",
+     "x": 242,
+     "y": 234,
+     "w": 68,
+     "h": 16,
+     "conf": 96.7
+    },
+    {
+     "t": "her",
+     "x": 322,
+     "y": 228,
+     "w": 36,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "nose",
+     "x": 370,
+     "y": 234,
+     "w": 55,
+     "h": 13,
+     "conf": 95.5
+    },
+    {
+     "t": "started",
+     "x": 437,
+     "y": 228,
+     "w": 85,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 533,
+     "y": 231,
+     "w": 23,
+     "h": 16,
+     "conf": 96.2
+    },
+    {
+     "t": "tingle.",
+     "x": 566,
+     "y": 228,
+     "w": 76,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "An",
+     "x": 79,
+     "y": 264,
+     "w": 30,
+     "h": 18,
+     "conf": 96.6
+    },
+    {
+     "t": "aroma",
+     "x": 122,
+     "y": 269,
+     "w": 74,
+     "h": 13,
+     "conf": 96.3
+    },
+    {
+     "t": "tickled",
+     "x": 206,
+     "y": 263,
+     "w": 81,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "her",
+     "x": 300,
+     "y": 263,
+     "w": 36,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "taste",
+     "x": 346,
+     "y": 266,
+     "w": 60,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "buds",
+     "x": 419,
+     "y": 263,
+     "w": 56,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "and",
+     "x": 487,
+     "y": 263,
+     "w": 41,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "her",
+     "x": 541,
+     "y": 263,
+     "w": 36,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "mouth",
+     "x": 589,
+     "y": 263,
+     "w": 74,
+     "h": 19,
+     "conf": 97.0
+    },
+    {
+     "t": "started",
+     "x": 80,
+     "y": 298,
+     "w": 85,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "to",
+     "x": 176,
+     "y": 301,
+     "w": 23,
+     "h": 16,
+     "conf": 96.4
+    },
+    {
+     "t": "water.",
+     "x": 210,
+     "y": 301,
+     "w": 72,
+     "h": 16,
+     "conf": 96.2
+    },
+    {
+     "t": "She",
+     "x": 294,
+     "y": 298,
+     "w": 43,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "followed",
+     "x": 348,
+     "y": 298,
+     "w": 103,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 462,
+     "y": 298,
+     "w": 37,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "scent,",
+     "x": 511,
+     "y": 301,
+     "w": 71,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "and",
+     "x": 595,
+     "y": 298,
+     "w": 40,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "arrived",
+     "x": 81,
+     "y": 332,
+     "w": 81,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "in",
+     "x": 175,
+     "y": 333,
+     "w": 17,
+     "h": 18,
+     "conf": 96.2
+    },
+    {
+     "t": "a",
+     "x": 205,
+     "y": 338,
+     "w": 10,
+     "h": 13,
+     "conf": 96.2
+    },
+    {
+     "t": "village",
+     "x": 226,
+     "y": 332,
+     "w": 79,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 316,
+     "y": 335,
+     "w": 22,
+     "h": 16,
+     "conf": 96.0
+    },
+    {
+     "t": "find",
+     "x": 349,
+     "y": 332,
+     "w": 45,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "people",
+     "x": 407,
+     "y": 332,
+     "w": 79,
+     "h": 24,
+     "conf": 95.9
+    },
+    {
+     "t": "standing",
+     "x": 497,
+     "y": 332,
+     "w": 104,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "over",
+     "x": 614,
+     "y": 338,
+     "w": 50,
+     "h": 13,
+     "conf": 96.9
+    },
+    {
+     "t": "steaming",
+     "x": 80,
+     "y": 368,
+     "w": 111,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "pots",
+     "x": 204,
+     "y": 370,
+     "w": 51,
+     "h": 21,
+     "conf": 95.4
+    },
+    {
+     "t": "of",
+     "x": 266,
+     "y": 367,
+     "w": 24,
+     "h": 19,
+     "conf": 95.4
+    },
+    {
+     "t": "stew.",
+     "x": 300,
+     "y": 370,
+     "w": 61,
+     "h": 16,
+     "conf": 95.7
+    },
+    {
+     "t": "This",
+     "x": 80,
+     "y": 437,
+     "w": 50,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "tribe",
+     "x": 140,
+     "y": 437,
+     "w": 55,
+     "h": 19,
+     "conf": 95.7
+    },
+    {
+     "t": "was",
+     "x": 206,
+     "y": 443,
+     "w": 47,
+     "h": 13,
+     "conf": 96.5
+    },
+    {
+     "t": "famous",
+     "x": 264,
+     "y": 437,
+     "w": 90,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "for",
+     "x": 366,
+     "y": 437,
+     "w": 33,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "its",
+     "x": 410,
+     "y": 438,
+     "w": 27,
+     "h": 18,
+     "conf": 96.6
+    },
+    {
+     "t": "feasts",
+     "x": 449,
+     "y": 437,
+     "w": 74,
+     "h": 19,
+     "conf": 95.9
+    },
+    {
+     "t": "and",
+     "x": 535,
+     "y": 437,
+     "w": 41,
+     "h": 19,
+     "conf": 93.3
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 589,
+     "y": 437,
+     "w": 108,
+     "h": 24,
+     "conf": 91.3
+    },
+    {
+     "t": "had",
+     "x": 81,
+     "y": 471,
+     "w": 40,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "never",
+     "x": 134,
+     "y": 477,
+     "w": 65,
+     "h": 13,
+     "conf": 96.7
+    },
+    {
+     "t": "before",
+     "x": 210,
+     "y": 471,
+     "w": 76,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "tasted",
+     "x": 297,
+     "y": 471,
+     "w": 75,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "such",
+     "x": 384,
+     "y": 471,
+     "w": 56,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "flavours.",
+     "x": 452,
+     "y": 471,
+     "w": 105,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "After",
+     "x": 568,
+     "y": 471,
+     "w": 60,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "she",
+     "x": 639,
+     "y": 471,
+     "w": 41,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "had",
+     "x": 81,
+     "y": 506,
+     "w": 40,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "eaten",
+     "x": 133,
+     "y": 509,
+     "w": 66,
+     "h": 16,
+     "conf": 96.8
+    },
+    {
+     "t": "her",
+     "x": 212,
+     "y": 506,
+     "w": 36,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "fill,",
+     "x": 258,
+     "y": 506,
+     "w": 36,
+     "h": 22,
+     "conf": 96.3
+    },
+    {
+     "t": "she",
+     "x": 305,
+     "y": 506,
+     "w": 41,
+     "h": 19,
+     "conf": 96.1
+    },
+    {
+     "t": "told",
+     "x": 357,
+     "y": 506,
+     "w": 44,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 413,
+     "y": 506,
+     "w": 37,
+     "h": 19,
+     "conf": 96.8
+    },
+    {
+     "t": "village",
+     "x": 460,
+     "y": 506,
+     "w": 79,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "elders",
+     "x": 550,
+     "y": 506,
+     "w": 74,
+     "h": 19,
+     "conf": 96.4
+    },
+    {
+     "t": "about",
+     "x": 636,
+     "y": 506,
+     "w": 67,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "her",
+     "x": 81,
+     "y": 541,
+     "w": 34,
+     "h": 19,
+     "conf": 95.2
+    },
+    {
+     "t": "journey",
+     "x": 125,
+     "y": 542,
+     "w": 92,
+     "h": 23,
+     "conf": 95.2
+    },
+    {
+     "t": "to",
+     "x": 226,
+     "y": 544,
+     "w": 22,
+     "h": 16,
+     "conf": 96.6
+    },
+    {
+     "t": "bring",
+     "x": 261,
+     "y": 541,
+     "w": 58,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "back",
+     "x": 332,
+     "y": 541,
+     "w": 56,
+     "h": 19,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 397,
+     "y": 541,
+     "w": 37,
+     "h": 19,
+     "conf": 96.9
+    },
+    {
+     "t": "spirit",
+     "x": 446,
+     "y": 542,
+     "w": 61,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "of",
+     "x": 518,
+     "y": 541,
+     "w": 24,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "celebration",
+     "x": 552,
+     "y": 541,
+     "w": 136,
+     "h": 19,
+     "conf": 95.7
+    },
+    {
+     "t": "to",
+     "x": 79,
+     "y": 579,
+     "w": 22,
+     "h": 16,
+     "conf": 96.9
+    },
+    {
+     "t": "her",
+     "x": 114,
+     "y": 576,
+     "w": 36,
+     "h": 19,
+     "conf": 96.3
+    },
+    {
+     "t": "people.",
+     "x": 161,
+     "y": 576,
+     "w": 87,
+     "h": 24,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_15.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "The next day, the council of cooks gave her a\nsecret spice blend.\n“Our daughter,” they said, “with these spices,\nhappy tummies are guaranteed! We give you the\ngift of good food.”\nNkanyezi thanked the elders and put the spices in\nher bag.\nShe knew she had everything she needed.With\nnew energy she started the long journey back to\nthe village of Ndlovu.",
+   "char_count": 352,
+   "word_count": 63,
+   "mean_conf": 95.5,
+   "words": [
+    {
+     "t": "The",
+     "x": 866,
+     "y": 175,
+     "w": 44,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "next",
+     "x": 923,
+     "y": 177,
+     "w": 50,
+     "h": 18,
+     "conf": 96.0
+    },
+    {
+     "t": "day,",
+     "x": 984,
+     "y": 175,
+     "w": 46,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 1041,
+     "y": 175,
+     "w": 37,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "council",
+     "x": 1089,
+     "y": 175,
+     "w": 87,
+     "h": 20,
+     "conf": 96.1
+    },
+    {
+     "t": "of",
+     "x": 1189,
+     "y": 175,
+     "w": 24,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "cooks",
+     "x": 1222,
+     "y": 175,
+     "w": 71,
+     "h": 20,
+     "conf": 96.6
+    },
+    {
+     "t": "gave",
+     "x": 1305,
+     "y": 181,
+     "w": 55,
+     "h": 19,
+     "conf": 96.6
+    },
+    {
+     "t": "her",
+     "x": 1373,
+     "y": 175,
+     "w": 36,
+     "h": 20,
+     "conf": 94.4
+    },
+    {
+     "t": "a",
+     "x": 1420,
+     "y": 181,
+     "w": 11,
+     "h": 14,
+     "conf": 94.4
+    },
+    {
+     "t": "secret",
+     "x": 867,
+     "y": 212,
+     "w": 76,
+     "h": 18,
+     "conf": 96.3
+    },
+    {
+     "t": "spice",
+     "x": 953,
+     "y": 210,
+     "w": 64,
+     "h": 25,
+     "conf": 96.9
+    },
+    {
+     "t": "blend.",
+     "x": 1029,
+     "y": 210,
+     "w": 72,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "“Our",
+     "x": 868,
+     "y": 280,
+     "w": 52,
+     "h": 19,
+     "conf": 95.9
+    },
+    {
+     "t": "daughter,”",
+     "x": 931,
+     "y": 279,
+     "w": 124,
+     "h": 25,
+     "conf": 96.2
+    },
+    {
+     "t": "they",
+     "x": 1067,
+     "y": 279,
+     "w": 51,
+     "h": 25,
+     "conf": 96.7
+    },
+    {
+     "t": "said,",
+     "x": 1129,
+     "y": 279,
+     "w": 56,
+     "h": 23,
+     "conf": 96.4
+    },
+    {
+     "t": "“with",
+     "x": 1197,
+     "y": 279,
+     "w": 61,
+     "h": 20,
+     "conf": 95.1
+    },
+    {
+     "t": "these",
+     "x": 1269,
+     "y": 279,
+     "w": 66,
+     "h": 20,
+     "conf": 96.0
+    },
+    {
+     "t": "spices,",
+     "x": 1346,
+     "y": 279,
+     "w": 85,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "happy",
+     "x": 868,
+     "y": 314,
+     "w": 72,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "tummies",
+     "x": 951,
+     "y": 314,
+     "w": 106,
+     "h": 20,
+     "conf": 94.6
+    },
+    {
+     "t": "are",
+     "x": 1068,
+     "y": 320,
+     "w": 37,
+     "h": 14,
+     "conf": 94.6
+    },
+    {
+     "t": "guaranteed!",
+     "x": 1116,
+     "y": 314,
+     "w": 146,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "We",
+     "x": 1274,
+     "y": 315,
+     "w": 34,
+     "h": 19,
+     "conf": 96.3
+    },
+    {
+     "t": "give",
+     "x": 1319,
+     "y": 314,
+     "w": 49,
+     "h": 25,
+     "conf": 96.3
+    },
+    {
+     "t": "you",
+     "x": 1378,
+     "y": 320,
+     "w": 42,
+     "h": 19,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 1432,
+     "y": 314,
+     "w": 37,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "gift",
+     "x": 867,
+     "y": 349,
+     "w": 40,
+     "h": 25,
+     "conf": 96.6
+    },
+    {
+     "t": "of",
+     "x": 918,
+     "y": 349,
+     "w": 24,
+     "h": 20,
+     "conf": 97.0
+    },
+    {
+     "t": "good",
+     "x": 951,
+     "y": 349,
+     "w": 58,
+     "h": 25,
+     "conf": 96.8
+    },
+    {
+     "t": "food.”",
+     "x": 1022,
+     "y": 349,
+     "w": 72,
+     "h": 20,
+     "conf": 79.0
+    },
+    {
+     "t": "Nkanyezi",
+     "x": 868,
+     "y": 418,
+     "w": 109,
+     "h": 25,
+     "conf": 91.5
+    },
+    {
+     "t": "thanked",
+     "x": 990,
+     "y": 418,
+     "w": 96,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "the",
+     "x": 1098,
+     "y": 418,
+     "w": 37,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "elders",
+     "x": 1146,
+     "y": 418,
+     "w": 74,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "and",
+     "x": 1231,
+     "y": 418,
+     "w": 42,
+     "h": 20,
+     "conf": 95.7
+    },
+    {
+     "t": "put",
+     "x": 1287,
+     "y": 420,
+     "w": 37,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 1335,
+     "y": 418,
+     "w": 37,
+     "h": 20,
+     "conf": 96.2
+    },
+    {
+     "t": "spices",
+     "x": 1383,
+     "y": 418,
+     "w": 78,
+     "h": 25,
+     "conf": 96.1
+    },
+    {
+     "t": "in",
+     "x": 1473,
+     "y": 418,
+     "w": 18,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "her",
+     "x": 868,
+     "y": 453,
+     "w": 37,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "bag.",
+     "x": 916,
+     "y": 453,
+     "w": 49,
+     "h": 25,
+     "conf": 95.4
+    },
+    {
+     "t": "She",
+     "x": 867,
+     "y": 522,
+     "w": 44,
+     "h": 20,
+     "conf": 96.8
+    },
+    {
+     "t": "knew",
+     "x": 923,
+     "y": 522,
+     "w": 61,
+     "h": 20,
+     "conf": 95.5
+    },
+    {
+     "t": "she",
+     "x": 995,
+     "y": 522,
+     "w": 41,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "had",
+     "x": 1048,
+     "y": 522,
+     "w": 41,
+     "h": 20,
+     "conf": 96.3
+    },
+    {
+     "t": "everything",
+     "x": 1102,
+     "y": 522,
+     "w": 128,
+     "h": 25,
+     "conf": 96.5
+    },
+    {
+     "t": "she",
+     "x": 1242,
+     "y": 522,
+     "w": 41,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "needed.With",
+     "x": 1295,
+     "y": 522,
+     "w": 151,
+     "h": 20,
+     "conf": 89.7
+    },
+    {
+     "t": "new",
+     "x": 868,
+     "y": 563,
+     "w": 47,
+     "h": 14,
+     "conf": 95.7
+    },
+    {
+     "t": "energy",
+     "x": 926,
+     "y": 563,
+     "w": 81,
+     "h": 19,
+     "conf": 95.7
+    },
+    {
+     "t": "she",
+     "x": 1018,
+     "y": 557,
+     "w": 41,
+     "h": 20,
+     "conf": 96.9
+    },
+    {
+     "t": "started",
+     "x": 1071,
+     "y": 557,
+     "w": 85,
+     "h": 20,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 1169,
+     "y": 557,
+     "w": 36,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "long",
+     "x": 1218,
+     "y": 557,
+     "w": 50,
+     "h": 25,
+     "conf": 95.6
+    },
+    {
+     "t": "journey",
+     "x": 1277,
+     "y": 557,
+     "w": 93,
+     "h": 25,
+     "conf": 90.0
+    },
+    {
+     "t": "back",
+     "x": 1382,
+     "y": 557,
+     "w": 55,
+     "h": 20,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 1448,
+     "y": 559,
+     "w": 22,
+     "h": 18,
+     "conf": 95.6
+    },
+    {
+     "t": "the",
+     "x": 867,
+     "y": 592,
+     "w": 37,
+     "h": 20,
+     "conf": 96.4
+    },
+    {
+     "t": "village",
+     "x": 915,
+     "y": 592,
+     "w": 80,
+     "h": 25,
+     "conf": 96.4
+    },
+    {
+     "t": "of",
+     "x": 1006,
+     "y": 592,
+     "w": 24,
+     "h": 20,
+     "conf": 93.3
+    },
+    {
+     "t": "Ndlovu.",
+     "x": 1040,
+     "y": 592,
+     "w": 90,
+     "h": 20,
+     "conf": 92.3
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_16.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_18.jpg",
+   "image_file": "searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}

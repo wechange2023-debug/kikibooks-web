@@ -1,0 +1,1978 @@
+{
+ "slug": "why-is-nita-upside-down",
+ "wp_slug": "why-is-nita-upside-down",
+ "role": "elite-39-identity-gate",
+ "status": "raw_unreviewed",
+ "engine": "tesseract 5.4.0 (eng, psm 3)",
+ "source": "bookdash.org WP read-book full-size (thumbnail 접미사 제거)",
+ "page_rule": "서비스 M = PDF N - 4",
+ "created": "2026-07-10",
+ "skipped_files": [
+  {
+   "file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_01.jpg",
+   "reason": "front-matter(PDF 1)"
+  }
+ ],
+ "service_page_gaps": [],
+ "pages": [
+  {
+   "page": 1,
+   "pdf_page": 5,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_05.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_05.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Nita’s hanging upside down,\nher long hair tickling at the ground.\nThe trees, the grass, the everything\nis all the wrong way round.",
+   "char_count": 130,
+   "word_count": 23,
+   "mean_conf": 95.9,
+   "words": [
+    {
+     "t": "Nita’s",
+     "x": 191,
+     "y": 278,
+     "w": 78,
+     "h": 24,
+     "conf": 81.1
+    },
+    {
+     "t": "hanging",
+     "x": 279,
+     "y": 278,
+     "w": 117,
+     "h": 30,
+     "conf": 96.3
+    },
+    {
+     "t": "upside",
+     "x": 407,
+     "y": 278,
+     "w": 95,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "down,",
+     "x": 512,
+     "y": 278,
+     "w": 85,
+     "h": 29,
+     "conf": 96.7
+    },
+    {
+     "t": "her",
+     "x": 137,
+     "y": 321,
+     "w": 47,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "long",
+     "x": 193,
+     "y": 321,
+     "w": 60,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "hair",
+     "x": 264,
+     "y": 321,
+     "w": 58,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "tickling",
+     "x": 331,
+     "y": 321,
+     "w": 110,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "at",
+     "x": 452,
+     "y": 324,
+     "w": 25,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 487,
+     "y": 321,
+     "w": 45,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "ground.",
+     "x": 542,
+     "y": 321,
+     "w": 107,
+     "h": 30,
+     "conf": 96.2
+    },
+    {
+     "t": "The",
+     "x": 141,
+     "y": 408,
+     "w": 53,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "trees,",
+     "x": 204,
+     "y": 411,
+     "w": 76,
+     "h": 26,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 290,
+     "y": 408,
+     "w": 44,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "grass,",
+     "x": 344,
+     "y": 415,
+     "w": 82,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 436,
+     "y": 408,
+     "w": 45,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "everything",
+     "x": 491,
+     "y": 408,
+     "w": 154,
+     "h": 30,
+     "conf": 96.2
+    },
+    {
+     "t": "is",
+     "x": 199,
+     "y": 451,
+     "w": 23,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "all",
+     "x": 234,
+     "y": 451,
+     "w": 33,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 276,
+     "y": 451,
+     "w": 45,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "wrong",
+     "x": 331,
+     "y": 458,
+     "w": 88,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "way",
+     "x": 430,
+     "y": 458,
+     "w": 58,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "round.",
+     "x": 497,
+     "y": 451,
+     "w": 90,
+     "h": 24,
+     "conf": 96.6
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "pdf_page": 6,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_06.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_06.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Her feet, they poke into the sky.\nLittle Navi's walking by.\nHe says ‘I've seen you here before.\nYou're upside down again! What for?’",
+   "char_count": 132,
+   "word_count": 24,
+   "mean_conf": 95.4,
+   "words": [
+    {
+     "t": "Her",
+     "x": 167,
+     "y": 301,
+     "w": 51,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "feet,",
+     "x": 227,
+     "y": 299,
+     "w": 59,
+     "h": 29,
+     "conf": 96.8
+    },
+    {
+     "t": "they",
+     "x": 295,
+     "y": 299,
+     "w": 63,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "poke",
+     "x": 367,
+     "y": 299,
+     "w": 68,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "into",
+     "x": 445,
+     "y": 299,
+     "w": 56,
+     "h": 24,
+     "conf": 95.4
+    },
+    {
+     "t": "the",
+     "x": 510,
+     "y": 299,
+     "w": 45,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "sky.",
+     "x": 566,
+     "y": 299,
+     "w": 53,
+     "h": 30,
+     "conf": 95.7
+    },
+    {
+     "t": "Little",
+     "x": 222,
+     "y": 343,
+     "w": 74,
+     "h": 24,
+     "conf": 93.3
+    },
+    {
+     "t": "Navi's",
+     "x": 306,
+     "y": 343,
+     "w": 85,
+     "h": 24,
+     "conf": 90.6
+    },
+    {
+     "t": "walking",
+     "x": 402,
+     "y": 343,
+     "w": 113,
+     "h": 30,
+     "conf": 96.3
+    },
+    {
+     "t": "by.",
+     "x": 525,
+     "y": 343,
+     "w": 39,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "He",
+     "x": 150,
+     "y": 431,
+     "w": 37,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "says",
+     "x": 198,
+     "y": 436,
+     "w": 62,
+     "h": 23,
+     "conf": 95.6
+    },
+    {
+     "t": "‘I've",
+     "x": 270,
+     "y": 428,
+     "w": 53,
+     "h": 25,
+     "conf": 95.4
+    },
+    {
+     "t": "seen",
+     "x": 334,
+     "y": 436,
+     "w": 66,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "you",
+     "x": 409,
+     "y": 436,
+     "w": 51,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "here",
+     "x": 469,
+     "y": 429,
+     "w": 63,
+     "h": 24,
+     "conf": 94.9
+    },
+    {
+     "t": "before.",
+     "x": 541,
+     "y": 429,
+     "w": 95,
+     "h": 24,
+     "conf": 95.9
+    },
+    {
+     "t": "You're",
+     "x": 129,
+     "y": 473,
+     "w": 88,
+     "h": 24,
+     "conf": 87.0
+    },
+    {
+     "t": "upside",
+     "x": 227,
+     "y": 473,
+     "w": 95,
+     "h": 30,
+     "conf": 96.2
+    },
+    {
+     "t": "down",
+     "x": 332,
+     "y": 473,
+     "w": 79,
+     "h": 24,
+     "conf": 95.8
+    },
+    {
+     "t": "again!",
+     "x": 421,
+     "y": 473,
+     "w": 84,
+     "h": 30,
+     "conf": 95.8
+    },
+    {
+     "t": "What",
+     "x": 515,
+     "y": 473,
+     "w": 75,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "for?’",
+     "x": 599,
+     "y": 473,
+     "w": 59,
+     "h": 24,
+     "conf": 94.5
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "pdf_page": 7,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_07.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_07.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "His feet swim lightly in the air.\nShe tries to hide behind her hair.\n‘It's h-h-h-hard to t-t-talk’, she says to him.\n‘Tm not the same. I don't fit in’",
+   "char_count": 150,
+   "word_count": 30,
+   "mean_conf": 89.5,
+   "words": [
+    {
+     "t": "His",
+     "x": 172,
+     "y": 278,
+     "w": 46,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "feet",
+     "x": 229,
+     "y": 278,
+     "w": 52,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "swim",
+     "x": 292,
+     "y": 278,
+     "w": 77,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "lightly",
+     "x": 378,
+     "y": 278,
+     "w": 94,
+     "h": 30,
+     "conf": 95.8
+    },
+    {
+     "t": "in",
+     "x": 481,
+     "y": 278,
+     "w": 28,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "the",
+     "x": 518,
+     "y": 278,
+     "w": 45,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "air.",
+     "x": 574,
+     "y": 278,
+     "w": 40,
+     "h": 24,
+     "conf": 95.1
+    },
+    {
+     "t": "She",
+     "x": 159,
+     "y": 321,
+     "w": 51,
+     "h": 24,
+     "conf": 97.0
+    },
+    {
+     "t": "tries",
+     "x": 220,
+     "y": 321,
+     "w": 63,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "to",
+     "x": 294,
+     "y": 324,
+     "w": 25,
+     "h": 21,
+     "conf": 96.2
+    },
+    {
+     "t": "hide",
+     "x": 329,
+     "y": 321,
+     "w": 62,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "behind",
+     "x": 400,
+     "y": 321,
+     "w": 102,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "her",
+     "x": 511,
+     "y": 321,
+     "w": 47,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "hair.",
+     "x": 567,
+     "y": 321,
+     "w": 61,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "‘It's",
+     "x": 86,
+     "y": 407,
+     "w": 46,
+     "h": 25,
+     "conf": 43.3
+    },
+    {
+     "t": "h-h-h-hard",
+     "x": 142,
+     "y": 408,
+     "w": 161,
+     "h": 24,
+     "conf": 92.6
+    },
+    {
+     "t": "to",
+     "x": 312,
+     "y": 411,
+     "w": 26,
+     "h": 21,
+     "conf": 93.2
+    },
+    {
+     "t": "t-t-talk’,",
+     "x": 347,
+     "y": 408,
+     "w": 113,
+     "h": 29,
+     "conf": 90.2
+    },
+    {
+     "t": "she",
+     "x": 471,
+     "y": 408,
+     "w": 48,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "says",
+     "x": 530,
+     "y": 415,
+     "w": 61,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "to",
+     "x": 601,
+     "y": 411,
+     "w": 26,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "him.",
+     "x": 637,
+     "y": 408,
+     "w": 63,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "‘Tm",
+     "x": 176,
+     "y": 450,
+     "w": 49,
+     "h": 25,
+     "conf": 95.9
+    },
+    {
+     "t": "not",
+     "x": 235,
+     "y": 454,
+     "w": 46,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 290,
+     "y": 451,
+     "w": 45,
+     "h": 24,
+     "conf": 95.6
+    },
+    {
+     "t": "same.",
+     "x": 346,
+     "y": 458,
+     "w": 81,
+     "h": 17,
+     "conf": 95.6
+    },
+    {
+     "t": "I",
+     "x": 438,
+     "y": 453,
+     "w": 8,
+     "h": 22,
+     "conf": 91.5
+    },
+    {
+     "t": "don't",
+     "x": 455,
+     "y": 451,
+     "w": 70,
+     "h": 24,
+     "conf": 90.3
+    },
+    {
+     "t": "fit",
+     "x": 535,
+     "y": 451,
+     "w": 28,
+     "h": 24,
+     "conf": 31.2
+    },
+    {
+     "t": "in’",
+     "x": 572,
+     "y": 451,
+     "w": 39,
+     "h": 24,
+     "conf": 31.2
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "pdf_page": 8,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_08.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_08.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Navi takes her by the hand.\nHe wants to help her understand.\nThey climb to Navi's look-out spot.\nFrom up here they can see a lot.\nThey perch and have a quiet stare\nat children playing here and there.",
+   "char_count": 199,
+   "word_count": 39,
+   "mean_conf": 95.1,
+   "words": [
+    {
+     "t": "Navi",
+     "x": 197,
+     "y": 234,
+     "w": 65,
+     "h": 24,
+     "conf": 95.7
+    },
+    {
+     "t": "takes",
+     "x": 271,
+     "y": 234,
+     "w": 76,
+     "h": 24,
+     "conf": 95.7
+    },
+    {
+     "t": "her",
+     "x": 357,
+     "y": 234,
+     "w": 47,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "by",
+     "x": 413,
+     "y": 234,
+     "w": 34,
+     "h": 30,
+     "conf": 96.5
+    },
+    {
+     "t": "the",
+     "x": 456,
+     "y": 234,
+     "w": 45,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "hand.",
+     "x": 511,
+     "y": 234,
+     "w": 78,
+     "h": 24,
+     "conf": 96.0
+    },
+    {
+     "t": "He",
+     "x": 154,
+     "y": 280,
+     "w": 37,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "wants",
+     "x": 202,
+     "y": 281,
+     "w": 85,
+     "h": 21,
+     "conf": 96.5
+    },
+    {
+     "t": "to",
+     "x": 298,
+     "y": 281,
+     "w": 26,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "help",
+     "x": 333,
+     "y": 278,
+     "w": 62,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "her",
+     "x": 405,
+     "y": 278,
+     "w": 47,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "understand.",
+     "x": 461,
+     "y": 278,
+     "w": 171,
+     "h": 24,
+     "conf": 96.0
+    },
+    {
+     "t": "They",
+     "x": 145,
+     "y": 364,
+     "w": 71,
+     "h": 30,
+     "conf": 96.8
+    },
+    {
+     "t": "climb",
+     "x": 225,
+     "y": 364,
+     "w": 80,
+     "h": 24,
+     "conf": 95.6
+    },
+    {
+     "t": "to",
+     "x": 315,
+     "y": 367,
+     "w": 26,
+     "h": 21,
+     "conf": 93.3
+    },
+    {
+     "t": "Navi's",
+     "x": 351,
+     "y": 364,
+     "w": 85,
+     "h": 24,
+     "conf": 57.3
+    },
+    {
+     "t": "look-out",
+     "x": 446,
+     "y": 364,
+     "w": 119,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "spot.",
+     "x": 576,
+     "y": 367,
+     "w": 65,
+     "h": 27,
+     "conf": 96.4
+    },
+    {
+     "t": "From",
+     "x": 165,
+     "y": 410,
+     "w": 75,
+     "h": 22,
+     "conf": 96.1
+    },
+    {
+     "t": "up",
+     "x": 250,
+     "y": 415,
+     "w": 34,
+     "h": 23,
+     "conf": 96.8
+    },
+    {
+     "t": "here",
+     "x": 294,
+     "y": 408,
+     "w": 63,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "they",
+     "x": 367,
+     "y": 408,
+     "w": 63,
+     "h": 30,
+     "conf": 95.6
+    },
+    {
+     "t": "can",
+     "x": 438,
+     "y": 415,
+     "w": 52,
+     "h": 17,
+     "conf": 96.1
+    },
+    {
+     "t": "see",
+     "x": 500,
+     "y": 415,
+     "w": 45,
+     "h": 17,
+     "conf": 96.0
+    },
+    {
+     "t": "a",
+     "x": 547,
+     "y": 404,
+     "w": 13,
+     "h": 38,
+     "conf": 96.0
+    },
+    {
+     "t": "lot.",
+     "x": 580,
+     "y": 408,
+     "w": 41,
+     "h": 24,
+     "conf": 94.2
+    },
+    {
+     "t": "They",
+     "x": 151,
+     "y": 494,
+     "w": 71,
+     "h": 30,
+     "conf": 96.2
+    },
+    {
+     "t": "perch",
+     "x": 230,
+     "y": 494,
+     "w": 82,
+     "h": 30,
+     "conf": 96.2
+    },
+    {
+     "t": "and",
+     "x": 323,
+     "y": 494,
+     "w": 52,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "have",
+     "x": 384,
+     "y": 494,
+     "w": 67,
+     "h": 24,
+     "conf": 95.5
+    },
+    {
+     "t": "a",
+     "x": 462,
+     "y": 501,
+     "w": 14,
+     "h": 17,
+     "conf": 95.5
+    },
+    {
+     "t": "quiet",
+     "x": 486,
+     "y": 494,
+     "w": 71,
+     "h": 30,
+     "conf": 96.1
+    },
+    {
+     "t": "stare",
+     "x": 568,
+     "y": 497,
+     "w": 68,
+     "h": 21,
+     "conf": 96.6
+    },
+    {
+     "t": "at",
+     "x": 146,
+     "y": 541,
+     "w": 24,
+     "h": 21,
+     "conf": 96.4
+    },
+    {
+     "t": "children",
+     "x": 180,
+     "y": 538,
+     "w": 121,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "playing",
+     "x": 311,
+     "y": 538,
+     "w": 105,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "here",
+     "x": 427,
+     "y": 538,
+     "w": 62,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "and",
+     "x": 500,
+     "y": 538,
+     "w": 53,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "there.",
+     "x": 562,
+     "y": 538,
+     "w": 80,
+     "h": 24,
+     "conf": 96.2
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "pdf_page": 9,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_09.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_09.jpg",
+   "image_width": 1578,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 6,
+   "pdf_page": 10,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_10.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_10.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Those kids are not\nthe same at all.\nAbe's round.\nChi's freckled,",
+   "char_count": 64,
+   "word_count": 12,
+   "mean_conf": 84.6,
+   "words": [
+    {
+     "t": "Those",
+     "x": 88,
+     "y": 299,
+     "w": 88,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "kids",
+     "x": 187,
+     "y": 299,
+     "w": 62,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "are",
+     "x": 261,
+     "y": 306,
+     "w": 43,
+     "h": 17,
+     "conf": 96.3
+    },
+    {
+     "t": "not",
+     "x": 316,
+     "y": 302,
+     "w": 47,
+     "h": 21,
+     "conf": 96.9
+    },
+    {
+     "t": "the",
+     "x": 88,
+     "y": 343,
+     "w": 46,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "same",
+     "x": 146,
+     "y": 350,
+     "w": 76,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "at",
+     "x": 234,
+     "y": 346,
+     "w": 26,
+     "h": 21,
+     "conf": 96.8
+    },
+    {
+     "t": "all.",
+     "x": 272,
+     "y": 343,
+     "w": 41,
+     "h": 24,
+     "conf": 95.7
+    },
+    {
+     "t": "Abe's",
+     "x": 88,
+     "y": 429,
+     "w": 76,
+     "h": 24,
+     "conf": 26.1
+    },
+    {
+     "t": "round.",
+     "x": 176,
+     "y": 429,
+     "w": 93,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "Chi's",
+     "x": 1076,
+     "y": 659,
+     "w": 70,
+     "h": 24,
+     "conf": 25.8
+    },
+    {
+     "t": "freckled,",
+     "x": 1158,
+     "y": 659,
+     "w": 128,
+     "h": 29,
+     "conf": 95.8
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "pdf_page": 11,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_11.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_11.jpg",
+   "image_width": 3150,
+   "image_height": 1575,
+   "ocr_text": "Lala’s extra tall.",
+   "char_count": 18,
+   "word_count": 3,
+   "mean_conf": 89.8,
+   "words": [
+    {
+     "t": "Lala’s",
+     "x": 564,
+     "y": 773,
+     "w": 157,
+     "h": 48,
+     "conf": 78.1
+    },
+    {
+     "t": "extra",
+     "x": 742,
+     "y": 779,
+     "w": 144,
+     "h": 42,
+     "conf": 96.4
+    },
+    {
+     "t": "tall.",
+     "x": 906,
+     "y": 773,
+     "w": 102,
+     "h": 48,
+     "conf": 94.9
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "pdf_page": 12,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_12.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_12.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Bambam’'s wild and must be free, while Lulu’s reading quietly.",
+   "char_count": 62,
+   "word_count": 10,
+   "mean_conf": 89.1,
+   "words": [
+    {
+     "t": "Bambam’'s",
+     "x": 157,
+     "y": 659,
+     "w": 147,
+     "h": 24,
+     "conf": 41.4
+    },
+    {
+     "t": "wild",
+     "x": 314,
+     "y": 659,
+     "w": 62,
+     "h": 24,
+     "conf": 95.7
+    },
+    {
+     "t": "and",
+     "x": 386,
+     "y": 659,
+     "w": 52,
+     "h": 24,
+     "conf": 95.7
+    },
+    {
+     "t": "must",
+     "x": 447,
+     "y": 662,
+     "w": 72,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "be",
+     "x": 528,
+     "y": 659,
+     "w": 33,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "free,",
+     "x": 571,
+     "y": 659,
+     "w": 60,
+     "h": 29,
+     "conf": 96.8
+    },
+    {
+     "t": "while",
+     "x": 979,
+     "y": 659,
+     "w": 79,
+     "h": 24,
+     "conf": 93.3
+    },
+    {
+     "t": "Lulu’s",
+     "x": 1068,
+     "y": 659,
+     "w": 82,
+     "h": 24,
+     "conf": 81.6
+    },
+    {
+     "t": "reading",
+     "x": 1160,
+     "y": 659,
+     "w": 108,
+     "h": 30,
+     "conf": 96.3
+    },
+    {
+     "t": "quietly.",
+     "x": 1279,
+     "y": 659,
+     "w": 103,
+     "h": 30,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "pdf_page": 13,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_13.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_13.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Look at Freya's crazy hair.",
+   "char_count": 27,
+   "word_count": 5,
+   "mean_conf": 93.4,
+   "words": [
+    {
+     "t": "Look",
+     "x": 995,
+     "y": 386,
+     "w": 69,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "at",
+     "x": 1074,
+     "y": 389,
+     "w": 25,
+     "h": 21,
+     "conf": 95.9
+    },
+    {
+     "t": "Freya's",
+     "x": 1109,
+     "y": 386,
+     "w": 98,
+     "h": 30,
+     "conf": 81.5
+    },
+    {
+     "t": "crazy",
+     "x": 1218,
+     "y": 393,
+     "w": 78,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "hair.",
+     "x": 1305,
+     "y": 386,
+     "w": 61,
+     "h": 24,
+     "conf": 96.3
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "pdf_page": 14,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_14.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_14.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "And Sid wears glasses everywhere.",
+   "char_count": 33,
+   "word_count": 5,
+   "mean_conf": 89.8,
+   "words": [
+    {
+     "t": "And",
+     "x": 141,
+     "y": 386,
+     "w": 58,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "Sid",
+     "x": 209,
+     "y": 386,
+     "w": 45,
+     "h": 24,
+     "conf": 95.8
+    },
+    {
+     "t": "wears",
+     "x": 263,
+     "y": 393,
+     "w": 84,
+     "h": 17,
+     "conf": 82.1
+    },
+    {
+     "t": "glasses",
+     "x": 357,
+     "y": 386,
+     "w": 105,
+     "h": 30,
+     "conf": 95.8
+    },
+    {
+     "t": "everywhere.",
+     "x": 472,
+     "y": 386,
+     "w": 174,
+     "h": 30,
+     "conf": 78.6
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "pdf_page": 15,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_15.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_15.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "And me, I am just skin and bone.\nAnd you are you. You're not alone.\nEach human's sort of strange, you see.\nThat makes you just the same, like me.\nThis world is really one big game.\nTo play, we can’t all be the same.",
+   "char_count": 215,
+   "word_count": 45,
+   "mean_conf": 93.6,
+   "words": [
+    {
+     "t": "And",
+     "x": 159,
+     "y": 239,
+     "w": 59,
+     "h": 24,
+     "conf": 95.2
+    },
+    {
+     "t": "me,",
+     "x": 227,
+     "y": 246,
+     "w": 49,
+     "h": 22,
+     "conf": 95.2
+    },
+    {
+     "t": "I",
+     "x": 286,
+     "y": 241,
+     "w": 8,
+     "h": 22,
+     "conf": 78.2
+    },
+    {
+     "t": "am",
+     "x": 304,
+     "y": 246,
+     "w": 43,
+     "h": 17,
+     "conf": 78.2
+    },
+    {
+     "t": "just",
+     "x": 356,
+     "y": 239,
+     "w": 52,
+     "h": 30,
+     "conf": 95.8
+    },
+    {
+     "t": "skin",
+     "x": 419,
+     "y": 239,
+     "w": 61,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "and",
+     "x": 491,
+     "y": 239,
+     "w": 52,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "bone.",
+     "x": 551,
+     "y": 239,
+     "w": 76,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "And",
+     "x": 150,
+     "y": 276,
+     "w": 59,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "you",
+     "x": 218,
+     "y": 283,
+     "w": 51,
+     "h": 23,
+     "conf": 96.6
+    },
+    {
+     "t": "are",
+     "x": 279,
+     "y": 283,
+     "w": 43,
+     "h": 17,
+     "conf": 96.9
+    },
+    {
+     "t": "you.",
+     "x": 332,
+     "y": 283,
+     "w": 56,
+     "h": 23,
+     "conf": 96.7
+    },
+    {
+     "t": "You're",
+     "x": 399,
+     "y": 276,
+     "w": 88,
+     "h": 24,
+     "conf": 74.2
+    },
+    {
+     "t": "not",
+     "x": 497,
+     "y": 279,
+     "w": 46,
+     "h": 21,
+     "conf": 96.1
+    },
+    {
+     "t": "alone.",
+     "x": 554,
+     "y": 276,
+     "w": 82,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "Each",
+     "x": 119,
+     "y": 349,
+     "w": 71,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "human's",
+     "x": 199,
+     "y": 349,
+     "w": 122,
+     "h": 24,
+     "conf": 39.6
+    },
+    {
+     "t": "sort",
+     "x": 332,
+     "y": 352,
+     "w": 54,
+     "h": 21,
+     "conf": 96.0
+    },
+    {
+     "t": "of",
+     "x": 395,
+     "y": 349,
+     "w": 28,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "strange,",
+     "x": 432,
+     "y": 352,
+     "w": 113,
+     "h": 27,
+     "conf": 96.7
+    },
+    {
+     "t": "you",
+     "x": 554,
+     "y": 356,
+     "w": 51,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "see.",
+     "x": 616,
+     "y": 356,
+     "w": 51,
+     "h": 17,
+     "conf": 95.5
+    },
+    {
+     "t": "That",
+     "x": 115,
+     "y": 386,
+     "w": 64,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "makes",
+     "x": 189,
+     "y": 386,
+     "w": 93,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "you",
+     "x": 293,
+     "y": 393,
+     "w": 51,
+     "h": 23,
+     "conf": 97.0
+    },
+    {
+     "t": "just",
+     "x": 352,
+     "y": 386,
+     "w": 53,
+     "h": 30,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 415,
+     "y": 386,
+     "w": 44,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "same,",
+     "x": 470,
+     "y": 393,
+     "w": 81,
+     "h": 22,
+     "conf": 96.6
+    },
+    {
+     "t": "like",
+     "x": 560,
+     "y": 386,
+     "w": 52,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "me.",
+     "x": 622,
+     "y": 393,
+     "w": 50,
+     "h": 17,
+     "conf": 96.6
+    },
+    {
+     "t": "This",
+     "x": 152,
+     "y": 459,
+     "w": 62,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "world",
+     "x": 224,
+     "y": 459,
+     "w": 82,
+     "h": 24,
+     "conf": 96.4
+    },
+    {
+     "t": "is",
+     "x": 314,
+     "y": 459,
+     "w": 24,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "really",
+     "x": 348,
+     "y": 459,
+     "w": 81,
+     "h": 30,
+     "conf": 96.1
+    },
+    {
+     "t": "one",
+     "x": 438,
+     "y": 466,
+     "w": 50,
+     "h": 17,
+     "conf": 96.2
+    },
+    {
+     "t": "big",
+     "x": 497,
+     "y": 459,
+     "w": 43,
+     "h": 30,
+     "conf": 96.2
+    },
+    {
+     "t": "game.",
+     "x": 551,
+     "y": 466,
+     "w": 83,
+     "h": 23,
+     "conf": 96.9
+    },
+    {
+     "t": "To",
+     "x": 160,
+     "y": 498,
+     "w": 33,
+     "h": 22,
+     "conf": 97.0
+    },
+    {
+     "t": "play,",
+     "x": 203,
+     "y": 496,
+     "w": 64,
+     "h": 30,
+     "conf": 96.4
+    },
+    {
+     "t": "we",
+     "x": 277,
+     "y": 503,
+     "w": 39,
+     "h": 17,
+     "conf": 96.4
+    },
+    {
+     "t": "can’t",
+     "x": 326,
+     "y": 496,
+     "w": 68,
+     "h": 24,
+     "conf": 84.0
+    },
+    {
+     "t": "all",
+     "x": 405,
+     "y": 496,
+     "w": 33,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "be",
+     "x": 447,
+     "y": 496,
+     "w": 32,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "the",
+     "x": 489,
+     "y": 496,
+     "w": 45,
+     "h": 24,
+     "conf": 96.0
+    },
+    {
+     "t": "same.",
+     "x": 545,
+     "y": 503,
+     "w": 81,
+     "h": 17,
+     "conf": 96.0
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "pdf_page": 16,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_16.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_16.jpg",
+   "image_width": 1575,
+   "image_height": 788,
+   "ocr_text": "Nita feels the right way round,\nthanks to the new friend she’s found.\nUpside down was never fun.\nNow she plays with everyone.",
+   "char_count": 125,
+   "word_count": 23,
+   "mean_conf": 96.0,
+   "words": [
+    {
+     "t": "Nita",
+     "x": 176,
+     "y": 294,
+     "w": 60,
+     "h": 24,
+     "conf": 96.9
+    },
+    {
+     "t": "feels",
+     "x": 245,
+     "y": 294,
+     "w": 66,
+     "h": 24,
+     "conf": 96.6
+    },
+    {
+     "t": "the",
+     "x": 321,
+     "y": 294,
+     "w": 45,
+     "h": 24,
+     "conf": 96.5
+    },
+    {
+     "t": "right",
+     "x": 376,
+     "y": 294,
+     "w": 69,
+     "h": 30,
+     "conf": 96.2
+    },
+    {
+     "t": "way",
+     "x": 455,
+     "y": 301,
+     "w": 57,
+     "h": 23,
+     "conf": 96.5
+    },
+    {
+     "t": "round,",
+     "x": 521,
+     "y": 294,
+     "w": 90,
+     "h": 29,
+     "conf": 96.5
+    },
+    {
+     "t": "thanks",
+     "x": 127,
+     "y": 331,
+     "w": 99,
+     "h": 24,
+     "conf": 96.7
+    },
+    {
+     "t": "to",
+     "x": 236,
+     "y": 334,
+     "w": 26,
+     "h": 21,
+     "conf": 96.7
+    },
+    {
+     "t": "the",
+     "x": 272,
+     "y": 331,
+     "w": 45,
+     "h": 24,
+     "conf": 96.2
+    },
+    {
+     "t": "new",
+     "x": 327,
+     "y": 338,
+     "w": 60,
+     "h": 17,
+     "conf": 96.5
+    },
+    {
+     "t": "friend",
+     "x": 396,
+     "y": 331,
+     "w": 86,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "she’s",
+     "x": 492,
+     "y": 331,
+     "w": 68,
+     "h": 24,
+     "conf": 87.0
+    },
+    {
+     "t": "found.",
+     "x": 571,
+     "y": 331,
+     "w": 88,
+     "h": 24,
+     "conf": 96.0
+    },
+    {
+     "t": "Upside",
+     "x": 191,
+     "y": 404,
+     "w": 99,
+     "h": 30,
+     "conf": 96.7
+    },
+    {
+     "t": "down",
+     "x": 300,
+     "y": 404,
+     "w": 79,
+     "h": 24,
+     "conf": 96.1
+    },
+    {
+     "t": "was",
+     "x": 388,
+     "y": 411,
+     "w": 55,
+     "h": 17,
+     "conf": 95.8
+    },
+    {
+     "t": "never",
+     "x": 453,
+     "y": 411,
+     "w": 80,
+     "h": 17,
+     "conf": 95.8
+    },
+    {
+     "t": "fun.",
+     "x": 543,
+     "y": 404,
+     "w": 53,
+     "h": 24,
+     "conf": 96.8
+    },
+    {
+     "t": "Now",
+     "x": 179,
+     "y": 443,
+     "w": 64,
+     "h": 22,
+     "conf": 96.9
+    },
+    {
+     "t": "she",
+     "x": 253,
+     "y": 441,
+     "w": 48,
+     "h": 24,
+     "conf": 95.7
+    },
+    {
+     "t": "plays",
+     "x": 312,
+     "y": 441,
+     "w": 74,
+     "h": 30,
+     "conf": 95.7
+    },
+    {
+     "t": "with",
+     "x": 397,
+     "y": 441,
+     "w": 64,
+     "h": 24,
+     "conf": 96.3
+    },
+    {
+     "t": "everyone.",
+     "x": 470,
+     "y": 448,
+     "w": 137,
+     "h": 23,
+     "conf": 96.5
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "pdf_page": 17,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_17.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_17.jpg",
+   "image_width": 1578,
+   "image_height": 791,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  },
+  {
+   "page": 14,
+   "pdf_page": 18,
+   "pattern": "_Page_N",
+   "image_url": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_18.jpg",
+   "image_file": "why-is-nita-upside-down_pdf-ebook_20150920_Page_18.jpg",
+   "image_width": 788,
+   "image_height": 788,
+   "ocr_text": "",
+   "char_count": 0,
+   "word_count": 0,
+   "mean_conf": null,
+   "words": []
+  }
+ ]
+}
