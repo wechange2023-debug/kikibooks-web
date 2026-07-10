@@ -34,11 +34,13 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import statistics
 import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import pdfplumber
 import requests
 from pypdf import PdfReader
 
@@ -93,6 +95,158 @@ def browse(slug, folder=None):
 
 def norm_ws(s):
     return re.sub(r"\s+", " ", s).strip()
+
+
+# ── 좌표 기반 재조립 (지시서 2026-07-10 (7) STEP 1) ──────────────────────
+# 진단 실측(2026-07-10, 대조군): pypdf의 순서 역전·"Y ou" 분리는 PDF가 아니라
+# 객체 저장 순서 추출의 산물. pdfplumber 좌표로 라인 밴딩(top 허용오차 3.0pt,
+# 줄 내 x 오름차순, 줄 간 y 오름차순)하면 해소. 진짜 드롭캡은 sindi-and-the-moon
+# 'S'(size 70 vs 본문 22, gap 4.9 < 단어간 중앙값 ~8) 1류 — 임계값은 이 실측으로
+# 튜닝: 단일 영문자 & 크기비 ≥1.5 & 다음 단어 소문자 시작 & gap ≤ 1.2×중앙값.
+BAND_TOL = 3.0
+DROPCAP_SIZE_RATIO = 1.5
+DROPCAP_GAP_RATIO = 1.2
+AMBIG_GAP_PT = 100.0  # 밴드 내 단어 간격이 이보다 크면 다단/말풍선 의심
+
+
+BLOCK_VGAP_RATIO = 1.8   # 줄 간 세로 간격이 줄 높이 중앙값의 이 배수를 넘으면 다른 블록
+SPREAD_RATIO = 1.4       # 페이지 w/h가 이보다 크면 스프레드(좌/우 반면) 판정
+
+
+def _line_of(band, ambiguous_flag):
+    """밴드(단어 리스트) → (라인 텍스트, ambiguous 갱신). 드롭캡 병합 포함."""
+    band.sort(key=lambda w: w["x0"])
+    gaps = [band[i + 1]["x0"] - band[i]["x1"] for i in range(len(band) - 1)]
+    med_gap = statistics.median(gaps) if gaps else 0.0
+    if any(g > AMBIG_GAP_PT for g in gaps):
+        ambiguous_flag[0] = True
+    toks = []
+    i = 0
+    while i < len(band):
+        w = band[i]
+        # 드롭캡 병합 (정규식 후처리 금지 — 좌표·폰트 신호만. 실측 튜닝: sindi 'S')
+        if (i + 1 < len(band) and len(w["text"]) == 1 and w["text"].isalpha()
+                and band[i + 1]["text"][:1].islower()
+                and w["size"] >= DROPCAP_SIZE_RATIO * band[i + 1]["size"]
+                and (band[i + 1]["x0"] - w["x1"]) <= DROPCAP_GAP_RATIO * max(med_gap, 1.0)):
+            toks.append(w["text"] + band[i + 1]["text"])
+            i += 2
+            continue
+        toks.append(w["text"])
+        i += 1
+    return " ".join(toks)
+
+
+def _reassemble_page(page):
+    """pdfplumber 페이지 → (텍스트, layout_ambiguous). 좌표 재조립 v2.
+
+    1) 라인 밴딩(top 허용오차) → 2) 라인들을 세로 인접+가로 겹침으로 **블록**으로
+    묶고 → 3) 스프레드 페이지는 블록을 **좌반면 먼저, 우반면 나중**(각 반면 안에서
+    top 오름차순) 순으로 배열한다. 근거: 순수 y-정렬은 스프레드의 좌·우 페이지
+    블록을 교차시킴(londi p6·p8 실측 역전), pypdf 객체 순서는 책에 따라 무작위.
+    """
+    words = page.extract_words(extra_attrs=["size"], keep_blank_chars=False)
+    if not words:
+        return "", False
+    # 여러 줄에 걸친 드롭캡 선분리: 단일 영문자 & 페이지 중앙값 대비 1.5배 이상 크기
+    # (실측: how-about-you 'W'+'ho are you?', sindi 'S'+'indi' — 밴드 병합만으로는
+    #  글자가 다음 줄까지 세로로 걸쳐 있어 복원 불가)
+    size_med = statistics.median(w["size"] for w in words)
+    dropcaps = [w for w in words
+                if len(w["text"]) == 1 and w["text"].isalpha()
+                and w["size"] >= DROPCAP_SIZE_RATIO * size_med]
+    words = [w for w in words if w not in dropcaps]
+    if not words:
+        words, dropcaps = dropcaps, []
+    words.sort(key=lambda w: (w["top"], w["x0"]))
+    bands = []
+    for w in words:
+        if bands and abs(w["top"] - bands[-1][0]["top"]) <= BAND_TOL:
+            bands[-1].append(w)
+        else:
+            bands.append([w])
+    # 라인 메타
+    lines = []
+    for band in bands:
+        x0 = min(w["x0"] for w in band)
+        x1 = max(w["x1"] for w in band)
+        top = min(w["top"] for w in band)
+        bot = max(w["bottom"] for w in band)
+        lines.append({"band": band, "x0": x0, "x1": x1, "top": top, "bottom": bot})
+    hmed = statistics.median(l["bottom"] - l["top"] for l in lines)
+    # 드롭캡 재부착: 글자의 세로 범위와 교차하고 x가 글자 오른쪽에 근접한 첫 라인의
+    # 선두 단어에 무공백 병합. 후보 없으면 독립 토큰으로 유지.
+    for dc in sorted(dropcaps, key=lambda w: w["top"]):
+        cands = [l for l in lines
+                 if l["top"] < dc["bottom"] and l["bottom"] > dc["top"]
+                 and 0 <= l["x0"] - dc["x1"] <= 0.35 * dc["size"]]
+        if cands:
+            tgt = min(cands, key=lambda l: abs(l["top"] - dc["top"]))
+            first = tgt["band"][0]
+            merged = dict(first)
+            merged["text"] = dc["text"] + first["text"]
+            merged["x0"] = dc["x0"]
+            tgt["band"][0] = merged
+            tgt["x0"] = min(tgt["x0"], dc["x0"])
+        else:
+            lines.append({"band": [dc], "x0": dc["x0"], "x1": dc["x1"],
+                          "top": dc["top"], "bottom": dc["bottom"]})
+    lines.sort(key=lambda l: l["top"])
+    # 블록 클러스터링: top-to-top 간격(드롭캡 세로 팽창에 강건) + 가로 겹침
+    blocks = []
+    for ln in lines:
+        placed = False
+        for b in blocks:
+            last = b["lines"][-1]
+            tgap = ln["top"] - last["top"]
+            overlap = min(ln["x1"], b["x1"]) - max(ln["x0"], b["x0"])
+            if 0 <= tgap <= hmed * 2.4 and overlap > -20:
+                b["lines"].append(ln)
+                b["x0"] = min(b["x0"], ln["x0"])
+                b["x1"] = max(b["x1"], ln["x1"])
+                placed = True
+                break
+        if not placed:
+            blocks.append({"lines": [ln], "x0": ln["x0"], "x1": ln["x1"],
+                           "top": ln["top"]})
+    # 블록 순서: 좌/우 반면 분할은 "완전 좌측 블록과 완전 우측 블록이 공존하고
+    # 중앙선을 걸치는 블록이 없을 때"만 적용(실측: sindi처럼 중앙선을 걸치는
+    # 단일 흐름 책에 분할을 강제하면 역전이 생김). 그 외에는 top 순 단일 흐름.
+    is_spread = float(page.width) / float(page.height) > SPREAD_RATIO
+    mid = float(page.width) / 2
+    ambiguous_flag = [False]
+    fully_left = [b for b in blocks if b["x1"] <= mid]
+    fully_right = [b for b in blocks if b["x0"] >= mid]
+    spanning = [b for b in blocks if b["x0"] < mid < b["x1"]]
+    use_split = is_spread and fully_left and fully_right and not spanning
+
+    def half_of(b):
+        if not use_split:
+            return 0
+        return 0 if b["x1"] <= mid else 1
+    blocks.sort(key=lambda b: (half_of(b), b["top"], b["x0"]))
+    out_lines = []
+    for b in blocks:
+        for ln in b["lines"]:
+            out_lines.append(_line_of(ln["band"], ambiguous_flag))
+    if len(blocks) > 3:
+        ambiguous_flag[0] = True  # 블록 다수 = 말풍선/다단 의심
+    text = "\n".join(out_lines)
+    # 허용 예외 1건: 구두점 앞 공백 제거
+    text = re.sub(r"\s+([.,!?;:])", r"\1", text)
+    return norm_ws(text), ambiguous_flag[0]
+
+
+def extract_texts(pdf_path):
+    """PDF 전 페이지 좌표 재조립 → (페이지별 텍스트 리스트, ambiguous 페이지 번호 리스트)."""
+    texts, ambig = [], []
+    with pdfplumber.open(str(pdf_path)) as pdf:
+        for i, page in enumerate(pdf.pages, 1):
+            t, a = _reassemble_page(page)
+            texts.append(t)
+            if a:
+                ambig.append(i)
+    return texts, ambig
 
 
 def harvest_one(slug, cache_dir):
@@ -168,11 +322,12 @@ def harvest_one(slug, cache_dir):
             log(f"  후보 기각({len(rd.pages)}p): {cand.rsplit('/', 1)[-1]}")
             continue
         pdf_link, reader = cand, rd
+        chosen_cache = dest.name
         break
     if reader is None:
         return None, f"pdf_invalid(전 후보 기각: {rejected})"
-    # 텍스트 추출 + 매핑 재판정
-    texts = [norm_ws(p.extract_text() or "") for p in reader.pages]
+    # 텍스트 추출(좌표 재조립) + 매핑 재판정
+    texts, ambig = extract_texts(dest)
     n_pages = len(texts)
     offset, deviant = None, None
     for i, t in enumerate(texts, 1):
@@ -200,6 +355,8 @@ def harvest_one(slug, cache_dir):
         "front_matter_word_count": sum(len(t.split()) for t in texts[:offset]),
         "license_hint": norm_ws(m.group(1)) if m else None,
         "license_warning": lic_warn,
+        "layout_ambiguous_pages": ambig,
+        "cache_file": chosen_cache,
         "pdf_url": BASE + pdf_link,
         "ebook_folder": ebook,
         "eng_folder": eng_used,
@@ -215,6 +372,8 @@ def main():
     here = Path(__file__).resolve().parent
     ap.add_argument("--out", default=str(here / "out"))
     ap.add_argument("--state", default=str(here / "state.json"))
+    ap.add_argument("--reextract", action="store_true",
+                    help="네트워크 없이 캐시 PDF에서 텍스트만 재추출(census 필드는 기존 값 유지)")
     a = ap.parse_args()
 
     out_dir = Path(a.out)
@@ -237,6 +396,38 @@ def main():
         state["remaining"] = len(slugs) - done
         state["updated_at"] = datetime.now(timezone.utc).isoformat()
         state_path.write_text(json.dumps(state, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    if a.reextract:
+        for idx, slug in enumerate(slugs, 1):
+            out_f = out_dir / f"{slug}.pages.json"
+            if not out_f.exists():
+                log(f"[{idx}/{len(slugs)}] {slug} — 건너뜀(out 부재)")
+                continue
+            doc = json.loads(out_f.read_text(encoding="utf-8"))
+            # 캐시 후보 중 채택본 결정: cache_file 필드 우선, 없으면 페이지 수 일치로
+            # 재판정(과거 산출물엔 필드가 없고, 기각된 표지 PDF가 {slug}.pdf로 캐시된
+            # 사고 — how-about-you 실측 — 재발 방지)
+            pdf_f = None
+            if doc.get("cache_file") and (cache / doc["cache_file"]).exists():
+                pdf_f = cache / doc["cache_file"]
+            else:
+                for cand in [cache / f"{slug}.pdf"] + sorted(cache.glob(f"{slug}.cand*.pdf")):
+                    if cand.exists() and len(PdfReader(str(cand)).pages) == doc["pdf_page_count"]:
+                        pdf_f = cand
+                        break
+            if pdf_f is None:
+                log(f"[{idx}/{len(slugs)}] {slug} — 건너뜀(페이지 수 일치 캐시 없음)")
+                continue
+            texts, ambig = extract_texts(pdf_f)
+            off = doc["mapping_offset"]
+            doc["pages"] = [{"page_no": i - off, "word_count": len(texts[i - 1].split()),
+                             "text": texts[i - 1]} for i in range(off + 1, len(texts) + 1)]
+            doc["front_matter_word_count"] = sum(len(t.split()) for t in texts[:off])
+            doc["layout_ambiguous_pages"] = ambig
+            doc["extraction"] = "pdfplumber-coord-v2"
+            out_f.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
+            log(f"[{idx}/{len(slugs)}] {slug} 재추출 OK (ambiguous {ambig})")
+        return
 
     failed_slugs = {f["slug"] for f in state["failed"]}
     for idx, slug in enumerate(slugs, 1):
