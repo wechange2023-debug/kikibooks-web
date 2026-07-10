@@ -1,0 +1,94 @@
+{
+ "slug": "grandpas-gold",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 13,
+ "front_matter_word_count": 244,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=grandpas-gold/ebook/en_english/grandpas-gold-pdf-ebook-20150919.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 7,
+   "text": "The children were talking about their Grandpas."
+  },
+  {
+   "page_no": 2,
+   "word_count": 19,
+   "text": "My Grandpa can build a tower to the sky, said Giraffe. Once he built a skyscraper for a king."
+  },
+  {
+   "page_no": 3,
+   "word_count": 22,
+   "text": "My Grandpa can fish for anything in the sea, said Cheetah. Once he caught a whale and kept it in his bath."
+  },
+  {
+   "page_no": 4,
+   "word_count": 25,
+   "text": "My Grandpa can climb to the clouds in the sky, said Mountain Goat. He climbed the tallest mountain in the world, in just four hours."
+  },
+  {
+   "page_no": 5,
+   "word_count": 21,
+   "text": "My Grandpa can cook a feast, said Elephant. Once he cooked a meal for a president’s birthday party. All by himself."
+  },
+  {
+   "page_no": 6,
+   "word_count": 34,
+   "text": "Well my Grandpa doesn’t build or fish or climb or cook, said Monkey. But he owns gold! He hides it in his mouth. And at night he soaks it in a glass of water."
+  },
+  {
+   "page_no": 7,
+   "word_count": 20,
+   "text": "No, he doesn’t! Yes, he does! No, he doesn’t! Well, come and see if you don’t believe me, said Monkey."
+  },
+  {
+   "page_no": 8,
+   "word_count": 8,
+   "text": "So the children went to see Monkey’s Grandpa."
+  },
+  {
+   "page_no": 9,
+   "word_count": 10,
+   "text": "You see? said Monkey. And he can take them out."
+  },
+  {
+   "page_no": 10,
+   "word_count": 6,
+   "text": "No, he can’t! cried the animals."
+  },
+  {
+   "page_no": 11,
+   "word_count": 9,
+   "text": "Waaah! said Grandpa Monkey. And there are enough …"
+  },
+  {
+   "page_no": 12,
+   "word_count": 3,
+   "text": "… for everyone!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

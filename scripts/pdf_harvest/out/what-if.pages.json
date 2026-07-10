@@ -1,0 +1,94 @@
+{
+ "slug": "what-if",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 500,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=what-if/ebook/en-english/what-if_english_e-book.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 9,
+   "text": "Nandi sat on the blue steps of her house."
+  },
+  {
+   "page_no": 2,
+   "word_count": 3,
+   "text": "She was wondering..."
+  },
+  {
+   "page_no": 3,
+   "word_count": 18,
+   "text": "What if jelly beans made you jump really high? You could get to school in one big leap!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 12,
+   "text": "What if goats and chickens could talk? Would they tell good jokes?"
+  },
+  {
+   "page_no": 5,
+   "word_count": 15,
+   "text": "What if houses were rocket ships? Your family could go on holidays to the moon!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 21,
+   "text": "What if no one had to cook? What if supper just arrived on the table? (And it was always your favourite.)"
+  },
+  {
+   "page_no": 7,
+   "word_count": 10,
+   "text": "What if ice-lollies never melted? They could last all summer."
+  },
+  {
+   "page_no": 8,
+   "word_count": 15,
+   "text": "What if the pictures in books flew around your head when Dad read to you?"
+  },
+  {
+   "page_no": 9,
+   "word_count": 15,
+   "text": "What if my pink gumboots were magical? I could run faster than my big brother!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 8,
+   "text": "What if you squeezed your eyes shut and..."
+  },
+  {
+   "page_no": 11,
+   "word_count": 22,
+   "text": "“Nandi, what are you doing?” asked Nandi’s big brother. Nandi sat back on the step with a big smile on her face."
+  },
+  {
+   "page_no": 12,
+   "word_count": 4,
+   "text": "“Just wondering,” she said."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

@@ -1,0 +1,94 @@
+{
+ "slug": "thatos-birthday-surprise",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 253,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=thatos-birthday-surprise/ebook/en-english/thatos-birthday-surprise_pdf-ebook.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 11,
+   "text": "It is one week until Thato’s birthday. That’s seven whole days!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 17,
+   "text": "His mama says: “Your birthday present will be a BIG surprise!” Thato wonders: what will it be?"
+  },
+  {
+   "page_no": 3,
+   "word_count": 21,
+   "text": "On Monday Thato thinks: “Maybe I will get giant wings so I can fly high in the sky like a bird…”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 16,
+   "text": "On Tuesday Thato thinks: “Maybe I will have a birthday cake as big as a house!”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 17,
+   "text": "On Wednesday Thato thinks: “Maybe I will get a rocket ship to whizz up to the moon.”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 19,
+   "text": "On Thursday Thato thinks: “Maybe I will get fins so I can swim under the water like a fish.”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 16,
+   "text": "On Friday Thato thinks: “Maybe I will get magic soccer boots and score a thousand goals!”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 17,
+   "text": "On Saturday Thato thinks: “Maybe I will get a key that opens a box filled with treasure!”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 15,
+   "text": "On Sunday it is Thato’s birthday. Mama smiles and says: “Come and see your surprise!”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 21,
+   "text": "It is the best present ever. Thato’s big brother Kudzai has come to visit all the way from the big city!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 30,
+   "text": "Thato smiles and smiles and his big brother lifts him up in the air and hugs him. Kudzai asks: “What do you want to do for your birthday, little brother?”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 12,
+   "text": "And Thato knows exactly what they will do the whole day long."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

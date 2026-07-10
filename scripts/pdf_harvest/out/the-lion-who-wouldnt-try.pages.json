@@ -1,0 +1,95 @@
+{
+ "slug": "the-lion-who-wouldnt-try",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 255,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=the-lion-who-wouldnt-try/ebook/en-english/the-lion-who-wouldnt-try_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 14,
+   "text": "It was a sunny day in the jungle. All the animals were out playing."
+  },
+  {
+   "page_no": 2,
+   "word_count": 24,
+   "text": "“Come play with me, Lion,” said Cheetah. “Catch me if you can!” zoom-zoom! went Cheetah. “I don’t want to play,” said Lion. “I’ll lose.”"
+  },
+  {
+   "page_no": 3,
+   "word_count": 24,
+   "text": "“Come play with me, Lion,” said Elephant. “We can throw rocks!” ka-pow! ka-pow! went Elephant. “I don’t want to play,” said Lion. “I’ll lose.”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 29,
+   "text": "“Come play with us, Lion!” said the monkeys. “Who can eat the most bananas?” pop! pop! pop! went the monkeys. “I don’t want to play,” said Lion. “I’ll lose.”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 24,
+   "text": "“Come play with me, Lion,\" said Springbok. “Let’s jump high!” zoop! zoop! zoop! went Springbok. “I don’t want to play,” said Lion. “I’ll lose.”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 24,
+   "text": "“Come play with me, Lion,” said Crocodile. “It’s a swimming competition!” splash! splash! went Crocodile. “I don’t want to play,” said Lion. “I’ll lose.”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 28,
+   "text": "Elephant and Crocodile had the swimming competition without Lion. Crocodile was quicker than Elephant, but each time Crocodile got ahead, Elephant tickled him! tee-hee-hee! went Elephant and Crocodile."
+  },
+  {
+   "page_no": 8,
+   "word_count": 10,
+   "text": "Lion sat sadly by himself, watching Crocodile and Elephant swim."
+  },
+  {
+   "page_no": 9,
+   "word_count": 17,
+   "text": "“Why are you sad, Lion?” asked Mouse. “Because I don't want to play,” said Lion. “I'll lose.\""
+  },
+  {
+   "page_no": 10,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 11,
+   "word_count": 18,
+   "text": "Lion slipped on a banana peel! wheeeeee! went Lion. “That looks like fun!” said all the other animals."
+  },
+  {
+   "page_no": 12,
+   "word_count": 6,
+   "text": "Lion played, and he was happy."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

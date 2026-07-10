@@ -1,0 +1,105 @@
+{
+ "slug": "mrs-penguins-perfect-palace",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 332,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=mrs-penguins-perfect-palace/ebook/en-english/mrs-penguins-perfect-palace_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 27,
+   "text": "“I wish I had a HOUSE!” said Mrs Penguin. “Dear Mrs Penguin,” said Papa Penguin. “I don’t like living in rubbish.” “We will build you a palace.”"
+  },
+  {
+   "page_no": 2,
+   "word_count": 34,
+   "text": "So the Penguin family set to work. “I’m hungry,” “The sand is making me itch,” said Gobbles. grumbled Sissie. Mrs Penguin sighed. She was doing all the work. “The measurements are wrong,” said Boetie."
+  },
+  {
+   "page_no": 3,
+   "word_count": 21,
+   "text": "At last the castle But the tide came in and washed it away. was finished. “We’ll try again,” said Papa Penguin."
+  },
+  {
+   "page_no": 4,
+   "word_count": 16,
+   "text": "“Come children, we’ll build Mama a mansion So the Penguin family set to work. from stone.”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 17,
+   "text": "“The stones are heavy,” “I’m still hungry,” said Gobbles. grumbled Sissie. “The measurements are wrong,” said Boetie."
+  },
+  {
+   "page_no": 6,
+   "word_count": 26,
+   "text": "At last it was finished. But the wind came up and blew it over. Mrs Penguin was cross. “I’m not doing any more work,” she said."
+  },
+  {
+   "page_no": 7,
+   "word_count": 45,
+   "text": "“We’ll try again,” said Papa. “I’m hungry,” said Gobbles. “I can’t think of anything,” said Sisi. “It’s too hard.” Mrs Penguin sighed. “We haven’t got any She was never going to get her home. cement,” said Boetie. “You can’t build a proper house without cement.”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 14,
+   "text": "“Just look at all this mess,” she said. Then Mrs Penguin had an idea."
+  },
+  {
+   "page_no": 9,
+   "word_count": 20,
+   "text": "“Boetie, fetch wood,” “Gobbles, pick up plastic. she said. Papa, fetch the hammer.” All day they worked. “Sissie, find nets.”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 27,
+   "text": "“I’m tired,” said Sissie. “I’m still hungry,” said Gobbles. “Keep working,” said Mama. “Keep working,” said Mama. “The measurements are wrong,” said Boetie. “Keep working,” said Mama."
+  },
+  {
+   "page_no": 11,
+   "word_count": 32,
+   "text": "“It’s going to be wonderful,” said Papa. So they worked and “You’re doing a good job,” said Mama. worked and worked and worked … … and at last the house was finished."
+  },
+  {
+   "page_no": 12,
+   "word_count": 20,
+   "text": "“Welcome to your palace,” said Papa. Mrs Penguin clapped her flippers. “Thank you,” she said. “It’s Mrs Penguin’s Perfect Palace.”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  11,
+  12,
+  13,
+  14,
+  15
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

@@ -1,0 +1,94 @@
+{
+ "slug": "there-must-be-a-rainbow",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 257,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=there-must-be-a-rainbow/ebook/en-english/there-must-be-a-rainbow_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 14,
+   "text": "Nestled in the Kingdom of the Zulu is a magnificent place called the Valley."
+  },
+  {
+   "page_no": 2,
+   "word_count": 26,
+   "text": "A little girl called Jabulile lives here. Jabulile was always a happy child. She was also curious, and full of questions about life. Everything fascinated her."
+  },
+  {
+   "page_no": 3,
+   "word_count": 25,
+   "text": "Jabulile’s father was a mielie farmer. Her mother was a teacher. They taught her to dream big dreams. Jabulile’s biggest dream was to help people."
+  },
+  {
+   "page_no": 4,
+   "word_count": 31,
+   "text": "Everyone in the village was Jabulile’s friend, especially the elders. They taught her about the wise men and women who once lived in the Valley. Jabulile also wanted to be wise."
+  },
+  {
+   "page_no": 5,
+   "word_count": 23,
+   "text": "One awful day, the clouds began to gather over the Valley. Everything grew dark and grey. An ugly storm swept over the land."
+  },
+  {
+   "page_no": 6,
+   "word_count": 22,
+   "text": "Great gusts of wind blew the roofs off the huts. All the animals lost their homes. It was a very sad day."
+  },
+  {
+   "page_no": 7,
+   "word_count": 38,
+   "text": "The village folk cried, “What shall we do now?” “All the crops are ruined!” cried the farmers. “Our homes are gone!” said the elders. All hope seemed lost. But Jabulile remembered something her wise father once told her."
+  },
+  {
+   "page_no": 8,
+   "word_count": 47,
+   "text": "Jabulile started speaking to the villagers. “The storm only hurts us,” she said, “because of the way we choose to see it. If you look up the sun is shining again. It is a new day. “After every storm, there must be a rainbow!” she shouted excitedly."
+  },
+  {
+   "page_no": 9,
+   "word_count": 9,
+   "text": "Just then a glorious rainbow appeared in the sky."
+  },
+  {
+   "page_no": 10,
+   "word_count": 20,
+   "text": "The villagers saw the rainbow and they began to smile. It stood as a promise that the storm was over."
+  },
+  {
+   "page_no": 11,
+   "word_count": 16,
+   "text": "The villagers rebuilt their homes. Farmers planted new crops. The grass grew greener than ever before."
+  },
+  {
+   "page_no": 12,
+   "word_count": 10,
+   "text": "Once again there was hope and happiness in the Valley."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

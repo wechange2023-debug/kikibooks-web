@@ -1,0 +1,95 @@
+{
+ "slug": "sindi-and-the-moon",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 309,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=sindi-and-the-moon/ebook/en-english/sindi-and-the-moon_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 33,
+   "text": "Swas indi a very lively little girl who loved to sing and dance. She lived on a farm with her parents and her Gogo. Sindi enjoyed following Gogo around and feeding the animals."
+  },
+  {
+   "page_no": 2,
+   "word_count": 51,
+   "text": "Oevening ne while Sindi and her family were having dinner, Sindi’s mother had something to tell her. “Sindi,” she said, “after the long Christmas holidays, you are going to go to school.” Sindi was so excited. She was happy that she would finally get to learn how to read and write."
+  },
+  {
+   "page_no": 3,
+   "word_count": 33,
+   "text": "When Sindi was happy, she danced. Her joy spread to the farm animals. The dogs barked more loudly. The cows mooed more beautifully. The butterflies flapped their wings and landed in her hair."
+  },
+  {
+   "page_no": 4,
+   "word_count": 27,
+   "text": "When Sindi danced, she swayed from left to right, as if she were pushed and pulled by the wind. She sang along with its soft, slow music."
+  },
+  {
+   "page_no": 5,
+   "word_count": 63,
+   "text": "As the holidays were ending after Christmas, Sindi started to wonder what school would really be like. She did not want her mother to know that she was nervous, so she asked Gogo what school would be like. “School is very serious,” Gogo said. “There is no more time for song and dance, only learning.” This did not make Sindi happy at all."
+  },
+  {
+   "page_no": 6,
+   "word_count": 40,
+   "text": "Tnight he before school started was very hot. Sindi just could not sleep! She tiptoed outside and sat on the stoep, looking up at the dark sky. The moon was big and bright and beautiful and the stars were twinkling."
+  },
+  {
+   "page_no": 7,
+   "word_count": 50,
+   "text": "Sspoke indi to the beautiful moon. “Dear moon so bright,” she said, “are you afraid of the dark? Is that why you ask the stars to keep you company?” “I am going to school tomorrow, what will it be like?” “Will they let me sing? Will they let me dance?”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 30,
+   "text": "Sstarted indi to sing. What she saw next made her rub her eyes in disbelief. Was she dreaming? The moon was smiling! And the stars were dancing to her song!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 45,
+   "text": "Agentle voice spoke to her. “Dear little Sindi,” the voice said. “School is a wonderful place. You will learn many things: to read and write, to sing and dance and to make many friends.” “But for now, Sindi, you must rest. Tomorrow will be beautiful.”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 51,
+   "text": "Sindi had never seen anything this amazing. She wanted to wake everyone up and show them the talking moon and dancing stars. But the moon stopped her. “Shhhh, Sindi,”it said. “This is our little secret.” The moon winked. Sindi returned to bed, comforted by the moon’s wise words, and slept peacefully."
+  },
+  {
+   "page_no": 11,
+   "word_count": 49,
+   "text": "The time came for school. Mama held Sindi’s hand as they approached the school. She was confident that the day would be beautiful, because the moon had told her so. Children were arriving with their mothers and fathers. They all looked excited. Sindi could not wait to make friends."
+  },
+  {
+   "page_no": 12,
+   "word_count": 62,
+   "text": "By lunch time, Sindi loved everything about school. “I wish the moon could see me now,” she said to herself. “Now I will learn to read. I will learn to write. But also I will sing and dance!” And all of Sindi’s new friends danced with her, just like the animals had done. They clapped their hands and sang to her tune."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

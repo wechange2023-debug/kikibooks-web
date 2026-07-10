@@ -1,0 +1,95 @@
+{
+ "slug": "shongololos-shoes",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 320,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=shongololos-shoes/ebook/en-english/shongololos-shoes_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 11,
+   "text": "Where are all my shoes? I know I left them here!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 8,
+   "text": "I haven’t seen your shoes. Go ask Snail!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 6,
+   "text": "No shoes here. Go ask Giraffe."
+  },
+  {
+   "page_no": 4,
+   "word_count": 8,
+   "text": "I’m in a hurry – go ask Frog."
+  },
+  {
+   "page_no": 5,
+   "word_count": 6,
+   "text": "Shoes? How many? Go ask Flamingo."
+  },
+  {
+   "page_no": 6,
+   "word_count": 6,
+   "text": "Seen your shoes? No, not me."
+  },
+  {
+   "page_no": 7,
+   "word_count": 6,
+   "text": "Will I ever find my shoes?"
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "Shoes, eh? You should ask the Monkeys."
+  },
+  {
+   "page_no": 9,
+   "word_count": 10,
+   "text": "Hello hello? We’re busy. Go ask Owl, she knows everything!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 10,
+   "text": "Hmm. I have an idea. Why don’t you ask Lion?"
+  },
+  {
+   "page_no": 11,
+   "word_count": 14,
+   "text": "These are yours? I’ll give them all back if you come to my party!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

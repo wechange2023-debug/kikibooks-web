@@ -1,0 +1,95 @@
+{
+ "slug": "a-beautiful-day",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 316,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=a-beautiful-day/ebook/en_english/a-beautiful-day_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 16,
+   "text": "“What a beautiful day,” says Mom. “Wake up Nicholas.” “Hello sun,” says Nicholas. “Good morning birds.”"
+  },
+  {
+   "page_no": 2,
+   "word_count": 20,
+   "text": "“It’s a lovely day,” says Dad. “Let’s have a picnic by the river.” “Can my friend Jacob come?” asks Nicholas."
+  },
+  {
+   "page_no": 3,
+   "word_count": 22,
+   "text": "“Don’t forget me. I love picnics!” says Donkey. “And me. I want to come too!” says Dog. “Follow us,” say the birds."
+  },
+  {
+   "page_no": 4,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 5,
+   "word_count": 8,
+   "text": "“I’ll race you to that tree,” Nicholas says."
+  },
+  {
+   "page_no": 6,
+   "word_count": 14,
+   "text": "“I won, I won,” says Donkey. “Not fair,” says Nicholas. “You’ve got four legs.”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 15,
+   "text": "“Look what I can do,” says Nicholas. “I bet you can’t do this,” says Jacob."
+  },
+  {
+   "page_no": 8,
+   "word_count": 6,
+   "text": "“Here’s our picnic spot,” says Dad."
+  },
+  {
+   "page_no": 9,
+   "word_count": 7,
+   "text": "“Race you to the water!” says Jacob."
+  },
+  {
+   "page_no": 10,
+   "word_count": 8,
+   "text": "“Come and eat, boys and girls,” says Mom."
+  },
+  {
+   "page_no": 11,
+   "word_count": 10,
+   "text": "“Time to go home,” says Mom. “Say goodbye to Jacob.”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

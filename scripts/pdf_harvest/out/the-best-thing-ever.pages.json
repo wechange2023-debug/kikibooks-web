@@ -1,0 +1,95 @@
+{
+ "slug": "the-best-thing-ever",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 296,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=the-best-thing-ever/ebook/en-english/the-best-thing-ever_english_e-book.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 13,
+   "text": "Muzi loves to build things. He dreams of building the best thing ever."
+  },
+  {
+   "page_no": 2,
+   "word_count": 15,
+   "text": "Once he built a shelter for his toys. But it wasn’t the best thing ever."
+  },
+  {
+   "page_no": 3,
+   "word_count": 17,
+   "text": "Yesterday he built a bridge It was a good thing. for his animals. But not the best…"
+  },
+  {
+   "page_no": 4,
+   "word_count": 21,
+   "text": "Today Muzi is going to visit uGogo. He is sad. Without his toys, how can he build the best thing ever?"
+  },
+  {
+   "page_no": 5,
+   "word_count": 24,
+   "text": "At the bus stop, Muzi is amazed. He sees red things and blue things. Small things and big things. New things and old things."
+  },
+  {
+   "page_no": 6,
+   "word_count": 11,
+   "text": "Muzi has a new idea for building the best thing ever."
+  },
+  {
+   "page_no": 7,
+   "word_count": 19,
+   "text": "On the road to uGogo’s, Muzi finds many things. Long things and short things. Round things and square things."
+  },
+  {
+   "page_no": 8,
+   "word_count": 17,
+   "text": "By the riverside, Muzi finds more things. Soft things and pointy things. Green things and brown things."
+  },
+  {
+   "page_no": 9,
+   "word_count": 5,
+   "text": "Look, Muzi! We are here."
+  },
+  {
+   "page_no": 10,
+   "word_count": 9,
+   "text": "While uGogo bakes for the hungry travellers… Muzi builds."
+  },
+  {
+   "page_no": 11,
+   "word_count": 15,
+   "text": "Gogo, Gogo! says Muzi. The world is full of toys. Look what I can build."
+  },
+  {
+   "page_no": 12,
+   "word_count": 15,
+   "text": "Oh, Muzi, laughs Gogo. A new house for me. This is the best thing ever!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4,
+  7
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

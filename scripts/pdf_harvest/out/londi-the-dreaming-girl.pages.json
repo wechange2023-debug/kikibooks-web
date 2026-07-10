@@ -1,0 +1,97 @@
+{
+ "slug": "londi-the-dreaming-girl",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 324,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=londi-the-dreaming-girl/ebook/en-english/londi-the-dreaming-girl_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 13,
+   "text": "Londi was a dreaming girl. Up in the sky, she didn’t see clouds."
+  },
+  {
+   "page_no": 2,
+   "word_count": 12,
+   "text": "Instead Londi saw flying geese, jumping fish, and fluffy sheep running home."
+  },
+  {
+   "page_no": 3,
+   "word_count": 20,
+   "text": "One afternoon, Gogo came outside, looking tired. “Londi, stop dreaming!” she said. “It’s time to go and fetch the water.”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 16,
+   "text": "Londi stood up and smiled at her feet. “Let’s go, feet! You know the way there!”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 22,
+   "text": "Londi started walking to the tap. She crept past Mama Neli’s house. She hopped over the rocks. She dashed down the path."
+  },
+  {
+   "page_no": 6,
+   "word_count": 25,
+   "text": "The line at the tap was long. “Oh no!” Londi said to her feet. “We’ll have to wait. Let’s stay in line. No dreaming away!”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 15,
+   "text": "Ooh! Londi thought. But what’s that shining over there? I wonder who lost their shoe?"
+  },
+  {
+   "page_no": 8,
+   "word_count": 11,
+   "text": "Did it belong to Or something else… a girl like me?"
+  },
+  {
+   "page_no": 9,
+   "word_count": 7,
+   "text": "And what’s that under there? Cheep! Cheep!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 22,
+   "text": "And what’s that big shadow? Uh oh, it’s Gogo! “Londi, your bucket nearly rolled away!” “Sorry, Gogo. I dreamed too far, again.”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 23,
+   "text": "They filled up the bucket together. Londi watched the big sun sink into the hills. “Come let’s go, my dreaming girl,” said Gogo."
+  },
+  {
+   "page_no": 12,
+   "word_count": 27,
+   "text": "“Look, Gogo! There’s a pink pig in the sky!” “Oh Londi… It’s just a cloud,” Gogo sighed. Londi took Gogo’s hand and they walked home together happily."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  9,
+  12
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

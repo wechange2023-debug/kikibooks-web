@@ -1,0 +1,92 @@
+{
+ "slug": "when-i-grow-up",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 231,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=when-i-grow-up/ebook/en-english/when-i-grow-up_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 10,
+   "text": "What do I want to be when I grow up?"
+  },
+  {
+   "page_no": 2,
+   "word_count": 15,
+   "text": "When I grow up, I want to be a dancer and dance on a stage."
+  },
+  {
+   "page_no": 3,
+   "word_count": 15,
+   "text": "When I grow up, I want to be a firefighter and put out big fires."
+  },
+  {
+   "page_no": 4,
+   "word_count": 15,
+   "text": "When I grow up, I want to be a nurse and make sick people better."
+  },
+  {
+   "page_no": 5,
+   "word_count": 15,
+   "text": "When I grow up, I want to be a musician and play in a band."
+  },
+  {
+   "page_no": 6,
+   "word_count": 15,
+   "text": "When I grow up, I want to be a mechanic and fix cars and tractors."
+  },
+  {
+   "page_no": 7,
+   "word_count": 17,
+   "text": "When I grow up, I want to be a teacher and teach children to read and write."
+  },
+  {
+   "page_no": 8,
+   "word_count": 16,
+   "text": "When I grow up, I want to be a soccer player and score the winning goal."
+  },
+  {
+   "page_no": 9,
+   "word_count": 15,
+   "text": "When I grow up, I want to be an astronaut and fly to the moon."
+  },
+  {
+   "page_no": 10,
+   "word_count": 18,
+   "text": "When I grow up, I want to be a chef and make food for my family and friends."
+  },
+  {
+   "page_no": 11,
+   "word_count": 12,
+   "text": "When I grow up, I can choose whatever I want to be!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 10,
+   "text": "What do you want to be when you grow up?"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [],
+ "extraction": "pdfplumber-coord-v2"
+}

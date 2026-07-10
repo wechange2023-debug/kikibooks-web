@@ -1,0 +1,96 @@
+{
+ "slug": "rafikis-style",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 316,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=rafikis-style/ebook/en-english/rafikis-style_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 8,
+   "text": "On Sunday, Jimmy Zogba scored the winning goal."
+  },
+  {
+   "page_no": 2,
+   "word_count": 8,
+   "text": "On Monday, the Cool Cat Crew strutted by."
+  },
+  {
+   "page_no": 3,
+   "word_count": 14,
+   "text": "“Hey, Rafiki, where’s your zebra hair? Your hair’s so plain, like you don’t care.”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 13,
+   "text": "“Hey, Rafiki, where’s your fake tattoo? Your skin’s so boring. You are too.”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 12,
+   "text": "“Hey, Rafiki, where’s your bling? Your teeth are wonky, that’s the thing.”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 6,
+   "text": "That day, Rafiki walked home slowly."
+  },
+  {
+   "page_no": 7,
+   "word_count": 16,
+   "text": "“Auntie, can I have zebra hair?” “I can’t cut you zebra hair. Actually, I wouldn’t dare.”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 19,
+   "text": "“My skin’s so boring, Sisi. Can you make a fake tattoo?” “You don’t need one to look like you.”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 14,
+   "text": "“Mkhulu, I wish I had some bling.” “Bling, my child, don’t mean a thing.”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 9,
+   "text": "The next weekend, Santi Ramires scored the winning goal."
+  },
+  {
+   "page_no": 11,
+   "word_count": 12,
+   "text": "On Monday, the “Hey, Rafiki! Looking fine!” Cool Cat Crew strutted by."
+  },
+  {
+   "page_no": 12,
+   "word_count": 10,
+   "text": "Rafiki shrugged. “I look like me; this style is mine.”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  15
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

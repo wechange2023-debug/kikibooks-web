@@ -1,0 +1,93 @@
+{
+ "slug": "hugs-in-the-city",
+ "pdf_page_count": 17,
+ "body_page_range": [
+  1,
+  13
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 252,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=hugs-in-the-city/ebook/en_english/hugs-in-the-city_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 10,
+   "text": "I hugged the neighbor’s cat, Ben. Ben said, “Meow?” MEOW?"
+  },
+  {
+   "page_no": 2,
+   "word_count": 16,
+   "text": "I hugged the old cat who lives under the park bench. He squiggled and he wriggled."
+  },
+  {
+   "page_no": 3,
+   "word_count": 15,
+   "text": "I hugged Mrs Lilly’s He licked my face. tubby, ginger cat. “Slurp, slurp, slurp.” SLURP!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 17,
+   "text": "I hugged the cat who eats outside the fish and chips shop. He went, OM, NOM, NOM."
+  },
+  {
+   "page_no": 5,
+   "word_count": 15,
+   "text": "I even hugged the grumpy cat who doesn’t like hugs! He yowled and yowled! YOWL!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 20,
+   "text": "I hugged a long cat. I hugged a short cat. I hugged an old cat. I hugged a young cat."
+  },
+  {
+   "page_no": 7,
+   "word_count": 10,
+   "text": "I hugged a Mommy cat, and every kitten she had."
+  },
+  {
+   "page_no": 8,
+   "word_count": 15,
+   "text": "I tried to hug the big cats at the zoo, NO! but the zookeeper said,"
+  },
+  {
+   "page_no": 9,
+   "word_count": 22,
+   "text": "I climbed on the bus and hugged the cat that was hiding in an old lady’s bag. The old lady shrieked! SHRIEK!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 8,
+   "text": "I went home and got into bed. YAWN!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 8,
+   "text": "Some furry things and hugged me. snuck in..."
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  3,
+  7,
+  10,
+  11,
+  15
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

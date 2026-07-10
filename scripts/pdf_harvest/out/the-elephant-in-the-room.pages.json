@@ -1,0 +1,94 @@
+{
+ "slug": "the-elephant-in-the-room",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 301,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=the-elephant-in-the-room/ebook/en-english/the-elephant-in-the-room_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 36,
+   "text": "One morning, Lindi found an elephant in her room. “Look!” she called. “There’s an elephant in my room!” “No there isn’t,” her mother called back. “Elephants don’t live in houses. Everybody knows that.” The elephant yawned."
+  },
+  {
+   "page_no": 2,
+   "word_count": 38,
+   "text": "At breakfast, Lindi’s dad asked her to pass the milk. “I can’t,” said Lindi. “The elephant drank it all.” “There isn’t an elephant,” said her dad. “Elephants don’t live in the city. Everybody knows that.” The elephant burped."
+  },
+  {
+   "page_no": 3,
+   "word_count": 40,
+   "text": "At school, the teacher grumbled, “What’s wrong with this chalkboard? It’s all wrinkly!” “That’s not the chalkboard. That’s my elephant!” said Lindi. “There are no elephants at school,” said the teacher. “Everybody knows that.” The elephant ate the teacher’s sandwiches."
+  },
+  {
+   "page_no": 4,
+   "word_count": 43,
+   "text": "At break-time, the elephant followed Lindi to the playground. He knocked over the swings by mistake. “Go away!” said Lindi. “You’re not real and you shouldn’t be here! Everybody knows that!” The elephant drooped. He walked away, wiping his eyes with his trunk."
+  },
+  {
+   "page_no": 5,
+   "word_count": 14,
+   "text": "After school, Lindi couldn’t see the elephant anywhere. “Elephant!” she called. “Where are you?”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 23,
+   "text": "Lindi went home without him. She felt lonely. So she went outside, and sat on the steps, and waited. And waited. And waited."
+  },
+  {
+   "page_no": 7,
+   "word_count": 18,
+   "text": "And then … she saw a trunk. And tusks. And ears. The elephant was coming down the road!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 21,
+   "text": "She ran up and hugged him. “I’m sorry,” she said. “I didn’t mean it! I know you’re real. You’re my elephant.”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 58,
+   "text": "The elephant lifted her up and put her on his back, and she rode down the street. She waved to her neighbours. “Hello, Mr Green! Hello, Mrs Green!” “Look at Lindi!” said Mr Green. “How did she get up there? Maybe she grew!” “Don’t be silly,” said Mrs Green. “Little girls don’t grow that high. Everybody knows that.”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 34,
+   "text": "The elephant took Lindi to the lake, and she slid down his trunk like it was a slide. “Wheeeee!” she shrieked. They played all afternoon, laughing and splashing and spraying each other with water."
+  },
+  {
+   "page_no": 11,
+   "word_count": 31,
+   "text": "That night, the elephant tucked her into bed. “Good night, Elephant,” said Lindi. “Thank you for a lovely day.” He patted her head, and curled up to sleep outside her window."
+  },
+  {
+   "page_no": 12,
+   "word_count": 21,
+   "text": "“Elephants are the best friends in the world,” Lindi said to herself. “Nobody knows that, except for me and my elephant.”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

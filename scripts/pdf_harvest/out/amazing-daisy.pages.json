@@ -1,0 +1,99 @@
+{
+ "slug": "amazing-daisy",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 279,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=amazing-daisy/ebook/en_english/amazing-daisy_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 19,
+   "text": "Once upon a time on a little farm near a little village there lived a little chicken called Daisy."
+  },
+  {
+   "page_no": 2,
+   "word_count": 23,
+   "text": "“When I grow up, I want to fly high, But all the other chickens high into the sky,” Daisy said. laughed at her."
+  },
+  {
+   "page_no": 3,
+   "word_count": 30,
+   "text": "“You are so weird,” they said. “Daisy, we can all flap our wings but “We won’t play with you anymore.” it’s very difficult for chickens to fly,” Mama told her."
+  },
+  {
+   "page_no": 4,
+   "word_count": 28,
+   "text": "Daisy wouldn’t give up. Every day she practised by herself, flapping her wings. Flap, flap, flap, she would flap her wings but she couldn’t lift off the ground."
+  },
+  {
+   "page_no": 5,
+   "word_count": 38,
+   "text": "While she practised, she imagined herself flying high into the sky and looking at the chickens below. She imagined herself flying past the sparrows and past the swallows. “Wow!” the birds would say. “A chicken that can fly!”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 22,
+   "text": "So … Flap, flap, flap, every day Daisy would flap her wings. She would lift off the ground but fall down again."
+  },
+  {
+   "page_no": 7,
+   "word_count": 35,
+   "text": "“I’m never going to fly!” Daisy cried “Daisy, you are different from the to Mama. “The others are right.” other chickens. They don’t want to fly but you do! You can do it,” Mama said."
+  },
+  {
+   "page_no": 8,
+   "word_count": 41,
+   "text": "The following day Daisy climbed to the top of the chicken coop and flap, flap, flap, she flapped her wings. She flew into the air and flapped her wings … and flapped her wings … and flapped her wings and …"
+  },
+  {
+   "page_no": 9,
+   "word_count": 19,
+   "text": "! M A B The other chickens laughed out loud. “Ha ha ha! We told you! Chickens can’t fly!”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 44,
+   "text": "But the next day Daisy climbed even higher, right up to the top of the rondavel. Flap, flap, flap, Daisy flapped her wings. She flew into the air and flapped her wings … and flapped her wings … and flapped her wings and …"
+  },
+  {
+   "page_no": 11,
+   "word_count": 26,
+   "text": "She kept flying! The wind beneath her wings grew stronger and she flew higher and higher! The sparrows and the swallows said, “Amazing! A flying chicken!”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 16,
+   "text": "And the other chickens wanted to be just like her. They said, “Oh Daisy, you’re amazing!”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  6,
+  7,
+  11,
+  12
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

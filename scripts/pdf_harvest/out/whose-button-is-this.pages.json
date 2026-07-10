@@ -1,0 +1,99 @@
+{
+ "slug": "whose-button-is-this",
+ "pdf_page_count": 19,
+ "body_page_range": [
+  1,
+  15
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 247,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=whose-button-is-this/ebook/en-english/whose-button-is-this_pdf-ebook.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 13,
+   "text": "Tinny Tim was sitting on the road when a button bounced his way."
+  },
+  {
+   "page_no": 2,
+   "word_count": 13,
+   "text": "“I wonder where this comes from,” he said. He wanted to find out."
+  },
+  {
+   "page_no": 3,
+   "word_count": 14,
+   "text": "It was busy on the side of the road. “Woah!” He nearly got squashed."
+  },
+  {
+   "page_no": 4,
+   "word_count": 11,
+   "text": "He made a lucky escape. “It’s scary out here,” he said."
+  },
+  {
+   "page_no": 5,
+   "word_count": 5,
+   "text": "“Hey there, is this yours?”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 13,
+   "text": "The green man said nothing. He just turned red. “What a rude person.”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 9,
+   "text": "Tinny Tim carried on looking. “Whose button is this?”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 4,
+   "text": "“Woah..!...at least he’s friendly.”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 15,
+   "text": "“I’ve got to get to the other side. I’m sure that’s where this comes from.”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 15,
+   "text": "SPLASH! “That was close.” He waited for the cars to pass before he carried on."
+  },
+  {
+   "page_no": 11,
+   "word_count": 12,
+   "text": "Maybe this was who he was looking for. “Hello, who are you?”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 10,
+   "text": "“I’m Ruby Rags.” “I think this is yours,” he said."
+  },
+  {
+   "page_no": 13,
+   "word_count": 8,
+   "text": "“Thank you, little robot. Can we be friends?”"
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 15,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

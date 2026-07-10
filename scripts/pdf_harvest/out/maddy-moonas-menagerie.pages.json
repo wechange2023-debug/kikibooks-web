@@ -1,0 +1,102 @@
+{
+ "slug": "maddy-moonas-menagerie",
+ "pdf_page_count": 19,
+ "body_page_range": [
+  1,
+  15
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 12,
+ "front_matter_word_count": 317,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=maddy-moonas-menagerie/ebook/en-english/maddy-moonas-menagerie_pdf-ebook.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 46,
+   "text": "My name is Maddy Moona, And today I’m turning five. Dad promised I could choose a pet, A real one! Something live! We’ll travel across the whole wide world, Searching Mali through Tibet, Until we find the perfect one... Oh, I know just what I’ll get!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 48,
+   "text": "I’m going to get an elephant. But... what if Ellie caught a cold? I’ll ride on it to school. I guess she’d sneeze.... A LOT! My brother Billy can walk behind There is no tissue big enough he’ll think I’m awfully cool. to wipe up all that snot."
+  },
+  {
+   "page_no": 3,
+   "word_count": 48,
+   "text": "I want a Nile crocodile sent to me by the pharaohs. I’ll call him Tut and feed him soup, fish fingers, and baby marrows. I’ll keep him in the bathtub and brush his pearly whites, But... what if flossing all those teeth takes me all day and night?"
+  },
+  {
+   "page_no": 4,
+   "word_count": 47,
+   "text": "Perhaps a pair of porcupines, for games of robbers and cops. Their prickly quills will be handy for holding up sweetie shops. I can munch away on candy bars while my gang sharpen their spines. But... what if my sharp-shooting pals put me in the firing line?"
+  },
+  {
+   "page_no": 5,
+   "word_count": 58,
+   "text": "Maybe I need a stealthier plan. Let’s clear out the store with funk! There isn’t a smellier critter on earth That’s what I want — a skunk! But.... what if I can’t go into the shop after Skunky has let off his stink? Sweets are no good for my teeth anyway. A rotten idea! I need to rethink!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 55,
+   "text": "A rhino! The horns, the big stomping feet, the armour on both of its flanks! Billy would never chase me again. It would be my own personal tank. But... what if Billy raises his temper and Rhino goes on the rampage? Crash bang boom! The teacups! The plates! Now I’m grounded ‘til I’m gran’s age."
+  },
+  {
+   "page_no": 7,
+   "word_count": 56,
+   "text": "I need a beast to tame my brother. With teeth, sharp claws and a roar. A LION! I could feed it Billy biltong... Yes! A lion would settle the score. But... a lion has a huge appetite. Skinny Billy won’t satisfy. And once Brutus has a taste for us Moonas, he’ll see me as Maddy stir-fry."
+  },
+  {
+   "page_no": 8,
+   "word_count": 59,
+   "text": "Dad thinks I should choose a cuddlier pet. My parents are so hard to please. They want me to have a pet I can hug. A python? A python has squeeze. But... if Snakey develops too much of a crush, he’ll suffocate me with affection. To be honest, I just can’t marry a snake! And reptiles can’t handle rejection."
+  },
+  {
+   "page_no": 9,
+   "word_count": 63,
+   "text": "No, reptiles aren’t the way to go. I definitely need something taller. A giraffe would be awesome. I’ll slide down her neck, and think up a long name to call her. But... something more than eight foot tall is no good. Our house has a rather low ceiling. I’d spend hours massaging cricks out her neck. My fingers would lose all their feeling."
+  },
+  {
+   "page_no": 10,
+   "word_count": 14,
+   "text": "None of these are the perfect pet! Oh what, oh what will I get?"
+  },
+  {
+   "page_no": 11,
+   "word_count": 29,
+   "text": "Those animals just don’t work. None are my perfect partner in crime. I want something with fur, a pet who will follow. Oh wait! I know — a canine!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 31,
+   "text": "My Bandit is the biggest bark on the block! He’s the fastest pup in the west! Nothing can stop us. Not Billy nor bedtime. I love my Bandit. He’s my best!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 15,
+   "word_count": 45,
+   "text": "It ’ s Maddy Moona s birthday ’ and she really wants a pet! But which silly animal will picky Maddy get? ISBN 9780992235741 ISBN 9780992235741 9 780992 235741 9 780992 235741 Maddy Moona’s Menager ie! Rachel Zadok, Candace di Talamo & Nick Mulgrew by"
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  6,
+  19
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

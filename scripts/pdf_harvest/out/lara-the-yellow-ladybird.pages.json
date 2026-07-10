@@ -1,0 +1,96 @@
+{
+ "slug": "lara-the-yellow-ladybird",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 276,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=lara-the-yellow-ladybird/ebook/en-english/lara-the-yellow-ladybird_english_e-book.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 16,
+   "text": "Lara the ladybird was a special bug. Unlike all her friends, she had bright yellow wings."
+  },
+  {
+   "page_no": 2,
+   "word_count": 16,
+   "text": "Everyone loved her yellow wings. Each morning, Bibi Butterfly said hello. And Manto Mantis always waved."
+  },
+  {
+   "page_no": 3,
+   "word_count": 18,
+   "text": "Even Sesa, the sulky spider, was happy to see her. At school, she played with lots of friends."
+  },
+  {
+   "page_no": 4,
+   "word_count": 20,
+   "text": "But Lara wanted to be like the other ladybirds. “I wish I had red wings like you, Mama,” she cried."
+  },
+  {
+   "page_no": 5,
+   "word_count": 14,
+   "text": "So one day, to cheer her up, Lara’s mother painted her wings bright red."
+  },
+  {
+   "page_no": 6,
+   "word_count": 11,
+   "text": "The next morning, nobody greeted Lara on her way to school."
+  },
+  {
+   "page_no": 7,
+   "word_count": 11,
+   "text": "And when she got there, none of her friends said hello."
+  },
+  {
+   "page_no": 8,
+   "word_count": 24,
+   "text": "Lara sat all alone. No one noticed her new red wings. Until Miss Miya spotted her and said: “You’ve painted your lovely yellow wings!”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 12,
+   "text": "Lara’s classmates were shocked. “So unique!” “Your wings are special!” “So rare!”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 19,
+   "text": "“Lara,” Miss Miya said, “your yellow wings are what make you you. Like Sipho’s spot … and Sally’s legs.”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 28,
+   "text": "Back home, Lara took a long bath and “I’ll never paint my wings again!” scrubbed until her golden wings gleamed. she thought. Except, maybe once or twice …"
+  },
+  {
+   "page_no": 12,
+   "word_count": 18,
+   "text": "To try a bit of purple … or something nice. But not for ever and just for fun."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  11,
+  13,
+  15
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

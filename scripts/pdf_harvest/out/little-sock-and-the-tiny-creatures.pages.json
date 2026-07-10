@@ -1,0 +1,96 @@
+{
+ "slug": "little-sock-and-the-tiny-creatures",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 257,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=little-sock-and-the-tiny-creatures/ebook/en-english/little-sock-and-the-tiny-creatures_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 6,
+   "text": "It’s wash day for the Socks."
+  },
+  {
+   "page_no": 2,
+   "word_count": 14,
+   "text": "OH NO! Little Sock falls out! “I have to get home,” says Little Sock."
+  },
+  {
+   "page_no": 3,
+   "word_count": 9,
+   "text": "“Do you know the way home?” asks Little Sock."
+  },
+  {
+   "page_no": 4,
+   "word_count": 7,
+   "text": "“No, but take this,” says the Robot."
+  },
+  {
+   "page_no": 5,
+   "word_count": 9,
+   "text": "“Do you know the way home?” asks Little Sock."
+  },
+  {
+   "page_no": 6,
+   "word_count": 7,
+   "text": "“No, but take this,” says the Mouse."
+  },
+  {
+   "page_no": 7,
+   "word_count": 9,
+   "text": "“Do you know the way home?” asks Little Sock."
+  },
+  {
+   "page_no": 8,
+   "word_count": 5,
+   "text": "“ No, but take… OOPS!!!”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 10,
+   "text": "“Maybe the marble knows the way home,” says Little Sock."
+  },
+  {
+   "page_no": 10,
+   "word_count": 5,
+   "text": "“It does!” says Little Sock."
+  },
+  {
+   "page_no": 11,
+   "word_count": 4,
+   "text": "Little Sock is happy."
+  },
+  {
+   "page_no": 12,
+   "word_count": 52,
+   "text": "MAKE YOUR OWN L I T T L E S O C K Different socks have different personalities, so pick your favourite. YOU WILL NEED: INSTRUCTIONS • a sock Ask your grown-up to sew the buttons • two buttons onto the sock. • a needle and thread • a grown-up to help"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4,
+  6,
+  16
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

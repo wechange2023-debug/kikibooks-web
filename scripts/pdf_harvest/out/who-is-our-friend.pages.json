@@ -1,0 +1,95 @@
+{
+ "slug": "who-is-our-friend",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 324,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=who-is-our-friend/ebook/en-english/who-is-our-friend_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 14,
+   "text": "Can you guess who our best friend is? He’s not like us at all."
+  },
+  {
+   "page_no": 2,
+   "word_count": 5,
+   "text": "Our best friend is Bird!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 8,
+   "text": "I am Rhino. I get covered in fleas."
+  },
+  {
+   "page_no": 4,
+   "word_count": 5,
+   "text": "Bird eats them all up."
+  },
+  {
+   "page_no": 5,
+   "word_count": 8,
+   "text": "I am Crocodile. I can’t brush my teeth."
+  },
+  {
+   "page_no": 6,
+   "word_count": 5,
+   "text": "Bird pecks them all clean."
+  },
+  {
+   "page_no": 7,
+   "word_count": 8,
+   "text": "I am Giraffe. I can’t scratch my head."
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "Bird can reach just the right spot."
+  },
+  {
+   "page_no": 9,
+   "word_count": 9,
+   "text": "I am Zebra. I can’t see things far away."
+  },
+  {
+   "page_no": 10,
+   "word_count": 10,
+   "text": "Bird has great eyes, so when he’s watching I’m safe."
+  },
+  {
+   "page_no": 11,
+   "word_count": 8,
+   "text": "Bird might be different, but that’s no problem…"
+  },
+  {
+   "page_no": 12,
+   "word_count": 7,
+   "text": "We don’t even mind when he sings!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 5,
+   "text": "Will you be my friend?"
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

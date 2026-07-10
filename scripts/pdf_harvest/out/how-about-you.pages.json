@@ -1,0 +1,97 @@
+{
+ "slug": "how-about-you",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 14,
+ "front_matter_word_count": 240,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=how-about-you/ebook/en-english/how-about-you-pdf-ebook.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 4,
+   "text": "W ho are you?"
+  },
+  {
+   "page_no": 2,
+   "word_count": 8,
+   "text": "Is that goo? Eeuw! I want some too."
+  },
+  {
+   "page_no": 3,
+   "word_count": 13,
+   "text": "W e are two. How old are you? Six hundred and thirty two?"
+  },
+  {
+   "page_no": 4,
+   "word_count": 15,
+   "text": "I choose two shoes. W I like blue. hich do Do you too? you choose?"
+  },
+  {
+   "page_no": 5,
+   "word_count": 1,
+   "text": "Horseshoes!?"
+  },
+  {
+   "page_no": 6,
+   "word_count": 5,
+   "text": "I make toys with boys."
+  },
+  {
+   "page_no": 7,
+   "word_count": 8,
+   "text": "W eeurgghhh... Whaaa! make lots of noise. aargh!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "I take a nap on Gogo’s back."
+  },
+  {
+   "page_no": 9,
+   "word_count": 3,
+   "text": "I don’t nap!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 7,
+   "text": "I stay upright all through the night."
+  },
+  {
+   "page_no": 11,
+   "word_count": 7,
+   "text": "The ball goes THWOCK! Buddy, you ROCK!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 7,
+   "text": "That’s what we do. How about you?"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4,
+  8,
+  11,
+  14
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

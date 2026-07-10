@@ -1,0 +1,95 @@
+{
+ "slug": "a-dancers-tale",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 350,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=a-dancers-tale/ebook/en_english/a-dancers-tale_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 35,
+   "text": "Once upon a time, not so far away, a baby called Phyllis was born for ballet. Two people in love, her Mom and her Dad, could not have known yet what a dancer they had."
+  },
+  {
+   "page_no": 2,
+   "word_count": 29,
+   "text": "When Phyllis was four she had us transfixed: impressing her teachers with ducky feet flicks. Before school and after, she danced every day. Nothing pleased Phyllis more than ballet."
+  },
+  {
+   "page_no": 3,
+   "word_count": 35,
+   "text": "The world would soon see, when, only fifteen, she travelled to London to live out her dream. Far from home and her friends, she was starting afresh. The Royal Ballet school would soon be impressed!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 36,
+   "text": "When she danced Swan Lake it was fit for the Queen! After years pirouetting, it was time to be seen! She took to the stage, leaping, twirling about, with everyone smiling! They clap and they shout!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 34,
+   "text": "From Mexico to Canada, the US to France, everyone asked her to visit and dance. With the Royal Ballet, and all of her friends, she spread love for dancing so it never would end."
+  },
+  {
+   "page_no": 6,
+   "word_count": 37,
+   "text": "Still, Phyllis missed home, they’d been too long apart. She longed to return and to make a fresh start. So she leaped and she bounded to her beautiful land, to walk once again on South African sand."
+  },
+  {
+   "page_no": 7,
+   "word_count": 37,
+   "text": "Dance isn’t just fun, as Phyllis well knew: she worked day and night, and with hard work she grew. Always smiling and tireless, through good times and tough, she aimed for her best. ‘Good’ was never enough."
+  },
+  {
+   "page_no": 8,
+   "word_count": 29,
+   "text": "Romeo and Juliet, Swan Lake and Giselle. She captured each audience under her spell. With Gary Burne beside her, Eduard Greyling too, her dancing was magic in every review."
+  },
+  {
+   "page_no": 9,
+   "word_count": 33,
+   "text": "Reward comes eventually, when you’re put to the test. And one day South Africa would call her the best: ‘Prima Ballerina Assoluta’, greatest dancer of all, her title forever. Phyllis wanted no more."
+  },
+  {
+   "page_no": 10,
+   "word_count": 34,
+   "text": "Soon Phyllis found love when she met Philip Boyd, a dancer himself! They were both overjoyed. In love, they soon married, and together they’d dance. No match could be better when given the chance!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 39,
+   "text": "They didn’t have children but never were sad, for they had a way to help all moms and dads. Their school, Dance For All, would give children a chance, from all walks of life, to learn and love dance."
+  },
+  {
+   "page_no": 12,
+   "word_count": 36,
+   "text": "Her gift to the world and all her success help others to realise they can be their best. They dance for us now, inspired by her feats, inspiring us, too, as we dream in our seats."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 1,
+   "text": "Endpapers"
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

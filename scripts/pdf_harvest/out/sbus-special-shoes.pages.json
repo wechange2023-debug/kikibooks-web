@@ -1,0 +1,94 @@
+{
+ "slug": "sbus-special-shoes",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 244,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=sbus-special-shoes/ebook/en-english/sbus-special-shoes_pdf-ebook.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 7,
+   "text": "These are my big brother Sbu’s shoes."
+  },
+  {
+   "page_no": 2,
+   "word_count": 7,
+   "text": "Look what I can do in them."
+  },
+  {
+   "page_no": 3,
+   "word_count": 4,
+   "text": "I can race cars!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 7,
+   "text": "Sometimes, I even race our bouncy dog."
+  },
+  {
+   "page_no": 5,
+   "word_count": 7,
+   "text": "With Sbu’s shoes I win every time."
+  },
+  {
+   "page_no": 6,
+   "word_count": 8,
+   "text": "Wait! Let me show you one more thing."
+  },
+  {
+   "page_no": 7,
+   "word_count": 5,
+   "text": "Watch me dance and spin."
+  },
+  {
+   "page_no": 8,
+   "word_count": 6,
+   "text": "I can cartwheel over and over."
+  },
+  {
+   "page_no": 9,
+   "word_count": 9,
+   "text": "I’m a monkey! Look at me hang upside down."
+  },
+  {
+   "page_no": 10,
+   "word_count": 7,
+   "text": "Watch me jump and catch the moon."
+  },
+  {
+   "page_no": 11,
+   "word_count": 4,
+   "text": "Here, try them on!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 9,
+   "text": "See what you can do in Sbu’s special shoes."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

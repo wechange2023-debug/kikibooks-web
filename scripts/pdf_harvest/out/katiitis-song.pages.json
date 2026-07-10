@@ -1,0 +1,95 @@
+{
+ "slug": "katiitis-song",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 320,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=katiitis-song/ebook/en_english/katiitis-song_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 9,
+   "text": "Katiiti lived in a village next to a forest."
+  },
+  {
+   "page_no": 2,
+   "word_count": 12,
+   "text": "She loved playing in the forest. Maama told her to be careful."
+  },
+  {
+   "page_no": 3,
+   "word_count": 11,
+   "text": "Every day Maama would sing their special song to call her."
+  },
+  {
+   "page_no": 4,
+   "word_count": 7,
+   "text": "One day, Katiiti bumped into a gorilla."
+  },
+  {
+   "page_no": 5,
+   "word_count": 7,
+   "text": "She ran and hid in a cave."
+  },
+  {
+   "page_no": 6,
+   "word_count": 10,
+   "text": "Gorilla came and sang Maama’s song in a gruff voice."
+  },
+  {
+   "page_no": 7,
+   "word_count": 10,
+   "text": "Gorilla ate lots of bananas to make his voice sweeter."
+  },
+  {
+   "page_no": 8,
+   "word_count": 3,
+   "text": "Gorilla sang sweetishly."
+  },
+  {
+   "page_no": 9,
+   "word_count": 14,
+   "text": "Gorilla went away and ate lots of honey to make his voice even sweeter."
+  },
+  {
+   "page_no": 10,
+   "word_count": 6,
+   "text": "Gorilla sang as sweetly as Maama."
+  },
+  {
+   "page_no": 11,
+   "word_count": 9,
+   "text": "Maama came just in time to chase away Gorilla."
+  },
+  {
+   "page_no": 12,
+   "word_count": 9,
+   "text": "Katiiti and Maama sang all the way back home."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

@@ -1,0 +1,103 @@
+{
+ "slug": "sleepy-mr-sloth",
+ "pdf_page_count": 19,
+ "body_page_range": [
+  1,
+  15
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 292,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=sleepy-mr-sloth/ebook/en-english/sleepy-mr-sloth_english_pdf-ebook.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 30,
+   "text": "One day, Mr Sloth came to visit. He said: I’m sleepy! I need a good branch for a bed! Y a w Yn n! w a Y a w n!!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 16,
+   "text": "I’m quite good at climbing. I know how to swing. But sleeping’s my favourite, favourite thing!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 18,
+   "text": "This branch looks lovely! I think I’ll sleep here. And you? Don’t you think that’s a splendid idea?"
+  },
+  {
+   "page_no": 4,
+   "word_count": 20,
+   "text": "Oh no, Mr Sloth! A giraffe’s eating there! He might think you’re lunch and start nibbling your hair!! w O"
+  },
+  {
+   "page_no": 5,
+   "word_count": 18,
+   "text": "This branch looks lovely! I think I’ll sleep here. And you? Don’t you think that’s a splendid idea?"
+  },
+  {
+   "page_no": 6,
+   "word_count": 17,
+   "text": "Oh no, Mr Sloth! There’s a beehive right there! You’ll never get sleep with those bees everywhere!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 18,
+   "text": "This branch looks lovely! I think I’ll sleep here. And you? Don’t you think that’s a splendid idea?"
+  },
+  {
+   "page_no": 8,
+   "word_count": 43,
+   "text": "Oh no, Mr Sloth, that’s a snake over there! Not a branch! Poor old snake. You gave him quite a scare. s! s s s s s s s s s s s s s! s s s s! s s s! s"
+  },
+  {
+   "page_no": 9,
+   "word_count": 18,
+   "text": "This branch looks lovely! I think I’ll sleep here. And you? Don’t you think that’s a splendid idea?"
+  },
+  {
+   "page_no": 10,
+   "word_count": 39,
+   "text": "Oh no, Mr Sloth! There’s a bird squawking there! You’ll never get sleep with that noise in the air! w! H a a w h -! w a H H a w! a w! h - w a H"
+  },
+  {
+   "page_no": 11,
+   "word_count": 21,
+   "text": "Try climb one more branch, Mr Sloth! they all said. And that branch was just the right one for his bed."
+  },
+  {
+   "page_no": 12,
+   "word_count": 19,
+   "text": "The bird and the snake, the giraffe and each bee were happy to have Mr Sloth in their tree."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 15,
+   "word_count": 26,
+   "text": "He’s quite good at climbing. He knows how to swing. But sleeping’s his favourite, favourite thing! ISBN 9780992235727 ISBN 9780992235727 9 780992 235727 9 780992 235727"
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  5,
+  12,
+  14,
+  19
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

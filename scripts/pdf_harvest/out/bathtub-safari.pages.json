@@ -1,0 +1,101 @@
+{
+ "slug": "bathtub-safari",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 347,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=bathtub-safari/ebook/en_english/bathtub-safari_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 25,
+   "text": "Bathtime is Jack’s favourite part of the day. ‘I’ll be back in a few moments,’ says his mom. ‘Make sure to clean behind your ears.’"
+  },
+  {
+   "page_no": 2,
+   "word_count": 32,
+   "text": "O S H. O W S A n d a a s s w ’ i e s r h e o h f T a t a i l. And then..."
+  },
+  {
+   "page_no": 3,
+   "word_count": 4,
+   "text": "Jack’s bathtub safari begins!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 14,
+   "text": "There’s a twist and a turn... Something’s Look at what’s growing... coming! It’s a..."
+  },
+  {
+   "page_no": 5,
+   "word_count": 5,
+   "text": "o o o t T!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 9,
+   "text": "There’s a RUMBLE! and... UP UP It’s going up"
+  },
+  {
+   "page_no": 7,
+   "word_count": 1,
+   "text": "Splash!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 8,
+   "text": "There’s a SPLOSH. Something bubbles. It’s time to..."
+  },
+  {
+   "page_no": 9,
+   "word_count": 13,
+   "text": "But something’s lurking in A the background... H A A A A A"
+  },
+  {
+   "page_no": 10,
+   "word_count": 4,
+   "text": "r! a o R"
+  },
+  {
+   "page_no": 11,
+   "word_count": 12,
+   "text": "‘Time to get out. I hope you’re clean and ready for bed.’"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  6,
+  8,
+  9,
+  10,
+  12,
+  13
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

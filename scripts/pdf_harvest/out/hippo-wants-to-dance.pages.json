@@ -1,0 +1,96 @@
+{
+ "slug": "hippo-wants-to-dance",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 284,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=hippo-wants-to-dance/ebook/en-english/hippo-wants-to-dance_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 21,
+   "text": "Hippo wants to dance. She jumps up and down on the dusty ground. hm! p Tu T h u m! p"
+  },
+  {
+   "page_no": 2,
+   "word_count": 15,
+   "text": "“You’re getting dirt on me!” says Shongololo, sleeping in the sand. “Go dance somewhere else.”"
+  },
+  {
+   "page_no": 3,
+   "word_count": 27,
+   "text": "Hippo wants to dance. She rolls into the river and splashes her arms and legs.! h s i l p S S p l s h a!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 14,
+   "text": "“You’re making me wet!” says Kingfisher, hunting for her breakfast. “Go dance somewhere else.”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 26,
+   "text": "Hippo wants to dance. She twirls around and around in a field, kicking her legs up high. os! woh S S w o o h s!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 15,
+   "text": "“Be careful! You nearly kicked me!” says Meerkat, bathing his babies. “Go dance somewhere else.”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 27,
+   "text": "Hippo wants to dance. She flops into a puddle of mud and slides around on her nice big belly. Sus! qih q u s h a! S"
+  },
+  {
+   "page_no": 8,
+   "word_count": 17,
+   "text": "“Why don’t you stop dancing?” asks Donkey, carrying his buckets. “Why can’t you do something useful instead?”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 27,
+   "text": "Hippo is sad. She is too sad to dance. She sits on a rock and cries. The tears roll down her cheeks and fall on the ground."
+  },
+  {
+   "page_no": 10,
+   "word_count": 25,
+   "text": "! p o l P P l o p! Grasshopper hears Hippo’s tears. He starts dancing around her feet. H o p! o H! p"
+  },
+  {
+   "page_no": 11,
+   "word_count": 14,
+   "text": "Hippo and Grasshopper start to dance, and the other animals come to look …"
+  },
+  {
+   "page_no": 12,
+   "word_count": 3,
+   "text": "Story spread 12"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  2,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

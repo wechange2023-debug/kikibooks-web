@@ -1,0 +1,96 @@
+{
+ "slug": "i-will-help-you",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 50,
+ "front_matter_word_count": 289,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=i-will-help-you/ebook/en-english/i-will-help-you_e-book_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 11,
+   "text": "“Ouch!” Mama Heron hurts her wing and leg on barbed wire."
+  },
+  {
+   "page_no": 2,
+   "word_count": 13,
+   "text": "“I am hurt. I can’t get home to my children.” “Please help me.”"
+  },
+  {
+   "page_no": 3,
+   "word_count": 13,
+   "text": "“Why are you crying Mama Heron?” “I can’t get home to my children.”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 6,
+   "text": "“I will help you,” says Lungile."
+  },
+  {
+   "page_no": 5,
+   "word_count": 3,
+   "text": "“Thank you, Lungile!”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 25,
+   "text": "The next day, Gogo sends Lungile On the way, he stops to play with to the shop to buy bread. his friends in the river."
+  },
+  {
+   "page_no": 7,
+   "word_count": 5,
+   "text": "Eish! The money is gone."
+  },
+  {
+   "page_no": 8,
+   "word_count": 8,
+   "text": "“Don’t come home until you find that money!”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 5,
+   "text": "“Why are you crying, Lungile?”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 19,
+   "text": "“I lost the money Gogo gave me to buy bread. We have no supper now.” “I will help you.”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 11,
+   "text": "Mama Heron’s sharp eyes see the coins shining in the water."
+  },
+  {
+   "page_no": 12,
+   "word_count": 4,
+   "text": "“Thank you, Mama Heron.”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4,
+  7,
+  10
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

@@ -1,0 +1,97 @@
+{
+ "slug": "is-there-anyone-like-me",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 321,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=is-there-anyone-like-me/ebook/en_english/anyone-like-me_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 10,
+   "text": "I wonder if there’s another me somewhere in the world."
+  },
+  {
+   "page_no": 2,
+   "word_count": 8,
+   "text": "Who looks the same. And talks the same."
+  },
+  {
+   "page_no": 3,
+   "word_count": 5,
+   "text": "And even has my curls."
+  },
+  {
+   "page_no": 4,
+   "word_count": 11,
+   "text": "Someone with my Who even has my laugh. eyes my ears."
+  },
+  {
+   "page_no": 5,
+   "word_count": 8,
+   "text": "Who can do what I can do …"
+  },
+  {
+   "page_no": 6,
+   "word_count": 7,
+   "text": "… and can’t do what I can’t."
+  },
+  {
+   "page_no": 7,
+   "word_count": 20,
+   "text": "I’ve looked and looked everywhere to find another me. I went down to the park and looked behind the trees."
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "I looked around, up and down …"
+  },
+  {
+   "page_no": 9,
+   "word_count": 5,
+   "text": "… at every single face."
+  },
+  {
+   "page_no": 10,
+   "word_count": 9,
+   "text": "I couldn’t find another me in any single place."
+  },
+  {
+   "page_no": 11,
+   "word_count": 12,
+   "text": "There’s only one me in the world! I’m special, oh it’s true!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 12,
+   "text": "But not just me, don’t you see? There’s only one of you!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  6,
+  8
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

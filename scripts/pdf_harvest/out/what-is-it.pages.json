@@ -1,0 +1,94 @@
+{
+ "slug": "what-is-it",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 246,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=what-is-it/ebook/en-english/what-is-it_english_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 3,
+   "text": "What is it?"
+  },
+  {
+   "page_no": 2,
+   "word_count": 12,
+   "text": "What is it? It hasn’t got a trunk. It’s not like me."
+  },
+  {
+   "page_no": 3,
+   "word_count": 12,
+   "text": "What is it? It hasn’t got a tail. It’s not like me."
+  },
+  {
+   "page_no": 4,
+   "word_count": 12,
+   "text": "What is it? Ugh! Where are its feathers? It’s not like me."
+  },
+  {
+   "page_no": 5,
+   "word_count": 12,
+   "text": "What is it? Look at those tiny feet. It’s not like us."
+  },
+  {
+   "page_no": 6,
+   "word_count": 5,
+   "text": "Do you think it’s dangerous?"
+  },
+  {
+   "page_no": 7,
+   "word_count": 8,
+   "text": "Do you think it wants to eat us?"
+  },
+  {
+   "page_no": 8,
+   "word_count": 2,
+   "text": "Achoo! Achoo!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 11,
+   "text": "A a r g h! k! E e! n u R"
+  },
+  {
+   "page_no": 10,
+   "word_count": 3,
+   "text": "It’s chasing us!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 4,
+   "text": "Be careful. Come back."
+  },
+  {
+   "page_no": 12,
+   "word_count": 9,
+   "text": "What is it? It’s a baby just like me!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

@@ -1,0 +1,95 @@
+{
+ "slug": "a-tiny-seed",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 12,
+ "front_matter_word_count": 352,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=a-tiny-seed/ebook/en_english/a-tiny-seed_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 26,
+   "text": "In a village on the slopes of Mount Kenya in East Africa, a little girl worked in the fields with her mother. Her name was Wangari."
+  },
+  {
+   "page_no": 2,
+   "word_count": 25,
+   "text": "Wangari loved being outside. In her family’s food garden she broke up the soil with her machete. She pressed tiny seeds into the warm earth."
+  },
+  {
+   "page_no": 3,
+   "word_count": 40,
+   "text": "Her favourite time of day was just after sunset. When it got too dark to see the plants, Wangari knew it was time to go home. She would follow the narrow paths through the fields, crossing rivers as she went."
+  },
+  {
+   "page_no": 4,
+   "word_count": 44,
+   "text": "Wangari was a clever child and couldn’t wait to go to school. But her mother and father wanted her to stay and help them at home. When she was seven years old, her big brother persuaded her parents to let her go to school."
+  },
+  {
+   "page_no": 5,
+   "word_count": 43,
+   "text": "She liked to learn! Wangari learnt more and more with every book she read. She did so well at school that she was invited to study in the United States of America. Wangari was excited! She wanted to know more about the world."
+  },
+  {
+   "page_no": 6,
+   "word_count": 38,
+   "text": "At the American university Wangari learnt many new things. She studied plants and how they grow. And she remembered how she grew: playing games with her brothers in the shade of the trees in the beautiful Kenyan forests."
+  },
+  {
+   "page_no": 7,
+   "word_count": 34,
+   "text": "The more she learnt, the more she realised that she loved the people of Kenya. She wanted them to be happy and free. The more she learnt, the more she remembered her African home."
+  },
+  {
+   "page_no": 8,
+   "word_count": 38,
+   "text": "When she had finished her studies, she returned to Kenya. But her country had changed. Huge farms stretched across the land. Women had no wood to make cooking fires. The people were poor and the children were hungry."
+  },
+  {
+   "page_no": 9,
+   "word_count": 43,
+   "text": "Wangari knew what to do. She taught the women how to plant trees from seeds. The women sold the trees and used the money to look after their families. The women were very happy. Wangari had helped them to feel powerful and strong."
+  },
+  {
+   "page_no": 10,
+   "word_count": 29,
+   "text": "As time passed, the new trees grew into forests, and the rivers started flowing again. Wangari’s message spread across Africa. Today, millions of trees have grown from Wangari’s seeds."
+  },
+  {
+   "page_no": 11,
+   "word_count": 35,
+   "text": "Wangari had worked hard. People all over the world took notice, and gave her a famous prize. It is called the Nobel Peace Prize, and she was the first African woman ever to receive it."
+  },
+  {
+   "page_no": 12,
+   "word_count": 17,
+   "text": "Wangari died in 2011, but we can think of her every time we see a beautiful tree."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

@@ -1,0 +1,100 @@
+{
+ "slug": "a-house-for-mouse",
+ "pdf_page_count": 19,
+ "body_page_range": [
+  1,
+  15
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 299,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=a-house-for-mouse/ebook/en_english/a-house-for-mouse_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 7,
+   "text": "Mouse was looking for a new house."
+  },
+  {
+   "page_no": 2,
+   "word_count": 6,
+   "text": "This looks like a nice house."
+  },
+  {
+   "page_no": 3,
+   "word_count": 13,
+   "text": "“You can come and sleep with me,” said Puppy. “Thank you,” said Mouse."
+  },
+  {
+   "page_no": 4,
+   "word_count": 8,
+   "text": "That night, Mouse’s dreams were bouncy and muddy."
+  },
+  {
+   "page_no": 5,
+   "word_count": 13,
+   "text": "“You can come and sleep with me,” said Parrot. “Thank you,” said Mouse."
+  },
+  {
+   "page_no": 6,
+   "word_count": 8,
+   "text": "That night, Mouse’s dreams were noisy and wild."
+  },
+  {
+   "page_no": 7,
+   "word_count": 13,
+   "text": "“You can come and sleep with me,” said Fish. “Thank you,” said Mouse."
+  },
+  {
+   "page_no": 8,
+   "word_count": 8,
+   "text": "That night, Mouse’s dreams were cold and wet."
+  },
+  {
+   "page_no": 9,
+   "word_count": 6,
+   "text": "Mouse needed somewhere warm and dry."
+  },
+  {
+   "page_no": 10,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 11,
+   "word_count": 5,
+   "text": "Mouse found a bookshelf nearby."
+  },
+  {
+   "page_no": 12,
+   "word_count": 8,
+   "text": "That night, Mouse had warm and cosy dreams."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 3,
+   "text": "Good night, Mouse."
+  },
+  {
+   "page_no": 15,
+   "word_count": 47,
+   "text": "Mouse is looking for a new house. Friendly animals offer to share their homes with him. But nothing is right until he finds his own little spot, warm and cosy. Michele Fry, Amy Uzzell ISBN 9780992235758 & Jennifer Jacobs ISBN 9780992235758 9 780992 235758 9 780992 235758"
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  19
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

@@ -1,0 +1,95 @@
+{
+ "slug": "walking-together",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 318,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=walking-together/ebook/en-english/walking-together_en_20200803.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 15,
+   "text": "When we go walking and the road is long, we’ll walk together singing a song."
+  },
+  {
+   "page_no": 2,
+   "word_count": 16,
+   "text": "I am with you and you are with me. A journey is fun with our family."
+  },
+  {
+   "page_no": 3,
+   "word_count": 16,
+   "text": "I’ll keep you cosy like a mother hen. She keeps her chicks warm under her wing."
+  },
+  {
+   "page_no": 4,
+   "word_count": 19,
+   "text": "If the rain starts to fall down from the sky, like that good hat I’ll keep your face dry."
+  },
+  {
+   "page_no": 5,
+   "word_count": 16,
+   "text": "If storm clouds get angry and grumble and moan, be brave, why cry? You’re not alone."
+  },
+  {
+   "page_no": 6,
+   "word_count": 16,
+   "text": "We’re walking together so we never get bored. Look up! Look around! See where we’ve explored!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 19,
+   "text": "If you see something that’s funny to see, I don’t want to miss it. Please share it with me!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 21,
+   "text": "If your feet start to hurt from the distance we’ve passed, don’t worry, we’ve made it! Here’s the clinic at last."
+  },
+  {
+   "page_no": 9,
+   "word_count": 20,
+   "text": "We all need to check our throat, lungs and ears. Get strong as you grow, it’s no reason for tears."
+  },
+  {
+   "page_no": 10,
+   "word_count": 18,
+   "text": "Do you think it’s scary? Here, hold my hand. She’ll check your blood pressure with this clever armband."
+  },
+  {
+   "page_no": 11,
+   "word_count": 21,
+   "text": "They give us our medicine, tell us what we should know, to keep us all healthy. Now back home we go."
+  },
+  {
+   "page_no": 12,
+   "word_count": 19,
+   "text": "It’s okay to be tired, there’s so much we’ve seen. Now it’s your bedtime. Sleep well and sweet dreams."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

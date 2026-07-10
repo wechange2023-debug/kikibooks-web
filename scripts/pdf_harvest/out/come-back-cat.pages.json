@@ -1,0 +1,102 @@
+{
+ "slug": "come-back-cat",
+ "pdf_page_count": 19,
+ "body_page_range": [
+  1,
+  15
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": "boilerplate_not_found(offset=4 가정)",
+ "has_no_text_folder": true,
+ "no_text_file_count": 12,
+ "front_matter_word_count": 293,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=come-back-cat/ebook/en-english/come-back-cat_english_pdf-ebook.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 6,
+   "text": "Come back, cat! Play with me."
+  },
+  {
+   "page_no": 2,
+   "word_count": 7,
+   "text": "Sit in your basket. Stay right here!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 7,
+   "text": "Come back, cat! That’s way too high."
+  },
+  {
+   "page_no": 4,
+   "word_count": 6,
+   "text": "Come back, cat! Don’t go outside."
+  },
+  {
+   "page_no": 5,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 6,
+   "word_count": 6,
+   "text": "Come back, cat! That’s not yours."
+  },
+  {
+   "page_no": 7,
+   "word_count": 7,
+   "text": "Come back, cat! What have you got?"
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "Come back, cat. That’s not your friend!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 5,
+   "text": "Hello, cat! Are you back?"
+  },
+  {
+   "page_no": 10,
+   "word_count": 8,
+   "text": "Stay in your basket. It’s nap time now."
+  },
+  {
+   "page_no": 11,
+   "word_count": 1,
+   "text": "Cat?"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 15,
+   "word_count": 35,
+   "text": "Adelightful tale about an independent cat. No cats were harmed in the production of this book. ISBN 978-9-991291-32-1 ISBN 978-9-991291-32-1 9 789991 291321 9 789991 291321 Come back, cat! Karen Lilje Nicola Rijsdijk Sam Scarborough"
+  }
+ ],
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  12,
+  19
+ ],
+ "extraction": "pdfplumber-coord-v2"
+}

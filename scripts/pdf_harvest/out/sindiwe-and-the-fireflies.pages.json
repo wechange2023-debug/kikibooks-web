@@ -1,0 +1,92 @@
+{
+ "slug": "sindiwe-and-the-fireflies",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 358,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "pdf_url": "https://bookdash.org/book-source-files/?download=sindiwe-and-the-fireflies/ebook/en-english/sindiwe-and-the-fireflies_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 26,
+   "text": "One day a very clever baby was born in Gungululu in the Eastern Cape. Her name was Sindiwe Magona. She was the oldest of eight children."
+  },
+  {
+   "page_no": 2,
+   "word_count": 28,
+   "text": "At night, her grandmother told magical stories about ogres and giants, animals of the forests, great beasts, and little creatures of the veld. It was Sindiwe’s favourite time."
+  },
+  {
+   "page_no": 3,
+   "word_count": 10,
+   "text": "Sindiwe loved school and she dreamed about being a teacher."
+  },
+  {
+   "page_no": 4,
+   "word_count": 38,
+   "text": "When Sindiwe became a teenager, her family organised a feast to celebrate. She was given special things to wear and a wise old man sang a praise song to her. (Blessings, long life! May your ancestors guard you!)"
+  },
+  {
+   "page_no": 5,
+   "word_count": 53,
+   "text": "Sindiwe trained to be a teacher. She was very excited to teach at her first school. But there weren’t enough schools for black children and they had no desks or books to write in. This made Sindiwe feel scared. How could she be a good teacher when the children had nowhere to sit?"
+  },
+  {
+   "page_no": 6,
+   "word_count": 27,
+   "text": "She left the school to work as a cleaner. She worked in four different houses. Sometimes the people there treated her badly and Sindiwe became very unhappy."
+  },
+  {
+   "page_no": 7,
+   "word_count": 42,
+   "text": "All this time Sindiwe studied. Her hard work paid off! She won a scholarship to study at a university in New York. She and her three small children packed their bags and flew across the sea to the United States of America."
+  },
+  {
+   "page_no": 8,
+   "word_count": 19,
+   "text": "In New York, Sindiwe studied to become a social worker. She wanted to help families make their lives better."
+  },
+  {
+   "page_no": 9,
+   "word_count": 28,
+   "text": "When she finished studying, the United Nations gave Sindiwe a job. Most of the countries in the world meet at the United Nations to talk about their problems."
+  },
+  {
+   "page_no": 10,
+   "word_count": 50,
+   "text": "Sindiwe told the world about South Africa, and how hard it was for black people living there. The people at the United Nations loved to listen to Sindiwe’s stories. They wanted to learn more and more about South Africans. Perhaps, together, they could help to change things in South Africa."
+  },
+  {
+   "page_no": 11,
+   "word_count": 53,
+   "text": "She worked at the United Nations for twenty years while her children grew into adults. But Sindiwe missed the country where she was born. She wanted to tell her stories to the people at home. So she packed her luggage, got on a plane and flew back over the sea to Cape Town."
+  },
+  {
+   "page_no": 12,
+   "word_count": 37,
+   "text": "Sindiwe’s love for books and stories have helped her write piles and piles of books. And children and grown-ups love to read her stories. Many people call her Nomabali because she’s always writing, telling and reading stories."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ],
+ "layout_ambiguous_pages": [],
+ "extraction": "pdfplumber-coord-v2"
+}
