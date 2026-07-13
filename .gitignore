@@ -12,6 +12,12 @@ dist/
 !scripts/ocr_pilot/out/
 !scripts/ocr_pilot/out/**
 
+# 예외: TTS 파일럿 정본 json은 커밋 대상 (안건 #3·#4 정답지 — 전역 out/ 규칙의 예외).
+# 폴더 예외 후 audio·.tts.json 재무시 → 순수 {slug}.json 49개만 통과
+!scripts/tts_pilot/out/
+scripts/tts_pilot/out/audio/
+scripts/tts_pilot/out/*.tts.json
+
 # Vercel
 .vercel/
 
