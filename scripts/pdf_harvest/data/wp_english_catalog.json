@@ -1,0 +1,1857 @@
+[
+ {
+  "slug": "the-window-seat",
+  "id": 45917,
+  "title": "The Window Seat",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/the-window-seat_en_cover.jpg"
+ },
+ {
+  "slug": "khaya-wants-to-row",
+  "id": 45768,
+  "title": "Khaya Wants to Row",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/khaya-wants-to-row_en_cover.jpg"
+ },
+ {
+  "slug": "moms-hands",
+  "id": 45728,
+  "title": "Mom&#8217;s hands",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/moms-hands_en_cover.jpg"
+ },
+ {
+  "slug": "banzis-busy-bees",
+  "id": 45658,
+  "title": "Banzi&#8217;s Busy Bees",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/banzis-busy-bees_en_cover.jpg"
+ },
+ {
+  "slug": "whats-happened-to-our-water",
+  "id": 45606,
+  "title": "What&#8217;s happened to our water?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/whats-happened-to-our-water_en_cover.jpg"
+ },
+ {
+  "slug": "going-places",
+  "id": 45584,
+  "title": "Going Places",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/going-places_en_cover-3.jpg"
+ },
+ {
+  "slug": "best-friends",
+  "id": 45476,
+  "title": "Best Friends",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/best-friends_en_cover.jpg"
+ },
+ {
+  "slug": "samoosas",
+  "id": 45454,
+  "title": "Samoosas!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/samoosas_en_cover.jpg"
+ },
+ {
+  "slug": "thulis-tissue",
+  "id": 45390,
+  "title": "Thuli&#8217;s Tissue",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/thulis-tissue_en_cover.jpg"
+ },
+ {
+  "slug": "how-do-you-eat",
+  "id": 45372,
+  "title": "How do you eat?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2025/10/how-do-you-eat_en_cover.jpg"
+ },
+ {
+  "slug": "its-my-book",
+  "id": 35800,
+  "title": "It&#8217;s MY book!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/978-1-77632-585-6.jpg"
+ },
+ {
+  "slug": "why-the-owl-never-sleeps",
+  "id": 35783,
+  "title": "Why the owl never sleeps",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/978-1-77632-593-1.jpg"
+ },
+ {
+  "slug": "julia-loves-books",
+  "id": 35736,
+  "title": "Julia Loves Books",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/978-1-77632-594-8.jpg"
+ },
+ {
+  "slug": "aaaaahhh-mmawe",
+  "id": 35714,
+  "title": "AAAAAHHH!!!! Mmawe!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/978-1-77632-592-4.jpg"
+ },
+ {
+  "slug": "tata-comes-home",
+  "id": 35503,
+  "title": "Tata comes home",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/978-1-77632-591-7.jpg"
+ },
+ {
+  "slug": "grumpy-cloud",
+  "id": 35484,
+  "title": "Grumpy Cloud",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/978-1-77632-588-7.jpg"
+ },
+ {
+  "slug": "mazi-learns-to-play",
+  "id": 35225,
+  "title": "Mazi Learns to Play!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/978-1-77632-586-3.jpg"
+ },
+ {
+  "slug": "oyisa-and-the-giant-tree",
+  "id": 35209,
+  "title": "Oyisa and the Giant Tree",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/978-1-77632-584-9.jpg"
+ },
+ {
+  "slug": "i-hate-winter",
+  "id": 35099,
+  "title": "I Hate Winter",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/978-1-77632-587-0.jpg"
+ },
+ {
+  "slug": "jock-and-me",
+  "id": 35065,
+  "title": "Jock and Me",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2024/09/jock-and-me_en_cover.jpg"
+ },
+ {
+  "slug": "the-one-in-the-middle",
+  "id": 32724,
+  "title": "The one in the middle",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/11/9781776231263.jpg"
+ },
+ {
+  "slug": "the-monster-must-go",
+  "id": 32707,
+  "title": "The monster must go!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/11/9781776231201.jpg"
+ },
+ {
+  "slug": "oumas-amazing-flowers",
+  "id": 32689,
+  "title": "Ouma&#8217;s amazing flowers",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/11/9781776231218.jpg"
+ },
+ {
+  "slug": "open-the-door",
+  "id": 32665,
+  "title": "Open the door",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/11/9781776231225.jpg"
+ },
+ {
+  "slug": "lets-go-on-a-litter-hunt",
+  "id": 31886,
+  "title": "Let&#8217;s go on a litter hunt",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/11/9781776231232.jpg"
+ },
+ {
+  "slug": "its-my-birthday",
+  "id": 31868,
+  "title": "It&#8217;s my birthday!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/11/9781776230389.jpg"
+ },
+ {
+  "slug": "how-do-you-want-your-eggs",
+  "id": 31849,
+  "title": "How do you want your eggs?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/11/9781776231164.jpg"
+ },
+ {
+  "slug": "a-trip-to-the-tap",
+  "id": 31831,
+  "title": "A trip to the tap",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/11/9781776231126.jpg"
+ },
+ {
+  "slug": "monkey-business",
+  "id": 31801,
+  "title": "Monkey business",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/10/9781776230365.jpg"
+ },
+ {
+  "slug": "lets-party",
+  "id": 31783,
+  "title": "Let&#8217;s Party!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/10/9781776230396.jpg"
+ },
+ {
+  "slug": "amahle-wants-to-help",
+  "id": 31750,
+  "title": "Amahle wants to help!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/10/9781776230372.jpg"
+ },
+ {
+  "slug": "mud",
+  "id": 31729,
+  "title": "MUD!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/10/9781776230402.jpg"
+ },
+ {
+  "slug": "dance-khuzwayo-dance",
+  "id": 30840,
+  "title": "Dance, Khuzwayo, dance!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/03/cover.jpg"
+ },
+ {
+  "slug": "baby-talk",
+  "id": 30825,
+  "title": "Baby Talk",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2023/03/Baby-Talk-Cover_single.jpg"
+ },
+ {
+  "slug": "the-memory-tree",
+  "id": 30698,
+  "title": "The Memory Tree",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/12/the-memory-tree-en-20221202_cover.jpg"
+ },
+ {
+  "slug": "lebo-and-gogos-tea-party",
+  "id": 30663,
+  "title": "Lebo and Gogo&#8217;s Tea Party",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/12/lebo-and-gogos-tea-party_en_20221201_cover.jpg"
+ },
+ {
+  "slug": "the-sausage-dog",
+  "id": 30645,
+  "title": "The Sausage Dog",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/12/the-sausage-dog_en_20221201_cover.jpg"
+ },
+ {
+  "slug": "moms-red-coat",
+  "id": 30627,
+  "title": "Mom&#8217;s Red Coat",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/12/moms-red-coat_en_20221201_cover.jpg"
+ },
+ {
+  "slug": "look-out-luthando",
+  "id": 30599,
+  "title": "Look out, Luthando!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/11/look-out-luthando_en_20221127_cover.jpg"
+ },
+ {
+  "slug": "zenandes-helping-hands",
+  "id": 30578,
+  "title": "Zenande&#8217;s helping hands",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/11/Zenandes-helping-hands-en-20221128_cover.jpg"
+ },
+ {
+  "slug": "who-took-my-shoe",
+  "id": 30554,
+  "title": "Who Took My Shoe?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/11/who-took-my-shoe_en_20221127_cover.jpg"
+ },
+ {
+  "slug": "fifi-and-teddy",
+  "id": 30534,
+  "title": "Fifi and Teddy",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/11/fifi-and-teddy_en_20221127_cover.jpg"
+ },
+ {
+  "slug": "matthew-is-up",
+  "id": 30058,
+  "title": "Matthew is up!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/11/matthew-is-up_en_978-1-928497-91-2-rotated.jpg"
+ },
+ {
+  "slug": "catch-that-cat",
+  "id": 30089,
+  "title": "Catch That Cat!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/11/catch-that-cat_en_978-1-928497-94-3.jpg"
+ },
+ {
+  "slug": "zibu-and-zizo",
+  "id": 28426,
+  "title": "Zibu and Zizo",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/06/zibu-and-zizo_en_20220606_cover.jpg"
+ },
+ {
+  "slug": "whats-next",
+  "id": 28425,
+  "title": "What&#8217;s next?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/06/whats-next_en_20220606_cover-1.jpg"
+ },
+ {
+  "slug": "the-box",
+  "id": 28424,
+  "title": "The Box",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/06/the-box_en_20220606_cover.jpg"
+ },
+ {
+  "slug": "alexs-super-medicine",
+  "id": 28423,
+  "title": "Alex&#8217;s Super Medicine",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/06/alexs-super-medicine_en_20220606_cover.jpg"
+ },
+ {
+  "slug": "sams-treasures",
+  "id": 28369,
+  "title": "Sam&#8217;s Treasures",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/05/sams-treasures_en_20220529_cover-2.jpg"
+ },
+ {
+  "slug": "lets-be-friends",
+  "id": 28353,
+  "title": "Let&#8217;s be Friends",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/05/lets-be-friends_en_20220529_cover.jpg"
+ },
+ {
+  "slug": "joannas-grannies",
+  "id": 28337,
+  "title": "Joanna&#8217;s Grannies",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/05/joannas-grannies_en_20220529_cover.jpg"
+ },
+ {
+  "slug": "tikky-boom-tish",
+  "id": 28279,
+  "title": "Tikky! Boom! Tish!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/05/tikky_boom_tish_en_20220520_cover.jpg"
+ },
+ {
+  "slug": "how-do-you-sleep",
+  "id": 28280,
+  "title": "How do you sleep?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/05/how-do-you-sleep_en_20220520_cover-2.jpg"
+ },
+ {
+  "slug": "meerkat-magic",
+  "id": 28281,
+  "title": "Meerkat magic",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2022/05/meerkat-magic_en_20220523_cover.jpg"
+ },
+ {
+  "slug": "look-up",
+  "id": 27019,
+  "title": "Look up!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/10/look-up_en_20211014_cover.jpg"
+ },
+ {
+  "slug": "brave-bora",
+  "id": 26906,
+  "title": "Brave Bora",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/10/brave-bora_en_20211005_cover-1.jpg"
+ },
+ {
+  "slug": "the-best-nest",
+  "id": 26873,
+  "title": "The Best Nest",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/10/the-best-nest_en_20210929_cover.jpg"
+ },
+ {
+  "slug": "mama-whats-for-lunch",
+  "id": 26856,
+  "title": "Mama, What&#8217;s For Lunch?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/10/mama-whats-for-lunch_en_20210929_cover.jpg"
+ },
+ {
+  "slug": "whose-shoe-is-this",
+  "id": 25791,
+  "title": "Whose shoe is this?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/06/whose-shoe-is-this_en_20210531_cover.jpg"
+ },
+ {
+  "slug": "the-boy-who-only-ate-pancakes",
+  "id": 25792,
+  "title": "The boy who only ate pancakes",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/06/the-boy-who-only-ate-pancakes_en_20210531_cover.jpg"
+ },
+ {
+  "slug": "the-best-gift",
+  "id": 25774,
+  "title": "The Best Gift",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/06/the-best-gift_en_20210531_cover.jpg"
+ },
+ {
+  "slug": "pako-the-pigeon-disappears",
+  "id": 25757,
+  "title": "Pako the Pigeon Disappears",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/06/pako_the_pigeon_disappears_en_20210531_cover.jpg"
+ },
+ {
+  "slug": "shaka-and-mazi",
+  "id": 25692,
+  "title": "Shaka and Mazi",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/05/shaka-and-mazi_en_20210525_cover.jpg"
+ },
+ {
+  "slug": "yes-you-can",
+  "id": 25691,
+  "title": "Yes you can!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/05/yes-you-can_en_20210525_cover.jpg"
+ },
+ {
+  "slug": "theres-a-fire-on-the-mountain",
+  "id": 25690,
+  "title": "There&#8217;s a Fire on the Mountain",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/05/theres-a-fire-on-the-mountain_en_20210524_cover.jpg"
+ },
+ {
+  "slug": "little-shoots",
+  "id": 25689,
+  "title": "Little Shoots",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/05/little-shoots_en_20210525_cover.jpg"
+ },
+ {
+  "slug": "tlotlegos-tea-party",
+  "id": 25664,
+  "title": "Tlotlego’s Tea Party",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/05/tlotlegos-tea-party_en_20210524_cover.jpg"
+ },
+ {
+  "slug": "how-to-tame-a-monster",
+  "id": 25635,
+  "title": "How to Tame a Monster",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2021/05/how-to-tame-a-monster_en_20210524_cover.jpg"
+ },
+ {
+  "slug": "o-rain-come",
+  "id": 16397,
+  "title": "O Rain Come",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2020/11/o-rain-come_en_20201105_cover.jpg"
+ },
+ {
+  "slug": "yapo-saves-the-day",
+  "id": 16378,
+  "title": "Yapo Saves The Day",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2020/11/yapo-saves-the-day_en_20201105_cover.jpg"
+ },
+ {
+  "slug": "a-day-out",
+  "id": 16357,
+  "title": "A Day Out",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2020/11/a-day-out_en_20201104_cover.jpg"
+ },
+ {
+  "slug": "egg",
+  "id": 16335,
+  "title": "Egg",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2020/11/egg_en_20201023_cover.jpg"
+ },
+ {
+  "slug": "lesedis-sandbox",
+  "id": 14796,
+  "title": "Lesedi&#8217;s Sandbox",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2020/05/lesedis-sandbox_en_20200515_cover.jpg"
+ },
+ {
+  "slug": "the-things-that-really-matter",
+  "id": 14780,
+  "title": "The Things That Really Matter",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2020/05/the-things-that-really-matter_en_20200515_cover.jpg"
+ },
+ {
+  "slug": "a-very-busy-day",
+  "id": 10856,
+  "title": "A very busy day!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/11/a-very-busy-day_en_20191124_cover.jpg"
+ },
+ {
+  "slug": "im-the-colour-of-honey",
+  "id": 10830,
+  "title": "I&#8217;m the Colour of Honey",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/11/im-the-colour-of-honey_en_20191124_cover.jpg"
+ },
+ {
+  "slug": "why-birds-sing-at-dawn",
+  "id": 10809,
+  "title": "Why Birds Sing at Dawn",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/11/Why-birds-sing-at-dawn_en_20191121_cover.jpg"
+ },
+ {
+  "slug": "come-stay-with-me",
+  "id": 10787,
+  "title": "Come stay with me",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/11/come-stay-with-me_en_20191122_cover.jpg"
+ },
+ {
+  "slug": "the-new-road",
+  "id": 10498,
+  "title": "The New Road",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/11/the-new-road_en_20191114_cover.jpg"
+ },
+ {
+  "slug": "mama-antelopes-house",
+  "id": 10465,
+  "title": "Mama Antelope&#8217;s House",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/11/mama-antelopes-house_em_20191121_cover.jpg"
+ },
+ {
+  "slug": "tejus-shadow",
+  "id": 10268,
+  "title": "Teju&#8217;s Shadow",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/11/tejus-shadow_en_20191114_cover.jpg"
+ },
+ {
+  "slug": "theres-an-alien-in-my-house",
+  "id": 9615,
+  "title": "There&#8217;s an alien in my house!",
+  "languages": [
+   621
+  ],
+  "cover": null
+ },
+ {
+  "slug": "wiggle-jiggle",
+  "id": 7900,
+  "title": "Wiggle Jiggle",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/05/wiggle-jiggle_en_20190503_cover.jpg"
+ },
+ {
+  "slug": "the-great-tidy-up",
+  "id": 9371,
+  "title": "The Great Tidy Up",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/11/the-great-tidy-up_en_20191108_cover.jpg"
+ },
+ {
+  "slug": "dudus-hat",
+  "id": 9313,
+  "title": "Dudu&#8217;s Hat",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/11/dudus-hat_en_20191107_cover.jpg"
+ },
+ {
+  "slug": "baby-babble",
+  "id": 8216,
+  "title": "Baby Babble",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/05/baby-babble_en_20190527_cover.jpg"
+ },
+ {
+  "slug": "sing-to-me",
+  "id": 8175,
+  "title": "Sing to me",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/05/sing-to-me_en_20190520_cover.jpg"
+ },
+ {
+  "slug": "hello-baby",
+  "id": 8121,
+  "title": "Hello, baby!",
+  "languages": [
+   621,
+   644
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/05/hello-baby_en_20190520_cover.jpg"
+ },
+ {
+  "slug": "babys-first-family-photo",
+  "id": 7992,
+  "title": "Baby&#8217;s First Family Photo",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/05/babys-first-family-photo_en_20190506_cover.jpg"
+ },
+ {
+  "slug": "my-special-blankie",
+  "id": 7952,
+  "title": "My Special Blankie",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/05/my-special-blankie_en_20190506_cover.jpg"
+ },
+ {
+  "slug": "i-want-to",
+  "id": 7921,
+  "title": "I want to!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/05/i-want-to_en_20190503_cover.jpg"
+ },
+ {
+  "slug": "woof-woof",
+  "id": 7860,
+  "title": "Woof-woof!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/04/woof-woof_en_20190424_cover.jpg"
+ },
+ {
+  "slug": "shhhhh",
+  "id": 7826,
+  "title": "Shhhhh!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/04/shhhhh_en_20190424_cover.jpg"
+ },
+ {
+  "slug": "whos-that-baby",
+  "id": 7795,
+  "title": "Who&#8217;s that baby?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/04/whos-that-baby_en_20180424_cover.jpg"
+ },
+ {
+  "slug": "i-dont-want-to-go-to-sleep",
+  "id": 7322,
+  "title": "I don&#8217;t want to go to sleep!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/02/i-dont-want-to-go-to-sleep_en_20190114_cover.jpg"
+ },
+ {
+  "slug": "lions-are-always-brave",
+  "id": 7298,
+  "title": "Lions are Always Brave",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/02/lions-are-always-brave_en_20190114_cover.jpg"
+ },
+ {
+  "slug": "dance-mihlali",
+  "id": 7236,
+  "title": "Dance, Mihlali!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/02/dance-mihlali_en_20181206_cover.jpg"
+ },
+ {
+  "slug": "auntie-bois-gift",
+  "id": 7139,
+  "title": "Auntie Boi&#8217;s Gift",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2019/02/auntie-bois-gift_en_20190114_cover-2.jpg"
+ },
+ {
+  "slug": "the-great-cake-contest",
+  "id": 6579,
+  "title": "The Great Cake Contest",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/12/the-great-cake-contest_en_20181213_cover-1.jpg"
+ },
+ {
+  "slug": "whats-at-the-park",
+  "id": 6491,
+  "title": "What&#8217;s at the Park?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/12/whats-at-the-park_en_20181213_cover-1.jpg"
+ },
+ {
+  "slug": "lets-have-an-inside-day",
+  "id": 6421,
+  "title": "Let&#8217;s have an inside day!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/12/lets-have-an-inside-day_en_20181128_cover-3.jpg"
+ },
+ {
+  "slug": "the-very-tired-lioness",
+  "id": 6341,
+  "title": "The Very Tired Lioness",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/12/the-very-tired-lioness_en_20181205_cover-3.jpg"
+ },
+ {
+  "slug": "malis-friend",
+  "id": 6078,
+  "title": "Mali&#8217;s Friend",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/11/malis-friend_en_20181120_cover.jpg"
+ },
+ {
+  "slug": "grandpa-farouks-garden",
+  "id": 5680,
+  "title": "Grandpa Farouk&#8217;s Garden",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/07/grandpa-farouks-garden_en_20180618_cover.jpg"
+ },
+ {
+  "slug": "the-fish-that-couldnt-swim",
+  "id": 5458,
+  "title": "The fish that couldn’t swim",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/05/the-fish-that-couldnt-swim_en_20181215_cover.jpg"
+ },
+ {
+  "slug": "who-takes-the-train",
+  "id": 5435,
+  "title": "Who takes the train?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/05/who-takes-the-train_en_20180504_cover.jpg"
+ },
+ {
+  "slug": "zandi-and-birdy-monster",
+  "id": 5418,
+  "title": "Zandi and Birdy Monster",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/05/zandi-and-birdy-monster_en_20180508_cover.jpg"
+ },
+ {
+  "slug": "where-is-lulu",
+  "id": 5394,
+  "title": "Where is Lulu?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/05/where-is-lulu_en_20180503_cover.jpg"
+ },
+ {
+  "slug": "the-dream-pillow",
+  "id": 5358,
+  "title": "The Dream Pillow",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/05/the-dream-pillow_en_20180423_cover.jpg"
+ },
+ {
+  "slug": "you-yes-you",
+  "id": 5101,
+  "title": "You! Yes You!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/04/yes-you_en_20180423_cover.jpg"
+ },
+ {
+  "slug": "ann-nem-oh-nee-finds-adventure",
+  "id": 4948,
+  "title": "Ann-Nem-Oh-Nee finds Adventure",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/03/ann-nem-oh-nee-finds-adventure_en_20180329_cover-4-scaled.jpg"
+ },
+ {
+  "slug": "the-pumpkin-chase",
+  "id": 4401,
+  "title": "The Pumpkin Chase",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/03/the-pumpkin-chase_20180207_cover.jpg"
+ },
+ {
+  "slug": "tigs-world",
+  "id": 4316,
+  "title": "Tig&#8217;s World",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/tigs-world_20180115_cover.jpg"
+ },
+ {
+  "slug": "feathered-friends",
+  "id": 4334,
+  "title": "Feathered Friends",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/feathered-friends_20180117_cover.jpg"
+ },
+ {
+  "slug": "the-lost-laugh",
+  "id": 4297,
+  "title": "The lost laugh",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/the-lost-laugh_en_20181216_cover.jpg"
+ },
+ {
+  "slug": "the-bounce",
+  "id": 4278,
+  "title": "The Bounce",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/the-bounce_20180115_cover.jpg"
+ },
+ {
+  "slug": "knight-times",
+  "id": 4236,
+  "title": "Knight Times",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/knight-times_20180117_cover.jpg"
+ },
+ {
+  "slug": "my-inside-weather",
+  "id": 4254,
+  "title": "My inside weather",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/my-inside-weather_20180115_cover.jpg"
+ },
+ {
+  "slug": "circles",
+  "id": 4208,
+  "title": "Circles",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/circles_20180111_cover.jpg"
+ },
+ {
+  "slug": "no",
+  "id": 4186,
+  "title": "No!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/no_20180115_cover.jpg"
+ },
+ {
+  "slug": "thats-not-thabi-thats-a-hippopotamus",
+  "id": 4167,
+  "title": "That&#8217;s not Thabi, That&#8217;s a hippopotamus",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/thats-not-thabi_en_20181215_cover-1.jpg"
+ },
+ {
+  "slug": "just-like-me",
+  "id": 4147,
+  "title": "Just Like Me",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/just-like-me_20180111_cover.jpg"
+ },
+ {
+  "slug": "and-also",
+  "id": 4128,
+  "title": "And Also!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2018/01/and-also_20180111_cover.jpg"
+ },
+ {
+  "slug": "the-cottonwool-doctor",
+  "id": 3846,
+  "title": "The Cottonwool Doctor",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/07/the-cottonwool-doctor_20170712_cover.jpg"
+ },
+ {
+  "slug": "lonwabos-recipes",
+  "id": 3501,
+  "title": "Lonwabo&#8217;s Recipes",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/07/lonwabos-recipes_english_20170320_cover.jpg"
+ },
+ {
+  "slug": "the-baby-book",
+  "id": 3477,
+  "title": "The Baby Book",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/05/the-baby-book_english_20170220_cover.jpg"
+ },
+ {
+  "slug": "mina-and-the-birthday-dress",
+  "id": 3457,
+  "title": "Mina and the Birthday Dress",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/05/mina-and-the-birthday-dress_english_20170503_cover.jpg"
+ },
+ {
+  "slug": "mogaus-gift",
+  "id": 3345,
+  "title": "Mogau&#8217;s Gift",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/mogaus-gift_english_20170331-1-1.jpg"
+ },
+ {
+  "slug": "miss-tiny-chef",
+  "id": 3327,
+  "title": "Miss Tiny Chef",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/miss-tiny-chef_english_20170330_cover.jpg"
+ },
+ {
+  "slug": "nomvundla-and-the-chilli-eating-contest",
+  "id": 3240,
+  "title": "Nomvundla and the Chilli-Eating Contest",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/nomvundla-and-the-chilli-eating-contest_english_20170320_cover.jpg"
+ },
+ {
+  "slug": "senzo-and-the-sun",
+  "id": 3219,
+  "title": "Senzo and the Sun",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/senzo-and-the-sun_english_20170320_cover.jpg"
+ },
+ {
+  "slug": "whats-in-the-pot",
+  "id": 3157,
+  "title": "What&#8217;s In The Pot?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/whats-in-the-pot_english_20170320_cover.jpg"
+ },
+ {
+  "slug": "foxy-joxy-plays-a-trick",
+  "id": 3133,
+  "title": "Foxy Joxy Plays a Trick",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/foxy-joxy-plays-a-trick_english_20170320_cover.jpg"
+ },
+ {
+  "slug": "thuli-special-and-the-secret",
+  "id": 3114,
+  "title": "Thuli, Special and the Secret",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/thuli-special-and-the-secret_english_20170315_cover.jpg"
+ },
+ {
+  "slug": "tumi-goes-to-the-park",
+  "id": 3094,
+  "title": "Tumi Goes to the Park",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/tumi-goes-to-the-park_english_20170316_cover.jpg"
+ },
+ {
+  "slug": "my-special-hair",
+  "id": 3073,
+  "title": "My Special Hair",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/my-special-hair_english_20170315_cover.jpg"
+ },
+ {
+  "slug": "the-three-doof-doofs",
+  "id": 3054,
+  "title": "The 3 Doof-Doofs",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/the-three-doof-doofs_english_20170315_cover-1.jpg"
+ },
+ {
+  "slug": "tones-big-drop",
+  "id": 3035,
+  "title": "Tone&#8217;s Big Drop",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/tones-big-drop_english_20170324_cover.jpg"
+ },
+ {
+  "slug": "hello",
+  "id": 3014,
+  "title": "Hello",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/hello_english_20170315_cover.jpg"
+ },
+ {
+  "slug": "the-fish-and-chickens-wedding",
+  "id": 2994,
+  "title": "The fish and chicken’s wedding",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/03/the-fish-and-chickens-wedding_en_20180405_cover.jpg"
+ },
+ {
+  "slug": "the-lion-who-wouldnt-try",
+  "id": 2881,
+  "title": "The Lion who Wouldn&#8217;t Try",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/the-lion-who-wouldnt-try_english_20170208_cover.jpg"
+ },
+ {
+  "slug": "the-lazy-ant",
+  "id": 2906,
+  "title": "The Lazy Ant",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/the-lazy-ant_en_20191210_cover.jpg"
+ },
+ {
+  "slug": "zanele-sees-numbers",
+  "id": 2884,
+  "title": "Zanele sees numbers",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/zanele-sees-numbers_english_20170208_cover.jpg"
+ },
+ {
+  "slug": "little-goat",
+  "id": 2860,
+  "title": "Little Goat",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/little-goat_english_20170208_cover.jpg"
+ },
+ {
+  "slug": "clever-pig",
+  "id": 2839,
+  "title": "Clever Pig",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/9781928377252.jpg"
+ },
+ {
+  "slug": "why-is-there-a-hole-in-the-wall",
+  "id": 2820,
+  "title": "Why is there a hole in the wall?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/why-is-there-a-hole-in-the-wall_english_20170208_cover.jpg"
+ },
+ {
+  "slug": "the-biscuit-jar-must-fall",
+  "id": 2776,
+  "title": "The Biscuit Jar Must Fall",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/the-biscuit-jar-must-fall_english_20161230_cover.jpg"
+ },
+ {
+  "slug": "the-rainbow-cloud",
+  "id": 2756,
+  "title": "The Rainbow Cloud",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/the-rainbow-cloud_english_20161230_cover.jpg"
+ },
+ {
+  "slug": "small-birds-big-adventure",
+  "id": 2736,
+  "title": "Small Bird&#8217;s Big Adventure",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/small-birds-big-adventure_english_20161230_cover.jpg"
+ },
+ {
+  "slug": "where-is-thabo",
+  "id": 2716,
+  "title": "Where is Thabo?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/where-is-thabo_english_20161230_cover.jpg"
+ },
+ {
+  "slug": "scared-tumi",
+  "id": 2691,
+  "title": "Scared Tumi",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/scared-tumi_english_20161230_page0.jpg"
+ },
+ {
+  "slug": "unathi-and-the-dirty-smelly-beast",
+  "id": 2671,
+  "title": "Unathi and the Dirty, Smelly Beast",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/unathi-and-the-dirty-smelly-beast_english_20161214_cover.jpg"
+ },
+ {
+  "slug": "palesa-can-walk",
+  "id": 2651,
+  "title": "Palesa Can Walk!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/palesa-can-walk_20161214_cover.jpg"
+ },
+ {
+  "slug": "my-dream-in-the-drawer",
+  "id": 2630,
+  "title": "My Dream in the Drawer",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/my-dream-in-the-drawer_20161214_cover.jpg"
+ },
+ {
+  "slug": "the-sea",
+  "id": 2584,
+  "title": "The Sea",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2017/02/the-sea_english_20161214_cover.jpg"
+ },
+ {
+  "slug": "hugs-in-the-city",
+  "id": 2467,
+  "title": "Hugs in the City",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/11/hugs-in-the-city_english_20161108_Page_01.jpg"
+ },
+ {
+  "slug": "katiitis-song",
+  "id": 2424,
+  "title": "Katiiti&#8217;s Song",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/09/katiitis-song_english_20160910_Page_01.jpg"
+ },
+ {
+  "slug": "it-wasnt-me",
+  "id": 2339,
+  "title": "It Wasn&#8217;t Me!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/09/it-wasnt-me_english_20160724_Page_01.jpg"
+ },
+ {
+  "slug": "what-is-it",
+  "id": 2280,
+  "title": "What is it?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/05/what-is-it_english_english_20160521_Page_01.jpg"
+ },
+ {
+  "slug": "mrs-penguins-perfect-palace",
+  "id": 2256,
+  "title": "Mrs Penguin&#8217;s Perfect Palace",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/05/mrs-penguins-perfect-palace_en_20181215_cover.jpg"
+ },
+ {
+  "slug": "the-best-thing-ever",
+  "id": 2210,
+  "title": "The best thing ever",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/04/the-best-thing-ever_english_20160409_Page_01-1.jpg"
+ },
+ {
+  "slug": "lara-the-yellow-ladybird",
+  "id": 2188,
+  "title": "Lara the Yellow Ladybird",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/04/the-yellow-ladybird_english_20160409_Page_01.jpg"
+ },
+ {
+  "slug": "little-sock-and-the-tiny-creatures",
+  "id": 2148,
+  "title": "Little Sock and the tiny creatures",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/03/little-sock_english_20160324_Page_01.jpg"
+ },
+ {
+  "slug": "hippo-wants-to-dance",
+  "id": 2128,
+  "title": "Hippo Wants to Dance",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/03/hippo-wants-to-dance_english_20160324_Page_01-1.jpg"
+ },
+ {
+  "slug": "who-is-our-friend",
+  "id": 2105,
+  "title": "Who is our friend?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/03/who-is-our-friend_english_20160324_Page_01.jpg"
+ },
+ {
+  "slug": "when-i-grow-up",
+  "id": 2084,
+  "title": "When I grow up",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/03/when-i-grow-up_english_20160324_Page_01.jpg"
+ },
+ {
+  "slug": "the-elephant-in-the-room",
+  "id": 2044,
+  "title": "The Elephant in the Room",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/03/the-elephant-in-the-room_english_20160323_Page_01.jpg"
+ },
+ {
+  "slug": "shongololos-shoes",
+  "id": 2023,
+  "title": "Shongololo&#8217;s shoes",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/03/shongololos-shoes_english_20160323_Page_01.jpg"
+ },
+ {
+  "slug": "thatos-birthday-surprise",
+  "id": 1806,
+  "title": "Thato&#8217;s Birthday Surprise",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/03/thatos-birthday-surprise_Page_01.jpg"
+ },
+ {
+  "slug": "what-if",
+  "id": 1764,
+  "title": "What if&#8230;?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/01/what-if_Page_01.jpg"
+ },
+ {
+  "slug": "sbus-special-shoes",
+  "id": 1744,
+  "title": "Sbu&#8217;s Special Shoes",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/01/sbus-special-shoes_Page_01.jpg"
+ },
+ {
+  "slug": "sima-and-siza",
+  "id": 1724,
+  "title": "Sima and Siza",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/01/sima-and-siza_Page_01.jpg"
+ },
+ {
+  "slug": "there-must-be-a-rainbow",
+  "id": 1785,
+  "title": "There Must be a Rainbow",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/01/there-must-be-a-rainbow_front-cover.jpg"
+ },
+ {
+  "slug": "sindi-and-the-moon",
+  "id": 1701,
+  "title": "Sindi and the Moon",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/01/sindi-and-the-moon_Page_01.jpg"
+ },
+ {
+  "slug": "a-beautiful-day",
+  "id": 1631,
+  "title": "A Beautiful Day",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/01/a-beautiful-day_cover_20160104.jpg"
+ },
+ {
+  "slug": "i-will-help-you",
+  "id": 1599,
+  "title": "I Will Help You",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/12/i-will-help-you-cover.jpg"
+ },
+ {
+  "slug": "londi-the-dreaming-girl",
+  "id": 1647,
+  "title": "Londi the Dreaming Girl",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/01/londi-the-dreaming-girl_cover_pdf-ebook_20160104.jpg"
+ },
+ {
+  "slug": "searching-for-the-spirit-of-spring",
+  "id": 1509,
+  "title": "Searching for the Spirit of Spring",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/09/searching-for-the-spirit-of-spring_pdf-ebook-20150921_Page_01.jpg"
+ },
+ {
+  "slug": "whose-button-is-this",
+  "id": 1485,
+  "title": "Whose button is this?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/09/whose-button-is-this_pdf-ebook_20150920_Page_01.jpg"
+ },
+ {
+  "slug": "why-is-nita-upside-down",
+  "id": 1453,
+  "title": "Why is Nita Upside Down?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/09/why-is-nita-upside-down_pdf-ebook_20150920_Page_01.jpg"
+ },
+ {
+  "slug": "rafikis-style",
+  "id": 1433,
+  "title": "Rafiki&#8217;s Style",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/09/rafikis-style_pdf-ebook_20150920_Page_01.jpg"
+ },
+ {
+  "slug": "grandpas-gold",
+  "id": 1411,
+  "title": "Grandpa&#8217;s Gold",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/09/grandpas-gold-pdf-ebook-20150919_Page_01.jpg"
+ },
+ {
+  "slug": "karabos-question",
+  "id": 1345,
+  "title": "Karabo&#8217;s Question",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/08/karabos-question-20150827_Page_01.jpg"
+ },
+ {
+  "slug": "walking-together",
+  "id": 1364,
+  "title": "Walking Together",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/08/walking-together_20150827_Page_01.jpg"
+ },
+ {
+  "slug": "is-there-anyone-like-me",
+  "id": 1324,
+  "title": "Is There Anyone Like Me?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/08/anyone-like-me_front-cover_20150811.jpg"
+ },
+ {
+  "slug": "how-about-you",
+  "id": 1318,
+  "title": "How About You?",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/08/how-about-you-pdf-ebook_20150804_Page_01.jpg"
+ },
+ {
+  "slug": "amazing-daisy",
+  "id": 1279,
+  "title": "Amazing Daisy!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2016/09/amazing-daisy-pdf-ebook_20150804_Page_01.jpg"
+ },
+ {
+  "slug": "little-ants-big-plan",
+  "id": 1188,
+  "title": "Little Ant&#8217;s Big Plan",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/07/little-ants-big-plan_20150712_Page_01.jpg"
+ },
+ {
+  "slug": "lory-dory",
+  "id": 1173,
+  "title": "Lory Dory",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/07/lory-dory_Page_01.jpg"
+ },
+ {
+  "slug": "a-tiny-seed",
+  "id": 951,
+  "title": "A Tiny Seed",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2015/02/a-tiny-seed_front-cover_201502081.jpg"
+ },
+ {
+  "slug": "bathtub-safari",
+  "id": 648,
+  "title": "Bathtub Safari",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/12/bathtub-safari_front-cover_20141202.jpg"
+ },
+ {
+  "slug": "tortoise-finds-his-home",
+  "id": 593,
+  "title": "Tortoise finds his home",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/11/tortoise-finds-his-home_english_pdf-ebook_cover_20150920.jpg"
+ },
+ {
+  "slug": "miss-helens-magical-world",
+  "id": 411,
+  "title": "Miss Helen&#8217;s Magical World",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/11/miss-helens-magical-world_front-cover_20141105.jpg"
+ },
+ {
+  "slug": "a-dancers-tale",
+  "id": 410,
+  "title": "A Dancer&#8217;s Tale",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/11/phyllis_front-cover_20141105-2.jpg"
+ },
+ {
+  "slug": "zanele-situ-my-story",
+  "id": 343,
+  "title": "Zanele Situ: My Story",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/10/zanele-situ-my-story_front-cover_20141003.jpg"
+ },
+ {
+  "slug": "singing-the-truth",
+  "id": 336,
+  "title": "Singing the Truth",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/10/singing-the-truth_english_cover_20171013_Cropped.jpg"
+ },
+ {
+  "slug": "sindiwe-and-the-fireflies",
+  "id": 346,
+  "title": "Sindiwe and the Fireflies",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/10/sindiwe-and-the-fireflies_front-cover_20140922.jpg"
+ },
+ {
+  "slug": "queen-of-soweto",
+  "id": 329,
+  "title": "Queen of Soweto",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/09/queen-of-soweto_front-cover_20140919.jpg"
+ },
+ {
+  "slug": "gracas-dream",
+  "id": 324,
+  "title": "Graca&#8217;s Dream",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/09/gracas-dream_front-cover_20140922.jpg"
+ },
+ {
+  "slug": "together-were-strong",
+  "id": 322,
+  "title": "Together We&#8217;re Strong",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/09/together-were-strong_front-cover_20140922_web.jpg"
+ },
+ {
+  "slug": "sizwes-smile",
+  "id": 320,
+  "title": "Sizwe&#8217;s Smile",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/09/sizwes-smile_english_e-book_20180930_1.jpg"
+ },
+ {
+  "slug": "a-house-for-mouse",
+  "id": 318,
+  "title": "A house for Mouse",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/09/a-house-for-mouse_front-cover_20140908.jpg"
+ },
+ {
+  "slug": "maddy-moonas-menagerie",
+  "id": 337,
+  "title": "Maddy Moona&#8217;s Menagerie",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/10/maddy-moona_front-cover_20140922.jpg"
+ },
+ {
+  "slug": "a-fish-and-a-gift",
+  "id": 60,
+  "title": "A Fish and a Gift",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/07/a-fish-and-a-gift.jpg"
+ },
+ {
+  "slug": "come-back-cat",
+  "id": 50,
+  "title": "Come back, cat!",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/07/come-back-cat_english_pdf-ebook_20140909_Page_01.jpg"
+ },
+ {
+  "slug": "sleepy-mr-sloth",
+  "id": 41,
+  "title": "Sleepy Mr Sloth",
+  "languages": [
+   621
+  ],
+  "cover": "https://bookdash.org/wp-content/uploads/2014/07/sleepy-mr-sloth.jpg"
+ }
+]
