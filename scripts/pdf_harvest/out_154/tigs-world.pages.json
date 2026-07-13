@@ -1,0 +1,95 @@
+{
+ "slug": "tigs-world",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 286,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  2,
+  4
+ ],
+ "cache_file": "tigs-world.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=tigs-world/ebook/en-english/tigs-world.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 8,
+   "text": "Tig’s mom is a scientist. She knows things."
+  },
+  {
+   "page_no": 2,
+   "word_count": 9,
+   "text": "Tig’s dad is a writer. He makes things up."
+  },
+  {
+   "page_no": 3,
+   "word_count": 19,
+   "text": "Tig has a globe. “Mom, if the world is round, why don’t the people on the bottom fall off?”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 10,
+   "text": "“Because gravity pulls everyone towards the middle of the Earth.”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 25,
+   "text": "“Wherever you go, the Earth feels like it is below you. Unless you go into space. Then there’s no down at all, and you float!”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 23,
+   "text": "“People on the other side of the Earth think that they are the right way up......and we are upside down! Isn’t that amazing!”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 15,
+   "text": "“Dad, if the world is round, why don’t the people on the bottom fall off?”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 14,
+   "text": "“Oh, they used to! A lot of people fell off......and ended up on Saturn.”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 26,
+   "text": "“But some people got caught in the branches of trees. They climbed up to the ground, and dug tunnels so they could get around without falling.”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 12,
+   "text": "“Now they’ve built upside-down houses, and they swing between them on ropes!”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 9,
+   "text": "Tig is pretty sure someone is making things up."
+  },
+  {
+   "page_no": 12,
+   "word_count": 3,
+   "text": "But that’s OK."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

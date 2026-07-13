@@ -1,0 +1,97 @@
+{
+ "slug": "theres-an-alien-in-my-house",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 334,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  9,
+  11
+ ],
+ "cache_file": "theres-an-alien-in-my-house.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=theres-an-alien-in-my-house/ebook/en_english/theres-an-alien-in-my-house_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 10,
+   "text": "There’s an alien in my house... We are under attack!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 20,
+   "text": "The walls are changing colour. It must be the alien. The air is getting warmer. It must be the alien."
+  },
+  {
+   "page_no": 3,
+   "word_count": 8,
+   "text": "Strangers keep coming. It must be the alien."
+  },
+  {
+   "page_no": 4,
+   "word_count": 25,
+   "text": "We need protection. I build a fort. Mom and Dad normally build with me, but these days I feel invisible. It must be the alien."
+  },
+  {
+   "page_no": 5,
+   "word_count": 53,
+   "text": "t. I t m h u g s t i b n e e t h h e t a f w e i r d o l a n o i i s e e e l r i n d n a t h e i d m. e h I"
+  },
+  {
+   "page_no": 6,
+   "word_count": 10,
+   "text": "We are under attack! I am an army of one."
+  },
+  {
+   "page_no": 7,
+   "word_count": 15,
+   "text": "1 step, 2 step... 3 step, 4 step... I am the army. Ready for battle."
+  },
+  {
+   "page_no": 8,
+   "word_count": 8,
+   "text": "5 step, 6 step... Away with you, alien!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 7,
+   "text": "7 step, 8 step... I get closer."
+  },
+  {
+   "page_no": 10,
+   "word_count": 30,
+   "text": "9 step, 10 step... I am by its head. Woah! I get a fright. It is tiny and it......looks like me?! How can that be? Is it really an alien?"
+  },
+  {
+   "page_no": 11,
+   "word_count": 8,
+   "text": "Maybe it’s a friend. Maybe it’s my friend?"
+  },
+  {
+   "page_no": 12,
+   "word_count": 11,
+   "text": "1 step, 2 step... We are now an army of two."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "slug": "shhhhh",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 295,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  13,
+  16
+ ],
+ "cache_file": "shhhhh.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=shhhhh/ebook/en-english/shhhhh_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 15,
+   "text": "Baby is sleeping. Z Z Z z z Z z z z Z z Z"
+  },
+  {
+   "page_no": 2,
+   "word_count": 13,
+   "text": "D OO D OO DF OO F F! Shh, Sister! Baby is sleeping!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 16,
+   "text": "G N A L C CLANG C L A N G! Shh, Brother! Baby is sleeping!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 16,
+   "text": "F O O WF O O! F Shhh, dog! W O O Baby is W sleeping!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 9,
+   "text": "Beepity Beep! Beepity Beep! Shhh, phone! Baby is sleeping!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 20,
+   "text": "T O O T T O T O! T O O T E E T Shhhh, radio! Baby is sleeping!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 8,
+   "text": "Brmmm Brmmm BRMMM! Shhhhh, truck! Baby is sleeping!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 9,
+   "text": "Clickity Clack Clickity Clack! Baby is sleeping! Shhhhhh, train!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 26,
+   "text": "a b b u d! B a a b Shhhhhhhhh, a b d u b bhelicopter! u d d Baby is u b a b sleeping!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 3,
+   "text": "Baby is awake!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 12,
+   "text": "DOOF WOOF C L A N G BEEP TOOT BRMMM BADUBBA! Clickity"
+  },
+  {
+   "page_no": 12,
+   "word_count": 83,
+   "text": "Baby is noisy! M M M R B N y t k i W G EPc C T i l EC O l B OO i c B B A O U R D! k A T i B M t BF O W O O y F WO C O F M O O B l D FO i G A c F D N k A BEEP M i t L D y C U B B A! C L A"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

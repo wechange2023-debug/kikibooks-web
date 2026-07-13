@@ -1,0 +1,95 @@
+{
+ "slug": "joannas-grannies",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 351,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "joannas-grannies.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=joannas-grannies/ebook/en_english/joannas-grannies_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 4,
+   "text": "I have two grannies."
+  },
+  {
+   "page_no": 2,
+   "word_count": 2,
+   "text": "Granny Jo"
+  },
+  {
+   "page_no": 3,
+   "word_count": 2,
+   "text": "Granny Anna"
+  },
+  {
+   "page_no": 4,
+   "word_count": 2,
+   "text": "Farmer granny"
+  },
+  {
+   "page_no": 5,
+   "word_count": 2,
+   "text": "Soccer granny"
+  },
+  {
+   "page_no": 6,
+   "word_count": 2,
+   "text": "Bicycle granny"
+  },
+  {
+   "page_no": 7,
+   "word_count": 2,
+   "text": "Taxi granny"
+  },
+  {
+   "page_no": 8,
+   "word_count": 2,
+   "text": "Singing granny"
+  },
+  {
+   "page_no": 9,
+   "word_count": 2,
+   "text": "Dancing granny"
+  },
+  {
+   "page_no": 10,
+   "word_count": 8,
+   "text": "Granny Jo and Granny Anna come to tea."
+  },
+  {
+   "page_no": 11,
+   "word_count": 5,
+   "text": "I sit in the middle."
+  },
+  {
+   "page_no": 12,
+   "word_count": 8,
+   "text": "There’s a bit of each granny in me."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

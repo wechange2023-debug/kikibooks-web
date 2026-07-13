@@ -1,0 +1,95 @@
+{
+ "slug": "brave-bora",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 328,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "brave-bora.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=brave-bora/ebook/en_english/brave-bora_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 20,
+   "text": "Bora is sitting at the clinic with Baba. Jojo, his stuffed monkey, came too. Jojo is sleeping in Bora’s bag."
+  },
+  {
+   "page_no": 2,
+   "word_count": 8,
+   "text": "“I don’t like needles. They hurt!” says Bora."
+  },
+  {
+   "page_no": 3,
+   "word_count": 22,
+   "text": "“An injection helps make you healthy. It’s okay to be scared, Bora. Baba will be right here with you. And Jojo too.”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 21,
+   "text": "“Bora Baraka!” a loud voice calls. “Let’s go Bora,” says Baba. “It’s your turn.” “Let’s come back tomorrow Baba!” says Bora."
+  },
+  {
+   "page_no": 5,
+   "word_count": 25,
+   "text": "“Remember what Baba said you will get for being brave enough to get your injection?” asks Baba. “A red lollipop! Okay, I’m coming,” says Bora."
+  },
+  {
+   "page_no": 6,
+   "word_count": 25,
+   "text": "The doctor smiles at Bora. “Is this your monkey? Can we examine him too?” she asks. Bora looks at Baba, then at Jojo, and nods."
+  },
+  {
+   "page_no": 7,
+   "word_count": 23,
+   "text": "“Now, it’s your turn,” she says. Will you help me give your monkey a small injection so he feels better?” asks the doctor."
+  },
+  {
+   "page_no": 8,
+   "word_count": 12,
+   "text": "“TOOP!” says the doctor as she gives Jojo the monkey an injection."
+  },
+  {
+   "page_no": 9,
+   "word_count": 22,
+   "text": "“Now, it’s your turn. Is that a superhero on your T-shirt?” she asks. “TOOP!” she says as she gives Bora the injection."
+  },
+  {
+   "page_no": 10,
+   "word_count": 8,
+   "text": "“Ouch!” shouts Bora. “Hey, that wasn’t so bad!”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 18,
+   "text": "“I know it stings a little, but we’re done and you have been very brave!” says the doctor."
+  },
+  {
+   "page_no": 12,
+   "word_count": 7,
+   "text": "“One red lollipop for our brave Bora!”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

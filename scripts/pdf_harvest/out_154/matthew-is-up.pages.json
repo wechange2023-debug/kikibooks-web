@@ -1,0 +1,95 @@
+{
+ "slug": "matthew-is-up",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 318,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "matthew-is-up.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=matthew-is-up/ebook/en_english/matthew-is-up_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 7,
+   "text": "The sun is up. Matthew is up."
+  },
+  {
+   "page_no": 2,
+   "word_count": 9,
+   "text": "Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping."
+  },
+  {
+   "page_no": 3,
+   "word_count": 26,
+   "text": "Matthew is hungry. Matthew pours the milk on his cereal. Matthew eats. Matthew eats it all up. Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping."
+  },
+  {
+   "page_no": 4,
+   "word_count": 23,
+   "text": "Matthew needs to poo. He sits on the loo and wipes his own bottom. Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping."
+  },
+  {
+   "page_no": 5,
+   "word_count": 31,
+   "text": "Matthew pulls off his pyjamas. He puts on his clothes. First he puts on his Spiderman underpants. Then he puts on his number 1 shirt. Then he puts on his pants."
+  },
+  {
+   "page_no": 6,
+   "word_count": 9,
+   "text": "Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping."
+  },
+  {
+   "page_no": 7,
+   "word_count": 10,
+   "text": "So Matthew jumps. Matthew jumps small jumps in his room."
+  },
+  {
+   "page_no": 8,
+   "word_count": 12,
+   "text": "Mommy is still sleeping. Daddy is still sleeping. Lizwi is still sleeping."
+  },
+  {
+   "page_no": 9,
+   "word_count": 13,
+   "text": "So Matthew jumps. Matthew jumps in the passage. Matthew jumps in the bathroom."
+  },
+  {
+   "page_no": 10,
+   "word_count": 12,
+   "text": "Mommy is still sleeping. Daddy is still sleeping. Lizwi is still sleeping."
+  },
+  {
+   "page_no": 11,
+   "word_count": 17,
+   "text": "So Matthew jumps on them. Matthew jumps on Mommy, on Daddy, on Lizwi, on the big bed."
+  },
+  {
+   "page_no": 12,
+   "word_count": 16,
+   "text": "Lizwi wakes up. Lizwi jumps! Matthew and Lizwi jump on Mommy and Daddy! Mommy wakes up."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "slug": "feathered-friends",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 284,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  4,
+  11,
+  13
+ ],
+ "cache_file": "feathered-friends.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=feathered-friends/ebook/en-english/feathered-friends.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 9,
+   "text": "We are the oakum boys. We do everything together."
+  },
+  {
+   "page_no": 2,
+   "word_count": 14,
+   "text": "Penguins don’t fly, they swim. But we’re too young to swim. So we walk."
+  },
+  {
+   "page_no": 3,
+   "word_count": 17,
+   "text": "One day we went for a long walk. We walked and walked. Until we saw something new."
+  },
+  {
+   "page_no": 4,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 5,
+   "word_count": 6,
+   "text": "He’s got something on his head!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 7,
+   "word_count": 5,
+   "text": "You’re changing! So are you!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 9,
+   "word_count": 8,
+   "text": "It’s not so bad! It’s not so cold!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 10,
+   "text": "But who’s going to teach us to swim? I will!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 117,
+   "text": "In this book you’ll meet king penguins, chinstrap penguins, and one lonely macaroni... as seen through the eyes of the oakum boys, which are what king penguin babies are before they grow up. All of these penguin species (and a few more) are found in Antarctica, the coldest, driest, windiest place on earth. It takes some very special qualities to survive in this harsh landscape. But if you are lucky enough to visit here, you will find that no matter how alike the penguins seem, each one is different – and all of them are special. We hope that by learning about these amazing animals, future generations will want to protect them as much as we do."
+  }
+ ]
+}

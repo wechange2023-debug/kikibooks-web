@@ -1,0 +1,95 @@
+{
+ "slug": "tumi-goes-to-the-park",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 292,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  4,
+  6
+ ],
+ "cache_file": "tumi-goes-to-the-park.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=tumi-goes-to-the-park/ebook/en-english/tumi-goes-to-the-park_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 7,
+   "text": "first It’s Tumi’s trip to the park."
+  },
+  {
+   "page_no": 2,
+   "word_count": 20,
+   "text": "what’s that? “Mama, ” “It’s a slide,” says Mama. “May I go on it?” asks Tumi. “Of course!” says Mama."
+  },
+  {
+   "page_no": 3,
+   "word_count": 1,
+   "text": "“Wheeeee!”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 12,
+   "text": "“Look Mama, I swing like a nk y ” m. o e"
+  },
+  {
+   "page_no": 5,
+   "word_count": 19,
+   "text": "“I just went past you ten times, Mama!” says Tumi. “Clever girl! says Mama. “You know how to count!”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 11,
+   "text": "“Do you want to play?” asks Tumi. “Yes!” says the boy."
+  },
+  {
+   "page_no": 7,
+   "word_count": 4,
+   "text": "“I’m Tumi.” “I’m Zakhe.”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 10,
+   "text": "Tumi sees the sandpit. “Let’s build a sandcastle!” says Tumi."
+  },
+  {
+   "page_no": 9,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 10,
+   "word_count": 8,
+   "text": "“I’m taking a photo for Gogo,” says Mama."
+  },
+  {
+   "page_no": 11,
+   "word_count": 21,
+   "text": "“It’s time to go home now, Tumi,” says Mama. “Bye, Zakhe!” waves Tumi. “Bye, Tumi!” says Zakhe. “See you next time!”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 11,
+   "text": "thank you “Mama, for bringing me to the park,” says Tumi."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

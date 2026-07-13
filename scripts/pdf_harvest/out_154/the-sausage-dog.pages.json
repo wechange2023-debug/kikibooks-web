@@ -1,0 +1,98 @@
+{
+ "slug": "the-sausage-dog",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 321,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  10,
+  13,
+  14
+ ],
+ "cache_file": "the-sausage-dog.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=the-sausage-dog/ebook/en_english/the-sausage-dog_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 5,
+   "text": "Mama and Thembsie go shopping."
+  },
+  {
+   "page_no": 2,
+   "word_count": 17,
+   "text": "‘Mama, that dog looks like a sausage. A sausage with legs and a head.’ ‘And a tail!’"
+  },
+  {
+   "page_no": 3,
+   "word_count": 15,
+   "text": "‘Mama, can we have that sausage dog?’ ‘No, sorry Thembsie. We can’t have a dog.’"
+  },
+  {
+   "page_no": 4,
+   "word_count": 5,
+   "text": "Mama and Thembsie go home."
+  },
+  {
+   "page_no": 5,
+   "word_count": 13,
+   "text": "‘Mama, those balloons look like sausages. ‘Can I play with them?’ ‘Yes Thembsie!’"
+  },
+  {
+   "page_no": 6,
+   "word_count": 26,
+   "text": "Thembsie twists and shapes the! P O P balloons this way. P O! P! P O P And Thembsie twists and shapes the balloons that way."
+  },
+  {
+   "page_no": 7,
+   "word_count": 12,
+   "text": "‘Papa, can you make this balloon into a sausage dog?’ ‘Yes, Thembsie.’"
+  },
+  {
+   "page_no": 8,
+   "word_count": 5,
+   "text": "Papa and Thembsie go inside."
+  },
+  {
+   "page_no": 9,
+   "word_count": 27,
+   "text": "Papa twists and shapes the balloon this way. And Papa twists and shapes the balloon that way. H E A! D T I L A! LG! ES"
+  },
+  {
+   "page_no": 10,
+   "word_count": 21,
+   "text": "Thembsie and her sausage dog go for a walk. B O P! P! O H B O U N C E!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 17,
+   "text": "‘Thembsie, dinner time!’ calls Mama. ‘Mama, Papa, this is my sausage dog. Can he have some dinner?’"
+  },
+  {
+   "page_no": 12,
+   "word_count": 2,
+   "text": "‘Yes, Thembsie!’"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

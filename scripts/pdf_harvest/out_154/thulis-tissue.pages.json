@@ -1,0 +1,95 @@
+{
+ "slug": "thulis-tissue",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 268,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "thulis-tissue.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=thulis-tissue/e-book/en_english/thulis-tissue_en.pdf",
+ "ebook_folder": "/e-book",
+ "eng_folder": "/e-book/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 6,
+   "text": "Thuli! Tissues belong in the bin."
+  },
+  {
+   "page_no": 2,
+   "word_count": 12,
+   "text": "A little breeze caught the tissue. W H O O S H!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 4,
+   "text": "Hey! Come back here!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 13,
+   "text": "The goat shook its head and the tissue flew off.? H E M"
+  },
+  {
+   "page_no": 5,
+   "word_count": 19,
+   "text": "... P PU U,, P U w e n t t h e t i s s u e."
+  },
+  {
+   "page_no": 6,
+   "word_count": 5,
+   "text": "You belong in the bin!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 8,
+   "word_count": 13,
+   "text": "bin! That belongs in the zz Bz zzz B B z z z"
+  },
+  {
+   "page_no": 9,
+   "word_count": 4,
+   "text": "P! L O P"
+  },
+  {
+   "page_no": 10,
+   "word_count": 6,
+   "text": "G O T C H A!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 12,
+   "word_count": 5,
+   "text": "bin! You belong in the"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

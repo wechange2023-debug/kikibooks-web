@@ -1,0 +1,98 @@
+{
+ "slug": "little-shoots",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 333,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  6,
+  8,
+  10
+ ],
+ "cache_file": "little-shoots.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=little-shoots/e-book/en_english/little-shoots_en.pdf",
+ "ebook_folder": "/e-book",
+ "eng_folder": "/e-book/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 6,
+   "text": "“When will I grow?” asks Layo."
+  },
+  {
+   "page_no": 2,
+   "word_count": 14,
+   "text": "“I don’t know,” replies Baba. “When you are ready,” says Grandma. “Soon,” says Mama."
+  },
+  {
+   "page_no": 3,
+   "word_count": 11,
+   "text": "Grandma takes Layo to the farm. “Let us plant some seeds.”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 19,
+   "text": "In one field they plant corn, “What are these?” asks Layo. and in another, melon. “Bamboo seeds,” replies Grandma."
+  },
+  {
+   "page_no": 5,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 6,
+   "word_count": 22,
+   "text": "“The corn and melon have grown “They will grow when they are well,” says Grandma. ready.” “What about the bamboo?” asks Layo."
+  },
+  {
+   "page_no": 7,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 8,
+   "word_count": 8,
+   "text": "“Everything grows in its own time,” says Grandma."
+  },
+  {
+   "page_no": 9,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 10,
+   "word_count": 6,
+   "text": "“They have grown well,” says Grandma."
+  },
+  {
+   "page_no": 11,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 12,
+   "word_count": 4,
+   "text": "“You have grown well.”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

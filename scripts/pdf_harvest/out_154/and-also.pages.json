@@ -1,0 +1,100 @@
+{
+ "slug": "and-also",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 8,
+ "front_matter_word_count": 314,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  8,
+  12,
+  13,
+  14,
+  16
+ ],
+ "cache_file": "and-also.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=and-also/ebook/en-english/and-also.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 11,
+   "text": "Thabo pretends that his bed is a raft on the sea!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 14,
+   "text": "His little sister Keitu says, “Yes! And also! There are sharks.” “No!” says Thabo."
+  },
+  {
+   "page_no": 3,
+   "word_count": 8,
+   "text": "Thabo pretends that their taxi is a spaceship!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 16,
+   "text": "His little sister Keitu says, “Yes! And also! Watch out for shooting stars!” “No,” says Thabo."
+  },
+  {
+   "page_no": 5,
+   "word_count": 7,
+   "text": "Thabo pretends the playground is a jungle!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 14,
+   "text": "His little sister Keitu says, “Yes! And also! We are lions.” “No,” says Thabo."
+  },
+  {
+   "page_no": 7,
+   "word_count": 14,
+   "text": "“Oh!” says Thabo, “Wait! Wow! Yes! That’s a great idea!” “I know!” says Keitu."
+  },
+  {
+   "page_no": 8,
+   "word_count": 13,
+   "text": "Thabo pretends to be a lion! Keitu also pretends to be a lion!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 24,
+   "text": "Keitu says, “Yes! And also! Thabo pretends the other kids are a We can jump on this log river of crocodiles! to float away.”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 24,
+   "text": "Story spread 10 “Yes! And also!” Thabo says, “We can Keitu says, “Yes! slide down the rainbow!” And also! Watch out for the dinosaurs!”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 12,
+   "word_count": 19,
+   "text": "Thabo says,“I had the Keitu says, “And also! We should play again tomorrow!” best day playing pretend with you.”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

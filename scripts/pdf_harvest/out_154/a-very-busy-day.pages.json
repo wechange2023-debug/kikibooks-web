@@ -1,0 +1,96 @@
+{
+ "slug": "a-very-busy-day",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 343,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  11
+ ],
+ "cache_file": "a-very-busy-day.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=a-very-busy-day/ebook/en_english/a-very-busy-day_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 17,
+   "text": "Today is a very busy day! Mama and I have lots of things to do and see."
+  },
+  {
+   "page_no": 2,
+   "word_count": 25,
+   "text": "We walk to the station and find people in a queue. Old people and young people, loud people and quiet people, all going to town."
+  },
+  {
+   "page_no": 3,
+   "word_count": 19,
+   "text": "Through the minibus window, I see cars driving by. Fast cars and slow cars, big cars and small cars."
+  },
+  {
+   "page_no": 4,
+   "word_count": 20,
+   "text": "There are so many buildings in town! Tall ones and short ones, glass ones and brick ones, everywhere I look."
+  },
+  {
+   "page_no": 5,
+   "word_count": 24,
+   "text": "Mama and I walk in and out of shops. Shops for clothes and shops for books, shops for bags and all sorts of things."
+  },
+  {
+   "page_no": 6,
+   "word_count": 15,
+   "text": "Mama tries on some shoes. Red shoes and green shoes, high shoes and low shoes."
+  },
+  {
+   "page_no": 7,
+   "word_count": 4,
+   "text": "Bonjour! Hello! Ola! Jambo!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 9,
+   "word_count": 24,
+   "text": "In a big store, we fill a trolley with food. Boxes of cereal, and sacks of fruit. Bags of flour and bottles of juice."
+  },
+  {
+   "page_no": 10,
+   "word_count": 22,
+   "text": "Mama shows me the toys and asks me to choose! There are soft toys and round toys, loud toys and fast toys."
+  },
+  {
+   "page_no": 11,
+   "word_count": 21,
+   "text": "Today we’ve bought lots of things! Bags of food and bags of clothes. A pair of shoes and even some treats."
+  },
+  {
+   "page_no": 12,
+   "word_count": 19,
+   "text": "Back at home, in our quiet house, I take out the special gift that Mama bought just for me!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

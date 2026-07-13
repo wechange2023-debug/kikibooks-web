@@ -1,0 +1,95 @@
+{
+ "slug": "clever-pig",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 304,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "clever-pig.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=clever-pig/ebook/en-english/clever-pig_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 9,
+   "text": "Come Pig! Let’s play. Can you find the carrot?"
+  },
+  {
+   "page_no": 2,
+   "word_count": 9,
+   "text": "No, it’s not under there. No, it’s not inside."
+  },
+  {
+   "page_no": 3,
+   "word_count": 2,
+   "text": "Clever Pig!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 10,
+   "text": "Wake up, Pig! Come out and play. Where is she?"
+  },
+  {
+   "page_no": 5,
+   "word_count": 3,
+   "text": "Pig is gone."
+  },
+  {
+   "page_no": 6,
+   "word_count": 12,
+   "text": "The sun came up. And the sun went down. But, no Pig."
+  },
+  {
+   "page_no": 7,
+   "word_count": 4,
+   "text": "I miss my friend."
+  },
+  {
+   "page_no": 8,
+   "word_count": 4,
+   "text": "My Pig! Clever Pig."
+  },
+  {
+   "page_no": 9,
+   "word_count": 6,
+   "text": "And one, two, three new friends!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 4,
+   "text": "Come, pigs! Let’s play."
+  },
+  {
+   "page_no": 11,
+   "word_count": 3,
+   "text": "Time for bed!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 2,
+   "text": "Goodnight, pigs."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

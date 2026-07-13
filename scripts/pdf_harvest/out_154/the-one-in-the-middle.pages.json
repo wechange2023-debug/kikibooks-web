@@ -1,0 +1,96 @@
+{
+ "slug": "the-one-in-the-middle",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 287,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  15
+ ],
+ "cache_file": "the-one-in-the-middle.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=the-one-in-the-middle/ebook/en_english/the-one-in-the-middle_en_20231110.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 18,
+   "text": "I am the middle one. Not the first born. Not the last born. The one in the middle!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 10,
+   "text": "The one in the middle can be easy to forget."
+  },
+  {
+   "page_no": 3,
+   "word_count": 5,
+   "text": "And easy to leave out."
+  },
+  {
+   "page_no": 4,
+   "word_count": 11,
+   "text": "But that’s okay because I am also the one with IDEAS!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 18,
+   "text": "Look what I can make from just this cardboard box! A BEAUTIFUL house… with real doors and windows."
+  },
+  {
+   "page_no": 6,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 7,
+   "word_count": 11,
+   "text": "My house has an extra special bed, and a MAGIC SLIDE."
+  },
+  {
+   "page_no": 8,
+   "word_count": 8,
+   "text": "Some days my house is also a shop."
+  },
+  {
+   "page_no": 9,
+   "word_count": 9,
+   "text": "And on other days it’s a VERY FANTASTIC show."
+  },
+  {
+   "page_no": 10,
+   "word_count": 7,
+   "text": "Sometimes my house is just for me!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 32,
+   "text": "And sometimes it’s a house for three! I am the middle one. Not the first born. Not the last born. The one in the middle! And that’s the best place for me."
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

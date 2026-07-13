@@ -1,0 +1,95 @@
+{
+ "slug": "lets-have-an-inside-day",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 329,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "lets-have-an-inside-day.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=lets-have-an-inside-day/ebook/en-english/lets-have-an-inside-day_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 5,
+   "text": "Let’s have an inside day…"
+  },
+  {
+   "page_no": 2,
+   "word_count": 6,
+   "text": "A pancake, syrup and berries day."
+  },
+  {
+   "page_no": 3,
+   "word_count": 8,
+   "text": "A jump on the bed and twirling day."
+  },
+  {
+   "page_no": 4,
+   "word_count": 8,
+   "text": "A dress up like dad and pictures day."
+  },
+  {
+   "page_no": 5,
+   "word_count": 6,
+   "text": "Let’s have an inside games day."
+  },
+  {
+   "page_no": 6,
+   "word_count": 4,
+   "text": "We’ll hide and seek…"
+  },
+  {
+   "page_no": 7,
+   "word_count": 4,
+   "text": "And run and scream."
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "But whisper when we pass Mama’s room."
+  },
+  {
+   "page_no": 9,
+   "word_count": 7,
+   "text": "Let’s have a dancing and singing day…"
+  },
+  {
+   "page_no": 10,
+   "word_count": 7,
+   "text": "A tickle tummies and eat gummies day."
+  },
+  {
+   "page_no": 11,
+   "word_count": 11,
+   "text": "Let’s get snuggly and tell stories. Fall asleep and get snoring..."
+  },
+  {
+   "page_no": 12,
+   "word_count": 8,
+   "text": "Because an inside day is a busy day."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

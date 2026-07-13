@@ -1,0 +1,98 @@
+{
+ "slug": "my-special-blankie",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 348,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  2,
+  7,
+  9,
+  10
+ ],
+ "cache_file": "my-special-blankie.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=my-special-blankie/ebook/en_english/my-special-blankie_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 12,
+   "text": "Can you see me? I’m on Mama’s back in my special blankie."
+  },
+  {
+   "page_no": 2,
+   "word_count": 15,
+   "text": "I love Mama. And Mama loves me. And I love, love, LOVE my special blankie."
+  },
+  {
+   "page_no": 3,
+   "word_count": 17,
+   "text": "m! oo B I like to make a noise. B a n g! h! a s B"
+  },
+  {
+   "page_no": 4,
+   "word_count": 7,
+   "text": "But Mama likes quiet. Shhh Shhh Shhh"
+  },
+  {
+   "page_no": 5,
+   "word_count": 10,
+   "text": "Mama does her work. o! G G o! o! G"
+  },
+  {
+   "page_no": 6,
+   "word_count": 17,
+   "text": "h! o a W And I like to play. W o a h! h! a o W"
+  },
+  {
+   "page_no": 7,
+   "word_count": 8,
+   "text": "Oh, I love, love, LOVE my special blankie."
+  },
+  {
+   "page_no": 8,
+   "word_count": 11,
+   "text": "But when I eat, Mama says my special blankie must watch."
+  },
+  {
+   "page_no": 9,
+   "word_count": 13,
+   "text": "And when I wash, my special blankie must wait where it is dry."
+  },
+  {
+   "page_no": 10,
+   "word_count": 12,
+   "text": "I love bedtime stories with Mama. My special blankie listens with me..."
+  },
+  {
+   "page_no": 11,
+   "word_count": 7,
+   "text": "... and helps me go to sleep."
+  },
+  {
+   "page_no": 12,
+   "word_count": 7,
+   "text": "I love, love, LOVE my special blankie."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "slug": "hello-baby",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 355,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  3,
+  4,
+  17
+ ],
+ "cache_file": "hello-baby.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=hello-baby/ebook/en_english/hello-baby.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 2,
+   "text": "Ukuphi umntwana?"
+  },
+  {
+   "page_no": 2,
+   "word_count": 1,
+   "text": "Sawubona!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 2,
+   "text": "Luphi usana?"
+  },
+  {
+   "page_no": 4,
+   "word_count": 1,
+   "text": "Molweni!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 4,
+   "text": "Waar is die baba?"
+  },
+  {
+   "page_no": 6,
+   "word_count": 1,
+   "text": "Hallo!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 4,
+   "text": "Where is the baby?"
+  },
+  {
+   "page_no": 8,
+   "word_count": 1,
+   "text": "Hello!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 3,
+   "text": "Ngwana o kae?"
+  },
+  {
+   "page_no": 10,
+   "word_count": 1,
+   "text": "Dumelang!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 3,
+   "text": "Lesea le hokae?"
+  },
+  {
+   "page_no": 12,
+   "word_count": 6,
+   "text": "Dumelang! a! t - a T"
+  },
+  {
+   "page_no": 13,
+   "word_count": 9,
+   "text": "Salani! Hamba kakuhle! Totsiens! Sepela gabotse! Kha vha sale!"
+  },
+  {
+   "page_no": 14,
+   "word_count": 11,
+   "text": "e, b y e - B y y! a b b"
+  }
+ ]
+}

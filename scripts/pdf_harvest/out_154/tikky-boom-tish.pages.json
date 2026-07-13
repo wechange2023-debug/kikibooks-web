@@ -1,0 +1,103 @@
+{
+ "slug": "tikky-boom-tish",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 346,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  5,
+  6,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13
+ ],
+ "cache_file": "tikky-boom-tish.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=tikky-boom-tish/ebook/en_english/tikky_boom_tish_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 9,
+   "text": "This book is full of SI U M C!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 14,
+   "text": "When you see a drum, like THIS, say “Boom!” out loud! m o Bo"
+  },
+  {
+   "page_no": 3,
+   "word_count": 3,
+   "text": "Boom! Boom! Boom!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 12,
+   "text": "When you see a rattle, like THIS, say “Tikky!” Ti kk y!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 8,
+   "text": "Tikky Boom Tikky Boom Tikky Boom Tikky Boom!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 13,
+   "text": "When you see a cymbal, like THIS, say “Tish!” T s i h!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 8,
+   "text": "Boom Tikky Tikky Tish! Boom Tikky Tikky Tish!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 16,
+   "text": "When you see a keyboard, like THIS, say “ Wubba! ” a! b b u W"
+  },
+  {
+   "page_no": 9,
+   "word_count": 7,
+   "text": "Boom Wubba Boom Wubba Boom Wubba Boom!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 11,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

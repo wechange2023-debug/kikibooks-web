@@ -1,0 +1,96 @@
+{
+ "slug": "thats-not-thabi-thats-a-hippopotamus",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 390,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  7
+ ],
+ "cache_file": "thats-not-thabi-thats-a-hippopotamus.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=thats-not-thabi-thats-a-hippopotamus/ebook/en-english/thats-not-thabi_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 10,
+   "text": "Lucy woke up. Her sister Thabi wasn’t in her bed."
+  },
+  {
+   "page_no": 2,
+   "word_count": 11,
+   "text": "“Where’s Thabi?” Lucy asked Ma. “Thabi’s in the kitchen eating breakfast.”"
+  },
+  {
+   "page_no": 3,
+   "word_count": 6,
+   "text": "“That’s not Thabi!” “That’s a hippopotamus!”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 6,
+   "text": "Lucy looked all over the house."
+  },
+  {
+   "page_no": 5,
+   "word_count": 10,
+   "text": "“Where’s Thabi?” Lucy asked Pa. “Thabi’s swimming in the pool.”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 6,
+   "text": "“That’s not Thabi!” “That’s a hippopotamus!”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 6,
+   "text": "Lucy kept looking around the garden."
+  },
+  {
+   "page_no": 8,
+   "word_count": 11,
+   "text": "“Where’s Thabi?” Lucy asked the neighbour. “Thabi’s playing in the park.”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 6,
+   "text": "“That’s not Thabi! That’s a hippopotamus!”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 13,
+   "text": "Then Lucy heard a funny noise. She gave the hippopotamus a big tickle."
+  },
+  {
+   "page_no": 11,
+   "word_count": 2,
+   "text": "“There’s Thabi!”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 9,
+   "text": "“Thanks,” said Thabi. “It’s very boring inside a hippopotamus.”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

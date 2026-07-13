@@ -1,0 +1,96 @@
+{
+ "slug": "no",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 285,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  4,
+  12,
+  15
+ ],
+ "cache_file": "no.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=no/ebook/en_english/no.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 9,
+   "text": "Nosisi, it’s time to stop playing. Please come inside?"
+  },
+  {
+   "page_no": 2,
+   "word_count": 1,
+   "text": "No!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 9,
+   "text": "Nosisi, we need to go to the shops. No!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 6,
+   "text": "Look at these beautiful butterflies. No!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 7,
+   "text": "Come help Mama make some rice. No!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 4,
+   "text": "Let’s feed Shakes. No!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 5,
+   "text": "Nosisi it’s bath time... No!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 5,
+   "text": "No No No! No Nonononono..."
+  },
+  {
+   "page_no": 9,
+   "word_count": 6,
+   "text": "How about an ice cream? No!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 3,
+   "text": "Oh. Not no..."
+  },
+  {
+   "page_no": 11,
+   "word_count": 6,
+   "text": "Yes! Yummy. Yummy. Yay! Yay! Yay!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 8,
+   "text": "Nosisi, will you tidy your room? Hmmmm. Well...okay."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

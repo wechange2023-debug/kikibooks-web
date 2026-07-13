@@ -1,0 +1,97 @@
+{
+ "slug": "its-my-book",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 273,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  8,
+  13
+ ],
+ "cache_file": "its-my-book.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=its-my-book/e-book/en_english/its-my-book_en.pdf",
+ "ebook_folder": "/e-book",
+ "eng_folder": "/e-book/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 17,
+   "text": "Susu LOVES to read. i m e... a t O n n o c e u p"
+  },
+  {
+   "page_no": 2,
+   "word_count": 10,
+   "text": "Come back SILLY goose! Geese can’t read. It’s MY book!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 17,
+   "text": "Now where was I... e... m t i a n o O p n u c e"
+  },
+  {
+   "page_no": 4,
+   "word_count": 16,
+   "text": "You CRAZY pig! Pigs can’t read. o b Y M s ’ t I! k o"
+  },
+  {
+   "page_no": 5,
+   "word_count": 19,
+   "text": "Shhh! Don’t tell ANYONE I’m here. e... m t i a n o O p n u c e"
+  },
+  {
+   "page_no": 6,
+   "word_count": 12,
+   "text": "Aargh! Not you too, FUNNY dog! Dogs can’t read. It’s MY book!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 20,
+   "text": "No one will find me up HERE! m e... t i a O n n o c e u p"
+  },
+  {
+   "page_no": 8,
+   "word_count": 29,
+   "text": "Ai! Watch out Mr Dragon, you’ll BURN my book! Don’t you know, dragons can’t read. I t ’ s M Y b o o o o o o k!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 18,
+   "text": "m e... FINALLY... some peace and quiet! t i a O n n o c e u p"
+  },
+  {
+   "page_no": 10,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 11,
+   "word_count": 13,
+   "text": "Susu, it looks like everyone wants to read. Let’s start a book club!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 23,
+   "text": "You’re right, everybody loves reading. We can SHARE our books.... m e t i a n o p O u n c e"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

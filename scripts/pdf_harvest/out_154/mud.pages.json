@@ -1,0 +1,99 @@
+{
+ "slug": "mud",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 264,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  7,
+  10,
+  11,
+  16
+ ],
+ "cache_file": "mud.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=mud/ebook/en_english/mud_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 13,
+   "text": "Zama has spent all morning in a mucky puddle, making a new friend."
+  },
+  {
+   "page_no": 2,
+   "word_count": 15,
+   "text": "“Let’s have some fun, Mud. What do you want to do?” “Something naughty,” grins Mud."
+  },
+  {
+   "page_no": 3,
+   "word_count": 2,
+   "text": "SQUELCH! WHEEEE!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 9,
+   "text": "“Oh no, Mud! You made Mama’s clean sheets dirty!”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 16,
+   "text": "“Zama! What have you done to my washing?” “It’s not me, Mama. It’s Mud!” cries Zama."
+  },
+  {
+   "page_no": 6,
+   "word_count": 18,
+   "text": "“Mud! What did you do to But Mud ignores Zama and Mama’s clean floor?” scampers into the kitchen."
+  },
+  {
+   "page_no": 7,
+   "word_count": 11,
+   "text": "“Zama! “It’s not me, What is this Mama. It’s Mud!” mess?”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 8,
+   "text": "Oh dear! Is there anything Mud didn’t touch?"
+  },
+  {
+   "page_no": 9,
+   "word_count": 21,
+   "text": "“It’s Mud, Mama!” pleads Zama. “I don’t know how to stop it!” “Enough nonsense, Zama! Get in the bath. Right now!”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 17,
+   "text": "Zama sinks into the bubbles. It feels so good to be clean again! But where is Mud?"
+  },
+  {
+   "page_no": 11,
+   "word_count": 3,
+   "text": "Suddenly... KER- SPLASH!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 18,
+   "text": "“Zama! “I know, Mama,” The bath is says Zama crossly. full of mud!” “And it can stay there!”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

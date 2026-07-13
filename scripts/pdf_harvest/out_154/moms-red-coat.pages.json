@@ -1,0 +1,99 @@
+{
+ "slug": "moms-red-coat",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 322,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  6,
+  12,
+  13,
+  15
+ ],
+ "cache_file": "moms-red-coat.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=moms-red-coat/ebook/en_english/moms-red-coat_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 15,
+   "text": "I love Mom’s coat! It’s red and long and warm. And it smells like Mom!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 33,
+   "text": "I love doing things with Mom! We picnic outside. We work in the garden. She hugs me when I come home from school. At night, she holds me tight until I fall asleep."
+  },
+  {
+   "page_no": 3,
+   "word_count": 20,
+   "text": "‘Good news!’ says Mom. ‘I found a job! I will be away all week, but I’ll come home on weekends!’"
+  },
+  {
+   "page_no": 4,
+   "word_count": 17,
+   "text": "‘Who will hold me at night, Mom?’ ‘Who will hug me, picnic with me, garden with me?’"
+  },
+  {
+   "page_no": 5,
+   "word_count": 29,
+   "text": "‘I can see that you are sad. I will leave my red coat here with you.’ ‘When you see it, remember that I love you and I’m coming back.’"
+  },
+  {
+   "page_no": 6,
+   "word_count": 21,
+   "text": "I drag the red coat outside – it’s my picnic blanket! It feels like Mom is with me. Oops! Juice spill!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 33,
+   "text": "I am sad that Mom’s not waiting at the door when I come home. I put on her coat. It’s warm and it smells like her. It feels like a hug! Oops! Paint!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 26,
+   "text": "I help Gogo in the garden. The long coat on the branch scares away the chickens! It feels like Mom is gardening with us. Oops! Mud!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 28,
+   "text": "When it’s dark, I miss Mom most. Gogo covers me with her warm coat. It feels like Mom is holding me as I fall asleep. Oops! Cookie crumbs!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 20,
+   "text": "Mom’s red coat is warm and smells like… paint, juice, mud and cookie crumbs! Oops! We need to wash it!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 66,
+   "text": "The wind blows the red coat off the washing line... r! a i u h e p t Oops! i n t o Who did the coat fall on?! e c n e f e h t r e v o s e f l i I t! i x a t e h t r e v o e s f l i I t"
+  },
+  {
+   "page_no": 12,
+   "word_count": 21,
+   "text": "I run and grab it! ‘Found you, coat!’ The red coat smells like Mom again. ‘Oh!’ ‘Found you, Mom! You’re back!’"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

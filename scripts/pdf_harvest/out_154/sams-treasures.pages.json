@@ -1,0 +1,96 @@
+{
+ "slug": "sams-treasures",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 339,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  15
+ ],
+ "cache_file": "sams-treasures.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=sams-treasures/ebook/en_english/sams-treasures_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 13,
+   "text": "Sam and Dara were at the park. A shiny sparkle caught Sam’s eye."
+  },
+  {
+   "page_no": 2,
+   "word_count": 11,
+   "text": "A crystal ball! A magic pearl! A treasure for Sam’s collection!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 15,
+   "text": "“That’s not treasure – that’s junk,” said Dara. She didn’t like the things Sam found."
+  },
+  {
+   "page_no": 4,
+   "word_count": 16,
+   "text": "That was fine with Sam. “Time to go treasure hunting!” Off he went with his backpack."
+  },
+  {
+   "page_no": 5,
+   "word_count": 11,
+   "text": "Between the bushes Sam found a crown and a magic wand."
+  },
+  {
+   "page_no": 6,
+   "word_count": 13,
+   "text": "Under an old log he found monsters and creepy creatures. No thank you!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 10,
+   "text": "Among the flowers Sam found a chest and a ring."
+  },
+  {
+   "page_no": 8,
+   "word_count": 15,
+   "text": "In the stream Sam found a message in a bottle and a wise old wizard."
+  },
+  {
+   "page_no": 9,
+   "word_count": 23,
+   "text": "By the lamp post Sam found a sports car and a victory trophy. Time to show Dara all the treasures he had found!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 16,
+   "text": "Dara was crying. “I lost my ring,” said Dara. “I don’t know where I dropped it.”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 13,
+   "text": "That sounded like something It was! It was Dara’s ring! Sam had found."
+  },
+  {
+   "page_no": 12,
+   "word_count": 7,
+   "text": "“Thank you, Sam! You DO find treasures!”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

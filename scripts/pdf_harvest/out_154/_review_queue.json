@@ -1,0 +1,703 @@
+{
+ "threshold_q1": 67.48,
+ "n": 39,
+ "books": [
+  {
+   "slug": "a-day-out",
+   "agree": 0.0,
+   "v2_wordcount": 67,
+   "v1_wordcount": 25,
+   "divergence_examples": [
+    {
+     "page_no": 6,
+     "v1": "Eeee! It's cold!",
+     "v2": "E e e ce! I t o ' s l d!"
+    },
+    {
+     "page_no": 3,
+     "v1": "Wait for me!",
+     "v2": "m! e o r f i t a W"
+    }
+   ]
+  },
+  {
+   "slug": "how-do-you-sleep",
+   "agree": 0.0,
+   "v2_wordcount": 241,
+   "v1_wordcount": 114,
+   "divergence_examples": [
+    {
+     "page_no": 6,
+     "v1": "We take turns to guard each other. How do you sleep, duck?",
+     "v2": "How do you sleep, duck? t u r n s k e t o a t e W r d e a c a h u g o t h e r."
+    },
+    {
+     "page_no": 5,
+     "v1": "I change colour in my dreams. How do you sleep, octopus?",
+     "v2": "How do you sleep, octopus? g e c o n l o a u h r c d r y e I m a m n s i."
+    }
+   ]
+  },
+  {
+   "slug": "i-dont-want-to-go-to-sleep",
+   "agree": 0.0,
+   "v2_wordcount": 568,
+   "v1_wordcount": 226,
+   "divergence_examples": [
+    {
+     "page_no": 7,
+     "v1": "\"I want to fly across the sky! Leap from star Fill my pockets with stardust!\" to star!",
+     "v2": "! y k s e h t s s o r c a l y o f t t w a n \" I! r a t s L t o e a p f r o s m t a r F i l l m \" y t! p s o w u c k i r d e t h s t a t s"
+    },
+    {
+     "page_no": 3,
+     "v1": "\"Goodnight, Nandi.\" \"I want mo re supper .Another boo k! Just one mo re song?\" \"Idon'twanttogotosleep!\"",
+     "v2": "e\" p! e l s o o t og ' t w a t o n t dn I a \" n t m o r e s u p p e A r n. o t h e r b o J o u k s t! o n e m o r e s o n g? \" \"Goodnight, Nandi.\" \" I w"
+    }
+   ]
+  },
+  {
+   "slug": "shhhhh",
+   "agree": 0.0,
+   "v2_wordcount": 230,
+   "v1_wordcount": 101,
+   "divergence_examples": [
+    {
+     "page_no": 12,
+     "v1": "Baby is noisy! CLANG DOOF WOOF CLANG WOOFBEEP BRMMM TOOT Clickit y DOOF BADUBBA! BRMMM Clickity BADUBBA! Clickity BEEP WOOF",
+     "v2": "Baby is noisy! M M M R B N y t k i W G EPc C T i l EC O l B OO i c B B A O U R D! k A T i B M t BF O W O O y F WO C O F M O O B l D FO i G A c F D N k A BEEP M "
+    },
+    {
+     "page_no": 9,
+     "v1": "Shhhhhhhhh, helicopter! Baby is sleeping! Ba dubba dubba dubba dubba!",
+     "v2": "a b b u d! B a a b Shhhhhhhhh, a b d u b bhelicopter! u d d Baby is u b a b sleeping!"
+    }
+   ]
+  },
+  {
+   "slug": "the-monster-must-go",
+   "agree": 0.0,
+   "v2_wordcount": 216,
+   "v1_wordcount": 91,
+   "divergence_examples": [
+    {
+     "page_no": 8,
+     "v1": "I tried TRAPPING it. But the monster was too CUNNING.",
+     "v2": "T R A P m o n P s e t d I e N h e r G t i w r t t i u a t I. B s. G N I N N U C o o t"
+    },
+    {
+     "page_no": 5,
+     "v1": "The monster is... DIRTY SMELLY STICKY DROOLY GRUMPY NOISY",
+     "v2": "N O I S Y G R U M The monster is... P Y D I R T Y S M D R E O L L O Y L Y S T I C K Y"
+    }
+   ]
+  },
+  {
+   "slug": "wiggle-jiggle",
+   "agree": 0.0,
+   "v2_wordcount": 261,
+   "v1_wordcount": 104,
+   "divergence_examples": [
+    {
+     "page_no": 2,
+     "v1": "my tummy! Flowers and leaves aremy favourite food. Yummy in",
+     "v2": "F l o w e r s a n d l e a v e m s y a f a v r o e u r i t e f o Y o d. u m y mi n t u m m y m y!"
+    },
+    {
+     "page_no": 4,
+     "v1": "Pitter-patter I love the rain. on the leaves.",
+     "v2": "r a i n. e t h e I l o v te t rpa - t h e l e Pn tt o e i r a v e s."
+    }
+   ]
+  },
+  {
+   "slug": "samoosas",
+   "agree": 21.81,
+   "v2_wordcount": 302,
+   "v1_wordcount": 184,
+   "divergence_examples": [
+    {
+     "page_no": 12,
+     "v1": "His samoosas were a little bit different but still famous!",
+     "v2": "e t n r e! e s wr u e o ff s m ai d s a oo f t i ll mb i t s e a l t s tt u s b i l i Ha"
+    },
+    {
+     "page_no": 3,
+     "v1": "Are they circles? No, Granny, they're triangles!",
+     "v2": "Are they circles? n y, a n r G o, N g l e s! a n r i t e r ' y e h t"
+    }
+   ]
+  },
+  {
+   "slug": "khaya-wants-to-row",
+   "agree": 23.54,
+   "v2_wordcount": 493,
+   "v1_wordcount": 297,
+   "divergence_examples": [
+    {
+     "page_no": 9,
+     "v1": "At the Kowie River, boats are lined up. They take a taxi to Port Alfred.",
+     "v2": "T h e y t a k e a t a x i t o P o r t A l f r e d. R i v e r, b o a t s a r i e e l o w i n K e d h e u p t. A t"
+    },
+    {
+     "page_no": 12,
+     "v1": "\"Khaya wants to row, row.Khaya wants to row. Row a boat with an oar. Row a boat with an oar!\" Khaya smiles and whispers,",
+     "v2": "K h a y a s m i l e s a n d w h i s p e r s, a w a n y t s a h t K o \" r o w a w a y n a t, h s r K t o o w r. r o. a \" w o! r n. a a o h t i n w a t a o h b R "
+    }
+   ]
+  },
+  {
+   "slug": "its-my-book",
+   "agree": 25.7,
+   "v2_wordcount": 194,
+   "v1_wordcount": 129,
+   "divergence_examples": [
+    {
+     "page_no": 8,
+     "v1": "Ai! Watch out Mr Dragon, you'll BURN my book! Don't you know, dragons can't read. booooook! It's MY",
+     "v2": "Ai! Watch out Mr Dragon, you'll BURN my book! Don't you know, dragons can't read. I t ' s M Y b o o o o o o k!"
+    },
+    {
+     "page_no": 1,
+     "v1": "Once upon a time ... Susu LOVES to read.",
+     "v2": "Susu LOVES to read. i m e... a t O n n o c e u p"
+    }
+   ]
+  },
+  {
+   "slug": "thulis-tissue",
+   "agree": 29.08,
+   "v2_wordcount": 87,
+   "v1_wordcount": 54,
+   "divergence_examples": [
+    {
+     "page_no": 5,
+     "v1": "went the tissue. UP, UP, UP...",
+     "v2": "... P PU U,, P U w e n t t h e t i s s u e."
+    },
+    {
+     "page_no": 2,
+     "v1": "A little breeze caught the tissue. WHOOSH!",
+     "v2": "A little breeze caught the tissue. W H O O S H!"
+    }
+   ]
+  },
+  {
+   "slug": "lets-be-friends",
+   "agree": 30.49,
+   "v2_wordcount": 97,
+   "v1_wordcount": 67,
+   "divergence_examples": [
+    {
+     "page_no": 3,
+     "v1": "Hello! Hi! Do you like to swim? So do I!",
+     "v2": "Hello! Hi! o! I od S m? w i s o t e k l i u o y o D"
+    },
+    {
+     "page_no": 10,
+     "v1": "NOBODY wants to be my friend. knock knock",
+     "v2": "NOBODY wants to be my friend. c k n o k k n o c k"
+    }
+   ]
+  },
+  {
+   "slug": "julia-loves-books",
+   "agree": 31.4,
+   "v2_wordcount": 131,
+   "v1_wordcount": 76,
+   "divergence_examples": [
+    {
+     "page_no": 12,
+     "v1": "We will love your book. Dankie Asante Salamat Na gode Tak Shukran Enkosi Merci Ngiyabonga Kea leboga Thank you Ndzi khensa",
+     "v2": "N a g o d e M e c ri i e n k a D Enkosi N g Asante i y a b o n g a T h a n k y o u S a l a m aa t l e b o g a K e We will love N d z i your book. k h e n s a T "
+    }
+   ]
+  },
+  {
+   "slug": "banzis-busy-bees",
+   "agree": 34.59,
+   "v2_wordcount": 308,
+   "v1_wordcount": 221,
+   "divergence_examples": [
+    {
+     "page_no": 3,
+     "v1": "Time to leave! Banzi waves goodbye to each bee. \"Bye-bye, busy bees,\" \" Buzz-buzz,\" Banzi says. the bees say.",
+     "v2": "e, y Time to leave! b - e y b e e s s y u b, \" B \" Banzi waves goodbye to each bee. B a n z i s a y s. \", z y. z u a b s - z s z e \" u B e b e h t"
+    },
+    {
+     "page_no": 2,
+     "v1": "The bees sit on sunflowers and buzz around the garden while Banzi and Gogo garden. \"Buzz-buzz,\" say the bees. \"Buzz-buzz,\" says Gogo.",
+     "v2": "b u z z, - \" z z u B The bees sit on \" a y s G s o g o. sunflowers and buzz around the garden while \" B Banzi and Gogo u z \" z z, - b u z garden. s. e s e a y b"
+    }
+   ]
+  },
+  {
+   "slug": "the-baby-book",
+   "agree": 37.3,
+   "v2_wordcount": 2721,
+   "v1_wordcount": 2386,
+   "divergence_examples": [
+    {
+     "page_no": 1,
+     "v1": "Dear parents, guardians, teachers & community leaders - Talking to children about their bodies can be awkward, especially if it's not a part of your culture. Bu",
+     "v2": "HOW TO USE THIS BOOK Dear parents, guardians, teachers & community leaders - Dear girls and boys - Talking to children about their bodies can be awkward, We hop"
+    },
+    {
+     "page_no": 2,
+     "v1": "Like other animals, a baby is made when one female and one male have sex at the right time. During sex, the man's sperm fertilises the woman's egg, and a baby c",
+     "v2": "Human pregnancy takes a long time - nine calendar months or ten lunar (moon) months from fertilisation to birth. Humans are mammals. We are warm-blooded, have h"
+    }
+   ]
+  },
+  {
+   "slug": "senzo-and-the-sun",
+   "agree": 42.9,
+   "v2_wordcount": 371,
+   "v1_wordcount": 228,
+   "divergence_examples": [
+    {
+     "page_no": 8,
+     "v1": "Senzo can wash dishes too. Splish- splash! Splish-splash! Can you?",
+     "v2": "Senzo can wash dishes too. a s S p p l l i s s h - s p l h -! a s h i s p l S Can you? h!"
+    },
+    {
+     "page_no": 10,
+     "v1": "Senzo can hush too. Can you? Shhhhhhhhh, shhhhhhhhh.",
+     "v2": "Senzo can hush too. h h h h h S h h h h, s h h h h. h h h h h Can you?"
+    }
+   ]
+  },
+  {
+   "slug": "the-lost-laugh",
+   "agree": 44.33,
+   "v2_wordcount": 302,
+   "v1_wordcount": 201,
+   "divergence_examples": [
+    {
+     "page_no": 12,
+     "v1": "They all laughed and laughed so that their teeth showed too. \"I'll never lose my laugh again, \" said Spotty the happy Hyena.",
+     "v2": "They all laughed and laughed so that their teeth showed too. o s e eve r l ' ll n \" I m y l a u g h a g a i n, \" t h e o tt y d S p s a i h a pp y H y e n a."
+    },
+    {
+     "page_no": 2,
+     "v1": "\"Please help me find my laugh, Giraffe.\" \"I can't hear a laugh up here.\"",
+     "v2": "\"Please help me find my laugh, Giraffe.\" a r h e n ' t c a \" I a l a u g h e. \" e r p h u"
+    }
+   ]
+  },
+  {
+   "slug": "nomvundla-and-the-chilli-eating-contest",
+   "agree": 47.59,
+   "v2_wordcount": 260,
+   "v1_wordcount": 175,
+   "divergence_examples": [
+    {
+     "page_no": 6,
+     "v1": "Chilli-eatiNg COnTesT Rules Don'T say hOw it feels1. 2. finish all youR Chillies hoT \"Soko, you go first,\" says Nomvundla.",
+     "v2": "\"Soko, you go first,\" says Nomvundla. g tN i - i a e l hl i C s e l u TR s e T n O C T o h 1. i t f e e l s D o n ' T s a y h O w 2. R C h i l l i e s s h a l l"
+    },
+    {
+     "page_no": 8,
+     "v1": "eee! hOt! hhlllliiiii. Maiwe! eish! eish!",
+     "v2": "! e w a i M e e e! e i s h! i. i i i i l l l l h h O! h h s e i t!"
+    }
+   ]
+  },
+  {
+   "slug": "tejus-shadow",
+   "agree": 48.37,
+   "v2_wordcount": 263,
+   "v1_wordcount": 198,
+   "divergence_examples": [
+    {
+     "page_no": 10,
+     "v1": "Mum and Teju make shadow puppets until he falls asleep. OOOOOHHHH! AAAAHHHH!",
+     "v2": "O O O O O H H H A H!! H H H H A A A Mum and Teju make shadow puppets until he falls asleep."
+    },
+    {
+     "page_no": 7,
+     "v1": "\"Well, there's one way to make a shadow disappear...\" MAMA! OFF ON",
+     "v2": "OFF! A \"Well, there's one way to make a shadow disappear...\" M ON A M"
+    }
+   ]
+  },
+  {
+   "slug": "tikky-boom-tish",
+   "agree": 49.69,
+   "v2_wordcount": 90,
+   "v1_wordcount": 73,
+   "divergence_examples": [
+    {
+     "page_no": 8,
+     "v1": "like THIS, Wubba!say \"Wubba!\" When you see a keyboard,",
+     "v2": "When you see a keyboard, like THIS, say \" Wubba! \" a! b b u W"
+    },
+    {
+     "page_no": 1,
+     "v1": "This book is full of MUSIC!",
+     "v2": "This book is full of SI U M C!"
+    }
+   ]
+  },
+  {
+   "slug": "whats-happened-to-our-water",
+   "agree": 50.44,
+   "v2_wordcount": 336,
+   "v1_wordcount": 237,
+   "divergence_examples": [
+    {
+     "page_no": 7,
+     "v1": "Let's go up the river to see if we can find the problem. EW! FLAPHOPSPURT SPRAY ICK! SPLOSH SPLISH YUCK!",
+     "v2": "Let's go up the river to see if we can find the problem. T R P O U H S P R A Y P S F L S! A P K! C I P L W I S H P S! E K C Y U O L S H"
+    },
+    {
+     "page_no": 5,
+     "v1": "Let's go up the river to see if we can find the problem. FLAPHOP SPLOSH SPLISH YUCK!EW!",
+     "v2": "P O H F L A P! W E Let's go up the river to see if we can find the problem. S P L I! S K O L H P S H S C U Y"
+    }
+   ]
+  },
+  {
+   "slug": "little-shoots",
+   "agree": 50.79,
+   "v2_wordcount": 90,
+   "v1_wordcount": 101,
+   "divergence_examples": [
+    {
+     "page_no": 2,
+     "v1": "\"I don't know, \" replies Baba. \"Soon, \" says Mama. \"When you are ready, \" says Grandma.",
+     "v2": "\"I don't know,\" replies Baba. \"When you are ready,\" says Grandma. \"Soon,\" says Mama."
+    },
+    {
+     "page_no": 6,
+     "v1": "\"The corn and melon have grown well, \" says Grandma. \"What about the bamboo?\" asks Layo. \"They will grow when they are ready. \"",
+     "v2": "\"The corn and melon have grown \"They will grow when they are well,\" says Grandma. ready.\" \"What about the bamboo?\" asks Layo."
+    }
+   ]
+  },
+  {
+   "slug": "baby-babble",
+   "agree": 52.69,
+   "v2_wordcount": 45,
+   "v1_wordcount": 48,
+   "divergence_examples": [
+    {
+     "page_no": 5,
+     "v1": "Sore, sore . . . Teeth are sore.",
+     "v2": "Sore, sore... are sore. Teeth"
+    },
+    {
+     "page_no": 1,
+     "v1": "Which shoes? You choose!",
+     "v2": "Which? You choose! shoes"
+    }
+   ]
+  },
+  {
+   "slug": "whos-that-baby",
+   "agree": 53.85,
+   "v2_wordcount": 66,
+   "v1_wordcount": 64,
+   "divergence_examples": [
+    {
+     "page_no": 10,
+     "v1": "That baby's cute nose. My cute nose.",
+     "v2": "My cute nose. That baby 's cute nose."
+    },
+    {
+     "page_no": 12,
+     "v1": "ME!Oh! That baby is...",
+     "v2": "Oh! That baby is... ME!"
+    }
+   ]
+  },
+  {
+   "slug": "how-to-tame-a-monster",
+   "agree": 54.51,
+   "v2_wordcount": 145,
+   "v1_wordcount": 132,
+   "divergence_examples": [
+    {
+     "page_no": 10,
+     "v1": "And bigger. GRRRAWWWR! RAWWWWWR!",
+     "v2": "WWWW R! A W R GRRRAWWWR! er. gg bi nd A"
+    },
+    {
+     "page_no": 9,
+     "v1": "The monsters got bigger. GRRRAWWWR! RAWWWWWR!",
+     "v2": "W R! WWW A W R bigger. GRRRAWWWR! The monsters got"
+    }
+   ]
+  },
+  {
+   "slug": "aaaaahhh-mmawe",
+   "agree": 54.55,
+   "v2_wordcount": 178,
+   "v1_wordcount": 130,
+   "divergence_examples": [
+    {
+     "page_no": 2,
+     "v1": "AAAAAHHH!!!! Mmawe!",
+     "v2": "!!! H! H A H A A A A m a w e M!"
+    },
+    {
+     "page_no": 5,
+     "v1": "AAAAAHHH!!!! Mmawe!",
+     "v2": "!!! H! H A H A A A A m a w e M!"
+    }
+   ]
+  },
+  {
+   "slug": "tlotlegos-tea-party",
+   "agree": 54.74,
+   "v2_wordcount": 418,
+   "v1_wordcount": 404,
+   "divergence_examples": [
+    {
+     "page_no": 2,
+     "v1": "Tlotlego counts the teacups as he takes them from the kitchen. \"One, two, three, four, and one for Koko!\" 1 2 3 4 5 best dad",
+     "v2": "Tlotlego counts the teacups as he takes them from the kitchen. \"One, two, three, four, and one for Koko!\" 1 2 4 5 3 b e s t d a d"
+    },
+    {
+     "page_no": 1,
+     "v1": "Tlotlego is hosting a tea party for the WHOLE family. \"How many people are coming for tea, Koko?\" \"You, me, Mama, and Papa. And your little sister, Tshiamo.\" 1 ",
+     "v2": "1 2 \"How many people are coming for tea, Koko?\" 3 4 5 Tlotlego is hosting a tea party \"You, me, Mama, and Papa. for the WHOLE family. And your little sister, Ts"
+    }
+   ]
+  },
+  {
+   "slug": "the-best-gift",
+   "agree": 56.73,
+   "v2_wordcount": 479,
+   "v1_wordcount": 390,
+   "divergence_examples": [
+    {
+     "page_no": 3,
+     "v1": "He joins the cricket club at school and learns to bat and bowl. He hits the ball hard. Puuu!",
+     "v2": "He joins the cricket club at school and learns to bat and bowl. He hits the ball hard. Pu! uu"
+    },
+    {
+     "page_no": 2,
+     "v1": "\"You'll only know if you try many things,\" says Dad. \"I want to try cricket,\" says Jibraan. What if I have another gift? Jibraan wonders. \"Do I have just one gi",
+     "v2": "What if I have another gift? Jibraan wonders. \"Do I have just one gift Dad?\" he asks. \"You'll only know if you try many things,\" says Dad. \"I want to try cricke"
+    }
+   ]
+  },
+  {
+   "slug": "oyisa-and-the-giant-tree",
+   "agree": 56.76,
+   "v2_wordcount": 255,
+   "v1_wordcount": 189,
+   "divergence_examples": [
+    {
+     "page_no": 11,
+     "v1": "shouts Oyisa from the tree. \"Oyisaaaa! It's time for your bath,\" Mama calls. \"I'm coming!\"",
+     "v2": "o r f e m t i! ' s a I t a a s. a a ll s c y i a O m \" a M, \" h a t b u r o y g\"! mn i o Imc ' \" shouts Oyisa from the tree."
+    },
+    {
+     "page_no": 7,
+     "v1": "The branches look like a swing. \"Jingi jingi umnand'ujingi wam!\" she sings.",
+     "v2": "The branches look like a swing. \"! m ga w i n j i u d ' m n a n u g i n j i g i n she sings. i J \""
+    }
+   ]
+  },
+  {
+   "slug": "mazi-learns-to-play",
+   "agree": 57.33,
+   "v2_wordcount": 311,
+   "v1_wordcount": 289,
+   "divergence_examples": [
+    {
+     "page_no": 5,
+     "v1": "The ball hits him on the head. After they explain the game to Mazi, Rona throws the ball at him. she shouts. \"D odge Mazi!\"",
+     "v2": "After they explain the game to Mazi, Rona throws the ball at him. a eM g d z\"! i oshe shouts. D \" The ball hits him on the head."
+    },
+    {
+     "page_no": 3,
+     "v1": "\"But no cryingno crying, okay?\" Boa tells Mazi. Boa feels bad and allows Mazi to play dodgeball with them. \"Okay,\" Mazi says, excited.",
+     "v2": "\"But nnoo ccrryyiinngg, okay?\" Boa tells Mazi. Boa feels bad and allows Mazi \"Okay,\" to play dodgeball with them. Mazi says, excited."
+    }
+   ]
+  },
+  {
+   "slug": "you-yes-you",
+   "agree": 57.74,
+   "v2_wordcount": 335,
+   "v1_wordcount": 266,
+   "divergence_examples": [
+    {
+     "page_no": 2,
+     "v1": "You see those ninja monkeys up there? I need you to shake this book so they fall out of the trees! Shake shake shake shake shake",
+     "v2": "You see those ninja monkeys up there? I need you to shake this book so they fall out of the trees! k e s h h a a k S e s h a e k e a k s h s h a k e"
+    },
+    {
+     "page_no": 4,
+     "v1": "That got rid of them! This is the door to the monster's cave. Knock to open it! knock! knock!knock!",
+     "v2": "That got rid of them! This is the door to the monster's cave. Knock to open it! k n o!! c k c k k! o c k n o n k"
+    }
+   ]
+  },
+  {
+   "slug": "my-dream-in-the-drawer",
+   "agree": 57.84,
+   "v2_wordcount": 318,
+   "v1_wordcount": 256,
+   "divergence_examples": [
+    {
+     "page_no": 3,
+     "v1": "Space Selfie! ... who I'd be, and where I'd go, And what I'd one day see.",
+     "v2": "S pa c e S e l fi e! ... who I'd be, and where I'd go, And what I'd one day see."
+    },
+    {
+     "page_no": 12,
+     "v1": "And soared ... and soared ... ... and soared.",
+     "v2": "And soared... and soared ...... and soared."
+    }
+   ]
+  },
+  {
+   "slug": "jock-and-me",
+   "agree": 59.76,
+   "v2_wordcount": 88,
+   "v1_wordcount": 76,
+   "divergence_examples": [
+    {
+     "page_no": 4,
+     "v1": "And his smile is wide.",
+     "v2": "e. A d n i d w h i s s m i l e i s"
+    },
+    {
+     "page_no": 2,
+     "v1": "His ears are floppy. His legs are bendy. His eyes are cloudy.",
+     "v2": "His ears are floppy. His legs are bendy. cloudy. His eyes are"
+    }
+   ]
+  },
+  {
+   "slug": "why-birds-sing-at-dawn",
+   "agree": 61.02,
+   "v2_wordcount": 264,
+   "v1_wordcount": 208,
+   "divergence_examples": [
+    {
+     "page_no": 11,
+     "v1": "Early the next morning, Yellow sang Mama's song: And rain started falling. \"It's a beautiful morning! We wake up and shine!\"",
+     "v2": "Early the next morning, Yellow sang Mama's song: \" I t ' s a b e a u t i f u l m o r n i n g! n e! \" h i s d n a p u k e w a W e And rain started falling."
+    },
+    {
+     "page_no": 1,
+     "v1": "A long time ago, in the forest of Happy-Land, birds and trees could talk to each other. Tweet Tweet Bla TweetTweet Tweet Tweet",
+     "v2": "A long time ago, in the forest of Happy-Land, birds and trees could talk to each other. B l a T w w e e t e w e e t T e t T w ee t e t T w e w T e e t T"
+    }
+   ]
+  },
+  {
+   "slug": "catch-that-cat",
+   "agree": 61.31,
+   "v2_wordcount": 190,
+   "v1_wordcount": 146,
+   "divergence_examples": [
+    {
+     "page_no": 5,
+     "v1": "Thank goodness. The sock helped her float. We've got to catch that cat! Come on.",
+     "v2": ". n o. s d s e e p n. l t e d a h oo o k fl g c o r k e s n h e a h h T T e m o C! t o a t c t ot a g h e t v h ' e c Wt a c"
+    },
+    {
+     "page_no": 3,
+     "v1": "There she goes. Come on, climb. She's in the tree. Catch that cat! Look. Look!",
+     "v2": "Look. Look! There she goes. Come on, climb. She's in the tree. Catch that cat!"
+    }
+   ]
+  },
+  {
+   "slug": "hello-baby",
+   "agree": 62.79,
+   "v2_wordcount": 49,
+   "v1_wordcount": 37,
+   "divergence_examples": [
+    {
+     "page_no": 14,
+     "v1": "baby! Bye-bye,",
+     "v2": "e, b y e - B y y! a b b"
+    },
+    {
+     "page_no": 12,
+     "v1": "Dumelang! T a-ta!",
+     "v2": "Dumelang! a! t - a T"
+    }
+   ]
+  },
+  {
+   "slug": "whats-in-the-pot",
+   "agree": 63.56,
+   "v2_wordcount": 231,
+   "v1_wordcount": 230,
+   "divergence_examples": [
+    {
+     "page_no": 1,
+     "v1": "\"It's a surprise\", said Mama, putting a big pot on the stove. \" \"What's for supper?\" asked Sam.",
+     "v2": "\" \"What's for?\" \"It's a \", supper surprise asked Sam. said Mama, putting a big pot on the stove."
+    },
+    {
+     "page_no": 2,
+     "v1": "She added a jug of water. Sam was worried. \"Are we having water for supper?\" he wailed. \"It's a surprise. Wait and see.\" replied Mama.",
+     "v2": "She added a jug of. water Sam was worried. \"Are we having for supper?\" water he wailed. \"It's a surprise. Wait and see.\" replied Mama."
+    }
+   ]
+  },
+  {
+   "slug": "im-the-colour-of-honey",
+   "agree": 66.36,
+   "v2_wordcount": 343,
+   "v1_wordcount": 299,
+   "divergence_examples": [
+    {
+     "page_no": 8,
+     "v1": "\"Why do you look so different?\"",
+     "v2": "o d y h W \" o s k o o l u o y \"? t n e r e ff d i"
+    },
+    {
+     "page_no": 4,
+     "v1": "No! It's my Mummy! \"Is that your Aunty?\" asks the woman at the store.",
+     "v2": "\"Is that your Aunty?\" asks the woman at the store.! o N It's my Mummy!"
+    }
+   ]
+  },
+  {
+   "slug": "theres-a-fire-on-the-mountain",
+   "agree": 67.16,
+   "v2_wordcount": 295,
+   "v1_wordcount": 247,
+   "divergence_examples": [
+    {
+     "page_no": 10,
+     "v1": "And the tall watsonia in orange and pink. Then there were asparagus ferns unfolding in wet patches after the rain.",
+     "v2": "d i n g i n w o l e t n f p u a t s c n h r e e s f a s f u t e g r a r t a h p e s r a a i e n r. e w And the tall e watsonia r e h in orange t n and pink. e h"
+    },
+    {
+     "page_no": 1,
+     "v1": "\"There's a fire on the mountain. Run, run! Kukh'umlilo kwezontaba. Baleka, baleka!\" My friends and I have a game we like to play.",
+     "v2": "My friends and I have a game we like to play. \"There's a fire on the mountain. Run, run! Kukh'umlilo kwezontaba. Baleka, baleka!\""
+    }
+   ]
+  },
+  {
+   "slug": "theres-an-alien-in-my-house",
+   "agree": 67.38,
+   "v2_wordcount": 205,
+   "v1_wordcount": 169,
+   "divergence_examples": [
+    {
+     "page_no": 5,
+     "v1": "I hear a weird noise in the middle of the night. It must be the alien.",
+     "v2": "t. I t m h u g s t i b n e e t h h e t a f w e i r d o l a n o i i s e e e l r i n d n a t h e i d m. e h I"
+    },
+    {
+     "page_no": 10,
+     "v1": "9 step, 10 step... I am by its head. Woah! I get a fright. It is tiny and it... ...looks like me?! How can that be? Is it really an alien?",
+     "v2": "9 step, 10 step... I am by its head. Woah! I get a fright. It is tiny and it......looks like me?! How can that be? Is it really an alien?"
+    }
+   ]
+  }
+ ]
+}

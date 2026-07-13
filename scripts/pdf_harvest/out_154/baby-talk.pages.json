@@ -1,0 +1,96 @@
+{
+ "slug": "baby-talk",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 333,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  15
+ ],
+ "cache_file": "baby-talk.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=baby-talk/ebook/en_english/baby-talk_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 17,
+   "text": "Tayo can’t wait to meet his baby sister. Hurry up Mama! Let her out of your tummy."
+  },
+  {
+   "page_no": 2,
+   "word_count": 15,
+   "text": "But Tinu isn’t what Tayo expects. She looks funny. She smells horrible! And even worse…"
+  },
+  {
+   "page_no": 3,
+   "word_count": 10,
+   "text": "Neh! Neh! She’s too noisy, Mama! Tinu won’t stop crying."
+  },
+  {
+   "page_no": 4,
+   "word_count": 18,
+   "text": "She’s trying to tell you something, Tayo. What do you think she’s saying? I don’t know, says Tayo."
+  },
+  {
+   "page_no": 5,
+   "word_count": 10,
+   "text": "Well, I think she’s just hungry. Mama feeds Tinu. But…"
+  },
+  {
+   "page_no": 6,
+   "word_count": 18,
+   "text": "Eh! Tinu cries again. You’ve fed her, why is she still crying? Because sometimes, babies need a good…"
+  },
+  {
+   "page_no": 7,
+   "word_count": 1,
+   "text": "BUUURP!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 27,
+   "text": "Friends and family want to meet her, but Tinu has never been around so many people. WAAAAHH! Mama takes Tinu to her room for some quiet time."
+  },
+  {
+   "page_no": 9,
+   "word_count": 22,
+   "text": "As time goes by, Tayo learns what Tinu’s cries mean. And she doesn’t seem so bad after all. They even play together."
+  },
+  {
+   "page_no": 10,
+   "word_count": 19,
+   "text": "No, Tinu. Planes are for flying, not chewing. But sometimes, Tinu cries and Tayo doesn’t know what she wants."
+  },
+  {
+   "page_no": 11,
+   "word_count": 14,
+   "text": "Tinu cries through the day... and through the night. Why won’t she stop crying?"
+  },
+  {
+   "page_no": 12,
+   "word_count": 10,
+   "text": "Wait, what’s that? Look Mama, Tinu’s got her first tooth!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

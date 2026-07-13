@@ -1,0 +1,96 @@
+{
+ "slug": "meerkat-magic",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 326,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  9
+ ],
+ "cache_file": "meerkat-magic.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=meerkat-magic/ebook/en_english/meerkat-magic_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 7,
+   "text": "Bonke and Peo live near a hill."
+  },
+  {
+   "page_no": 2,
+   "word_count": 7,
+   "text": "They like to run, hide and climb."
+  },
+  {
+   "page_no": 3,
+   "word_count": 7,
+   "text": "Peo doesn’t like to climb too high."
+  },
+  {
+   "page_no": 4,
+   "word_count": 8,
+   "text": "Sometimes they are lucky enough to find berries."
+  },
+  {
+   "page_no": 5,
+   "word_count": 15,
+   "text": "‘Did that meerkat Bonke laughs. just wave at me?’ asks Peo. ‘That’s impossible!’ he says."
+  },
+  {
+   "page_no": 6,
+   "word_count": 6,
+   "text": "The meerkat up, scampers up, up…"
+  },
+  {
+   "page_no": 7,
+   "word_count": 2,
+   "text": "‘Let’s go!’"
+  },
+  {
+   "page_no": 8,
+   "word_count": 3,
+   "text": "‘Bonke, I’m scared.’"
+  },
+  {
+   "page_no": 9,
+   "word_count": 4,
+   "text": "‘It’s okay, I’m here.’"
+  },
+  {
+   "page_no": 10,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 11,
+   "word_count": 4,
+   "text": "! W O W"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

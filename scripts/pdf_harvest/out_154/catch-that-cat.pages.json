@@ -1,0 +1,96 @@
+{
+ "slug": "catch-that-cat",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 322,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  9
+ ],
+ "cache_file": "catch-that-cat.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=catch-that-cat/ebook/en_english/catch-that-cat_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 7,
+   "text": "Hurry. Hurry! Help me catch that cat!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 14,
+   "text": "She stole my sock and ran off… snatch her. Grab her. Catch that cat!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 15,
+   "text": "Look. Look! There she goes. Come on, climb. She’s in the tree. Catch that cat!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 12,
+   "text": "Eek. She jumped! I just missed her. Quick. Fast. Catch that cat!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 59,
+   "text": ". n o. s d s e e p n. l t e d a h oo o k fl g c o r k e s n h e a h h T T e m o C! t o a t c t ot a g h e t v h ’ e c Wt a c"
+  },
+  {
+   "page_no": 6,
+   "word_count": 16,
+   "text": "Watch out, everybody. That is one fast cat! Are we ever going to catch that cat?"
+  },
+  {
+   "page_no": 7,
+   "word_count": 18,
+   "text": "Did you see her jump on a duck? Look at them float. I hope my sock stays dry!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 9,
+   "text": "Clever cat. We’ll catch you yet! Hmm. But how?"
+  },
+  {
+   "page_no": 9,
+   "word_count": 12,
+   "text": "Shhh. Quiet. Let’s hide here. Here’s our chance to catch that cat!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 1,
+   "text": "Gotcha!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 12,
+   "text": "Wow! Look here. The sock is for her babies. What sweet kittens!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 15,
+   "text": "Quick. Catch all those cats! We’ll bring them home. They can have all my socks."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

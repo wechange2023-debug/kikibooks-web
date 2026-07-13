@@ -1,0 +1,94 @@
+{
+ "slug": "knight-times",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 291,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  5
+ ],
+ "cache_file": "knight-times.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=knight-times/ebook/en-english/knight-times.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 10,
+   "text": "Good day, Good day, Thinama of Tsakane! Lilly of Ladybrand!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 4,
+   "text": "You can’t catch me!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 4,
+   "text": "Charge! Follow that dragon!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 5,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 6,
+   "word_count": 1,
+   "text": "Hahahahahahaha......."
+  },
+  {
+   "page_no": 7,
+   "word_count": 8,
+   "text": "We’re going to get you! …you slimy songololo!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 9,
+   "word_count": 1,
+   "text": "Attack!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 2,
+   "text": "Supper time!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 5,
+   "text": "Please, just five more minutes!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "slug": "whos-that-baby",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 295,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "cache_file": "whos-that-baby.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=whos-that-baby/ebook/en_english/whos-that-baby_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 3,
+   "text": "Who’s that baby?"
+  },
+  {
+   "page_no": 2,
+   "word_count": 7,
+   "text": "That baby can walk. Just like me."
+  },
+  {
+   "page_no": 3,
+   "word_count": 7,
+   "text": "My wiggly toes. That baby’s wiggly toes!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 4,
+   "text": "Oh? That baby’s gone!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 3,
+   "text": "Who’s that baby?"
+  },
+  {
+   "page_no": 6,
+   "word_count": 7,
+   "text": "My waving hands. That baby’s waving hands."
+  },
+  {
+   "page_no": 7,
+   "word_count": 3,
+   "text": "Want to play?"
+  },
+  {
+   "page_no": 8,
+   "word_count": 5,
+   "text": "Oh, no! That baby’s gone!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 4,
+   "text": "Who is that baby?"
+  },
+  {
+   "page_no": 10,
+   "word_count": 8,
+   "text": "My cute nose. That baby ’s cute nose."
+  },
+  {
+   "page_no": 11,
+   "word_count": 9,
+   "text": "I make a funny face. So does that baby."
+  },
+  {
+   "page_no": 12,
+   "word_count": 5,
+   "text": "Oh! That baby is... ME!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 1,
+   "text": "Goodbye!"
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

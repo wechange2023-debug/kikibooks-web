@@ -1,0 +1,37 @@
+{
+ "adr": "0042",
+ "population": 154,
+ "status_counts": {
+  "AUTO": 115,
+  "REVIEW": 39,
+  "MANUAL": 0,
+  "WORDLESS-OK": 0,
+  "LICENSE-HOLD": 0
+ },
+ "agree_distribution": {
+  "n": 154,
+  "min": 0.0,
+  "q1": 67.48,
+  "median": 81.91,
+  "q3": 97.22,
+  "max": 100.0,
+  "std": 24.93,
+  "iqr": 29.75
+ },
+ "review_threshold_q1": 67.48,
+ "signals": {
+  "w_wordless": [],
+  "w_nolayer": [],
+  "mapping_deviant": [],
+  "license_warning": [],
+  "folder_unresolved": []
+ },
+ "abort_check": {
+  "denominator_text_books": 154,
+  "w_nolayer_count": 0,
+  "w_nolayer_pct": 0.0,
+  "band": "<15%",
+  "preregistered": "ADR-0042 §4 (15/40%) — 사후조정 없음"
+ },
+ "notes": "정본선택(v1 vs v2)은 미확정 — 다음 ADR 대기. acc(정본대비)는 정본 부재로 미실행."
+}

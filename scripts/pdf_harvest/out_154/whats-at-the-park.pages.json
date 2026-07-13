@@ -1,0 +1,95 @@
+{
+ "slug": "whats-at-the-park",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 316,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "whats-at-the-park.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=whats-at-the-park/ebook/en-english/whats-at-the-park_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 12,
+   "text": "Down the road from Zoey’s house, there is a big, green park."
+  },
+  {
+   "page_no": 2,
+   "word_count": 23,
+   "text": "Zoey is quite shy, but she loves to play in the park. Every day after school, Zoey and Granny go there to play."
+  },
+  {
+   "page_no": 3,
+   "word_count": 21,
+   "text": "Granny needs glasses to see. But she can hear very well. Zoey is good at finding things. Even better than Granny!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 6,
+   "text": "She can find birds and bugs."
+  },
+  {
+   "page_no": 5,
+   "word_count": 10,
+   "text": "She can find the prettiest flowers and the tallest trees."
+  },
+  {
+   "page_no": 6,
+   "word_count": 9,
+   "text": "And she’s very good at finding Granny’s secret sweets."
+  },
+  {
+   "page_no": 7,
+   "word_count": 32,
+   "text": "“What’s that noise behind the tree?” asks Granny. “Does it sound like a bird?” asks Zoey. “No,” says Granny. “It sounds much bigger than a bird. Can you see what it is?”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 5,
+   "text": "“It’s a dog!” says Zoey."
+  },
+  {
+   "page_no": 9,
+   "word_count": 8,
+   "text": "“Phew!” says Granny. “This dog is very smelly!”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 32,
+   "text": "The next day, Zoey comes home from school and packs her bag. “Are you ready to go to the park?” asks Granny. “Yes, please,” says Zoey. “Granny, look who’s outside!” says Zoey."
+  },
+  {
+   "page_no": 11,
+   "word_count": 11,
+   "text": "“You found us!” says Zoey. “Now, let’s give you a bath.”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 17,
+   "text": "And from that day on, Zoey, Granny and their new friend played in the park every day."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

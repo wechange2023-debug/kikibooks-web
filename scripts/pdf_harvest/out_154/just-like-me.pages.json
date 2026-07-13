@@ -1,0 +1,95 @@
+{
+ "slug": "just-like-me",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 326,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "just-like-me.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=just-like-me/ebook/en_english/just-like-me_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 15,
+   "text": "It’s Rahah’s birthday next week. She’s excited about inviting her new friends to her party."
+  },
+  {
+   "page_no": 2,
+   "word_count": 33,
+   "text": "“Who will you invite?” asks Mum. “You’ve only been at school a few months. The kids all seem so very different, don’t they?” “No, Mum. I have lots of new friends,” says Rahah."
+  },
+  {
+   "page_no": 3,
+   "word_count": 14,
+   "text": "“I want to invite Zerina. She wants to be a ballerina, just like me!”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 10,
+   "text": "“Oh lovely,” says Mum. “Let’s play some dance music then.”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 16,
+   "text": "“I hope that Sikelele can come too. He sings in the school choir, just like me.”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 10,
+   "text": "“Oh that’s good - we’ll all have fun singing too.”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 11,
+   "text": "“Can we invite Susheela? She’s got fluffy kittens, just like me.”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 10,
+   "text": "“Yes, let’s. She’ll have fun playing with our kittens too.”"
+  },
+  {
+   "page_no": 9,
+   "word_count": 14,
+   "text": "“And we must invite Yongnam. She loves pink cupcakes even more than I do.”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 14,
+   "text": "“It’s lucky I’m making cupcakes then,” says Mum. “She can have the pink ones.”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 24,
+   "text": "“Ah thanks, Mum! I can’t wait.” “Oh Rahah! I’m so excited to meet all your friends. They sound so special - just like you!”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 21,
+   "text": "“But what about you? You love books, don’t you… just like me! Would you like to come to my party too?”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 16,
+   "text": "T T h h a a n n k k Y Y o o u u!!"
+  }
+ ]
+}

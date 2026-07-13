@@ -1,0 +1,95 @@
+{
+ "slug": "come-stay-with-me",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 336,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "come-stay-with-me.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=come-stay-with-me/ebook/en_english/come-stay-with-me_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 17,
+   "text": "Tendai Turtle lives in the water. Tendai’s best friend is Bunny Busi. She lives in a tree."
+  },
+  {
+   "page_no": 2,
+   "word_count": 6,
+   "text": "Granny Turtle has hurt her shell."
+  },
+  {
+   "page_no": 3,
+   "word_count": 15,
+   "text": "“We have to go to help Granny,” says Mum. “Come stay with me,” calls Busi."
+  },
+  {
+   "page_no": 4,
+   "word_count": 8,
+   "text": "Tendai stays with Bunny Busi in the tree."
+  },
+  {
+   "page_no": 5,
+   "word_count": 4,
+   "text": "They play all day."
+  },
+  {
+   "page_no": 6,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 7,
+   "word_count": 4,
+   "text": "They sleep all night."
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "Mum and Dad come back with Granny."
+  },
+  {
+   "page_no": 9,
+   "word_count": 6,
+   "text": "“How are you, Granny?” asks Tendai."
+  },
+  {
+   "page_no": 10,
+   "word_count": 15,
+   "text": "“I am better now,” says Granny with a smile. “We fixed her shell,” answers Mum."
+  },
+  {
+   "page_no": 11,
+   "word_count": 6,
+   "text": "Granny gives Tendai her favourite flute."
+  },
+  {
+   "page_no": 12,
+   "word_count": 7,
+   "text": "Tendai plays the flute and everybody dances."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

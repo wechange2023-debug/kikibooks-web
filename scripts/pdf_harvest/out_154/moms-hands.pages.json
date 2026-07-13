@@ -1,0 +1,96 @@
+{
+ "slug": "moms-hands",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 294,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  13
+ ],
+ "cache_file": "moms-hands.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=moms-hands/e-book/en_english/moms-hands_en.pdf",
+ "ebook_folder": "/e-book",
+ "eng_folder": "/e-book/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 9,
+   "text": "Mom holds me close. Her hands move. I smile."
+  },
+  {
+   "page_no": 2,
+   "word_count": 13,
+   "text": "“Good morning,” Mom signs. Her hands dance in the air. I wave back."
+  },
+  {
+   "page_no": 3,
+   "word_count": 12,
+   "text": "Mom shows me “love”. She points to her heart. Then to me."
+  },
+  {
+   "page_no": 4,
+   "word_count": 15,
+   "text": "At breakfast, we sign “eat”. I tap my mouth with my hand. Mom claps, “Yes!”"
+  },
+  {
+   "page_no": 5,
+   "word_count": 13,
+   "text": "When we play, Mom signs “ball”. I roll it to her. She laughs."
+  },
+  {
+   "page_no": 6,
+   "word_count": 13,
+   "text": "Mom signs “bird”. We watch the birds fly. I flap my arms too."
+  },
+  {
+   "page_no": 7,
+   "word_count": 19,
+   "text": "At story time, Mom signs each word. Her hands paint pictures in the air. I listen with my eyes."
+  },
+  {
+   "page_no": 8,
+   "word_count": 13,
+   "text": "When I feel sad. Mom signs “hug”. She wraps me in her arms."
+  },
+  {
+   "page_no": 9,
+   "word_count": 10,
+   "text": "Mom meets her I watch their Deaf friends. moving hands."
+  },
+  {
+   "page_no": 10,
+   "word_count": 13,
+   "text": "I learn to sign “friend”. I hold my hands together. Mom smiles proudly."
+  },
+  {
+   "page_no": 11,
+   "word_count": 16,
+   "text": "Before bed, Mom signs “I love you”. Her hands make a special shape. I copy her."
+  },
+  {
+   "page_no": 12,
+   "word_count": 13,
+   "text": "Mom talks with her hands. I love Mom’s hands. Mom and me. Forever."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "slug": "hello",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": false,
+ "no_text_file_count": null,
+ "front_matter_word_count": 319,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "hello.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=hello/ebook/en-english/hello_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 15,
+   "text": "My name is Lolo. I have many friends. Come out with me to say hello!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 13,
+   "text": "Hello Sun, big and bright. You fill the day with your bright light."
+  },
+  {
+   "page_no": 3,
+   "word_count": 13,
+   "text": "Hello Grass, soft and green. You give us all a place to play."
+  },
+  {
+   "page_no": 4,
+   "word_count": 13,
+   "text": "Hello Sky, broad and blue. You fill the sky with the colour blue."
+  },
+  {
+   "page_no": 5,
+   "word_count": 13,
+   "text": "Hello Moon, up in the dark. You make the night not so dark."
+  },
+  {
+   "page_no": 6,
+   "word_count": 12,
+   "text": "Hello Star, big and white. You make the night so very nice."
+  },
+  {
+   "page_no": 7,
+   "word_count": 13,
+   "text": "Hello Wind, strong and free. You blow things around, and make it cool."
+  },
+  {
+   "page_no": 8,
+   "word_count": 11,
+   "text": "Hello Rain, pouring down. You bring water, and cool our ground."
+  },
+  {
+   "page_no": 9,
+   "word_count": 27,
+   "text": "Hello Lightning, from high above. Your bright flashing light gives us a fright. Hello Thunder, roaring in the rain. You make a boom noise, so very loud."
+  },
+  {
+   "page_no": 10,
+   "word_count": 12,
+   "text": "Hello Dew, drops of water. You make the ground soft and wet."
+  },
+  {
+   "page_no": 11,
+   "word_count": 13,
+   "text": "Hello Tree, big and strong. You give us shade and fruit to eat."
+  },
+  {
+   "page_no": 12,
+   "word_count": 13,
+   "text": "Hello Bird, flying in the sky. You fill our days with lovely songs."
+  },
+  {
+   "page_no": 13,
+   "word_count": 4,
+   "text": "o! ll e h"
+  },
+  {
+   "page_no": 14,
+   "word_count": 14,
+   "text": "Hello You, reading this book. Now you’ve met my friends, please show me yours!"
+  }
+ ]
+}

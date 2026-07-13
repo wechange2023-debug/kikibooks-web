@@ -1,0 +1,95 @@
+{
+ "slug": "oumas-amazing-flowers",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 263,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "oumas-amazing-flowers.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=oumas-amazing-flowers/ebook/en_english/oumas-amazing-flowers_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 15,
+   "text": "Ouma has a window box full of amazing flowers. Robyn wants to pick them all!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 16,
+   "text": "Please don’t pick the flowers, Robyn! Ouma loves to see them when she opens her curtains."
+  },
+  {
+   "page_no": 3,
+   "word_count": 12,
+   "text": "Butterflies dance around the petals. It’s so lovely to have these visitors."
+  },
+  {
+   "page_no": 4,
+   "word_count": 9,
+   "text": "The bees use the flowers to make delicious honey."
+  },
+  {
+   "page_no": 5,
+   "word_count": 11,
+   "text": "The flowers bring joy to everyone who walks past Ouma’s house."
+  },
+  {
+   "page_no": 6,
+   "word_count": 11,
+   "text": "The neighbour likes to smell them when he visits for tea."
+  },
+  {
+   "page_no": 7,
+   "word_count": 9,
+   "text": "Sometimes, sunbirds drink the sweet nectar from the flowers."
+  },
+  {
+   "page_no": 8,
+   "word_count": 14,
+   "text": "Look, a tiny beetle! It shines in the sun. And there’s a fat caterpillar!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 12,
+   "text": "Please don’t pick Ouma’s flowers, Robyn! They won’t stay fresh very long."
+  },
+  {
+   "page_no": 10,
+   "word_count": 19,
+   "text": "“I won’t pick them, Ouma,” says Robyn, even though she really wants to. She feels a little bit sad!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 17,
+   "text": "Ouma doesn’t want Robyn to be sad. “Okay, Robyn,” says Ouma. “You can pick your favourite flower.”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 11,
+   "text": "“And I have an idea … Let’s plant more flowers together!”"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

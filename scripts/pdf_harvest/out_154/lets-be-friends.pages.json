@@ -1,0 +1,97 @@
+{
+ "slug": "lets-be-friends",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 416,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  2,
+  4,
+  16
+ ],
+ "cache_file": "lets-be-friends.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=lets-be-friends/ebook/en_english/lets-be-friends_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 6,
+   "text": "It’s time to make some friends!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 8,
+   "text": "hard. Making friends can be But let’s try!"
+  },
+  {
+   "page_no": 3,
+   "word_count": 21,
+   "text": "Hello! Hi! o! I od S m? w i s o t e k l i u o y o D"
+  },
+  {
+   "page_no": 4,
+   "word_count": 3,
+   "text": "LET’S BE FRIENDS!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 2,
+   "text": "Oh dear."
+  },
+  {
+   "page_no": 6,
+   "word_count": 17,
+   "text": "H e l l o! H i! Do you like seashells? So do I! LET’S BE FRIENDS!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 2,
+   "text": "Oh my."
+  },
+  {
+   "page_no": 8,
+   "word_count": 17,
+   "text": "H e l l o! H i! Are you a fish? So am I! LET’S BE FRIENDS!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 2,
+   "text": "Oh NO."
+  },
+  {
+   "page_no": 10,
+   "word_count": 16,
+   "text": "NOBODY wants to be my friend. c k n o k k n o c k"
+  },
+  {
+   "page_no": 11,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 12,
+   "word_count": 3,
+   "text": "LET’S BE FRIENDS!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "slug": "a-day-out",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 323,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "a-day-out.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=a-day-out/ebook/en-english/a-day-out_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 10,
+   "text": "I c a n ss ee at h e e!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 3,
+   "word_count": 9,
+   "text": "m! e o r f i t a W"
+  },
+  {
+   "page_no": 4,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 5,
+   "word_count": 7,
+   "text": "L o o k! oo! k L"
+  },
+  {
+   "page_no": 6,
+   "word_count": 11,
+   "text": "E e e ce! I t o ’ s l d!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 6,
+   "text": "o G y a w a!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "t! a e m e C o"
+  },
+  {
+   "page_no": 9,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 10,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 11,
+   "word_count": 5,
+   "text": "G o t i t!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 12,
+   "text": "a a d h I a d d. o o g y"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

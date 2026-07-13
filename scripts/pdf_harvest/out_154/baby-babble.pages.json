@@ -1,0 +1,97 @@
+{
+ "slug": "baby-babble",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 322,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  5,
+  16
+ ],
+ "cache_file": "baby-babble.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=baby-babble/ebook/en_english/baby-babble_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 4,
+   "text": "Which? You choose! shoes"
+  },
+  {
+   "page_no": 2,
+   "word_count": 4,
+   "text": "Please, please! More! peas"
+  },
+  {
+   "page_no": 3,
+   "word_count": 2,
+   "text": "Num-num? Yum-yum!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 4,
+   "text": "All gone! Full tum."
+  },
+  {
+   "page_no": 5,
+   "word_count": 5,
+   "text": "Sore, sore... are sore. Teeth"
+  },
+  {
+   "page_no": 6,
+   "word_count": 5,
+   "text": "Nice, nice! is nice. Ice"
+  },
+  {
+   "page_no": 7,
+   "word_count": 2,
+   "text": "there? Who’s"
+  },
+  {
+   "page_no": 8,
+   "word_count": 2,
+   "text": "Teddy bear!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 4,
+   "text": "Where’s dum-dum? Baby. sad"
+  },
+  {
+   "page_no": 10,
+   "word_count": 4,
+   "text": "There’s dum-dum! Baby. glad"
+  },
+  {
+   "page_no": 11,
+   "word_count": 5,
+   "text": "Splish, splosh! Time to. wash"
+  },
+  {
+   "page_no": 12,
+   "word_count": 4,
+   "text": "Night night, tight! sleep"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

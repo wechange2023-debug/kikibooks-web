@@ -1,0 +1,96 @@
+{
+ "slug": "where-is-lulu",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 310,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  14
+ ],
+ "cache_file": "where-is-lulu.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=where-is-lulu/ebook/en-english/where-is-lulu_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 2,
+   "text": "“Oh, no!”"
+  },
+  {
+   "page_no": 2,
+   "word_count": 7,
+   "text": "“Lulu! It’s time to go,” calls Ma."
+  },
+  {
+   "page_no": 3,
+   "word_count": 13,
+   "text": "Where is Lulu? Is she under the sofa? Is she behind the curtain?"
+  },
+  {
+   "page_no": 4,
+   "word_count": 14,
+   "text": "Where is Lulu? Is she next to the stove? Is she in the cupboard?"
+  },
+  {
+   "page_no": 5,
+   "word_count": 10,
+   "text": "“Lulu! It’s time to go. Where are you?” calls Ma."
+  },
+  {
+   "page_no": 6,
+   "word_count": 8,
+   "text": "“There you are!” “I don’t want to gooo!”"
+  },
+  {
+   "page_no": 7,
+   "word_count": 12,
+   "text": "“We have to go,” says Ma. “But I really like this one!”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "R Y A R B L I"
+  },
+  {
+   "page_no": 9,
+   "word_count": 8,
+   "text": "Story spread 9 “I really like this one!”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 9,
+   "text": "“And this one.” “And this one.” “And this one.”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 8,
+   "text": "“See? You return books and borrow more.” “YAY!”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 4,
+   "text": "Where is Lulu now?"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

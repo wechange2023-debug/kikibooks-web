@@ -1,0 +1,94 @@
+{
+ "slug": "woof-woof",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 283,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "cache_file": "woof-woof.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=woof-woof/ebook/en-english/woof-woof_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 1,
+   "text": "Daddy!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 3,
+   "text": "Don’t be scared."
+  },
+  {
+   "page_no": 3,
+   "word_count": 2,
+   "text": "Woof-woof out!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 5,
+   "text": "Look, Doggy’s bringing the ball."
+  },
+  {
+   "page_no": 5,
+   "word_count": 1,
+   "text": "Ball?"
+  },
+  {
+   "page_no": 6,
+   "word_count": 5,
+   "text": "Doggy wants to play. Play?"
+  },
+  {
+   "page_no": 7,
+   "word_count": 3,
+   "text": "Catch the ball."
+  },
+  {
+   "page_no": 8,
+   "word_count": 2,
+   "text": "Woof-woof out!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 3,
+   "text": "Look, Daddy’s playing."
+  },
+  {
+   "page_no": 10,
+   "word_count": 3,
+   "text": "Now you play."
+  },
+  {
+   "page_no": 11,
+   "word_count": 2,
+   "text": "Catch, Woof-woof!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

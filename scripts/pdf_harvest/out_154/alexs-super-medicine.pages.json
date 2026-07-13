@@ -1,0 +1,100 @@
+{
+ "slug": "alexs-super-medicine",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 364,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  8,
+  10,
+  12,
+  15,
+  16
+ ],
+ "cache_file": "alexs-super-medicine.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=alexs-super-medicine/ebook/en_english/alexs-super-medicine_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 13,
+   "text": "I’m not feeling so good, Mom. Let’s visit Dr Bongi. She can help."
+  },
+  {
+   "page_no": 2,
+   "word_count": 17,
+   "text": "Drink this medicine, Alex. It will make you feel better. But I don’t like medicine. It’s yucky."
+  },
+  {
+   "page_no": 3,
+   "word_count": 18,
+   "text": "Jett, I’ll let you play with my shiny red car if you drink my medicine. Eeew, no way!"
+  },
+  {
+   "page_no": 4,
+   "word_count": 16,
+   "text": "How can I make my medicine I know, I’ll put it on my sandwich. taste better?"
+  },
+  {
+   "page_no": 5,
+   "word_count": 1,
+   "text": "Urgh!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 14,
+   "text": "Maybe I should hide it away. I know, I’ll hide it in the garden."
+  },
+  {
+   "page_no": 7,
+   "word_count": 2,
+   "text": "Oh no!"
+  },
+  {
+   "page_no": 8,
+   "word_count": 14,
+   "text": "I’d better try something else. I know, I’ll hide it in a bird’s nest."
+  },
+  {
+   "page_no": 9,
+   "word_count": 1,
+   "text": "Aaah!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 7,
+   "text": "Hmm, maybe I should just try it?"
+  },
+  {
+   "page_no": 11,
+   "word_count": 12,
+   "text": "Wooah, this is I feel something... actually so much fun! What’s happening?"
+  },
+  {
+   "page_no": 12,
+   "word_count": 23,
+   "text": "IYou feel did it, Alex! We’re so proud of you. so much better! And all I had to do was drink my medicine."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

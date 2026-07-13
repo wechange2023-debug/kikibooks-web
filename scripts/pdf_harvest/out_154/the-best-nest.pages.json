@@ -1,0 +1,96 @@
+{
+ "slug": "the-best-nest",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 316,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  6
+ ],
+ "cache_file": "the-best-nest.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=the-best-nest/ebook/en_english/the-best-nest_en_20210929.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 17,
+   "text": "Blue Bird is bored. “I am tired of this nest,” he says. “We need a new home.”"
+  },
+  {
+   "page_no": 2,
+   "word_count": 42,
+   "text": "“If you insist,” says Brown Bird. “But I am not moving unless the new nest is better than the one that we have now.” “Oh yes,” says Blue Bird. “It will be a great nest. I will find the best nest ever!”"
+  },
+  {
+   "page_no": 3,
+   "word_count": 25,
+   "text": "“Look at this lovely nest! It is soft and cosy. And we can each have our own bed. This is the best nest for us.”"
+  },
+  {
+   "page_no": 4,
+   "word_count": 3,
+   "text": "But it isn’t!"
+  },
+  {
+   "page_no": 5,
+   "word_count": 17,
+   "text": "“Look at this beautiful nest. It is so bright and colourful. This is the very best nest.”"
+  },
+  {
+   "page_no": 6,
+   "word_count": 3,
+   "text": "But it isn’t!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 15,
+   "text": "“Look at this shiny nest. See how it sparkles. This is the best nest yet.”"
+  },
+  {
+   "page_no": 8,
+   "word_count": 3,
+   "text": "But it isn’t!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 18,
+   "text": "“Look at this large nest! It even has its own door. This is the best nest of all.”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 3,
+   "text": "But it isn’t!"
+  },
+  {
+   "page_no": 11,
+   "word_count": 17,
+   "text": "“Look at this nest. See how well it has been built. This is the best nest ever.”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 6,
+   "text": "“Yes, it is,” says Brown Bird."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

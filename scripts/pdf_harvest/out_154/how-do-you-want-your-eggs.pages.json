@@ -1,0 +1,95 @@
+{
+ "slug": "how-do-you-want-your-eggs",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 291,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "how-do-you-want-your-eggs.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=how-do-you-want-your-eggs/ebook/en_english/how-do-you-want-your-eggs_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 3,
+   "text": "Good morning, Luzuko!"
+  },
+  {
+   "page_no": 2,
+   "word_count": 4,
+   "text": "It’s time for breakfast."
+  },
+  {
+   "page_no": 3,
+   "word_count": 6,
+   "text": "How do you want your eggs?"
+  },
+  {
+   "page_no": 4,
+   "word_count": 6,
+   "text": "Do you want boiled eggs, Luzuko?"
+  },
+  {
+   "page_no": 5,
+   "word_count": 6,
+   "text": "I like boiled eggs, but …"
+  },
+  {
+   "page_no": 6,
+   "word_count": 6,
+   "text": "Do you want scrambled eggs, Luzuko?"
+  },
+  {
+   "page_no": 7,
+   "word_count": 6,
+   "text": "I like scrambled eggs, but …"
+  },
+  {
+   "page_no": 8,
+   "word_count": 6,
+   "text": "Do you want fried eggs, Luzuko?"
+  },
+  {
+   "page_no": 9,
+   "word_count": 6,
+   "text": "I like fried eggs, but …"
+  },
+  {
+   "page_no": 10,
+   "word_count": 8,
+   "text": "Well? How do you want your eggs, Luzuko?"
+  },
+  {
+   "page_no": 11,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 12,
+   "word_count": 8,
+   "text": "Today, I just want a bowl of porridge."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

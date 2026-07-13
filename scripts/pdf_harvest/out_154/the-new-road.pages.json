@@ -1,0 +1,96 @@
+{
+ "slug": "the-new-road",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 322,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  10
+ ],
+ "cache_file": "the-new-road.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=the-new-road/ebook/en_english/the-new-road_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 9,
+   "text": "Chapansi and her best friend Luano love collecting inswa."
+  },
+  {
+   "page_no": 2,
+   "word_count": 19,
+   "text": "They love to play on the old dirt road.......even if Mama would tsk-tsk because the stones hurt her feet."
+  },
+  {
+   "page_no": 3,
+   "word_count": 9,
+   "text": "One day, big cars arrive. Mama calls them Caterpillars."
+  },
+  {
+   "page_no": 4,
+   "word_count": 11,
+   "text": "They cover the road in black stuff. Mama calls it tar."
+  },
+  {
+   "page_no": 5,
+   "word_count": 10,
+   "text": "The road is smooth now. Like walking on a mattress!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 16,
+   "text": "But when Chapansi and Luano go to the road to catch inswa...... they only catch three!"
+  },
+  {
+   "page_no": 7,
+   "word_count": 20,
+   "text": "Chapansi used to love playing chiyato with Luano. But there are no more stones on the road to play with."
+  },
+  {
+   "page_no": 8,
+   "word_count": 10,
+   "text": "Chapansi is worried. What if the inswa can’t breathe anymore?"
+  },
+  {
+   "page_no": 9,
+   "word_count": 4,
+   "text": "Chapansi kicks the road!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 18,
+   "text": "Chapansi goes to Mama. ‘Don’t be sad, my child. Inswa will always find a way out,’ she says."
+  },
+  {
+   "page_no": 11,
+   "word_count": 12,
+   "text": "One rainy day, Luano comes running to Chapansi’s house. ‘Inswa is back!’"
+  },
+  {
+   "page_no": 12,
+   "word_count": 12,
+   "text": "Inswa is back! It defeated the road! Mama was right after all!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "slug": "lions-are-always-brave",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 343,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  12
+ ],
+ "cache_file": "lions-are-always-brave.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=lions-are-always-brave/ebook/en-english/lions-are-always-brave_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 2,
+   "text": "Oh! Hello."
+  },
+  {
+   "page_no": 2,
+   "word_count": 17,
+   "text": "I’m a lion. Do you know what that is? Should I tell you? Let me tell you."
+  },
+  {
+   "page_no": 3,
+   "word_count": 4,
+   "text": "A lion is strong."
+  },
+  {
+   "page_no": 4,
+   "word_count": 5,
+   "text": "Lions can run very fast."
+  },
+  {
+   "page_no": 5,
+   "word_count": 4,
+   "text": "Lions are extreeemely stretchy."
+  },
+  {
+   "page_no": 6,
+   "word_count": 4,
+   "text": "And, um, br... br..."
+  },
+  {
+   "page_no": 7,
+   "word_count": 10,
+   "text": "... brave. Lions are always brave! Lions aren’t scared of..."
+  },
+  {
+   "page_no": 8,
+   "word_count": 2,
+   "text": "ANY....... THING!"
+  },
+  {
+   "page_no": 9,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 10,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 11,
+   "word_count": 1,
+   "text": "ROAR!"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "slug": "my-special-hair",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 0,
+ "front_matter_word_count": 288,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  4
+ ],
+ "cache_file": "my-special-hair.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=my-special-hair/ebook/en-english/my-special-hair_english.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en-english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 22,
+   "text": "I have a very special head, a special head of hair. My special hair is quite unique. My special hair is rare."
+  },
+  {
+   "page_no": 2,
+   "word_count": 25,
+   "text": "It grows not just on any head, but mine, my own, just me! My special hair does special things – it’s magic hair, you see."
+  },
+  {
+   "page_no": 3,
+   "word_count": 25,
+   "text": "In summer when the sun is hot, with no shade anywhere, I do not sweat, I do not burn. I grow a hat of hair."
+  },
+  {
+   "page_no": 4,
+   "word_count": 25,
+   "text": "In winter when my nose turns red, and when the cold wind blows, my special hair grows very long. I’m wrapped from top to toes."
+  },
+  {
+   "page_no": 5,
+   "word_count": 26,
+   "text": "In spring when all the birds come out, and each one builds a nest, my head is full of songs because my special hair is best."
+  },
+  {
+   "page_no": 6,
+   "word_count": 22,
+   "text": "In autumn when the leaves fall down, no flowers to be found, my special head begins to bloom bright blossoms all around."
+  },
+  {
+   "page_no": 7,
+   "word_count": 25,
+   "text": "My special hair is stiff and strong. It does not hang or drape. I never look the same because my hair can change its shape."
+  },
+  {
+   "page_no": 8,
+   "word_count": 24,
+   "text": "My special hair is full of curls. It’s twisted, tangled, tough. My special hair grows hairy hands – a place to store my stuff."
+  },
+  {
+   "page_no": 9,
+   "word_count": 25,
+   "text": "My special hair grows special wings – so smooth, so soft, so light. They float around my face, until my hair and I take flight."
+  },
+  {
+   "page_no": 10,
+   "word_count": 22,
+   "text": "My special hair is colourful, a rainbow all in one! It brightens up the darkest day. My hair is full of fun."
+  },
+  {
+   "page_no": 11,
+   "word_count": 25,
+   "text": "My special hair is full of love. With love my head is crowned. It grows and grows and grows until I spread it all around."
+  },
+  {
+   "page_no": 12,
+   "word_count": 24,
+   "text": "So many types of special heads, so many types of hair. Be proud of what you have on top, your magic grows up there!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

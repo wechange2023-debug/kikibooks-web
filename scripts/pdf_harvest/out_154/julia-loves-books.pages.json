@@ -1,0 +1,96 @@
+{
+ "slug": "julia-loves-books",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 293,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  2,
+  4,
+  16
+ ],
+ "cache_file": "julia-loves-books.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=julia-loves-books/e-book/en_english/julia-loves-books_en.pdf",
+ "ebook_folder": "/e-book",
+ "eng_folder": "/e-book/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 3,
+   "text": "Julia loves books."
+  },
+  {
+   "page_no": 2,
+   "word_count": 5,
+   "text": "She loves books with words,"
+  },
+  {
+   "page_no": 3,
+   "word_count": 4,
+   "text": "and books with pictures."
+  },
+  {
+   "page_no": 4,
+   "word_count": 5,
+   "text": "Julia loves books about swimming,"
+  },
+  {
+   "page_no": 5,
+   "word_count": 4,
+   "text": "and books about tennis."
+  },
+  {
+   "page_no": 6,
+   "word_count": 5,
+   "text": "She loves books about travelling,"
+  },
+  {
+   "page_no": 7,
+   "word_count": 5,
+   "text": "and books about staying home."
+  },
+  {
+   "page_no": 8,
+   "word_count": 6,
+   "text": "But there is one book missing."
+  },
+  {
+   "page_no": 9,
+   "word_count": 6,
+   "text": "Where is the book about Julia?"
+  },
+  {
+   "page_no": 10,
+   "word_count": 7,
+   "text": "She will have to write it herself."
+  },
+  {
+   "page_no": 11,
+   "word_count": 5,
+   "text": "Here is a pen, Julia."
+  },
+  {
+   "page_no": 12,
+   "word_count": 76,
+   "text": "N a g o d e M e c ri i e n k a D Enkosi N g Asante i y a b o n g a T h a n k y o u S a l a m aa t l e b o g a K e We will love N d z i your book. k h e n s a T a k k r a n S h u"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

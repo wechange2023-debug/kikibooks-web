@@ -1,0 +1,96 @@
+{
+ "slug": "going-places",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 264,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  14
+ ],
+ "cache_file": "going-places.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=going-places/e-book/en_english/going-places_en.pdf",
+ "ebook_folder": "/e-book",
+ "eng_folder": "/e-book/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 18,
+   "text": "Thandi whizzed on a rollercoaster, took a bumper car for a spin, and won a giant, fluffy bear…"
+  },
+  {
+   "page_no": 2,
+   "word_count": 7,
+   "text": "…all while she sat in her bedroom."
+  },
+  {
+   "page_no": 3,
+   "word_count": 15,
+   "text": "Ndalo swam through forests of kelp and coral, past a stingray and a majestic shark…"
+  },
+  {
+   "page_no": 4,
+   "word_count": 7,
+   "text": "…as he lay under a yellowwood tree."
+  },
+  {
+   "page_no": 5,
+   "word_count": 12,
+   "text": "Yohluka rocketed into space on a special mission to repair a satellite…"
+  },
+  {
+   "page_no": 6,
+   "word_count": 8,
+   "text": "…but he was still cuddling on the couch."
+  },
+  {
+   "page_no": 7,
+   "word_count": 13,
+   "text": "Faith paraded through the veld, waving to zebras as an oxpecker soared above…"
+  },
+  {
+   "page_no": 8,
+   "word_count": 7,
+   "text": "…from the safety of Gogo’s warm kitchen."
+  },
+  {
+   "page_no": 9,
+   "word_count": 15,
+   "text": "On Monday morning, Ms Kani asked the class, “So, what did you do this weekend?”"
+  },
+  {
+   "page_no": 10,
+   "word_count": 18,
+   "text": "“I drove a car!” “I swam with a shark!” “I flew to outer space!” “I rode an elephant!”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 19,
+   "text": "Ms Kani laughed. “It sounds like you’ve been reading again. Now, which book do you want to read next?”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

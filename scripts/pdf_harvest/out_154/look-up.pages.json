@@ -1,0 +1,98 @@
+{
+ "slug": "look-up",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 311,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  6,
+  7,
+  11
+ ],
+ "cache_file": "look-up.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=look-up/ebook/en_english/look-up_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 7,
+   "text": "Wow, look up! What do you see?"
+  },
+  {
+   "page_no": 2,
+   "word_count": 11,
+   "text": "Story spread 2 In the morning... Small sparrows and big hadedas."
+  },
+  {
+   "page_no": 3,
+   "word_count": 9,
+   "text": "In the daytime... A flutter of butterflies over flowers."
+  },
+  {
+   "page_no": 4,
+   "word_count": 13,
+   "text": "A sugarbird with its long tail. A sunbird with its bright red collar."
+  },
+  {
+   "page_no": 5,
+   "word_count": 8,
+   "text": "A yellow-billed kite soaring high in the sky."
+  },
+  {
+   "page_no": 6,
+   "word_count": 9,
+   "text": "In the late afternoon... Bees buzzing to their hive."
+  },
+  {
+   "page_no": 7,
+   "word_count": 7,
+   "text": "As the sun sets... Geese flying home."
+  },
+  {
+   "page_no": 8,
+   "word_count": 9,
+   "text": "The twinkling lights of an aeroplane full of people."
+  },
+  {
+   "page_no": 9,
+   "word_count": 6,
+   "text": "Bats eating insects for their dinner."
+  },
+  {
+   "page_no": 10,
+   "word_count": 11,
+   "text": "When it’s nice and dark... An owl swooping over a field."
+  },
+  {
+   "page_no": 11,
+   "word_count": 3,
+   "text": "A shooting star."
+  },
+  {
+   "page_no": 12,
+   "word_count": 10,
+   "text": "Even when we’re dreaming there is so much to see!"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

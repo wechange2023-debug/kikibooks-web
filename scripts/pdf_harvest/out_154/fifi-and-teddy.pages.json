@@ -1,0 +1,96 @@
+{
+ "slug": "fifi-and-teddy",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 339,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4,
+  7
+ ],
+ "cache_file": "fifi-and-teddy.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=fifi-and-teddy/ebook/en_english/fifi-and-teddy.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 9,
+   "text": "Fifi has loved Teddy since she was a baby."
+  },
+  {
+   "page_no": 2,
+   "word_count": 8,
+   "text": "Fifi eats with Teddy. Fifi plays with Teddy."
+  },
+  {
+   "page_no": 3,
+   "word_count": 13,
+   "text": "Fifi takes Teddy wherever And they curl up together she goes. every night."
+  },
+  {
+   "page_no": 4,
+   "word_count": 17,
+   "text": "Fifi knows she cannot take Teddy to school. So every morning she leaves Teddy on her bed."
+  },
+  {
+   "page_no": 5,
+   "word_count": 12,
+   "text": "One day, when she comes back from school, Teddy is not there!"
+  },
+  {
+   "page_no": 6,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 7,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 8,
+   "word_count": 5,
+   "text": "“What’s wrong, Fifi?” asks Mom."
+  },
+  {
+   "page_no": 9,
+   "word_count": 3,
+   "text": "Teddy is missing!"
+  },
+  {
+   "page_no": 10,
+   "word_count": 7,
+   "text": "“No, darling. Teddy just had a bath!”"
+  },
+  {
+   "page_no": 11,
+   "word_count": 4,
+   "text": "“There you are, Teddy!”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

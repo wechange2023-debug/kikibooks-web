@@ -1,0 +1,95 @@
+{
+ "slug": "the-great-tidy-up",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 326,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "the-great-tidy-up.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=the-great-tidy-up/ebook/en_english/the-great-tidy-up_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 31,
+   "text": "‘We are going to have so much fun while Gogo is having a nap,’ says big sister Khwezi. ‘Ooh yes!’ says little brother Mzamo. ‘What will we do?’ z z z"
+  },
+  {
+   "page_no": 2,
+   "word_count": 29,
+   "text": "‘We will clean the house for Papa and Mama while they are out.’ ‘That’s no fun,’ says Mzamo. ‘Uh uh, no. Not me. I don’t want to clean up!’"
+  },
+  {
+   "page_no": 3,
+   "word_count": 20,
+   "text": "‘But Papa and Mama will be so proud. Let me show you how much fun we will have!’ says Khwezi."
+  },
+  {
+   "page_no": 4,
+   "word_count": 7,
+   "text": "‘First we will put the toys away!’"
+  },
+  {
+   "page_no": 5,
+   "word_count": 6,
+   "text": "‘Now we will sweep the stoep!’"
+  },
+  {
+   "page_no": 6,
+   "word_count": 6,
+   "text": "‘Now we will wash the dishes!’"
+  },
+  {
+   "page_no": 7,
+   "word_count": 6,
+   "text": "‘Now we will wash the windows!’"
+  },
+  {
+   "page_no": 8,
+   "word_count": 9,
+   "text": "z z z ‘Now we will polish the floor!’"
+  },
+  {
+   "page_no": 9,
+   "word_count": 6,
+   "text": "‘Now we will wash the clothes!’"
+  },
+  {
+   "page_no": 10,
+   "word_count": 7,
+   "text": "‘Now we will hang the clothes up!’"
+  },
+  {
+   "page_no": 11,
+   "word_count": 1,
+   "text": "“SURPRISE!”"
+  },
+  {
+   "page_no": 12,
+   "word_count": 16,
+   "text": "‘I have been watching them the whole time and they have been little angels!’ says Gogo."
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "slug": "zibu-and-zizo",
+ "pdf_page_count": 18,
+ "body_page_range": [
+  1,
+  14
+ ],
+ "mapping_offset": 4,
+ "mapping_deviant": null,
+ "has_no_text_folder": true,
+ "no_text_file_count": 18,
+ "front_matter_word_count": 406,
+ "license_hint": "Creative Commons Attribution 4",
+ "license_warning": false,
+ "layout_ambiguous_pages": [
+  1,
+  4
+ ],
+ "cache_file": "zibu-and-zizo.pdf",
+ "pdf_url": "https://bookdash.org/book-source-files/?download=zibu-and-zizo/ebook/en_english/zibu-and-zizo_en.pdf",
+ "ebook_folder": "/ebook",
+ "eng_folder": "/ebook/en_english",
+ "pages": [
+  {
+   "page_no": 1,
+   "word_count": 13,
+   "text": "Zibu and Zizo are twin brothers. ‘They look the same,’ people always say."
+  },
+  {
+   "page_no": 2,
+   "word_count": 12,
+   "text": "Mama buys them the same clothes. They go to the same school."
+  },
+  {
+   "page_no": 3,
+   "word_count": 7,
+   "text": "Zibu and Zizo both like banana bread."
+  },
+  {
+   "page_no": 4,
+   "word_count": 10,
+   "text": "Sometimes Zibu and Zizo say... Hello!!... at the same time."
+  },
+  {
+   "page_no": 5,
+   "word_count": 3,
+   "text": "Zibu likes soccer."
+  },
+  {
+   "page_no": 6,
+   "word_count": 4,
+   "text": "Zizo likes drawing pictures."
+  },
+  {
+   "page_no": 7,
+   "word_count": 6,
+   "text": "Zibu likes to talk to people."
+  },
+  {
+   "page_no": 8,
+   "word_count": 6,
+   "text": "Zizo likes to keep to himself."
+  },
+  {
+   "page_no": 9,
+   "word_count": 10,
+   "text": "Zibu likes counting numbers. He wants to be an accountant."
+  },
+  {
+   "page_no": 10,
+   "word_count": 10,
+   "text": "Zizo likes learning new words. He wants to write books."
+  },
+  {
+   "page_no": 11,
+   "word_count": 17,
+   "text": "‘How come Zibu and Zizo look the same, but like different things?’. ask the children at school"
+  },
+  {
+   "page_no": 12,
+   "word_count": 15,
+   "text": "'We look the same, but we are different and like different things and that's okay.'"
+  },
+  {
+   "page_no": 13,
+   "word_count": 0,
+   "text": ""
+  },
+  {
+   "page_no": 14,
+   "word_count": 0,
+   "text": ""
+  }
+ ]
+}
