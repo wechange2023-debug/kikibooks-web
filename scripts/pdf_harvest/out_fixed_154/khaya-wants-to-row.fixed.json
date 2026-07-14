@@ -1,0 +1,422 @@
+{
+ "slug": "khaya-wants-to-row",
+ "book_body_size": 18.9,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Khaya lives in Joza township with Gogo Lucy and Mkhulu Majozi. His mother works far away in Cape Town.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Khaya lives in Joza township with Gogo Lucy and Mkhulu Majozi. His mother works far away in Cape Town.",
+     "bbox": [
+      623.6,
+      96.8,
+      862.4,
+      192.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Every morning, Khaya eats porridge with Gogo on the stoep. The kettle whistles on the paraffin stove. The sun peeks over Joza. “Gogo, tell me a story!” Khaya says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Every morning, Khaya eats porridge with Gogo on the stoep. The kettle whistles on the paraffin stove. The sun peeks over Joza.",
+     "bbox": [
+      715.6,
+      181.5,
+      1041.2,
+      277.5
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "“Gogo, tell me a story!”",
+     "bbox": [
+      709.7,
+      313.3,
+      1022.5,
+      343.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Khaya says.",
+     "bbox": [
+      715.6,
+      373.5,
+      808.0,
+      391.5
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Gogo smiles. She tells him stories of rivers and dreams. “K haya,” she says, “when you arebigandstrong, youcanbe anythingyouw ”.tna Khaya smiles and nods.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Gogo smiles. She tells him stories of rivers and dreams.",
+     "bbox": [
+      149.9,
+      75.3,
+      417.3,
+      119.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“K haya,” she says, “when you arebigandstrong,",
+     "bbox": [
+      136.7,
+      159.4,
+      515.9,
+      256.9
+     ],
+     "size": 19.1
+    },
+    {
+     "role": "BODY",
+     "text": "youcanbe anythingyouw ”.tna Khaya smiles and nods.",
+     "bbox": [
+      618.5,
+      249.9,
+      1088.6,
+      491.8
+     ],
+     "size": 32.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "One Saturday, Mkhulu switches on the TV. Rowers are gliding across the water. “Mkhulu! What are they doing?” Khaya asks. “They are rowing with oars, my boy,” says Mkhulu.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One Saturday, Mkhulu switches on the TV. Rowers are gliding across the water.",
+     "bbox": [
+      84.9,
+      120.7,
+      426.1,
+      164.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Mkhulu! What are they doing?” Khaya asks. “They are rowing with oars, my boy,” says Mkhulu.",
+     "bbox": [
+      624.2,
+      90.4,
+      904.6,
+      261.7
+     ],
+     "size": 23.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Khaya claps his hands. “Oh wow! I want to row too!” He sings, “I want to row a boat, I want to row a boat!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Khaya claps his hands. “Oh wow! I want to row too!”",
+     "bbox": [
+      792.3,
+      148.5,
+      1061.5,
+      293.9
+     ],
+     "size": 34.5
+    },
+    {
+     "role": "SFX",
+     "text": "He sings, “I want to row a boat, I want to row a boat!”",
+     "bbox": [
+      782.0,
+      334.5,
+      1071.4,
+      427.9
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Mkhulu sings with him, “Khayawantstorow, Khayawantstorow! Rowaboatwithan oar. Row a boatwithanoar.” Gogo laughs and joins in.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mkhulu sings with him,",
+     "bbox": [
+      254.6,
+      62.1,
+      439.4,
+      80.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Khayawantstorow, Khayawantstorow!",
+     "bbox": [
+      343.1,
+      118.0,
+      500.6,
+      258.3
+     ],
+     "size": 22.7
+    },
+    {
+     "role": "BODY",
+     "text": "Rowaboatwithan oar.",
+     "bbox": [
+      645.2,
+      165.2,
+      808.6,
+      270.9
+     ],
+     "size": 21.2
+    },
+    {
+     "role": "BODY",
+     "text": "Row a boatwithanoar.” Gogo laughs and joins in.",
+     "bbox": [
+      665.1,
+      278.4,
+      1052.8,
+      464.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "From that day, Khaya plays in puddles, draws boats in the sand, and builds toy boats from scraps.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "From that day, Khaya plays in puddles, draws boats in the sand, and builds toy boats from scraps.",
+     "bbox": [
+      85.0,
+      306.0,
+      351.6,
+      376.0
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "One morning, Mkhulu wakes Khaya early. “Come, Mzukulu, I have a surprise.” Khaya gets ready. Today feels special.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One morning, Mkhulu wakes Khaya early.",
+     "bbox": [
+      741.9,
+      168.7,
+      917.6,
+      212.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Come, Mzukulu, I have a surprise.”",
+     "bbox": [
+      711.6,
+      248.5,
+      947.3,
+      314.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Khaya gets ready. Today feels special.",
+     "bbox": [
+      752.9,
+      344.7,
+      906.6,
+      388.7
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "They t ake a taxi to Port Alfred. Atthe Kowie River, b oats are lined up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They t ake a taxi to Port Alfred.",
+     "bbox": [
+      164.9,
+      372.6,
+      411.8,
+      422.1
+     ],
+     "size": 18.8
+    },
+    {
+     "role": "BODY",
+     "text": "Atthe Kowie River, b oats are lined up.",
+     "bbox": [
+      771.8,
+      144.3,
+      1080.4,
+      190.9
+     ],
+     "size": 19.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Rowers are ready with their oars. “Wow, Mkhulu! This is where people row!” Khaya shouts. He watches boats racing fast across the water. He waves at rowers and takes a photo with one.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Rowers are ready with their oars. “Wow, Mkhulu! This is where people row!” Khaya shouts.",
+     "bbox": [
+      85.0,
+      86.3,
+      478.1,
+      130.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "He watches boats racing fast across the water. He waves at rowers and takes a photo with one.",
+     "bbox": [
+      652.0,
+      86.3,
+      1037.3,
+      130.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "At the end of the day, Khaya hugs Mkhulu. “Thank you, Mkhulu. You are the best!” “One day, Khaya,” Mkhulu says, “you will row a boat like a champion.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "At the end of the day, Khaya hugs Mkhulu.",
+     "bbox": [
+      680.7,
+      103.8,
+      1022.2,
+      121.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "“Thank you, Mkhulu. You are the best!”",
+     "bbox": [
+      709.9,
+      157.5,
+      989.4,
+      223.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“One day, Khaya,” Mkhulu says, “you will row a boat like a champion.”",
+     "bbox": [
+      702.2,
+      263.8,
+      999.3,
+      307.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Khaya smilesandwhispers, Khaya “Khaya wants wantstoroww torow,ro. . Row Row a a boatwithanoar!” boatwithanoar.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Khaya smilesandwhispers,",
+     "bbox": [
+      102.1,
+      68.8,
+      314.4,
+      156.5
+     ],
+     "size": 20.9
+    },
+    {
+     "role": "BODY",
+     "text": "Khaya “Khaya wants wantstoroww torow,ro. .",
+     "bbox": [
+      147.3,
+      199.9,
+      493.0,
+      379.1
+     ],
+     "size": 36.9
+    },
+    {
+     "role": "BODY",
+     "text": "Row Row a a boatwithanoar!” boatwithanoar.",
+     "bbox": [
+      751.1,
+      299.6,
+      1084.1,
+      519.9
+     ],
+     "size": 37.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

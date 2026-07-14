@@ -1,0 +1,334 @@
+{
+ "slug": "dance-mihlali",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "It is almost time for the big concert at school. All the children are having fun practising. But not Mihlali …",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It is almost time for the big concert at school. All the children are having fun practising. But not Mihlali …",
+     "bbox": [
+      648.2,
+      148.1,
+      1061.2,
+      229.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“I’ll help you practise at home.” She is worried she will forget her dance steps.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I’ll help you practise at home.”",
+     "bbox": [
+      702.7,
+      148.6,
+      998.1,
+      172.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "She is worried she will forget her dance steps.",
+     "bbox": [
+      56.7,
+      415.0,
+      471.7,
+      439.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“I wish this concert would never happen!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I wish this concert would never happen!”",
+     "bbox": [
+      657.3,
+      148.6,
+      1048.9,
+      172.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Not a chance! The day of the concert is getting closer…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Not a chance! The day of the concert is getting closer…",
+     "bbox": [
+      90.7,
+      463.2,
+      457.0,
+      516.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "GRANNY FROM “Granny has sent you a gift.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "GRANNY FROM",
+     "bbox": [
+      258.4,
+      293.6,
+      291.0,
+      337.1
+     ],
+     "size": 11.7
+    },
+    {
+     "role": "BODY",
+     "text": "“Granny has sent you a gift.”",
+     "bbox": [
+      147.3,
+      486.9,
+      419.6,
+      510.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "GRANNY FROM Mihlali is too worried about the concert to open gifts.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "GRANNY FROM",
+     "bbox": [
+      228.6,
+      353.9,
+      267.8,
+      406.0
+     ],
+     "size": 14.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mihlali is too worried about the concert to open gifts.",
+     "bbox": [
+      788.0,
+      175.3,
+      1041.2,
+      228.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Perhaps she should take a look inside. What great dancing shoes from Granny!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Perhaps she should take a look inside.",
+     "bbox": [
+      90.7,
+      489.5,
+      435.7,
+      513.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "What great dancing shoes from Granny!",
+     "bbox": [
+      651.2,
+      489.5,
+      1027.0,
+      513.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Granny was the best dancer ever.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Granny was the best dancer ever.",
+     "bbox": [
+      691.6,
+      285.4,
+      1011.9,
+      309.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "And at home! Mihlali practises and practises at school… And she dances in her dreams.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And at home!",
+     "bbox": [
+      785.8,
+      79.7,
+      915.0,
+      103.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mihlali practises and practises at school…",
+     "bbox": [
+      90.7,
+      439.7,
+      468.7,
+      463.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "And she dances in her dreams.",
+     "bbox": [
+      709.6,
+      439.6,
+      992.6,
+      463.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Mihlali must rest. The big concert is tomorrow.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mihlali must rest.",
+     "bbox": [
+      205.6,
+      489.6,
+      361.3,
+      513.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "The big concert is tomorrow.",
+     "bbox": [
+      720.4,
+      488.2,
+      980.4,
+      512.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "It’s concert day. Mihlali does her dance just right. What great fun! And surprise! Granny has even come to watch Mihlali dance.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s concert day. Mihlali does her dance just right. What great fun!",
+     "bbox": [
+      718.6,
+      134.9,
+      1076.9,
+      187.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "And surprise! Granny has even come to watch Mihlali dance.",
+     "bbox": [
+      718.6,
+      250.2,
+      1056.2,
+      302.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“I danced just like you, Granny.” “You were amazing! You are the best dancer I’ve ever seen.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I danced just like you, Granny.”",
+     "bbox": [
+      132.1,
+      72.5,
+      434.9,
+      96.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You were amazing! You are the best dancer I’ve ever seen.”",
+     "bbox": [
+      657.6,
+      70.7,
+      1016.1,
+      123.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

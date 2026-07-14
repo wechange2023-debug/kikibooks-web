@@ -1,0 +1,223 @@
+{
+ "slug": "the-sea",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "On a very hot day, on a holiday day, we go to the beach. To the sea. We go to the sea, my family and me.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On a very hot day, on a holiday day, we go to the beach. To the sea. We go to the sea, my family and me.",
+     "bbox": [
+      757.6,
+      218.0,
+      988.6,
+      428.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "On the edge of the sand is the water. That’s where my toes touch the sea.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On the edge of the sand is the water. That’s where my toes touch the sea.",
+     "bbox": [
+      67.8,
+      242.8,
+      499.2,
+      308.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "The waves play a game. They say yes, I say no. They run up to meet me, and I run from the sea.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The waves play a game. They say yes, I say no. They run up to meet me, and I run from the sea.",
+     "bbox": [
+      132.0,
+      92.6,
+      417.9,
+      230.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "They say no, I say yes. I run back to the edge. I chase the waves home to the sea.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They say no, I say yes. I run back to the edge. I chase the waves home to the sea.",
+     "bbox": [
+      81.3,
+      215.9,
+      485.6,
+      317.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "They say yes, I say no. They say no, I say yes. The sea chases me, and I chase the sea.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They say yes, I say no. They say no, I say yes. The sea chases me, and I chase the sea.",
+     "bbox": [
+      791.5,
+      118.8,
+      1048.3,
+      256.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "There is blue. There is sea spray. In the game, I can’t be still.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There is blue. There is sea spray. In the game, I can’t be still.",
+     "bbox": [
+      673.9,
+      400.5,
+      1043.9,
+      466.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "A chasing wave brings me a shell. It leaves it for me on the wet sand.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A chasing wave brings me a shell. It leaves it for me on the wet sand.",
+     "bbox": [
+      83.6,
+      427.6,
+      480.2,
+      493.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "I find a feather in the dry sand, and I send it on a wave to the sea.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I find a feather in the dry sand, and I send it on a wave to the sea.",
+     "bbox": [
+      638.3,
+      232.9,
+      1054.0,
+      298.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Then the waves say yes, and I say yes too.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then the waves say yes, and I say yes too.",
+     "bbox": [
+      145.7,
+      235.0,
+      421.2,
+      301.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "I have sea and sand in my toes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I have sea and sand in my toes.",
+     "bbox": [
+      93.5,
+      267.9,
+      460.6,
+      297.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Oh, I love the sea.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh, I love the sea.",
+     "bbox": [
+      184.2,
+      182.6,
+      396.4,
+      212.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

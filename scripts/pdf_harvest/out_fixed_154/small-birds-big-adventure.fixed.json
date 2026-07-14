@@ -1,0 +1,344 @@
+{
+ "slug": "small-birds-big-adventure",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Small Bird was a small bird. He was very small and very birdy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Small Bird was a small bird. He was very small and very birdy.",
+     "bbox": [
+      113.1,
+      274.0,
+      454.0,
+      322.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Small Bird lived in a beautiful house with the Giant. Small Bird loved the Giant very much. She was a kind Giant. She gave Small Bird lots of toys.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Small Bird lived in a beautiful house with the Giant. Small Bird loved the Giant very much.",
+     "bbox": [
+      57.2,
+      234.4,
+      510.0,
+      282.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "She was a kind Giant. She gave Small Bird lots of toys.",
+     "bbox": [
+      120.8,
+      313.6,
+      446.3,
+      362.0
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Small Bird was sad when the Giant wasn’t around. So one day Small Bird went to go find the Giant.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Small Bird was sad when the Giant wasn’t around.",
+     "bbox": [
+      189.7,
+      221.2,
+      442.5,
+      269.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "So one day Small Bird went to go find the Giant.",
+     "bbox": [
+      178.5,
+      300.4,
+      453.8,
+      348.8
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Small Bird flew up and up until he could see the whole world. He wanted to find the Giant. Where would he land?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Small Bird flew up and up until he could see the whole world.",
+     "bbox": [
+      650.2,
+      234.4,
+      1050.8,
+      282.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "He wanted to find the Giant. Where would he land?",
+     "bbox": [
+      706.5,
+      313.6,
+      994.4,
+      362.0
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Small Bird landed in a huge forest, filled with trees and flowers and treasure. Small Bird loved playing with the shiny jewels! But where was the Giant?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Small Bird landed in a huge forest, filled with trees and flowers and treasure.",
+     "bbox": [
+      80.8,
+      234.4,
+      486.3,
+      282.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Small Bird loved playing with the shiny jewels! But where was the Giant?",
+     "bbox": [
+      87.8,
+      313.6,
+      479.3,
+      362.0
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Small Bird walked into a vast field of snow. The snow was white and soft. Small Bird loved rolling around on the cool ground. But where was the Giant?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Small Bird walked into a vast field of snow. The snow was white and soft.",
+     "bbox": [
+      633.5,
+      221.2,
+      1067.5,
+      269.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Small Bird loved rolling around on the cool ground. But where was the Giant?",
+     "bbox": [
+      635.3,
+      300.4,
+      1065.7,
+      348.8
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "This time, Small Bird flew even higher into the sky. He flew among the stars and galaxies! He saw the moon! He saw a comet! But where was the Giant?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "This time, Small Bird flew even higher into the sky.",
+     "bbox": [
+      759.4,
+      291.1,
+      1016.6,
+      339.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "He flew among the stars and galaxies! He saw the moon! He saw a comet!",
+     "bbox": [
+      695.1,
+      370.4,
+      1081.0,
+      418.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "But where was the Giant?",
+     "bbox": [
+      757.5,
+      449.6,
+      1018.5,
+      471.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "From way up high, with his sharp birdy eyes, Small Bird saw something! What could it be?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "From way up high, with his sharp birdy eyes, Small Bird saw something!",
+     "bbox": [
+      624.9,
+      234.4,
+      1076.0,
+      282.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "What could it be?",
+     "bbox": [
+      760.8,
+      313.6,
+      940.1,
+      335.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Small Bird dived down, down, down. Where would he land?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Small Bird dived down, down, down.",
+     "bbox": [
+      100.5,
+      247.6,
+      466.6,
+      269.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Where would he land?",
+     "bbox": [
+      170.5,
+      300.4,
+      396.5,
+      322.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Small Bird landed right in the Giant’s hands! He was so happy to see her. “I love you, Giant!” he shrieked.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Small Bird landed right in the Giant’s hands! He was so happy to see her.",
+     "bbox": [
+      625.7,
+      234.4,
+      1075.3,
+      282.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I love you, Giant!” he shrieked.",
+     "bbox": [
+      686.4,
+      340.0,
+      1014.5,
+      362.0
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "The Giant held Small Bird close to her. “I love you too,” the Giant said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The Giant held Small Bird close to her.",
+     "bbox": [
+      798.8,
+      138.1,
+      1008.4,
+      186.5
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I love you too,” the Giant said.",
+     "bbox": [
+      799.6,
+      217.3,
+      1007.6,
+      265.7
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,378 @@
+{
+ "slug": "the-fish-and-chickens-wedding",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "There once lived a chicken, called Cikizwa, who was an orphan. One day Cikizwa was out looking for food when she saw a mole coming out of his hole. She started speaking to the mole, but he ignored her.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There once lived a chicken, called Cikizwa, who was an orphan.",
+     "bbox": [
+      87.7,
+      232.6,
+      479.4,
+      272.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "One day Cikizwa was out looking for food when she saw a mole coming out of his hole. She started speaking to the mole, but he ignored her.",
+     "bbox": [
+      74.6,
+      297.4,
+      492.6,
+      358.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Tears poured down Cikizwa’s face as she wept bitterly, and so the mole apologised for hurting her feelings. Then he bought some cooldrink and scones. They ate and drank them together and then they both felt much happier.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tears poured down Cikizwa’s face as she wept bitterly, and so the mole apologised for hurting her feelings.",
+     "bbox": [
+      87.6,
+      70.8,
+      479.5,
+      132.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Then he bought some cooldrink and scones. They ate and drank them together and then they both felt much happier.",
+     "bbox": [
+      647.4,
+      70.8,
+      1053.6,
+      132.0
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "From that day on, the mole and Cikizwa became great friends. The friends often hugged each other tightly. They loved and looked after each other.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "From that day on, the mole and Cikizwa became great friends. The friends often hugged each other tightly. They loved and looked after each other.",
+     "bbox": [
+      73.1,
+      250.1,
+      494.1,
+      311.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "One evening, Cikizwa said goodbye to her friend and went home. That night, Cikizwa had a dream. She heard her mother’s voice asking, “When is Cikizwa getting married?” “Oh, I must have been dreaming,” said Cikizwa as she woke up. Now, in the place where Cikizwa lived, there was a cruel elephant.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One evening, Cikizwa said goodbye to her friend and went home. That night, Cikizwa had a dream.",
+     "bbox": [
+      77.5,
+      70.8,
+      489.6,
+      110.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "She heard her mother’s voice asking, “When is Cikizwa getting married?” “Oh, I must have been dreaming,” said Cikizwa as she woke up.",
+     "bbox": [
+      130.8,
+      135.6,
+      436.3,
+      218.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Now, in the place where Cikizwa lived, there was a cruel elephant.",
+     "bbox": [
+      73.6,
+      459.1,
+      493.5,
+      498.7
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Elephant often said really unkind things to Cikizwa to try and make her unhappy. One morning, when Cikizwa greeted Elephant, he snubbed her and said, “Ha, ha, ha! Go away, you orphan! What do you want from me? You’re so skinny. It’s as if you haven’t had enough mealies to eat!” Cikizwa was heartbroken.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Elephant often said really unkind things to Cikizwa to try and make her unhappy. One morning, when Cikizwa greeted Elephant, he snubbed her and said, “Ha, ha, ha! Go away, you orphan! What do you want from me? You’re so skinny. It’s as if you haven’t had enough mealies to eat!” Cikizwa was heartbroken.",
+     "bbox": [
+      73.3,
+      221.8,
+      493.8,
+      369.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "On her way home, she met Gusha Bhoqo. As soon as she saw the kind sheep, she poured out her heart to him. She told him about what Elephant had said to her. Gusha comforted the chicken and he was even able to make her smile a little. Then Gusha invited Cikizwa to have supper at his home. They had tasty samp, cooked with beans for supper. Afterwards, Cikizwa danced joyfully with the Gusha family as the music played. She danced so much that she sent the dust flying and forgot all her troubles!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On her way home, she met Gusha Bhoqo. As soon as she saw the kind sheep, she poured out her heart to him. She told him about what Elephant had said to her.",
+     "bbox": [
+      67.6,
+      70.8,
+      499.5,
+      153.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Gusha comforted the chicken and he was even able to make her smile a little. Then Gusha invited Cikizwa to have supper at his home. They had tasty samp, cooked with beans for supper. Afterwards, Cikizwa danced joyfully with the Gusha family as the music played. She danced so much that she sent the dust flying and forgot all her troubles!",
+     "bbox": [
+      57.0,
+      394.3,
+      510.1,
+      541.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "The next day it rained and rained. It rained so heavily that many animals were swept away by the nearby river. Cikizwa was safe in her little coop because her father had been clever enough to build a drain nearby so that it didn’t get flooded.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The next day it rained and rained. It rained so heavily that many animals were swept away by the nearby river. Cikizwa was safe in her little coop because her father had been clever enough to build a drain nearby so that it didn’t get flooded.",
+     "bbox": [
+      73.0,
+      232.6,
+      494.2,
+      336.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "But Cikizwa still felt sad about what had happened to some of her friends. Once the rain stopped, beautiful, colourful flowers appeared and there was a cool breeze. Cikizwa was out enjoying the sunshine when she saw Elephant limping along and crying loudly. Kind Cikizwa quickly called an ambulance.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But Cikizwa still felt sad about what had happened to some of her friends.",
+     "bbox": [
+      72.8,
+      210.9,
+      494.3,
+      250.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Once the rain stopped, beautiful, colourful flowers appeared and there was a cool breeze. Cikizwa was out enjoying the sunshine when she saw Elephant limping along and crying loudly. Kind Cikizwa quickly called an ambulance.",
+     "bbox": [
+      74.3,
+      275.8,
+      492.8,
+      380.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "When the ambulance arrived, Elephant got the help he needed. His leg was bandaged and he was given an injection to help with the pain. As soon as Elephant started to feel better, he thanked Cikizwa for her kindness. Then he said, “Cikizwa, my child, never change who you are. Keep on respecting and loving everyone.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When the ambulance arrived, Elephant got the help he needed. His leg was bandaged and he was given an injection to help with the pain. As soon as Elephant started to feel better, he thanked Cikizwa for her kindness.",
+     "bbox": [
+      70.9,
+      200.2,
+      496.3,
+      304.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Then he said, “Cikizwa, my child, never change who you are. Keep on respecting and loving everyone.”",
+     "bbox": [
+      88.7,
+      329.8,
+      478.4,
+      390.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Some time later, Cikizwa went down to the river to enjoy herself. There were already a few people and animals there. Some of them were fishing, and then braaiing the fish they had caught. They ate the fish and fluffy freshly-baked roosterkoek. Cikizwa noticed a beautiful fish and she found out that his name was Gumbi. Gumbi and Cikizwa got to know each other and quickly became friends. Cikizwa even decided to stop eating fish out of respect for Gumbi. Some of the other animals laughed at them and said, “How can a fish and a chicken be friends?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Some time later, Cikizwa went down to the river to enjoy herself. There were already a few people and animals there. Some of them were fishing, and then braaiing the fish they had caught. They ate the fish and fluffy freshly-baked roosterkoek.",
+     "bbox": [
+      251.4,
+      70.8,
+      502.8,
+      261.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Cikizwa noticed a beautiful fish and she found out that his name was Gumbi.",
+     "bbox": [
+      247.5,
+      286.8,
+      506.7,
+      348.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Gumbi and Cikizwa got to know each other and quickly became friends. Cikizwa even decided to stop eating fish out of respect for Gumbi.",
+     "bbox": [
+      635.5,
+      70.8,
+      903.8,
+      175.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Some of the other animals laughed at them and said, “How can a fish and a chicken be friends?”",
+     "bbox": [
+      625.8,
+      200.4,
+      913.6,
+      261.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "But Gumbi and Cikizwa didn’t care. They became even closer. Gumbi taught Cikizwa how to swim and dive, and Cikizwa taught Gumbi how to scratch in the sand for food. Eventually Gumbi asked Cikizwa to marry him. Cikizwa agreed immediately. Together they decided to have their wedding the following Saturday at a place that they both loved near the river.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But Gumbi and Cikizwa didn’t care. They became even closer. Gumbi taught Cikizwa how to swim and dive, and Cikizwa taught Gumbi how to scratch in the sand for food.",
+     "bbox": [
+      81.1,
+      189.3,
+      486.0,
+      272.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Eventually Gumbi asked Cikizwa to marry him. Cikizwa agreed immediately. Together they decided to have their wedding the following Saturday at a place that they both loved near the river.",
+     "bbox": [
+      91.9,
+      297.4,
+      475.2,
+      401.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Their wedding day arrived. The sun was blazing hot. What a wonderful wedding it was! The animal choir sang beautifully. Iguanas, whales, crocodiles, seals, sharks, dolphins, sheep, cattle, dogs, antelopes, hares, porcupines, water snakes and other animals all sang together: “It is enjoyable here at the wedding of the fish. It is enjoyable here at the wedding of the chicken!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Their wedding day arrived. The sun was blazing hot. What a wonderful wedding it was!",
+     "bbox": [
+      85.9,
+      167.8,
+      481.2,
+      207.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "The animal choir sang beautifully. Iguanas, whales, crocodiles, seals, sharks, dolphins, sheep, cattle, dogs, antelopes, hares, porcupines, water snakes and other animals all sang together:",
+     "bbox": [
+      75.9,
+      232.6,
+      491.2,
+      315.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It is enjoyable here at the wedding of the fish. It is enjoyable here at the wedding of the chicken!”",
+     "bbox": [
+      70.9,
+      340.6,
+      496.1,
+      380.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

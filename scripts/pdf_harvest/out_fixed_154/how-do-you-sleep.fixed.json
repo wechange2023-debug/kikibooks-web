@@ -1,0 +1,355 @@
+{
+ "slug": "how-do-you-sleep",
+ "book_body_size": 43.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "How sleep, do bird? you Iflyinmysleep.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How sleep, do bird? you",
+     "bbox": [
+      150.2,
+      337.1,
+      334.2,
+      427.1
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Iflyinmysleep.",
+     "bbox": [
+      752.3,
+      279.1,
+      998.8,
+      426.9
+     ],
+     "size": 53.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "How do you sleep, bat? Isleep upsi ed nwod .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, bat?",
+     "bbox": [
+      150.2,
+      340.6,
+      334.2,
+      430.6
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Isleep upsi ed nwod .",
+     "bbox": [
+      902.0,
+      159.5,
+      965.2,
+      509.7
+     ],
+     "size": 24.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "How do you sleep, bullfrog? Irestonmyside.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, bullfrog?",
+     "bbox": [
+      136.1,
+      339.2,
+      361.4,
+      429.2
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Irestonmyside.",
+     "bbox": [
+      602.6,
+      46.4,
+      852.5,
+      254.9
+     ],
+     "size": 54.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "How do you sleep, octopus? Ichange inmy dreams. colour",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, octopus?",
+     "bbox": [
+      136.1,
+      337.0,
+      354.9,
+      427.0
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Ichange inmy dreams. colour",
+     "bbox": [
+      840.8,
+      92.0,
+      1114.8,
+      248.6
+     ],
+     "size": 51.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "How do you sleep, duck? Wetake turns to guard eachother.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, duck?",
+     "bbox": [
+      150.2,
+      339.2,
+      334.2,
+      429.2
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Wetake turns to guard eachother.",
+     "bbox": [
+      683.8,
+      103.6,
+      1056.7,
+      258.8
+     ],
+     "size": 46.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "How do you sleep, baby owl? Isleeponm y .ecaf",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, baby owl?",
+     "bbox": [
+      99.9,
+      98.2,
+      341.4,
+      188.2
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Isleeponm y .ecaf",
+     "bbox": [
+      957.1,
+      150.2,
+      1106.5,
+      452.5
+     ],
+     "size": 30.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "How do you sleep, otter? We sleep holdinghands .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, otter?",
+     "bbox": [
+      121.9,
+      342.0,
+      305.9,
+      432.0
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "We sleep holdinghands .",
+     "bbox": [
+      845.2,
+      114.4,
+      1095.3,
+      337.7
+     ],
+     "size": 32.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "How do you sleep, walrus? I sleep on the land and under the water.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, walrus?",
+     "bbox": [
+      113.4,
+      305.1,
+      322.2,
+      395.1
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I sleep on the land",
+     "bbox": [
+      791.1,
+      38.3,
+      1094.2,
+      81.3
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "and under the water.",
+     "bbox": [
+      990.8,
+      146.7,
+      1094.2,
+      330.7
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "How do you sleep, giraffe? We sleeponeachother .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, giraffe?",
+     "bbox": [
+      113.4,
+      278.9,
+      319.3,
+      368.9
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "We sleeponeachother .",
+     "bbox": [
+      773.0,
+      109.8,
+      1090.7,
+      341.5
+     ],
+     "size": 29.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "How do you sleep, meerkat? Wesleep inaheap.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, meerkat?",
+     "bbox": [
+      109.8,
+      279.3,
+      339.4,
+      369.3
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Wesleep inaheap.",
+     "bbox": [
+      636.4,
+      31.7,
+      961.5,
+      143.2
+     ],
+     "size": 52.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "How do you sleep, Pula? Goodnight! Sleep tight!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you sleep, Pula?",
+     "bbox": [
+      46.1,
+      51.0,
+      250.3,
+      141.0
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Goodnight! Sleep tight!",
+     "bbox": [
+      879.7,
+      320.6,
+      1096.6,
+      522.5
+     ],
+     "size": 49.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

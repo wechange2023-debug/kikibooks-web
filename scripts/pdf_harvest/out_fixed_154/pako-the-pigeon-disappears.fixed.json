@@ -1,0 +1,356 @@
+{
+ "slug": "pako-the-pigeon-disappears",
+ "book_body_size": 25.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "This is Pako the Pigeon. Pako goes, “Coo! Coo!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "This is Pako the Pigeon. Pako goes, “Coo! Coo!”",
+     "bbox": [
+      97.4,
+      208.5,
+      469.5,
+      386.9
+     ],
+     "size": 46.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "She flies and spreads out her wings. She loves to fly over Namwayi and Dairine’s house as they play crisscross every day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She flies and spreads out her wings.",
+     "bbox": [
+      57.2,
+      122.5,
+      305.0,
+      177.5
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "She loves to fly over Namwayi and Dairine’s house as they play crisscross every day.",
+     "bbox": [
+      716.6,
+      150.3,
+      984.2,
+      265.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Coo!Coo! Pako!Pako! Namwayi and Dairine love to imitate Pako. hands They spread the and house. run their around little",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Coo!Coo! Pako!Pako!",
+     "bbox": [
+      145.1,
+      169.8,
+      481.1,
+      379.9
+     ],
+     "size": 45.6
+    },
+    {
+     "role": "BODY",
+     "text": "Namwayi and Dairine love to imitate Pako. hands They spread the and house. run their around little",
+     "bbox": [
+      718.9,
+      113.5,
+      981.9,
+      275.5
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "One fly over day, the Pako house did not as usual. Where could she be?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One fly over day, the Pako house did not as usual.",
+     "bbox": [
+      154.8,
+      244.6,
+      412.1,
+      329.6
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "SFX",
+     "text": "Where could she be?",
+     "bbox": [
+      711.7,
+      251.5,
+      960.8,
+      339.5
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Dairine, Namwayi and the cat looked for Pako in the garden, but she was not there.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dairine, Namwayi and the cat looked for Pako in the garden,",
+     "bbox": [
+      67.7,
+      148.9,
+      499.2,
+      203.9
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "but she was not there.",
+     "bbox": [
+      776.1,
+      139.7,
+      924.7,
+      194.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "They looked in the sky and they could not see Pako anywhere. This made them very sad.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They looked in the sky and they could not see Pako anywhere.",
+     "bbox": [
+      318.4,
+      133.3,
+      510.2,
+      248.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "This made them very sad.",
+     "bbox": [
+      623.6,
+      180.8,
+      813.2,
+      235.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Cat called to Pako: Meow! Meow !",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Cat called to Pako: Meow! Meow !",
+     "bbox": [
+      642.7,
+      131.9,
+      1070.1,
+      467.8
+     ],
+     "size": 47.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Cat heard Pako reply, and followed the sound. Coo! Coo!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Cat heard Pako reply, and followed the sound.",
+     "bbox": [
+      159.0,
+      153.2,
+      407.9,
+      238.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "SFX",
+     "text": "Coo! Coo!",
+     "bbox": [
+      676.6,
+      94.4,
+      797.1,
+      181.6
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Oh no! Pako was caught in a thicket. Not to worry, I have soft and tender paws. See!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh no! Pako was caught in a thicket.",
+     "bbox": [
+      194.0,
+      154.6,
+      416.9,
+      209.6
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Not to worry, I have soft and tender paws. See!",
+     "bbox": [
+      832.7,
+      80.9,
+      1040.5,
+      165.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Cat gently took Pako to Namwayi and Dairine. They could see that Pako had hurt her wing.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Cat gently took Pako to Namwayi and Dairine. They could see that Pako had hurt her wing.",
+     "bbox": [
+      704.7,
+      221.2,
+      996.1,
+      353.2
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Pako’s wing was very sore, but the girls took good care of her. With Mum’s help, Namwayi and Dairine bandaged Pako’s wing to help her heal quickly.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Pako’s wing was very sore, but the girls took good care of her.",
+     "bbox": [
+      276.6,
+      119.2,
+      510.2,
+      234.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "With Mum’s help, Namwayi and Dairine bandaged Pako’s wing to help her heal quickly.",
+     "bbox": [
+      623.6,
+      157.4,
+      848.5,
+      302.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Coo! Coo! When Pako healed, she flew home. But she would fly to the girls’ window each morning. The would girls shout, “Good morning Pako!” Meow! Meow!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Coo! Coo!",
+     "bbox": [
+      347.8,
+      85.1,
+      455.9,
+      165.7
+     ],
+     "size": 40.5
+    },
+    {
+     "role": "BODY",
+     "text": "When Pako healed, she flew home. But she would fly to the girls’ window each morning.",
+     "bbox": [
+      119.5,
+      382.1,
+      447.4,
+      497.1
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "The would girls shout, “Good morning Pako!”",
+     "bbox": [
+      623.6,
+      107.8,
+      775.9,
+      252.8
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Meow! Meow!",
+     "bbox": [
+      684.9,
+      305.1,
+      799.5,
+      365.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,268 @@
+{
+ "slug": "sams-treasures",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Sam and Dara were at the park. A shiny sparkle caught Sam’s eye.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sam and Dara were at the park. A shiny sparkle caught Sam’s eye.",
+     "bbox": [
+      675.9,
+      169.3,
+      1024.9,
+      217.7
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "A crystal ball! A magic pearl! A treasure for Sam’s collection!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A crystal ball! A magic pearl! A treasure for Sam’s collection!",
+     "bbox": [
+      123.6,
+      250.9,
+      443.3,
+      299.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“That’s not treasure – that’s junk,” said Dara. She didn’t like the things Sam found.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“That’s not treasure – that’s junk,” said Dara.",
+     "bbox": [
+      109.5,
+      92.7,
+      457.4,
+      141.1
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "She didn’t like the things Sam found.",
+     "bbox": [
+      664.1,
+      476.8,
+      1036.7,
+      498.8
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "That was fine with Sam. “Time to go treasure hunting!” Off he went with his backpack.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "That was fine with Sam. “Time to go treasure hunting!”",
+     "bbox": [
+      695.8,
+      120.4,
+      1005.0,
+      168.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Off he went with his backpack.",
+     "bbox": [
+      693.0,
+      199.6,
+      1007.8,
+      221.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Between the bushes Sam found a crown and a magic wand.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Between the bushes Sam found a crown and a magic wand.",
+     "bbox": [
+      120.1,
+      92.7,
+      446.8,
+      141.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Under an old log he found monsters and creepy creatures. No thank you!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Under an old log he found monsters and creepy creatures. No thank you!",
+     "bbox": [
+      119.4,
+      145.4,
+      447.6,
+      229.8
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Among the flowers Sam found a chest and a ring.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Among the flowers Sam found a chest and a ring.",
+     "bbox": [
+      693.3,
+      250.9,
+      1007.5,
+      299.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "In the stream Sam found a message in a bottle and a wise old wizard.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In the stream Sam found a message in a bottle and a wise old wizard.",
+     "bbox": [
+      663.2,
+      325.2,
+      1037.6,
+      373.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "By the lamp post Sam found a sports car and a victory trophy. Time to show Dara all the treasures he had found!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "By the lamp post Sam found a sports car and a victory trophy. Time to show Dara all the treasures he had found!",
+     "bbox": [
+      627.0,
+      124.3,
+      1073.8,
+      199.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Dara was crying. “I lost my ring,” said Dara. “I don’t know where I dropped it.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dara was crying. “I lost my ring,” said Dara. “I don’t know where I dropped it.”",
+     "bbox": [
+      113.0,
+      237.7,
+      453.9,
+      312.5
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "That sounded like something Sam had found. It was! It was Dara’s ring!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "That sounded like something Sam had found.",
+     "bbox": [
+      136.0,
+      61.5,
+      431.0,
+      110.0
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "It was! It was Dara’s ring!",
+     "bbox": [
+      724.2,
+      61.5,
+      976.7,
+      83.5
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Thank you, Sam! You DO find treasures!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Thank you, Sam! You DO find treasures!”",
+     "bbox": [
+      638.5,
+      277.3,
+      1062.3,
+      299.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

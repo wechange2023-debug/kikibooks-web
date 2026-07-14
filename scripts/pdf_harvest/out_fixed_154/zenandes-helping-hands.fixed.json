@@ -1,0 +1,301 @@
+{
+ "slug": "zenandes-helping-hands",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Zenande lives with her mama and brother in KwaMashu. She loves playing outside with her toys.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zenande lives with her mama and brother in KwaMashu.",
+     "bbox": [
+      664.2,
+      61.8,
+      1022.0,
+      115.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "She loves playing outside with her toys.",
+     "bbox": [
+      664.2,
+      151.8,
+      972.2,
+      205.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "One morning, Mama tells Zenande that she won’t be able to play outside. Zenande is sad.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One morning, Mama tells Zenande that she won’t be able to play outside.",
+     "bbox": [
+      666.1,
+      58.6,
+      969.8,
+      142.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Zenande is sad.",
+     "bbox": [
+      666.1,
+      178.6,
+      855.8,
+      202.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "She looks outside and sees fallen trees, a lot of water on the roads, houses washed away and cars standing still.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She looks outside and sees fallen trees, a lot of water on the roads, houses washed away and cars standing still.",
+     "bbox": [
+      117.6,
+      68.1,
+      468.8,
+      182.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Her house is flooded, some windows are broken, and her favourite mango tree is gone.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Her house is flooded, some windows are broken, and her favourite mango tree is gone.",
+     "bbox": [
+      660.5,
+      199.9,
+      981.6,
+      313.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Mama, what happened?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Mama, what happened?”",
+     "bbox": [
+      660.5,
+      276.5,
+      968.7,
+      300.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“We had heavy rains last night, so much wind and a lot of thunder,” Mama explains.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“We had heavy rains last night, so much wind and a lot of thunder,” Mama explains.",
+     "bbox": [
+      660.5,
+      246.5,
+      1037.2,
+      330.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Wow!” Zenande is confused. “Does this mean we are never ever getting out of the house?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Wow!” Zenande is confused. “Does this mean we are never ever getting out of the house?”",
+     "bbox": [
+      93.5,
+      231.5,
+      468.7,
+      345.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Oh no, mntanami,” laughs Mama. “It is safe to go outside now. Let’s go and help Gogo Zondi!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Oh no, mntanami,” laughs Mama.",
+     "bbox": [
+      93.5,
+      88.8,
+      503.6,
+      112.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It is safe to go outside now. Let’s go and help Gogo Zondi!”",
+     "bbox": [
+      93.5,
+      148.8,
+      465.2,
+      202.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Mama and Zenande go across the road to see Gogo Zondi. Her face cheers up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama and Zenande go across the road to see Gogo Zondi.",
+     "bbox": [
+      660.5,
+      47.6,
+      1029.7,
+      101.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Her face cheers up.",
+     "bbox": [
+      660.5,
+      137.6,
+      895.8,
+      161.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "The neighbours are already mopping the floors and drying clothes and blankets outside for Gogo Zondi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The neighbours are already mopping the floors and drying clothes and blankets outside for Gogo Zondi.",
+     "bbox": [
+      93.5,
+      231.5,
+      464.2,
+      345.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“I bought you some sweets, Gogo,” Zenande says. “You are such a special young girl.” Gogo Zondi is smiling.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I bought you some sweets, Gogo,” Zenande says.",
+     "bbox": [
+      93.5,
+      216.5,
+      425.6,
+      270.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You are such a special young girl.” Gogo Zondi is smiling.",
+     "bbox": [
+      93.5,
+      306.5,
+      457.2,
+      360.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“I feel so much better with all of you helping me,” says Gogo Zondi. “Helping you has helped me feel better, Gogo!” Zenande smiles.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I feel so much better with all of you helping me,” says Gogo Zondi.",
+     "bbox": [
+      93.5,
+      201.5,
+      427.7,
+      285.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Helping you has helped me feel better, Gogo!” Zenande smiles.",
+     "bbox": [
+      93.5,
+      321.5,
+      486.6,
+      375.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

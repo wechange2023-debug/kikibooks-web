@@ -1,0 +1,268 @@
+{
+ "slug": "miss-tiny-chef",
+ "book_body_size": 19.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Kasini is eight years old. She loves to cook. She reads a cook book on the school bus every morning and before bedtime.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Kasini is eight years old. She loves to cook. She reads a cook book on the school bus every morning and before bedtime.",
+     "bbox": [
+      679.6,
+      224.1,
+      1021.2,
+      295.1
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Nobody knows her secret, that she sleeps with a wooden mingling stick every night. When she sleeps, she dreams that she is smiling, wearing a chef’s hat and holding her mingling stick high up in the air.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nobody knows her secret, that she sleeps with a wooden mingling stick every night. When she sleeps, she dreams that she is smiling, wearing a chef’s hat and holding her mingling stick high up in the air.",
+     "bbox": [
+      703.7,
+      165.9,
+      977.0,
+      314.9
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Kasini loves to sing as she cooks. She sings to the carrots and dances with the flour.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Kasini loves to sing as she cooks. She sings to the carrots and dances with the flour.",
+     "bbox": [
+      715.4,
+      231.2,
+      974.5,
+      302.2
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "She slices the cucumber and places two on top of her eyes. She BANGS the saucepans loudly as she jumps up and down.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She slices the cucumber and places two on top of her eyes. She BANGS the saucepans loudly as she jumps up and down.",
+     "bbox": [
+      687.4,
+      241.0,
+      1013.4,
+      312.0
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“GET BACK TO WORK.” the stick scolds. “Cooking is not work, it’s fun,” Kasini laughs. The stick tells her if the soup needs more salt, if the chicken needs more heat and when the Ugali is ready to eat.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“GET BACK TO WORK.” the stick scolds.",
+     "bbox": [
+      690.6,
+      201.2,
+      996.7,
+      220.6
+     ],
+     "size": 19.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Cooking is not work, it’s fun,” Kasini laughs.",
+     "bbox": [
+      679.7,
+      253.2,
+      1007.6,
+      272.6
+     ],
+     "size": 19.0
+    },
+    {
+     "role": "BODY",
+     "text": "The stick tells her if the soup needs more salt, if the chicken needs more heat and when the Ugali is ready to eat.",
+     "bbox": [
+      680.2,
+      305.2,
+      1007.1,
+      376.2
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Sometimes Kasini doesn’t listen to the stick. “I will use my palm to taste the soup,” she says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes Kasini doesn’t listen to the stick. “I will use my palm to taste the soup,” she says.",
+     "bbox": [
+      686.7,
+      208.3,
+      1000.6,
+      279.3
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“I will use my mouth to taste the chicken,” she decides. The stick laughs for she is young and it is old. Older than the cutlery in the house, Older than Kasini’s older brother. So old it knows all the great recipes by heart.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I will use my mouth to taste the chicken,” she decides. The stick laughs for she is young and it is old. Older than the cutlery in the house, Older than Kasini’s older brother. So old it knows all the great recipes by heart.",
+     "bbox": [
+      689.6,
+      199.6,
+      995.7,
+      348.2
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Kasini adds more salt, pepper and curry powder to the soup. This is wrong and she knows it but she is only being stubborn.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Kasini adds more salt, pepper and curry powder to the soup. This is wrong and she knows it but she is only being stubborn.",
+     "bbox": [
+      691.1,
+      208.3,
+      996.2,
+      279.3
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "The stick doesn’t like being disrespected, it changes colour from brown to red to show Kasini that it is angry.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The stick doesn’t like being disrespected, it changes colour from brown to red to show Kasini that it is angry.",
+     "bbox": [
+      700.4,
+      247.9,
+      993.3,
+      318.9
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“The soup will BURN without the mingling stick!” moans Kasini.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“The soup will BURN without the mingling stick!” moans Kasini.",
+     "bbox": [
+      724.1,
+      208.7,
+      976.6,
+      253.7
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "She sings for the stick, but there is no change. “I am sorry,” she says. The stick turns back to brown just in time and Kasini hugs it in joy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She sings for the stick, but there is no change.",
+     "bbox": [
+      757.4,
+      204.7,
+      924.3,
+      249.7
+     ],
+     "size": 19.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I am sorry,” she says. The stick turns back to brown just in time and Kasini hugs it in joy.",
+     "bbox": [
+      705.7,
+      282.6,
+      976.0,
+      353.6
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Now I can serve mummy the food I made,” Kasini says excitedly. “The food we made,” she giggles, as she tucks the stick away.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Now I can serve mummy the food I made,” Kasini says excitedly. “The food we made,” she giggles, as she tucks the stick away.",
+     "bbox": [
+      709.4,
+      235.8,
+      972.3,
+      332.4
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

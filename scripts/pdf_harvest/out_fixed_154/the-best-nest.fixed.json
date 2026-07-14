@@ -1,0 +1,334 @@
+{
+ "slug": "the-best-nest",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Blue Bird is bored. “I am tired of this nest,” he says. “We need a new home.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Blue Bird is bored. “I am tired of this nest,” he says.",
+     "bbox": [
+      99.6,
+      147.2,
+      467.3,
+      186.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“We need a new home.”",
+     "bbox": [
+      180.6,
+      212.0,
+      386.4,
+      230.0
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“If you insist,” says Brown Bird. “But I am not moving unless the new nest is better than the one that we have now.” “Oh yes,” says Blue Bird. “It will be a great nest. I will find the best nest ever!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“If you insist,” says Brown Bird.",
+     "bbox": [
+      212.0,
+      111.8,
+      354.9,
+      151.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“But I am not moving unless the new nest is better than the one that we have now.”",
+     "bbox": [
+      95.2,
+      198.2,
+      471.7,
+      237.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Oh yes,” says Blue Bird.",
+     "bbox": [
+      220.7,
+      262.9,
+      346.3,
+      302.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It will be a great nest. I will find the best nest ever!”",
+     "bbox": [
+      157.7,
+      327.8,
+      409.2,
+      367.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Look at this lovely nest! It is soft and cosy. And we can each have our own bed. This is the best nest for us.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look at this lovely nest! It is soft and cosy. And we can each have our own bed.",
+     "bbox": [
+      680.9,
+      63.4,
+      1056.7,
+      103.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "This is the best nest for us.”",
+     "bbox": [
+      749.1,
+      128.2,
+      988.5,
+      146.2
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "But it isn’t!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "But it isn’t!",
+     "bbox": [
+      209.2,
+      65.5,
+      357.7,
+      94.5
+     ],
+     "size": 29.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Look at this beautiful nest. It is so bright and colourful. This is the very best nest.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look at this beautiful nest. It is so bright and colourful.",
+     "bbox": [
+      609.1,
+      62.1,
+      1091.7,
+      80.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "This is the very best nest.”",
+     "bbox": [
+      736.6,
+      105.3,
+      964.2,
+      123.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "But it isn’t!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "But it isn’t!",
+     "bbox": [
+      350.9,
+      271.0,
+      499.4,
+      300.0
+     ],
+     "size": 29.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Look at this shiny nest. See how it sparkles. This is the best nest yet.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look at this shiny nest. See how it sparkles.",
+     "bbox": [
+      659.0,
+      95.8,
+      1041.8,
+      113.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "This is the best nest yet.”",
+     "bbox": [
+      741.9,
+      138.9,
+      958.9,
+      156.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "But it isn’t!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "But it isn’t!",
+     "bbox": [
+      334.6,
+      65.5,
+      483.1,
+      94.5
+     ],
+     "size": 29.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Look at this large nest! It even has its own door. This is the best nest of all.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look at this large nest! It even has its own door.",
+     "bbox": [
+      712.2,
+      62.1,
+      921.5,
+      101.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "This is the best nest of all.”",
+     "bbox": [
+      700.2,
+      127.0,
+      933.5,
+      144.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "But it isn’t!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "But it isn’t!",
+     "bbox": [
+      662.8,
+      380.1,
+      811.3,
+      409.1
+     ],
+     "size": 29.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“Look at this nest. See how well it has been built. This is the best nest ever.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look at this nest. See how well it has been built.",
+     "bbox": [
+      691.6,
+      62.1,
+      950.4,
+      101.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "This is the best nest ever.”",
+     "bbox": [
+      708.4,
+      127.0,
+      933.6,
+      144.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Yes, it is,” says Brown Bird.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Yes, it is,” says Brown Bird.",
+     "bbox": [
+      668.4,
+      154.3,
+      828.4,
+      203.6
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

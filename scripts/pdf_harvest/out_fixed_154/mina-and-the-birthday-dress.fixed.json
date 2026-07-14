@@ -1,0 +1,223 @@
+{
+ "slug": "mina-and-the-birthday-dress",
+ "book_body_size": 28.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Tomorrow is Mina’s birthday. She is having a party in the garden.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tomorrow is Mina’s birthday. She is having a party in the garden.",
+     "bbox": [
+      653.7,
+      427.3,
+      1059.8,
+      488.9
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Mina is going to the shops with Mum to buy a birthday dress.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mina is going to the shops with Mum to buy a birthday dress.",
+     "bbox": [
+      74.9,
+      98.4,
+      426.8,
+      160.0
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“I want a blue dress,” Mina says. Mum finds a lovely blue dress.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I want a blue dress,” Mina says. Mum finds a lovely blue dress.",
+     "bbox": [
+      670.8,
+      256.5,
+      1030.0,
+      318.1
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Mina shakes her head. “I don’t want a blue dress.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mina shakes her head. “I don’t want a blue dress.”",
+     "bbox": [
+      702.3,
+      255.8,
+      996.6,
+      317.4
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“I want a pink dress,” Mina says. Mum shows her a beautiful pink dress.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I want a pink dress,” Mina says. Mum shows her a beautiful pink dress.",
+     "bbox": [
+      635.8,
+      417.3,
+      1070.7,
+      478.9
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Mina folds her arms. “I don’t want a pink dress.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mina folds her arms. “I don’t want a pink dress.”",
+     "bbox": [
+      703.9,
+      256.5,
+      997.8,
+      318.1
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“I want a green dress,” Mina says. Mum holds out a pretty green dress.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I want a green dress,” Mina says. Mum holds out a pretty green dress.",
+     "bbox": [
+      78.2,
+      389.0,
+      488.8,
+      450.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Mina frowns. “I don’t want a green dress.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mina frowns. “I don’t want a green dress.”",
+     "bbox": [
+      695.6,
+      256.5,
+      1006.1,
+      318.1
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Mum says, “You don’t want a blue dress, you don’t want a pink dress and you don’t want a green dress.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mum says, “You don’t want a blue dress, you don’t want a pink dress and you don’t want a green dress.”",
+     "bbox": [
+      90.2,
+      239.7,
+      477.7,
+      334.9
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“What about this dress?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What about this dress?”",
+     "bbox": [
+      712.2,
+      273.3,
+      989.5,
+      301.3
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Mina says, “Yes! I love yellow. I want the yellow dress.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mina says, “Yes! I love yellow. I want the yellow dress.”",
+     "bbox": [
+      151.5,
+      239.7,
+      416.4,
+      334.9
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

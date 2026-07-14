@@ -1,0 +1,223 @@
+{
+ "slug": "how-do-you-want-your-eggs",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Good morning, Luzuko!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Good morning, Luzuko!",
+     "bbox": [
+      722.1,
+      267.5,
+      978.7,
+      291.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "It’s time for breakfast.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s time for breakfast.",
+     "bbox": [
+      726.2,
+      90.4,
+      974.6,
+      114.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "How do you want your eggs?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you want your eggs?",
+     "bbox": [
+      711.5,
+      111.6,
+      1040.6,
+      135.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Do you want boiled eggs, Luzuko?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Do you want boiled eggs, Luzuko?",
+     "bbox": [
+      91.8,
+      227.8,
+      475.1,
+      251.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "I like boiled eggs, but …",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I like boiled eggs, but …",
+     "bbox": [
+      743.6,
+      240.6,
+      989.8,
+      264.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Do you want scrambled eggs, Luzuko?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Do you want scrambled eggs, Luzuko?",
+     "bbox": [
+      66.8,
+      244.9,
+      500.1,
+      268.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "I like scrambled eggs, but …",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I like scrambled eggs, but …",
+     "bbox": [
+      702.8,
+      227.8,
+      998.0,
+      251.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Do you want fried eggs, Luzuko?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Do you want fried eggs, Luzuko?",
+     "bbox": [
+      99.8,
+      232.1,
+      467.1,
+      256.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "I like fried eggs, but …",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I like fried eggs, but …",
+     "bbox": [
+      733.0,
+      247.7,
+      967.7,
+      271.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Well? How do you want your eggs, Luzuko?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Well? How do you want your eggs, Luzuko?",
+     "bbox": [
+      609.5,
+      90.4,
+      1088.5,
+      114.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Today, I just want a bowl of porridge.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Today, I just want a bowl of porridge.",
+     "bbox": [
+      649.8,
+      270.3,
+      1051.0,
+      294.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

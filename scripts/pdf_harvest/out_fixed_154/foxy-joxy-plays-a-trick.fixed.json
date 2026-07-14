@@ -1,0 +1,323 @@
+{
+ "slug": "foxy-joxy-plays-a-trick",
+ "book_body_size": 25.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Foxy Joxy was a sly fox. He sold big, fresh watermelons. Watermelons for sale! 500",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Foxy Joxy was a sly fox.",
+     "bbox": [
+      255.0,
+      197.7,
+      480.6,
+      222.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "He sold big, fresh watermelons.",
+     "bbox": [
+      283.9,
+      247.7,
+      451.7,
+      302.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "SFX",
+     "text": "Watermelons for sale!",
+     "bbox": [
+      666.1,
+      58.9,
+      942.4,
+      137.3
+     ],
+     "size": 45.2
+    },
+    {
+     "role": "BODY",
+     "text": "500",
+     "bbox": [
+      607.2,
+      218.5,
+      672.5,
+      273.4
+     ],
+     "size": 45.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Your price is too high,” said Rabbit Jabbit. “You are asking too much,” said Gia Giraffe.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Your price is too high,” said Rabbit Jabbit.",
+     "bbox": [
+      27.1,
+      359.3,
+      162.8,
+      444.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You are asking too much,” said Gia Giraffe.",
+     "bbox": [
+      595.6,
+      53.5,
+      853.8,
+      108.5
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Foxy Joxy had a clever idea.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Foxy Joxy had a clever idea.",
+     "bbox": [
+      30.2,
+      357.4,
+      295.8,
+      382.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "He slit open a big watermelon, scooped out the fruit, and gobbled it up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He slit open a big watermelon, scooped out the fruit, and gobbled it up.",
+     "bbox": [
+      93.8,
+      476.4,
+      473.1,
+      531.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Then he filled it with water! He took a needle and thread and sewed the watermelon back together.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then he filled it with water!",
+     "bbox": [
+      131.7,
+      117.8,
+      402.1,
+      142.8
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "He took a needle and thread and sewed the watermelon back together.",
+     "bbox": [
+      86.0,
+      315.5,
+      446.9,
+      370.5
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "He sold his water melons for a cheap price. Many animals bought from Foxy Joxy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He sold his water melons for a cheap price.",
+     "bbox": [
+      869.3,
+      175.9,
+      1083.8,
+      266.9
+     ],
+     "size": 28.8
+    },
+    {
+     "role": "BODY",
+     "text": "Many animals bought from Foxy Joxy.",
+     "bbox": [
+      874.5,
+      318.3,
+      1085.6,
+      373.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“This watermelon has only water in it,” complained Funky Monkey.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“This watermelon has only water in it,” complained Funky Monkey.",
+     "bbox": [
+      868.9,
+      465.0,
+      1114.5,
+      550.0
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Well, you got what you paid for,” said Foxy Joxy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Well, you got what you paid for,” said Foxy Joxy.",
+     "bbox": [
+      802.6,
+      150.4,
+      979.0,
+      231.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“We need to teach Foxy Joxy a lesson,” said Ellie Elephant.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“We need to teach Foxy Joxy a lesson,” said Ellie Elephant.",
+     "bbox": [
+      679.0,
+      384.3,
+      1044.1,
+      439.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "The animals gathered around and came up with a plan. “I have an idea,” said Oliver Owl.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The animals gathered around and came up with a plan.",
+     "bbox": [
+      42.2,
+      189.3,
+      251.2,
+      274.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I have an idea,” said Oliver Owl.",
+     "bbox": [
+      66.9,
+      317.7,
+      225.1,
+      372.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "They took an empty watermelon, stuffed Foxy Joxy into it and played a game of football with it.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They took an empty watermelon, stuffed Foxy Joxy into it and played a game of football with it.",
+     "bbox": [
+      613.7,
+      392.6,
+      860.4,
+      507.6
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Foxy Joxy was dizzy! He learnt his lesson and never cheated again.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Foxy Joxy was dizzy!",
+     "bbox": [
+      717.1,
+      70.3,
+      917.7,
+      95.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "He learnt his lesson and never cheated again.",
+     "bbox": [
+      711.7,
+      179.7,
+      942.3,
+      234.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

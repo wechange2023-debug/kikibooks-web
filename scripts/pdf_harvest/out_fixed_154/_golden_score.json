@@ -1,0 +1,424 @@
+{
+ "adr": "0044",
+ "counts": {
+  "ORDER": {
+   "pass": 28,
+   "fail": 0,
+   "NEEDS_HUMAN": 4
+  },
+  "SPLIT": {
+   "pass": 13,
+   "fail": 0,
+   "NEEDS_HUMAN": 0
+  },
+  "IMG_TEXT": {
+   "pass": 4,
+   "fail": 0,
+   "NEEDS_HUMAN": 0
+  },
+  "SFX": {
+   "pass": 5,
+   "fail": 1,
+   "NEEDS_HUMAN": 0
+  }
+ },
+ "gate": {
+  "ORDER": {
+   "rate": 100.0,
+   "threshold": 90.0,
+   "met": true
+  },
+  "SPLIT": {
+   "rate": 100.0,
+   "threshold": 95.0,
+   "met": true
+  }
+ },
+ "results": [
+  {
+   "slug": "hello",
+   "page_no": 2,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 3,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 4,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 5,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 6,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 7,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 8,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 9,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 10,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 11,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 12,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "hello",
+   "page_no": 14,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('you', 'your') → 존재 True"
+  },
+  {
+   "slug": "how-do-you-sleep",
+   "page_no": 5,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "질문블록 idx 0, 답블록 idx 1"
+  },
+  {
+   "slug": "how-do-you-sleep",
+   "page_no": 6,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "질문블록 idx 0, 답블록 idx 1"
+  },
+  {
+   "slug": "how-do-you-sleep",
+   "page_no": 7,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "질문블록 idx 0, 답블록 idx 1"
+  },
+  {
+   "slug": "how-to-tame-a-monster",
+   "page_no": 2,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "how-to-tame-a-monster",
+   "page_no": 4,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "how-to-tame-a-monster",
+   "page_no": 5,
+   "defect_type": "IMG_TEXT",
+   "verdict": "pass",
+   "detail": "대문자형 본문 잔존 없음 / DECOR 제외 ['SCHOOL']"
+  },
+  {
+   "slug": "im-the-colour-of-honey",
+   "page_no": 4,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "im-the-colour-of-honey",
+   "page_no": 5,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "im-the-colour-of-honey",
+   "page_no": 6,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "블록 top 순열 [192, 301]"
+  },
+  {
+   "slug": "im-the-colour-of-honey",
+   "page_no": 11,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "its-my-book",
+   "page_no": 1,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "블록 top 순열 [100, 440]"
+  },
+  {
+   "slug": "its-my-book",
+   "page_no": 3,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "블록 top 순열 [85, 263]"
+  },
+  {
+   "slug": "its-my-book",
+   "page_no": 5,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "블록 top 순열 [55, 365]"
+  },
+  {
+   "slug": "its-my-book",
+   "page_no": 7,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "블록 top 순열 [62, 431]"
+  },
+  {
+   "slug": "its-my-book",
+   "page_no": 8,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "핵심구 2개 순서 일치 = True"
+  },
+  {
+   "slug": "its-my-book",
+   "page_no": 9,
+   "defect_type": "ORDER",
+   "verdict": "NEEDS_HUMAN",
+   "detail": "블록 top 동일 밴드([62, 58]) — 상하 힌트와 기하 불일치, 사람 확인"
+  },
+  {
+   "slug": "its-my-book",
+   "page_no": 12,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "블록 top 순열 [56, 445]"
+  },
+  {
+   "slug": "shhhhh",
+   "page_no": 2,
+   "defect_type": "SFX",
+   "verdict": "pass",
+   "detail": "오제외 없음 — 배치·조립 품질은 정책상 팀장 재검토"
+  },
+  {
+   "slug": "shhhhh",
+   "page_no": 3,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "shhhhh",
+   "page_no": 4,
+   "defect_type": "SFX",
+   "verdict": "pass",
+   "detail": "오제외 없음 — 배치·조립 품질은 정책상 팀장 재검토"
+  },
+  {
+   "slug": "shhhhh",
+   "page_no": 6,
+   "defect_type": "SFX",
+   "verdict": "pass",
+   "detail": "오제외 없음 — 배치·조립 품질은 정책상 팀장 재검토"
+  },
+  {
+   "slug": "shhhhh",
+   "page_no": 7,
+   "defect_type": "SFX",
+   "verdict": "pass",
+   "detail": "오제외 없음 — 배치·조립 품질은 정책상 팀장 재검토"
+  },
+  {
+   "slug": "shhhhh",
+   "page_no": 9,
+   "defect_type": "SFX",
+   "verdict": "pass",
+   "detail": "오제외 없음 — 배치·조립 품질은 정책상 팀장 재검토"
+  },
+  {
+   "slug": "the-lost-laugh",
+   "page_no": 7,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "the-lost-laugh",
+   "page_no": 8,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "thulis-tissue",
+   "page_no": 5,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "블록 1개(줄 top순 내장) — 방향 위반 불가"
+  },
+  {
+   "slug": "wiggle-jiggle",
+   "page_no": 2,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "wiggle-jiggle",
+   "page_no": 3,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "wiggle-jiggle",
+   "page_no": 4,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "블록 1개(줄 top순 내장) — 방향 위반 불가"
+  },
+  {
+   "slug": "whats-happened-to-our-water",
+   "page_no": null,
+   "defect_type": "SFX",
+   "verdict": "fail",
+   "detail": "오제외 [(5, 'HOPFLAP')] — 배치·조립 품질은 정책상 팀장 재검토 [전권 flag]"
+  },
+  {
+   "slug": "dudus-hat",
+   "page_no": 3,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "우측열 top 순열 [218]"
+  },
+  {
+   "slug": "dudus-hat",
+   "page_no": 5,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "우측열 top 순열 [99]"
+  },
+  {
+   "slug": "dudus-hat",
+   "page_no": 7,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "우측열 top 순열 [183]"
+  },
+  {
+   "slug": "dudus-hat",
+   "page_no": 9,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "핵심구 5개 순서 일치 = True"
+  },
+  {
+   "slug": "dudus-hat",
+   "page_no": 10,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "dudus-hat",
+   "page_no": 12,
+   "defect_type": "ORDER",
+   "verdict": "pass",
+   "detail": "열 2개, 좌열부터 출력순 연속 배치 = True"
+  },
+  {
+   "slug": "the-box",
+   "page_no": 11,
+   "defect_type": "SPLIT",
+   "verdict": "pass",
+   "detail": "병합 토큰 ('wheeeee',) → 존재 True"
+  },
+  {
+   "slug": "yapo-saves-the-day",
+   "page_no": 5,
+   "defect_type": "IMG_TEXT",
+   "verdict": "pass",
+   "detail": "대문자형 본문 잔존 없음 / DECOR 제외 ['TINO', 'KUMA']"
+  },
+  {
+   "slug": "yapo-saves-the-day",
+   "page_no": 7,
+   "defect_type": "IMG_TEXT",
+   "verdict": "pass",
+   "detail": "대문자형 본문 잔존 없음 / DECOR 제외 ['TINO', 'KUMA']"
+  },
+  {
+   "slug": "yapo-saves-the-day",
+   "page_no": 8,
+   "defect_type": "IMG_TEXT",
+   "verdict": "pass",
+   "detail": "대문자형 본문 잔존 없음 / DECOR 제외 ['TINO', 'KUMA']"
+  },
+  {
+   "slug": "yapo-saves-the-day",
+   "page_no": 9,
+   "defect_type": "ORDER",
+   "verdict": "NEEDS_HUMAN",
+   "detail": "일반 힌트('읽기순 재정렬') — 자동판정 기준 없음"
+  },
+  {
+   "slug": "yapo-saves-the-day",
+   "page_no": 10,
+   "defect_type": "ORDER",
+   "verdict": "NEEDS_HUMAN",
+   "detail": "일반 힌트('읽기순 재정렬') — 자동판정 기준 없음"
+  },
+  {
+   "slug": "zibu-and-zizo",
+   "page_no": 4,
+   "defect_type": "ORDER",
+   "verdict": "NEEDS_HUMAN",
+   "detail": "일반 힌트('읽기순 재정렬') — 자동판정 기준 없음"
+  }
+ ]
+}

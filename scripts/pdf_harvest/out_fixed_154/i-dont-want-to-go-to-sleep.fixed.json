@@ -1,0 +1,367 @@
+{
+ "slug": "i-dont-want-to-go-to-sleep",
+ "book_body_size": 25.4,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“Goodnight, Nandi.” “Idon’twantto go to sleep!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Goodnight, Nandi.”",
+     "bbox": [
+      292.9,
+      243.9,
+      481.3,
+      267.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Idon’twantto go to sleep!”",
+     "bbox": [
+      795.1,
+      127.5,
+      1071.0,
+      205.4
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“That’s enough now. Goodnight, Nandi.” “I … don’t … want … to … go … to … sleep.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“That’s enough now. Goodnight, Nandi.”",
+     "bbox": [
+      312.8,
+      298.8,
+      502.1,
+      351.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I … don’t … want … to … go … to … sleep.”",
+     "bbox": [
+      649.0,
+      112.0,
+      1065.9,
+      201.2
+     ],
+     "size": 25.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Iwantmoresupper. Anotherbook! Justonemoresong?” “Goodnight, Nandi.” “Idon’twanttogotosleep!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Iwantmoresupper. Anotherbook! Justonemoresong?”",
+     "bbox": [
+      286.9,
+      83.1,
+      507.2,
+      287.8
+     ],
+     "size": 28.8
+    },
+    {
+     "role": "BODY",
+     "text": "“Goodnight, Nandi.”",
+     "bbox": [
+      160.2,
+      320.4,
+      348.6,
+      344.4
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "“Idon’twanttogotosleep!”",
+     "bbox": [
+      656.4,
+      30.7,
+      1037.5,
+      141.6
+     ],
+     "size": 42.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“MAMA!ed ... I Please? ne Please.” a glass ofwater. “It’s time to go to sleep now. Goodnight, Nandi.” “I DON’T TO GO WANT TO SLEEP!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“MAMA!ed ... I Please? ne Please.” a glass ofwater.",
+     "bbox": [
+      126.2,
+      71.7,
+      483.5,
+      249.8
+     ],
+     "size": 30.3
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s time to go to sleep now. Goodnight, Nandi.”",
+     "bbox": [
+      235.3,
+      400.7,
+      496.1,
+      453.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "“I DON’T TO GO WANT TO SLEEP!”",
+     "bbox": [
+      614.3,
+      137.0,
+      875.2,
+      342.0
+     ],
+     "size": 39.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Mama sighs: “What about an adventure? Do you want an adventure?” “… yes…”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama sighs: “What about an adventure? Do you want an adventure?”",
+     "bbox": [
+      96.7,
+      252.9,
+      470.3,
+      305.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“… yes…”",
+     "bbox": [
+      934.4,
+      176.4,
+      1030.2,
+      217.9
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Do you want to creep through the jungle on the trail of the fearsome hippocrocoturtleduck?” “Yes! Yes! Yes!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Do you want to creep through the jungle on the trail of the fearsome hippocrocoturtleduck?”",
+     "bbox": [
+      623.6,
+      86.9,
+      846.0,
+      197.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "“Yes! Yes! Yes!”",
+     "bbox": [
+      618.9,
+      268.5,
+      870.2,
+      344.0
+     ],
+     "size": 38.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“I Leap want from tofly star acrossthesky! tostar! Fillmypockets with stardust!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“I Leap want from tofly star acrossthesky! tostar! Fillmypockets with stardust!”",
+     "bbox": [
+      64.2,
+      143.1,
+      427.1,
+      425.3
+     ],
+     "size": 34.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Iwant tosee the a Nandi-sizedglasssubmarine creatures of the ocean! atthebottom Anda there pet giant with squidtodowaterballet me!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Iwant tosee the a Nandi-sizedglasssubmarine creatures of the ocean! atthebottom Anda there pet giant with squidtodowaterballet me!”",
+     "bbox": [
+      87.8,
+      52.9,
+      459.4,
+      257.5
+     ],
+     "size": 25.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Iwant to build and zoom myself to apairofbutterflywings theroofofthesky where I’ll seealltheworld and everythinginit!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Iwant to build and zoom myself to apairofbutterflywings theroofofthesky where I’ll seealltheworld and everythinginit!”",
+     "bbox": [
+      661.6,
+      115.7,
+      1071.8,
+      366.4
+     ],
+     "size": 25.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Look here, Nandi. Here is your very own adventure boat. It’s waiting to take you wherever you want to go. See, put your head here ... that’s right ... and I’ll just tuck you in ... there we go ... now, off you go! Adventure awaits ...”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look here, Nandi.",
+     "bbox": [
+      85.0,
+      115.2,
+      261.4,
+      139.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Here is your very own adventure boat.",
+     "bbox": [
+      85.0,
+      172.8,
+      441.3,
+      196.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "It’s waiting to take you wherever you want to go.",
+     "bbox": [
+      85.0,
+      230.4,
+      479.6,
+      283.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "See, put your head here ... that’s right ... and I’ll just tuck you in ... there we go ... now, off you go!",
+     "bbox": [
+      85.0,
+      316.8,
+      450.1,
+      398.4
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Adventure awaits ...”",
+     "bbox": [
+      85.0,
+      432.0,
+      272.5,
+      456.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“Goodnight, Nandi.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Goodnight, Nandi.”",
+     "bbox": [
+      756.2,
+      274.8,
+      944.6,
+      298.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Draw your dreams here.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Draw your dreams here.",
+     "bbox": [
+      789.0,
+      95.0,
+      1014.5,
+      119.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,290 @@
+{
+ "slug": "thats-not-thabi-thats-a-hippopotamus",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Lucy woke up. Her sister Thabi wasn’t in her bed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lucy woke up. Her sister Thabi wasn’t in her bed.",
+     "bbox": [
+      718.6,
+      428.8,
+      1039.4,
+      494.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Thabi’s in the kitchen eating breakfast.” “Where’s Thabi?” Lucy asked Ma.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Thabi’s in the kitchen eating breakfast.”",
+     "bbox": [
+      637.8,
+      75.0,
+      823.6,
+      177.0
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Where’s Thabi?” Lucy asked Ma.",
+     "bbox": [
+      60.5,
+      474.9,
+      491.0,
+      504.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“That’s not Thabi!” “That’s a hippopotamus!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“That’s not Thabi!”",
+     "bbox": [
+      163.5,
+      105.0,
+      403.7,
+      134.9
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“That’s a hippopotamus!”",
+     "bbox": [
+      687.1,
+      106.4,
+      1013.9,
+      136.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Lucy looked all over the house.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lucy looked all over the house.",
+     "bbox": [
+      648.7,
+      143.9,
+      1052.1,
+      173.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Where’s Thabi?” Lucy asked Pa. “Thabi’s swimming in the pool.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Where’s Thabi?” Lucy asked Pa. “Thabi’s swimming in the pool.”",
+     "bbox": [
+      627.9,
+      178.7,
+      871.0,
+      336.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“That’s not Thabi!” “That’s a hippopotamus!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“That’s not Thabi!”",
+     "bbox": [
+      172.0,
+      73.1,
+      412.2,
+      103.1
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“That’s a hippopotamus!”",
+     "bbox": [
+      806.5,
+      251.6,
+      1013.6,
+      317.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Lucy kept looking around the garden.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lucy kept looking around the garden.",
+     "bbox": [
+      733.2,
+      190.7,
+      981.7,
+      256.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Where’s Thabi?” Lucy asked the neighbour. “Thabi’s playing in the park.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Where’s Thabi?” Lucy asked the neighbour.",
+     "bbox": [
+      623.6,
+      71.6,
+      846.7,
+      173.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Thabi’s playing in the park.”",
+     "bbox": [
+      623.6,
+      202.3,
+      827.5,
+      268.3
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“That’s not Thabi! That’s a hippopotamus!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“That’s not Thabi!",
+     "bbox": [
+      168.8,
+      126.4,
+      398.1,
+      156.4
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "That’s a hippopotamus!”",
+     "bbox": [
+      708.6,
+      394.8,
+      1024.5,
+      424.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Then Lucy heard a funny noise. She gave the hippopotamus a big tickle.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then Lucy heard a funny noise. She gave the hippopotamus a big tickle.",
+     "bbox": [
+      138.9,
+      193.5,
+      423.6,
+      331.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“There’s Thabi!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“There’s Thabi!”",
+     "bbox": [
+      70.9,
+      280.5,
+      275.1,
+      310.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Thanks,” said Thabi. “It’s very boring inside a hippopotamus.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Thanks,” said Thabi. “It’s very boring inside a hippopotamus.”",
+     "bbox": [
+      56.7,
+      58.9,
+      458.7,
+      124.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

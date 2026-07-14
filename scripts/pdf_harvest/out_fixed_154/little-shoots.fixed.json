@@ -1,0 +1,220 @@
+{
+ "slug": "little-shoots",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“When will I grow?” asks Layo.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“When will I grow?” asks Layo.",
+     "bbox": [
+      158.1,
+      89.6,
+      408.8,
+      154.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“I don’t know,” replies Baba. “Soon,” says Mama. “When you are ready,” says Grandma.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I don’t know,” replies Baba. “Soon,” says Mama.",
+     "bbox": [
+      105.1,
+      58.5,
+      461.8,
+      133.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“When you are ready,” says Grandma.",
+     "bbox": [
+      709.2,
+      59.3,
+      991.6,
+      124.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Grandma takes Layo to the farm. “Let us plant some seeds.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Grandma takes Layo to the farm. “Let us plant some seeds.”",
+     "bbox": [
+      687.6,
+      83.0,
+      1013.2,
+      185.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "In one field they plant corn, and in another, melon. “What are these?” asks Layo. “Bamboo seeds,” replies Grandma.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In one field they plant corn, and in another, melon.",
+     "bbox": [
+      103.9,
+      116.5,
+      463.0,
+      182.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What are these?” asks Layo. “Bamboo seeds,” replies Grandma.",
+     "bbox": [
+      631.5,
+      116.5,
+      1069.3,
+      191.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“The corn and melon have grown well,” says Grandma. “What about the bamboo?” asks Layo. “They will grow when they are ready.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“The corn and melon have grown well,” says Grandma. “What about the bamboo?” asks Layo.",
+     "bbox": [
+      74.8,
+      59.1,
+      492.1,
+      216.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“They will grow when they are ready.”",
+     "bbox": [
+      659.4,
+      59.1,
+      1041.4,
+      125.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Everything grows in its own time,” says Grandma.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Everything grows in its own time,” says Grandma.",
+     "bbox": [
+      63.0,
+      61.0,
+      504.0,
+      126.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“They have grown well,” says Grandma.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“They have grown well,” says Grandma.",
+     "bbox": [
+      132.2,
+      254.4,
+      434.8,
+      319.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“You have grown well.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“You have grown well.”",
+     "bbox": [
+      696.5,
+      96.1,
+      1004.3,
+      128.1
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

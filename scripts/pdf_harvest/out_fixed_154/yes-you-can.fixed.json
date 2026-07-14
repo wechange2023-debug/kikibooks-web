@@ -1,0 +1,389 @@
+{
+ "slug": "yes-you-can",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“What do you want to be when you grow up?” asks Teacher Langa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What do you want to be when you grow up?” asks Teacher Langa.",
+     "bbox": [
+      658.7,
+      97.5,
+      902.9,
+      181.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Story spread 2 Khutso shouts, “I want to be a cook!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Story spread 2",
+     "bbox": [
+      -142.4,
+      -122.0,
+      27.8,
+      -98.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "Khutso shouts, “I want to be a cook!”",
+     "bbox": [
+      56.7,
+      448.9,
+      480.1,
+      519.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "I love helping my mom bake and cook at home.” Nandi says, “No! That’s a girl’s job. My mom does all the cooking at home.” “Yes he can, Nandi. You can be anything you want to be,” says Teacher Langa. The class chants, “Yes you can!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I love helping my mom bake and cook at home.”",
+     "bbox": [
+      782.4,
+      61.3,
+      1055.2,
+      113.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Nandi says, “No! That’s a girl’s job. My mom does all the cooking at home.”",
+     "bbox": [
+      782.4,
+      136.7,
+      1064.3,
+      220.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes he can, Nandi. You can be anything you want to be,” says Teacher Langa.",
+     "bbox": [
+      782.4,
+      244.0,
+      942.0,
+      392.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "The class chants, “Yes you can!”",
+     "bbox": [
+      782.4,
+      449.9,
+      1056.0,
+      520.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Milani says, “I want to build houses like my dad.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Milani says, “I want to build houses like my dad.”",
+     "bbox": [
+      56.7,
+      417.3,
+      503.2,
+      514.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“No you can’t, that’s dangerous!” yells Phathu. “Yes she can, Phathu, as long as she loves it,” replies Teacher Langa. The class chants, “Yes she can!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“No you can’t, that’s dangerous!” yells Phathu.",
+     "bbox": [
+      793.7,
+      171.9,
+      1040.4,
+      255.9
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes she can, Phathu, as long as she loves it,” replies Teacher Langa.",
+     "bbox": [
+      793.7,
+      279.2,
+      1052.6,
+      363.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "The class chants, “Yes she can!”",
+     "bbox": [
+      793.7,
+      449.9,
+      1065.0,
+      520.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Sthelo says, “I want to be a nurse.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sthelo says, “I want to be a nurse.”",
+     "bbox": [
+      56.7,
+      53.1,
+      492.3,
+      119.7
+     ],
+     "size": 28.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "The class bursts out laughing. “What is so funny?” asks Teacher Langa. Nandi replies, “Nurses are girls.” “There are male nurses too,” says Teacher Langa. “So class, can Sthelo be a nurse?” The class booms, “Yes he can!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The class bursts out laughing.",
+     "bbox": [
+      792.8,
+      61.3,
+      944.4,
+      113.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What is so funny?” asks Teacher Langa.",
+     "bbox": [
+      792.8,
+      136.7,
+      937.4,
+      220.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Nandi replies, “Nurses are girls.”",
+     "bbox": [
+      792.8,
+      244.0,
+      1096.3,
+      264.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“There are male nurses too,” says Teacher Langa.",
+     "bbox": [
+      792.8,
+      287.3,
+      1060.7,
+      339.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“So class, can Sthelo be a nurse?”",
+     "bbox": [
+      792.8,
+      362.7,
+      1031.5,
+      414.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "The class booms, “Yes he can!”",
+     "bbox": [
+      792.8,
+      438.0,
+      1044.7,
+      508.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“I want to be an artist and draw pretty pictures,’’ says Liyana.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I want to be an artist and draw pretty pictures,’’ says Liyana.",
+     "bbox": [
+      622.2,
+      54.7,
+      1047.4,
+      119.1
+     ],
+     "size": 28.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“That’s not a real job,” says Khutso and rolls his eyes. “That sounds lovely, Liyana!” replies teacher Langa. “Can Liyana be an artist?” “Yes she can!” shouts the class!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“That’s not a real job,” says Khutso and rolls his eyes.",
+     "bbox": [
+      793.7,
+      61.3,
+      922.5,
+      177.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“That sounds lovely, Liyana!” replies teacher Langa. “Can Liyana be an artist?”",
+     "bbox": [
+      793.7,
+      200.7,
+      1083.8,
+      284.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "“Yes she can!” shouts the class!",
+     "bbox": [
+      793.7,
+      447.6,
+      1065.0,
+      514.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“I want to be an alarm clock,” says Phathu.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I want to be an alarm clock,” says Phathu.",
+     "bbox": [
+      34.9,
+      54.7,
+      511.5,
+      139.7
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“Huh?” “What do you think, class?” asks Teacher Langa. The class booms, “ Yes you can! Yes you can!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“Huh?” “What do you think, class?” asks Teacher Langa. The class booms, “ Yes you can! Yes you can!”",
+     "bbox": [
+      622.4,
+      63.2,
+      895.0,
+      361.1
+     ],
+     "size": 36.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Nandi when she hasn’t grows shared up. what she wants to be What do you think she could be?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nandi when she hasn’t grows shared up. what she wants to be",
+     "bbox": [
+      56.7,
+      61.3,
+      458.1,
+      113.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "What do you think she could be?",
+     "bbox": [
+      623.6,
+      66.0,
+      975.4,
+      106.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

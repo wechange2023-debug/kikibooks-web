@@ -1,0 +1,313 @@
+{
+ "slug": "whos-that-baby",
+ "book_body_size": 38.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Who’s that baby?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Who’s that baby?",
+     "bbox": [
+      138.2,
+      91.3,
+      428.8,
+      129.3
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "That baby can walk. Just like me.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "That baby can walk.",
+     "bbox": [
+      110.0,
+      91.3,
+      456.9,
+      129.3
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "BODY",
+     "text": "Just like me.",
+     "bbox": [
+      746.3,
+      483.5,
+      954.6,
+      521.5
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "My wiggly toes. That baby’s wiggly toes!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My wiggly toes.",
+     "bbox": [
+      151.0,
+      91.3,
+      416.1,
+      129.3
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "BODY",
+     "text": "That baby’s wiggly toes!",
+     "bbox": [
+      641.6,
+      475.7,
+      1047.9,
+      513.7
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Oh? That baby’s gone!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh? That baby’s gone!",
+     "bbox": [
+      96.6,
+      91.3,
+      470.4,
+      129.3
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Who’s that baby?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Who’s that baby?",
+     "bbox": [
+      138.2,
+      91.3,
+      428.8,
+      129.3
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "My waving hands. That baby’s waving hands.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My waving hands.",
+     "bbox": [
+      126.8,
+      91.3,
+      440.2,
+      129.3
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "BODY",
+     "text": "That baby’s waving hands.",
+     "bbox": [
+      624.8,
+      483.5,
+      1078.9,
+      521.5
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Want to play?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Want to play?",
+     "bbox": [
+      166.7,
+      91.3,
+      400.3,
+      129.3
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Oh, no! That baby’s gone!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh, no! That baby’s gone!",
+     "bbox": [
+      68.4,
+      465.5,
+      498.6,
+      503.5
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Who is that baby?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Who is that baby?",
+     "bbox": [
+      130.7,
+      465.5,
+      436.3,
+      503.5
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "My cute nose. That baby ’s cute nose.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My cute nose.",
+     "bbox": [
+      166.9,
+      91.3,
+      400.1,
+      129.3
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "BODY",
+     "text": "That baby ’s cute nose.",
+     "bbox": [
+      663.0,
+      469.3,
+      1040.7,
+      507.3
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "I make a funny face. So does that baby.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I make a funny face.",
+     "bbox": [
+      109.5,
+      91.3,
+      457.5,
+      129.3
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "BODY",
+     "text": "So does that baby.",
+     "bbox": [
+      697.2,
+      483.5,
+      1003.5,
+      521.5
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Oh! That baby is... ME!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh! That baby is...",
+     "bbox": [
+      129.0,
+      91.3,
+      437.9,
+      129.3
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "SFX",
+     "text": "ME!",
+     "bbox": [
+      805.8,
+      83.8,
+      895.0,
+      133.8
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "Goodbye!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Goodbye!",
+     "bbox": [
+      1016.9,
+      85.6,
+      1069.7,
+      96.6
+     ],
+     "size": 11.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

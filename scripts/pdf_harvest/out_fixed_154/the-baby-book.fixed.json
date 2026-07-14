@@ -1,0 +1,775 @@
+{
+ "slug": "the-baby-book",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "HOW TO USE THIS BOOK Dear girls and boys – We hope that this book will help you understand your wonderful body and how babies are made. When you’re much older, you can decide if you want to have one. The special words in this book are in bold, and there are pages at the back, a Glossary, to explain them. There’s also information there if you need help. We hope this book answers your questions. Love is a feeling we all have, but sex is something grown-ups do. Some people have sex for fun, but it can also be the start of a very long journey that can make a whole new person! Dear parents, guardians, teachers & community leaders – Talking to children about their bodies can be awkward, especially if it’s not a part of your culture. But if we don’t talk about how our bodies work, children might learn things that are untrue or harmful, and they might have sex or make babies before they are ready. We hope that you sit down somewhere quiet and read this book slowly with the child in your care. Let them look at the pictures for as long as they want. Try to answer their questions calmly, and help them feel comfortable with their bodies. We’ve asked a variety of parents – doctors, sex educators, feminists, politicians, writers and therapists –to help us get everything right. We know that you’ll also use your own culture, religion and beliefs to help your children make healthy choices. WE HOPE YOU FIND THIS BOOK HELPFUL.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "HOW TO USE THIS BOOK",
+     "bbox": [
+      232.1,
+      54.7,
+      507.4,
+      78.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dear girls and boys –",
+     "bbox": [
+      56.7,
+      83.0,
+      215.7,
+      101.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "We hope that this book will help you understand your wonderful body and how babies are made. When you’re much older, you can decide if you want to have one.",
+     "bbox": [
+      56.7,
+      121.9,
+      474.0,
+      183.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "The special words in this book are in bold, and there are pages at the back, a Glossary, to explain them. There’s also information there if you need help.",
+     "bbox": [
+      56.7,
+      208.3,
+      496.2,
+      269.5
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "We hope this book answers your questions.",
+     "bbox": [
+      144.0,
+      295.2,
+      510.2,
+      315.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Love is a feeling we all have, but sex is something grown-ups do. Some people have sex for fun, but it can also be the start of a very long journey that can make a whole new person!",
+     "bbox": [
+      246.2,
+      372.3,
+      482.6,
+      498.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dear parents, guardians, teachers & community leaders –",
+     "bbox": [
+      623.6,
+      57.5,
+      1064.6,
+      75.5
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Talking to children about their bodies can be awkward, especially if it’s not a part of your culture. But if we don’t talk about how our bodies work, children might learn things that are untrue or harmful, and they might have sex or make babies before they are ready.",
+     "bbox": [
+      623.6,
+      101.2,
+      1076.8,
+      205.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "We hope that you sit down somewhere quiet and read this book slowly with the child in your care. Let them look at the pictures for as long as they want. Try to answer their questions calmly, and help them feel comfortable with their bodies.",
+     "bbox": [
+      623.6,
+      230.8,
+      1069.7,
+      313.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "We’ve asked a variety of parents – doctors, sex educators, feminists, politicians, writers and therapists –to help us get everything right. We know that you’ll also use your own culture, religion and beliefs to help your children make healthy choices.",
+     "bbox": [
+      623.6,
+      338.8,
+      1064.0,
+      443.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "WE HOPE YOU FIND THIS BOOK HELPFUL.",
+     "bbox": [
+      624.0,
+      487.3,
+      1073.9,
+      511.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Humans are mammals. We are warm-blooded, have hair, and can suckle (breastfeed) our young. If there’s something technical you’re not sure about, look at the Glossary at the end of the book. Try to use the scientific language about private parts, even if you feel embarrassed. The bits in brackets after the words tell you how to pronounce them in English. You’ll also find phone numbers and websites of South African groups that support families. If you’re in another country, there should be similar organisations. Human pregnancy takes a long time – nine calendar months or ten lunar (moon) months from fertilisation to birth. Like other animals, a baby is made when one female and one male have sex at the right time. During sex, the man’s sperm fertilises the woman’s egg, and a baby can grow inside the woman’s belly, in her womb (uterus).",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Humans are mammals. We are warm-blooded, have hair, and can suckle (breastfeed) our young.",
+     "bbox": [
+      70.8,
+      226.7,
+      496.2,
+      266.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "If there’s something technical you’re not sure about, look at the Glossary at the end of the book. Try to use the scientific language about private parts, even if you feel embarrassed. The bits in brackets after the words tell you how to pronounce them in English.",
+     "bbox": [
+      59.6,
+      324.7,
+      507.3,
+      429.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "You’ll also find phone numbers and websites of South African groups that support families. If you’re in another country, there should be similar organisations.",
+     "bbox": [
+      77.1,
+      454.3,
+      489.9,
+      515.5
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Human pregnancy takes a long time – nine calendar months or ten lunar (moon) months from fertilisation to birth.",
+     "bbox": [
+      625.9,
+      62.0,
+      816.9,
+      166.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Like other animals, a baby is made when one female and one male have sex at the right time. During sex, the man’s sperm fertilises the woman’s egg, and a baby can grow inside the woman’s belly, in her womb (uterus).",
+     "bbox": [
+      623.6,
+      411.6,
+      962.2,
+      517.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Let’s start at the beginning. A girl is born with thousands of eggs inside her ovaries. Any time from the age of eight, puberty (getting a grown-up body) can start. Girls’ and boys’ brains send messages to their bodies and they start to change: they swell, smell different, and get hairy. Bodies and their parts come in all shapes and sizes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Let’s start at the beginning. A girl is born with thousands of eggs inside her ovaries. Any time from the age of eight, puberty (getting a grown-up body) can start. Girls’ and boys’ brains send messages to their bodies and they start to change: they swell, smell different, and get hairy. Bodies and their parts come in all shapes and sizes.",
+     "bbox": [
+      645.5,
+      58.0,
+      1077.2,
+      184.0
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "When a girl reaches puberty, she gets a special power to make babies. An egg (ovum) comes down her Fallopian tube. This is called ovulation and two weeks later she gets her period (menstruates). This cycle usually happens every 28 days, following the moon’s phases, but everyone is different. When a boy reaches puberty, white liquid, called semen, might start to come out of his penis. This means that he is able to make a woman pregnant. If it happens when he is asleep, it is call a wet dream, and most boys have them at some time. Periods can be messy and sore, but they are a normal part of life. Girls should not feel embarrassed about it. fallopian tube ovaries uterus cervix vagina vulva",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When a girl reaches puberty, she gets a special power to make babies. An egg (ovum) comes down her Fallopian tube. This is called ovulation and two weeks later she gets her period (menstruates). This cycle usually happens every 28 days, following the moon’s phases, but everyone is different.",
+     "bbox": [
+      56.7,
+      58.0,
+      433.9,
+      205.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "When a boy reaches puberty, white liquid, called semen, might start to come out of his penis. This means that he is able to make a woman pregnant. If it happens when he is asleep, it is call a wet dream, and most boys have them at some time.",
+     "bbox": [
+      56.7,
+      230.8,
+      418.8,
+      356.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Periods can be messy and sore, but they are a normal part of life. Girls should not feel embarrassed about it.",
+     "bbox": [
+      252.8,
+      400.5,
+      485.1,
+      483.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "fallopian tube",
+     "bbox": [
+      1010.5,
+      60.3,
+      1091.2,
+      104.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "ovaries",
+     "bbox": [
+      1023.3,
+      125.0,
+      1089.3,
+      145.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "uterus",
+     "bbox": [
+      946.8,
+      154.7,
+      1005.6,
+      174.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "cervix",
+     "bbox": [
+      946.8,
+      271.9,
+      1001.9,
+      291.9
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "vagina",
+     "bbox": [
+      946.8,
+      311.8,
+      1007.2,
+      331.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "vulva",
+     "bbox": [
+      946.8,
+      359.7,
+      996.5,
+      379.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Your body may be ready to make babies, but your mind and your feelings must be grown up too. It’s very important to finish school so you can find proper work and make your own money in the Choose years afterwards. wisely. The chemicals (hormones) in your glands can make you excited when you think about kissing or touching. This feeling of want (desire) makes people want to have sex. It’s nature’s way of making more humans. When in you sex. have person to South can have you’re If sex you decide Africa for sex just do, old permission are with says because if first enough doing you them. over ask want it. your the (consent) (the sixteen), And to other friends law have don’t",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Your body may be ready to make babies, but your mind and your feelings must be grown up too. It’s very important to finish school so you can find proper work and make your own money in the Choose years afterwards. wisely.",
+     "bbox": [
+      58.1,
+      70.8,
+      270.9,
+      261.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "The chemicals (hormones) in your glands can make you excited when you think about kissing or touching. This feeling of want (desire) makes people want to have sex. It’s nature’s way of making more humans.",
+     "bbox": [
+      623.6,
+      58.0,
+      1044.8,
+      140.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "When in you sex. have person to South can have you’re If sex you decide Africa for sex just do, old permission are with says because if first enough doing you them. over ask want it. your the (consent) (the sixteen), And to other friends law have don’t",
+     "bbox": [
+      708.2,
+      229.3,
+      1015.4,
+      462.3
+     ],
+     "size": 21.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "When a man and a woman kiss and touch each other’s naked bodies, sometimes they also have sex. When they are ready, the man gets an erection and his penis becomes hard. The woman’s vagina will get wet. The man and the woman lie together, and he pushes his stiff penis into her vagina. This is called sex. There are lots of different kinds of families, but you need one egg and one sperm to make a baby. different a you pregnant. yourself Sex squishy sickness think can ways with feel or you such Even sore to ticklish a might as condom have if at you HIV, first. want sex, – aren’t or and so There it but to, you can so having have always you are don’t feel don’t condoms lots tight, sex, protect share of but get nearby, just in case.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When a man and a woman kiss and touch each other’s naked bodies, sometimes they also have sex. When they are ready, the man gets an erection and his penis becomes hard. The woman’s vagina will get wet. The man and the woman lie together, and he pushes his stiff penis into her vagina. This is called sex.",
+     "bbox": [
+      56.7,
+      58.0,
+      502.6,
+      184.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "There are lots of different kinds of families, but you need one egg and one sperm to make a baby.",
+     "bbox": [
+      193.7,
+      261.2,
+      408.3,
+      344.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "different a you pregnant. yourself Sex squishy sickness think can ways with feel or you such Even sore to ticklish a might as condom have if at you HIV, first. want sex, – aren’t or and so There it but to, you can so having have always you are don’t feel don’t condoms lots tight, sex, protect share of but get nearby, just in case.",
+     "bbox": [
+      727.0,
+      342.3,
+      1070.1,
+      521.1
+     ],
+     "size": 18.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "sperm duct prostate testis scrotum penis While the penis is inside the woman, the man and woman rub against each other until they each have an orgasm (pleasure explosion). The man ejaculates, and about a teaspoonful of semen squirts out of his penis and into the body of the woman. Semen has millions of tiny sperm in it! They swim up the woman’s vagina, through the cervix, into the uterus and the Fallopian tubes. It is a race, and only one sperm can make its way into the egg. A woman can get pregnant even if the penis is on her thigh (play sex) and not in the vagina. Some semen always escapes before the man ejaculates. Sperm travel long distances. If there are two eggs and two winning sperm, or the fertilised egg splits into two, the mother will carry twins!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "sperm duct",
+     "bbox": [
+      430.9,
+      186.7,
+      532.5,
+      206.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "prostate",
+     "bbox": [
+      430.9,
+      261.1,
+      507.7,
+      281.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "testis scrotum penis",
+     "bbox": [
+      430.9,
+      373.8,
+      505.6,
+      458.9
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "While the penis is inside the woman, the man and woman rub against each other until they each have an orgasm (pleasure explosion). The man ejaculates, and about a teaspoonful of semen squirts out of his penis and into the body of the woman. Semen has millions of tiny sperm in it! They swim up the woman’s vagina, through the cervix, into the uterus and the Fallopian tubes. It is a race, and only one sperm can make its way into the egg.",
+     "bbox": [
+      663.0,
+      57.8,
+      1077.2,
+      248.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "A woman can get pregnant even if the penis is on her thigh (play sex) and not in the vagina. Some semen always escapes before the man ejaculates. Sperm travel long distances.",
+     "bbox": [
+      623.0,
+      294.5,
+      964.4,
+      377.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "If there are two eggs and two winning sperm, or the fertilised egg splits into two, the mother will carry twins!",
+     "bbox": [
+      615.7,
+      451.3,
+      930.6,
+      512.5
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Over a few days, the fertilised ovum travels to the womb. It plants itself in the warm lining of the womb and keeps growing by making many, many new cells. Each cell has the same set of 46 chromosomes or gene map that will make the baby look like his or her family – the same hair and eye colour, and so on. X+Y means that cell will become a boy. The father’s sperm decides if the baby is a boy or a girl. Eggs carry the X (female) chromosome. Sperm carry the X (female) or the Y (male). X+X means the cell will become a girl.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Over a few days, the fertilised ovum travels to the womb. It plants itself in the warm lining of the womb and keeps growing by making many, many new cells. Each cell has the same set of 46 chromosomes or gene map that will make the baby look like his or her family – the same hair and eye colour, and so on.",
+     "bbox": [
+      56.7,
+      58.0,
+      501.2,
+      184.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "X+Y means that cell will become a boy.",
+     "bbox": [
+      673.2,
+      66.0,
+      1055.4,
+      87.0
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "The father’s sperm decides if the baby is a boy or a girl. Eggs carry the X (female) chromosome. Sperm carry the X (female) or the Y (male).",
+     "bbox": [
+      255.7,
+      399.6,
+      481.4,
+      504.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "X+X means the cell will become a girl.",
+     "bbox": [
+      674.3,
+      491.3,
+      1040.6,
+      512.3
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "uterus placenta umbilical cord fluid Babies hiccup, cough and yawn even in the womb! In the mother’s womb, the baby rests inside a thin, strong sac (membranous bag). The umbilical cord joins the mother and her growing baby or foetus. If she eats healthy food, the foetus grows well. If the mother smokes (or is often in the same room as a smoker), takes drugs or drinks alcohol, she can damage the foetus. Women do not have periods when they are pregnant.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "uterus",
+     "bbox": [
+      102.3,
+      131.4,
+      161.1,
+      151.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "placenta umbilical cord",
+     "bbox": [
+      33.1,
+      185.0,
+      161.1,
+      235.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "fluid",
+     "bbox": [
+      119.0,
+      286.6,
+      161.1,
+      306.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Babies hiccup, cough and yawn even in the womb!",
+     "bbox": [
+      135.7,
+      416.8,
+      297.9,
+      478.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "In the mother’s womb, the baby rests inside a thin, strong sac (membranous bag). The umbilical cord joins the mother and her growing baby or foetus. If she eats healthy food, the foetus grows well. If the mother smokes (or is often in the same room as a smoker), takes drugs or drinks alcohol, she can damage the foetus.",
+     "bbox": [
+      741.2,
+      58.0,
+      1077.2,
+      227.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Women do not have periods when they are pregnant.",
+     "bbox": [
+      699.9,
+      348.8,
+      847.8,
+      410.0
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "A pregnant woman visits a midwife, clinic or doctor a few times to check on the baby. When the baby is ready to be born, the woman goes into labour. Labour can last from an hour to two days, and it is exhausting. In an ordinary birth, the womb muscles squeeze in waves to push the baby out of the uterus and out through the vagina. This is very hard work for the mother, but easier if her body can relax. It must be very slow because the cervix and vagina have to stretch to free the baby. Your body is amazing! When babies are born they are covered in blood and waxy white substance called vernix. This waterproofs the baby inside the womb. The umbilical cord is cut and tied in a knot. It dries out and falls off after about three days and becomes the belly button. Some women have a painkiller (anaesthetic) and an operation called a caesarean section . Then the woman does not go into labour. A few days before the baby is ready to be born, the mother goes to hospital. The doctor cuts through the abdomen and uterus linings to pull out the baby, and then sews the mother up again.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A pregnant woman visits a midwife, clinic or doctor a few times to check on the baby. When the baby is ready to be born, the woman goes into labour. Labour can last from an hour to two days, and it is exhausting. In an ordinary birth, the womb muscles squeeze in waves to push the baby out of the uterus and out through the vagina. This is very hard work for the mother, but easier if her body can relax. It must be very slow because the cervix and vagina have to stretch to free the baby. Your body is amazing! When babies are born they are covered in blood and waxy white substance called vernix. This waterproofs the baby inside the womb. The umbilical cord is cut and tied in a knot. It dries out and falls off after about three days and becomes the belly button.",
+     "bbox": [
+      623.6,
+      48.3,
+      1074.4,
+      380.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Some women have a painkiller (anaesthetic) and an operation called a caesarean section . Then the woman does not go into labour. A few days before the baby is ready to be born, the mother goes to hospital. The doctor cuts through the abdomen and uterus linings to pull out the baby, and then sews the mother up again.",
+     "bbox": [
+      623.6,
+      406.1,
+      1077.2,
+      532.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Being born is hard work. For the first three months of their lives, babies just want to feed and sleep like other mammal babies so they can grow. Breastfeeding is best for the baby’s health, brain development and feelings of love (bonding), but this is not always possible for everyone. Soon the baby will start looking like a person. Babies’ necks are weak, so be careful to support their heads when you hold them. Can you believe that was once you? Well done, mammal! Babies don’t cry real tears for the first few weeks, until their tear ducts are fully formed. Some babies’ eyes are dark blue when they are born, like puppies or kittens, but the colour can change! By the time they are nine months old, they will have the eye colour they will have when they are grown up. REMEMBER You should only have sex when you are over sixteen, and if you and the other person both want to have sex. Use a condom to protect each other from viruses such as HIV, and to prevent pregnancy. It is never okay for a grown-up to have sex with a child or someone under sixteen. If they do, this is called statutory rape. If this happens to you, even if they tell you to keep it a secret, tell another grown-up you trust – a parent, a teacher, a social worker, a community leader – so that they can help you stop the abuse. Adults are here to protect children, not bully them. You have not done anything wrong, nobody will be angry with you and it is not your fault. Do not have sex with an older person for protection, money or special treatment. They can pass on diseases such as HIV because they have more than one sex partner.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Being born is hard work. For the first three months of their lives, babies just want to feed and sleep like other mammal babies so they can grow. Breastfeeding is best for the baby’s health, brain development and feelings of love (bonding), but this is not always possible for everyone.",
+     "bbox": [
+      56.7,
+      58.0,
+      372.3,
+      205.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Soon the baby will start looking like a person. Babies’ necks are weak, so be careful to support their heads when you hold them. Can you believe that was once you? Well done, mammal!",
+     "bbox": [
+      56.7,
+      230.8,
+      355.2,
+      335.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Babies don’t cry real tears for the first few weeks, until their tear ducts are fully formed. Some babies’ eyes are dark blue when they are born, like puppies or kittens, but the colour can change! By the time they are nine months old, they will have the eye colour they will have when they are grown up.",
+     "bbox": [
+      49.5,
+      374.2,
+      400.5,
+      521.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "REMEMBER You should only have sex when you are over sixteen, and if you and the other person both want to have sex. Use a condom to protect each other from viruses such as HIV, and to prevent pregnancy.",
+     "bbox": [
+      626.0,
+      60.0,
+      1077.2,
+      172.7
+     ],
+     "size": 18.4
+    },
+    {
+     "role": "BODY",
+     "text": "It is never okay for a grown-up to have sex with a child or someone under sixteen. If they do, this is called statutory rape. If this happens to you, even if they tell you to keep it a secret, tell another grown-up you trust – a parent, a teacher, a social worker, a community leader – so that they can help you stop the abuse. Adults are here to protect children, not bully them. You have not done anything wrong, nobody will be angry with you and it is not your fault.",
+     "bbox": [
+      694.7,
+      197.3,
+      1077.2,
+      410.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Do not have sex with an older person for protection, money or special treatment. They can pass on diseases such as HIV because they have more than one sex partner.",
+     "bbox": [
+      688.8,
+      435.5,
+      1077.2,
+      518.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Here GLOSSARY are some of the big words in this book, and how to say them. abuse (a-byoos): bad treatment; cruelty anaesthetic (a-nis-theh-tik): painkiller, such as an injection (epidural) in the spine caesarean section (suh-zeh-ri-un sek-shin): A ‘caesar’ is when a doctor delivers the baby in hospital, with painkilling drugs and surgery. The mother does not go into labour, unless a caesar is used when there is an emergency, and the doctor has to deliver the baby quickly. cervix (ser-vicks): a cushion of muscle between the uterus and the vagina chromosome (kro-mo-zohm): the information inside each cell in your body condom (kon-dom): thin rubber covering for penis to stop sperm from entering the woman’s body consent (kon-sent): asking permission (“Do you want to ..?” or “Is it okay if I..?”) ejaculate (e-jak-yoo-layt): when the penis squirts semen embryo (em-bree-yo): the cells after fertilisation, up to two months old erection (eh-rek-shin): when the penis becomes stiff Fallopian tubes (fuh-low-pi-yin tyoobz): the little tubes connecting the ovaries to the uterus foetus (fee-tis): the baby inside the womb, from three months old to birth gene (jean): the information in a chromosome that makes you look like your parents hormones (hor-moanz): chemicals in your glands, such as oestrogen (ees-tra-jin) and progesterone (proh-jes-tuh-roan) HIV (aych-ai-vee): Human Immunodeficiency Virus. A virus that attacks your immune system and weakens your body’s defence against infection. An infected person can pass it to another person through bodily fluids such as semen and blood. menstruate (men-stroo-ayt): When the egg is not fertilised, the uterus has to let go of the spongy lining which is filled with blood vessels. (If the woman is pregnant, this lining protects and feeds the fertilised egg, so it can grow into a baby.) When fertilisation does not happen, the lining comes away and leaves the body as menstrual blood, through the vagina. orgasm ovaries (oh-vuh-rees): (or-gaz-um): moment two little of organs most intense near the pleasure uterus during that store sex all the girl’s eggs (ova) ovum (oh-vim): one female egg ovulation (ov-yoo-lay-shin): when an egg travels down the Fallopian tube, trying to be fertilised penis (pee-nus): men’s sex and urinary organ placenta (pluh-sen-tuh): the organ that connects the mother and baby’s blood supply through a tube called the umbilical cord. It sends hormones, food and oxygen from the mother to the foetus, and also takes waste back to the mother’s bloodstream puberty (pyoo-ba-tee): when the body can make babies rape (rayp): forced sex semen (see-min): liquid as well as the seed in sperm sperm (spuhrm): spermatozoa – male seed that can make a baby if it finds the right egg statutory rape (stat-yoo-taw-ree rayp): when somebody has sex with a child under the age of consent (sixteen, in South Africa). Even if the child agrees to it, this is the law of the country, and the older person who has sex with them should go to jail. umbilical cord (um-bil-i-kil kawd): part of the placenta. An organ that connects the mother and baby’s blood supply. It sends hormones, food and oxygen from the mother to the foetus, and also takes waste back to the mother’s bloodstream uterus (yoo-ta-ris): muscular sac in a woman’s abdomen that holds the baby during pregnancy vagina (va-jai-nuh): muscular canal inside the woman’s body, for sex and giving birth vernix (vir-niks): waxy white covering that waterproofed the baby’s skin in the uterus vulva (vul-vuh): the folds of skin on the outside of the vagina wet dream (wet dreem): when semen comes out of the boy’s penis when he is asleep womb (woom): the uterus zygote (zai-goat): a one-day-old cell body",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Here GLOSSARY are some of the big words in this book, and how to say them. abuse (a-byoos): bad treatment; cruelty anaesthetic (a-nis-theh-tik): painkiller, such as an injection (epidural) in the spine caesarean section (suh-zeh-ri-un sek-shin): A ‘caesar’ is when a doctor delivers the baby in hospital, with painkilling drugs and surgery. The mother does not go into labour, unless a caesar is used when there is an emergency, and the doctor has to deliver the baby quickly. cervix (ser-vicks): a cushion of muscle between the uterus and the vagina chromosome (kro-mo-zohm): the information inside each cell in your body condom (kon-dom): thin rubber covering for penis to stop sperm from entering the woman’s body consent (kon-sent): asking permission (“Do you want to ..?” or “Is it okay if I..?”) ejaculate (e-jak-yoo-layt): when the penis squirts semen embryo (em-bree-yo): the cells after fertilisation, up to two months old erection (eh-rek-shin): when the penis becomes stiff Fallopian tubes (fuh-low-pi-yin tyoobz): the little tubes connecting the ovaries to the uterus foetus (fee-tis): the baby inside the womb, from three months old to birth gene (jean): the information in a chromosome that makes you look like your parents hormones (hor-moanz): chemicals in your glands, such as oestrogen (ees-tra-jin) and progesterone (proh-jes-tuh-roan) HIV (aych-ai-vee): Human Immunodeficiency Virus. A virus that attacks your immune system and weakens your body’s defence against infection. An infected person can pass it to another person through bodily fluids such as semen and blood. menstruate (men-stroo-ayt): When the egg is not fertilised, the uterus has to let go of the spongy lining which is filled with blood vessels. (If the woman is pregnant, this lining protects and feeds the fertilised egg, so it can grow into a baby.) When fertilisation does not happen, the lining comes away and leaves the body as menstrual blood, through the vagina.",
+     "bbox": [
+      55.8,
+      40.8,
+      518.8,
+      531.1
+     ],
+     "size": 14.0
+    },
+    {
+     "role": "BODY",
+     "text": "orgasm ovaries (oh-vuh-rees): (or-gaz-um): moment two little of organs most intense near the pleasure uterus during that store sex all the girl’s eggs (ova) ovum (oh-vim): one female egg ovulation (ov-yoo-lay-shin): when an egg travels down the Fallopian tube, trying to be fertilised penis (pee-nus): men’s sex and urinary organ placenta (pluh-sen-tuh): the organ that connects the mother and baby’s blood supply through a tube called the umbilical cord. It sends hormones, food and oxygen from the mother to the foetus, and also takes waste back to the mother’s bloodstream puberty (pyoo-ba-tee): when the body can make babies rape (rayp): forced sex semen (see-min): liquid as well as the seed in sperm sperm (spuhrm): spermatozoa – male seed that can make a baby if it finds the right egg statutory rape (stat-yoo-taw-ree rayp): when somebody has sex with a child under the age of consent (sixteen, in South Africa). Even if the child agrees to it, this is the law of the country, and the older person who has sex with them should go to jail. umbilical cord (um-bil-i-kil kawd): part of the placenta. An organ that connects the mother and baby’s blood supply. It sends hormones, food and oxygen from the mother to the foetus, and also takes waste back to the mother’s bloodstream uterus (yoo-ta-ris): muscular sac in a woman’s abdomen that holds the baby during pregnancy vagina (va-jai-nuh): muscular canal inside the woman’s body, for sex and giving birth vernix (vir-niks): waxy white covering that waterproofed the baby’s skin in the uterus vulva (vul-vuh): the folds of skin on the outside of the vagina wet dream (wet dreem): when semen comes out of the boy’s penis when he is asleep womb (woom): the uterus zygote (zai-goat): a one-day-old cell body",
+     "bbox": [
+      623.6,
+      57.5,
+      1105.3,
+      497.9
+     ],
+     "size": 14.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "It doesn’t matter how old you are, if someone forces you to have sex, it is called rape. Call one of these organisa- tions and ask for help. Here are some numbers for South African groups, but your country will have similar organisations: FOR CHILDREN Molo Songololo : +27 (0)21 448 5421 Email : info@molo.org.za Childline : 08000 555 55 RAPCAN : +27 (0)21 712 2330 Email : info@rapcan.org.za FOR ADULTS Rape Crisis: +27 (0)21 447 1467 Stop Gender Violence Helpline : 0800 150 150 Email : safetalking@lifeline.org.za",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It doesn’t matter how old you are, if someone forces you to have sex, it is called rape. Call one of these organisa- tions and ask for help. Here are some numbers for South African groups, but your country will have similar organisations:",
+     "bbox": [
+      268.7,
+      58.0,
+      510.2,
+      227.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "FOR CHILDREN Molo Songololo : +27 (0)21 448 5421 Email : info@molo.org.za Childline : 08000 555 55 RAPCAN : +27 (0)21 712 2330 Email : info@rapcan.org.za",
+     "bbox": [
+      43.5,
+      320.4,
+      523.4,
+      407.6
+     ],
+     "size": 18.4
+    },
+    {
+     "role": "BODY",
+     "text": "FOR ADULTS Rape Crisis: +27 (0)21 447 1467 Stop Gender Violence Helpline : 0800 150 150 Email : safetalking@lifeline.org.za",
+     "bbox": [
+      104.8,
+      433.8,
+      462.1,
+      521.0
+     ],
+     "size": 18.4
+    }
+   ],
+   "decor_excluded": []
+  }
+ ]
+}

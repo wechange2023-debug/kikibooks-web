@@ -1,0 +1,223 @@
+{
+ "slug": "egg",
+ "book_body_size": 50.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Egg",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Egg",
+     "bbox": [
+      247.4,
+      221.8,
+      319.5,
+      271.8
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "My egg?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My egg?",
+     "bbox": [
+      203.1,
+      94.2,
+      363.8,
+      144.2
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Not my egg.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Not my egg.",
+     "bbox": [
+      165.7,
+      94.2,
+      401.2,
+      144.2
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "My egg?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My egg?",
+     "bbox": [
+      203.1,
+      94.2,
+      363.8,
+      144.2
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Not my egg.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Not my egg.",
+     "bbox": [
+      165.7,
+      94.2,
+      401.2,
+      144.2
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "My egg?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My egg?",
+     "bbox": [
+      203.1,
+      94.2,
+      363.8,
+      144.2
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Not my egg.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Not my egg.",
+     "bbox": [
+      165.7,
+      94.2,
+      401.2,
+      144.2
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "My egg?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My egg?",
+     "bbox": [
+      203.1,
+      94.2,
+      363.8,
+      144.2
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Not my egg.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Not my egg.",
+     "bbox": [
+      165.7,
+      94.2,
+      401.2,
+      144.2
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "My egg.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My egg.",
+     "bbox": [
+      915.4,
+      94.2,
+      1068.8,
+      144.2
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Our egg.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Our egg.",
+     "bbox": [
+      766.7,
+      92.8,
+      934.2,
+      142.8
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

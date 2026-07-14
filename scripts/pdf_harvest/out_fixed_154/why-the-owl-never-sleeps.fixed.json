@@ -1,0 +1,279 @@
+{
+ "slug": "why-the-owl-never-sleeps",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Ages ago, when rocks were still soft and trees could talk, all the animals lived on land under one big shed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Ages ago, when rocks were still soft and trees could talk, all the animals lived on land under one big shed.",
+     "bbox": [
+      143.2,
+      233.4,
+      423.7,
+      311.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "They took care of each other and protected one another from human trouble all day and night.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They took care of each other and protected one another from human trouble all day and night.",
+     "bbox": [
+      136.3,
+      233.4,
+      430.6,
+      311.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "At sunset, the elephants trumpeted and the birds chirped along in harmony, while the peacock danced.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "At sunset, the elephants trumpeted and the birds chirped along in harmony, while the peacock danced.",
+     "bbox": [
+      128.2,
+      233.4,
+      438.8,
+      311.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "One night, it was Mr Owl’s turn to guard the animals as they slept.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One night, it was Mr Owl’s turn to guard the animals as they slept.",
+     "bbox": [
+      124.9,
+      248.4,
+      442.0,
+      296.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "He stayed up watching far and wide for any sign of humans.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He stayed up watching far and wide for any sign of humans.",
+     "bbox": [
+      193.6,
+      233.4,
+      373.3,
+      311.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Suddenly the bush in front of him crackled and shook.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Suddenly the bush in front of him crackled and shook.",
+     "bbox": [
+      56.7,
+      191.0,
+      319.3,
+      239.0
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Aww!” Mr Owl was trapped in the hands of a small boy. Owl hooted and ruffled his feathers. There was even a toot.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Aww!” Mr Owl was trapped in the hands of a small boy.",
+     "bbox": [
+      172.2,
+      188.4,
+      394.8,
+      236.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Owl hooted and ruffled his feathers. There was even a toot.",
+     "bbox": [
+      141.1,
+      278.4,
+      425.8,
+      326.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Please don’t roast me! Take the other animals. I am too wise to be eaten – I won’t be as delicious.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Please don’t roast me! Take the other animals. I am too wise to be eaten – I won’t be as delicious.”",
+     "bbox": [
+      176.4,
+      218.4,
+      390.6,
+      326.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "The boy shrugged, heading under the animals’ shed. He lit a fire, waking the animals from their sleep. “Fire!” they shouted, as they scattered all over.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The boy shrugged, heading under the animals’ shed. He lit a fire, waking the animals from their sleep.",
+     "bbox": [
+      152.4,
+      168.1,
+      414.9,
+      276.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Fire!” they shouted, as they scattered all over.",
+     "bbox": [
+      101.9,
+      332.1,
+      465.0,
+      350.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "The insects hid underground. Some animals ran for the river and never came back. The birds flew deep into the night sky.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The insects hid underground.",
+     "bbox": [
+      169.0,
+      181.3,
+      397.9,
+      199.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Some animals ran for the river and never came back.",
+     "bbox": [
+      165.6,
+      241.3,
+      401.7,
+      289.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "The birds flew deep into the night sky.",
+     "bbox": [
+      133.2,
+      331.3,
+      433.7,
+      349.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "The humans left with the cats, cows and dogs, leaving Mr Owl ashamed. “They must never see me again.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The humans left with the cats, cows and dogs, leaving Mr Owl ashamed. “They must never see me again.”",
+     "bbox": [
+      206.9,
+      195.8,
+      489.0,
+      273.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "From that night, he vowed never to show his face in daylight … only at night to eat and stretch his wings.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "From that night, he vowed never to show his face in daylight … only at night to eat and stretch his wings.",
+     "bbox": [
+      49.6,
+      57.6,
+      372.2,
+      135.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

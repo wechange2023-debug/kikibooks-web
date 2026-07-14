@@ -1,0 +1,235 @@
+{
+ "slug": "joannas-grannies",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "I have two grannies.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I have two grannies.",
+     "bbox": [
+      170.5,
+      113.8,
+      396.4,
+      137.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Granny Jo",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Granny Jo",
+     "bbox": [
+      224.8,
+      278.7,
+      342.1,
+      302.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Granny Anna",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Granny Anna",
+     "bbox": [
+      209.8,
+      276.8,
+      357.1,
+      300.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Farmer granny",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Farmer granny",
+     "bbox": [
+      198.3,
+      276.8,
+      368.6,
+      300.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Soccer granny",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Soccer granny",
+     "bbox": [
+      201.4,
+      276.8,
+      365.6,
+      300.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Bicycle granny",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Bicycle granny",
+     "bbox": [
+      200.3,
+      276.8,
+      366.7,
+      300.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Taxi granny",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Taxi granny",
+     "bbox": [
+      217.8,
+      276.8,
+      349.2,
+      300.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Singing granny",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Singing granny",
+     "bbox": [
+      198.4,
+      276.8,
+      368.5,
+      300.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Dancing granny",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dancing granny",
+     "bbox": [
+      193.3,
+      276.8,
+      373.6,
+      300.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Granny Jo and Granny Anna come to tea.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Granny Jo and Granny Anna come to tea.",
+     "bbox": [
+      755.9,
+      61.6,
+      1077.2,
+      115.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "I sit in the middle.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I sit in the middle.",
+     "bbox": [
+      753.1,
+      99.6,
+      947.7,
+      123.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "There’s a bit of each granny in me.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There’s a bit of each granny in me.",
+     "bbox": [
+      88.0,
+      142.8,
+      479.0,
+      166.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

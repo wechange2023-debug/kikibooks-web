@@ -1,0 +1,253 @@
+{
+ "slug": "whose-shoe-is-this",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Fezile, we need to go! Come and help Gogo find her black shoes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fezile, we need to go! Come and help Gogo find her black shoes.",
+     "bbox": [
+      662.5,
+      109.1,
+      1038.3,
+      211.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Whose shoe is this? Who would wear this shoe? Where would they wear it to?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Whose shoe is this? Who would wear this shoe? Where would they wear it to?”",
+     "bbox": [
+      640.6,
+      147.4,
+      1060.2,
+      283.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Fezile! “Yes, Gogo?” “Where are you?” “I’m looking for the shoes!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Fezile!",
+     "bbox": [
+      198.1,
+      231.1,
+      368.9,
+      286.1
+     ],
+     "size": 55.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes, Gogo?”",
+     "bbox": [
+      763.4,
+      118.6,
+      937.4,
+      148.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Where are you?”",
+     "bbox": [
+      721.1,
+      226.6,
+      979.7,
+      256.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’m looking for the shoes!”",
+     "bbox": [
+      743.1,
+      334.6,
+      957.7,
+      400.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Whose shoe is this? Who would wear this shoe? Where would they wear it to?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Whose shoe is this? Who would wear this shoe? Where would they wear it to?”",
+     "bbox": [
+      640.6,
+      147.4,
+      1060.2,
+      283.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Where are you, my child? “I’m still looking!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Where are you, my child?",
+     "bbox": [
+      170.7,
+      217.8,
+      396.2,
+      283.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’m still looking!”",
+     "bbox": [
+      729.9,
+      217.8,
+      970.9,
+      247.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Whose shoe is this? Who would wear this shoe? Where would they wear it to?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Whose shoe is this? Who would wear this shoe? Where would they wear it to?”",
+     "bbox": [
+      640.6,
+      147.4,
+      1060.2,
+      283.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Have you found the shoes? “Let’s look for them together. Please fetch the broom.” With Gogo’s help, Fezile finally finds the shoes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Have you found the shoes?",
+     "bbox": [
+      265.1,
+      127.1,
+      500.5,
+      193.1
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Let’s look for them together. Please fetch the broom.”",
+     "bbox": [
+      633.7,
+      70.4,
+      1074.8,
+      136.4
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "With Gogo’s help, Fezile finally finds the shoes.",
+     "bbox": [
+      652.2,
+      505.9,
+      1048.6,
+      523.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "SHOE STORE",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "SHOE STORE",
+     "bbox": [
+      863.5,
+      80.6,
+      1057.3,
+      112.6
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

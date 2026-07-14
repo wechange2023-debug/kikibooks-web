@@ -1,0 +1,311 @@
+{
+ "slug": "nomvundla-and-the-chilli-eating-contest",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Nomvundla the hare and Soko the monkey are buddies. “Hurry, Soko! We don’t want to be late for the Chilli-Eating Contest,” says Nomvundla.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nomvundla the hare and Soko the monkey are buddies. “Hurry, Soko! We don’t want to be late for the Chilli-Eating Contest,” says Nomvundla.",
+     "bbox": [
+      56.7,
+      56.8,
+      475.8,
+      124.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Nomvundla, if you win, who will you take to the Hamba-Hamba Funfair?” asks Soko.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Nomvundla, if you win, who will you take to the Hamba-Hamba Funfair?” asks Soko.",
+     "bbox": [
+      265.6,
+      56.8,
+      498.9,
+      124.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Hmm, I wonder who Nomvundla’s best friend is?” “That’s easy,” says Nomvundla. “I’ll take my best friend!” Who do you think Nomvundla’s best friend is?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Hmm, I wonder who Nomvundla’s best friend is?”",
+     "bbox": [
+      623.6,
+      81.8,
+      815.5,
+      123.8
+     ],
+     "size": 17.0
+    },
+    {
+     "role": "BODY",
+     "text": "“That’s easy,” says Nomvundla. “I’ll take my best friend!”",
+     "bbox": [
+      338.3,
+      243.9,
+      510.9,
+      311.9
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Who do you think Nomvundla’s best friend is?",
+     "bbox": [
+      987.5,
+      382.8,
+      1111.2,
+      449.8
+     ],
+     "size": 17.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Nomvundla and Soko are the last to arrive.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nomvundla and Soko are the last to arrive.",
+     "bbox": [
+      203.5,
+      102.2,
+      363.3,
+      145.2
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Soko, you go first,” says Nomvundla. Chilli-eatiNg COnTesT Rules 1. Don’T say hOw hoT it feels 2. finish all youR Chillies",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Soko, you go first,” says Nomvundla.",
+     "bbox": [
+      56.7,
+      56.8,
+      194.3,
+      99.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Chilli-eatiNg COnTesT Rules 1. Don’T say hOw hoT it feels 2. finish all youR Chillies",
+     "bbox": [
+      701.3,
+      99.3,
+      990.3,
+      245.6
+     ],
+     "size": 21.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Nomvundla, I’m scared,” says Soko. “I’m not!” says Nomvundla. How many chillies would you be able to eat?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Nomvundla, I’m scared,” says Soko. “I’m not!” says Nomvundla.",
+     "bbox": [
+      623.6,
+      56.8,
+      883.6,
+      99.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "How many chillies would you be able to eat?",
+     "bbox": [
+      623.6,
+      265.1,
+      752.0,
+      333.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "eee! eish! Maiwe! hOt! hhlllliiiii. eish!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "eee! eish!",
+     "bbox": [
+      41.7,
+      107.4,
+      140.7,
+      252.5
+     ],
+     "size": 40.1
+    },
+    {
+     "role": "SFX",
+     "text": "Maiwe!",
+     "bbox": [
+      421.2,
+      57.8,
+      565.7,
+      141.9
+     ],
+     "size": 54.6
+    },
+    {
+     "role": "SFX",
+     "text": "hOt!",
+     "bbox": [
+      405.4,
+      259.1,
+      530.9,
+      331.4
+     ],
+     "size": 62.7
+    },
+    {
+     "role": "SFX",
+     "text": "hhlllliiiii. eish!",
+     "bbox": [
+      934.0,
+      156.8,
+      1079.2,
+      339.3
+     ],
+     "size": 44.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "It’s Nomvundla’s turn. She has a plan.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s Nomvundla’s turn. She has a plan.",
+     "bbox": [
+      623.6,
+      56.8,
+      771.6,
+      98.8
+     ],
+     "size": 17.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Nomvundla starts to sing: “You say it’s HOT. I say it’s NOT!” The judges are surprised and ask her what she is saying. She carries on singing her song until her chillies are finished. Can you help Nomvundla sing her song?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nomvundla starts to sing: “You say it’s HOT. I say it’s NOT!” The judges are surprised and ask her what she is saying. She carries on singing her song until her chillies are finished.",
+     "bbox": [
+      56.7,
+      280.8,
+      245.8,
+      473.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Can you help Nomvundla sing her song?",
+     "bbox": [
+      618.0,
+      301.8,
+      734.0,
+      369.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Hooray! Nomvundla is the winner! “YOU are my best friend, Soko!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hooray! Nomvundla is the winner! “YOU are my best friend, Soko!”",
+     "bbox": [
+      623.6,
+      56.8,
+      872.2,
+      99.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "wheeeeeeee!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "wheeeeeeee!",
+     "bbox": [
+      279.1,
+      115.0,
+      546.0,
+      192.9
+     ],
+     "size": 49.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

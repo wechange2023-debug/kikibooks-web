@@ -1,0 +1,235 @@
+{
+ "slug": "my-special-hair",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "I have a very special head, a special head of hair. My special hair is quite unique. My special hair is rare.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I have a very special head, a special head of hair. My special hair is quite unique. My special hair is rare.",
+     "bbox": [
+      112.0,
+      225.2,
+      429.0,
+      351.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "It grows not just on any head, but mine, my own, just me! My special hair does special things – it’s magic hair, you see.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It grows not just on any head, but mine, my own, just me! My special hair does special things – it’s magic hair, you see.",
+     "bbox": [
+      82.6,
+      125.3,
+      453.4,
+      303.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "In summer when the sun is hot, with no shade anywhere, I do not sweat, I do not burn. I grow a hat of hair.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In summer when the sun is hot, with no shade anywhere, I do not sweat, I do not burn. I grow a hat of hair.",
+     "bbox": [
+      734.2,
+      165.5,
+      1055.9,
+      291.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "In winter when my nose turns red, and when the cold wind blows, my special hair grows very long. I’m wrapped from top to toes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In winter when my nose turns red, and when the cold wind blows, my special hair grows very long. I’m wrapped from top to toes.",
+     "bbox": [
+      705.3,
+      123.2,
+      1056.0,
+      327.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "In spring when all the birds come out, and each one builds a nest, my head is full of songs because my special hair is best.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In spring when all the birds come out, and each one builds a nest, my head is full of songs because my special hair is best.",
+     "bbox": [
+      56.0,
+      298.7,
+      442.7,
+      424.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "In autumn when the leaves fall down, no flowers to be found, my special head begins to bloom bright blossoms all around.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In autumn when the leaves fall down, no flowers to be found, my special head begins to bloom bright blossoms all around.",
+     "bbox": [
+      99.2,
+      135.7,
+      484.0,
+      261.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "My special hair is stiff and strong. It does not hang or drape. I never look the same because my hair can change its shape.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My special hair is stiff and strong. It does not hang or drape. I never look the same because my hair can change its shape.",
+     "bbox": [
+      117.6,
+      216.5,
+      460.2,
+      342.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "My special hair is full of curls. It’s twisted, tangled, tough. My special hair grows hairy hands – a place to store my stuff.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My special hair is full of curls. It’s twisted, tangled, tough. My special hair grows hairy hands – a place to store my stuff.",
+     "bbox": [
+      731.3,
+      218.6,
+      1094.9,
+      404.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "My special hair grows special wings – so smooth, so soft, so light. They float around my face, until my hair and I take flight.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My special hair grows special wings – so smooth, so soft, so light. They float around my face, until my hair and I take flight.",
+     "bbox": [
+      140.3,
+      188.1,
+      520.3,
+      366.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "My special hair is colourful, a rainbow all in one! It brightens up the darkest day. My hair is full of fun.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My special hair is colourful, a rainbow all in one! It brightens up the darkest day. My hair is full of fun.",
+     "bbox": [
+      661.2,
+      164.3,
+      984.1,
+      290.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "My special hair is full of love. With love my head is crowned. It grows and grows and grows until I spread it all around.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My special hair is full of love. With love my head is crowned. It grows and grows and grows until I spread it all around.",
+     "bbox": [
+      76.5,
+      148.5,
+      407.8,
+      327.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "So many types of special heads, so many types of hair. Be proud of what you have on top, your magic grows up there!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So many types of special heads, so many types of hair. Be proud of what you have on top, your magic grows up there!",
+     "bbox": [
+      154.5,
+      165.9,
+      507.4,
+      291.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

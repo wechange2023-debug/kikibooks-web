@@ -1,0 +1,323 @@
+{
+ "slug": "look-out-luthando",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“Listen!” says Luthando. “What do you hear?” asks Sonto. “Saturday.” “What does Saturday sound like?” “It’s quieter than Friday,” says Luthando. “Everyone’s still sleeping.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Listen!” says Luthando. “What do you hear?” asks Sonto. “Saturday.” “What does Saturday sound like?” “It’s quieter than Friday,” says Luthando. “Everyone’s still sleeping.”",
+     "bbox": [
+      75.2,
+      196.2,
+      491.7,
+      350.2
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“I must fix Gogo’s gate today,” Daddy says. “An ice cream for anyone who helps me carry the shopping home,” Mama says. “We’ll help you, Mama,” say the children.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I must fix Gogo’s gate today,” Daddy says.",
+     "bbox": [
+      60.9,
+      61.6,
+      506.0,
+      83.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“An ice cream for anyone who helps me carry the shopping home,” Mama says. “We’ll help you, Mama,” say the children.",
+     "bbox": [
+      614.5,
+      61.6,
+      1086.3,
+      136.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Look out, Luthando!” “Hawu!” “You’re so funny,” Sonto laughs.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look out, Luthando!” “Hawu!” “You’re so funny,” Sonto laughs.",
+     "bbox": [
+      120.7,
+      440.7,
+      446.2,
+      515.5
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“I hear a motorbike,” says Luthando. “There’s no motorbike,” says Sonto, looking all around.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I hear a motorbike,” says Luthando.",
+     "bbox": [
+      95.9,
+      61.6,
+      471.0,
+      83.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“There’s no motorbike,” says Sonto, looking all around.",
+     "bbox": [
+      636.5,
+      61.6,
+      1002.0,
+      110.0
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "A motorbike zooms past. “You’re very good at hearing, Luthando.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A motorbike zooms past. “You’re very good at hearing, Luthando.”",
+     "bbox": [
+      168.1,
+      85.7,
+      424.4,
+      160.5
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Look out, Luthando!” “Hawu!” says Luthando as he steps into a puddle. “Look how wet you are,” says Mama.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look out, Luthando!” “Hawu!” says Luthando as he steps into a puddle.",
+     "bbox": [
+      54.7,
+      61.6,
+      322.3,
+      136.4
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Look how wet you are,” says Mama.",
+     "bbox": [
+      690.7,
+      61.6,
+      940.6,
+      110.0
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Daddy’s home.” “How do you know, Luthando?” asks Sonto. “I can smell his cooking,” says Luthando sniffing the air. “You’re also good at smelling,” Mama says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Daddy’s home.” “How do you know, Luthando?” asks Sonto.",
+     "bbox": [
+      60.9,
+      61.6,
+      506.0,
+      110.0
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I can smell his cooking,” says Luthando sniffing the air. “You’re also good at smelling,” Mama says.",
+     "bbox": [
+      629.5,
+      394.3,
+      1071.3,
+      469.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Look out, Luthando!” “Ouch!” “Watch where you’re walking,” Mama says. “Luthando’s not so good at looking,” says Sonto.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look out, Luthando!” “Ouch!” “Watch where you’re walking,” Mama says. “Luthando’s not so good at looking,” says Sonto.",
+     "bbox": [
+      94.2,
+      41.7,
+      518.4,
+      169.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“What do you see, Luthando?” asks the friendly woman. Luthando squeezes his eyes together. He sees black squiggles on the wall. He looks through a pair of glasses. “I see letters,” he says. “Excellent!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What do you see, Luthando?” asks the friendly woman. Luthando squeezes his eyes together. He sees black squiggles on the wall.",
+     "bbox": [
+      90.8,
+      57.3,
+      476.1,
+      158.5
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "He looks through a pair of glasses. “I see letters,” he says. “Excellent!”",
+     "bbox": [
+      671.6,
+      61.6,
+      1029.2,
+      136.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Look, Gogo!” “You have glasses,” says Gogo, clapping her hands. “How wonderful. Tell me what you see.” “I see bugs and ants and spiders and bees. I see EVERYTHING now.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look, Gogo!” “You have glasses,” says Gogo, clapping her hands. “How wonderful. Tell me what you see.”",
+     "bbox": [
+      81.3,
+      47.4,
+      485.7,
+      148.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I see bugs and ants and spiders and bees. I see EVERYTHING now.”",
+     "bbox": [
+      630.0,
+      47.4,
+      1070.8,
+      95.8
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“Gogo, your face has cracks,” says Luthando, touching Gogo’s face. “Hayi…Luthando! Those aren’t cracks. They’re lines on my face from getting old and laughing at all the funny things you say.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Gogo, your face has cracks,” says Luthando, touching Gogo’s face. “Hayi…Luthando! Those aren’t cracks. They’re lines on my face from getting old and laughing at all the funny things you say.”",
+     "bbox": [
+      614.2,
+      186.3,
+      1086.6,
+      313.9
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Don’t...” “Look, a puddle!” says Luthando. Too late!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Don’t...”",
+     "bbox": [
+      240.7,
+      61.6,
+      326.2,
+      83.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Look, a puddle!” says Luthando.",
+     "bbox": [
+      682.5,
+      61.6,
+      1018.3,
+      83.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Too late!",
+     "bbox": [
+      652.4,
+      424.8,
+      765.6,
+      451.8
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

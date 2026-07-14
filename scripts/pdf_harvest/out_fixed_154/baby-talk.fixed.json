@@ -1,0 +1,356 @@
+{
+ "slug": "baby-talk",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Tayo can’t wait to meet his baby sister. Hurry up Mama! Let her out of your tummy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tayo can’t wait to meet his baby sister. Hurry up Mama! Let her out of your tummy.",
+     "bbox": [
+      65.2,
+      76.8,
+      505.0,
+      236.7
+     ],
+     "size": 32.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "But Tinu isn’t what Tayo expects. She looks funny. She smells horrible! And even worse…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But Tinu isn’t what Tayo expects. She looks funny.",
+     "bbox": [
+      119.2,
+      63.5,
+      447.8,
+      183.7
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "She smells horrible!",
+     "bbox": [
+      933.2,
+      141.1,
+      1081.7,
+      211.4
+     ],
+     "size": 31.5
+    },
+    {
+     "role": "BODY",
+     "text": "And even worse…",
+     "bbox": [
+      636.5,
+      395.0,
+      766.6,
+      465.2
+     ],
+     "size": 31.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Neh! Neh! She’s too noisy, Mama! Tinu won’t stop crying.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Neh! Neh!",
+     "bbox": [
+      657.8,
+      57.8,
+      1051.1,
+      139.9
+     ],
+     "size": 82.1
+    },
+    {
+     "role": "BODY",
+     "text": "She’s too noisy, Mama! Tinu won’t stop crying.",
+     "bbox": [
+      666.2,
+      314.1,
+      1037.8,
+      382.5
+     ],
+     "size": 31.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "She’s trying to tell you something, Tayo. What do you think she’s saying? I don’t know, says Tayo.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She’s trying to tell you something, Tayo. What do you think she’s saying?",
+     "bbox": [
+      640.9,
+      107.0,
+      1063.2,
+      219.2
+     ],
+     "size": 33.0
+    },
+    {
+     "role": "BODY",
+     "text": "I don’t know, says Tayo.",
+     "bbox": [
+      620.0,
+      290.8,
+      830.4,
+      359.1
+     ],
+     "size": 31.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Well, I think she’s just hungry. Mama feeds Tinu. But…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Well, I think she’s just hungry. Mama feeds Tinu. But…",
+     "bbox": [
+      125.0,
+      64.0,
+      441.9,
+      185.9
+     ],
+     "size": 31.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Eh! Tinu cries again. You’ve fed her, why is she still crying? Because need sometimes, a good… babies",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Eh! Tinu cries again.",
+     "bbox": [
+      98.3,
+      74.8,
+      465.4,
+      156.9
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "You’ve fed her, why is she still crying?",
+     "bbox": [
+      109.4,
+      192.3,
+      460.8,
+      264.9
+     ],
+     "size": 33.0
+    },
+    {
+     "role": "BODY",
+     "text": "Because need sometimes, a good… babies",
+     "bbox": [
+      629.2,
+      64.0,
+      1074.8,
+      136.6
+     ],
+     "size": 33.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "BUUURP!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "BUUURP!",
+     "bbox": [
+      90.8,
+      227.3,
+      460.4,
+      309.4
+     ],
+     "size": 82.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Friends and family want to meet her, but Tinu has never been around so many people. WAAAAHH! Mama takes Tinu to her room for some quiet time.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Friends and family want to meet her, but Tinu has never been around so many people. WAAAAHH! Mama takes Tinu to her room for some quiet time.",
+     "bbox": [
+      623.6,
+      70.4,
+      1075.4,
+      358.1
+     ],
+     "size": 36.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "As time goes by, Tayo learns what Tinu’s cries mean. And she doesn’t seem so bad after all. They even play together.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "As time goes by, Tayo learns what Tinu’s cries mean.",
+     "bbox": [
+      779.8,
+      54.8,
+      1083.5,
+      156.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "And she doesn’t seem so bad after all. They even play together.",
+     "bbox": [
+      780.0,
+      198.8,
+      1083.5,
+      300.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "No, Tinu. Planes are for flying, not chewing. But sometimes, Tinu cries and Tayo doesn’t know what she wants.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "No, Tinu. Planes are for flying, not chewing.",
+     "bbox": [
+      98.2,
+      65.4,
+      472.0,
+      138.0
+     ],
+     "size": 33.0
+    },
+    {
+     "role": "BODY",
+     "text": "But sometimes, Tinu cries and Tayo doesn’t know what she wants.",
+     "bbox": [
+      643.4,
+      60.5,
+      1057.4,
+      162.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Tinu cries through the day... and through the night. Why won’t she stop crying?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tinu cries through the day...",
+     "bbox": [
+      94.0,
+      275.1,
+      472.9,
+      305.1
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "and through the night.",
+     "bbox": [
+      697.2,
+      275.1,
+      1003.5,
+      305.1
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Why won’t she stop crying?",
+     "bbox": [
+      622.3,
+      422.6,
+      859.2,
+      495.2
+     ],
+     "size": 33.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Wait, what’s that? Look Mama, Tinu’s got her first tooth!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Wait, what’s that? Look Mama,",
+     "bbox": [
+      161.7,
+      54.8,
+      405.3,
+      125.1
+     ],
+     "size": 31.5
+    },
+    {
+     "role": "BODY",
+     "text": "Tinu’s got her first tooth!",
+     "bbox": [
+      649.5,
+      65.4,
+      1054.5,
+      98.4
+     ],
+     "size": 33.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

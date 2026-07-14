@@ -1,0 +1,269 @@
+{
+ "slug": "the-boy-who-only-ate-pancakes",
+ "book_body_size": 26.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Rekai loved to eat pancakes more than anything in the whole world.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Rekai loved to eat pancakes more than anything in the whole world.",
+     "bbox": [
+      156.7,
+      221.9,
+      410.2,
+      367.9
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "He loved pancakes so very much. He simply refused to eat any other food!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He loved pancakes so very much. He simply refused to eat any other food!",
+     "bbox": [
+      149.9,
+      221.5,
+      417.0,
+      367.5
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Rekai’s mom said, “Eat some good food . Have some veggies and fruit! And don’t forget water and juice.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Rekai’s mom said, “Eat some good food . Have some veggies and fruit! And don’t forget water and juice.”",
+     "bbox": [
+      635.8,
+      210.0,
+      898.5,
+      456.0
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "But Rekai shook his head and said , “NO! I don’t want to. Only pancakes will do!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But Rekai shook his head and said , “NO! I don’t want to. Only pancakes will do!”",
+     "bbox": [
+      682.9,
+      206.5,
+      1017.9,
+      391.8
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Then his mom had an idea . “I know how to get Rekai to eat healthy food!” she said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then his mom had an idea . “I know how to get Rekai to eat healthy food!” she said.",
+     "bbox": [
+      699.0,
+      216.5,
+      1001.8,
+      372.5
+     ],
+     "size": 29.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "She mixed up a batch of some extra special pancakes with a surprise ingredient.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She mixed up a batch of some extra special pancakes with a surprise ingredient.",
+     "bbox": [
+      137.3,
+      186.5,
+      428.7,
+      402.5
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Mom watched as he gobbled them up, and she was very pleased.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mom watched as he gobbled them up, and she was very pleased.",
+     "bbox": [
+      141.8,
+      209.0,
+      413.8,
+      363.0
+     ],
+     "size": 27.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Softly, she giggled and thought, this is great . He has no clue what he has just eaten!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Softly, she giggled and thought, this is great . He has no clue what he has just eaten!",
+     "bbox": [
+      131.6,
+      185.4,
+      391.9,
+      390.4
+     ],
+     "size": 27.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Then, one day, Rekai caught Mom adding butternut to his pancakes and he was very surprised. “Your secret ingredient is a vegetable?” he cried.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then, one day, Rekai caught Mom adding butternut to his pancakes and he was very surprised. “Your secret ingredient is a vegetable?” he cried.",
+     "bbox": [
+      631.5,
+      68.6,
+      916.3,
+      380.6
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "To this day he enjoys eating his pancakes, and every day Mom adds many yummy surprises.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "To this day he enjoys eating his pancakes, and every day Mom adds many yummy surprises.",
+     "bbox": [
+      754.7,
+      87.5,
+      1012.3,
+      273.5
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Sometimes she adds spinach. Sometimes she adds carrots. Sometimes she adds strawberries, or even apples.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes she adds spinach. Sometimes she adds carrots. Sometimes she adds strawberries, or even apples.",
+     "bbox": [
+      71.9,
+      201.5,
+      386.4,
+      387.5
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "It’s a fun surprise every single time.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s a fun surprise every single time.",
+     "bbox": [
+      56.7,
+      68.6,
+      272.0,
+      246.4
+     ],
+     "size": 43.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "Pancake surprise recipe 1 cup (250ml) self-raising flour 1 egg 1 cup (250ml) of milk 1 tbsp (15ml) sugar 2 tbsp (30ml) melted butter or margarine A pinch of salt 1 tsp (5ml) cooking oil Surprise: A handful of boiled and drained veggies or mashed fruit of your choice. Method: Separate the egg and whisk egg white separately until it has soft peaks, and set aside. Mix egg yolk with sugar, milk, salt and butter. Add all the wet ingredients to the self-raising flour and mix thoroughly. Mix in pre-boiled veg or mashed fruit, then finally, the egg whites. Add the desired amount of batter to a pan on medium heat and turn once bubbly and golden brown. Enjoy!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Pancake surprise recipe",
+     "bbox": [
+      56.7,
+      56.9,
+      381.9,
+      84.9
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "1 cup (250ml) self-raising flour 1 egg 1 cup (250ml) of milk 1 tbsp (15ml) sugar 2 tbsp (30ml) melted butter or margarine A pinch of salt 1 tsp (5ml) cooking oil Surprise: A handful of boiled and drained veggies or mashed fruit of your choice.",
+     "bbox": [
+      56.7,
+      110.6,
+      344.6,
+      290.6
+     ],
+     "size": 12.0
+    },
+    {
+     "role": "SFX",
+     "text": "Method: Separate the egg and whisk egg white separately until it has soft peaks, and set aside. Mix egg yolk with sugar, milk, salt and butter. Add all the wet ingredients to the self-raising flour and mix thoroughly. Mix in pre-boiled veg or mashed fruit, then finally, the egg whites. Add the desired amount of batter to a pan on medium heat and turn once bubbly and golden brown. Enjoy!",
+     "bbox": [
+      56.7,
+      308.8,
+      476.9,
+      506.0
+     ],
+     "size": 15.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

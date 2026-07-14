@@ -1,0 +1,290 @@
+{
+ "slug": "a-trip-to-the-tap",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Oluhle wakes up early. She is excited to get water. “Come Mama, we have to be first today,” she calls.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oluhle wakes up early. She is excited to get water.",
+     "bbox": [
+      128.1,
+      186.8,
+      438.8,
+      255.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Come Mama, we have to be first today,” she calls.",
+     "bbox": [
+      90.0,
+      321.8,
+      476.9,
+      390.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "On the way they meet Nathi and Unathi. They are going to the tap with their mother.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On the way they meet Nathi and Unathi. They are going to the tap with their mother.",
+     "bbox": [
+      134.6,
+      209.3,
+      432.3,
+      368.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Oluhle and her friends play while the grown-ups get water. “Oluhle, your bucket is full,” says Mama.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oluhle and her friends play while the grown-ups get water.",
+     "bbox": [
+      93.1,
+      186.8,
+      473.9,
+      255.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Oluhle, your bucket is full,” says Mama.",
+     "bbox": [
+      122.5,
+      321.8,
+      444.5,
+      390.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "At home, Oluhle takes a bath. Mama goes to work and Oluhle stays with Makhulu.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "At home, Oluhle takes a bath. Mama goes to work and Oluhle stays with Makhulu.",
+     "bbox": [
+      103.1,
+      231.8,
+      463.9,
+      345.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "In the afternoon Makhulu starts to make supper. She needs more water. She calls Oluhle so they can go to the tap.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In the afternoon Makhulu starts to make supper. She needs more water. She calls Oluhle so they can go to the tap.",
+     "bbox": [
+      136.2,
+      186.8,
+      430.7,
+      390.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Makhulu, I can’t find my bucket. I searched everywhere,” says Oluhle. Makhulu helps her look, but the bucket is nowhere to be found.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Makhulu, I can’t find my bucket. I searched everywhere,” says Oluhle.",
+     "bbox": [
+      93.9,
+      164.3,
+      473.1,
+      278.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Makhulu helps her look, but the bucket is nowhere to be found.",
+     "bbox": [
+      101.5,
+      344.3,
+      465.4,
+      413.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Makhulu thinks of a plan. She gets a 2-litre bottle from the cupboard and fetches paints and paint brushes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Makhulu thinks of a plan. She gets a 2-litre bottle from the cupboard and fetches paints and paint brushes.",
+     "bbox": [
+      100.0,
+      203.6,
+      467.0,
+      374.8
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Makhulu makes a bucket from the water bottle. She paints it pink. “Here’s a recycled bucket, Oluhle!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Makhulu makes a bucket from the water bottle. She paints it pink. “Here’s a recycled bucket, Oluhle!”",
+     "bbox": [
+      83.1,
+      209.3,
+      483.8,
+      368.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Thank you, Makhulu,” says Oluhle. She is excited to go to the tap with her new recycled bucket.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Thank you, Makhulu,” says Oluhle. She is excited to go to the tap with her new recycled bucket.",
+     "bbox": [
+      80.8,
+      231.8,
+      486.1,
+      345.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "The next day Unathi and Nathi bring two bottles to Makhulu. “Makhulu, could you please make recycled buckets for us?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The next day Unathi and Nathi bring two bottles to Makhulu.",
+     "bbox": [
+      106.1,
+      186.8,
+      460.9,
+      255.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Makhulu, could you please make recycled buckets for us?”",
+     "bbox": [
+      89.5,
+      321.8,
+      477.5,
+      390.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Makhulu paints their buckets yellow and blue, their favourite colours. Nathi and Unathi are happy. Oluhle is happy too.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Makhulu paints their buckets yellow and blue, their favourite colours. Nathi and Unathi are happy. Oluhle is happy too.",
+     "bbox": [
+      116.5,
+      186.8,
+      450.4,
+      390.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "The friends can’t wait to show off with their new buckets. “Can we go to the tap now?” they ask.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The friends can’t wait to show off with their new buckets.",
+     "bbox": [
+      87.3,
+      186.8,
+      479.6,
+      255.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Can we go to the tap now?” they ask.",
+     "bbox": [
+      117.5,
+      321.8,
+      449.5,
+      390.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

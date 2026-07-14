@@ -1,0 +1,334 @@
+{
+ "slug": "wiggle-jiggle",
+ "book_body_size": 60.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Wiggle jiggle wriggle! I am a wiggly worm.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Wiggle jiggle wriggle!",
+     "bbox": [
+      66.6,
+      165.3,
+      497.3,
+      416.5
+     ],
+     "size": 72.9
+    },
+    {
+     "role": "BODY",
+     "text": "I am a wiggly worm.",
+     "bbox": [
+      831.8,
+      389.4,
+      1078.7,
+      415.4
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Flowers my favouritefood. and leavesare Yummy in my tummy!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Flowers my favouritefood. and leavesare",
+     "bbox": [
+      56.1,
+      58.9,
+      336.3,
+      207.1
+     ],
+     "size": 30.1
+    },
+    {
+     "role": "BODY",
+     "text": "Yummy in",
+     "bbox": [
+      313.4,
+      165.5,
+      542.2,
+      346.1
+     ],
+     "size": 55.3
+    },
+    {
+     "role": "BODY",
+     "text": "my tummy!",
+     "bbox": [
+      605.6,
+      347.9,
+      866.0,
+      446.5
+     ],
+     "size": 51.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Wiggle jiggle wriggle! I am a wiggly worm.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Wiggle jiggle wriggle!",
+     "bbox": [
+      67.3,
+      138.5,
+      497.3,
+      374.6
+     ],
+     "size": 72.9
+    },
+    {
+     "role": "BODY",
+     "text": "I am a wiggly worm.",
+     "bbox": [
+      685.9,
+      356.8,
+      765.4,
+      445.2
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "I love the rain. Pitter- patter on the leaves.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I love the rain. Pitter- patter on the leaves.",
+     "bbox": [
+      61.8,
+      254.5,
+      808.4,
+      392.6
+     ],
+     "size": 30.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Watch me wiggle and dance. Wiggleggle ji wriggle!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Watch me wiggle and dance. Wiggleggle ji wriggle!",
+     "bbox": [
+      708.2,
+      121.5,
+      1083.8,
+      399.6
+     ],
+     "size": 74.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "POO!!! My magic makes poo plants grow BIG.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "POO!!!",
+     "bbox": [
+      48.9,
+      53.2,
+      335.3,
+      165.4
+     ],
+     "size": 103.2
+    },
+    {
+     "role": "BODY",
+     "text": "My magic makes poo plants grow BIG.",
+     "bbox": [
+      622.2,
+      107.1,
+      913.4,
+      253.1
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "I love to see my plants grow. Yellow,and red, green. blue",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I love to see my plants grow. Yellow,and red, green. blue",
+     "bbox": [
+      629.5,
+      352.5,
+      1065.2,
+      524.5
+     ],
+     "size": 40.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Wigglejiggle wriggle! I am a wiggly worm.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Wigglejiggle wriggle! I am a wiggly worm.",
+     "bbox": [
+      228.5,
+      140.6,
+      1075.2,
+      361.5
+     ],
+     "size": 31.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Wiggle in when the garden. you see me Wiggleggle ji wriggle!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Wiggle in when the garden. you see me",
+     "bbox": [
+      139.6,
+      119.3,
+      444.3,
+      176.5
+     ],
+     "size": 26.0
+    },
+    {
+     "role": "SFX",
+     "text": "Wiggleggle ji wriggle!",
+     "bbox": [
+      659.3,
+      56.2,
+      1034.8,
+      295.1
+     ],
+     "size": 83.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Where am I now? I’m here in my cocoon!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Where am I now?",
+     "bbox": [
+      75.8,
+      82.8,
+      472.9,
+      214.8
+     ],
+     "size": 60.0
+    },
+    {
+     "role": "BODY",
+     "text": "I’m here in my cocoon!",
+     "bbox": [
+      623.6,
+      363.7,
+      969.7,
+      523.1
+     ],
+     "size": 64.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Oh wait! I’m not a wiggly worm!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh wait!",
+     "bbox": [
+      168.4,
+      259.8,
+      398.6,
+      319.8
+     ],
+     "size": 60.0
+    },
+    {
+     "role": "BODY",
+     "text": "I’m not a wiggly worm!",
+     "bbox": [
+      650.8,
+      301.3,
+      899.0,
+      516.8
+     ],
+     "size": 59.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Flitter flutter flitter! I am a butterfly!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Flitter flutter flitter!",
+     "bbox": [
+      79.0,
+      135.5,
+      463.6,
+      347.1
+     ],
+     "size": 72.4
+    },
+    {
+     "role": "SFX",
+     "text": "I am a butterfly!",
+     "bbox": [
+      127.1,
+      438.8,
+      241.1,
+      496.0
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,334 @@
+{
+ "slug": "oyisa-and-the-giant-tree",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Oyisa loves to eat all kinds of fruit. She eats pears, grapes, oranges, and watermelon.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oyisa loves to eat all kinds of fruit. She eats pears, grapes, oranges, and watermelon.",
+     "bbox": [
+      111.6,
+      244.7,
+      455.4,
+      332.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "She can eat a whole lot of fruit in no time at all.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She can eat a whole lot of fruit in no time at all.",
+     "bbox": [
+      705.1,
+      258.3,
+      995.7,
+      321.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "But she doesn’t like the seeds. They get stuck in her teeth and taste bitter. Yuck!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But she doesn’t like the seeds.",
+     "bbox": [
+      118.4,
+      228.8,
+      448.5,
+      252.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "They get stuck in her teeth and taste bitter. Yuck!",
+     "bbox": [
+      135.7,
+      292.8,
+      431.2,
+      350.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Today, she’s eating a delicious, juicy pear. She spits the seeds out on the ground.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Today, she’s eating a delicious, juicy pear. She spits the seeds out on the ground.",
+     "bbox": [
+      679.4,
+      244.8,
+      1021.5,
+      332.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "A plant begins to grow between her feet. That’s strange, thinks Oyisa. What’s going on here?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A plant begins to grow between her feet.",
+     "bbox": [
+      157.9,
+      212.8,
+      409.0,
+      268.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "That’s strange, thinks Oyisa. What’s going on here?",
+     "bbox": [
+      128.0,
+      308.8,
+      437.9,
+      364.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Suddenly, a tree shoots up high – with Oyisa perched on top! Oyisa needs to find a way down.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Suddenly, a tree shoots up high – with Oyisa perched on top!",
+     "bbox": [
+      91.1,
+      145.3,
+      475.8,
+      208.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Oyisa needs to find a way down.",
+     "bbox": [
+      740.2,
+      388.9,
+      905.7,
+      476.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "The look swing. branches like a umnand’ujingiwam”! she sings. “Jingijingi",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The look swing. branches like a",
+     "bbox": [
+      353.8,
+      133.6,
+      505.1,
+      221.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "umnand’ujingiwam”! she sings.",
+     "bbox": [
+      737.0,
+      120.0,
+      1063.2,
+      316.5
+     ],
+     "size": 40.4
+    },
+    {
+     "role": "BODY",
+     "text": "“Jingijingi",
+     "bbox": [
+      630.0,
+      257.0,
+      735.9,
+      334.2
+     ],
+     "size": 27.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "She swiiiiinggs to the next branch and meets a bird.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She swiiiiinggs to the next branch and meets a bird.",
+     "bbox": [
+      645.1,
+      258.3,
+      1055.7,
+      321.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "The bird wants to build a cosy nest in her hair. “No way, Mr Bird!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The bird wants to build a cosy nest in her hair.",
+     "bbox": [
+      156.8,
+      260.8,
+      410.1,
+      316.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No way, Mr Bird!”",
+     "bbox": [
+      896.1,
+      160.0,
+      1094.0,
+      224.5
+     ],
+     "size": 27.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "On her way down, she spies a giant pear and climbs onto it. It sways in different directions, and this is the best feeling in the world!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On her way down, she spies a giant pear and climbs onto it.",
+     "bbox": [
+      161.7,
+      180.8,
+      405.2,
+      268.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "It sways in different directions, and this is the best feeling in the world!",
+     "bbox": [
+      147.7,
+      308.8,
+      419.2,
+      396.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“Oyisaaaa! your bath,” Mama It’s time calls. for “I’m coming!” shouts Oyisa from the tree.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“Oyisaaaa! your bath,” Mama It’s time calls. for “I’m coming!”",
+     "bbox": [
+      634.5,
+      52.2,
+      1020.5,
+      328.2
+     ],
+     "size": 41.6
+    },
+    {
+     "role": "BODY",
+     "text": "shouts Oyisa from the tree.",
+     "bbox": [
+      774.6,
+      393.6,
+      926.2,
+      449.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "What an adventure! Oyisa decides to start collecting seeds. Who knows what magic lies inside them?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "What an adventure!",
+     "bbox": [
+      132.7,
+      210.3,
+      434.2,
+      243.3
+     ],
+     "size": 33.0
+    },
+    {
+     "role": "BODY",
+     "text": "Oyisa decides to start collecting seeds. Who knows what magic lies inside them?",
+     "bbox": [
+      124.8,
+      281.3,
+      442.2,
+      369.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,367 @@
+{
+ "slug": "its-my-birthday",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“Kurukukuuu! Wake up, Zingisile! Today is your birthday!” it’s It’s also my birthday, a school and day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Kurukukuuu! Wake up, Zingisile! Today is your birthday!”",
+     "bbox": [
+      101.0,
+      82.2,
+      465.9,
+      205.8
+     ],
+     "size": 37.5
+    },
+    {
+     "role": "BODY",
+     "text": "it’s It’s also my birthday, a school and day.",
+     "bbox": [
+      717.1,
+      79.7,
+      991.1,
+      145.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Mama, Mama! Guess what day it is?” I shout. I always ask my mama every morning on my birthday.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Mama, Mama! Guess what day it is?” I shout.",
+     "bbox": [
+      84.0,
+      197.7,
+      482.8,
+      285.4
+     ],
+     "size": 45.0
+    },
+    {
+     "role": "BODY",
+     "text": "I always ask my mama every morning on my birthday.",
+     "bbox": [
+      97.9,
+      327.4,
+      469.8,
+      393.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“This is your birthday porridge. Now, quickly, eat up and get ready. You can’t be late on your birthday!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“This is your birthday porridge. Now, quickly, eat up and get ready.",
+     "bbox": [
+      82.0,
+      60.6,
+      486.3,
+      162.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "You can’t be late on your birthday!”",
+     "bbox": [
+      721.1,
+      59.1,
+      979.7,
+      125.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Mmmhhh. I love mealie it’s runny... porridge when Gulp! Gulp! Gulp!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mmmhhh. I love mealie it’s runny... porridge when",
+     "bbox": [
+      101.7,
+      181.2,
+      465.2,
+      290.2
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "SFX",
+     "text": "Gulp!",
+     "bbox": [
+      657.0,
+      239.6,
+      759.5,
+      316.9
+     ],
+     "size": 48.7
+    },
+    {
+     "role": "SFX",
+     "text": "Gulp! Gulp!",
+     "bbox": [
+      938.0,
+      159.1,
+      1063.4,
+      310.6
+     ],
+     "size": 41.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "At preschool everyone knows it’s my birthday. They sing happy birthday and give me handmade love notes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "At preschool everyone knows it’s my birthday.",
+     "bbox": [
+      84.9,
+      144.2,
+      476.3,
+      210.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "They sing happy birthday and give me handmade love notes.",
+     "bbox": [
+      80.8,
+      257.0,
+      480.5,
+      366.2
+     ],
+     "size": 31.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "I can’t wait for my special meal from Mama. I can’t wait to see my favourite cousin, Sisipho. She is also my best friend. Her birthday is coming in September. Which chicken will Mama cook for me? I hope it’s the fat one.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I can’t wait for my special meal from Mama.",
+     "bbox": [
+      103.4,
+      79.0,
+      436.5,
+      145.0
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "I can’t wait to see my favourite cousin, Sisipho. She is also my best friend. Her birthday is coming in September.",
+     "bbox": [
+      679.6,
+      79.0,
+      1021.1,
+      253.0
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Which chicken will Mama cook for me? I hope it’s the fat one.",
+     "bbox": [
+      645.8,
+      295.0,
+      1055.0,
+      361.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Zingisile, what was your favourite part of the story?” asks Mrs Mkombe. “Pumpkin and mealie pap!” I shout, still in my daydream. All my friends laugh.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Zingisile, what was your favourite part of the story?” asks Mrs Mkombe.",
+     "bbox": [
+      145.3,
+      86.8,
+      434.4,
+      224.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Pumpkin and mealie pap!” I shout, still in my daydream. All my friends laugh.",
+     "bbox": [
+      684.6,
+      86.8,
+      1038.8,
+      224.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "When I get home, Luhambo is excited. He has only had one birthday, on the 28th of April. Now I’ve had five birthdays already!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When I get home, Luhambo is excited. He has only had one birthday, on the 28th of April.",
+     "bbox": [
+      86.6,
+      133.6,
+      480.2,
+      235.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Now I’ve had five birthdays already!",
+     "bbox": [
+      732.6,
+      417.0,
+      968.1,
+      483.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Look at all the food! Mama has made my favourites – spinach and sweetcorn and pumpkin and mealie pap and gravy and her special bread. Everything is from our garden.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Look at all the food! Mama has made my favourites – spinach and sweetcorn and pumpkin and mealie pap and gravy and her special bread. Everything is from our garden.",
+     "bbox": [
+      664.7,
+      76.9,
+      1050.9,
+      322.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Happy birthday, Zingisile! Mini emnandi kuwe, Zingisile! How old are you now?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Happy birthday, Zingisile! Mini emnandi kuwe, Zingisile! How old are you now?”",
+     "bbox": [
+      654.2,
+      211.5,
+      1046.4,
+      313.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“I’m five years old now!” I sing back. My papa picks me up and spins me around. “My Zing-star! You’re so old you’re almost a teacher!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I’m five years old now!” I sing back. My papa picks me up and spins me around.",
+     "bbox": [
+      124.5,
+      139.2,
+      442.5,
+      277.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“My Zing-star! You’re so old you’re almost a teacher!”",
+     "bbox": [
+      154.4,
+      349.0,
+      412.5,
+      451.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Mama lets me pick the biggest piece of chicken. She dishes for me first. I dip my delicious bread in the gravy and I smile. I can’t wait for my next birthday!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama lets me pick the biggest piece of chicken. She dishes for me first.",
+     "bbox": [
+      122.0,
+      142.8,
+      444.9,
+      244.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "I dip my delicious bread in the gravy and I smile. I can’t wait for my next birthday!",
+     "bbox": [
+      112.1,
+      286.8,
+      454.8,
+      424.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

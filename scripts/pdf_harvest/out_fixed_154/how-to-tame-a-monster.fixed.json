@@ -1,0 +1,336 @@
+{
+ "slug": "how-to-tame-a-monster",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Lwando has a little sister named Oyiso. Sometimes she is very cute. But sometimes she turns into a monster.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lwando has a little sister named Oyiso. Sometimes she is very cute.",
+     "bbox": [
+      56.7,
+      61.8,
+      486.5,
+      114.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "But sometimes she turns into a monster.",
+     "bbox": [
+      690.5,
+      62.0,
+      1010.3,
+      139.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "That’s okay, because Lwando is a monster tamer.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "That’s okay, because Lwando is a",
+     "bbox": [
+      98.4,
+      61.8,
+      468.5,
+      85.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "monster tamer.",
+     "bbox": [
+      672.6,
+      42.7,
+      1028.2,
+      90.7
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "On Monday, the monster looked angry. But Lwando knew she was just hungry.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Monday, the monster looked angry.",
+     "bbox": [
+      116.2,
+      61.8,
+      291.6,
+      167.6
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Lwando knew she was just hungry.",
+     "bbox": [
+      739.4,
+      61.8,
+      1077.2,
+      138.8
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "On Tuesday, the monster looked very angry. But Lwando knew she was just tired.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Tuesday, the monster looked very angry.",
+     "bbox": [
+      56.7,
+      61.8,
+      412.9,
+      138.8
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Lwando knew she was just tired.",
+     "bbox": [
+      623.6,
+      61.8,
+      961.4,
+      138.8
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "On Wednesday, the monster looked even angrier. But Lwando knew she was just sad.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Wednesday, the monster looked even angrier.",
+     "bbox": [
+      56.7,
+      61.8,
+      319.0,
+      164.3
+     ],
+     "size": 33.0
+    },
+    {
+     "role": "DECOR",
+     "text": "SCHOOL",
+     "bbox": [
+      600.2,
+      284.0,
+      672.6,
+      302.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Lwando knew she was just sad.",
+     "bbox": [
+      867.4,
+      61.8,
+      1063.9,
+      166.3
+     ],
+     "size": 33.0
+    }
+   ],
+   "decor_excluded": [
+    "SCHOOL"
+   ]
+  },
+  {
+   "page_no": 6,
+   "text": "On Thursday, the monster looked furious. But Lwando knew she just needed some quiet.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Thursday, the monster looked furious.",
+     "bbox": [
+      317.6,
+      351.9,
+      496.0,
+      436.4
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Lwando knew she just needed some quiet.",
+     "bbox": [
+      751.5,
+      100.1,
+      876.6,
+      206.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "But on Friday, nothing worked.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But on Friday, nothing worked.",
+     "bbox": [
+      97.1,
+      103.7,
+      469.8,
+      180.8
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Then there were two monsters.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then there were two monsters.",
+     "bbox": [
+      89.7,
+      96.7,
+      477.2,
+      144.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "The monsters got bigger. RAW WWW WR! GRRRAWWWR!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The monsters got bigger.",
+     "bbox": [
+      105.0,
+      66.8,
+      462.0,
+      114.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "RAW WWW WR! GRRRAWWWR!",
+     "bbox": [
+      623.7,
+      31.5,
+      788.1,
+      83.6
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "RAW WWWW R! GRRRAWWWR! A nd bi gg er.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "RAW WWWW R! GRRRAWWWR!",
+     "bbox": [
+      276.5,
+      70.5,
+      440.9,
+      122.6
+     ],
+     "size": 19.0
+    },
+    {
+     "role": "BODY",
+     "text": "A nd bi gg er.",
+     "bbox": [
+      686.4,
+      17.3,
+      1014.4,
+      99.3
+     ],
+     "size": 60.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Luckily, Dad is the best monster tamer of all. He knows you can’t tame monsters by being bigger or angrier.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Luckily, Dad is the best monster tamer of all. He knows you can’t tame monsters by being bigger or angrier.",
+     "bbox": [
+      78.3,
+      60.9,
+      488.6,
+      158.8
+     ],
+     "size": 34.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "You can only tame monsters by helping them feel safe.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "You can only tame monsters by helping them feel safe.",
+     "bbox": [
+      867.5,
+      345.0,
+      1038.8,
+      466.9
+     ],
+     "size": 34.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

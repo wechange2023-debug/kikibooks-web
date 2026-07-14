@@ -1,0 +1,367 @@
+{
+ "slug": "senzo-and-the-sun",
+ "book_body_size": 26.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "The morning sun creeps over the horizon and peeps through the leaves, waking Senzo. Gogo’s rooster shakes his wings, stretches his neck and crows. Koek-a-loek-a-loo!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The morning sun creeps over the horizon and peeps through the leaves, waking Senzo.",
+     "bbox": [
+      623.6,
+      56.5,
+      988.6,
+      102.7
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "Gogo’s rooster shakes his wings, stretches his neck and crows. Koek-a-loek-a-loo!",
+     "bbox": [
+      687.0,
+      132.1,
+      1077.3,
+      279.2
+     ],
+     "size": 33.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Senzo can crow too. Koek-a-loek-a-loo! Can you?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Senzo can crow too. Koek-a-loek-a-loo! Can you?",
+     "bbox": [
+      56.7,
+      67.7,
+      510.2,
+      295.0
+     ],
+     "size": 34.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "The sun is bright and warm. Senzo is ready for school. He takes Gogo’s hand. The road is busy. Taxis zip past and toot their horns. Beep - beep! Beep - beep!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The sun is bright and warm. Senzo is ready for school. He takes Gogo’s hand.",
+     "bbox": [
+      235.6,
+      106.1,
+      467.8,
+      177.5
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "The road is busy. Taxis zip past and toot their horns.",
+     "bbox": [
+      56.7,
+      206.9,
+      342.9,
+      253.1
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "Beep - beep! Beep - beep!",
+     "bbox": [
+      224.7,
+      300.8,
+      467.7,
+      331.8
+     ],
+     "size": 24.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Senzo can toot too. Beep-beep! Beep-beep! Can you?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Senzo can toot too.",
+     "bbox": [
+      630.7,
+      115.9,
+      837.2,
+      141.9
+     ],
+     "size": 26.0
+    },
+    {
+     "role": "SFX",
+     "text": "Beep-beep! Beep-beep! Can you?",
+     "bbox": [
+      671.0,
+      191.6,
+      1077.2,
+      328.9
+     ],
+     "size": 39.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "The sun is high in the sky. School is over and Senzo’s friends play on the grass. They stretch out their arms and run down the hill. Weeeeeee!Weeeee!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The sun is high in the sky. School is over and Senzo’s friends play on the grass.",
+     "bbox": [
+      56.7,
+      56.5,
+      478.0,
+      102.7
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "They stretch out their arms and run down the hill.",
+     "bbox": [
+      98.1,
+      132.1,
+      510.4,
+      153.1
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "SFX",
+     "text": "Weeeeeee!Weeeee!",
+     "bbox": [
+      117.8,
+      202.2,
+      445.9,
+      280.1
+     ],
+     "size": 48.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Senzo can run too. Weeeeeee!Weeeee! Can you?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Senzo can run too. Weeeeeee!Weeeee! Can you?",
+     "bbox": [
+      619.1,
+      73.3,
+      1077.2,
+      327.5
+     ],
+     "size": 35.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "The sun is low on the horizon, the sky is full of colour. The long day is nearly over and supper is finished. Gogo and Mama wash the dishes. Splish-splash! Splish- splash!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The sun is low on the horizon, the sky is full of colour. The long day is nearly over and supper is finished.",
+     "bbox": [
+      56.7,
+      111.0,
+      503.7,
+      157.2
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "Gogo and Mama wash the dishes. Splish-splash! Splish- splash!",
+     "bbox": [
+      623.6,
+      67.8,
+      1078.1,
+      142.6
+     ],
+     "size": 26.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Senzo can wash dishes too. Splish- splash! Splish- splash! Can you?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Senzo can wash dishes too.",
+     "bbox": [
+      56.7,
+      86.3,
+      295.6,
+      107.3
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "SFX",
+     "text": "Splish- splash! Splish- splash! Can you?",
+     "bbox": [
+      81.0,
+      167.2,
+      510.2,
+      330.3
+     ],
+     "size": 42.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "The casting Senzo sun is long washed is dipping shadows. and under full and the tired. horizon, “It’s time to sleep,” says Mama. Shhhhhhhhh, shhhhhhhhhh. She holds Senzo close and rocks. She hushes him.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The casting Senzo sun is long washed is dipping shadows. and under full and the tired. horizon, “It’s time to sleep,” says Mama.",
+     "bbox": [
+      56.7,
+      56.5,
+      367.7,
+      153.1
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "SFX",
+     "text": "Shhhhhhhhh, shhhhhhhhhh.",
+     "bbox": [
+      633.0,
+      64.6,
+      1067.5,
+      121.8
+     ],
+     "size": 36.9
+    },
+    {
+     "role": "BODY",
+     "text": "She holds Senzo close and rocks. She hushes him.",
+     "bbox": [
+      245.0,
+      352.7,
+      510.3,
+      398.9
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Senzo can hush too. Shhhhhhhhh,hhhh. shhhhh Can you?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Senzo can hush too.",
+     "bbox": [
+      56.7,
+      84.7,
+      274.2,
+      110.7
+     ],
+     "size": 26.0
+    },
+    {
+     "role": "SFX",
+     "text": "Shhhhhhhhh,hhhh. shhhhh Can you?",
+     "bbox": [
+      70.2,
+      159.9,
+      510.2,
+      350.6
+     ],
+     "size": 40.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "The sun has done her work for the day and she’s going to sleep. She pulls a blanket of darkness over herself to keep warm. The sun dreams.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The sun has done her work for the day and she’s going to sleep.",
+     "bbox": [
+      56.7,
+      56.5,
+      374.0,
+      102.7
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "She pulls a blanket of darkness over herself to keep warm. The sun dreams.",
+     "bbox": [
+      56.7,
+      132.1,
+      510.2,
+      229.9
+     ],
+     "size": 25.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Senzo can dream too. Can you?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Senzo can dream too. Can you?",
+     "bbox": [
+      83.6,
+      108.1,
+      490.8,
+      217.5
+     ],
+     "size": 41.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

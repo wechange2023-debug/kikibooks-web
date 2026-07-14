@@ -1,0 +1,499 @@
+{
+ "slug": "moms-red-coat",
+ "book_body_size": 23.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "I love Mom’s coat! It’s red and long and warm. And it smells like Mom!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I love Mom’s coat! It’s red and long and warm. And it smells like Mom!",
+     "bbox": [
+      151.2,
+      239.8,
+      415.7,
+      326.5
+     ],
+     "size": 23.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "I love doing things with Mom! We picnic outside. She hugs me when I come home from school. We work in the garden. At night, she holds me tight until I fall asleep.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "I love doing things with Mom!",
+     "bbox": [
+      56.7,
+      66.9,
+      476.4,
+      96.9
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "We picnic outside.",
+     "bbox": [
+      297.6,
+      176.6,
+      471.4,
+      197.6
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "She hugs me when I come home from school.",
+     "bbox": [
+      837.6,
+      137.5,
+      1019.6,
+      208.9
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "We work in the garden.",
+     "bbox": [
+      56.7,
+      404.6,
+      280.7,
+      425.6
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "At night, she holds me tight until I fall asleep.",
+     "bbox": [
+      623.6,
+      384.4,
+      836.5,
+      430.6
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "‘Good news!’ says Mom. ‘I found a job! I will be away all week, but I’ll come home on weekends!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Good news!’ says Mom. ‘I found a job! I will be away all week, but I’ll come home on weekends!’",
+     "bbox": [
+      232.2,
+      222.2,
+      499.1,
+      369.6
+     ],
+     "size": 21.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "‘Who will hold me at night, Mom?’ ‘Who will hug me, picnic with me, garden with me?’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Who will hold me at night, Mom?’ ‘Who will hug me, picnic with me, garden with me?’",
+     "bbox": [
+      124.9,
+      214.4,
+      447.8,
+      353.9
+     ],
+     "size": 28.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "‘I can see that you are sad. I will leave my red coat here with you.’ ‘When you see it, remember that I love you and I’m coming back.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘I can see that you are sad. I will leave my red coat here with you.’",
+     "bbox": [
+      646.3,
+      161.9,
+      1054.5,
+      263.9
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘When you see it, remember that I love you and I’m coming back.’",
+     "bbox": [
+      692.2,
+      297.3,
+      1008.6,
+      383.5
+     ],
+     "size": 23.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "I drag the red coat outside – it’s my picnic blanket! It feels like Mom is with me. Oops! Juice spill!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I drag the red coat outside – it’s my picnic blanket! It feels like Mom is with me.",
+     "bbox": [
+      85.6,
+      221.5,
+      481.3,
+      316.2
+     ],
+     "size": 25.5
+    },
+    {
+     "role": "BODY",
+     "text": "Oops! Juice spill!",
+     "bbox": [
+      997.9,
+      98.2,
+      1101.2,
+      144.4
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "I am sad that Mom’s not waiting at the door when I come home. I put on her coat. It’s warm and it smells like her. It feels like a hug! Oops! Paint!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I am sad that Mom’s not waiting at the door when I come home.",
+     "bbox": [
+      71.0,
+      181.7,
+      496.0,
+      227.9
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "I put on her coat.",
+     "bbox": [
+      201.5,
+      257.3,
+      365.4,
+      278.3
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "SFX",
+     "text": "It’s warm and it smells like her. It feels like a hug!",
+     "bbox": [
+      61.9,
+      309.2,
+      505.1,
+      375.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Oops! Paint!",
+     "bbox": [
+      1007.0,
+      145.0,
+      1065.1,
+      191.2
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "I help Gogo in the garden. The long coat on the branch scares away the chickens! It feels like Mom is gardening with us. Oops! Mud!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I help Gogo in the garden.",
+     "bbox": [
+      158.8,
+      62.8,
+      408.1,
+      83.8
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "The long coat on the branch scares away the chickens!",
+     "bbox": [
+      623.6,
+      61.3,
+      967.2,
+      107.5
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "It feels like Mom is gardening with us.",
+     "bbox": [
+      623.6,
+      153.7,
+      859.8,
+      255.7
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Oops! Mud!",
+     "bbox": [
+      783.8,
+      331.7,
+      841.9,
+      377.9
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "When it’s dark, I miss Mom most. Gogo covers me with her warm coat. It feels like Mom is holding me as I fall asleep. Oops! Cookie crumbs!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When it’s dark, I miss Mom most.",
+     "bbox": [
+      110.8,
+      125.4,
+      456.2,
+      148.4
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "Gogo covers me with her warm coat.",
+     "bbox": [
+      88.2,
+      180.6,
+      478.7,
+      203.6
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "It feels like Mom is holding me as I fall asleep.",
+     "bbox": [
+      58.6,
+      239.1,
+      508.4,
+      307.3
+     ],
+     "size": 31.0
+    },
+    {
+     "role": "BODY",
+     "text": "Oops! Cookie crumbs!",
+     "bbox": [
+      665.9,
+      332.1,
+      746.5,
+      403.5
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Mom’s red coat is warm and smells like… paint, juice, mud and cookie crumbs! Oops! We need to wash it!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mom’s red coat is warm and smells like…",
+     "bbox": [
+      56.7,
+      160.4,
+      287.6,
+      262.4
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "paint, juice,",
+     "bbox": [
+      129.3,
+      305.7,
+      219.0,
+      351.6
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "mud",
+     "bbox": [
+      213.8,
+      356.4,
+      257.6,
+      377.4
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "and cookie crumbs!",
+     "bbox": [
+      266.5,
+      377.4,
+      455.9,
+      398.4
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "Oops! We need to wash it!",
+     "bbox": [
+      905.6,
+      71.3,
+      1021.3,
+      142.7
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "The wind blows the red coat off the washing line... up in t o the air! It flies overthefence! It flies overthetaxi! Oops! Who did the coat fall on?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The wind blows the red coat off the washing line...",
+     "bbox": [
+      72.9,
+      63.6,
+      494.0,
+      131.8
+     ],
+     "size": 31.0
+    },
+    {
+     "role": "BODY",
+     "text": "up in t o the air!",
+     "bbox": [
+      171.1,
+      164.2,
+      390.8,
+      213.9
+     ],
+     "size": 29.6
+    },
+    {
+     "role": "SFX",
+     "text": "It flies overthefence! It flies overthetaxi!",
+     "bbox": [
+      208.3,
+      268.3,
+      520.9,
+      500.3
+     ],
+     "size": 30.6
+    },
+    {
+     "role": "BODY",
+     "text": "Oops! Who did the coat fall on?",
+     "bbox": [
+      945.0,
+      181.8,
+      1030.0,
+      278.4
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "I run and grab it! ‘Found you, coat!’ The red coat smells like Mom again. ‘Oh!’ ‘Found you, Mom! You’re back!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I run and grab it!",
+     "bbox": [
+      56.7,
+      181.8,
+      216.5,
+      202.8
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Found you, coat!’ The red coat smells like Mom again.",
+     "bbox": [
+      110.0,
+      263.7,
+      456.9,
+      332.0
+     ],
+     "size": 26.0
+    },
+    {
+     "role": "SFX",
+     "text": "‘Oh!’ ‘Found you, Mom! You’re back!’",
+     "bbox": [
+      709.0,
+      71.5,
+      991.8,
+      139.7
+     ],
+     "size": 31.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

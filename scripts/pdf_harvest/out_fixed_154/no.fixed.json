@@ -1,0 +1,389 @@
+{
+ "slug": "no",
+ "book_body_size": 35.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Nosisi, it’s time to stop playing. Please come inside?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nosisi, it’s time to stop playing.",
+     "bbox": [
+      712.0,
+      201.9,
+      988.8,
+      278.9
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Please come inside?",
+     "bbox": [
+      695.8,
+      327.9,
+      1005.1,
+      362.9
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "No!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "No!",
+     "bbox": [
+      785.4,
+      265.0,
+      915.5,
+      347.0
+     ],
+     "size": 82.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Nosisi, we need the shops. to go to No!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nosisi, we need the shops. to go to",
+     "bbox": [
+      298.3,
+      144.9,
+      501.2,
+      263.9
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "SFX",
+     "text": "No!",
+     "bbox": [
+      766.2,
+      177.9,
+      896.4,
+      259.9
+     ],
+     "size": 82.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Look at these beautiful butterflies. No!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Look at these beautiful butterflies.",
+     "bbox": [
+      669.0,
+      66.8,
+      1031.9,
+      143.8
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "SFX",
+     "text": "No!",
+     "bbox": [
+      700.0,
+      297.1,
+      785.7,
+      351.1
+     ],
+     "size": 54.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Mama Come make help some rice. No!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama Come make help some rice.",
+     "bbox": [
+      179.0,
+      189.6,
+      378.7,
+      308.6
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "SFX",
+     "text": "No!",
+     "bbox": [
+      690.3,
+      198.6,
+      776.0,
+      252.6
+     ],
+     "size": 54.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Let’s feed Shakes. No!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Let’s feed Shakes.",
+     "bbox": [
+      650.5,
+      88.1,
+      926.9,
+      123.1
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "SFX",
+     "text": "No!",
+     "bbox": [
+      889.1,
+      335.5,
+      974.8,
+      389.5
+     ],
+     "size": 54.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Nosisi it’s bath time... No!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nosisi it’s bath time...",
+     "bbox": [
+      683.4,
+      108.6,
+      1017.4,
+      143.6
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "SFX",
+     "text": "No!",
+     "bbox": [
+      749.5,
+      315.3,
+      951.4,
+      442.5
+     ],
+     "size": 127.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "No No No No! Nonononono...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "No",
+     "bbox": [
+      55.5,
+      66.8,
+      102.5,
+      101.8
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "No",
+     "bbox": [
+      347.1,
+      157.5,
+      394.2,
+      192.5
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "No",
+     "bbox": [
+      92.0,
+      460.1,
+      139.0,
+      495.1
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "SFX",
+     "text": "No! Nonononono...",
+     "bbox": [
+      623.6,
+      341.1,
+      852.5,
+      497.2
+     ],
+     "size": 53.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "How about an ice cream? No!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How about an ice cream?",
+     "bbox": [
+      651.5,
+      83.8,
+      1049.4,
+      118.8
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "SFX",
+     "text": "No!",
+     "bbox": [
+      810.0,
+      341.7,
+      895.7,
+      395.7
+     ],
+     "size": 54.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Oh. Not no...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh. Not no...",
+     "bbox": [
+      217.5,
+      255.2,
+      349.5,
+      332.2
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Yes! Yummy. Yummy. Yay! Yay! Yay!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Yes! Yummy. Yummy.",
+     "bbox": [
+      137.7,
+      249.5,
+      403.0,
+      385.4
+     ],
+     "size": 47.0
+    },
+    {
+     "role": "BODY",
+     "text": "Yay!",
+     "bbox": [
+      635.8,
+      424.0,
+      702.2,
+      459.0
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Yay!",
+     "bbox": [
+      981.6,
+      66.8,
+      1048.0,
+      101.8
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Yay!",
+     "bbox": [
+      996.5,
+      390.0,
+      1062.9,
+      425.0
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Nosisi, will you tidy your room? Hmmmm. Well...okay.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nosisi, will you tidy your room?",
+     "bbox": [
+      128.0,
+      250.2,
+      439.1,
+      327.2
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Hmmmm. Well...okay.",
+     "bbox": [
+      678.5,
+      117.5,
+      1022.2,
+      152.5
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

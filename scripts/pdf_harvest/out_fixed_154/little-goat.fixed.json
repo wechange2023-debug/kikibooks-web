@@ -1,0 +1,312 @@
+{
+ "slug": "little-goat",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Little Goat went to find the sweetest grass. The sky was blue above. But she did not look up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Little Goat went to find the sweetest grass.",
+     "bbox": [
+      131.6,
+      239.7,
+      435.4,
+      301.7
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "The sky was blue above. But she did not look up.",
+     "bbox": [
+      716.5,
+      99.8,
+      984.3,
+      161.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "The river gurgled below. But Little Goat did not listen to its song.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The river gurgled below. But Little Goat did not listen to its song.",
+     "bbox": [
+      629.3,
+      172.9,
+      1071.5,
+      234.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "But Little Goat didn’t answer. A bird called to her, saying, “How do you do?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But Little Goat didn’t answer.",
+     "bbox": [
+      623.6,
+      105.8,
+      951.0,
+      135.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "A bird called to her, saying, “How do you do?”",
+     "bbox": [
+      57.4,
+      456.3,
+      365.3,
+      518.3
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Story spread 4 She just walked along looking for the sweetest grass.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Story spread 4",
+     "bbox": [
+      19.1,
+      35.8,
+      152.5,
+      59.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "She just walked along looking for the sweetest grass.",
+     "bbox": [
+      644.5,
+      255.7,
+      1056.2,
+      317.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "As she walked along, Little Goat moved further and further away from Mother Goat.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "As she walked along, Little Goat moved further and further away from Mother Goat.",
+     "bbox": [
+      623.6,
+      171.0,
+      990.9,
+      265.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Little Goat found the sweetest grass. She ate and ate. She had walked far from Mother Goat.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Little Goat found the sweetest grass. She ate and ate.",
+     "bbox": [
+      80.2,
+      58.1,
+      486.7,
+      120.1
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "She had walked far from Mother Goat.",
+     "bbox": [
+      629.9,
+      383.8,
+      1069.5,
+      413.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Mother Goat wondered where Little Goat had gone. She looked in the mealie patch, but Little Goat was not there.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mother Goat wondered where Little Goat had gone.",
+     "bbox": [
+      113.5,
+      231.7,
+      453.4,
+      293.7
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "She looked in the mealie patch, but Little Goat was not there.",
+     "bbox": [
+      655.2,
+      455.5,
+      1053.9,
+      517.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Mother Goat ran to the river. But Little Goat was not there. “Where are you, Little Goat,” bleated Mother Goat.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mother Goat ran to the river. But Little Goat was not there.",
+     "bbox": [
+      700.2,
+      120.9,
+      1028.9,
+      182.9
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Where are you, Little Goat,” bleated Mother Goat.",
+     "bbox": [
+      703.6,
+      216.9,
+      1026.6,
+      278.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "A bird called to Mother Goat. “Little Goat is asleep in the sweet grass across the bridge.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A bird called to Mother Goat. “Little Goat is asleep in the sweet grass across the bridge.”",
+     "bbox": [
+      632.8,
+      68.3,
+      1068.0,
+      162.3
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Mother Goat crossed the bridge, to the sweet grass.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mother Goat crossed the bridge, to the sweet grass.",
+     "bbox": [
+      667.1,
+      255.7,
+      1033.7,
+      317.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "There she found Little Goat fast asleep.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There she found Little Goat fast asleep.",
+     "bbox": [
+      56.7,
+      177.8,
+      364.4,
+      239.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Wake up, Little Goat,” said Mother Goat gently. “You were lost!” “I wasn’t lost… I have been here all the time!” said Little Goat.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Wake up, Little Goat,” said Mother Goat gently. “You were lost!”",
+     "bbox": [
+      56.7,
+      56.5,
+      463.6,
+      118.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I wasn’t lost… I have been here all the time!” said Little Goat.",
+     "bbox": [
+      623.6,
+      454.9,
+      1048.8,
+      516.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

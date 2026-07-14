@@ -1,0 +1,290 @@
+{
+ "slug": "theres-an-alien-in-my-house",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "There’s an alien in my house... We are under attack!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There’s an alien in my house... We are under attack!",
+     "bbox": [
+      142.8,
+      249.9,
+      424.1,
+      305.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "The walls are changing colour. It must be the alien. The air is getting warmer. It must be the alien.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The walls are changing colour. It must be the alien. The air is getting warmer. It must be the alien.",
+     "bbox": [
+      140.9,
+      223.2,
+      425.8,
+      351.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Strangers keep coming. It must be the alien.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Strangers keep coming. It must be the alien.",
+     "bbox": [
+      171.7,
+      256.3,
+      395.2,
+      312.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "We need protection. I build a fort. Mom and Dad normally build with me, but these days I feel invisible. It must be the alien.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We need protection. I build a fort.",
+     "bbox": [
+      873.1,
+      292.1,
+      1063.1,
+      348.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mom and Dad normally build with me, but these days I feel invisible. It must be the alien.",
+     "bbox": [
+      722.1,
+      395.8,
+      1080.8,
+      487.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Iheara weird noise in the middleofthenight. It mustbethealien.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Iheara weird noise in the middleofthenight.",
+     "bbox": [
+      134.3,
+      138.5,
+      529.0,
+      268.8
+     ],
+     "size": 22.1
+    },
+    {
+     "role": "BODY",
+     "text": "It mustbethealien.",
+     "bbox": [
+      725.5,
+      136.1,
+      894.4,
+      240.7
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "We are under attack! I am an army of one.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We are under attack! I am an army of one.",
+     "bbox": [
+      743.6,
+      249.2,
+      943.0,
+      305.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "1 step, 2 step... I am the army. 3 step, 4 step... Ready for battle.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "1 step, 2 step... I am the army.",
+     "bbox": [
+      209.3,
+      59.3,
+      363.4,
+      115.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "3 step, 4 step... Ready for battle.",
+     "bbox": [
+      794.9,
+      59.3,
+      965.8,
+      115.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "5 step, 6 step... Away with you, alien!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "5 step, 6 step... Away with you, alien!",
+     "bbox": [
+      767.1,
+      130.2,
+      979.0,
+      186.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "7 step, 8 step... I get closer.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "7 step, 8 step... I get closer.",
+     "bbox": [
+      207.1,
+      67.1,
+      345.7,
+      123.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "9 step, 10 step... I am by its head. Woah! I get a fright. It is tiny and it... ...looks like me?! How can that be? Is it really an alien?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "9 step, 10 step... I am by its head.",
+     "bbox": [
+      205.4,
+      174.1,
+      361.5,
+      230.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Woah! I get a fright. It is tiny and it...",
+     "bbox": [
+      190.0,
+      282.1,
+      377.0,
+      338.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "...looks like me?! How can that be? Is it really an alien?",
+     "bbox": [
+      761.7,
+      72.7,
+      943.2,
+      164.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Maybe it’s a friend. Maybe it’s my friend?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Maybe it’s a friend. Maybe it’s my friend?",
+     "bbox": [
+      749.0,
+      59.9,
+      952.0,
+      115.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "1 step, 2 step... We are now an army of two.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "1 step, 2 step... We are now an army of two.",
+     "bbox": [
+      154.2,
+      258.4,
+      422.7,
+      314.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

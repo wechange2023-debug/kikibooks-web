@@ -1,0 +1,435 @@
+{
+ "slug": "whats-happened-to-our-water",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Mfubu, the hippo, lives in his huge pool of water. I love wallowing and diving! SPLISH SPLOSH",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mfubu, the hippo, lives in his huge pool of water. I love wallowing and diving!",
+     "bbox": [
+      85.0,
+      80.5,
+      482.0,
+      129.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "SPLISH SPLOSH",
+     "bbox": [
+      650.9,
+      375.9,
+      912.2,
+      440.6
+     ],
+     "size": 40.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "But now there is a big problem. The water is so dirty, I can’t see. Look at all this scum!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But now there is a big problem.",
+     "bbox": [
+      154.1,
+      80.5,
+      412.8,
+      98.5
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "The water is so dirty, I can’t see. Look at all this scum!",
+     "bbox": [
+      712.9,
+      80.5,
+      987.9,
+      120.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "I feel sad. I need my friends to help me find the problem. SPLISH SPLOSH YUCK!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I feel sad. I need my friends to help me find the problem.",
+     "bbox": [
+      163.5,
+      87.6,
+      403.5,
+      127.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "SPLISH SPLOSH YUCK!",
+     "bbox": [
+      738.6,
+      333.4,
+      1043.3,
+      463.2
+     ],
+     "size": 50.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "First he finds Hoppy Heron. She is sad too. The water is so smelly! The fish are dying! I have nothing to eat!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "First he finds Hoppy Heron. She is sad too.",
+     "bbox": [
+      170.4,
+      80.5,
+      396.5,
+      120.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "The water is so smelly! The fish are dying! I have nothing to eat!",
+     "bbox": [
+      186.5,
+      157.1,
+      380.5,
+      218.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Let’s go up the river to see if we can find the problem. EW! SPLISH SP LOSH YUCK!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Let’s go up the river to see if we can find the problem.",
+     "bbox": [
+      709.5,
+      80.5,
+      996.9,
+      120.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "DECOR",
+     "text": "HOPFLAP",
+     "bbox": [
+      130.5,
+      340.4,
+      271.8,
+      433.2
+     ],
+     "size": 48.7
+    },
+    {
+     "role": "SFX",
+     "text": "EW! SPLISH SP LOSH YUCK!",
+     "bbox": [
+      396.3,
+      399.7,
+      1048.5,
+      543.8
+     ],
+     "size": 51.2
+    }
+   ],
+   "decor_excluded": [
+    "HOPFLAP"
+   ]
+  },
+  {
+   "page_no": 6,
+   "text": "They meet Jambo, the elephant. He is looking miserable. The water tastes so horrible, I can’t drink it.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They meet Jambo, the elephant. He is looking miserable.",
+     "bbox": [
+      148.6,
+      80.5,
+      418.3,
+      120.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "The water tastes so horrible, I can’t drink it.",
+     "bbox": [
+      160.5,
+      162.7,
+      406.4,
+      202.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Let’s go up the river to see if we can find the problem. S PURTPRAY S ICK! HOPFLAP EW! SPLISH SP LOSH YUCK!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Let’s go up the river to see if we can find the problem.",
+     "bbox": [
+      706.7,
+      93.3,
+      994.1,
+      132.9
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "S PURTPRAY S ICK! HOPFLAP EW! SPLISH SP LOSH YUCK!",
+     "bbox": [
+      78.0,
+      372.4,
+      1094.9,
+      551.3
+     ],
+     "size": 47.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "When they get near where the people live, they stop and stare. Y U CK! It’s the people polluting the river.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When they get near where the people live, they stop and stare.",
+     "bbox": [
+      107.9,
+      60.7,
+      459.0,
+      100.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "Y U CK!",
+     "bbox": [
+      378.1,
+      145.3,
+      513.6,
+      209.3
+     ],
+     "size": 32.2
+    },
+    {
+     "role": "BODY",
+     "text": "It’s the people polluting the river.",
+     "bbox": [
+      708.7,
+      60.7,
+      992.1,
+      78.7
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Hello! Why do you look so sad? Your stinky mess is making our river dirty! It makes us sick.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello! Why do you look so sad?",
+     "bbox": [
+      149.8,
+      60.7,
+      417.1,
+      78.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Your stinky mess is making our river dirty! It makes us sick.",
+     "bbox": [
+      670.7,
+      60.7,
+      1030.1,
+      100.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "We’re so sorry! We must get help to fix this. KWAAAK!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We’re so sorry! We must get help to fix this.",
+     "bbox": [
+      97.2,
+      60.7,
+      469.7,
+      78.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "KWAAAK!",
+     "bbox": [
+      740.4,
+      252.8,
+      944.7,
+      326.9
+     ],
+     "size": 61.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "It’s getting late ... and the animals are tired. The pipe is fixed and the litter is gone. And now we can go home. S PLISHSPLOSH! HOPFLAP! SPURT SP RAY!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s getting late ... and the animals are tired. The pipe is fixed and the litter is gone.",
+     "bbox": [
+      105.9,
+      60.7,
+      461.0,
+      100.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "And now we can go home.",
+     "bbox": [
+      739.7,
+      60.7,
+      964.0,
+      78.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "S PLISHSPLOSH! HOPFLAP!",
+     "bbox": [
+      103.4,
+      381.1,
+      544.1,
+      477.3
+     ],
+     "size": 42.0
+    },
+    {
+     "role": "SFX",
+     "text": "SPURT SP RAY!",
+     "bbox": [
+      725.2,
+      413.5,
+      1018.3,
+      524.1
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Guess what? The pool is already cleaner. Guess what? The water already smells better. Guess what? The water already tastes cleaner. It’s been a good day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Guess what? The pool is already cleaner.",
+     "bbox": [
+      332.4,
+      88.3,
+      496.8,
+      149.5
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Guess what? The water already smells better.",
+     "bbox": [
+      60.1,
+      322.9,
+      277.2,
+      384.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Guess what? The water already tastes cleaner.",
+     "bbox": [
+      649.5,
+      426.4,
+      1051.3,
+      444.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "It’s been a good day.",
+     "bbox": [
+      763.4,
+      466.5,
+      937.4,
+      484.5
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

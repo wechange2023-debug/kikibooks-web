@@ -1,0 +1,389 @@
+{
+ "slug": "the-sausage-dog",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Mama and Thembsie go shopping.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama and Thembsie go shopping.",
+     "bbox": [
+      85.0,
+      225.8,
+      481.9,
+      249.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "‘Mama, that dog looks like a sausage. A sausage with legs and a head.’ ‘And a tail!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Mama, that dog looks like a sausage. A sausage with legs and a head.’",
+     "bbox": [
+      64.5,
+      88.0,
+      502.4,
+      140.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘And a tail!’",
+     "bbox": [
+      785.5,
+      478.5,
+      915.3,
+      502.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "‘Mama, can we have that sausage dog?’ ‘No, sorry Thembsie. We can’t have a dog.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Mama, can we have that sausage dog?’",
+     "bbox": [
+      50.4,
+      248.0,
+      516.5,
+      272.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘No, sorry Thembsie. We can’t have a dog.’",
+     "bbox": [
+      35.4,
+      305.6,
+      531.6,
+      329.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Mama and Thembsie go home.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama and Thembsie go home.",
+     "bbox": [
+      105.4,
+      91.1,
+      461.6,
+      115.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "‘Mama, those balloons look like sausages. ‘Can I play with them?’ ‘Yes Thembsie!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Mama, those balloons look like sausages. ‘Can I play with them?’",
+     "bbox": [
+      40.8,
+      141.9,
+      526.1,
+      194.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Yes Thembsie!’",
+     "bbox": [
+      194.9,
+      228.3,
+      372.1,
+      252.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Thembsie balloons twists this and way. shapes the And Thembsie balloons twists that and way. shapes the POP! POP! POP!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thembsie balloons twists this and way. shapes the",
+     "bbox": [
+      98.0,
+      62.0,
+      469.0,
+      114.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "And Thembsie balloons twists that and way. shapes the",
+     "bbox": [
+      72.8,
+      473.2,
+      495.2,
+      526.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "POP! POP! POP!",
+     "bbox": [
+      733.6,
+      62.2,
+      1001.1,
+      532.1
+     ],
+     "size": 90.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "‘Papa, can you make this balloon into a sausage dog?’ ‘Yes, Thembsie.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Papa, can you make this balloon into a sausage dog?’",
+     "bbox": [
+      54.9,
+      140.8,
+      512.0,
+      193.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Yes, Thembsie.’",
+     "bbox": [
+      191.8,
+      227.2,
+      375.2,
+      251.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Papa and Thembsie go inside.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Papa and Thembsie go inside.",
+     "bbox": [
+      111.0,
+      102.5,
+      455.9,
+      126.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Papa twists and shapes the balloon this way. HEAD! And Papa twists and shapes the balloon that way. LEGS! TAIL!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Papa twists and shapes the balloon this way.",
+     "bbox": [
+      124.1,
+      62.0,
+      442.8,
+      114.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "HEAD!",
+     "bbox": [
+      829.6,
+      107.4,
+      984.6,
+      194.2
+     ],
+     "size": 56.3
+    },
+    {
+     "role": "BODY",
+     "text": "And Papa twists and shapes the balloon that way.",
+     "bbox": [
+      102.4,
+      478.2,
+      472.6,
+      531.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "LEGS!",
+     "bbox": [
+      642.5,
+      395.1,
+      784.7,
+      486.0
+     ],
+     "size": 56.8
+    },
+    {
+     "role": "SFX",
+     "text": "TAIL!",
+     "bbox": [
+      923.8,
+      369.9,
+      1051.1,
+      460.2
+     ],
+     "size": 58.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Thembsie and her sausage dog go for a walk. HOP! BOP! BOUNCE!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thembsie and her sausage dog go for a walk.",
+     "bbox": [
+      101.6,
+      81.7,
+      465.3,
+      134.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "HOP!",
+     "bbox": [
+      603.3,
+      187.8,
+      725.3,
+      261.1
+     ],
+     "size": 55.4
+    },
+    {
+     "role": "SFX",
+     "text": "BOP!",
+     "bbox": [
+      958.0,
+      139.7,
+      1079.3,
+      227.4
+     ],
+     "size": 58.7
+    },
+    {
+     "role": "SFX",
+     "text": "BOUNCE!",
+     "bbox": [
+      811.1,
+      388.0,
+      1028.6,
+      458.0
+     ],
+     "size": 51.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "‘Thembsie, dinner time!’ calls Mama. ‘Mama, Papa, this is my sausage dog. Can he have some dinner?’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Thembsie, dinner time!’ calls Mama.",
+     "bbox": [
+      73.2,
+      69.9,
+      493.8,
+      93.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Mama, Papa, this is my sausage dog. Can he have some dinner?’",
+     "bbox": [
+      66.5,
+      127.5,
+      500.4,
+      180.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "‘Yes, Thembsie!’",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "‘Yes, Thembsie!’",
+     "bbox": [
+      99.7,
+      192.8,
+      467.3,
+      240.8
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

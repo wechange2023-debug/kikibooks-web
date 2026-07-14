@@ -1,0 +1,246 @@
+{
+ "slug": "my-inside-weather",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "It’s easy to talk about the weather outside, even if it changes all the time.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s easy to talk about the weather outside, even if it changes all the time.",
+     "bbox": [
+      59.1,
+      233.0,
+      507.8,
+      339.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "But it’s hard to talk about the weather inside me. Sometimes it feels like people don’t understand.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But it’s hard to talk about the weather inside me. Sometimes it feels like people don’t understand.",
+     "bbox": [
+      61.5,
+      233.0,
+      505.5,
+      339.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Do you feel like that too?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Do you feel like that too?",
+     "bbox": [
+      122.2,
+      271.0,
+      444.7,
+      301.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Some days my mind is full of sunshine and rainbows. I feel like I can do anything.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Some days my mind is full of sunshine and rainbows. I feel like I can do anything.",
+     "bbox": [
+      71.0,
+      233.0,
+      496.0,
+      339.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "On other days my head is full of fog and clouds. It’s hard to listen to what people are saying or to remember things.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On other days my head is full of fog and clouds. It’s hard to listen to what people are saying or to remember things.",
+     "bbox": [
+      61.8,
+      214.0,
+      505.1,
+      358.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "I sometimes wake up feeling like it’s windy and wild in my head. I feel tired and grumpy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I sometimes wake up feeling like it’s windy and wild in my head. I feel tired and grumpy.",
+     "bbox": [
+      74.8,
+      233.0,
+      492.1,
+      339.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "And sometimes it feels like it’s raining inside me. It can be a drizzle making me feel sad, or a storm making me feel angry.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And sometimes it feels like it’s raining inside me. It can be a drizzle making me feel sad, or a storm making me feel angry.",
+     "bbox": [
+      73.4,
+      214.0,
+      493.6,
+      358.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Sometimes the weather inside me doesn’t match the weather outside.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes the weather inside me doesn’t match the weather outside.",
+     "bbox": [
+      86.8,
+      233.0,
+      480.1,
+      339.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Sometimes my inside weather doesn’t match how I want to feel or how I think I should feel.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes my inside weather doesn’t match how I want to feel or how I think I should feel.",
+     "bbox": [
+      73.2,
+      233.0,
+      493.7,
+      339.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Is that okay? Yes, of course it is.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Is that okay?",
+     "bbox": [
+      202.2,
+      195.0,
+      364.7,
+      225.0
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Yes, of course it is.",
+     "bbox": [
+      165.6,
+      347.0,
+      401.3,
+      377.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "The best thing to do when we feel like our inside weather is strange is to tell someone we love, and talk about it.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The best thing to do when we feel like our inside weather is strange is to tell someone we love, and talk about it.",
+     "bbox": [
+      65.4,
+      214.0,
+      501.6,
+      358.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "They’ve got inside weather too, and they’ll understand.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They’ve got inside weather too, and they’ll understand.",
+     "bbox": [
+      80.2,
+      252.0,
+      486.7,
+      320.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

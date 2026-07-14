@@ -1,0 +1,367 @@
+{
+ "slug": "who-takes-the-train",
+ "book_body_size": 28.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Today is Beach Day! Naledi is going on the train for the first time.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Today is Beach Day!",
+     "bbox": [
+      56.7,
+      227.5,
+      317.0,
+      255.5
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Naledi is going on the train for the first time.",
+     "bbox": [
+      56.7,
+      289.9,
+      401.6,
+      351.5
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Who takes the train?” Naledi asks. “Let’s wait and see,” Mom says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Who takes the train?” Naledi asks.",
+     "bbox": [
+      56.7,
+      241.9,
+      501.8,
+      269.9
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Let’s wait and see,” Mom says.",
+     "bbox": [
+      56.7,
+      309.1,
+      455.1,
+      337.1
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Look, Mom!” Naledi whispers.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look, Mom!” Naledi whispers.",
+     "bbox": [
+      56.7,
+      275.5,
+      437.6,
+      303.5
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Hello little girl, do you want to say hi?” Naledi looks at Mom. Mom nods. “Yes please!” says Naledi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Hello little girl, do you want to say hi?”",
+     "bbox": [
+      56.7,
+      157.9,
+      448.0,
+      219.5
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Naledi looks at Mom.",
+     "bbox": [
+      56.7,
+      258.7,
+      325.7,
+      286.7
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mom nods.",
+     "bbox": [
+      56.7,
+      325.9,
+      197.6,
+      353.9
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes please!” says Naledi.",
+     "bbox": [
+      56.7,
+      393.1,
+      377.3,
+      421.1
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Chocolates! Chocolates!” “Please can I get one?” Naledi asks. “We need to leave space in your tummy for the ice-cream at the beach,” Mom says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Chocolates! Chocolates!”",
+     "bbox": [
+      80.8,
+      89.0,
+      239.0,
+      149.0
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Please can I get one?” Naledi asks.",
+     "bbox": [
+      623.6,
+      210.7,
+      1076.2,
+      238.7
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“We need to leave space in your tummy for the ice-cream at the beach,” Mom says.",
+     "bbox": [
+      623.6,
+      273.1,
+      1038.4,
+      368.3
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Why are you wearing pyjamas?” Naledi asks.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why are you wearing pyjamas?” Naledi asks.",
+     "bbox": [
+      56.7,
+      258.7,
+      485.9,
+      320.3
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“We do karate.” “Like this!” Kapow!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“We do karate.”",
+     "bbox": [
+      56.7,
+      101.9,
+      256.2,
+      129.9
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Like this!”",
+     "bbox": [
+      271.4,
+      409.4,
+      399.1,
+      437.4
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "SFX",
+     "text": "Kapow!",
+     "bbox": [
+      623.6,
+      186.1,
+      787.4,
+      234.1
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Oh, look! A soldier.” “No,” Mom says, “that is a sailor. She is from the navy.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Oh, look! A soldier.”",
+     "bbox": [
+      56.7,
+      225.1,
+      307.0,
+      253.1
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No,” Mom says, “that is a sailor. She is from the navy.”",
+     "bbox": [
+      56.7,
+      292.3,
+      463.4,
+      353.9
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Mom! Drummers!” “Listen, Naledi,” Mom says. “The drums beat to the sound of the train.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Mom! Drummers!”",
+     "bbox": [
+      56.7,
+      208.3,
+      297.0,
+      236.3
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Listen, Naledi,” Mom says. “The drums beat to the sound of the train.”",
+     "bbox": [
+      56.7,
+      275.5,
+      474.1,
+      370.7
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Do you want to dance with us?” the drummer asks.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Do you want to dance with us?” the drummer asks.",
+     "bbox": [
+      56.7,
+      126.2,
+      472.1,
+      187.8
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“We are getting off at the next stop,” Mom tells Naledi who is now tired.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“We are getting off at the next stop,” Mom tells Naledi who is now tired.",
+     "bbox": [
+      56.7,
+      241.9,
+      498.5,
+      337.1
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“So, what kind of people take the train?” Mom asks. “The best kind,” Naledi says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“So, what kind of people take the train?” Mom asks.",
+     "bbox": [
+      56.7,
+      73.0,
+      478.9,
+      134.6
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“The best kind,” Naledi says.",
+     "bbox": [
+      56.7,
+      169.0,
+      415.2,
+      197.0
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

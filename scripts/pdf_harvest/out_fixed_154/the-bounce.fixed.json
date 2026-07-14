@@ -1,0 +1,400 @@
+{
+ "slug": "the-bounce",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "In a little yellow house lived a big black dog. The big black dog loved to bounce.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In a little yellow house lived a big black dog.",
+     "bbox": [
+      99.4,
+      84.2,
+      467.6,
+      104.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "The big black dog loved to bounce.",
+     "bbox": [
+      704.2,
+      84.2,
+      996.6,
+      104.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "He had everything he could ever need, but Black Dog was unhappy. His human worked most of the day, so they could only play late in the afternoon.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He had everything he could ever need, but Black Dog was unhappy.",
+     "bbox": [
+      122.1,
+      190.5,
+      444.9,
+      240.5
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "His human worked most of the day, so they could only play late in the afternoon.",
+     "bbox": [
+      136.2,
+      280.5,
+      430.7,
+      360.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "In the big house next door lived a little girl and her two spotty dogs. One morning when Black Dog’s human left for work, he heard the little girl laughing. “It would be fun to have someone to play with,” Black Dog sighed. So, he started to bounce. He bounced . . . and bounced . . . and bounced . . .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In the big house next door lived a little girl and her two spotty dogs.",
+     "bbox": [
+      107.7,
+      89.8,
+      459.3,
+      139.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "One morning when Black Dog’s human left for work, he heard the little girl laughing.",
+     "bbox": [
+      67.3,
+      179.8,
+      499.6,
+      229.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It would be fun to have someone to play with,” Black Dog sighed.",
+     "bbox": [
+      87.7,
+      269.8,
+      479.2,
+      319.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "So, he started to bounce.",
+     "bbox": [
+      179.0,
+      359.8,
+      387.9,
+      379.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "He bounced . . . and bounced . . . and bounced . . .",
+     "bbox": [
+      214.6,
+      419.8,
+      352.4,
+      499.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": ". . . until he bounced so high that he landed in the little girl’s garden. At first Black Dog had loads of fun.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": ". . . until he bounced so high that he landed in the little girl’s garden.",
+     "bbox": [
+      103.6,
+      84.2,
+      463.4,
+      134.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "At first Black Dog had loads of fun.",
+     "bbox": [
+      706.9,
+      84.2,
+      993.9,
+      104.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "But then the little girl started pulling tails and twisting ears. “This is no fun!” Black Dog yelped. So he started to bounce. He bounced . . . and bounced . . . and bounced . . .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But then the little girl started pulling tails and twisting ears.",
+     "bbox": [
+      701.2,
+      108.3,
+      999.6,
+      158.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“This is no fun!” Black Dog yelped.",
+     "bbox": [
+      706.2,
+      198.3,
+      994.6,
+      218.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "So he started to bounce. He bounced . . . and bounced . . . and bounced . . .",
+     "bbox": [
+      748.0,
+      258.3,
+      952.8,
+      368.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": ". . . until he bounced so high that he landed back in his own garden. In the big house on the other side lived an old lady with a little yellow dog. “I’m sure she won’t pull my tail or twist my ears. It would be great to play with her,” sighed Black Dog.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": ". . . until he bounced so high that he landed back in his own garden. In the big house on the other side lived an old lady with a little yellow dog.",
+     "bbox": [
+      123.0,
+      67.2,
+      443.9,
+      177.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’m sure she won’t pull my tail or twist my ears. It would be great to play with her,” sighed Black Dog.",
+     "bbox": [
+      124.7,
+      217.2,
+      442.2,
+      297.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "So he started to bounce. He bounced . . . and bounced . . . and bounced . . . . . . until he bounced so high that he landed in the old lady’s garden.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So he started to bounce.",
+     "bbox": [
+      748.0,
+      119.7,
+      952.8,
+      139.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "He bounced . . . and bounced . . . and bounced . . .",
+     "bbox": [
+      781.5,
+      179.7,
+      919.3,
+      259.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": ". . . until he bounced so high that he landed in the old lady’s garden.",
+     "bbox": [
+      702.2,
+      299.6,
+      998.6,
+      349.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "At first, the lady scratched Black Dog behind his ears and rubbed his tummy. But after a while, the old lady sat down in her rocking chair and Black Dog got really bored. Yaaaaaawn...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "At first, the lady scratched Black Dog behind his ears and rubbed his tummy. But after a while, the old lady sat down in her rocking chair and Black Dog got really bored.",
+     "bbox": [
+      75.3,
+      182.0,
+      491.6,
+      292.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "Yaaaaaawn...",
+     "bbox": [
+      717.1,
+      356.6,
+      947.0,
+      427.7
+     ],
+     "size": 43.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "So he started to bounce. He bounced . . . and bounced . . . and bounced . . .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So he started to bounce.",
+     "bbox": [
+      748.0,
+      111.8,
+      952.8,
+      131.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "He bounced . . . and bounced . . . and bounced . . .",
+     "bbox": [
+      781.5,
+      171.8,
+      919.3,
+      251.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": ". . . until he bounced so high that he landed in his own garden again. When Black Dog’s human came home she didn’t pull his tail or sit in a chair scratching his ears.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": ". . . until he bounced so high that he landed in his own garden again.",
+     "bbox": [
+      176.4,
+      142.3,
+      472.8,
+      192.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "When Black Dog’s human came home she didn’t pull his tail or sit in a chair scratching his ears.",
+     "bbox": [
+      166.2,
+      232.3,
+      482.9,
+      312.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "They played his favourite game and she told him how much she’d missed him all day long.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They played his favourite game and she told him how much she’d missed him all day long.",
+     "bbox": [
+      703.6,
+      240.1,
+      1011.4,
+      320.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“I love her and she loves me. I am a lucky dog after all!” Black Dog sighed happily, as they curled up on the couch together.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I love her and she loves me. I am a lucky dog after all!” Black Dog sighed happily, as they curled up on the couch together.",
+     "bbox": [
+      52.2,
+      111.8,
+      514.8,
+      191.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

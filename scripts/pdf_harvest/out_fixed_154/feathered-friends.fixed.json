@@ -1,0 +1,264 @@
+{
+ "slug": "feathered-friends",
+ "book_body_size": 12.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "We are the oakum boys. We do everything together.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We are the oakum boys. We do everything together.",
+     "bbox": [
+      56.7,
+      267.9,
+      464.4,
+      341.9
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Penguins don’t fly, they swim. But we’re too young to swim. So we walk.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Penguins don’t fly, they swim. But we’re too young to swim.",
+     "bbox": [
+      56.7,
+      370.2,
+      495.8,
+      444.2
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "So we walk.",
+     "bbox": [
+      56.7,
+      496.2,
+      228.7,
+      528.2
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "One day we went for a long walk. We walked and walked. Until we saw something new.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day we went for a long walk.",
+     "bbox": [
+      56.7,
+      81.7,
+      308.4,
+      155.7
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "We walked and walked. Until we saw something new.",
+     "bbox": [
+      650.0,
+      454.2,
+      1077.4,
+      528.2
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "He’s got something on his head!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "He’s got something on his head!",
+     "bbox": [
+      142.4,
+      81.7,
+      424.6,
+      155.7
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "You’re changing! So are you!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "You’re changing!",
+     "bbox": [
+      158.3,
+      496.2,
+      408.7,
+      528.2
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "SFX",
+     "text": "So are you!",
+     "bbox": [
+      766.8,
+      496.2,
+      934.1,
+      528.2
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "It’s not so bad! It’s not so cold!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "It’s not so bad!",
+     "bbox": [
+      170.2,
+      496.2,
+      396.8,
+      528.2
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "SFX",
+     "text": "It’s not so cold!",
+     "bbox": [
+      733.9,
+      496.2,
+      967.0,
+      528.2
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "But who’s going to teach us to swim? I will!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "But who’s going to teach us to swim?",
+     "bbox": [
+      147.2,
+      454.2,
+      419.9,
+      528.2
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "SFX",
+     "text": "I will!",
+     "bbox": [
+      807.2,
+      81.7,
+      893.7,
+      113.7
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "In this book you’ll meet king penguins, chinstrap penguins, and one lonely macaroni ... as seen through the eyes of the oakum boys, which are what king penguin babies are before they grow up. All of these penguin species (and a few more) are found in Antarctica, the coldest, driest, windiest place on earth. It takes some very special qualities to survive in this harsh landscape. But if you are lucky enough to visit here, you will find that no matter how alike the penguins seem, each one is different – and all of them are special. We hope that by learning about these amazing animals, future generations will want to protect them as much as we do.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In this book you’ll meet king penguins, chinstrap penguins, and one lonely macaroni ... as seen through the eyes of the oakum boys, which are what king penguin babies are before they grow up.",
+     "bbox": [
+      139.1,
+      112.8,
+      428.0,
+      166.8
+     ],
+     "size": 12.0
+    },
+    {
+     "role": "BODY",
+     "text": "All of these penguin species (and a few more) are found in Antarctica, the coldest, driest, windiest place on earth. It takes some very special qualities to survive in this harsh landscape. But if you are lucky enough to visit here, you will find that no matter how alike the penguins seem, each one is different – and all of them are special.",
+     "bbox": [
+      135.5,
+      182.8,
+      431.6,
+      278.8
+     ],
+     "size": 12.0
+    },
+    {
+     "role": "BODY",
+     "text": "We hope that by learning about these amazing animals, future generations will want to protect them as much as we do.",
+     "bbox": [
+      150.7,
+      294.8,
+      416.4,
+      334.8
+     ],
+     "size": 12.0
+    }
+   ],
+   "decor_excluded": []
+  }
+ ]
+}

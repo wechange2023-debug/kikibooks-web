@@ -1,0 +1,312 @@
+{
+ "slug": "circles",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "On a cliff there lived a young vulture with his mother.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On a cliff there lived a young vulture with his mother.",
+     "bbox": [
+      623.6,
+      62.6,
+      1052.3,
+      114.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "When he was old enough to fly, his mother took him high into the air and they circled together, watching the ground below. “I want to show you something beautiful,” she told her son. They saw an old gemsbok staggering through the heat. “Look there. That gemsbok won’t last long.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When he was old enough to fly, his mother took him high into the air and they circled together, watching the ground below.",
+     "bbox": [
+      56.7,
+      62.6,
+      499.1,
+      144.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I want to show you something beautiful,” she told her son.",
+     "bbox": [
+      56.7,
+      182.6,
+      489.6,
+      234.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "They saw an old gemsbok staggering through the heat. “Look there. That gemsbok won’t last long.”",
+     "bbox": [
+      820.9,
+      62.6,
+      1067.0,
+      204.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Sure enough, the buck collapsed right there and died. The two vultures flew down. “This isn’t beautiful,” said the young vulture to his mother. “This is horrible!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sure enough, the buck collapsed right there and died.",
+     "bbox": [
+      56.7,
+      361.6,
+      393.7,
+      413.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "The two vultures flew down. “This isn’t beautiful,” said the young vulture to his mother. “This is horrible!”",
+     "bbox": [
+      623.6,
+      173.3,
+      1031.2,
+      255.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“I know,” said his mother. “Death is very difficult, and very sad. But it is also beautiful.” “No ways,” said the young vulture. “Yuck.” “Just wait,” she said. “We will come back here soon and you will see.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I know,” said his mother. “Death is very difficult, and very sad. But it is also beautiful.”",
+     "bbox": [
+      56.7,
+      62.6,
+      467.3,
+      144.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No ways,” said the young vulture. “Yuck.”",
+     "bbox": [
+      56.7,
+      182.6,
+      490.0,
+      204.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Just wait,” she said. “We will come back here soon and you will see.”",
+     "bbox": [
+      623.6,
+      62.6,
+      1043.6,
+      114.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "The next week, they visited the dead buck. Its skeleton was clean and white, and tiny plants had started to grow between the bones.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The next week, they visited the dead buck. Its skeleton was clean and white, and tiny plants had started to grow between the bones.",
+     "bbox": [
+      56.7,
+      238.3,
+      497.6,
+      350.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "The week after that, the shoots had grown tall and blossomed. A butterfly sipped at the flowers and a songololo rested in their shade.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The week after that, the shoots had grown tall and blossomed. A butterfly sipped at the flowers and a songololo rested in their shade.",
+     "bbox": [
+      56.7,
+      231.2,
+      448.7,
+      343.2
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "A week later, a pair of weavers was picking the leaves to build a nest. Bees were collecting pollen from the blossoms. And a spider had made her home between the buck’s horns.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A week later, a pair of weavers was picking the leaves to build a nest. Bees were collecting pollen from the blossoms. And a spider had made her home between the buck’s horns.",
+     "bbox": [
+      56.7,
+      249.7,
+      505.6,
+      391.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "And the week after that, they saw a young gemsbok nibbling the tasty shoots.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And the week after that, they saw a young gemsbok nibbling the tasty shoots.",
+     "bbox": [
+      56.7,
+      253.9,
+      500.0,
+      305.9
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Well?” said the vulture’s mother. “Look at the life one buck has given. He has given a spider a home and weavers a nest, fed bees and butterflies, sheltered a songololo, and helped the next generation of buck grow strong.” The young vulture smiled.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Well?” said the vulture’s mother. “Look at the life one buck has given. He has given a spider a home and weavers a nest, fed bees and butterflies, sheltered a songololo, and helped the next generation of buck grow strong.”",
+     "bbox": [
+      56.7,
+      62.6,
+      504.5,
+      234.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "The young vulture smiled.",
+     "bbox": [
+      56.7,
+      272.6,
+      323.8,
+      294.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "The two of them flew back to their nest high up on the cliff.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The two of them flew back to their nest high up on the cliff.",
+     "bbox": [
+      623.6,
+      62.6,
+      1033.9,
+      114.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“It is not just our bodies we leave behind when we die,” said the mother vulture. “We also leave our lessons and our love and our memories.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It is not just our bodies we leave behind when we die,” said the mother vulture. “We also leave our lessons and our love and our memories.”",
+     "bbox": [
+      623.6,
+      62.6,
+      1075.2,
+      174.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Where do we leave all those things?” asked the little vulture. “We leave them in our children and in our family and friends. You are already my green patch on earth, Little Vulture. And you will be, forever.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Where do we leave all those things?” asked the little vulture.",
+     "bbox": [
+      302.1,
+      62.6,
+      508.6,
+      174.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“We leave them in our children and in our family and friends. You are already my green patch on earth, Little Vulture. And you will be, forever.”",
+     "bbox": [
+      623.6,
+      62.6,
+      1052.3,
+      174.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

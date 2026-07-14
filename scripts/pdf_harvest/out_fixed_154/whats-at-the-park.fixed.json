@@ -1,0 +1,301 @@
+{
+ "slug": "whats-at-the-park",
+ "book_body_size": 25.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Down the road from Zoey’s house, there is a big, green park.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Down the road from Zoey’s house, there is a big, green park.",
+     "bbox": [
+      71.3,
+      295.1,
+      348.2,
+      380.1
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Zoey is quite shy, but she loves to play in the park. Every day after school, Zoey and Granny go there to play.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zoey is quite shy, but she loves to play in the park. Every day after school, Zoey and Granny go there to play.",
+     "bbox": [
+      100.6,
+      322.7,
+      466.3,
+      437.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Granny needs glasses to see. But she can hear very well. Zoey is good at finding things. Even better than Granny!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Granny needs glasses to see. But she can hear very well.",
+     "bbox": [
+      112.2,
+      217.6,
+      454.8,
+      272.6
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Zoey is good at finding things. Even better than Granny!",
+     "bbox": [
+      105.2,
+      307.6,
+      461.7,
+      362.6
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "She can find birds and bugs.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She can find birds and bugs.",
+     "bbox": [
+      193.6,
+      80.4,
+      373.4,
+      135.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "She can find the prettiest flowers and the tallest trees.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She can find the prettiest flowers and the tallest trees.",
+     "bbox": [
+      78.0,
+      435.4,
+      469.1,
+      490.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "And she’s very good at finding Granny’s secret sweets.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And she’s very good at finding Granny’s secret sweets.",
+     "bbox": [
+      103.8,
+      262.6,
+      463.1,
+      317.6
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“What’s that noise behind the tree?” asks Granny. “Does it sound like a bird?” asks Zoey. “No,” says Granny. “It sounds much bigger than a bird. Can you see what it is?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What’s that noise behind the tree?” asks Granny.",
+     "bbox": [
+      92.6,
+      50.6,
+      440.3,
+      105.6
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Does it sound like a bird?” asks Zoey.",
+     "bbox": [
+      108.8,
+      140.6,
+      424.1,
+      195.6
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No,” says Granny. “It sounds much bigger than a bird. Can you see what it is?”",
+     "bbox": [
+      59.5,
+      396.4,
+      473.4,
+      481.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“It’s a dog!” says Zoey.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It’s a dog!” says Zoey.",
+     "bbox": [
+      716.2,
+      112.1,
+      984.5,
+      137.1
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Phew!” says Granny. “This dog is very smelly!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Phew!” says Granny. “This dog is very smelly!”",
+     "bbox": [
+      320.7,
+      100.2,
+      473.0,
+      215.2
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "The next day, Zoey comes home from school and packs her bag. “Are you ready to go to the park?” asks Granny. “Yes, please,” says Zoey. “Granny, look who’s outside!” says Zoey.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The next day, Zoey comes home from school and packs her bag.",
+     "bbox": [
+      70.5,
+      62.0,
+      496.5,
+      106.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Are you ready to go to the park?” asks Granny.",
+     "bbox": [
+      56.9,
+      134.0,
+      510.1,
+      154.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes, please,” says Zoey.",
+     "bbox": [
+      170.7,
+      182.0,
+      401.8,
+      202.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Granny, look who’s outside!” says Zoey.",
+     "bbox": [
+      906.5,
+      195.3,
+      1094.8,
+      239.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“You found us!” says Zoey. “Now, let’s give you a bath.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“You found us!” says Zoey. “Now, let’s give you a bath.”",
+     "bbox": [
+      151.4,
+      266.8,
+      415.5,
+      310.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "And from that day on, Zoey, Granny and their new friend played in the park every day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And from that day on, Zoey, Granny and their new friend played in the park every day.",
+     "bbox": [
+      68.0,
+      62.0,
+      498.9,
+      106.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

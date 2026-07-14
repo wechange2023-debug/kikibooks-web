@@ -1,0 +1,334 @@
+{
+ "slug": "why-is-there-a-hole-in-the-wall",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Lungisa lived in a village called esiKhaleni or Place of Noise. Some people also called it Hole-in-the-Wall.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lungisa lived in a village called esiKhaleni or Place of Noise.",
+     "bbox": [
+      91.4,
+      73.0,
+      475.7,
+      117.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Some people also called it Hole-in-the-Wall.",
+     "bbox": [
+      647.3,
+      78.5,
+      1053.7,
+      98.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Why is there a hole in the wall?” Lungisa asked his mother. “Because one of the sea-people used a giant fish head to break through the wall so that he could get to the woman he loved.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why is there a hole in the wall?” Lungisa asked his mother.",
+     "bbox": [
+      128.7,
+      226.9,
+      438.5,
+      270.9
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Because one of the sea-people used a giant fish head to break through the wall so that he could get to the woman he loved.”",
+     "bbox": [
+      60.0,
+      298.9,
+      507.1,
+      366.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Interesting,” said Lungisa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Interesting,” said Lungisa.",
+     "bbox": [
+      154.9,
+      286.9,
+      412.1,
+      306.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Why is there a hole in the wall?” Lungisa asked his teacher.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why is there a hole in the wall?” Lungisa asked his teacher.",
+     "bbox": [
+      695.6,
+      214.7,
+      1005.4,
+      258.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Because waves crashed against the rock for millions of years, and made a hole in the sandstone,” said his teacher.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Because waves crashed against the rock for millions of years, and made a hole in the sandstone,” said his teacher.",
+     "bbox": [
+      81.8,
+      262.9,
+      485.3,
+      330.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Interesting,” said Lungisa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Interesting,” said Lungisa.",
+     "bbox": [
+      154.9,
+      286.9,
+      412.1,
+      306.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Why is there a hole in the wall?” Lungisa asked his granny. “So that our ancestors will have a gateway to us.” “Interesting,” said Lungisa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why is there a hole in the wall?” Lungisa asked his granny.",
+     "bbox": [
+      695.6,
+      88.8,
+      1005.4,
+      132.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“So that our ancestors will have a gateway to us.”",
+     "bbox": [
+      694.1,
+      184.8,
+      1006.9,
+      228.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Interesting,” said Lungisa.",
+     "bbox": [
+      721.9,
+      280.8,
+      979.0,
+      300.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Why is there a hole in the wall?” Lungisa asked his auntie. “It is a window to God.” “Interesting,” said Lungisa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why is there a hole in the wall?” Lungisa asked his auntie.",
+     "bbox": [
+      128.7,
+      168.2,
+      438.5,
+      212.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It is a window to God.”",
+     "bbox": [
+      171.9,
+      264.2,
+      395.1,
+      284.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Interesting,” said Lungisa.",
+     "bbox": [
+      154.9,
+      336.2,
+      412.1,
+      356.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Why is there a hole in the wall?” Lungisa asked his friend. “Because a ship crashed into the wall.” “Interesting,” said Lungisa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why is there a hole in the wall?” Lungisa asked his friend.",
+     "bbox": [
+      695.6,
+      202.9,
+      1005.4,
+      246.9
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Because a ship crashed into the wall.”",
+     "bbox": [
+      669.9,
+      298.9,
+      1031.1,
+      318.9
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Interesting,” said Lungisa.",
+     "bbox": [
+      721.9,
+      370.9,
+      979.0,
+      390.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Why is there a hole in the wall?” Lungisa asked his little sister. “So that my brother will keep on asking questions,” she said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why is there a hole in the wall?” Lungisa asked his little sister.",
+     "bbox": [
+      56.8,
+      303.5,
+      267.9,
+      395.5
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“So that my brother will keep on asking questions,” she said.",
+     "bbox": [
+      66.7,
+      423.5,
+      257.9,
+      491.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "And Lungisa laughed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And Lungisa laughed.",
+     "bbox": [
+      184.6,
+      252.2,
+      382.4,
+      272.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "But he kept on asking.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But he kept on asking.",
+     "bbox": [
+      181.4,
+      91.3,
+      385.6,
+      111.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

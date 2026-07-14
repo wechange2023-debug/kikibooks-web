@@ -1,0 +1,345 @@
+{
+ "slug": "the-new-road",
+ "book_body_size": 28.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Chapansi and her best friend Luano love collecting inswa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Chapansi and her best friend Luano love collecting inswa.",
+     "bbox": [
+      96.9,
+      365.0,
+      470.0,
+      426.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "They love to play on the old dirt road... ....even if Mama would tsk-tsk because the stones hurt her feet.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They love to play on the old dirt road...",
+     "bbox": [
+      109.6,
+      62.7,
+      420.4,
+      124.3
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "....even if Mama would tsk-tsk because the stones hurt her feet.",
+     "bbox": [
+      739.3,
+      412.6,
+      1082.5,
+      507.8
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "One day, big cars arrive. Mama calls them Caterpillars.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day, big cars arrive.",
+     "bbox": [
+      156.9,
+      67.9,
+      470.5,
+      95.9
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mama calls them Caterpillars.",
+     "bbox": [
+      123.0,
+      423.6,
+      504.4,
+      451.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "They cover the road in black stuff. Mama calls it tar.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They cover the road in black stuff.",
+     "bbox": [
+      632.5,
+      181.0,
+      1071.1,
+      209.0
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mama calls it tar.",
+     "bbox": [
+      743.1,
+      248.2,
+      960.5,
+      276.2
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "The road is smooth now. Like walking on a mattress!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The road is smooth now.",
+     "bbox": [
+      94.8,
+      62.7,
+      409.8,
+      90.7
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Like walking on a mattress!",
+     "bbox": [
+      673.1,
+      488.3,
+      1021.8,
+      516.3
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "But when Chapansi and Luano go to the road to catch inswa... ... they only catch three!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But when Chapansi and Luano go to the road to catch inswa...",
+     "bbox": [
+      66.2,
+      454.7,
+      500.7,
+      516.3
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "... they only catch three!",
+     "bbox": [
+      700.4,
+      488.3,
+      1000.4,
+      516.3
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Chapansi used to love playing chiyato with Luano. But there are no more stones on the road to play with.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Chapansi used to love playing chiyato with Luano.",
+     "bbox": [
+      107.3,
+      62.7,
+      459.7,
+      124.3
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "But there are no more stones on the road to play with.",
+     "bbox": [
+      662.4,
+      458.2,
+      1038.4,
+      519.8
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Chapansi is worried. What if the inswa can’t breathe anymore?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Chapansi is worried.",
+     "bbox": [
+      721.8,
+      62.7,
+      979.0,
+      90.7
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "What if the inswa can’t breathe anymore?",
+     "bbox": [
+      702.8,
+      393.4,
+      995.2,
+      455.0
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Chapansi kicks the road!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Chapansi kicks the road!",
+     "bbox": [
+      703.7,
+      347.0,
+      997.1,
+      441.6
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Chapansi goes to Mama. ‘Don’t be sad, my child. Inswa will always find a way out,’ she says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Chapansi goes to Mama.",
+     "bbox": [
+      124.2,
+      62.9,
+      442.8,
+      90.9
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Don’t be sad, my child. Inswa will always find a way out,’ she says.",
+     "bbox": [
+      638.3,
+      272.9,
+      1062.5,
+      334.5
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "One rainy day, Luano comes running to Chapansi’s house. ‘Inswa is back!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One rainy day, Luano comes running to Chapansi’s house.",
+     "bbox": [
+      98.7,
+      102.8,
+      468.2,
+      164.4
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "SFX",
+     "text": "‘Inswa is back!’",
+     "bbox": [
+      689.4,
+      67.1,
+      1011.4,
+      115.1
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Inswa is back! It defeated the road! Mama was right after all!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Inswa is back! It defeated the road!",
+     "bbox": [
+      59.8,
+      62.7,
+      507.1,
+      90.7
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mama was right after all!",
+     "bbox": [
+      689.8,
+      488.3,
+      1011.0,
+      516.3
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

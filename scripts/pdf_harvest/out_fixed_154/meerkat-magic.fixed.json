@@ -1,0 +1,222 @@
+{
+ "slug": "meerkat-magic",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Bonke and Peo live near a hill.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Bonke and Peo live near a hill.",
+     "bbox": [
+      637.0,
+      116.5,
+      849.4,
+      184.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "They like to run, hide and climb.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They like to run, hide and climb.",
+     "bbox": [
+      69.0,
+      328.4,
+      292.9,
+      396.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Peo doesn’t like to climb too high.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Peo doesn’t like to climb too high.",
+     "bbox": [
+      162.1,
+      103.7,
+      404.8,
+      171.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Sometimes they are lucky enough to find berries.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes they are lucky enough to find berries.",
+     "bbox": [
+      199.3,
+      207.5,
+      398.8,
+      351.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "‘Did that meerkat just wave at me?’ asks Peo. Bonke laughs. ‘That’s impossible!’ he says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Did that meerkat just wave at me?’ asks Peo.",
+     "bbox": [
+      91.5,
+      63.3,
+      475.4,
+      131.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Bonke laughs. ‘That’s impossible!’ he says.",
+     "bbox": [
+      658.6,
+      63.3,
+      1042.2,
+      131.3
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "The scampers meerkat up, up, up…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The scampers meerkat up, up, up…",
+     "bbox": [
+      681.5,
+      192.1,
+      1070.6,
+      268.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "‘Let’s go!’",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "‘Let’s go!’",
+     "bbox": [
+      851.2,
+      96.5,
+      1059.3,
+      144.4
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "‘Bonke, I’m scared.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Bonke, I’m scared.’",
+     "bbox": [
+      828.6,
+      419.0,
+      1081.5,
+      519.0
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "‘It’s okay, I’m here.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘It’s okay, I’m here.’",
+     "bbox": [
+      863.6,
+      67.3,
+      1096.1,
+      167.3
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "WOW!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "WOW!",
+     "bbox": [
+      813.8,
+      10.0,
+      1036.9,
+      216.0
+     ],
+     "size": 123.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

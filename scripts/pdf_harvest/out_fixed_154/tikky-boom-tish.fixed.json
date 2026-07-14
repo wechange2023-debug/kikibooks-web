@@ -1,0 +1,375 @@
+{
+ "slug": "tikky-boom-tish",
+ "book_body_size": 38.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "This book is full of M U SI C!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "This book is full of M U SI C!",
+     "bbox": [
+      176.2,
+      198.2,
+      390.6,
+      394.1
+     ],
+     "size": 52.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "When you see a drum, like THIS, say “Boom!” out loud Bo om !",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When you see a drum,",
+     "bbox": [
+      97.0,
+      59.5,
+      469.9,
+      97.5
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "BODY",
+     "text": "like THIS,",
+     "bbox": [
+      288.2,
+      269.7,
+      485.7,
+      315.7
+     ],
+     "size": 46.0
+    },
+    {
+     "role": "BODY",
+     "text": "say “Boom!” out loud",
+     "bbox": [
+      107.3,
+      482.4,
+      459.5,
+      521.6
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "SFX",
+     "text": "Bo om !",
+     "bbox": [
+      697.0,
+      424.7,
+      1003.8,
+      546.7
+     ],
+     "size": 116.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Boom! Boom! Boom!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Boom! Boom!",
+     "bbox": [
+      100.3,
+      455.3,
+      484.1,
+      515.3
+     ],
+     "size": 54.0
+    },
+    {
+     "role": "SFX",
+     "text": "Boom!",
+     "bbox": [
+      731.2,
+      439.9,
+      969.6,
+      521.9
+     ],
+     "size": 82.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "When you see a rattle, like THIS, say “Tikky!” Ti k k y !",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When you see a rattle,",
+     "bbox": [
+      97.2,
+      59.5,
+      469.8,
+      97.5
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "BODY",
+     "text": "like THIS,",
+     "bbox": [
+      288.2,
+      269.7,
+      485.7,
+      315.7
+     ],
+     "size": 46.0
+    },
+    {
+     "role": "BODY",
+     "text": "say “Tikky!”",
+     "bbox": [
+      193.8,
+      482.3,
+      373.4,
+      520.4
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "SFX",
+     "text": "Ti k k y !",
+     "bbox": [
+      737.2,
+      420.4,
+      963.6,
+      542.4
+     ],
+     "size": 98.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Tikky Boom Tikky Boom Tikky Boom Tikky Boom!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tikky Boom Tikky Boom",
+     "bbox": [
+      98.3,
+      433.8,
+      468.6,
+      471.1
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Tikky Boom Tikky Boom!",
+     "bbox": [
+      660.0,
+      433.8,
+      1040.8,
+      471.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "When you see a cymbal, like THIS, say “Tish!” Tish !",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When you see a cymbal,",
+     "bbox": [
+      81.7,
+      59.5,
+      485.2,
+      97.5
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "BODY",
+     "text": "like THIS,",
+     "bbox": [
+      288.2,
+      269.7,
+      485.7,
+      315.7
+     ],
+     "size": 46.0
+    },
+    {
+     "role": "BODY",
+     "text": "say “Tish!”",
+     "bbox": [
+      198.0,
+      482.4,
+      369.3,
+      520.8
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "SFX",
+     "text": "Tish !",
+     "bbox": [
+      754.5,
+      430.7,
+      946.3,
+      540.7
+     ],
+     "size": 92.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Boom Tikky Tikky Tish! Boom Tikky Tikky Tish!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Boom Tikky Tikky Tish!",
+     "bbox": [
+      109.3,
+      433.8,
+      457.6,
+      471.1
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Boom Tikky Tikky Tish!",
+     "bbox": [
+      676.2,
+      433.8,
+      1024.5,
+      471.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "When you see a keyboard, like THIS, say “ Wubba! ” Wubb a!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When you see a keyboard,",
+     "bbox": [
+      64.0,
+      59.5,
+      502.9,
+      97.5
+     ],
+     "size": 38.0
+    },
+    {
+     "role": "BODY",
+     "text": "like THIS,",
+     "bbox": [
+      288.2,
+      269.7,
+      485.7,
+      315.7
+     ],
+     "size": 46.0
+    },
+    {
+     "role": "BODY",
+     "text": "say “ Wubba! ”",
+     "bbox": [
+      169.0,
+      481.0,
+      398.3,
+      521.6
+     ],
+     "size": 40.0
+    },
+    {
+     "role": "SFX",
+     "text": "Wubb a!",
+     "bbox": [
+      700.8,
+      415.6,
+      999.9,
+      547.6
+     ],
+     "size": 95.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Boom Wubba Boom Wubba Boom Wubba Boom!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Boom Wubba Boom Wubba",
+     "bbox": [
+      66.7,
+      434.5,
+      500.2,
+      471.1
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Boom Wubba Boom!",
+     "bbox": [
+      687.9,
+      434.5,
+      1012.9,
+      471.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

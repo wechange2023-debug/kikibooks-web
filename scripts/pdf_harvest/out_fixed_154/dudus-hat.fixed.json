@@ -1,0 +1,410 @@
+{
+ "slug": "dudus-hat",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“Hey, Dudu,” Dumisani says. “I bet you can’t throw your hat through that window.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Hey, Dudu,” Dumisani says.",
+     "bbox": [
+      56.1,
+      82.1,
+      333.6,
+      112.1
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I bet you can’t throw your hat through that window.”",
+     "bbox": [
+      70.6,
+      152.1,
+      319.7,
+      252.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Dudu looks up at the open window. It’s so high up the classroom wall, she can’t see what’s on the other side.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dudu looks up at the open window.",
+     "bbox": [
+      118.2,
+      179.2,
+      448.7,
+      199.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "It’s so high up the classroom wall, she can’t see what’s on the other side.",
+     "bbox": [
+      103.9,
+      231.2,
+      463.0,
+      277.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“OK,” says Dudu. “I’ll count to three.” They take their hats off and stand ready. “One...” says Dudu slowly, “two”... “THREE!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“OK,” says Dudu. “I’ll count to three.”",
+     "bbox": [
+      173.0,
+      92.7,
+      394.2,
+      157.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "They take their hats off and stand ready.",
+     "bbox": [
+      171.8,
+      188.8,
+      395.2,
+      234.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "“One...” says Dudu slowly, “two”... “THREE!”",
+     "bbox": [
+      642.0,
+      217.9,
+      1031.0,
+      441.3
+     ],
+     "size": 68.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Dudu and Dumisani throw their hats towards the window. Dudu’s hat lands softly against the wall and slides down onto the shelf underneath. But Dumisani’s hat gets close. It hits the windowsill and rebounds, turning three times in the air before coming to rest on the head of the stuffed rhino below.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dudu and Dumisani throw their hats towards the window.",
+     "bbox": [
+      113.2,
+      102.2,
+      453.7,
+      148.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dudu’s hat lands softly against the wall and slides down onto the shelf underneath.",
+     "bbox": [
+      118.2,
+      180.2,
+      448.7,
+      252.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Dumisani’s hat gets close. It hits the windowsill and rebounds, turning three times in the air before coming to rest on the head of the stuffed rhino below.",
+     "bbox": [
+      114.8,
+      284.2,
+      452.1,
+      408.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Dudu and Dumisani laugh so hard, Dudu has to hold her tummy. “Again!” she says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dudu and Dumisani laugh so hard, Dudu has to hold her tummy.",
+     "bbox": [
+      121.3,
+      88.0,
+      445.7,
+      134.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Again!” she says.",
+     "bbox": [
+      610.0,
+      99.4,
+      863.4,
+      247.7
+     ],
+     "size": 54.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "The friends fetch their hats, and Dumisani counts, “One, two, three!” Dumisani’s hat sails through the air, makes it past the windowsill, bumps against the frame and falls through the window. “YES!” he shouts. Dudu’s hat is on the shelf again.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The friends fetch their hats, and Dumisani counts, “One, two, three!”",
+     "bbox": [
+      152.8,
+      61.8,
+      414.1,
+      143.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dumisani’s hat sails through the air, makes it past the windowsill, bumps against the frame and falls through the window.",
+     "bbox": [
+      115.0,
+      183.8,
+      451.9,
+      281.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“YES!” he shouts.",
+     "bbox": [
+      197.8,
+      313.7,
+      369.2,
+      343.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dudu’s hat is on the shelf again.",
+     "bbox": [
+      687.2,
+      337.0,
+      837.8,
+      383.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Do it again,” Dumisani says to Dudu. Dudu gets her hat, balls it up in her hand But says her and Dumisani, hat “One, squints bounces two, at and the off three,” Dudu the window. windowsill throws. and slides down the wall again. “Again” says Dumisani.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Do it again,” Dumisani says to Dudu. Dudu gets her hat, balls it up in her hand But says her and Dumisani, hat “One, squints bounces two, at and the off three,” Dudu the window. windowsill throws. and slides down the wall again.",
+     "bbox": [
+      91.3,
+      89.0,
+      475.6,
+      335.1
+     ],
+     "size": 20.6
+    },
+    {
+     "role": "BODY",
+     "text": "“Again” says Dumisani.",
+     "bbox": [
+      616.9,
+      183.0,
+      894.4,
+      318.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Uh uh,” says Dudu. “Let’s go outside to the swings.” She fetches her hat and puts it firmly on her head. “Ah, please, Dudu?” says Dumisani. “Here, I’ll help you.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Uh uh,” says Dudu. “Let’s go outside to the swings.” She fetches her hat and puts it firmly on her head.",
+     "bbox": [
+      81.4,
+      96.3,
+      275.8,
+      273.4
+     ],
+     "size": 21.1
+    },
+    {
+     "role": "BODY",
+     "text": "“Ah, please, Dudu?” says Dumisani.",
+     "bbox": [
+      659.9,
+      203.0,
+      874.0,
+      258.1
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Here, I’ll help you.”",
+     "bbox": [
+      660.1,
+      290.0,
+      873.7,
+      320.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "He takes Dudu’s hat from her head, balls it up, and puts it in her hand. “Point your other hand at the window,” he says. “Now throw from your shoulder.” Dudu takes a deep breath and throws. Her hat swoops up, opens like a gliding bird, flies through the window, and disappears.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He takes Dudu’s hat from her head, balls it up, and puts it in her hand.",
+     "bbox": [
+      300.1,
+      88.0,
+      502.8,
+      186.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Point your other hand at the window,” he says. “Now throw from your shoulder.” Dudu takes a deep breath and throws.",
+     "bbox": [
+      56.7,
+      288.1,
+      293.0,
+      500.1
+     ],
+     "size": 22.2
+    },
+    {
+     "role": "BODY",
+     "text": "Her hat swoops up, opens like a gliding bird, flies through the window, and disappears.",
+     "bbox": [
+      654.4,
+      378.2,
+      890.5,
+      476.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Yes!” lifting Dudu and their Dumisani arms in victory. shout,",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“Yes!”",
+     "bbox": [
+      139.6,
+      66.3,
+      441.2,
+      230.4
+     ],
+     "size": 136.2
+    },
+    {
+     "role": "BODY",
+     "text": "lifting Dudu and their Dumisani arms in victory. shout,",
+     "bbox": [
+      723.5,
+      133.4,
+      977.3,
+      179.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“TEACHER!” Dudu shouts to Teacher Lethabo. “Our fell hats out the window!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“TEACHER!” Dudu shouts to Teacher Lethabo.",
+     "bbox": [
+      121.9,
+      79.6,
+      447.9,
+      221.4
+     ],
+     "size": 49.3
+    },
+    {
+     "role": "SFX",
+     "text": "“Our fell hats out the window!”",
+     "bbox": [
+      752.6,
+      90.1,
+      956.3,
+      215.1
+     ],
+     "size": 41.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

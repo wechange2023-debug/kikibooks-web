@@ -1,0 +1,412 @@
+{
+ "slug": "im-the-colour-of-honey",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "My name is Amanda. I live with my Mummy, my Daddy and my dog Porsha. My Daddy says I’m the colour of honey. My Mummy says I look like a beautiful sunset.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My name is Amanda. I live with my Mummy, my Daddy and my dog Porsha.",
+     "bbox": [
+      710.3,
+      161.1,
+      1021.9,
+      239.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "My Daddy says I’m the colour of honey.",
+     "bbox": [
+      740.2,
+      269.1,
+      992.0,
+      320.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "My Mummy says I look like a beautiful sunset.",
+     "bbox": [
+      718.0,
+      350.1,
+      1014.2,
+      401.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "But I don’t look like either of them. Only Porsha is brown like me!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But I don’t look like either of them. Only Porsha is brown like me!",
+     "bbox": [
+      689.2,
+      202.8,
+      1011.6,
+      280.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "When we go out some people stare at us, or ask us lots of questions.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When we go out some people stare at us, or ask us lots of questions.",
+     "bbox": [
+      626.3,
+      304.9,
+      831.2,
+      409.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Is that your Aunty?” asks the woman at the store. No! It’s my Mummy!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Is that your Aunty?” asks the woman at the store.",
+     "bbox": [
+      101.1,
+      99.8,
+      326.0,
+      177.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "No! It’s my Mummy!",
+     "bbox": [
+      707.9,
+      151.0,
+      995.7,
+      379.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "asks “Is that the your man in Teacher?” the park. No! It’s my Daddy!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "asks “Is that the your man in Teacher?” the park.",
+     "bbox": [
+      75.0,
+      140.3,
+      352.1,
+      191.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "No! It’s my Daddy!",
+     "bbox": [
+      707.9,
+      151.0,
+      995.7,
+      399.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Why don’t you look like them?” “Because I’m the colour of honey. And I look like a beautiful sunset.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why don’t you look like them?”",
+     "bbox": [
+      172.5,
+      192.3,
+      394.4,
+      243.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Because I’m the colour of honey. And I look like a beautiful sunset.”",
+     "bbox": [
+      135.1,
+      301.4,
+      431.8,
+      379.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“But your Daddy is like a night sky,” says the woman at the store. “And your Mummy is as white as the blank pages in a book,” says the man in the park.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“But your Daddy is like a night sky,” says the woman at the store.",
+     "bbox": [
+      656.2,
+      117.3,
+      1046.0,
+      168.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“And your Mummy is as white as the blank pages in a book,” says the man in the park.",
+     "bbox": [
+      671.6,
+      198.3,
+      1030.6,
+      276.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "you “Whyokt?” differen lo do so",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "you “Whyokt?” differen lo do so",
+     "bbox": [
+      127.6,
+      160.8,
+      428.6,
+      395.7
+     ],
+     "size": 61.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "The next day I wrap a towel on my head and swing it around just like Mummy does with her hair. “Is that your Aunty?” asks the woman at the store. “No, that’s my Mummy!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The next day I wrap a towel on my head and swing it around just like Mummy does with her hair.",
+     "bbox": [
+      697.1,
+      142.7,
+      1003.7,
+      247.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Is that your Aunty?” asks the woman at the store.",
+     "bbox": [
+      709.8,
+      277.7,
+      991.0,
+      328.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "“No, that’s my Mummy!”",
+     "bbox": [
+      725.7,
+      391.2,
+      975.1,
+      470.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "I run home and get some black paint. I smear it on my face. “Nice face painting!” says the man in the park. He points to Dad and asks, “Is that your teacher?” my “No, Daddy!” he’s My tears wash the paint away.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I run home and get some black paint. I smear it on my face.",
+     "bbox": [
+      73.6,
+      83.1,
+      484.8,
+      134.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Nice face painting!” says the man in the park. He points to Dad and asks, “Is that your teacher?”",
+     "bbox": [
+      649.0,
+      83.1,
+      1050.9,
+      161.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "my “No, Daddy!” he’s",
+     "bbox": [
+      684.0,
+      235.3,
+      883.5,
+      347.1
+     ],
+     "size": 40.5
+    },
+    {
+     "role": "BODY",
+     "text": "My tears wash the paint away.",
+     "bbox": [
+      855.5,
+      437.4,
+      1057.7,
+      488.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "I mummyeon’t lookhylikd dadd “W y?”ndu, ayo “Amanda, show me that smile, that’s just I don’t like your feel Daddy’s.” like smiling. “Come on Amanda, look at your dimple. It’s so pretty, just like your Mummy’s!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I mummyeon’t lookhylikd dadd “W y?”ndu, ayo",
+     "bbox": [
+      324.5,
+      81.0,
+      480.9,
+      205.1
+     ],
+     "size": 26.4
+    },
+    {
+     "role": "BODY",
+     "text": "“Amanda, show me that smile, that’s just I don’t like your feel Daddy’s.” like smiling.",
+     "bbox": [
+      628.2,
+      65.9,
+      1072.6,
+      182.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Come on Amanda, look at your dimple. It’s so pretty, just like your Mummy’s!”",
+     "bbox": [
+      665.1,
+      210.9,
+      1035.7,
+      288.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Mummy and Daddy make me smile. And I make them smile too! “Look!” I say, “My teeth are white, just like yours.” “Yes, and your heart is red, just like ours.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mummy and Daddy make me smile. And I make them smile too!",
+     "bbox": [
+      118.8,
+      138.4,
+      416.9,
+      216.4
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Look!” I say, “My teeth are white, just like yours.”",
+     "bbox": [
+      109.4,
+      248.5,
+      426.4,
+      299.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes, and your heart is red, just like ours.”",
+     "bbox": [
+      121.5,
+      327.4,
+      414.2,
+      378.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "How many colours are you?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How many colours are you?",
+     "bbox": [
+      180.1,
+      178.1,
+      386.8,
+      229.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  }
+ ]
+}

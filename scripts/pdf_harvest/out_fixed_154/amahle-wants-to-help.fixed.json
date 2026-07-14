@@ -1,0 +1,312 @@
+{
+ "slug": "amahle-wants-to-help",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Every time Amahle wants to help, all she hears is “NO”. Mama picks up Amahle’s toothbrush. “Mama, can I squeeze the toothpaste?” But Mama says…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Every time Amahle wants to help, all she hears is “NO”.",
+     "bbox": [
+      136.4,
+      181.3,
+      430.5,
+      235.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mama picks up Amahle’s toothbrush. “Mama, can I squeeze the toothpaste?”",
+     "bbox": [
+      81.9,
+      277.3,
+      485.0,
+      331.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Mama says…",
+     "bbox": [
+      197.4,
+      373.3,
+      369.5,
+      395.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“No, Amahle, you are too young.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“No, Amahle, you are too young.”",
+     "bbox": [
+      112.3,
+      277.3,
+      454.6,
+      299.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Baba is looking for his keys. “Baba, can I drive your bakkie?” But Baba says…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Baba is looking for his keys. “Baba, can I drive your bakkie?”",
+     "bbox": [
+      119.0,
+      229.3,
+      447.9,
+      283.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Baba says…",
+     "bbox": [
+      202.6,
+      325.3,
+      364.3,
+      347.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“No, Amahle, you are too young.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“No, Amahle, you are too young.”",
+     "bbox": [
+      112.3,
+      277.3,
+      454.6,
+      299.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Mkhulu’s chickens are clucking outside. “Mkhulu, can I feed the chickens?” But Mkhulu says…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mkhulu’s chickens are clucking outside. “Mkhulu, can I feed the chickens?”",
+     "bbox": [
+      83.7,
+      229.3,
+      483.3,
+      283.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Mkhulu says…",
+     "bbox": [
+      193.4,
+      325.3,
+      373.5,
+      347.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“No, Amahle, you are too young.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“No, Amahle, you are too young.”",
+     "bbox": [
+      112.3,
+      277.3,
+      454.6,
+      299.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Amahle sees Mama in the kitchen. “Mama, can I boil water for tea?” But Mama says…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Amahle sees Mama in the kitchen. “Mama, can I boil water for tea?”",
+     "bbox": [
+      108.7,
+      229.3,
+      458.2,
+      283.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Mama says…",
+     "bbox": [
+      197.4,
+      325.3,
+      369.5,
+      347.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“No, Amahle, you are too young.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“No, Amahle, you are too young.”",
+     "bbox": [
+      112.3,
+      277.3,
+      454.6,
+      299.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Amahle runs over to Gogo’s vegetable garden. “Gogo, can I water the plants?” But Gogo says…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Amahle runs over to Gogo’s vegetable garden. “Gogo, can I water the plants?”",
+     "bbox": [
+      124.0,
+      213.3,
+      442.9,
+      299.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Gogo says…",
+     "bbox": [
+      202.2,
+      341.3,
+      364.7,
+      363.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“No, Amahle, you are too young.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“No, Amahle, you are too young.”",
+     "bbox": [
+      112.3,
+      277.3,
+      454.6,
+      299.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Amahle grabs a book from the table. “Mama, can I read to Teddy?” And Mama says…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Amahle grabs a book from the table. “Mama, can I read to Teddy?”",
+     "bbox": [
+      92.9,
+      213.3,
+      474.0,
+      267.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "And Mama says…",
+     "bbox": [
+      194.6,
+      309.3,
+      372.3,
+      331.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Yes you can, Amahle.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Yes you can, Amahle.”",
+     "bbox": [
+      113.5,
+      402.1,
+      453.5,
+      434.1
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

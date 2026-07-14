@@ -1,0 +1,345 @@
+{
+ "slug": "julia-loves-books",
+ "book_body_size": 33.3,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Julia loves books.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Julia loves books.",
+     "bbox": [
+      203.5,
+      196.2,
+      363.4,
+      373.0
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "She loves books with words,",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She loves books with words,",
+     "bbox": [
+      57.4,
+      187.6,
+      357.1,
+      364.4
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "and books with pictures.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "and books with pictures.",
+     "bbox": [
+      102.4,
+      162.8,
+      365.3,
+      339.6
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Julia loves books about swimming,",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Julia loves books about swimming,",
+     "bbox": [
+      114.3,
+      102.6,
+      452.6,
+      279.4
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "and books about tennis.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "and books about tennis.",
+     "bbox": [
+      626.5,
+      89.8,
+      985.2,
+      204.2
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "She loves books about travelling,",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She loves books about travelling,",
+     "bbox": [
+      114.3,
+      329.4,
+      452.6,
+      506.1
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "and books about staying home.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "and books about staying home.",
+     "bbox": [
+      95.4,
+      212.4,
+      471.5,
+      389.2
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "But there is one book missing.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But there is one book missing.",
+     "bbox": [
+      728.9,
+      203.9,
+      1019.4,
+      380.7
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Where is the book about Julia?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Where is the book about Julia?",
+     "bbox": [
+      56.7,
+      98.3,
+      514.1,
+      212.7
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "She will have to write it herself.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She will have to write it herself.",
+     "bbox": [
+      72.2,
+      238.6,
+      494.8,
+      353.0
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Here is a pen, Julia.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Here is a pen, Julia.",
+     "bbox": [
+      111.3,
+      123.8,
+      455.6,
+      238.2
+     ],
+     "size": 52.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "gode Na Merci Dankie Enkosi Ngiyabonga Asante Thank you Salamat leboga Kea We will love Ndzi your book. khensa Shukran Tak",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "gode Na",
+     "bbox": [
+      455.6,
+      28.0,
+      507.5,
+      79.0
+     ],
+     "size": 22.6
+    },
+    {
+     "role": "BODY",
+     "text": "Merci",
+     "bbox": [
+      138.2,
+      39.5,
+      234.2,
+      95.7
+     ],
+     "size": 38.9
+    },
+    {
+     "role": "BODY",
+     "text": "Dankie",
+     "bbox": [
+      324.1,
+      100.9,
+      428.2,
+      145.5
+     ],
+     "size": 33.5
+    },
+    {
+     "role": "BODY",
+     "text": "Enkosi",
+     "bbox": [
+      34.8,
+      157.7,
+      140.3,
+      188.6
+     ],
+     "size": 30.9
+    },
+    {
+     "role": "BODY",
+     "text": "Ngiyabonga",
+     "bbox": [
+      440.4,
+      176.0,
+      520.9,
+      202.2
+     ],
+     "size": 14.2
+    },
+    {
+     "role": "BODY",
+     "text": "Asante",
+     "bbox": [
+      232.7,
+      181.3,
+      321.2,
+      205.2
+     ],
+     "size": 23.8
+    },
+    {
+     "role": "BODY",
+     "text": "Thank you",
+     "bbox": [
+      505.1,
+      225.6,
+      552.7,
+      262.2
+     ],
+     "size": 15.4
+    },
+    {
+     "role": "BODY",
+     "text": "Salamat leboga Kea",
+     "bbox": [
+      316.6,
+      357.5,
+      554.6,
+      411.9
+     ],
+     "size": 17.9
+    },
+    {
+     "role": "BODY",
+     "text": "We will love Ndzi your book. khensa",
+     "bbox": [
+      688.7,
+      77.1,
+      1109.8,
+      191.5
+     ],
+     "size": 52.0
+    },
+    {
+     "role": "BODY",
+     "text": "Shukran",
+     "bbox": [
+      723.0,
+      415.5,
+      833.6,
+      446.6
+     ],
+     "size": 26.3
+    },
+    {
+     "role": "BODY",
+     "text": "Tak",
+     "bbox": [
+      1063.4,
+      317.2,
+      1116.9,
+      354.3
+     ],
+     "size": 31.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

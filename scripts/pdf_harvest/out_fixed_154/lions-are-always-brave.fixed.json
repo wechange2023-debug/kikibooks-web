@@ -1,0 +1,210 @@
+{
+ "slug": "lions-are-always-brave",
+ "book_body_size": 36.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Oh! Hello.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh! Hello.",
+     "bbox": [
+      779.5,
+      509.7,
+      922.7,
+      545.7
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "I’m a lion. Do you know what that is? Should I tell you? Let me tell you.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I’m a lion. Do you know what that is? Should I tell you? Let me tell you.",
+     "bbox": [
+      97.3,
+      203.4,
+      469.6,
+      369.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "A lion is strong.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A lion is strong.",
+     "bbox": [
+      740.4,
+      268.2,
+      960.4,
+      304.2
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Lions can run very fast.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lions can run very fast.",
+     "bbox": [
+      687.0,
+      268.2,
+      1013.8,
+      304.2
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Lions are extreeemely stretchy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lions are extreeemely stretchy.",
+     "bbox": [
+      633.7,
+      507.1,
+      1067.1,
+      543.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "And, um, br ... br ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And, um, br ... br ...",
+     "bbox": [
+      719.1,
+      281.7,
+      981.6,
+      317.7
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "... brave. Lions are always brave! Lions aren’t scared of ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "... brave. Lions are always brave! Lions aren’t scared of ...",
+     "bbox": [
+      87.2,
+      225.0,
+      416.3,
+      347.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "ANY ... .... THING!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "ANY ...",
+     "bbox": [
+      233.6,
+      509.7,
+      333.4,
+      545.7
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": ".... THING!",
+     "bbox": [
+      772.2,
+      509.7,
+      928.6,
+      545.7
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "ROAR!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "ROAR!",
+     "bbox": [
+      225.6,
+      266.2,
+      341.3,
+      308.2
+     ],
+     "size": 42.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

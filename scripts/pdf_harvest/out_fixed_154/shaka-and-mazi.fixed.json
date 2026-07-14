@@ -1,0 +1,345 @@
+{
+ "slug": "shaka-and-mazi",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Shaka has a new friend that only he can see.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Shaka has a new friend that only he can see.",
+     "bbox": [
+      172.9,
+      252.9,
+      389.8,
+      306.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“His name is Mazi ” he tells Mama. ...but whenever Mama comes to Shaka’s room, Mazi runs and hides .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“His name is Mazi ” he tells Mama.",
+     "bbox": [
+      126.4,
+      62.2,
+      454.7,
+      88.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "...but whenever Mama comes to Shaka’s room, Mazi runs and hides .",
+     "bbox": [
+      672.1,
+      465.5,
+      1031.5,
+      519.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Mazi likes to laugh . He makes Shaka laugh too! They roll in the grass and build castles in the sand.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mazi likes to laugh . He makes Shaka laugh too!",
+     "bbox": [
+      156.0,
+      171.4,
+      411.0,
+      219.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "They roll in the grass and build castles in the sand.",
+     "bbox": [
+      151.7,
+      337.9,
+      423.7,
+      385.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Can Mazi eat with us?” Shaka asks Papa at dinner. But when Papa looks up, Mazi hides behind the curtains.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Can Mazi eat with us?” Shaka asks Papa at dinner.",
+     "bbox": [
+      158.7,
+      184.8,
+      408.2,
+      232.5
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "But when Papa looks up, Mazi hides behind the curtains.",
+     "bbox": [
+      133.0,
+      343.6,
+      442.5,
+      397.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "One day, Mama tells Shaka, “Papa has a new job. We are moving to another town.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day, Mama tells Shaka, “Papa has a new job. We are moving to another town.”",
+     "bbox": [
+      117.1,
+      247.6,
+      449.8,
+      325.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Can Mazi come?” Shaka asks Mama. “Ask him.” Mama says. But Shaka can’t see Mazi anywhere .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Can Mazi come?” Shaka asks Mama.",
+     "bbox": [
+      200.6,
+      60.6,
+      380.2,
+      108.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Ask him.” Mama says. But Shaka can’t see Mazi anywhere .",
+     "bbox": [
+      670.3,
+      460.4,
+      1033.1,
+      513.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "The next afternoon, the big truck comes. Soon, the house is empty.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The next afternoon, the big truck comes.",
+     "bbox": [
+      183.2,
+      168.6,
+      383.7,
+      222.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Soon, the house is empty.",
+     "bbox": [
+      167.1,
+      343.6,
+      408.3,
+      363.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "But Shaka can’t leave. Where has Mazi gone ?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But Shaka can’t leave.",
+     "bbox": [
+      181.6,
+      65.6,
+      399.3,
+      91.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Where has Mazi gone ?",
+     "bbox": [
+      738.7,
+      475.9,
+      964.6,
+      501.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Is Mazi in the garden ? Has he jumped over the fence?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Is Mazi in the garden ?",
+     "bbox": [
+      169.9,
+      250.4,
+      397.0,
+      276.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Has he jumped over the fence?",
+     "bbox": [
+      127.0,
+      305.6,
+      439.9,
+      331.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Maybe Mazi’s Papa got a new job too,” Mama says. “He might also have moved away.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Maybe Mazi’s Papa got a new job too,” Mama says.",
+     "bbox": [
+      100.3,
+      65.6,
+      480.6,
+      113.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“He might also have moved away.”",
+     "bbox": [
+      684.3,
+      475.9,
+      1019.0,
+      501.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "When Shaka gets to the new house, there is a boy next door. “My name is Matty ,” says the boy with a smile.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When Shaka gets to the new house, there is a boy next door.",
+     "bbox": [
+      116.1,
+      168.6,
+      450.9,
+      222.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“My name is Matty ,” says the boy with a smile.",
+     "bbox": [
+      168.4,
+      352.1,
+      407.0,
+      399.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Sometimes we miss old friends,” Mama says. “But there is always room in our hearts for new ones!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Sometimes we miss old friends,” Mama says.",
+     "bbox": [
+      128.0,
+      65.6,
+      452.8,
+      113.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“But there is always room in our hearts for new ones!”",
+     "bbox": [
+      658.7,
+      468.8,
+      1044.7,
+      516.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

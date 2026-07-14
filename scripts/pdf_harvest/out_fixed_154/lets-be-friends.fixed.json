@@ -1,0 +1,311 @@
+{
+ "slug": "lets-be-friends",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "It’s time to make some friends!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s time to make some friends!",
+     "bbox": [
+      113.3,
+      150.0,
+      330.3,
+      216.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Making friends can be hard. But let’s try!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Making friends can be hard.",
+     "bbox": [
+      657.6,
+      194.6,
+      907.3,
+      224.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "But let’s try!",
+     "bbox": [
+      747.3,
+      295.9,
+      1077.1,
+      355.9
+     ],
+     "size": 60.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Hello! Hi! Doyouliketoswim? So do I!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello! Hi!",
+     "bbox": [
+      216.3,
+      353.9,
+      350.6,
+      383.9
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Doyouliketoswim? So do I!",
+     "bbox": [
+      706.3,
+      84.9,
+      976.4,
+      188.0
+     ],
+     "size": 31.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "LET’S BE FRIENDS!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "LET’S BE FRIENDS!",
+     "bbox": [
+      668.9,
+      109.4,
+      938.3,
+      229.4
+     ],
+     "size": 60.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Oh dear.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh dear.",
+     "bbox": [
+      790.5,
+      356.7,
+      910.3,
+      386.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Hello! Hi! Do you like seashells? So do I! LET’S BE FRIENDS!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello! Hi! Do you like seashells?",
+     "bbox": [
+      134.5,
+      61.7,
+      368.9,
+      154.7
+     ],
+     "size": 25.4
+    },
+    {
+     "role": "BODY",
+     "text": "So do I!",
+     "bbox": [
+      336.8,
+      189.8,
+      442.7,
+      219.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "SFX",
+     "text": "LET’S BE FRIENDS!",
+     "bbox": [
+      673.4,
+      183.5,
+      860.1,
+      263.5
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Oh my.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh my.",
+     "bbox": [
+      733.4,
+      151.9,
+      832.7,
+      181.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Hello! Hi! Are you a fish? So am I! LET’S BE FRIENDS!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello! Hi! Are you a fish?",
+     "bbox": [
+      134.5,
+      61.7,
+      341.1,
+      154.7
+     ],
+     "size": 25.4
+    },
+    {
+     "role": "BODY",
+     "text": "So am I!",
+     "bbox": [
+      333.6,
+      189.8,
+      445.9,
+      219.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "SFX",
+     "text": "LET’S BE FRIENDS!",
+     "bbox": [
+      686.2,
+      183.5,
+      872.8,
+      263.5
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Oh NO.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh NO.",
+     "bbox": [
+      715.0,
+      122.2,
+      821.4,
+      152.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "NOBODY wants to be my friend. knock knock",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "NOBODY wants to be my friend.",
+     "bbox": [
+      96.5,
+      153.5,
+      250.8,
+      254.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "knock knock",
+     "bbox": [
+      708.2,
+      287.3,
+      770.7,
+      342.0
+     ],
+     "size": 15.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "LET’S BE FRIENDS!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "LET’S BE",
+     "bbox": [
+      129.2,
+      160.3,
+      366.9,
+      220.3
+     ],
+     "size": 60.0
+    },
+    {
+     "role": "SFX",
+     "text": "FRIENDS!",
+     "bbox": [
+      715.6,
+      160.3,
+      985.1,
+      220.3
+     ],
+     "size": 60.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

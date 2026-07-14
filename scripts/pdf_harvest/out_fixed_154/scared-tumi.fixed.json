@@ -1,0 +1,246 @@
+{
+ "slug": "scared-tumi",
+ "book_body_size": 25.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "My name is Tumi and I am scared.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My name is Tumi and I am scared.",
+     "bbox": [
+      173.9,
+      260.9,
+      393.0,
+      315.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Mama says it’s okay to be scared. “Everybody gets scared.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama says it’s okay to be scared. “Everybody gets scared.”",
+     "bbox": [
+      111.6,
+      260.9,
+      455.3,
+      315.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "What if there is a monster under my bed?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What if there is a monster under my bed?",
+     "bbox": [
+      150.7,
+      260.9,
+      416.2,
+      315.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Then I will tell it to go away and NEVER come back.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Then I will tell it to go away and NEVER come back.”",
+     "bbox": [
+      137.1,
+      260.9,
+      429.8,
+      315.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "What if there are eyes in the bath tub drain?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What if there are eyes in the bath tub drain?",
+     "bbox": [
+      171.5,
+      260.9,
+      395.4,
+      315.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Then your big sister, Kamo, will pull you out of the bath.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Then your big sister, Kamo, will pull you out of the bath.”",
+     "bbox": [
+      133.6,
+      260.9,
+      433.3,
+      315.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "What if a whale swallows me at the beach?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What if a whale swallows me at the beach?",
+     "bbox": [
+      134.6,
+      260.9,
+      432.3,
+      315.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Then Kamo and I will swim into the whale’s mouth to rescue you.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Then Kamo and I will swim into the whale’s mouth to rescue you.”",
+     "bbox": [
+      678.4,
+      457.7,
+      1076.5,
+      512.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "What if I can’t sing ABC and the other kids laugh at me?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What if I can’t sing ABC and the other kids laugh at me?",
+     "bbox": [
+      75.4,
+      111.7,
+      312.3,
+      196.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Then Teacher Jill will help you remember.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Then Teacher Jill will help you remember.”",
+     "bbox": [
+      143.4,
+      260.4,
+      423.6,
+      315.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "What if I’m scared of going to the dentist tomorrow?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What if I’m scared of going to the dentist tomorrow?",
+     "bbox": [
+      145.7,
+      260.9,
+      421.2,
+      315.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“I will be right there holding your hand.” Everybody gets scared. Mama says it’s okay.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I will be right there holding your hand.”",
+     "bbox": [
+      75.6,
+      230.9,
+      491.4,
+      255.9
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Everybody gets scared. Mama says it’s okay.",
+     "bbox": [
+      163.7,
+      290.9,
+      403.2,
+      345.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

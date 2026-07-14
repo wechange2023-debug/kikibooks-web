@@ -1,0 +1,256 @@
+{
+ "slug": "come-stay-with-me",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Tendai Turtle lives in the water. Tendai’s best friend is Bunny Busi. She lives in a tree.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tendai Turtle lives in the water.",
+     "bbox": [
+      76.2,
+      94.3,
+      490.8,
+      124.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Tendai’s best friend is Bunny Busi. She lives in a tree.",
+     "bbox": [
+      629.4,
+      431.6,
+      1071.4,
+      497.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Granny Turtle has hurt her shell.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Granny Turtle has hurt her shell.",
+     "bbox": [
+      745.2,
+      94.7,
+      1035.0,
+      160.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“We have to go to help Granny,” says Mum. “Come stay with me,” calls Busi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“We have to go to help Granny,” says Mum.",
+     "bbox": [
+      63.3,
+      99.0,
+      503.7,
+      165.0
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Come stay with me,” calls Busi.",
+     "bbox": [
+      699.3,
+      434.4,
+      1001.5,
+      500.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Tendai stays with Bunny Busi in the tree.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tendai stays with Bunny Busi in the tree.",
+     "bbox": [
+      129.9,
+      80.5,
+      437.1,
+      146.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "They play all day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They play all day.",
+     "bbox": [
+      169.0,
+      80.1,
+      397.9,
+      110.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "They sleep all night.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They sleep all night.",
+     "bbox": [
+      132.2,
+      269.3,
+      393.7,
+      299.3
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Mum and Dad come back with Granny.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mum and Dad come back with Granny.",
+     "bbox": [
+      727.7,
+      145.0,
+      973.1,
+      211.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“How are you, Granny?” asks Tendai.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“How are you, Granny?” asks Tendai.",
+     "bbox": [
+      117.1,
+      77.0,
+      449.8,
+      143.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“I am better now,” says Granny with a smile. “We fixed her shell,” answers Mum.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I am better now,” says Granny with a smile.",
+     "bbox": [
+      118.2,
+      67.8,
+      448.8,
+      133.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“We fixed her shell,” answers Mum.",
+     "bbox": [
+      703.6,
+      77.0,
+      997.2,
+      143.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Granny gives Tendai her favourite flute.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Granny gives Tendai her favourite flute.",
+     "bbox": [
+      696.4,
+      77.0,
+      1004.4,
+      143.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Tendai plays the flute and everybody dances.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tendai plays the flute and everybody dances.",
+     "bbox": [
+      117.3,
+      77.0,
+      449.6,
+      143.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

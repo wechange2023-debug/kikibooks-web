@@ -1,0 +1,378 @@
+{
+ "slug": "moms-hands",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Mom holds me close. Her hands move. I smile.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mom holds me close. Her hands move.",
+     "bbox": [
+      165.8,
+      244.9,
+      401.1,
+      297.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "I smile.",
+     "bbox": [
+      245.5,
+      331.3,
+      321.4,
+      355.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Good morning,” Mom signs. Her hands dance in the air. I wave back.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Good morning,” Mom signs.",
+     "bbox": [
+      670.3,
+      92.3,
+      856.1,
+      145.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Her hands dance in the air.",
+     "bbox": [
+      636.3,
+      250.6,
+      828.4,
+      303.4
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "I wave back.",
+     "bbox": [
+      662.9,
+      365.8,
+      801.8,
+      389.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Mom shows me “love”. She points to her heart. Then to me.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mom shows me “love”.",
+     "bbox": [
+      724.4,
+      350.5,
+      976.4,
+      374.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "She points to her heart. Then to me.",
+     "bbox": [
+      719.1,
+      408.1,
+      981.7,
+      460.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "At breakfast, we sign “eat”. I tap my mouth with my hand. Mom claps, “Yes!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "At breakfast, we sign “eat”.",
+     "bbox": [
+      93.1,
+      228.6,
+      397.3,
+      252.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "I tap my mouth with my hand. Mom claps, “Yes!”",
+     "bbox": [
+      76.9,
+      286.2,
+      413.5,
+      339.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "When we play, Mom signs “ball”. I roll it to her. She laughs.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When we play, Mom signs “ball”.",
+     "bbox": [
+      306.2,
+      146.2,
+      497.5,
+      198.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "I roll it to her. She laughs.",
+     "bbox": [
+      658.0,
+      302.8,
+      806.0,
+      355.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Mom signs “bird”. We watch the birds fly. I flap my arms too.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mom signs “bird”.",
+     "bbox": [
+      809.1,
+      233.5,
+      1003.7,
+      257.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "We watch the birds fly. I flap my arms too.",
+     "bbox": [
+      778.0,
+      291.1,
+      1034.8,
+      343.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "At story time, Mom signs each word. Her hands paint pictures in the air. I listen with my eyes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "At story time, Mom signs each word. Her hands paint pictures in the air.",
+     "bbox": [
+      79.8,
+      291.0,
+      487.2,
+      343.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "I listen with my eyes.",
+     "bbox": [
+      168.0,
+      377.4,
+      398.9,
+      401.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "When I feel sad. Mom signs “hug”. She wraps me in her arms.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When I feel sad. Mom signs “hug”.",
+     "bbox": [
+      204.1,
+      357.1,
+      396.9,
+      409.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "She wraps me in her arms.",
+     "bbox": [
+      151.6,
+      443.5,
+      449.4,
+      467.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Mom meets her Deaf friends. I watch their moving hands.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mom meets her Deaf friends.",
+     "bbox": [
+      343.4,
+      290.7,
+      519.8,
+      343.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "I watch their moving hands.",
+     "bbox": [
+      620.2,
+      290.7,
+      784.4,
+      343.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "I learn to sign “friend”. I hold my hands together. Mom smiles proudly.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I learn to sign “friend”. I hold my hands together.",
+     "bbox": [
+      138.9,
+      462.2,
+      428.0,
+      515.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mom smiles proudly.",
+     "bbox": [
+      937.9,
+      378.6,
+      1070.5,
+      431.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Before bed, Mom signs “I love you”. Her hands make a special shape. I copy her.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Before bed, Mom signs “I love you”.",
+     "bbox": [
+      84.7,
+      268.6,
+      482.2,
+      292.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Her hands make a special shape. I copy her.",
+     "bbox": [
+      97.4,
+      326.2,
+      469.5,
+      379.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Mom talks with her hands. I love Mom’s hands. Mom and me. Forever.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mom talks with her hands. I love Mom’s hands.",
+     "bbox": [
+      703.8,
+      303.4,
+      997.0,
+      356.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mom and me. Forever.",
+     "bbox": [
+      723.8,
+      389.8,
+      977.0,
+      413.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

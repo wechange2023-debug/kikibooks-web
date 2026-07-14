@@ -1,0 +1,244 @@
+{
+ "slug": "the-fish-that-couldnt-swim",
+ "book_body_size": 28.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "There once was a boy who could run and jump and climb. He could even make a noise like a seagull. But he couldn’t swim. And oh, how he wanted to.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There once was a boy who could run and jump and climb. He could even make a noise like a seagull.",
+     "bbox": [
+      59.0,
+      138.8,
+      507.9,
+      246.8
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "But he couldn’t swim.",
+     "bbox": [
+      623.6,
+      140.6,
+      888.4,
+      168.6
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "And oh, how he wanted to.",
+     "bbox": [
+      623.6,
+      220.6,
+      792.3,
+      288.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Then one day ... ... he noticed a fish that couldn’t swim either.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then one day ...",
+     "bbox": [
+      56.7,
+      101.4,
+      249.8,
+      129.4
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "... he noticed a fish that couldn’t swim either.",
+     "bbox": [
+      623.6,
+      99.9,
+      780.5,
+      287.9
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "He wanted to help the fish.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He wanted to help the fish.",
+     "bbox": [
+      187.4,
+      170.4,
+      379.5,
+      238.4
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "So he put it in the water ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So he put it in the water ...",
+     "bbox": [
+      689.3,
+      271.5,
+      1011.5,
+      299.5
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "... and the fish came alive!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "... and the fish came alive!",
+     "bbox": [
+      125.8,
+      274.4,
+      441.1,
+      302.4
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "But the boy also wanted to learn to swim.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But the boy also wanted to learn to swim.",
+     "bbox": [
+      701.5,
+      173.6,
+      999.3,
+      241.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "So the fish showed the boy how to put his mouth in the water and blow .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So the fish showed the boy how to put his mouth in the water and blow .",
+     "bbox": [
+      56.7,
+      156.1,
+      253.2,
+      434.8
+     ],
+     "size": 49.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "What fun they had!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What fun they had!",
+     "bbox": [
+      192.1,
+      127.0,
+      430.1,
+      154.9
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "The next day, the boy remembered what the fish had taught him.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The next day, the boy remembered what the fish had taught him.",
+     "bbox": [
+      636.3,
+      140.3,
+      1064.5,
+      208.3
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "And so the boy who could run and jump and climb, and even make a noise like a seagull, learned to swim like a fish.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And so the boy who could run and jump and climb, and even make a noise like a seagull, learned to swim like a fish.",
+     "bbox": [
+      60.5,
+      214.3,
+      506.4,
+      362.4
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,268 @@
+{
+ "slug": "grumpy-cloud",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "In a colourful land filled with feelings, there lived a boy named Fafa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In a colourful land filled with feelings, there lived a boy named Fafa.",
+     "bbox": [
+      114.9,
+      136.6,
+      452.0,
+      277.4
+     ],
+     "size": 28.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Fafa was a cheerful boy who loved to run and play all day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fafa was a cheerful boy who loved to run and play all day.",
+     "bbox": [
+      128.9,
+      258.1,
+      438.0,
+      390.9
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "But he had a special gift: his feelings could come to life.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But he had a special gift: his feelings could come to life.",
+     "bbox": [
+      679.8,
+      253.2,
+      1021.0,
+      355.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "One day, Fafa woke up feeling grumpy. Grumpy Cloud, with a frown on their face, followed Fafa around all day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day, Fafa woke up feeling grumpy. Grumpy Cloud, with a frown on their face, followed Fafa around all day.",
+     "bbox": [
+      92.2,
+      190.9,
+      474.7,
+      364.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Whenever Fafa tried to play, Grumpy Cloud would make everything sad.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Whenever Fafa tried to play, Grumpy Cloud would make everything sad.",
+     "bbox": [
+      652.3,
+      130.7,
+      1048.5,
+      232.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Fafa tried his best to shake off Grumpy Cloud... but nothing worked.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fafa tried his best to shake off Grumpy Cloud...",
+     "bbox": [
+      667.6,
+      315.6,
+      1040.3,
+      381.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "but nothing worked.",
+     "bbox": [
+      764.5,
+      425.3,
+      1040.3,
+      455.3
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "He tried dancing, but Grumpy Cloud was STILL there.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He tried dancing, but Grumpy Cloud was STILL there.",
+     "bbox": [
+      138.8,
+      239.5,
+      428.1,
+      341.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Mama decided to tickle Grumpy Cloud. It DIDN’T work.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama decided to tickle Grumpy Cloud.",
+     "bbox": [
+      712.6,
+      201.5,
+      1036.4,
+      267.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "It DIDN’T work.",
+     "bbox": [
+      768.1,
+      297.9,
+      980.8,
+      327.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Mama tried again and Grumpy Cloud smiled slightly, but Grumpy Cloud stayed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama tried again and Grumpy Cloud smiled slightly, but Grumpy Cloud stayed.",
+     "bbox": [
+      102.5,
+      183.1,
+      464.4,
+      324.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Mama tickled Grumpy Cloud one last time. A giggle came out and Grumpy Cloud went away.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama tickled Grumpy Cloud one last time. A giggle came out and Grumpy Cloud went away.",
+     "bbox": [
+      55.3,
+      127.1,
+      503.1,
+      229.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Fafa laughed with joy and a happy little smile appeared.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fafa laughed with joy and a happy little smile appeared.",
+     "bbox": [
+      668.4,
+      221.1,
+      1032.4,
+      323.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Fafa knew that it was okay to have different feelings, as long as he knew his way back to his smile.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fafa knew that it was okay to have different feelings,",
+     "bbox": [
+      93.0,
+      101.6,
+      473.9,
+      224.9
+     ],
+     "size": 37.5
+    },
+    {
+     "role": "BODY",
+     "text": "as long as he knew his way back to his smile.",
+     "bbox": [
+      668.2,
+      101.4,
+      1032.6,
+      165.2
+     ],
+     "size": 29.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

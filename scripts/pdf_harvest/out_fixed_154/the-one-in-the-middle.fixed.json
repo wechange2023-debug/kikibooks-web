@@ -1,0 +1,266 @@
+{
+ "slug": "the-one-in-the-middle",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "I am the middle one. Not the first born. Not the last born. The one in the middle!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I am the middle one. Not the first born. Not the last born.",
+     "bbox": [
+      113.4,
+      214.9,
+      324.5,
+      300.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "The one in the middle!",
+     "bbox": [
+      113.4,
+      338.9,
+      344.3,
+      362.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "The one in the middle can be easy to forget.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The one in the middle can be easy to forget.",
+     "bbox": [
+      657.6,
+      132.2,
+      881.0,
+      187.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "And easy to leave out.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And easy to leave out.",
+     "bbox": [
+      737.8,
+      155.1,
+      963.0,
+      179.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "But that’s okay because I am also the one with IDEAS!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But that’s okay because I am also the one with IDEAS!",
+     "bbox": [
+      256.5,
+      245.9,
+      459.3,
+      331.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Look what I can make from just this cardboard box! A BEAUTIFUL house… with real doors and windows.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Look what I can make from just this cardboard box!",
+     "bbox": [
+      795.0,
+      184.7,
+      993.7,
+      270.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "A BEAUTIFUL house… with real doors and windows.",
+     "bbox": [
+      782.0,
+      308.7,
+      1006.7,
+      394.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "My house has an extra special bed, and a MAGIC SLIDE.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My house has an extra special bed, and a MAGIC SLIDE.",
+     "bbox": [
+      750.4,
+      231.8,
+      950.4,
+      317.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Some days my house is also a shop.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Some days my house is also a shop.",
+     "bbox": [
+      708.7,
+      261.4,
+      924.9,
+      316.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "And on other days it’s a VERY FANTASTIC show.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And on other days it’s a VERY FANTASTIC show.",
+     "bbox": [
+      141.7,
+      261.4,
+      381.4,
+      316.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Sometimes my house is just for me!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes my house is just for me!",
+     "bbox": [
+      708.7,
+      261.4,
+      929.0,
+      316.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "And sometimes it’s a house for three! I am the middle one. Not the first born. Not the last born. The one in the middle! And that’s the best place for me.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And sometimes it’s a house for three!",
+     "bbox": [
+      79.4,
+      183.9,
+      460.5,
+      207.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "I am the middle one. Not the first born. Not the last born.",
+     "bbox": [
+      79.4,
+      245.9,
+      290.5,
+      331.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "The one in the middle!",
+     "bbox": [
+      79.4,
+      369.9,
+      310.3,
+      393.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "And that’s the best place for me.",
+     "bbox": [
+      684.5,
+      452.7,
+      1016.3,
+      476.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,356 @@
+{
+ "slug": "lets-party",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "I’m invited to my friend’s party. Hooray! I get to dress up and wear something fun. Hmmm …",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I’m invited to my friend’s party.",
+     "bbox": [
+      56.7,
+      63.3,
+      290.1,
+      129.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Hooray! I get to dress up and wear something fun.",
+     "bbox": [
+      691.6,
+      84.8,
+      981.5,
+      238.3
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "SFX",
+     "text": "Hmmm …",
+     "bbox": [
+      839.1,
+      460.3,
+      1058.6,
+      510.3
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Or I’ve maybe always even wanted an to orange dress like carrot a superhero and save the day. CRUNCH Zoom! Zap! CRUNCH Kapow! CRUNCH",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Or I’ve maybe always even wanted an to orange dress like carrot a superhero and save the day.",
+     "bbox": [
+      56.7,
+      59.2,
+      365.4,
+      165.3
+     ],
+     "size": 30.1
+    },
+    {
+     "role": "BODY",
+     "text": "CRUNCH Zoom! Zap! CRUNCH Kapow! CRUNCH",
+     "bbox": [
+      622.5,
+      117.5,
+      1059.9,
+      484.7
+     ],
+     "size": 91.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "But I’d also like to be a fluffy bunny with soft ears and a wiggly nose. Hop hop.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But I’d also like to be a fluffy bunny with soft ears and a wiggly nose. Hop",
+     "bbox": [
+      623.6,
+      63.3,
+      995.5,
+      306.4
+     ],
+     "size": 50.2
+    },
+    {
+     "role": "BODY",
+     "text": "hop.",
+     "bbox": [
+      941.3,
+      409.5,
+      1089.2,
+      512.5
+     ],
+     "size": 73.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Or maybe even orange carrot. a very Crunch. Crunch. Crunch.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Or maybe even orange carrot. a very",
+     "bbox": [
+      57.4,
+      91.7,
+      225.4,
+      229.7
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Crunch. Crunch. Crunch.",
+     "bbox": [
+      670.5,
+      122.7,
+      1030.3,
+      462.7
+     ],
+     "size": 100.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "I could dress like a birthday cake. Yummmm.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "I could dress like a birthday cake. Yummmm.",
+     "bbox": [
+      56.7,
+      216.4,
+      464.7,
+      382.4
+     ],
+     "size": 55.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Or I could pretend to be a great, big whale. Sploosh splash.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Or I could pretend to be a great, big whale.",
+     "bbox": [
+      294.8,
+      140.6,
+      490.7,
+      278.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Sploosh splash.",
+     "bbox": [
+      902.1,
+      66.6,
+      1073.2,
+      165.6
+     ],
+     "size": 45.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "It would also be fun to dress up like a leaping, twirling dancer. Wheeeeeee!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It would also be fun to dress up like",
+     "bbox": [
+      56.7,
+      84.6,
+      337.2,
+      150.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "a leaping,",
+     "bbox": [
+      372.7,
+      352.7,
+      512.8,
+      382.7
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "twirling dancer.",
+     "bbox": [
+      686.2,
+      224.2,
+      792.6,
+      290.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "SFX",
+     "text": "Wheeeeeee!",
+     "bbox": [
+      628.2,
+      449.4,
+      1072.6,
+      524.4
+     ],
+     "size": 75.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Or I could go as a fart and be all loud and stinky. Pfffffffft!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Or I could go as a fart and be all loud and stinky.",
+     "bbox": [
+      56.7,
+      335.5,
+      268.8,
+      473.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "SFX",
+     "text": "Pfffffffft!",
+     "bbox": [
+      677.5,
+      213.7,
+      1019.0,
+      287.5
+     ],
+     "size": 73.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "But I also really love monsters. Roar!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But I also really love monsters.",
+     "bbox": [
+      56.7,
+      63.4,
+      278.0,
+      129.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "SFX",
+     "text": "Roar!",
+     "bbox": [
+      709.5,
+      443.7,
+      921.5,
+      524.1
+     ],
+     "size": 80.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "How will I choose what to be?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How will I choose what to be?",
+     "bbox": [
+      686.0,
+      256.1,
+      929.0,
+      322.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "I know! I’ll go as a superhero-bunny- carrot-birthday cake-whale- dancer-fart-monster!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I know! I’ll go as a superhero-bunny- carrot-birthday cake-whale- dancer-fart-monster!",
+     "bbox": [
+      56.7,
+      69.2,
+      467.4,
+      258.8
+     ],
+     "size": 32.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Zoom! Hop Crunch. Yummmm. Sploosh hop. Zap! Crunch. splash. Kapow! Crunch. Let’sty! par Wheeeeeee! Pfffffffft! Roar!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Zoom! Hop Crunch. Yummmm. Sploosh hop. Zap! Crunch. splash. Kapow! Crunch. Let’sty! par Wheeeeeee! Pfffffffft! Roar!",
+     "bbox": [
+      56.7,
+      58.5,
+      953.6,
+      444.2
+     ],
+     "size": 40.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

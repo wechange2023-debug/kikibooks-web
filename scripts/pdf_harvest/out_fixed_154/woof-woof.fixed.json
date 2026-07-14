@@ -1,0 +1,234 @@
+{
+ "slug": "woof-woof",
+ "book_body_size": 28.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Daddy!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Daddy!",
+     "bbox": [
+      801.4,
+      239.9,
+      899.4,
+      267.9
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Don’t be scared.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Don’t be scared.",
+     "bbox": [
+      737.3,
+      114.4,
+      963.5,
+      142.4
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Woof-woof out!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Woof-woof out!",
+     "bbox": [
+      658.5,
+      142.5,
+      876.5,
+      170.5
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Look, Doggy’s bringing the ball.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Look, Doggy’s bringing the ball.",
+     "bbox": [
+      165.4,
+      184.6,
+      401.6,
+      246.2
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Ball?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Ball?",
+     "bbox": [
+      422.0,
+      180.5,
+      484.9,
+      208.5
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Doggy wants to play. Play?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Doggy wants to play.",
+     "bbox": [
+      325.9,
+      86.0,
+      508.9,
+      147.7
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Play?",
+     "bbox": [
+      381.4,
+      244.8,
+      453.4,
+      272.8
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Catch the ball.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Catch the ball.",
+     "bbox": [
+      182.6,
+      260.3,
+      384.3,
+      288.3
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Woof-woof out!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Woof-woof out!",
+     "bbox": [
+      741.4,
+      118.7,
+      959.4,
+      146.7
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Look, Daddy’s playing.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Look, Daddy’s playing.",
+     "bbox": [
+      128.5,
+      62.0,
+      438.5,
+      90.0
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Now you play.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Now you play.",
+     "bbox": [
+      752.0,
+      148.4,
+      948.8,
+      176.4
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Catch, Woof-woof!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Catch, Woof-woof!",
+     "bbox": [
+      719.5,
+      74.7,
+      981.3,
+      102.7
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

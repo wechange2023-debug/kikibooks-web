@@ -1,0 +1,280 @@
+{
+ "slug": "just-like-me",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "It’s Rahah’s birthday next week. She’s excited about inviting her new friends to her party.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s Rahah’s birthday next week. She’s excited about inviting her new friends to her party.",
+     "bbox": [
+      84.3,
+      217.0,
+      407.7,
+      373.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Who will you invite?” asks Mum. “You’ve only been at school a few months. The kids all seem so very different, don’t they?” “No, Mum. I have lots of new friends,” says Rahah.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Who will you invite?” asks Mum. “You’ve only been at school a few months. The kids all seem so very different, don’t they?”",
+     "bbox": [
+      58.8,
+      75.2,
+      473.5,
+      231.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No, Mum. I have lots of new friends,” says Rahah.",
+     "bbox": [
+      58.8,
+      263.2,
+      417.1,
+      335.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“I want to invite Zerina. She wants to be a ballerina, just like me !”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I want to invite Zerina. She wants to be a ballerina, just like me !”",
+     "bbox": [
+      65.2,
+      181.5,
+      402.7,
+      303.6
+     ],
+     "size": 34.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Oh lovely,” says Mum. “Let’s play some dance music then.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Oh lovely,” says Mum. “Let’s play some dance music then.”",
+     "bbox": [
+      37.6,
+      426.7,
+      491.1,
+      498.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“I hope that Sikelele can come too. He sings in the school choir, just like me .”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I hope that Sikelele can come too. He sings in the school choir, just like me .”",
+     "bbox": [
+      817.6,
+      105.0,
+      1062.6,
+      308.1
+     ],
+     "size": 34.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Oh that’s good - we’ll all have fun singing too.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Oh that’s good - we’ll all have fun singing too.”",
+     "bbox": [
+      58.8,
+      116.3,
+      430.1,
+      188.3
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Can we invite Susheela? She’s got fluffy kittens, just like me .”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Can we invite Susheela? She’s got fluffy kittens, just like me .”",
+     "bbox": [
+      741.6,
+      165.9,
+      1048.8,
+      287.7
+     ],
+     "size": 34.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Yes, let’s. She’ll have fun playing with our kittens too.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Yes, let’s. She’ll have fun playing with our kittens too.”",
+     "bbox": [
+      93.5,
+      226.9,
+      365.3,
+      340.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“And we must invite Yongnam. She loves pink cupcakes even more than I do.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“And we must invite Yongnam. She loves pink cupcakes even more than I do.”",
+     "bbox": [
+      690.9,
+      73.8,
+      1077.2,
+      187.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“It’s lucky I’m making cupcakes then,” says Mum. “She can have the pink ones.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It’s lucky I’m making cupcakes then,” says Mum.",
+     "bbox": [
+      65.2,
+      141.8,
+      399.4,
+      213.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“She can have the pink ones.”",
+     "bbox": [
+      65.2,
+      267.9,
+      427.9,
+      297.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“Ah thanks, Mum! I can’t wait.” “Oh Rahah! I’m so excited to meet all your friends. They sound so special - just like you !”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Ah thanks, Mum! I can’t wait.”",
+     "bbox": [
+      56.7,
+      92.6,
+      437.7,
+      122.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Oh Rahah! I’m so excited to meet all your friends. They sound so special - just like you !”",
+     "bbox": [
+      56.7,
+      176.6,
+      408.6,
+      336.6
+     ],
+     "size": 34.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“But what about you? You love books, don’t you… just like me! Would you like to come to my party too?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“But what about you? You love books, don’t you… just like me! Would you like to come to my party too?”",
+     "bbox": [
+      92.1,
+      170.2,
+      426.5,
+      408.2
+     ],
+     "size": 31.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "TThhaannkk YYoouu!!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "TThhaannkk YYoouu!!",
+     "bbox": [
+      292.3,
+      450.8,
+      351.9,
+      474.5
+     ],
+     "size": 14.2
+    }
+   ],
+   "decor_excluded": []
+  }
+ ]
+}

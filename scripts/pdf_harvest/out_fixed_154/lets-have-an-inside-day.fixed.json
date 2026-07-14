@@ -1,0 +1,235 @@
+{
+ "slug": "lets-have-an-inside-day",
+ "book_body_size": 35.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Let’s have an inside day…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Let’s have an inside day…",
+     "bbox": [
+      669.0,
+      437.8,
+      1054.2,
+      472.8
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "A pancake, syrup and berries day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A pancake, syrup and berries day.",
+     "bbox": [
+      135.9,
+      223.8,
+      395.9,
+      300.8
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "A jump on the bed and twirling day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A jump on the bed and twirling day.",
+     "bbox": [
+      720.0,
+      240.8,
+      1002.7,
+      317.8
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "A dress up like dad and pictures day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A dress up like dad and pictures day.",
+     "bbox": [
+      149.5,
+      255.7,
+      436.9,
+      332.7
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Let’s have an inside games day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Let’s have an inside games day.",
+     "bbox": [
+      734.9,
+      252.1,
+      1002.9,
+      329.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "We’ll hide and seek…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We’ll hide and seek…",
+     "bbox": [
+      153.9,
+      260.6,
+      476.7,
+      295.6
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "And run and scream.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And run and scream.",
+     "bbox": [
+      142.4,
+      265.6,
+      458.0,
+      300.6
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "But whisper when we pass Mama’s room.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But whisper when we pass Mama’s room.",
+     "bbox": [
+      678.2,
+      228.8,
+      1009.6,
+      305.8
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Let’s have a dancing and singing day…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Let’s have a dancing and singing day…",
+     "bbox": [
+      89.8,
+      186.2,
+      461.8,
+      263.2
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "A tickle tummies and eat gummies day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A tickle tummies and eat gummies day.",
+     "bbox": [
+      666.1,
+      254.3,
+      987.8,
+      331.3
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Let’s get snuggly and tell stories. Fall asleep and get snoring...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Let’s get snuggly and tell stories. Fall asleep and get snoring...",
+     "bbox": [
+      56.7,
+      167.1,
+      485.8,
+      286.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Because an inside day is a busy day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Because an inside day is a busy day.",
+     "bbox": [
+      730.8,
+      246.8,
+      1003.8,
+      323.8
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

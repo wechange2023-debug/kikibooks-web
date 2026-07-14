@@ -1,0 +1,289 @@
+{
+ "slug": "dance-khuzwayo-dance",
+ "book_body_size": 35.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Everyone knows that Khuzwayo loves to dance. When the village leader chooses him to be the next Ingoma dancer, no one is surprised.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Everyone knows that Khuzwayo loves to dance. When the village leader chooses him to be the next Ingoma dancer, no one is surprised.",
+     "bbox": [
+      126.4,
+      155.5,
+      440.5,
+      423.2
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Ingoma is a dance to celebrate the first crops at the beginning of the year. Khuzwayo’s family is proud.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Ingoma is a dance to celebrate the first crops at the beginning of the year. Khuzwayo’s family is proud.",
+     "bbox": [
+      109.9,
+      315.1,
+      457.1,
+      498.7
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "But Khuzwayo is worried. How will he dance in front of so many people from so many villages? He normally only performs for a few neighbours.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But Khuzwayo is worried.",
+     "bbox": [
+      128.3,
+      437.0,
+      438.6,
+      472.0
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "How will he dance in front of so many people from so many villages? He normally only performs for a few neighbours.",
+     "bbox": [
+      656.7,
+      174.4,
+      1044.0,
+      400.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“I can’t do it! It’s too scary.” He runs away ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I can’t do it! It’s too scary.”",
+     "bbox": [
+      191.0,
+      231.4,
+      375.9,
+      331.1
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "He",
+     "bbox": [
+      781.0,
+      154.4,
+      811.3,
+      189.4
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "runs",
+     "bbox": [
+      811.3,
+      219.3,
+      884.3,
+      264.3
+     ],
+     "size": 45.0
+    },
+    {
+     "role": "BODY",
+     "text": "away ...",
+     "bbox": [
+      885.0,
+      289.1,
+      1024.8,
+      344.1
+     ],
+     "size": 55.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Everyone wonders where he is. No one can find him. But Khuzwayo’s best friends know exactly where he would be!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Everyone wonders where he is. No one can find him. But Khuzwayo’s best friends know exactly where he would be!",
+     "bbox": [
+      83.9,
+      308.7,
+      483.0,
+      492.4
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Why did you run away?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why did you run away?”",
+     "bbox": [
+      103.8,
+      97.3,
+      239.2,
+      250.3
+     ],
+     "size": 45.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“I am nervous. What if I make a mistake?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I am nervous. What if I make a mistake?”",
+     "bbox": [
+      66.8,
+      70.1,
+      273.4,
+      206.1
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“We can help you. Let’s all practise together!” “Khuzwayo, you’re so good. You’re ready to dance with the older dancers!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“We can help you. Let’s all practise together!”",
+     "bbox": [
+      125.7,
+      427.4,
+      441.3,
+      497.8
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Khuzwayo, you’re so good. You’re ready to dance with the older dancers!”",
+     "bbox": [
+      627.5,
+      427.4,
+      1073.3,
+      497.8
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Khuzwayo grows more confident.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Khuzwayo grows more confident.",
+     "bbox": [
+      199.9,
+      311.1,
+      367.0,
+      447.1
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "On the day of the Ingoma dance Khuzwayo leads his village to the arena wearing a special outfit. He still feels a little nervous, but the rattles on his feet guide him.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On the day of the Ingoma dance Khuzwayo leads his village to the arena wearing a special outfit.",
+     "bbox": [
+      56.7,
+      67.4,
+      326.4,
+      253.0
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "He still feels a little nervous, but the rattles on his feet guide him.",
+     "bbox": [
+      56.7,
+      282.1,
+      287.4,
+      429.3
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "He stomps his legs. He waves his arms. Everyone loves Khuzwayo’s dance!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He stomps his legs. He waves his arms. Everyone loves Khuzwayo’s dance!",
+     "bbox": [
+      56.7,
+      142.3,
+      357.2,
+      369.9
+     ],
+     "size": 43.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

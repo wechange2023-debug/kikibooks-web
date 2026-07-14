@@ -1,0 +1,378 @@
+{
+ "slug": "the-rainbow-cloud",
+ "book_body_size": 25.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "A long time ago in the land of the Zulu people, the King Jama ka Ndaba was very powerful, wise, fair and kind.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A long time ago in the land of the Zulu people, the King Jama ka Ndaba was very powerful, wise, fair and kind.",
+     "bbox": [
+      630.3,
+      250.7,
+      1070.8,
+      335.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "But he had no children and he was worried that he would not have an heir. He prayed and made offerings to the gods but nothing happened.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But he had no children and he was worried that he would not have an heir.",
+     "bbox": [
+      90.5,
+      205.7,
+      476.6,
+      290.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "He prayed and made offerings to the gods but nothing happened.",
+     "bbox": [
+      95.6,
+      325.7,
+      471.5,
+      380.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "One night while the king was asleep, a witch came in a dream. “The gods have heard your plea and the queen will bear twins. One will rule the Zulu nation and the other will have magical powers,” the witch said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One night while the king was asleep, a witch came in a dream.",
+     "bbox": [
+      669.6,
+      288.1,
+      1045.6,
+      343.1
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“The gods have heard your plea and the queen will bear twins. One will rule the Zulu nation and the other will have magical powers,” the witch said.",
+     "bbox": [
+      658.3,
+      378.1,
+      1056.9,
+      523.1
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Twins Mkabayi and Mmama were born but the queen cried for Mkabayi because the rule said that the first- born twin must be offered to the gods. Seeing the queen’s sadness, the king said, “From today, when twins are born, both babies will live.” The people celebrated but not all were happy with the king’s new rule.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Twins Mkabayi and Mmama were born but the queen cried for Mkabayi because the rule said that the first- born twin must be offered to the gods.",
+     "bbox": [
+      57.3,
+      144.8,
+      509.9,
+      259.8
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Seeing the queen’s sadness, the king said, “From today, when twins are born, both babies will live.”",
+     "bbox": [
+      67.8,
+      294.8,
+      499.3,
+      379.8
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "The people celebrated but not all were happy with the king’s new rule.",
+     "bbox": [
+      67.6,
+      414.8,
+      499.6,
+      469.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "The little girls grew beautifully. One day Mkabayi had a stick fight and defeated a boy who bullied children. “Go away, you cursed girl!” said the boy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The little girls grew beautifully. One day Mkabayi had a stick fight and defeated a boy who bullied children.",
+     "bbox": [
+      623.8,
+      205.7,
+      1077.2,
+      290.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Go away, you cursed girl!” said the boy.",
+     "bbox": [
+      696.4,
+      325.7,
+      1004.6,
+      380.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Come back, Mkabayi!” Mkabayi cried and ran into the forest where the frightening ghosts, Hornhead and Longtom lived.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Come back, Mkabayi!”",
+     "bbox": [
+      148.5,
+      220.7,
+      418.5,
+      245.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mkabayi cried and ran into the forest where the frightening ghosts, Hornhead and Longtom lived.",
+     "bbox": [
+      75.1,
+      280.7,
+      492.0,
+      365.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Mmama stood in silence and closed her eyes. The magic bond between the twins led Mmama to her sister .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mmama stood in silence and closed her eyes.",
+     "bbox": [
+      676.4,
+      217.7,
+      1024.6,
+      272.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "The magic bond between the twins led Mmama to her sister .",
+     "bbox": [
+      630.0,
+      307.7,
+      1071.0,
+      371.5
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Story spread 8 “No one wants to play with me, I’m cursed!” cried Mkabayi. “I want to play with you,” Mmama said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Story spread 8",
+     "bbox": [
+      -73.7,
+      -110.8,
+      59.7,
+      -86.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No one wants to play with me, I’m cursed!” cried Mkabayi.",
+     "bbox": [
+      106.3,
+      220.7,
+      467.5,
+      275.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I want to play with you,” Mmama said.",
+     "bbox": [
+      133.4,
+      310.7,
+      433.7,
+      365.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“We will have a nice dinner tonight Longtom,” said Hornhead. Mkabayi picked up a stick. “You can’t kill ghosts with a stick!” Longtom laughed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“We will have a nice dinner tonight Longtom,” said Hornhead.",
+     "bbox": [
+      647.5,
+      190.7,
+      1053.5,
+      245.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mkabayi picked up a stick.",
+     "bbox": [
+      699.3,
+      280.7,
+      1001.5,
+      305.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You can’t kill ghosts with a stick!” Longtom laughed.",
+     "bbox": [
+      648.2,
+      340.7,
+      1052.8,
+      395.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“How about this?” Mmama said, raising her hand. Thunder roared and lightning struck the ghosts, while a rainbow cloud protected the girls.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“How about this?” Mmama said, raising her hand.",
+     "bbox": [
+      695.4,
+      225.3,
+      1005.5,
+      280.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Thunder roared and lightning struck the ghosts, while a rainbow cloud protected the girls.",
+     "bbox": [
+      692.5,
+      315.3,
+      1008.4,
+      430.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“How did you do that?” Mkabayi asked. “The way you beat that boy!” Mmama said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“How did you do that?” Mkabayi asked.",
+     "bbox": [
+      148.4,
+      315.8,
+      418.7,
+      370.8
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“The way you beat that boy!” Mmama said.",
+     "bbox": [
+      113.5,
+      405.8,
+      453.6,
+      460.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "The girls went home happy, knowing that whatever happened they could protect each other.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The girls went home happy, knowing that whatever happened they could protect each other.",
+     "bbox": [
+      684.8,
+      242.8,
+      1016.1,
+      357.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

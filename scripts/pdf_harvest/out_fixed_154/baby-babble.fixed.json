@@ -1,0 +1,235 @@
+{
+ "slug": "baby-babble",
+ "book_body_size": 36.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Which shoes ? You choose!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Which shoes ? You choose!",
+     "bbox": [
+      633.6,
+      273.2,
+      1067.2,
+      312.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Please, please! More peas !",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Please, please! More peas !",
+     "bbox": [
+      163.5,
+      251.6,
+      403.4,
+      334.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Num-num? Yum-yum!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Num-num? Yum-yum!",
+     "bbox": [
+      665.7,
+      273.2,
+      1035.1,
+      312.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "All gone! Full tum.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "All gone! Full tum.",
+     "bbox": [
+      134.3,
+      273.2,
+      432.6,
+      312.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Sore, sore . . . Teeth are sore.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sore, sore . . . Teeth are sore.",
+     "bbox": [
+      726.3,
+      251.6,
+      974.5,
+      334.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Nice, nice! Ice is nice.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nice, nice! Ice is nice.",
+     "bbox": [
+      113.5,
+      273.2,
+      453.4,
+      312.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Who’s there?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Who’s there?",
+     "bbox": [
+      741.5,
+      268.3,
+      959.2,
+      307.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Teddy bear!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Teddy bear!",
+     "bbox": [
+      180.3,
+      276.4,
+      386.6,
+      312.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Where’s dum-dum? Baby sad .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Where’s dum-dum? Baby sad .",
+     "bbox": [
+      121.1,
+      250.9,
+      445.8,
+      333.2
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "There’s dum-dum! Baby glad .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There’s dum-dum! Baby glad .",
+     "bbox": [
+      700.0,
+      251.6,
+      1000.8,
+      334.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Splish, splosh! Time to wash .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Splish, splosh! Time to wash .",
+     "bbox": [
+      168.2,
+      251.6,
+      398.8,
+      334.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Night night, sleep tight!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Night night, sleep tight!",
+     "bbox": [
+      75.8,
+      273.2,
+      457.1,
+      312.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

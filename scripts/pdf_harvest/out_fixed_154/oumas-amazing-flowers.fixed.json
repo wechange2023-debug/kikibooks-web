@@ -1,0 +1,257 @@
+{
+ "slug": "oumas-amazing-flowers",
+ "book_body_size": 28.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Ouma has a window box full of amazing flowers. Robyn wants to pick them all!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Ouma has a window box full of amazing flowers. Robyn wants to pick them all!",
+     "bbox": [
+      124.1,
+      188.6,
+      442.8,
+      336.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Please don’t pick the flowers, Robyn! Ouma loves to see them when she opens her curtains.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Please don’t pick the flowers, Robyn! Ouma loves to see them when she opens her curtains.",
+     "bbox": [
+      717.3,
+      195.7,
+      983.5,
+      383.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Butterflies dance around the petals. It’s so lovely to have these visitors.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Butterflies dance around the petals. It’s so lovely to have these visitors.",
+     "bbox": [
+      153.3,
+      215.7,
+      413.6,
+      363.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "The bees use the flowers to make delicious honey.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The bees use the flowers to make delicious honey.",
+     "bbox": [
+      740.7,
+      235.7,
+      960.1,
+      343.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "The flowers bring joy to everyone who walks past Ouma’s house.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The flowers bring joy to everyone who walks past Ouma’s house.",
+     "bbox": [
+      170.7,
+      215.7,
+      396.2,
+      363.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "The neighbour likes to smell them when he visits for tea.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The neighbour likes to smell them when he visits for tea.",
+     "bbox": [
+      724.3,
+      235.7,
+      976.5,
+      343.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Sometimes, sunbirds drink the sweet nectar from the flowers.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes, sunbirds drink the sweet nectar from the flowers.",
+     "bbox": [
+      164.9,
+      215.7,
+      402.0,
+      363.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Look, a tiny beetle! It shines in the sun. And there’s a fat caterpillar!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Look, a tiny beetle! It shines in the sun. And there’s a fat caterpillar!",
+     "bbox": [
+      729.5,
+      215.7,
+      971.3,
+      363.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Please don’t pick Ouma’s flowers, Robyn! They won’t stay fresh very long.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Please don’t pick Ouma’s flowers, Robyn! They won’t stay fresh very long.",
+     "bbox": [
+      121.7,
+      215.7,
+      445.2,
+      363.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“I won’t pick them, Ouma,” says Robyn, even though she really wants to. She feels a little bit sad!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I won’t pick them, Ouma,” says Robyn, even though she really wants to.",
+     "bbox": [
+      703.9,
+      188.6,
+      996.9,
+      336.6
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "She feels a little bit sad!",
+     "bbox": [
+      699.8,
+      362.7,
+      1001.0,
+      390.7
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Ouma doesn’t want Robyn to be sad. “Okay, Robyn,” says Ouma. “You can pick your favourite flower.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Ouma doesn’t want Robyn to be sad.",
+     "bbox": [
+      157.0,
+      188.6,
+      409.9,
+      256.6
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Okay, Robyn,” says Ouma. “You can pick your favourite flower.”",
+     "bbox": [
+      141.8,
+      282.7,
+      425.1,
+      390.7
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“And I have an idea … Let’s plant more flowers together!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“And I have an idea … Let’s plant more flowers together!”",
+     "bbox": [
+      715.7,
+      235.7,
+      985.1,
+      343.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

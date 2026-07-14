@@ -1,0 +1,278 @@
+{
+ "slug": "going-places",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Thandi whizzed on a rollercoaster, took a bumper car for a spin, and won a giant, fluffy bear…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thandi whizzed on a rollercoaster, took a bumper car for a spin, and won a giant, fluffy bear…",
+     "bbox": [
+      122.7,
+      95.1,
+      444.2,
+      187.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "…all while she sat in her bedroom.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "…all while she sat in her bedroom.",
+     "bbox": [
+      126.8,
+      183.4,
+      440.1,
+      203.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Ndalo swam through forests of kelp and coral, past a stingray and a majestic shark…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Ndalo swam through forests of kelp and coral, past a stingray and a majestic shark…",
+     "bbox": [
+      74.9,
+      123.8,
+      491.0,
+      165.6
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "…as he lay under a yellowwood tree.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "…as he lay under a yellowwood tree.",
+     "bbox": [
+      122.3,
+      183.2,
+      444.7,
+      202.2
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Yohluka rocketed into space on a special mission to repair a satellite…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Yohluka rocketed into space on a special mission to repair a satellite…",
+     "bbox": [
+      658.1,
+      380.0,
+      1042.7,
+      424.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "…but he was still cuddling on the couch.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "…but he was still cuddling on the couch.",
+     "bbox": [
+      100.5,
+      183.4,
+      466.5,
+      203.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Faith paraded through the veld, waving to zebras as an oxpecker soared above…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Faith paraded through the veld, waving to zebras as an oxpecker soared above…",
+     "bbox": [
+      132.3,
+      409.8,
+      430.4,
+      477.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "…from the safety of Gogo’s warm kitchen.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "…from the safety of Gogo’s warm kitchen.",
+     "bbox": [
+      88.0,
+      184.4,
+      479.0,
+      204.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "On Monday morning, Ms Kani asked the class, “So, what did you do this weekend?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Monday morning, Ms Kani asked the class,",
+     "bbox": [
+      736.8,
+      200.0,
+      964.0,
+      244.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“So, what did you do this weekend?”",
+     "bbox": [
+      681.2,
+      272.0,
+      1019.6,
+      292.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“I drove a car!” “I swam with a shark!” “I flew to outer space!” “I rode an elephant!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I drove a car!”",
+     "bbox": [
+      83.2,
+      77.1,
+      222.3,
+      97.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I swam with a shark!”",
+     "bbox": [
+      285.6,
+      108.2,
+      490.4,
+      128.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I flew to outer space!”",
+     "bbox": [
+      633.9,
+      106.8,
+      845.8,
+      126.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I rode an elephant!”",
+     "bbox": [
+      867.4,
+      141.9,
+      1059.5,
+      161.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Ms Kani laughed. “It sounds like you’ve been reading again. Now, which book do you want to read next?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Ms Kani laughed.",
+     "bbox": [
+      203.9,
+      81.0,
+      363.1,
+      101.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It sounds like you’ve been reading again. Now, which book do you want to read next?”",
+     "bbox": [
+      88.3,
+      129.0,
+      478.6,
+      197.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

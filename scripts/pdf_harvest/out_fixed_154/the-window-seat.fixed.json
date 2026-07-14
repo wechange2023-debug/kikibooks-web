@@ -1,0 +1,334 @@
+{
+ "slug": "the-window-seat",
+ "book_body_size": 21.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Every December Gugu and Cici travel with Mom to Joburg. Their best bit? Riding the long-distance train together.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Every December Gugu and Cici travel with Mom to Joburg.",
+     "bbox": [
+      648.1,
+      387.1,
+      950.2,
+      437.1
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "Their best bit? Riding the long-distance train together.",
+     "bbox": [
+      661.0,
+      456.4,
+      937.3,
+      506.4
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“This year I’m taking the window seat!” says Cici. “Not fair! You had it last year,” Gugu shouts.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“This year I’m taking the window seat!” says Cici.",
+     "bbox": [
+      153.0,
+      126.4,
+      387.0,
+      176.4
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Not fair! You had it last year,” Gugu shouts.",
+     "bbox": [
+      126.1,
+      195.7,
+      413.9,
+      245.7
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Race!” says Gugu. Off they go, running down the platform. Cici reaches it first.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Race!” says Gugu.",
+     "bbox": [
+      193.8,
+      134.2,
+      373.1,
+      155.2
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "Off they go, running down the platform.",
+     "bbox": [
+      185.9,
+      174.5,
+      381.0,
+      224.5
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "Cici reaches it first.",
+     "bbox": [
+      193.2,
+      243.9,
+      373.7,
+      264.9
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Rock, paper, scissors!” says Cici. This time, Gugu wins.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Rock, paper, scissors!” says Cici.",
+     "bbox": [
+      657.9,
+      397.7,
+      878.5,
+      447.7
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "This time, Gugu wins.",
+     "bbox": [
+      667.9,
+      467.0,
+      868.5,
+      488.0
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Mom decides, “You’ll share the window. Half the trip is for Gugu, half for Cici.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mom decides, “You’ll share the window. Half the trip is for Gugu, half for Cici.”",
+     "bbox": [
+      693.5,
+      405.7,
+      1007.3,
+      484.7
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "They get on the train. No! Every window seat is taken.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They get on the train.",
+     "bbox": [
+      755.6,
+      368.4,
+      963.2,
+      389.4
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "No! Every window seat is taken.",
+     "bbox": [
+      747.0,
+      408.8,
+      966.1,
+      458.8
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "The sisters sit in the aisle seats. They peek at the window. They wish they could see the view.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The sisters sit in the aisle seats. They peek at the window. They wish they could see the view.",
+     "bbox": [
+      711.8,
+      243.6,
+      1013.1,
+      322.6
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "The lady sitting in the window seat drops her handbag. The sisters pick it up and hand it back.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The lady sitting in the window seat drops her handbag.",
+     "bbox": [
+      90.2,
+      279.6,
+      424.3,
+      329.6
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "The sisters pick it up and hand it back.",
+     "bbox": [
+      137.5,
+      348.9,
+      377.0,
+      398.9
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Thank you, girls. Would you like to sit here by the window?” “Yes!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Thank you, girls. Would you like to sit here by the window?” “Yes!”",
+     "bbox": [
+      715.1,
+      337.7,
+      990.0,
+      465.7
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Gugu leans close to the window. “Into the tunnel!” she yells.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Gugu leans close to the window. “Into the tunnel!” she yells.",
+     "bbox": [
+      666.0,
+      245.6,
+      779.4,
+      411.6
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Out comes the sun again. Cici jumps into the window seat. “Look!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Out comes the sun again.",
+     "bbox": [
+      741.4,
+      172.8,
+      987.7,
+      193.8
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "Cici jumps into the window seat. “Look!”",
+     "bbox": [
+      775.8,
+      291.2,
+      953.3,
+      390.2
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Finally they fall asleep. They will wake up in Joburg. They can’t wait to tell Tata what they saw.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Finally they fall asleep. They will wake up in Joburg.",
+     "bbox": [
+      740.2,
+      194.8,
+      960.6,
+      273.8
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "They can’t wait to tell Tata what they saw.",
+     "bbox": [
+      747.0,
+      293.1,
+      953.8,
+      343.1
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,268 @@
+{
+ "slug": "tata-comes-home",
+ "book_body_size": 21.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Every Friday after school, Daluxolo stands with his arms leaning over the front gate, waiting...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Every Friday after school, Daluxolo stands with his arms leaning over the front gate, waiting...",
+     "bbox": [
+      687.4,
+      89.7,
+      1032.6,
+      188.0
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Daaaaaaaalllllliiiiiiiiiiiii! His friends keep calling him to play ball with them at the dusty soccer field down the road but he keeps saying no. DDaaaali!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Daaaaaaaalllllliiiiiiiiiiiii!",
+     "bbox": [
+      233.6,
+      -206.2,
+      674.0,
+      -38.9
+     ],
+     "size": 55.7
+    },
+    {
+     "role": "SFX",
+     "text": "His friends keep calling him to play ball with them at the dusty soccer field down the road but he keeps saying no. DDaaaali!",
+     "bbox": [
+      93.5,
+      54.2,
+      476.1,
+      251.9
+     ],
+     "size": 45.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "That’s because someone special is coming … every weekend Tata comes home.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "That’s because someone special is coming … every weekend Tata comes home.",
+     "bbox": [
+      725.5,
+      115.9,
+      1045.2,
+      279.7
+     ],
+     "size": 41.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "He cranes his neck towards the main road, eagerly waiting to see the moment when Tata’s white VW Beetle turns into his street.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He cranes his neck towards the main road, eagerly waiting to see the moment when Tata’s white VW Beetle turns into his street.",
+     "bbox": [
+      623.6,
+      51.4,
+      1043.9,
+      162.4
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "As soon as it turns the corner, Dali runs to the home car in so Tata’s he can car. drive the rest of the way Beep! Beeep!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "As soon as it turns the corner, Dali runs to the home car in so Tata’s he can car. drive the rest of the way",
+     "bbox": [
+      69.8,
+      61.3,
+      487.0,
+      142.3
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "SFX",
+     "text": "Beep! Beeep!",
+     "bbox": [
+      633.6,
+      93.3,
+      842.1,
+      246.0
+     ],
+     "size": 80.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Hello Dali my boy,” Tata yells with excitement, as he opens the door. “Hop in!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“Hello Dali my boy,” Tata yells with excitement, as he opens the door. “Hop in!”",
+     "bbox": [
+      226.5,
+      63.5,
+      539.1,
+      307.1
+     ],
+     "size": 37.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "When Tata is home, he and Dali always have so much fun together, starting with their favourite meal cooked by Mama – pap, wors and gravy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When Tata is home, he and Dali always have so much fun together,",
+     "bbox": [
+      278.5,
+      59.9,
+      514.0,
+      140.9
+     ],
+     "size": 21.0
+    },
+    {
+     "role": "BODY",
+     "text": "starting with their favourite meal cooked by Mama – pap, wors and gravy.",
+     "bbox": [
+      623.6,
+      120.2,
+      839.0,
+      303.4
+     ],
+     "size": 41.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "On Saturday morning, they start their day with a short jog around the neighbourhood.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Saturday morning, they start their day with a short jog around the neighbourhood.",
+     "bbox": [
+      700.6,
+      197.4,
+      1000.2,
+      278.4
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Then after lunch, Tata teaches Dali how to play card games.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then after lunch, Tata teaches Dali how to play card games.",
+     "bbox": [
+      637.9,
+      97.7,
+      857.4,
+      178.7
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "In the afternoon, Dali loves watching Tata polish his shoes while whistling to his favourite songs on the radio.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "In the afternoon, Dali loves watching Tata polish his shoes while whistling to his favourite songs on the radio.",
+     "bbox": [
+      133.6,
+      102.4,
+      433.4,
+      213.4
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Sunday is the saddest day when they have to say goodbye because Tata must go back to work.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sunday is the saddest day when they have to say goodbye because Tata must go back to work.",
+     "bbox": [
+      99.5,
+      412.8,
+      447.4,
+      493.8
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "But Dali does not stay sad for long because he knows that on Friday, Tata comes home.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But Dali does not stay sad for long because he knows that on Friday, Tata comes home.",
+     "bbox": [
+      668.9,
+      226.4,
+      1031.9,
+      335.4
+     ],
+     "size": 34.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

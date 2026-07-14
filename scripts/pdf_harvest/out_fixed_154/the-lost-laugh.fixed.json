@@ -1,0 +1,433 @@
+{
+ "slug": "the-lost-laugh",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Spotty the Hyena is very sad. He has lost his laugh.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Spotty the Hyena is very sad. He has lost his laugh.",
+     "bbox": [
+      660.7,
+      105.4,
+      1040.1,
+      168.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Please help me find my laugh, Giraffe.” “I can’t hear a laugh up here.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Please help me find my laugh, Giraffe.”",
+     "bbox": [
+      68.4,
+      105.3,
+      335.5,
+      168.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I can’t hear",
+     "bbox": [
+      761.0,
+      65.3,
+      974.8,
+      123.5
+     ],
+     "size": 41.8
+    },
+    {
+     "role": "BODY",
+     "text": "a laugh",
+     "bbox": [
+      801.5,
+      164.6,
+      930.9,
+      215.5
+     ],
+     "size": 41.7
+    },
+    {
+     "role": "BODY",
+     "text": "up here.”",
+     "bbox": [
+      789.2,
+      259.1,
+      947.2,
+      312.4
+     ],
+     "size": 41.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Please help me find my laugh, Hippo.” “I can’t hear a laugh down here.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Please help me find my laugh, Hippo.”",
+     "bbox": [
+      96.5,
+      82.0,
+      363.6,
+      145.0
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I can’t hear a laugh down here.”",
+     "bbox": [
+      111.4,
+      196.5,
+      402.1,
+      352.7
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Please my laugh, help Warthog.” me find “I can’t hear a laugh in here.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Please my laugh, help Warthog.” me find",
+     "bbox": [
+      194.5,
+      73.5,
+      461.7,
+      136.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I can’t hear a laugh in here.”",
+     "bbox": [
+      648.6,
+      78.3,
+      878.3,
+      204.1
+     ],
+     "size": 37.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Please help me find my laugh, Monkey.” “How did you lose it?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Please help me find my laugh, Monkey.”",
+     "bbox": [
+      149.9,
+      113.5,
+      417.0,
+      176.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“How did you lose it?”",
+     "bbox": [
+      139.6,
+      212.5,
+      427.5,
+      242.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“When I laugh, you can see my big teeth. That makes everyone frightened,” said Spotty. “Then I got sad and my laugh just disappeared.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“When I laugh, you can see my big teeth. That makes everyone frightened,” said Spotty.",
+     "bbox": [
+      78.1,
+      65.3,
+      488.8,
+      161.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Then I got sad and my laugh just disappeared.”",
+     "bbox": [
+      94.3,
+      197.3,
+      472.6,
+      260.3
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“I can’t find it anywhere!” “But you were looking in the wrong place.”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“I can’t find it anywhere!”",
+     "bbox": [
+      152.9,
+      162.4,
+      413.2,
+      314.2
+     ],
+     "size": 45.4
+    },
+    {
+     "role": "BODY",
+     "text": "“But you were looking in the wrong place.”",
+     "bbox": [
+      626.4,
+      273.2,
+      915.6,
+      336.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Monkey jumped out of the tree and picked up a feather. Then she began to tickle Spotty all over.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Monkey",
+     "bbox": [
+      108.8,
+      61.0,
+      219.8,
+      96.7
+     ],
+     "size": 31.4
+    },
+    {
+     "role": "BODY",
+     "text": "jumped",
+     "bbox": [
+      112.4,
+      128.4,
+      214.2,
+      163.6
+     ],
+     "size": 31.3
+    },
+    {
+     "role": "BODY",
+     "text": "out of the tree",
+     "bbox": [
+      66.7,
+      194.7,
+      261.1,
+      234.7
+     ],
+     "size": 30.9
+    },
+    {
+     "role": "BODY",
+     "text": "and picked up a feather.",
+     "bbox": [
+      72.8,
+      279.4,
+      255.4,
+      342.4
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Then she began to tickle Spotty all over.",
+     "bbox": [
+      689.6,
+      65.0,
+      1011.2,
+      128.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Slowly Spotty started smiling, and then he let out a big, loud laugh. He laughed and laughed until he was rolling around on the ground.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Slowly Spotty started smiling, and then he let out a big, loud laugh.",
+     "bbox": [
+      671.1,
+      227.7,
+      1026.9,
+      323.7
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "He laughed and laughed until he was rolling around on the ground.",
+     "bbox": [
+      671.1,
+      359.7,
+      1017.4,
+      455.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "All the other animals started laughing too.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "All the other animals started laughing too.",
+     "bbox": [
+      708.7,
+      286.1,
+      979.3,
+      349.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“Where did you find his laugh?” they asked. “His laugh was inside him all the time. I just made him happy and out it came.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Where did you find his laugh?” they asked.",
+     "bbox": [
+      56.7,
+      58.0,
+      467.7,
+      121.0
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“His laugh was inside him all the time. I just made him happy and out it came.”",
+     "bbox": [
+      56.7,
+      439.0,
+      476.1,
+      535.0
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "They all laughed and laughed so that their teeth showed too. “I’ll n eve r lose my laugh again,” said Spotty the happy Hyena.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They all laughed and laughed so that their teeth showed too.",
+     "bbox": [
+      148.2,
+      240.5,
+      419.3,
+      336.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’ll n eve r lose",
+     "bbox": [
+      722.8,
+      126.1,
+      975.2,
+      179.2
+     ],
+     "size": 41.1
+    },
+    {
+     "role": "BODY",
+     "text": "my laugh again,”",
+     "bbox": [
+      703.2,
+      218.0,
+      993.1,
+      273.0
+     ],
+     "size": 41.1
+    },
+    {
+     "role": "BODY",
+     "text": "said Spotty the",
+     "bbox": [
+      717.4,
+      310.6,
+      980.4,
+      364.3
+     ],
+     "size": 41.1
+    },
+    {
+     "role": "BODY",
+     "text": "happy Hyena.",
+     "bbox": [
+      727.3,
+      403.1,
+      969.0,
+      455.6
+     ],
+     "size": 41.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,389 @@
+{
+ "slug": "mazi-learns-to-play",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Mazi is sad. His older brother Boa, and big sister Rona, don’t want to play with him.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mazi is sad.",
+     "bbox": [
+      800.1,
+      120.4,
+      900.7,
+      139.4
+     ],
+     "size": 19.0
+    },
+    {
+     "role": "BODY",
+     "text": "His older brother Boa, and big sister Rona, don’t want to play with him.",
+     "bbox": [
+      689.6,
+      166.0,
+      1011.2,
+      207.8
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Boa finds Mazi crying. “What’s wrong Mazi?” Boa asks. “I want to play with you, but you don’t want to play with me,” cries Mazi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Boa finds Mazi crying.",
+     "bbox": [
+      76.8,
+      128.5,
+      198.9,
+      176.9
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What’s wrong Mazi?” Boa asks.",
+     "bbox": [
+      738.8,
+      121.1,
+      962.0,
+      169.5
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I want to play with you, but you don’t want to play with me,” cries Mazi.",
+     "bbox": [
+      684.1,
+      350.7,
+      1016.7,
+      425.5
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“But nnoo ccrryyiinngg, okay?” Boa tells Mazi. Boa feels bad and allows Mazi to play dodgeball with them. “Okay,” Mazi says, excited.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“But nnoo ccrryyiinngg, okay?” Boa tells Mazi.",
+     "bbox": [
+      750.7,
+      78.6,
+      950.1,
+      120.4
+     ],
+     "size": 19.0
+    },
+    {
+     "role": "BODY",
+     "text": "Boa feels bad and allows Mazi to play dodgeball with them.",
+     "bbox": [
+      148.2,
+      464.8,
+      418.7,
+      506.6
+     ],
+     "size": 19.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Okay,” Mazi says, excited.",
+     "bbox": [
+      768.7,
+      464.8,
+      932.1,
+      506.6
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Boa and Rona explain the dodgeball game to Mazi. He must stand in the middle and dodge the beachball while Boa and Rona try to hit him with it.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Boa and Rona explain the dodgeball game to Mazi.",
+     "bbox": [
+      150.2,
+      172.1,
+      416.8,
+      220.5
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "He must stand in the middle and dodge the beachball while Boa and Rona try to hit him with it.",
+     "bbox": [
+      138.9,
+      277.7,
+      428.0,
+      378.9
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "After they explain the game to Mazi, Rona throws the ball at him. “Dodge she shouts. Mazi! ” The ball hits him on the head.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "After they explain the game to Mazi, Rona throws the ball at him.",
+     "bbox": [
+      253.4,
+      191.9,
+      482.1,
+      266.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Dodge she shouts. Mazi! ” The ball hits him on the head.",
+     "bbox": [
+      114.0,
+      362.7,
+      461.8,
+      506.6
+     ],
+     "size": 36.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“ Ouchiee! ” “You hit me with the ball!” cries Mazi, as he throws himself onto the ground. “But that’s the game,” says Rona, laughing. “Okay. I will try again,” smiles Mazi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“ Ouchiee! ” “You hit me with the ball!” cries Mazi, as he throws himself onto the ground.",
+     "bbox": [
+      57.3,
+      57.8,
+      513.1,
+      203.2
+     ],
+     "size": 29.2
+    },
+    {
+     "role": "BODY",
+     "text": "“But that’s the game,” says Rona, laughing. “Okay. I will try again,” smiles Mazi.",
+     "bbox": [
+      658.5,
+      161.4,
+      1042.3,
+      203.2
+     ],
+     "size": 19.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Boa throws the ball at Mazi, who’s standing in the middle. Mazi catches the ball and runs with it around the tree. “You can’t catch me!” he shouts. “Mazi stop!” Boa and Rona shout at the same time.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Boa throws the ball at Mazi, who’s standing in the middle.",
+     "bbox": [
+      108.5,
+      271.3,
+      458.4,
+      319.7
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mazi catches the ball and runs with it around the tree. “You can’t catch me!” he shouts.",
+     "bbox": [
+      50.4,
+      350.5,
+      499.7,
+      505.2
+     ],
+     "size": 28.6
+    },
+    {
+     "role": "BODY",
+     "text": "“Mazi stop!” Boa and Rona shout at the same time.",
+     "bbox": [
+      767.5,
+      117.3,
+      978.6,
+      193.7
+     ],
+     "size": 22.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Boa explains the rules to Mazi once more. Then they try again. This time, Rona goes in the middle and Boa throws the ball. Rona dodges the ball and it goes to Mazi’s side.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Boa explains the rules to Mazi once more. Then they try again.",
+     "bbox": [
+      118.5,
+      95.2,
+      448.5,
+      143.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "This time, Rona goes in the middle and Boa throws the ball. Rona dodges the ball and it goes to Mazi’s side.",
+     "bbox": [
+      653.0,
+      417.3,
+      1047.8,
+      492.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Mazi kicks the ball so high it gets stuck in the tree. “Maaziii!” they shout in frustration. he “I’m says sorry,” with his head down.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mazi kicks the ball so high it gets stuck in the tree.",
+     "bbox": [
+      110.3,
+      181.4,
+      297.2,
+      302.4
+     ],
+     "size": 23.8
+    },
+    {
+     "role": "BODY",
+     "text": "“Maaziii!” they shout in frustration.",
+     "bbox": [
+      732.3,
+      116.7,
+      985.5,
+      166.7
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "he “I’m says sorry,” with his head down.",
+     "bbox": [
+      712.0,
+      204.0,
+      872.5,
+      278.8
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“You have to follow the rules of the game, Mazi, or else we won’t play with you,” Boa says. “Stand in the middle and let’s try again.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“You have to follow the rules of the game, Mazi, or else we won’t play with you,” Boa says.",
+     "bbox": [
+      700.0,
+      144.1,
+      1000.8,
+      245.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Stand in the middle and let’s try again.”",
+     "bbox": [
+      746.4,
+      378.9,
+      954.4,
+      427.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Rona throws the ball, and this time Mazi dodges it. FINALLY!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Rona throws the ball, and this time Mazi dodges it. FINALLY!",
+     "bbox": [
+      130.2,
+      146.6,
+      436.7,
+      253.8
+     ],
+     "size": 29.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“I did it!” screams Mazi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I did it!” screams Mazi.",
+     "bbox": [
+      811.7,
+      232.3,
+      1060.6,
+      321.7
+     ],
+     "size": 41.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,246 @@
+{
+ "slug": "unathi-and-the-dirty-smelly-beast",
+ "book_body_size": 36.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Something is following Unathi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Something is following Unathi.",
+     "bbox": [
+      143.3,
+      202.8,
+      423.6,
+      273.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "It is dirty. It is smelly. It is a beast!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It is dirty. It is smelly. It is a beast!",
+     "bbox": [
+      161.0,
+      149.7,
+      405.9,
+      362.6
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Unathi is good at running. The beast is good at chasing.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Unathi is good at running. The beast is good at chasing.",
+     "bbox": [
+      138.4,
+      121.5,
+      428.6,
+      391.7
+     ],
+     "size": 51.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Unathi is better at jumping. The beast is better at splashing.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Unathi is better at jumping. The beast is better at splashing.",
+     "bbox": [
+      131.8,
+      88.9,
+      435.2,
+      348.9
+     ],
+     "size": 51.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Unathi is best at climbing. The beast is best at digging.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Unathi is best at climbing. The beast is best at digging.",
+     "bbox": [
+      145.3,
+      174.7,
+      421.8,
+      433.3
+     ],
+     "size": 51.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Unathi and the beast both love singing!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Unathi and the beast both love singing!",
+     "bbox": [
+      101.9,
+      200.9,
+      465.1,
+      331.8
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "It’s time for Unathi to go home. The dirty, smelly beast wants to go home too!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s time for Unathi to go home. The dirty, smelly beast wants to go home too!",
+     "bbox": [
+      53.3,
+      108.1,
+      485.4,
+      317.0
+     ],
+     "size": 39.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“ No dirty, smelly beasts in the house! ” says mama.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“ No dirty, smelly beasts in the house! ” says mama.",
+     "bbox": [
+      58.7,
+      82.0,
+      508.2,
+      220.1
+     ],
+     "size": 44.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Unathi and the beast are good at sneaking.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Unathi and the beast are good at sneaking.",
+     "bbox": [
+      56.8,
+      132.9,
+      510.2,
+      261.8
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Unathi is good at dressing The beast is not. up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Unathi is good at",
+     "bbox": [
+      163.2,
+      69.1,
+      403.8,
+      105.1
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "dressing The beast is not. up.",
+     "bbox": [
+      129.3,
+      138.0,
+      437.6,
+      215.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Unathi and the beast can hide in the bubbles.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Unathi and the beast can hide in the bubbles.",
+     "bbox": [
+      110.4,
+      174.0,
+      456.7,
+      299.9
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "The beast is not dirty. The beast is not smelly. The beast is clean and lovely.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The beast is not dirty. The beast is not smelly. The beast is clean and lovely.",
+     "bbox": [
+      54.4,
+      201.7,
+      467.1,
+      427.1
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

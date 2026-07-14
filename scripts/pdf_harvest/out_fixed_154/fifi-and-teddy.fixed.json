@@ -1,0 +1,210 @@
+{
+ "slug": "fifi-and-teddy",
+ "book_body_size": 28.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Fifi has loved Teddy since she was a baby.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fifi has loved Teddy since she was a baby.",
+     "bbox": [
+      245.2,
+      242.8,
+      450.2,
+      346.9
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Fifi eats with Teddy. Fifi plays with Teddy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fifi eats with Teddy. Fifi plays with Teddy.",
+     "bbox": [
+      150.1,
+      101.5,
+      416.8,
+      167.5
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Fifi takes Teddy wherever she goes. And they curl up together every night.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fifi takes Teddy wherever she goes.",
+     "bbox": [
+      118.6,
+      64.6,
+      448.3,
+      130.6
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "And they curl up together every night.",
+     "bbox": [
+      685.2,
+      64.6,
+      1015.6,
+      130.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Fifi knows she cannot take Teddy to school. So every morning she leaves Teddy on her bed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fifi knows she cannot take Teddy to school. So every morning she leaves Teddy on her bed.",
+     "bbox": [
+      97.3,
+      218.7,
+      469.6,
+      360.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "One day, when she comes back from school, Teddy is not there!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day, when she comes back from school, Teddy is not there!",
+     "bbox": [
+      78.4,
+      256.6,
+      488.5,
+      322.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“What’s wrong, Fifi?” asks Mom.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What’s wrong, Fifi?” asks Mom.",
+     "bbox": [
+      152.8,
+      257.7,
+      414.2,
+      323.7
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Teddy is missing!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Teddy is missing!",
+     "bbox": [
+      733.8,
+      275.6,
+      950.0,
+      303.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“No, darling. Teddy just had a bath!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“No, darling. Teddy just had a bath!”",
+     "bbox": [
+      701.9,
+      256.6,
+      998.9,
+      322.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“There you are, Teddy!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“There you are, Teddy!”",
+     "bbox": [
+      701.2,
+      180.0,
+      999.6,
+      208.0
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

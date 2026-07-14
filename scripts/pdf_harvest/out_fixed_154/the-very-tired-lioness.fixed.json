@@ -1,0 +1,334 @@
+{
+ "slug": "the-very-tired-lioness",
+ "book_body_size": 25.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "There was once a very old and very tired lioness. She was so tired that she slept all day. And all night.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There was once a very old and very tired lioness.",
+     "bbox": [
+      107.0,
+      170.2,
+      393.5,
+      224.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "She was so tired that she slept all day. And all night.",
+     "bbox": [
+      236.2,
+      331.2,
+      461.4,
+      417.1
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Come and hunt with us,” said her sisters and daughters. But the lioness was too tired.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Come and hunt with us,” said her sisters and daughters.",
+     "bbox": [
+      664.0,
+      186.2,
+      988.3,
+      240.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "But the lioness was too tired.",
+     "bbox": [
+      824.9,
+      364.5,
+      1032.7,
+      420.0
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“What’s wrong with her?” asked the young impalas. “Don’t go too close,” warned their mothers. “She might eat you.” But the lioness just flicked her ears to chase away the flies.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What’s wrong with her?” asked the young impalas. “Don’t go too close,” warned their mothers. “She might eat you.”",
+     "bbox": [
+      102.9,
+      145.5,
+      470.8,
+      260.5
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "But the lioness just flicked her ears to chase away the flies.",
+     "bbox": [
+      240.9,
+      348.0,
+      468.4,
+      433.6
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "One day the lioness woke up with a strange feeling that something was watching her. When she looked up she saw a boiling roiling creature in the tree. “Who are you?” asked the lioness.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day the lioness woke up with a strange feeling that something was watching her.",
+     "bbox": [
+      660.5,
+      137.7,
+      980.9,
+      223.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "When she looked up she saw a boiling roiling creature in the tree.",
+     "bbox": [
+      660.5,
+      316.9,
+      1022.1,
+      371.9
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Who are you?” asked the lioness.",
+     "bbox": [
+      660.5,
+      399.6,
+      1028.5,
+      425.1
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“I am the sun. I have come to fetch you.” “Go away,” grumbled the lioness. “I want to sleep.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I am the sun. I have come to fetch you.”",
+     "bbox": [
+      102.2,
+      173.7,
+      387.3,
+      229.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Go away,” grumbled the lioness. “I want to sleep.”",
+     "bbox": [
+      234.7,
+      331.9,
+      464.0,
+      416.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "When the lioness opened her eyes again, the sun was still in the tree. “Can’t you see, you are making us all hot and thirsty?” “It’s getting late,” said the sun. “Follow me.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When the lioness opened her eyes again, the sun was still in the tree. “Can’t you see, you are making us all hot and thirsty?”",
+     "bbox": [
+      672.8,
+      141.4,
+      1046.1,
+      256.9
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s getting late,” said the sun. “Follow me.”",
+     "bbox": [
+      672.8,
+      365.6,
+      858.5,
+      450.6
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "So the lioness slowly got up and followed the sun. “Happy hunting,” called her sisters and daughters after her. “See you! See you!” chirped the bird.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So the lioness slowly got up and followed the sun.",
+     "bbox": [
+      98.7,
+      166.6,
+      413.6,
+      222.1
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Happy hunting,” called her sisters and daughters after her. “See you! See you!” chirped the bird.",
+     "bbox": [
+      90.7,
+      333.9,
+      493.7,
+      433.6
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "But the lioness didn’t hear anything. She just climbed higher and higher and higher into the sky.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But the lioness didn’t hear anything.",
+     "bbox": [
+      665.0,
+      173.8,
+      891.7,
+      229.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "She just climbed higher and higher and higher into the sky.",
+     "bbox": [
+      765.1,
+      328.7,
+      1015.0,
+      414.2
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Phew, it is far,” said the lioness.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Phew, it is far,” said the lioness.",
+     "bbox": [
+      272.1,
+      111.4,
+      443.7,
+      165.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Not too far to go anymore,” said the sun. “You can rest when we get there.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Not too far to go anymore,” said the sun. “You can rest when we get there.”",
+     "bbox": [
+      667.6,
+      387.8,
+      1038.2,
+      472.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "And so the lioness came to stay with the sun. All day she lay lazily in its warmth.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And so the lioness came to stay with the sun. All day she lay lazily in its warmth.",
+     "bbox": [
+      107.7,
+      94.5,
+      368.6,
+      210.0
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "But at night, when the sun was asleep, she looked down at the beautiful world she had left behind.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But at night, when the sun was asleep, she looked down at the beautiful world she had left behind.",
+     "bbox": [
+      704.4,
+      362.7,
+      1021.5,
+      478.2
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

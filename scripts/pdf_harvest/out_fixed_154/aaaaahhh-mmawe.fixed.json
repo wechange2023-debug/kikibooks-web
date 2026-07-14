@@ -1,0 +1,312 @@
+{
+ "slug": "aaaaahhh-mmawe",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Where did Tshedza’s ball go? Is it in this big, leafy bush?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Where did Tshedza’s ball go? Is it in this big, leafy bush?",
+     "bbox": [
+      92.5,
+      101.0,
+      462.8,
+      160.3
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "AAAAAHHH!!!! Mmawe!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "AAAAAHHH!!!! Mmawe!",
+     "bbox": [
+      636.8,
+      135.7,
+      1058.7,
+      298.4
+     ],
+     "size": 67.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Don’t be scared, Tshedza! It’s just Makhulu’s new dog, Banda.” Banda wags his tail and smiles. It’s fun to play with Banda.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Don’t be scared, Tshedza! It’s just Makhulu’s new dog, Banda.”",
+     "bbox": [
+      273.5,
+      225.4,
+      514.4,
+      363.4
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Banda wags his tail and smiles. It’s fun to play with Banda.",
+     "bbox": [
+      651.3,
+      84.0,
+      896.5,
+      175.8
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Tshedza is warm in his bed and falling asleep when… WHOOSH! BANG! CRASH! tingalingaling…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tshedza is warm in his bed and falling asleep when…",
+     "bbox": [
+      83.2,
+      118.6,
+      422.7,
+      178.0
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "WHOOSH! BANG! CRASH! tingalingaling…",
+     "bbox": [
+      668.2,
+      131.6,
+      1032.5,
+      202.0
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "AAAAAHHH!!!! Mmawe!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "AAAAAHHH!!!! Mmawe!",
+     "bbox": [
+      630.2,
+      225.7,
+      1052.0,
+      388.4
+     ],
+     "size": 67.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Don’t be scared, Tshedza! It’s just the big pot falling.” Mmawe tucks Tshedza back in bed and kisses his forehead. “Good night, Tshedza.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Don’t be scared, Tshedza! It’s just the big pot falling.”",
+     "bbox": [
+      746.9,
+      74.5,
+      1043.6,
+      176.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mmawe tucks Tshedza back in bed and kisses his forehead.",
+     "bbox": [
+      654.9,
+      219.3,
+      1043.0,
+      278.7
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Good night, Tshedza.”",
+     "bbox": [
+      683.5,
+      336.7,
+      996.0,
+      366.7
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "What’s in this box near the door?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What’s in this box near the door?",
+     "bbox": [
+      802.0,
+      255.4,
+      1026.5,
+      314.8
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "AAAAAHHH!!!! Mmawe!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "AAAAAHHH!!!! Mmawe!",
+     "bbox": [
+      614.9,
+      217.5,
+      1036.8,
+      380.3
+     ],
+     "size": 67.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Don’t be scared, Tshedza! It’s just your new shoes.” Tshedza likes his new shoes with their red laces.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Don’t be scared, Tshedza! It’s just your new shoes.”",
+     "bbox": [
+      153.1,
+      66.1,
+      393.9,
+      168.1
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Tshedza likes his new shoes with their red laces.",
+     "bbox": [
+      781.4,
+      392.2,
+      992.5,
+      484.0
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "The sun has gone down and the house is dark… empty… quiet… Where is everyone?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The sun has gone down and the house is dark… empty… quiet…",
+     "bbox": [
+      623.6,
+      202.3,
+      923.8,
+      294.1
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "Where is everyone?",
+     "bbox": [
+      623.6,
+      331.9,
+      873.5,
+      358.9
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "AAAAAHHH!!!! Mmawe!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "AAAAAHHH!!!! Mmawe!",
+     "bbox": [
+      627.7,
+      217.2,
+      1049.5,
+      379.9
+     ],
+     "size": 67.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Don’t be scared, Tshedza! It’s just Baba.” “I missed you, Baba!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Don’t be scared, Tshedza! It’s just Baba.”",
+     "bbox": [
+      683.1,
+      128.9,
+      907.0,
+      230.9
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I missed you, Baba!”",
+     "bbox": [
+      727.1,
+      352.3,
+      1028.2,
+      382.3
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,322 @@
+{
+ "slug": "and-also",
+ "book_body_size": 25.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Thabo pretends that his bed is a raft on the sea!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo pretends that his bed is a raft on the sea!",
+     "bbox": [
+      300.5,
+      72.3,
+      543.9,
+      151.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "His little sister Keitu says, “Yes! And also! There are sharks.” “No!” says Thabo.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "His little sister Keitu says, “Yes! And also! There are sharks.”",
+     "bbox": [
+      103.0,
+      62.7,
+      463.9,
+      114.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No!” says Thabo.",
+     "bbox": [
+      732.8,
+      83.2,
+      941.3,
+      109.1
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Thabo pretends that their taxi is a spaceship!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo pretends that their taxi is a spaceship!",
+     "bbox": [
+      124.2,
+      93.8,
+      502.9,
+      146.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "His little sister Keitu says, “Yes! And also! Watch out for shooting stars !” “No,” says Thabo.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "His little sister Keitu says, “Yes! And also! Watch out for shooting stars !”",
+     "bbox": [
+      63.0,
+      15.8,
+      536.5,
+      68.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No,” says Thabo.",
+     "bbox": [
+      756.6,
+      42.6,
+      965.4,
+      68.5
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Thabo pretends the playground is a jungle !",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo pretends the playground is a jungle !",
+     "bbox": [
+      596.1,
+      510.1,
+      1104.7,
+      536.0
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“No,” says Thabo. His little sister Keitu says, “Yes! And also! We are lions .”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“No,” says Thabo.",
+     "bbox": [
+      849.7,
+      66.9,
+      1058.4,
+      92.8
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "His little sister Keitu says, “Yes! And also! We are lions .”",
+     "bbox": [
+      100.6,
+      499.9,
+      460.7,
+      552.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Oh!” says Thabo, “Wait! Wow! Yes! That’s a great idea!” “I know!” says Keitu.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Oh!” says Thabo, “Wait! Wow! Yes! That’s a great idea!”",
+     "bbox": [
+      92.2,
+      70.3,
+      501.7,
+      123.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I know!” says Keitu.",
+     "bbox": [
+      732.7,
+      86.0,
+      968.1,
+      111.0
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Thabo pretends to be a lion! Keitu also pretends to be a lion!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo pretends to be a lion!",
+     "bbox": [
+      116.7,
+      63.4,
+      450.2,
+      89.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Keitu also pretends to be a lion!",
+     "bbox": [
+      652.0,
+      63.4,
+      1025.4,
+      89.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Thabo pretends the other kids are a river of crocodiles! Keitu says, “Yes! And also! We can jump on this log to float away.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo pretends the other kids are a river of crocodiles!",
+     "bbox": [
+      70.6,
+      63.4,
+      496.4,
+      116.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Keitu says, “Yes! And also! We can jump on this log to float away.”",
+     "bbox": [
+      809.5,
+      37.9,
+      1113.0,
+      117.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Story spread 10 “Yes! And also!” Thabo says, “We can slide down the rainbow!” Keitu says, “Yes! And also! Watch out for the dinosaurs!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Story spread 10",
+     "bbox": [
+      -127.6,
+      -112.2,
+      17.2,
+      -88.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes! And also!” Thabo says, “We can slide down the rainbow!”",
+     "bbox": [
+      241.0,
+      28.7,
+      530.9,
+      108.6
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Keitu says, “Yes! And also! Watch out for the dinosaurs!”",
+     "bbox": [
+      622.4,
+      55.8,
+      858.7,
+      135.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Thabo says,“I had the best day playing pretend with you.” Keitu says, “And also! We should play again tomorrow!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo says,“I had the best day playing pretend with you.”",
+     "bbox": [
+      265.9,
+      72.6,
+      522.1,
+      151.6
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "Keitu says, “And also! We should play again tomorrow!”",
+     "bbox": [
+      656.8,
+      70.5,
+      1053.2,
+      121.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

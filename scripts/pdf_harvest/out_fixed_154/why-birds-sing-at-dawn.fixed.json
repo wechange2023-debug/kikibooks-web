@@ -1,0 +1,334 @@
+{
+ "slug": "why-birds-sing-at-dawn",
+ "book_body_size": 23.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "A long time ago, in the forest of Happy-Land, birds and trees could talk to each other. Tweet Tweet Tweet Tweet Bla Tweet Tweet",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A long time ago, in the forest of Happy-Land, birds and trees could talk to each other.",
+     "bbox": [
+      100.9,
+      193.7,
+      466.1,
+      271.9
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "Tweet",
+     "bbox": [
+      326.6,
+      363.3,
+      369.0,
+      391.5
+     ],
+     "size": 18.3
+    },
+    {
+     "role": "BODY",
+     "text": "Tweet Tweet",
+     "bbox": [
+      579.3,
+      325.1,
+      633.5,
+      395.4
+     ],
+     "size": 19.0
+    },
+    {
+     "role": "BODY",
+     "text": "Tweet",
+     "bbox": [
+      506.4,
+      333.0,
+      548.8,
+      361.2
+     ],
+     "size": 18.3
+    },
+    {
+     "role": "BODY",
+     "text": "Bla",
+     "bbox": [
+      844.4,
+      260.8,
+      870.6,
+      283.6
+     ],
+     "size": 17.4
+    },
+    {
+     "role": "BODY",
+     "text": "Tweet Tweet",
+     "bbox": [
+      773.0,
+      313.2,
+      851.0,
+      371.4
+     ],
+     "size": 18.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "There was a bird family with three children: Blue, Pink and Yellow. They all lived on a big wise tree called Mamango.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There was a bird family with three children: Blue, Pink and Yellow. They all lived on a big wise tree called Mamango.",
+     "bbox": [
+      53.6,
+      172.8,
+      509.2,
+      292.8
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Mama Birdie’s voice was beautiful! She would wake up early to sing her song.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama Birdie’s voice was beautiful! She would wake up early to sing her song.",
+     "bbox": [
+      80.6,
+      352.1,
+      483.5,
+      402.7
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "But drought set in on the land. Rivers dried up and leaves fell off.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But drought set in on the land. Rivers dried up and leaves fell off.",
+     "bbox": [
+      657.8,
+      155.1,
+      1043.0,
+      205.7
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Mamango thought long and hard. “Maybe we should get the magic worm that brings rain. But who can go?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mamango thought long and hard. “Maybe we should get the magic worm that brings rain. But who can go?”",
+     "bbox": [
+      649.0,
+      346.9,
+      1051.8,
+      439.2
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“I will go. I am not afraid,” Mama Birdie said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I will go. I am not afraid,” Mama Birdie said.",
+     "bbox": [
+      712.6,
+      360.6,
+      988.3,
+      425.4
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Everyone missed Mama Birdie, and her song. Would she ever find her way back home?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Everyone missed Mama Birdie, and her song. Would she ever find her way back home?",
+     "bbox": [
+      86.7,
+      353.9,
+      480.2,
+      432.1
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“What if we sing Mama’s song?” Yellow asked. “Mama said if we sing her song, she will find her way back.” “But I don’t know how to sing!” cried Pink.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What if we sing Mama’s song?” Yellow asked. “Mama said if we sing her song, she will find her way back.”",
+     "bbox": [
+      97.4,
+      143.8,
+      469.6,
+      277.9
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "“But I don’t know how to sing!” cried Pink.",
+     "bbox": [
+      689.8,
+      148.0,
+      1011.1,
+      212.7
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Have you tried singing?” Mamango asked.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Have you tried singing?” Mamango asked.",
+     "bbox": [
+      719.6,
+      378.3,
+      981.3,
+      443.1
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“I have tried singing,” said Yellow. “I can teach you.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I have tried singing,” said Yellow. “I can teach you.”",
+     "bbox": [
+      171.9,
+      231.2,
+      395.1,
+      337.8
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Early the next morning, Yellow sang Mama’s song: “It’s a beautifulmorning! We wakeupand shine!” And rain started falling.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Early the next morning, Yellow sang Mama’s song:",
+     "bbox": [
+      124.1,
+      112.4,
+      442.9,
+      163.0
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s a beautifulmorning!",
+     "bbox": [
+      88.3,
+      187.9,
+      342.9,
+      252.6
+     ],
+     "size": 24.2
+    },
+    {
+     "role": "BODY",
+     "text": "We wakeupand shine!”",
+     "bbox": [
+      188.4,
+      276.6,
+      433.9,
+      345.9
+     ],
+     "size": 25.2
+    },
+    {
+     "role": "BODY",
+     "text": "And rain started falling.",
+     "bbox": [
+      158.2,
+      385.3,
+      408.8,
+      408.3
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Eventually, all the birds joined Yellow in song. Mama Birdie found her way back to Happy-Land. And from then on, birds sang at dawn.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Eventually, all the birds joined Yellow in song. Mama Birdie found her way back to Happy-Land. And from then on, birds sang at dawn.",
+     "bbox": [
+      642.8,
+      75.6,
+      1043.8,
+      237.3
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

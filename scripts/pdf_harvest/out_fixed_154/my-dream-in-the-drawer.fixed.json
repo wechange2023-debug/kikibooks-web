@@ -1,0 +1,434 @@
+{
+ "slug": "my-dream-in-the-drawer",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "I kept it hidden, safe and sound, In my drawer of socks. I once had a dream, so small and light, I kept it in a box.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I kept it hidden, safe and sound, In my drawer of socks.",
+     "bbox": [
+      615.1,
+      118.3,
+      875.4,
+      164.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "I once had a dream, so small and light, I kept it in a box.",
+     "bbox": [
+      104.9,
+      484.9,
+      421.1,
+      530.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "This tiny dream, I had, you see, Was mostly about me …",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "This tiny dream, I had, you see, Was mostly about me …",
+     "bbox": [
+      66.8,
+      96.6,
+      320.1,
+      142.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "SpaceSelfie! … who I’d be, and where I’d go, And what I’d one day see.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "SpaceSelfie!",
+     "bbox": [
+      92.9,
+      184.5,
+      185.5,
+      222.3
+     ],
+     "size": 18.9
+    },
+    {
+     "role": "BODY",
+     "text": "… who I’d be, and where I’d go, And what I’d one day see.",
+     "bbox": [
+      689.4,
+      496.3,
+      948.0,
+      542.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "At first, it was a little dream, Until one day it grew, And so I took it out for air, To show my dream to you.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "At first, it was a little dream, Until one day it grew,",
+     "bbox": [
+      170.1,
+      490.4,
+      397.7,
+      536.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "And so I took it out for air, To show my dream to you.",
+     "bbox": [
+      731.3,
+      490.4,
+      944.2,
+      536.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "And then my dream, it got so big, I had to let it out ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And then my dream, it got so big, I had to let it out ...",
+     "bbox": [
+      723.8,
+      236.9,
+      997.1,
+      282.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "I took it to the playground, And watched it bounce about.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I took it to the playground, And watched it bounce about.",
+     "bbox": [
+      642.8,
+      61.6,
+      887.5,
+      107.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Then all the kids, they saw my dream, And said, “We want one too!” I said to them, “Ok, no probs.” And told them what to do. Wow!!! Awesome! What??",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then all the kids, they saw my dream, And said, “We want one too!” I said to them, “Ok, no probs.” And told them what to do.",
+     "bbox": [
+      152.8,
+      55.3,
+      459.1,
+      153.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "Wow!!!",
+     "bbox": [
+      479.8,
+      139.8,
+      522.5,
+      154.8
+     ],
+     "size": 15.0
+    },
+    {
+     "role": "BODY",
+     "text": "Awesome!",
+     "bbox": [
+      109.6,
+      380.0,
+      176.6,
+      396.0
+     ],
+     "size": 16.0
+    },
+    {
+     "role": "SFX",
+     "text": "What??",
+     "bbox": [
+      463.7,
+      476.4,
+      513.0,
+      491.4
+     ],
+     "size": 15.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Well, first you think of what you want. Believe it with your heart.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Well, first you think of what you want. Believe it with your heart.",
+     "bbox": [
+      679.6,
+      256.3,
+      989.8,
+      302.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "To get a dream as big as mine, This is the place to start.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "To get a dream as big as mine, This is the place to start.”",
+     "bbox": [
+      722.8,
+      433.0,
+      973.1,
+      479.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“And once it’s big enough,” I said. “You’ve got to let it free To fly up high across the world, For all the world to see.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“And once it’s big enough,” I said. “You’ve got to let it free To fly up high across the world, For all the world to see.”",
+     "bbox": [
+      149.1,
+      220.2,
+      414.0,
+      318.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "And at that point, my big old dream, Which once was in a drawer … Shook and climbed, Took to the sky …",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And at that point, my big old dream, Which once was in a drawer … Shook and climbed, Took to the sky …",
+     "bbox": [
+      708.0,
+      451.4,
+      1008.0,
+      549.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "And soared ... and soared … ... and soared.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And soared ...",
+     "bbox": [
+      737.2,
+      345.3,
+      849.3,
+      365.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "and soared … ... and soared.",
+     "bbox": [
+      798.8,
+      391.4,
+      1087.3,
+      469.5
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "gluehere gluehere gluehere Don’t cut it out! Trace it, colour it, and make it your own! glue here gluehere gluehere gluehere glue here gluehere gluehere",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "gluehere",
+     "bbox": [
+      358.5,
+      267.4,
+      402.1,
+      303.6
+     ],
+     "size": 13.6
+    },
+    {
+     "role": "BODY",
+     "text": "gluehere",
+     "bbox": [
+      298.6,
+      333.9,
+      322.1,
+      372.6
+     ],
+     "size": 8.8
+    },
+    {
+     "role": "BODY",
+     "text": "gluehere",
+     "bbox": [
+      454.5,
+      190.7,
+      496.8,
+      228.9
+     ],
+     "size": 13.4
+    },
+    {
+     "role": "SFX",
+     "text": "Don’t cut it out! Trace it, colour it, and make it your own!",
+     "bbox": [
+      176.5,
+      429.8,
+      421.3,
+      510.8
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "glue here",
+     "bbox": [
+      621.9,
+      33.0,
+      668.5,
+      53.0
+     ],
+     "size": 13.0
+    },
+    {
+     "role": "BODY",
+     "text": "gluehere",
+     "bbox": [
+      734.5,
+      66.2,
+      778.9,
+      101.1
+     ],
+     "size": 13.6
+    },
+    {
+     "role": "BODY",
+     "text": "gluehere",
+     "bbox": [
+      654.6,
+      191.9,
+      696.1,
+      231.4
+     ],
+     "size": 13.3
+    },
+    {
+     "role": "BODY",
+     "text": "gluehere",
+     "bbox": [
+      840.7,
+      139.0,
+      884.2,
+      175.6
+     ],
+     "size": 13.6
+    },
+    {
+     "role": "BODY",
+     "text": "glue here",
+     "bbox": [
+      932.0,
+      200.6,
+      970.6,
+      214.5
+     ],
+     "size": 10.5
+    },
+    {
+     "role": "BODY",
+     "text": "gluehere",
+     "bbox": [
+      748.7,
+      267.5,
+      791.5,
+      305.1
+     ],
+     "size": 13.5
+    },
+    {
+     "role": "BODY",
+     "text": "gluehere",
+     "bbox": [
+      831.5,
+      334.2,
+      853.5,
+      373.1
+     ],
+     "size": 8.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

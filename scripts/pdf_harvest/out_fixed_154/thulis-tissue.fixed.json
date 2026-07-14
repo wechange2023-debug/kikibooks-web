@@ -1,0 +1,255 @@
+{
+ "slug": "thulis-tissue",
+ "book_body_size": 27.5,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Thuli! Tissues belong in the bin.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thuli! Tissues belong in the bin.",
+     "bbox": [
+      710.6,
+      191.0,
+      990.2,
+      245.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "A little breeze caught the tissue. WHOOSH!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A little breeze caught the tissue.",
+     "bbox": [
+      104.6,
+      73.3,
+      462.4,
+      97.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "WHOOSH!",
+     "bbox": [
+      629.5,
+      55.0,
+      880.8,
+      183.7
+     ],
+     "size": 68.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Hey! Come back here!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hey! Come back here!",
+     "bbox": [
+      188.4,
+      80.4,
+      378.5,
+      134.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "The goat shook its head and the tissue flew off. MEH?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The goat shook its head and the tissue flew off.",
+     "bbox": [
+      714.5,
+      62.0,
+      986.3,
+      116.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "MEH?",
+     "bbox": [
+      724.4,
+      445.0,
+      872.9,
+      523.0
+     ],
+     "size": 59.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "UP,UP, UP.. . wentthetissue.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "UP,UP, UP.. . wentthetissue.",
+     "bbox": [
+      212.2,
+      89.4,
+      743.1,
+      278.4
+     ],
+     "size": 56.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "You belong in the bin!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "You belong in the bin!",
+     "bbox": [
+      163.5,
+      79.0,
+      403.4,
+      103.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "That belongs in the bin! Bzzz Bzzz Bzzz",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "That belongs in the bin!",
+     "bbox": [
+      142.4,
+      122.5,
+      424.5,
+      156.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "Bzzz Bzzz",
+     "bbox": [
+      618.6,
+      65.8,
+      806.9,
+      184.4
+     ],
+     "size": 50.5
+    },
+    {
+     "role": "SFX",
+     "text": "Bzzz",
+     "bbox": [
+      819.2,
+      180.6,
+      894.8,
+      228.6
+     ],
+     "size": 36.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "PLOP!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "PLOP!",
+     "bbox": [
+      722.2,
+      381.9,
+      863.6,
+      439.5
+     ],
+     "size": 50.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "GOTCHA !",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "GOTCHA !",
+     "bbox": [
+      973.6,
+      57.4,
+      1077.6,
+      515.6
+     ],
+     "size": 53.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "You belong in the bin!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "You belong in the bin!",
+     "bbox": [
+      711.3,
+      148.6,
+      989.5,
+      192.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,532 @@
+{
+ "slug": "the-best-gift",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Jibraan loves building with toy bricks. Dad says, “That’s very good, Jibraan. You’ve got a gift for building things!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Jibraan loves building with toy bricks.",
+     "bbox": [
+      113.4,
+      253.4,
+      412.0,
+      271.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dad says, “That’s very good, Jibraan. You’ve got a gift for building things!”",
+     "bbox": [
+      113.4,
+      301.4,
+      407.1,
+      349.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "What if I have another gift? Jibraan wonders. “Do I have just one gift Dad?” he asks. “You’ll only know if you try many things,” says Dad. “I want to try cricket,” says Jibraan.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What if I have another gift? Jibraan wonders. “Do I have just one gift Dad?” he asks.",
+     "bbox": [
+      56.7,
+      364.0,
+      416.9,
+      406.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You’ll only know if you try many things,” says Dad. “I want to try cricket,” says Jibraan.",
+     "bbox": [
+      56.7,
+      442.6,
+      462.2,
+      484.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "He at to He school bat joins hits and the the and bowl. ball cricket learns hard. club Puuu!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He at to He school bat joins hits and the the and bowl. ball cricket learns hard. club Puuu!",
+     "bbox": [
+      267.9,
+      177.8,
+      1040.8,
+      425.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Wow!” says Coach Uno. “What a great batsman you are. You’ve got a gift, Jibraan!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Wow!” says Coach Uno.",
+     "bbox": [
+      623.6,
+      301.4,
+      757.4,
+      354.4
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What a great batsman you are. You’ve got a gift, Jibraan!”",
+     "bbox": [
+      623.6,
+      384.4,
+      880.5,
+      426.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Wuu!!! Wiii!! Wiii! Waa!! At his His karate katas friend with class, Sumeya Sensai Jibraan does Shaukat. practises them well. He high-fives “You’re You smiles have “Excellent, Jibraan really her. at a gift.” Sumeya good, tries Sumeya!” again. Sumeya. and He makes says Sensai another Shaukat. mistake. “You didn’t give up, Jibraan. That’s a gift too,” says Sumeya.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Wuu!!! Wiii!! Wiii! Waa!!",
+     "bbox": [
+      44.5,
+      130.7,
+      257.3,
+      423.3
+     ],
+     "size": 64.2
+    },
+    {
+     "role": "BODY",
+     "text": "At his His karate katas friend with class, Sumeya Sensai Jibraan does Shaukat. practises them well.",
+     "bbox": [
+      693.1,
+      155.6,
+      973.3,
+      216.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "He high-fives “You’re You smiles have “Excellent, Jibraan really her. at a gift.” Sumeya good, tries Sumeya!” again. Sumeya. and He makes says Sensai another Shaukat. mistake.",
+     "bbox": [
+      635.7,
+      234.8,
+      1071.0,
+      418.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You didn’t give up, Jibraan. That’s a gift too,” says Sumeya.",
+     "bbox": [
+      635.7,
+      443.6,
+      882.2,
+      504.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“How was Karate?” asks Dad. “I made many mistakes and I didn’t give up, Dad. Karate is Sumeya’s gift.” “You’ll discover other gifts,” says Dad. Jibraan wonders what they are...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“How was Karate?” asks Dad.",
+     "bbox": [
+      623.6,
+      206.7,
+      772.4,
+      248.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I made many mistakes and I didn’t give up, Dad. Karate is Sumeya’s gift.”",
+     "bbox": [
+      623.6,
+      278.7,
+      825.4,
+      344.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You’ll discover other gifts,” says Dad.",
+     "bbox": [
+      623.6,
+      393.9,
+      872.3,
+      433.5
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Jibraan wonders what they are...",
+     "bbox": [
+      623.6,
+      463.5,
+      755.4,
+      505.5
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "I love music. Am I good at music? “Dad, can I play the drums?” he asks. “Well, let’s try,” says Dad.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I love music. Am I good at music?",
+     "bbox": [
+      696.4,
+      364.0,
+      966.8,
+      382.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Dad, can I play the drums?” he asks. “Well, let’s try,” says Dad.",
+     "bbox": [
+      696.4,
+      412.0,
+      993.2,
+      454.0
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "They turn some pots and buckets upside down and get two wooden spoons for drum sticks. Jibraan imagines a whole band playing with him. He beats the drum to a simple rhythm. didadda! Paa!!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They turn some pots and buckets upside down and get two wooden spoons for drum sticks.",
+     "bbox": [
+      97.1,
+      153.8,
+      428.6,
+      219.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Jibraan imagines a whole band playing with him. He beats the drum to a simple rhythm.",
+     "bbox": [
+      97.1,
+      249.8,
+      452.8,
+      291.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "didadda! Paa!!",
+     "bbox": [
+      966.4,
+      271.5,
+      1111.6,
+      378.4
+     ],
+     "size": 37.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Little forth plays Laith on the the drums. rocks chair back as Jibraan and Wiki Wiki!!! WikiWiki!!! Dadum, dadum, dadum, Dadum didadda dadum. didadda! Ding!! Dadum!!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Little forth plays Laith on the the drums. rocks chair back as Jibraan and",
+     "bbox": [
+      266.0,
+      101.8,
+      492.2,
+      167.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "Wiki Wiki!!! WikiWiki!!!",
+     "bbox": [
+      297.7,
+      247.9,
+      480.1,
+      366.3
+     ],
+     "size": 28.4
+    },
+    {
+     "role": "BODY",
+     "text": "Dadum, dadum, dadum, Dadum didadda dadum.",
+     "bbox": [
+      270.2,
+      456.3,
+      510.4,
+      500.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "didadda!",
+     "bbox": [
+      610.9,
+      97.5,
+      739.1,
+      186.7
+     ],
+     "size": 35.5
+    },
+    {
+     "role": "SFX",
+     "text": "Ding!!",
+     "bbox": [
+      1012.9,
+      200.8,
+      1119.3,
+      290.4
+     ],
+     "size": 44.8
+    },
+    {
+     "role": "BODY",
+     "text": "Dadum!!",
+     "bbox": [
+      1022.7,
+      486.7,
+      1100.1,
+      524.8
+     ],
+     "size": 22.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“That sounds amazing,” says Dad. “I love that beat. You’ve got a gift, Jibraan.” Hahaha!!!Yeeeee!!! Jibraan He loves laughs. discovering a new talent when he tries something new. “This is fun, Dad! I love my gifts.” Yaaaa!!!! Yeeees!!!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“That sounds amazing,” says Dad.",
+     "bbox": [
+      282.8,
+      197.5,
+      472.9,
+      237.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I love that beat. You’ve got a gift, Jibraan.”",
+     "bbox": [
+      282.8,
+      262.3,
+      486.8,
+      301.9
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Hahaha!!!Yeeeee!!! Jibraan He loves laughs. discovering a new talent when he tries something new.",
+     "bbox": [
+      586.9,
+      30.2,
+      860.4,
+      253.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“This is fun, Dad! I love my gifts.”",
+     "bbox": [
+      622.9,
+      283.4,
+      769.9,
+      325.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "Yaaaa!!!! Yeeees!!!",
+     "bbox": [
+      595.3,
+      410.7,
+      905.5,
+      480.8
+     ],
+     "size": 40.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Just then, Little Laith rocks the chair over and falls to the floor. Jibraan jumps to help his baby brother. “Are you okay, little Laith?” he asks. Aaaahh!! He rubs Little Laith’s head. He kisses Little Laith’s tears. “Can I kiss it better, Little Laith?” he asks. “Can I hug it better, Little Laith?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Just then, Little Laith rocks the chair over and falls to the floor.",
+     "bbox": [
+      187.1,
+      147.1,
+      439.2,
+      189.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Jibraan jumps to help his baby brother. “Are you okay, little Laith?” he asks.",
+     "bbox": [
+      187.1,
+      222.3,
+      396.4,
+      312.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "SFX",
+     "text": "Aaaahh!!",
+     "bbox": [
+      326.3,
+      407.2,
+      488.3,
+      475.2
+     ],
+     "size": 40.4
+    },
+    {
+     "role": "BODY",
+     "text": "He rubs Little Laith’s head. He kisses Little Laith’s tears.",
+     "bbox": [
+      656.9,
+      69.2,
+      882.7,
+      108.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Can I kiss it better, Little Laith?” he asks.",
+     "bbox": [
+      656.9,
+      134.0,
+      824.4,
+      173.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Can I hug it better, Little Laith?”",
+     "bbox": [
+      656.9,
+      198.8,
+      814.0,
+      238.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Hahahaha!!hahahaha!! Hihihihihi!! Hihihihihihi!! Dad smiles. “Aha!” says Dad. “Look how kind and loving you are. That’s the best gift of all! That’s the one to practise everyday.” Jibraan laughs. Little Laith laughs too. “What’s your gift, Little Laith?” he asks.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hahahaha!!hahahaha!! Hihihihihi!! Hihihihihihi!! Dad smiles. “Aha!” says Dad. “Look how kind and loving you are. That’s the best gift of all! That’s the one to practise everyday.”",
+     "bbox": [
+      579.4,
+      38.0,
+      1098.3,
+      413.6
+     ],
+     "size": 19.9
+    },
+    {
+     "role": "BODY",
+     "text": "Jibraan laughs. Little Laith laughs too. “What’s your gift, Little Laith?” he asks.",
+     "bbox": [
+      691.6,
+      443.6,
+      1000.0,
+      485.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

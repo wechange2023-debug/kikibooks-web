@@ -1,0 +1,455 @@
+{
+ "slug": "open-the-door",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Olwethu wants to play pretend. “I want to fly like a bird, swim like a mermaid, roar like a lion,” she tells Gogo. But Gogo says, “Not now, Olwethu. It’s time to go to school.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Olwethu wants to play pretend.",
+     "bbox": [
+      56.7,
+      62.0,
+      415.4,
+      86.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I want to fly like a bird, swim like a mermaid, roar like a lion,” she tells Gogo.",
+     "bbox": [
+      56.7,
+      119.6,
+      437.2,
+      201.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Gogo says, “Not now, Olwethu. It’s time to go to school.”",
+     "bbox": [
+      904.2,
+      290.1,
+      1075.2,
+      429.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "STOMP! STOMP! Olwethu’s feet go as she walks slowly to school. But what is this? There’s a door, covered in feathers. Olwethu walks up to it and…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "STOMP! STOMP! Olwethu’s feet go as she walks slowly to school.",
+     "bbox": [
+      56.7,
+      69.6,
+      503.4,
+      212.1
+     ],
+     "size": 32.5
+    },
+    {
+     "role": "BODY",
+     "text": "But what is this?",
+     "bbox": [
+      416.7,
+      380.1,
+      492.8,
+      461.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "There’s a door, covered in feathers.",
+     "bbox": [
+      623.6,
+      96.0,
+      796.0,
+      177.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Olwethu walks up to it and…",
+     "bbox": [
+      623.6,
+      280.8,
+      788.0,
+      333.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "WHOOSH! Olwethu is a bird in the sky!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "WHOOSH!",
+     "bbox": [
+      145.3,
+      86.6,
+      421.6,
+      144.6
+     ],
+     "size": 58.0
+    },
+    {
+     "role": "BODY",
+     "text": "Olwethu is a bird in the sky!",
+     "bbox": [
+      694.6,
+      491.5,
+      1006.2,
+      515.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "ZOOOOM! Birds her as wave they at fly by. She’s flying!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "ZOOOOM!",
+     "bbox": [
+      255.6,
+      69.3,
+      527.2,
+      126.3
+     ],
+     "size": 57.0
+    },
+    {
+     "role": "BODY",
+     "text": "Birds her as wave they at fly by.",
+     "bbox": [
+      623.6,
+      70.5,
+      829.8,
+      123.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "She’s flying!",
+     "bbox": [
+      353.8,
+      468.3,
+      490.4,
+      492.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "But what is this? There’s covered another in scales. door, FLAP! FLAP! She flies over, touches the door and…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But what is this?",
+     "bbox": [
+      252.3,
+      110.2,
+      437.0,
+      134.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "There’s covered another in scales. door,",
+     "bbox": [
+      217.3,
+      167.8,
+      465.9,
+      220.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "FLAP! FLAP!",
+     "bbox": [
+      623.6,
+      89.4,
+      821.7,
+      217.0
+     ],
+     "size": 58.0
+    },
+    {
+     "role": "BODY",
+     "text": "She flies over, touches the door and…",
+     "bbox": [
+      917.2,
+      393.1,
+      1077.2,
+      474.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "SPLISH!SPLOSH! Olwethu a the The as mermaid she ocean! fish swims smile is in by. at her",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "SPLISH!SPLOSH!",
+     "bbox": [
+      95.3,
+      22.3,
+      479.1,
+      291.6
+     ],
+     "size": 66.0
+    },
+    {
+     "role": "BODY",
+     "text": "Olwethu a the The as mermaid she ocean! fish swims smile is in by. at her",
+     "bbox": [
+      623.6,
+      96.0,
+      854.8,
+      264.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "But what is this? There’s another door, shining bright like the sun. She swims over, and…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But what is this?",
+     "bbox": [
+      56.7,
+      62.0,
+      241.4,
+      86.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "There’s another door, shining bright like the sun.",
+     "bbox": [
+      56.7,
+      119.6,
+      467.3,
+      172.4
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "She swims over, and…",
+     "bbox": [
+      640.6,
+      483.0,
+      887.6,
+      507.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“GRRRRRRRRR!” She opens her mouth and… Olwethu is a lion in the savannah.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“GRRRRRRRRR!”",
+     "bbox": [
+      58.8,
+      71.5,
+      511.2,
+      128.5
+     ],
+     "size": 57.0
+    },
+    {
+     "role": "BODY",
+     "text": "She opens her mouth and…",
+     "bbox": [
+      675.6,
+      132.9,
+      838.1,
+      185.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Olwethu is a lion in the savannah.",
+     "bbox": [
+      306.4,
+      463.2,
+      518.7,
+      516.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“ROOOAAARRRR!” Her voice is loud and powerful. But what is this? There’s door, covered another with photos of her friends. She prowls over, holds up her paw, and…",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“ROOOAAARRRR!” Her voice is loud and powerful. But what is this?",
+     "bbox": [
+      36.8,
+      69.3,
+      530.4,
+      194.7
+     ],
+     "size": 32.2
+    },
+    {
+     "role": "BODY",
+     "text": "There’s door, covered another with photos of her friends.",
+     "bbox": [
+      623.6,
+      76.2,
+      805.0,
+      186.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "She prowls over, holds up her paw, and…",
+     "bbox": [
+      623.6,
+      220.2,
+      757.7,
+      330.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "WHIZZ! Olwethu is herself again. She’s in her classroom with her friends.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "WHIZZ! Olwethu is herself again.",
+     "bbox": [
+      230.4,
+      69.6,
+      510.2,
+      172.8
+     ],
+     "size": 41.0
+    },
+    {
+     "role": "BODY",
+     "text": "She’s in her classroom with her friends.",
+     "bbox": [
+      723.1,
+      115.9,
+      977.7,
+      168.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Teacher Songelwa says, “HMMMMMM... ...where have you been, Olwethu?”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Teacher Songelwa says, “HMMMMMM...",
+     "bbox": [
+      89.0,
+      62.0,
+      478.0,
+      161.7
+     ],
+     "size": 40.5
+    },
+    {
+     "role": "BODY",
+     "text": "...where have you been, Olwethu?”",
+     "bbox": [
+      623.6,
+      62.0,
+      771.9,
+      143.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“WOW! Teacher, I’ve been everywhere!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“WOW! Teacher, I’ve been everywhere!”",
+     "bbox": [
+      279.1,
+      322.7,
+      486.2,
+      458.9
+     ],
+     "size": 32.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

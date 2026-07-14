@@ -1,0 +1,367 @@
+{
+ "slug": "mama-antelopes-house",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Long ago, all the animals lived in a village. Mama Antelope had a big house.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Long ago, all the animals lived in a village. Mama Antelope had a big house.",
+     "bbox": [
+      72.9,
+      452.2,
+      494.0,
+      509.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "One day, Hare wanted to play a trick. He thought and thought and thought… He crept into Mama Antelope’s house. He closed the door and made a lot of noise.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day, Hare wanted to play a trick. He thought and thought and thought… He crept into Mama Antelope’s house. He closed the door and made a lot of noise.",
+     "bbox": [
+      66.6,
+      122.0,
+      501.8,
+      253.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Mama Antelope came home. “Who is in my house?” she cried. Someone “Hyena, is please in my help! house.” PING! CLINK!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama Antelope came home. “Who is in my house?” she cried.",
+     "bbox": [
+      124.0,
+      196.4,
+      442.9,
+      253.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Someone “Hyena, is please in my help! house.”",
+     "bbox": [
+      160.6,
+      307.4,
+      412.6,
+      364.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "PING!",
+     "bbox": [
+      903.3,
+      68.2,
+      1018.0,
+      144.5
+     ],
+     "size": 48.9
+    },
+    {
+     "role": "SFX",
+     "text": "CLINK!",
+     "bbox": [
+      940.6,
+      305.1,
+      1078.7,
+      389.4
+     ],
+     "size": 48.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Knock, knock, knock! “Open the door!” howled Hyena. But the door did not open. CRASH! SNAP!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Knock, knock, knock! “Open the door!” howled Hyena. But the door did not open.",
+     "bbox": [
+      125.8,
+      94.3,
+      441.2,
+      188.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "CRASH!",
+     "bbox": [
+      670.7,
+      184.6,
+      841.5,
+      245.7
+     ],
+     "size": 48.8
+    },
+    {
+     "role": "SFX",
+     "text": "SNAP!",
+     "bbox": [
+      890.3,
+      240.7,
+      1032.8,
+      315.5
+     ],
+     "size": 52.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Hyena called Giraffe. “Open the door!” shouted Giraffe. BANG! SMASH! But the door did not open.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hyena called Giraffe. “Open the door!” shouted Giraffe.",
+     "bbox": [
+      137.5,
+      301.2,
+      345.8,
+      395.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "BANG!",
+     "bbox": [
+      604.3,
+      255.5,
+      752.6,
+      345.4
+     ],
+     "size": 54.5
+    },
+    {
+     "role": "SFX",
+     "text": "SMASH!",
+     "bbox": [
+      930.9,
+      248.1,
+      1111.0,
+      310.1
+     ],
+     "size": 49.2
+    },
+    {
+     "role": "BODY",
+     "text": "But the door did not open.",
+     "bbox": [
+      621.1,
+      497.6,
+      881.2,
+      517.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Giraffe called Zebra. “Open the door!” yelled Zebra. But the door did not open. BASH! BOOM!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Giraffe called Zebra. “Open the door!” yelled Zebra. But the door did not open.",
+     "bbox": [
+      52.6,
+      124.3,
+      351.8,
+      218.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "BASH! BOOM!",
+     "bbox": [
+      871.5,
+      201.0,
+      1106.9,
+      393.6
+     ],
+     "size": 54.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Zebra called Elephant. He “Open was big the and door!” strong. commanded But the door Elephant. did not open. BOOM! BOOM! BOOM!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zebra called Elephant. He “Open was big the and door!” strong. commanded But the door Elephant. did not open.",
+     "bbox": [
+      58.9,
+      61.0,
+      286.9,
+      266.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "BOOM! BOOM! BOOM!",
+     "bbox": [
+      872.5,
+      83.6,
+      1107.5,
+      312.7
+     ],
+     "size": 53.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Mama Antelope was sad. All the animals were sad. Who was in Mama Antelope’s house?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama Antelope was sad. All the animals were sad.",
+     "bbox": [
+      726.6,
+      224.0,
+      974.2,
+      281.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Who was in Mama Antelope’s house?",
+     "bbox": [
+      667.1,
+      335.0,
+      1033.7,
+      355.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "The birds sang. The butterflies flapped. The bees buzzed. “Open the door!” they all cried.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The birds sang. The butterflies flapped. The bees buzzed. “Open the door!” they all cried.",
+     "bbox": [
+      131.8,
+      209.8,
+      435.2,
+      340.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Baby Antelope came home. “Who is in our house?” “Please open the door,” she asked sweetly.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Baby Antelope came home. “Who is in our house?”",
+     "bbox": [
+      147.0,
+      81.6,
+      419.9,
+      138.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Please open the door,” she asked sweetly.",
+     "bbox": [
+      167.8,
+      192.6,
+      399.1,
+      249.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "The door opened. It was Hare! Hare was smiling. He loved tricks.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The door opened. It was Hare! Hare was smiling. He loved tricks.",
+     "bbox": [
+      92.3,
+      107.1,
+      266.7,
+      238.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Hurrah! Hurrah! Mama Antelope and Baby Antelope are happy. The animals are happy. Mama Antelope’s house is open at last.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hurrah! Hurrah! Mama Antelope and Baby Antelope are happy. The animals are happy. Mama Antelope’s house is open at last.",
+     "bbox": [
+      90.0,
+      336.0,
+      476.9,
+      504.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

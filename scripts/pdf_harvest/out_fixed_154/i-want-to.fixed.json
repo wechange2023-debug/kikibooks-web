@@ -1,0 +1,235 @@
+{
+ "slug": "i-want-to",
+ "book_body_size": 64.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "I want to crawl",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to crawl",
+     "bbox": [
+      106.3,
+      209.4,
+      424.0,
+      364.3
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "I want to climb",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to climb",
+     "bbox": [
+      692.2,
+      312.2,
+      1002.0,
+      470.4
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "I want to eat",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to eat",
+     "bbox": [
+      136.1,
+      152.7,
+      396.7,
+      300.1
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "I want to drink",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to drink",
+     "bbox": [
+      704.5,
+      64.9,
+      1014.4,
+      220.9
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "I want to sing",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to sing",
+     "bbox": [
+      56.7,
+      91.8,
+      332.2,
+      246.2
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "I want to play",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to play",
+     "bbox": [
+      681.8,
+      209.4,
+      991.6,
+      365.5
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "I want to draw",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to draw",
+     "bbox": [
+      124.7,
+      124.4,
+      440.8,
+      281.6
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "I want to splash",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to splash",
+     "bbox": [
+      688.2,
+      209.4,
+      997.9,
+      365.5
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "I want to go to Mama",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to go to Mama",
+     "bbox": [
+      85.8,
+      66.3,
+      477.5,
+      318.5
+     ],
+     "size": 93.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "I want to read",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to read",
+     "bbox": [
+      688.2,
+      159.1,
+      1007.2,
+      316.6
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "I want to hug",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to hug",
+     "bbox": [
+      136.1,
+      209.4,
+      425.8,
+      366.7
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "I want to sleep",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I want to sleep",
+     "bbox": [
+      688.2,
+      195.3,
+      1007.2,
+      352.7
+     ],
+     "size": 83.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

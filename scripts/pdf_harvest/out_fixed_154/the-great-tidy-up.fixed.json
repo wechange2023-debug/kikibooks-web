@@ -1,0 +1,356 @@
+{
+ "slug": "the-great-tidy-up",
+ "book_body_size": 23.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "‘We are going to have so much fun while Gogo is having a nap,’ says big sister Khwezi. ‘Ooh yes!’ says little brother Mzamo. ‘What will we do?’ z z z",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘We are going to have so much fun while Gogo is having a nap,’ says big sister Khwezi.",
+     "bbox": [
+      81.8,
+      155.1,
+      485.1,
+      233.2
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Ooh yes!’ says little brother Mzamo.",
+     "bbox": [
+      82.0,
+      265.4,
+      485.0,
+      288.4
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘What will we do?’",
+     "bbox": [
+      184.5,
+      348.2,
+      382.4,
+      371.2
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "z",
+     "bbox": [
+      758.0,
+      20.2,
+      772.4,
+      47.9
+     ],
+     "size": 27.6
+    },
+    {
+     "role": "BODY",
+     "text": "z",
+     "bbox": [
+      729.7,
+      51.3,
+      742.0,
+      74.9
+     ],
+     "size": 23.6
+    },
+    {
+     "role": "BODY",
+     "text": "z",
+     "bbox": [
+      740.8,
+      91.2,
+      748.8,
+      106.5
+     ],
+     "size": 15.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "‘We will clean the house for Papa and Mama while they are out.’ ‘That’s no fun,’ says Mzamo. ‘Uh uh, no. Not me. I don’t want to clean up!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘We will clean the house for Papa and Mama while they are out.’",
+     "bbox": [
+      100.2,
+      138.4,
+      466.8,
+      189.0
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘That’s no fun,’ says Mzamo.",
+     "bbox": [
+      126.8,
+      248.8,
+      440.2,
+      271.8
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Uh uh, no. Not me. I don’t want to clean up!’",
+     "bbox": [
+      146.2,
+      304.0,
+      420.8,
+      382.2
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "‘But Papa and Mama will be so proud. Let me show you how much fun we will have!’ says Khwezi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘But Papa and Mama will be so proud.",
+     "bbox": [
+      47.3,
+      83.8,
+      464.4,
+      106.8
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "Let me show you how much fun we will have!’ says Khwezi.",
+     "bbox": [
+      42.0,
+      139.0,
+      469.7,
+      189.6
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "‘First we will put the toys away!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘First we will put the toys away!’",
+     "bbox": [
+      215.9,
+      265.1,
+      436.8,
+      315.7
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "‘Now we will sweep the stoep!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Now we will sweep the stoep!’",
+     "bbox": [
+      59.6,
+      480.9,
+      393.9,
+      503.9
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "‘Now we will wash the dishes!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Now we will wash the dishes!’",
+     "bbox": [
+      719.1,
+      435.6,
+      1046.9,
+      458.6
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "‘Now we will wash the windows!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Now we will wash the windows!’",
+     "bbox": [
+      31.4,
+      265.1,
+      243.5,
+      315.7
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "‘Now we will polish the floor!’ z z z",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Now we will polish the floor!’",
+     "bbox": [
+      72.2,
+      86.5,
+      252.4,
+      137.2
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "z",
+     "bbox": [
+      424.5,
+      26.6,
+      434.1,
+      46.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "z",
+     "bbox": [
+      401.4,
+      56.9,
+      410.1,
+      74.9
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "z",
+     "bbox": [
+      413.9,
+      92.9,
+      419.2,
+      103.9
+     ],
+     "size": 11.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "‘Now we will wash the clothes!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Now we will wash the clothes!’",
+     "bbox": [
+      92.3,
+      393.0,
+      430.7,
+      416.0
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "‘Now we will hang the clothes up!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Now we will hang the clothes up!’",
+     "bbox": [
+      97.5,
+      278.9,
+      469.5,
+      301.9
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“SURPRISE!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“SURPRISE!”",
+     "bbox": [
+      323.4,
+      129.5,
+      529.9,
+      164.5
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "‘I have been watching them the whole time and they have been little angels!’ says Gogo.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘I have been watching them the whole time and they have been little angels!’ says Gogo.",
+     "bbox": [
+      71.8,
+      158.1,
+      495.2,
+      236.3
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

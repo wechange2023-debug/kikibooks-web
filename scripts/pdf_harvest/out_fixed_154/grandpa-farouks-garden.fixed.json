@@ -1,0 +1,356 @@
+{
+ "slug": "grandpa-farouks-garden",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Deep in the city, surrounded by houses and bricks and tar, you’ll find Grandpa Farouk’s garden.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Deep in the city, surrounded by houses and bricks and tar, you’ll find Grandpa Farouk’s garden.",
+     "bbox": [
+      751.0,
+      60.6,
+      1053.2,
+      121.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Amir visits Grandpa once a week. He loves the leaves and flowers and trees.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Amir visits Grandpa once a week. He loves the leaves and flowers and trees.",
+     "bbox": [
+      109.8,
+      120.9,
+      457.1,
+      160.5
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "He helps with the compost, and works with his Grandpa all day. Amir helps to water the plants.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He helps with the compost, and works with his Grandpa all day.",
+     "bbox": [
+      660.7,
+      60.6,
+      1040.1,
+      100.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Amir helps to water the plants.",
+     "bbox": [
+      157.5,
+      496.1,
+      409.4,
+      514.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "When they finish, they feast on a harvest of fruit. One day, Grandpa didn’t eat his pear. “What’s wrong?” asked Amir.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When they finish, they feast on a harvest of fruit.",
+     "bbox": [
+      187.1,
+      306.4,
+      379.9,
+      367.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "One day, Grandpa didn’t eat his pear. “What’s wrong?” asked Amir.",
+     "bbox": [
+      696.9,
+      474.5,
+      1003.9,
+      514.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“My garden is dying,” replied Grandpa. “Why?” asked Amir. “Look closely,” said Grandpa. “Some pests are eating the plants.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“My garden is dying,” replied Grandpa.",
+     "bbox": [
+      125.4,
+      164.4,
+      441.5,
+      182.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Why?” asked Amir.",
+     "bbox": [
+      204.2,
+      207.6,
+      362.7,
+      225.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Look closely,” said Grandpa. “Some pests are eating the plants.”",
+     "bbox": [
+      135.1,
+      250.8,
+      431.8,
+      290.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“We need ladybirds!” said Grandpa. “They are the bugs that eat the pests that kill the plants. Without ladybirds, the garden will die.” “I’ll bring you a bug or two,” said Amir.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“We need ladybirds!” said Grandpa. “They are the bugs that eat the pests that kill the plants. Without ladybirds, the garden will die.”",
+     "bbox": [
+      94.8,
+      61.3,
+      472.2,
+      122.5
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’ll bring you a bug or two,” said Amir.",
+     "bbox": [
+      692.8,
+      496.1,
+      1008.0,
+      515.7
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "For a whole week, Amir looked and searched and collected. He found one ladybird on the sports field.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "For a whole week, Amir looked and searched and collected.",
+     "bbox": [
+      98.2,
+      60.6,
+      468.7,
+      100.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "He found one ladybird on the sports field.",
+     "bbox": [
+      679.1,
+      496.1,
+      1021.7,
+      514.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Two more at the shop. Three at the park.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Two more at the shop.",
+     "bbox": [
+      191.9,
+      60.6,
+      375.0,
+      78.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Three at the park.",
+     "bbox": [
+      776.8,
+      496.1,
+      924.0,
+      514.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "And four behind the TV. Next week, Amir went to visit Grandpa Farouk, and showed him his jar of ten bugs. “You’ve done well, oh my boy, you’ve done well,” Grandpa said, with a tear in his eye.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And four behind the TV.",
+     "bbox": [
+      185.7,
+      60.6,
+      381.2,
+      78.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Next week, Amir went to visit Grandpa Farouk, and showed him his jar of ten bugs.",
+     "bbox": [
+      659.7,
+      409.7,
+      1041.1,
+      449.3
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You’ve done well, oh my boy, you’ve done well,” Grandpa said, with a tear in his eye.",
+     "bbox": [
+      675.5,
+      474.5,
+      1025.3,
+      514.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Grandpa was very happy. The ladybirds were very hungry!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Grandpa was very happy.",
+     "bbox": [
+      105.9,
+      76.0,
+      319.3,
+      94.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "The ladybirds were very hungry!",
+     "bbox": [
+      79.4,
+      119.2,
+      345.9,
+      137.2
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "The ladybirds ate the pests, and the garden blossomed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The ladybirds ate the pests, and the garden blossomed.",
+     "bbox": [
+      168.6,
+      244.9,
+      465.0,
+      284.5
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "From that day on, Grandpa Farouk’s garden did what gardens should do. It grew and grew and grew.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "From that day on, Grandpa Farouk’s garden did what gardens should do.",
+     "bbox": [
+      781.6,
+      98.1,
+      1082.1,
+      137.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "It grew and grew and grew.",
+     "bbox": [
+      818.7,
+      162.9,
+      1045.0,
+      180.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

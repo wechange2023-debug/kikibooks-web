@@ -1,0 +1,246 @@
+{
+ "slug": "the-box",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Andi is bored. Max is bored, too.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Andi is bored.",
+     "bbox": [
+      384.2,
+      61.1,
+      510.2,
+      81.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Max is bored, too.",
+     "bbox": [
+      912.4,
+      61.1,
+      1077.2,
+      81.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“What’s in the box, Dad?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What’s in the box, Dad?”",
+     "bbox": [
+      275.1,
+      61.1,
+      510.2,
+      81.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "It’s only fruit and vegetables.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s only fruit and vegetables.",
+     "bbox": [
+      56.7,
+      61.1,
+      205.6,
+      106.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Do you want to play with it?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Do you want to play with it?”",
+     "bbox": [
+      347.2,
+      270.4,
+      491.7,
+      315.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“What will we do with the box?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What will we do with the box?”",
+     "bbox": [
+      56.7,
+      61.1,
+      348.2,
+      81.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Asanda comes to play. “Wow! What a cool box!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Asanda comes to play. “Wow! What a cool box!”",
+     "bbox": [
+      56.7,
+      61.1,
+      504.3,
+      81.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "WHOOOOSH",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "WHOOOOSH",
+     "bbox": [
+      819.0,
+      287.8,
+      1110.5,
+      552.9
+     ],
+     "size": 67.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Paul comes to play. “Wow! What a cool box!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Paul comes to play. “Wow! What a cool box!”",
+     "bbox": [
+      56.7,
+      61.1,
+      473.6,
+      81.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "RAHHHRRR",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "RAHHHRRR",
+     "bbox": [
+      231.2,
+      202.4,
+      495.7,
+      324.6
+     ],
+     "size": 80.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Niki comes to play. “Wow! What a cool box!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Niki comes to play. “Wow! What a cool box!”",
+     "bbox": [
+      56.7,
+      61.1,
+      467.6,
+      81.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "WHEEEEE",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "WHEEEEE",
+     "bbox": [
+      321.1,
+      82.3,
+      527.3,
+      335.8
+     ],
+     "size": 62.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "What a cool box.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What a cool box.",
+     "bbox": [
+      56.7,
+      61.1,
+      213.5,
+      81.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

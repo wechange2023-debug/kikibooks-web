@@ -1,0 +1,303 @@
+{
+ "slug": "hello-baby",
+ "book_body_size": 56.7,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Ukuphi umntwana?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Ukuphi umntwana?",
+     "bbox": [
+      98.0,
+      226.6,
+      469.0,
+      266.6
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Sawubona!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Sawubona!",
+     "bbox": [
+      62.5,
+      214.8,
+      504.3,
+      301.9
+     ],
+     "size": 87.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Luphi usana?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Luphi usana?",
+     "bbox": [
+      157.1,
+      249.4,
+      409.9,
+      289.4
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Molweni!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Molweni!",
+     "bbox": [
+      70.8,
+      229.8,
+      496.1,
+      338.5
+     ],
+     "size": 108.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Waar is die baba?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Waar is die baba?",
+     "bbox": [
+      110.7,
+      296.9,
+      456.3,
+      336.9
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Hallo!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Hallo!",
+     "bbox": [
+      153.2,
+      286.9,
+      413.7,
+      401.3
+     ],
+     "size": 114.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Where is the baby?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Where is the baby?",
+     "bbox": [
+      99.1,
+      216.8,
+      467.8,
+      256.8
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Hello!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Hello!",
+     "bbox": [
+      152.8,
+      198.5,
+      408.3,
+      312.9
+     ],
+     "size": 114.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Ngwana o kae?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Ngwana o kae?",
+     "bbox": [
+      134.4,
+      140.9,
+      432.5,
+      180.9
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Dumelang!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Dumelang!",
+     "bbox": [
+      82.5,
+      166.4,
+      484.4,
+      254.8
+     ],
+     "size": 88.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Lesea le hokae?",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Lesea le hokae?",
+     "bbox": [
+      128.9,
+      175.0,
+      438.0,
+      215.0
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Dumelang! Ta-ta!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Dumelang!",
+     "bbox": [
+      78.7,
+      158.5,
+      480.5,
+      246.9
+     ],
+     "size": 88.4
+    },
+    {
+     "role": "SFX",
+     "text": "Ta-ta!",
+     "bbox": [
+      878.2,
+      64.9,
+      1104.7,
+      166.4
+     ],
+     "size": 83.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "Salani! Totsiens! Kha vha sale! Hamba kakuhle! Sepela gabotse!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Salani!",
+     "bbox": [
+      244.4,
+      105.7,
+      405.0,
+      155.7
+     ],
+     "size": 50.0
+    },
+    {
+     "role": "BODY",
+     "text": "Totsiens!",
+     "bbox": [
+      102.0,
+      205.5,
+      311.6,
+      255.5
+     ],
+     "size": 50.0
+    },
+    {
+     "role": "SFX",
+     "text": "Kha vha sale!",
+     "bbox": [
+      194.5,
+      309.8,
+      457.5,
+      350.8
+     ],
+     "size": 41.0
+    },
+    {
+     "role": "BODY",
+     "text": "Hamba kakuhle! Sepela gabotse!",
+     "bbox": [
+      668.2,
+      103.0,
+      1050.2,
+      320.8
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "Bye-bye, baby!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Bye-bye, baby!",
+     "bbox": [
+      171.3,
+      209.6,
+      396.5,
+      336.5
+     ],
+     "size": 58.5
+    }
+   ],
+   "decor_excluded": []
+  }
+ ]
+}

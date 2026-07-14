@@ -1,0 +1,279 @@
+{
+ "slug": "the-lazy-ant",
+ "book_body_size": 23.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "It was summer time and most of the ants in Ant City were collecting food. But Lazy Ant was lying on his back on top of a rock basking in the sun.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It was summer time and most of the ants in Ant City were collecting food.",
+     "bbox": [
+      56.7,
+      210.0,
+      508.1,
+      260.6
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Lazy Ant was lying on his back on top of a rock basking in the sun.",
+     "bbox": [
+      56.7,
+      292.8,
+      489.7,
+      343.4
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "As Lazy Ant’s mother and sisters were busy collecting food, he just glanced at them, whistling and waiting for them to finish.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "As Lazy Ant’s mother and sisters were busy collecting food, he just glanced at them, whistling and waiting for them to finish.",
+     "bbox": [
+      728.4,
+      235.1,
+      1047.4,
+      340.9
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "But when it was time to eat, Lazy Ant would suddenly jump up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But when it was time to eat, Lazy Ant would suddenly jump up.",
+     "bbox": [
+      56.7,
+      262.7,
+      473.3,
+      313.3
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Lazy Ant always complained when he was given work to do. In fact, he was so lazy that he would even cry! Instead of working, Lazy Ant would chat non-stop, and so when it was time to go home, his work was left unfinished.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lazy Ant always complained when he was given work to do. In fact, he was so lazy that he would even cry!",
+     "bbox": [
+      623.6,
+      193.7,
+      1043.5,
+      271.9
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "Instead of working, Lazy Ant would chat non-stop, and so when it was time to go home, his work was left unfinished.",
+     "bbox": [
+      623.6,
+      304.1,
+      1004.8,
+      382.3
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "One day Lazy Ant’s mother found him sitting on a rock as usual.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day Lazy Ant’s mother found him sitting on a rock as usual.",
+     "bbox": [
+      623.6,
+      262.7,
+      1076.8,
+      313.3
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "His mother was angry and she punished him. Then she told him to quickly fill a sack with food. Lazy Ant grumbled as he began working. He knew that he would not be getting any food if he didn’t work.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "His mother was angry and she punished him.",
+     "bbox": [
+      56.7,
+      207.5,
+      487.0,
+      230.5
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "Then she told him to quickly fill a sack with food. Lazy Ant grumbled as he began working. He knew that he would not be getting any food if he didn’t work.",
+     "bbox": [
+      56.7,
+      262.7,
+      504.7,
+      368.5
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "By the end of that day, Lazy Ant’s sack was full. His mother was very happy to see that her son had worked so hard.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "By the end of that day, Lazy Ant’s sack was full. His mother was very happy to see that her son had worked so hard.",
+     "bbox": [
+      623.6,
+      144.1,
+      1060.7,
+      222.3
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Lazy Ant’s mother prepared a special meal for supper to reward her son. He enjoyed the meal along with the other ants who had worked hard all day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lazy Ant’s mother prepared a special meal for supper to reward her son. He enjoyed the meal along with the other ants who had worked hard all day.",
+     "bbox": [
+      637.8,
+      235.1,
+      1084.6,
+      340.9
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "The next morning, Lazy Ant was the first one to wake up and he prepared breakfast for his mother.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The next morning, Lazy Ant was the first one to wake up and he prepared breakfast for his mother.",
+     "bbox": [
+      93.5,
+      245.4,
+      439.1,
+      323.6
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "All the other ants were shocked by the change in Lazy Ant’s behaviour. He went up and down offering help to any ant who needed it.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "All the other ants were shocked by the change in Lazy Ant’s behaviour. He went up and down offering help to any ant who needed it.",
+     "bbox": [
+      79.1,
+      107.6,
+      471.8,
+      213.4
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "The elders of Ant City even celebrated the change in Lazy Ant’s behaviour with him.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The elders of Ant City even celebrated the change in Lazy Ant’s behaviour with him.",
+     "bbox": [
+      56.7,
+      123.1,
+      446.3,
+      173.7
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "And from that day, Lazy Ant saw the importance of working together with others. Working together creates peace, joy and harmony.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And from that day, Lazy Ant saw the importance of working together with others.",
+     "bbox": [
+      629.3,
+      221.3,
+      1044.9,
+      271.9
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "Working together creates peace, joy and harmony.",
+     "bbox": [
+      629.3,
+      304.1,
+      964.6,
+      354.7
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

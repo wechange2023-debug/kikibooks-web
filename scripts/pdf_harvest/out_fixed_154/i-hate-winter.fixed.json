@@ -1,0 +1,334 @@
+{
+ "slug": "i-hate-winter",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "On an icy winter morning, Thembeka wakes up dreaming of the summer sun. “Time to get dressed, Thembeka!” says uBaba.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On an icy winter morning, Thembeka wakes up dreaming of the summer sun.",
+     "bbox": [
+      95.2,
+      58.4,
+      471.7,
+      106.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Time to get dressed, Thembeka!” says uBaba.",
+     "bbox": [
+      629.3,
+      475.1,
+      1071.5,
+      497.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“I hate being cold,” Thembeka grumbles. “When will it be warm again, Baba?” “When spring comes.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I hate being cold,” Thembeka grumbles. “When will it be warm again, Baba?”",
+     "bbox": [
+      87.9,
+      60.4,
+      479.4,
+      172.0
+     ],
+     "size": 28.5
+    },
+    {
+     "role": "BODY",
+     "text": "“When spring comes.”",
+     "bbox": [
+      745.2,
+      58.4,
+      955.8,
+      80.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“But I want to wear flip-flops so I can wriggle my toes,” Thembeka moans, putting on her boots.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“But I want to wear flip-flops so I can wriggle my toes,” Thembeka moans, putting on her boots.",
+     "bbox": [
+      647.2,
+      145.4,
+      1054.5,
+      395.9
+     ],
+     "size": 28.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“I want to swim in the pool with my friends today.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I want to swim in the pool with my friends today.”",
+     "bbox": [
+      130.0,
+      58.4,
+      436.9,
+      107.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“I want to eat ice cream now, Baba!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“I want to eat ice cream now, Baba!”",
+     "bbox": [
+      623.6,
+      59.8,
+      1036.8,
+      148.8
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Outside, the wind is freezing. “Brrrrr!” “I want to r-r-ride my b-b-bicycle,” Thembeka says, her teeth chattering.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Outside, the wind is freezing. “Brrrrr!”",
+     "bbox": [
+      115.5,
+      414.0,
+      451.5,
+      434.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I want to r-r-ride my b-b-bicycle,” Thembeka says, her teeth chattering.",
+     "bbox": [
+      111.8,
+      462.0,
+      455.2,
+      506.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Thembeka angrily crosses her arms. “I hate winter!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Thembeka angrily crosses her arms. “I hate winter!”",
+     "bbox": [
+      91.7,
+      156.2,
+      475.6,
+      292.2
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Thembeka Soon they is arrive still feeling at uGogo’s cold and house. cross. Then she sniffs the air. What’s that smell? That wonderful, amazing, mouth-watering smell?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thembeka Soon they is arrive still feeling at uGogo’s cold and house. cross. Then she sniffs the air.",
+     "bbox": [
+      93.7,
+      103.0,
+      473.2,
+      177.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "SFX",
+     "text": "What’s that smell?",
+     "bbox": [
+      640.4,
+      105.3,
+      1060.2,
+      157.3
+     ],
+     "size": 52.0
+    },
+    {
+     "role": "BODY",
+     "text": "That wonderful, amazing, mouth-watering smell?",
+     "bbox": [
+      728.7,
+      439.6,
+      972.0,
+      488.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“It’s my famous vegetable soup,” says uGogo. “I only make it in winter.” “I guess I’ll try some...” Thembeka says doubtfully.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It’s my famous vegetable soup,” says uGogo. “I only make it in winter.”",
+     "bbox": [
+      82.3,
+      158.7,
+      485.1,
+      281.1
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I guess I’ll try some...” Thembeka says doubtfully.",
+     "bbox": [
+      722.0,
+      58.4,
+      978.7,
+      106.8
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "uGogo serves them steaming bowls of soup.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "uGogo serves them steaming bowls of soup.",
+     "bbox": [
+      702.4,
+      253.0,
+      998.4,
+      314.6
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "uGogo and uBaba look at Thembeka as she lifts her spoon to her mouth... What will she think?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "uGogo and uBaba look at Thembeka as she lifts her spoon to her mouth...",
+     "bbox": [
+      643.1,
+      309.2,
+      1057.5,
+      357.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "What will she think?",
+     "bbox": [
+      752.4,
+      388.4,
+      948.3,
+      410.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Mmmmm”. She has never tasted anything so delicious. The soup warms her up from the inside out. “I love winter!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Mmmmm”.",
+     "bbox": [
+      794.5,
+      103.7,
+      906.3,
+      125.7
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "She has never tasted anything so delicious. The soup warms her up from the inside out.",
+     "bbox": [
+      640.2,
+      156.5,
+      1060.5,
+      204.9
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "SFX",
+     "text": "“I love winter!”",
+     "bbox": [
+      694.4,
+      444.5,
+      1006.7,
+      493.8
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

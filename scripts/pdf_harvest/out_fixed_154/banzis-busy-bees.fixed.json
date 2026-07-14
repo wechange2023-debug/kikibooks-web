@@ -1,0 +1,422 @@
+{
+ "slug": "banzis-busy-bees",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Banzi and Gogo love to garden. Gogo’s garden has vegetables, flowers and Banzi’s favourite – bees! “Buzz-buzz,” saysBanzi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Banzi and Gogo love to garden.",
+     "bbox": [
+      255.4,
+      72.5,
+      432.8,
+      125.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Gogo’s garden has vegetables, flowers and Banzi’s favourite – bees!",
+     "bbox": [
+      635.7,
+      69.4,
+      1065.1,
+      122.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Buzz-buzz,” saysBanzi.",
+     "bbox": [
+      622.3,
+      157.2,
+      803.7,
+      262.4
+     ],
+     "size": 31.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Buzz-buzz,” says Gogo. “Buzz-buzz,” say the bees. sunflowers The bees sit and on buzz around the garden while Banzi garden. and Gogo",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Buzz-buzz,” says Gogo.",
+     "bbox": [
+      221.0,
+      73.2,
+      466.1,
+      152.0
+     ],
+     "size": 27.5
+    },
+    {
+     "role": "BODY",
+     "text": "“Buzz-buzz,” say the bees.",
+     "bbox": [
+      297.2,
+      208.8,
+      503.8,
+      308.7
+     ],
+     "size": 31.2
+    },
+    {
+     "role": "BODY",
+     "text": "sunflowers The bees sit and on buzz around the garden while Banzi garden. and Gogo",
+     "bbox": [
+      635.0,
+      103.4,
+      815.0,
+      271.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Banzi waves Time goodbye to leave! to each bee. “Bye-bye,sy bu Banzi bees,” says. “ Buzz-buzz,” thebeessay.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Banzi waves Time goodbye to leave! to each bee.",
+     "bbox": [
+      90.2,
+      72.6,
+      476.8,
+      154.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Bye-bye,sy bu Banzi bees,” says.",
+     "bbox": [
+      655.5,
+      60.4,
+      958.4,
+      178.0
+     ],
+     "size": 32.9
+    },
+    {
+     "role": "BODY",
+     "text": "“ Buzz-buzz,” thebeessay.",
+     "bbox": [
+      765.7,
+      272.4,
+      974.0,
+      390.2
+     ],
+     "size": 32.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "After a few days, Gogo and Banzi go to check on the garden. The bees are gone. The flowers have also disappeared!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "After a few days, Gogo and Banzi go to check on the garden.",
+     "bbox": [
+      152.2,
+      82.6,
+      414.7,
+      164.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "The bees are gone.",
+     "bbox": [
+      668.9,
+      84.8,
+      881.7,
+      108.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "The flowers have also disappeared!",
+     "bbox": [
+      676.9,
+      142.3,
+      873.7,
+      195.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Yho! Yho! Yho!” Banzi says. “Gogo, the bees are gone!” “Oh no!” says Gogo. “Don’t worry, I have a magic trick to call them right back!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Yho! Yho! Yho!” Banzi says.",
+     "bbox": [
+      103.7,
+      74.1,
+      463.2,
+      104.1
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Gogo, the bees are gone!”",
+     "bbox": [
+      134.0,
+      136.4,
+      433.0,
+      160.4
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Oh no!” says Gogo.",
+     "bbox": [
+      741.9,
+      72.0,
+      958.9,
+      96.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Don’t worry, I have a magic trick to call them right back!”",
+     "bbox": [
+      626.9,
+      129.6,
+      1073.9,
+      182.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Mmm… magic!” Banzi says. “First, we need to plant new flowers,” says Gogo. “Then, we need to leave a bucket of water in the garden.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Mmm… magic!” Banzi says.",
+     "bbox": [
+      132.1,
+      68.7,
+      491.6,
+      98.7
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "“First, we need to plant new flowers,” says Gogo.",
+     "bbox": [
+      174.5,
+      130.9,
+      449.1,
+      183.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Then, we need to leave a bucket of water in the garden.”",
+     "bbox": [
+      630.5,
+      66.6,
+      826.5,
+      177.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Gogo and Banzi plant sunflower seeds and leave the bucket of water in the garden.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Gogo and Banzi plant sunflower seeds and leave the bucket of water in the garden.",
+     "bbox": [
+      682.0,
+      72.2,
+      1018.8,
+      153.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Before they leave, Gogo stands in the middle of the garden, raises up her right hand and says: “Busy, busy bees. Busy, busy bees. Come back to Banzi!” “Busy, busy bees. Busy, busy bees. Come back to me!” Banzi whispers after Gogo.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Before they leave, Gogo stands in the middle of the garden, raises up her right hand and says:",
+     "bbox": [
+      151.7,
+      77.3,
+      415.2,
+      216.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Busy, busy bees. Busy, busy bees. Come back to Banzi!”",
+     "bbox": [
+      84.1,
+      252.7,
+      482.7,
+      318.7
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Busy, busy bees. Busy, busy bees. Come back to me!”",
+     "bbox": [
+      651.0,
+      69.9,
+      1049.6,
+      135.9
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Banzi whispers after Gogo.",
+     "bbox": [
+      702.3,
+      168.2,
+      998.5,
+      192.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Banzi and Gogo check the garden every day for a week.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Banzi and Gogo check the garden every day for a week.",
+     "bbox": [
+      641.4,
+      165.4,
+      890.2,
+      247.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Nothing yet.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nothing yet.",
+     "bbox": [
+      667.9,
+      125.6,
+      801.9,
+      149.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Nothing yet.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Nothing yet.",
+     "bbox": [
+      667.9,
+      125.6,
+      801.9,
+      149.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "The bees are back! Banzi and Gogo laugh as the bees dance from flower to flower.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The bees are back!",
+     "bbox": [
+      131.1,
+      74.8,
+      341.5,
+      98.8
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Banzi and Gogo laugh as the bees dance from flower to flower.",
+     "bbox": [
+      663.0,
+      74.2,
+      1037.8,
+      127.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

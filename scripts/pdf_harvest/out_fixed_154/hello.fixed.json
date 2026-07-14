@@ -1,0 +1,281 @@
+{
+ "slug": "hello",
+ "book_body_size": 36.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "My name is Lolo. I have many friends. Come out with me to say hello!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My name is Lolo. I have many friends. Come out with me to say hello!",
+     "bbox": [
+      85.0,
+      186.0,
+      357.2,
+      372.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Hello Sun, big and bright. You fill the day with your bright light.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Sun, big and bright. You fill the day with your bright light.",
+     "bbox": [
+      85.0,
+      186.0,
+      366.5,
+      372.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Hello Grass, soft and green. You give us all a place to play.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Grass, soft and green. You give us all a place to play.",
+     "bbox": [
+      85.0,
+      194.0,
+      294.9,
+      380.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Hello Sky, broad and blue. You fill the sky with the colour blue.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Sky, broad and blue. You fill the sky with the colour blue.",
+     "bbox": [
+      85.0,
+      194.0,
+      354.1,
+      380.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Hello Moon, up in the dark. You make the night not so dark.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Moon, up in the dark. You make the night not so dark.",
+     "bbox": [
+      85.0,
+      194.0,
+      345.5,
+      380.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Hello Star, big and white. You make the night so very nice.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Star, big and white. You make the night so very nice.",
+     "bbox": [
+      85.0,
+      194.0,
+      345.5,
+      380.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Hello Wind, strong and free. You blow things around, and make it cool.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Wind, strong and free. You blow things around, and make it cool.",
+     "bbox": [
+      85.0,
+      194.0,
+      409.6,
+      380.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Hello Rain, pouring down. You bring water, and cool our ground.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Rain, pouring down. You bring water, and cool our ground.",
+     "bbox": [
+      85.0,
+      194.0,
+      367.6,
+      380.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Hello Lightning, from high above. Your bright flashing light gives us a fright. Hello Thunder, roaring in the rain. You make a boom noise, so very loud.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Lightning, from high above. Your bright flashing light gives us a fright.",
+     "bbox": [
+      85.0,
+      69.4,
+      412.6,
+      255.4
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Hello Thunder, roaring in the rain. You make a boom noise, so very loud.",
+     "bbox": [
+      85.0,
+      319.4,
+      419.9,
+      505.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Hello Dew, drops of water. You make the ground soft and wet.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Dew, drops of water. You make the ground soft and wet.",
+     "bbox": [
+      85.0,
+      194.0,
+      374.6,
+      380.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Hello Tree, big and strong. You give us shade and fruit to eat.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Tree, big and strong. You give us shade and fruit to eat.",
+     "bbox": [
+      85.0,
+      194.0,
+      326.2,
+      380.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Hello Bird, flying in the sky. You fill our days with lovely songs.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello Bird, flying in the sky. You fill our days with lovely songs.",
+     "bbox": [
+      85.0,
+      194.0,
+      315.2,
+      380.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "hello!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "hello!",
+     "bbox": [
+      1032.0,
+      482.3,
+      1078.0,
+      511.5
+     ],
+     "size": 17.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "Hello You, reading this book. Now you’ve met my friends, please show me yours!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hello You, reading this book.",
+     "bbox": [
+      90.4,
+      56.1,
+      476.5,
+      92.1
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Now you’ve met my friends, please show me yours!",
+     "bbox": [
+      95.4,
+      432.7,
+      471.5,
+      513.7
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  }
+ ]
+}

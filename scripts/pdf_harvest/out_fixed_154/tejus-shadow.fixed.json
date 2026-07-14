@@ -1,0 +1,523 @@
+{
+ "slug": "tejus-shadow",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“What’s that?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What’s that?”",
+     "bbox": [
+      774.0,
+      98.6,
+      926.7,
+      121.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Teju hides. “It won’t find me here!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Teju hides.",
+     "bbox": [
+      229.9,
+      241.6,
+      337.1,
+      263.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It won’t find me here!”",
+     "bbox": [
+      164.6,
+      305.6,
+      402.3,
+      327.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "He runs. “Why are you following me?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He runs.",
+     "bbox": [
+      708.9,
+      43.0,
+      793.5,
+      65.0
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Why are you following me?”",
+     "bbox": [
+      674.3,
+      109.0,
+      828.0,
+      164.0
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Leave me ALONE!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Leave me ALONE!",
+     "bbox": [
+      636.6,
+      180.4,
+      802.2,
+      264.8
+     ],
+     "size": 34.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Go away. Go away. GO AWAY! “Teju! What are you doing?” “It won’t go away!” “Your shadow?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Go away. Go away. GO AWAY!",
+     "bbox": [
+      40.8,
+      44.5,
+      520.8,
+      103.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Teju! What are you doing?”",
+     "bbox": [
+      823.7,
+      75.9,
+      982.3,
+      129.9
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It won’t go away!”",
+     "bbox": [
+      608.3,
+      194.2,
+      803.6,
+      216.2
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Your shadow?”",
+     "bbox": [
+      823.0,
+      281.1,
+      985.8,
+      303.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“It follows me everywhere! It’s like a super secret spy!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It follows me everywhere! It’s like a super secret spy!”",
+     "bbox": [
+      689.3,
+      119.9,
+      974.6,
+      174.7
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "shadow “Well, way to there’s disappear...” make one a OFF ON MAMA!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "shadow “Well, way to there’s disappear...” make one a",
+     "bbox": [
+      42.6,
+      118.8,
+      255.1,
+      204.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "OFF ON MAMA!",
+     "bbox": [
+      376.6,
+      109.0,
+      1062.8,
+      506.6
+     ],
+     "size": 23.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Later that night in Teju’s bedroom, the light goes off... ...and then on. And off... ...and on. Teju can’t sleep. OFF ON << <<CLICK! CLICK! >> << CLICK! >> <<CLICK! >> << CLICK! >> <<CLICK! >> << CLICK! >> <<CLICK!>> >> << CLICK! >> << CLICK! >> ON <<CLICK! >> <<CLICK! >> << CLICK! >>",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Later that night in Teju’s bedroom, the light goes off...",
+     "bbox": [
+      80.2,
+      47.8,
+      486.8,
+      107.8
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "...and then on.",
+     "bbox": [
+      198.7,
+      208.4,
+      368.2,
+      233.4
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "And off...",
+     "bbox": [
+      231.3,
+      348.7,
+      335.6,
+      373.7
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "...and on. Teju can’t sleep.",
+     "bbox": [
+      178.7,
+      473.4,
+      371.2,
+      533.4
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "OFF ON << <<CLICK! CLICK! >> << CLICK! >>",
+     "bbox": [
+      868.5,
+      157.3,
+      1095.0,
+      259.9
+     ],
+     "size": 12.7
+    },
+    {
+     "role": "BODY",
+     "text": "<<CLICK! >> << CLICK! >> <<CLICK! >> << CLICK! >> <<CLICK!>>",
+     "bbox": [
+      606.2,
+      160.8,
+      837.3,
+      270.8
+     ],
+     "size": 13.6
+    },
+    {
+     "role": "BODY",
+     "text": ">>",
+     "bbox": [
+      1062.0,
+      179.8,
+      1099.3,
+      215.8
+     ],
+     "size": 33.4
+    },
+    {
+     "role": "BODY",
+     "text": "<< CLICK! >> << CLICK! >>",
+     "bbox": [
+      627.1,
+      462.2,
+      812.9,
+      549.9
+     ],
+     "size": 23.4
+    },
+    {
+     "role": "DECOR",
+     "text": "OFF",
+     "bbox": [
+      873.7,
+      451.3,
+      883.9,
+      456.7
+     ],
+     "size": 5.4
+    },
+    {
+     "role": "BODY",
+     "text": "ON",
+     "bbox": [
+      874.8,
+      483.2,
+      882.9,
+      488.6
+     ],
+     "size": 5.4
+    },
+    {
+     "role": "BODY",
+     "text": "<<CLICK! >>",
+     "bbox": [
+      1025.6,
+      444.3,
+      1085.8,
+      467.2
+     ],
+     "size": 11.9
+    },
+    {
+     "role": "BODY",
+     "text": "<<CLICK! >>",
+     "bbox": [
+      935.4,
+      481.8,
+      1031.3,
+      518.2
+     ],
+     "size": 18.9
+    },
+    {
+     "role": "BODY",
+     "text": "<< CLICK! >>",
+     "bbox": [
+      1024.5,
+      520.2,
+      1095.0,
+      543.5
+     ],
+     "size": 13.5
+    }
+   ],
+   "decor_excluded": [
+    "OFF"
+   ]
+  },
+  {
+   "page_no": 9,
+   "text": "“What’s wrong Teju?” “It only goes away in the dark, but I’m scared of the dark!” Mum gives Teju a big hug. “Do you want to see something amazing?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What’s wrong Teju?”",
+     "bbox": [
+      252.2,
+      58.6,
+      472.5,
+      80.7
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It only goes away in the dark, but I’m scared of the dark!”",
+     "bbox": [
+      210.1,
+      156.0,
+      525.3,
+      210.0
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mum gives Teju a big hug.",
+     "bbox": [
+      226.0,
+      288.4,
+      493.0,
+      310.4
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Do you want to see something amazing?”",
+     "bbox": [
+      248.3,
+      338.4,
+      473.6,
+      392.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "OOOOOHHHH ! AAAAHHHH ! Mum and Teju make shadow puppets until he falls asleep.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "OOOOOHHHH !",
+     "bbox": [
+      43.5,
+      15.8,
+      183.8,
+      291.2
+     ],
+     "size": 34.1
+    },
+    {
+     "role": "SFX",
+     "text": "AAAAHHHH !",
+     "bbox": [
+      388.3,
+      26.2,
+      516.3,
+      253.9
+     ],
+     "size": 34.3
+    },
+    {
+     "role": "BODY",
+     "text": "Mum and Teju make shadow puppets until he falls asleep.",
+     "bbox": [
+      746.4,
+      250.3,
+      968.6,
+      336.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "After school, Teju waits for Mum. “I’m bored.” Teju stands up, he jumps, he dances. His shadow does the same. “Cool!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "After school, Teju waits for Mum. “I’m bored.”",
+     "bbox": [
+      113.4,
+      43.8,
+      452.1,
+      97.8
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Teju stands up, he jumps, he dances. His shadow does the same.",
+     "bbox": [
+      94.4,
+      143.5,
+      471.6,
+      197.5
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Cool!”",
+     "bbox": [
+      610.9,
+      173.3,
+      680.3,
+      195.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Goodnight Shadow!” When he goes to bed that night, Teju leaves his night light on.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Goodnight Shadow!”",
+     "bbox": [
+      657.4,
+      93.0,
+      774.8,
+      147.0
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "When he goes to bed that night, Teju leaves his night light on.",
+     "bbox": [
+      210.9,
+      364.3,
+      482.6,
+      450.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

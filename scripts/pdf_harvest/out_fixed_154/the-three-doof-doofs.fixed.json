@@ -1,0 +1,345 @@
+{
+ "slug": "the-three-doof-doofs",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "What is that?! What is that doof-doof-doof noise? A cat? A mouse? A visitor in the house?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What is that?! What is that doof-doof-doof noise?",
+     "bbox": [
+      692.6,
+      58.1,
+      1008.2,
+      104.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "A cat? A mouse? A visitor in the house?",
+     "bbox": [
+      759.6,
+      136.2,
+      941.2,
+      208.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "No, it’s something even furrier than a cat, even cuter than a mouse, and much tinier than you and me.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "No, it’s something even furrier than a cat, even cuter than a mouse, and much tinier than you and me.",
+     "bbox": [
+      112.3,
+      84.2,
+      454.6,
+      156.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "It’s the three Doof-Doofs. These sweet creatures have only one foot each to hop on. And each hop makes a thumping doof-doof on the floor.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s the three Doof-Doofs.",
+     "bbox": [
+      746.8,
+      58.1,
+      954.0,
+      78.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "These sweet creatures have only one foot each to hop on. And each hop makes a thumping doof-doof on the floor.",
+     "bbox": [
+      676.6,
+      110.2,
+      1024.2,
+      182.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "ahhhh uhh who is Here always is Solly thinking Doof, looooong the smart and one, loud. He uhhs and ahhs and doof-doofs all night long.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "ahhhh uhh",
+     "bbox": [
+      369.0,
+      46.5,
+      524.8,
+      172.7
+     ],
+     "size": 52.5
+    },
+    {
+     "role": "BODY",
+     "text": "who is Here always is Solly thinking Doof, looooong the smart and one, loud.",
+     "bbox": [
+      672.4,
+      110.2,
+      1028.3,
+      156.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "He uhhs and ahhs and doof-doofs all night long.",
+     "bbox": [
+      630.6,
+      184.8,
+      1070.2,
+      208.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "He reads daytime stories to the other Doof-Doofs, because unlike you and me, that is when they sleep. Thinky, stinky Solly Doof prefers reading over bathing any time.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He reads daytime stories to the other Doof-Doofs, because unlike you and me, that is when they sleep.",
+     "bbox": [
+      634.4,
+      110.2,
+      1066.4,
+      156.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Thinky, stinky Solly Doof prefers reading over bathing any time.",
+     "bbox": [
+      683.2,
+      188.2,
+      1017.6,
+      234.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "And here is Sally Doof, the smallest and sweetest Doof-Doof of the three. In a little quiet voice she sings doobee-doobee Doof-Doof songs, when it gets a bit too quiet in the night.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And here is Sally Doof, the smallest and sweetest Doof-Doof of the three.",
+     "bbox": [
+      77.8,
+      58.1,
+      489.2,
+      104.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "In a little quiet voice she sings doobee-doobee Doof-Doof songs, when it gets a bit too quiet in the night.",
+     "bbox": [
+      120.8,
+      136.2,
+      446.2,
+      208.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "She likes finding shiny things and cuddles. Snuggly, huggly Sally Doof who loves to sing. clink clankclunk",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She likes finding shiny things and cuddles. Snuggly, huggly Sally Doof who loves to sing.",
+     "bbox": [
+      68.9,
+      91.7,
+      441.4,
+      137.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "clink clankclunk",
+     "bbox": [
+      347.5,
+      213.3,
+      707.6,
+      330.2
+     ],
+     "size": 53.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Don’t forget Silly Doof, the funniest Doof-Doof in the house. He is always joking. hahahahaha! Wiggly, giggly Silly Doof will make you laugh until your tummy hurts. He cheers up the other Doof-Doofs whenever they feel sad.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Don’t forget Silly Doof, the funniest Doof-Doof in the house. He is always joking.",
+     "bbox": [
+      93.5,
+      58.1,
+      473.4,
+      104.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "hahahahaha!",
+     "bbox": [
+      106.4,
+      198.9,
+      392.0,
+      334.3
+     ],
+     "size": 54.9
+    },
+    {
+     "role": "BODY",
+     "text": "Wiggly, giggly Silly Doof will make you laugh until your tummy hurts.",
+     "bbox": [
+      658.8,
+      58.1,
+      1025.0,
+      104.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "He cheers up the other Doof-Doofs whenever they feel sad.",
+     "bbox": [
+      698.5,
+      136.2,
+      985.3,
+      182.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "He loves to dance on his big silly foot, to the songs that Sally Doof sings.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He loves to dance on his big silly foot, to the songs that Sally Doof sings.",
+     "bbox": [
+      127.8,
+      84.2,
+      439.1,
+      130.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "So, if at night you ever hear a strange doof-doof noise again, remember, it’s just the three Doof-Doofs, reading, singing and dancing on their one doof-doof foot.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So, if at night you ever hear a strange doof-doof noise again, remember, it’s just the three Doof-Doofs, reading, singing and dancing on their one doof-doof foot.",
+     "bbox": [
+      681.7,
+      84.2,
+      1019.1,
+      208.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "So sleep well, little one. Or keep one eye open...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So sleep well, little one. Or keep one eye open...",
+     "bbox": [
+      752.0,
+      84.2,
+      948.8,
+      130.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Because maybe, just maybe, you’ll see three cute little creatures hopping past on one foot, going doof-doof-doof.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Because maybe, just maybe, you’ll see three cute little creatures hopping past on one foot, going doof-doof-doof.",
+     "bbox": [
+      704.3,
+      58.1,
+      996.5,
+      156.8
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

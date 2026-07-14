@@ -1,0 +1,311 @@
+{
+ "slug": "the-dream-pillow",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "When the stars are out and the moon swings in the sky, and the light in my room is low, things are different.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When the stars are out and the moon swings in the sky, and the light in my room is low, things are different.",
+     "bbox": [
+      753.3,
+      272.5,
+      1017.1,
+      362.5
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "The pirate puppet waves his sword. The mango tree bends its branches. Even my teddy becomes a different sort of bear.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The pirate puppet waves his sword. The mango tree bends its branches. Even my teddy becomes a different sort of bear.",
+     "bbox": [
+      750.4,
+      388.6,
+      1046.9,
+      478.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "I keep very still in my cave of blankets or I call, “Maaamaaa! Daaaddyyy!” or I jump into their bed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I keep very still in my cave of blankets or I call, “Maaamaaa! Daaaddyyy!” or I jump into their bed.",
+     "bbox": [
+      111.7,
+      332.8,
+      331.2,
+      422.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "I tell Mama about Pirate and Tree and Bear.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I tell Mama about Pirate and Tree and Bear.",
+     "bbox": [
+      117.0,
+      356.8,
+      321.1,
+      398.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“You had a really bad dream.” “What’s a dream?” “When we sleep we think about our day, but everything gets mixed up. It feels real, but it’s not real.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“You had a really bad dream.”",
+     "bbox": [
+      93.3,
+      297.4,
+      344.8,
+      315.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What’s a dream?”",
+     "bbox": [
+      139.3,
+      332.8,
+      298.7,
+      350.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“When we sleep we think about our day, but everything gets mixed up. It feels real, but it’s not real.”",
+     "bbox": [
+      88.1,
+      368.1,
+      350.0,
+      458.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“It is real!” “You know when we read a story together, it’s made up, but we laugh, or get scared or excited? A dream is the same.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It is real!”",
+     "bbox": [
+      153.1,
+      354.8,
+      249.5,
+      372.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You know when we read a story together, it’s made up, but we laugh, or get scared or excited? A dream is the same.”",
+     "bbox": [
+      65.4,
+      390.1,
+      337.3,
+      480.1
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“You mean a dream is a story?” “Yes! But it happens at night. You put your head on the pillow, you fall asleep and then the story happens.” “So a dream is a story you find in your pillow?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“You mean a dream is a story?”",
+     "bbox": [
+      112.4,
+      318.2,
+      375.4,
+      336.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes! But it happens at night. You put your head on the pillow, you fall asleep and then the story happens.”",
+     "bbox": [
+      82.0,
+      353.6,
+      405.8,
+      419.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“So a dream is a story you find in your pillow?”",
+     "bbox": [
+      106.6,
+      436.9,
+      381.1,
+      478.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Yes!” “Can I put the stories in my pillow?” “You can.” “How?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Yes!”",
+     "bbox": [
+      259.0,
+      104.7,
+      313.6,
+      122.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Can I put the stories in my pillow?”",
+     "bbox": [
+      135.0,
+      140.0,
+      437.7,
+      158.0
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You can.”",
+     "bbox": [
+      241.3,
+      175.4,
+      331.4,
+      193.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "“How?”",
+     "bbox": [
+      254.3,
+      210.7,
+      318.3,
+      228.7
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Let’s write down all your best stories, fold up the paper and tuck it inside the pillow.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Let’s write down all your best stories, fold up the paper and tuck it inside the pillow.”",
+     "bbox": [
+      188.6,
+      262.6,
+      510.3,
+      328.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "When the stars are out and the moon swings in the sky, and the light in my room is low, things are different.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When the stars are out and the moon swings in the sky, and the light in my room is low, things are different.",
+     "bbox": [
+      753.3,
+      272.5,
+      1017.1,
+      362.5
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "for ilyas tomÁs",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "for ilyas tomÁs",
+     "bbox": [
+      250.4,
+      368.3,
+      329.1,
+      386.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  }
+ ]
+}

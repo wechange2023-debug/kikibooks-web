@@ -1,0 +1,312 @@
+{
+ "slug": "zandi-and-birdy-monster",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "This is Zandi. She has a friend that no one else can see. Some call him her imaginary friend, but Birdy Monster is very real to Zandi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "This is Zandi.",
+     "bbox": [
+      794.3,
+      185.8,
+      906.5,
+      205.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "She has a friend that no one else can see.",
+     "bbox": [
+      674.5,
+      245.8,
+      1026.3,
+      265.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Some call him her imaginary friend, but Birdy Monster is very real to Zandi.",
+     "bbox": [
+      684.9,
+      305.8,
+      1015.9,
+      355.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Zandi and Birdy Monster play together everyday. Sometimes they mix up magic potions that will make you small or tall, or run very fast.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zandi and Birdy Monster play together everyday.",
+     "bbox": [
+      305.5,
+      302.5,
+      501.7,
+      382.5
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Sometimes they mix up magic potions that will make you small or tall, or run very fast.",
+     "bbox": [
+      629.3,
+      104.0,
+      881.7,
+      184.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Sometimes they are pirates... ...or superheroes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes they are pirates...",
+     "bbox": [
+      161.7,
+      115.4,
+      405.3,
+      135.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "...or superheroes.",
+     "bbox": [
+      778.0,
+      424.2,
+      922.8,
+      444.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Sometimes they climb trees to spy over the garden fence.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes they climb trees to spy over the garden fence.",
+     "bbox": [
+      725.9,
+      235.9,
+      977.7,
+      285.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Sometimes they blow bubbles in the bath like hippos.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes they blow bubbles in the bath like hippos.",
+     "bbox": [
+      130.5,
+      260.0,
+      433.6,
+      310.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Birdy Monster comes from the other side of the moon, where it is always night time.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Birdy Monster comes from the other side of the moon, where it is always night time.",
+     "bbox": [
+      652.1,
+      265.6,
+      1048.7,
+      315.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "When Zandi goes to bed, he glows in the dark so that she doesn’t get scared.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When Zandi goes to bed, he glows in the dark so that she doesn’t get scared.",
+     "bbox": [
+      142.2,
+      257.1,
+      407.7,
+      337.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Birdy Monster has travelled everywhere, even to Port Elizabeth to visit Zandi’s Gogo Adeline.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Birdy Monster has travelled everywhere, even to Port Elizabeth to visit Zandi’s Gogo Adeline.",
+     "bbox": [
+      647.4,
+      438.6,
+      1053.4,
+      488.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Gogo and Birdy Monster like to play cards together. Gogo also likes to cheat.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Gogo and Birdy Monster like to play cards together.",
+     "bbox": [
+      139.3,
+      367.7,
+      385.1,
+      417.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Gogo also likes to cheat.",
+     "bbox": [
+      160.6,
+      457.7,
+      363.8,
+      477.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "When Birdy Monster goes travelling, he always comes back with the best stories.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When Birdy Monster goes travelling, he always comes back with the best stories.",
+     "bbox": [
+      686.5,
+      259.2,
+      1028.5,
+      309.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Zandi likes to play with her other friends, too. They can’t see Birdy Monster, but he doesn’t mind. “Come on, Birdy Monster!” shouts Zandi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zandi likes to play with her other friends, too. They can’t see Birdy Monster, but he doesn’t mind.",
+     "bbox": [
+      110.2,
+      149.4,
+      456.7,
+      229.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Come on, Birdy Monster!” shouts Zandi.",
+     "bbox": [
+      111.5,
+      269.4,
+      455.5,
+      289.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Why is he called Birdy Monster?” Robyn asks. “Because that is his name,” says Zandi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why is he called Birdy Monster?” Robyn asks.",
+     "bbox": [
+      130.0,
+      108.3,
+      419.9,
+      158.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Because that is his name,” says Zandi.",
+     "bbox": [
+      682.6,
+      108.3,
+      1012.5,
+      128.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

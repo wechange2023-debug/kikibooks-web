@@ -1,0 +1,279 @@
+{
+ "slug": "where-is-thabo",
+ "book_body_size": 32.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "It’s Monday morning and Thabo’s family is getting ready for the day.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s Monday morning and Thabo’s family is getting ready for the day.",
+     "bbox": [
+      662.2,
+      78.4,
+      1045.0,
+      187.2
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Mama is in a hurry. She sloshes her tea across the counter. But where is Thabo?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama is in a hurry. She sloshes her tea across the counter.",
+     "bbox": [
+      613.0,
+      93.3,
+      1083.5,
+      163.7
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "But where is Thabo?",
+     "bbox": [
+      723.0,
+      208.5,
+      973.5,
+      240.5
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Slow down, Mama.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Slow down, Mama.",
+     "bbox": [
+      690.3,
+      254.1,
+      1010.5,
+      296.1
+     ],
+     "size": 42.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Baba is in a hurry. His clothes are all wrong. But where is Thabo?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Baba is in a hurry. His clothes are all wrong.",
+     "bbox": [
+      694.5,
+      93.3,
+      1005.2,
+      163.7
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "But where is Thabo?",
+     "bbox": [
+      724.6,
+      208.5,
+      975.0,
+      240.5
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Slow down, Baba.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Slow down, Baba.",
+     "bbox": [
+      701.7,
+      254.1,
+      999.0,
+      296.1
+     ],
+     "size": 42.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Zinzi is in a hurry. She gobbles up her cereal. Has anyone seen Thabo?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zinzi is in a hurry. She gobbles up her cereal.",
+     "bbox": [
+      685.3,
+      93.3,
+      1014.4,
+      163.7
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "Has anyone seen Thabo?",
+     "bbox": [
+      691.6,
+      208.5,
+      1008.0,
+      240.5
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Slow down, Zinzi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Slow down, Zinzi.",
+     "bbox": [
+      707.4,
+      254.1,
+      993.4,
+      296.1
+     ],
+     "size": 42.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Thabo! Where is Thabo?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo! Where is Thabo?",
+     "bbox": [
+      769.9,
+      131.7,
+      1076.6,
+      163.7
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Thabo is not in a hurry.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo is not in a hurry.",
+     "bbox": [
+      707.2,
+      131.7,
+      992.5,
+      163.7
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Hurry up, Thabo! You will be late for school and remember, it’s soccer practise today.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hurry up, Thabo!",
+     "bbox": [
+      742.6,
+      213.6,
+      958.2,
+      245.6
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "You will be late for school and remember, it’s soccer practise today.",
+     "bbox": [
+      626.4,
+      290.4,
+      1074.4,
+      360.8
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Thabo is in a hurry.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo is in a hurry.",
+     "bbox": [
+      694.4,
+      254.1,
+      1006.4,
+      296.1
+     ],
+     "size": 42.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Hurry up, everyone. It’s soccer practise today.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hurry up, everyone. It’s soccer practise today.",
+     "bbox": [
+      696.8,
+      252.0,
+      1004.0,
+      322.4
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

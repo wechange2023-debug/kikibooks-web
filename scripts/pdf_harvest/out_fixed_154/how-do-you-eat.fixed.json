@@ -1,0 +1,367 @@
+{
+ "slug": "how-do-you-eat",
+ "book_body_size": 43.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Miri likes to crunch her toast.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Miri likes to crunch her toast.",
+     "bbox": [
+      56.7,
+      56.2,
+      512.8,
+      99.2
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "How do you eat, flamingo? I eat upside down! I trap shrimp in my beak.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, flamingo?",
+     "bbox": [
+      104.9,
+      110.0,
+      352.5,
+      200.0
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I eat upside down! I trap shrimp in my beak.",
+     "bbox": [
+      623.6,
+      429.9,
+      1029.2,
+      520.0
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "How do you eat, dung beetle? I roll dung into a ball. I chew the wet bits and my babies munch the grass.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, dung beetle?",
+     "bbox": [
+      130.4,
+      339.6,
+      378.0,
+      429.6
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I roll dung into a ball. I chew the wet bits and my babies munch the grass.",
+     "bbox": [
+      694.5,
+      131.1,
+      1015.0,
+      315.1
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "How do you eat, pangolin? I lick up ants with my long, sticky tongue.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, pangolin?",
+     "bbox": [
+      130.4,
+      339.6,
+      378.0,
+      429.6
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I lick up ants with my long, sticky tongue.",
+     "bbox": [
+      623.6,
+      372.1,
+      1076.6,
+      462.1
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "How do you eat, earthworm? I don’t have teeth. I swallow soil!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, earthworm?",
+     "bbox": [
+      130.4,
+      339.6,
+      378.0,
+      429.6
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I don’t have teeth. I swallow soil!",
+     "bbox": [
+      623.6,
+      429.9,
+      920.0,
+      520.0
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "How do you eat, tickbird? I ride on animals and snack on their ticks and earwax.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, tickbird?",
+     "bbox": [
+      130.4,
+      112.8,
+      378.0,
+      202.8
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I ride on animals and snack on their ticks and earwax.",
+     "bbox": [
+      711.5,
+      54.6,
+      1020.4,
+      191.6
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "How do you eat, whale? I sing to find my supper. The sound bounces off the fish!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, whale?",
+     "bbox": [
+      102.0,
+      353.8,
+      349.7,
+      443.8
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I sing to find my supper. The sound bounces off the fish!",
+     "bbox": [
+      671.8,
+      382.9,
+      1077.0,
+      520.0
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "How do you eat, tortoise? I munch prickly pears with my hard mouth.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, tortoise?",
+     "bbox": [
+      102.0,
+      110.0,
+      349.7,
+      200.0
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I munch prickly pears with my hard mouth.",
+     "bbox": [
+      623.6,
+      54.6,
+      988.8,
+      144.6
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "How do you eat, secretary bird? I stomp on snakes. I slurp them up!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, secretary bird?",
+     "bbox": [
+      102.0,
+      112.8,
+      349.7,
+      202.8
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I stomp on snakes. I slurp them up!",
+     "bbox": [
+      623.6,
+      54.6,
+      1048.0,
+      144.6
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "How do you eat, giraffe? I stretch my neck and grab the highest leaves.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, giraffe?",
+     "bbox": [
+      130.4,
+      254.6,
+      378.0,
+      344.6
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I stretch my neck and grab the highest leaves.",
+     "bbox": [
+      623.6,
+      54.6,
+      1066.8,
+      144.6
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "How do you eat, ostrich? I swallow little stones to break up my food.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How do you eat, ostrich?",
+     "bbox": [
+      102.0,
+      353.8,
+      349.7,
+      443.8
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "I swallow little stones to break up my food.",
+     "bbox": [
+      623.6,
+      54.6,
+      1027.1,
+      144.6
+     ],
+     "size": 43.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Miri, what is the best way to eat? Oh, she’s too busy to chat! Nibble!Chew! !prulS!wehC BURP! Munch! Excuse !elbbiN me! Gobble!Slurp !wehC!elbbiN !",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Miri, what is the best way to eat?",
+     "bbox": [
+      121.0,
+      56.2,
+      445.8,
+      146.2
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Oh, she’s too busy to chat!",
+     "bbox": [
+      85.0,
+      478.6,
+      481.8,
+      521.5
+     ],
+     "size": 43.0
+    },
+    {
+     "role": "BODY",
+     "text": "Nibble!Chew! !prulS!wehC BURP! Munch! Excuse !elbbiN me! Gobble!Slurp !wehC!elbbiN !",
+     "bbox": [
+      594.3,
+      112.6,
+      1109.0,
+      470.9
+     ],
+     "size": 47.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

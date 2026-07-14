@@ -1,0 +1,301 @@
+{
+ "slug": "zibu-and-zizo",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Zibu and Zizo are twin brothers. ‘They look the same,’ people always say.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zibu and Zizo are twin brothers.",
+     "bbox": [
+      192.3,
+      168.1,
+      374.6,
+      220.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘They look the same,’ people always say.",
+     "bbox": [
+      176.7,
+      254.5,
+      390.6,
+      307.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Mama buys them the same clothes. They go to the same school.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama buys them the same clothes.",
+     "bbox": [
+      235.0,
+      206.2,
+      415.1,
+      260.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "They go to the same school.",
+     "bbox": [
+      238.5,
+      296.2,
+      411.5,
+      350.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Zibu and Zizo both like banana bread.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zibu and Zizo both like banana bread.",
+     "bbox": [
+      165.9,
+      99.5,
+      401.0,
+      152.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Sometimes Zibu and Zizo say ... Hello!! ... at the same time.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Sometimes Zibu and Zizo say ...",
+     "bbox": [
+      181.8,
+      55.5,
+      385.1,
+      108.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "Hello!!",
+     "bbox": [
+      177.7,
+      235.0,
+      368.3,
+      301.0
+     ],
+     "size": 66.0
+    },
+    {
+     "role": "BODY",
+     "text": "... at the same time.",
+     "bbox": [
+      182.7,
+      484.0,
+      384.1,
+      508.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Zibu likes soccer.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zibu likes soccer.",
+     "bbox": [
+      760.3,
+      298.9,
+      934.8,
+      322.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Zizo likes drawing pictures.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zizo likes drawing pictures.",
+     "bbox": [
+      195.4,
+      164.7,
+      371.5,
+      217.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Zibu likes to talk to people.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zibu likes to talk to people.",
+     "bbox": [
+      144.4,
+      77.0,
+      422.4,
+      101.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Zizo likes to keep to himself.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zizo likes to keep to himself.",
+     "bbox": [
+      137.9,
+      275.5,
+      429.0,
+      299.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Zibu likes counting numbers. He wants to be an accountant.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zibu likes counting numbers.",
+     "bbox": [
+      754.3,
+      217.9,
+      946.5,
+      270.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He wants to be an accountant.",
+     "bbox": [
+      755.8,
+      304.3,
+      945.0,
+      357.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Zizo likes learning new words. He wants to write books.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zizo likes learning new words.",
+     "bbox": [
+      634.5,
+      274.8,
+      840.9,
+      327.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He wants to write books.",
+     "bbox": [
+      611.8,
+      361.2,
+      870.1,
+      385.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "‘How come Zibu and Zizo look the same, but like different things?’ ask the children at school .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘How come Zibu and Zizo look the same, but like different things?’ ask the children at school .",
+     "bbox": [
+      143.1,
+      215.2,
+      439.4,
+      327.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "'We look the same, but we are different and like different things and that's okay.'",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "'We look the same, but we are different and like different things and that's okay.'",
+     "bbox": [
+      159.2,
+      232.3,
+      407.7,
+      342.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

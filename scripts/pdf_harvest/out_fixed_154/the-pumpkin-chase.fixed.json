@@ -1,0 +1,334 @@
+{
+ "slug": "the-pumpkin-chase",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Miss Sunflower is crying. “A thief just stole my pumpkin pie! Now what will I have for dinner?” she sobs.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Miss Sunflower is crying. “A thief just stole my pumpkin pie! Now what will I have for dinner?” she sobs.",
+     "bbox": [
+      62.9,
+      255.2,
+      504.2,
+      341.2
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Don’t cry Miss Sunflower. We will find your pumpkin pie,” said Officer Zig. “We will catch that crook!” said Officer Zag.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Don’t cry Miss Sunflower. We will find your pumpkin pie,” said Officer Zig. “We will catch that crook!” said Officer Zag.",
+     "bbox": [
+      626.0,
+      255.2,
+      1075.0,
+      341.2
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Look! There he goes!” said Officer Zig. “Catch that crook!” said Officer Zag.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look! There he goes!” said Officer Zig.",
+     "bbox": [
+      84.3,
+      287.2,
+      482.8,
+      309.2
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Catch that crook!” said Officer Zag.",
+     "bbox": [
+      671.0,
+      467.3,
+      919.3,
+      521.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!” cried the crook.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!” cried the crook.",
+     "bbox": [
+      628.0,
+      255.2,
+      1072.9,
+      341.2
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "They chased hi m up the hill... …but the crook was too quick. “I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They chased hi m up the hill...",
+     "bbox": [
+      102.8,
+      367.2,
+      471.8,
+      426.1
+     ],
+     "size": 22.7
+    },
+    {
+     "role": "BODY",
+     "text": "…but the crook was too quick.",
+     "bbox": [
+      772.8,
+      404.6,
+      1077.3,
+      426.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+     "bbox": [
+      632.5,
+      468.6,
+      1077.4,
+      522.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "They chased him down the riverbank but the crook rolled away. “I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They chased him down the riverbank but the crook rolled away.",
+     "bbox": [
+      66.0,
+      428.8,
+      343.8,
+      522.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+     "bbox": [
+      714.4,
+      63.2,
+      997.9,
+      149.2
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "They chased him under the bridge but the crook swam away. “I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They chased him under the bridge but the crook swam away.",
+     "bbox": [
+      87.0,
+      88.0,
+      479.9,
+      149.9
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+     "bbox": [
+      623.3,
+      96.6,
+      829.6,
+      214.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "They chased him over the fires... …but the crook jumped too high. “I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They chased him over the fires...",
+     "bbox": [
+      99.9,
+      88.0,
+      467.1,
+      128.0
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "…but the crook jumped too high.",
+     "bbox": [
+      745.8,
+      209.9,
+      1075.7,
+      231.9
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+     "bbox": [
+      759.5,
+      273.9,
+      1061.9,
+      359.9
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "They chased him around the tree but they could not catch the crook. “I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They chased him around the tree but they could not catch the crook.",
+     "bbox": [
+      86.7,
+      88.0,
+      480.3,
+      149.9
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’m too fast and you’re too slow. You will never catch the pumpkin pie thief!”",
+     "bbox": [
+      628.0,
+      95.9,
+      1072.9,
+      149.9
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Officer Zig and Officer Zag did not give up. They ran and ran and ran until… SPLAT! They chased him right into a wall!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Officer Zig and Officer Zag did not give up. They ran and ran and ran until…",
+     "bbox": [
+      69.6,
+      372.1,
+      497.5,
+      426.1
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "SPLAT! They chased him right into a wall!",
+     "bbox": [
+      92.2,
+      460.1,
+      474.7,
+      522.0
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“Hurray! We caught the crook!” said the cops.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Hurray! We caught the crook!” said the cops.",
+     "bbox": [
+      686.9,
+      271.2,
+      1014.0,
+      325.2
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Officer Zig and Officer Zag returned the pumpkin pie to Miss Sunflower. “Thank you very much,” said Miss Sunflower. Dinner time!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Officer Zig and Officer Zag returned the pumpkin pie to Miss Sunflower. “Thank you very much,” said Miss Sunflower. Dinner time!",
+     "bbox": [
+      83.5,
+      207.2,
+      483.6,
+      399.3
+     ],
+     "size": 31.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

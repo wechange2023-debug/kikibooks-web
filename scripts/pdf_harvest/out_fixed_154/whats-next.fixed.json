@@ -1,0 +1,311 @@
+{
+ "slug": "whats-next",
+ "book_body_size": 30.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Fatima is always busy! She loves to run and play.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fatima is always busy!",
+     "bbox": [
+      141.5,
+      205.2,
+      425.5,
+      235.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "She loves to run and play.",
+     "bbox": [
+      185.6,
+      313.2,
+      381.3,
+      379.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Her favourite part of the day is when Grandpa arrives. “How should we spend our day, Fatima?” asks Grandpa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Her favourite part of the day is when Grandpa arrives.",
+     "bbox": [
+      91.5,
+      205.2,
+      475.4,
+      271.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“How should we spend our day, Fatima?” asks Grandpa.",
+     "bbox": [
+      84.8,
+      313.2,
+      482.1,
+      379.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“I know!” says Fatima. “Let’s go to the park.” “I can see the whole world from up here,” Fatima shouts.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I know!” says Fatima. “Let’s go to the park.”",
+     "bbox": [
+      29.1,
+      36.3,
+      309.1,
+      102.3
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I can see the whole world from up here,” Fatima shouts.",
+     "bbox": [
+      613.7,
+      432.4,
+      868.4,
+      534.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“I have an idea!” “Let’s play superheroes and pick up the litter,” says Fatima.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I have an idea!”",
+     "bbox": [
+      877.6,
+      89.2,
+      1086.8,
+      119.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Let’s play superheroes and pick up the litter,” says Fatima.",
+     "bbox": [
+      914.3,
+      224.6,
+      1096.9,
+      398.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Great stuff! Now you can see all the flowers.” “What’s next?” asks Grandpa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Great stuff! Now you can see all the flowers.”",
+     "bbox": [
+      98.9,
+      205.2,
+      468.0,
+      271.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What’s next?” asks Grandpa.",
+     "bbox": [
+      99.1,
+      349.2,
+      467.9,
+      379.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Weeeeee eee !” “What a crazy cool kid you are!” says Grandpa. “What’s next?”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“Weeeeee eee !” “What a crazy cool kid you are!” says Grandpa. “What’s next?”",
+     "bbox": [
+      55.1,
+      138.0,
+      516.4,
+      416.4
+     ],
+     "size": 45.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“How about something cold and delicious?” says Fatima.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“How about something cold and delicious?” says Fatima.",
+     "bbox": [
+      640.0,
+      32.4,
+      1060.8,
+      98.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“What’s next, kiddo?” asks Grandpa. Fatima yawns. “Let’s go home.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What’s next, kiddo?” asks Grandpa.",
+     "bbox": [
+      151.8,
+      187.2,
+      415.1,
+      253.2
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Fatima yawns. “Let’s go home.”",
+     "bbox": [
+      183.0,
+      331.2,
+      383.9,
+      397.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Hello, Fatima,” says Mum. “What did you and Grandpa do today?” “Not much!” they both say.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Hello, Fatima,” says Mum.",
+     "bbox": [
+      270.3,
+      62.5,
+      460.4,
+      128.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What did you and Grandpa do today?”",
+     "bbox": [
+      255.1,
+      170.5,
+      475.5,
+      272.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Not much!” they both say.",
+     "bbox": [
+      610.6,
+      397.8,
+      758.5,
+      499.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“What should we do tomorrow?” asks Fatima.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What should we do tomorrow?” asks Fatima.",
+     "bbox": [
+      82.3,
+      241.2,
+      484.6,
+      307.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Fatima hurries to bed. She is excited for her next adventure with her best friend, Grandpa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Fatima hurries to bed. She is excited for her next adventure with her best friend, Grandpa.",
+     "bbox": [
+      36.4,
+      387.8,
+      333.9,
+      525.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

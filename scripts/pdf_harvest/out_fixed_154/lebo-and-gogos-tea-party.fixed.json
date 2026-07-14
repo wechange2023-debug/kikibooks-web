@@ -1,0 +1,223 @@
+{
+ "slug": "lebo-and-gogos-tea-party",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Lebo is at Gogo’s farm. She is bored with chasing the animals. ‘Now you chase me, Gogo!’ Lebo shouts as she races past. ‘Slow down, Lebo,’ Gogo says, hurrying to catch up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lebo is at Gogo’s farm. She is bored with chasing the animals. ‘Now you chase me, Gogo!’ Lebo shouts as she races past. ‘Slow down, Lebo,’ Gogo says, hurrying to catch up.",
+     "bbox": [
+      105.6,
+      61.1,
+      443.3,
+      221.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Gogo trips over a rock while chasing Lebo. ‘Ouch!’ she screams. Gogo has hurt her ankle.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Gogo trips over a rock while chasing Lebo. ‘Ouch!’ she screams. Gogo has hurt her ankle.",
+     "bbox": [
+      105.6,
+      192.2,
+      367.9,
+      296.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "She comes back from the doctor with a special boot and crutches. ‘Gogo, come back to the city with us so that we can take care of you,’ says Lebo’s mom. ‘I won’t leave my farm. I will manage on my own,’ Gogo replies, stubbornly.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She comes back from the doctor with a special boot and crutches. ‘Gogo, come back to the city with us so that we can take care of you,’ says Lebo’s mom. ‘I won’t leave my farm. I will manage on my own,’ Gogo replies, stubbornly.",
+     "bbox": [
+      672.5,
+      142.6,
+      1027.2,
+      330.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "‘Gogo, you must come. We will have so much fun!’ Lebo says, excitedly.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Gogo, you must come. We will have so much fun!’ Lebo says, excitedly.",
+     "bbox": [
+      672.5,
+      248.5,
+      1008.6,
+      296.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "During the drive, Lebo bounces on her seat. She thinks of all the wild adventures she and Gogo will have in the city.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "During the drive, Lebo bounces on her seat. She thinks of all the wild adventures she and Gogo will have in the city.",
+     "bbox": [
+      711.5,
+      394.9,
+      1038.8,
+      498.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "When they arrive at the house, Gogo rests on the sofa.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When they arrive at the house, Gogo rests on the sofa.",
+     "bbox": [
+      105.6,
+      263.9,
+      449.7,
+      311.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Lebo dashes into the lounge. ‘Gogo, Gogo, I know what we can do today! We can go to the mall. There are lots of shops with nice toys and ice cream!’ ‘I’m afraid I can’t. The mall is too big, and I will get so tired.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lebo dashes into the lounge. ‘Gogo, Gogo, I know what we can do today! We can go to the mall. There are lots of shops with nice toys and ice cream!’ ‘I’m afraid I can’t. The mall is too big, and I will get so tired.’",
+     "bbox": [
+      105.6,
+      112.2,
+      448.9,
+      300.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "‘Gogo, Gogo, I know what we can do today! We can go to the park!’ ‘I’m afraid that won’t work. The dogs in the park will run around and could make me fall again.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Gogo, Gogo, I know what we can do today! We can go to the park!’ ‘I’m afraid that won’t work. The dogs in the park will run around and could make me fall again.’",
+     "bbox": [
+      100.6,
+      109.3,
+      444.2,
+      241.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "A second later, Lebo’s eyes are wide with excitement. ‘Gogo, Gogo, I know what else we can do today. Let’s go to the beach.’ ‘I’m sorry, Lebo. I’m afraid my crutches will sink into the soft sand.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "A second later, Lebo’s eyes are wide with excitement. ‘Gogo, Gogo, I know what else we can do today. Let’s go to the beach.’ ‘I’m sorry, Lebo. I’m afraid my crutches will sink into the soft sand.’",
+     "bbox": [
+      105.6,
+      127.9,
+      458.2,
+      287.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Lebo is quiet while Gogo knits. Suddenly she has an idea!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lebo is quiet while Gogo knits. Suddenly she has an idea!",
+     "bbox": [
+      105.6,
+      239.9,
+      386.6,
+      289.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "‘Gogo, Gogo, I know what we can do today! Let’s have a tea party. Gogo, you can sit here. I will bring everything to you because you are hurt.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Gogo, Gogo, I know what we can do today! Let’s have a tea party. Gogo, you can sit here. I will bring everything to you because you are hurt.’",
+     "bbox": [
+      113.4,
+      202.9,
+      426.9,
+      334.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

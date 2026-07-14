@@ -1,0 +1,322 @@
+{
+ "slug": "its-my-book",
+ "book_body_size": 24.5,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Susu LOVES to read. Once upon a time ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Susu LOVES to read.",
+     "bbox": [
+      78.0,
+      100.3,
+      306.5,
+      124.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Once upon a time ...",
+     "bbox": [
+      209.9,
+      440.4,
+      438.3,
+      485.4
+     ],
+     "size": 26.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Come back SILLY goose! Geese can’t read. It’s MY book!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Come back SILLY goose! Geese can’t read. It’s MY book!",
+     "bbox": [
+      145.9,
+      84.7,
+      421.0,
+      202.5
+     ],
+     "size": 30.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Now where was I ... Once uponatime ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Now where was I ...",
+     "bbox": [
+      178.0,
+      84.7,
+      389.0,
+      108.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Once uponatime ...",
+     "bbox": [
+      729.4,
+      263.1,
+      953.1,
+      331.1
+     ],
+     "size": 27.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "You CRAZY pig! Pigs can’t read. It’sMYbook!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "You CRAZY pig! Pigs can’t read.",
+     "bbox": [
+      73.7,
+      53.5,
+      372.2,
+      122.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "It’sMYbook!",
+     "bbox": [
+      614.7,
+      66.9,
+      825.4,
+      211.5
+     ],
+     "size": 46.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Shhh! Don’t tell ANYONE I’m here. Once uponatime ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Shhh! Don’t tell ANYONE I’m here.",
+     "bbox": [
+      96.0,
+      54.9,
+      469.9,
+      78.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Once uponatime ...",
+     "bbox": [
+      714.2,
+      364.8,
+      937.9,
+      432.9
+     ],
+     "size": 27.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Aargh! Not you too, FUNNY dog! Dogs can’t read. It’s MY book!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Aargh! Not you too, FUNNY dog! Dogs can’t read.",
+     "bbox": [
+      101.2,
+      46.4,
+      464.6,
+      102.4
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "It’s MY book!",
+     "bbox": [
+      737.0,
+      52.1,
+      963.8,
+      89.2
+     ],
+     "size": 37.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "No one will find me up HERE! Once upon a time ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "No one will find me up HERE!",
+     "bbox": [
+      122.0,
+      62.0,
+      444.9,
+      86.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Once upon a time ...",
+     "bbox": [
+      733.5,
+      430.6,
+      961.0,
+      479.4
+     ],
+     "size": 26.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Ai! Watch out Mr Dragon, you’ll BURN my book! Don’t you know, dragons can’t read. It’sMY booooook!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Ai! Watch out Mr Dragon, you’ll BURN my book! Don’t you know, dragons can’t read.",
+     "bbox": [
+      79.6,
+      46.4,
+      487.3,
+      134.4
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "It’sMY booooook!",
+     "bbox": [
+      870.9,
+      377.3,
+      1066.5,
+      547.0
+     ],
+     "size": 45.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "FINALLY ... some peace and quiet! Once upon a time ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "FINALLY ... some peace and quiet!",
+     "bbox": [
+      95.3,
+      62.0,
+      471.6,
+      86.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Once upon a time ...",
+     "bbox": [
+      742.2,
+      57.6,
+      969.7,
+      106.4
+     ],
+     "size": 26.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Susu, it looks like everyone wants to read. Let’s start a book club!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Susu, it looks like everyone wants to read. Let’s start a book club!",
+     "bbox": [
+      48.2,
+      53.5,
+      518.6,
+      109.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "You’re right, everybody loves reading. We can SHARE our books. Once uponatime ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "You’re right, everybody loves reading. We can SHARE our books.",
+     "bbox": [
+      57.2,
+      56.4,
+      484.9,
+      112.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Once uponatime ...",
+     "bbox": [
+      604.2,
+      444.9,
+      818.6,
+      515.6
+     ],
+     "size": 26.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,334 @@
+{
+ "slug": "the-monster-must-go",
+ "book_body_size": 37.8,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "There is a MONSTER in our house.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "There is a MONSTER in our house.",
+     "bbox": [
+      847.0,
+      381.4,
+      1077.2,
+      518.2
+     ],
+     "size": 39.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "It wasn’t ALWAYS here.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It wasn’t ALWAYS here.",
+     "bbox": [
+      662.3,
+      151.0,
+      1038.5,
+      187.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "One day, it just TURNED UP.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day, it just TURNED UP.",
+     "bbox": [
+      726.2,
+      375.2,
+      974.6,
+      454.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Themonster EATS and ROARS all day all night.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Themonster EATS",
+     "bbox": [
+      117.9,
+      54.5,
+      455.1,
+      154.3
+     ],
+     "size": 50.2
+    },
+    {
+     "role": "BODY",
+     "text": "and ROARS",
+     "bbox": [
+      724.9,
+      47.2,
+      980.4,
+      127.7
+     ],
+     "size": 49.4
+    },
+    {
+     "role": "BODY",
+     "text": "all day",
+     "bbox": [
+      226.3,
+      476.1,
+      340.6,
+      518.4
+     ],
+     "size": 39.4
+    },
+    {
+     "role": "BODY",
+     "text": "all night.",
+     "bbox": [
+      783.0,
+      472.2,
+      923.6,
+      518.4
+     ],
+     "size": 39.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "The monster is... NOIS DIRTYYY GRUMP DROOLYY SMELL STICKY",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The monster is...",
+     "bbox": [
+      151.1,
+      180.1,
+      415.9,
+      216.1
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "NOIS DIRTYYY GRUMP DROOLYY SMELL STICKY",
+     "bbox": [
+      601.2,
+      91.6,
+      851.9,
+      407.8
+     ],
+     "size": 38.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "The monster must GO!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "The monster must GO!",
+     "bbox": [
+      668.5,
+      163.2,
+      1032.2,
+      278.7
+     ],
+     "size": 50.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Itried SCARING itof. But the LAUGHED. monster just HA-HA! HA-HA!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Itried SCARING itof.",
+     "bbox": [
+      107.5,
+      36.0,
+      503.0,
+      196.3
+     ],
+     "size": 43.3
+    },
+    {
+     "role": "BODY",
+     "text": "But the LAUGHED. monster just HA-HA! HA-HA!",
+     "bbox": [
+      682.2,
+      62.9,
+      1018.6,
+      351.1
+     ],
+     "size": 40.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Itried TRAPPINGit. Butthe monsterwas tooCUNNING .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Itried TRAPPINGit.",
+     "bbox": [
+      128.4,
+      56.1,
+      452.9,
+      147.1
+     ],
+     "size": 42.5
+    },
+    {
+     "role": "BODY",
+     "text": "Butthe monsterwas",
+     "bbox": [
+      677.9,
+      56.2,
+      1023.1,
+      156.3
+     ],
+     "size": 43.6
+    },
+    {
+     "role": "BODY",
+     "text": "tooCUNNING .",
+     "bbox": [
+      889.3,
+      347.0,
+      1072.7,
+      513.6
+     ],
+     "size": 32.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "I even tried sending it to the MOON. But that just made it ANGRY.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I even tried sending it to the MOON.",
+     "bbox": [
+      105.9,
+      211.0,
+      461.0,
+      290.2
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "But that just made it ANGRY.",
+     "bbox": [
+      681.3,
+      64.7,
+      1019.5,
+      143.8
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "It’sTOO LATE! The monster’sGOTME!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "It’sTOO LATE!",
+     "bbox": [
+      707.7,
+      105.3,
+      982.5,
+      213.9
+     ],
+     "size": 57.4
+    },
+    {
+     "role": "BODY",
+     "text": "The monster’sGOTME!",
+     "bbox": [
+      747.7,
+      349.8,
+      1071.4,
+      518.8
+     ],
+     "size": 43.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "OOHH!!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "OOHH!!",
+     "bbox": [
+      220.7,
+      182.4,
+      346.3,
+      254.4
+     ],
+     "size": 72.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Well... Maybe the monster isn’t SO bad.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Well... Maybe the monster isn’t SO bad.",
+     "bbox": [
+      687.8,
+      204.8,
+      1013.0,
+      327.2
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

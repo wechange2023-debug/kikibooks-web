@@ -1,0 +1,279 @@
+{
+ "slug": "jock-and-me",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Jock is an old dog.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Jock is an old dog.",
+     "bbox": [
+      182.0,
+      247.4,
+      384.8,
+      269.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "His ears are floppy. His legs are bendy. His eyes are cloudy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "His ears are floppy.",
+     "bbox": [
+      333.8,
+      129.1,
+      459.5,
+      183.5
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "His legs are bendy.",
+     "bbox": [
+      100.2,
+      354.0,
+      222.8,
+      409.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "His eyes are cloudy.",
+     "bbox": [
+      736.0,
+      444.3,
+      967.1,
+      472.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "But he still runs fast!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But he still runs fast!",
+     "bbox": [
+      727.7,
+      112.7,
+      973.1,
+      140.7
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "And his smile is wide.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And his smile is wide.",
+     "bbox": [
+      161.1,
+      241.8,
+      406.6,
+      283.9
+     ],
+     "size": 23.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "When the sun goes down he walks along the fence with Tatomkhulu.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When the sun goes down",
+     "bbox": [
+      212.6,
+      149.9,
+      354.4,
+      205.6
+     ],
+     "size": 23.5
+    },
+    {
+     "role": "BODY",
+     "text": "he walks along the fence with Tatomkhulu.",
+     "bbox": [
+      714.1,
+      149.9,
+      985.3,
+      205.6
+     ],
+     "size": 23.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "They greet their friends.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They greet their friends.",
+     "bbox": [
+      359.2,
+      154.2,
+      476.3,
+      242.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "They count the sheep.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They count the sheep.",
+     "bbox": [
+      156.8,
+      167.9,
+      410.1,
+      195.9
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "They check the gates.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They check the gates.",
+     "bbox": [
+      158.6,
+      104.9,
+      408.3,
+      132.9
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Jock sleeps outside. When it rains, he sleeps under the bakkie.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Jock sleeps outside.",
+     "bbox": [
+      175.4,
+      238.5,
+      391.5,
+      260.5
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "When it rains, he sleeps under the bakkie.",
+     "bbox": [
+      147.9,
+      284.9,
+      419.0,
+      340.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "He loves Tatomkhulu.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He loves Tatomkhulu.",
+     "bbox": [
+      199.7,
+      195.3,
+      367.2,
+      249.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "He loves chicken. Sometimes he gets some!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He loves chicken. Sometimes he gets some!",
+     "bbox": [
+      181.2,
+      133.7,
+      385.7,
+      219.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "He also loves me.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He also loves me.",
+     "bbox": [
+      185.9,
+      218.0,
+      381.0,
+      246.0
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

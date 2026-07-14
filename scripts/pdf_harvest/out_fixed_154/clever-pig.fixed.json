@@ -1,0 +1,312 @@
+{
+ "slug": "clever-pig",
+ "book_body_size": 35.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Come Pig! Let’s play. Can you find the carrot?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Come Pig! Let’s play.",
+     "bbox": [
+      778.8,
+      144.1,
+      922.0,
+      221.1
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Can you find the carrot?",
+     "bbox": [
+      684.6,
+      396.1,
+      1016.1,
+      431.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "No, it’s not under there. No, it’s not inside.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "No, it’s not under there.",
+     "bbox": [
+      124.7,
+      184.7,
+      442.2,
+      219.7
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "No, it’s not inside.",
+     "bbox": [
+      730.7,
+      449.0,
+      970.1,
+      484.0
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Clever Pig!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Clever Pig!",
+     "bbox": [
+      776.8,
+      273.2,
+      922.6,
+      308.2
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Wake up, Pig! Come out and play. Where is she?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Wake up, Pig! Come out and play.",
+     "bbox": [
+      148.5,
+      165.1,
+      418.4,
+      242.1
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Where is she?",
+     "bbox": [
+      190.3,
+      375.1,
+      376.6,
+      410.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Pig is gone.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Pig is gone.",
+     "bbox": [
+      772.8,
+      270.1,
+      928.0,
+      305.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "The sun came up. And the sun went down. But, no Pig.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The sun came up.",
+     "bbox": [
+      221.1,
+      95.4,
+      459.9,
+      130.4
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "And the sun went down. But, no Pig.",
+     "bbox": [
+      623.6,
+      98.4,
+      1038.2,
+      175.4
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "I miss my friend.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I miss my friend.",
+     "bbox": [
+      271.8,
+      147.5,
+      490.8,
+      182.5
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "My Pig! Clever Pig.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My Pig! Clever Pig.",
+     "bbox": [
+      778.2,
+      249.1,
+      922.5,
+      326.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "And one, two, three new friends!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And one,",
+     "bbox": [
+      56.7,
+      117.4,
+      181.1,
+      152.4
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "two,",
+     "bbox": [
+      331.8,
+      159.4,
+      389.3,
+      194.4
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "three new friends!",
+     "bbox": [
+      623.6,
+      223.7,
+      862.2,
+      258.7
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Come, pigs! Let’s play.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Come, pigs!",
+     "bbox": [
+      107.3,
+      141.8,
+      269.7,
+      176.8
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Let’s play.",
+     "bbox": [
+      782.5,
+      446.2,
+      918.3,
+      481.2
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Time for bed!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Time for bed!",
+     "bbox": [
+      760.0,
+      124.1,
+      940.8,
+      159.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Goodnight, pigs.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Goodnight, pigs.",
+     "bbox": [
+      268.1,
+      220.8,
+      491.6,
+      255.8
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

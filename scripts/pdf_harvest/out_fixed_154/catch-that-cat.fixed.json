@@ -1,0 +1,400 @@
+{
+ "slug": "catch-that-cat",
+ "book_body_size": 27.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Hurry. Hurry! Help me catch that cat!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Hurry. Hurry!",
+     "bbox": [
+      691.6,
+      233.2,
+      827.8,
+      332.2
+     ],
+     "size": 45.0
+    },
+    {
+     "role": "BODY",
+     "text": "Help me catch that cat!",
+     "bbox": [
+      694.3,
+      425.0,
+      1000.8,
+      452.0
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "She stole my sock and ran off… snatch her. Grab her. Catch that cat!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She stole my sock and ran off… snatch her. Grab her.",
+     "bbox": [
+      646.1,
+      99.6,
+      1054.7,
+      159.0
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "SFX",
+     "text": "Catch that cat!",
+     "bbox": [
+      706.8,
+      226.9,
+      994.0,
+      266.9
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Look. Look! There she goes. Come on, climb. She’s in the tree. Catch that cat!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Look. Look!",
+     "bbox": [
+      172.4,
+      114.3,
+      394.6,
+      154.3
+     ],
+     "size": 40.0
+    },
+    {
+     "role": "BODY",
+     "text": "There she goes. Come on, climb.",
+     "bbox": [
+      180.3,
+      223.9,
+      386.6,
+      283.3
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "She’s in the tree. Catch that cat!",
+     "bbox": [
+      175.0,
+      321.1,
+      392.0,
+      380.5
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Eek. She jumped! I just missed her. Quick. Fast. Catch that cat!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Eek. She jumped! I just missed her.",
+     "bbox": [
+      108.0,
+      425.8,
+      354.1,
+      491.8
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Quick. Fast. Catch that cat!",
+     "bbox": [
+      757.3,
+      59.7,
+      1044.6,
+      146.5
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": ". ssendoog knahT dep l eh kcos ehT . taofl reh . no emoC ot !tac tog taht ev ’ eW hctac",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": ". ssendoog knahT dep l eh kcos ehT . taofl reh",
+     "bbox": [
+      113.1,
+      294.0,
+      204.9,
+      514.8
+     ],
+     "size": 16.9
+    },
+    {
+     "role": "BODY",
+     "text": ". no emoC",
+     "bbox": [
+      438.9,
+      277.4,
+      483.9,
+      480.4
+     ],
+     "size": 23.0
+    },
+    {
+     "role": "BODY",
+     "text": "ot !tac tog taht ev ’ eW hctac",
+     "bbox": [
+      667.2,
+      52.6,
+      726.6,
+      243.6
+     ],
+     "size": 16.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Watch out, everybody. That is one fast cat! Are we ever going to catch that cat?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Watch out, everybody.",
+     "bbox": [
+      90.3,
+      203.7,
+      238.0,
+      263.1
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "That is one fast cat!",
+     "bbox": [
+      33.5,
+      300.9,
+      294.8,
+      327.9
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "Are we ever going to catch that cat?",
+     "bbox": [
+      757.6,
+      59.9,
+      1028.2,
+      119.3
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Did you see her jump on a duck? Look at them float. I hope my sock stays dry!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Did you see her jump on a duck? Look at them float.",
+     "bbox": [
+      136.3,
+      61.4,
+      389.5,
+      153.2
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "I hope my sock stays dry!",
+     "bbox": [
+      70.7,
+      209.9,
+      439.6,
+      239.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Clever cat. We’ll catch you yet! Hmm. But how?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Clever cat. We’ll catch you yet!",
+     "bbox": [
+      722.5,
+      164.8,
+      978.3,
+      224.2
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "SFX",
+     "text": "Hmm. But how?",
+     "bbox": [
+      761.7,
+      284.4,
+      939.1,
+      372.4
+     ],
+     "size": 40.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Shhh. Quiet. Let’s hide here. Here’s our chance to catch that cat!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Shhh. Quiet.",
+     "bbox": [
+      162.2,
+      144.0,
+      390.6,
+      184.0
+     ],
+     "size": 40.0
+    },
+    {
+     "role": "BODY",
+     "text": "Let’s hide here. Here’s our chance to catch that cat!",
+     "bbox": [
+      777.5,
+      321.1,
+      1048.0,
+      417.2
+     ],
+     "size": 28.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Gotcha!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Gotcha!",
+     "bbox": [
+      60.0,
+      250.0,
+      507.0,
+      370.0
+     ],
+     "size": 120.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Wow! Look here. The sock is for her babies. What sweet kittens!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Wow!",
+     "bbox": [
+      809.8,
+      167.5,
+      939.2,
+      217.5
+     ],
+     "size": 50.0
+    },
+    {
+     "role": "BODY",
+     "text": "Look here.",
+     "bbox": [
+      805.8,
+      267.0,
+      943.1,
+      294.0
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "The sock is for her babies. What sweet kittens!",
+     "bbox": [
+      704.0,
+      331.8,
+      1045.0,
+      391.2
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Quick. Catch all those cats! We’ll bring them home. They can have all my socks.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Quick. Catch all those cats!",
+     "bbox": [
+      718.2,
+      94.9,
+      982.6,
+      154.3
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "We’ll bring them home. They can have all my socks.",
+     "bbox": [
+      668.5,
+      192.1,
+      1032.2,
+      251.5
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

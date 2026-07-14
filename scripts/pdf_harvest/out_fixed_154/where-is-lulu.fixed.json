@@ -1,0 +1,290 @@
+{
+ "slug": "where-is-lulu",
+ "book_body_size": 32.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“Oh, no!”",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "“Oh, no!”",
+     "bbox": [
+      129.2,
+      260.7,
+      437.8,
+      340.7
+     ],
+     "size": 80.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Lulu! It’s time to go,” calls Ma.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Lulu! It’s time to go,” calls Ma.",
+     "bbox": [
+      132.1,
+      255.2,
+      434.8,
+      325.6
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Where is Lulu? Is she under the sofa? Is she behind the curtain?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Where is Lulu? Is she under the sofa? Is she behind the curtain?",
+     "bbox": [
+      93.5,
+      138.0,
+      467.1,
+      246.8
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Where is Lulu? Is she next to the stove? Is she in the cupboard?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Where is Lulu? Is she next to the stove? Is she in the cupboard?",
+     "bbox": [
+      93.5,
+      135.9,
+      446.4,
+      244.7
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Lulu! It’s time to go. Where are you?” calls Ma.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Lulu! It’s time to go. Where are you?” calls Ma.",
+     "bbox": [
+      56.7,
+      255.2,
+      435.5,
+      325.6
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“There you are!” “I don’t want to gooo!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“There you are!”",
+     "bbox": [
+      56.7,
+      236.0,
+      291.1,
+      268.0
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I don’t want to gooo!”",
+     "bbox": [
+      56.7,
+      312.8,
+      380.6,
+      344.8
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“We have to go,” says Ma. “But I really like this one!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“We have to go,” says Ma.",
+     "bbox": [
+      56.7,
+      236.0,
+      435.2,
+      268.0
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“But I really like this one!”",
+     "bbox": [
+      56.7,
+      312.8,
+      422.4,
+      344.8
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "L I B R A RY",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "L I B R A RY",
+     "bbox": [
+      675.3,
+      152.7,
+      741.3,
+      188.5
+     ],
+     "size": 18.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Story spread 9 “I really like this one!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Story spread 9",
+     "bbox": [
+      -124.7,
+      -109.6,
+      37.1,
+      -85.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I really like this one!”",
+     "bbox": [
+      56.7,
+      274.4,
+      363.7,
+      306.4
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“And this one.” “And this one.” “And this one.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“And this one.”",
+     "bbox": [
+      64.9,
+      74.1,
+      275.2,
+      106.1
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“And this one.” “And this one.”",
+     "bbox": [
+      673.0,
+      72.1,
+      1027.8,
+      154.4
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“See? You return books and borrow more.” “YAY!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“See? You return books and borrow more.”",
+     "bbox": [
+      56.7,
+      216.8,
+      395.6,
+      287.2
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“YAY!”",
+     "bbox": [
+      56.7,
+      332.0,
+      138.7,
+      364.0
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Where is Lulu now?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Where is Lulu now?",
+     "bbox": [
+      56.7,
+      274.4,
+      338.8,
+      306.4
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

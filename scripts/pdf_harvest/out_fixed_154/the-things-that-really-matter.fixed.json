@@ -1,0 +1,389 @@
+{
+ "slug": "the-things-that-really-matter",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "We are going on a trip. I ask Mama what to pack. She says, ‘The things that really matter.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We are going on a trip. I ask Mama what to pack.",
+     "bbox": [
+      727.2,
+      223.4,
+      973.6,
+      267.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "She says, ‘The things that really matter.’",
+     "bbox": [
+      727.0,
+      295.4,
+      973.8,
+      339.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "We stop at the windmill for breakfast, The jungle gym is so much fun. I forget my toy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We stop at the windmill for breakfast, The jungle gym is so much fun.",
+     "bbox": [
+      100.3,
+      55.7,
+      466.7,
+      99.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "I forget my toy.",
+     "bbox": [
+      775.1,
+      55.7,
+      925.6,
+      75.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "I am sad in the car, but Tando is happy. ‘Hooray! Now you can play with me !’ he says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I am sad in the car, but Tando is happy.",
+     "bbox": [
+      755.9,
+      155.6,
+      944.9,
+      199.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Hooray! Now you can play with me !’ he says.",
+     "bbox": [
+      737.6,
+      227.6,
+      963.2,
+      273.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "We stop at a farm to see some animals. Tando is searching so hard for a springbok, a monkey gets away with his headphones.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We stop at a farm to see some animals. Tando is searching so hard for a springbok,",
+     "bbox": [
+      75.1,
+      55.7,
+      491.9,
+      99.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "a monkey gets away with his headphones.",
+     "bbox": [
+      647.6,
+      55.7,
+      1053.2,
+      75.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "He is sad in the car, but I am happy. ‘Hooray! Now you can sing with me !’ I say.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He is sad in the car, but I am happy.",
+     "bbox": [
+      756.3,
+      169.8,
+      944.5,
+      213.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Hooray! Now you can sing with me !’ I say.",
+     "bbox": [
+      744.6,
+      241.8,
+      956.2,
+      287.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "We stop at a roaring waterfall. We are so excited, we are pushing and pulling. Papa falls in the water, and so does his map.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We stop at a roaring waterfall. We are so excited, we are pushing and pulling.",
+     "bbox": [
+      134.7,
+      55.7,
+      432.2,
+      123.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Papa falls in the water, and so does his map.",
+     "bbox": [
+      739.0,
+      55.7,
+      961.8,
+      99.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "He is sad in the car, but Mama is happy. ‘Hooray! Now I can help you find our way!’ she says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He is sad in the car, but Mama is happy.",
+     "bbox": [
+      755.9,
+      169.8,
+      945.0,
+      213.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Hooray! Now I can help you find our way!’ she says.",
+     "bbox": [
+      715.6,
+      241.8,
+      985.2,
+      287.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "We stop at the roadside vendor to buy some mielies. Mama bends over to pick the best ones, and her glasses fall and break.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We stop at the roadside vendor to buy some mielies.",
+     "bbox": [
+      131.1,
+      57.6,
+      435.8,
+      101.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mama bends over to pick the best ones, and her glasses fall and break.",
+     "bbox": [
+      658.3,
+      57.6,
+      1042.5,
+      101.6
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Mama is sad in the car, but Papa is happy. ‘Hooray! Now we can find our way together !’ Papa says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama is sad in the car, but Papa is happy.",
+     "bbox": [
+      739.5,
+      157.0,
+      961.3,
+      201.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Hooray! Now we can find our way together !’ Papa says.",
+     "bbox": [
+      694.1,
+      229.0,
+      1006.7,
+      274.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "We stop on an ancient hill to get a view of the valley. Papa is making silly jokes for us to smile for the picture, but...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We stop on an ancient hill to get a view of the valley. Papa is making silly jokes for us to smile for the picture,",
+     "bbox": [
+      81.5,
+      55.7,
+      485.4,
+      123.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "but...",
+     "bbox": [
+      826.7,
+      55.7,
+      874.0,
+      75.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "when we get back to the car, it won’t start. Everyone stops laughing. ‘Don’t worry...’ says Mama. ‘WeWe can are still the have things a good that time. really matter.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "when we get back to the car, it won’t start.",
+     "bbox": [
+      732.4,
+      186.1,
+      968.4,
+      230.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Everyone stops laughing.",
+     "bbox": [
+      729.8,
+      258.1,
+      971.0,
+      278.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Don’t worry...’ says Mama. ‘WeWe can are still the have things a good that time. really matter.’",
+     "bbox": [
+      703.6,
+      306.1,
+      997.2,
+      398.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "And so, we do have a good time. By playing and singing and finding our way together, while enjoying the best mielies.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And so, we do have a good time.",
+     "bbox": [
+      745.0,
+      223.3,
+      955.8,
+      271.5
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "By playing and singing and finding our way together,",
+     "bbox": [
+      706.4,
+      299.5,
+      994.4,
+      343.5
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "while enjoying the best mielies.",
+     "bbox": [
+      763.6,
+      371.5,
+      937.2,
+      415.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,334 @@
+{
+ "slug": "mud",
+ "book_body_size": 28.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Zama has spent all morning in a mucky puddle, making a new friend.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zama has spent all morning in a mucky puddle, making a new friend.",
+     "bbox": [
+      154.5,
+      225.2,
+      412.5,
+      354.1
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Let’s have some fun, Mud. What do you want to do?” “Something naughty,” grins Mud.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Let’s have some fun, Mud. What do you want to do?”",
+     "bbox": [
+      58.9,
+      243.9,
+      254.3,
+      372.7
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Something naughty,” grins Mud.",
+     "bbox": [
+      906.4,
+      256.2,
+      1055.2,
+      351.4
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "SQUELCH! WHEEEE!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "SQUELCH!",
+     "bbox": [
+      168.4,
+      73.1,
+      398.5,
+      121.1
+     ],
+     "size": 48.0
+    },
+    {
+     "role": "SFX",
+     "text": "WHEEEE!",
+     "bbox": [
+      749.2,
+      73.1,
+      951.6,
+      121.1
+     ],
+     "size": 48.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Oh no, Mud! You made Mama’s clean sheets dirty!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Oh no, Mud! You made Mama’s clean sheets dirty!”",
+     "bbox": [
+      62.4,
+      225.2,
+      240.9,
+      354.1
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Zama! What have you done to my washing?” “It’s not me, Mama. It’s Mud!” cries Zama.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Zama! What have you done to my washing?”",
+     "bbox": [
+      63.2,
+      131.9,
+      203.3,
+      294.3
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s not me, Mama. It’s Mud!” cries Zama.",
+     "bbox": [
+      825.6,
+      158.8,
+      1034.6,
+      254.0
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Mud! What did you do to Mama’s clean floor?” But Mud ignores Zama and scampers into the kitchen.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Mud! What did you do to Mama’s clean floor?”",
+     "bbox": [
+      119.8,
+      63.3,
+      447.1,
+      124.9
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "But Mud ignores Zama and scampers into the kitchen.",
+     "bbox": [
+      673.6,
+      60.4,
+      1027.2,
+      122.0
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Zama! What is this mess?” “It’s not me, Mama. It’s Mud!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Zama! What is this mess?”",
+     "bbox": [
+      59.1,
+      138.6,
+      207.4,
+      233.8
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s not me, Mama. It’s Mud!”",
+     "bbox": [
+      825.6,
+      140.5,
+      1034.6,
+      202.1
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Oh dear! Is there anything Mud didn’t touch?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh dear! Is there anything Mud didn’t touch?",
+     "bbox": [
+      682.9,
+      62.5,
+      1017.9,
+      124.2
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“It’s Mud, Mama!” pleads Zama. “I don’t know how to stop it!” “Enough nonsense, Zama! Get in the bath. Right now!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It’s Mud, Mama!” pleads Zama. “I don’t know how to stop it!”",
+     "bbox": [
+      81.9,
+      68.9,
+      485.0,
+      130.5
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Enough nonsense, Zama! Get in the bath. Right now!”",
+     "bbox": [
+      941.2,
+      84.4,
+      1085.6,
+      246.8
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Zama sinks into the bubbles. It feels so good to be clean again! But where is Mud?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zama sinks into the bubbles. It feels so good to be clean again!",
+     "bbox": [
+      168.5,
+      166.4,
+      480.6,
+      261.6
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "But where is Mud?",
+     "bbox": [
+      795.7,
+      114.8,
+      1029.8,
+      142.8
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Suddenly... KER- SPLASH!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Suddenly...",
+     "bbox": [
+      96.0,
+      114.8,
+      230.7,
+      142.8
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "SFX",
+     "text": "KER- SPLASH!",
+     "bbox": [
+      768.9,
+      217.3,
+      968.1,
+      312.3
+     ],
+     "size": 50.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“Zama! The bath is full of mud!” “I know, Mama,” says Zama crossly. “And it can stay there!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Zama! The bath is full of mud!”",
+     "bbox": [
+      318.9,
+      81.2,
+      473.4,
+      176.4
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I know, Mama,” says Zama crossly. “And it can stay there!”",
+     "bbox": [
+      704.2,
+      81.2,
+      996.6,
+      176.4
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

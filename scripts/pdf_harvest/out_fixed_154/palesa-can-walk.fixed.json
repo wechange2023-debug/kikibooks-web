@@ -1,0 +1,235 @@
+{
+ "slug": "palesa-can-walk",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Palesa can’t sleep. It’s her birthday tomorrow. She’s one year old!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Palesa can’t sleep. It’s her birthday tomorrow. She’s one year old!",
+     "bbox": [
+      697.7,
+      258.8,
+      1003.3,
+      340.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "All her friends will bring her lots of presents.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "All her friends will bring her lots of presents.",
+     "bbox": [
+      717.4,
+      273.2,
+      983.5,
+      326.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Seth will bring a... What will Seth bring? A rattle! And Sandile? A drum!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Seth will bring a... What will Seth bring? A rattle! And Sandile? A drum!",
+     "bbox": [
+      731.0,
+      228.9,
+      970.0,
+      368.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "But what about Aunty Mamsie? Oh, she’ll bring a cake, balloons, a trumpet, a talking doll, a computer, and ... and ... and ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But what about Aunty Mamsie? Oh, she’ll bring a cake, balloons, a trumpet, a talking doll, a computer, and ... and ... and ...",
+     "bbox": [
+      643.4,
+      244.4,
+      1057.6,
+      354.8
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "LOOK! Palesa’s fast asleep...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "LOOK! Palesa’s fast asleep...",
+     "bbox": [
+      688.9,
+      287.6,
+      1005.6,
+      311.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "TRII-IING-TRII-IING! “Happy birthday!” comes from the door. “Come in! Come in!” Mommy shouts.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "TRII-IING-TRII-IING! “Happy birthday!” comes from the door. “Come in! Come in!” Mommy shouts.",
+     "bbox": [
+      746.3,
+      50.0,
+      1005.5,
+      189.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "On her stool, Palesa’s eyes grow bigger and bigger.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On her stool, Palesa’s eyes grow bigger and bigger.",
+     "bbox": [
+      703.1,
+      273.2,
+      997.9,
+      326.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Over there, against the wall, the pile of toys grows and grows and grows.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Over there, against the wall, the pile of toys grows and grows and grows.",
+     "bbox": [
+      692.1,
+      258.8,
+      1008.8,
+      340.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Mine!” Palesa screams. “Mine!” she waves her angry arms. But everybody’s busy playing.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Mine!” Palesa screams. “Mine!” she waves her angry arms. But everybody’s busy playing.",
+     "bbox": [
+      656.0,
+      258.8,
+      1045.0,
+      340.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“MINE!” And, with one big heave, pushes herself up. She goes and gathers the toys.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“MINE!” And, with one big heave, pushes herself up. She goes and gathers the toys.",
+     "bbox": [
+      662.6,
+      258.8,
+      1038.2,
+      340.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Everybody stops. Then they all clap their hands. “Hurray! Palesa can walk!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Everybody stops. Then they all clap their hands. “Hurray! Palesa can walk!”",
+     "bbox": [
+      682.3,
+      258.8,
+      1018.7,
+      340.4
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Look! Now everyone is happy. Palesa is happy to play with her friends.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Look! Now everyone is happy. Palesa is happy to play with her friends.",
+     "bbox": [
+      629.4,
+      273.2,
+      1071.6,
+      326.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

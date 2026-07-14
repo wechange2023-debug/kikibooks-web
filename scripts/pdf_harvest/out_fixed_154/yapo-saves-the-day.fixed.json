@@ -1,0 +1,489 @@
+{
+ "slug": "yapo-saves-the-day",
+ "book_body_size": 18.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Yapo loves to play with his soccer ball! He often tries dribbling tricks with his dad. An elastico, a rainbow flick and even...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Yapo loves to play with his soccer ball!",
+     "bbox": [
+      644.9,
+      168.4,
+      998.7,
+      186.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "He often tries dribbling tricks with his dad. An elastico, a rainbow flick and even...",
+     "bbox": [
+      644.9,
+      220.4,
+      1033.9,
+      264.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "... a bicycle kick!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "... a bicycle kick!",
+     "bbox": [
+      155.9,
+      108.8,
+      302.9,
+      126.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Yapo is the star of the Under 6 Team of Tino Football Club. He is quick and nimble on the field. Yapo scores most of the goals for his team.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Yapo is the star of the Under 6 Team of Tino Football Club. He is quick and nimble on the field. Yapo scores most of the goals for his team.",
+     "bbox": [
+      78.0,
+      136.3,
+      445.2,
+      232.3
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Yapo, however, does not like to pass the ball. Coach Tazi often reminds Yapo to share the ball with his teammates.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Yapo, however, does not like to pass the ball. Coach Tazi often reminds Yapo to share the ball with his teammates.",
+     "bbox": [
+      78.0,
+      200.8,
+      401.7,
+      296.8
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "One day, Tino Football Club was playing Kuma Football Club. Yapo tried many times to score but the Kuma team was too strong. By half-time, Kuma was leading 2 – 0.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day, Tino Football Club was playing Kuma Football Club. Yapo tried many times to score but the Kuma team was too strong.",
+     "bbox": [
+      78.0,
+      95.9,
+      473.7,
+      165.9
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "By half-time, Kuma was leading 2 – 0.",
+     "bbox": [
+      78.0,
+      199.9,
+      422.5,
+      217.9
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "DECOR",
+     "text": "TINO",
+     "bbox": [
+      717.2,
+      110.9,
+      789.2,
+      140.9
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "DECOR",
+     "text": "KUMA",
+     "bbox": [
+      919.8,
+      107.4,
+      1009.2,
+      137.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": [
+    "TINO",
+    "KUMA"
+   ]
+  },
+  {
+   "page_no": 6,
+   "text": "Coach Tazi gave the team a stern pep talk, ‘Play together and pass the ball to whoever is free! Yapo, pass the ball!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Coach Tazi gave the team a stern pep talk, ‘Play together and pass the ball to whoever is free!",
+     "bbox": [
+      78.0,
+      108.7,
+      404.8,
+      178.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Yapo, pass the ball!’",
+     "bbox": [
+      78.0,
+      212.7,
+      257.8,
+      230.7
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "When Yapo was the made second to half sit on began, the bench. His teammates were a little scared to play without him, but they remembered to play together. Nat scored the first goal for the Tino team. ‘WOOHOO!’ cheered the crowd. Three minutes before the end of the game, Lindi scored the team’s second goal! ‘LADUMA!’ they shouted.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When Yapo was the made second to half sit on began, the bench. His teammates were a little scared to play without him, but they remembered to play together.",
+     "bbox": [
+      78.0,
+      61.2,
+      400.2,
+      183.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Nat scored the first goal for the Tino team.",
+     "bbox": [
+      78.0,
+      217.2,
+      296.8,
+      261.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "DECOR",
+     "text": "TINO",
+     "bbox": [
+      362.3,
+      280.0,
+      398.7,
+      297.4
+     ],
+     "size": 15.8
+    },
+    {
+     "role": "DECOR",
+     "text": "KUMA",
+     "bbox": [
+      452.3,
+      287.2,
+      497.6,
+      304.5
+     ],
+     "size": 15.8
+    },
+    {
+     "role": "BODY",
+     "text": "‘WOOHOO!’ cheered the crowd.",
+     "bbox": [
+      637.8,
+      65.7,
+      1036.6,
+      101.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Three minutes before the end of the game, Lindi scored the team’s second goal!",
+     "bbox": [
+      637.8,
+      124.7,
+      1023.0,
+      168.7
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘LADUMA!’ they shouted.",
+     "bbox": [
+      637.8,
+      201.7,
+      832.5,
+      258.7
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": [
+    "TINO",
+    "KUMA"
+   ]
+  },
+  {
+   "page_no": 8,
+   "text": "Coach Tazi called Yapo back into the game, ‘The score is now 2 – 2. Take us home, boy! Remember to play with your teammates!’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Coach Tazi called Yapo back into the game, ‘The score is now 2 – 2. Take us home, boy!",
+     "bbox": [
+      78.0,
+      96.2,
+      469.1,
+      140.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Remember to play with your teammates!’",
+     "bbox": [
+      78.0,
+      174.2,
+      455.6,
+      192.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "DECOR",
+     "text": "TINO",
+     "bbox": [
+      650.6,
+      124.7,
+      689.0,
+      150.2
+     ],
+     "size": 19.4
+    },
+    {
+     "role": "DECOR",
+     "text": "KUMA",
+     "bbox": [
+      750.1,
+      96.8,
+      797.5,
+      124.5
+     ],
+     "size": 20.1
+    }
+   ],
+   "decor_excluded": [
+    "TINO",
+    "KUMA"
+   ]
+  },
+  {
+   "page_no": 9,
+   "text": "Lindi kicked the ball to Nat, who passed it to Yapo. Yapo dribbled between two opponents and when he was about to take a shot, he spotted another Kuma player running towards him. Yapo saw Lindi following close behind, remembered Coach Tazi and passed the ball to her. Lindi turned towards the goal, and took her best shot!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lindi kicked the ball to Nat, who passed it to Yapo.",
+     "bbox": [
+      56.7,
+      61.2,
+      307.0,
+      105.2
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Yapo dribbled between two opponents and when he was about to take a shot, he spotted another Kuma player running towards him.",
+     "bbox": [
+      114.8,
+      172.4,
+      434.1,
+      268.4
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Yapo saw Lindi following close behind, remembered Coach Tazi and passed the ball to her.",
+     "bbox": [
+      56.7,
+      335.8,
+      299.6,
+      431.8
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "Lindi turned towards the goal, and took her best shot!",
+     "bbox": [
+      293.1,
+      436.9,
+      489.5,
+      506.9
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "‘GOAL!’ cried Coach Tazi. The Tino crowd went wild with joy as Lindi’s teammates ran to hug her! Yapo was very happy that his team had won 3 – 2. But he was a little disappointed that he had not scored any goals.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘GOAL!’ cried Coach Tazi.",
+     "bbox": [
+      173.4,
+      50.5,
+      401.6,
+      140.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "The Tino crowd went wild with joy as Lindi’s teammates ran to hug her!",
+     "bbox": [
+      248.7,
+      174.6,
+      488.6,
+      244.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "DECOR",
+     "text": "TINO",
+     "bbox": [
+      816.3,
+      170.6,
+      854.3,
+      192.1
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "DECOR",
+     "text": "KUMA",
+     "bbox": [
+      924.0,
+      152.0,
+      971.4,
+      175.7
+     ],
+     "size": 18.6
+    },
+    {
+     "role": "BODY",
+     "text": "Yapo was very happy that his team had won 3 – 2. But he was a little disappointed that he had not scored any goals.",
+     "bbox": [
+      773.9,
+      408.4,
+      1066.2,
+      504.4
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": [
+    "TINO",
+    "KUMA"
+   ]
+  },
+  {
+   "page_no": 11,
+   "text": "‘Congratulations for a mighty comeback!’ beamed Coach Tazi to his team. ‘Well done, Yapo, for passing the ball to Lindi.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Congratulations for a mighty comeback!’ beamed Coach Tazi to his team.",
+     "bbox": [
+      637.8,
+      157.6,
+      1014.1,
+      201.6
+     ],
+     "size": 18.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Well done, Yapo, for passing the ball to Lindi.’",
+     "bbox": [
+      637.8,
+      235.6,
+      1057.5,
+      253.6
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "‘You may not have scored a goal today, but you certainly helped your team to win. Well done, son!’ smiled Dad, as they walked home together.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘You may not have scored a goal today, but you certainly helped your team to win. Well done, son!’ smiled Dad, as they walked home together.",
+     "bbox": [
+      78.0,
+      163.2,
+      473.7,
+      259.2
+     ],
+     "size": 18.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

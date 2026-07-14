@@ -1,0 +1,444 @@
+{
+ "slug": "the-cottonwool-doctor",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Once upon a time, about 200 years ago, there was a girl called Margaret Ann Bulkly. Margaret lived in a cool, green land called Ireland, in a country called Great Britain. Margaret was clever and curious. Margaret had big dreams. Margaret was brave and fought when she thought something was wrong.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Once upon a time, about 200 years ago, there was a girl called Margaret Ann Bulkly. Margaret lived in a cool, green land called Ireland, in a country called Great Britain.",
+     "bbox": [
+      63.4,
+      202.6,
+      503.5,
+      302.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Margaret was clever and curious. Margaret had big dreams. Margaret was brave and fought when she thought something was wrong.",
+     "bbox": [
+      59.8,
+      332.6,
+      507.1,
+      406.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Margaret’s mother and father paid for her brother to be educated as a lawyer. And then they used the last of their money so that he could marry a wealthy man’s daughter. Margaret was clever and had big dreams. But there was no money left for her to study, not even as a governess or a nurse. Margaret was brave. “I want to be a doctor!” she said. But two hundred years ago a girl could not become a lawyer or a politician or a doctor.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Margaret’s mother and father paid for her brother to be educated as a lawyer. And then they used the last of their money so that he could marry a wealthy man’s daughter.",
+     "bbox": [
+      63.7,
+      150.6,
+      503.2,
+      250.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Margaret was clever and had big dreams. But there was no money left for her to study, not even as a governess or a nurse.",
+     "bbox": [
+      59.9,
+      280.6,
+      507.0,
+      354.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Margaret was brave. “I want to be a doctor!” she said. But two hundred years ago a girl could not become a lawyer or a politician or a doctor.",
+     "bbox": [
+      70.8,
+      384.6,
+      496.1,
+      458.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Margaret had an uncle who was a famous painter. His name was James Barry. One of James Barry’s friends was General Miranda from Venezuela. General Miranda had a library – it was very beautiful and very big. His library had more than 6000 books! “I want to read this one! And this one! And this one!” said Margaret. Margaret was clever and curious. General Miranda was impressed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Margaret had an uncle who was a famous painter. His name was James Barry.",
+     "bbox": [
+      64.5,
+      163.6,
+      502.4,
+      211.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "One of James Barry’s friends was General Miranda from Venezuela. General Miranda had a library – it was very beautiful and very big. His library had more than 6000 books!",
+     "bbox": [
+      60.8,
+      241.6,
+      506.2,
+      341.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I want to read this one! And this one! And this one!” said Margaret. Margaret was clever and curious. General Miranda was impressed.",
+     "bbox": [
+      74.7,
+      371.6,
+      492.3,
+      445.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "When Margaret’s uncle James Barry died, he left her some money. “It’s enough money to study to be a doctor!” said General Miranda. “But I can’t become a doctor,” said Margaret. “A boy can become a doctor,” said General Miranda. “And you can dress like a boy.” Margaret was brave and she fought for what she believed in. She really wanted to be a doctor. So she cut off her hair. She practiced speaking in a deep voice. She put on boy’s clothes. From then onwards, no one knew that Margaret was a girl. She became James Barry, just like her uncle.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When Margaret’s uncle James Barry died, he left her some money. “It’s enough money to study to be a doctor!” said General Miranda.",
+     "bbox": [
+      54.4,
+      111.6,
+      512.5,
+      185.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "“But I can’t become a doctor,” said Margaret. “A boy can become a doctor,” said General Miranda. “And you can dress like a boy.”",
+     "bbox": [
+      54.8,
+      215.6,
+      512.1,
+      289.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Margaret was brave and she fought for what she believed in. She really wanted to be a doctor. So she cut off her hair. She practiced speaking in a deep voice. She put on boy’s clothes.",
+     "bbox": [
+      61.4,
+      319.6,
+      505.6,
+      419.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "From then onwards, no one knew that Margaret was a girl. She became James Barry, just like her uncle.",
+     "bbox": [
+      52.0,
+      449.6,
+      514.9,
+      497.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "James Barry was a hard-working medical student. He took 13 subjects and worked all through the summer when the other students went on holiday. But after five years, he nearly didn’t get to write his final exam. The examiners thought he looked too young! James Barry didn’t have a beard because he wasn’t a man.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "James Barry was a hard-working medical student. He took 13 subjects and worked all through the summer when the other students went on holiday.",
+     "bbox": [
+      63.5,
+      202.6,
+      503.4,
+      276.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "But after five years, he nearly didn’t get to write his final exam. The examiners thought he looked too young! James Barry didn’t have a beard because he wasn’t a man.",
+     "bbox": [
+      57.3,
+      306.6,
+      509.7,
+      406.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Dr James Barry was brave and curious. Dr James Barry had big dreams. So he joined the army. In the army you would see the world! In 1816, the army sent Dr James Barry to Cape Town. Cape Town was a small, interesting city in South Africa. South Africa was far, far away from Ireland. Dr James Barry felt excited.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dr James Barry was brave and curious. Dr James Barry had big dreams. So he joined the army. In the army you would see the world!",
+     "bbox": [
+      70.3,
+      176.6,
+      496.6,
+      250.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "In 1816, the army sent Dr James Barry to Cape Town. Cape Town was a small, interesting city in South Africa. South Africa was far, far away from Ireland.",
+     "bbox": [
+      74.8,
+      280.6,
+      492.1,
+      380.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dr James Barry felt excited.",
+     "bbox": [
+      163.2,
+      410.6,
+      403.7,
+      432.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Dr James Barry was short and slim. He wore platform shoes to look taller and padding under his clothes to look bigger. The people of Cape Town called Dr James Barry the kapok dokter, the cottonwool doctor.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dr James Barry was short and slim. He wore platform shoes to look taller and padding under his clothes to look bigger. The people of Cape Town called Dr James Barry the kapok dokter, the cottonwool doctor.",
+     "bbox": [
+      69.9,
+      241.6,
+      497.1,
+      367.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“I would very much like to cut off your ears!” Dr James Barry would shout at anyone who challenged him. Dr James Barry even once fought a duel with pistols! Luckily, they both missed hitting each other. Why did the doctor fight so much? Margaret was brave, but she was also frightened. She knew that if anyone found out that she was Dr James Barry she would no longer be allowed to be a doctor. Everyone had to believe Dr James Barry was a man.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I would very much like to cut off your ears!” Dr James Barry would shout at anyone who challenged him.",
+     "bbox": [
+      84.2,
+      150.6,
+      482.8,
+      224.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dr James Barry even once fought a duel with pistols! Luckily, they both missed hitting each other.",
+     "bbox": [
+      52.2,
+      254.6,
+      514.7,
+      302.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Why did the doctor fight so much? Margaret was brave, but she was also frightened. She knew that if anyone found out that she was Dr James Barry she would no longer be allowed to be a doctor. Everyone had to believe Dr James Barry was a man.",
+     "bbox": [
+      51.2,
+      332.6,
+      515.7,
+      458.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Dr James Barry fought when he thought something was wrong. In Cape Town, people with leprosy were banished to Robben Island. The lepers were put on the island because people believed they could catch the disease from them very easily. Dirty houses and bad food made the lepers much sicker. Dr James Barry asked the leaders in Cape Town for cleaner living conditions and healthier food for the sick people on Robben Island.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dr James Barry fought when he thought something was wrong.",
+     "bbox": [
+      59.4,
+      150.6,
+      507.6,
+      198.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "In Cape Town, people with leprosy were banished to Robben Island. The lepers were put on the island because people believed they could catch the disease from them very easily.",
+     "bbox": [
+      60.0,
+      228.6,
+      506.9,
+      328.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dirty houses and bad food made the lepers much sicker. Dr James Barry asked the leaders in Cape Town for cleaner living conditions and healthier food for the sick people on Robben Island.",
+     "bbox": [
+      68.1,
+      358.6,
+      498.8,
+      458.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Many years later Dr James Barry worked in a war hospital. Here he met Florence Nightingale, a nurse. Florence Nightingale was also known as The Lady with the Lamp, because she would check on wounded soldiers at night. She became famous during the war because she asked the army leaders for cleaner living conditions and healthier food for the soldiers. Dr James Barry had been asking for the same things for many years.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Many years later Dr James Barry worked in a war hospital. Here he met Florence Nightingale, a nurse.",
+     "bbox": [
+      56.0,
+      176.6,
+      510.9,
+      224.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Florence Nightingale was also known as The Lady with the Lamp, because she would check on wounded soldiers at night. She became famous during the war because she asked the army leaders for cleaner living conditions and healthier food for the soldiers. Dr James Barry had been asking for the same things for many years.",
+     "bbox": [
+      54.5,
+      254.6,
+      512.4,
+      432.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Dr James Barry travelled all over the world. He worked in South Africa, St Helena, Barbados, Mauritius, Trinidad and Tobago, Malta, Corfu, Jamaica, Crimea, West Indies, Canada… 11 places in all. What exciting adventures he had!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Dr James Barry travelled all over the world. He worked in South Africa, St Helena, Barbados, Mauritius, Trinidad and Tobago, Malta, Corfu, Jamaica, Crimea, West Indies, Canada… 11 places in all.",
+     "bbox": [
+      77.2,
+      215.6,
+      489.8,
+      341.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "What exciting adventures he had!",
+     "bbox": [
+      137.9,
+      371.6,
+      429.0,
+      393.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "People only found out that Dr James Barry was a woman when she died in 1865. In the same year, Dr Elizabeth Garret Andersen became the first woman to become a doctor in Great Britain. Dr James Barry has shown us that girls are clever. Girls are brave. Girls have dreams. Girls can fight for what they believe in. And girls can become doctors!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "People only found out that Dr James Barry was a woman when she died in 1865.",
+     "bbox": [
+      68.8,
+      176.6,
+      498.2,
+      224.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "In the same year, Dr Elizabeth Garret Andersen became the first woman to become a doctor in Great Britain.",
+     "bbox": [
+      74.7,
+      254.6,
+      492.2,
+      328.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dr James Barry has shown us that girls are clever. Girls are brave. Girls have dreams. Girls can fight for what they believe in. And girls can become doctors!",
+     "bbox": [
+      50.6,
+      358.6,
+      516.3,
+      432.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

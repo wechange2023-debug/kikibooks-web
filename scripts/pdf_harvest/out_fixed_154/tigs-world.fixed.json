@@ -1,0 +1,268 @@
+{
+ "slug": "tigs-world",
+ "book_body_size": 18.7,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Tig’s mom is a scientist. She knows things.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tig’s mom is a scientist. She knows things.",
+     "bbox": [
+      92.8,
+      103.4,
+      474.9,
+      122.5
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Tig’s dad is a writer. He makes things up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tig’s dad is a writer. He makes things up.",
+     "bbox": [
+      665.1,
+      98.4,
+      1035.6,
+      117.5
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Tig has a globe. “Mom, if the world is round, why don’t the people on the bottom fall off?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tig has a globe.",
+     "bbox": [
+      623.6,
+      192.0,
+      757.6,
+      210.6
+     ],
+     "size": 18.7
+    },
+    {
+     "role": "BODY",
+     "text": "“Mom, if the world is round, why don’t the people on the bottom fall off?”",
+     "bbox": [
+      623.6,
+      240.0,
+      1056.3,
+      283.1
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Because gravity pulls everyone towards the middle of the Earth.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Because gravity pulls everyone towards the middle of the Earth.”",
+     "bbox": [
+      82.9,
+      131.7,
+      337.3,
+      198.4
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Wherever you go, the Earth feels like it is below you. Unless you go into space. Then there’s no down at all, and you float!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Wherever you go, the Earth feels like it is below you. Unless you go into space. Then there’s no down at all, and you float!”",
+     "bbox": [
+      663.3,
+      404.8,
+      1043.3,
+      471.8
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“People on the other side of the Earth think that they are the right way up... ...and we are upside down! Isn’t that amazing!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“People on the other side of the Earth think that they are the right way up...",
+     "bbox": [
+      76.5,
+      89.4,
+      452.1,
+      132.5
+     ],
+     "size": 18.7
+    },
+    {
+     "role": "BODY",
+     "text": "...and we are upside down! Isn’t that amazing!”",
+     "bbox": [
+      646.3,
+      445.9,
+      1052.5,
+      464.9
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Dad, if the world is round, why don’t the people on the bottom fall off?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Dad, if the world is round, why don’t the people on the bottom fall off?”",
+     "bbox": [
+      77.5,
+      237.1,
+      435.5,
+      280.1
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Oh, they used to! A lot of people fell off... ...and ended up on Saturn.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Oh, they used to! A lot of people fell off...",
+     "bbox": [
+      96.6,
+      282.9,
+      317.8,
+      325.6
+     ],
+     "size": 18.7
+    },
+    {
+     "role": "BODY",
+     "text": "...and ended up on Saturn.”",
+     "bbox": [
+      712.3,
+      81.4,
+      960.1,
+      100.5
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“But some people got caught in the branches of trees. They climbed up to the ground, and dug tunnels so they could get around without falling.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“But some people got caught in the branches of trees. They climbed up to the ground, and dug tunnels so they could get around without falling.”",
+     "bbox": [
+      56.7,
+      359.5,
+      483.0,
+      426.2
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Now they’ve built upside-down houses, and they swing between them on ropes!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Now they’ve built upside-down houses, and they swing between them on ropes!”",
+     "bbox": [
+      668.0,
+      380.3,
+      1023.3,
+      422.9
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Tig is pretty sure someone is making things up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Tig is pretty sure someone is making things up.",
+     "bbox": [
+      636.4,
+      271.4,
+      1062.5,
+      290.5
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "But that’s OK.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But that’s OK.",
+     "bbox": [
+      802.7,
+      148.0,
+      922.7,
+      167.1
+     ],
+     "size": 18.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

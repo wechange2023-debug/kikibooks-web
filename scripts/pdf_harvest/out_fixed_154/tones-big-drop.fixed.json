@@ -1,0 +1,432 @@
+{
+ "slug": "tones-big-drop",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "One hot day, little Tone sits with the other cloud droplets and looks down from the sky. Everything looks so interesting from way up here in the clouds. The trees look like little soft green balls. The rivers look like silver ribbons. The mountain tops look like ice cream scoops. The buildings look like little grey boxes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One hot day, little Tone sits with the other cloud droplets and looks down from the sky. Everything looks so interesting from way up here in the clouds.",
+     "bbox": [
+      58.9,
+      159.1,
+      508.0,
+      269.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "The trees look like little soft green balls. The rivers look like silver ribbons. The mountain tops look like ice cream scoops. The buildings look like little grey boxes.",
+     "bbox": [
+      56.9,
+      303.1,
+      510.0,
+      413.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“What else is down there?” Tone asks her friend Nyunyu. “My daddy says there are people and animals and trees and cars,” says Nyunyu. “Wow! So much to see!” says Tone.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What else is down there?” Tone asks her friend Nyunyu.",
+     "bbox": [
+      95.9,
+      187.9,
+      471.6,
+      240.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“My daddy says there are people and animals and trees and cars,” says Nyunyu.",
+     "bbox": [
+      87.7,
+      274.3,
+      479.2,
+      327.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Wow! So much to see!” says Tone.",
+     "bbox": [
+      123.0,
+      360.7,
+      444.0,
+      384.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "As the day carries on, their friend Ms Sun rises higher and higher in the sky until Tone and Nyunyu and the other droplets cannot see her anymore.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "As the day carries on, their friend Ms Sun rises higher and higher in the sky until Tone and Nyunyu and the other droplets cannot see her anymore.",
+     "bbox": [
+      83.6,
+      85.3,
+      483.8,
+      195.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Mr Wind comes along whistling a sweet, sweet tune. His whistles blow Tone and Nyunyu and their droplet friends off their cloud. “Brr!” says Tone. It’s getting very cold.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mr Wind comes along whistling a sweet, sweet tune.",
+     "bbox": [
+      96.2,
+      85.3,
+      470.7,
+      138.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "His whistles blow Tone and Nyunyu and their droplet friends off their cloud.",
+     "bbox": [
+      641.1,
+      200.5,
+      1060.2,
+      253.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Brr!” says Tone.",
+     "bbox": [
+      777.0,
+      286.9,
+      923.8,
+      310.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "It’s getting very cold.",
+     "bbox": [
+      755.1,
+      344.5,
+      945.7,
+      368.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "BOOP! Mr Wind keeps whistling and Tone and Nyunyu and the other droplets fall onto another cloud. They bounce off the cloud and then fall far, far towards the earth.",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "BOOP!",
+     "bbox": [
+      781.0,
+      57.3,
+      919.8,
+      102.3
+     ],
+     "size": 45.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mr Wind keeps whistling and Tone and Nyunyu and the other droplets fall onto another cloud.",
+     "bbox": [
+      61.8,
+      258.1,
+      505.1,
+      310.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "They bounce off the cloud and then fall far, far towards the earth.",
+     "bbox": [
+      632.5,
+      463.2,
+      1068.8,
+      516.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Look at me fall, Nyunyu. I’m going faster than you!” says Tone and she races with Nyunyu to see who will be the fastest. They fall past clouds and birds and very tall buildings.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Look at me fall, Nyunyu. I’m going faster than you!” says Tone and she races with Nyunyu to see who will be the fastest.",
+     "bbox": [
+      63.0,
+      56.5,
+      503.9,
+      138.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "They fall past clouds and birds and very tall buildings.",
+     "bbox": [
+      687.1,
+      463.2,
+      1013.6,
+      516.0
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Down, down, down they go. Faster and faster. “ Look at that, Tone. What is it?” says Nyunyu. “Hmm, I see red and orange, yellow and green, blue and purple,” says Tone.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Down,",
+     "bbox": [
+      253.0,
+      187.9,
+      313.9,
+      211.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "down,",
+     "bbox": [
+      254.9,
+      245.5,
+      312.0,
+      269.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "down they go.",
+     "bbox": [
+      217.4,
+      303.1,
+      349.6,
+      327.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Faster and faster.",
+     "bbox": [
+      202.7,
+      360.7,
+      364.2,
+      384.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“ Look at that, Tone. What is it?” says Nyunyu.",
+     "bbox": [
+      635.1,
+      56.5,
+      1065.7,
+      80.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Hmm, I see red and orange, yellow and green, blue and purple,” says Tone.",
+     "bbox": [
+      629.0,
+      483.1,
+      1071.8,
+      535.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“It looks like a big ball!” says Nyunyu.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It looks like a big ball!” says Nyunyu.",
+     "bbox": [
+      677.5,
+      432.1,
+      1023.3,
+      456.1
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“It looks like a rainbow!” says Tone.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It looks like a rainbow!” says Tone.",
+     "bbox": [
+      690.6,
+      91.9,
+      1010.2,
+      115.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Down, down, down they fall. “Whee!” “Whee!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Down,",
+     "bbox": [
+      253.0,
+      202.3,
+      313.9,
+      226.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "down,",
+     "bbox": [
+      254.9,
+      259.9,
+      312.0,
+      283.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "down they fall.",
+     "bbox": [
+      215.3,
+      317.5,
+      351.6,
+      341.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "“Whee!”",
+     "bbox": [
+      870.2,
+      139.3,
+      1017.5,
+      184.3
+     ],
+     "size": 45.0
+    },
+    {
+     "role": "SFX",
+     "text": "“Whee!”",
+     "bbox": [
+      635.6,
+      400.9,
+      838.4,
+      462.9
+     ],
+     "size": 62.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Swoosh! They slide down the big, bouncy, colourful thing. “It’s an umbrella!” shout Tone and Nyunyu.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Swoosh! They slide down the big, bouncy, colourful thing.",
+     "bbox": [
+      59.1,
+      215.6,
+      507.8,
+      311.5
+     ],
+     "size": 34.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s an umbrella!” shout Tone and Nyunyu.",
+     "bbox": [
+      81.0,
+      345.1,
+      485.9,
+      369.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

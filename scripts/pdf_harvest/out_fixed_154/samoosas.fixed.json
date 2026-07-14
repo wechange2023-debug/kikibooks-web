@@ -1,0 +1,368 @@
+{
+ "slug": "samoosas",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Amir loves Grandma Rabiya’s kitchen. He loves the spices… the smells… and the sizzling sounds. Amir wants to learn to fold Grandma’s famous samoosas.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Amir loves Grandma Rabiya’s kitchen.",
+     "bbox": [
+      255.6,
+      109.3,
+      464.4,
+      157.7
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "He loves the spices… the smells… and the sizzling sounds.",
+     "bbox": [
+      238.0,
+      188.5,
+      482.0,
+      263.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Amir wants to learn to fold Grandma’s famous samoosas.",
+     "bbox": [
+      637.8,
+      148.9,
+      875.9,
+      223.7
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Are samoosas square? No! laughs Amir.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Are samoosas square?",
+     "bbox": [
+      218.7,
+      99.7,
+      348.3,
+      157.2
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "No! laughs Amir.",
+     "bbox": [
+      748.5,
+      75.9,
+      912.8,
+      145.9
+     ],
+     "size": 37.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Are they circles? they’retriangles! No,Granny,",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Are they circles?",
+     "bbox": [
+      233.3,
+      433.6,
+      333.6,
+      500.9
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "they’retriangles! No,Granny,",
+     "bbox": [
+      670.5,
+      71.6,
+      918.7,
+      213.8
+     ],
+     "size": 38.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "They sing Great- Great - Great - Grandma’s samoosa song. Chop the potatoes chop , chop , chop! Shake in the spices shake , shake, shake! Fold the samoosas fold, fold, fold!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "They sing Great- Great - Great - Grandma’s samoosa song.",
+     "bbox": [
+      113.0,
+      61.5,
+      453.9,
+      141.2
+     ],
+     "size": 22.2
+    },
+    {
+     "role": "BODY",
+     "text": "Chop the potatoes chop , chop , chop! Shake in the spices shake , shake, shake!",
+     "bbox": [
+      710.9,
+      181.8,
+      1004.0,
+      353.7
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Fold the samoosas fold, fold, fold!",
+     "bbox": [
+      713.4,
+      380.2,
+      965.9,
+      454.1
+     ],
+     "size": 27.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Amir copies Grandma. Fold the dough once… Fold the dough twice…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Amir copies Grandma. Fold the dough once… Fold the dough twice…",
+     "bbox": [
+      737.7,
+      424.2,
+      963.1,
+      511.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Then fill it and fold it and paste it and done! But Amir’s samoosas look…",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then fill it and fold it and paste it and done!",
+     "bbox": [
+      245.0,
+      147.2,
+      430.4,
+      233.8
+     ],
+     "size": 25.5
+    },
+    {
+     "role": "BODY",
+     "text": "But Amir’s samoosas look…",
+     "bbox": [
+      668.6,
+      177.3,
+      942.9,
+      199.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "…different. They’re not triangles! I don’t know what shape they are. But they’re not the same! I give up!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "…different.",
+     "bbox": [
+      189.3,
+      280.9,
+      377.6,
+      316.9
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "They’re not triangles! I don’t know what shape they are. But they’re not the same! I give up!",
+     "bbox": [
+      694.0,
+      70.5,
+      998.9,
+      224.1
+     ],
+     "size": 27.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Things don’t have to be the same, Amir. It’s the ddiiffffeerreennccee that makes the difference! Grandpa Farouk walks in and picks up a special-shaped samoosa …",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Things don’t have to be the same, Amir. It’s the ddiiffffeerreennccee that makes the difference!",
+     "bbox": [
+      84.3,
+      88.4,
+      482.6,
+      141.4
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Grandpa Farouk walks in and picks up a special-shaped samoosa …",
+     "bbox": [
+      671.9,
+      428.9,
+      1028.9,
+      477.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "CRUNCH! Hmmm, now that’s a tasty samoooooosa!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "CRUNCH!",
+     "bbox": [
+      164.7,
+      384.7,
+      334.0,
+      464.7
+     ],
+     "size": 55.8
+    },
+    {
+     "role": "SFX",
+     "text": "Hmmm, now that’s a tasty samoooooosa!",
+     "bbox": [
+      696.5,
+      60.4,
+      1004.3,
+      120.5
+     ],
+     "size": 30.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "You see! Your special-shaped samoosas are a hit. Highfive!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "You see! Your special-shaped samoosas are a hit.",
+     "bbox": [
+      277.5,
+      403.6,
+      457.4,
+      493.8
+     ],
+     "size": 24.5
+    },
+    {
+     "role": "SFX",
+     "text": "Highfive!",
+     "bbox": [
+      811.9,
+      158.9,
+      990.6,
+      276.1
+     ],
+     "size": 56.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "From that day on Amir would chop , chop , chop! shake , shake, shake! fold, fold, fold! Just like Great-Great-Great-Grandma.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "From that day on Amir would chop , chop , chop! shake , shake, shake! fold, fold, fold! Just like Great-Great-Great-Grandma.",
+     "bbox": [
+      657.4,
+      89.2,
+      1043.4,
+      282.0
+     ],
+     "size": 26.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "erew sasoomas s i tnere ffi d t i b e l tt il ! suoma f llits t ub Ha",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "erew sasoomas s i tnere ffi d t i b e l tt il ! suoma f llits t ub Ha",
+     "bbox": [
+      56.5,
+      153.8,
+      151.7,
+      410.3
+     ],
+     "size": 16.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "How many shapes did you find?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "How many shapes did you find?",
+     "bbox": [
+      120.7,
+      493.1,
+      446.2,
+      515.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  }
+ ]
+}

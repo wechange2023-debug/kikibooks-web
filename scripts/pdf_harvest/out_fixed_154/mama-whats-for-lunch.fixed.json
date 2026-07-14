@@ -1,0 +1,426 @@
+{
+ "slug": "mama-whats-for-lunch",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“Hurry,Thabo. Mama is making lunch,” calls Tumi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Hurry,Thabo. Mama is making lunch,” calls Tumi.",
+     "bbox": [
+      623.6,
+      474.9,
+      982.8,
+      518.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Where are you going, Thabo?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Where are you going, Thabo?”",
+     "bbox": [
+      664.7,
+      82.4,
+      985.4,
+      104.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "His friends don’t understand why he chooses lunch over their game, but Thabo has a secret. Mama’s lunches are special.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "His friends don’t understand why he chooses lunch over their game, but Thabo has a secret.",
+     "bbox": [
+      56.7,
+      443.0,
+      486.9,
+      487.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mama’s lunches are special.",
+     "bbox": [
+      623.6,
+      449.3,
+      881.9,
+      469.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "On Monday, Mama shapes their food like little bugs that wriggle and crawl, making Tumi shriek in fright. “EEEE!” But they are yummy fruit and vegetables, and not very scary at all.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Monday, Mama shapes their food like little bugs that wriggle and crawl, making Tumi shriek in fright.",
+     "bbox": [
+      623.6,
+      78.0,
+      1070.2,
+      146.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "“EEEE!”",
+     "bbox": [
+      623.6,
+      180.1,
+      725.6,
+      208.1
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "But they are yummy fruit and vegetables, and not very scary at all.",
+     "bbox": [
+      623.6,
+      241.2,
+      1045.8,
+      294.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "On Tuesday, she makes a lion that roars so loudly the house shakes. “ROAR!” But it’s just delicious pasta and cheese.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Tuesday, she makes a lion that roars so loudly the house shakes.",
+     "bbox": [
+      623.6,
+      84.3,
+      1057.7,
+      126.1
+     ],
+     "size": 19.0
+    },
+    {
+     "role": "BODY",
+     "text": "“ROAR!” But it’s just delicious pasta and cheese.",
+     "bbox": [
+      623.6,
+      182.3,
+      987.7,
+      253.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "On Wednesday, Mama creates a chicken that wakes up the whole street. “CLUCK CLUCK PAKAA!” But it’s just a plate of juicy fruit.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Wednesday, Mama creates a chicken that wakes up the whole street.",
+     "bbox": [
+      623.6,
+      78.7,
+      1040.6,
+      122.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "“CLUCK CLUCK PAKAA!”",
+     "bbox": [
+      623.6,
+      156.8,
+      947.6,
+      184.8
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "But it’s just a plate of juicy fruit.",
+     "bbox": [
+      623.6,
+      217.9,
+      924.5,
+      237.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "On Thursday, she builds a noisy truck. Thabo and Tumi cover their ears. “VROOOM!” But it’s a sweet strawberry jam sandwich.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Thursday, she builds a noisy truck.",
+     "bbox": [
+      623.6,
+      80.1,
+      975.4,
+      100.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Thabo and Tumi cover their ears.",
+     "bbox": [
+      623.6,
+      128.1,
+      930.2,
+      148.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "SFX",
+     "text": "“VROOOM!”",
+     "bbox": [
+      623.6,
+      183.7,
+      794.6,
+      213.7
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "But it’s a sweet strawberry jam sandwich.",
+     "bbox": [
+      623.6,
+      248.1,
+      1010.1,
+      268.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "On Friday, Mama makes a beautiful garden filled with flowers, birds and ladybugs. “TWEET TWEET!” But it’s healthy pap, beans and a crunchy salad.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Friday, Mama makes a beautiful garden filled with flowers, birds and ladybugs.",
+     "bbox": [
+      625.0,
+      79.4,
+      1072.1,
+      123.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“TWEET TWEET!” But it’s healthy pap, beans and a crunchy salad.",
+     "bbox": [
+      625.0,
+      157.5,
+      1067.0,
+      229.0
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "DECOR",
+     "text": "PAP",
+     "bbox": [
+      955.8,
+      407.3,
+      997.0,
+      428.3
+     ],
+     "size": 21.0
+    }
+   ],
+   "decor_excluded": [
+    "PAP"
+   ]
+  },
+  {
+   "page_no": 9,
+   "text": "“Mama, what’s for lunch?” asks Tumi. “Yes, Mama,” says Thabo. “What are you making today?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Mama, what’s for lunch?” asks Tumi.",
+     "bbox": [
+      623.6,
+      78.0,
+      974.1,
+      98.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes, Mama,” says Thabo. “What are you making today?”",
+     "bbox": [
+      623.6,
+      126.0,
+      1007.6,
+      170.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Thabo and Tumi can’t wait another second. Their tummies are grumbling. Finally, Mama is ready. “What is it Mama?” asks Thabo, licking his lips.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thabo and Tumi can’t wait another second. Their tummies are grumbling.",
+     "bbox": [
+      623.6,
+      203.4,
+      1023.8,
+      247.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "Finally, Mama is ready.",
+     "bbox": [
+      623.6,
+      275.4,
+      837.4,
+      295.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What is it Mama?” asks Thabo, licking his lips.",
+     "bbox": [
+      623.6,
+      323.4,
+      1061.1,
+      343.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "It’s Thabo, Tumi and Mama! “Mmm, our favourite, your famous stew and rice.” “Thank you, Mama!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s Thabo, Tumi and Mama!",
+     "bbox": [
+      623.6,
+      80.8,
+      885.7,
+      100.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Mmm, our favourite, your famous stew and rice.”",
+     "bbox": [
+      623.6,
+      152.8,
+      1032.3,
+      196.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Thank you, Mama!”",
+     "bbox": [
+      623.6,
+      224.8,
+      814.6,
+      244.8
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "What will Mama make on Sunday?",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "What will Mama make on Sunday?",
+     "bbox": [
+      623.6,
+      75.9,
+      939.2,
+      95.9
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "DECOR",
+     "text": "PAP",
+     "bbox": [
+      214.1,
+      470.4,
+      263.2,
+      495.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": [
+    "PAP"
+   ]
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,334 @@
+{
+ "slug": "best-friends",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Zindzi and Tim Tam were best friends. They did everything together.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Zindzi and Tim Tam were best friends. They did everything together.",
+     "bbox": [
+      705.4,
+      212.8,
+      995.2,
+      317.0
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "‘Do you want to play dress-up?’ asked Oswin. ‘No thank you,’ said Zindzi. ‘I’ll play dress-up with Tim Tam.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Do you want to play dress-up?’ asked Oswin.",
+     "bbox": [
+      129.0,
+      115.0,
+      437.7,
+      164.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘No thank you,’ said Zindzi. ‘I’ll play dress-up with Tim Tam.’",
+     "bbox": [
+      694.1,
+      115.0,
+      1006.5,
+      164.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "‘Do you want to do a puzzle with me?’ asked Kaya. ‘No thank you,’ said Zindzi. ‘I like doing puzzles with Tim Tam.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Do you want to do a puzzle with me?’ asked Kaya.",
+     "bbox": [
+      299.0,
+      242.6,
+      484.0,
+      320.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘No thank you,’ said Zindzi. ‘I like doing puzzles with Tim Tam.’",
+     "bbox": [
+      683.3,
+      261.0,
+      1017.3,
+      310.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "‘Do you want to join our scooter race?’ asked The Twins. ‘No thank you,’ said Zindzi. ‘I’ll race with Tim Tam.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Do you want to join our scooter race?’ asked The Twins.",
+     "bbox": [
+      661.3,
+      105.1,
+      1039.3,
+      154.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘No thank you,’ said Zindzi. ‘I’ll race with Tim Tam.’",
+     "bbox": [
+      720.6,
+      177.2,
+      980.0,
+      226.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "One day, Tim Tam didn’t come to school. ‘Tim Tam is sick,’ said Teacher. ‘Why don’t you play with your other friends, Zindzi?’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "One day, Tim Tam didn’t come to school.",
+     "bbox": [
+      651.4,
+      174.5,
+      1049.1,
+      194.5
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Tim Tam is sick,’ said Teacher. ‘Why don’t you play with your other friends, Zindzi?’",
+     "bbox": [
+      700.7,
+      217.7,
+      999.9,
+      295.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Oswin was making a Get Well Soon card for Tim Tam. ‘But… Tim Tam is my best friend,’ said Zindzi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oswin was making a Get Well Soon card for Tim Tam.",
+     "bbox": [
+      124.7,
+      109.3,
+      442.0,
+      158.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘But… Tim Tam is my best friend,’ said Zindzi.",
+     "bbox": [
+      111.1,
+      185.9,
+      455.8,
+      245.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "‘You can help me,’ said Oswin. ‘Dip dip, dab dab.’ ‘Dip dip, dab dab,’ said Zindzi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘You can help me,’ said Oswin. ‘Dip dip, dab dab.’ ‘Dip dip, dab dab,’ said Zindzi.",
+     "bbox": [
+      65.3,
+      126.3,
+      464.1,
+      405.9
+     ],
+     "size": 34.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "When the card was done, Oswin and Zindzi played dress-up. The next day, they played hopscotch with Kaya. The day after that, the three of them rode scooters with The Twins.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When the card was done, Oswin and Zindzi played dress-up.",
+     "bbox": [
+      247.0,
+      64.3,
+      492.7,
+      142.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "The next day, they played hopscotch with Kaya.",
+     "bbox": [
+      173.4,
+      214.2,
+      426.6,
+      263.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "The day after that, the three of them rode scooters with The Twins.",
+     "bbox": [
+      617.6,
+      64.0,
+      929.9,
+      142.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "On Monday, Tim Tam came back to school. ‘Let’s go read a book with Oswin!’ said Zindzi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "On Monday, Tim Tam came back to school.",
+     "bbox": [
+      149.9,
+      112.2,
+      416.9,
+      161.2
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Let’s go read a book with Oswin!’ said Zindzi.",
+     "bbox": [
+      687.4,
+      370.2,
+      1013.2,
+      419.2
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "‘Is Oswin your best friend now?’ asked Tim Tam. ‘He’s my new friend,’ said Zindzi. ‘He’s your friend too! Look, we made you a card.’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Is Oswin your best friend now?’ asked Tim Tam.",
+     "bbox": [
+      129.7,
+      84.5,
+      437.0,
+      133.5
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘He’s my new friend,’ said Zindzi. ‘He’s your friend too! Look, we made you a card.’",
+     "bbox": [
+      634.5,
+      75.2,
+      981.1,
+      163.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "‘Should we all play together?’",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "‘Should we all play together?’",
+     "bbox": [
+      139.3,
+      129.9,
+      427.4,
+      149.9
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "‘Okay,’ said Tim Tam. ‘Let’s all be best friends!’",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "‘Okay,’ said Tim Tam. ‘Let’s all be best friends!’",
+     "bbox": [
+      70.7,
+      113.6,
+      506.5,
+      184.3
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

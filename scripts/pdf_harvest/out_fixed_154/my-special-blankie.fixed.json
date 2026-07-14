@@ -1,0 +1,378 @@
+{
+ "slug": "my-special-blankie",
+ "book_body_size": 35.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Can you see me? I’m on Mama’s back in my special blankie.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Can you see me?",
+     "bbox": [
+      175.6,
+      204.1,
+      463.6,
+      239.1
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "I’m on Mama’s back in my special blankie.",
+     "bbox": [
+      133.2,
+      288.1,
+      506.1,
+      365.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "I love Mama. And Mama loves me. And I love, love, LOVE my special blankie.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I love Mama. And Mama loves me.",
+     "bbox": [
+      103.1,
+      166.2,
+      463.9,
+      243.2
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "And I love, love, LOVE my special blankie.",
+     "bbox": [
+      715.4,
+      452.6,
+      1083.2,
+      529.6
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Boom! I like to make a noise. Bang! Bash!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Boom!",
+     "bbox": [
+      381.8,
+      261.2,
+      486.3,
+      306.3
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "I like to make a noise.",
+     "bbox": [
+      98.4,
+      415.2,
+      468.6,
+      450.2
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Bang!",
+     "bbox": [
+      643.7,
+      149.4,
+      739.9,
+      197.7
+     ],
+     "size": 34.7
+    },
+    {
+     "role": "BODY",
+     "text": "Bash!",
+     "bbox": [
+      714.7,
+      244.5,
+      807.8,
+      289.4
+     ],
+     "size": 34.1
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "But Mama likes quiet. Shhh Shhh Shhh",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But Mama likes quiet.",
+     "bbox": [
+      95.9,
+      111.9,
+      471.1,
+      146.9
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Shhh Shhh Shhh",
+     "bbox": [
+      942.7,
+      90.5,
+      1077.2,
+      235.3
+     ],
+     "size": 42.8
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Mama does her work. Go! Go! Go!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama does her work.",
+     "bbox": [
+      106.6,
+      213.7,
+      478.8,
+      248.7
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Go!",
+     "bbox": [
+      764.2,
+      137.3,
+      820.0,
+      175.5
+     ],
+     "size": 34.0
+    },
+    {
+     "role": "BODY",
+     "text": "Go!",
+     "bbox": [
+      726.4,
+      235.9,
+      783.3,
+      276.5
+     ],
+     "size": 34.9
+    },
+    {
+     "role": "BODY",
+     "text": "Go!",
+     "bbox": [
+      812.6,
+      304.6,
+      870.0,
+      343.8
+     ],
+     "size": 34.3
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Woah! And I like to play. Woah! Woah!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Woah!",
+     "bbox": [
+      420.5,
+      455.0,
+      523.4,
+      499.9
+     ],
+     "size": 35.1
+    },
+    {
+     "role": "BODY",
+     "text": "And I like to play.",
+     "bbox": [
+      754.0,
+      89.2,
+      1050.2,
+      124.2
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "Woah!",
+     "bbox": [
+      961.0,
+      250.0,
+      1064.7,
+      299.8
+     ],
+     "size": 36.4
+    },
+    {
+     "role": "BODY",
+     "text": "Woah!",
+     "bbox": [
+      986.9,
+      368.8,
+      1092.5,
+      415.6
+     ],
+     "size": 35.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Oh, I love, love, LOVE my special blankie.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Oh, I love, love, LOVE my special blankie.",
+     "bbox": [
+      106.3,
+      253.2,
+      460.6,
+      330.2
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "But when I eat, Mama says my special blankie must watch.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But when I eat, Mama says my special blankie must watch.",
+     "bbox": [
+      81.8,
+      116.7,
+      485.2,
+      235.7
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "And when I wash, my special blankie must wait where it is dry.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "And when I wash, my special blankie must wait where it is dry.",
+     "bbox": [
+      664.8,
+      109.3,
+      1036.0,
+      228.3
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "I love bedtime stories with Mama. My special blankie listens with me ...",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I love bedtime stories with Mama.",
+     "bbox": [
+      665.4,
+      190.2,
+      1035.4,
+      267.2
+     ],
+     "size": 35.0
+    },
+    {
+     "role": "BODY",
+     "text": "My special blankie listens with me ...",
+     "bbox": [
+      690.6,
+      316.2,
+      1010.2,
+      393.2
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "... and helps me go to sleep.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "... and helps me go to sleep.",
+     "bbox": [
+      148.9,
+      258.1,
+      418.1,
+      335.1
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "I love, love, LOVE my special blankie.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I love, love, LOVE my special blankie.",
+     "bbox": [
+      118.1,
+      253.2,
+      448.8,
+      330.2
+     ],
+     "size": 35.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

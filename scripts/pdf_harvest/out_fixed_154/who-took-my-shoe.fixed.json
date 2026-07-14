@@ -1,0 +1,322 @@
+{
+ "slug": "who-took-my-shoe",
+ "book_body_size": 20.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“Come, Jabulani,” Ma says. “Why aren’t you ready? You’ll be late for school.” “I can’t find my shoe,” says Jabulani.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Come, Jabulani,” Ma says. “Why aren’t you ready? You’ll be late for school.”",
+     "bbox": [
+      600.9,
+      367.1,
+      861.8,
+      435.1
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I can’t find my shoe,” says Jabulani.",
+     "bbox": [
+      626.4,
+      463.1,
+      842.2,
+      507.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“Did you look in the wardrobe?” Ma asks. “Yes, it’s not in the wardrobe.” “Did you look under your bed?” says Ma. “It’s not under my bed,” Jabulani says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Did you look in the wardrobe?” Ma asks. “Yes, it’s not in the wardrobe.”",
+     "bbox": [
+      648.2,
+      37.9,
+      1052.6,
+      81.9
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Did you look under your bed?” says Ma. “It’s not under my bed,” Jabulani says.",
+     "bbox": [
+      150.6,
+      473.4,
+      550.3,
+      517.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“I know where your shoe is,” giggles Jabulani’s sister Lungi. “Where?” Jabulani asks. “I’m not telling you!” says Lungi “Somebody’s taken it,” Jabulani says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I know where your shoe is,” giggles Jabulani’s sister Lungi. “Where?” Jabulani asks.",
+     "bbox": [
+      276.6,
+      24.8,
+      513.5,
+      116.8
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I’m not telling you!” says Lungi",
+     "bbox": [
+      294.2,
+      473.4,
+      495.9,
+      517.4
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Somebody’s taken it,” Jabulani says.",
+     "bbox": [
+      667.9,
+      473.4,
+      1032.9,
+      493.4
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Why would someone take one shoe when they’ve got two feet?” says Lungi. “I don’t know. Maybe they’ve hidden it to make me cross.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Why would someone take one shoe when they’ve got two feet?” says Lungi.",
+     "bbox": [
+      86.4,
+      33.0,
+      480.5,
+      77.0
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I don’t know. Maybe they’ve hidden it to make me cross.”",
+     "bbox": [
+      623.6,
+      312.3,
+      830.9,
+      380.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Did you take my shoe?” he asks Lungi. “No,” says Lungi, “your shoes are too big for me.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Did you take my shoe?” he asks Lungi.",
+     "bbox": [
+      157.8,
+      246.6,
+      400.2,
+      290.6
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No,” says Lungi, “your shoes are too big for me.”",
+     "bbox": [
+      657.8,
+      288.0,
+      819.8,
+      356.0
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Did you take my shoe?” Jabulani asks Fruit Juice the Dog. She smiles her big dog smile at him and wags her tail.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Did you take my shoe?” Jabulani asks Fruit Juice the Dog.",
+     "bbox": [
+      81.1,
+      79.7,
+      324.2,
+      147.7
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "She smiles her big dog smile at him and wags her tail.",
+     "bbox": [
+      650.6,
+      79.7,
+      879.4,
+      147.7
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Maybe a bird picked it up and flew away with your shoe,” laughs Lungi.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Maybe a bird picked it up and flew away with your shoe,” laughs Lungi.",
+     "bbox": [
+      78.3,
+      61.3,
+      339.1,
+      129.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“Maybe a monkey took it and left it up in a tree,” says Jabulani.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Maybe a monkey took it and left it up in a tree,” says Jabulani.",
+     "bbox": [
+      205.6,
+      98.1,
+      535.0,
+      142.1
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Don’t worry, we’ll find your shoe,” says Ma. “Everyone look for Jabulani’s shoe.” But the shoe is nowhere to be found.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Don’t worry, we’ll find your shoe,” says Ma. “Everyone look for Jabulani’s shoe.”",
+     "bbox": [
+      637.5,
+      61.3,
+      1063.3,
+      105.3
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "But the shoe is nowhere to be found.",
+     "bbox": [
+      665.9,
+      133.3,
+      1034.9,
+      153.3
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“It’s all right,” says Ma. “You can wear your takkies to school today.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“It’s all right,” says Ma. “You can wear your takkies to school today.”",
+     "bbox": [
+      65.7,
+      75.5,
+      501.2,
+      119.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Lungi comes rushing into the kitchen with a big smile on her face. “I know where your shoe is,” she shouts. “Come and see.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lungi comes rushing into the kitchen with a big smile on her face.",
+     "bbox": [
+      61.8,
+      75.5,
+      505.1,
+      119.5
+     ],
+     "size": 20.0
+    },
+    {
+     "role": "BODY",
+     "text": "“I know where your shoe is,” she shouts. “Come and see.”",
+     "bbox": [
+      86.0,
+      147.5,
+      480.9,
+      191.5
+     ],
+     "size": 20.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

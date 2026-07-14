@@ -1,0 +1,345 @@
+{
+ "slug": "shhhhh",
+ "book_body_size": 54.5,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Baby is sleeping. ZZZZZZzzz zzz",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Baby is sleeping.",
+     "bbox": [
+      126.3,
+      272.0,
+      440.6,
+      312.0
+     ],
+     "size": 40.0
+    },
+    {
+     "role": "SFX",
+     "text": "ZZZZZZzzz zzz",
+     "bbox": [
+      975.4,
+      84.8,
+      1122.6,
+      206.2
+     ],
+     "size": 40.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "DOOF DOOF DOOF ! Shh, Sister! Baby is sleeping!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "DOOF DOOF DOOF !",
+     "bbox": [
+      296.5,
+      52.6,
+      509.8,
+      455.9
+     ],
+     "size": 40.7
+    },
+    {
+     "role": "SFX",
+     "text": "Shh, Sister! Baby is sleeping!",
+     "bbox": [
+      623.6,
+      417.3,
+      783.3,
+      518.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "CLANG CLANG CLANG! Shh, sleeping! Brother! Baby is",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "CLANG CLANG CLANG!",
+     "bbox": [
+      263.8,
+      52.0,
+      554.2,
+      547.2
+     ],
+     "size": 101.9
+    },
+    {
+     "role": "BODY",
+     "text": "Shh, sleeping! Brother! Baby is",
+     "bbox": [
+      888.7,
+      122.5,
+      1077.2,
+      223.4
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "OOF WWOOFOF! WO Shhh, sleeping! Baby dog! is",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "OOF WWOOFOF! WO",
+     "bbox": [
+      235.5,
+      17.7,
+      567.7,
+      390.6
+     ],
+     "size": 128.4
+    },
+    {
+     "role": "SFX",
+     "text": "Shhh, sleeping! Baby dog! is",
+     "bbox": [
+      676.3,
+      241.6,
+      827.7,
+      342.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Beepity Beep! Beepity Beep! Shhh, phone! Baby is sleeping!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Beepity Beep! Beepity Beep!",
+     "bbox": [
+      77.1,
+      64.9,
+      489.9,
+      168.2
+     ],
+     "size": 47.8
+    },
+    {
+     "role": "SFX",
+     "text": "Shhh, phone! Baby is sleeping!",
+     "bbox": [
+      659.6,
+      453.3,
+      895.6,
+      518.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "TOOTTOOT T E E T O O T ! Shhhh, radio! Baby is sleeping!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "TOOTTOOT",
+     "bbox": [
+      36.9,
+      36.9,
+      363.6,
+      200.0
+     ],
+     "size": 94.3
+    },
+    {
+     "role": "SFX",
+     "text": "T E E T O O T !",
+     "bbox": [
+      53.3,
+      392.0,
+      519.3,
+      562.6
+     ],
+     "size": 110.9
+    },
+    {
+     "role": "SFX",
+     "text": "Shhhh, radio! Baby is sleeping!",
+     "bbox": [
+      660.3,
+      223.6,
+      784.8,
+      360.5
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Brmmm Brmmm BRMMM! Baby sleeping! is Shhhhh, truck!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Brmmm Brmmm BRMMM! Baby sleeping! is",
+     "bbox": [
+      81.2,
+      60.9,
+      748.1,
+      228.3
+     ],
+     "size": 44.0
+    },
+    {
+     "role": "SFX",
+     "text": "Shhhhh, truck!",
+     "bbox": [
+      623.6,
+      65.8,
+      737.7,
+      131.8
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Clickity Clack Clickity Shhhhhh, train! Clack! Baby sleeping! is",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Clickity Clack",
+     "bbox": [
+      98.6,
+      63.4,
+      501.9,
+      138.7
+     ],
+     "size": 75.3
+    },
+    {
+     "role": "SFX",
+     "text": "Clickity Shhhhhh, train! Clack! Baby sleeping! is",
+     "bbox": [
+      244.5,
+      368.1,
+      755.3,
+      541.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Baubbabbadubba d du dubba! Shhhhhhhhh, helicopter! sleeping! Baby is",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Baubbabbadubba d du dubba! Shhhhhhhhh, helicopter! sleeping! Baby is",
+     "bbox": [
+      45.7,
+      266.4,
+      871.1,
+      548.2
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Baby is awake!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Baby is awake!",
+     "bbox": [
+      56.7,
+      378.4,
+      397.3,
+      540.5
+     ],
+     "size": 80.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "DOOF C L A N G WOOF BEEP TOOT BRMMM Clickity BADUBBA!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "DOOF C L A N G WOOF BEEP TOOT BRMMM Clickity BADUBBA!",
+     "bbox": [
+      437.9,
+      -14.4,
+      1187.8,
+      614.6
+     ],
+     "size": 124.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Baby is noisy! BRMMM Clickti yBADUBBA! CLANG WOOFlickit TOOTC WOOFBEEPBRMMM y DOOFBADUBBA!OF CLANGDOOF Clickity BEEP WO",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Baby is noisy!",
+     "bbox": [
+      721.8,
+      131.7,
+      979.0,
+      171.7
+     ],
+     "size": 40.0
+    },
+    {
+     "role": "BODY",
+     "text": "BRMMM Clickti yBADUBBA! CLANG WOOFlickit TOOTC WOOFBEEPBRMMM y DOOFBADUBBA!OF CLANGDOOF Clickity BEEP WO",
+     "bbox": [
+      356.2,
+      238.4,
+      1188.7,
+      645.4
+     ],
+     "size": 52.6
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

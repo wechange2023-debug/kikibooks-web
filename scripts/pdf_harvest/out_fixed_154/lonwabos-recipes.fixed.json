@@ -1,0 +1,310 @@
+{
+ "slug": "lonwabos-recipes",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Lonwabo was a ten-year-old boy. He lived with his mother and grandmother.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lonwabo was a ten-year-old boy.",
+     "bbox": [
+      197.9,
+      113.9,
+      502.2,
+      137.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He lived with his mother and grandmother.",
+     "bbox": [
+      623.6,
+      113.9,
+      839.2,
+      166.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Lonwabo’s grandmother had the most beautiful and rich vegetable garden. He enjoyed helping his grandmother weed the garden and water the vegetables.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lonwabo’s grandmother had the most beautiful and rich vegetable garden.",
+     "bbox": [
+      247.3,
+      56.3,
+      510.2,
+      137.9
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He enjoyed helping his grandmother weed the garden and water the vegetables.",
+     "bbox": [
+      623.6,
+      56.3,
+      899.1,
+      137.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "He had to fetch water from the river. He was not a lazy boy. He would walk down the hill and up again. He would pass his friends playing soccer and they would laugh out loud and say to him, “Lonwabo why do you do that? That is a girl’s job, we would never do that.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He had to fetch water from the river. He was not a lazy boy. He would walk down the hill and up again.",
+     "bbox": [
+      83.3,
+      113.9,
+      483.7,
+      195.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He would pass his friends playing soccer and they would laugh out loud and say to him, “Lonwabo why do you do that? That is a girl’s job, we would never do that.”",
+     "bbox": [
+      624.2,
+      113.9,
+      1076.6,
+      224.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Lonwabo laughed them off and continued with his journey. He would think about all the happy times with his grandmother in the garden.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lonwabo laughed them off and continued with his journey.",
+     "bbox": [
+      92.3,
+      142.7,
+      474.6,
+      195.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He would think about all the happy times with his grandmother in the garden.",
+     "bbox": [
+      62.5,
+      229.1,
+      504.4,
+      281.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "These thoughts made him forget about the long journey and about his friends’ comments. He liked guessing how many carrots would be in each bunch before his grandmother pulled them out of the ground.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "These thoughts made him forget about the long journey and about his friends’ comments.",
+     "bbox": [
+      206.5,
+      257.9,
+      510.7,
+      339.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He liked guessing how many carrots would be in each bunch before his grandmother pulled them out of the ground.",
+     "bbox": [
+      230.1,
+      373.1,
+      510.8,
+      483.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Lonwabo’s grandmother always prepared lunch for him, while he was at school and his mother was at work. Every day he came home to find his food already prepared and left out on the table for him.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lonwabo’s grandmother always prepared lunch for him, while he was at school and his mother was at work.",
+     "bbox": [
+      56.9,
+      171.5,
+      510.0,
+      253.1
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Every day he came home to find his food already prepared and left out on the table for him.",
+     "bbox": [
+      61.0,
+      286.7,
+      506.5,
+      368.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Immediately after taking off his school uniform, he sat at the table, said a little prayer and began to eat.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Immediately after taking off his school uniform, he sat at the table, said a little prayer and began to eat.",
+     "bbox": [
+      62.8,
+      229.1,
+      504.2,
+      310.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "His grandmother prepared all kinds of meals for their lunches. He loved his grandmother’s tasty meals.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "His grandmother prepared all kinds of meals for their lunches.",
+     "bbox": [
+      112.4,
+      257.9,
+      455.0,
+      310.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He loved his grandmother’s tasty meals.",
+     "bbox": [
+      671.6,
+      257.9,
+      1029.2,
+      281.9
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "When he finished eating, he would wash his dish, take a book and pencil and go and sit next to his grandmother. He asked her about the ingredients in the meal he had just eaten and carefully wrote down every little detail.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "When he finished eating, he would wash his dish, take a book and pencil and go and sit next to his grandmother.",
+     "bbox": [
+      654.3,
+      113.9,
+      1046.5,
+      195.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He asked her about the ingredients in the meal he had just eaten and carefully wrote down every little detail.",
+     "bbox": [
+      630.6,
+      229.1,
+      1070.8,
+      310.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "He told himself that when grows up, he is going to open his own restaurant. He will name the restaurant after his grandmother and make all the meals that his grandmother makes for him.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "He told himself that when grows up, he is going to open his own restaurant.",
+     "bbox": [
+      111.5,
+      113.9,
+      455.5,
+      166.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "He will name the restaurant after his grandmother and make all the meals that his grandmother makes for him.",
+     "bbox": [
+      626.8,
+      113.9,
+      1074.5,
+      195.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

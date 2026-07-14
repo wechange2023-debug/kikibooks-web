@@ -1,0 +1,290 @@
+{
+ "slug": "sing-to-me",
+ "book_body_size": 27.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Mama loves to sing. She sings high.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama loves to sing.",
+     "bbox": [
+      157.1,
+      137.6,
+      409.7,
+      164.6
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "She sings high.",
+     "bbox": [
+      190.2,
+      202.4,
+      376.6,
+      229.4
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "She sings low.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She sings low.",
+     "bbox": [
+      748.4,
+      382.8,
+      924.0,
+      409.8
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "She sings like a twittering bird.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She sings like a twittering bird.",
+     "bbox": [
+      743.2,
+      246.1,
+      957.6,
+      312.1
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Mama loves to sing. She sings high.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama loves to sing.",
+     "bbox": [
+      646.1,
+      163.2,
+      898.7,
+      190.2
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "She sings high.",
+     "bbox": [
+      679.2,
+      227.9,
+      865.6,
+      254.9
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "She sings low.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She sings low.",
+     "bbox": [
+      695.1,
+      270.9,
+      870.7,
+      297.9
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "She sings like an angel.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She sings like an angel.",
+     "bbox": [
+      190.5,
+      378.6,
+      359.4,
+      437.9
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Mama loves to sing. She sings high.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama loves to sing.",
+     "bbox": [
+      724.1,
+      136.9,
+      976.7,
+      163.9
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "She sings high.",
+     "bbox": [
+      757.2,
+      201.7,
+      943.6,
+      228.7
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "She sings low.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She sings low.",
+     "bbox": [
+      195.7,
+      336.0,
+      371.2,
+      363.0
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "She sings like the pattering rain.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She sings like",
+     "bbox": [
+      199.0,
+      426.7,
+      367.9,
+      453.7
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "the pattering rain.",
+     "bbox": [
+      735.0,
+      426.7,
+      965.7,
+      453.7
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Mama loves to sing. She sings high.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama loves to sing.",
+     "bbox": [
+      213.9,
+      131.9,
+      466.4,
+      158.9
+     ],
+     "size": 27.0
+    },
+    {
+     "role": "BODY",
+     "text": "She sings high.",
+     "bbox": [
+      246.9,
+      196.7,
+      433.4,
+      223.7
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "She sings low.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She sings low.",
+     "bbox": [
+      762.6,
+      360.1,
+      938.2,
+      387.1
+     ],
+     "size": 27.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "My mama loves to sing to me.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My mama loves to sing to me.",
+     "bbox": [
+      170.3,
+      248.6,
+      396.6,
+      326.6
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

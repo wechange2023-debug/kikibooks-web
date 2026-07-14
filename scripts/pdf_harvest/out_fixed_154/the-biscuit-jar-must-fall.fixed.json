@@ -1,0 +1,378 @@
+{
+ "slug": "the-biscuit-jar-must-fall",
+ "book_body_size": 25.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Micki and her friends Lolo and Unathi were reading their favourite books. “If you help Micki clean her room,” Prudence said, “you can all have biscuits afterwards.” “YAY!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Micki and her friends Lolo and Unathi were reading their favourite books.",
+     "bbox": [
+      623.6,
+      76.2,
+      1056.0,
+      131.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“If you help Micki clean her room,” Prudence said, “you can all have biscuits afterwards.”",
+     "bbox": [
+      623.6,
+      166.2,
+      1028.3,
+      251.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“YAY!”",
+     "bbox": [
+      623.6,
+      286.2,
+      707.4,
+      311.2
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "But they carried on and read and read and read.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "But they carried on and read and read and read.",
+     "bbox": [
+      56.7,
+      272.8,
+      498.2,
+      327.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Then they stopped reading and cleaned Micki’s room.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Then they stopped reading and cleaned Micki’s room.",
+     "bbox": [
+      56.7,
+      272.8,
+      510.3,
+      327.8
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“My room is tidy now,” Micki said. “Let’s go and get biscuits.” But they could not find Prudence anywhere.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“My room is tidy now,” Micki said. “Let’s go and get biscuits.”",
+     "bbox": [
+      623.6,
+      132.9,
+      1017.6,
+      187.9
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "But they could not find Prudence anywhere.",
+     "bbox": [
+      623.6,
+      222.9,
+      1001.3,
+      277.9
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Micki, Lolo and Unathi stared at the biscuit jar on the top shelf wondering how to reach it.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Micki, Lolo and Unathi stared at the biscuit jar on the top shelf wondering how to reach it.",
+     "bbox": [
+      56.7,
+      439.3,
+      426.6,
+      524.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "So they found a chair and took turns to climb on it. But none of them could reach the biscuit jar. “My mama would say this is dangerous and we could fall and hurt ourselves,” Lolo said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So they found a chair and took turns to climb on it.",
+     "bbox": [
+      56.7,
+      259.3,
+      409.1,
+      314.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "But none of them could reach the biscuit jar.",
+     "bbox": [
+      56.7,
+      349.3,
+      395.9,
+      404.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“My mama would say this is dangerous and we could fall and hurt ourselves,” Lolo said.",
+     "bbox": [
+      56.7,
+      439.3,
+      409.3,
+      524.3
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "So Lolo sat on Unathi’s shoulders and stretched out his arms but could not reach the biscuit jar. “My father would say this is dangerous and we could fall and hurt ourselves,” Unathi said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So Lolo sat on Unathi’s shoulders and stretched out his arms but could not reach the biscuit jar.",
+     "bbox": [
+      56.7,
+      320.0,
+      488.7,
+      405.0
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“My father would say this is dangerous and we could fall and hurt ourselves,” Unathi said.",
+     "bbox": [
+      56.7,
+      440.0,
+      507.3,
+      525.0
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "So they found a rope to throw around the biscuit jar and pull it down. But they could still not reach the biscuit jar. “My mummy would say this is dangerous and the jar could fall on us and hurt us,” Micki said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So they found a rope to throw around the biscuit jar and pull it down.",
+     "bbox": [
+      56.7,
+      76.2,
+      490.7,
+      131.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "But they could still not reach the biscuit jar.",
+     "bbox": [
+      56.7,
+      166.2,
+      434.8,
+      221.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“My mummy would say this is dangerous and the jar could fall on us and hurt us,” Micki said.",
+     "bbox": [
+      56.7,
+      256.2,
+      492.1,
+      341.2
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“What are you doing?” Jonathan and Sakhi asked. “We are trying to reach the biscuit jar,” Micki said. “We can help you,” they said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What are you doing?” Jonathan and Sakhi asked.",
+     "bbox": [
+      56.7,
+      379.3,
+      370.4,
+      434.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“We are trying to reach the biscuit jar,” Micki said.",
+     "bbox": [
+      56.7,
+      469.3,
+      460.0,
+      524.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“We can help you,” they said.",
+     "bbox": [
+      623.6,
+      469.1,
+      853.6,
+      524.1
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Let’s push the table close to the shelf and climb on that instead,” Jonathan said. But still, none of them could reach the biscuit jar.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Let’s push the table close to the shelf and climb on that instead,” Jonathan said.",
+     "bbox": [
+      731.3,
+      277.5,
+      1066.9,
+      362.5
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "But still, none of them could reach the biscuit jar.",
+     "bbox": [
+      731.3,
+      397.5,
+      1056.0,
+      452.5
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“Let’s throw a ball at the jar and knock it down so that the biscuits fall out,” Sakhi said. “Yes!” Lolo and Jonathan said. “No!” Unathi and Micki said.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Let’s throw a ball at the jar and knock it down so that the biscuits fall out,” Sakhi said.",
+     "bbox": [
+      56.7,
+      348.4,
+      506.3,
+      433.4
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Yes!” Lolo and Jonathan said. “No!” Unathi and Micki said.",
+     "bbox": [
+      56.7,
+      468.4,
+      412.7,
+      523.4
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Finally, Micki had an idea… And that is how, together, they reached the biscuit jar!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Finally, Micki had an idea…",
+     "bbox": [
+      163.7,
+      499.3,
+      476.9,
+      524.3
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "And that is how, together, they reached the biscuit jar!",
+     "bbox": [
+      909.2,
+      269.7,
+      1079.0,
+      384.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

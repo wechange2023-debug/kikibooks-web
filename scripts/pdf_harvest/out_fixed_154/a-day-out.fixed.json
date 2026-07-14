@@ -1,0 +1,187 @@
+{
+ "slug": "a-day-out",
+ "book_body_size": 34.2,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "I canea!the s see",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I canea!the s see",
+     "bbox": [
+      861.7,
+      97.8,
+      1032.1,
+      186.1
+     ],
+     "size": 41.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Waitfor me!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Waitfor me!",
+     "bbox": [
+      834.0,
+      157.2,
+      1035.3,
+      245.0
+     ],
+     "size": 46.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Looook! L k!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Looook! L k!",
+     "bbox": [
+      635.5,
+      44.6,
+      758.1,
+      126.3
+     ],
+     "size": 48.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Eeee! It’s cold!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Eeee! It’s cold!",
+     "bbox": [
+      307.3,
+      45.1,
+      464.2,
+      143.7
+     ],
+     "size": 37.4
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "away! Go",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "away! Go",
+     "bbox": [
+      71.0,
+      350.0,
+      206.7,
+      441.5
+     ],
+     "size": 45.9
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Come eat!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Come eat!",
+     "bbox": [
+      751.8,
+      138.6,
+      923.2,
+      204.2
+     ],
+     "size": 42.2
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Got it!",
+   "blocks": [
+    {
+     "role": "SFX",
+     "text": "Got it!",
+     "bbox": [
+      212.2,
+      184.5,
+      353.3,
+      247.6
+     ],
+     "size": 50.7
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "good I had day a .",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "good I had day a .",
+     "bbox": [
+      624.5,
+      221.1,
+      832.9,
+      322.4
+     ],
+     "size": 31.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

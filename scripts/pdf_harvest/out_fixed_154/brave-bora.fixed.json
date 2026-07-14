@@ -1,0 +1,345 @@
+{
+ "slug": "brave-bora",
+ "book_body_size": 32.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Bora is sitting at the clinic with Baba. Jojo, his stuffed monkey, came too. Jojo is sleeping in Bora’s bag.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Bora is sitting at the clinic with Baba.",
+     "bbox": [
+      71.6,
+      122.6,
+      444.3,
+      193.0
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "Jojo, his stuffed monkey, came too.",
+     "bbox": [
+      71.6,
+      237.8,
+      415.3,
+      308.2
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "Jojo is sleeping in Bora’s bag.",
+     "bbox": [
+      71.6,
+      353.0,
+      484.0,
+      385.0
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "“I don’t like needles. They hurt!” says Bora.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I don’t like needles. They hurt!” says Bora.",
+     "bbox": [
+      56.7,
+      245.9,
+      372.7,
+      316.4
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“An injection helps make you healthy. It’s okay to be scared, Bora. Baba will be right here with you. And Jojo too.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“An injection helps make you healthy. It’s okay to be scared, Bora. Baba will be right here with you. And Jojo too.”",
+     "bbox": [
+      75.1,
+      96.4,
+      454.2,
+      282.0
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Bora Baraka!” a loud voice calls. “Let’s go Bora,” says Baba. “It’s your turn.” “Let’s come back tomorrow Baba!” says Bora.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Bora Baraka!” a loud voice calls.",
+     "bbox": [
+      253.2,
+      128.3,
+      507.2,
+      198.7
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Let’s go Bora,” says Baba.",
+     "bbox": [
+      253.2,
+      243.5,
+      471.4,
+      313.9
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s your turn.”",
+     "bbox": [
+      253.2,
+      358.7,
+      472.1,
+      390.7
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Let’s come back tomorrow Baba!” says Bora.",
+     "bbox": [
+      675.6,
+      436.6,
+      1065.8,
+      507.0
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Remember what Baba said you will get for being brave enough to get your injection?” asks Baba. “A red lollipop! Okay, I’m coming,” says Bora.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Remember what Baba said you will get for being brave enough to get your injection?” asks Baba.",
+     "bbox": [
+      56.7,
+      84.4,
+      429.8,
+      231.6
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“A red lollipop! Okay, I’m coming,” says Bora.",
+     "bbox": [
+      56.7,
+      390.5,
+      479.1,
+      460.9
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "The doctor smiles at Bora. “Is this your monkey? Can we examine him too?” she asks. Bora looks at Baba, then at Jojo, and nods.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The doctor smiles at Bora. “Is this your monkey? Can we examine him too?” she asks.",
+     "bbox": [
+      52.4,
+      57.6,
+      504.3,
+      159.6
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Bora looks at Baba, then at Jojo, and nods.",
+     "bbox": [
+      776.7,
+      345.2,
+      1055.6,
+      454.0
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“Now, it’s your turn,” she says. Will you help me give your monkey a small injection so he feels better?” asks the doctor.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Now, it’s your turn,” she says.",
+     "bbox": [
+      623.6,
+      165.2,
+      1057.2,
+      197.2
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "Will you help me give your monkey a small injection so he feels better?” asks the doctor.",
+     "bbox": [
+      623.6,
+      262.9,
+      1064.6,
+      371.8
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“TOOP!” says the doctor as she gives Jojo the monkey an injection.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“TOOP!” says the doctor as she gives Jojo the monkey an injection.",
+     "bbox": [
+      623.6,
+      134.0,
+      1035.5,
+      242.8
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“Now, it’s your turn. Is that a superhero on your T-shirt?” she asks. “TOOP!” she says as she gives Bora the injection.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Now, it’s your turn. Is that a superhero on your T-shirt?” she asks.",
+     "bbox": [
+      623.6,
+      66.0,
+      1035.8,
+      174.8
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“TOOP!” she says as she gives Bora the injection.",
+     "bbox": [
+      623.6,
+      431.1,
+      971.8,
+      501.5
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Ouch!” shouts Bora. “Hey, that wasn’t so bad!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Ouch!” shouts Bora.",
+     "bbox": [
+      642.0,
+      173.7,
+      940.1,
+      205.7
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "“Hey, that wasn’t so bad!”",
+     "bbox": [
+      642.0,
+      250.5,
+      1009.4,
+      282.5
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "“I know it stings a little, but we’re done and you have been very brave!” says the doctor.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“I know it stings a little, but we’re done and you have been very brave!” says the doctor.",
+     "bbox": [
+      642.0,
+      183.6,
+      1039.1,
+      330.8
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "“One red lollipop for our brave Bora!”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“One red lollipop for our brave Bora!”",
+     "bbox": [
+      56.7,
+      66.0,
+      353.2,
+      136.3
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

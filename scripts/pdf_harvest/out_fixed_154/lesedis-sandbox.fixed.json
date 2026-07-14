@@ -1,0 +1,378 @@
+{
+ "slug": "lesedis-sandbox",
+ "book_body_size": 22.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "It’s the holidays and I’d love to go to the beach, but we have never been. I wonder what it feels like to play in the sea sand.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s the holidays and I’d love to go to the beach, but we have never been.",
+     "bbox": [
+      92.0,
+      343.5,
+      476.2,
+      393.5
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "I wonder what it feels like to play in the sea sand.",
+     "bbox": [
+      76.7,
+      426.6,
+      491.4,
+      480.6
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Surprise! ‘Look what we made you. A sandbox,’ exclaims Lesedi’s dad. Dad says he used some of his old tyres. Mom painted them with all my favourite colours: blue, red and yellow.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Surprise!",
+     "bbox": [
+      791.0,
+      39.7,
+      909.8,
+      67.7
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘Look what we made you. A sandbox,’ exclaims Lesedi’s dad.",
+     "bbox": [
+      678.8,
+      97.9,
+      1022.0,
+      147.9
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Dad says he used some of his old tyres. Mom painted them with all my favourite colours: blue, red and yellow.",
+     "bbox": [
+      648.4,
+      181.9,
+      1052.4,
+      263.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "I can’t wait to get inside. I climb into my sandbox and my feet feel so warm and squishy.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I can’t wait to get inside.",
+     "bbox": [
+      685.8,
+      228.2,
+      1015.0,
+      256.2
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "I climb into my sandbox and my feet feel so warm and squishy.",
+     "bbox": [
+      665.4,
+      286.4,
+      1035.4,
+      340.2
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Look! I’m at the beach. That looks like a good spot to spread my blanket. I set up my umbrella, but the wind blows it away.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Look!",
+     "bbox": [
+      246.7,
+      265.0,
+      320.2,
+      293.0
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "I’m at the beach.",
+     "bbox": [
+      199.8,
+      323.3,
+      367.1,
+      345.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "That looks like a good spot to spread my blanket.",
+     "bbox": [
+      147.1,
+      379.3,
+      419.9,
+      429.3
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "I set up my umbrella, but the wind blows it away.",
+     "bbox": [
+      147.5,
+      463.3,
+      419.4,
+      513.3
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "The ocean makes a roaring sound. I run on the beach, daring the waves to catch me as I make footprints in the sand.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The ocean makes a roaring sound.",
+     "bbox": [
+      183.9,
+      61.4,
+      383.0,
+      115.2
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "I run on the beach, daring the waves to catch me as I make footprints in the sand.",
+     "bbox": [
+      121.5,
+      145.4,
+      445.4,
+      223.4
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Using my bucket and spade, I dig for shells. They come in many shapes and sizes.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Using my bucket and spade, I dig for shells.",
+     "bbox": [
+      139.8,
+      351.2,
+      427.1,
+      401.2
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "They come in many shapes and sizes.",
+     "bbox": [
+      167.5,
+      435.2,
+      399.4,
+      489.0
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "Let me build a sandcastle. Wow, that’s huge!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Let me build a sandcastle. Wow, that’s huge!",
+     "bbox": [
+      719.1,
+      152.0,
+      981.7,
+      205.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "It’s lunchtime! Maybe I should have a strawberry jam sandwich. Mmm, my favourite.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "It’s lunchtime!",
+     "bbox": [
+      189.9,
+      328.3,
+      377.0,
+      356.3
+     ],
+     "size": 28.0
+    },
+    {
+     "role": "BODY",
+     "text": "Maybe I should have a strawberry jam sandwich.",
+     "bbox": [
+      152.8,
+      386.6,
+      414.2,
+      438.5
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mmm, my favourite.",
+     "bbox": [
+      182.6,
+      470.6,
+      384.3,
+      492.6
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "For dessert, Mom brings me some chocolate ice cream.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "For dessert, Mom brings me some chocolate ice cream.",
+     "bbox": [
+      711.6,
+      61.4,
+      989.2,
+      143.2
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "I lie on my blanket enjoying my ice cream and gaze at the sky turning pink.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "I lie on my blanket enjoying my ice cream and gaze at the sky turning pink.",
+     "bbox": [
+      168.2,
+      138.0,
+      398.7,
+      247.7
+     ],
+     "size": 25.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Lesedi’s mom and dad watch him, their eyes beaming with pleasure. ‘I’m so happy we could make his dream come true right here at home,’ Lesedi’s mom says.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lesedi’s mom and dad watch him, their eyes beaming with pleasure.",
+     "bbox": [
+      623.6,
+      340.1,
+      1077.2,
+      393.8
+     ],
+     "size": 25.0
+    },
+    {
+     "role": "BODY",
+     "text": "‘I’m so happy we could make his dream come true right here at home,’ Lesedi’s mom says.",
+     "bbox": [
+      650.8,
+      424.1,
+      1050.0,
+      502.1
+     ],
+     "size": 22.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Thank you, Mom and Dad. Today was the happiest day of my life!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Thank you, Mom and Dad.",
+     "bbox": [
+      150.2,
+      350.6,
+      416.8,
+      372.6
+     ],
+     "size": 22.0
+    },
+    {
+     "role": "BODY",
+     "text": "Today was the happiest day of my life!",
+     "bbox": [
+      195.8,
+      406.6,
+      371.1,
+      484.6
+     ],
+     "size": 23.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

@@ -1,0 +1,220 @@
+{
+ "slug": "knight-times",
+ "book_body_size": 28.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "Good day, Thinama of Tsakane! Good day, Lilly of Ladybrand!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Good day, Thinama of Tsakane!",
+     "bbox": [
+      270.7,
+      498.8,
+      502.6,
+      551.6
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "Good day, Lilly of Ladybrand!",
+     "bbox": [
+      622.2,
+      498.8,
+      829.0,
+      551.6
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "You can’t catch me!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "You can’t catch me!",
+     "bbox": [
+      848.8,
+      448.5,
+      1105.6,
+      476.5
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Charge! Follow that dragon!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Charge!",
+     "bbox": [
+      248.7,
+      86.5,
+      359.4,
+      116.5
+     ],
+     "size": 30.0
+    },
+    {
+     "role": "BODY",
+     "text": "Follow that dragon!",
+     "bbox": [
+      666.1,
+      471.7,
+      921.2,
+      499.7
+     ],
+     "size": 28.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Hahahahahahaha.......",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Hahahahahahaha.......",
+     "bbox": [
+      98.4,
+      237.0,
+      468.8,
+      273.0
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "We’re going to get you! …you slimy songololo!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "We’re going to get you!",
+     "bbox": [
+      732.0,
+      154.0,
+      1079.5,
+      186.0
+     ],
+     "size": 32.0
+    },
+    {
+     "role": "BODY",
+     "text": "…you slimy songololo!",
+     "bbox": [
+      622.9,
+      309.1,
+      947.7,
+      341.1
+     ],
+     "size": 32.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "Attack!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Attack!",
+     "bbox": [
+      57.2,
+      162.4,
+      180.9,
+      198.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Supper time!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Supper time!",
+     "bbox": [
+      87.1,
+      155.7,
+      241.8,
+      181.7
+     ],
+     "size": 26.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Please, just five more minutes!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Please, just five more minutes!",
+     "bbox": [
+      902.0,
+      161.3,
+      1075.1,
+      211.3
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

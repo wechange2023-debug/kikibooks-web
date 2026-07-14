@@ -1,0 +1,334 @@
+{
+ "slug": "matthew-is-up",
+ "book_body_size": 36.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "The sun is up. Matthew is up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "The sun is up. Matthew is up.",
+     "bbox": [
+      732.0,
+      160.3,
+      968.8,
+      239.5
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping.",
+     "bbox": [
+      687.2,
+      64.7,
+      1013.6,
+      187.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "Matthew is hungry. Matthew pours the milk on his cereal. Matthew eats. Matthew eats it all up. Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Matthew is hungry. Matthew pours the milk on his cereal. Matthew eats. Matthew eats it all up.",
+     "bbox": [
+      56.7,
+      64.7,
+      498.2,
+      273.4
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping.",
+     "bbox": [
+      56.7,
+      323.9,
+      383.1,
+      446.2
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "Matthew needs to poo. He sits on the loo and wipes his own bottom. Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Matthew needs to poo.",
+     "bbox": [
+      56.7,
+      109.7,
+      435.8,
+      145.7
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "He sits on the loo and wipes his own bottom.",
+     "bbox": [
+      56.7,
+      196.1,
+      423.5,
+      275.2
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping.",
+     "bbox": [
+      56.7,
+      325.6,
+      383.1,
+      448.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "Matthew pulls off his pyjamas. He puts on his clothes. First he puts on his Spiderman underpants. Then he puts on his number 1 shirt. Then he puts on his pants.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Matthew pulls off his pyjamas. He puts on his clothes.",
+     "bbox": [
+      56.7,
+      92.3,
+      426.7,
+      214.7
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "First he puts on his Spiderman underpants. Then he puts on his number 1 shirt. Then he puts on his pants.",
+     "bbox": [
+      56.7,
+      265.1,
+      490.4,
+      473.9
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mommy is sleeping. Daddy is sleeping. Lizwi is sleeping.",
+     "bbox": [
+      687.2,
+      64.7,
+      1013.6,
+      187.1
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "So Matthew jumps. Matthew jumps small jumps in his room.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So Matthew jumps.",
+     "bbox": [
+      126.6,
+      83.1,
+      440.3,
+      119.1
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Matthew jumps small jumps in his room.",
+     "bbox": [
+      106.8,
+      169.5,
+      460.1,
+      248.7
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "Mommy is still sleeping. Daddy is still sleeping. Lizwi is still sleeping.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mommy is still sleeping. Daddy is still sleeping. Lizwi is still sleeping.",
+     "bbox": [
+      56.7,
+      207.5,
+      453.2,
+      329.9
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "So Matthew jumps. Matthew jumps in the passage. Matthew jumps in the bathroom.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So Matthew jumps. Matthew jumps in the passage.",
+     "bbox": [
+      56.7,
+      76.0,
+      413.2,
+      198.4
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Matthew jumps in the bathroom.",
+     "bbox": [
+      56.7,
+      246.1,
+      228.9,
+      411.7
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "Mommy is still sleeping. Daddy is still sleeping. Lizwi is still sleeping.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mommy is still sleeping. Daddy is still sleeping. Lizwi is still sleeping.",
+     "bbox": [
+      56.7,
+      92.3,
+      453.2,
+      214.7
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "So Matthew jumps on them. Matthew jumps on Mommy, on Daddy, on Lizwi, on the big bed.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "So Matthew jumps on them.",
+     "bbox": [
+      56.7,
+      109.7,
+      509.8,
+      145.7
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Matthew jumps on Mommy, on Daddy, on Lizwi, on the big bed.",
+     "bbox": [
+      56.7,
+      196.1,
+      312.1,
+      404.9
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "Lizwi wakes up. Lizwi jumps! Matthew and Lizwi jump on Mommy and Daddy! Mommy wakes up.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Lizwi wakes up. Lizwi jumps!",
+     "bbox": [
+      56.7,
+      64.7,
+      308.8,
+      143.8
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Matthew and Lizwi jump on Mommy and Daddy!",
+     "bbox": [
+      56.7,
+      194.2,
+      458.2,
+      273.4
+     ],
+     "size": 36.0
+    },
+    {
+     "role": "BODY",
+     "text": "Mommy wakes up.",
+     "bbox": [
+      56.7,
+      323.9,
+      367.3,
+      359.9
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}

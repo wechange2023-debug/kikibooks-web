@@ -1,0 +1,378 @@
+{
+ "slug": "whats-in-the-pot",
+ "book_body_size": 24.0,
+ "pipeline": "order_fix-v1 (ADR-0044)",
+ "pages": [
+  {
+   "page_no": 1,
+   "text": "“ “What’s for supper ?” asked Sam. “It’s a surprise ”, said Mama, putting a big pot on the stove.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“",
+     "bbox": [
+      56.7,
+      56.5,
+      63.9,
+      80.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What’s for supper ?” asked Sam.",
+     "bbox": [
+      298.2,
+      86.5,
+      510.2,
+      140.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s a surprise ”, said Mama, putting a big pot on the stove.",
+     "bbox": [
+      623.6,
+      86.5,
+      796.6,
+      200.5
+     ],
+     "size": 24.5
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 2,
+   "text": "She added a jug of water . Sam was worried. “Are we having water for supper?” he wailed. “It’s a surprise. Wait and see.” replied Mama.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "She added a jug of water . Sam was worried. “Are we having water for supper?” he wailed.",
+     "bbox": [
+      680.1,
+      186.2,
+      1020.7,
+      300.2
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s a surprise. Wait and see.” replied Mama.",
+     "bbox": [
+      715.1,
+      336.2,
+      991.2,
+      390.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 3,
+   "text": "“Can I help ?” asked Sam. “I could stir .” “You are still a bit short ,” said Mama. “The pot might fall over. But you can help me by fetching things.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Can I help ?” asked Sam. “I could stir .”",
+     "bbox": [
+      94.2,
+      493.2,
+      472.8,
+      530.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“You are still a bit short ,” said Mama. “The pot might fall over. But you can help me by fetching things.”",
+     "bbox": [
+      623.6,
+      216.2,
+      870.7,
+      373.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 4,
+   "text": "“Can you bring me an onion , please.” “This doesn’t smell very nice.” “They will taste nice once they are cooked .”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Can you bring me an onion , please.”",
+     "bbox": [
+      103.2,
+      59.3,
+      463.8,
+      96.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“This doesn’t smell very nice.”",
+     "bbox": [
+      135.6,
+      150.5,
+      431.3,
+      187.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“They will taste nice once they are cooked .”",
+     "bbox": [
+      824.3,
+      116.5,
+      1077.2,
+      183.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 5,
+   "text": "“Now I need some tomatoes . No, that is an apple . The tomatoes are also round and red, but you will find them in the fridge.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Now I need some tomatoes . No, that is an apple . The tomatoes are also round and red, but you will find them in the fridge.”",
+     "bbox": [
+      108.9,
+      198.4,
+      458.0,
+      345.2
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 6,
+   "text": "“Can you bring me potatoes . They are round and brown .” “Is supper ready yet?”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Can you bring me potatoes . They are round and brown .”",
+     "bbox": [
+      56.7,
+      56.4,
+      363.8,
+      126.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "SFX",
+     "text": "“Is supper ready yet?”",
+     "bbox": [
+      690.1,
+      271.9,
+      1010.6,
+      326.4
+     ],
+     "size": 36.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 7,
+   "text": "“If you are hungry you can eat the apple while you wait.” “What about these?” “No, we won’t need biscuits. We can save those for after supper .”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“If you are hungry you can eat the apple while you wait.”",
+     "bbox": [
+      263.3,
+      56.5,
+      510.3,
+      140.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“What about these?”",
+     "bbox": [
+      623.6,
+      56.5,
+      813.8,
+      80.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“No, we won’t need biscuits. We can save those for after supper .”",
+     "bbox": [
+      623.6,
+      116.5,
+      911.0,
+      213.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 8,
+   "text": "“What’s in the pot ?” “It’s a surprise . Wait and see.”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What’s in the pot ?”",
+     "bbox": [
+      185.9,
+      90.1,
+      381.1,
+      127.3
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“It’s a surprise . Wait and see.”",
+     "bbox": [
+      673.9,
+      274.1,
+      1045.7,
+      319.9
+     ],
+     "size": 30.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 9,
+   "text": "“What about this ?” “That is a watermelon . It will be too big for the pot.” “See if you can find some spinach . It is also green .”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“What about this ?”",
+     "bbox": [
+      189.2,
+      86.5,
+      377.7,
+      123.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“That is a watermelon . It will be too big for the pot.”",
+     "bbox": [
+      79.4,
+      146.5,
+      487.6,
+      200.5
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "“See if you can find some spinach . It is also green .”",
+     "bbox": [
+      682.8,
+      463.2,
+      1021.4,
+      530.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 10,
+   "text": "“Please get some bread. No, it won’t go into the pot but on the table .”",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "“Please get some bread.",
+     "bbox": [
+      277.2,
+      116.5,
+      510.2,
+      153.7
+     ],
+     "size": 24.0
+    },
+    {
+     "role": "BODY",
+     "text": "No, it won’t go into the pot but on the table .”",
+     "bbox": [
+      623.6,
+      116.5,
+      888.2,
+      183.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 11,
+   "text": "Mama carried the pot to the table and started to dish up. “What’s in the pot ?” asked Sam.",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "Mama carried the pot to the table and started to dish up. “What’s in the pot ?” asked Sam.",
+     "bbox": [
+      217.6,
+      116.5,
+      510.4,
+      230.5
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 12,
+   "text": "My “Soup!” favourite!",
+   "blocks": [
+    {
+     "role": "BODY",
+     "text": "My “Soup!” favourite!",
+     "bbox": [
+      381.1,
+      139.0,
+      510.2,
+      191.7
+     ],
+     "size": 24.0
+    }
+   ],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 13,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  },
+  {
+   "page_no": 14,
+   "text": "",
+   "blocks": [],
+   "decor_excluded": []
+  }
+ ]
+}
