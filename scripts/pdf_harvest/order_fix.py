@@ -193,8 +193,10 @@ def tag_blocks(blocks, book_body_size):
     sentences = [b for b in blocks if len(b["tokens"]) >= 3]  # 실문장 블록(고립 기준점)
     for b in blocks:
         alpha = re.sub(r"[^A-Za-z]", "", b["text"])
-        # 감탄부호(!·?)로 끝나는 블록은 의성·대사 가능성 — 보수적으로 보존('MEH?' 실측)
-        sfx = bool(SFX_RE.search(b["text"])) or b["text"].rstrip()[-1:] in "!?"
+        # 감탄부호(!·?)로 끝나는 블록은 의성·대사 가능성 — 보수적으로 보존('MEH?' 실측).
+        # 닫는 따옴표류는 벗기고 검사('“YAY!”' 오제외 방지 — 154 전권 실측)
+        sfx = bool(SFX_RE.search(b["text"])) or \
+            b["text"].rstrip().rstrip("\"”’'»)").strip()[-1:] in "!?"
         ratio = b["size"] / book_body_size
         odd_size = not (DECOR_RATIO_LO <= ratio <= DECOR_RATIO_HI)
         allcaps = bool(alpha) and alpha.isupper()
@@ -280,13 +282,17 @@ def fix_book(slug, out_dir):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--slugs", default=None, help="쉼표구분 slug (기본: golden 수록 전권)")
+    ap.add_argument("--slugs-file", default=None, help="slug 목록 파일(줄당 1개 — 전권 적용용)")
     ap.add_argument("--out", default=str(PH / "out_fixed_14"))
     a = ap.parse_args()
     try:
         sys.stdout.reconfigure(encoding="utf-8")
     except Exception:
         pass
-    if a.slugs:
+    if a.slugs_file:
+        slugs = [s.strip() for s in Path(a.slugs_file).read_text(encoding="utf-8").splitlines()
+                 if s.strip()]
+    elif a.slugs:
         slugs = a.slugs.split(",")
     else:
         g = json.loads(GOLDEN.read_text(encoding="utf-8"))

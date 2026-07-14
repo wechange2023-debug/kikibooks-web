@@ -18,6 +18,7 @@
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -25,7 +26,11 @@ from pathlib import Path
 
 PH = Path(__file__).resolve().parent
 GOLDEN = PH / "golden/order_golden.json"
-FIXED = PH / "out_fixed_14"
+_ap = argparse.ArgumentParser()
+_ap.add_argument("--fixed-dir", default=str(PH / "out_fixed_14"),
+                 help="교정 산출물 디렉터리(전권 적용판 회귀 채점 시 out_fixed_154)")
+_args = _ap.parse_args()
+FIXED = Path(_args.fixed_dir)
 REPORT = FIXED / "_golden_score.json"
 
 SFX_RE = re.compile(r"([A-Za-z])\1{2,}|([A-Za-z]{2,4})\2")  # order_fix와 동일 정의
