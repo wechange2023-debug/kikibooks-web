@@ -63,7 +63,7 @@ scratchpad/step3_out/
 
 # Prong-2 검수 뷰어 렌더 산출물 (ADR-0043) — build_review.py로 재생성 가능, 용량 큼
 scripts/pdf_harvest/review_viewer/img/
-scripts/pdf_harvest/review_viewer/review.html
+scripts/pdf_harvest/review_viewer/*.html
 
 # 좌표 재추출 원료 (ADR-0044) — reextract_coords.py로 캐시에서 재생성 가능 (4.9MB)
 scripts/pdf_harvest/out_coords_154/
