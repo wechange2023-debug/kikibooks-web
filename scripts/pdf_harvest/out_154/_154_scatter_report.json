@@ -1,0 +1,2809 @@
+{
+ "adr": "0043 Prong-1",
+ "constants": {
+  "tie_eps": 0.02,
+  "both_high": 0.1,
+  "ok_singles": [
+   "A",
+   "I",
+   "O",
+   "a"
+  ]
+ },
+ "totals": {
+  "v2_worse": 56,
+  "v1_worse": 1,
+  "tie": 97
+ },
+ "review39": {
+  "v2_worse": 35,
+  "v1_worse": 0,
+  "tie": 4
+ },
+ "v1_worse_slugs": [
+  "hello"
+ ],
+ "both_high_scatter_slugs": [],
+ "human_review_set": [
+  "hello"
+ ],
+ "falsification": {
+  "total_gt_15": false,
+  "review_gt_10": false,
+  "verdict": "PASS(예측 부합)"
+ },
+ "books": {
+  "a-day-out": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.38,
+    "fragment_hits": 0,
+    "alpha_tokens": 24
+   },
+   "v2": {
+    "single_char_ratio": 0.6515,
+    "mean_alpha_token_len": 1.23,
+    "fragment_hits": 16,
+    "alpha_tokens": 66
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 0.0
+  },
+  "a-trip-to-the-tap": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 227
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 227
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "a-very-busy-day": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 210
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 210
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 99.05
+  },
+  "aaaaahhh-mmawe": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.96,
+    "fragment_hits": 0,
+    "alpha_tokens": 130
+   },
+   "v2": {
+    "single_char_ratio": 0.1149,
+    "mean_alpha_token_len": 3.64,
+    "fragment_hits": 16,
+    "alpha_tokens": 174
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 54.55
+  },
+  "alexs-super-medicine": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.99,
+    "fragment_hits": 0,
+    "alpha_tokens": 139
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.02,
+    "fragment_hits": 0,
+    "alpha_tokens": 138
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 74.01
+  },
+  "amahle-wants-to-help": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.56,
+    "fragment_hits": 0,
+    "alpha_tokens": 136
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.56,
+    "fragment_hits": 0,
+    "alpha_tokens": 136
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "and-also": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.58,
+    "fragment_hits": 0,
+    "alpha_tokens": 163
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.58,
+    "fragment_hits": 0,
+    "alpha_tokens": 163
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 79.27
+  },
+  "ann-nem-oh-nee-finds-adventure": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 288
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 288
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 70.59
+  },
+  "auntie-bois-gift": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.52,
+    "fragment_hits": 0,
+    "alpha_tokens": 293
+   },
+   "v2": {
+    "single_char_ratio": 0.0629,
+    "mean_alpha_token_len": 4.16,
+    "fragment_hits": 6,
+    "alpha_tokens": 318
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 88.87
+  },
+  "baby-babble": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.18,
+    "fragment_hits": 0,
+    "alpha_tokens": 45
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.24,
+    "fragment_hits": 0,
+    "alpha_tokens": 45
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 52.69
+  },
+  "baby-talk": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.52,
+    "fragment_hits": 0,
+    "alpha_tokens": 181
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.52,
+    "fragment_hits": 0,
+    "alpha_tokens": 181
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 91.16
+  },
+  "babys-first-family-photo": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.22,
+    "fragment_hits": 0,
+    "alpha_tokens": 95
+   },
+   "v2": {
+    "single_char_ratio": 0.0204,
+    "mean_alpha_token_len": 4.05,
+    "fragment_hits": 1,
+    "alpha_tokens": 98
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 87.94
+  },
+  "banzis-busy-bees": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.58,
+    "fragment_hits": 0,
+    "alpha_tokens": 219
+   },
+   "v2": {
+    "single_char_ratio": 0.2568,
+    "mean_alpha_token_len": 3.39,
+    "fragment_hits": 22,
+    "alpha_tokens": 292
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 34.59
+  },
+  "best-friends": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.41,
+    "fragment_hits": 0,
+    "alpha_tokens": 220
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.41,
+    "fragment_hits": 0,
+    "alpha_tokens": 220
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 75.0
+  },
+  "brave-bora": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.47,
+    "fragment_hits": 0,
+    "alpha_tokens": 211
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.48,
+    "fragment_hits": 0,
+    "alpha_tokens": 211
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 98.11
+  },
+  "catch-that-cat": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.18,
+    "fragment_hits": 0,
+    "alpha_tokens": 146
+   },
+   "v2": {
+    "single_char_ratio": 0.2394,
+    "mean_alpha_token_len": 3.24,
+    "fragment_hits": 14,
+    "alpha_tokens": 188
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 61.31
+  },
+  "circles": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.5,
+    "fragment_hits": 0,
+    "alpha_tokens": 344
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.5,
+    "fragment_hits": 0,
+    "alpha_tokens": 344
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 76.16
+  },
+  "clever-pig": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.07,
+    "fragment_hits": 0,
+    "alpha_tokens": 68
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.07,
+    "fragment_hits": 0,
+    "alpha_tokens": 68
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "come-stay-with-me": {
+   "v1": {
+    "single_char_ratio": 0.0104,
+    "mean_alpha_token_len": 4.43,
+    "fragment_hits": 0,
+    "alpha_tokens": 96
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.47,
+    "fragment_hits": 0,
+    "alpha_tokens": 95
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 72.77
+  },
+  "dance-khuzwayo-dance": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.53,
+    "fragment_hits": 0,
+    "alpha_tokens": 180
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 180
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 94.46
+  },
+  "dance-mihlali": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.68,
+    "fragment_hits": 0,
+    "alpha_tokens": 152
+   },
+   "v2": {
+    "single_char_ratio": 0.0941,
+    "mean_alpha_token_len": 4.18,
+    "fragment_hits": 6,
+    "alpha_tokens": 170
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 75.31
+  },
+  "dudus-hat": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.61,
+    "fragment_hits": 0,
+    "alpha_tokens": 314
+   },
+   "v2": {
+    "single_char_ratio": 0.0093,
+    "mean_alpha_token_len": 4.5,
+    "fragment_hits": 0,
+    "alpha_tokens": 323
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 72.87
+  },
+  "egg": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 25
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 25
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "feathered-friends": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.37,
+    "fragment_hits": 0,
+    "alpha_tokens": 185
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.38,
+    "fragment_hits": 0,
+    "alpha_tokens": 185
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 98.93
+  },
+  "fifi-and-teddy": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.47,
+    "fragment_hits": 0,
+    "alpha_tokens": 78
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.47,
+    "fragment_hits": 0,
+    "alpha_tokens": 78
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 94.87
+  },
+  "foxy-joxy-plays-a-trick": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.47,
+    "fragment_hits": 0,
+    "alpha_tokens": 160
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.45,
+    "fragment_hits": 0,
+    "alpha_tokens": 161
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 80.92
+  },
+  "going-places": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.41,
+    "fragment_hits": 0,
+    "alpha_tokens": 139
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.41,
+    "fragment_hits": 0,
+    "alpha_tokens": 139
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "grandpa-farouks-garden": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.57,
+    "fragment_hits": 0,
+    "alpha_tokens": 221
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.57,
+    "fragment_hits": 0,
+    "alpha_tokens": 221
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 91.86
+  },
+  "grumpy-cloud": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.47,
+    "fragment_hits": 0,
+    "alpha_tokens": 158
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.47,
+    "fragment_hits": 0,
+    "alpha_tokens": 158
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 79.75
+  },
+  "hello": {
+   "v1": {
+    "single_char_ratio": 0.0663,
+    "mean_alpha_token_len": 3.92,
+    "fragment_hits": 0,
+    "alpha_tokens": 196
+   },
+   "v2": {
+    "single_char_ratio": 0.0108,
+    "mean_alpha_token_len": 4.13,
+    "fragment_hits": 0,
+    "alpha_tokens": 186
+   },
+   "verdict": "v1_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 84.29
+  },
+  "hello-baby": {
+   "v1": {
+    "single_char_ratio": 0.0541,
+    "mean_alpha_token_len": 5.38,
+    "fragment_hits": 0,
+    "alpha_tokens": 37
+   },
+   "v2": {
+    "single_char_ratio": 0.2128,
+    "mean_alpha_token_len": 4.19,
+    "fragment_hits": 3,
+    "alpha_tokens": 47
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 62.79
+  },
+  "how-do-you-eat": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 185
+   },
+   "v2": {
+    "single_char_ratio": 0.1903,
+    "mean_alpha_token_len": 3.31,
+    "fragment_hits": 14,
+    "alpha_tokens": 226
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 74.7
+  },
+  "how-do-you-sleep": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.91,
+    "fragment_hits": 0,
+    "alpha_tokens": 114
+   },
+   "v2": {
+    "single_char_ratio": 0.6307,
+    "mean_alpha_token_len": 1.85,
+    "fragment_hits": 55,
+    "alpha_tokens": 241
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 0.0
+  },
+  "how-do-you-want-your-eggs": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.31,
+    "fragment_hits": 0,
+    "alpha_tokens": 62
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.31,
+    "fragment_hits": 0,
+    "alpha_tokens": 62
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "how-to-tame-a-monster": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.93,
+    "fragment_hits": 0,
+    "alpha_tokens": 132
+   },
+   "v2": {
+    "single_char_ratio": 0.0345,
+    "mean_alpha_token_len": 4.49,
+    "fragment_hits": 2,
+    "alpha_tokens": 145
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 54.51
+  },
+  "i-dont-want-to-go-to-sleep": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.46,
+    "fragment_hits": 0,
+    "alpha_tokens": 212
+   },
+   "v2": {
+    "single_char_ratio": 0.6942,
+    "mean_alpha_token_len": 1.75,
+    "fragment_hits": 126,
+    "alpha_tokens": 533
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 0.0
+  },
+  "i-hate-winter": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.83,
+    "fragment_hits": 0,
+    "alpha_tokens": 190
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.83,
+    "fragment_hits": 0,
+    "alpha_tokens": 190
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 78.95
+  },
+  "i-want-to": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 2.8,
+    "fragment_hits": 0,
+    "alpha_tokens": 50
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 2.8,
+    "fragment_hits": 0,
+    "alpha_tokens": 50
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "im-the-colour-of-honey": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.99,
+    "fragment_hits": 0,
+    "alpha_tokens": 299
+   },
+   "v2": {
+    "single_char_ratio": 0.1335,
+    "mean_alpha_token_len": 3.52,
+    "fragment_hits": 11,
+    "alpha_tokens": 337
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 66.36
+  },
+  "its-my-birthday": {
+   "v1": {
+    "single_char_ratio": 0.0036,
+    "mean_alpha_token_len": 4.49,
+    "fragment_hits": 0,
+    "alpha_tokens": 276
+   },
+   "v2": {
+    "single_char_ratio": 0.0352,
+    "mean_alpha_token_len": 4.36,
+    "fragment_hits": 3,
+    "alpha_tokens": 284
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 72.65
+  },
+  "its-my-book": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.16,
+    "fragment_hits": 0,
+    "alpha_tokens": 122
+   },
+   "v2": {
+    "single_char_ratio": 0.4167,
+    "mean_alpha_token_len": 2.74,
+    "fragment_hits": 26,
+    "alpha_tokens": 192
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 25.7
+  },
+  "joannas-grannies": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.46,
+    "fragment_hits": 0,
+    "alpha_tokens": 41
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.46,
+    "fragment_hits": 0,
+    "alpha_tokens": 41
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "jock-and-me": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.38,
+    "fragment_hits": 0,
+    "alpha_tokens": 76
+   },
+   "v2": {
+    "single_char_ratio": 0.1705,
+    "mean_alpha_token_len": 3.78,
+    "fragment_hits": 5,
+    "alpha_tokens": 88
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 59.76
+  },
+  "julia-loves-books": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.74,
+    "fragment_hits": 0,
+    "alpha_tokens": 76
+   },
+   "v2": {
+    "single_char_ratio": 0.4275,
+    "mean_alpha_token_len": 2.75,
+    "fragment_hits": 21,
+    "alpha_tokens": 131
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 31.4
+  },
+  "just-like-me": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.43,
+    "fragment_hits": 0,
+    "alpha_tokens": 194
+   },
+   "v2": {
+    "single_char_ratio": 0.0631,
+    "mean_alpha_token_len": 4.17,
+    "fragment_hits": 5,
+    "alpha_tokens": 206
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 91.09
+  },
+  "khaya-wants-to-row": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.34,
+    "fragment_hits": 0,
+    "alpha_tokens": 297
+   },
+   "v2": {
+    "single_char_ratio": 0.4124,
+    "mean_alpha_token_len": 2.64,
+    "fragment_hits": 77,
+    "alpha_tokens": 485
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 23.54
+  },
+  "knight-times": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 35
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 35
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 77.14
+  },
+  "lebo-and-gogos-tea-party": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.09,
+    "fragment_hits": 0,
+    "alpha_tokens": 297
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.09,
+    "fragment_hits": 0,
+    "alpha_tokens": 297
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "lesedis-sandbox": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.13,
+    "fragment_hits": 0,
+    "alpha_tokens": 232
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.13,
+    "fragment_hits": 0,
+    "alpha_tokens": 232
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "lets-be-friends": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.94,
+    "fragment_hits": 0,
+    "alpha_tokens": 67
+   },
+   "v2": {
+    "single_char_ratio": 0.3608,
+    "mean_alpha_token_len": 2.72,
+    "fragment_hits": 9,
+    "alpha_tokens": 97
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 30.49
+  },
+  "lets-go-on-a-litter-hunt": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 251
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.08,
+    "fragment_hits": 0,
+    "alpha_tokens": 249
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 96.03
+  },
+  "lets-have-an-inside-day": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.25,
+    "fragment_hits": 0,
+    "alpha_tokens": 81
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.25,
+    "fragment_hits": 0,
+    "alpha_tokens": 81
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "lets-party": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.62,
+    "fragment_hits": 0,
+    "alpha_tokens": 157
+   },
+   "v2": {
+    "single_char_ratio": 0.0309,
+    "mean_alpha_token_len": 4.48,
+    "fragment_hits": 1,
+    "alpha_tokens": 162
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 73.29
+  },
+  "lions-are-always-brave": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.21,
+    "fragment_hits": 0,
+    "alpha_tokens": 47
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.46,
+    "fragment_hits": 0,
+    "alpha_tokens": 48
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 82.35
+  },
+  "little-goat": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.48,
+    "fragment_hits": 0,
+    "alpha_tokens": 187
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.5,
+    "fragment_hits": 0,
+    "alpha_tokens": 186
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 80.27
+  },
+  "little-shoots": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.69,
+    "fragment_hits": 0,
+    "alpha_tokens": 91
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.86,
+    "fragment_hits": 0,
+    "alpha_tokens": 90
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 50.79
+  },
+  "lonwabos-recipes": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.53,
+    "fragment_hits": 0,
+    "alpha_tokens": 296
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.53,
+    "fragment_hits": 0,
+    "alpha_tokens": 296
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 75.68
+  },
+  "look-out-luthando": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.19,
+    "fragment_hits": 0,
+    "alpha_tokens": 252
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.19,
+    "fragment_hits": 0,
+    "alpha_tokens": 252
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 77.78
+  },
+  "look-up": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.47,
+    "fragment_hits": 0,
+    "alpha_tokens": 102
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.62,
+    "fragment_hits": 0,
+    "alpha_tokens": 102
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 90.52
+  },
+  "malis-friend": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.42,
+    "fragment_hits": 0,
+    "alpha_tokens": 273
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.42,
+    "fragment_hits": 0,
+    "alpha_tokens": 273
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 67.77
+  },
+  "mama-antelopes-house": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.64,
+    "fragment_hits": 0,
+    "alpha_tokens": 214
+   },
+   "v2": {
+    "single_char_ratio": 0.0776,
+    "mean_alpha_token_len": 4.06,
+    "fragment_hits": 9,
+    "alpha_tokens": 245
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 76.47
+  },
+  "mama-whats-for-lunch": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.85,
+    "fragment_hits": 0,
+    "alpha_tokens": 216
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.85,
+    "fragment_hits": 0,
+    "alpha_tokens": 216
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 95.37
+  },
+  "matthew-is-up": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.65,
+    "fragment_hits": 0,
+    "alpha_tokens": 184
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.65,
+    "fragment_hits": 0,
+    "alpha_tokens": 184
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "mazi-learns-to-play": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.25,
+    "fragment_hits": 0,
+    "alpha_tokens": 289
+   },
+   "v2": {
+    "single_char_ratio": 0.059,
+    "mean_alpha_token_len": 4.0,
+    "fragment_hits": 5,
+    "alpha_tokens": 305
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 57.33
+  },
+  "meerkat-magic": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.58,
+    "fragment_hits": 0,
+    "alpha_tokens": 60
+   },
+   "v2": {
+    "single_char_ratio": 0.0323,
+    "mean_alpha_token_len": 4.42,
+    "fragment_hits": 1,
+    "alpha_tokens": 62
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 83.74
+  },
+  "mina-and-the-birthday-dress": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.05,
+    "fragment_hits": 0,
+    "alpha_tokens": 132
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.12,
+    "fragment_hits": 0,
+    "alpha_tokens": 130
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 96.95
+  },
+  "miss-tiny-chef": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.24,
+    "fragment_hits": 0,
+    "alpha_tokens": 309
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.24,
+    "fragment_hits": 0,
+    "alpha_tokens": 309
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "mogaus-gift": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.84,
+    "fragment_hits": 0,
+    "alpha_tokens": 189
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.84,
+    "fragment_hits": 0,
+    "alpha_tokens": 189
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 86.46
+  },
+  "moms-hands": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 159
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 159
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 88.68
+  },
+  "moms-red-coat": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.9,
+    "fragment_hits": 0,
+    "alpha_tokens": 293
+   },
+   "v2": {
+    "single_char_ratio": 0.1311,
+    "mean_alpha_token_len": 3.49,
+    "fragment_hits": 15,
+    "alpha_tokens": 328
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 74.32
+  },
+  "monkey-business": {
+   "v1": {
+    "single_char_ratio": 0.0134,
+    "mean_alpha_token_len": 4.41,
+    "fragment_hits": 1,
+    "alpha_tokens": 224
+   },
+   "v2": {
+    "single_char_ratio": 0.1798,
+    "mean_alpha_token_len": 3.69,
+    "fragment_hits": 14,
+    "alpha_tokens": 267
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 71.31
+  },
+  "mud": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.43,
+    "fragment_hits": 0,
+    "alpha_tokens": 151
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.43,
+    "fragment_hits": 0,
+    "alpha_tokens": 151
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 81.46
+  },
+  "my-dream-in-the-drawer": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.67,
+    "fragment_hits": 0,
+    "alpha_tokens": 248
+   },
+   "v2": {
+    "single_char_ratio": 0.2684,
+    "mean_alpha_token_len": 2.93,
+    "fragment_hits": 26,
+    "alpha_tokens": 313
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 57.84
+  },
+  "my-inside-weather": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.19,
+    "fragment_hits": 0,
+    "alpha_tokens": 190
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.19,
+    "fragment_hits": 0,
+    "alpha_tokens": 190
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "my-special-blankie": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.03,
+    "fragment_hits": 0,
+    "alpha_tokens": 115
+   },
+   "v2": {
+    "single_char_ratio": 0.1037,
+    "mean_alpha_token_len": 3.46,
+    "fragment_hits": 6,
+    "alpha_tokens": 135
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 73.12
+  },
+  "my-special-hair": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.97,
+    "fragment_hits": 0,
+    "alpha_tokens": 288
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.99,
+    "fragment_hits": 0,
+    "alpha_tokens": 287
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 97.26
+  },
+  "no": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.55,
+    "fragment_hits": 0,
+    "alpha_tokens": 69
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.55,
+    "fragment_hits": 0,
+    "alpha_tokens": 69
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 94.2
+  },
+  "nomvundla-and-the-chilli-eating-contest": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.89,
+    "fragment_hits": 0,
+    "alpha_tokens": 174
+   },
+   "v2": {
+    "single_char_ratio": 0.3412,
+    "mean_alpha_token_len": 3.31,
+    "fragment_hits": 29,
+    "alpha_tokens": 255
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 47.59
+  },
+  "o-rain-come": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 199
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 199
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 84.92
+  },
+  "open-the-door": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.62,
+    "fragment_hits": 0,
+    "alpha_tokens": 200
+   },
+   "v2": {
+    "single_char_ratio": 0.0381,
+    "mean_alpha_token_len": 4.4,
+    "fragment_hits": 4,
+    "alpha_tokens": 210
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 90.24
+  },
+  "oumas-amazing-flowers": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.66,
+    "fragment_hits": 0,
+    "alpha_tokens": 155
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.66,
+    "fragment_hits": 0,
+    "alpha_tokens": 155
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "oyisa-and-the-giant-tree": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.4,
+    "fragment_hits": 0,
+    "alpha_tokens": 188
+   },
+   "v2": {
+    "single_char_ratio": 0.2131,
+    "mean_alpha_token_len": 3.35,
+    "fragment_hits": 18,
+    "alpha_tokens": 244
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 56.76
+  },
+  "pako-the-pigeon-disappears": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.37,
+    "fragment_hits": 0,
+    "alpha_tokens": 203
+   },
+   "v2": {
+    "single_char_ratio": 0.0679,
+    "mean_alpha_token_len": 4.01,
+    "fragment_hits": 6,
+    "alpha_tokens": 221
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 68.0
+  },
+  "palesa-can-walk": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.91,
+    "fragment_hits": 0,
+    "alpha_tokens": 148
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.97,
+    "fragment_hits": 0,
+    "alpha_tokens": 148
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 95.99
+  },
+  "samoosas": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.14,
+    "fragment_hits": 0,
+    "alpha_tokens": 183
+   },
+   "v2": {
+    "single_char_ratio": 0.3953,
+    "mean_alpha_token_len": 3.16,
+    "fragment_hits": 36,
+    "alpha_tokens": 296
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 21.81
+  },
+  "sams-treasures": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.25,
+    "fragment_hits": 0,
+    "alpha_tokens": 161
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.23,
+    "fragment_hits": 0,
+    "alpha_tokens": 162
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 95.08
+  },
+  "scared-tumi": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.98,
+    "fragment_hits": 0,
+    "alpha_tokens": 128
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.02,
+    "fragment_hits": 0,
+    "alpha_tokens": 128
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 90.84
+  },
+  "senzo-and-the-sun": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.64,
+    "fragment_hits": 0,
+    "alpha_tokens": 228
+   },
+   "v2": {
+    "single_char_ratio": 0.3427,
+    "mean_alpha_token_len": 2.92,
+    "fragment_hits": 35,
+    "alpha_tokens": 356
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 42.9
+  },
+  "shaka-and-mazi": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.19,
+    "fragment_hits": 0,
+    "alpha_tokens": 188
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.21,
+    "fragment_hits": 0,
+    "alpha_tokens": 187
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 73.94
+  },
+  "shhhhh": {
+   "v1": {
+    "single_char_ratio": 0.0099,
+    "mean_alpha_token_len": 5.51,
+    "fragment_hits": 0,
+    "alpha_tokens": 101
+   },
+   "v2": {
+    "single_char_ratio": 0.487,
+    "mean_alpha_token_len": 2.42,
+    "fragment_hits": 41,
+    "alpha_tokens": 230
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 0.0
+  },
+  "sing-to-me": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.11,
+    "fragment_hits": 0,
+    "alpha_tokens": 64
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.11,
+    "fragment_hits": 0,
+    "alpha_tokens": 64
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "small-birds-big-adventure": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.13,
+    "fragment_hits": 0,
+    "alpha_tokens": 234
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.13,
+    "fragment_hits": 0,
+    "alpha_tokens": 234
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "tata-comes-home": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.57,
+    "fragment_hits": 0,
+    "alpha_tokens": 220
+   },
+   "v2": {
+    "single_char_ratio": 0.1012,
+    "mean_alpha_token_len": 3.91,
+    "fragment_hits": 11,
+    "alpha_tokens": 257
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 78.84
+  },
+  "tejus-shadow": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.62,
+    "fragment_hits": 0,
+    "alpha_tokens": 172
+   },
+   "v2": {
+    "single_char_ratio": 0.2008,
+    "mean_alpha_token_len": 3.33,
+    "fragment_hits": 18,
+    "alpha_tokens": 239
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 48.37
+  },
+  "thats-not-thabi-thats-a-hippopotamus": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.48,
+    "fragment_hits": 0,
+    "alpha_tokens": 95
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.43,
+    "fragment_hits": 0,
+    "alpha_tokens": 96
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 75.92
+  },
+  "the-baby-book": {
+   "v1": {
+    "single_char_ratio": 0.0013,
+    "mean_alpha_token_len": 4.65,
+    "fragment_hits": 0,
+    "alpha_tokens": 2354
+   },
+   "v2": {
+    "single_char_ratio": 0.1439,
+    "mean_alpha_token_len": 4.08,
+    "fragment_hits": 133,
+    "alpha_tokens": 2682
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 37.3
+  },
+  "the-best-gift": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.83,
+    "fragment_hits": 0,
+    "alpha_tokens": 390
+   },
+   "v2": {
+    "single_char_ratio": 0.1426,
+    "mean_alpha_token_len": 3.94,
+    "fragment_hits": 25,
+    "alpha_tokens": 477
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 56.73
+  },
+  "the-best-nest": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.79,
+    "fragment_hits": 0,
+    "alpha_tokens": 169
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.79,
+    "fragment_hits": 0,
+    "alpha_tokens": 169
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "the-biscuit-jar-must-fall": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.4,
+    "fragment_hits": 0,
+    "alpha_tokens": 290
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.4,
+    "fragment_hits": 0,
+    "alpha_tokens": 290
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 97.93
+  },
+  "the-bounce": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.15,
+    "fragment_hits": 0,
+    "alpha_tokens": 345
+   },
+   "v2": {
+    "single_char_ratio": 0.0057,
+    "mean_alpha_token_len": 4.18,
+    "fragment_hits": 2,
+    "alpha_tokens": 352
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 78.88
+  },
+  "the-box": {
+   "v1": {
+    "single_char_ratio": 0.0152,
+    "mean_alpha_token_len": 4.05,
+    "fragment_hits": 0,
+    "alpha_tokens": 66
+   },
+   "v2": {
+    "single_char_ratio": 0.2118,
+    "mean_alpha_token_len": 3.14,
+    "fragment_hits": 6,
+    "alpha_tokens": 85
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 70.86
+  },
+  "the-boy-who-only-ate-pancakes": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.59,
+    "fragment_hits": 0,
+    "alpha_tokens": 296
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.59,
+    "fragment_hits": 0,
+    "alpha_tokens": 296
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 96.36
+  },
+  "the-cottonwool-doctor": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.52,
+    "fragment_hits": 0,
+    "alpha_tokens": 782
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.52,
+    "fragment_hits": 0,
+    "alpha_tokens": 782
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 99.75
+  },
+  "the-dream-pillow": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 223
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.04,
+    "fragment_hits": 0,
+    "alpha_tokens": 223
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "the-fish-and-chickens-wedding": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.67,
+    "fragment_hits": 0,
+    "alpha_tokens": 672
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.67,
+    "fragment_hits": 0,
+    "alpha_tokens": 672
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 85.12
+  },
+  "the-fish-that-couldnt-swim": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.71,
+    "fragment_hits": 0,
+    "alpha_tokens": 126
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.79,
+    "fragment_hits": 0,
+    "alpha_tokens": 126
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 80.54
+  },
+  "the-great-cake-contest": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.09,
+    "fragment_hits": 0,
+    "alpha_tokens": 274
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.11,
+    "fragment_hits": 0,
+    "alpha_tokens": 274
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 89.82
+  },
+  "the-great-tidy-up": {
+   "v1": {
+    "single_char_ratio": 0.0417,
+    "mean_alpha_token_len": 3.99,
+    "fragment_hits": 2,
+    "alpha_tokens": 144
+   },
+   "v2": {
+    "single_char_ratio": 0.0417,
+    "mean_alpha_token_len": 3.99,
+    "fragment_hits": 2,
+    "alpha_tokens": 144
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 95.83
+  },
+  "the-lazy-ant": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.11,
+    "fragment_hits": 0,
+    "alpha_tokens": 298
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.11,
+    "fragment_hits": 0,
+    "alpha_tokens": 298
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "the-lost-laugh": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.33,
+    "fragment_hits": 0,
+    "alpha_tokens": 200
+   },
+   "v2": {
+    "single_char_ratio": 0.3345,
+    "mean_alpha_token_len": 2.94,
+    "fragment_hits": 35,
+    "alpha_tokens": 290
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 44.33
+  },
+  "the-memory-tree": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.72,
+    "fragment_hits": 0,
+    "alpha_tokens": 365
+   },
+   "v2": {
+    "single_char_ratio": 0.0081,
+    "mean_alpha_token_len": 4.65,
+    "fragment_hits": 0,
+    "alpha_tokens": 370
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 97.55
+  },
+  "the-monster-must-go": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.32,
+    "fragment_hits": 0,
+    "alpha_tokens": 90
+   },
+   "v2": {
+    "single_char_ratio": 0.5896,
+    "mean_alpha_token_len": 1.82,
+    "fragment_hits": 45,
+    "alpha_tokens": 212
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 0.0
+  },
+  "the-new-road": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.52,
+    "fragment_hits": 0,
+    "alpha_tokens": 151
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.57,
+    "fragment_hits": 0,
+    "alpha_tokens": 150
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 88.74
+  },
+  "the-one-in-the-middle": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.88,
+    "fragment_hits": 0,
+    "alpha_tokens": 129
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.88,
+    "fragment_hits": 0,
+    "alpha_tokens": 129
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "the-pumpkin-chase": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.46,
+    "fragment_hits": 0,
+    "alpha_tokens": 259
+   },
+   "v2": {
+    "single_char_ratio": 0.0264,
+    "mean_alpha_token_len": 4.35,
+    "fragment_hits": 1,
+    "alpha_tokens": 265
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 79.05
+  },
+  "the-rainbow-cloud": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 308
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.54,
+    "fragment_hits": 0,
+    "alpha_tokens": 308
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "the-sausage-dog": {
+   "v1": {
+    "single_char_ratio": 0.0069,
+    "mean_alpha_token_len": 4.67,
+    "fragment_hits": 0,
+    "alpha_tokens": 144
+   },
+   "v2": {
+    "single_char_ratio": 0.097,
+    "mean_alpha_token_len": 4.08,
+    "fragment_hits": 7,
+    "alpha_tokens": 165
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 74.76
+  },
+  "the-sea": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.22,
+    "fragment_hits": 0,
+    "alpha_tokens": 177
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.22,
+    "fragment_hits": 0,
+    "alpha_tokens": 177
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "the-things-that-really-matter": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.92,
+    "fragment_hits": 0,
+    "alpha_tokens": 268
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.92,
+    "fragment_hits": 0,
+    "alpha_tokens": 268
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 76.49
+  },
+  "the-three-doof-doofs": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.68,
+    "fragment_hits": 0,
+    "alpha_tokens": 273
+   },
+   "v2": {
+    "single_char_ratio": 0.0803,
+    "mean_alpha_token_len": 4.27,
+    "fragment_hits": 9,
+    "alpha_tokens": 299
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 76.92
+  },
+  "the-very-tired-lioness": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.31,
+    "fragment_hits": 0,
+    "alpha_tokens": 258
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.31,
+    "fragment_hits": 0,
+    "alpha_tokens": 258
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "the-window-seat": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.48,
+    "fragment_hits": 0,
+    "alpha_tokens": 178
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.48,
+    "fragment_hits": 0,
+    "alpha_tokens": 178
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 94.38
+  },
+  "theres-a-fire-on-the-mountain": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.66,
+    "fragment_hits": 0,
+    "alpha_tokens": 246
+   },
+   "v2": {
+    "single_char_ratio": 0.1803,
+    "mean_alpha_token_len": 3.9,
+    "fragment_hits": 18,
+    "alpha_tokens": 294
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 67.16
+  },
+  "theres-an-alien-in-my-house": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 3.99,
+    "fragment_hits": 0,
+    "alpha_tokens": 157
+   },
+   "v2": {
+    "single_char_ratio": 0.2383,
+    "mean_alpha_token_len": 3.24,
+    "fragment_hits": 17,
+    "alpha_tokens": 193
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 67.38
+  },
+  "thuli-special-and-the-secret": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.9,
+    "fragment_hits": 0,
+    "alpha_tokens": 266
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.9,
+    "fragment_hits": 0,
+    "alpha_tokens": 266
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "thulis-tissue": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.24,
+    "fragment_hits": 0,
+    "alpha_tokens": 54
+   },
+   "v2": {
+    "single_char_ratio": 0.3721,
+    "mean_alpha_token_len": 2.63,
+    "fragment_hits": 12,
+    "alpha_tokens": 86
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 29.08
+  },
+  "tigs-world": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.34,
+    "fragment_hits": 0,
+    "alpha_tokens": 175
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.39,
+    "fragment_hits": 0,
+    "alpha_tokens": 173
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 89.66
+  },
+  "tikky-boom-tish": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.42,
+    "fragment_hits": 0,
+    "alpha_tokens": 73
+   },
+   "v2": {
+    "single_char_ratio": 0.125,
+    "mean_alpha_token_len": 3.65,
+    "fragment_hits": 3,
+    "alpha_tokens": 88
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 49.69
+  },
+  "tlotlegos-tea-party": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.4,
+    "fragment_hits": 0,
+    "alpha_tokens": 346
+   },
+   "v2": {
+    "single_char_ratio": 0.0656,
+    "mean_alpha_token_len": 4.16,
+    "fragment_hits": 8,
+    "alpha_tokens": 366
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 54.74
+  },
+  "tones-big-drop": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.55,
+    "fragment_hits": 0,
+    "alpha_tokens": 278
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.55,
+    "fragment_hits": 0,
+    "alpha_tokens": 278
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 92.11
+  },
+  "tumi-goes-to-the-park": {
+   "v1": {
+    "single_char_ratio": 0.0328,
+    "mean_alpha_token_len": 4.29,
+    "fragment_hits": 1,
+    "alpha_tokens": 122
+   },
+   "v2": {
+    "single_char_ratio": 0.0246,
+    "mean_alpha_token_len": 4.3,
+    "fragment_hits": 0,
+    "alpha_tokens": 122
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 86.35
+  },
+  "unathi-and-the-dirty-smelly-beast": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.24,
+    "fragment_hits": 0,
+    "alpha_tokens": 122
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.22,
+    "fragment_hits": 0,
+    "alpha_tokens": 122
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 78.86
+  },
+  "whats-at-the-park": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.33,
+    "fragment_hits": 0,
+    "alpha_tokens": 186
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.33,
+    "fragment_hits": 0,
+    "alpha_tokens": 186
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "whats-happened-to-our-water": {
+   "v1": {
+    "single_char_ratio": 0.0085,
+    "mean_alpha_token_len": 4.21,
+    "fragment_hits": 0,
+    "alpha_tokens": 236
+   },
+   "v2": {
+    "single_char_ratio": 0.2768,
+    "mean_alpha_token_len": 2.96,
+    "fragment_hits": 33,
+    "alpha_tokens": 336
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 50.44
+  },
+  "whats-in-the-pot": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.26,
+    "fragment_hits": 0,
+    "alpha_tokens": 229
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.25,
+    "fragment_hits": 0,
+    "alpha_tokens": 229
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 63.56
+  },
+  "whats-next": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.81,
+    "fragment_hits": 0,
+    "alpha_tokens": 145
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.7,
+    "fragment_hits": 0,
+    "alpha_tokens": 148
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 94.59
+  },
+  "where-is-lulu": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.09,
+    "fragment_hits": 0,
+    "alpha_tokens": 95
+   },
+   "v2": {
+    "single_char_ratio": 0.0495,
+    "mean_alpha_token_len": 3.85,
+    "fragment_hits": 2,
+    "alpha_tokens": 101
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 92.93
+  },
+  "where-is-thabo": {
+   "v1": {
+    "single_char_ratio": 0.0097,
+    "mean_alpha_token_len": 4.28,
+    "fragment_hits": 0,
+    "alpha_tokens": 103
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.32,
+    "fragment_hits": 0,
+    "alpha_tokens": 102
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 98.05
+  },
+  "who-takes-the-train": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.5,
+    "fragment_hits": 0,
+    "alpha_tokens": 158
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.5,
+    "fragment_hits": 0,
+    "alpha_tokens": 158
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 96.2
+  },
+  "who-took-my-shoe": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.46,
+    "fragment_hits": 0,
+    "alpha_tokens": 223
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.44,
+    "fragment_hits": 0,
+    "alpha_tokens": 224
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 75.84
+  },
+  "whos-that-baby": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.33,
+    "fragment_hits": 0,
+    "alpha_tokens": 64
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.2,
+    "fragment_hits": 0,
+    "alpha_tokens": 66
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 53.85
+  },
+  "whose-shoe-is-this": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.46,
+    "fragment_hits": 0,
+    "alpha_tokens": 101
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.46,
+    "fragment_hits": 0,
+    "alpha_tokens": 101
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 96.04
+  },
+  "why-birds-sing-at-dawn": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.42,
+    "fragment_hits": 0,
+    "alpha_tokens": 208
+   },
+   "v2": {
+    "single_char_ratio": 0.2261,
+    "mean_alpha_token_len": 3.51,
+    "fragment_hits": 20,
+    "alpha_tokens": 261
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 61.02
+  },
+  "why-is-there-a-hole-in-the-wall": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.68,
+    "fragment_hits": 0,
+    "alpha_tokens": 192
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.68,
+    "fragment_hits": 0,
+    "alpha_tokens": 192
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "why-the-owl-never-sleeps": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.34,
+    "fragment_hits": 0,
+    "alpha_tokens": 221
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.34,
+    "fragment_hits": 0,
+    "alpha_tokens": 221
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "wiggle-jiggle": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.4,
+    "fragment_hits": 0,
+    "alpha_tokens": 104
+   },
+   "v2": {
+    "single_char_ratio": 0.5891,
+    "mean_alpha_token_len": 1.76,
+    "fragment_hits": 45,
+    "alpha_tokens": 258
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 0.0
+  },
+  "woof-woof": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.37,
+    "fragment_hits": 0,
+    "alpha_tokens": 30
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 5.37,
+    "fragment_hits": 0,
+    "alpha_tokens": 30
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "yapo-saves-the-day": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.44,
+    "fragment_hits": 0,
+    "alpha_tokens": 360
+   },
+   "v2": {
+    "single_char_ratio": 0.0421,
+    "mean_alpha_token_len": 4.2,
+    "fragment_hits": 6,
+    "alpha_tokens": 380
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 76.93
+  },
+  "yes-you-can": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.37,
+    "fragment_hits": 0,
+    "alpha_tokens": 238
+   },
+   "v2": {
+    "single_char_ratio": 0.0125,
+    "mean_alpha_token_len": 4.32,
+    "fragment_hits": 1,
+    "alpha_tokens": 240
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 97.11
+  },
+  "you-yes-you": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.01,
+    "fragment_hits": 0,
+    "alpha_tokens": 264
+   },
+   "v2": {
+    "single_char_ratio": 0.2102,
+    "mean_alpha_token_len": 3.18,
+    "fragment_hits": 25,
+    "alpha_tokens": 333
+   },
+   "verdict": "v2_worse",
+   "both_high_scatter": false,
+   "label": "REVIEW",
+   "agree": 57.74
+  },
+  "zandi-and-birdy-monster": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.69,
+    "fragment_hits": 0,
+    "alpha_tokens": 188
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.71,
+    "fragment_hits": 0,
+    "alpha_tokens": 187
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 89.33
+  },
+  "zanele-sees-numbers": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.52,
+    "fragment_hits": 0,
+    "alpha_tokens": 190
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.52,
+    "fragment_hits": 0,
+    "alpha_tokens": 190
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "zenandes-helping-hands": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.57,
+    "fragment_hits": 0,
+    "alpha_tokens": 195
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.57,
+    "fragment_hits": 0,
+    "alpha_tokens": 195
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 100.0
+  },
+  "zibu-and-zizo": {
+   "v1": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.58,
+    "fragment_hits": 0,
+    "alpha_tokens": 113
+   },
+   "v2": {
+    "single_char_ratio": 0.0,
+    "mean_alpha_token_len": 4.63,
+    "fragment_hits": 0,
+    "alpha_tokens": 113
+   },
+   "verdict": "tie",
+   "both_high_scatter": false,
+   "label": "AUTO",
+   "agree": 87.72
+  }
+ }
+}
