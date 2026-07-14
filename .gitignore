@@ -60,3 +60,7 @@ dry_run_*.txt
 
 # STEP 3 표지 변환물 (ADR-0032) — 206장 webp, 버킷에 실물 업로드 완료. 재현 가능.
 scratchpad/step3_out/
+
+# Prong-2 검수 뷰어 렌더 산출물 (ADR-0043) — build_review.py로 재생성 가능, 용량 큼
+scripts/pdf_harvest/review_viewer/img/
+scripts/pdf_harvest/review_viewer/review.html
