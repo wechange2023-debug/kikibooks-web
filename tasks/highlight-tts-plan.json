@@ -1,0 +1,18 @@
+{
+  "plan": "highlight-tts",
+  "created": "2026-07-15",
+  "head_at_creation": "f914bf2",
+  "confirmed_pipeline": ["extract_draft","human_review","tts","marks_highlight","service_on"],
+  "total_phases": 7,
+  "remaining_phases": 7,
+  "last_successful_state": null,
+  "phases": [
+    {"id":"A","name":"데이터 모델(검수·상태·확정텍스트·캐릭터매핑 스키마)","status":"pending","depends_on":[],"critical_path":true},
+    {"id":"B","name":"ADR 정리(0017/0027/0035/0038/0039/0043 + 신규 0045/0046)","status":"pending","depends_on":[],"critical_path":false},
+    {"id":"C","name":"관리자 검수 화면(review_viewer/order_fix/golden 재활용)","status":"pending","depends_on":["A"],"critical_path":true},
+    {"id":"D","name":"자체 뷰어(이미지+자막+TTS버튼+하이라이트; 레이아웃 Claude Design 선검증)","status":"pending","depends_on":["A"],"critical_path":true},
+    {"id":"E","name":"TTS 154권(marks 경로·1인 기본·따옴표 화자분리 초벌·캐릭터 옵션)","status":"pending","depends_on":["A"],"critical_path":true},
+    {"id":"F","name":"사용자 노출(has_audio getBookById 보강+아이콘·서비스 ON 연동)","status":"pending","depends_on":["E"],"critical_path":true},
+    {"id":"G","name":"백로그 정리(staging 하드코딩·prefix·B집합5·결손15·.gitignore)","status":"pending","depends_on":[],"critical_path":false}
+  ]
+}
