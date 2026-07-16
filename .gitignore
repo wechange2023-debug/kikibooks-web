@@ -67,3 +67,7 @@ scripts/pdf_harvest/review_viewer/*.html
 
 # 좌표 재추출 원료 (ADR-0044) — reextract_coords.py로 캐시에서 재생성 가능 (4.9MB)
 scripts/pdf_harvest/out_coords_154/
+
+# 페이지 이미지 트랙 (ADR-0049) — PDF 캐시·렌더 이미지. 재생성 체인 커밋됨, 영구본은 Storage.
+scripts/pdf_harvest/_pdf_cache/
+scripts/pdf_harvest/out_images_154/
