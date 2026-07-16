@@ -1,7 +1,8 @@
 -- 목적: book_text 페이지 단위 확정텍스트 적재 (이 파일: 4of4)
 -- 실행자: 팀장(Supabase SQL Editor). 워커 초안. DB 직접 쓰기 금지.
 -- 값 출처: scripts/pdf_harvest/out_fixed_154 (ADR-0044 order_fix 확정 JSON)
--- 근거 ADR: ADR-0046(book_text 스키마), ADR-0047(적재 대상 152권)
+-- 근거 ADR: ADR-0046, ADR-0047, ADR-0048
+-- source: pdf_harvest_v2_orderfix (ADR-0048 D1)
 -- 이 파일 담당: slug the-sausage-dog ~ zibu-and-zizo, 38권 / 532행
 -- 생성기: scripts/pdf_harvest/gen_book_text_sql.py
 -- 매핑: page_index = page_no - 1 (ADR-0046 D2). blocks = order_fix 원본 블록 → jsonb.
@@ -18,8 +19,8 @@ SELECT count(*) AS books_found FROM books
 
 -- ───────── [적재] ─────────
 BEGIN;
-INSERT INTO book_text (book_id, page_index, text, blocks)
-SELECT b.id, v.page_index, v.text, v.blocks::jsonb
+INSERT INTO book_text (book_id, page_index, text, blocks, source)
+SELECT b.id, v.page_index, v.text, v.blocks::jsonb, $$pdf_harvest_v2_orderfix$$
   FROM (VALUES
     ('the-sausage-dog', 0, $$Mama and Thembsie go shopping.$$, $$[{"role": "BODY", "text": "Mama and Thembsie go shopping.", "bbox": [85.0, 225.8, 481.9, 249.8], "size": 24.0}]$$),
     ('the-sausage-dog', 1, $$‘Mama, that dog looks like a sausage. A sausage with legs and a head.’ ‘And a tail!’$$, $$[{"role": "BODY", "text": "‘Mama, that dog looks like a sausage. A sausage with legs and a head.’", "bbox": [64.5, 88.0, 502.4, 140.8], "size": 24.0}, {"role": "BODY", "text": "‘And a tail!’", "bbox": [785.5, 478.5, 915.3, 502.5], "size": 24.0}]$$),
@@ -568,3 +569,7 @@ SELECT count(*) AS rows_after FROM book_text bt
 SELECT DISTINCT v.slug FROM (VALUES ('the-sausage-dog'), ('the-sea'), ('the-things-that-really-matter'), ('the-three-doof-doofs'), ('the-very-tired-lioness'), ('the-window-seat'), ('theres-a-fire-on-the-mountain'), ('theres-an-alien-in-my-house'), ('thuli-special-and-the-secret'), ('thulis-tissue'), ('tigs-world'), ('tikky-boom-tish'), ('tlotlegos-tea-party'), ('tones-big-drop'), ('tumi-goes-to-the-park'), ('unathi-and-the-dirty-smelly-beast'), ('whats-at-the-park'), ('whats-happened-to-our-water'), ('whats-in-the-pot'), ('whats-next'), ('where-is-lulu'), ('where-is-thabo'), ('who-takes-the-train'), ('who-took-my-shoe'), ('whos-that-baby'), ('whose-shoe-is-this'), ('why-birds-sing-at-dawn'), ('why-is-there-a-hole-in-the-wall'), ('why-the-owl-never-sleeps'), ('wiggle-jiggle'), ('woof-woof'), ('yapo-saves-the-day'), ('yes-you-can'), ('you-yes-you'), ('zandi-and-birdy-monster'), ('zanele-sees-numbers'), ('zenandes-helping-hands'), ('zibu-and-zizo')) AS v(slug)
   WHERE NOT EXISTS (SELECT 1 FROM books b
      WHERE b.source_platform='book_dash' AND b.source_id=v.slug);
+-- (e) source 라벨 확인 (기대: pdf_harvest_v2_orderfix 1종 / 532행)
+SELECT bt.source, count(*) FROM book_text bt JOIN books b ON b.id=bt.book_id
+  WHERE b.source_platform='book_dash' AND b.source_id IN ('the-sausage-dog', 'the-sea', 'the-things-that-really-matter', 'the-three-doof-doofs', 'the-very-tired-lioness', 'the-window-seat', 'theres-a-fire-on-the-mountain', 'theres-an-alien-in-my-house', 'thuli-special-and-the-secret', 'thulis-tissue', 'tigs-world', 'tikky-boom-tish', 'tlotlegos-tea-party', 'tones-big-drop', 'tumi-goes-to-the-park', 'unathi-and-the-dirty-smelly-beast', 'whats-at-the-park', 'whats-happened-to-our-water', 'whats-in-the-pot', 'whats-next', 'where-is-lulu', 'where-is-thabo', 'who-takes-the-train', 'who-took-my-shoe', 'whos-that-baby', 'whose-shoe-is-this', 'why-birds-sing-at-dawn', 'why-is-there-a-hole-in-the-wall', 'why-the-owl-never-sleeps', 'wiggle-jiggle', 'woof-woof', 'yapo-saves-the-day', 'yes-you-can', 'you-yes-you', 'zandi-and-birdy-monster', 'zanele-sees-numbers', 'zenandes-helping-hands', 'zibu-and-zizo')
+  GROUP BY bt.source;

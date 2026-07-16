@@ -1,7 +1,8 @@
 -- 목적: book_text 페이지 단위 확정텍스트 적재 (이 파일: 3of4)
 -- 실행자: 팀장(Supabase SQL Editor). 워커 초안. DB 직접 쓰기 금지.
 -- 값 출처: scripts/pdf_harvest/out_fixed_154 (ADR-0044 order_fix 확정 JSON)
--- 근거 ADR: ADR-0046(book_text 스키마), ADR-0047(적재 대상 152권)
+-- 근거 ADR: ADR-0046, ADR-0047, ADR-0048
+-- source: pdf_harvest_v2_orderfix (ADR-0048 D1)
 -- 이 파일 담당: slug nomvundla-and-the-chilli-eating-contest ~ the-rainbow-cloud, 38권 / 532행
 -- 생성기: scripts/pdf_harvest/gen_book_text_sql.py
 -- 매핑: page_index = page_no - 1 (ADR-0046 D2). blocks = order_fix 원본 블록 → jsonb.
@@ -18,8 +19,8 @@ SELECT count(*) AS books_found FROM books
 
 -- ───────── [적재] ─────────
 BEGIN;
-INSERT INTO book_text (book_id, page_index, text, blocks)
-SELECT b.id, v.page_index, v.text, v.blocks::jsonb
+INSERT INTO book_text (book_id, page_index, text, blocks, source)
+SELECT b.id, v.page_index, v.text, v.blocks::jsonb, $$pdf_harvest_v2_orderfix$$
   FROM (VALUES
     ('nomvundla-and-the-chilli-eating-contest', 0, $$Nomvundla the hare and Soko the monkey are buddies. “Hurry, Soko! We don’t want to be late for the Chilli-Eating Contest,” says Nomvundla.$$, $$[{"role": "BODY", "text": "Nomvundla the hare and Soko the monkey are buddies. “Hurry, Soko! We don’t want to be late for the Chilli-Eating Contest,” says Nomvundla.", "bbox": [56.7, 56.8, 475.8, 124.8], "size": 18.0}]$$),
     ('nomvundla-and-the-chilli-eating-contest', 1, $$$$, $$[]$$),
@@ -568,3 +569,7 @@ SELECT count(*) AS rows_after FROM book_text bt
 SELECT DISTINCT v.slug FROM (VALUES ('nomvundla-and-the-chilli-eating-contest'), ('o-rain-come'), ('open-the-door'), ('oumas-amazing-flowers'), ('oyisa-and-the-giant-tree'), ('pako-the-pigeon-disappears'), ('palesa-can-walk'), ('samoosas'), ('sams-treasures'), ('scared-tumi'), ('senzo-and-the-sun'), ('shaka-and-mazi'), ('shhhhh'), ('sing-to-me'), ('small-birds-big-adventure'), ('tata-comes-home'), ('tejus-shadow'), ('thats-not-thabi-thats-a-hippopotamus'), ('the-best-gift'), ('the-best-nest'), ('the-biscuit-jar-must-fall'), ('the-bounce'), ('the-box'), ('the-boy-who-only-ate-pancakes'), ('the-cottonwool-doctor'), ('the-dream-pillow'), ('the-fish-and-chickens-wedding'), ('the-fish-that-couldnt-swim'), ('the-great-cake-contest'), ('the-great-tidy-up'), ('the-lazy-ant'), ('the-lost-laugh'), ('the-memory-tree'), ('the-monster-must-go'), ('the-new-road'), ('the-one-in-the-middle'), ('the-pumpkin-chase'), ('the-rainbow-cloud')) AS v(slug)
   WHERE NOT EXISTS (SELECT 1 FROM books b
      WHERE b.source_platform='book_dash' AND b.source_id=v.slug);
+-- (e) source 라벨 확인 (기대: pdf_harvest_v2_orderfix 1종 / 532행)
+SELECT bt.source, count(*) FROM book_text bt JOIN books b ON b.id=bt.book_id
+  WHERE b.source_platform='book_dash' AND b.source_id IN ('nomvundla-and-the-chilli-eating-contest', 'o-rain-come', 'open-the-door', 'oumas-amazing-flowers', 'oyisa-and-the-giant-tree', 'pako-the-pigeon-disappears', 'palesa-can-walk', 'samoosas', 'sams-treasures', 'scared-tumi', 'senzo-and-the-sun', 'shaka-and-mazi', 'shhhhh', 'sing-to-me', 'small-birds-big-adventure', 'tata-comes-home', 'tejus-shadow', 'thats-not-thabi-thats-a-hippopotamus', 'the-best-gift', 'the-best-nest', 'the-biscuit-jar-must-fall', 'the-bounce', 'the-box', 'the-boy-who-only-ate-pancakes', 'the-cottonwool-doctor', 'the-dream-pillow', 'the-fish-and-chickens-wedding', 'the-fish-that-couldnt-swim', 'the-great-cake-contest', 'the-great-tidy-up', 'the-lazy-ant', 'the-lost-laugh', 'the-memory-tree', 'the-monster-must-go', 'the-new-road', 'the-one-in-the-middle', 'the-pumpkin-chase', 'the-rainbow-cloud')
+  GROUP BY bt.source;

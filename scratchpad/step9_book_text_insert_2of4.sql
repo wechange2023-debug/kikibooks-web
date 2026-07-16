@@ -1,7 +1,8 @@
 -- 목적: book_text 페이지 단위 확정텍스트 적재 (이 파일: 2of4)
 -- 실행자: 팀장(Supabase SQL Editor). 워커 초안. DB 직접 쓰기 금지.
 -- 값 출처: scripts/pdf_harvest/out_fixed_154 (ADR-0044 order_fix 확정 JSON)
--- 근거 ADR: ADR-0046(book_text 스키마), ADR-0047(적재 대상 152권)
+-- 근거 ADR: ADR-0046, ADR-0047, ADR-0048
+-- source: pdf_harvest_v2_orderfix (ADR-0048 D1)
 -- 이 파일 담당: slug im-the-colour-of-honey ~ no, 38권 / 532행
 -- 생성기: scripts/pdf_harvest/gen_book_text_sql.py
 -- 매핑: page_index = page_no - 1 (ADR-0046 D2). blocks = order_fix 원본 블록 → jsonb.
@@ -18,8 +19,8 @@ SELECT count(*) AS books_found FROM books
 
 -- ───────── [적재] ─────────
 BEGIN;
-INSERT INTO book_text (book_id, page_index, text, blocks)
-SELECT b.id, v.page_index, v.text, v.blocks::jsonb
+INSERT INTO book_text (book_id, page_index, text, blocks, source)
+SELECT b.id, v.page_index, v.text, v.blocks::jsonb, $$pdf_harvest_v2_orderfix$$
   FROM (VALUES
     ('im-the-colour-of-honey', 0, $$My name is Amanda. I live with my Mummy, my Daddy and my dog Porsha. My Daddy says I’m the colour of honey. My Mummy says I look like a beautiful sunset.$$, $$[{"role": "BODY", "text": "My name is Amanda. I live with my Mummy, my Daddy and my dog Porsha.", "bbox": [710.3, 161.1, 1021.9, 239.1], "size": 24.0}, {"role": "BODY", "text": "My Daddy says I’m the colour of honey.", "bbox": [740.2, 269.1, 992.0, 320.1], "size": 24.0}, {"role": "BODY", "text": "My Mummy says I look like a beautiful sunset.", "bbox": [718.0, 350.1, 1014.2, 401.1], "size": 24.0}]$$),
     ('im-the-colour-of-honey', 1, $$But I don’t look like either of them. Only Porsha is brown like me!$$, $$[{"role": "BODY", "text": "But I don’t look like either of them. Only Porsha is brown like me!", "bbox": [689.2, 202.8, 1011.6, 280.8], "size": 24.0}]$$),
@@ -568,3 +569,7 @@ SELECT count(*) AS rows_after FROM book_text bt
 SELECT DISTINCT v.slug FROM (VALUES ('im-the-colour-of-honey'), ('its-my-birthday'), ('its-my-book'), ('joannas-grannies'), ('jock-and-me'), ('julia-loves-books'), ('just-like-me'), ('khaya-wants-to-row'), ('knight-times'), ('lebo-and-gogos-tea-party'), ('lesedis-sandbox'), ('lets-be-friends'), ('lets-go-on-a-litter-hunt'), ('lets-have-an-inside-day'), ('lets-party'), ('lions-are-always-brave'), ('little-goat'), ('little-shoots'), ('lonwabos-recipes'), ('look-out-luthando'), ('look-up'), ('malis-friend'), ('mama-antelopes-house'), ('mama-whats-for-lunch'), ('matthew-is-up'), ('mazi-learns-to-play'), ('meerkat-magic'), ('mina-and-the-birthday-dress'), ('miss-tiny-chef'), ('moms-hands'), ('moms-red-coat'), ('monkey-business'), ('mud'), ('my-dream-in-the-drawer'), ('my-inside-weather'), ('my-special-blankie'), ('my-special-hair'), ('no')) AS v(slug)
   WHERE NOT EXISTS (SELECT 1 FROM books b
      WHERE b.source_platform='book_dash' AND b.source_id=v.slug);
+-- (e) source 라벨 확인 (기대: pdf_harvest_v2_orderfix 1종 / 532행)
+SELECT bt.source, count(*) FROM book_text bt JOIN books b ON b.id=bt.book_id
+  WHERE b.source_platform='book_dash' AND b.source_id IN ('im-the-colour-of-honey', 'its-my-birthday', 'its-my-book', 'joannas-grannies', 'jock-and-me', 'julia-loves-books', 'just-like-me', 'khaya-wants-to-row', 'knight-times', 'lebo-and-gogos-tea-party', 'lesedis-sandbox', 'lets-be-friends', 'lets-go-on-a-litter-hunt', 'lets-have-an-inside-day', 'lets-party', 'lions-are-always-brave', 'little-goat', 'little-shoots', 'lonwabos-recipes', 'look-out-luthando', 'look-up', 'malis-friend', 'mama-antelopes-house', 'mama-whats-for-lunch', 'matthew-is-up', 'mazi-learns-to-play', 'meerkat-magic', 'mina-and-the-birthday-dress', 'miss-tiny-chef', 'moms-hands', 'moms-red-coat', 'monkey-business', 'mud', 'my-dream-in-the-drawer', 'my-inside-weather', 'my-special-blankie', 'my-special-hair', 'no')
+  GROUP BY bt.source;

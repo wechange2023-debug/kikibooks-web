@@ -1,7 +1,8 @@
 -- 목적: book_text 페이지 단위 확정텍스트 적재 (이 파일: 1of4)
 -- 실행자: 팀장(Supabase SQL Editor). 워커 초안. DB 직접 쓰기 금지.
 -- 값 출처: scripts/pdf_harvest/out_fixed_154 (ADR-0044 order_fix 확정 JSON)
--- 근거 ADR: ADR-0046(book_text 스키마), ADR-0047(적재 대상 152권)
+-- 근거 ADR: ADR-0046, ADR-0047, ADR-0048
+-- source: pdf_harvest_v2_orderfix (ADR-0048 D1)
 -- 이 파일 담당: slug a-day-out ~ i-want-to, 38권 / 532행
 -- 생성기: scripts/pdf_harvest/gen_book_text_sql.py
 -- 매핑: page_index = page_no - 1 (ADR-0046 D2). blocks = order_fix 원본 블록 → jsonb.
@@ -18,8 +19,8 @@ SELECT count(*) AS books_found FROM books
 
 -- ───────── [적재] ─────────
 BEGIN;
-INSERT INTO book_text (book_id, page_index, text, blocks)
-SELECT b.id, v.page_index, v.text, v.blocks::jsonb
+INSERT INTO book_text (book_id, page_index, text, blocks, source)
+SELECT b.id, v.page_index, v.text, v.blocks::jsonb, $$pdf_harvest_v2_orderfix$$
   FROM (VALUES
     ('a-day-out', 0, $$I canea!the s see$$, $$[{"role": "BODY", "text": "I canea!the s see", "bbox": [861.7, 97.8, 1032.1, 186.1], "size": 41.2}]$$),
     ('a-day-out', 1, $$$$, $$[]$$),
@@ -568,3 +569,7 @@ SELECT count(*) AS rows_after FROM book_text bt
 SELECT DISTINCT v.slug FROM (VALUES ('a-day-out'), ('a-trip-to-the-tap'), ('a-very-busy-day'), ('aaaaahhh-mmawe'), ('alexs-super-medicine'), ('amahle-wants-to-help'), ('and-also'), ('ann-nem-oh-nee-finds-adventure'), ('auntie-bois-gift'), ('baby-babble'), ('baby-talk'), ('babys-first-family-photo'), ('banzis-busy-bees'), ('best-friends'), ('brave-bora'), ('catch-that-cat'), ('circles'), ('clever-pig'), ('come-stay-with-me'), ('dance-khuzwayo-dance'), ('dance-mihlali'), ('dudus-hat'), ('egg'), ('feathered-friends'), ('fifi-and-teddy'), ('foxy-joxy-plays-a-trick'), ('going-places'), ('grandpa-farouks-garden'), ('grumpy-cloud'), ('hello'), ('hello-baby'), ('how-do-you-eat'), ('how-do-you-sleep'), ('how-do-you-want-your-eggs'), ('how-to-tame-a-monster'), ('i-dont-want-to-go-to-sleep'), ('i-hate-winter'), ('i-want-to')) AS v(slug)
   WHERE NOT EXISTS (SELECT 1 FROM books b
      WHERE b.source_platform='book_dash' AND b.source_id=v.slug);
+-- (e) source 라벨 확인 (기대: pdf_harvest_v2_orderfix 1종 / 532행)
+SELECT bt.source, count(*) FROM book_text bt JOIN books b ON b.id=bt.book_id
+  WHERE b.source_platform='book_dash' AND b.source_id IN ('a-day-out', 'a-trip-to-the-tap', 'a-very-busy-day', 'aaaaahhh-mmawe', 'alexs-super-medicine', 'amahle-wants-to-help', 'and-also', 'ann-nem-oh-nee-finds-adventure', 'auntie-bois-gift', 'baby-babble', 'baby-talk', 'babys-first-family-photo', 'banzis-busy-bees', 'best-friends', 'brave-bora', 'catch-that-cat', 'circles', 'clever-pig', 'come-stay-with-me', 'dance-khuzwayo-dance', 'dance-mihlali', 'dudus-hat', 'egg', 'feathered-friends', 'fifi-and-teddy', 'foxy-joxy-plays-a-trick', 'going-places', 'grandpa-farouks-garden', 'grumpy-cloud', 'hello', 'hello-baby', 'how-do-you-eat', 'how-do-you-sleep', 'how-do-you-want-your-eggs', 'how-to-tame-a-monster', 'i-dont-want-to-go-to-sleep', 'i-hate-winter', 'i-want-to')
+  GROUP BY bt.source;
