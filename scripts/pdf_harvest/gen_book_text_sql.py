@@ -32,6 +32,7 @@ EXPECT_BOOKS = 152
 EXPECT_ROWS = 2128
 N_SPLIT = 4
 PLATFORM = "book_dash"
+SOURCE_LABEL = "pdf_harvest_v2_orderfix"  # ADR-0048 D1 (출처 체인: coords 재추출 → order_fix)
 
 
 def sql_str(s: str) -> str:
@@ -43,6 +44,7 @@ def load_books() -> list[dict]:
     """out_fixed_154에서 대상 slug만 로드. 메타(_*.json) 스킵, 제외 목록 적용."""
     skipped_meta = []
     excluded_hit = []
+    pipelines = set()
     books = []
     for f in sorted(SRC_DIR.glob("*.json")):
         name = f.name
@@ -58,6 +60,7 @@ def load_books() -> list[dict]:
             continue
         data = json.loads(f.read_text(encoding="utf-8"))
         pages = data.get("pages", [])
+        pipelines.add(data.get("pipeline"))
         # 가드: page_no가 1부터 연속인지
         for i, p in enumerate(pages):
             expected = i + 1
@@ -69,6 +72,11 @@ def load_books() -> list[dict]:
 
     print(f"메타/스킵 파일: {len(skipped_meta)}개 {sorted(skipped_meta)}")
     print(f"제외 slug (ADR-0047): {sorted(excluded_hit)}")
+    print(f"pipeline distinct 값: {sorted(str(p) for p in pipelines)}")
+
+    # 가드: pipeline 값 1종 (추적용 — source로 쓰지는 않음, ADR-0048 D1)
+    if len(pipelines) != 1:
+        raise SystemExit(f"[STOP] pipeline 값 {len(pipelines)}종 != 1종 — 파일 미생성")
 
     # 가드: 정확히 152권
     if len(books) != EXPECT_BOOKS:
@@ -128,7 +136,8 @@ def render_sql(part: int, total: int, books: list[dict]) -> tuple[str, int]:
     lines.append(f"-- 목적: book_text 페이지 단위 확정텍스트 적재 (이 파일: {part}of{total})")
     lines.append("-- 실행자: 팀장(Supabase SQL Editor). 워커 초안. DB 직접 쓰기 금지.")
     lines.append("-- 값 출처: scripts/pdf_harvest/out_fixed_154 (ADR-0044 order_fix 확정 JSON)")
-    lines.append("-- 근거 ADR: ADR-0046(book_text 스키마), ADR-0047(적재 대상 152권)")
+    lines.append("-- 근거 ADR: ADR-0046, ADR-0047, ADR-0048")
+    lines.append(f"-- source: {SOURCE_LABEL} (ADR-0048 D1)")
     lines.append(f"-- 이 파일 담당: slug {slugs[0]} ~ {slugs[-1]}, {n_books}권 / {m_rows}행")
     lines.append("-- 생성기: scripts/pdf_harvest/gen_book_text_sql.py")
     lines.append("-- 매핑: page_index = page_no - 1 (ADR-0046 D2). blocks = order_fix 원본 블록 → jsonb.")
@@ -145,8 +154,8 @@ def render_sql(part: int, total: int, books: list[dict]) -> tuple[str, int]:
     lines.append("")
     lines.append("-- ───────── [적재] ─────────")
     lines.append("BEGIN;")
-    lines.append("INSERT INTO book_text (book_id, page_index, text, blocks)")
-    lines.append("SELECT b.id, v.page_index, v.text, v.blocks::jsonb")
+    lines.append("INSERT INTO book_text (book_id, page_index, text, blocks, source)")
+    lines.append(f"SELECT b.id, v.page_index, v.text, v.blocks::jsonb, $${SOURCE_LABEL}$$")
     lines.append("  FROM (VALUES")
     lines.append(",\n".join(all_rows))
     lines.append("  ) AS v(slug, page_index, text, blocks)")
@@ -165,6 +174,10 @@ def render_sql(part: int, total: int, books: list[dict]) -> tuple[str, int]:
     lines.append(f"SELECT DISTINCT v.slug FROM (VALUES {values_rows}) AS v(slug)")
     lines.append("  WHERE NOT EXISTS (SELECT 1 FROM books b")
     lines.append(f"     WHERE b.source_platform='{PLATFORM}' AND b.source_id=v.slug);")
+    lines.append(f"-- (e) source 라벨 확인 (기대: {SOURCE_LABEL} 1종 / {m_rows}행)")
+    lines.append("SELECT bt.source, count(*) FROM book_text bt JOIN books b ON b.id=bt.book_id")
+    lines.append(f"  WHERE b.source_platform='{PLATFORM}' AND b.source_id IN ({in_list})")
+    lines.append("  GROUP BY bt.source;")
     lines.append("")
     return "\n".join(lines), m_rows
 
