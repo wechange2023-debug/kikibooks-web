@@ -1,7 +1,7 @@
 # ADR-0047: book_text 적재 대상 확정 — 152권 (population 154 − 게이트① 탈락 2)
 
 ## Status
-Proposed (2026-07-15) / 기준 HEAD 93ce82d
+Accepted (2026-07-16) / 기준 HEAD 93ce82d
 
 ## Context
 
