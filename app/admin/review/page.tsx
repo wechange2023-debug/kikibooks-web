@@ -5,6 +5,7 @@ import {
   getReviewBookList,
   type ReviewStatus,
 } from '@/lib/admin/review/query';
+import { hasRotatedPages } from '@/lib/admin/review/rotation-pages';
 
 /**
  * /admin/review — 검수 대상 책 목록 (ADR-0051 구현 1).
@@ -80,6 +81,17 @@ export default async function AdminReviewPage() {
                   <span className="min-w-0 flex-1 truncate text-sm font-medium text-text">
                     {row.title}
                   </span>
+                  {/* ADR-0051 D4 — 회전 의심 면을 가진 책 식별용. 표시 전용(교정 0건).
+                      데이터는 lib/admin/review/rotation-pages.ts 상수에서 slug로 판정하므로
+                      조회 반환 형태(getReviewBookList) 변경 0건이다. */}
+                  {hasRotatedPages(row.slug) && (
+                    <span
+                      title="회전 의심 면이 있는 책입니다."
+                      className="shrink-0 text-xs text-text-variant"
+                    >
+                      ⚠
+                    </span>
+                  )}
                   <span className="shrink-0 text-xs text-text-variant">
                     {signal.label}
                   </span>

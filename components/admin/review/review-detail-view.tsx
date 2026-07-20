@@ -11,6 +11,7 @@ import type {
   ReviewBookDetail,
   ReviewStatus,
 } from '@/lib/admin/review/query';
+import { isRotatedPage } from '@/lib/admin/review/rotation-pages';
 
 /**
  * ReviewDetailView — 책별 검수 상세 (ADR-0051 구현 1 표시 + 구현 2 편집·전이).
@@ -23,8 +24,9 @@ import type {
  *   - ADR-0051 D3: status가 'in_review'일 때만 textarea·[저장] 활성. 그 외는 읽기 전용.
  *     전이 버튼은 상태별 1종(검수시작·확정·되돌리기). tts_done 되돌리기는 window.confirm
  *     경고 후에만 호출한다(경고 문구 박제 직역).
- *   - ADR-0051 D4: 회전 페이지 "⚠ 회전 의심" 배지는 구현 3 범위(rotation_audit 적재 경로 미정).
- *     이미지 자동교정은 어느 구현에서도 하지 않는다(ADR-0050 D1·D2).
+ *   - ADR-0051 D4: 회전 의심 면(직교회전 33면/18권)에 "⚠ 회전 의심" 배지를 **표시만** 한다.
+ *     출처는 lib/admin/review/rotation-pages.ts 상수. 이미지 자동교정·텍스트 자동교정은
+ *     하지 않는다(ADR-0050 D1·D2 — 검수자는 원본과 동일한 화면을 봐야 한다).
  *   - ADR-0019 D18: server action 결과를 useTransition으로 받아 메시지를 표시한다.
  *     라이브러리 추가 0건 — React 상태만 사용.
  *
@@ -243,6 +245,8 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
             const rowState = rowStates[page.pageIndex] ?? { kind: 'idle' };
             const value = drafts[page.pageIndex] ?? '';
             const rowDirty = value !== (baselines[page.pageIndex] ?? '');
+            // ADR-0051 D4 — 표시 전용. 이 값은 이미지·텍스트를 바꾸지 않는다.
+            const rotated = isRotatedPage(detail.slug, page.pageIndex);
 
             return (
               <li
@@ -250,8 +254,16 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
                 className="grid grid-cols-[3fr_2fr] gap-4 rounded-lg border border-outline bg-surface p-4"
               >
                 <div className="flex flex-col gap-1">
-                  <span className="text-xs text-text-variant">
-                    {String(page.pageIndex + 1).padStart(2, '0')}면
+                  <span className="flex items-center gap-2 text-xs text-text-variant">
+                    <span>{String(page.pageIndex + 1).padStart(2, '0')}면</span>
+                    {rotated && (
+                      <span
+                        title="원본이 90° 회전 인쇄된 면입니다. 읽기순서가 뒤집혔을 수 있으니 확인해 주세요."
+                        className="inline-flex items-center rounded border border-outline bg-surface-2 px-1.5 py-0.5 text-xs font-medium text-text"
+                      >
+                        ⚠ 회전 의심
+                      </span>
+                    )}
                   </span>
                   {/* 자체 창고(Supabase Storage public) 이미지 — 규칙 조립 URL이라 next/image
                       최적화 불요. asb-reader.tsx PageImage 선례 정합. */}
