@@ -77,6 +77,15 @@ export function AdminNav({ copy }: AdminNavProps) {
       isActive: (p) => p === '/admin/users' || p.startsWith('/admin/users/'),
     },
     {
+      // ADR-0051 구현 2 — /admin/review 검수 화면 링크 1개 추가(intent §5.2 "4링크" 박제 확장).
+      // 라벨 hardcoded 사유: AdminCopy['nav']는 home·books·users·stats·logout 고정 키라
+      // review 키 추가 = lib/admin/copy.ts 수정이 선결이다. 본 구현 2는 3파일 범위라
+      // 임시 hardcoded로 두고 copy.ts 편입은 백로그 유지(ADR-0051 Backlog).
+      href: '/admin/review',
+      label: '검수',
+      isActive: (p) => p === '/admin/review' || p.startsWith('/admin/review/'),
+    },
+    {
       // D13 — stats 별도 페이지 미생성. /admin 홈 #stats 섹션 anchor scroll.
       // 활성 표시는 home과 path 공유라 항상 false(UX 충돌 회피).
       href: '/admin#stats',
