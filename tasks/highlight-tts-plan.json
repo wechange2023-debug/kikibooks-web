@@ -4,15 +4,39 @@
   "head_at_creation": "f914bf2",
   "confirmed_pipeline": ["extract_draft","human_review","tts","marks_highlight","service_on"],
   "total_phases": 7,
-  "remaining_phases": 7,
-  "last_successful_state": null,
+  "last_updated": "2026-07-22",
+  "demo": {
+    "deadline": "2026-07-28",
+    "adr": "ADR-0052",
+    "scope_note": "시연 대응 범위 축소 — 154권 배치 연기, 시범 12권만. B(ADR정리)·G(백로그) 제외.",
+    "critical_path": ["E", "D", "F"],
+    "cohort_slug_source": "lib/admin/review/pilot-cohort.ts",
+    "representative_books": [
+      {"slug": "a-trip-to-the-tap", "book_id": "0134f341-7b58-4c7c-b17a-8d4e036dcd72", "title": "A trip to the tap"},
+      {"slug": "amahle-wants-to-help", "book_id": "f3e5da2f-a04d-4b08-ac81-4dee971c15e8", "title": "Amahle wants to help!"},
+      {"slug": "baby-babble", "book_id": "22a4f65f-df39-44c3-863f-81d7855e35c0", "title": "Baby Babble"}
+    ],
+    "schedule": [
+      {"date": "2026-07-23", "goal": "book_text->TTS 입력 브리지 + 12권 mp3/marks 생성", "phase": "E(축소)"},
+      {"date": "2026-07-25", "goal": "뷰어 오디오 재생 + 단어 하이라이트 통합 (하이라이트 판정)", "phase": "D"},
+      {"date": "2026-07-26", "goal": "has_audio 보강 + TTS 아이콘 + 12권 서비스 ON", "phase": "F"},
+      {"date": "2026-07-27", "goal": "리허설 지원·버그 수정 (신규 기능 추가 금지)", "phase": "-"}
+    ]
+  },
   "phases": [
-    {"id":"A","name":"데이터 모델(검수·상태·확정텍스트·캐릭터매핑 스키마)","status":"pending","depends_on":[],"critical_path":true},
-    {"id":"B","name":"ADR 정리(0017/0027/0035/0038/0039/0043 + 신규 0045/0046)","status":"pending","depends_on":[],"critical_path":false},
-    {"id":"C","name":"관리자 검수 화면(review_viewer/order_fix/golden 재활용)","status":"pending","depends_on":["A"],"critical_path":true},
-    {"id":"D","name":"자체 뷰어(이미지+자막+TTS버튼+하이라이트; 레이아웃 Claude Design 선검증)","status":"pending","depends_on":["A"],"critical_path":true},
-    {"id":"E","name":"TTS 154권(marks 경로·1인 기본·따옴표 화자분리 초벌·캐릭터 옵션)","status":"pending","depends_on":["A"],"critical_path":true},
-    {"id":"F","name":"사용자 노출(has_audio getBookById 보강+아이콘·서비스 ON 연동)","status":"pending","depends_on":["E"],"critical_path":true},
-    {"id":"G","name":"백로그 정리(staging 하드코딩·prefix·B집합5·결손15·.gitignore)","status":"pending","depends_on":[],"critical_path":false}
+    {"id":"A","name":"데이터 모델(검수·상태·확정텍스트·캐릭터매핑 스키마)","status":"done","depends_on":[],"critical_path":true,"note":"ADR-0046 확정, book_text 152권·book_review 152권 적재 완료"},
+    {"id":"B","name":"ADR 정리(0017/0027/0035/0038/0039/0043 + 신규 0045/0046)","status":"deferred","depends_on":[],"critical_path":false,"note":"0046 완료. 나머지 시연 후로 연기(ADR-0052 범위 밖)"},
+    {"id":"C","name":"관리자 검수 화면(review_viewer/order_fix/golden 재활용)","status":"done","depends_on":["A"],"critical_path":true,"note":"ADR-0051 구현·push 3e717e9. 팀장 12권 검수 완료(confirmed)"},
+    {"id":"D","name":"자체 뷰어(이미지+자막+TTS버튼+하이라이트; 단어/문장 전환식)","status":"pending","depends_on":["A","E"],"critical_path":true,"note":"대표 3권 기준. 하이라이트 단어단위(문장 강등 대비 전환식). ADR-0052 D4·D5·D7"},
+    {"id":"E","name":"TTS 12권(A안 브리지·1인 Ruth·대표 3권 우선)","status":"pending","depends_on":["A"],"critical_path":true,"note":"154->12 축소. 대표 3권 최우선. 브리지=팀장 SQL export->워커 변환(A안). ADR-0052 D1·D2·D3"},
+    {"id":"F","name":"사용자 노출(has_audio getBookById 보강+아이콘·12권 서비스 ON)","status":"pending","depends_on":["E"],"critical_path":true,"note":"서비스 ON 12권 한정. tts_done 전이 SQL은 팀장 실행"},
+    {"id":"G","name":"백로그 정리(staging 하드코딩·prefix·B집합5·결손15·.gitignore)","status":"deferred","depends_on":[],"critical_path":false,"note":"시연 범위 밖(ADR-0052)"}
+  ],
+  "units": [
+    {"id":"U1","phase":"E","desc":"ADR-0052 + tracker 갱신","status":"done"},
+    {"id":"U2","phase":"E","desc":"export SQL 문서 + 변환 스크립트 + 검증 요약","status":"pending"},
+    {"id":"U3","phase":"E","desc":"12권 TTS 생성 러너 + 업로드 절차 문서","status":"pending"},
+    {"id":"U4","phase":"D","desc":"뷰어 오디오+하이라이트 통합","status":"pending"},
+    {"id":"U5","phase":"F","desc":"has_audio 보강+아이콘 + tts_done SQL 문서","status":"pending"}
   ]
 }
