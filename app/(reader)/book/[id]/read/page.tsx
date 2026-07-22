@@ -3,10 +3,12 @@ import type { ReactNode } from 'react';
 import { notFound, redirect } from 'next/navigation';
 
 import { AsbReader } from '@/components/book/asb-reader';
+import { AudioReader } from '@/components/book/audio-reader';
 import { FinishButton } from '@/components/book/finish-button';
 import { HtmlReader } from '@/components/book/html-reader';
 import { ReaderAttributionBar } from '@/components/book/reader-attribution-bar';
 import { SIGN_IN_PATH } from '@/lib/auth/routes';
+import { getAudioReaderBook, hasReaderAudio } from '@/lib/book/audio-manifest';
 import { buildAttributionRows, type AttributionRow } from '@/lib/book/attribution';
 import { getBookDetailCopy, getBookReaderCopy } from '@/lib/book/copy';
 import { getBookById } from '@/lib/book/detail';
@@ -120,6 +122,35 @@ export default async function ReadPage({ params }: ReadPageProps) {
   const readerRows = buildAttributionRows(book, detailCopy).filter((row) =>
     READER_BAR_KEYS.has(row.key),
   );
+
+  // 오디오 리더 분기 (ADR-0052 Phase D·F) — book_audio 행이 있는 책만.
+  //   게이트는 count 전용 쿼리 1회(hasReaderAudio). 행이 0이면 아래 content_type 경로를
+  //   그대로 타므로 기존 896권 html·asb_native 동작은 변하지 않는다(회귀 0).
+  //   has_audio 컬럼 대신 book_audio를 보는 이유: getBookById의 17컬럼 SELECT는
+  //   unstable_cache('books-catalog', 1h) 경유라 컬럼 추가가 카탈로그 캐시에 영향을 준다
+  //   (ADR-0033). 읽기 라우트 안에서 끝나는 book_audio 조회가 영향 범위가 좁다.
+  if (await hasReaderAudio(book.id)) {
+    const audioBook = await getAudioReaderBook(book.id);
+    if (audioBook && audioBook.audioPageCount > 0) {
+      // 제목·페이지수·뒤로가기는 AudioReader 헤더가 보유 → 외곽 h1 중복 제거.
+      // 어트리뷰션 바(CC BY 의무)는 page 레벨 유지. 완독 버튼은 P2-B 재배치로
+      // AudioReader 하단 1행에 합류시킨다 — FinishButton 자체는 무수정(슬롯 주입).
+      // 배경은 순백(P2-C). bg-surface = --color-surface = #FFFFFF (semantic 토큰, Hard Rule 10).
+      // 오디오 리더 화면 한정 — 아래 content_type 경로는 bg-surface-2 그대로다.
+      return (
+        <div className="flex h-screen flex-col bg-surface">
+          <ReaderAttributionBar rows={readerRows} />
+          <main className="flex-1 overflow-hidden">
+            <AudioReader
+              book={audioBook}
+              bookDetailHref={`/book/${book.id}`}
+              finishSlot={<FinishButton bookId={book.id} copy={readerCopy.finish} />}
+            />
+          </main>
+        </div>
+      );
+    }
+  }
 
   // content_type 분기 — html 실구현, 나머지는 미지원 안내 골격 (ADR-0017 D1·D2)
   let readerBody: ReactNode;
