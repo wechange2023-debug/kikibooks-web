@@ -16,6 +16,10 @@
   - 권별 매니페스트: **`out/audio_danielle/{slug}/_manifest.json`**
   - 배치 리포트: `out/_tts_batch_danielle_report.json`
   - 12권 = **mp3 138 + marks 138 = 276개 / 약 7.5 MB**(빈텍스트 면 30 제외).
+  - **표지 제목 낭독**(ADR-0034 Amd#1 `kind='cover'`): `out/audio_danielle/{slug}/cover.mp3` ·
+    `cover.marks.json` — 12권 × 2 = **24개 추가, 합계 300개**. 키는 본문과 같은 폴더에
+    co-location(`book_dash-{slug}/danielle/cover.*`). 적재 SQL은
+    `docs/sql/pilot12_danielle_cover_load.sql`(본문 SQL과 독립, 순서 무관).
 - 업로드 **대상 아님**: `out/audio_danielle/_raw/`(감속 전 원속도 원본, 디버그 보존용),
   `_manifest.json`, `out/audio/`(구 Ruth 배치).
 

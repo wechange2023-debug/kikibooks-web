@@ -80,6 +80,14 @@ def build_plan(slug: str) -> list[dict]:
     man = json.loads(man_path.read_text(encoding="utf-8"))
     key_prefix = f"book_dash-{slug}/{VOICE}"  # ADR-0034 Amd#2 성우 층위
     items: list[dict] = []
+    # 표지(ADR-0034 Amd#1 kind='cover') — 매니페스트에 cover 항목이 있을 때만.
+    # 본문과 같은 폴더에 co-location(cover.mp3 / cover.marks.json).
+    if man.get("cover"):
+        items.append({"local": book_dir / "cover.mp3",
+                      "key": f"{key_prefix}/cover.mp3", "ct": CT_MP3, "label": "cover.mp3"})
+        items.append({"local": book_dir / "cover.marks.json",
+                      "key": f"{key_prefix}/cover.marks.json", "ct": CT_MARKS,
+                      "label": "cover.marks.json"})
     for p in man.get("pages", []):
         # 로컬 파일명이 이미 1-based(pNN) — 축 변환 없이 그대로 키에 사용한다.
         nn = f"p{int(p['page']):02d}"
