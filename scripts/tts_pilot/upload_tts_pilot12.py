@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
 """upload_tts_pilot12.py — 시범 12권 TTS 오디오 → Supabase Storage 'book-audio' 업로드.
 
-ADR-0052 Phase E · Unit 3 (업로더 B안). ADR-0034 결정 ②③ 규약 계승.
+ADR-0052 Phase E · Unit 3 (업로더 B안). ADR-0034 결정 ②③ + **Amendment #2** 규약.
 
 ★ Storage 전용 쓰기. DB write 0건(book_audio INSERT·has_audio 는 Phase F, 팀장 SQL).
 ★ 기존 upload_audio.py(구 44권·UUID 키)와 별개 — 이 스크립트는 12권 slug 코호트 전용.
   우리 12권은 books.source_id = slug 이므로 book_key = book_dash-{slug} 로 귀결된다
   (이미지 경로 book-images/book_dash-{slug}/NN.jpg 와 평행 정합).
 
-경로 규칙(ADR-0034 결정 ②):
-  book-audio/book_dash-{slug}/pNN.mp3         (NN = page-1, 0-based 2자리 zero-pad)
-  book-audio/book_dash-{slug}/pNN.marks.json
+경로 규칙(ADR-0034 Amendment #2 — 성우 층위 + 1-based 축):
+  book-audio/book_dash-{slug}/danielle/pNN.mp3         (NN = page_index+1, 1-based 2자리 zero-pad)
+  book-audio/book_dash-{slug}/danielle/pNN.marks.json
+  ※ 로컬 파일명이 이미 1-based(pNN)이므로 **축 변환 없이 그대로 통과**시킨다.
+  ※ 구 44권 키(성우 층위 없음·0-based)는 무수정 이력 보존 — 본 스크립트가 건드리지 않는다.
 
 Content-Type(ADR-0034 결정 ③, 명시 지정 — 확장자 자동추측 금지):
   mp3        → audio/mpeg
   marks.json → application/json; charset=utf-8
   공통 캐시   → Cache-Control: public, max-age=31536000, immutable
 
-입력: out/{slug}_Ruth_r78.tts.json (generate_tts.py 매니페스트) + out/audio/*.mp3|.marks.json
+입력: out/audio_danielle/{slug}/_manifest.json (run_tts_batch_v2.py 매니페스트)
+      + out/audio_danielle/{slug}/pNN.mp3|pNN.marks.json
 
 보안(Hard Rule 6 · ADR-0003):
   secret 키는 환경변수에서만 읽는다. 코드·파일·로그에 절대 출력·기록 금지.
@@ -48,10 +51,10 @@ for _s in (sys.stdout, sys.stderr):
 
 PILOT = Path(__file__).resolve().parent
 OUT = PILOT / "out"
-AUDIO = OUT / "audio"
+AUDIO_ROOT = OUT / "audio_danielle"  # run_tts_batch_v2.py 산출 루트
 
 BUCKET = "book-audio"
-SUFFIX = "_Ruth_r78"  # generate_tts.py 파일명 접미사(voice=Ruth, rate=78)
+VOICE = "danielle"  # Storage 성우 폴더명 = DB book_audio.voice (ADR-0034 Amd#2, 소문자)
 
 CT_MP3 = "audio/mpeg"
 CT_MARKS = "application/json; charset=utf-8"
@@ -69,22 +72,22 @@ REP_SLUGS = ["a-trip-to-the-tap", "amahle-wants-to-help", "baby-babble"]
 
 def build_plan(slug: str) -> list[dict]:
     """(local_path, key, content_type, label) 업로드 항목 리스트. 매니페스트 없으면 예외."""
-    man_path = OUT / f"{slug}{SUFFIX}.tts.json"
+    book_dir = AUDIO_ROOT / slug
+    man_path = book_dir / "_manifest.json"
     if not man_path.exists():
-        raise FileNotFoundError(f"매니페스트 없음: {man_path.name} (run_tts_batch.py 먼저 실행)")
+        raise FileNotFoundError(
+            f"매니페스트 없음: audio_danielle/{slug}/_manifest.json (run_tts_batch_v2.py 먼저 실행)")
     man = json.loads(man_path.read_text(encoding="utf-8"))
-    book_key = f"book_dash-{slug}"
+    key_prefix = f"book_dash-{slug}/{VOICE}"  # ADR-0034 Amd#2 성우 층위
     items: list[dict] = []
-    for s in man.get("scenes", []):
-        if not s.get("audio"):
-            continue  # 빈 텍스트 페이지(음성 스킵) — 업로드 대상 아님
-        nn = int(s["page"]) - 1  # ADR-0034: page_index 0-based, 경로 pNN 정합
-        mp3 = (PILOT / str(s["audio"]).replace("\\", "/")).resolve()
-        marks = (PILOT / str(s["marks"]).replace("\\", "/")).resolve()
-        items.append({"local": mp3, "key": f"{book_key}/p{nn:02d}.mp3", "ct": CT_MP3,
-                      "label": f"p{nn:02d}.mp3"})
-        items.append({"local": marks, "key": f"{book_key}/p{nn:02d}.marks.json", "ct": CT_MARKS,
-                      "label": f"p{nn:02d}.marks.json"})
+    for p in man.get("pages", []):
+        # 로컬 파일명이 이미 1-based(pNN) — 축 변환 없이 그대로 키에 사용한다.
+        nn = f"p{int(p['page']):02d}"
+        items.append({"local": book_dir / f"{nn}.mp3",
+                      "key": f"{key_prefix}/{nn}.mp3", "ct": CT_MP3, "label": f"{nn}.mp3"})
+        items.append({"local": book_dir / f"{nn}.marks.json",
+                      "key": f"{key_prefix}/{nn}.marks.json", "ct": CT_MARKS,
+                      "label": f"{nn}.marks.json"})
     return items
 
 
@@ -109,12 +112,13 @@ def init_supabase():
     return create_client(url, key), url.rstrip("/")
 
 
-def existing_keys(client, book_key: str) -> set[str]:
+def existing_keys(client, key_prefix: str) -> set[str]:
+    """key_prefix = book_dash-{slug}/{voice} — 성우 폴더 안만 조회(구 44권 키 무간섭)."""
     try:
-        items = client.storage.from_(BUCKET).list(book_key, {"limit": 1000})
+        items = client.storage.from_(BUCKET).list(key_prefix, {"limit": 1000})
     except Exception:  # noqa: BLE001
         return set()
-    return {f"{book_key}/{it['name']}" for it in (items or []) if it.get("name")}
+    return {f"{key_prefix}/{it['name']}" for it in (items or []) if it.get("name")}
 
 
 def order_rep_first(slugs: list[str]) -> list[str]:
@@ -138,7 +142,7 @@ def main() -> int:
         targets = list(PILOT_COHORT)
     targets = order_rep_first(targets)
 
-    print(f"[INFO] 대상 {len(targets)}권 (버킷 {BUCKET}, 키 = book_dash-<slug>)")
+    print(f"[INFO] 대상 {len(targets)}권 (버킷 {BUCKET}, 키 = book_dash-<slug>/{VOICE}/pNN.*)")
     print("=" * 96)
 
     # 계획 수립 + 로컬 존재 점검(이상 시 진행 중단).
@@ -155,7 +159,7 @@ def main() -> int:
         plans[slug] = plan
         total_items += len(plan)
         tag = "★" if slug in REP_SLUGS else " "
-        print(f"[{tag}{slug:33}] key=book_dash-{slug}  items={len(plan)}")
+        print(f"[{tag}{slug:33}] key=book_dash-{slug}/{VOICE}  items={len(plan)}")
         if args.dry_run:
             for it in plan:
                 ok_local = it["local"].exists() and it["local"].stat().st_size > 0
@@ -180,8 +184,8 @@ def main() -> int:
     client, sb_url = init_supabase()
     up_ok, skip, fail = 0, 0, []
     for slug in targets:
-        book_key = f"book_dash-{slug}"
-        present = set() if args.overwrite else existing_keys(client, book_key)
+        key_prefix = f"book_dash-{slug}/{VOICE}"
+        present = set() if args.overwrite else existing_keys(client, key_prefix)
         for it in plans[slug]:
             if it["key"] in present:
                 skip += 1
@@ -212,7 +216,11 @@ def main() -> int:
         return 0
     print("\n[확인용 URL] 공개 URL HTTP GET (200 + Content-Type):")
     for slug in targets:
-        key = f"book_dash-{slug}/p00.mp3"
+        # 첫 면이 빈 텍스트면 p01이 없을 수 있으므로 계획의 첫 mp3 키를 쓴다.
+        first_mp3 = next((it["key"] for it in plans[slug] if it["ct"] == CT_MP3), None)
+        if not first_mp3:
+            continue
+        key = first_mp3
         url = f"{sb_url}/storage/v1/object/public/{BUCKET}/{key}"
         try:
             r = requests.get(url, timeout=30)
