@@ -27,16 +27,24 @@
     {"id":"A","name":"데이터 모델(검수·상태·확정텍스트·캐릭터매핑 스키마)","status":"done","depends_on":[],"critical_path":true,"note":"ADR-0046 확정, book_text 152권·book_review 152권 적재 완료"},
     {"id":"B","name":"ADR 정리(0017/0027/0035/0038/0039/0043 + 신규 0045/0046)","status":"deferred","depends_on":[],"critical_path":false,"note":"0046 완료. 나머지 시연 후로 연기(ADR-0052 범위 밖)"},
     {"id":"C","name":"관리자 검수 화면(review_viewer/order_fix/golden 재활용)","status":"done","depends_on":["A"],"critical_path":true,"note":"ADR-0051 구현·push 3e717e9. 팀장 12권 검수 완료(confirmed)"},
-    {"id":"D","name":"자체 뷰어(이미지+자막+TTS버튼+하이라이트; 단어/문장 전환식)","status":"pending","depends_on":["A","E"],"critical_path":true,"note":"대표 3권 기준. 하이라이트 단어단위(문장 강등 대비 전환식). ADR-0052 D4·D5·D7"},
-    {"id":"E","name":"TTS 12권(A안 브리지·1인 Ruth·대표 3권 우선)","status":"pending","depends_on":["A"],"critical_path":true,"note":"154->12 축소. 대표 3권 최우선. 브리지=팀장 SQL export->워커 변환(A안). ADR-0052 D1·D2·D3"},
+    {"id":"D","name":"자체 뷰어(이미지+자막+TTS버튼+하이라이트; 단어/문장 전환식)","status":"in_progress","depends_on":["A","E"],"critical_path":true,"note":"뷰어 컴포넌트 구현·검증·커밋(513b6b5). 상하 1단(P1-D)·자동넘김 지연(P1-C)·byte 슬라이싱(P1-A) 반영. 잔여: read/page.tsx 배선 + 7/25 실기기 하이라이트 판정"},
+    {"id":"E","name":"TTS 12권(A안 브리지·대표 3권 우선)","status":"in_progress","depends_on":["A"],"critical_path":true,"note":"Ruth 78%로 12권 생성 완료(로컬)했으나 팀장 반려 → 성우 Amy(en-GB neural) 확정. 속도 확정(r85 vs r92) 대기 후 12권 재생성(Ruth 보존). ADR-0052 D1·D2·D3"},
     {"id":"F","name":"사용자 노출(has_audio getBookById 보강+아이콘·12권 서비스 ON)","status":"pending","depends_on":["E"],"critical_path":true,"note":"서비스 ON 12권 한정. tts_done 전이 SQL은 팀장 실행"},
     {"id":"G","name":"백로그 정리(staging 하드코딩·prefix·B집합5·결손15·.gitignore)","status":"deferred","depends_on":[],"critical_path":false,"note":"시연 범위 밖(ADR-0052)"}
   ],
   "units": [
     {"id":"U1","phase":"E","desc":"ADR-0052 + tracker 갱신","status":"done"},
-    {"id":"U2","phase":"E","desc":"export SQL 문서 + 변환 스크립트 + 검증 요약","status":"pending"},
-    {"id":"U3","phase":"E","desc":"12권 TTS 생성 러너 + 업로드 절차 문서","status":"pending"},
-    {"id":"U4","phase":"D","desc":"뷰어 오디오+하이라이트 통합","status":"pending"},
+    {"id":"U2","phase":"E","desc":"export SQL 문서 + 변환 스크립트 + 검증 요약","status":"done","note":"build_tts_input.py + BRIDGE.md (0bddebd)"},
+    {"id":"U3","phase":"E","desc":"12권 TTS 생성 러너 + 업로드 절차 문서 + 업로더","status":"done","note":"run_tts_batch.py(e5cfa87)+UPLOAD.md(c2dc052)+upload_tts_pilot12.py(10f1bc1). Ruth 산출물 로컬. Amy 재생성은 성우속도 확정 후"},
+    {"id":"U4","phase":"D","desc":"뷰어 오디오+하이라이트 통합","status":"done","note":"513b6b5 커밋. audio-reader/highlighted-text/audio-manifest/highlight-config"},
     {"id":"U5","phase":"F","desc":"has_audio 보강+아이콘 + tts_done SQL 문서","status":"pending"}
-  ]
+  ],
+  "demo_feedback_p1": {
+    "date": "2026-07-24",
+    "P1-A": {"status": "done", "note": "하이라이트 어긋남 = marks start/end가 UTF-8 byte offset인데 뷰어가 char 슬라이스. TextEncoder byte 슬라이싱으로 수정(highlighted-text.tsx). 검증: 12권 1973단어 0불일치, amahle 브라우저 25/26 vs mark.value. 회귀 금지"},
+    "P1-B": {"status": "voice_confirmed_speed_pending", "note": "성우 Amy(en-GB neural) 확정. 속도 r85/r92 샘플 out/voice_samples_amy/ — 팀장 확정 대기. generative 엔진 word marks 미지원→neural 필수. neural pitch 미지원"},
+    "P1-C": {"status": "done", "note": "AUTO_ADVANCE_DELAY_MS=2000, audio-reader onEnded 지연. Playwright 검증"},
+    "P1-D": {"status": "done", "note": "2단→상하 1단, 넓은화면 max-w 중앙정렬. 3화면 검증"},
+    "P2": {"status": "backlog", "note": "성우 층위 키 book_dash-{slug}/{voice}/pNN.* 채택(재생성 시 반영). 관리자 성우선택 UI는 시연후 ADR 백로그"}
+  }
 }
