@@ -210,7 +210,7 @@ VALUES
   ('aaf10a7e-6b50-4840-8999-3f2c76a2c731', 'page', 8, 'book_dash-banzis-busy-bees/danielle/p09.mp3', 'book_dash-banzis-busy-bees/danielle/p09.marks.json', 'danielle', 'long-form', 85, 5180),
   ('aaf10a7e-6b50-4840-8999-3f2c76a2c731', 'page', 9, 'book_dash-banzis-busy-bees/danielle/p10.mp3', 'book_dash-banzis-busy-bees/danielle/p10.marks.json', 'danielle', 'long-form', 85, 1780),
   ('aaf10a7e-6b50-4840-8999-3f2c76a2c731', 'page', 10, 'book_dash-banzis-busy-bees/danielle/p11.mp3', 'book_dash-banzis-busy-bees/danielle/p11.marks.json', 'danielle', 'long-form', 85, 1780),
-  ('aaf10a7e-6b50-4840-8999-3f2c76a2c731', 'page', 11, 'book_dash-banzis-busy-bees/danielle/p12.mp3', 'book_dash-banzis-busy-bees/danielle/p12.marks.json', 'danielle', 'long-form', 85, 7580);
+  ('aaf10a7e-6b50-4840-8999-3f2c76a2c731', 'page', 11, 'book_dash-banzis-busy-bees/danielle/p12.mp3', 'book_dash-banzis-busy-bees/danielle/p12.marks.json', 'danielle', 'long-form', 85, 7580)
 ON CONFLICT (book_id, kind, page_index, voice) DO UPDATE SET
   audio_path  = EXCLUDED.audio_path,
   marks_path  = EXCLUDED.marks_path,
