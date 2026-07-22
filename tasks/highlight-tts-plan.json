@@ -27,8 +27,8 @@
     {"id":"A","name":"데이터 모델(검수·상태·확정텍스트·캐릭터매핑 스키마)","status":"done","depends_on":[],"critical_path":true,"note":"ADR-0046 확정, book_text 152권·book_review 152권 적재 완료"},
     {"id":"B","name":"ADR 정리(0017/0027/0035/0038/0039/0043 + 신규 0045/0046)","status":"deferred","depends_on":[],"critical_path":false,"note":"0046 완료. 나머지 시연 후로 연기(ADR-0052 범위 밖)"},
     {"id":"C","name":"관리자 검수 화면(review_viewer/order_fix/golden 재활용)","status":"done","depends_on":["A"],"critical_path":true,"note":"ADR-0051 구현·push 3e717e9. 팀장 12권 검수 완료(confirmed)"},
-    {"id":"D","name":"자체 뷰어(이미지+자막+TTS버튼+하이라이트; 단어/문장 전환식)","status":"in_progress","depends_on":["A","E"],"critical_path":true,"note":"뷰어 컴포넌트 구현·검증·커밋(513b6b5). 상하 1단(P1-D)·자동넘김 지연(P1-C)·byte 슬라이싱(P1-A) 반영. 잔여: read/page.tsx 배선 + 7/25 실기기 하이라이트 판정"},
-    {"id":"E","name":"TTS 12권(A안 브리지·대표 3권 우선)","status":"in_progress","depends_on":["A"],"critical_path":true,"note":"Ruth 78%로 12권 생성 완료(로컬)했으나 팀장 반려 → 성우 Amy(en-GB neural) 확정. 속도 확정(r85 vs r92) 대기 후 12권 재생성(Ruth 보존). ADR-0052 D1·D2·D3"},
+    {"id":"D","name":"자체 뷰어(이미지+자막+TTS버튼+하이라이트; 단어/문장 전환식)","status":"in_progress","depends_on":["A","E"],"critical_path":true,"note":"read/page.tsx 배선·표지 슬라이드·레이아웃(P2-A/B/C) 팀장 실화면 검증 통과. 임시 dev-audio·public/tts-dev 삭제. 잔여: 7/25 실기기 하이라이트 판정 + UX Wave 1"},
+    {"id":"E","name":"TTS 12권(A안 브리지·대표 3권 우선)","status":"done","depends_on":["A"],"critical_path":true,"note":"ADR-0052 Amd#2 확정 = Danielle/long-form/us-east-1/atempo 0.85. 본문 138쌍 + 표지 12건 생성·업로드·적재 완료(팀장 실측 138/12/12). Ruth·Amy 산출물은 이력 보존. ADR-0052 D1·D2·D3"},
     {"id":"F","name":"사용자 노출(has_audio getBookById 보강+아이콘·12권 서비스 ON)","status":"pending","depends_on":["E"],"critical_path":true,"note":"서비스 ON 12권 한정. tts_done 전이 SQL은 팀장 실행"},
     {"id":"G","name":"백로그 정리(staging 하드코딩·prefix·B집합5·결손15·.gitignore)","status":"deferred","depends_on":[],"critical_path":false,"note":"시연 범위 밖(ADR-0052)"}
   ],
@@ -42,9 +42,17 @@
   "demo_feedback_p1": {
     "date": "2026-07-24",
     "P1-A": {"status": "done", "note": "하이라이트 어긋남 = marks start/end가 UTF-8 byte offset인데 뷰어가 char 슬라이스. TextEncoder byte 슬라이싱으로 수정(highlighted-text.tsx). 검증: 12권 1973단어 0불일치, amahle 브라우저 25/26 vs mark.value. 회귀 금지"},
-    "P1-B": {"status": "voice_confirmed_speed_pending", "note": "성우 Amy(en-GB neural) 확정. 속도 r85/r92 샘플 out/voice_samples_amy/ — 팀장 확정 대기. generative 엔진 word marks 미지원→neural 필수. neural pitch 미지원"},
+    "P1-B": {"status": "done", "note": "최종 = Danielle/long-form/us-east-1/평문+ffmpeg atempo 0.85(ADR-0052 Amd#2). Amy(en-GB) 확정은 라운드3~3.5 청취로 대체됨. SSML prosody 감속 금지(울림). generative는 word marks 미지원, long-form은 지원 확인"},
     "P1-C": {"status": "done", "note": "AUTO_ADVANCE_DELAY_MS=2000, audio-reader onEnded 지연. Playwright 검증"},
     "P1-D": {"status": "done", "note": "2단→상하 1단, 넓은화면 max-w 중앙정렬. 3화면 검증"},
-    "P2": {"status": "backlog", "note": "성우 층위 키 book_dash-{slug}/{voice}/pNN.* 채택(재생성 시 반영). 관리자 성우선택 UI는 시연후 ADR 백로그"}
+    "P2": {"status": "done", "note": "성우 층위 키 book_dash-{slug}/{voice}/pNN.* 정식화(ADR-0034 Amd#2, 축도 1-based 개정). P2-A 이미지확대·바탕제거·고딕자막 / P2-B 좌우버튼·자막확대·하단1행 / P2-C 진행바제거·완독게이트·토글테두리·순백배경 전부 팀장 검증 통과. 관리자 성우선택 UI는 시연후 ADR 백로그"}
+  },
+  "ux_waves": {
+    "approved_date": "2026-07-22",
+    "source": "docs/intent/ux-feedback-2026-07-22.md (페르소나 3인 리뷰, 피드백 10건)",
+    "schedule_rule": "Wave1은 2026-07-23~24 진행하되 7/25 하이라이트 판정·7/27 리허설 통과 항목만 시연 빌드 포함(ADR-0052 D1 신규기능 금지선 준수). Wave2=시연 후~베타 전. Wave3=베타 후 기획 판단",
+    "wave1": {"status": "pending", "items": ["F1 완독 조건 안내", "F2 다시듣기", "F3 표지 시작 유도", "F4 토글 라벨 상시 노출"], "note": "컴포넌트 내부 UI만. 데이터·스키마 변경 0"},
+    "wave2": {"status": "pending", "items": ["F5 뒤로가기 보호", "F6 자막 숨김 토글", "F7 스와이프 넘김"], "note": "라우팅·제스처 개입. 기존 Asb/Html 뷰어와 일관성 검토 필요"},
+    "wave3": {"status": "pending", "items": ["F8 탭 비활성 일시정지", "F9 한국어 해석(ADR 선행 필수)", "F10 이미지 내 하이라이트"], "note": "F9는 번역 저작권(ADR-0023 §2.6 승계)·저장위치(Hard Rule 8 스키마 ADR)·생성주체 확정 전 착수 금지"}
   }
 }
