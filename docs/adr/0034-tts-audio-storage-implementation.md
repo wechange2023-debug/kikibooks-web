@@ -217,3 +217,44 @@ ALTER TABLE public.book_audio
 - 스키마 반영 후, `book_audio` INSERT SQL 초안(본문 `kind='page'` × 각 페이지 + 표지 `kind='cover'`
   1행/책, `voice='Ruth' engine='neural' rate=78`, `audio_path`=업로드 키, `duration_ms`=마지막 mark
   프록시)과 오디오 적재된 책 `books.has_audio = true` 반영을 워커가 산출 → 팀장 실행.
+
+---
+
+## Amendment #2 (2026-07-22, Accepted) — 오브젝트 키 축 1-based 개정 + 성우 층위 도입
+
+### Context
+
+시범 12권 Danielle 배치(ADR-0052 Amendment #2)를 준비하며 두 규약이 충돌했다.
+
+- 본 ADR 결정 ②: `pNN` 의 `NN` = `page_index` (**0-based**, `p00`부터)
+- ADR-0052 D5: `NN` = `page_index + 1` (**1-based**) — 페이지 이미지 파일명 `NN.jpg`·뷰어 페이지와
+  단일 축으로 정렬하기 위한 결정
+
+또한 ADR-0052 Amendment #1·#2에서 **성우 층위 키**(`{voice}` 폴더)가 요구됐으나 본 ADR 결정 ②에는
+성우 층위가 없다.
+
+### 결정 — 결정 ②의 경로 규약을 다음으로 개정한다
+
+- **축 개정**: 오디오 오브젝트 키의 `NN`을 **1-based**(`NN = page_index + 1`, `p01`부터)로 한다.
+  - 근거: 페이지 이미지(`book-images/book_dash-{slug}/NN.jpg`)·mp3·뷰어 페이지가 **단일 축**으로
+    정렬된다. 축이 둘이면 뷰어·업로더·SQL 각 지점에서 ±1 변환이 필요해 오류 표면이 넓어진다.
+- **성우 층위 정식화**: 키 구조를 **`book-audio/{book_key}/{voice}/pNN.mp3`**(+`.marks.json`)로 한다.
+  ```
+  book-audio/book_dash-{slug}/danielle/p01.mp3
+  book-audio/book_dash-{slug}/danielle/p01.marks.json
+  ```
+  - 근거: `book_audio` UNIQUE가 이미 `voice`를 포함(멀티보이스 전제)하는데 키에는 성우 구분이
+    없어, 재생성·성우 교체 시 같은 키를 덮어써야 했다. 층위를 두면 성우별 트랙이 **무충돌 공존**한다.
+- **`voice` 컬럼 표기 규칙**: DB `book_audio.voice` 값은 **Storage 키의 성우 폴더명과 동일한 소문자**로
+  쓴다(예: `danielle`). 키와 컬럼이 같은 문자열이어야 상호 유도가 가능하다.
+- **`page_index` 컬럼은 계속 0-based**로 둔다. 스키마 `CHECK (page_index >= 0)`·기존 행 의미를
+  건드리지 않는다. **파일명 축만 개정**하며, 따라서 `audio_path`의 `NN`과 `page_index`는
+  `NN = page_index + 1` 관계로 **의도적으로 다르다**(본 Amendment가 그 근거다).
+
+### 기존 자산 처리 — 마이그레이션 없음
+
+- v1 html 44권의 기존 `p00~` 축 오브젝트와 `voice='Ruth'` 표기 행은 **수정·삭제·이동하지 않는다**
+  (이력 보존). 개정 규약은 **본 Amendment 이후 신규 배치에만** 적용한다.
+- 두 축이 공존하므로, 경로를 생성·해석하는 코드는 **배치(성우 층위 유무)로 구분**한다.
+  성우 폴더가 있으면 1-based, 없으면 0-based(구 44권)로 읽는다.
+- 리스크: 규약 이원화. 구 44권을 신 규약으로 재정렬할지는 **시연 후 백로그**로 이연한다.
