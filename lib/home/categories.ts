@@ -279,6 +279,7 @@ interface BookCardRow {
   title: string;
   author: string | null;
   cover_url: string;
+  has_audio: boolean;
 }
 
 /** books id 조회 행. */
@@ -356,7 +357,7 @@ export async function getCategoryBooks(
 
   const { data: bookRows, error: bookError } = await supabase
     .from('books')
-    .select('id, title, author, cover_url')
+    .select('id, title, author, cover_url, has_audio')
     .in('id', cappedIds)
     .returns<BookCardRow[]>();
 
@@ -374,6 +375,7 @@ export async function getCategoryBooks(
       title: row.title,
       author: row.author,
       coverUrl: row.cover_url,
+      hasAudio: row.has_audio,
     }));
 }
 

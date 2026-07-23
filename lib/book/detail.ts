@@ -79,6 +79,15 @@ export interface Book {
    */
   language: string;
   is_active: boolean;
+  /**
+   * 오디오(TTS 낭독) 지원 여부 — 카드·상세 "듣기 지원" 아이콘 표시용 신호 (Phase F).
+   *
+   * ★ 표시 전용 신호다. 리더의 오디오 기능 게이팅은 book_audio 행 존재
+   *   (audio-manifest.ts hasReaderAudio)를 정본으로 쓴다. has_audio는 카탈로그·상세의
+   *   아이콘 노출만 결정하고, 실제 재생 가능 여부는 book_audio가 결정한다
+   *   (진실 원천 분리 — ADR-0033 캐시 영향 최소화 + ADR-0052 오디오 정본).
+   */
+  has_audio: boolean;
 }
 
 /**
@@ -123,7 +132,7 @@ const getBookByIdCached = unstable_cache(
     const { data, error } = await supabase
       .from('books')
       .select(
-        'id, title, author, illustrator, cover_url, content_url, content_type, original_url, license, attribution_text, source_platform, source_id, level, age_min, age_max, language, is_active',
+        'id, title, author, illustrator, cover_url, content_url, content_type, original_url, license, attribution_text, source_platform, source_id, level, age_min, age_max, language, is_active, has_audio',
       )
       .eq('id', id)
       .eq('is_active', true)
@@ -135,7 +144,10 @@ const getBookByIdCached = unstable_cache(
 
     return data ?? null;
   },
-  ['getBookById'],
+  // 캐시 키 버전 서픽스 v2 — has_audio 추가로 페이로드(17→18컬럼)가 바뀌었다. 구버전
+  // 캐시(17컬럼)가 배포 후에도 잔존해 has_audio 누락 행이 반환되는 것을 막는다.
+  // tags·revalidate 정책은 불변(ADR-0033).
+  ['getBookById-v2'],
   { tags: ['books-catalog'], revalidate: 3600 },
 );
 

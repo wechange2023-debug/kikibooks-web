@@ -9,7 +9,7 @@ import {
 } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Headphones } from 'lucide-react';
 
 import { fetchLibraryPage } from '@/lib/library/actions';
 import type { LibraryCopy } from '@/lib/library/copy';
@@ -157,6 +157,16 @@ function LibraryBookCard({ book }: { book: PopularBook }) {
             onError={() => setImageError(true)}
           />
         )}
+        {/* 오디오 지원 배지 (Phase F) — hasAudio=true인 책만. BookCoverCard와 동일 pill. */}
+        {book.hasAudio ? (
+          <span
+            role="img"
+            aria-label="오디오 지원"
+            className="absolute right-1.5 top-1.5 inline-flex h-7 w-7 items-center justify-center rounded-pill border border-outline bg-surface text-primary shadow-elev-1"
+          >
+            <Headphones className="h-4 w-4" aria-hidden="true" />
+          </span>
+        ) : null}
       </div>
       <div className="flex flex-col gap-0.5">
         <p className="line-clamp-2 text-sm font-semibold text-text">{book.title}</p>

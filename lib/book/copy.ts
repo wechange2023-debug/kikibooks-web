@@ -70,6 +70,14 @@ export interface BookDetailCopy {
     label: string;
   };
   /**
+   * 오디오(TTS 낭독) 지원 배지 카피 (Phase F) — BookMeta 칩 영역에 아이콘과 함께 노출.
+   * has_audio=true인 책에만 렌더한다(표시 전용 신호, lib/book/detail.ts Book.has_audio 참조).
+   */
+  audioSupport: {
+    /** "듣기 지원" 칩 라벨. */
+    label: string;
+  };
+  /**
    * 공통 404 페이지 카피 — 블랙리스트(ADR-0014 Amendment #4)·books 행 NULL·RLS 차단
    * 3 케이스 모두 동일 UX로 렌더한다(사용자에게 사유 구분 미노출, intent §5.5).
    */
@@ -233,6 +241,9 @@ const BOOK_DETAIL_COPY: BookDetailCopy = {
   },
   readButton: {
     label: '📖 읽기 시작',
+  },
+  audioSupport: {
+    label: '듣기 지원',
   },
   notFound: {
     title: '찾을 수 없는 책이에요',

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Headphones } from 'lucide-react';
 
 import type { PopularBook } from '@/lib/landing/popular-books';
 
@@ -82,6 +82,18 @@ export function BookCoverCard({ book }: BookCoverCardProps) {
             onError={() => setImageError(true)}
           />
         )}
+        {/* 오디오 지원 배지 (Phase F) — hasAudio=true인 책만. 표지 우상단 작은 pill.
+            3~7세 대상이라 텍스트 없이 아이콘만, aria-label로 접근성 확보.
+            톤은 리더 포지션 pill(audio-reader.tsx)과 일치: border-outline + bg-surface + shadow-elev-1. */}
+        {book.hasAudio ? (
+          <span
+            role="img"
+            aria-label="오디오 지원"
+            className="absolute right-1.5 top-1.5 inline-flex h-7 w-7 items-center justify-center rounded-pill border border-outline bg-surface text-primary shadow-elev-1"
+          >
+            <Headphones className="h-4 w-4" aria-hidden="true" />
+          </span>
+        ) : null}
       </div>
       <div className="flex flex-col gap-0.5">
         <p className="line-clamp-2 text-sm font-semibold text-text">

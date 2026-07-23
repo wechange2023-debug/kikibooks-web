@@ -62,6 +62,7 @@ interface BookCardRow {
   title: string;
   author: string | null;
   cover_url: string;
+  has_audio: boolean;
 }
 
 /** reading_sessions 완독 행 조회용. */
@@ -133,7 +134,7 @@ async function pickBooksAtLevelRange(
 
   const { data: bookRows, error: bookError } = await supabase
     .from('books')
-    .select('id, title, author, cover_url')
+    .select('id, title, author, cover_url, has_audio')
     .in('id', picked)
     .returns<BookCardRow[]>();
 
@@ -146,6 +147,7 @@ async function pickBooksAtLevelRange(
     title: row.title,
     author: row.author,
     coverUrl: row.cover_url,
+    hasAudio: row.has_audio,
   }));
 }
 

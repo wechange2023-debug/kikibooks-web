@@ -44,6 +44,12 @@ export interface PopularBook {
   /** books.author는 nullable — 없으면 캡션에서 저자 줄을 생략한다(ADR-0013). */
   author: string | null;
   coverUrl: string;
+  /**
+   * 오디오(TTS 낭독) 지원 여부 — 카드 우상단 "듣기 지원" 배지 표시용 (Phase F).
+   * 표시 전용 신호다. 리더 오디오 기능 게이팅은 book_audio 정본이 별도로 담당한다
+   * (진실 원천 분리 — lib/book/detail.ts Book.has_audio 주석 참조).
+   */
+  hasAudio: boolean;
 }
 
 /** books 테이블 id 조회 행. */
@@ -57,6 +63,7 @@ interface BookCardRow {
   title: string;
   author: string | null;
   cover_url: string;
+  has_audio: boolean;
 }
 
 /**
@@ -99,7 +106,7 @@ export async function getPopularBooks(
   // 3) 선정된 책 상세 조회
   const { data: bookRows, error: bookError } = await supabase
     .from('books')
-    .select('id, title, author, cover_url')
+    .select('id, title, author, cover_url, has_audio')
     .in('id', pickedIds)
     .returns<BookCardRow[]>();
 
@@ -112,6 +119,7 @@ export async function getPopularBooks(
     title: row.title,
     author: row.author,
     coverUrl: row.cover_url,
+    hasAudio: row.has_audio,
   }));
 }
 

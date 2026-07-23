@@ -147,12 +147,14 @@ interface IndexCursor {
   i: number;
 }
 
-/** 책 카드 렌더에 필요한 4 컬럼 (표지·캡션). 카테고리 모드·toPopularBook 공용. */
+/** 책 카드 렌더에 필요한 컬럼 (표지·캡션·오디오 배지). 카테고리 모드·toPopularBook 공용. */
 interface CardRow {
   id: string;
   title: string;
   author: string | null;
   cover_url: string;
+  /** "듣기 지원" 배지 표시용 (Phase F). 표시 전용 — 리더 게이팅은 book_audio 정본. */
+  has_audio: boolean;
 }
 
 /** keyset 모드 조회 행 — 카드 4컬럼 + cursor 인코딩용 synced_at. */
@@ -237,7 +239,7 @@ async function getBooksKeyset(
 ): Promise<LibraryPage> {
   let query = supabase
     .from('books')
-    .select('id, title, author, cover_url, synced_at')
+    .select('id, title, author, cover_url, has_audio, synced_at')
     .eq('is_active', true);
 
   for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
@@ -354,7 +356,7 @@ async function getBooksWithCategory(
   // payload를 줄인다(정렬 절 자체는 synced_at 컬럼값 없이도 DB가 수행 — 결과 순서 불변).
   let query = supabase
     .from('books')
-    .select('id, title, author, cover_url')
+    .select('id, title, author, cover_url, has_audio')
     .eq('is_active', true);
 
   for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
@@ -415,5 +417,6 @@ function toPopularBook(row: CardRow): PopularBook {
     title: row.title,
     author: row.author,
     coverUrl: row.cover_url,
+    hasAudio: row.has_audio,
   };
 }

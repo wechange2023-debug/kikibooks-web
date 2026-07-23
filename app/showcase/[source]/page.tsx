@@ -44,6 +44,7 @@ interface BookRow {
   title: string;
   author: string | null;
   cover_url: string;
+  has_audio: boolean;
 }
 
 function toPopularBook(row: BookRow): PopularBook {
@@ -52,6 +53,7 @@ function toPopularBook(row: BookRow): PopularBook {
     title: row.title,
     author: row.author,
     coverUrl: row.cover_url,
+    hasAudio: row.has_audio,
   };
 }
 
@@ -69,7 +71,7 @@ async function fetchAllBySource(
   for (let start = 0; start < FETCH_MAX; start += FETCH_CHUNK) {
     const { data, error } = await supabase
       .from('books')
-      .select('id, title, author, cover_url')
+      .select('id, title, author, cover_url, has_audio')
       .eq('is_active', true)
       .eq('source_platform', source)
       .order('title', { ascending: true })

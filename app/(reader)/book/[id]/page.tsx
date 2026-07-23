@@ -96,7 +96,7 @@ export default async function BookDetailPage({ params }: BookDetailPageProps) {
       <div className="mx-auto flex max-w-screen-sm flex-col gap-5 px-4 md:max-w-screen-md md:gap-6 md:px-6 lg:max-w-screen-lg">
         {/* 로그아웃·홈↔라이브러리 네비는 공통 헤더(components/app/app-header.tsx)로 수렴 — ADR-0021 D4. */}
         <BookCoverHero book={book} />
-        <BookMeta book={book} />
+        <BookMeta book={book} audioLabel={copy.audioSupport.label} />
         <AttributionBox rows={rows} />
         <div className="flex justify-center">
           <ReadButton bookId={book.id} label={copy.readButton.label} />
