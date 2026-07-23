@@ -50,9 +50,16 @@
   "ux_waves": {
     "approved_date": "2026-07-22",
     "source": "docs/intent/ux-feedback-2026-07-22.md (페르소나 3인 리뷰, 피드백 10건)",
+    "plan_vs_actual_doc": "docs/intent/ux-waves-plan-vs-actual-2026-07-23.md",
+    "numbering_note": "intent F1~F10 = 페르소나 피드백 10건 식별자. wave1_5/1_6/1_7의 F5-a/F6/F7~F9는 각 작업지시서 로컬 라벨로 intent F5~F10과 의미가 다름(예: intent F7=스와이프 != wave1_7 F7=어트리뷰션 팝오버)",
     "schedule_rule": "Wave1은 2026-07-23~24 진행하되 7/25 하이라이트 판정·7/27 리허설 통과 항목만 시연 빌드 포함(ADR-0052 D1 신규기능 금지선 준수). Wave2=시연 후~베타 전. Wave3=베타 후 기획 판단",
-    "wave1": {"status": "pending", "items": ["F1 완독 조건 안내", "F2 다시듣기", "F3 표지 시작 유도", "F4 토글 라벨 상시 노출"], "note": "컴포넌트 내부 UI만. 데이터·스키마 변경 0"},
+    "wave1": {"status": "done", "completed_date": "2026-07-23", "commits": ["1b6a4d2", "c373d07"], "items": ["F1 완독 조건 안내", "F2 다시듣기", "F3 표지 시작 유도", "F4 토글 라벨 상시 노출"], "note": "컴포넌트 내부 UI만. 데이터·스키마 변경 0. 팀장 실화면 검수 통과"},
+    "wave1_5": {"status": "done", "unplanned": true, "completed_date": "2026-07-23", "commits": ["bee2356"], "items": ["F5-a 무음면 자동 넘김", "F5-b 페이지 넘김 시 재생 연속성"], "note": "계획 외 — Wave1 검수 중 무음면 자동 넘김 정지·넘김 시 재생 단절 버그 대응. 팀장 검수 통과"},
+    "wave1_6": {"status": "done", "unplanned": true, "completed_date": "2026-07-23", "commits": ["69fd8da"], "items": ["자동 넘김 토글을 '연속 듣기 모드'로 재정의", "F6 무음면 카운트다운 표시"], "note": "계획 외 — 무음면 전환 후 재생 안 됨·자연종료(리플레이) 후 넘김 단절·무음면 멈춘 듯 보임 대응. 팀장 검수 통과"},
+    "wave1_7": {"status": "done", "unplanned": true, "completed_date": "2026-07-23", "commits": ["2f161c2"], "items": ["F7 어트리뷰션 상단 바 제거->헤더 정보 팝오버", "F8 그림 영역 확장", "F9 페이지 위치 표시(이미지 우하단)"], "note": "계획 외 — 팀장 피드백+페르소나 5인 리뷰. 팝오버는 하단바 390px 포화로 헤더 배치(오케 승인). 책 상세 AttributionBox 불변. 팀장 검수 통과"},
+    "wave1_7b": {"status": "done", "unplanned": true, "completed_date": "2026-07-23", "commits": ["d3ea119", "449980b"], "items": ["하단 바 상단 구분선+흰->회색 그라데이션(가로 100%)"], "note": "계획 외 — 팀장 스타일 지시(자막-바 시각 분리). 스타일만, 로직·그리드 무수정. 팀장 검수 통과"},
     "wave2": {"status": "pending", "items": ["F5 뒤로가기 보호", "F6 자막 숨김 토글", "F7 스와이프 넘김"], "note": "라우팅·제스처 개입. 기존 Asb/Html 뷰어와 일관성 검토 필요"},
-    "wave3": {"status": "pending", "items": ["F8 탭 비활성 일시정지", "F9 한국어 해석(ADR 선행 필수)", "F10 이미지 내 하이라이트"], "note": "F9는 번역 저작권(ADR-0023 §2.6 승계)·저장위치(Hard Rule 8 스키마 ADR)·생성주체 확정 전 착수 금지"}
+    "wave3": {"status": "pending", "items": ["F8 탭 비활성 일시정지", "F9 한국어 해석(ADR 선행 필수)", "F10 이미지 내 하이라이트"], "note": "F9는 번역 저작권(ADR-0023 §2.6 승계)·저장위치(Hard Rule 8 스키마 ADR)·생성주체 확정 전 착수 금지"},
+    "design_renewal": {"status": "pending", "when": "시연 후", "benchmarks": ["Epic!", "Vooks", "Duolingo ABC", "Khan Academy Kids"], "sequence": ["Claude Design 시안", "docs/design-system.md 갱신", "적용"], "note": "신규 트랙. 디자인 토큰 체계(Hard Rule 10) 준수 전제"}
   }
 }
