@@ -144,6 +144,7 @@ export default async function ReadPage({ params }: ReadPageProps) {
             <AudioReader
               book={audioBook}
               bookDetailHref={`/book/${book.id}`}
+              autoAdvanceLabel={readerCopy.audioReader.autoAdvanceLabel}
               finishSlot={<FinishButton bookId={book.id} copy={readerCopy.finish} />}
             />
           </main>

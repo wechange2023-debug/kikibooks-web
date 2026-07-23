@@ -8,6 +8,7 @@ import {
   Loader2,
   Pause,
   Play,
+  RotateCcw,
 } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 
@@ -41,6 +42,12 @@ interface AudioReaderProps {
   bookDetailHref: string;
   /** 뒤로가기 라벨. */
   backLabel?: string;
+  /**
+   * 자동 넘김 토글 라벨(Wave 1 F4). 좁은 화면에서도 상시 노출한다.
+   * server-only lib/book/copy.ts의 audioReader.autoAdvanceLabel을 page.tsx가 주입한다
+   * (클라이언트 컴포넌트가 copy를 직접 import할 수 없으므로 props threading).
+   */
+  autoAdvanceLabel?: string;
   /**
    * 하단 1행 오른쪽에 놓을 완독 버튼(P2-B). page.tsx가 FinishButton을 주입한다.
    * 슬롯으로 받는 이유: FinishButton은 HtmlReader·AsbReader와 공유하는 컴포넌트라
@@ -173,6 +180,7 @@ export function AudioReader({
   book,
   bookDetailHref,
   backLabel = '책으로 돌아가기',
+  autoAdvanceLabel = '자동 넘김',
   finishSlot,
 }: AudioReaderProps) {
   const { bookId, cover, pages, title } = book;
@@ -209,6 +217,9 @@ export function AudioReader({
   const [nowMs, setNowMs] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [autoAdvance, setAutoAdvance] = useState(true);
+  // 현재 슬라이드 오디오가 끝까지 재생됐는지(F2 다시듣기). 재생 시작·페이지 이동 시 해제.
+  // true면 중앙 버튼이 ▶ 대신 ↻(다시듣기)로 바뀌고 클릭 시 처음부터 재생한다.
+  const [ended, setEnded] = useState(false);
   // 완독 버튼 게이트(P2-C) — 마지막 슬라이드에 **한 번이라도 도달**하면 true로 굳는다.
   // 이후 앞 페이지로 되돌아가도 유지된다(다시 잠그지 않는다).
   const [reachedEnd, setReachedEnd] = useState(false);
@@ -289,6 +300,7 @@ export function AudioReader({
   useEffect(() => {
     setNowMs(0);
     setIsPlaying(false);
+    setEnded(false); // 새 슬라이드에서는 다시듣기 상태 해제(F2).
     const el = audioRef.current;
     if (el && autoplayNextRef.current && page.audioUrl) {
       autoplayNextRef.current = false;
@@ -314,12 +326,18 @@ export function AudioReader({
     const el = audioRef.current;
     if (!el || !page.audioUrl) return;
     clearAdvanceTimer(); // 대기 중 자동 넘김이 있으면 수동 재생/정지가 우선.
-    if (el.paused) el.play().catch(() => undefined);
-    else el.pause();
-  }, [page.audioUrl, clearAdvanceTimer]);
+    if (el.paused) {
+      // 다시듣기(F2): 끝까지 들은 뒤 재생하면 처음부터. onPlay가 ended를 해제한다.
+      if (ended) el.currentTime = 0;
+      el.play().catch(() => undefined);
+    } else {
+      el.pause();
+    }
+  }, [page.audioUrl, clearAdvanceTimer, ended]);
 
   const handleEnded = useCallback(() => {
     setIsPlaying(false);
+    setEnded(true); // 다시듣기 버튼 노출 조건(F2).
     stopRaf();
     const el = audioRef.current;
     if (el) setNowMs(el.duration * 1000 || 0);
@@ -336,6 +354,10 @@ export function AudioReader({
   const isFirst = index === 0;
   const isLast = index === total - 1;
   const hasAudio = Boolean(page.audioUrl);
+  // 표지 시작 유도 오버레이(F3): 표지 슬라이드에서 아직 재생 전(nowMs 0·정지)일 때만.
+  // 한 번 재생되면 nowMs>0 으로 굳어 되돌아와도 다시 뜨지 않는다(표지 재진입 제외).
+  const showCoverStart =
+    page.key === 'cover' && hasAudio && !isPlaying && nowMs === 0;
 
   // 마지막 슬라이드 도달 이력 기록. 단방향(false→true)이라 되돌아가도 풀리지 않는다.
   useEffect(() => {
@@ -391,6 +413,23 @@ export function AudioReader({
               overlay
               className="absolute right-1 top-1/2 -translate-y-1/2 lg:hidden"
             />
+            {/* 표지 시작 유도(F3) — 이미지 전체가 탭 타깃, 중앙에 시작 필.
+                색 투명도 모디파이어 대신 backdrop-blur-sm로 오버레이 질감을 주고
+                커버 이미지는 가리지 않는다(Tailwind v3 hex 토큰 투명도 렌더 회피).
+                재생 시작(isPlaying) 또는 nowMs 진행 시 showCoverStart=false로 사라진다. */}
+            {showCoverStart && (
+              <button
+                type="button"
+                onClick={togglePlay}
+                aria-label="눌러서 시작하기"
+                className="absolute inset-0 z-10 flex items-center justify-center backdrop-blur-sm transition-opacity duration-200 ease-kiki"
+              >
+                <span className="inline-flex items-center gap-2 rounded-pill bg-primary px-6 py-3 font-body text-lg font-semibold text-white shadow-elev-2">
+                  <Play className="h-6 w-6 translate-x-[1px]" aria-hidden />
+                  눌러서 시작하기
+                </span>
+              </button>
+            )}
           </div>
           <NavButton
             direction="next"
@@ -445,21 +484,28 @@ export function AudioReader({
                 }`}
               />
             </button>
-            {/* 좁은 화면에선 라벨을 숨겨 3요소가 한 줄에 들어가게 한다(스위치는 남음). */}
-            <span className="hidden text-sm text-text-variant lg:inline">
-              재생 후 자동 넘김
+            {/* 토글 라벨 상시 노출(F4) — 무엇을 켜고 끄는지 좁은 화면에서도 보이게 한다.
+                무스크롤 단일행 유지를 위해 문구를 축약('자동 넘김', copy.ts 편입)하고
+                줄바꿈을 막는다(whitespace-nowrap). truncate 대신 nowrap: 4글자 축약이라
+                가로 폭을 거의 먹지 않고, 잘림 없이 온전히 보이는 편이 P1·P3에 유리. */}
+            <span className="whitespace-nowrap text-sm text-text-variant">
+              {autoAdvanceLabel}
             </span>
           </div>
 
+          {/* 중앙 주 동작 버튼. 재생 완료(ended) 후에는 ▶ 대신 ↻(다시듣기, F2)로 바뀌고
+              클릭 시 togglePlay가 currentTime=0으로 되감아 처음부터 재생한다. */}
           <button
             type="button"
             onClick={togglePlay}
             disabled={!hasAudio}
-            aria-label={isPlaying ? '일시정지' : '재생'}
+            aria-label={isPlaying ? '일시정지' : ended ? '다시 듣기' : '재생'}
             className="inline-flex h-16 w-16 items-center justify-center rounded-pill bg-primary text-white shadow-elev-2 transition-all duration-200 ease-kiki hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-[0.38]"
           >
             {isPlaying ? (
               <Pause className="h-7 w-7" aria-hidden />
+            ) : ended ? (
+              <RotateCcw className="h-7 w-7" aria-hidden />
             ) : (
               <Play className="h-7 w-7 translate-x-[1px]" aria-hidden />
             )}
@@ -487,6 +533,16 @@ export function AudioReader({
             </div>
           </div>
         </div>
+
+        {/* 완독 조건 안내(F1) — 왜 완독 버튼이 회색인지 알린다(P1).
+            게이트가 잠긴 동안(!reachedEnd)만 렌더하고, 마지막 장 도달로 풀리면
+            숨겨 세로 공간을 회수한다(무스크롤 단일화면 유지). 완독 버튼 쪽에
+            붙도록 우측 정렬. title= 툴팁은 hover 없는 터치기기에서 안 보여 보조일 뿐. */}
+        {!reachedEnd && (
+          <p className="w-full max-w-4xl shrink-0 text-right text-xs text-text-variant">
+            끝까지 들으면 완독 버튼이 켜져요
+          </p>
+        )}
       </div>
 
       {/* 오디오 — 페이지별 remount(key). 화면엔 커스텀 컨트롤만 노출. */}
@@ -497,6 +553,7 @@ export function AudioReader({
         preload="metadata"
         onPlay={() => {
           setIsPlaying(true);
+          setEnded(false); // 재생 시작 시 다시듣기 상태 해제(F2).
           startRaf();
         }}
         onPause={() => {
