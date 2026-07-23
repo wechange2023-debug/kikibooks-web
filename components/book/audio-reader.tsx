@@ -562,9 +562,12 @@ export function AudioReader({
             grid 3열(1fr auto 1fr)이라 좌우 폭이 달라도 재생 버튼이 화면 중앙에 고정된다.
             Wave 1.7b(스타일만): 자막과 시각 분리를 위해 상단 회색 구분선(border-outline #E8E2D9)
             + 흰색→옅은 회색 그라데이션(from-surface #FFF → to-surface-2, semantic 토큰·투명도
-            미사용으로 Tailwind v3 hex 렌더 이슈 회피). pt-2는 구분선과 컨트롤 사이 여백(가독성);
-            이미지 행(flex-1)이 흡수하므로 무스크롤 불변. 그리드·컬럼·로직 무수정. */}
-        <div className="grid w-full max-w-4xl shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-2 border-t border-outline bg-gradient-to-b from-surface to-surface-2 pt-2">
+            미사용으로 Tailwind v3 hex 렌더 이슈 회피). pt-2는 구분선과 컨트롤 사이 여백(가독성).
+            후속: 구분선·그라데이션을 가로 100%로 — 바깥 밴드 래퍼가 부모 컨텐츠열 px를 -mx로
+            상쇄해 리더 폭 전체를 덮고(경계선 edge-to-edge), 안쪽에서 px로 되돌려 컨트롤은
+            max-w-4xl mx-auto로 기존 위치를 그대로 유지한다. 이미지 행(flex-1) 흡수로 무스크롤 불변. */}
+        <div className="w-full shrink-0 border-t border-outline bg-gradient-to-b from-surface to-surface-2 pt-2 -mx-2 px-2 md:-mx-4 md:px-4">
+          <div className="mx-auto grid w-full max-w-4xl grid-cols-[1fr_auto_1fr] items-center gap-2">
           <div className="flex items-center justify-start gap-2">
             <button
               type="button"
@@ -634,6 +637,7 @@ export function AudioReader({
             >
               {finishSlot}
             </div>
+          </div>
           </div>
         </div>
 
