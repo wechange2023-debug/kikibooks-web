@@ -13,7 +13,11 @@ import {
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 
 import { HighlightedText, type WordMark } from '@/components/book/highlighted-text';
-import { AUTO_ADVANCE_DELAY_MS, HIGHLIGHT_UNIT } from '@/lib/book/highlight-config';
+import {
+  AUTO_ADVANCE_DELAY_MS,
+  HIGHLIGHT_UNIT,
+  SILENT_PAGE_ADVANCE_MS,
+} from '@/lib/book/highlight-config';
 import type { ReaderAudioBook } from '@/lib/book/audio-manifest';
 import { startReadingSession } from '@/lib/book/reading-session';
 
@@ -228,6 +232,10 @@ export function AudioReader({
   const rafRef = useRef<number | null>(null);
   // 자동 넘김으로 페이지가 바뀐 직후 새 오디오를 이어서 재생하기 위한 플래그.
   const autoplayNextRef = useRef(false);
+  // 재생 세션 진행 중 여부(F5-b) — onPlay에서 true, 사용자 일시정지(onPause)에서 false.
+  // 자연 종료(onEnded)는 pause 이벤트를 내지 않아 세션이 유지되고, 무음 페이지를 지나도
+  // (상태가 아니라 ref라) 값이 보존된다. goNext가 이 값을 보고 다음 장 이어재생을 예약한다.
+  const playSessionRef = useRef(false);
   // 자동 넘김 지연 타이머(P1-C). 수동 조작·언마운트 시 취소한다.
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -319,6 +327,10 @@ export function AudioReader({
   }, [clearAdvanceTimer]);
   const goNext = useCallback(() => {
     clearAdvanceTimer();
+    // 재생 세션 진행 중이면 다음 장 이어재생을 예약한다(F5-b). 사용자가 일시정지한
+    // 상태(playSessionRef=false)에서 수동으로 넘기면 예약하지 않아 정지 상태가 유지된다.
+    // 무음 페이지의 F5-a 타이머가 goNext를 호출할 때도 이 경로로 이어재생이 연결된다.
+    if (playSessionRef.current) autoplayNextRef.current = true;
     setIndex((i) => Math.min(total - 1, i + 1));
   }, [total, clearAdvanceTimer]);
 
@@ -363,6 +375,20 @@ export function AudioReader({
   useEffect(() => {
     if (isLast) setReachedEnd(true);
   }, [isLast]);
+
+  // 소리 없는 페이지 자동 넘김(F5-a) — 오디오가 없으면 onEnded가 없어 handleEnded의
+  // 자동 넘김 경로가 걸리지 않는다. 자동 넘김 ON + 오디오 없음 + 마지막 장 아님이면
+  // SILENT_PAGE_ADVANCE_MS 후 다음 장으로 넘긴다. deps에 index를 포함해 무음 페이지가
+  // 연속돼도 페이지마다 타이머를 새로 건다. 이탈·토글 변경 시 cleanup으로 반드시 해제해
+  // 중복 전환을 막는다. goNext가 재생 세션 여부를 보고 이어재생을 잇는다(F5-b 연결).
+  useEffect(() => {
+    if (!autoAdvance || hasAudio || isLast) return;
+    clearAdvanceTimer();
+    advanceTimerRef.current = setTimeout(() => {
+      goNext();
+    }, SILENT_PAGE_ADVANCE_MS);
+    return clearAdvanceTimer;
+  }, [index, autoAdvance, hasAudio, isLast, goNext, clearAdvanceTimer]);
 
   return (
     <div className="flex h-full w-full flex-col">
@@ -554,10 +580,14 @@ export function AudioReader({
         onPlay={() => {
           setIsPlaying(true);
           setEnded(false); // 재생 시작 시 다시듣기 상태 해제(F2).
+          playSessionRef.current = true; // 재생 세션 시작(F5-b).
           startRaf();
         }}
         onPause={() => {
           setIsPlaying(false);
+          // 사용자 일시정지 = 세션 종료(F5-b). 자연 종료(onEnded)는 pause를 내지 않아
+          // 여기 오지 않으므로 자동 넘김 이어재생 세션은 유지된다.
+          playSessionRef.current = false;
           stopRaf();
         }}
         onEnded={handleEnded}

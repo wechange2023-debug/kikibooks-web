@@ -19,3 +19,11 @@ export const HIGHLIGHT_UNIT: HighlightUnit = 'word';
  * 이 값만 조정하면 된다(기본 2000ms).
  */
 export const AUTO_ADVANCE_DELAY_MS = 2000;
+
+/**
+ * 소리 없는 페이지 자동 넘김 대기(ms) — 오디오가 없는 페이지는 재생 종료 이벤트
+ * (onEnded)가 없어 자동 넘김이 걸리지 않는다(Wave 1.5 F5-a). 자동 넘김 ON일 때
+ * 이 시간만큼 그림을 보여준 뒤 다음 장으로 넘긴다. 소리 있는 페이지의 낭독 길이를
+ * 대략 대신하는 값이라 AUTO_ADVANCE_DELAY_MS(종료 후 여운)보다 길게 둔다(기본 5000ms).
+ */
+export const SILENT_PAGE_ADVANCE_MS = 5000;
