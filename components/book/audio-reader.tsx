@@ -224,18 +224,22 @@ export function AudioReader({
   // 현재 슬라이드 오디오가 끝까지 재생됐는지(F2 다시듣기). 재생 시작·페이지 이동 시 해제.
   // true면 중앙 버튼이 ▶ 대신 ↻(다시듣기)로 바뀌고 클릭 시 처음부터 재생한다.
   const [ended, setEnded] = useState(false);
+  // 무음면 카운트다운 남은 초(Wave 1.6 F6). null이면 미표시(토글 OFF·오디오 면·마지막 면).
+  const [silentCountdown, setSilentCountdown] = useState<number | null>(null);
   // 완독 버튼 게이트(P2-C) — 마지막 슬라이드에 **한 번이라도 도달**하면 true로 굳는다.
   // 이후 앞 페이지로 되돌아가도 유지된다(다시 잠그지 않는다).
   const [reachedEnd, setReachedEnd] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const rafRef = useRef<number | null>(null);
-  // 자동 넘김으로 페이지가 바뀐 직후 새 오디오를 이어서 재생하기 위한 플래그.
-  const autoplayNextRef = useRef(false);
-  // 재생 세션 진행 중 여부(F5-b) — onPlay에서 true, 사용자 일시정지(onPause)에서 false.
-  // 자연 종료(onEnded)는 pause 이벤트를 내지 않아 세션이 유지되고, 무음 페이지를 지나도
-  // (상태가 아니라 ref라) 값이 보존된다. goNext가 이 값을 보고 다음 장 이어재생을 예약한다.
-  const playSessionRef = useRef(false);
+  // 사용자가 리더와 한 번이라도 상호작용(재생 탭·수동 이동)했는지(Wave 1.6). 표지 첫
+  // 진입 등 상호작용 전에는 자동 재생을 시도하지 않는다 — 브라우저 자동재생 정책을
+  // 존중하고 F3 표지 오버레이를 유지한다. 이후 진입은 연속 듣기 모드 규칙을 따른다.
+  const interactedRef = useRef(false);
+  // 페이지 진입 effect가 최신 토글값을 deps 없이 읽기 위한 미러(Wave 1.6). autoAdvance를
+  // 그 effect의 deps에 넣으면 토글만 바꿔도 재생 상태가 리셋되므로 ref로 우회한다.
+  const autoAdvanceRef = useRef(autoAdvance);
+  autoAdvanceRef.current = autoAdvance;
   // 자동 넘김 지연 타이머(P1-C). 수동 조작·언마운트 시 취소한다.
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -304,39 +308,42 @@ export function AudioReader({
   }, []);
   useEffect(() => clearAdvanceTimer, [clearAdvanceTimer]);
 
-  // 페이지 변경 시 시간 초기화 + (자동 넘김 이어재생이면) 새 오디오 자동 재생.
+  // 페이지 진입 시 시간·상태 초기화 + 연속 듣기 모드면 자동 재생(Wave 1.6).
+  // 어느 경로로 왔든(자동 전환·수동 다음·수동 이전) 토글 ON + 오디오 있음 + 사용자가
+  // 이미 상호작용했으면 재생한다(토글 상태가 곧 모드 — 세션 플래그 제거). 표지 첫 진입
+  // (상호작용 전)은 시도하지 않는다. autoAdvance는 미러 ref로 읽어 deps에서 빼, 토글만
+  // 바꿔도 이 effect가 재실행돼 재생 상태가 리셋되는 것을 막는다.
   useEffect(() => {
     setNowMs(0);
     setIsPlaying(false);
     setEnded(false); // 새 슬라이드에서는 다시듣기 상태 해제(F2).
     const el = audioRef.current;
-    if (el && autoplayNextRef.current && page.audioUrl) {
-      autoplayNextRef.current = false;
-      el.play().catch(() => {
-        // 브라우저 자동재생 정책 등 — 무시(사용자가 재생 버튼으로 이어갈 수 있음).
+    if (el && autoAdvanceRef.current && page.audioUrl && interactedRef.current) {
+      el.play().catch((err) => {
+        // 브라우저 자동재생 정책 등 — 조용히 ▶ 대기 폴백(화면 유지), 콘솔 로그만.
+        console.log('[audio-reader] 자동 재생 실패 — 수동 대기로 폴백', err);
       });
-    } else {
-      autoplayNextRef.current = false;
     }
   }, [index, page.audioUrl]);
 
-  // 수동 페이지 이동 시 대기 중인 자동 넘김 타이머를 취소한다.
+  // 페이지 이동 — 대기 중인 자동 넘김 타이머를 취소한다. 이동으로 상호작용 플래그를
+  // 세우고, 새 페이지의 자동 재생 여부는 진입 effect가 토글(연속 듣기 모드) 기준으로
+  // 결정한다(Wave 1.6 — 세션 플래그 제거). 일시정지 상태에서 넘겨도 새 장은 모드 규칙대로.
   const goPrev = useCallback(() => {
+    interactedRef.current = true;
     clearAdvanceTimer();
     setIndex((i) => Math.max(0, i - 1));
   }, [clearAdvanceTimer]);
   const goNext = useCallback(() => {
+    interactedRef.current = true;
     clearAdvanceTimer();
-    // 재생 세션 진행 중이면 다음 장 이어재생을 예약한다(F5-b). 사용자가 일시정지한
-    // 상태(playSessionRef=false)에서 수동으로 넘기면 예약하지 않아 정지 상태가 유지된다.
-    // 무음 페이지의 F5-a 타이머가 goNext를 호출할 때도 이 경로로 이어재생이 연결된다.
-    if (playSessionRef.current) autoplayNextRef.current = true;
     setIndex((i) => Math.min(total - 1, i + 1));
   }, [total, clearAdvanceTimer]);
 
   const togglePlay = useCallback(() => {
     const el = audioRef.current;
     if (!el || !page.audioUrl) return;
+    interactedRef.current = true; // 사용자 재생/정지 탭 = 상호작용(Wave 1.6).
     clearAdvanceTimer(); // 대기 중 자동 넘김이 있으면 수동 재생/정지가 우선.
     if (el.paused) {
       // 다시듣기(F2): 끝까지 들은 뒤 재생하면 처음부터. onPlay가 ended를 해제한다.
@@ -353,11 +360,11 @@ export function AudioReader({
     stopRaf();
     const el = audioRef.current;
     if (el) setNowMs(el.duration * 1000 || 0);
-    // 자동 넘김: 지연(P1-C) 후 다음 페이지로 넘기고 이어재생 예약(ADR-0052 뷰어 자동 진행).
+    // 연속 듣기 모드면 여운(P1-C) 후 다음 장으로. 다음 장의 자동 재생은 페이지 진입
+    // effect가 토글 기준으로 처리한다(자연 종료는 일시정지가 아니라 흐름 지속 — Wave 1.6).
     if (autoAdvance && index < total - 1) {
       clearAdvanceTimer();
       advanceTimerRef.current = setTimeout(() => {
-        autoplayNextRef.current = true;
         goNext();
       }, AUTO_ADVANCE_DELAY_MS);
     }
@@ -376,19 +383,34 @@ export function AudioReader({
     if (isLast) setReachedEnd(true);
   }, [isLast]);
 
-  // 소리 없는 페이지 자동 넘김(F5-a) — 오디오가 없으면 onEnded가 없어 handleEnded의
-  // 자동 넘김 경로가 걸리지 않는다. 자동 넘김 ON + 오디오 없음 + 마지막 장 아님이면
-  // SILENT_PAGE_ADVANCE_MS 후 다음 장으로 넘긴다. deps에 index를 포함해 무음 페이지가
-  // 연속돼도 페이지마다 타이머를 새로 건다. 이탈·토글 변경 시 cleanup으로 반드시 해제해
-  // 중복 전환을 막는다. goNext가 재생 세션 여부를 보고 이어재생을 잇는다(F5-b 연결).
+  // 무음면 자동 넘김 + 카운트다운(Wave 1.6 F5-a·F6) — 오디오가 없으면 onEnded가 없어
+  // handleEnded 경로가 안 걸린다. 연속 듣기 모드(토글 ON) + 오디오 없음 + 마지막 장 아님
+  // 이면 1초 간격으로 N→…→1을 표시하며 SILENT_PAGE_ADVANCE_MS 후 다음 장으로 넘긴다.
+  // 다음 장의 자동 재생은 페이지 진입 effect가 처리한다. deps에 index 포함 — 무음면이
+  // 연속돼도 면마다 새로 센다. 수동 이동·토글 OFF·마지막 면 진입 시 cleanup으로 타이머·
+  // 표시를 즉시 해제한다(중복 전환·잔상 방지). 마지막 면 무음은 넘어갈 곳이 없어 미표시.
   useEffect(() => {
-    if (!autoAdvance || hasAudio || isLast) return;
-    clearAdvanceTimer();
-    advanceTimerRef.current = setTimeout(() => {
-      goNext();
-    }, SILENT_PAGE_ADVANCE_MS);
-    return clearAdvanceTimer;
-  }, [index, autoAdvance, hasAudio, isLast, goNext, clearAdvanceTimer]);
+    if (!autoAdvance || hasAudio || isLast) {
+      setSilentCountdown(null);
+      return;
+    }
+    let remaining = Math.ceil(SILENT_PAGE_ADVANCE_MS / 1000);
+    setSilentCountdown(remaining);
+    const id = setInterval(() => {
+      remaining -= 1;
+      if (remaining <= 0) {
+        clearInterval(id);
+        setSilentCountdown(null);
+        goNext();
+      } else {
+        setSilentCountdown(remaining);
+      }
+    }, 1000);
+    return () => {
+      clearInterval(id);
+      setSilentCountdown(null);
+    };
+  }, [index, autoAdvance, hasAudio, isLast, goNext]);
 
   return (
     <div className="flex h-full w-full flex-col">
@@ -485,6 +507,15 @@ export function AudioReader({
           )}
         </div>
 
+        {/* 무음면 카운트다운(Wave 1.6 F6) — 연속 듣기 모드에서 오디오 없는 면이 몇 초 뒤
+            넘어가는지 숫자로 알린다(멈춘 것처럼 보이는 문제 해소). 인라인 문구(copy.ts 미편입).
+            조건은 silentCountdown 상태 하나로 충족 — 토글 OFF·오디오 면·마지막 면이면 null. */}
+        {silentCountdown !== null && (
+          <p className="shrink-0 text-center text-sm font-semibold text-text-variant">
+            <span className="tabular-nums text-primary">{silentCountdown}</span>초 후 다음 장
+          </p>
+        )}
+
         {/* 하단 1행 — 자동넘김(좌) · 재생(중앙, 주 동작) · 완독(우).
             grid 3열(1fr auto 1fr)이라 좌우 폭이 달라도 재생 버튼이 화면 중앙에 고정된다. */}
         <div className="grid w-full max-w-4xl shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-2">
@@ -580,14 +611,10 @@ export function AudioReader({
         onPlay={() => {
           setIsPlaying(true);
           setEnded(false); // 재생 시작 시 다시듣기 상태 해제(F2).
-          playSessionRef.current = true; // 재생 세션 시작(F5-b).
           startRaf();
         }}
         onPause={() => {
           setIsPlaying(false);
-          // 사용자 일시정지 = 세션 종료(F5-b). 자연 종료(onEnded)는 pause를 내지 않아
-          // 여기 오지 않으므로 자동 넘김 이어재생 세션은 유지된다.
-          playSessionRef.current = false;
           stopRaf();
         }}
         onEnded={handleEnded}
