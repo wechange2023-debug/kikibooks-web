@@ -4,7 +4,7 @@
   "head_at_creation": "f914bf2",
   "confirmed_pipeline": ["extract_draft","human_review","tts","marks_highlight","service_on"],
   "total_phases": 7,
-  "last_updated": "2026-07-22",
+  "last_updated": "2026-07-23",
   "demo": {
     "deadline": "2026-07-28",
     "adr": "ADR-0052",
