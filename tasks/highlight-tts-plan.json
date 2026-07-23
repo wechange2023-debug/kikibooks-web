@@ -21,7 +21,8 @@
       {"date": "2026-07-25", "goal": "뷰어 오디오 재생 + 단어 하이라이트 통합 (하이라이트 판정)", "phase": "D"},
       {"date": "2026-07-26", "goal": "has_audio 보강 + TTS 아이콘 + 12권 서비스 ON", "phase": "F"},
       {"date": "2026-07-27", "goal": "리허설 지원·버그 수정 (신규 기능 추가 금지)", "phase": "-"}
-    ]
+    ],
+    "highlight_verdict": {"status": "passed", "date": "2026-07-23", "unit": "word", "books": ["a-trip-to-the-tap", "amahle-wants-to-help", "baby-babble"], "note": "7/25 예정분 조기 수행. 대표 3권 단어 하이라이트 합격. HIGHLIGHT_UNIT 'word' 유지 확정, sentence 강등 불필요"}
   },
   "phases": [
     {"id":"A","name":"데이터 모델(검수·상태·확정텍스트·캐릭터매핑 스키마)","status":"done","depends_on":[],"critical_path":true,"note":"ADR-0046 확정, book_text 152권·book_review 152권 적재 완료"},
