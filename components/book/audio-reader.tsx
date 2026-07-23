@@ -559,8 +559,12 @@ export function AudioReader({
         )}
 
         {/* 하단 1행 — 자동넘김(좌) · 재생(중앙, 주 동작) · 완독(우).
-            grid 3열(1fr auto 1fr)이라 좌우 폭이 달라도 재생 버튼이 화면 중앙에 고정된다. */}
-        <div className="grid w-full max-w-4xl shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-2">
+            grid 3열(1fr auto 1fr)이라 좌우 폭이 달라도 재생 버튼이 화면 중앙에 고정된다.
+            Wave 1.7b(스타일만): 자막과 시각 분리를 위해 상단 회색 구분선(border-outline #E8E2D9)
+            + 흰색→옅은 회색 그라데이션(from-surface #FFF → to-surface-2, semantic 토큰·투명도
+            미사용으로 Tailwind v3 hex 렌더 이슈 회피). pt-2는 구분선과 컨트롤 사이 여백(가독성);
+            이미지 행(flex-1)이 흡수하므로 무스크롤 불변. 그리드·컬럼·로직 무수정. */}
+        <div className="grid w-full max-w-4xl shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-2 border-t border-outline bg-gradient-to-b from-surface to-surface-2 pt-2">
           <div className="flex items-center justify-start gap-2">
             <button
               type="button"
