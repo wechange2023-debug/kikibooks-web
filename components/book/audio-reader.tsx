@@ -5,14 +5,17 @@ import {
   ArrowLeft,
   ChevronLeft,
   ChevronRight,
+  Info,
   Loader2,
   Pause,
   Play,
   RotateCcw,
+  X,
 } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 
 import { HighlightedText, type WordMark } from '@/components/book/highlighted-text';
+import type { AttributionRow } from '@/lib/book/attribution';
 import {
   AUTO_ADVANCE_DELAY_MS,
   HIGHLIGHT_UNIT,
@@ -52,6 +55,12 @@ interface AudioReaderProps {
    * (클라이언트 컴포넌트가 copy를 직접 import할 수 없으므로 props threading).
    */
   autoAdvanceLabel?: string;
+  /**
+   * 어트리뷰션 행(Wave 1.7 F7). 상단 어트리뷰션 바 제거 대신 헤더 ⓘ 팝오버로 노출한다.
+   * page.tsx가 buildAttributionRows 결과(작가/출판사·illustrator·license·원본)를 내려준다.
+   * CC BY 필수 4요소 중 책 제목은 book.title로 별도 노출. 비면 ⓘ를 표시하지 않는다.
+   */
+  attributionRows?: AttributionRow[];
   /**
    * 하단 1행 오른쪽에 놓을 완독 버튼(P2-B). page.tsx가 FinishButton을 주입한다.
    * 슬롯으로 받는 이유: FinishButton은 HtmlReader·AsbReader와 공유하는 컴포넌트라
@@ -185,6 +194,7 @@ export function AudioReader({
   bookDetailHref,
   backLabel = '책으로 돌아가기',
   autoAdvanceLabel = '자동 넘김',
+  attributionRows = [],
   finishSlot,
 }: AudioReaderProps) {
   const { bookId, cover, pages, title } = book;
@@ -226,6 +236,8 @@ export function AudioReader({
   const [ended, setEnded] = useState(false);
   // 무음면 카운트다운 남은 초(Wave 1.6 F6). null이면 미표시(토글 OFF·오디오 면·마지막 면).
   const [silentCountdown, setSilentCountdown] = useState<number | null>(null);
+  // 어트리뷰션 팝오버 표시 여부(Wave 1.7 F7). 헤더 ⓘ로 열고 배경/✕/Esc로 닫는다.
+  const [showAttribution, setShowAttribution] = useState(false);
   // 완독 버튼 게이트(P2-C) — 마지막 슬라이드에 **한 번이라도 도달**하면 true로 굳는다.
   // 이후 앞 페이지로 되돌아가도 유지된다(다시 잠그지 않는다).
   const [reachedEnd, setReachedEnd] = useState(false);
@@ -412,9 +424,20 @@ export function AudioReader({
     };
   }, [index, autoAdvance, hasAudio, isLast, goNext]);
 
+  // 어트리뷰션 팝오버 Esc 닫기(F7 접근성). 열려 있을 때만 리스너를 건다.
+  useEffect(() => {
+    if (!showAttribution) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowAttribution(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [showAttribution]);
+
   return (
     <div className="flex h-full w-full flex-col">
-      {/* 헤더 1행 — 뒤로가기 · 타이틀 · 위치. 상하 여백 최소화(P2-B): 이미지·자막에 세로 양보. */}
+      {/* 헤더 1행 — 뒤로가기 · 타이틀 · ⓘ 저작권(Wave 1.7 F7). 위치 표시(F9)는 이미지
+          우하단 모서리로 이동했다. 상하 여백 최소화(P2-B): 이미지·자막에 세로 양보. */}
       <header className="flex shrink-0 items-center gap-3 px-3 py-1.5 md:px-6">
         <Link
           href={bookDetailHref}
@@ -427,9 +450,21 @@ export function AudioReader({
         <h1 className="min-w-0 flex-1 truncate text-center font-body text-base font-semibold text-text md:text-lg">
           {title}
         </h1>
-        <span className="shrink-0 text-sm font-semibold tabular-nums text-text-variant">
-          {page.positionLabel}
-        </span>
+        {/* ⓘ 저작권 — 상단 어트리뷰션 바 제거(F7)를 대체하는 1탭 도달점. 뒤로가기와 같은
+            h-10 w-10로 헤더 좌우 균형을 맞춘다. 어트리뷰션 데이터가 없으면 자리만 비운다. */}
+        {attributionRows.length > 0 ? (
+          <button
+            type="button"
+            onClick={() => setShowAttribution(true)}
+            aria-label="저작권 정보"
+            aria-haspopup="dialog"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-pill border border-outline bg-surface text-text-variant transition-colors duration-200 ease-kiki hover:bg-surface-2"
+          >
+            <Info className="h-5 w-5" aria-hidden />
+          </button>
+        ) : (
+          <span className="h-10 w-10 shrink-0" aria-hidden />
+        )}
       </header>
 
       {/* 본문 — 상하 1단(P1-D) + P2-B 재배치.
@@ -478,6 +513,13 @@ export function AudioReader({
                 </span>
               </button>
             )}
+            {/* 페이지 위치(F9) — 이미지 우하단 모서리. 헤더에서 이리로 이동(상단 바 제거로
+                커진 그림 곁에 진행도를 둔다). 표지='표지', 본문='n / 전체본문수'(표지는 별도
+                트랙이라 본문 카운트 제외 — 기존 positionLabel). solid bg(투명도 미사용).
+                pointer-events-none으로 이미지·오버레이 탭을 막지 않는다. */}
+            <span className="pointer-events-none absolute bottom-1 right-1 rounded-pill border border-outline bg-surface px-2.5 py-1 text-xs font-semibold tabular-nums text-text-variant shadow-elev-1">
+              {page.positionLabel}
+            </span>
           </div>
           <NavButton
             direction="next"
@@ -619,6 +661,96 @@ export function AudioReader({
         }}
         onEnded={handleEnded}
       />
+
+      {/* 어트리뷰션 팝오버(Wave 1.7 F7) — 상단 바 제거를 대체해 CC BY 필수 4요소를 담는다:
+          ① 작가(+illustrator) ② 책 제목 ③ 라이선스명+링크 ④ 원본 보기(새 탭). 배경은 색
+          투명도 대신 backdrop-blur-sm(Tailwind v3 hex 토큰 투명도 미렌더 회피), 카드는 solid
+          bg-surface. 외부 링크는 target=_blank + rel=noopener noreferrer(license-rules §7.2). */}
+      {showAttribution && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="저작권 정보"
+          className="fixed inset-0 z-30 flex items-end justify-center backdrop-blur-sm sm:items-center"
+        >
+          <button
+            type="button"
+            aria-label="닫기"
+            onClick={() => setShowAttribution(false)}
+            className="absolute inset-0 h-full w-full cursor-default"
+          />
+          <div className="relative z-10 m-3 w-full max-w-md rounded-lg border border-outline bg-surface p-5 shadow-elev-modal">
+            <div className="mb-3 flex items-center justify-between gap-2">
+              <h2 className="font-body text-base font-semibold text-text">저작권 정보</h2>
+              <button
+                type="button"
+                onClick={() => setShowAttribution(false)}
+                aria-label="닫기"
+                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-pill text-text-variant transition-colors duration-200 ease-kiki hover:bg-surface-2"
+              >
+                <X className="h-5 w-5" aria-hidden />
+              </button>
+            </div>
+            <dl className="flex flex-col gap-2 text-sm">
+              {/* ② 책 제목 — books.title 원문 그대로. */}
+              <div className="flex items-baseline gap-2">
+                <dt className="shrink-0 font-semibold text-text">📖 제목</dt>
+                <dd className="break-keep text-text-variant">{title}</dd>
+              </div>
+              {attributionRows.map((row) => {
+                if (row.key === 'license') {
+                  return (
+                    <div key={row.key} className="flex items-baseline gap-2">
+                      <dt className="shrink-0 font-semibold text-text">{row.label}</dt>
+                      <dd className="min-w-0">
+                        {row.href ? (
+                          <a
+                            href={row.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-tertiary transition-colors duration-200 ease-kiki hover:underline"
+                          >
+                            {row.value}
+                          </a>
+                        ) : (
+                          <span className="text-text-variant">{row.value}</span>
+                        )}
+                      </dd>
+                    </div>
+                  );
+                }
+                if (row.key === 'originalLink') {
+                  return (
+                    <div key={row.key} className="flex items-baseline gap-2">
+                      <dt className="shrink-0 font-semibold text-text">{row.label}</dt>
+                      <dd className="min-w-0">
+                        <a
+                          href={row.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-tertiary transition-colors duration-200 ease-kiki hover:underline"
+                        >
+                          새 탭에서 열기
+                        </a>
+                      </dd>
+                    </div>
+                  );
+                }
+                // 작가 / 출판사 / illustrator — 라벨 + 값
+                return (
+                  <div key={row.key} className="flex items-baseline gap-2">
+                    <dt className="shrink-0 font-semibold text-text">{row.label}</dt>
+                    <dd className="break-keep text-text-variant">{row.value}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+            <p className="mt-4 text-xs text-text-variant">
+              모든 도서는 CC BY 4.0 라이선스입니다.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

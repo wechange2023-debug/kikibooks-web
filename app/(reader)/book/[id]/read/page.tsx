@@ -79,6 +79,20 @@ const READER_BAR_KEYS: ReadonlySet<AttributionRow['key']> = new Set([
   'originalLink',
 ]);
 
+/**
+ * 오디오 리더 ⓘ 팝오버 표시 행 key (Wave 1.7 F7). 미니 바보다 넓은 시트라 illustrator까지
+ * 포함해 CC BY 필수 4요소(작가+illustrator·라이선스+링크·원본)를 모두 담는다. source만 제외
+ * (책 제목은 AudioReader가 book.title로 별도 노출). 상단 바 제거로 사라진 어트리뷰션 도달을
+ * 리더 내 1탭으로 대체한다(license-rules.md §7 어트리뷰션 상시 도달 의무).
+ */
+const READER_POPOVER_KEYS: ReadonlySet<AttributionRow['key']> = new Set([
+  'author',
+  'publisher',
+  'illustrator',
+  'license',
+  'originalLink',
+]);
+
 interface ReadPageProps {
   params: { id: string };
 }
@@ -119,8 +133,11 @@ export default async function ReadPage({ params }: ReadPageProps) {
   }
 
   // 미니 바 행 압축 — buildAttributionRows 재사용, page에서 선별 (신규 export 0건)
-  const readerRows = buildAttributionRows(book, detailCopy).filter((row) =>
-    READER_BAR_KEYS.has(row.key),
+  const allAttributionRows = buildAttributionRows(book, detailCopy);
+  const readerRows = allAttributionRows.filter((row) => READER_BAR_KEYS.has(row.key));
+  // 오디오 리더 ⓘ 팝오버용(F7) — illustrator 포함(미니 바보다 넓은 시트).
+  const readerPopoverRows = allAttributionRows.filter((row) =>
+    READER_POPOVER_KEYS.has(row.key),
   );
 
   // 오디오 리더 분기 (ADR-0052 Phase D·F) — book_audio 행이 있는 책만.
@@ -137,14 +154,17 @@ export default async function ReadPage({ params }: ReadPageProps) {
       // AudioReader 하단 1행에 합류시킨다 — FinishButton 자체는 무수정(슬롯 주입).
       // 배경은 순백(P2-C). bg-surface = --color-surface = #FFFFFF (semantic 토큰, Hard Rule 10).
       // 오디오 리더 화면 한정 — 아래 content_type 경로는 bg-surface-2 그대로다.
+      // 상단 어트리뷰션 바 제거(Wave 1.7 F7·F8) — 그림 영역 확장을 위해 세로를 양보하고,
+      // CC BY 어트리뷰션은 AudioReader 헤더 ⓘ 팝오버로 1탭 도달을 보장한다(readerPopoverRows).
+      // 아래 content_type 경로는 기존대로 ReaderAttributionBar를 유지한다(회귀 0).
       return (
         <div className="flex h-screen flex-col bg-surface">
-          <ReaderAttributionBar rows={readerRows} />
           <main className="flex-1 overflow-hidden">
             <AudioReader
               book={audioBook}
               bookDetailHref={`/book/${book.id}`}
               autoAdvanceLabel={readerCopy.audioReader.autoAdvanceLabel}
+              attributionRows={readerPopoverRows}
               finishSlot={<FinishButton bookId={book.id} copy={readerCopy.finish} />}
             />
           </main>
