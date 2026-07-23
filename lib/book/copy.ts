@@ -160,6 +160,22 @@ export interface BookReaderCopy {
     /** 완독 처리(server action) 진행 중 버튼 라벨 (useTransition isPending). */
     completingLabel: string;
   };
+  /**
+   * 오디오 리더(AudioReader — book_dash 오디오 12권 분기) 카피.
+   *
+   * Wave 1 F4 (docs/intent/ux-feedback-2026-07-22.md §2) — '자동 넘김' 토글 라벨을
+   * 좁은 화면에서도 상시 노출한다. AudioReader는 'use client'라 server-only 본 모듈을
+   * 직접 import할 수 없어 read page.tsx가 getBookReaderCopy() 결과를 props로 내려준다
+   * (ADR-0012 결정 2 카피 단일 출처 패턴 계승).
+   *
+   * ★ 범위 한정: 이번 편입은 F4 토글 라벨 1건뿐이다. F1(완독 안내)·F3(표지 시작 유도)
+   *   신규 문구와 AudioReader의 기타 인라인 문구('이 페이지는 소리가 없어요' 등)는
+   *   범위 확장 방지로 컴포넌트 인라인 유지 — 전체 nav·review 카피 편입은 백로그.
+   */
+  audioReader: {
+    /** '재생 후 자동 넘김' 토글 라벨. 상시 노출 정합 위해 축약(F4). */
+    autoAdvanceLabel: string;
+  };
 }
 
 /**
@@ -259,6 +275,9 @@ const BOOK_READER_COPY: BookReaderCopy = {
   finish: {
     buttonLabel: '다 읽었어요',
     completingLabel: '완독 처리 중…',
+  },
+  audioReader: {
+    autoAdvanceLabel: '자동 넘김',
   },
 };
 
