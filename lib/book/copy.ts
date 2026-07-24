@@ -184,6 +184,27 @@ export interface BookReaderCopy {
     /** '재생 후 자동 넘김' 토글 라벨. 상시 노출 정합 위해 축약(F4). */
     autoAdvanceLabel: string;
   };
+  /**
+   * 리더 이탈 확인 모달(Wave 2 F5 뒤로가기 보호) 카피.
+   *
+   * 아이가 브라우저 뒤로가기를 눌러 읽던 책에서 튕겨 나가는 문제(intent F5)를 막는
+   * 확인 단계다. ReaderExitGuard가 'use client'라 본 모듈을 직접 import할 수 없어
+   * read page.tsx가 props로 내려준다(audioReader 항목과 동일 threading 패턴).
+   *
+   * 톤: 3~7세 자녀와 학부모가 함께 읽는 화면 — 겁주지 않는 질문형 + 짧은 결과 안내.
+   * body가 '처음부터 다시'인 이유: 읽던 위치는 저장하지 않으므로(재진입 시 표지부터)
+   * 사실 그대로 알린다. 위치 저장 기능이 생기면 이 문구를 함께 고쳐야 한다.
+   */
+  exitGuard: {
+    /** 모달 헤더 질문. */
+    title: string;
+    /** 나갈 경우 무슨 일이 생기는지 1줄 안내. */
+    body: string;
+    /** 머무르기(주 동작) 버튼 라벨. */
+    stayLabel: string;
+    /** 이탈 확정 버튼 라벨. */
+    leaveLabel: string;
+  };
 }
 
 /**
@@ -289,6 +310,12 @@ const BOOK_READER_COPY: BookReaderCopy = {
   },
   audioReader: {
     autoAdvanceLabel: '자동 넘김',
+  },
+  exitGuard: {
+    title: '책 읽기를 그만할까요?',
+    body: '지금 나가면 이 책을 처음부터 다시 읽어야 해요.',
+    stayLabel: '계속 읽기',
+    leaveLabel: '나가기',
   },
 };
 
