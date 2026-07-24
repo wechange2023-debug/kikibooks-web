@@ -31,6 +31,7 @@ import {
   PAGE_TURN_SOUND_VOLUME,
   SILENT_PAGE_ADVANCE_MS,
   SWIPE_MIN_PX,
+  TAP_MAX_PX,
 } from '@/lib/book/highlight-config';
 import type { ReaderAudioBook } from '@/lib/book/audio-manifest';
 import { startReadingSession } from '@/lib/book/reading-session';
@@ -496,41 +497,6 @@ export function AudioReader({
     goNext();
   }, [goNext]);
 
-  // 스와이프 넘김(Wave 2 F7) — 아이는 버튼을 찾기 전에 화면을 민다(intent F7).
-  //   ★ 판정은 touchend 한 번뿐이고, 통과하면 기존 goPrev/goNext를 그대로 호출한다.
-  //     따라서 상호작용 플래그·자동 넘김 타이머 취소·연속 듣기 재생 규칙이 버튼 조작과
-  //     100% 동일하게 적용된다(오디오 로직 무수정 — 새 경로를 만들지 않는 것이 요점).
-  //   ★ 오인식 방지: 가로 이동이 SWIPE_MIN_PX 이상이고 세로 이동보다 클 때만 넘긴다.
-  //     탭(이동≈0)·세로 제스처는 통과하지 못한다. preventDefault는 쓰지 않아 브라우저
-  //     기본 동작(표지 시작 버튼 탭 등)을 막지 않는다.
-  //   ★ 마우스는 대상이 아니다(터치 전용). 데스크탑은 좌우 버튼이 그대로 주 수단이다.
-  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
-
-  const handleTouchStart = useCallback((e: ReactTouchEvent) => {
-    const t = e.touches[0];
-    // 멀티터치(핀치 등)는 페이지 넘김 의도가 아니다 — 판정 대상에서 뺀다.
-    touchStartRef.current =
-      e.touches.length === 1 && t ? { x: t.clientX, y: t.clientY } : null;
-  }, []);
-
-  const handleTouchEnd = useCallback(
-    (e: ReactTouchEvent) => {
-      const start = touchStartRef.current;
-      touchStartRef.current = null;
-      const t = e.changedTouches[0];
-      if (!start || !t) return;
-      const dx = t.clientX - start.x;
-      const dy = t.clientY - start.y;
-      if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) <= Math.abs(dy)) return;
-      // 좌로 밀면 다음 장, 우로 밀면 이전 장(책장을 넘기는 방향과 같다).
-      // 양 끝에서는 goPrev/goNext의 clamp가 그대로 막아 준다(별도 경계 처리 0건).
-      // userPrev/userNext 경유 — 넘김 애니메이션 도중의 연속 스와이프는 무시된다.
-      if (dx < 0) userNext();
-      else userPrev();
-    },
-    [userNext, userPrev],
-  );
-
   const togglePlay = useCallback(() => {
     const el = audioRef.current;
     if (!el || !page.audioUrl) return;
@@ -544,6 +510,71 @@ export function AudioReader({
       el.pause();
     }
   }, [page.audioUrl, clearAdvanceTimer, ended]);
+
+  // 그림 탭/클릭으로 재생·일시정지(피드백 v2 Task 1.5) — 하단 재생 버튼과 같은 togglePlay를
+  //   불러 상태를 완전히 공유한다(별도 상태 0건). 반환값 = 실제로 토글했는지(터치에서
+  //   합성 클릭 억제 판단에 쓴다).
+  //   무동작 조건(우선순위 순):
+  //     ① 자식 버튼(이동·표지 시작·완독) 위 탭 → 그 버튼이 처리(closest('button')).
+  //     ② 넘김 애니메이션 진행 중 → 무시(isTurningRef).
+  //     ③ 표지 '눌러서 시작하기'가 떠 있는 면 → 기존 오버레이 버튼 우선(변경 금지).
+  //     ④ 무음 면(오디오 없음) → 무동작(togglePlay 내부 가드로도 이중 방어).
+  const handleImageActivate = useCallback(
+    (target: HTMLElement): boolean => {
+      if (target.closest('button')) return false;
+      if (isTurningRef.current) return false;
+      // 표지 시작 오버레이가 뜬 면(표지·미재생)은 기존 '눌러서 시작하기' 버튼이 처리한다.
+      // showCoverStart 조건을 인라인으로 재판정한다(그 const는 렌더 뒤쪽에 선언돼 여기선 참조 불가).
+      if (page.key === 'cover' && page.audioUrl && !isPlaying && nowMs === 0) {
+        return false;
+      }
+      if (!page.audioUrl) return false;
+      togglePlay();
+      return true;
+    },
+    [page.key, page.audioUrl, isPlaying, nowMs, togglePlay],
+  );
+
+  // 스와이프 넘김(Wave 2 F7) + 제자리 탭(Task 1.5)을 한 touchend에서 함께 판정한다.
+  //   ★ 스와이프: 가로 이동 SWIPE_MIN_PX 이상이고 세로보다 크면 넘김(기존 로직 그대로).
+  //   ★ 탭: 가로·세로 이동이 모두 TAP_MAX_PX 미만인 '제자리 짧은 탭'만 재생/정지로 본다.
+  //     둘 중 어느 쪽도 아니면(애매한 대각·중간 이동) 아무 것도 하지 않는다(오발동 방지).
+  //   ★ 이중 발동 방지: 탭을 실제로 처리하면 preventDefault로 합성 클릭을 취소해
+  //     onClick(마우스용)과 겹치지 않게 한다. 마우스(데스크탑)는 터치가 없어 onClick만 탄다.
+  //   상호작용 플래그·타이머 취소·연속 듣기 규칙은 goPrev/goNext·togglePlay가 그대로 처리한다.
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  const handleTouchStart = useCallback((e: ReactTouchEvent) => {
+    const t = e.touches[0];
+    // 멀티터치(핀치 등)는 넘김·탭 의도가 아니다 — 판정 대상에서 뺀다.
+    touchStartRef.current =
+      e.touches.length === 1 && t ? { x: t.clientX, y: t.clientY } : null;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: ReactTouchEvent) => {
+      const start = touchStartRef.current;
+      touchStartRef.current = null;
+      const t = e.changedTouches[0];
+      if (!start || !t) return;
+      const dx = t.clientX - start.x;
+      const dy = t.clientY - start.y;
+      const absX = Math.abs(dx);
+      const absY = Math.abs(dy);
+      // 스와이프 — 좌=다음, 우=이전. 양 끝 clamp는 goPrev/goNext가 처리(별도 경계 0건).
+      // userPrev/userNext 경유 — 넘김 애니메이션 도중의 연속 스와이프는 무시된다.
+      if (absX >= SWIPE_MIN_PX && absX > absY) {
+        if (dx < 0) userNext();
+        else userPrev();
+        return;
+      }
+      // 제자리 짧은 탭 — 재생/정지. 처리했으면 합성 클릭을 막아 onClick 이중 발동을 차단.
+      if (absX < TAP_MAX_PX && absY < TAP_MAX_PX) {
+        if (handleImageActivate(e.target as HTMLElement)) e.preventDefault();
+      }
+    },
+    [userNext, userPrev, handleImageActivate],
+  );
 
   const handleEnded = useCallback(() => {
     setIsPlaying(false);
@@ -665,6 +696,10 @@ export function AudioReader({
           <div
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
+            // 마우스 클릭(데스크탑) 재생/정지 — 터치는 handleTouchEnd가 처리 후 합성 클릭을
+            // preventDefault로 막으므로 여기로 오지 않는다(이중 발동 없음). 자식 버튼 위 클릭은
+            // handleImageActivate가 closest('button')로 걸러 그 버튼에 양보한다.
+            onClick={(e) => handleImageActivate(e.target as HTMLElement)}
             className="relative flex h-full min-h-0 flex-1 items-center justify-center overflow-hidden"
           >
             {/* 책넘김 3D 컬(Task 2) — 슬라이드 key로 remount돼 면마다 enter 애니메이션이 돈다.
