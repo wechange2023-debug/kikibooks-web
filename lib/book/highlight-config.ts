@@ -57,9 +57,12 @@ export const TAP_MAX_PX = 10;
 export const PAGE_TURN_MS = 650;
 
 /**
- * 책넘김 효과음 경로 — 자산 연결은 Task B에서. 지금은 null(재생 0건).
+ * 책넘김 효과음 경로 — public/sounds/page-turn.mp3.
+ *
+ * 자산: dragon-studio-flipping-book-page-499646 (Pixabay Content License, 2026-07-24 오케 승인).
+ * 출처·라이선스는 docs/assets/audio-credits.md에 기록. 플립 1단계 시작 시점에 1회 재생된다.
  */
-export const PAGE_TURN_SOUND_URL: string | null = null;
+export const PAGE_TURN_SOUND_URL: string | null = '/sounds/page-turn.mp3';
 
 /**
  * 책넘김 효과음 음량(0~1) — 낭독을 덮지 않도록 충분히 낮춘다.
