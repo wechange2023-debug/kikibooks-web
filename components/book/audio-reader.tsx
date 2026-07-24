@@ -190,7 +190,7 @@ function PageImage({ src, alt }: { src: string; alt: string }) {
 }
 
 /**
- * TurningPage — 책넘김 3D 컬 연출(리더 폴리시 Task 2).
+ * TurningPage — 책넘김 3D 컬 연출(리더 폴리시 Task 2 · 시인성 수정 피드백 v2 Task 2).
  *
  * ★ 시각 레이어 전용이다. 오디오·하이라이트·index 전환 로직과 접점이 0건이다:
  *   부모가 이 래퍼를 슬라이드 key로 remount하면, 새 면이 비스듬히 누운 자세에서
@@ -201,41 +201,72 @@ function PageImage({ src, alt }: { src: string; alt: string }) {
  *   원칙 계승). 마운트 직후 초기 transform(회전+기울임)을 리플로우로 굳힌 뒤 다음
  *   프레임에 identity로 transition을 건다 — 순수 enter 트랜지션.
  *
- * 방향: next=오른쪽→왼쪽 넘김(왼쪽 모서리를 경첩으로 오른쪽이 내려앉음),
+ * 방향: next=오른쪽→왼쪽 넘김(왼쪽 모서리를 경첩으로 오른쪽이 내려옴),
  *       prev=왼쪽→오른쪽 넘김(오른쪽 모서리 경첩). direction으로 경첩·회전 부호를 뒤집는다.
  *
- * 접근성: prefers-reduced-motion이면 transform을 아예 걸지 않아 즉시 전환된다
- *   (초기 회전 자세도 건너뛴다 — motion-reduce 유틸만으로는 '회전 후 점프'가 남으므로
- *    matchMedia로 초기 자세 자체를 생략한다).
+ * ── 시인성 수정(피드백 v2 Task 2) ──────────────────────────────────────────────
+ *   초판이 '거의 안 보인' 원인 2가지를 함께 고친다:
+ *     (d) 자세가 약했다 — perspective 1200px(원경)·32°·opacity 0.5는 원근 왜곡이 옅어
+ *         빠른 페이드처럼 보였다. → perspective 900px(근경)·42°·opacity 0.2 + 가로 슬라이드로
+ *         명확한 3D 컬로 강화.
+ *     (마스킹) 넘김이 도는 동안 새 이미지가 아직 opacity 0→1 페이드 중(PageImage 200ms)이라
+ *         '빈 영역'이 돌아 아무 것도 안 보였다. → 도는 동안만 종이 질감(bg-surface + shadow-elev-2
+ *         + 둥근 모서리, semantic 토큰만)을 입혀 '한 장의 종이'가 넘어가는 형태를 이미지 로드와
+ *         무관하게 보이게 한다. 전환이 끝나면(onTransitionEnd) 걷어내 정적 화면(P2-A 무카드)을
+ *         그대로 유지한다.
+ *   또한 첫 마운트(표지 진입)에는 애니메이션을 걸지 않는다(animate=false) — 실제 넘김에만 돈다.
+ *
+ * 접근성: prefers-reduced-motion이면 transform·종이질감 모두 걸지 않아 즉시 전환된다
+ *   (초기 회전 자세도 건너뛴다 — matchMedia로 초기 자세 자체를 생략).
  */
 function TurningPage({
   direction,
+  animate,
   reduceMotion,
   children,
 }: {
   direction: 'next' | 'prev';
+  /** 실제 페이지 넘김에만 true. 첫 마운트(표지 진입)는 false로 애니메이션 생략. */
+  animate: boolean;
   reduceMotion: boolean;
   children: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const active = animate && !reduceMotion;
+  // 도는 동안만 종이 질감. 전환 종료 시 걷어내 정적 화면을 원복한다.
+  const [turning, setTurning] = useState(active);
   useEffect(() => {
     const el = ref.current;
-    if (!el || reduceMotion) return; // 감속 모드: 초기 자세 없이 즉시 평면.
+    if (!el || !active) return;
     // next는 왼쪽 경첩(오른쪽 모서리가 들렸다 내려옴), prev는 오른쪽 경첩.
     const hinge = direction === 'next' ? 'left center' : 'right center';
-    const startRotate = direction === 'next' ? 32 : -32; // deg
+    const startRotate = direction === 'next' ? 42 : -42; // deg — 근경 perspective와 함께 뚜렷한 컬.
+    const startShiftPct = direction === 'next' ? 8 : -8; // 경첩 쪽으로 살짝 밀려 들어오는 슬라이드감.
     el.style.transformOrigin = hinge;
     el.style.transition = 'none';
-    el.style.transform = `perspective(1200px) rotateY(${startRotate}deg)`;
-    el.style.opacity = '0.5';
+    el.style.transform = `perspective(900px) rotateY(${startRotate}deg) translateX(${startShiftPct}%)`;
+    el.style.opacity = '0.2';
     // 초기 자세를 강제로 커밋(리플로우) — 없으면 브라우저가 두 스타일을 합쳐 애니메이션이 생략된다.
     void el.offsetWidth;
     el.style.transition = `transform ${PAGE_TURN_MS}ms cubic-bezier(0.2, 0, 0, 1), opacity ${PAGE_TURN_MS}ms ease-out`;
-    el.style.transform = 'perspective(1200px) rotateY(0deg)';
+    el.style.transform = 'perspective(900px) rotateY(0deg) translateX(0)';
     el.style.opacity = '1';
-  }, [direction, reduceMotion]);
+  }, [active, direction]);
   return (
-    <div ref={ref} className="flex h-full w-full items-center justify-center will-change-transform">
+    <div
+      ref={ref}
+      // transform 트랜지션이 끝나면 종이 질감을 걷어낸다(정적 화면 원복).
+      //   ★ 자식(PageImage img)의 opacity 트랜지션이 버블링으로 이 핸들러를 조기에 때리는 것을
+      //     막는다: 이 div 자신(currentTarget)의 'transform' 종료에만 반응한다.
+      onTransitionEnd={(e) => {
+        if (e.target === e.currentTarget && e.propertyName === 'transform') {
+          setTurning(false);
+        }
+      }}
+      className={`flex h-full w-full items-center justify-center will-change-transform ${
+        turning ? 'rounded-md bg-surface shadow-elev-2' : ''
+      }`}
+    >
       {children}
     </div>
   );
@@ -335,6 +366,10 @@ export function AudioReader({
   // 전환 중 사용자 입력 잠금(연타로 두 장이 한꺼번에 넘어가는 것 방지). 자동 넘김·무음면
   // 넘김은 잠금 대상이 아니다 — 연속 듣기 흐름이 잠금에 걸려 멈추면 안 되기 때문.
   const isTurningRef = useRef(false);
+  // 한 번이라도 실제 넘김이 있었는가 — 첫 마운트(표지 진입)에는 넘김 애니메이션을 걸지
+  // 않기 위한 게이트. beginTurn이 true로 굳힌다(단방향). ref라 리렌더를 유발하지 않지만,
+  // 값을 세우는 beginTurn 직후 setIndex 리렌더에서 최신값(true)이 prop으로 읽힌다.
+  const didTurnRef = useRef(false);
   // prefers-reduced-motion — 마운트 시 1회 확정. 감속 모드면 애니메이션·입력잠금을 생략한다.
   const reduceMotionRef = useRef(false);
   // 책넘김 효과음(Task 3) — 음원 미확보(PAGE_TURN_SOUND_URL=null)라 현재 재생 0건.
@@ -453,6 +488,7 @@ export function AudioReader({
   // 실제 경계에서 막혀 index가 안 바뀌는 경우(첫/마지막 면)에는 부르지 않는다(아래 호출부에서 가드).
   const beginTurn = useCallback((dir: 'next' | 'prev') => {
     setTurnDir(dir);
+    didTurnRef.current = true; // 이후 TurningPage 마운트는 넘김 애니메이션을 켠다.
     // 효과음 1회 재생(URL 확보 시에만 동작 — 현재 자산 미확보로 no-op). 낭독과 겹쳐도
     // 음량이 낮아 방해하지 않는다. 되감아 연타 전환에도 매번 처음부터 짧게 난다.
     const s = turnSoundRef.current;
@@ -708,6 +744,7 @@ export function AudioReader({
             <TurningPage
               key={page.key}
               direction={turnDir}
+              animate={didTurnRef.current}
               reduceMotion={reduceMotionRef.current}
             >
               <PageImage key={page.imageUrl} src={page.imageUrl} alt={page.imageAlt} />
