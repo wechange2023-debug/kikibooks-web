@@ -28,6 +28,9 @@ import type { AttributionRow } from '@/lib/book/attribution';
 import {
   AUTO_ADVANCE_DELAY_MS,
   HIGHLIGHT_UNIT,
+  PAGE_TURN_MS,
+  PAGE_TURN_SOUND_URL,
+  PAGE_TURN_SOUND_VOLUME,
   SILENT_PAGE_ADVANCE_MS,
   SWIPE_MIN_PX,
 } from '@/lib/book/highlight-config';
@@ -187,6 +190,58 @@ function PageImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+/**
+ * TurningPage — 책넘김 3D 컬 연출(리더 폴리시 Task 2).
+ *
+ * ★ 시각 레이어 전용이다. 오디오·하이라이트·index 전환 로직과 접점이 0건이다:
+ *   부모가 이 래퍼를 슬라이드 key로 remount하면, 새 면이 비스듬히 누운 자세에서
+ *   평평하게 안착하는 enter 애니메이션만 돈다. 전환 '완료 시점'을 바꾸지 않으므로
+ *   연속 듣기·자동 재생 타이밍은 그대로다(기존 페이지 진입 effect가 즉시 실행됨).
+ *
+ * 구현: keyframes·tailwind.config 무변경(celebrate-rewards.tsx의 "transition만으로"
+ *   원칙 계승). 마운트 직후 초기 transform(회전+기울임)을 리플로우로 굳힌 뒤 다음
+ *   프레임에 identity로 transition을 건다 — 순수 enter 트랜지션.
+ *
+ * 방향: next=오른쪽→왼쪽 넘김(왼쪽 모서리를 경첩으로 오른쪽이 내려앉음),
+ *       prev=왼쪽→오른쪽 넘김(오른쪽 모서리 경첩). direction으로 경첩·회전 부호를 뒤집는다.
+ *
+ * 접근성: prefers-reduced-motion이면 transform을 아예 걸지 않아 즉시 전환된다
+ *   (초기 회전 자세도 건너뛴다 — motion-reduce 유틸만으로는 '회전 후 점프'가 남으므로
+ *    matchMedia로 초기 자세 자체를 생략한다).
+ */
+function TurningPage({
+  direction,
+  reduceMotion,
+  children,
+}: {
+  direction: 'next' | 'prev';
+  reduceMotion: boolean;
+  children: ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || reduceMotion) return; // 감속 모드: 초기 자세 없이 즉시 평면.
+    // next는 왼쪽 경첩(오른쪽 모서리가 들렸다 내려옴), prev는 오른쪽 경첩.
+    const hinge = direction === 'next' ? 'left center' : 'right center';
+    const startRotate = direction === 'next' ? 32 : -32; // deg
+    el.style.transformOrigin = hinge;
+    el.style.transition = 'none';
+    el.style.transform = `perspective(1200px) rotateY(${startRotate}deg)`;
+    el.style.opacity = '0.5';
+    // 초기 자세를 강제로 커밋(리플로우) — 없으면 브라우저가 두 스타일을 합쳐 애니메이션이 생략된다.
+    void el.offsetWidth;
+    el.style.transition = `transform ${PAGE_TURN_MS}ms cubic-bezier(0.2, 0, 0, 1), opacity ${PAGE_TURN_MS}ms ease-out`;
+    el.style.transform = 'perspective(1200px) rotateY(0deg)';
+    el.style.opacity = '1';
+  }, [direction, reduceMotion]);
+  return (
+    <div ref={ref} className="flex h-full w-full items-center justify-center will-change-transform">
+      {children}
+    </div>
+  );
+}
+
 /** 표지·본문을 한 축으로 다루는 슬라이드. key는 marks 캐시·audio remount 식별자. */
 interface Slide {
   key: string;
@@ -237,6 +292,9 @@ export function AudioReader({
   const total = slides.length;
 
   const [index, setIndex] = useState(0);
+  // index 동기 미러 — goPrev/goNext가 경계를 렌더 사이에도 정확히 판정하게 한다.
+  const indexRef = useRef(0);
+  indexRef.current = index;
   const [marksByPage, setMarksByPage] = useState<Record<string, WordMark[]>>({});
   const [nowMs, setNowMs] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -270,6 +328,32 @@ export function AudioReader({
   autoAdvanceRef.current = autoAdvance;
   // 자동 넘김 지연 타이머(P1-C). 수동 조작·언마운트 시 취소한다.
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // ── 책넘김 연출(리더 폴리시 Task 2·3) ──────────────────────────────────────
+  // 넘김 방향 — TurningPage가 enter 애니메이션 방향을 이 값으로 정한다. 표지 첫 렌더는
+  // 애니메이션 대상이 아니므로 초기값('next')은 의미가 없다. goPrev/goNext가 갱신한다.
+  const [turnDir, setTurnDir] = useState<'next' | 'prev'>('next');
+  // 전환 중 사용자 입력 잠금(연타로 두 장이 한꺼번에 넘어가는 것 방지). 자동 넘김·무음면
+  // 넘김은 잠금 대상이 아니다 — 연속 듣기 흐름이 잠금에 걸려 멈추면 안 되기 때문.
+  const isTurningRef = useRef(false);
+  // prefers-reduced-motion — 마운트 시 1회 확정. 감속 모드면 애니메이션·입력잠금을 생략한다.
+  const reduceMotionRef = useRef(false);
+  // 책넘김 효과음(Task 3) — 음원 미확보(PAGE_TURN_SOUND_URL=null)라 현재 재생 0건.
+  // 자산이 확보돼 URL이 채워지면 이 ref에 Audio가 만들어져 페이지 전환마다 1회 재생된다.
+  const turnSoundRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    reduceMotionRef.current =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true;
+    // 효과음 preload — URL이 있을 때만. 낭독을 덮지 않도록 음량을 낮춰 둔다(-12dB 수준).
+    if (PAGE_TURN_SOUND_URL) {
+      const el = new Audio(PAGE_TURN_SOUND_URL);
+      el.volume = PAGE_TURN_SOUND_VOLUME;
+      el.preload = 'auto';
+      turnSoundRef.current = el;
+    }
+  }, []);
 
   const page = slides[index];
   const marks = marksByPage[page.key] ?? [];
@@ -357,16 +441,62 @@ export function AudioReader({
   // 페이지 이동 — 대기 중인 자동 넘김 타이머를 취소한다. 이동으로 상호작용 플래그를
   // 세우고, 새 페이지의 자동 재생 여부는 진입 effect가 토글(연속 듣기 모드) 기준으로
   // 결정한다(Wave 1.6 — 세션 플래그 제거). 일시정지 상태에서 넘겨도 새 장은 모드 규칙대로.
+  // 전환 잠금 해제 타이머 — 언마운트·연속 전환 시 갱신한다.
+  const turnLockTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(
+    () => () => {
+      if (turnLockTimerRef.current) clearTimeout(turnLockTimerRef.current);
+    },
+    [],
+  );
+
+  // 넘김 부수효과(방향 반영 + 효과음 + 입력잠금) — index 전환 '직전'에만 부른다.
+  // 실제 경계에서 막혀 index가 안 바뀌는 경우(첫/마지막 면)에는 부르지 않는다(아래 호출부에서 가드).
+  const beginTurn = useCallback((dir: 'next' | 'prev') => {
+    setTurnDir(dir);
+    // 효과음 1회 재생(URL 확보 시에만 동작 — 현재 자산 미확보로 no-op). 낭독과 겹쳐도
+    // 음량이 낮아 방해하지 않는다. 되감아 연타 전환에도 매번 처음부터 짧게 난다.
+    const s = turnSoundRef.current;
+    if (s) {
+      s.currentTime = 0;
+      s.play().catch(() => undefined); // 자동재생 정책 등 — 조용히 무시(넘김 자체엔 무영향).
+    }
+    // 감속 모드는 애니메이션이 없어 잠글 이유도 없다(즉시 다음 입력 수용).
+    if (reduceMotionRef.current) return;
+    isTurningRef.current = true;
+    if (turnLockTimerRef.current) clearTimeout(turnLockTimerRef.current);
+    turnLockTimerRef.current = setTimeout(() => {
+      isTurningRef.current = false;
+    }, PAGE_TURN_MS);
+  }, []);
+
   const goPrev = useCallback(() => {
     interactedRef.current = true;
     clearAdvanceTimer();
+    // 경계에서 막히면 넘김 연출도 생략한다. index 미러 ref로 동기 판정 —
+    // 부수효과(beginTurn)를 setIndex 업데이터 밖에 둬 StrictMode 이중 호출을 피한다.
+    if (indexRef.current <= 0) return;
+    beginTurn('prev');
     setIndex((i) => Math.max(0, i - 1));
-  }, [clearAdvanceTimer]);
+  }, [clearAdvanceTimer, beginTurn]);
   const goNext = useCallback(() => {
     interactedRef.current = true;
     clearAdvanceTimer();
+    if (indexRef.current >= total - 1) return;
+    beginTurn('next');
     setIndex((i) => Math.min(total - 1, i + 1));
-  }, [total, clearAdvanceTimer]);
+  }, [total, clearAdvanceTimer, beginTurn]);
+
+  // 사용자 입력(버튼·스와이프) 전용 가드 — 전환 애니메이션 도중의 연타를 무시한다.
+  // 자동 넘김·무음면 넘김은 goPrev/goNext를 직접 불러 이 가드를 거치지 않는다(흐름 유지).
+  const userPrev = useCallback(() => {
+    if (isTurningRef.current) return;
+    goPrev();
+  }, [goPrev]);
+  const userNext = useCallback(() => {
+    if (isTurningRef.current) return;
+    goNext();
+  }, [goNext]);
 
   // 스와이프 넘김(Wave 2 F7) — 아이는 버튼을 찾기 전에 화면을 민다(intent F7).
   //   ★ 판정은 touchend 한 번뿐이고, 통과하면 기존 goPrev/goNext를 그대로 호출한다.
@@ -396,10 +526,11 @@ export function AudioReader({
       if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) <= Math.abs(dy)) return;
       // 좌로 밀면 다음 장, 우로 밀면 이전 장(책장을 넘기는 방향과 같다).
       // 양 끝에서는 goPrev/goNext의 clamp가 그대로 막아 준다(별도 경계 처리 0건).
-      if (dx < 0) goNext();
-      else goPrev();
+      // userPrev/userNext 경유 — 넘김 애니메이션 도중의 연속 스와이프는 무시된다.
+      if (dx < 0) userNext();
+      else userPrev();
     },
-    [goNext, goPrev],
+    [userNext, userPrev],
   );
 
   const togglePlay = useCallback(() => {
@@ -525,7 +656,7 @@ export function AudioReader({
         <div className="flex min-h-0 w-full flex-1 items-center justify-center gap-1 md:gap-3">
           <NavButton
             direction="prev"
-            onClick={goPrev}
+            onClick={userPrev}
             disabled={isFirst}
             className="hidden lg:inline-flex"
           />
@@ -538,18 +669,27 @@ export function AudioReader({
             onTouchEnd={handleTouchEnd}
             className="relative flex h-full min-h-0 flex-1 items-center justify-center overflow-hidden"
           >
-            <PageImage key={page.imageUrl} src={page.imageUrl} alt={page.imageAlt} />
+            {/* 책넘김 3D 컬(Task 2) — 슬라이드 key로 remount돼 면마다 enter 애니메이션이 돈다.
+                이미지만 감싸고 오버레이(이동 버튼·표지 시작·위치표시)는 밖에 둬 함께 돌지 않게 한다.
+                방향은 turnDir(직전 goPrev/goNext가 설정), 감속 모드는 reduceMotionRef로 생략. */}
+            <TurningPage
+              key={page.key}
+              direction={turnDir}
+              reduceMotion={reduceMotionRef.current}
+            >
+              <PageImage key={page.imageUrl} src={page.imageUrl} alt={page.imageAlt} />
+            </TurningPage>
             {/* 모바일·태블릿(<lg) — 좌우 버튼이 이미지 폭을 잠식하므로 이미지 위 오버레이로 둔다. */}
             <NavButton
               direction="prev"
-              onClick={goPrev}
+              onClick={userPrev}
               disabled={isFirst}
               overlay
               className="absolute left-1 top-1/2 -translate-y-1/2 lg:hidden"
             />
             <NavButton
               direction="next"
-              onClick={goNext}
+              onClick={userNext}
               disabled={isLast}
               overlay
               className="absolute right-1 top-1/2 -translate-y-1/2 lg:hidden"
@@ -581,7 +721,7 @@ export function AudioReader({
           </div>
           <NavButton
             direction="next"
-            onClick={goNext}
+            onClick={userNext}
             disabled={isLast}
             className="hidden lg:inline-flex"
           />
