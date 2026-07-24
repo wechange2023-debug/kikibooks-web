@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import {
   ArrowLeft,
-  Captions,
-  CaptionsOff,
   ChevronLeft,
   ChevronRight,
   Info,
@@ -771,31 +769,32 @@ export function AudioReader({
             max-w-4xl mx-auto로 기존 위치를 그대로 유지한다. 이미지 행(flex-1) 흡수로 무스크롤 불변. */}
         <div className="w-full shrink-0 border-t border-outline bg-gradient-to-b from-surface to-surface-2 pt-2 -mx-2 px-2 md:-mx-4 md:px-4">
           <div className="mx-auto grid w-full max-w-4xl grid-cols-[1fr_auto_1fr] items-center gap-2">
-          <div className="flex items-center justify-start gap-2">
-            {/* 자막 표시/숨김 — 헤더에서 하단 컨트롤 바로 이동(리더 폴리시).
-                폭 예산(실측): 390px에서 좌측 셀 108 + 중앙 64 + 완독 ≈177 + gap 16 ≈ 365로
-                여유가 ~9px뿐이라, 44px 버튼을 그냥 더하면 무스크롤 단일행(P1-D)이 깨진다.
-                → md 미만에서는 '자동 넘김' 텍스트 라벨을 접어(아이콘 2개 = 96px < 기존 108px)
-                  자리를 만들고, md 이상에서는 라벨을 그대로 노출해 Wave 1 F4(라벨 상시 노출)의
-                  의도를 지킨다. 라벨을 완전히 없애지 않는 것이 이 절충의 핵심이다.
-                터치 타깃은 h-11 w-11(44px) — 아동 사용자 기준 하한. */}
+          <div className="flex items-center justify-start gap-1.5">
+            {/* 자막 스위치 — 아이콘 버튼에서 스위치로 통일(피드백 v2 Task 1). '자동 넘김'과
+                동일한 스위치 언어(h-6 w-11 pill, primary=켜짐)를 써 두 토글의 시각·조작을 맞춘다.
+                켜짐=자막 표시. 라벨 '자막'은 md 미만에서 접어(P1-D 단일행 유지) 스위치만 남기고,
+                md 이상에서 노출한다. 접힘 구간에도 aria-label로 스크린리더 정보는 유지된다. */}
             <button
               type="button"
+              role="switch"
+              aria-checked={showSubtitle}
+              aria-label="자막 표시"
               onClick={() => setShowSubtitle((v) => !v)}
-              aria-pressed={!showSubtitle}
-              aria-label={showSubtitle ? '자막 숨기기' : '자막 보이기'}
-              className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-pill border transition-colors duration-200 ease-kiki ${
+              className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-pill border transition-colors duration-200 ease-kiki ${
                 showSubtitle
-                  ? 'border-outline bg-surface text-text-variant hover:bg-surface-2'
-                  : 'border-transparent bg-primary text-on-primary'
+                  ? 'border-transparent bg-primary'
+                  : 'border-text-disabled bg-surface-2'
               }`}
             >
-              {showSubtitle ? (
-                <Captions className="h-5 w-5" aria-hidden />
-              ) : (
-                <CaptionsOff className="h-5 w-5" aria-hidden />
-              )}
+              <span
+                className={`inline-block h-5 w-5 rounded-pill bg-surface shadow-elev-1 transition-transform duration-200 ease-kiki ${
+                  showSubtitle ? 'translate-x-[1.375rem]' : 'translate-x-[0.125rem]'
+                }`}
+              />
             </button>
+            <span className="hidden whitespace-nowrap text-sm text-text-variant md:inline">
+              자막
+            </span>
             <button
               type="button"
               role="switch"
@@ -817,8 +816,7 @@ export function AudioReader({
                 }`}
               />
             </button>
-            {/* 토글 라벨(F4) — 무엇을 켜고 끄는지 알린다. 자막 토글이 이 줄에 합류하면서
-                md 미만에서만 접는다(hidden md:inline). 접히는 구간에서도 스위치의
+            {/* 토글 라벨(F4) — md 미만에서만 접는다(hidden md:inline). 접히는 구간에서도 스위치의
                 aria-label('재생 후 자동 넘김')은 그대로라 스크린리더 정보 손실은 0이다.
                 whitespace-nowrap 유지 — 노출 구간에서 두 줄로 흘러 P1-D를 깨지 않게. */}
             <span className="hidden whitespace-nowrap text-sm text-text-variant md:inline">
