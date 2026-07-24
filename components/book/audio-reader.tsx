@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import {
   ArrowLeft,
-  Captions,
-  CaptionsOff,
   ChevronLeft,
   ChevronRight,
   Info,
@@ -33,6 +31,7 @@ import {
   PAGE_TURN_SOUND_VOLUME,
   SILENT_PAGE_ADVANCE_MS,
   SWIPE_MIN_PX,
+  TAP_MAX_PX,
 } from '@/lib/book/highlight-config';
 import type { ReaderAudioBook } from '@/lib/book/audio-manifest';
 import { startReadingSession } from '@/lib/book/reading-session';
@@ -191,7 +190,7 @@ function PageImage({ src, alt }: { src: string; alt: string }) {
 }
 
 /**
- * TurningPage — 책넘김 3D 컬 연출(리더 폴리시 Task 2).
+ * TurningPage — 책넘김 3D 컬 연출(리더 폴리시 Task 2 · 시인성 수정 피드백 v2 Task 2).
  *
  * ★ 시각 레이어 전용이다. 오디오·하이라이트·index 전환 로직과 접점이 0건이다:
  *   부모가 이 래퍼를 슬라이드 key로 remount하면, 새 면이 비스듬히 누운 자세에서
@@ -202,41 +201,72 @@ function PageImage({ src, alt }: { src: string; alt: string }) {
  *   원칙 계승). 마운트 직후 초기 transform(회전+기울임)을 리플로우로 굳힌 뒤 다음
  *   프레임에 identity로 transition을 건다 — 순수 enter 트랜지션.
  *
- * 방향: next=오른쪽→왼쪽 넘김(왼쪽 모서리를 경첩으로 오른쪽이 내려앉음),
+ * 방향: next=오른쪽→왼쪽 넘김(왼쪽 모서리를 경첩으로 오른쪽이 내려옴),
  *       prev=왼쪽→오른쪽 넘김(오른쪽 모서리 경첩). direction으로 경첩·회전 부호를 뒤집는다.
  *
- * 접근성: prefers-reduced-motion이면 transform을 아예 걸지 않아 즉시 전환된다
- *   (초기 회전 자세도 건너뛴다 — motion-reduce 유틸만으로는 '회전 후 점프'가 남으므로
- *    matchMedia로 초기 자세 자체를 생략한다).
+ * ── 시인성 수정(피드백 v2 Task 2) ──────────────────────────────────────────────
+ *   초판이 '거의 안 보인' 원인 2가지를 함께 고친다:
+ *     (d) 자세가 약했다 — perspective 1200px(원경)·32°·opacity 0.5는 원근 왜곡이 옅어
+ *         빠른 페이드처럼 보였다. → perspective 900px(근경)·42°·opacity 0.2 + 가로 슬라이드로
+ *         명확한 3D 컬로 강화.
+ *     (마스킹) 넘김이 도는 동안 새 이미지가 아직 opacity 0→1 페이드 중(PageImage 200ms)이라
+ *         '빈 영역'이 돌아 아무 것도 안 보였다. → 도는 동안만 종이 질감(bg-surface + shadow-elev-2
+ *         + 둥근 모서리, semantic 토큰만)을 입혀 '한 장의 종이'가 넘어가는 형태를 이미지 로드와
+ *         무관하게 보이게 한다. 전환이 끝나면(onTransitionEnd) 걷어내 정적 화면(P2-A 무카드)을
+ *         그대로 유지한다.
+ *   또한 첫 마운트(표지 진입)에는 애니메이션을 걸지 않는다(animate=false) — 실제 넘김에만 돈다.
+ *
+ * 접근성: prefers-reduced-motion이면 transform·종이질감 모두 걸지 않아 즉시 전환된다
+ *   (초기 회전 자세도 건너뛴다 — matchMedia로 초기 자세 자체를 생략).
  */
 function TurningPage({
   direction,
+  animate,
   reduceMotion,
   children,
 }: {
   direction: 'next' | 'prev';
+  /** 실제 페이지 넘김에만 true. 첫 마운트(표지 진입)는 false로 애니메이션 생략. */
+  animate: boolean;
   reduceMotion: boolean;
   children: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const active = animate && !reduceMotion;
+  // 도는 동안만 종이 질감. 전환 종료 시 걷어내 정적 화면을 원복한다.
+  const [turning, setTurning] = useState(active);
   useEffect(() => {
     const el = ref.current;
-    if (!el || reduceMotion) return; // 감속 모드: 초기 자세 없이 즉시 평면.
+    if (!el || !active) return;
     // next는 왼쪽 경첩(오른쪽 모서리가 들렸다 내려옴), prev는 오른쪽 경첩.
     const hinge = direction === 'next' ? 'left center' : 'right center';
-    const startRotate = direction === 'next' ? 32 : -32; // deg
+    const startRotate = direction === 'next' ? 42 : -42; // deg — 근경 perspective와 함께 뚜렷한 컬.
+    const startShiftPct = direction === 'next' ? 8 : -8; // 경첩 쪽으로 살짝 밀려 들어오는 슬라이드감.
     el.style.transformOrigin = hinge;
     el.style.transition = 'none';
-    el.style.transform = `perspective(1200px) rotateY(${startRotate}deg)`;
-    el.style.opacity = '0.5';
+    el.style.transform = `perspective(900px) rotateY(${startRotate}deg) translateX(${startShiftPct}%)`;
+    el.style.opacity = '0.2';
     // 초기 자세를 강제로 커밋(리플로우) — 없으면 브라우저가 두 스타일을 합쳐 애니메이션이 생략된다.
     void el.offsetWidth;
     el.style.transition = `transform ${PAGE_TURN_MS}ms cubic-bezier(0.2, 0, 0, 1), opacity ${PAGE_TURN_MS}ms ease-out`;
-    el.style.transform = 'perspective(1200px) rotateY(0deg)';
+    el.style.transform = 'perspective(900px) rotateY(0deg) translateX(0)';
     el.style.opacity = '1';
-  }, [direction, reduceMotion]);
+  }, [active, direction]);
   return (
-    <div ref={ref} className="flex h-full w-full items-center justify-center will-change-transform">
+    <div
+      ref={ref}
+      // transform 트랜지션이 끝나면 종이 질감을 걷어낸다(정적 화면 원복).
+      //   ★ 자식(PageImage img)의 opacity 트랜지션이 버블링으로 이 핸들러를 조기에 때리는 것을
+      //     막는다: 이 div 자신(currentTarget)의 'transform' 종료에만 반응한다.
+      onTransitionEnd={(e) => {
+        if (e.target === e.currentTarget && e.propertyName === 'transform') {
+          setTurning(false);
+        }
+      }}
+      className={`flex h-full w-full items-center justify-center will-change-transform ${
+        turning ? 'rounded-md bg-surface shadow-elev-2' : ''
+      }`}
+    >
       {children}
     </div>
   );
@@ -336,6 +366,10 @@ export function AudioReader({
   // 전환 중 사용자 입력 잠금(연타로 두 장이 한꺼번에 넘어가는 것 방지). 자동 넘김·무음면
   // 넘김은 잠금 대상이 아니다 — 연속 듣기 흐름이 잠금에 걸려 멈추면 안 되기 때문.
   const isTurningRef = useRef(false);
+  // 한 번이라도 실제 넘김이 있었는가 — 첫 마운트(표지 진입)에는 넘김 애니메이션을 걸지
+  // 않기 위한 게이트. beginTurn이 true로 굳힌다(단방향). ref라 리렌더를 유발하지 않지만,
+  // 값을 세우는 beginTurn 직후 setIndex 리렌더에서 최신값(true)이 prop으로 읽힌다.
+  const didTurnRef = useRef(false);
   // prefers-reduced-motion — 마운트 시 1회 확정. 감속 모드면 애니메이션·입력잠금을 생략한다.
   const reduceMotionRef = useRef(false);
   // 책넘김 효과음(Task 3) — 음원 미확보(PAGE_TURN_SOUND_URL=null)라 현재 재생 0건.
@@ -454,6 +488,7 @@ export function AudioReader({
   // 실제 경계에서 막혀 index가 안 바뀌는 경우(첫/마지막 면)에는 부르지 않는다(아래 호출부에서 가드).
   const beginTurn = useCallback((dir: 'next' | 'prev') => {
     setTurnDir(dir);
+    didTurnRef.current = true; // 이후 TurningPage 마운트는 넘김 애니메이션을 켠다.
     // 효과음 1회 재생(URL 확보 시에만 동작 — 현재 자산 미확보로 no-op). 낭독과 겹쳐도
     // 음량이 낮아 방해하지 않는다. 되감아 연타 전환에도 매번 처음부터 짧게 난다.
     const s = turnSoundRef.current;
@@ -498,41 +533,6 @@ export function AudioReader({
     goNext();
   }, [goNext]);
 
-  // 스와이프 넘김(Wave 2 F7) — 아이는 버튼을 찾기 전에 화면을 민다(intent F7).
-  //   ★ 판정은 touchend 한 번뿐이고, 통과하면 기존 goPrev/goNext를 그대로 호출한다.
-  //     따라서 상호작용 플래그·자동 넘김 타이머 취소·연속 듣기 재생 규칙이 버튼 조작과
-  //     100% 동일하게 적용된다(오디오 로직 무수정 — 새 경로를 만들지 않는 것이 요점).
-  //   ★ 오인식 방지: 가로 이동이 SWIPE_MIN_PX 이상이고 세로 이동보다 클 때만 넘긴다.
-  //     탭(이동≈0)·세로 제스처는 통과하지 못한다. preventDefault는 쓰지 않아 브라우저
-  //     기본 동작(표지 시작 버튼 탭 등)을 막지 않는다.
-  //   ★ 마우스는 대상이 아니다(터치 전용). 데스크탑은 좌우 버튼이 그대로 주 수단이다.
-  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
-
-  const handleTouchStart = useCallback((e: ReactTouchEvent) => {
-    const t = e.touches[0];
-    // 멀티터치(핀치 등)는 페이지 넘김 의도가 아니다 — 판정 대상에서 뺀다.
-    touchStartRef.current =
-      e.touches.length === 1 && t ? { x: t.clientX, y: t.clientY } : null;
-  }, []);
-
-  const handleTouchEnd = useCallback(
-    (e: ReactTouchEvent) => {
-      const start = touchStartRef.current;
-      touchStartRef.current = null;
-      const t = e.changedTouches[0];
-      if (!start || !t) return;
-      const dx = t.clientX - start.x;
-      const dy = t.clientY - start.y;
-      if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) <= Math.abs(dy)) return;
-      // 좌로 밀면 다음 장, 우로 밀면 이전 장(책장을 넘기는 방향과 같다).
-      // 양 끝에서는 goPrev/goNext의 clamp가 그대로 막아 준다(별도 경계 처리 0건).
-      // userPrev/userNext 경유 — 넘김 애니메이션 도중의 연속 스와이프는 무시된다.
-      if (dx < 0) userNext();
-      else userPrev();
-    },
-    [userNext, userPrev],
-  );
-
   const togglePlay = useCallback(() => {
     const el = audioRef.current;
     if (!el || !page.audioUrl) return;
@@ -546,6 +546,71 @@ export function AudioReader({
       el.pause();
     }
   }, [page.audioUrl, clearAdvanceTimer, ended]);
+
+  // 그림 탭/클릭으로 재생·일시정지(피드백 v2 Task 1.5) — 하단 재생 버튼과 같은 togglePlay를
+  //   불러 상태를 완전히 공유한다(별도 상태 0건). 반환값 = 실제로 토글했는지(터치에서
+  //   합성 클릭 억제 판단에 쓴다).
+  //   무동작 조건(우선순위 순):
+  //     ① 자식 버튼(이동·표지 시작·완독) 위 탭 → 그 버튼이 처리(closest('button')).
+  //     ② 넘김 애니메이션 진행 중 → 무시(isTurningRef).
+  //     ③ 표지 '눌러서 시작하기'가 떠 있는 면 → 기존 오버레이 버튼 우선(변경 금지).
+  //     ④ 무음 면(오디오 없음) → 무동작(togglePlay 내부 가드로도 이중 방어).
+  const handleImageActivate = useCallback(
+    (target: HTMLElement): boolean => {
+      if (target.closest('button')) return false;
+      if (isTurningRef.current) return false;
+      // 표지 시작 오버레이가 뜬 면(표지·미재생)은 기존 '눌러서 시작하기' 버튼이 처리한다.
+      // showCoverStart 조건을 인라인으로 재판정한다(그 const는 렌더 뒤쪽에 선언돼 여기선 참조 불가).
+      if (page.key === 'cover' && page.audioUrl && !isPlaying && nowMs === 0) {
+        return false;
+      }
+      if (!page.audioUrl) return false;
+      togglePlay();
+      return true;
+    },
+    [page.key, page.audioUrl, isPlaying, nowMs, togglePlay],
+  );
+
+  // 스와이프 넘김(Wave 2 F7) + 제자리 탭(Task 1.5)을 한 touchend에서 함께 판정한다.
+  //   ★ 스와이프: 가로 이동 SWIPE_MIN_PX 이상이고 세로보다 크면 넘김(기존 로직 그대로).
+  //   ★ 탭: 가로·세로 이동이 모두 TAP_MAX_PX 미만인 '제자리 짧은 탭'만 재생/정지로 본다.
+  //     둘 중 어느 쪽도 아니면(애매한 대각·중간 이동) 아무 것도 하지 않는다(오발동 방지).
+  //   ★ 이중 발동 방지: 탭을 실제로 처리하면 preventDefault로 합성 클릭을 취소해
+  //     onClick(마우스용)과 겹치지 않게 한다. 마우스(데스크탑)는 터치가 없어 onClick만 탄다.
+  //   상호작용 플래그·타이머 취소·연속 듣기 규칙은 goPrev/goNext·togglePlay가 그대로 처리한다.
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  const handleTouchStart = useCallback((e: ReactTouchEvent) => {
+    const t = e.touches[0];
+    // 멀티터치(핀치 등)는 넘김·탭 의도가 아니다 — 판정 대상에서 뺀다.
+    touchStartRef.current =
+      e.touches.length === 1 && t ? { x: t.clientX, y: t.clientY } : null;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: ReactTouchEvent) => {
+      const start = touchStartRef.current;
+      touchStartRef.current = null;
+      const t = e.changedTouches[0];
+      if (!start || !t) return;
+      const dx = t.clientX - start.x;
+      const dy = t.clientY - start.y;
+      const absX = Math.abs(dx);
+      const absY = Math.abs(dy);
+      // 스와이프 — 좌=다음, 우=이전. 양 끝 clamp는 goPrev/goNext가 처리(별도 경계 0건).
+      // userPrev/userNext 경유 — 넘김 애니메이션 도중의 연속 스와이프는 무시된다.
+      if (absX >= SWIPE_MIN_PX && absX > absY) {
+        if (dx < 0) userNext();
+        else userPrev();
+        return;
+      }
+      // 제자리 짧은 탭 — 재생/정지. 처리했으면 합성 클릭을 막아 onClick 이중 발동을 차단.
+      if (absX < TAP_MAX_PX && absY < TAP_MAX_PX) {
+        if (handleImageActivate(e.target as HTMLElement)) e.preventDefault();
+      }
+    },
+    [userNext, userPrev, handleImageActivate],
+  );
 
   const handleEnded = useCallback(() => {
     setIsPlaying(false);
@@ -667,6 +732,10 @@ export function AudioReader({
           <div
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
+            // 마우스 클릭(데스크탑) 재생/정지 — 터치는 handleTouchEnd가 처리 후 합성 클릭을
+            // preventDefault로 막으므로 여기로 오지 않는다(이중 발동 없음). 자식 버튼 위 클릭은
+            // handleImageActivate가 closest('button')로 걸러 그 버튼에 양보한다.
+            onClick={(e) => handleImageActivate(e.target as HTMLElement)}
             className="relative flex h-full min-h-0 flex-1 items-center justify-center overflow-hidden"
           >
             {/* 책넘김 3D 컬(Task 2) — 슬라이드 key로 remount돼 면마다 enter 애니메이션이 돈다.
@@ -675,6 +744,7 @@ export function AudioReader({
             <TurningPage
               key={page.key}
               direction={turnDir}
+              animate={didTurnRef.current}
               reduceMotion={reduceMotionRef.current}
             >
               <PageImage key={page.imageUrl} src={page.imageUrl} alt={page.imageAlt} />
@@ -771,31 +841,32 @@ export function AudioReader({
             max-w-4xl mx-auto로 기존 위치를 그대로 유지한다. 이미지 행(flex-1) 흡수로 무스크롤 불변. */}
         <div className="w-full shrink-0 border-t border-outline bg-gradient-to-b from-surface to-surface-2 pt-2 -mx-2 px-2 md:-mx-4 md:px-4">
           <div className="mx-auto grid w-full max-w-4xl grid-cols-[1fr_auto_1fr] items-center gap-2">
-          <div className="flex items-center justify-start gap-2">
-            {/* 자막 표시/숨김 — 헤더에서 하단 컨트롤 바로 이동(리더 폴리시).
-                폭 예산(실측): 390px에서 좌측 셀 108 + 중앙 64 + 완독 ≈177 + gap 16 ≈ 365로
-                여유가 ~9px뿐이라, 44px 버튼을 그냥 더하면 무스크롤 단일행(P1-D)이 깨진다.
-                → md 미만에서는 '자동 넘김' 텍스트 라벨을 접어(아이콘 2개 = 96px < 기존 108px)
-                  자리를 만들고, md 이상에서는 라벨을 그대로 노출해 Wave 1 F4(라벨 상시 노출)의
-                  의도를 지킨다. 라벨을 완전히 없애지 않는 것이 이 절충의 핵심이다.
-                터치 타깃은 h-11 w-11(44px) — 아동 사용자 기준 하한. */}
+          <div className="flex items-center justify-start gap-1.5">
+            {/* 자막 스위치 — 아이콘 버튼에서 스위치로 통일(피드백 v2 Task 1). '자동 넘김'과
+                동일한 스위치 언어(h-6 w-11 pill, primary=켜짐)를 써 두 토글의 시각·조작을 맞춘다.
+                켜짐=자막 표시. 라벨 '자막'은 md 미만에서 접어(P1-D 단일행 유지) 스위치만 남기고,
+                md 이상에서 노출한다. 접힘 구간에도 aria-label로 스크린리더 정보는 유지된다. */}
             <button
               type="button"
+              role="switch"
+              aria-checked={showSubtitle}
+              aria-label="자막 표시"
               onClick={() => setShowSubtitle((v) => !v)}
-              aria-pressed={!showSubtitle}
-              aria-label={showSubtitle ? '자막 숨기기' : '자막 보이기'}
-              className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-pill border transition-colors duration-200 ease-kiki ${
+              className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-pill border transition-colors duration-200 ease-kiki ${
                 showSubtitle
-                  ? 'border-outline bg-surface text-text-variant hover:bg-surface-2'
-                  : 'border-transparent bg-primary text-on-primary'
+                  ? 'border-transparent bg-primary'
+                  : 'border-text-disabled bg-surface-2'
               }`}
             >
-              {showSubtitle ? (
-                <Captions className="h-5 w-5" aria-hidden />
-              ) : (
-                <CaptionsOff className="h-5 w-5" aria-hidden />
-              )}
+              <span
+                className={`inline-block h-5 w-5 rounded-pill bg-surface shadow-elev-1 transition-transform duration-200 ease-kiki ${
+                  showSubtitle ? 'translate-x-[1.375rem]' : 'translate-x-[0.125rem]'
+                }`}
+              />
             </button>
+            <span className="hidden whitespace-nowrap text-sm text-text-variant md:inline">
+              자막
+            </span>
             <button
               type="button"
               role="switch"
@@ -817,8 +888,7 @@ export function AudioReader({
                 }`}
               />
             </button>
-            {/* 토글 라벨(F4) — 무엇을 켜고 끄는지 알린다. 자막 토글이 이 줄에 합류하면서
-                md 미만에서만 접는다(hidden md:inline). 접히는 구간에서도 스위치의
+            {/* 토글 라벨(F4) — md 미만에서만 접는다(hidden md:inline). 접히는 구간에서도 스위치의
                 aria-label('재생 후 자동 넘김')은 그대로라 스크린리더 정보 손실은 0이다.
                 whitespace-nowrap 유지 — 노출 구간에서 두 줄로 흘러 P1-D를 깨지 않게. */}
             <span className="hidden whitespace-nowrap text-sm text-text-variant md:inline">
