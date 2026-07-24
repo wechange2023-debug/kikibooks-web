@@ -27,3 +27,12 @@ export const AUTO_ADVANCE_DELAY_MS = 2000;
  * 대략 대신하는 값이라 AUTO_ADVANCE_DELAY_MS(종료 후 여운)보다 길게 둔다(기본 5000ms).
  */
 export const SILENT_PAGE_ADVANCE_MS = 5000;
+
+/**
+ * 스와이프 넘김 최소 가로 이동(px) — 터치 기기 전용(Wave 2 F7).
+ *
+ * 이 값 미만이거나 세로 이동이 더 크면 페이지를 넘기지 않는다. 탭·세로 제스처를
+ * 넘김으로 오인하지 않게 하는 유일한 문턱이라, 아이 손가락처럼 흔들림이 큰 입력에서
+ * 오작동이 잦으면 이 값만 올리면 된다(기본 50px).
+ */
+export const SWIPE_MIN_PX = 50;

@@ -14,7 +14,14 @@ import {
   RotateCcw,
   X,
 } from 'lucide-react';
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type TouchEvent as ReactTouchEvent,
+} from 'react';
 
 import { HighlightedText, type WordMark } from '@/components/book/highlighted-text';
 import type { AttributionRow } from '@/lib/book/attribution';
@@ -22,6 +29,7 @@ import {
   AUTO_ADVANCE_DELAY_MS,
   HIGHLIGHT_UNIT,
   SILENT_PAGE_ADVANCE_MS,
+  SWIPE_MIN_PX,
 } from '@/lib/book/highlight-config';
 import type { ReaderAudioBook } from '@/lib/book/audio-manifest';
 import { startReadingSession } from '@/lib/book/reading-session';
@@ -360,6 +368,40 @@ export function AudioReader({
     setIndex((i) => Math.min(total - 1, i + 1));
   }, [total, clearAdvanceTimer]);
 
+  // 스와이프 넘김(Wave 2 F7) — 아이는 버튼을 찾기 전에 화면을 민다(intent F7).
+  //   ★ 판정은 touchend 한 번뿐이고, 통과하면 기존 goPrev/goNext를 그대로 호출한다.
+  //     따라서 상호작용 플래그·자동 넘김 타이머 취소·연속 듣기 재생 규칙이 버튼 조작과
+  //     100% 동일하게 적용된다(오디오 로직 무수정 — 새 경로를 만들지 않는 것이 요점).
+  //   ★ 오인식 방지: 가로 이동이 SWIPE_MIN_PX 이상이고 세로 이동보다 클 때만 넘긴다.
+  //     탭(이동≈0)·세로 제스처는 통과하지 못한다. preventDefault는 쓰지 않아 브라우저
+  //     기본 동작(표지 시작 버튼 탭 등)을 막지 않는다.
+  //   ★ 마우스는 대상이 아니다(터치 전용). 데스크탑은 좌우 버튼이 그대로 주 수단이다.
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  const handleTouchStart = useCallback((e: ReactTouchEvent) => {
+    const t = e.touches[0];
+    // 멀티터치(핀치 등)는 페이지 넘김 의도가 아니다 — 판정 대상에서 뺀다.
+    touchStartRef.current =
+      e.touches.length === 1 && t ? { x: t.clientX, y: t.clientY } : null;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: ReactTouchEvent) => {
+      const start = touchStartRef.current;
+      touchStartRef.current = null;
+      const t = e.changedTouches[0];
+      if (!start || !t) return;
+      const dx = t.clientX - start.x;
+      const dy = t.clientY - start.y;
+      if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) <= Math.abs(dy)) return;
+      // 좌로 밀면 다음 장, 우로 밀면 이전 장(책장을 넘기는 방향과 같다).
+      // 양 끝에서는 goPrev/goNext의 clamp가 그대로 막아 준다(별도 경계 처리 0건).
+      if (dx < 0) goNext();
+      else goPrev();
+    },
+    [goNext, goPrev],
+  );
+
   const togglePlay = useCallback(() => {
     const el = audioRef.current;
     if (!el || !page.audioUrl) return;
@@ -511,7 +553,15 @@ export function AudioReader({
             disabled={isFirst}
             className="hidden lg:inline-flex"
           />
-          <div className="relative flex h-full min-h-0 flex-1 items-center justify-center overflow-hidden">
+          {/* 스와이프 판정 영역(Wave 2 F7) = 그림 영역. 아이가 미는 곳이 그림이고,
+              하단 컨트롤(토글·재생·완독)까지 포함하면 버튼 드래그가 넘김으로 새어 든다.
+              오버레이 이동 버튼·표지 시작 버튼도 이 안에 있지만, 탭은 이동량이 문턱에
+              못 미쳐 넘김으로 판정되지 않는다(문턱 SWIPE_MIN_PX). */}
+          <div
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            className="relative flex h-full min-h-0 flex-1 items-center justify-center overflow-hidden"
+          >
             <PageImage key={page.imageUrl} src={page.imageUrl} alt={page.imageAlt} />
             {/* 모바일·태블릿(<lg) — 좌우 버튼이 이미지 폭을 잠식하므로 이미지 위 오버레이로 둔다. */}
             <NavButton
