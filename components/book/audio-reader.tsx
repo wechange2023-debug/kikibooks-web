@@ -500,30 +500,6 @@ export function AudioReader({
         <h1 className="min-w-0 flex-1 truncate text-center font-body text-base font-semibold text-text md:text-lg">
           {title}
         </h1>
-        {/* 자막 표시/숨김(Wave 2 F6) — "그림만 크게 보고 싶다"에 대한 1탭 스위치.
-            하단 1행이 아니라 헤더에 두는 이유(실측 폭 예산):
-              360px 폭에서 하단 좌측 셀은 스위치(44) + 라벨('자동 넘김' ≈56) 로 이미
-              가용폭(≈132)의 대부분을 쓴다. 여기에 버튼을 더하면 grid 1fr 열이 밀려
-              무스크롤 단일행(P1-D)이 깨진다. 헤더는 제목이 truncate로 양보하므로 안전하고,
-              ⓘ와 나란히 두면 '보기 옵션'끼리 묶이는 이점도 있다.
-            상태는 아이콘(Captions/CaptionsOff) + aria-pressed로 함께 알린다. */}
-        <button
-          type="button"
-          onClick={() => setShowSubtitle((v) => !v)}
-          aria-pressed={!showSubtitle}
-          aria-label={showSubtitle ? '자막 숨기기' : '자막 보이기'}
-          className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-pill border transition-colors duration-200 ease-kiki ${
-            showSubtitle
-              ? 'border-outline bg-surface text-text-variant hover:bg-surface-2'
-              : 'border-transparent bg-primary text-on-primary'
-          }`}
-        >
-          {showSubtitle ? (
-            <Captions className="h-5 w-5" aria-hidden />
-          ) : (
-            <CaptionsOff className="h-5 w-5" aria-hidden />
-          )}
-        </button>
         {/* ⓘ 저작권 — 상단 어트리뷰션 바 제거(F7)를 대체하는 1탭 도달점. 뒤로가기와 같은
             h-10 w-10로 헤더 좌우 균형을 맞춘다. 어트리뷰션 데이터가 없으면 자리만 비운다. */}
         {attributionRows.length > 0 ? (
@@ -656,6 +632,30 @@ export function AudioReader({
         <div className="w-full shrink-0 border-t border-outline bg-gradient-to-b from-surface to-surface-2 pt-2 -mx-2 px-2 md:-mx-4 md:px-4">
           <div className="mx-auto grid w-full max-w-4xl grid-cols-[1fr_auto_1fr] items-center gap-2">
           <div className="flex items-center justify-start gap-2">
+            {/* 자막 표시/숨김 — 헤더에서 하단 컨트롤 바로 이동(리더 폴리시).
+                폭 예산(실측): 390px에서 좌측 셀 108 + 중앙 64 + 완독 ≈177 + gap 16 ≈ 365로
+                여유가 ~9px뿐이라, 44px 버튼을 그냥 더하면 무스크롤 단일행(P1-D)이 깨진다.
+                → md 미만에서는 '자동 넘김' 텍스트 라벨을 접어(아이콘 2개 = 96px < 기존 108px)
+                  자리를 만들고, md 이상에서는 라벨을 그대로 노출해 Wave 1 F4(라벨 상시 노출)의
+                  의도를 지킨다. 라벨을 완전히 없애지 않는 것이 이 절충의 핵심이다.
+                터치 타깃은 h-11 w-11(44px) — 아동 사용자 기준 하한. */}
+            <button
+              type="button"
+              onClick={() => setShowSubtitle((v) => !v)}
+              aria-pressed={!showSubtitle}
+              aria-label={showSubtitle ? '자막 숨기기' : '자막 보이기'}
+              className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-pill border transition-colors duration-200 ease-kiki ${
+                showSubtitle
+                  ? 'border-outline bg-surface text-text-variant hover:bg-surface-2'
+                  : 'border-transparent bg-primary text-on-primary'
+              }`}
+            >
+              {showSubtitle ? (
+                <Captions className="h-5 w-5" aria-hidden />
+              ) : (
+                <CaptionsOff className="h-5 w-5" aria-hidden />
+              )}
+            </button>
             <button
               type="button"
               role="switch"
@@ -677,11 +677,11 @@ export function AudioReader({
                 }`}
               />
             </button>
-            {/* 토글 라벨 상시 노출(F4) — 무엇을 켜고 끄는지 좁은 화면에서도 보이게 한다.
-                무스크롤 단일행 유지를 위해 문구를 축약('자동 넘김', copy.ts 편입)하고
-                줄바꿈을 막는다(whitespace-nowrap). truncate 대신 nowrap: 4글자 축약이라
-                가로 폭을 거의 먹지 않고, 잘림 없이 온전히 보이는 편이 P1·P3에 유리. */}
-            <span className="whitespace-nowrap text-sm text-text-variant">
+            {/* 토글 라벨(F4) — 무엇을 켜고 끄는지 알린다. 자막 토글이 이 줄에 합류하면서
+                md 미만에서만 접는다(hidden md:inline). 접히는 구간에서도 스위치의
+                aria-label('재생 후 자동 넘김')은 그대로라 스크린리더 정보 손실은 0이다.
+                whitespace-nowrap 유지 — 노출 구간에서 두 줄로 흘러 P1-D를 깨지 않게. */}
+            <span className="hidden whitespace-nowrap text-sm text-text-variant md:inline">
               {autoAdvanceLabel}
             </span>
           </div>
