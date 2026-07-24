@@ -7,6 +7,7 @@ import { AudioReader } from '@/components/book/audio-reader';
 import { FinishButton } from '@/components/book/finish-button';
 import { HtmlReader } from '@/components/book/html-reader';
 import { ReaderAttributionBar } from '@/components/book/reader-attribution-bar';
+import { ReaderExitGuard } from '@/components/book/reader-exit-guard';
 import { SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getAudioReaderBook, hasReaderAudio } from '@/lib/book/audio-manifest';
 import { buildAttributionRows, type AttributionRow } from '@/lib/book/attribution';
@@ -163,8 +164,16 @@ export default async function ReadPage({ params }: ReadPageProps) {
       // 상단 어트리뷰션 바 제거(Wave 1.7 F7·F8) — 그림 영역 확장을 위해 세로를 양보하고,
       // CC BY 어트리뷰션은 AudioReader 헤더 ⓘ 팝오버로 1탭 도달을 보장한다(readerPopoverRows).
       // 아래 content_type 경로는 기존대로 ReaderAttributionBar를 유지한다(회귀 0).
+      // 이탈 확인 가드(Wave 2 F5) — AudioReader 형제로 마운트한다. 재생 상태와 접점이
+      // 없어(props·ref 공유 0건) 오디오·하이라이트 로직은 무수정이다. 완독 → /celebrate는
+      // 클라이언트 라우팅이라 가드가 발화하지 않는다(정상 흐름 무간섭).
+      // html·asb_native 경로에는 달지 않는다 — intent 문서가 기존 뷰어 일관성을 미결로 둠.
       return (
         <div className="flex h-screen flex-col bg-surface">
+          <ReaderExitGuard
+            bookDetailHref={`/book/${book.id}`}
+            copy={readerCopy.exitGuard}
+          />
           <main className="flex-1 overflow-hidden">
             <AudioReader
               book={audioBook}

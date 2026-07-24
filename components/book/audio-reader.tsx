@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import {
   ArrowLeft,
+  Captions,
+  CaptionsOff,
   ChevronLeft,
   ChevronRight,
   Info,
@@ -12,7 +14,14 @@ import {
   RotateCcw,
   X,
 } from 'lucide-react';
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type TouchEvent as ReactTouchEvent,
+} from 'react';
 
 import { HighlightedText, type WordMark } from '@/components/book/highlighted-text';
 import type { AttributionRow } from '@/lib/book/attribution';
@@ -20,6 +29,7 @@ import {
   AUTO_ADVANCE_DELAY_MS,
   HIGHLIGHT_UNIT,
   SILENT_PAGE_ADVANCE_MS,
+  SWIPE_MIN_PX,
 } from '@/lib/book/highlight-config';
 import type { ReaderAudioBook } from '@/lib/book/audio-manifest';
 import { startReadingSession } from '@/lib/book/reading-session';
@@ -238,6 +248,12 @@ export function AudioReader({
   const [silentCountdown, setSilentCountdown] = useState<number | null>(null);
   // 어트리뷰션 팝오버 표시 여부(Wave 1.7 F7). 헤더 ⓘ로 열고 배경/✕/Esc로 닫는다.
   const [showAttribution, setShowAttribution] = useState(false);
+  // 자막 표시 여부(Wave 2 F6 "그림만 크게 보고 싶다"). 기본 표시.
+  //   ★ 렌더 전용 스위치다 — marks fetch·rAF 시각 추적·activeIndex 계산은 그대로 돈다.
+  //     따라서 숨긴 채 듣다가 다시 켜도 하이라이트가 현재 재생 위치에 붙어 있다.
+  //   ★ 상태를 이 컴포넌트에 두므로 페이지를 넘겨도(index만 변경) 유지되고, 리더를
+  //     벗어나면 사라진다. localStorage 등 영속화는 하지 않는다(작업 범위 밖).
+  const [showSubtitle, setShowSubtitle] = useState(true);
   // 완독 버튼 게이트(P2-C) — 마지막 슬라이드에 **한 번이라도 도달**하면 true로 굳는다.
   // 이후 앞 페이지로 되돌아가도 유지된다(다시 잠그지 않는다).
   const [reachedEnd, setReachedEnd] = useState(false);
@@ -352,6 +368,40 @@ export function AudioReader({
     setIndex((i) => Math.min(total - 1, i + 1));
   }, [total, clearAdvanceTimer]);
 
+  // 스와이프 넘김(Wave 2 F7) — 아이는 버튼을 찾기 전에 화면을 민다(intent F7).
+  //   ★ 판정은 touchend 한 번뿐이고, 통과하면 기존 goPrev/goNext를 그대로 호출한다.
+  //     따라서 상호작용 플래그·자동 넘김 타이머 취소·연속 듣기 재생 규칙이 버튼 조작과
+  //     100% 동일하게 적용된다(오디오 로직 무수정 — 새 경로를 만들지 않는 것이 요점).
+  //   ★ 오인식 방지: 가로 이동이 SWIPE_MIN_PX 이상이고 세로 이동보다 클 때만 넘긴다.
+  //     탭(이동≈0)·세로 제스처는 통과하지 못한다. preventDefault는 쓰지 않아 브라우저
+  //     기본 동작(표지 시작 버튼 탭 등)을 막지 않는다.
+  //   ★ 마우스는 대상이 아니다(터치 전용). 데스크탑은 좌우 버튼이 그대로 주 수단이다.
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  const handleTouchStart = useCallback((e: ReactTouchEvent) => {
+    const t = e.touches[0];
+    // 멀티터치(핀치 등)는 페이지 넘김 의도가 아니다 — 판정 대상에서 뺀다.
+    touchStartRef.current =
+      e.touches.length === 1 && t ? { x: t.clientX, y: t.clientY } : null;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: ReactTouchEvent) => {
+      const start = touchStartRef.current;
+      touchStartRef.current = null;
+      const t = e.changedTouches[0];
+      if (!start || !t) return;
+      const dx = t.clientX - start.x;
+      const dy = t.clientY - start.y;
+      if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) <= Math.abs(dy)) return;
+      // 좌로 밀면 다음 장, 우로 밀면 이전 장(책장을 넘기는 방향과 같다).
+      // 양 끝에서는 goPrev/goNext의 clamp가 그대로 막아 준다(별도 경계 처리 0건).
+      if (dx < 0) goNext();
+      else goPrev();
+    },
+    [goNext, goPrev],
+  );
+
   const togglePlay = useCallback(() => {
     const el = audioRef.current;
     if (!el || !page.audioUrl) return;
@@ -450,6 +500,30 @@ export function AudioReader({
         <h1 className="min-w-0 flex-1 truncate text-center font-body text-base font-semibold text-text md:text-lg">
           {title}
         </h1>
+        {/* 자막 표시/숨김(Wave 2 F6) — "그림만 크게 보고 싶다"에 대한 1탭 스위치.
+            하단 1행이 아니라 헤더에 두는 이유(실측 폭 예산):
+              360px 폭에서 하단 좌측 셀은 스위치(44) + 라벨('자동 넘김' ≈56) 로 이미
+              가용폭(≈132)의 대부분을 쓴다. 여기에 버튼을 더하면 grid 1fr 열이 밀려
+              무스크롤 단일행(P1-D)이 깨진다. 헤더는 제목이 truncate로 양보하므로 안전하고,
+              ⓘ와 나란히 두면 '보기 옵션'끼리 묶이는 이점도 있다.
+            상태는 아이콘(Captions/CaptionsOff) + aria-pressed로 함께 알린다. */}
+        <button
+          type="button"
+          onClick={() => setShowSubtitle((v) => !v)}
+          aria-pressed={!showSubtitle}
+          aria-label={showSubtitle ? '자막 숨기기' : '자막 보이기'}
+          className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-pill border transition-colors duration-200 ease-kiki ${
+            showSubtitle
+              ? 'border-outline bg-surface text-text-variant hover:bg-surface-2'
+              : 'border-transparent bg-primary text-on-primary'
+          }`}
+        >
+          {showSubtitle ? (
+            <Captions className="h-5 w-5" aria-hidden />
+          ) : (
+            <CaptionsOff className="h-5 w-5" aria-hidden />
+          )}
+        </button>
         {/* ⓘ 저작권 — 상단 어트리뷰션 바 제거(F7)를 대체하는 1탭 도달점. 뒤로가기와 같은
             h-10 w-10로 헤더 좌우 균형을 맞춘다. 어트리뷰션 데이터가 없으면 자리만 비운다. */}
         {attributionRows.length > 0 ? (
@@ -479,7 +553,15 @@ export function AudioReader({
             disabled={isFirst}
             className="hidden lg:inline-flex"
           />
-          <div className="relative flex h-full min-h-0 flex-1 items-center justify-center overflow-hidden">
+          {/* 스와이프 판정 영역(Wave 2 F7) = 그림 영역. 아이가 미는 곳이 그림이고,
+              하단 컨트롤(토글·재생·완독)까지 포함하면 버튼 드래그가 넘김으로 새어 든다.
+              오버레이 이동 버튼·표지 시작 버튼도 이 안에 있지만, 탭은 이동량이 문턱에
+              못 미쳐 넘김으로 판정되지 않는다(문턱 SWIPE_MIN_PX). */}
+          <div
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            className="relative flex h-full min-h-0 flex-1 items-center justify-center overflow-hidden"
+          >
             <PageImage key={page.imageUrl} src={page.imageUrl} alt={page.imageAlt} />
             {/* 모바일·태블릿(<lg) — 좌우 버튼이 이미지 폭을 잠식하므로 이미지 위 오버레이로 둔다. */}
             <NavButton
@@ -530,24 +612,29 @@ export function AudioReader({
         </div>
 
         {/* 자막 — 확대(P2-B) 후 P2-C에서 문장 간격 확보: 크기 한 단계 축소 + 행간 loose(2.0).
-            한 줄이 너무 길지 않도록 max-w-4xl 상한 유지. */}
-        <div className="flex w-full max-w-4xl shrink-0 items-center justify-center">
-          {page.text ? (
-            <HighlightedText
-              text={page.text}
-              marks={marks}
-              activeIndex={activeIndex}
-              unit={HIGHLIGHT_UNIT}
-              // lg:text-3xl은 자체 line-height를 함께 지정하므로 lg:leading-loose를 반드시 동반한다
-              // (없으면 lg 구간 행간이 1.2로 되돌아간다 — 실측 확인).
-              className="whitespace-pre-wrap text-center font-body text-2xl font-semibold leading-loose text-text lg:text-3xl lg:leading-loose"
-            />
-          ) : (
-            <p className="text-center text-sm text-text-variant">
-              이 페이지는 소리가 없어요.
-            </p>
-          )}
-        </div>
+            한 줄이 너무 길지 않도록 max-w-4xl 상한 유지.
+            Wave 2 F6: 자막을 끄면 이 블록 자체를 렌더하지 않는다 — 껍데기만 남기면 부모의
+            gap-2가 빈 줄로 남아 그림이 그만큼 못 커진다. 반면 '소리가 없어요' 안내는 자막이
+            아니라 상태 표시라서 토글과 무관하게 유지한다(왜 조용한지 알려주는 정보). */}
+        {(showSubtitle || !page.text) && (
+          <div className="flex w-full max-w-4xl shrink-0 items-center justify-center">
+            {page.text ? (
+              <HighlightedText
+                text={page.text}
+                marks={marks}
+                activeIndex={activeIndex}
+                unit={HIGHLIGHT_UNIT}
+                // lg:text-3xl은 자체 line-height를 함께 지정하므로 lg:leading-loose를 반드시 동반한다
+                // (없으면 lg 구간 행간이 1.2로 되돌아간다 — 실측 확인).
+                className="whitespace-pre-wrap text-center font-body text-2xl font-semibold leading-loose text-text lg:text-3xl lg:leading-loose"
+              />
+            ) : (
+              <p className="text-center text-sm text-text-variant">
+                이 페이지는 소리가 없어요.
+              </p>
+            )}
+          </div>
+        )}
 
         {/* 무음면 카운트다운(Wave 1.6 F6) — 연속 듣기 모드에서 오디오 없는 면이 몇 초 뒤
             넘어가는지 숫자로 알린다(멈춘 것처럼 보이는 문제 해소). 인라인 문구(copy.ts 미편입).
