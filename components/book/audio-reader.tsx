@@ -395,9 +395,10 @@ export function AudioReader({
   // ── 책넘김 연출(리더 폴리시 Task 2·3 · 단판 스파인 플립 피드백 v3.1) ────────
   // 진행 중 넘김 정보(null=정적). FlipOverlay가 이 값으로 헌 페이지 단판을 그린다.
   const [flip, setFlip] = useState<FlipState | null>(null);
-  // 플립 종료 콜백 — useCallback으로 참조를 고정한다. 인라인 화살표면 재렌더마다 새 참조가
-  // 돼 FlipOverlay 애니 effect가 재실행(cleanup cancel)되어 애니가 조기 종료된다(v3.1 버그).
-  const handleFlipDone = useCallback(() => setFlip(null), []);
+  // 낭독 시작 보류 플래그(v3.1 검수 Task 2) — 플립 있는 넘김에서 true로 세우고, 플립 종료
+  // (onDone)에서 낭독을 시작한 뒤 false로 내린다. 플립 없는 진입(첫 페이지·감속 모드)은 false라
+  // 페이지 진입 effect가 곧바로 낭독한다.
+  const deferNarrationRef = useRef(false);
   // 넘김마다 증가하는 식별자 — FlipOverlay key로 써 연속 넘김에도 애니메이션을 새로 태운다.
   const flipIdRef = useRef(0);
   // 전환 중 사용자 입력 잠금(연타로 두 장이 한꺼번에 넘어가는 것 방지). 자동 넘김·무음면
@@ -469,6 +470,9 @@ export function AudioReader({
   const page = slides[index];
   const marks = marksByPage[page.key] ?? [];
   const activeIndex = activeMarkIndex(marks, nowMs);
+  // 현재 페이지 오디오 URL 미러 — startNarration이 deps 없이 최신 오디오 유무를 판정한다.
+  const currentAudioUrlRef = useRef<string | null>(page.audioUrl);
+  currentAudioUrlRef.current = page.audioUrl;
 
   // 세션 시작 — 마운트 1회(HtmlReader·AsbReader와 동일, intent §5.1). 실패는 silent.
   // ★ 이 호출이 없으면 FinishButton의 completeReadingSession이 미완료 세션을 못 찾아
@@ -531,23 +535,39 @@ export function AudioReader({
   }, []);
   useEffect(() => clearAdvanceTimer, [clearAdvanceTimer]);
 
-  // 페이지 진입 시 시간·상태 초기화 + 연속 듣기 모드면 자동 재생(Wave 1.6).
-  // 어느 경로로 왔든(자동 전환·수동 다음·수동 이전) 토글 ON + 오디오 있음 + 사용자가
-  // 이미 상호작용했으면 재생한다(토글 상태가 곧 모드 — 세션 플래그 제거). 표지 첫 진입
-  // (상호작용 전)은 시도하지 않는다. autoAdvance는 미러 ref로 읽어 deps에서 빼, 토글만
-  // 바꿔도 이 effect가 재실행돼 재생 상태가 리셋되는 것을 막는다.
-  useEffect(() => {
-    setNowMs(0);
-    setIsPlaying(false);
-    setEnded(false); // 새 슬라이드에서는 다시듣기 상태 해제(F2).
+  // 낭독 시작 — 연속 듣기 모드(토글 ON) + 오디오 있음 + 사용자 상호작용 후일 때만 재생.
+  // 표지 첫 진입(상호작용 전)은 시도하지 않는다. deps 없이 refs로만 최신값을 읽어 참조를
+  // 고정한다(페이지 진입 effect·플립 종료 콜백 양쪽에서 공유).
+  const startNarration = useCallback(() => {
     const el = audioRef.current;
-    if (el && autoAdvanceRef.current && page.audioUrl && interactedRef.current) {
+    if (el && autoAdvanceRef.current && currentAudioUrlRef.current && interactedRef.current) {
       el.play().catch((err) => {
         // 브라우저 자동재생 정책 등 — 조용히 ▶ 대기 폴백(화면 유지), 콘솔 로그만.
         console.log('[audio-reader] 자동 재생 실패 — 수동 대기로 폴백', err);
       });
     }
-  }, [index, page.audioUrl]);
+  }, []);
+
+  // 플립 종료 콜백 — useCallback으로 참조 고정(인라인 화살표면 재렌더마다 새 참조가 돼
+  // FlipOverlay 애니 effect가 재실행·조기 종료된다, v3.1 버그). 보류된 낭독을 여기서 시작한다.
+  const handleFlipDone = useCallback(() => {
+    setFlip(null);
+    if (deferNarrationRef.current) {
+      deferNarrationRef.current = false;
+      startNarration(); // 플립이 끝난 시점에 낭독 시작(검수 Task 2 — 너무 빠른 낭독 해소).
+    }
+  }, [startNarration]);
+
+  // 페이지 진입 시 시간·상태 초기화 + (플립 없는 진입이면) 낭독 시작. 플립 있는 넘김은
+  // deferNarrationRef=true라 여기서 시작하지 않고 handleFlipDone(플립 종료)에서 시작한다.
+  // autoAdvance는 미러 ref로 읽어 deps에서 빼, 토글만 바꿔도 재생 상태가 리셋되지 않게 한다.
+  useEffect(() => {
+    setNowMs(0);
+    setIsPlaying(false);
+    setEnded(false); // 새 슬라이드에서는 다시듣기 상태 해제(F2).
+    if (deferNarrationRef.current) return; // 낭독은 플립 종료(onDone)에서 시작.
+    startNarration();
+  }, [index, page.audioUrl, startNarration]);
 
   // 페이지 이동 — 대기 중인 자동 넘김 타이머를 취소한다. 이동으로 상호작용 플래그를
   // 세우고, 새 페이지의 자동 재생 여부는 진입 effect가 토글(연속 듣기 모드) 기준으로
@@ -576,6 +596,8 @@ export function AudioReader({
     const buf = turnBufferRef.current;
     if (!ctx || !buf) return;
     const fire = () => {
+      // 반드시 running일 때만 호출된다 — suspended에서 start(0)를 예약(넘김 뒤 뒤늦게 재생)하는
+      // 경로를 아예 두지 않는다. 1회용 BufferSource, gain으로 -12dB 낮춰 낭독을 덮지 않는다.
       const src = ctx.createBufferSource();
       src.buffer = buf;
       const gain = ctx.createGain();
@@ -587,13 +609,19 @@ export function AudioReader({
       fire();
       return;
     }
+    // running이 아니면 resume을 시도하되, 50ms 안에 running이 되면 발사·아니면 이번 소리는 생략한다
+    // ("즉시 못 쏘면 쏘지 않는다"). start()는 오직 running 확인 후에만 부른다(예약 경로 제거).
     const t0 = performance.now();
-    ctx
-      .resume()
-      .then(() => {
-        if (performance.now() - t0 <= 100) fire();
-      })
-      .catch(() => undefined);
+    ctx.resume().catch(() => undefined);
+    const check = () => {
+      if (ctx.state === 'running') {
+        fire();
+      } else if (performance.now() - t0 < 50) {
+        requestAnimationFrame(check);
+      }
+      // 50ms 초과 & 여전히 not running → 생략(start 미호출).
+    };
+    requestAnimationFrame(check);
   }, []);
 
   // 넘김 부수효과(단판 세팅 + 효과음 + 입력잠금) — index 전환 '직전'에만 부른다.
@@ -604,6 +632,8 @@ export function AudioReader({
       playTurnSound();
       // 감속 모드는 애니메이션·입력잠금을 생략한다(즉시 다음 입력 수용, 플립 오버레이 미마운트).
       if (reduceMotionRef.current) return;
+      // 플립 있는 넘김 — 낭독은 플립 종료(handleFlipDone)에서 시작한다(검수 Task 2).
+      deferNarrationRef.current = true;
       // from=현재(옛) 장. 단판이라 새 장은 아래 정적 베이스가 담당(index는 setIndex로 곧 바뀜).
       const fromSlide = slidesRef.current[indexRef.current];
       flipIdRef.current += 1;
