@@ -18,6 +18,7 @@ import {
   useRef,
   useState,
   type ReactNode,
+  type RefObject,
   type TouchEvent as ReactTouchEvent,
 } from 'react';
 
@@ -189,85 +190,174 @@ function PageImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-/**
- * TurningPage — 책넘김 3D 컬 연출(리더 폴리시 Task 2 · 시인성 수정 피드백 v2 Task 2).
- *
- * ★ 시각 레이어 전용이다. 오디오·하이라이트·index 전환 로직과 접점이 0건이다:
- *   부모가 이 래퍼를 슬라이드 key로 remount하면, 새 면이 비스듬히 누운 자세에서
- *   평평하게 안착하는 enter 애니메이션만 돈다. 전환 '완료 시점'을 바꾸지 않으므로
- *   연속 듣기·자동 재생 타이밍은 그대로다(기존 페이지 진입 effect가 즉시 실행됨).
- *
- * 구현: keyframes·tailwind.config 무변경(celebrate-rewards.tsx의 "transition만으로"
- *   원칙 계승). 마운트 직후 초기 transform(회전+기울임)을 리플로우로 굳힌 뒤 다음
- *   프레임에 identity로 transition을 건다 — 순수 enter 트랜지션.
- *
- * 방향: next=오른쪽→왼쪽 넘김(왼쪽 모서리를 경첩으로 오른쪽이 내려옴),
- *       prev=왼쪽→오른쪽 넘김(오른쪽 모서리 경첩). direction으로 경첩·회전 부호를 뒤집는다.
- *
- * ── 시인성 수정(피드백 v2 Task 2) ──────────────────────────────────────────────
- *   초판이 '거의 안 보인' 원인 2가지를 함께 고친다:
- *     (d) 자세가 약했다 — perspective 1200px(원경)·32°·opacity 0.5는 원근 왜곡이 옅어
- *         빠른 페이드처럼 보였다. → perspective 900px(근경)·42°·opacity 0.2 + 가로 슬라이드로
- *         명확한 3D 컬로 강화.
- *     (마스킹) 넘김이 도는 동안 새 이미지가 아직 opacity 0→1 페이드 중(PageImage 200ms)이라
- *         '빈 영역'이 돌아 아무 것도 안 보였다. → 도는 동안만 종이 질감(bg-surface + shadow-elev-2
- *         + 둥근 모서리, semantic 토큰만)을 입혀 '한 장의 종이'가 넘어가는 형태를 이미지 로드와
- *         무관하게 보이게 한다. 전환이 끝나면(onTransitionEnd) 걷어내 정적 화면(P2-A 무카드)을
- *         그대로 유지한다.
- *   또한 첫 마운트(표지 진입)에는 애니메이션을 걸지 않는다(animate=false) — 실제 넘김에만 돈다.
- *
- * 접근성: prefers-reduced-motion이면 transform·종이질감 모두 걸지 않아 즉시 전환된다
- *   (초기 회전 자세도 건너뛴다 — matchMedia로 초기 자세 자체를 생략).
- */
-function TurningPage({
-  direction,
-  animate,
-  reduceMotion,
-  children,
-}: {
+/** FlipOverlay가 넘김을 그릴 때 필요한 정보. null이면 정적(넘김 없음). */
+interface FlipState {
+  /** 애니메이션 재시작 식별자(연속 넘김 시 remount). */
+  id: number;
   direction: 'next' | 'prev';
-  /** 실제 페이지 넘김에만 true. 첫 마운트(표지 진입)는 false로 애니메이션 생략. */
-  animate: boolean;
-  reduceMotion: boolean;
-  children: ReactNode;
+  /** 접혀 올라가는 현재(옛) 장 이미지. */
+  fromUrl: string;
+  fromAlt: string;
+  /** 펼쳐져 안착하는 다음(새) 장 이미지. 경계 밖이면 null(종이 뒷면으로 대체). */
+  toUrl: string | null;
+  toAlt: string;
+}
+
+/**
+ * FlipOverlay — 2단계 3D 책장 넘김(피드백 v2 Task A, 단일 회전 방식 폐기).
+ *
+ * 종전 단일 rotateY는 페이드처럼 보였다. 실제 종이 한 장이 서 있다 눕는 입체감을 위해
+ * **두 판 릴레이**로 재구성한다(전폭 단일 페이지 뷰의 올바른 기하):
+ *   · 1단계(0~50%): 현재 장(fromUrl)이 경첩 축으로 0°→90°로 접혀 선다(front 가시).
+ *   · 2단계(50~100%): 다음 장(toUrl)이 90°→0°로 펼쳐져 눕는다(안착). 두 판 다 ±90°를
+ *     넘지 않아 화면 밖으로 날아가지 않고 제자리에 선다/눕는다.
+ *   · 경첩: next=왼쪽, prev=오른쪽(좌우 대칭 반전).
+ * 두 판은 시각적으로 한 장처럼 겹치고, 아래에는 정적 새 페이지가 이미 깔려 있어
+ * (index는 넘김 시작 시 이미 바뀜) 오버레이가 사라지면 그대로 이어진다(마스킹 0).
+ *
+ * 마스킹 방지: 판 배경을 bg-surface(종이)로 깔아 이미지 미로드 시에도 '종이'가 돈다.
+ *   다음 장 이미지는 마운트 즉시 프리로드해 2단계에서 빈 판이 되지 않게 한다. toUrl이
+ *   없으면(경계) 뒷판은 종이 뒷면 질감만 보인다.
+ *
+ * 그림자: 각 판에 반투명 음영(bg-text)을 덧대 접힐수록 짙어지고(1단계) 누울수록 옅어져(2단계)
+ *   '서 있는 종이'의 입체 음영이 판을 가로질러 이동한다. 색은 semantic 토큰만(Hard Rule 10).
+ *
+ * 구현: Web Animations API(element.animate) — keyframe offset으로 두 판의 시점을 정확히
+ *   가른다. tailwind.config·전역 keyframes 무변경(컴포넌트 로컬 유지). 오디오·하이라이트·
+ *   index 로직과 접점 0건(시각 오버레이 전용, pointer-events-none).
+ *
+ * 접근성: prefers-reduced-motion이면 부모가 아예 마운트하지 않는다(즉시 전환).
+ */
+function FlipFace({
+  imageUrl,
+  alt,
+  faceRef,
+  shadowRef,
+}: {
+  imageUrl: string | null;
+  alt: string;
+  faceRef: React.RefObject<HTMLDivElement | null>;
+  shadowRef: React.RefObject<HTMLDivElement | null>;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const active = animate && !reduceMotion;
-  // 도는 동안만 종이 질감. 전환 종료 시 걷어내 정적 화면을 원복한다.
-  const [turning, setTurning] = useState(active);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || !active) return;
-    // next는 왼쪽 경첩(오른쪽 모서리가 들렸다 내려옴), prev는 오른쪽 경첩.
-    const hinge = direction === 'next' ? 'left center' : 'right center';
-    const startRotate = direction === 'next' ? 42 : -42; // deg — 근경 perspective와 함께 뚜렷한 컬.
-    const startShiftPct = direction === 'next' ? 8 : -8; // 경첩 쪽으로 살짝 밀려 들어오는 슬라이드감.
-    el.style.transformOrigin = hinge;
-    el.style.transition = 'none';
-    el.style.transform = `perspective(900px) rotateY(${startRotate}deg) translateX(${startShiftPct}%)`;
-    el.style.opacity = '0.2';
-    // 초기 자세를 강제로 커밋(리플로우) — 없으면 브라우저가 두 스타일을 합쳐 애니메이션이 생략된다.
-    void el.offsetWidth;
-    el.style.transition = `transform ${PAGE_TURN_MS}ms cubic-bezier(0.2, 0, 0, 1), opacity ${PAGE_TURN_MS}ms ease-out`;
-    el.style.transform = 'perspective(900px) rotateY(0deg) translateX(0)';
-    el.style.opacity = '1';
-  }, [active, direction]);
   return (
     <div
-      ref={ref}
-      // transform 트랜지션이 끝나면 종이 질감을 걷어낸다(정적 화면 원복).
-      //   ★ 자식(PageImage img)의 opacity 트랜지션이 버블링으로 이 핸들러를 조기에 때리는 것을
-      //     막는다: 이 div 자신(currentTarget)의 'transform' 종료에만 반응한다.
-      onTransitionEnd={(e) => {
-        if (e.target === e.currentTarget && e.propertyName === 'transform') {
-          setTurning(false);
-        }
-      }}
-      className={`flex h-full w-full items-center justify-center will-change-transform ${
-        turning ? 'rounded-md bg-surface shadow-elev-2' : ''
-      }`}
+      ref={faceRef}
+      className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-md bg-surface shadow-elev-2 [backface-visibility:hidden]"
     >
-      {children}
+      {imageUrl ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={imageUrl} alt={alt} className="max-h-full max-w-full object-contain" />
+      ) : (
+        // 종이 뒷면 질감(경계·미로드 대체) — 은은한 표면 톤.
+        <div className="h-full w-full bg-surface-2" />
+      )}
+      {/* 이동 음영 — 서 있을수록 짙게. bg-text(near-black) + 인라인 opacity를 WAA로 구동. */}
+      <div
+        ref={shadowRef}
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-text"
+        style={{ opacity: 0 }}
+      />
+    </div>
+  );
+}
+
+function FlipOverlay({
+  flip,
+  durationMs,
+  onDone,
+}: {
+  flip: FlipState;
+  durationMs: number;
+  onDone: () => void;
+}) {
+  const { direction, fromUrl, fromAlt, toUrl, toAlt } = flip;
+  const fromFaceRef = useRef<HTMLDivElement>(null);
+  const toFaceRef = useRef<HTMLDivElement>(null);
+  const fromShadowRef = useRef<HTMLDivElement>(null);
+  const toShadowRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const fromEl = fromFaceRef.current;
+    const toEl = toFaceRef.current;
+    if (!fromEl || !toEl) {
+      onDone();
+      return;
+    }
+    // 다음 장 프리로드(베스트에포트) — 2단계에서 빈 판 방지.
+    if (toUrl) {
+      const im = new Image();
+      im.src = toUrl;
+    }
+    const hinge = direction === 'next' ? 'left center' : 'right center';
+    // next: 오른쪽 모서리가 뒤로 접힘(음의 각). prev: 대칭(양의 각).
+    const sign = direction === 'next' ? -1 : 1;
+    fromEl.style.transformOrigin = hinge;
+    toEl.style.transformOrigin = hinge;
+
+    const opts: KeyframeAnimationOptions = {
+      duration: durationMs,
+      easing: 'ease-in-out',
+      fill: 'forwards',
+    };
+    // 1단계: from 0°→90°(선다), 후반은 90° 유지(엣지온=사실상 비가시).
+    const fromAnim = fromEl.animate(
+      [
+        { transform: `rotateY(0deg)`, offset: 0 },
+        { transform: `rotateY(${sign * 90}deg)`, offset: 0.5 },
+        { transform: `rotateY(${sign * 90}deg)`, offset: 1 },
+      ],
+      opts,
+    );
+    // 2단계: to 90° 유지(전반) → 0°로 눕는다(안착).
+    const toAnim = toEl.animate(
+      [
+        { transform: `rotateY(${sign * 90}deg)`, offset: 0 },
+        { transform: `rotateY(${sign * 90}deg)`, offset: 0.5 },
+        { transform: `rotateY(0deg)`, offset: 1 },
+      ],
+      opts,
+    );
+    // 음영: from은 접힐수록 짙게(0→0.55, 후반 유지), to는 누울수록 옅게(0.55 유지→0).
+    const fromShadow = fromShadowRef.current?.animate(
+      [
+        { opacity: 0, offset: 0 },
+        { opacity: 0.55, offset: 0.5 },
+        { opacity: 0.55, offset: 1 },
+      ],
+      opts,
+    );
+    const toShadow = toShadowRef.current?.animate(
+      [
+        { opacity: 0.55, offset: 0 },
+        { opacity: 0.55, offset: 0.5 },
+        { opacity: 0, offset: 1 },
+      ],
+      opts,
+    );
+
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      onDone();
+    };
+    toAnim.onfinish = finish;
+    toAnim.oncancel = finish;
+    return () => {
+      fromAnim.cancel();
+      toAnim.cancel();
+      fromShadow?.cancel();
+      toShadow?.cancel();
+    };
+  }, [direction, fromUrl, toUrl, durationMs, onDone]);
+
+  return (
+    <div className="pointer-events-none absolute inset-0 z-[5] [perspective:1600px]">
+      {/* to(다음 장)를 먼저 깔고 from(현재 장)을 위에 — 전반부엔 from만 보이고 후반부엔
+          from이 엣지온으로 사라지며 to가 눕는다. */}
+      <FlipFace imageUrl={toUrl} alt={toAlt} faceRef={toFaceRef} shadowRef={toShadowRef} />
+      <FlipFace imageUrl={fromUrl} alt={fromAlt} faceRef={fromFaceRef} shadowRef={fromShadowRef} />
     </div>
   );
 }
@@ -359,17 +449,14 @@ export function AudioReader({
   // 자동 넘김 지연 타이머(P1-C). 수동 조작·언마운트 시 취소한다.
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // ── 책넘김 연출(리더 폴리시 Task 2·3) ──────────────────────────────────────
-  // 넘김 방향 — TurningPage가 enter 애니메이션 방향을 이 값으로 정한다. 표지 첫 렌더는
-  // 애니메이션 대상이 아니므로 초기값('next')은 의미가 없다. goPrev/goNext가 갱신한다.
-  const [turnDir, setTurnDir] = useState<'next' | 'prev'>('next');
+  // ── 책넘김 연출(리더 폴리시 Task 2·3 · 2단계 플립 재구현 피드백 v2 Task A) ────────
+  // 진행 중 넘김 정보(null=정적). FlipOverlay가 이 값으로 from/to 두 판을 그린다.
+  const [flip, setFlip] = useState<FlipState | null>(null);
+  // 넘김마다 증가하는 식별자 — FlipOverlay key로 써 연속 넘김에도 애니메이션을 새로 태운다.
+  const flipIdRef = useRef(0);
   // 전환 중 사용자 입력 잠금(연타로 두 장이 한꺼번에 넘어가는 것 방지). 자동 넘김·무음면
   // 넘김은 잠금 대상이 아니다 — 연속 듣기 흐름이 잠금에 걸려 멈추면 안 되기 때문.
   const isTurningRef = useRef(false);
-  // 한 번이라도 실제 넘김이 있었는가 — 첫 마운트(표지 진입)에는 넘김 애니메이션을 걸지
-  // 않기 위한 게이트. beginTurn이 true로 굳힌다(단방향). ref라 리렌더를 유발하지 않지만,
-  // 값을 세우는 beginTurn 직후 setIndex 리렌더에서 최신값(true)이 prop으로 읽힌다.
-  const didTurnRef = useRef(false);
   // prefers-reduced-motion — 마운트 시 1회 확정. 감속 모드면 애니메이션·입력잠금을 생략한다.
   const reduceMotionRef = useRef(false);
   // 책넘김 효과음(Task 3) — 음원 미확보(PAGE_TURN_SOUND_URL=null)라 현재 재생 0건.
@@ -484,20 +571,38 @@ export function AudioReader({
     [],
   );
 
-  // 넘김 부수효과(방향 반영 + 효과음 + 입력잠금) — index 전환 '직전'에만 부른다.
+  // slides 동기 미러 — beginTurn이 넘김 시작 시점(index 변경 전)의 from/to 이미지를
+  // 정확히 집게 한다. slides는 매 렌더 새 배열이라 ref로 최신값을 참조한다.
+  const slidesRef = useRef(slides);
+  slidesRef.current = slides;
+
+  // 넘김 부수효과(from/to 판 세팅 + 효과음 + 입력잠금) — index 전환 '직전'에만 부른다.
   // 실제 경계에서 막혀 index가 안 바뀌는 경우(첫/마지막 면)에는 부르지 않는다(아래 호출부에서 가드).
   const beginTurn = useCallback((dir: 'next' | 'prev') => {
-    setTurnDir(dir);
-    didTurnRef.current = true; // 이후 TurningPage 마운트는 넘김 애니메이션을 켠다.
-    // 효과음 1회 재생(URL 확보 시에만 동작 — 현재 자산 미확보로 no-op). 낭독과 겹쳐도
-    // 음량이 낮아 방해하지 않는다. 되감아 연타 전환에도 매번 처음부터 짧게 난다.
+    // 효과음 1회 재생(1단계 시작 시점). 낭독과 겹쳐도 음량이 낮아(-12dB) 방해하지 않는다.
+    // 되감아 연타 전환에도 매번 처음부터 짧게 난다.
     const s = turnSoundRef.current;
     if (s) {
       s.currentTime = 0;
       s.play().catch(() => undefined); // 자동재생 정책 등 — 조용히 무시(넘김 자체엔 무영향).
     }
-    // 감속 모드는 애니메이션이 없어 잠글 이유도 없다(즉시 다음 입력 수용).
+    // 감속 모드는 애니메이션·입력잠금을 생략한다(즉시 다음 입력 수용, 플립 오버레이 미마운트).
     if (reduceMotionRef.current) return;
+    // from=현재(옛) 장, to=넘어갈 새 장. indexRef는 아직 옛 index(setIndex 전 호출).
+    const cur = slidesRef.current;
+    const fromIdx = indexRef.current;
+    const toIdx = dir === 'next' ? fromIdx + 1 : fromIdx - 1;
+    const fromSlide = cur[fromIdx];
+    const toSlide = cur[toIdx];
+    flipIdRef.current += 1;
+    setFlip({
+      id: flipIdRef.current,
+      direction: dir,
+      fromUrl: fromSlide.imageUrl,
+      fromAlt: fromSlide.imageAlt,
+      toUrl: toSlide?.imageUrl ?? null,
+      toAlt: toSlide?.imageAlt ?? '',
+    });
     isTurningRef.current = true;
     if (turnLockTimerRef.current) clearTimeout(turnLockTimerRef.current);
     turnLockTimerRef.current = setTimeout(() => {
@@ -738,17 +843,21 @@ export function AudioReader({
             onClick={(e) => handleImageActivate(e.target as HTMLElement)}
             className="relative flex h-full min-h-0 flex-1 items-center justify-center overflow-hidden"
           >
-            {/* 책넘김 3D 컬(Task 2) — 슬라이드 key로 remount돼 면마다 enter 애니메이션이 돈다.
-                이미지만 감싸고 오버레이(이동 버튼·표지 시작·위치표시)는 밖에 둬 함께 돌지 않게 한다.
-                방향은 turnDir(직전 goPrev/goNext가 설정), 감속 모드는 reduceMotionRef로 생략. */}
-            <TurningPage
-              key={page.key}
-              direction={turnDir}
-              animate={didTurnRef.current}
-              reduceMotion={reduceMotionRef.current}
-            >
-              <PageImage key={page.imageUrl} src={page.imageUrl} alt={page.imageAlt} />
-            </TurningPage>
+            {/* 정적 베이스 — 항상 현재(넘김 후 새) 페이지. 넘김 중에는 위 FlipOverlay가 덮고,
+                끝나면 오버레이가 사라지며 이 베이스가 그대로 드러난다(마스킹 0). */}
+            <PageImage key={page.imageUrl} src={page.imageUrl} alt={page.imageAlt} />
+            {/* 2단계 3D 플립 오버레이(피드백 v2 Task A) — 넘김 중에만 마운트. id로 remount해
+                연속 넘김에도 새 애니메이션. 끝나면 onDone으로 flip=null → 언마운트. 감속 모드는
+                beginTurn이 flip을 세우지 않아 마운트되지 않는다(즉시 전환). pointer-events-none이라
+                아래 그림 탭·스와이프 판정(컨테이너 핸들러)을 가로채지 않는다. */}
+            {flip && (
+              <FlipOverlay
+                key={flip.id}
+                flip={flip}
+                durationMs={PAGE_TURN_MS}
+                onDone={() => setFlip(null)}
+              />
+            )}
             {/* 모바일·태블릿(<lg) — 좌우 버튼이 이미지 폭을 잠식하므로 이미지 위 오버레이로 둔다. */}
             <NavButton
               direction="prev"

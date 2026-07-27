@@ -47,24 +47,22 @@ export const SWIPE_MIN_PX = 50;
 export const TAP_MAX_PX = 10;
 
 /**
- * 책넘김 애니메이션 길이(ms) — 새 면이 비스듬히 누운 자세에서 평평하게 안착하기까지.
+ * 책넘김 2단계 플립 길이(ms) — 1단계(현재 장 0°→90° 접힘) + 2단계(다음 장 90°→0° 안착).
  *
- * 이 값은 **입력 잠금 시간이기도 하다**: 애니메이션이 도는 동안 사용자 조작(버튼·스와이프)은
+ * 이 값은 **입력 잠금 시간이기도 하다**: 애니메이션이 도는 동안 사용자 조작(버튼·스와이프·탭)은
  * 무시된다(연타로 두 장이 한꺼번에 넘어가는 것 방지). 자동 넘김·무음면 넘김은 잠금 대상이
  * 아니다 — 연속 듣기 흐름이 잠금에 걸려 멈추면 안 되기 때문이다.
- * 길게 잡으면 넘김이 굼떠 보이고, 짧으면 종이 느낌이 사라진다(기본 360ms).
+ * 2단계 플립은 종이가 서는 중간 자세를 확실히 보여줘야 해 600~700ms가 적정(기본 650ms).
  */
-export const PAGE_TURN_MS = 360;
+export const PAGE_TURN_MS = 650;
 
 /**
- * 책넘김 효과음 경로 — **미확보 상태(null)라 재생 0건**.
+ * 책넘김 효과음 경로 — public/sounds/page-turn.mp3.
  *
- * 효과음은 CC0(퍼블릭 도메인 헌정) 음원만 쓸 수 있다(작업 지시 라이선스 게이트).
- * 리포·로컬에 출처·라이선스가 확정된 CC0 파일이 없어 자산 확보 전까지 null로 둔다.
- * 확보되면 (1) 파일을 public/ 아래 두고 (2) 이 상수에 경로를 넣고 (3) 출처·라이선스를
- * docs/assets/audio-credits.md에 기록하면 재생 코드는 그대로 살아난다(코드 수정 0줄).
+ * 자산: dragon-studio-flipping-book-page-499646 (Pixabay Content License, 2026-07-24 오케 승인).
+ * 출처·라이선스는 docs/assets/audio-credits.md에 기록. 플립 1단계 시작 시점에 1회 재생된다.
  */
-export const PAGE_TURN_SOUND_URL: string | null = null;
+export const PAGE_TURN_SOUND_URL: string | null = '/sounds/page-turn.mp3';
 
 /**
  * 책넘김 효과음 음량(0~1) — 낭독을 덮지 않도록 충분히 낮춘다.

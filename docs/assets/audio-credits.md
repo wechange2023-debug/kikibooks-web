@@ -5,28 +5,27 @@
 
 ## 라이선스 게이트 (필수)
 
-- 효과음은 **CC0 (퍼블릭 도메인 헌정)** 음원만 사용할 수 있다.
-- 출처·라이선스가 확정되지 않은 파일은 **적재 금지**. CC BY 계열도 이 용도로는 쓰지 않는다
-  (짧은 UI 효과음에 어트리뷰션을 상시 노출하기 어려워 CC0로 한정).
+- 효과음은 출처·라이선스가 **확정된** 음원만 사용한다. 확정 불가 파일은 적재 금지.
+- 허용 라이선스: CC0(퍼블릭 도메인 헌정), Pixabay Content License 등 **어트리뷰션 없이
+  상업적 사용·재배포가 허용되는** 라이선스. CC BY 계열(어트리뷰션 상시 노출 요구)은
+  짧은 UI 효과음에 부적합해 원칙적으로 배제한다.
 
 ## 자산 목록
 
 | 용도 | 파일 경로 | 출처(URL) | 라이선스 | 확보일 | 비고 |
 |---|---|---|---|---|---|
-| 책넘김 효과음 | _(미확보)_ | — | CC0 필요 | — | ⏳ **팀장 확보 필요** — 아래 참조 |
+| 책넘김 효과음 | `public/sounds/page-turn.mp3` | https://pixabay.com/sound-effects/film-special-effects-flipping-book-page-499646/ | Pixabay Content License | 2026-07-24 | 원본 파일명 `dragon-studio-flipping-book-page-499646`. 오케 승인(2026-07-24) |
 
-## 책넘김 효과음 — 대기 상태 (2026-07-24)
+## 책넘김 효과음 — 적재 완료 (2026-07-24)
 
-- 현재 리포·로컬에 출처·라이선스가 확정된 CC0 음원이 없어 **효과음은 미적재**다.
-- 코드 훅은 준비돼 있다(재생 코드 무수정으로 자산만 연결 가능):
-  - 재생 경로 상수: `lib/book/highlight-config.ts`의 `PAGE_TURN_SOUND_URL` (현재 `null`)
-  - 음량 상수: 같은 파일 `PAGE_TURN_SOUND_VOLUME` (`0.25` ≈ -12dB, 낭독을 덮지 않는 값)
-  - 재생 트리거: `components/book/audio-reader.tsx`의 `beginTurn()` — 페이지 전환마다 1회 재생
-- **연결 절차** (자산 확보 시):
-  1. CC0 mp3/ogg 파일을 `public/` 아래 둔다 (예: `public/sfx/page-turn.mp3`)
-  2. `PAGE_TURN_SOUND_URL`을 그 경로(예: `/sfx/page-turn.mp3`)로 바꾼다
-  3. 위 표에 출처 URL·라이선스·확보일을 채운다
-  4. 코드 그 외 수정 0줄 — 훅이 그대로 살아난다
-- **음원 후보처(CC0)**: freesound.org(License 필터 = Creative Commons 0),
-  Wikimedia Commons(Public domain), Pixabay Sound Effects 등에서 "page turn / paper flip".
-  다운로드 시 **각 파일의 라이선스가 실제로 CC0인지** 개별 확인 후 표에 기록한다.
+- **파일**: `public/sounds/page-turn.mp3` (원본 `dragon-studio-flipping-book-page-499646.mp3`, 팀장 배치)
+- **출처**: https://pixabay.com/sound-effects/film-special-effects-flipping-book-page-499646/
+- **라이선스**: Pixabay Content License (어트리뷰션 불요·상업적 사용 허용). 오케 승인 2026-07-24.
+- **연결**:
+  - 경로 상수: `lib/book/highlight-config.ts` `PAGE_TURN_SOUND_URL = '/sounds/page-turn.mp3'`
+  - 음량 상수: 같은 파일 `PAGE_TURN_SOUND_VOLUME = 0.25` (≈ -12dB, 낭독을 덮지 않는 값)
+  - 재생 트리거: `components/book/audio-reader.tsx`의 `beginTurn()` — 플립 **1단계 시작 시점**에 1회 재생
+- **교체 절차** (다른 음원으로 바꿀 때):
+  1. 새 파일을 `public/sounds/` 아래 둔다
+  2. `PAGE_TURN_SOUND_URL`을 그 경로로 바꾼다
+  3. 위 표에 출처·라이선스·확보일을 갱신한다 — 코드 그 외 수정 0줄
