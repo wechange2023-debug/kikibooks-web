@@ -80,6 +80,9 @@ DEFAULT_PRESET = "danielle-longform"
 
 MP3_QUALITY = "2"
 RETRY = 2
+# SynthesizeSpeech 1회 요청의 과금 문자 상한(3,000자). 초과 유닛은 요청이 거부되므로
+# 분할이 필요하다 — dry-run에서 미리 잡는다. 현 실측 최대 페이지는 657자.
+POLLY_CHAR_LIMIT = 3000
 DEFAULT_KRW_RATE = 1380.0     # 환산용 가정치. 확정 환율은 팀장 확인(--krw-rate로 조정).
 
 
@@ -130,6 +133,8 @@ def dry_run(sel: dict, preset: dict, with_cover: bool, krw_rate: float,
                 flags.append("CTRL_CHAR_STRIPPED")
             if t["audio_pages"] and t["body_chars"] / t["audio_pages"] < 15:
                 flags.append("VERY_SHORT_PAGES")
+            if any(p["chars"] > POLLY_CHAR_LIMIT for p in t["pages"]):
+                flags.append("OVER_POLLY_LIMIT")
             w.writerow([
                 t["slug"], t["book_id"], t["title"], t["page_rows"], t["audio_pages"],
                 len(t["empty_pages"]), t["body_chars"], cc, billable,
@@ -198,6 +203,8 @@ def dry_run(sel: dict, preset: dict, with_cover: bool, krw_rate: float,
            if t["ctrl_pages"] else [])
         + ([f"VERY_SHORT_PAGES:{t['body_chars']}자/{t['audio_pages']}면"]
            if t["audio_pages"] and t["body_chars"] / t["audio_pages"] < 15 else [])
+        + ([f"OVER_POLLY_LIMIT:p{p['page']:02d}={p['chars']}자"
+            for p in t["pages"] if p["chars"] > POLLY_CHAR_LIMIT])
     )]
     print()
     print(f"  [이상 징후] {len(anomalies)}건")
@@ -338,7 +345,23 @@ def synth_unit(polly, ffmpeg: str, preset: dict, dest_dir: Path, raw_dir: Path,
     }
 
 
-def generate(sel: dict, preset: dict, with_cover: bool, dest_root: Path) -> int:
+def already_done(dest_dir: Path, unit: str) -> bool:
+    """이 유닛이 이미 로컬에 온전히 생성돼 있는가(mp3·marks 둘 다 비어있지 않음).
+
+    ⚠ 재개 판정은 **로컬 산출물 기준**이지 `book_audio` 기준이 아니다.
+    본 스크립트는 DB에 쓰지 않으므로, 중단 시점까지 만든 것은 DB에 없고 디스크에만 있다.
+    `book_audio` 조회는 '배치 전체를 다시 돌릴 때' 이미 적재 완료된 권을 빼는 용도다(대상 선정).
+    """
+    mp3 = dest_dir / f"{unit}.mp3"
+    marks = dest_dir / f"{unit}.marks.json"
+    try:
+        return mp3.stat().st_size > 0 and marks.stat().st_size > 0
+    except OSError:
+        return False
+
+
+def generate(sel: dict, preset: dict, with_cover: bool, dest_root: Path,
+             force: bool = False) -> int:
     ffmpeg = find_ffmpeg()
     if preset["atempo"] and not ffmpeg:
         print("[STOP] ffmpeg 미설치 — atempo 후처리 불가(시스템 PATH·imageio_ffmpeg 모두 없음).")
@@ -352,27 +375,35 @@ def generate(sel: dict, preset: dict, with_cover: bool, dest_root: Path) -> int:
 
     targets = sel["targets"]
     print(f"[INFO] {len(targets)}권 · voice={preset['voice']} engine={preset['engine']} "
-          f"region={preset['region']} cover={'Y' if with_cover else 'N'}")
+          f"region={preset['region']} cover={'Y' if with_cover else 'N'} "
+          f"재개={'끔(--force 전량 재생성)' if force else '켬(기존 산출물 건너뜀)'}")
     print("=" * 78)
 
-    report, ok, failed = [], 0, 0
+    report, ok, failed, skipped_total = [], 0, 0, 0
     for i, t in enumerate(targets, 1):
         slug = t["slug"]
         dest_dir = dest_root / slug
         raw_dir = dest_root / "_raw" / slug
-        units, failures = [], []
+        units, failures, skipped = [], [], []
 
         work = [(f"p{p['page']:02d}", p["text"]) for p in t["pages"]]
         if with_cover and t["cover_text"]:
             work.insert(0, ("cover", t["cover_text"]))
 
         for unit, text in work:
+            if not force and already_done(dest_dir, unit):
+                skipped.append(unit)
+                units.append({"unit": unit, "file": f"{unit}.mp3",
+                              "marks_file": f"{unit}.marks.json",
+                              "chars": len(text), "text": text, "reused": True})
+                continue
             try:
                 entry = synth_unit(polly, ffmpeg, preset, dest_dir, raw_dir, unit, text)
                 units.append(entry)
             except Exception as exc:  # noqa: BLE001
                 failures.append({"unit": unit, "error": f"{type(exc).__name__}: {exc}"})
                 print(f"    [{unit}] FAIL {type(exc).__name__}: {exc}")
+        skipped_total += len(skipped)
 
         manifest = {
             "slug": slug, "book_id": t["book_id"], "title": t["title"],
@@ -382,8 +413,8 @@ def generate(sel: dict, preset: dict, with_cover: bool, dest_root: Path) -> int:
             "rate_pct": preset["rate_pct"],
             "key_prefix": f"book_dash-{slug}/{preset['voice_key']}",
             "page_rows": t["page_rows"], "audio_units": len(units),
-            "empty_pages": t["empty_pages"], "failed": failures,
-            "units": units,
+            "empty_pages": t["empty_pages"], "reused_units": skipped,
+            "failed": failures, "units": units,
         }
         if units:
             dest_dir.mkdir(parents=True, exist_ok=True)
@@ -392,24 +423,30 @@ def generate(sel: dict, preset: dict, with_cover: bool, dest_root: Path) -> int:
 
         entry = {"slug": slug, "book_id": t["book_id"],
                  "ok": bool(units) and not failures,
-                 "audio_units": len(units), "failed": failures}
+                 "audio_units": len(units), "reused_units": len(skipped),
+                 "failed": failures}
         report.append(entry)
         if entry["ok"]:
             ok += 1
-            print(f"[OK]   {i:3d}/{len(targets)} {slug:38s} units={len(units)}")
+            reuse = f" (재사용 {len(skipped)})" if skipped else ""
+            print(f"[OK]   {i:3d}/{len(targets)} {slug:38s} units={len(units)}{reuse}")
         else:
             failed += 1
             print(f"[FAIL] {i:3d}/{len(targets)} {slug:38s} {failures}")
 
     rp = OUT_DIR / "_fullbatch_report.json"
     rp.write_text(json.dumps(
-        {"preset": preset, "with_cover": with_cover,
+        {"preset": preset, "with_cover": with_cover, "force": force,
          "books_ok": ok, "books_failed": failed,
          "total_units": sum(r["audio_units"] for r in report),
+         "reused_units": skipped_total,
+         "failed_books": [r["slug"] for r in report if not r["ok"]],
          "books": report}, ensure_ascii=False, indent=2), encoding="utf-8")
     print("=" * 78)
     print(f"[DONE] 성공 {ok} / 실패 {failed} · 총 {sum(r['audio_units'] for r in report)} 유닛 "
-          f"→ {rp.name}")
+          f"(그중 재사용 {skipped_total}) → {rp.name}")
+    if failed:
+        print(f"[FAILED] {[r['slug'] for r in report if not r['ok']]}")
     print("업로드·DB INSERT는 수행하지 않았다(팀장 영역).")
     return 0 if failed == 0 else 3
 
@@ -422,6 +459,8 @@ def main() -> int:
     ap.add_argument("--preset", default=DEFAULT_PRESET, choices=sorted(PRESETS),
                     help=f"보이스·엔진 프리셋 (기본 {DEFAULT_PRESET})")
     ap.add_argument("--with-cover", action="store_true", help="표지 낭독 트랙 포함")
+    ap.add_argument("--force", action="store_true",
+                    help="이미 생성된 로컬 산출물도 다시 합성(기본은 건너뛰고 재개)")
     ap.add_argument("--slugs", default=None, help="쉼표구분 slug 화이트리스트")
     ap.add_argument("--limit", type=int, default=None, help="앞에서 N권만")
     ap.add_argument("--krw-rate", type=float, default=DEFAULT_KRW_RATE,
@@ -457,7 +496,7 @@ def main() -> int:
     dest = Path(args.dest) if args.dest else OUT_DIR / f"audio_full_{preset['voice_key']}"
     print(f"[WARN] 실제 Polly 호출 모드 — 대상 {len(sel['targets'])}권. "
           "dry-run 승인 없이 실행하지 말 것.")
-    return generate(sel, preset, args.with_cover, dest)
+    return generate(sel, preset, args.with_cover, dest, args.force)
 
 
 if __name__ == "__main__":

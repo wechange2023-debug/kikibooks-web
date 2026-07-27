@@ -13,7 +13,7 @@
     "usd_per_million": 100.0,
     "note": "평문 합성 → ffmpeg atempo=0.85 → marks time×(1/0.85) (ADR-0052 Amd#2)"
   },
-  "with_cover": false,
+  "with_cover": true,
   "krw_rate_assumed": 1380.0,
   "stats": {
     "book_dash_total": 209,
@@ -32,13 +32,13 @@
   "page_rows": 1624,
   "audio_pages": 1348,
   "body_chars": 118944,
-  "cover_chars": 0,
-  "billable_chars": 118944,
+  "cover_chars": 5269,
+  "billable_chars": 124213,
   "cost_usd": {
-    "neural_x1": 1.9031,
-    "neural_x2": 3.8062,
-    "longform_x1": 11.8944,
-    "longform_x2": 23.7888
+    "neural_x1": 1.9874,
+    "neural_x2": 3.9748,
+    "longform_x1": 12.4213,
+    "longform_x2": 24.8426
   },
   "exclusion_lists": {
     "rotated": [
