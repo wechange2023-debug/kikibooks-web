@@ -235,11 +235,16 @@ function FlipOverlay({
 }) {
   const { direction, fromUrl, fromAlt } = flip;
   const plateRef = useRef<HTMLDivElement>(null);
+  // onDone을 ref로 보관 — 애니 effect의 deps에서 빼, 부모 재렌더로 onDone 참조가 바뀌어도
+  // effect가 재실행(=cleanup의 anim.cancel)되지 않게 한다. 플립 애니는 '마운트 시 1회 시작,
+  // 언마운트 전까지 cancel되지 않는다'가 보장돼야 하기 때문(조기 종료 버그 원인 제거).
+  const onDoneRef = useRef(onDone);
+  onDoneRef.current = onDone;
 
   useEffect(() => {
     const el = plateRef.current;
     if (!el) {
-      onDone();
+      onDoneRef.current();
       return;
     }
     // next=왼쪽 책등으로 뒤로(-180°), prev=오른쪽 책등으로 대칭(+180°).
@@ -250,17 +255,20 @@ function FlipOverlay({
       { duration: durationMs, easing: 'ease-in-out', fill: 'forwards' },
     );
     let settled = false;
+    // 자연 종료(onfinish)로 finish→onDone(setFlip null)→언마운트 시, cleanup의 cancel은
+    // settled 가드로 무시된다. cancel 경로로 onDone이 불려도 setFlip(null) 재호출은 멱등(무해).
     const finish = () => {
       if (settled) return;
       settled = true;
-      onDone();
+      onDoneRef.current();
     };
     anim.onfinish = finish;
     anim.oncancel = finish;
     return () => {
       anim.cancel();
     };
-  }, [direction, fromUrl, durationMs, onDone]);
+    // direction·fromUrl·durationMs는 key=flip.id 리마운트로 인스턴스당 불변 → 실질 마운트 1회 실행.
+  }, [direction, fromUrl, durationMs]);
 
   // 책등 쪽(next=왼쪽, prev=오른쪽)이 어두운 고정 음영 마스크. gradient는 알파 형상일 뿐,
   // 색은 아래 div의 bg-text 토큰이 담당한다(고정 opacity, 애니 없음).
@@ -380,9 +388,12 @@ export function AudioReader({
   // 자동 넘김 지연 타이머(P1-C). 수동 조작·언마운트 시 취소한다.
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // ── 책넘김 연출(리더 폴리시 Task 2·3 · 2단계 플립 재구현 피드백 v2 Task A) ────────
-  // 진행 중 넘김 정보(null=정적). FlipOverlay가 이 값으로 from/to 두 판을 그린다.
+  // ── 책넘김 연출(리더 폴리시 Task 2·3 · 단판 스파인 플립 피드백 v3.1) ────────
+  // 진행 중 넘김 정보(null=정적). FlipOverlay가 이 값으로 헌 페이지 단판을 그린다.
   const [flip, setFlip] = useState<FlipState | null>(null);
+  // 플립 종료 콜백 — useCallback으로 참조를 고정한다. 인라인 화살표면 재렌더마다 새 참조가
+  // 돼 FlipOverlay 애니 effect가 재실행(cleanup cancel)되어 애니가 조기 종료된다(v3.1 버그).
+  const handleFlipDone = useCallback(() => setFlip(null), []);
   // 넘김마다 증가하는 식별자 — FlipOverlay key로 써 연속 넘김에도 애니메이션을 새로 태운다.
   const flipIdRef = useRef(0);
   // 전환 중 사용자 입력 잠금(연타로 두 장이 한꺼번에 넘어가는 것 방지). 자동 넘김·무음면
@@ -545,19 +556,34 @@ export function AudioReader({
   const slidesRef = useRef(slides);
   slidesRef.current = slides;
 
-  // 효과음 재생 — 1회용 BufferSource를 매 넘김마다 새로 생성해 즉시 start(0).
-  // gain으로 음량을 낮춰(-12dB 수준) 낭독을 덮지 않는다. 버퍼 미준비 시 조용히 넘어간다.
+  // 효과음 재생 — 1회용 BufferSource를 매 넘김마다 새로 생성. gain으로 음량을 낮춰
+  // (-12dB 수준) 낭독을 덮지 않는다. 버퍼 미준비 시 조용히 넘어간다.
+  //   · running: 즉시 start(0).
+  //   · suspended: resume 완료 후 발사하되, 100ms를 넘겨 풀리면 생략한다(넘김이 이미
+  //     지난 뒤 뒤늦게 나는 소리가 무음보다 어색하기 때문). 시작 시각 비교로 판정.
   const playTurnSound = useCallback(() => {
     const ctx = audioCtxRef.current;
     const buf = turnBufferRef.current;
     if (!ctx || !buf) return;
-    if (ctx.state === 'suspended') ctx.resume().catch(() => undefined);
-    const src = ctx.createBufferSource();
-    src.buffer = buf;
-    const gain = ctx.createGain();
-    gain.gain.value = PAGE_TURN_SOUND_VOLUME;
-    src.connect(gain).connect(ctx.destination);
-    src.start(0);
+    const fire = () => {
+      const src = ctx.createBufferSource();
+      src.buffer = buf;
+      const gain = ctx.createGain();
+      gain.gain.value = PAGE_TURN_SOUND_VOLUME;
+      src.connect(gain).connect(ctx.destination);
+      src.start(0);
+    };
+    if (ctx.state === 'running') {
+      fire();
+      return;
+    }
+    const t0 = performance.now();
+    ctx
+      .resume()
+      .then(() => {
+        if (performance.now() - t0 <= 100) fire();
+      })
+      .catch(() => undefined);
   }, []);
 
   // 넘김 부수효과(단판 세팅 + 효과음 + 입력잠금) — index 전환 '직전'에만 부른다.
@@ -831,7 +857,7 @@ export function AudioReader({
                 key={flip.id}
                 flip={flip}
                 durationMs={PAGE_TURN_MS}
-                onDone={() => setFlip(null)}
+                onDone={handleFlipDone}
               />
             )}
             {/* 모바일·태블릿(<lg) — 좌우 버튼이 이미지 폭을 잠식하므로 이미지 위 오버레이로 둔다. */}
