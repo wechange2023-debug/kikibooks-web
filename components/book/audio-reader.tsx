@@ -255,17 +255,21 @@ function FlipOverlay({
       { duration: durationMs, easing: 'ease-in-out', fill: 'forwards' },
     );
     let settled = false;
-    // 자연 종료(onfinish)로 finish→onDone(setFlip null)→언마운트 시, cleanup의 cancel은
-    // settled 가드로 무시된다. cancel 경로로 onDone이 불려도 setFlip(null) 재호출은 멱등(무해).
     const finish = () => {
       if (settled) return;
       settled = true;
       onDoneRef.current();
     };
+    // onDone은 '자연 종료(onfinish)'에서만 부른다 — "cancel은 끝이 아니다". dev StrictMode는
+    // mount#1 → cleanup(anim.cancel) → mount#2로 이중 마운트하는데, cancel에서 onDone(setFlip
+    // null)을 부르면 오버레이가 mount#2의 애니가 시작되기도 전에 소멸해 플립이 즉사한다(dev 전용).
+    // 따라서 cancel은 조용히 무시하고, 재마운트된 mount#2의 애니가 완주해 onfinish로 종료한다.
     anim.onfinish = finish;
-    anim.oncancel = finish;
+    // 안전장치: onfinish 유실 대비 폴백(durationMs+200ms). settled 가드로 onfinish와 중복 안 됨.
+    const fallback = setTimeout(finish, durationMs + 200);
     return () => {
-      anim.cancel();
+      clearTimeout(fallback);
+      anim.cancel(); // onDone과 무관(cancel은 무시). 잔여 애니만 정리.
     };
     // direction·fromUrl·durationMs는 key=flip.id 리마운트로 인스턴스당 불변 → 실질 마운트 1회 실행.
   }, [direction, fromUrl, durationMs]);
@@ -417,8 +421,13 @@ export function AudioReader({
       (window as unknown as { webkitAudioContext?: typeof AudioContext })
         .webkitAudioContext;
     if (!AC) return;
-    const ctx = new AC();
-    audioCtxRef.current = ctx;
+    // StrictMode 이중 마운트에서 컨텍스트·버퍼를 재사용한다 — 중복 생성이나 cleanup의
+    // ctx.close()로 suspended/닫힌 컨텍스트가 남아 효과음이 무음이 되는 것을 막는다.
+    if (!audioCtxRef.current) {
+      audioCtxRef.current = new AC();
+    }
+    const ctx = audioCtxRef.current;
+    if (turnBufferRef.current) return; // 이미 디코드됨 — 재fetch 불필요.
     let cancelled = false;
     (async () => {
       try {
@@ -430,9 +439,10 @@ export function AudioReader({
         // 디코드/네트워크 실패 — 효과음 없이 진행(넘김 자체엔 무영향).
       }
     })();
+    // 컨텍스트는 닫지 않는다 — 실제 페이지 이탈(언마운트)로 GC된다. StrictMode 가짜 언마운트에서
+    // 닫으면 재마운트 후 닫힌 컨텍스트가 남아 무음이 되기 때문.
     return () => {
       cancelled = true;
-      ctx.close().catch(() => undefined);
     };
   }, []);
 
