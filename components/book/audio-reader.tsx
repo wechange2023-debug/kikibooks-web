@@ -18,7 +18,6 @@ import {
   useRef,
   useState,
   type ReactNode,
-  type RefObject,
   type TouchEvent as ReactTouchEvent,
 } from 'react';
 
@@ -195,73 +194,36 @@ interface FlipState {
   /** 애니메이션 재시작 식별자(연속 넘김 시 remount). */
   id: number;
   direction: 'next' | 'prev';
-  /** 접혀 올라가는 현재(옛) 장 이미지. */
+  /** 접혀 넘어가는 현재(옛) 장 이미지. 단판이라 새 장은 아래 정적 베이스가 담당. */
   fromUrl: string;
   fromAlt: string;
-  /** 펼쳐져 안착하는 다음(새) 장 이미지. 경계 밖이면 null(종이 뒷면으로 대체). */
-  toUrl: string | null;
-  toAlt: string;
 }
 
 /**
- * FlipOverlay — 2단계 3D 책장 넘김(피드백 v2 Task A, 단일 회전 방식 폐기).
+ * FlipOverlay — 단판 스파인 플립(피드백 v3.1, 2판 릴레이 폐기).
  *
- * 종전 단일 rotateY는 페이드처럼 보였다. 실제 종이 한 장이 서 있다 눕는 입체감을 위해
- * **두 판 릴레이**로 재구성한다(전폭 단일 페이지 뷰의 올바른 기하):
- *   · 1단계(0~50%): 현재 장(fromUrl)이 경첩 축으로 0°→90°로 접혀 선다(front 가시).
- *   · 2단계(50~100%): 다음 장(toUrl)이 90°→0°로 펼쳐져 눕는다(안착). 두 판 다 ±90°를
- *     넘지 않아 화면 밖으로 날아가지 않고 제자리에 선다/눕는다.
- *   · 경첩: next=왼쪽, prev=오른쪽(좌우 대칭 반전).
- * 두 판은 시각적으로 한 장처럼 겹치고, 아래에는 정적 새 페이지가 이미 깔려 있어
- * (index는 넘김 시작 시 이미 바뀜) 오버레이가 사라지면 그대로 이어진다(마스킹 0).
+ * 종전 2판 릴레이는 후반부가 정적 베이스와 동일 이미지가 겹쳐 눕는 구조라 실질 연출이
+ * 전반 접힘뿐이었고, 판 위 opacity 그림자가 겹쳐 '어두워졌다 밝아지는' 페이드로 보였다.
+ * 이를 단판 1장으로 재구성한다:
+ *   · 넘김 시작 시 정적 베이스(아래)에는 이미 '새 페이지'가 깔려 있다(index 선변경).
+ *   · 그 위에 '헌 페이지' 단판 1장만 올려 책등 축으로 접어 넘긴다.
+ *   · next: transform-origin=left center, rotateY 0°→-180°(왼쪽 책등으로 뒤로 넘어감).
+ *   · prev: 대칭 — transform-origin=right center, rotateY 0°→+180°(오른쪽 책등으로 넘어감).
+ *     ※ 지시서의 '-180°→0° 되돌리기'는 종료 시 헌 판이 새 판을 덮은 채 끝나 오버레이
+ *        소멸 순간 팝이 생긴다. origin-right 0°→+180°가 진짜 대칭(헌 판이 반대로 접혀 사라짐).
+ *   · backface-visibility: hidden — 90°를 넘어서면 뒷면이 향해 자연 소멸, 아래 새 페이지가 드러난다.
  *
- * 마스킹 방지: 판 배경을 bg-surface(종이)로 깔아 이미지 미로드 시에도 '종이'가 돈다.
- *   다음 장 이미지는 마운트 즉시 프리로드해 2단계에서 빈 판이 되지 않게 한다. toUrl이
- *   없으면(경계) 뒷판은 종이 뒷면 질감만 보인다.
+ * 그림자: opacity 오버레이 애니메이션을 제거하고(페이드 주범), 헌 판에 책등 쪽이 어두운
+ *   고정 음영만 둔다. 색은 semantic 토큰(bg-text)에 고정 opacity를 주고, linear-gradient는
+ *   mask(알파 형상)로만 써 좌/우를 어둡게 한다 — 색 알파 애니메이션 0건(Hard Rule 10 정합).
  *
- * 그림자: 각 판에 반투명 음영(bg-text)을 덧대 접힐수록 짙어지고(1단계) 누울수록 옅어져(2단계)
- *   '서 있는 종이'의 입체 음영이 판을 가로질러 이동한다. 색은 semantic 토큰만(Hard Rule 10).
+ * perspective: 부모 900px(종전 1600px에서 축소)로 접힘 왜곡을 강화한다.
  *
- * 구현: Web Animations API(element.animate) — keyframe offset으로 두 판의 시점을 정확히
- *   가른다. tailwind.config·전역 keyframes 무변경(컴포넌트 로컬 유지). 오디오·하이라이트·
- *   index 로직과 접점 0건(시각 오버레이 전용, pointer-events-none).
+ * 구현: Web Animations API(element.animate). 오디오·하이라이트·index 로직과 접점 0건
+ *   (시각 오버레이 전용, pointer-events-none).
  *
  * 접근성: prefers-reduced-motion이면 부모가 아예 마운트하지 않는다(즉시 전환).
  */
-function FlipFace({
-  imageUrl,
-  alt,
-  faceRef,
-  shadowRef,
-}: {
-  imageUrl: string | null;
-  alt: string;
-  faceRef: React.RefObject<HTMLDivElement | null>;
-  shadowRef: React.RefObject<HTMLDivElement | null>;
-}) {
-  return (
-    <div
-      ref={faceRef}
-      className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-md bg-surface shadow-elev-2 [backface-visibility:hidden]"
-    >
-      {imageUrl ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={imageUrl} alt={alt} className="max-h-full max-w-full object-contain" />
-      ) : (
-        // 종이 뒷면 질감(경계·미로드 대체) — 은은한 표면 톤.
-        <div className="h-full w-full bg-surface-2" />
-      )}
-      {/* 이동 음영 — 서 있을수록 짙게. bg-text(near-black) + 인라인 opacity를 WAA로 구동. */}
-      <div
-        ref={shadowRef}
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-text"
-        style={{ opacity: 0 }}
-      />
-    </div>
-  );
-}
-
 function FlipOverlay({
   flip,
   durationMs,
@@ -271,93 +233,62 @@ function FlipOverlay({
   durationMs: number;
   onDone: () => void;
 }) {
-  const { direction, fromUrl, fromAlt, toUrl, toAlt } = flip;
-  const fromFaceRef = useRef<HTMLDivElement>(null);
-  const toFaceRef = useRef<HTMLDivElement>(null);
-  const fromShadowRef = useRef<HTMLDivElement>(null);
-  const toShadowRef = useRef<HTMLDivElement>(null);
+  const { direction, fromUrl, fromAlt } = flip;
+  const plateRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const fromEl = fromFaceRef.current;
-    const toEl = toFaceRef.current;
-    if (!fromEl || !toEl) {
+    const el = plateRef.current;
+    if (!el) {
       onDone();
       return;
     }
-    // 다음 장 프리로드(베스트에포트) — 2단계에서 빈 판 방지.
-    if (toUrl) {
-      const im = new Image();
-      im.src = toUrl;
-    }
-    const hinge = direction === 'next' ? 'left center' : 'right center';
-    // next: 오른쪽 모서리가 뒤로 접힘(음의 각). prev: 대칭(양의 각).
-    const sign = direction === 'next' ? -1 : 1;
-    fromEl.style.transformOrigin = hinge;
-    toEl.style.transformOrigin = hinge;
-
-    const opts: KeyframeAnimationOptions = {
-      duration: durationMs,
-      easing: 'ease-in-out',
-      fill: 'forwards',
-    };
-    // 1단계: from 0°→90°(선다), 후반은 90° 유지(엣지온=사실상 비가시).
-    const fromAnim = fromEl.animate(
-      [
-        { transform: `rotateY(0deg)`, offset: 0 },
-        { transform: `rotateY(${sign * 90}deg)`, offset: 0.5 },
-        { transform: `rotateY(${sign * 90}deg)`, offset: 1 },
-      ],
-      opts,
+    // next=왼쪽 책등으로 뒤로(-180°), prev=오른쪽 책등으로 대칭(+180°).
+    el.style.transformOrigin = direction === 'next' ? 'left center' : 'right center';
+    const endDeg = direction === 'next' ? -180 : 180;
+    const anim = el.animate(
+      [{ transform: 'rotateY(0deg)' }, { transform: `rotateY(${endDeg}deg)` }],
+      { duration: durationMs, easing: 'ease-in-out', fill: 'forwards' },
     );
-    // 2단계: to 90° 유지(전반) → 0°로 눕는다(안착).
-    const toAnim = toEl.animate(
-      [
-        { transform: `rotateY(${sign * 90}deg)`, offset: 0 },
-        { transform: `rotateY(${sign * 90}deg)`, offset: 0.5 },
-        { transform: `rotateY(0deg)`, offset: 1 },
-      ],
-      opts,
-    );
-    // 음영: from은 접힐수록 짙게(0→0.55, 후반 유지), to는 누울수록 옅게(0.55 유지→0).
-    const fromShadow = fromShadowRef.current?.animate(
-      [
-        { opacity: 0, offset: 0 },
-        { opacity: 0.55, offset: 0.5 },
-        { opacity: 0.55, offset: 1 },
-      ],
-      opts,
-    );
-    const toShadow = toShadowRef.current?.animate(
-      [
-        { opacity: 0.55, offset: 0 },
-        { opacity: 0.55, offset: 0.5 },
-        { opacity: 0, offset: 1 },
-      ],
-      opts,
-    );
-
     let settled = false;
     const finish = () => {
       if (settled) return;
       settled = true;
       onDone();
     };
-    toAnim.onfinish = finish;
-    toAnim.oncancel = finish;
+    anim.onfinish = finish;
+    anim.oncancel = finish;
     return () => {
-      fromAnim.cancel();
-      toAnim.cancel();
-      fromShadow?.cancel();
-      toShadow?.cancel();
+      anim.cancel();
     };
-  }, [direction, fromUrl, toUrl, durationMs, onDone]);
+  }, [direction, fromUrl, durationMs, onDone]);
+
+  // 책등 쪽(next=왼쪽, prev=오른쪽)이 어두운 고정 음영 마스크. gradient는 알파 형상일 뿐,
+  // 색은 아래 div의 bg-text 토큰이 담당한다(고정 opacity, 애니 없음).
+  const shadowMask =
+    direction === 'next'
+      ? 'linear-gradient(to right, black, transparent 45%)'
+      : 'linear-gradient(to left, black, transparent 45%)';
 
   return (
-    <div className="pointer-events-none absolute inset-0 z-[5] [perspective:1600px]">
-      {/* to(다음 장)를 먼저 깔고 from(현재 장)을 위에 — 전반부엔 from만 보이고 후반부엔
-          from이 엣지온으로 사라지며 to가 눕는다. */}
-      <FlipFace imageUrl={toUrl} alt={toAlt} faceRef={toFaceRef} shadowRef={toShadowRef} />
-      <FlipFace imageUrl={fromUrl} alt={fromAlt} faceRef={fromFaceRef} shadowRef={fromShadowRef} />
+    <div className="pointer-events-none absolute inset-0 z-[5] [perspective:900px]">
+      <div
+        ref={plateRef}
+        className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-md bg-surface shadow-elev-2 [backface-visibility:hidden]"
+      >
+        {fromUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={fromUrl} alt={fromAlt} className="max-h-full max-w-full object-contain" />
+        ) : (
+          // 종이 뒷면 질감(미로드 대체) — 은은한 표면 톤.
+          <div className="h-full w-full bg-surface-2" />
+        )}
+        {/* 고정 종이 음영 — 책등 쪽을 어둡게(opacity 애니 0, 페이드 방지). */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-text"
+          style={{ opacity: 0.3, maskImage: shadowMask, WebkitMaskImage: shadowMask }}
+        />
+      </div>
     </div>
   );
 }
@@ -459,21 +390,59 @@ export function AudioReader({
   const isTurningRef = useRef(false);
   // prefers-reduced-motion — 마운트 시 1회 확정. 감속 모드면 애니메이션·입력잠금을 생략한다.
   const reduceMotionRef = useRef(false);
-  // 책넘김 효과음(Task 3) — 음원 미확보(PAGE_TURN_SOUND_URL=null)라 현재 재생 0건.
-  // 자산이 확보돼 URL이 채워지면 이 ref에 Audio가 만들어져 페이지 전환마다 1회 재생된다.
-  const turnSoundRef = useRef<HTMLAudioElement | null>(null);
+  // 책넘김 효과음(v3.1 Web Audio 전환) — 마운트 시 mp3를 디코드해 버퍼로 들고 있다가
+  // 넘김마다 1회용 BufferSource로 즉시 재생한다(HTMLAudio 첫 재생 디코드 지연 제거 → 무지연).
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const turnBufferRef = useRef<AudioBuffer | null>(null);
 
+  // 마운트 1회: reduce-motion 확정 + 효과음 버퍼 사전 디코드(Web Audio).
   useEffect(() => {
     reduceMotionRef.current =
       typeof window !== 'undefined' &&
       window.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true;
-    // 효과음 preload — URL이 있을 때만. 낭독을 덮지 않도록 음량을 낮춰 둔다(-12dB 수준).
-    if (PAGE_TURN_SOUND_URL) {
-      const el = new Audio(PAGE_TURN_SOUND_URL);
-      el.volume = PAGE_TURN_SOUND_VOLUME;
-      el.preload = 'auto';
-      turnSoundRef.current = el;
-    }
+    if (typeof window === 'undefined' || !PAGE_TURN_SOUND_URL) return;
+    const AC: typeof AudioContext | undefined =
+      window.AudioContext ??
+      (window as unknown as { webkitAudioContext?: typeof AudioContext })
+        .webkitAudioContext;
+    if (!AC) return;
+    const ctx = new AC();
+    audioCtxRef.current = ctx;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(PAGE_TURN_SOUND_URL);
+        const arr = await res.arrayBuffer();
+        const buf = await ctx.decodeAudioData(arr);
+        if (!cancelled) turnBufferRef.current = buf;
+      } catch {
+        // 디코드/네트워크 실패 — 효과음 없이 진행(넘김 자체엔 무영향).
+      }
+    })();
+    return () => {
+      cancelled = true;
+      ctx.close().catch(() => undefined);
+    };
+  }, []);
+
+  // 최초 사용자 제스처 1회로 AudioContext.resume()(자동재생 정책상 suspended 해제).
+  // 이후 리스너는 스스로 떼어낸다(원타임).
+  useEffect(() => {
+    const resume = () => {
+      const ctx = audioCtxRef.current;
+      if (ctx && ctx.state === 'suspended') ctx.resume().catch(() => undefined);
+      window.removeEventListener('pointerdown', resume);
+      window.removeEventListener('keydown', resume);
+      window.removeEventListener('touchstart', resume);
+    };
+    window.addEventListener('pointerdown', resume);
+    window.addEventListener('keydown', resume);
+    window.addEventListener('touchstart', resume);
+    return () => {
+      window.removeEventListener('pointerdown', resume);
+      window.removeEventListener('keydown', resume);
+      window.removeEventListener('touchstart', resume);
+    };
   }, []);
 
   const page = slides[index];
@@ -576,39 +545,46 @@ export function AudioReader({
   const slidesRef = useRef(slides);
   slidesRef.current = slides;
 
-  // 넘김 부수효과(from/to 판 세팅 + 효과음 + 입력잠금) — index 전환 '직전'에만 부른다.
-  // 실제 경계에서 막혀 index가 안 바뀌는 경우(첫/마지막 면)에는 부르지 않는다(아래 호출부에서 가드).
-  const beginTurn = useCallback((dir: 'next' | 'prev') => {
-    // 효과음 1회 재생(1단계 시작 시점). 낭독과 겹쳐도 음량이 낮아(-12dB) 방해하지 않는다.
-    // 되감아 연타 전환에도 매번 처음부터 짧게 난다.
-    const s = turnSoundRef.current;
-    if (s) {
-      s.currentTime = 0;
-      s.play().catch(() => undefined); // 자동재생 정책 등 — 조용히 무시(넘김 자체엔 무영향).
-    }
-    // 감속 모드는 애니메이션·입력잠금을 생략한다(즉시 다음 입력 수용, 플립 오버레이 미마운트).
-    if (reduceMotionRef.current) return;
-    // from=현재(옛) 장, to=넘어갈 새 장. indexRef는 아직 옛 index(setIndex 전 호출).
-    const cur = slidesRef.current;
-    const fromIdx = indexRef.current;
-    const toIdx = dir === 'next' ? fromIdx + 1 : fromIdx - 1;
-    const fromSlide = cur[fromIdx];
-    const toSlide = cur[toIdx];
-    flipIdRef.current += 1;
-    setFlip({
-      id: flipIdRef.current,
-      direction: dir,
-      fromUrl: fromSlide.imageUrl,
-      fromAlt: fromSlide.imageAlt,
-      toUrl: toSlide?.imageUrl ?? null,
-      toAlt: toSlide?.imageAlt ?? '',
-    });
-    isTurningRef.current = true;
-    if (turnLockTimerRef.current) clearTimeout(turnLockTimerRef.current);
-    turnLockTimerRef.current = setTimeout(() => {
-      isTurningRef.current = false;
-    }, PAGE_TURN_MS);
+  // 효과음 재생 — 1회용 BufferSource를 매 넘김마다 새로 생성해 즉시 start(0).
+  // gain으로 음량을 낮춰(-12dB 수준) 낭독을 덮지 않는다. 버퍼 미준비 시 조용히 넘어간다.
+  const playTurnSound = useCallback(() => {
+    const ctx = audioCtxRef.current;
+    const buf = turnBufferRef.current;
+    if (!ctx || !buf) return;
+    if (ctx.state === 'suspended') ctx.resume().catch(() => undefined);
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    const gain = ctx.createGain();
+    gain.gain.value = PAGE_TURN_SOUND_VOLUME;
+    src.connect(gain).connect(ctx.destination);
+    src.start(0);
   }, []);
+
+  // 넘김 부수효과(단판 세팅 + 효과음 + 입력잠금) — index 전환 '직전'에만 부른다.
+  // 실제 경계에서 막혀 index가 안 바뀌는 경우(첫/마지막 면)에는 부르지 않는다(아래 호출부에서 가드).
+  const beginTurn = useCallback(
+    (dir: 'next' | 'prev') => {
+      // 효과음 1회(넘김 시작 즉시). Web Audio라 첫 재생 디코드 지연이 없다.
+      playTurnSound();
+      // 감속 모드는 애니메이션·입력잠금을 생략한다(즉시 다음 입력 수용, 플립 오버레이 미마운트).
+      if (reduceMotionRef.current) return;
+      // from=현재(옛) 장. 단판이라 새 장은 아래 정적 베이스가 담당(index는 setIndex로 곧 바뀜).
+      const fromSlide = slidesRef.current[indexRef.current];
+      flipIdRef.current += 1;
+      setFlip({
+        id: flipIdRef.current,
+        direction: dir,
+        fromUrl: fromSlide.imageUrl,
+        fromAlt: fromSlide.imageAlt,
+      });
+      isTurningRef.current = true;
+      if (turnLockTimerRef.current) clearTimeout(turnLockTimerRef.current);
+      turnLockTimerRef.current = setTimeout(() => {
+        isTurningRef.current = false;
+      }, PAGE_TURN_MS);
+    },
+    [playTurnSound],
+  );
 
   const goPrev = useCallback(() => {
     interactedRef.current = true;
