@@ -1,0 +1,8373 @@
+{
+  "threshold": 2.0,
+  "books_measured": 201,
+  "images_measured": 965,
+  "hw_median": 0.5,
+  "candidates": [],
+  "storage_check": null,
+  "books": [
+    {
+      "slug": "9c9e55de-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1575,
+          "h": 1575,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e596c-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 775,
+          "h": 788,
+          "hw": 1.0168
+        }
+      ]
+    },
+    {
+      "slug": "9c9e5f48-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e6196-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e62ea-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 775,
+          "h": 812,
+          "hw": 1.0477
+        }
+      ]
+    },
+    {
+      "slug": "9c9e640c-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 775,
+          "h": 788,
+          "hw": 1.0168
+        }
+      ]
+    },
+    {
+      "slug": "9c9e6524-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e663c-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 722,
+          "h": 567,
+          "hw": 0.7853
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 672,
+          "h": 567,
+          "hw": 0.8438
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e6754-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e6d12-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 775,
+          "h": 788,
+          "hw": 1.0168
+        }
+      ]
+    },
+    {
+      "slug": "9c9e6e52-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e6f9c-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1575,
+          "h": 1575,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e71cc-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 775,
+          "h": 788,
+          "hw": 1.0168
+        }
+      ]
+    },
+    {
+      "slug": "9c9e72e4-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e76ea-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1575,
+          "h": 1575,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e7820-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e7a6e-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e7b9a-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e7cb2-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1024,
+          "h": 1021,
+          "hw": 0.9971
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1024,
+          "h": 1021,
+          "hw": 0.9971
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1024,
+          "h": 1023,
+          "hw": 0.999
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1024,
+          "h": 1021,
+          "hw": 0.9971
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1024,
+          "h": 1024,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e7dca-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 775,
+          "h": 788,
+          "hw": 1.0168
+        }
+      ]
+    },
+    {
+      "slug": "9c9e819e-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e83b0-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 2363,
+          "h": 2363,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e8586-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1000,
+          "h": 1000,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e86da-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1575,
+          "h": 788,
+          "hw": 0.5003
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1575,
+          "h": 788,
+          "hw": 0.5003
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1575,
+          "h": 788,
+          "hw": 0.5003
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1575,
+          "h": 788,
+          "hw": 0.5003
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 775,
+          "h": 788,
+          "hw": 1.0168
+        }
+      ]
+    },
+    {
+      "slug": "9c9e87f2-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e8c0c-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 800,
+          "h": 788,
+          "hw": 0.985
+        }
+      ]
+    },
+    {
+      "slug": "9c9e9102-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 564,
+          "h": 567,
+          "hw": 1.0053
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 566,
+          "h": 567,
+          "hw": 1.0018
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 863,
+          "h": 567,
+          "hw": 0.657
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 756,
+          "h": 756,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e9396-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1000,
+          "h": 1000,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e94e0-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 960,
+          "h": 960,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e96ac-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1000,
+          "h": 1000,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e9e5e-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9e9fc6-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9ea21e-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1575,
+          "h": 1575,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9ea48a-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1575,
+          "h": 1575,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9ea96c-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9eb2cc-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1575,
+          "h": 1575,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9eb68c-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 567,
+          "h": 567,
+          "hw": 1.0
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9eb7e0-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9ebdc6-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9ec05a-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9f3292-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9f41f6-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9f450c-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9f471e-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9f485e-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9f4976-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 1575,
+          "h": 1575,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9f4da4-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9f566e-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 13,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 553,
+          "h": 567,
+          "hw": 1.0253
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 564,
+          "h": 567,
+          "hw": 1.0053
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1134,
+          "h": 567,
+          "hw": 0.5
+        },
+        {
+          "file": "10.jpg",
+          "page": 10,
+          "w": 566,
+          "h": 567,
+          "hw": 1.0018
+        },
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "9c9f5790-fe46-11e5-86aa-5e5517507c66",
+      "source": "storage",
+      "images_in_folder": 1,
+      "sampled": 1,
+      "pages": [
+        {
+          "file": "cover.jpg",
+          "page": null,
+          "w": 788,
+          "h": 788,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "a-day-out",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "a-trip-to-the-tap",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "a-very-busy-day",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "aaaaahhh-mmawe",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "alexs-super-medicine",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "amahle-wants-to-help",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "and-also",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "ann-nem-oh-nee-finds-adventure",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "auntie-bois-gift",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "baby-babble",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "baby-talk",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "babys-first-family-photo",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "banzis-busy-bees",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "best-friends",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "brave-bora",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "catch-that-cat",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "circles",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "clever-pig",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "come-stay-with-me",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "dance-khuzwayo-dance",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "dance-mihlali",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "dudus-hat",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "egg",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "feathered-friends",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "fifi-and-teddy",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "foxy-joxy-plays-a-trick",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "going-places",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "grandpa-farouks-garden",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "grumpy-cloud",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "hello",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "hello-baby",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "how-do-you-eat",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "how-do-you-sleep",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "how-do-you-want-your-eggs",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "how-to-tame-a-monster",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "i-dont-want-to-go-to-sleep",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "i-hate-winter",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "i-want-to",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "im-the-colour-of-honey",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "its-my-birthday",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "its-my-book",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "joannas-grannies",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "jock-and-me",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "julia-loves-books",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "just-like-me",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "khaya-wants-to-row",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "knight-times",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "lebo-and-gogos-tea-party",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "lesedis-sandbox",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "lets-be-friends",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "lets-go-on-a-litter-hunt",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "lets-have-an-inside-day",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "lets-party",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "lions-are-always-brave",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "little-goat",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "little-shoots",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "lonwabos-recipes",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "look-out-luthando",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "look-up",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "malis-friend",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "mama-antelopes-house",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "mama-whats-for-lunch",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "matthew-is-up",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "mazi-learns-to-play",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "meerkat-magic",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "mina-and-the-birthday-dress",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "miss-tiny-chef",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "moms-hands",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "moms-red-coat",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "monkey-business",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "mud",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "my-dream-in-the-drawer",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "my-inside-weather",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "my-special-blankie",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "my-special-hair",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "no",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "nomvundla-and-the-chilli-eating-contest",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "o-rain-come",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "open-the-door",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "oumas-amazing-flowers",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "oyisa-and-the-giant-tree",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "pako-the-pigeon-disappears",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "palesa-can-walk",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "samoosas",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "sams-treasures",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "scared-tumi",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "senzo-and-the-sun",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "shaka-and-mazi",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "shhhhh",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "sing-to-me",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "small-birds-big-adventure",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "tata-comes-home",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "tejus-shadow",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "thats-not-thabi-thats-a-hippopotamus",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-best-gift",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-best-nest",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-biscuit-jar-must-fall",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-bounce",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-box",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-boy-who-only-ate-pancakes",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-cottonwool-doctor",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-dream-pillow",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-fish-and-chickens-wedding",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-fish-that-couldnt-swim",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-great-cake-contest",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-great-tidy-up",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-lazy-ant",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-lost-laugh",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-memory-tree",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-monster-must-go",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-new-road",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-one-in-the-middle",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-pumpkin-chase",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-rainbow-cloud",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-sausage-dog",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-sea",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-things-that-really-matter",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-three-doof-doofs",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-very-tired-lioness",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "the-window-seat",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "theres-a-fire-on-the-mountain",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "theres-an-alien-in-my-house",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "thuli-special-and-the-secret",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "thulis-tissue",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "tigs-world",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "tikky-boom-tish",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "tlotlegos-tea-party",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "tones-big-drop",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "tumi-goes-to-the-park",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "unathi-and-the-dirty-smelly-beast",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "whats-at-the-park",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "whats-happened-to-our-water",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "whats-in-the-pot",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "whats-next",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "where-is-lulu",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "where-is-thabo",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "who-takes-the-train",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "who-took-my-shoe",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "whos-that-baby",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "whose-shoe-is-this",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "why-birds-sing-at-dawn",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "why-is-there-a-hole-in-the-wall",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "why-the-owl-never-sleeps",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "wiggle-jiggle",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "woof-woof",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "yapo-saves-the-day",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "yes-you-can",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "you-yes-you",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "zandi-and-birdy-monster",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "zanele-sees-numbers",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "zenandes-helping-hands",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    },
+    {
+      "slug": "zibu-and-zizo",
+      "source": "storage",
+      "images_in_folder": 14,
+      "sampled": 5,
+      "pages": [
+        {
+          "file": "01.jpg",
+          "page": 1,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "04.jpg",
+          "page": 4,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "07.jpg",
+          "page": 7,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "11.jpg",
+          "page": 11,
+          "w": 1600,
+          "h": 800,
+          "hw": 0.5
+        },
+        {
+          "file": "14.jpg",
+          "page": 14,
+          "w": 1600,
+          "h": 1600,
+          "hw": 1.0
+        }
+      ]
+    }
+  ]
+}
