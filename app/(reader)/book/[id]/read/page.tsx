@@ -142,17 +142,18 @@ export default async function ReadPage({ params }: ReadPageProps) {
   );
 
   // 오디오 리더 분기 (ADR-0052 Phase D·F) — book_audio 행이 있는 책만.
-  //   게이트는 count 전용 쿼리 1회(hasReaderAudio). 행이 0이면 아래 content_type 경로를
-  //   그대로 타므로 기존 896권 html·asb_native 동작은 변하지 않는다(회귀 0).
+  //   게이트는 쿼리 1회(hasReaderAudio). 행이 0이면 아래 content_type 경로를 그대로 타므로
+  //   기존 896권 html·asb_native 동작은 변하지 않는다(회귀 0).
   //
-  //   ★ 진실 원천 분리 (Phase F 결정):
-  //     - 리더의 오디오 기능 게이팅(재생·연속 듣기·하이라이트)은 book_audio 행 존재를
-  //       정본으로 쓴다 — 실제 재생 가능한 오브젝트가 있는 책만 오디오 UI를 띄운다.
-  //     - 카드·상세의 "듣기 지원" 아이콘 표시는 books.has_audio 컬럼을 쓴다(표시 전용).
-  //   has_audio를 리더 게이트로 쓰지 않는 이유: getBookById의 SELECT는
-  //   unstable_cache('books-catalog', 1h) 경유라, 여기서 컬럼값에 기능을 걸면 캐시된 표시
-  //   신호와 실제 오브젝트 존재가 어긋날 수 있다(ADR-0033). 읽기 라우트 안에서 끝나는
-  //   book_audio 조회가 영향 범위가 좁고 정본과 일치한다.
+  //   ★ 판정 단일화 (2026-07-28):
+  //     리더 게이팅(재생·연속 듣기·하이라이트)과 카드·상세·관리자의 "듣기 지원" 배지가
+  //     모두 selectReaderAudioBookIds(lib/book/audio-manifest.ts) 한 함수를 쓴다 —
+  //     book_audio에 (kind='page', voice=DEFAULT_READER_VOICE) 행이 있는가.
+  //     즉 배지가 뜨는 책은 여기서도 오디오 리더로 열린다.
+  //
+  //   종전에는 배지만 books.has_audio 컬럼을 따로 봤다(표시/게이팅 진실 원천 분리).
+  //   그 결과 구 Ruth 44권(voice='Ruth')에서 배지는 뜨는데 재생은 안 되는 상태가 생겨
+  //   판정을 하나로 합쳤다. has_audio 컬럼 자체는 미접촉이며 읽기 참조만 끊었다.
   if (await hasReaderAudio(book.id)) {
     const audioBook = await getAudioReaderBook(book.id);
     if (audioBook && audioBook.audioPageCount > 0) {

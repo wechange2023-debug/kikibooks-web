@@ -5,7 +5,11 @@ import { notFound, redirect } from 'next/navigation';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 import { SIGN_IN_PATH } from '@/lib/auth/routes';
-import type { PopularBook } from '@/lib/landing/popular-books';
+import {
+  toPopularBooks,
+  type PopularBook,
+  type PopularBookRow,
+} from '@/lib/landing/popular-books';
 import { createClient } from '@/lib/supabase/server';
 
 import { ShowcaseGrid } from '../showcase-grid';
@@ -39,45 +43,30 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-interface BookRow {
-  id: string;
-  title: string;
-  author: string | null;
-  cover_url: string;
-  has_audio: boolean;
-}
-
-function toPopularBook(row: BookRow): PopularBook {
-  return {
-    id: row.id,
-    title: row.title,
-    author: row.author,
-    coverUrl: row.cover_url,
-    hasAudio: row.has_audio,
-  };
-}
-
 /**
  * 한 출처의 공개 도서 전량을 (title, id) 안정 정렬로 조회한다.
  *
  * Supabase 기본 1000행 cap 때문에 .range()로 청크 반복한다. 동일 ORDER BY 위에서의
  * offset 페이지네이션이라 청크 경계에 중복·누락이 없다(시연 중 동시 쓰기 없음 전제).
+ *
+ * 오디오 배지는 books.has_audio 컬럼이 아니라 toPopularBooks(카드 공용 통로)가
+ * book_audio에서 산출한다 — 상세·리더·관리자·카드와 동일 기준.
  */
 async function fetchAllBySource(
   supabase: SupabaseClient,
   source: string,
 ): Promise<PopularBook[]> {
-  const out: BookRow[] = [];
+  const out: PopularBookRow[] = [];
   for (let start = 0; start < FETCH_MAX; start += FETCH_CHUNK) {
     const { data, error } = await supabase
       .from('books')
-      .select('id, title, author, cover_url, has_audio')
+      .select('id, title, author, cover_url')
       .eq('is_active', true)
       .eq('source_platform', source)
       .order('title', { ascending: true })
       .order('id', { ascending: true })
       .range(start, start + FETCH_CHUNK - 1)
-      .returns<BookRow[]>();
+      .returns<PopularBookRow[]>();
     if (error) {
       throw new Error(`/showcase/${source}: books 조회 실패 — ${error.message}`);
     }
@@ -85,7 +74,7 @@ async function fetchAllBySource(
     out.push(...rows);
     if (rows.length < FETCH_CHUNK) break;
   }
-  return out.map(toPopularBook);
+  return toPopularBooks(supabase, out);
 }
 
 interface ShowcaseSourcePageProps {

@@ -71,7 +71,8 @@ export interface BookDetailCopy {
   };
   /**
    * 오디오(TTS 낭독) 지원 배지 카피 (Phase F) — BookMeta 칩 영역에 아이콘과 함께 노출.
-   * has_audio=true인 책에만 렌더한다(표시 전용 신호, lib/book/detail.ts Book.has_audio 참조).
+   * Book.hasAudio=true인 책에만 렌더한다. 판정은 리더 오디오 게이트와 동일 기준
+   * (selectReaderAudioBookIds — lib/book/detail.ts Book.hasAudio 참조).
    */
   audioSupport: {
     /** "듣기 지원" 칩 라벨. */

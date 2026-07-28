@@ -97,6 +97,16 @@ export const DEFAULT_READER_VOICE = 'danielle';
 export const READER_AUDIO_KIND = 'page';
 
 /**
+ * `.in('book_id', …)` 한 번에 넣는 id 최대 개수.
+ *
+ * PostgREST는 필터를 URL 쿼리스트링으로 실어 보낸다. UUID 1개가 약 37바이트라 id가
+ * 수천 개면 URL이 수십 KB로 불어나 요청이 거부된다(414). 시연 페이지
+ * (/showcase/[source])가 한 출처 전량(ASb 약 2,160권)을 한 번에 넘기므로 상한이 필요하다.
+ * 300개면 URL이 약 11KB로 안전하고, 일반 목록(카드 24·admin 24·상세 1)은 여전히 쿼리 1회다.
+ */
+const AUDIO_LOOKUP_CHUNK = 300;
+
+/**
  * 「이 책에 재생 가능한 낭독이 있는가」 판정의 **단일 출처**.
  *
  * 조건 = book_audio에 (kind=READER_AUDIO_KIND AND voice=DEFAULT_READER_VOICE) 행 존재.
@@ -104,18 +114,22 @@ export const READER_AUDIO_KIND = 'page';
  * `books.has_audio` 컬럼을 따로 보다가 구 Ruth 44권에서 「배지는 뜨는데 재생은 안 됨」이
  * 발생했다(2026-07-28 정찰). 그래서 조건 리터럴은 이 함수 안에만 둔다.
  *
- * 현재 호출 표면 3곳:
- *   1. hasReaderAudio(아래)        — /book/[id]/read 오디오 리더 게이트
- *   2. lib/book/detail.ts          — 상세 "듣기 지원" 배지 (카탈로그 캐시 안에서 산출)
- *   3. lib/admin/books/query.ts    — /admin/books 썸네일 오디오 배지
+ * 현재 호출 표면 4곳:
+ *   1. hasReaderAudio(아래)          — /book/[id]/read 오디오 리더 게이트
+ *   2. lib/book/detail.ts            — 상세 "듣기 지원" 배지 (카탈로그 캐시 안에서 산출)
+ *   3. lib/admin/books/query.ts      — /admin/books 썸네일 오디오 배지
+ *   4. lib/landing/popular-books.ts  — toPopularBooks(카드 4표면 공용 통로)
  *
  * @param supabase 호출자가 넘긴 클라이언트. **본 함수는 클라이언트를 만들지 않는다** —
  *   service role(리더·admin)과 쿠키 없는 publishable(카탈로그 캐시, ADR-0033 안전 원칙)을
  *   모두 받기 위해서다. book_audio RLS는 anon/authenticated SELECT 공개읽기라
  *   (ADR-0034 (d)) publishable 클라이언트로도 동일한 답이 나온다.
- * @param bookIds 판정 대상 book id들. 여러 권을 **쿼리 1회**로 접는다(목록 화면 N+1 방지).
+ * @param bookIds 판정 대상 book id들. 권마다 개별 조회하는 N+1을 쓰지 않는다 —
+ *   AUDIO_LOOKUP_CHUNK(300)개씩 묶어 조회하므로 일반 목록은 쿼리 1회로 끝난다.
  * @returns 낭독이 있는 book id 집합. 조회 실패 시 빈 Set — 배지·오디오 UI가 안 뜰 뿐
  *   책 자체는 기존 경로로 정상 노출된다(가용성 우선, 기존 폴백 동작 유지).
+ *   청크 하나만 실패해도 전체를 빈 Set으로 접는다(부분 결과로 「어떤 책만 배지가 빠지는」
+ *   설명 불가능한 상태를 만들지 않는다).
  */
 export async function selectReaderAudioBookIds(
   supabase: SupabaseClient,
@@ -126,19 +140,29 @@ export async function selectReaderAudioBookIds(
     return new Set();
   }
 
-  const { data, error } = await supabase
-    .from('book_audio')
-    .select('book_id')
-    .in('book_id', bookIds)
-    .eq('kind', READER_AUDIO_KIND)
-    .eq('voice', voice)
-    .returns<{ book_id: string }[]>();
+  const found = new Set<string>();
 
-  if (error) {
-    return new Set();
+  for (let start = 0; start < bookIds.length; start += AUDIO_LOOKUP_CHUNK) {
+    const chunk = bookIds.slice(start, start + AUDIO_LOOKUP_CHUNK);
+
+    const { data, error } = await supabase
+      .from('book_audio')
+      .select('book_id')
+      .in('book_id', chunk)
+      .eq('kind', READER_AUDIO_KIND)
+      .eq('voice', voice)
+      .returns<{ book_id: string }[]>();
+
+    if (error) {
+      return new Set();
+    }
+
+    for (const row of data ?? []) {
+      found.add(row.book_id);
+    }
   }
 
-  return new Set((data ?? []).map((row) => row.book_id));
+  return found;
 }
 
 function requireSupabaseUrl(): string {
