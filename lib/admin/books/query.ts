@@ -2,6 +2,7 @@ import 'server-only';
 
 import { z } from 'zod';
 
+import { DEFAULT_READER_VOICE } from '@/lib/book/audio-manifest';
 import { createServiceRoleClient } from '@/lib/supabase/server';
 
 /**
@@ -77,12 +78,12 @@ export const AdminBookFiltersSchema = z.object({
 export type AdminBookFilters = z.infer<typeof AdminBookFiltersSchema>;
 
 /**
- * /admin/books 책 1행 — spec scope_in line 93 박제 11 컬럼.
+ * books SELECT 결과 1행 — spec scope_in line 93 박제 11 컬럼 그대로.
  *
  * cover_url·attribution_text는 admin 화면 행 데이터(표지 thumb + 라이선스 캡션 디버그).
  * source_id는 미포함 — admin UI는 source_platform(badge)만으로 충분.
  */
-export interface AdminBookRow {
+interface AdminBookSelectRow {
   id: string;
   title: string;
   source_platform: string;
@@ -94,6 +95,25 @@ export interface AdminBookRow {
   synced_at: string;
   cover_url: string;
   attribution_text: string;
+}
+
+/**
+ * /admin/books 책 1행 = books 11 컬럼 + 파생 신호 hasAudio.
+ *
+ * hasAudio는 books 컬럼이 아니다(camelCase로 구분). book_audio 일괄 조회 결과에서
+ * 매핑한 파생값이라 snake_case 11 컬럼과 이름 규약을 달리한다.
+ */
+export interface AdminBookRow extends AdminBookSelectRow {
+  /**
+   * 이 책에 재생 가능한 오디오 오브젝트가 있는가 — book_audio 행 존재가 정본.
+   *
+   * books.has_audio 컬럼을 쓰지 않는 이유: has_audio는 카드·상세의 "듣기 지원" 표시
+   * 전용 신호이고, admin 검수 화면이 알고 싶은 것은 "썸네일을 열었을 때 오디오 리더가
+   * 실제로 뜨는가"이다. 그래서 읽기 라우트 게이트(hasReaderAudio)와 동일한 조건
+   * (kind='page' AND voice=DEFAULT_READER_VOICE)으로 판정한다
+   * (진실 원천 분리 — app/(reader)/book/[id]/read/page.tsx 주석 참조).
+   */
+  hasAudio: boolean;
 }
 
 /**
@@ -239,7 +259,7 @@ export async function getAdminBooks(
     .order('id', { ascending: true })
     .limit(ADMIN_BOOKS_PAGE_SIZE + 1);
 
-  const { data, error } = await query.returns<AdminBookRow[]>();
+  const { data, error } = await query.returns<AdminBookSelectRow[]>();
   if (error) {
     throw new Error(`getAdminBooks: books 조회 실패 — ${error.message}`);
   }
@@ -253,9 +273,46 @@ export async function getAdminBooks(
       ? encodeCursor({ mode: 'keyset', sa: last.synced_at, id: last.id })
       : null;
 
+  const audioBookIds = await selectAudioBookIds(
+    supabase,
+    page.map((row) => row.id),
+  );
+
   return {
-    rows: page,
+    rows: page.map((row) => ({ ...row, hasAudio: audioBookIds.has(row.id) })),
     nextCursor,
     hasMore,
   };
+}
+
+/**
+ * 이 페이지의 책 id들 중 오디오 오브젝트가 있는 id 집합을 **쿼리 1회**로 반환한다.
+ *
+ * 책마다 hasReaderAudio(count 쿼리)를 도는 N+1을 쓰지 않는다 — 24권이면 24회가 된다.
+ * `.in('book_id', ids)`로 한 번에 긁고 Set으로 접는다. 조건은 읽기 라우트 게이트와
+ * 동일(kind='page' + voice=DEFAULT_READER_VOICE)이라 배지 = "열면 오디오 리더가 뜬다".
+ *
+ * 조회 실패 시 빈 Set — 배지가 안 뜰 뿐 목록 자체는 그대로 뜬다(검수 화면 가용성 우선).
+ */
+async function selectAudioBookIds(
+  supabase: ReturnType<typeof createServiceRoleClient>,
+  bookIds: string[],
+): Promise<Set<string>> {
+  if (bookIds.length === 0) {
+    return new Set();
+  }
+
+  const { data, error } = await supabase
+    .from('book_audio')
+    .select('book_id')
+    .in('book_id', bookIds)
+    .eq('kind', 'page')
+    .eq('voice', DEFAULT_READER_VOICE)
+    .returns<{ book_id: string }[]>();
+
+  if (error) {
+    return new Set();
+  }
+
+  return new Set((data ?? []).map((row) => row.book_id));
 }

@@ -8,7 +8,7 @@ import {
   useTransition,
 } from 'react';
 import Image from 'next/image';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Volume2 } from 'lucide-react';
 
 import {
   clearCatalogCache,
@@ -156,6 +156,22 @@ function FilterChip({
  *   - copy.toggle.on/off → 토글 버튼 라벨(is_active true/false)
  *   - 토글 버튼 활성/비활성 시각 = FilterChip 패턴 정합(border-primary/border-outline)
  *   - level select: 1·2·3·4·5 + 'null' sentinel(copy.filters.levelNullLabel)
+ *
+ * 썸네일 = 새 탭 읽기 링크(검수 동선):
+ *   사용자용 뷰어 라우트 /book/[id]/read를 그대로 연다 — admin 전용 뷰어 0건이라
+ *   운영자가 보는 화면과 사용자가 보는 화면이 구조적으로 같다(검수 신뢰성).
+ *   target="_blank"로 목록의 스크롤·필터 상태(useState, URL 미동기 — D20)를 잃지 않는다.
+ *   카드의 나머지 클릭 표면(level select·is_active 토글)은 링크 밖이라 충돌 0건.
+ *
+ * 오디오 배지:
+ *   row.hasAudio(= book_audio 행 존재, query.ts 정본)일 때만 썸네일 우하단에 Volume2를
+ *   올린다. false면 DOM 0건(빈 자리 표시 없음). aria-hidden — 링크 aria-label이 오디오
+ *   유무를 이미 문장으로 전달하므로 아이콘 중복 낭독을 막는다.
+ *
+ * 자진 신고 — 박제 0건 하드코딩 2건:
+ *   링크 aria-label('… 새 창에서 읽기' / '오디오 있음')은 copy.books에 박제가 없어
+ *   한국어 하드코딩이다. '카탈로그 캐시 비우기' 버튼(ADR-0033 Amd#1 (b)) 동형 선례.
+ *   copy 확장 시 copy.books로 이동한다.
  */
 interface AdminBookCardProps {
   row: AdminBookRow;
@@ -180,7 +196,17 @@ function AdminBookCard({
   return (
     <article className="flex flex-col gap-3 rounded-md border border-outline bg-surface p-4 shadow-elev-1">
       <div className="flex gap-3">
-        <div className="relative h-[106px] w-[80px] shrink-0 overflow-hidden rounded-md bg-surface-3">
+        <a
+          href={`/book/${row.id}/read`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={
+            row.hasAudio
+              ? `${row.title} 새 창에서 읽기 (오디오 있음)`
+              : `${row.title} 새 창에서 읽기`
+          }
+          className="relative block h-[106px] w-[80px] shrink-0 overflow-hidden rounded-md bg-surface-3 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+        >
           {imageError ? (
             <div
               className={`flex h-full w-full items-center justify-center ${fallback.block}`}
@@ -197,7 +223,20 @@ function AdminBookCard({
               onError={() => setImageError(true)}
             />
           )}
-        </div>
+          {/*
+            오디오 배지 — 반투명은 opacity-80으로 낸다. Tailwind v3의 `bg-surface/80` 알파
+            모디파이어는 색 토큰이 `var(--color-surface)`(파싱 불가 문자열)라 무시되고
+            불투명하게 렌더된다. Hard Rule 10 정합(raw HEX 0건, semantic 토큰만).
+          */}
+          {row.hasAudio && (
+            <span
+              aria-hidden="true"
+              className="absolute bottom-1 right-1 inline-flex h-6 w-6 items-center justify-center rounded-pill bg-surface text-text opacity-80 shadow-elev-1"
+            >
+              <Volume2 className="h-3.5 w-3.5" />
+            </span>
+          )}
+        </a>
         <div className="flex min-w-0 flex-1 flex-col gap-1">
           <h2 className="line-clamp-2 text-sm font-semibold text-text">
             {row.title}
