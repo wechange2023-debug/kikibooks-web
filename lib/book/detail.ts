@@ -6,6 +6,8 @@ import {
   type SupabaseClient,
 } from '@supabase/supabase-js';
 
+import { selectReaderAudioBookIds } from '@/lib/book/audio-manifest';
+
 /**
  * 책 상세 페이지 데이터 fetch — books.id UUID 단일 조회.
  *
@@ -80,15 +82,25 @@ export interface Book {
   language: string;
   is_active: boolean;
   /**
-   * 오디오(TTS 낭독) 지원 여부 — 카드·상세 "듣기 지원" 아이콘 표시용 신호 (Phase F).
+   * 오디오(TTS 낭독) 지원 여부 — 상세 "듣기 지원" 배지 표시 신호.
    *
-   * ★ 표시 전용 신호다. 리더의 오디오 기능 게이팅은 book_audio 행 존재
-   *   (audio-manifest.ts hasReaderAudio)를 정본으로 쓴다. has_audio는 카탈로그·상세의
-   *   아이콘 노출만 결정하고, 실제 재생 가능 여부는 book_audio가 결정한다
-   *   (진실 원천 분리 — ADR-0033 캐시 영향 최소화 + ADR-0052 오디오 정본).
+   * ★ books 컬럼이 아니다(camelCase로 구분). `books.has_audio` 컬럼 대신
+   *   selectReaderAudioBookIds(lib/book/audio-manifest.ts)로 산출한다 — 즉 배지 조건과
+   *   리더 오디오 게이트 조건이 **같은 함수 한 곳**에서 나온다.
+   *
+   * 종전에는 `books.has_audio` 컬럼을 그대로 실었다(진실 원천 분리 = 표시는 컬럼,
+   * 게이팅은 book_audio). 그 결과 구 Ruth 44권(voice='Ruth')에서 컬럼은 true인데
+   * 리더 게이트(voice='danielle')는 false라 「배지는 뜨는데 재생이 안 되는」 상태가
+   * 생겼다(2026-07-28 정찰). 표시와 실제 재생 가능 여부를 한 기준으로 통일한다.
+   *
+   * `books.has_audio` 컬럼 자체는 건드리지 않는다 — 본 경로에서 참조만 끊었다.
+   * 컬럼 정리는 별도 트랙(카드 표면 3곳이 아직 컬럼을 읽는다 — 아래 주석 참조).
    */
-  has_audio: boolean;
+  hasAudio: boolean;
 }
+
+/** books SELECT 결과 그대로 — Book에서 파생 필드(hasAudio)만 뺀 형태. */
+type BookRow = Omit<Book, 'hasAudio'>;
 
 /**
  * 카탈로그 캐시 전용 — 쿠키 없는 publishable 클라이언트 (ADR-0033 P0-1 안전 원칙).
@@ -132,22 +144,37 @@ const getBookByIdCached = unstable_cache(
     const { data, error } = await supabase
       .from('books')
       .select(
-        'id, title, author, illustrator, cover_url, content_url, content_type, original_url, license, attribution_text, source_platform, source_id, level, age_min, age_max, language, is_active, has_audio',
+        'id, title, author, illustrator, cover_url, content_url, content_type, original_url, license, attribution_text, source_platform, source_id, level, age_min, age_max, language, is_active',
       )
       .eq('id', id)
       .eq('is_active', true)
-      .maybeSingle<Book>();
+      .maybeSingle<BookRow>();
 
     if (error) {
       throw new Error(`getBookById: books 조회 실패 (id=${id}) — ${error.message}`);
     }
 
-    return data ?? null;
+    if (!data) {
+      return null;
+    }
+
+    // "듣기 지원" 배지 판정 — 리더 오디오 게이트와 **같은 함수**를 쓴다(단일 출처).
+    //
+    // 이 조회는 캐시 함수 **안**에 있다. 즉 캐시 히트 시 요청당 추가 쿼리 0건이고,
+    // 미스 시에만 books 조회에 1건이 더 붙는다. 무효화도 기존과 동일하게
+    // tag 'books-catalog' 한 경로로 처리된다(admin 캐시 비우기 버튼 포함).
+    //
+    // 클라이언트는 쿠키 없는 publishable(createCatalogClient) 그대로다 — secret 키를
+    // 캐시 경로에 들이지 않는다(ADR-0033 안전 원칙 유지). book_audio RLS가
+    // anon/authenticated SELECT 공개읽기(ADR-0034 (d))라 service role 없이도 같은 답이다.
+    const audioBookIds = await selectReaderAudioBookIds(supabase, [id]);
+
+    return { ...data, hasAudio: audioBookIds.has(id) };
   },
-  // 캐시 키 버전 서픽스 v2 — has_audio 추가로 페이로드(17→18컬럼)가 바뀌었다. 구버전
-  // 캐시(17컬럼)가 배포 후에도 잔존해 has_audio 누락 행이 반환되는 것을 막는다.
+  // 캐시 키 버전 서픽스 v3 — 페이로드 키가 has_audio(컬럼) → hasAudio(book_audio 산출)로
+  // 바뀌었다. 구버전 캐시(v2)가 배포 후 잔존해 옛 판정이 반환되는 것을 막는다.
   // tags·revalidate 정책은 불변(ADR-0033).
-  ['getBookById-v2'],
+  ['getBookById-v3'],
   { tags: ['books-catalog'], revalidate: 3600 },
 );
 

@@ -36,7 +36,7 @@ interface BookMetaProps {
   book: Book;
   /**
    * 오디오 지원 배지 라벨 (Phase F, copy.ts audioSupport.label 정본).
-   * book.has_audio=true일 때만 칩을 렌더한다. 카피는 페이지가 props로 내려준다
+   * book.hasAudio=true일 때만 칩을 렌더한다. 카피는 페이지가 props로 내려준다
    * (ReadButton label 패턴 정합 — ADR-0012 결정 2 카피 단일 출처).
    */
   audioLabel: string;
@@ -91,9 +91,10 @@ export function BookMeta({ book, audioLabel }: BookMetaProps) {
 
       <li className={CHIP_CLASS}>{languageLabel}</li>
 
-      {/* 오디오 지원 배지 (Phase F) — has_audio=true인 책만. 아이콘 + "듣기 지원" 라벨.
-          false면 칩 자체를 렌더하지 않는다(빈 자리 차지 금지). */}
-      {book.has_audio ? (
+      {/* 오디오 지원 배지 (Phase F) — hasAudio=true인 책만. 아이콘 + "듣기 지원" 라벨.
+          false면 칩 자체를 렌더하지 않는다(빈 자리 차지 금지).
+          판정 정본 = 리더 오디오 게이트와 동일(lib/book/detail.ts Book.hasAudio 주석). */}
+      {book.hasAudio ? (
         <li className={`${CHIP_CLASS} gap-1.5 text-primary`}>
           <Headphones className="h-4 w-4" aria-hidden="true" />
           {audioLabel}

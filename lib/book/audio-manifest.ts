@@ -1,5 +1,7 @@
 import 'server-only';
 
+import type { SupabaseClient } from '@supabase/supabase-js';
+
 import { createServiceRoleClient } from '@/lib/supabase/server';
 
 /**
@@ -91,6 +93,54 @@ interface BuildOptions {
 /** ADR-0052 Amendment #2 확정 보이스. Storage 성우 폴더명과 동일한 소문자. */
 export const DEFAULT_READER_VOICE = 'danielle';
 
+/** 본문 낭독 트랙 kind. 표지(kind='cover')만 있는 책은 리더 오디오 대상이 아니다. */
+export const READER_AUDIO_KIND = 'page';
+
+/**
+ * 「이 책에 재생 가능한 낭독이 있는가」 판정의 **단일 출처**.
+ *
+ * 조건 = book_audio에 (kind=READER_AUDIO_KIND AND voice=DEFAULT_READER_VOICE) 행 존재.
+ * 이 조건이 여러 표면에 흩어지면 표면마다 답이 갈린다 — 실제로 상세 배지가
+ * `books.has_audio` 컬럼을 따로 보다가 구 Ruth 44권에서 「배지는 뜨는데 재생은 안 됨」이
+ * 발생했다(2026-07-28 정찰). 그래서 조건 리터럴은 이 함수 안에만 둔다.
+ *
+ * 현재 호출 표면 3곳:
+ *   1. hasReaderAudio(아래)        — /book/[id]/read 오디오 리더 게이트
+ *   2. lib/book/detail.ts          — 상세 "듣기 지원" 배지 (카탈로그 캐시 안에서 산출)
+ *   3. lib/admin/books/query.ts    — /admin/books 썸네일 오디오 배지
+ *
+ * @param supabase 호출자가 넘긴 클라이언트. **본 함수는 클라이언트를 만들지 않는다** —
+ *   service role(리더·admin)과 쿠키 없는 publishable(카탈로그 캐시, ADR-0033 안전 원칙)을
+ *   모두 받기 위해서다. book_audio RLS는 anon/authenticated SELECT 공개읽기라
+ *   (ADR-0034 (d)) publishable 클라이언트로도 동일한 답이 나온다.
+ * @param bookIds 판정 대상 book id들. 여러 권을 **쿼리 1회**로 접는다(목록 화면 N+1 방지).
+ * @returns 낭독이 있는 book id 집합. 조회 실패 시 빈 Set — 배지·오디오 UI가 안 뜰 뿐
+ *   책 자체는 기존 경로로 정상 노출된다(가용성 우선, 기존 폴백 동작 유지).
+ */
+export async function selectReaderAudioBookIds(
+  supabase: SupabaseClient,
+  bookIds: string[],
+  voice: string = DEFAULT_READER_VOICE,
+): Promise<Set<string>> {
+  if (bookIds.length === 0) {
+    return new Set();
+  }
+
+  const { data, error } = await supabase
+    .from('book_audio')
+    .select('book_id')
+    .in('book_id', bookIds)
+    .eq('kind', READER_AUDIO_KIND)
+    .eq('voice', voice)
+    .returns<{ book_id: string }[]>();
+
+  if (error) {
+    return new Set();
+  }
+
+  return new Set((data ?? []).map((row) => row.book_id));
+}
+
 function requireSupabaseUrl(): string {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   if (!url) {
@@ -110,26 +160,23 @@ function resolveAudioBase(opts: BuildOptions | undefined): string {
 /**
  * 오디오 리더 게이트 — 해당 책에 재생 가능한 오디오가 있는지만 확인한다.
  *
- * 읽기 라우트가 **모든 책**에서 호출하므로 count 전용(head: true)으로 유지한다.
- * 행이 0이면 호출자는 기존 뷰어 경로를 그대로 탄다(회귀 0).
+ * 판정은 selectReaderAudioBookIds(단일 출처)에 위임한다. 조건 리터럴(kind·voice)을
+ * 여기서 다시 쓰지 않는 이유는 그 함수 주석 참조. 행이 0이면 호출자는 기존 뷰어 경로를
+ * 그대로 탄다(회귀 0). 조회 실패도 동일하게 false로 접힌다.
+ *
+ * count(head:true) → book_id SELECT로 바뀌었다. 대상이 1권이라 최대 십수 행이고,
+ * 판정 결과는 동일하다(행 존재 여부만 본다).
  */
 export async function hasReaderAudio(
   bookId: string,
   voice: string = DEFAULT_READER_VOICE,
 ): Promise<boolean> {
-  const supabase = createServiceRoleClient();
-  const { count, error } = await supabase
-    .from('book_audio')
-    .select('id', { count: 'exact', head: true })
-    .eq('book_id', bookId)
-    .eq('kind', 'page')
-    .eq('voice', voice);
-
-  // 조회 실패 시 false — 오디오 UI를 띄우지 않고 기존 뷰어로 폴백한다(읽기 흐름 보존).
-  if (error) {
-    return false;
-  }
-  return (count ?? 0) > 0;
+  const audioBookIds = await selectReaderAudioBookIds(
+    createServiceRoleClient(),
+    [bookId],
+    voice,
+  );
+  return audioBookIds.has(bookId);
 }
 
 /**
