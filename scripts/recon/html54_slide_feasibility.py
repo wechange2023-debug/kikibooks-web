@@ -110,8 +110,8 @@ def to_abs_image_url(slug: str, src: str) -> str:
       - 상대경로  `images/01.jpg`                              → 책 폴더 기준 (대다수)
       - 루트절대  `/bookdash-books/{slug}/en/images/01.jpg`     → 사이트 루트 기준 (a-fish-and-a-gift)
     루트절대를 lstrip('/') 후 책 폴더에 이어붙이면 경로가 두 번 겹쳐 404가 난다.
-    (scripts/tts_pilot/extract_text.py to_abs_image_url이 그 형태다 — 본 정찰에서 발견,
-     해당 스크립트는 읽기 전용 원칙에 따라 수정하지 않고 보고서에 남긴다.)
+    (scripts/tts_pilot/extract_text.py to_abs_image_url이 그 형태였다 — 본 정찰에서 발견해
+     이후 urljoin 방식으로 수정됨.)
     """
     src = src.strip()
     if re.match(r"^https?://", src, re.I):

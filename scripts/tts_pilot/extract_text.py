@@ -32,7 +32,9 @@ import html
 import json
 import re
 import sys
+import time
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
 
@@ -44,8 +46,15 @@ for _stream in (sys.stdout, sys.stderr):
         except Exception:
             pass
 
-GH_PAGES_BASE = "https://bookdash.github.io/bookdash-books"  # sync_book_dash.py:77 정합
+GH_ORIGIN = "https://bookdash.github.io"
+GH_PAGES_BASE = f"{GH_ORIGIN}/bookdash-books"  # sync_book_dash.py:77 정합
 HTTP_TIMEOUT = 30
+
+# GH Pages가 전량 순회 중 간헐적으로 503을 준다(2026-07-28 정찰 실측:
+# walking-together/images/09.jpg — 재요청하면 200). 재시도 없이 실패로 처리하면
+# 멀쩡한 책이 추출 실패로 잡힌다. 4xx는 재시도하지 않는다(진짜 결손).
+HTTP_RETRIES = 2
+HTTP_RETRY_SLEEP = 1.0
 
 OUT_DIR = Path(__file__).resolve().parent / "out"
 
@@ -57,13 +66,31 @@ _TAG_RE = re.compile(r"<[^>]+>")
 
 
 def fetch_html(slug: str) -> str:
+    """GH Pages 원본 HTML을 가져온다. 5xx·네트워크 오류는 HTTP_RETRIES회까지 재시도."""
     url = f"{GH_PAGES_BASE}/{slug}/en/"
-    resp = requests.get(url, timeout=HTTP_TIMEOUT)
-    resp.raise_for_status()
-    # GH Pages는 UTF-8. requests가 헤더로 못 잡으면 강제.
-    if not resp.encoding or resp.encoding.lower() in ("iso-8859-1",):
-        resp.encoding = "utf-8"
-    return resp.text
+    last_exc: Exception | None = None
+
+    for attempt in range(1, HTTP_RETRIES + 1):
+        try:
+            resp = requests.get(url, timeout=HTTP_TIMEOUT)
+            # 4xx는 재시도해도 같다 — 즉시 raise.
+            if 500 <= resp.status_code < 600 and attempt < HTTP_RETRIES:
+                last_exc = requests.HTTPError(f"{resp.status_code} (재시도 {attempt})")
+                time.sleep(HTTP_RETRY_SLEEP)
+                continue
+            resp.raise_for_status()
+            # GH Pages는 UTF-8. requests가 헤더로 못 잡으면 강제.
+            if not resp.encoding or resp.encoding.lower() in ("iso-8859-1",):
+                resp.encoding = "utf-8"
+            return resp.text
+        except requests.RequestException as exc:
+            last_exc = exc
+            if attempt < HTTP_RETRIES:
+                time.sleep(HTTP_RETRY_SLEEP)
+                continue
+            raise
+
+    raise last_exc if last_exc else RuntimeError("fetch_html: 도달 불가")
 
 
 def isolate_body(html_text: str) -> str:
@@ -81,11 +108,19 @@ def isolate_body(html_text: str) -> str:
 
 
 def to_abs_image_url(slug: str, src: str) -> str:
-    """상대경로(images/01.jpg)를 GH Pages 절대 URL로. 이미 절대면 그대로."""
-    src = src.strip()
-    if re.match(r"^https?://", src, re.I):
-        return src
-    return f"{GH_PAGES_BASE}/{slug}/en/{src.lstrip('/')}"
+    """<img src>를 절대 URL로 변환한다.
+
+    이 코퍼스에는 src 규약이 **두 가지** 섞여 있다(2026-07-28 html 54권 전량 정찰 실측):
+      - 상대경로  `images/01.jpg`                            → 책 폴더 기준 (대다수)
+      - 루트절대  `/bookdash-books/{slug}/en/images/01.jpg`   → 사이트 루트 기준 (a-fish-and-a-gift)
+
+    종전 구현은 `src.lstrip('/')` 후 무조건 책 폴더에 이어붙여, 루트절대 경로에서 경로가
+    두 번 겹쳐 404가 났다(`.../a-fish-and-a-gift/en/bookdash-books/a-fish-and-a-gift/en/images/01.jpg`).
+    urljoin은 이 두 규약과 프로토콜 상대(`//host/...`)·절대 URL을 모두 표준대로 처리한다.
+
+    근거·재현: docs/recon/2026-07-28-html54-slide-feasibility.md §6-1
+    """
+    return urljoin(f"{GH_PAGES_BASE}/{slug}/en/", src.strip())
 
 
 def clean_text(inner_html: str) -> str:

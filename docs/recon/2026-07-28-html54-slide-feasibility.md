@@ -202,8 +202,12 @@ html 원본에는 뒤표지 면이 별도 장면으로 들어 있지 않다).
    - 상대경로 `images/01.jpg` (대다수)
    - **루트절대 `/bookdash-books/{slug}/en/images/01.jpg`** — `a-fish-and-a-gift` 1권 확인
    후자에 대해 경로가 두 번 겹쳐 404가 난다(`.../a-fish-and-a-gift/en/bookdash-books/a-fish-and-a-gift/en/images/01.jpg`).
-   본 정찰 스크립트는 고쳤고(§실측으로 567×567 12장 정상 판독), **`extract_text.py`는 읽기 전용 원칙에 따라
-   수정하지 않았다.** TTS 전량 실행 전에 처리 필요.
+   본 정찰 스크립트는 고쳤고(§실측으로 567×567 12장 정상 판독), 당시 `extract_text.py`는 읽기 전용 원칙에 따라
+   손대지 않았다.
+   > **후속 (2026-07-28)**: `extract_text.py`를 `urljoin` 방식으로 수정 완료. `a-fish-and-a-gift` 12장
+   > 전량 200(206) 확인. 같은 함수를 재사용하는 `scripts/copy_bookdash_images.py`도 함께 정상화된다.
+   > TTS 전량 배치 산출(116권·1,464유닛·124,213자)에는 영향 없음 — 해당 경로는 GH Pages가 아니라
+   > DB `book_text`를 읽는다(§검증).
 2. **GH Pages 간헐 503** — `walking-together/images/09.jpg`가 1회 503 후 재요청 200. 재시도 없이 세면
    멀쩡한 이미지가 결손으로 잡힌다. 스크립트에 1회 재시도를 넣었다.
 3. **블랙리스트 15권은 전원 이 54권 안에 있다.** 즉 `BOOK_DASH_404_SOURCE_IDS`는 v1 html 코호트 전용
