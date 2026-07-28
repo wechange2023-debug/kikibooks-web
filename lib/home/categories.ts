@@ -7,7 +7,11 @@ import {
 } from '@supabase/supabase-js';
 
 import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
-import type { PopularBook } from '@/lib/landing/popular-books';
+import {
+  toPopularBooks,
+  type PopularBook,
+  type PopularBookRow,
+} from '@/lib/landing/popular-books';
 
 /**
  * 홈 화면 카테고리 그리드 8개 — 정적 키워드 매핑 전략 (ADR-0015).
@@ -273,19 +277,6 @@ export function isCategorySlug(value: string): value is CategorySlug {
   return value in CATEGORIES_BY_SLUG;
 }
 
-/** books 표지 카드 조회 행. */
-interface BookCardRow {
-  id: string;
-  title: string;
-  author: string | null;
-  cover_url: string;
-  has_audio: boolean;
-}
-
-/** books id 조회 행. */
-interface BookIdRow {
-  id: string;
-}
 
 /** reading_sessions 완독 행. */
 interface CompletedSessionRow {
@@ -357,26 +348,23 @@ export async function getCategoryBooks(
 
   const { data: bookRows, error: bookError } = await supabase
     .from('books')
-    .select('id, title, author, cover_url, has_audio')
+    .select('id, title, author, cover_url')
     .in('id', cappedIds)
-    .returns<BookCardRow[]>();
+    .returns<PopularBookRow[]>();
 
   if (bookError) {
     throw new Error(`getCategoryBooks: 책 상세 조회 실패 — ${bookError.message}`);
   }
 
-  // 4-1) 상세 결과를 cappedIds 순서로 정렬 (synced_at DESC 일관성 보장)
+  // 4-1) 상세 결과를 cappedIds 순서로 정렬 (synced_at DESC 일관성 보장).
+  //      toPopularBooks는 입력 순서를 그대로 보존하므로 정렬 후 넘긴다.
   const cardById = new Map((bookRows ?? []).map((row) => [row.id, row]));
-  return cappedIds
+  const orderedRows = cappedIds
     .map((id) => cardById.get(id))
-    .filter((row): row is BookCardRow => row !== undefined)
-    .map((row) => ({
-      id: row.id,
-      title: row.title,
-      author: row.author,
-      coverUrl: row.cover_url,
-      hasAudio: row.has_audio,
-    }));
+    .filter((row): row is PopularBookRow => row !== undefined);
+
+  // 오디오 배지 판정은 toPopularBooks(공용 단일 통로)가 전담 — 쿼리 1회.
+  return toPopularBooks(supabase, orderedRows);
 }
 
 /** 자녀의 완독 book_id Set. recommendations.ts와 동일 구현 (소량 중복, 모듈 응집도 우선). */

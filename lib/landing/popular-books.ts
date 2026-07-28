@@ -2,6 +2,7 @@ import 'server-only';
 
 import type { SupabaseClient } from '@supabase/supabase-js';
 
+import { selectReaderAudioBookIds } from '@/lib/book/audio-manifest';
 import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
 
 /**
@@ -46,8 +47,11 @@ export interface PopularBook {
   coverUrl: string;
   /**
    * 오디오(TTS 낭독) 지원 여부 — 카드 우상단 "듣기 지원" 배지 표시용 (Phase F).
-   * 표시 전용 신호다. 리더 오디오 기능 게이팅은 book_audio 정본이 별도로 담당한다
-   * (진실 원천 분리 — lib/book/detail.ts Book.has_audio 주석 참조).
+   *
+   * ★ books.has_audio 컬럼이 아니다. selectReaderAudioBookIds(lib/book/audio-manifest.ts)
+   *   단일 출처로 산출한다 — 상세 배지·리더 오디오 게이트·관리자 배지와 같은 함수다.
+   *   종전에 컬럼을 그대로 실었을 때 구 Ruth 44권에서 「배지는 뜨는데 재생은 안 됨」이
+   *   발생했다(2026-07-28 정찰). 산출은 toPopularBooks(아래)가 전담한다.
    */
   hasAudio: boolean;
 }
@@ -57,13 +61,45 @@ interface BookIdRow {
   id: string;
 }
 
-/** books 테이블 표지 카드 조회 행. */
-interface BookCardRow {
+/**
+ * 카드 4종(랜딩·라이브러리·홈 추천·카테고리)이 공유하는 books SELECT 행.
+ *
+ * has_audio 컬럼은 포함하지 않는다 — 오디오 배지는 book_audio에서 산출한다.
+ */
+export interface PopularBookRow {
   id: string;
   title: string;
   author: string | null;
   cover_url: string;
-  has_audio: boolean;
+}
+
+/**
+ * books 행 → PopularBook 변환 + 오디오 배지 판정. **카드 표면 전체의 단일 통로**.
+ *
+ * 오디오 판정은 selectReaderAudioBookIds에 위임하므로 조건(kind·voice)이 여기에 없다.
+ * 목록 전체 id를 넘겨 **쿼리 1회**로 접는다 — 책마다 개별 조회하는 N+1을 쓰지 않는다.
+ * 입력 순서를 그대로 보존한다(카테고리 모드의 synced_at DESC 정렬 의존).
+ *
+ * @param supabase 호출자의 클라이언트. book_audio RLS가 anon/authenticated SELECT
+ *   공개읽기(ADR-0034 (d))라 세션 publishable 클라이언트로도 동일한 답이 나온다
+ *   — service role 승격 0건(lib/book/detail.ts 캐시 경로와 동일 원칙).
+ */
+export async function toPopularBooks(
+  supabase: SupabaseClient,
+  rows: readonly PopularBookRow[],
+): Promise<PopularBook[]> {
+  const audioBookIds = await selectReaderAudioBookIds(
+    supabase,
+    rows.map((row) => row.id),
+  );
+
+  return rows.map((row) => ({
+    id: row.id,
+    title: row.title,
+    author: row.author,
+    coverUrl: row.cover_url,
+    hasAudio: audioBookIds.has(row.id),
+  }));
 }
 
 /**
@@ -106,21 +142,15 @@ export async function getPopularBooks(
   // 3) 선정된 책 상세 조회
   const { data: bookRows, error: bookError } = await supabase
     .from('books')
-    .select('id, title, author, cover_url, has_audio')
+    .select('id, title, author, cover_url')
     .in('id', pickedIds)
-    .returns<BookCardRow[]>();
+    .returns<PopularBookRow[]>();
 
   if (bookError) {
     throw new Error(`getPopularBooks: 책 상세 조회 실패 — ${bookError.message}`);
   }
 
-  return (bookRows ?? []).map((row) => ({
-    id: row.id,
-    title: row.title,
-    author: row.author,
-    coverUrl: row.cover_url,
-    hasAudio: row.has_audio,
-  }));
+  return toPopularBooks(supabase, bookRows ?? []);
 }
 
 /**

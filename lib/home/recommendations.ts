@@ -3,7 +3,11 @@ import 'server-only';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
-import type { PopularBook } from '@/lib/landing/popular-books';
+import {
+  toPopularBooks,
+  type PopularBook,
+  type PopularBookRow,
+} from '@/lib/landing/popular-books';
 
 /**
  * 오늘의 추천 5권 — 자녀의 current_level을 기준으로 미독 책을 무작위로 고른다.
@@ -56,14 +60,6 @@ interface BookIdRow {
   id: string;
 }
 
-/** books 테이블 표지 카드 조회 행 (2차 상세 조회용). */
-interface BookCardRow {
-  id: string;
-  title: string;
-  author: string | null;
-  cover_url: string;
-  has_audio: boolean;
-}
 
 /** reading_sessions 완독 행 조회용. */
 interface CompletedSessionRow {
@@ -134,21 +130,16 @@ async function pickBooksAtLevelRange(
 
   const { data: bookRows, error: bookError } = await supabase
     .from('books')
-    .select('id, title, author, cover_url, has_audio')
+    .select('id, title, author, cover_url')
     .in('id', picked)
-    .returns<BookCardRow[]>();
+    .returns<PopularBookRow[]>();
 
   if (bookError) {
     throw new Error(`pickBooksAtLevelRange: 책 상세 조회 실패 — ${bookError.message}`);
   }
 
-  return (bookRows ?? []).map((row) => ({
-    id: row.id,
-    title: row.title,
-    author: row.author,
-    coverUrl: row.cover_url,
-    hasAudio: row.has_audio,
-  }));
+  // 오디오 배지 판정은 toPopularBooks(공용 단일 통로)가 전담 — 쿼리 1회.
+  return toPopularBooks(supabase, bookRows ?? []);
 }
 
 /**

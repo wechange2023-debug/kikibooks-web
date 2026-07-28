@@ -9,7 +9,11 @@ import {
   matchCategories,
   type CategorySlug,
 } from '@/lib/home/categories';
-import type { PopularBook } from '@/lib/landing/popular-books';
+import {
+  toPopularBooks,
+  type PopularBook,
+  type PopularBookRow,
+} from '@/lib/landing/popular-books';
 
 /**
  * 라이브러리 페이지(Screen 05 `/library`) 책 카탈로그 조회 단일 출처.
@@ -147,18 +151,13 @@ interface IndexCursor {
   i: number;
 }
 
-/** 책 카드 렌더에 필요한 컬럼 (표지·캡션·오디오 배지). 카테고리 모드·toPopularBook 공용. */
-interface CardRow {
-  id: string;
-  title: string;
-  author: string | null;
-  cover_url: string;
-  /** "듣기 지원" 배지 표시용 (Phase F). 표시 전용 — 리더 게이팅은 book_audio 정본. */
-  has_audio: boolean;
-}
-
-/** keyset 모드 조회 행 — 카드 4컬럼 + cursor 인코딩용 synced_at. */
-interface BookRow extends CardRow {
+/**
+ * keyset 모드 조회 행 — 공용 카드 컬럼(PopularBookRow) + cursor 인코딩용 synced_at.
+ *
+ * has_audio 컬럼은 select하지 않는다 — 오디오 배지는 toPopularBooks가 book_audio에서
+ * 산출한다(상세·리더·관리자와 동일 기준).
+ */
+interface BookRow extends PopularBookRow {
   synced_at: string;
 }
 
@@ -239,7 +238,7 @@ async function getBooksKeyset(
 ): Promise<LibraryPage> {
   let query = supabase
     .from('books')
-    .select('id, title, author, cover_url, has_audio, synced_at')
+    .select('id, title, author, cover_url, synced_at')
     .eq('is_active', true);
 
   for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
@@ -291,7 +290,7 @@ async function getBooksKeyset(
   const totalCount = cursor === null ? await countKeyset(supabase, filters) : 0;
 
   return {
-    books: page.map(toPopularBook),
+    books: await toPopularBooks(supabase, page),
     nextCursor,
     hasMore,
     totalCount,
@@ -352,11 +351,11 @@ async function getBooksWithCategory(
   cursor: string | null,
 ): Promise<LibraryPage> {
   // P0-4: 카테고리 모드는 정렬을 DB측(synced_at DESC, id ASC)이 하고 JS는 synced_at을 쓰지
-  // 않는다(index cursor·toPopularBook 모두 미사용). 미사용 컬럼 synced_at을 select에서 제외해
+  // 않는다(index cursor·toPopularBooks 모두 미사용). 미사용 컬럼 synced_at을 select에서 제외해
   // payload를 줄인다(정렬 절 자체는 synced_at 컬럼값 없이도 DB가 수행 — 결과 순서 불변).
   let query = supabase
     .from('books')
-    .select('id, title, author, cover_url, has_audio')
+    .select('id, title, author, cover_url')
     .eq('is_active', true);
 
   for (const blockedSourceId of BOOK_DASH_404_SOURCE_IDS) {
@@ -375,7 +374,7 @@ async function getBooksWithCategory(
     .order('synced_at', { ascending: false })
     .order('id', { ascending: true });
 
-  const { data, error } = await query.returns<CardRow[]>();
+  const { data, error } = await query.returns<PopularBookRow[]>();
   if (error) {
     throw new Error(`getBooks(category): books 조회 실패 — ${error.message}`);
   }
@@ -402,21 +401,10 @@ async function getBooksWithCategory(
   const nextCursor = hasMore ? encodeCursor({ mode: 'index', i: endIndex }) : null;
 
   return {
-    books: page.map(toPopularBook),
+    books: await toPopularBooks(supabase, page),
     nextCursor,
     hasMore,
     // 카테고리 모드는 후보 전수를 메모리에서 매칭하므로 전체 권수가 이미 확보됨 — 추가 쿼리 0건.
     totalCount: matched.length,
-  };
-}
-
-/** CardRow → PopularBook 변환 (cover_url → coverUrl camelCase). BookRow(상위형)도 수용. */
-function toPopularBook(row: CardRow): PopularBook {
-  return {
-    id: row.id,
-    title: row.title,
-    author: row.author,
-    coverUrl: row.cover_url,
-    hasAudio: row.has_audio,
   };
 }
