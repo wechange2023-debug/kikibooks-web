@@ -9,8 +9,15 @@ const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    // Vercel 이미지 최적화 한도 소진으로 표지가 전량 402(OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED)
+    // 응답을 받아 미출력됐다(2026-08-06 진단: 표본 28건 중 402 28건 / 200은 캐시 HIT 2건뿐).
+    // 도메인·경로 무관하게 자체 Supabase Storage 표지까지 동일 실패 → 최적화 경유 자체를 끈다.
+    // 원본 URL 직결 서빙이므로 한도를 소비하지 않는다. 전송량 최적화는 표지 자체 호스팅
+    // (webp 사전 변환) 트랙에서 별도 처리한다.
+    unoptimized: true,
     // 책 표지 CDN 도메인 — phase-04(Book Dash)·phase-05(GDL) 동기화 출처.
     // next/image 최적화를 위해 등록한다 (docs/adr/0012-landing-page-static.md 결정 6).
+    // unoptimized: true 상태에서는 미사용이나, 최적화 복귀 시 필요하므로 보존한다.
     remotePatterns: [
       { protocol: 'https', hostname: 'bookdash.github.io' },
       { protocol: 'https', hostname: 'bookdash.org' },
