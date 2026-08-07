@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { StatsDashboard } from '@/components/admin/stats/stats-dashboard';
 import { getAdminCopy } from '@/lib/admin/copy';
 import { getAdminStats } from '@/lib/admin/stats/query';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /admin — 관리 홈 + 통계 4종 통합 (phase-13b CP2-b CP2-admin-foundation).
@@ -40,7 +41,7 @@ import { getAdminStats } from '@/lib/admin/stats/query';
  */
 
 export const metadata: Metadata = {
-  title: '관리 홈 · 키키북스',
+  title: `관리 홈 · ${BRAND_NAME}`,
 };
 
 export default async function AdminHomePage() {

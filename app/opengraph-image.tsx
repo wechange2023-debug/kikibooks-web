@@ -1,11 +1,13 @@
 import { ImageResponse } from 'next/og';
 
+import { BRAND_NAME, BRAND_TAGLINE } from '@/lib/brand';
+
 /**
  * 랜딩 페이지 소셜 공유 이미지 (Open Graph / Twitter).
  *
  * ADR-0012 결정 7 — 외부 이미지 파일 없이 ImageResponse로 동적 생성한다.
- * 베타 한정 영문 브랜드 텍스트("Kikibooks" + 영문 태그라인) — 한글 글리프 폰트
- * 번들링을 피한다.
+ * 베타 한정 영문 브랜드 텍스트("Hello Kiki" + 영문 태그라인) — 한글 글리프 폰트
+ * 번들링을 피한다. 브랜드명이 영문(BRAND_NAME)이라 tofu 위험 없이 상수를 그대로 쓴다.
  *
  * phase-14 CP4 — 한글화 보류 결정. edge ImageResponse에 한글을 렌더하려면 Noto Sans KR
  * 서브셋 폰트 번들링 + edge 런타임 fetch 로딩이 필요하다(미번들 시 □□□ tofu 렌더). 폰트
@@ -23,7 +25,7 @@ import { ImageResponse } from 'next/og';
 // 프리렌더가 실패한다. edge 런타임이 ImageResponse의 표준 구성이다.
 export const runtime = 'edge';
 
-export const alt = 'Kikibooks — 우리 아이의 첫 영어 그림책 서재';
+export const alt = `${BRAND_NAME} — ${BRAND_TAGLINE}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -67,7 +69,7 @@ export default function OpengraphImage() {
             letterSpacing: -2,
           }}
         >
-          Kikibooks
+          {BRAND_NAME}
         </div>
         <div
           style={{

@@ -14,6 +14,7 @@ import { createClient } from '@/lib/supabase/server';
 
 import { ShowcaseGrid } from '../showcase-grid';
 import { isKnownSource, sourceLabel } from '../sources';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /showcase/[source] — 임시 시연 메뉴: 한 출처의 공개 도서 그리드(무한 스크롤).
@@ -39,7 +40,7 @@ const FETCH_MAX = 10000;
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: '출처별 도서 (시연) · 키키북스',
+  title: `출처별 도서 (시연) · ${BRAND_NAME}`,
   robots: { index: false, follow: false },
 };
 

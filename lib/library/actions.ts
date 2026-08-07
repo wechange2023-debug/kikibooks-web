@@ -20,7 +20,7 @@ import {
  *            login/actions) = 100% server action 패턴
  *   - 실측 3: lib/home/actions.ts updateChildLevel이 가장 가까운 선례 (LevelSelector 클라이언트
  *            컴포넌트 ↔ server action 호출, discriminated union 반환)
- *   - 기존 5건은 모두 mutation(UPDATE/INSERT). 본 함수는 키키북스 최초의 **client-triggered
+ *   - 기존 5건은 모두 mutation(UPDATE/INSERT). 본 함수는 Hello Kiki 최초의 **client-triggered
  *     SELECT용 server action**이며 패턴 본질(zod·createClient 본인 세션·{ok}/{error})은 계승.
  *   - 타입 안전: LibraryFilters → LibraryPage end-to-end TypeScript. route handler는 JSON
  *     수동 직렬화/역직렬화 필요 → 패턴 복잡도만 증가.
@@ -60,7 +60,7 @@ import {
  * 메시지를 보여주고 무한 스크롤 sentinel을 일시 정지한다. 재시도는 사용자 트리거
  * (스크롤 재진입·필터 변경)로 처리 — 자동 재시도는 베타 단순성 우선 미적용.
  *
- * lib/home/actions.ts UpdateChildLevelResult 패턴 정합(키키북스 server action 반환 표준).
+ * lib/home/actions.ts UpdateChildLevelResult 패턴 정합(Hello Kiki server action 반환 표준).
  */
 export type FetchLibraryPageResult =
   | { ok: true; page: LibraryPage }

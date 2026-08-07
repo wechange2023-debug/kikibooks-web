@@ -7,11 +7,12 @@ import { LandingHeader } from '@/components/landing/landing-header';
 import { PopularBooks } from '@/components/landing/popular-books';
 import { ValueProps } from '@/components/landing/value-props';
 import { resolvePostLoginPath } from '@/lib/auth/resolve-post-login-path';
+import { BRAND_NAME, BRAND_TAGLINE } from '@/lib/brand';
 import { getLandingCopy } from '@/lib/landing/copy';
 import { getPopularBooks, type PopularBook } from '@/lib/landing/popular-books';
 import { createClient } from '@/lib/supabase/server';
 
-const PAGE_TITLE = 'Kikibooks · 우리 아이의 첫 영어 그림책 서재';
+const PAGE_TITLE = `${BRAND_NAME} · ${BRAND_TAGLINE}`;
 const PAGE_DESCRIPTION =
   '만 3~7세 아이를 위한 무료 영어 그림책 서재. 890권이 넘는 그림책을 나이별 맞춤 추천으로, 광고 없이 안전하게 보여주세요.';
 
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
-    siteName: 'Kikibooks',
+    siteName: BRAND_NAME,
     locale: 'ko_KR',
     type: 'website',
     url: '/',

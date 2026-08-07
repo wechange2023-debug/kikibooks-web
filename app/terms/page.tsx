@@ -4,10 +4,11 @@ import {
   LegalPageShell,
   type LegalDocument,
 } from '@/components/legal/legal-page-shell';
+import { BRAND_NAME } from '@/lib/brand';
 
 export const metadata: Metadata = {
-  title: '이용약관 · Kikibooks',
-  description: '키키북스(Kikibooks) 서비스 이용약관.',
+  title: `이용약관 · ${BRAND_NAME}`,
+  description: `${BRAND_NAME} 서비스 이용약관.`,
 };
 
 /**
@@ -20,12 +21,12 @@ export const metadata: Metadata = {
 const TERMS_DOCUMENT: LegalDocument = {
   title: '이용약관',
   effectiveDate: '2026년 7월 1일',
-  intro: '본 약관은 키키북스 서비스 이용에 적용되는 기본 약관입니다.',
+  intro: `본 약관은 ${BRAND_NAME} 서비스 이용에 적용되는 기본 약관입니다.`,
   sections: [
     {
       heading: '목적',
       paragraphs: [
-        '본 약관은 주식회사 위체인지(이하 "회사")가 제공하는 유아 영어 그림책 e-라이브러리 서비스 "키키북스"(이하 "서비스")의 이용과 관련하여 회사와 회원 간의 권리·의무 및 책임사항, 이용조건 및 절차를 규정함을 목적으로 합니다.',
+        `본 약관은 주식회사 위체인지(이하 "회사")가 제공하는 유아 영어 그림책 e-라이브러리 서비스 "${BRAND_NAME}"(이하 "서비스")의 이용과 관련하여 회사와 회원 간의 권리·의무 및 책임사항, 이용조건 및 절차를 규정함을 목적으로 합니다.`,
       ],
     },
     {

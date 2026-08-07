@@ -11,6 +11,7 @@ import {
   type LibraryFilters,
 } from '@/lib/library/query';
 import { createClient } from '@/lib/supabase/server';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /library — Screen 05 책 라이브러리 정식 페이지 (phase-13 CP3-b-2).
@@ -65,7 +66,7 @@ import { createClient } from '@/lib/supabase/server';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: '라이브러리 · 키키북스',
+  title: `라이브러리 · ${BRAND_NAME}`,
   robots: { index: false, follow: false },
 };
 

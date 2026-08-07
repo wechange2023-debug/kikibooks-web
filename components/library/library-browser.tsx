@@ -96,7 +96,7 @@ const SENTINEL_ROOT_MARGIN = '0px 0px 200px 0px';
 
 /**
  * 표지 깨짐 fallback 팔레트 — book.id로 결정적 선택해 같은 책은 항상 같은 색.
- * RecommendationList·BookCoverCard와 동일 팔레트(키키북스 카드 fallback 표준).
+ * RecommendationList·BookCoverCard와 동일 팔레트(Hello Kiki 카드 fallback 표준).
  */
 const FALLBACK_PALETTE = [
   { block: 'bg-primary-container', text: 'text-on-primary-container' },
@@ -124,8 +124,14 @@ function pickFallbackColor(id: string): (typeof FALLBACK_PALETTE)[number] {
  * RecommendationCard와 다른 점:
  *   - w-32 가로 스크롤용 폭 제거 — 그리드 컬럼 너비에 자연 적응
  *   - sizes 속성 그리드 4 viewport 기준으로 조정
+ *
+ * export 사유 (2026-08-07, ADR-0024 마이페이지 작업 A안):
+ *   마이페이지(읽은 책·즐겨찾기 그리드)가 본 카드를 그대로 재사용한다. 카드 5벌째를
+ *   만들지 않기 위해 export만 추가했고 마크업·props는 무변경이다. 카드 4벌(랜딩·홈·
+ *   라이브러리·쇼케이스)을 공용 컴포넌트로 통합하는 리팩터링은 별도 작업 단위로
+ *   분리했다(docs/backlog.md §7.4 (y) — 홈·라이브러리 회귀 검증 포함).
  */
-function LibraryBookCard({ book }: { book: PopularBook }) {
+export function LibraryBookCard({ book }: { book: PopularBook }) {
   const [imageError, setImageError] = useState(false);
   const fallback = pickFallbackColor(book.id);
 

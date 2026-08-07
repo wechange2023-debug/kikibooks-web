@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { AdminBooksBrowser } from '@/components/admin/books/admin-books-browser';
 import { getAdminBooks } from '@/lib/admin/books/query';
 import { getAdminCopy } from '@/lib/admin/copy';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /admin/books — 콘텐츠 큐레이션 페이지 (phase-13b CP3-b).
@@ -38,7 +39,7 @@ import { getAdminCopy } from '@/lib/admin/copy';
  */
 
 export const metadata: Metadata = {
-  title: '콘텐츠 큐레이션 · 키키북스',
+  title: `콘텐츠 큐레이션 · ${BRAND_NAME}`,
 };
 
 export default async function AdminBooksPage() {

@@ -1,5 +1,7 @@
 import 'server-only';
 
+import { BRAND_NAME } from '@/lib/brand';
+
 /**
  * 랜딩 페이지(Screen 01) 카피 단일 출처 (Single Source of Truth).
  *
@@ -61,7 +63,7 @@ export interface LandingCopy {
  *   현재 적재량 896권, 안전 마진으로 "890권" 표기. 적재량 증가 시 이 줄만 갱신.
  */
 const LANDING_COPY: LandingCopy = {
-  brandName: 'Kikibooks',
+  brandName: BRAND_NAME,
   header: {
     loginLabel: '로그인',
     signupLabel: '무료로 시작하기',

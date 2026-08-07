@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import { BRAND_NAME } from '@/lib/brand';
 
 export const metadata: Metadata = {
-  title: '로그인 오류 · 키키북스',
+  title: `로그인 오류 · ${BRAND_NAME}`,
 };
 
 /**

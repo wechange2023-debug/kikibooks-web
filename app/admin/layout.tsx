@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { AdminNav } from '@/components/admin/admin-nav';
 import { getAdminCopy } from '@/lib/admin/copy';
 import { requireAdmin } from '@/lib/admin/gate';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /admin/* 레이아웃 — phase-13b CP2-b CP2-admin-foundation.
@@ -52,7 +53,7 @@ import { requireAdmin } from '@/lib/admin/gate';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: '관리 · 키키북스',
+  title: `관리 · ${BRAND_NAME}`,
   robots: { index: false, follow: false },
 };
 

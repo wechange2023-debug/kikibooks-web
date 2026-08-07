@@ -6,6 +6,7 @@ import {
   getAdminChildren,
   getAdminProfiles,
 } from '@/lib/admin/users/query';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /admin/users — 사용자·자녀 조회 페이지 (phase-13b CP4-b).
@@ -43,7 +44,7 @@ import {
  */
 
 export const metadata: Metadata = {
-  title: '사용자 관리 · 키키북스',
+  title: `사용자 관리 · ${BRAND_NAME}`,
 };
 
 export default async function AdminUsersPage() {

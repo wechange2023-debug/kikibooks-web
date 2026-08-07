@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google';
 
+import { BRAND_NAME } from '@/lib/brand';
 import { SITE_URL } from '@/lib/site';
 
 import './globals.css';
@@ -26,14 +27,14 @@ export const metadata: Metadata = {
   // 사이트 전역 절대 URL 기준 — OG/Twitter 이미지 등 모든 페이지가 상속한다.
   // 정식 도메인은 phase-14에서 NEXT_PUBLIC_SITE_URL 설정으로 일괄 정정 (lib/site.ts).
   metadataBase: new URL(SITE_URL),
-  title: 'Kikibooks',
+  title: BRAND_NAME,
   description: '한국 유아를 위한 무료 영어 그림책 e-라이브러리',
   // phase-14 CP4 — 전역 OG 한국어 기본값. openGraph/twitter는 페이지가 정의하면
   // 그 객체로 전체 덮어쓴다(Next.js metadata는 nested 객체 deep merge 0건). 따라서
   // 랜딩(app/page.tsx)은 자체 완전 openGraph로 덮어쓰고, 자체 openGraph 미정의 페이지
   // (home·library 등)는 본 한국어 기본값(siteName·ko_KR·website)을 상속한다.
   openGraph: {
-    siteName: 'Kikibooks',
+    siteName: BRAND_NAME,
     locale: 'ko_KR',
     type: 'website',
   },

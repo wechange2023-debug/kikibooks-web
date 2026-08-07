@@ -4,10 +4,11 @@ import {
   LegalPageShell,
   type LegalDocument,
 } from '@/components/legal/legal-page-shell';
+import { BRAND_NAME } from '@/lib/brand';
 
 export const metadata: Metadata = {
-  title: '개인정보처리방침 · Kikibooks',
-  description: '키키북스(Kikibooks) 개인정보처리방침.',
+  title: `개인정보처리방침 · ${BRAND_NAME}`,
+  description: `${BRAND_NAME} 개인정보처리방침.`,
 };
 
 /**

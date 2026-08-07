@@ -6,6 +6,7 @@ import { SIGN_IN_PATH } from '@/lib/auth/routes';
 import { createClient } from '@/lib/supabase/server';
 
 import { SOURCE_LABELS, sourceLabel } from './sources';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /showcase — 임시 시연 메뉴: 출처(source_platform)별 공개 도서 진입 화면.
@@ -23,7 +24,7 @@ import { SOURCE_LABELS, sourceLabel } from './sources';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: '출처별 도서 (시연) · 키키북스',
+  title: `출처별 도서 (시연) · ${BRAND_NAME}`,
   robots: { index: false, follow: false },
 };
 

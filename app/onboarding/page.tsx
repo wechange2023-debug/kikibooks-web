@@ -5,9 +5,10 @@ import { ChildProfileForm } from '@/components/onboarding/child-profile-form';
 import { POST_LOGIN_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
 import { hasChildren } from '@/lib/children/has-children';
 import { createClient } from '@/lib/supabase/server';
+import { BRAND_NAME } from '@/lib/brand';
 
 export const metadata: Metadata = {
-  title: '자녀 프로필 등록 · 키키북스',
+  title: `자녀 프로필 등록 · ${BRAND_NAME}`,
 };
 
 /**

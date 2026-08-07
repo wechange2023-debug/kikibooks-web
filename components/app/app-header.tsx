@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { HOME_PATH, LIBRARY_PATH, SHOWCASE_PATH } from '@/lib/auth/routes';
+import { MobileNav } from '@/components/app/mobile-nav';
+import { HOME_PATH, LIBRARY_PATH, MYPAGE_PATH, SHOWCASE_PATH } from '@/lib/auth/routes';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * 공통 앱 헤더 — 로그인 후 화면(/home·/library·/book 상세)의 홈↔라이브러리 네비 + 로그아웃.
@@ -19,6 +21,12 @@ import { HOME_PATH, LIBRARY_PATH, SHOWCASE_PATH } from '@/lib/auth/routes';
  *     (404는 몰입 화면 아님, 네비 제공이 오히려 탈출 동선 UX 이득. PM 결정 2026-06-11).
  *   - D4: 홈↔라이브러리 Link 2개 + 로그아웃 form. 자녀 프로필칩 미포함(book에
  *     getActiveChild 추가 회피). 라이브러리 h1+subtitle은 본 헤더 미포함(page 본문 잔류).
+ *
+ * 반응형 (ADR-0024 Amendment O3 재정정, 2026-08-07):
+ *   링크가 4개(홈·라이브러리·마이페이지·쇼케이스(검수용))로 늘어 390px 실측에서 텍스트
+ *   내비 + 로그아웃이 한 줄에 들어가지 않는다. **md 미만은 텍스트 내비·로그아웃을 숨기고
+ *   우측 햄버거 드롭다운(components/app/mobile-nav.tsx)으로 전환**하고, md 이상은 기존
+ *   텍스트 4링크를 그대로 유지한다. 라벨 축약안은 링크 증가 시 재발하므로 폐기됐다.
  *
  * 활성 판정 패턴 (components/admin/admin-nav.tsx 직역):
  *   - home (/home): pathname === HOME_PATH 정확 매칭.
@@ -60,6 +68,14 @@ const NAV_LINKS: NavLink[] = [
     label: '라이브러리',
     isActive: (p) => p === LIBRARY_PATH || p.startsWith(`${LIBRARY_PATH}/`),
   },
+  // 마이페이지 (ADR-0024 D6 + Amendment O3) — 진입 동선이 없으면 화면에 도달 불가.
+  // ※ Amendment O3: 쇼케이스(검수용) 포함 총 4링크가 된다. 쇼케이스는 팀장 검수에
+  //   사용 중이라 제거하지 않는다. 390px에서 넘치면 1순위 대응은 라벨 축약.
+  {
+    href: MYPAGE_PATH,
+    label: '마이페이지',
+    isActive: (p) => p === MYPAGE_PATH || p.startsWith(`${MYPAGE_PATH}/`),
+  },
   // 검수용 임시 메뉴 — 서비스 전환 시 제거 대상(app/showcase 삭제와 함께). 기존 항목 불변.
   {
     href: SHOWCASE_PATH,
@@ -79,33 +95,59 @@ export function AppHeader() {
   return (
     <header className="border-b border-outline bg-surface">
       <div className="mx-auto flex h-14 max-w-screen-sm items-center justify-between px-4 md:max-w-screen-md md:px-6 lg:max-w-screen-lg">
-        <nav aria-label="주요" className="flex items-center gap-1">
-          {NAV_LINKS.map((link) => {
-            const active = link.isActive(pathname);
-            const linkClass = active
-              ? 'rounded px-3 py-1.5 text-sm font-medium bg-surface-2 text-text'
-              : 'rounded px-3 py-1.5 text-sm font-medium text-text-variant hover:bg-surface-2 hover:text-text';
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={active ? 'page' : undefined}
-                className={linkClass}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-        </nav>
-
-        <form action="/auth/sign-out" method="post">
-          <button
-            type="submit"
-            className="inline-flex items-center rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+        {/* 좌측 그룹 — 로고 + (md 이상) 텍스트 내비. md 미만에서는 로고만 남는다. */}
+        <div className="flex items-center gap-4">
+          {/* 브랜드 로고 — 랜딩 헤더(landing-header.tsx) 선례 그대로: font-display +
+              font-bold + text-primary. 모바일은 한 단계 축소해 햄버거와 한 줄에 넣는다. */}
+          <Link
+            href={HOME_PATH}
+            aria-label="홈으로"
+            className="font-display text-base font-bold text-primary transition-colors duration-200 ease-kiki hover:text-primary-hover md:text-xl"
           >
-            로그아웃
-          </button>
-        </form>
+            {BRAND_NAME}
+          </Link>
+
+          {/* 데스크톱(md 이상) — 기존 텍스트 링크 그대로. md 미만은 MobileNav가 대신한다. */}
+          <nav aria-label="주요" className="hidden items-center gap-1 md:flex">
+            {NAV_LINKS.map((link) => {
+              const active = link.isActive(pathname);
+              const linkClass = active
+                ? 'rounded px-3 py-1.5 text-sm font-medium bg-surface-2 text-text'
+                : 'rounded px-3 py-1.5 text-sm font-medium text-text-variant hover:bg-surface-2 hover:text-text';
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={linkClass}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+
+        {/* 우측 그룹 — md 이상 로그아웃, md 미만 햄버거. 컨테이너 justify-between이
+            좌측 그룹과 갈라놓으므로 ml-auto가 필요 없다. */}
+        <div className="flex items-center">
+          <form action="/auth/sign-out" method="post" className="hidden md:block">
+            <button
+              type="submit"
+              className="inline-flex items-center rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            >
+              로그아웃
+            </button>
+          </form>
+
+          <MobileNav
+            items={NAV_LINKS.map((link) => ({
+              href: link.href,
+              label: link.label,
+              active: link.isActive(pathname),
+            }))}
+          />
+        </div>
       </div>
     </header>
   );

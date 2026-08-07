@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { ReviewDetailView } from '@/components/admin/review/review-detail-view';
 import { getReviewBookDetail } from '@/lib/admin/review/query';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /admin/review/[bookId] — 책별 검수 상세 (ADR-0051 구현 1).
@@ -26,7 +27,7 @@ import { getReviewBookDetail } from '@/lib/admin/review/query';
  */
 
 export const metadata: Metadata = {
-  title: '텍스트 검수 · 키키북스',
+  title: `텍스트 검수 · ${BRAND_NAME}`,
 };
 
 /** UUID v4 형식 — app/(reader)/book/[id]/page.tsx 정합. */

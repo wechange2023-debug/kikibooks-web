@@ -17,7 +17,7 @@ import { startReadingSession } from '@/lib/book/reading-session';
  * 보안 (ADR-0017 D6):
  *   - sandbox="allow-scripts allow-same-origin" — 외부 리더 JS 동작에 필수.
  *     allow-same-origin은 iframe '자기 출처'(bookdash.github.io / digitallibrary.io)
- *     기준이라 부모(키키북스 origin) 탈출 불가. 추가 권한은 부여하지 않는다
+ *     기준이라 부모(Hello Kiki origin) 탈출 불가. 추가 권한은 부여하지 않는다
  *     (GDL SPA 동작 미달 시 allow-forms·allow-popups 최소 보강 — F14, CP3-a 검수).
  *   - 부모 CSP frame-src 화이트리스트는 middleware.ts가 보강한다(CP3-a-4).
  *   - referrerPolicy="no-referrer" — 외부 사이트에 referrer 전달 0건(학부모·자녀

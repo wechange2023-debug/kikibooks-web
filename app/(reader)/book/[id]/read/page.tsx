@@ -15,6 +15,7 @@ import { getBookDetailCopy, getBookReaderCopy } from '@/lib/book/copy';
 import { getBookById } from '@/lib/book/detail';
 import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
 import { createClient } from '@/lib/supabase/server';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /book/[id]/read — Screen 04 책 뷰어 페이지 (ADR-0017 D1 iframe 단일 경로).
@@ -65,7 +66,7 @@ import { createClient } from '@/lib/supabase/server';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: '책 읽기 · 키키북스',
+  title: `책 읽기 · ${BRAND_NAME}`,
   robots: { index: false, follow: false },
 };
 

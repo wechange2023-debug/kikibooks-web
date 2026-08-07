@@ -6,7 +6,14 @@
  */
 
 /** 로그인해야만 들어갈 수 있는 경로의 접두사 목록. */
-export const PROTECTED_PREFIXES = ['/home', '/onboarding', '/library', '/book', '/admin'] as const;
+export const PROTECTED_PREFIXES = [
+  '/home',
+  '/onboarding',
+  '/library',
+  '/book',
+  '/mypage',
+  '/admin',
+] as const;
 
 /** 로그인한 사용자에게는 다시 보여주지 않는 인증 페이지. */
 export const AUTH_PAGES = ['/login', '/signup'] as const;
@@ -23,6 +30,13 @@ export const HOME_PATH = '/home';
 
 /** 공통 헤더 네비 경로 — 라이브러리 화면 (ADR-0021 D5). */
 export const LIBRARY_PATH = '/library';
+
+/**
+ * 공통 헤더 네비 경로 — 마이페이지 (ADR-0024 D1·D6).
+ * 로그인 후 개인 화면이므로 PROTECTED_PREFIXES에도 함께 등재한다
+ * (ADR-0024 Amendment O4 — 라우트 생성과 같은 작업 단위에서 추가).
+ */
+export const MYPAGE_PATH = '/mypage';
 
 /**
  * 공통 헤더 네비 경로 — 쇼케이스(검수용) 화면.

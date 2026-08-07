@@ -14,9 +14,10 @@ import { buildGreeting, getGreetingProfile } from '@/lib/home/greeting';
 import { getRecommendations } from '@/lib/home/recommendations';
 import { getStreakThisWeek } from '@/lib/home/streak';
 import { createClient } from '@/lib/supabase/server';
+import { BRAND_NAME } from '@/lib/brand';
 
 export const metadata: Metadata = {
-  title: '홈 · 키키북스',
+  title: `홈 · ${BRAND_NAME}`,
 };
 
 /**

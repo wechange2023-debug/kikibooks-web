@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { BRAND_NAME } from '@/lib/brand';
+
 /**
  * 약관·개인정보처리방침 등 법적 고지 페이지의 공용 레이아웃.
  *
@@ -36,7 +38,7 @@ export function LegalPageShell({ doc }: LegalPageShellProps) {
           href="/"
           className="text-sm font-semibold text-primary transition-colors duration-200 ease-kiki hover:text-primary-hover"
         >
-          ← 키키북스 홈
+          ← {BRAND_NAME} 홈
         </Link>
 
         <div className="rounded-md border border-warning bg-surface-2 px-4 py-3 text-sm text-text">

@@ -8,6 +8,7 @@ import { getCelebrateCopy } from '@/lib/book/copy';
 import { getBookById } from '@/lib/book/detail';
 import { getActiveChild } from '@/lib/home/active-child';
 import { createClient } from '@/lib/supabase/server';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /book/[id]/celebrate — Screen 05 완독 축하 (phase-13 CP2-e 정식 보상).
@@ -58,7 +59,7 @@ import { createClient } from '@/lib/supabase/server';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: '완독 축하 · 키키북스',
+  title: `완독 축하 · ${BRAND_NAME}`,
   robots: { index: false, follow: false },
 };
 

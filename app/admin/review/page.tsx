@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { ReviewListView } from '@/components/admin/review/review-list-view';
 import { getReviewBookList } from '@/lib/admin/review/query';
+import { BRAND_NAME } from '@/lib/brand';
 
 /**
  * /admin/review — 검수 대상 책 목록 (ADR-0051 구현 1, 구현 3-b에서 렌더 분리).
@@ -32,7 +33,7 @@ import { getReviewBookList } from '@/lib/admin/review/query';
  */
 
 export const metadata: Metadata = {
-  title: '텍스트 검수 · 키키북스',
+  title: `텍스트 검수 · ${BRAND_NAME}`,
 };
 
 export default async function AdminReviewPage() {
