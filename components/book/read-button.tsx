@@ -8,10 +8,12 @@ import { BookOpen } from 'lucide-react';
  *   - 현재 phase-11에서는 /book/[bookId]/read 라우트가 부재 → 클릭 시 Next.js 기본 404
  *   - phase-12 책 뷰어 구현 시 자동 활성화 — 본 컴포넌트 수정 0건
  *   - Link 패턴 (b) 채택 사유: 비활성 버튼(disabled, 옵션 a)은 "위치만 있고 누를 수 없는"
- *     사용자 혼란 가능. cp1_decisions d4(즐겨찾기 4-나 위치만 기각 + 4-다 미구현 채택)와
- *     동일 패턴 — 비활성 UI는 dead end로 보이므로 미채택. ReadButton은 (b) Link로 자리
- *     잡아 phase-12 page.tsx 추가 시 자연 활성화. license-rules.md §5.3 "읽기 버튼"
+ *     사용자 혼란 가능 — 비활성 UI는 dead end로 보이므로 미채택. ReadButton은 (b) Link로
+ *     자리 잡아 phase-12 page.tsx 추가 시 자연 활성화. license-rules.md §5.3 "읽기 버튼"
  *     위치 박제 정합.
+ *   - ※ 구정보 정정: 위 근거가 인용하던 cp1_decisions d4 "즐겨찾기 4-다 미구현 채택"은
+ *     ADR-0024 Amendment O1(2026-08-07)로 **즐겨찾기 토글 채택**으로 뒤집혔다.
+ *     구현체는 components/book/favorite-button.tsx — 본 컴포넌트와 같은 행에 배치된다.
  *
  * 디자인 인용 (design-system §6.1 Button Primary):
  *   - Primary 변형: bg-primary + text-on-primary + shadow-elev-pop + hover:bg-primary-hover
