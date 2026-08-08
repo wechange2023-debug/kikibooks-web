@@ -1,0 +1,160 @@
+{
+  "mode": "dry_run_count_only",
+  "note": "본 산출물은 세어보기 전용이다. DB 쓰기 0 · Storage 쓰기 0 · Polly 호출 0. 파싱 규칙은 lib/book/asb-parser.ts 이식본(무변경).",
+  "stopped": null,
+  "krw_rate_assumed": 1400.0,
+  "polly_char_limit": 3000,
+  "by_platform": {
+    "african_storybook": {
+      "books_total": 527,
+      "fetch_ok": 527,
+      "fetch_fail": 0,
+      "fetch_fail_status": {},
+      "no_text_books": 0,
+      "no_image_books": 0,
+      "axis_mismatch_books": 496,
+      "axis_diff_distribution": {
+        "-7": 1,
+        "-4": 6,
+        "-3": 2,
+        "-2": 24,
+        "-1": 433,
+        "0": 31,
+        "1": 11,
+        "2": 4,
+        "3": 7,
+        "4": 3,
+        "6": 1,
+        "7": 1,
+        "9": 1,
+        "13": 1,
+        "32": 1
+      },
+      "p_not_contiguous_books": 0,
+      "empty_pages_books": 2,
+      "empty_pages_total": 2,
+      "over_polly_limit_books": 0,
+      "mojibake_books": 0,
+      "pages_text_total": 5330,
+      "pages_image_total": 5729,
+      "chars_raw_total": 662229,
+      "chars_billable_total": 661840,
+      "max_page_chars_overall": 680,
+      "cost_estimate": {
+        "long-form": {
+          "usd_per_million": 100.0,
+          "usd_x1": 66.184,
+          "krw_x1": 92658,
+          "usd_x2": 132.368,
+          "krw_x2": 185315
+        },
+        "neural": {
+          "usd_per_million": 16.0,
+          "usd_x1": 10.5894,
+          "krw_x1": 14825,
+          "usd_x2": 21.1789,
+          "krw_x2": 29650
+        }
+      }
+    },
+    "bloom": {
+      "books_total": 142,
+      "fetch_ok": 142,
+      "fetch_fail": 0,
+      "fetch_fail_status": {},
+      "no_text_books": 0,
+      "no_image_books": 0,
+      "axis_mismatch_books": 0,
+      "axis_diff_distribution": {
+        "0": 142
+      },
+      "p_not_contiguous_books": 0,
+      "empty_pages_books": 19,
+      "empty_pages_total": 95,
+      "over_polly_limit_books": 0,
+      "mojibake_books": 0,
+      "pages_text_total": 1569,
+      "pages_image_total": 1569,
+      "chars_raw_total": 82396,
+      "chars_billable_total": 82568,
+      "max_page_chars_overall": 418,
+      "cost_estimate": {
+        "long-form": {
+          "usd_per_million": 100.0,
+          "usd_x1": 8.2568,
+          "krw_x1": 11560,
+          "usd_x2": 16.5136,
+          "krw_x2": 23119
+        },
+        "neural": {
+          "usd_per_million": 16.0,
+          "usd_x1": 1.3211,
+          "krw_x1": 1850,
+          "usd_x2": 2.6422,
+          "krw_x2": 3699
+        }
+      }
+    }
+  },
+  "total": {
+    "books_total": 669,
+    "fetch_ok": 669,
+    "fetch_fail": 0,
+    "fetch_fail_status": {},
+    "no_text_books": 0,
+    "no_image_books": 0,
+    "axis_mismatch_books": 496,
+    "axis_diff_distribution": {
+      "-7": 1,
+      "-4": 6,
+      "-3": 2,
+      "-2": 24,
+      "-1": 433,
+      "0": 173,
+      "1": 11,
+      "2": 4,
+      "3": 7,
+      "4": 3,
+      "6": 1,
+      "7": 1,
+      "9": 1,
+      "13": 1,
+      "32": 1
+    },
+    "p_not_contiguous_books": 0,
+    "empty_pages_books": 21,
+    "empty_pages_total": 97,
+    "over_polly_limit_books": 0,
+    "mojibake_books": 0,
+    "pages_text_total": 6899,
+    "pages_image_total": 7298,
+    "chars_raw_total": 744625,
+    "chars_billable_total": 744408,
+    "max_page_chars_overall": 680,
+    "cost_estimate": {
+      "long-form": {
+        "usd_per_million": 100.0,
+        "usd_x1": 74.4408,
+        "krw_x1": 104217,
+        "usd_x2": 148.8816,
+        "krw_x2": 208434
+      },
+      "neural": {
+        "usd_per_million": 16.0,
+        "usd_x1": 11.9105,
+        "krw_x1": 16675,
+        "usd_x2": 23.8211,
+        "krw_x2": 33349
+      }
+    }
+  },
+  "anomaly_flag_counts": {
+    "AXIS_MISMATCH": 496,
+    "EMPTY_PAGES": 21
+  },
+  "outputs": {
+    "per_book_csv": "scratchpad/text_harvest/asb_bloom_dryrun.csv",
+    "anomalies_csv": "scratchpad/text_harvest/asb_bloom_anomalies.csv",
+    "report_json": "scratchpad/text_harvest/asb_bloom_dryrun_report.json"
+  }
+}
