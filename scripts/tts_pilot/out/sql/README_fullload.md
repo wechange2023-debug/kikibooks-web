@@ -97,7 +97,7 @@ WHERE bt.source IN ('manifest_txt_v1', 'html_scene_json_v1') AND bt.text = ''
 GROUP BY b.source_platform;
 
 -- ④ 라벨 분포 — 기대 3종:
---    pdf_harvest_v2_orderfix (기존 Book Dash asb_native 151권, 무접촉)
+--    pdf_harvest_v2_orderfix (기존 Book Dash asb_native 152권 2,128행, 무접촉)
 --    manifest_txt_v1 6899행 / html_scene_json_v1 469행
 SELECT source, count(*) AS rows, count(DISTINCT book_id) AS books
 FROM book_text GROUP BY source ORDER BY rows DESC;
@@ -111,7 +111,7 @@ GROUP BY b.source_platform, b.source_id
 HAVING min(bt.page_index) <> 0 OR max(bt.page_index) <> count(*) - 1;
 
 -- ⑥ 범위 밖 무접촉 — 기대 0행.
---    기존 Book Dash asb_native 151권(pdf_harvest_v2_orderfix)에 새 라벨이 섞이지 않았는지.
+--    기존 Book Dash asb_native 152권(pdf_harvest_v2_orderfix)에 새 라벨이 섞이지 않았는지.
 SELECT count(*) AS contaminated
 FROM book_text bt JOIN books b ON b.id = bt.book_id
 WHERE b.source_platform = 'book_dash'
@@ -149,7 +149,7 @@ ADR-0056 D9-b는 **적재 후 육안 검증 1권**을 요구한다. `/admin/revi
 | `(d)` 행 출력 | 조인 실패 `source_id` | **중단·보고.** 해당 권 제외 후 재생성 |
 | `(f)`/⑤ 행 출력 | `page_index` 축 깨짐 | **중단·보고.** 하이라이트 오프셋 문제로 직결 |
 | `(g)` 빈 면 수 불일치 | 정제 규칙 불일치 | **중단·보고.** `sanitize()` 공유가 깨진 것 |
-| ⑥ ≠ 0 | 라벨 오염 | **중단·보고.** 기존 151권 트랙 침범 |
+| ⑥ ≠ 0 | 라벨 오염 | **중단·보고.** 기존 152권 트랙 침범 |
 | ⑦ ≠ 0 | 비활성·블랙리스트 권 적재 | **중단·보고.** 명단 오염 |
 | 중간에 되돌리고 싶을 때 | — | 코호트 단위: `DELETE FROM book_text WHERE source='html_scene_json_v1'`(39권분) / `'manifest_txt_v1'`(669권분, **기적재 10권 포함**) — ADR-0056 D5·D12 되돌리기 |
 

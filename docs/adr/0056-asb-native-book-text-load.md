@@ -95,7 +95,7 @@ TTS 낭독 + 본문 하이라이트 요구가 추가되면서, **서버 측에 �
 - 오디오 리더(`lib/book/audio-manifest.ts:12`)는 이미 `텍스트 = book_text.text (0-based
   page_index)`를 전제로 조립된다. `book_text`가 없으면 ASb·Bloom은 이 경로를 탈 수 없다.
 
-현 상태는 비대칭이다. Book Dash asb_native 151권은 `book_text`가 있으나 매니페스트에는
+현 상태는 비대칭이다. Book Dash asb_native 152권은 `book_text`가 있으나 매니페스트에는
 텍스트가 없고(`sync_book_dash_v2.py:355-366` — `page_text:` 비움), ASb·Bloom은 매니페스트에
 텍스트가 있으나 `book_text`가 0행이다.
 
@@ -481,7 +481,7 @@ for (let i = 0; i < pageCount; i++) {
   표지를 `slides[0]`에 앞세우고, `components/book/asb-reader.tsx:76-85`의 `toFaces()`가
   동일하게 `faces[0]`에 `coverUrl`을 넣는다. `book_text.page_index=0`은 표지가 있을 때
   화면 2번째 면에 대응한다.
-- 이는 **Book Dash asb_native 151권과 동일한 축**이며, 새로 생기는 어긋남이 아니다.
+- 이는 **Book Dash asb_native 152권과 동일한 축**이며, 새로 생기는 어긋남이 아니다.
 
 ### D4. 텍스트 원천은 `books.content_url`의 매니페스트 `.txt`이며, 파싱은 `asb-parser.ts`와 1:1 일치시킨다
 
@@ -502,7 +502,7 @@ for (let i = 0; i < pageCount; i++) {
 
 ### D5. `source` 라벨 = `'manifest_txt_v1'`
 
-- 기존 Book Dash 151권의 `'pdf_harvest_v2_orderfix'`(ADR-0048 D1)와 **구분**한다.
+- 기존 Book Dash 152권의 `'pdf_harvest_v2_orderfix'`(ADR-0048 D1)와 **구분**한다.
   출처 체인이 다르면 라벨이 달라야 한다는 ADR-0048 D1 원칙의 승계다.
 - `book_text.source`는 NOT NULL이며 기본값이 제거돼 있다(마이그레이션 007, ADR-0048 D2).
   INSERT에 `source`를 명시하지 않으면 즉시 실패한다(fail-closed).
@@ -676,13 +676,19 @@ for (let i = 0; i < pageCount; i++) {
 
 ### D12. [Book Dash html] `source` 라벨 = `'html_scene_json_v1'`
 
-- ASb·Bloom의 `'manifest_txt_v1'`(D5) 및 Book Dash 151권의 `'pdf_harvest_v2_orderfix'`
+- ASb·Bloom의 `'manifest_txt_v1'`(D5) 및 Book Dash 152권의 `'pdf_harvest_v2_orderfix'`
   (ADR-0048 D1)와 **구분**한다. 출처 체인이 다르면 라벨이 달라야 한다는 ADR-0048 D1 원칙의 승계다.
 - 라벨 3종이 공존하게 되며, 이는 의도된 상태다.
 
   | 라벨 | 코호트 | 원천 |
   |---|---|---|
-  | `pdf_harvest_v2_orderfix` | Book Dash `asb_native` 151권 | WP PDF → OCR |
+  | `pdf_harvest_v2_orderfix` | Book Dash `asb_native` **152권** | WP PDF → OCR |
+
+> **2026-08-10 정정**: 본 ADR은 이 코호트를 6곳에서 **151권**으로 적었으나 **152권이 정본**이다
+> (근거 미기재 상태의 오기였다). 정정 근거 — ADR-0047 확정치(제목·D1 "적재 대상 = 152권") ·
+> `scripts/pdf_harvest/gen_book_text_sql.py:31-32`(`EXPECT_BOOKS = 152` / `EXPECT_ROWS = 2128`) ·
+> 실행 SQL 4파일 헤더(38권 × 4 = 152권, 532행 × 4 = 2,128행) · ADR-0051 `:14`("2,128행 / 152권
+> 적재 완료") · 검수 화면 "전체 152권" 표기. 6곳 전부 152로 정정했다.
   | `manifest_txt_v1` | ASb·Bloom 669권 | 매니페스트 `.txt` |
   | **`html_scene_json_v1`** | **Book Dash html 34권** | **GH Pages HTML 장면 JSON** |
 
@@ -844,7 +850,7 @@ for (let i = 0; i < pageCount; i++) {
 - `AsbReader` 렌더 경로 변경(`book_text`를 읽도록 바꾸는 것). 본 ADR 범위 밖이다.
 - ASb·Bloom TTS 실제 합성·Storage 업로드·`book_audio` INSERT(별도 작업지시서).
 - GDL 464권의 본문 확보(별도 트랙, ADR-0055 C안 판정 보류 상태).
-- Book Dash asb_native 151권의 `source` 라벨 재정렬.
+- Book Dash asb_native 152권의 `source` 라벨 재정렬.
 - (구 항목) `book_review` 시드 여부는 **D8로 결정**됐다 — 더 이상 Non-goal이 아니다.
 
 ### Non-goals — Book Dash html 코호트 (2026-08-08 개정 신규)
