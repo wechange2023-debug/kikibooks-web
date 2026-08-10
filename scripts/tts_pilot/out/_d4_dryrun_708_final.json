@@ -1,0 +1,249 @@
+{
+  "mode": "dry_run",
+  "generated_for": "ADR-0053 D4 (팀장 승인 2026-08-10) · ADR-0056 Accepted 2026-08-10",
+  "scope": "708권 7,368면 = ASb 527 + Bloom 142 + Book Dash html 39(D9-a 34 + D9-b 5)",
+  "side_effects": {
+    "polly_calls": 0,
+    "db_writes": 0,
+    "db_reads": 0,
+    "storage_writes": 0,
+    "note": "본 산출은 전량 로컬 파일 기반이다. 워커는 DB에 접속하지 않았다(ADR-0053 D6 실행 경계 준수). 표지 title/author는 팀장 export scripts/tts_pilot/cover_targets_708.csv 경유."
+  },
+  "preset": {
+    "voice": "Danielle",
+    "engine": "long-form",
+    "usd_per_million": 100.0,
+    "source": "ADR-0053 Amd#1 (O1·O2 해소)"
+  },
+  "billing_basis": {
+    "rule": "과금 기준 = tts_targets.sanitize() 정제 후 문자수(chars_billable)이며 raw 문자수가 아니다.",
+    "caveat": "정제가 문자수를 줄이기만 하지 않는다. sanitize()의 _PUNCT_GAP_RE가 구두점 뒤에 공백을 삽입하므로 정제 후 문자수가 raw보다 증가할 수 있다(Bloom·D9-a·D9-b에서 실제로 증가).",
+    "x1_x2": "marks 요청 과금 여부 미확인이라 ×1/×2 구간을 병기한다(D4). ×2가 보수적 상한.",
+    "krw": "O3(환율) 미확정. 1,380원(D4 기본)·1,400원(Amd#3 C4 기준) 병기."
+  },
+  "sanitizer_unification": {
+    "status": "이미 통일돼 있었음 — 재산출 불요",
+    "correction": "워커가 2026-08-10 중간보고에서 '669권은 asb-parser 이식본 정제, 39권은 sanitize()'라고 보고했으나 오류였다. dryrun_asb_bloom.py:73이 tts_targets.sanitize를 직접 import하고 :259에서 적용한다. 'asb-parser 이식본'은 파서(parse_asb_text)이지 정제기가 아니다.",
+    "evidence": [
+      "dryrun_asb_bloom.py:71-73 (동일 함수 사용 주석 + import)",
+      "dryrun_asb_bloom.py:259 cleaned = [sanitize(t)[0] for t in texts]",
+      "tts_targets.py 최종 변경 5373799 — 669 리포트 생성 커밋 e2f4c14 이후 변경 0",
+      "tts_targets.py · dryrun_asb_bloom.py 작업본 git clean"
+    ],
+    "conclusion": "전 코호트가 단일 sanitize() 기준이다. 669건 원격 재fetch는 Δ=0이 구조적으로 보장되어 취소됐다."
+  },
+  "by_cohort": [
+    {
+      "cohort": "ASb (asb_native)",
+      "books": 527,
+      "body": {
+        "pages": 5330,
+        "empty_pages": 2,
+        "synth_units": 5328,
+        "chars_raw": 662229,
+        "chars_billable": 661840,
+        "usd_x1": 66.184,
+        "usd_x2": 132.368,
+        "krw_1380_x1": 91334,
+        "krw_1380_x2": 182668,
+        "krw_1400_x1": 92658,
+        "krw_1400_x2": 185315
+      },
+      "cover": {
+        "synth_units": 527,
+        "chars_billable": 26021,
+        "avg_chars": 49.4,
+        "author_missing": 0,
+        "usd_x1": 2.6021,
+        "usd_x2": 5.2042,
+        "krw_1380_x1": 3591,
+        "krw_1380_x2": 7182,
+        "krw_1400_x1": 3643,
+        "krw_1400_x2": 7286
+      },
+      "combined": {
+        "synth_units": 5855,
+        "chars_billable": 687861,
+        "usd_x1": 68.7861,
+        "usd_x2": 137.5722,
+        "krw_1380_x1": 94925,
+        "krw_1380_x2": 189850,
+        "krw_1400_x1": 96301,
+        "krw_1400_x2": 192601
+      }
+    },
+    {
+      "cohort": "Bloom (asb_native)",
+      "books": 142,
+      "body": {
+        "pages": 1569,
+        "empty_pages": 95,
+        "synth_units": 1474,
+        "chars_raw": 82396,
+        "chars_billable": 82568,
+        "usd_x1": 8.2568,
+        "usd_x2": 16.5136,
+        "krw_1380_x1": 11394,
+        "krw_1380_x2": 22789,
+        "krw_1400_x1": 11560,
+        "krw_1400_x2": 23119
+      },
+      "cover": {
+        "synth_units": 142,
+        "chars_billable": 6765,
+        "avg_chars": 47.6,
+        "author_missing": 0,
+        "usd_x1": 0.6765,
+        "usd_x2": 1.353,
+        "krw_1380_x1": 934,
+        "krw_1380_x2": 1867,
+        "krw_1400_x1": 947,
+        "krw_1400_x2": 1894
+      },
+      "combined": {
+        "synth_units": 1616,
+        "chars_billable": 89333,
+        "usd_x1": 8.9333,
+        "usd_x2": 17.8666,
+        "krw_1380_x1": 12328,
+        "krw_1380_x2": 24656,
+        "krw_1400_x1": 12507,
+        "krw_1400_x2": 25013
+      }
+    },
+    {
+      "cohort": "BD html D9-a",
+      "books": 34,
+      "body": {
+        "pages": 409,
+        "empty_pages": 0,
+        "synth_units": 409,
+        "chars_raw": 63923,
+        "chars_billable": 64074,
+        "usd_x1": 6.4074,
+        "usd_x2": 12.8148,
+        "krw_1380_x1": 8842,
+        "krw_1380_x2": 17684,
+        "krw_1400_x1": 8970,
+        "krw_1400_x2": 17941
+      },
+      "cover": {
+        "synth_units": 34,
+        "chars_billable": 2647,
+        "avg_chars": 77.9,
+        "author_missing": 0,
+        "usd_x1": 0.2647,
+        "usd_x2": 0.5294,
+        "krw_1380_x1": 365,
+        "krw_1380_x2": 731,
+        "krw_1400_x1": 371,
+        "krw_1400_x2": 741
+      },
+      "combined": {
+        "synth_units": 443,
+        "chars_billable": 66721,
+        "usd_x1": 6.6721,
+        "usd_x2": 13.3442,
+        "krw_1380_x1": 9207,
+        "krw_1380_x2": 18415,
+        "krw_1400_x1": 9341,
+        "krw_1400_x2": 18682
+      }
+    },
+    {
+      "cohort": "BD html D9-b",
+      "books": 5,
+      "body": {
+        "pages": 60,
+        "empty_pages": 1,
+        "synth_units": 59,
+        "chars_raw": 9489,
+        "chars_billable": 9520,
+        "usd_x1": 0.952,
+        "usd_x2": 1.904,
+        "krw_1380_x1": 1314,
+        "krw_1380_x2": 2628,
+        "krw_1400_x1": 1333,
+        "krw_1400_x2": 2666
+      },
+      "cover": {
+        "synth_units": 5,
+        "chars_billable": 362,
+        "avg_chars": 72.4,
+        "author_missing": 0,
+        "usd_x1": 0.0362,
+        "usd_x2": 0.0724,
+        "krw_1380_x1": 50,
+        "krw_1380_x2": 100,
+        "krw_1400_x1": 51,
+        "krw_1400_x2": 101
+      },
+      "combined": {
+        "synth_units": 64,
+        "chars_billable": 9882,
+        "usd_x1": 0.9882,
+        "usd_x2": 1.9764,
+        "krw_1380_x1": 1364,
+        "krw_1380_x2": 2727,
+        "krw_1400_x1": 1383,
+        "krw_1400_x2": 2767
+      }
+    }
+  ],
+  "total": {
+    "books": 708,
+    "body_pages": 7368,
+    "body_units": 7270,
+    "body_chars": 818002,
+    "cover_units": 708,
+    "cover_chars": 35795,
+    "total_units": 7978,
+    "total_chars": 853797,
+    "body": {
+      "usd_x1": 81.8002,
+      "usd_x2": 163.6004,
+      "krw_1380_x1": 112884,
+      "krw_1380_x2": 225769,
+      "krw_1400_x1": 114520,
+      "krw_1400_x2": 229041
+    },
+    "cover": {
+      "usd_x1": 3.5795,
+      "usd_x2": 7.159,
+      "krw_1380_x1": 4940,
+      "krw_1380_x2": 9879,
+      "krw_1400_x1": 5011,
+      "krw_1400_x2": 10023
+    },
+    "combined": {
+      "usd_x1": 85.3797,
+      "usd_x2": 170.7594,
+      "krw_1380_x1": 117824,
+      "krw_1380_x2": 235648,
+      "krw_1400_x1": 119532,
+      "krw_1400_x2": 239063
+    }
+  },
+  "reconciliation_14_68": {
+    "reference": "ADR-0053 Amd#3 C4 참고치 — 39권 raw 73,412자 / long-form ×2 $14.68 (표지 미포함)",
+    "measured_raw": 73412,
+    "raw_delta": 0,
+    "measured_billable": 73594,
+    "measured_usd_x2_body_only": 14.7188,
+    "delta_usd": 0.0388,
+    "verdict": "정합 — raw 차이 0자로 완전 일치. 정제 후 ×2는 $14.72로 참고치 대비 +$0.04이며, C4가 예고한 사유 ①(정제 후 문자수 변동)의 실현분이다.",
+    "note": "C4 사유 ②(표지 미포함)는 본 리포트에서 해소됐다 — 39권 표지 3,009자가 별도 계상됐다."
+  },
+  "gates": {
+    "polly_3000_char_limit_exceeded": 0,
+    "empty_pages_excluded_from_synthesis": 98,
+    "cover_units": 708,
+    "author_missing_books": 0
+  },
+  "sources": {
+    "body_asb_bloom": "scratchpad/text_harvest/asb_bloom_dryrun_report.json (커밋 e2f4c14, chars_billable_total)",
+    "body_bd_html39": "scripts/tts_pilot/out/{slug}.json 39건 로컬 실측 (39/39 git clean 검증필) + tts_targets.sanitize()",
+    "cover_all708": "scripts/tts_pilot/cover_targets_708.csv (팀장 export, 859행) → 확정 명단과 (source_platform, source_id) 조인 708/708",
+    "roster_of_record": "ADR-0056 O4 표(34권) · §Context 5-f 표(5권) · asb_bloom_targets.csv(669권)"
+  }
+}
