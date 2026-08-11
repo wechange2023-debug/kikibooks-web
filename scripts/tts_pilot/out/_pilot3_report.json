@@ -1,0 +1,515 @@
+{
+ "adr": "ADR-0053 D4 소량 게이트 파일럿(3권)",
+ "basis": "scripts/tts_pilot/out/_d4_dryrun_708_final.json 코호트별 유닛 수 중간값",
+ "preset": {
+  "voice": "Danielle",
+  "voice_key": "danielle",
+  "engine": "long-form",
+  "region": "us-east-1",
+  "sample_rate": "24000",
+  "atempo": 0.85,
+  "text_type": "text",
+  "usd_per_million": 100.0
+ },
+ "path_rule": "{platform}-{source_id}/danielle/{unit}.mp3 (버킷명 미포함 오브젝트 키)",
+ "db_writes": 0,
+ "storage_uploads": 0,
+ "conflict_check": [
+  {
+   "book_key": "african_storybook-23015",
+   "existing_rows": 0,
+   "existing_voices": [],
+   "existing_path_sample": null,
+   "pilot_key_prefix": "african_storybook-23015/danielle",
+   "conflict": false
+  },
+  {
+   "book_key": "bloom-06388454-77ed-4950-936c-18c9a9531b53",
+   "existing_rows": 0,
+   "existing_voices": [],
+   "existing_path_sample": null,
+   "pilot_key_prefix": "bloom-06388454-77ed-4950-936c-18c9a9531b53/danielle",
+   "conflict": false
+  },
+  {
+   "book_key": "book_dash-9c9e5f48-fe46-11e5-86aa-5e5517507c66",
+   "existing_rows": 13,
+   "existing_voices": [
+    "Ruth"
+   ],
+   "existing_path_sample": "book_dash-9c9e5f48-fe46-11e5-86aa-5e5517507c66/p00.mp3",
+   "pilot_key_prefix": "book_dash-9c9e5f48-fe46-11e5-86aa-5e5517507c66/danielle",
+   "conflict": false
+  }
+ ],
+ "summary": {
+  "books": 3,
+  "body_units": 32,
+  "cover_units": 3,
+  "total_units": 35,
+  "body_chars": 2885,
+  "cover_chars": 179,
+  "total_chars": 3064,
+  "usd_x1": 0.3064,
+  "usd_x2": 0.6128,
+  "krw_1380_x2": 845.7,
+  "note": "x2 = mp3 + speech-marks 2회 호출 모두 과금(실비용). x1은 참고치."
+ },
+ "books": [
+  {
+   "cohort": "asb",
+   "book_id": "b041a9e8-2fb9-4d4a-b594-be048446192c",
+   "platform": "african_storybook",
+   "source_id": "23015",
+   "title": "Education is the key",
+   "author": "Benefice Tuyisenge",
+   "voice": "Danielle",
+   "voice_key": "danielle",
+   "engine": "long-form",
+   "region": "us-east-1",
+   "sample_rate": "24000",
+   "atempo": 0.85,
+   "rate_pct": null,
+   "key_prefix": "african_storybook-23015/danielle",
+   "page_rows": 10,
+   "audio_units": 11,
+   "empty_pages": [],
+   "reused_units": [
+    "cover",
+    "p01",
+    "p02",
+    "p03",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08",
+    "p09",
+    "p10"
+   ],
+   "failed": [],
+   "units": [
+    {
+     "unit": "cover",
+     "file": "cover.mp3",
+     "marks_file": "cover.marks.json",
+     "words": 8,
+     "chars": 52,
+     "out_ms": 6100,
+     "last_mark_ms": 4912,
+     "mp3_bytes": 45404
+    },
+    {
+     "unit": "p01",
+     "file": "p01.mp3",
+     "marks_file": "p01.marks.json",
+     "words": 8,
+     "chars": 41,
+     "out_ms": 3380,
+     "last_mark_ms": 2161,
+     "mp3_bytes": 25172
+    },
+    {
+     "unit": "p02",
+     "file": "p02.mp3",
+     "marks_file": "p02.marks.json",
+     "words": 11,
+     "chars": 51,
+     "out_ms": 4440,
+     "last_mark_ms": 3471,
+     "mp3_bytes": 34220
+    },
+    {
+     "unit": "p03",
+     "file": "p03.mp3",
+     "marks_file": "p03.marks.json",
+     "words": 19,
+     "chars": 103,
+     "out_ms": 7630,
+     "last_mark_ms": 6382,
+     "mp3_bytes": 61292
+    },
+    {
+     "unit": "p04",
+     "file": "p04.mp3",
+     "marks_file": "p04.marks.json",
+     "words": 6,
+     "chars": 39,
+     "out_ms": 3720,
+     "last_mark_ms": 2529,
+     "mp3_bytes": 28172
+    },
+    {
+     "unit": "p05",
+     "file": "p05.mp3",
+     "marks_file": "p05.marks.json",
+     "words": 36,
+     "chars": 206,
+     "out_ms": 17880,
+     "last_mark_ms": 16449,
+     "mp3_bytes": 132356
+    },
+    {
+     "unit": "p06",
+     "file": "p06.mp3",
+     "marks_file": "p06.marks.json",
+     "words": 15,
+     "chars": 84,
+     "out_ms": 7270,
+     "last_mark_ms": 5559,
+     "mp3_bytes": 56612
+    },
+    {
+     "unit": "p07",
+     "file": "p07.mp3",
+     "marks_file": "p07.marks.json",
+     "words": 31,
+     "chars": 168,
+     "out_ms": 13850,
+     "last_mark_ms": 12629,
+     "mp3_bytes": 107900
+    },
+    {
+     "unit": "p08",
+     "file": "p08.mp3",
+     "marks_file": "p08.marks.json",
+     "words": 8,
+     "chars": 44,
+     "out_ms": 3960,
+     "last_mark_ms": 2912,
+     "mp3_bytes": 32276
+    },
+    {
+     "unit": "p09",
+     "file": "p09.mp3",
+     "marks_file": "p09.marks.json",
+     "words": 45,
+     "chars": 265,
+     "out_ms": 21170,
+     "last_mark_ms": 20279,
+     "mp3_bytes": 168476
+    },
+    {
+     "unit": "p10",
+     "file": "p10.mp3",
+     "marks_file": "p10.marks.json",
+     "words": 31,
+     "chars": 185,
+     "out_ms": 15910,
+     "last_mark_ms": 14571,
+     "mp3_bytes": 121916
+    }
+   ]
+  },
+  {
+   "cohort": "bloom",
+   "book_id": "f4465d8b-37c2-4947-89dd-80af6608057d",
+   "platform": "bloom",
+   "source_id": "06388454-77ed-4950-936c-18c9a9531b53",
+   "title": "What is this I hear?",
+   "author": "Zainab Tambawalla",
+   "voice": "Danielle",
+   "voice_key": "danielle",
+   "engine": "long-form",
+   "region": "us-east-1",
+   "sample_rate": "24000",
+   "atempo": 0.85,
+   "rate_pct": null,
+   "key_prefix": "bloom-06388454-77ed-4950-936c-18c9a9531b53/danielle",
+   "page_rows": 10,
+   "audio_units": 11,
+   "empty_pages": [],
+   "reused_units": [
+    "p01",
+    "p02",
+    "p03",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08",
+    "p09",
+    "p10"
+   ],
+   "failed": [],
+   "units": [
+    {
+     "unit": "cover",
+     "file": "cover.mp3",
+     "marks_file": "cover.marks.json",
+     "words": 9,
+     "chars": 50,
+     "out_ms": 5470,
+     "last_mark_ms": 4044,
+     "mp3_bytes": 39020
+    },
+    {
+     "unit": "p01",
+     "file": "p01.mp3",
+     "marks_file": "p01.marks.json",
+     "words": 5,
+     "chars": 27,
+     "out_ms": 3260,
+     "last_mark_ms": 1853,
+     "mp3_bytes": 23756
+    },
+    {
+     "unit": "p02",
+     "file": "p02.mp3",
+     "marks_file": "p02.marks.json",
+     "words": 14,
+     "chars": 67,
+     "out_ms": 6910,
+     "last_mark_ms": 5771,
+     "mp3_bytes": 51356
+    },
+    {
+     "unit": "p03",
+     "file": "p03.mp3",
+     "marks_file": "p03.marks.json",
+     "words": 5,
+     "chars": 26,
+     "out_ms": 2930,
+     "last_mark_ms": 1412,
+     "mp3_bytes": 20060
+    },
+    {
+     "unit": "p04",
+     "file": "p04.mp3",
+     "marks_file": "p04.marks.json",
+     "words": 7,
+     "chars": 33,
+     "out_ms": 3240,
+     "last_mark_ms": 2014,
+     "mp3_bytes": 25652
+    },
+    {
+     "unit": "p05",
+     "file": "p05.mp3",
+     "marks_file": "p05.marks.json",
+     "words": 8,
+     "chars": 42,
+     "out_ms": 3480,
+     "last_mark_ms": 2338,
+     "mp3_bytes": 24812
+    },
+    {
+     "unit": "p06",
+     "file": "p06.mp3",
+     "marks_file": "p06.marks.json",
+     "words": 8,
+     "chars": 41,
+     "out_ms": 3480,
+     "last_mark_ms": 2294,
+     "mp3_bytes": 25052
+    },
+    {
+     "unit": "p07",
+     "file": "p07.mp3",
+     "marks_file": "p07.marks.json",
+     "words": 8,
+     "chars": 41,
+     "out_ms": 3910,
+     "last_mark_ms": 2647,
+     "mp3_bytes": 28796
+    },
+    {
+     "unit": "p08",
+     "file": "p08.mp3",
+     "marks_file": "p08.marks.json",
+     "words": 14,
+     "chars": 72,
+     "out_ms": 5860,
+     "last_mark_ms": 4647,
+     "mp3_bytes": 41252
+    },
+    {
+     "unit": "p09",
+     "file": "p09.mp3",
+     "marks_file": "p09.marks.json",
+     "words": 11,
+     "chars": 57,
+     "out_ms": 6190,
+     "last_mark_ms": 5265,
+     "mp3_bytes": 43796
+    },
+    {
+     "unit": "p10",
+     "file": "p10.mp3",
+     "marks_file": "p10.marks.json",
+     "words": 13,
+     "chars": 60,
+     "out_ms": 5230,
+     "last_mark_ms": 4206,
+     "mp3_bytes": 39092
+    }
+   ]
+  },
+  {
+   "cohort": "bd_html",
+   "book_id": "e54b29d1-1992-4474-a0b9-7adbc3d13ed5",
+   "platform": "book_dash",
+   "source_id": "9c9e5f48-fe46-11e5-86aa-5e5517507c66",
+   "title": "Why is Nita upside down?",
+   "author": "Emma Hearne, Roxana Bouwer, Sarah Bouwer",
+   "voice": "Danielle",
+   "voice_key": "danielle",
+   "engine": "long-form",
+   "region": "us-east-1",
+   "sample_rate": "24000",
+   "atempo": 0.85,
+   "rate_pct": null,
+   "key_prefix": "book_dash-9c9e5f48-fe46-11e5-86aa-5e5517507c66/danielle",
+   "page_rows": 12,
+   "audio_units": 13,
+   "empty_pages": [],
+   "reused_units": [
+    "p01",
+    "p02",
+    "p03",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08",
+    "p09",
+    "p10",
+    "p11",
+    "p12"
+   ],
+   "failed": [],
+   "units": [
+    {
+     "unit": "cover",
+     "file": "cover.mp3",
+     "marks_file": "cover.marks.json",
+     "words": 13,
+     "chars": 77,
+     "out_ms": 7990,
+     "last_mark_ms": 6896,
+     "mp3_bytes": 58220
+    },
+    {
+     "unit": "p01",
+     "file": "p01.mp3",
+     "marks_file": "p01.marks.json",
+     "words": 23,
+     "chars": 130,
+     "out_ms": 11330,
+     "last_mark_ms": 10320,
+     "mp3_bytes": 85436
+    },
+    {
+     "unit": "p02",
+     "file": "p02.mp3",
+     "marks_file": "p02.marks.json",
+     "words": 24,
+     "chars": 133,
+     "out_ms": 13610,
+     "last_mark_ms": 12396,
+     "mp3_bytes": 94340
+    },
+    {
+     "unit": "p03",
+     "file": "p03.mp3",
+     "marks_file": "p03.marks.json",
+     "words": 30,
+     "chars": 151,
+     "out_ms": 15860,
+     "last_mark_ms": 14965,
+     "mp3_bytes": 114284
+    },
+    {
+     "unit": "p04",
+     "file": "p04.mp3",
+     "marks_file": "p04.marks.json",
+     "words": 39,
+     "chars": 199,
+     "out_ms": 17500,
+     "last_mark_ms": 16308,
+     "mp3_bytes": 131228
+    },
+    {
+     "unit": "p05",
+     "file": "p05.mp3",
+     "marks_file": "p05.marks.json",
+     "words": 13,
+     "chars": 77,
+     "out_ms": 7130,
+     "last_mark_ms": 5588,
+     "mp3_bytes": 53612
+    },
+    {
+     "unit": "p06",
+     "file": "p06.mp3",
+     "marks_file": "p06.marks.json",
+     "words": 12,
+     "chars": 64,
+     "out_ms": 6770,
+     "last_mark_ms": 5976,
+     "mp3_bytes": 47588
+    },
+    {
+     "unit": "p07",
+     "file": "p07.mp3",
+     "marks_file": "p07.marks.json",
+     "words": 3,
+     "chars": 18,
+     "out_ms": 2570,
+     "last_mark_ms": 1176,
+     "mp3_bytes": 17348
+    },
+    {
+     "unit": "p08",
+     "file": "p08.mp3",
+     "marks_file": "p08.marks.json",
+     "words": 11,
+     "chars": 61,
+     "out_ms": 6460,
+     "last_mark_ms": 4824,
+     "mp3_bytes": 48356
+    },
+    {
+     "unit": "p09",
+     "file": "p09.mp3",
+     "marks_file": "p09.marks.json",
+     "words": 5,
+     "chars": 27,
+     "out_ms": 3000,
+     "last_mark_ms": 2029,
+     "mp3_bytes": 21740
+    },
+    {
+     "unit": "p10",
+     "file": "p10.mp3",
+     "marks_file": "p10.marks.json",
+     "words": 5,
+     "chars": 33,
+     "out_ms": 3550,
+     "last_mark_ms": 2000,
+     "mp3_bytes": 26444
+    },
+    {
+     "unit": "p11",
+     "file": "p11.mp3",
+     "marks_file": "p11.marks.json",
+     "words": 45,
+     "chars": 215,
+     "out_ms": 23400,
+     "last_mark_ms": 22124,
+     "mp3_bytes": 160220
+    },
+    {
+     "unit": "p12",
+     "file": "p12.mp3",
+     "marks_file": "p12.marks.json",
+     "words": 23,
+     "chars": 125,
+     "out_ms": 11090,
+     "last_mark_ms": 10067,
+     "mp3_bytes": 79772
+    }
+   ]
+  }
+ ]
+}
