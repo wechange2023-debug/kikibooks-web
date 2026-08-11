@@ -146,12 +146,18 @@ def sanitize(text: str | None) -> tuple[str, dict]:
 
 
 def cover_text(title: str | None, author: str | None) -> str:
-    """표지 낭독 문구(ADR-0034 Amendment #1 형식). author 없으면 제목만."""
+    """표지 낭독 문구(ADR-0034 Amendment #1 형식). author 없으면 제목만.
+
+    제목이 이미 종결 부호(? ! .)로 끝나면 마침표를 덧붙이지 않는다.
+    (예: 'What is this I hear?' → 'What is this I hear?. Created by …' 이중 구두점 방지.
+     ADR-0053 D4 파일럿 청취 지적 · 팀장 보정 지시 2026-08-11)
+    """
     t = sanitize(title)[0]
     a = sanitize(author)[0]
     if not t:
         return ""
-    return f"{t}. Created by {a}." if a else f"{t}."
+    stop = t if t[-1] in "?!." else f"{t}."
+    return f"{stop} Created by {a}." if a else stop
 
 
 # ─────────────────────────────────────────────────────────────────────────────

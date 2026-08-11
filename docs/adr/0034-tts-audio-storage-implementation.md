@@ -178,6 +178,8 @@ ID) + 플랫폼 접두사**다. book-audio도 이 정본을 계승하되, 다중
 - 배치 트랙에서 책마다 **표지 낭독**(`"{title}. Created by {author}."`) 산출물(`cover.mp3` +
   `cover.marks.json`)이 추가됐다. 원 스키마(결정 ①)는 `page_index`(0-based, `CHECK >= 0`)만 있어
   **표지 슬롯이 없다**.
+  > ⚠ 본 문구 서식에는 예외가 있다 — 제목이 종결 부호로 끝나는 경우 마침표를 덧붙이지 않는다.
+  > **Amendment #3**(본 문서 하단)이 그 근거이며, 신규 배치는 #3의 서식을 따른다.
 - v1 html 배치 **44권 표지**는 이미 `book-audio` 버킷 `{book_key}/cover.mp3`(+`.marks.json`)로
   **업로드 완료**. 이를 DB에 수용하는 방식을 확정한다(팀장 결정: 안 A — `book_audio`에 표지 구분 칸).
 
@@ -258,3 +260,69 @@ ALTER TABLE public.book_audio
 - 두 축이 공존하므로, 경로를 생성·해석하는 코드는 **배치(성우 층위 유무)로 구분**한다.
   성우 폴더가 있으면 1-based, 없으면 0-based(구 44권)로 읽는다.
 - 리스크: 규약 이원화. 구 44권을 신 규약으로 재정렬할지는 **시연 후 백로그**로 이연한다.
+
+---
+
+## Amendment #3 (2026-08-11, Accepted) — 표지 낭독 문구의 종결 부호 예외 (Amd#1 서식 개정)
+
+### 맥락
+
+Amendment #1이 정한 표지 문구 서식은 `"{title}. Created by {author}."` 이며, 구현체는
+`scripts/tts_pilot/tts_targets.py`의 `cover_text()`다. 이 서식은 제목 뒤에 마침표를 **무조건**
+붙이므로, 제목 자체가 종결 부호로 끝나면 부호가 이중으로 쌓인다.
+
+ADR-0053 D4 소량 게이트 파일럿(3권)의 팀장 청취에서 실제로 지적됐다.
+
+```
+What is this I hear?. Created by Zainab Tambawalla.
+Why is Nita upside down?. Created by Emma Hearne, Roxana Bouwer, Sarah Bouwer.
+```
+
+`?.` 는 Polly long-form 엔진에서 불필요한 추가 휴지(pause)를 만들고, 낭독 텍스트가 화면 자막이나
+접근성 도구로 노출될 때 오식으로 읽힌다.
+
+### 결정 — 제목 말미가 `?` `!` `.` 중 하나이면 마침표 추가를 생략한다
+
+```python
+stop = t if t[-1] in "?!." else f"{t}."
+return f"{stop} Created by {a}." if a else stop
+```
+
+- 저자 뒤의 마침표는 **유지**한다(문장 종결). 생략 대상은 **제목 뒤 마침표뿐**이다.
+- `author`가 없으면 제목만 낭독하며, 이때도 동일 규칙이 적용된다.
+- 쉼표·콜론 등 비종결 부호는 대상이 아니다. 종결 부호 3종(`?` `!` `.`)으로 **한정**한다.
+  - 근거: 물음표·느낌표는 그 자체로 문장을 끝내므로 마침표가 중복이다. 마침표로 끝나는 제목은
+    이중 마침표(`..`)가 되어 명백한 오식이다. 그 외 부호는 문장을 끝내지 않으므로 마침표가 필요하다.
+
+### 경계 케이스 검증 (2026-08-11 실측)
+
+| 입력 제목 | author | 출력 | 판정 |
+|---|---|---|---|
+| `Education is the key` | 있음 | `Education is the key. Created by Benefice Tuyisenge.` | 불변 |
+| `What is this I hear?` | 있음 | `What is this I hear? Created by Zainab Tambawalla.` | 보정 |
+| `Why is Nita upside down?` | 있음 | `Why is Nita upside down? Created by Emma Hearne, Roxana Bouwer, Sarah Bouwer.` | 보정 |
+| `Wow!` | 있음 | `Wow! Created by A B.` | 보정 |
+| `Ends with period.` | 있음 | `Ends with period. Created by A B.` | 보정(`..` 방지) |
+| `No author title?` | 없음 | `No author title?` | 보정 |
+| `Plain title` | 없음 | `Plain title.` | 불변 |
+
+### 영향 범위 — 708권 전량 실측
+
+`cover_targets_708.csv`(859행)를 확정 명단과 `(source_platform, source_id)`로 조인한 708권 기준:
+
+- **영향 권수 72권** — 말미 `?` 35권 · `!` 26권 · `.` 11권
+- **표지 과금 문자 35,795 → 35,723자 (−72자)**
+- **전량 총 문자 853,797 → 853,725자 (−72자, −0.008%)**
+- 구 함수로 재계산한 35,795자가 ADR-0053 D4 드라이런 리포트의 `cover_chars`와 **정확히 일치** →
+  본 수치는 동일 모집단 기준이다.
+
+비용 영향은 $0.0144(x2 기준, 약 20원) 감소로 무시할 수준이다. 본 개정의 목적은 비용이 아니라
+**낭독 품질**이다.
+
+### 기존 자산 처리 — 재합성 없음
+
+- 기존 danielle 116권(1,464유닛)·구 Ruth 44권의 표지 트랙은 **재합성·교체하지 않는다**(이력 보존,
+  Amendment #2의 기존 자산 처리 원칙 계승).
+- ADR-0053 D4 파일럿 3권 중 해당 2권(`bloom` 1권 · `bd_html` 1권)의 **표지 유닛만** 교체 합성했다
+  (본문 32유닛 무접촉, 추가 과금 127자 = $0.0254).
+- 본 개정은 **이후 신규 배치에 적용**한다. 708권 전량 합성이 첫 적용 대상이다.
