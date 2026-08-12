@@ -14,6 +14,10 @@ O3은 여전히 미확정.
 무결성 전수 검증 통과(D4-a). 실지출 **$166.18**(크레딧 $115.01 + 실지출 $51.17).
 8/12 중단은 AWS 프리 플랜 종료에 따른 계정 정지가 원인이며 유료 전환으로 해소, 과금 영향 없음(D4-b).
 다음 단계는 **Storage 업로드 → `book_audio` 적재**이며 둘 다 팀장 실행 영역이다(D4-c).
+**2026-08-12 Storage 업로드 폐합** — 15,956키(mp3 7,978 + marks 7,978), 실패 0.
+**Amendment #4(2026-08-12)** — 적재 실행 수단으로 일회성 staging 테이블
+`book_audio_staging_708`을 경유한다(생성 `00` → 삭제 `07`). SQL Editor 크기 제한 대응이며
+합성 사양·범위는 무접촉. 도메인 DDL 변경 0건(Hard Rule 1·2·8 무저촉 근거는 E4).
 
 ## Deciders
 
@@ -523,3 +527,117 @@ ADR-0034 `:256` · 본 ADR Non-goals `:145` · **ADR-0056 D13**을 따른다.
   따르며, **구 Ruth 오브젝트(`p00~` 축)는 이동·개명하지 않는다.** 백로그를 열지 않는다.
   D9-b 5권은 구 오브젝트가 없어 **처음부터 신 규약**으로만 생성된다.
 - **본 Amendment는 39권의 합성 실행을 승인하지 않는다**(C2).
+
+---
+
+## Amendment #4 (2026-08-12, 팀장 지시) — 적재 실행 수단: 일회성 staging 테이블 도입
+
+### E0. 본 Amendment의 성격 — 합성 사양을 재개하지 않는다
+
+**Amendment #1~#3은 닫힌 상태 그대로 유효하다.** A·B·C 어느 항목도 재개·수정하지 않는다.
+본 Amendment가 다루는 것은 **이미 합성·업로드가 끝난 산출물을 `book_audio`에 적재하는
+"실행 수단"** 뿐이다. 보이스·엔진·속도·후처리·범위(708권 7,978유닛) 전부 무접촉이다.
+
+기록 사유는 하나다 — **적재 과정에서 DB에 테이블 1개가 임시로 생겼다 사라진다.**
+도메인 스키마 변경은 아니지만 `claude.md` Hard Rule 8(DB 스키마 변경 시 ADR 선행)의
+경계에 닿으므로, 사실관계와 무접촉 근거를 남긴다.
+
+### E1. 배경 — v1 단일 파일이 SQL Editor에서 실행 불가
+
+적재 SQL v1은 플랫폼별 단일 파일이었고, `load708_step1_asb.sql`이 **1,139,390바이트**였다.
+Supabase SQL Editor가 `Query is too large to be run via the SQL Editor`로 **실행을 거부**했다.
+step1조차 실행이 불가능해 파일 구조 자체를 바꿔야 했다.
+
+팀장은 **SQL Editor만 사용**한다(psql 직접 연결 도입 금지). 따라서 해법은
+"실행 단위를 Editor 제한 안쪽으로 쪼개되 원자성·무접촉 원칙은 유지"로 한정됐다.
+
+### E2. 결정 — 일회성 staging 테이블 1개를 경유한다
+
+`public.book_audio_staging_708` 을 만들고, 적재가 끝나면 지운다.
+
+| 컬럼 | 타입 | 용도 |
+|---|---|---|
+| `chunk_no` | int | 어느 청크 파일에서 왔는지(누락 청크 추적) |
+| `source_platform`, `source_id` | text | `books` 조인 키 |
+| `manifest_book_id` | uuid | 매니페스트가 기록한 `book_id` — **대조용**(삽입값 아님) |
+| `kind`, `page_index` | text, int | ADR-0034 Amd#1 / ADR-0052 D5 규약 그대로 |
+| `audio_path`, `marks_path` | text | 버킷명 미포함 오브젝트 키(ADR-0034) |
+| `duration_ms` | int | 감속 후 mp3 실측 |
+
+- 제약: `CONSTRAINT book_audio_staging_708_audio_path_key UNIQUE (audio_path)`
+- 인덱스: `book_audio_staging_708_src_idx (source_platform, source_id)`
+- **RLS 켜고 정책 0개** → anon·authenticated 전면 차단. SQL Editor(소유자)·service_role만 통과.
+  `books`·`book_audio` 선례(ADR-0034 Phase A-1 [3])와 동일한 방식이다.
+
+**TEMP 테이블을 쓰지 않는 이유**: SQL Editor는 실행 사이에 세션이 유지된다는 보장이 없어
+TEMP 테이블이 청크 사이에 사라질 수 있다. 그래서 영구 테이블로 만들고 명시적으로 지운다.
+
+### E3. 수명주기 — 생성부터 삭제까지 파일로 고정
+
+| 파일 | 역할 |
+|---|---|
+| `docs/sql/load708/00_staging_create.sql` | staging **생성** (`CREATE TABLE IF NOT EXISTS`, 멱등) |
+| `docs/sql/load708/01_chunk_01~12.sql` | staging에만 INSERT. 청크 12개, **최대 156,228바이트** |
+| `docs/sql/load708/02_staging_verify.sql` | 전량 게이트(읽기 전용) → `verdict` PASS/FAIL |
+| `docs/sql/load708/03~05_merge_step1~3.sql` | `book_audio` 머지. BEGIN → INSERT SELECT → 검증 → ROLLBACK |
+| `docs/sql/load708/06_final_verify.sql` | 최종 검증(읽기 전용) → `verdict` PASS/FAIL |
+| `docs/sql/load708/07_staging_drop.sql` | staging **삭제** (`DROP TABLE IF EXISTS`) |
+
+- **07은 절차의 마지막이며 생략 대상이 아니다.** staging은 적재 작업이 끝나면 DB에 남지 않는다.
+- v1 파일 4종은 삭제하지 않고 `docs/sql/deprecated/`로 이동했다(이력 보존).
+- 생성기는 `scripts/tts_pilot/gen_book_audio_sql_708.py` 하나이며 v2만 산출한다.
+
+### E4. 도메인 DDL 무접촉 근거 — Hard Rule 저촉 없음
+
+| Hard Rule | 저촉 여부 | 근거 |
+|---|---|---|
+| 1. `books.attribution_text` NOT NULL | **무접촉** | `books` DDL을 건드리지 않는다. 본 적재는 `books`를 **읽기만** 한다(조인) |
+| 2. `enforce_commercial_license` 트리거 | **무접촉** | 비활성화·삭제·우회 없음. `books` INSERT/UPDATE 자체가 없다 |
+| 8. DB 스키마 변경 시 ADR 선행 | **본 Amendment로 충족** | 아래 성격 판단 참조 |
+
+**성격 판단**: `book_audio_staging_708`은 도메인 모델이 아니라 **적재 작업용 일회성 그릇**이다.
+
+- `books`·`book_audio`·`book_text`·`book_review` 어느 테이블의 **컬럼·제약·트리거·인덱스도
+  변경하지 않는다.** 기존 객체에 대한 `ALTER`는 0건이다.
+- 앱 코드가 이 테이블을 참조하지 않는다(생성~삭제가 팀장 SQL 실행 구간 안에서 끝난다).
+- 마이그레이션(`supabase/migrations/`)에 넣지 않는 이유도 같다 — **영속 스키마가 아니다.**
+
+그럼에도 "public 스키마에 테이블이 생긴다"는 사실은 남으므로, 팀장 지시에 따라 본 Amendment로
+기록한다. **사후 승인이 아니라 사실 기록이다** — 도입은 팀장이 구조를 지정해 지시했다.
+
+### E5. 기존 행 보호 — v1에서 강화된 지점
+
+- 머지 `INSERT`에 **`ON CONFLICT` 절이 없다.** 충돌 시 에러로 죽는다(덮어쓰기 구조적 불가).
+  v1 이전 116권 배치는 `ON CONFLICT DO UPDATE`였으나, 본 적재는 "기존 행 무접촉"을
+  SQL 레벨에서 보장하는 쪽을 택했다.
+- `book_id`를 VALUES에 박지 않는다. `(source_platform, source_id)`로 `books`를 조인해 얻고,
+  매니페스트 `book_id`와 불일치하면 `RAISE EXCEPTION`(fail-closed). 머지 파일당 가드 6개.
+- 모든 검사·삽입이 `source_platform`으로 한정된다 → 앞 step을 COMMIT한 뒤 다음 step을
+  실행해도 앞 step 행이 충돌로 잡히지 않는다.
+- 청크는 `ON CONFLICT (audio_path) DO NOTHING` → 멱등. 재실행해도 중복이 쌓이지 않으므로
+  `TRUNCATE` 없이 실패 지점부터 이어서 실행할 수 있다.
+- 구 44권(`voice='Ruth'`)은 UNIQUE에서 자연 분리 — 무접촉이다.
+
+### E6. 적재 규모 (로컬 실측 재검산)
+
+| 코호트 | 권 | 행 | page | cover |
+|---|---:|---:|---:|---:|
+| african_storybook | 527 | 5,855 | 5,328 | 527 |
+| bloom | 142 | 1,616 | 1,474 | 142 |
+| book_dash | 39 | 507 | 468 | 39 |
+| **합계 (신규)** | **708** | **7,978** | **7,270** | **708** |
+| 기존 danielle (pilot12+fullbatch116) | 128 | 1,614 | 1,486 | 128 |
+| **최종 danielle** | **836** | **9,592** | **8,756** | **836** |
+
+- 업로드 체크포인트 15,956키 = mp3 7,978 + marks 7,978 — 매니페스트와 **1:1 일치**.
+- 기존 danielle 128권과 `book_id` 교집합 **0건**. `duration_ms` NULL **0행**.
+
+### E7. 본 Amendment가 바꾸지 않는 것
+
+- **Amendment #1 A1~A4 / #2 B1~B4 / #3 C1~C5 전부 유효.** 합성 사양·범위 무접촉.
+- **D1~D6 전부 무접촉.** 적재 대상·정제 게이트·비용 통제·실행 경계 모두 그대로다.
+- **D4-c의 실행 경계 유지** — 워커는 SQL 텍스트만 산출하고 DB에 직접 쓰지 않는다
+  (ADR-0052 D8). 생성기는 DB 접속 0건이다.
+- **`books.has_audio` 갱신과 `book_review.status` 전이는 본 적재 범위 밖이다.** 앱이
+  `has_audio`를 읽지 않고 `book_audio` 행 존재로 판정하므로(`lib/book/audio-manifest.ts`)
+  화면 영향이 없다. `06_final_verify.sql` [7]에 현재 상태 **조회만** 넣었다.

@@ -1136,7 +1136,7 @@ def main() -> int:
     print("=" * 70)
     print(f"[OK] 총 {tot['books']}권 / {tot['rows']}행 (page {tot['page']} + cover {tot['cover']})")
     print(f"     voice={VOICE} · engine={ENGINE} · rate={RATE} · duration NULL 0행")
-    print(f"     최대 파일 크기 {biggest:,}바이트 (v1 step1 = 1,143,081바이트 → 거부됨)")
+    print(f"     최대 파일 크기 {biggest:,}바이트 (v1 step1 = 1,139,390바이트 → Editor 거부됨)")
     print("-" * 70)
     for name, note in written:
         sz = (out_dir / name).stat().st_size
