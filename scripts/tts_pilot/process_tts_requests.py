@@ -112,8 +112,6 @@ UPLOAD_RETRIES = 3
 UPLOAD_WAIT = 2.0
 
 REQUESTED = "tts_requested"
-# 개행 유지로 늘어나는 문자수의 허용 상한(ADR-0053 D4 기준 대비). 초과 시 중단한다.
-CHAR_DELTA_TOLERANCE_PCT = 1.0
 
 _UUID = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", re.I)
 _SAFE_ID = re.compile(r"^[A-Za-z0-9._-]+$")
@@ -130,6 +128,26 @@ def reader_text(raw: str) -> str:
     이것과 같아야 강조가 정위치에 온다.
     """
     return _PUNCT_GAP_RE.sub(r"\1 ", (raw or "").strip())
+
+
+def delta_is_newline_only(polly: str, std: str) -> bool:
+    """D6 정제문과 기존 정제문의 차이가 **개행 보존 때문만**인가.
+
+    판정식: D6 정제문에 개행 접기 단계만 추가로 적용하면 기존 정제문과 정확히 같아야 한다.
+    `sanitize()`는 멱등이라(제어문자·zero-width·연속공백·strip·PUNCT_GAP는 이미 적용됨)
+    `sanitize(polly)`는 사실상 "polly에 `_NL_RE`만 더 먹인 것"과 같다.
+
+    True  → 두 문자열의 길이 차이는 전부 개행 유래다(D6 좌표계 결정의 의도된 증가).
+    False → 개행 외 원인의 편차가 섞였다. 원문 오염·정제 규칙 변경 등이 후보이며,
+            이 경우에만 합성을 막는다(fail-closed 보존).
+
+    비율 게이트를 쓰지 않는 이유(2026-08-13 실측):
+        catch-that-cat 1권 드라이런에서 개행 유래 +11자가 771자 대비 +1.447%로 계산돼
+        오탐 STOP이 났다. 같은 +11자가 4권 배치에서는 +0.348%였다. 분모가 작을수록
+        비율이 커지는 구조라 소형 배치에서 필연적으로 오탐한다. 편차의 **크기**가 아니라
+        **원인**을 재는 것이 옳다.
+    """
+    return sanitize(polly)[0] == std
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -236,13 +254,19 @@ def build_targets(client) -> tuple[list[dict], list[dict]]:
         if idxs != list(range(len(idxs))):
             raise Stop(f"{book_key}: page_index 불연속 (행 {len(idxs)}, 최대 {max(idxs)})")
 
-        pages, empty, drifted = [], [], []
+        pages, empty, drifted, unexplained = [], [], [], []
         chars_std = 0
+        delta_expected = 0
         for r in rows:
             raw = r["text"] or ""
             polly = sanitize(raw, collapse_newlines=False)[0]   # ← D6 좌표계
-            std = sanitize(raw)[0]                              # 기존 규칙(비용 비교 기준)
+            std = sanitize(raw)[0]                              # 기존 규칙(비교 기준)
             chars_std += len(std)
+            # 문자수 편차의 **원인** 판정 — 개행 유래면 기대 편차로 적립, 아니면 게이트 대상.
+            if delta_is_newline_only(polly, std):
+                delta_expected += len(polly) - len(std)
+            else:
+                unexplained.append(r["page_index"])
             if not polly:
                 empty.append(r["page_index"])
                 continue
@@ -265,6 +289,7 @@ def build_targets(client) -> tuple[list[dict], list[dict]]:
             "book_key": book_key, "key_prefix": f"{book_key}/{VOICE}",
             "requested_at": q["requested_at"],
             "page_rows": len(rows), "empty_pages": empty, "drift_pages": drifted,
+            "unexplained_pages": unexplained, "delta_expected": delta_expected,
             "cover_text": ctext, "cover_chars": len(ctext),
             "body_chars": sum(p["chars"] for p in pages),
             "chars_std": chars_std + len(ctext),
@@ -297,7 +322,11 @@ def report(targets: list[dict], excluded: list[dict]) -> dict:
     cover_chars = sum(t["cover_chars"] for t in targets)
     total_chars = body_chars + cover_chars
     std_chars = sum(t["chars_std"] for t in targets)
-    delta_pct = ((total_chars - std_chars) / std_chars * 100) if std_chars else 0.0
+    delta = total_chars - std_chars
+    delta_expected = sum(t["delta_expected"] for t in targets)
+    delta_pct = (delta / std_chars * 100) if std_chars else 0.0
+    unexplained = [(t["book_key"], t["unexplained_pages"]) for t in targets
+                   if t["unexplained_pages"]]
 
     print(f"\n[대상] {len(targets)}권 · 유닛 {total_units} (본문 {body_units} + 표지 {len(targets)})")
     print(f"{'book_key':40} {'면':>3} {'빈면':>4} {'유닛':>4} {'문자':>7}  요청시각")
@@ -307,8 +336,9 @@ def report(targets: list[dict], excluded: list[dict]) -> dict:
               f"{t['requested_at'][:19]}")
 
     print(f"\n[문자수] 총 {total_chars:,}자 (본문 {body_chars:,} + 표지 {cover_chars:,})")
-    print(f"[문자수] 기존 정제 규칙 대비 {delta_pct:+.3f}% "
-          f"(개행 유지분 {total_chars - std_chars:+,}자 · 허용 ±{CHAR_DELTA_TOLERANCE_PCT}%)")
+    print(f"[문자수] 기존 정제 규칙 대비 {delta:+,}자 ({delta_pct:+.3f}% — 참고값, 게이트 아님)")
+    print(f"         └ 개행 보존분(D6 좌표계 의도) {delta_expected:+,}자 · "
+          f"원인 불명 {delta - delta_expected:+,}자")
 
     upm = PRESETS[PRESET_KEY]["usd_per_million"]
     usd1, usd2 = estimate(total_chars, upm, 1), estimate(total_chars, upm, 2)
@@ -328,10 +358,17 @@ def report(targets: list[dict], excluded: list[dict]) -> dict:
     else:
         print("\n[좌표] 전 유닛 정합 ✅ — Polly 입력 == 리더 표시 텍스트")
 
+    # 문자수 게이트 — 편차의 **크기**가 아니라 **원인**을 잰다(2026-08-13 오탐 수정).
+    # 개행 보존분은 D6 좌표계 결정의 의도된 증가이므로 면제하고, 그 외 원인의 편차만 막는다.
+    # 과금 통제는 위 [문자수]·[비용] 절대값 출력 + 유닛별 Polly 상한 검사가 담당한다.
     ok = True
-    if abs(delta_pct) > CHAR_DELTA_TOLERANCE_PCT:
-        print(f"\n[STOP] 문자수 편차 {delta_pct:+.3f}% > 허용 ±{CHAR_DELTA_TOLERANCE_PCT}% "
-              f"— 원인 확인 전 합성 금지(ADR-0053 D4)")
+    if unexplained:
+        print(f"\n[STOP] 개행으로 설명되지 않는 문자수 편차 — "
+              f"{sum(len(p) for _, p in unexplained)}면")
+        for key, pages in unexplained:
+            print(f"   · {key:38} p{[p + 1 for p in pages]}")
+        print("   D6 정제문에 개행 접기만 더해도 기존 정제문과 일치하지 않는 면이다.")
+        print("   원인 후보: 원문 오염(제어문자·엔티티)·정제 규칙 변경. 확인 전 합성 금지(ADR-0053 D4).")
         ok = False
 
     print("\n" + "-" * 74)
@@ -339,9 +376,12 @@ def report(targets: list[dict], excluded: list[dict]) -> dict:
     print("-" * 74)
 
     return {"books": len(targets), "total_units": total_units, "total_chars": total_chars,
-            "std_chars": std_chars, "delta_pct": round(delta_pct, 4),
+            "std_chars": std_chars, "delta": delta, "delta_expected": delta_expected,
+            "delta_pct": round(delta_pct, 4),
             "usd_x1": round(usd1, 4), "usd_x2": round(usd2, 4),
-            "drift_pages": sum(len(p) for _, p in drifted), "cost_gate_ok": ok}
+            "drift_pages": sum(len(p) for _, p in drifted),
+            "unexplained_pages": sum(len(p) for _, p in unexplained),
+            "cost_gate_ok": ok}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -688,7 +728,7 @@ def main() -> int:
             print("\n[STOP] 대상 0권 — 합성할 것이 없다.")
             return 1
         if not summary.get("cost_gate_ok", True):
-            print("\n[STOP] 비용 게이트 미통과 — 합성하지 않는다.")
+            print("\n[STOP] 문자수 게이트 미통과 — 합성하지 않는다.")
             return 1
         if summary.get("drift_pages") and not args.allow_offset_drift:
             print("\n[STOP] 좌표 경고 면이 있다 — book_text 정리 후 재시도하거나")
