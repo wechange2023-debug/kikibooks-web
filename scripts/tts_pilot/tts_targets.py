@@ -119,22 +119,41 @@ def unescape_deep(text: str, max_rounds: int = 4) -> tuple[str, int]:
     return text, rounds
 
 
-def sanitize(text: str | None) -> tuple[str, dict]:
+def sanitize(text: str | None, *, collapse_newlines: bool = True) -> tuple[str, dict]:
     """Polly 입력용 정제. 반환: (정제문, 진단 dict).
 
     진단 키: entity_rounds(엔티티 디코딩 라운드), stripped_ctrl(제거된 제어문자 수),
              changed(원문 대비 변화 여부).
+
+    collapse_newlines (ADR-0058 D6, 2026-08-13 좌표계 결정)
+    ------------------------------------------------------
+        True (기본, **기존 호출부 전원 동작 불변**)
+            `\\s*\\n\\s*` → 공백 1개. ADR-0053 D3 원안 그대로다.
+        False (D6 요청 처리기 전용)
+            개행 접기 단계를 **건너뛴다**. 개행이 Polly 입력에 그대로 들어가고
+            speech marks가 **원문 좌표**로 생성돼, 리더(components/book/highlighted-text.tsx —
+            PUNCT_GAP만 적용하고 개행을 보존)와 오프셋이 정합한다.
+
+            근거: v1·파일럿 128권은 generate_tts.py normalize_text(PUNCT_GAP만)로 만들어져
+            marks가 원문 좌표다. 2026-08-13 실측에서 개행 보유 68면 1,314 mark 전량이
+            리더 구현과 일치했다. 신규 코호트도 같은 좌표계로 맞춘다.
+
+            개행은 Polly에서 공백처럼 취급되므로 **음성·억양에는 영향이 없다**.
+
+        두 모드 모두 `_WS_RE`(연속 공백 접기)·`strip()`·`_PUNCT_GAP_RE`는 동일하게 적용한다.
+        `_WS_RE`는 `[ \\t ]+`라 개행을 건드리지 않는다 — False 모드에서 " \\n"은 그대로 남는다.
     """
     raw = text or ""
     decoded, rounds = unescape_deep(raw)
 
-    # 제어문자 제거(개행·탭은 공백 정규화 단계에서 처리하므로 여기선 보존).
+    # 제어문자 제거(개행·탭은 공백 정규화 단계에서 처리하므로 여긴 보존).
     kept = [ch for ch in decoded
             if ch in ("\n", "\t") or unicodedata.category(ch)[0] != "C"]
     stripped_ctrl = len(decoded) - len(kept)
     cleaned = "".join(kept).translate(_ZERO_WIDTH)
 
-    cleaned = _NL_RE.sub(" ", cleaned)
+    if collapse_newlines:
+        cleaned = _NL_RE.sub(" ", cleaned)
     cleaned = _WS_RE.sub(" ", cleaned).strip()
     cleaned = _PUNCT_GAP_RE.sub(r"\1 ", cleaned)
 
@@ -333,7 +352,56 @@ def _selftest() -> int:
             bad += 1
         print(f"  [{flag}] {raw!r} -> {got!r}" + ("" if got == want else f"  (기대 {want!r})"))
     print(f"[{'PASS' if not bad else 'FAIL'}] 정제 자체점검 {len(cases) - bad}/{len(cases)}")
-    return 0 if not bad else 1
+
+    # ── ADR-0058 D6 좌표계 모드 (collapse_newlines=False) ──────────────────────
+    # 위 8케이스는 기본 모드 박제라 **변경하지 않는다**. 아래는 별도 추가 점검이다.
+    print("\n[D6] collapse_newlines=False (개행 보존 모드 — ADR-0058 D6)")
+    d6_cases = [
+        # 개행이 접히지 않고 그대로 Polly 입력에 전달된다
+        ("line1\nline2", "line1\nline2"),
+        ("Hurry. Hurry! \nHelp me catch that cat!",
+         "Hurry. Hurry! \nHelp me catch that cat!"),
+        # 개행 주변 공백은 건드리지 않는다(_WS_RE는 [ \t ]만 접는다)
+        ("a\n\nb", "a\n\nb"),
+        # 연속 공백 접기·trim·PUNCT_GAP은 기본 모드와 동일하게 작동한다
+        ("  spaced   out  ", "spaced out"),
+        ("Mom.“Say it”", "Mom. “Say it”"),
+        ("Tom &amp; Jerry", "Tom & Jerry"),
+        (None, ""),
+    ]
+    d6_bad = 0
+    for raw, want in d6_cases:
+        got, _ = sanitize(raw, collapse_newlines=False)
+        if got != want:
+            d6_bad += 1
+        print(f"  [{'ok ' if got == want else 'FAIL'}] {raw!r} -> {got!r}"
+              + ("" if got == want else f"  (기대 {want!r})"))
+    print(f"[{'PASS' if not d6_bad else 'FAIL'}] D6 모드 자체점검 "
+          f"{len(d6_cases) - d6_bad}/{len(d6_cases)}")
+
+    # ── 리더 좌표 정합 — D6 정제문 == 리더가 만드는 정규화문 ────────────────────
+    # 리더(components/book/highlighted-text.tsx)는 원문.trim()에 PUNCT_GAP만 적용한다.
+    # marks 오프셋이 그 문자열 기준이어야 강조가 정위치에 온다.
+    print("\n[D6] 리더 좌표 정합 (D6 정제문 == 원문.strip() + PUNCT_GAP)")
+    align_cases = [
+        "Hurry. Hurry! \nHelp me catch that cat!",
+        "“Makhulu, I can’t find my bucket,” says Oluhle. \nMakhulu helps her look.",
+        "One line only.",
+    ]
+    align_bad = 0
+    for raw in align_cases:
+        polly, _ = sanitize(raw, collapse_newlines=False)
+        reader = _PUNCT_GAP_RE.sub(r"\1 ", raw.strip())
+        if polly != reader:
+            align_bad += 1
+        print(f"  [{'ok ' if polly == reader else 'FAIL'}] {raw!r}"
+              + ("" if polly == reader else f"\n        polly={polly!r}\n        reader={reader!r}"))
+    print(f"[{'PASS' if not align_bad else 'FAIL'}] 좌표 정합 "
+          f"{len(align_cases) - align_bad}/{len(align_cases)}")
+
+    total_bad = bad + d6_bad + align_bad
+    print(f"\n[{'PASS' if not total_bad else 'FAIL'}] 전체 {total_bad}건 실패")
+    return 0 if not total_bad else 1
 
 
 if __name__ == "__main__":
