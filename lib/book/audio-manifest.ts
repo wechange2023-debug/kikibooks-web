@@ -8,10 +8,18 @@ import { createServiceRoleClient } from '@/lib/supabase/server';
  * 오디오 리더(Phase D) 데이터 조립 (ADR-0052 D4·D5).
  *
  * 페이지별 {이미지, 자막 텍스트, 오디오 URL, marks URL}을 만들어 AudioReader에 넘긴다.
- * 이미지·텍스트 출처는 검수 화면과 동일하다(불일치 방지, ADR-0052 D4):
- *   - 텍스트 = book_text.text (0-based page_index)
- *   - 이미지 = book-images/book_dash-{slug}/{NN}.jpg  (NN = page_index+1, 2자리)
+ * 이미지·텍스트 출처는 검수 화면과 동일하다(불일치 방지, ADR-0052 D4 · ADR-0057 D4):
+ *   - 텍스트 = book_text.text      (0-based page_index)
+ *   - 이미지 = book_text.image_url (같은 행에서 그대로 — 조립 0건, ADR-0057 D2)
  *   - 오디오 = {audioBase}/{book_audio.audio_path} (+ marks_path)
+ *
+ * ★ 이미지 URL은 **DB 값을 그대로 쓴다**(ADR-0057 D2). 종전에는 코드가
+ *   `book-images/book_dash-{source_id}/{NN}.jpg`를 조립했는데, 접두사가 하드코딩이라
+ *   ASb·Bloom·GDL에서는 전 면이 조용히 404였다(에러 없이 빈 칸 — ADR-0056 D14 참고·O-d).
+ *   실제로 ASb·Bloom 본문 이미지는 book-images 버킷에 객체가 없고 외부 CDN에 있으므로
+ *   접두사 분기로는 해결되지 않는다. 이제 적재 시점에 완성된 절대 URL을 넣어 두고
+ *   런타임은 그 값을 읽기만 한다 — 플랫폼 분기 0건.
+ *   image_url이 NULL인 면은 "이미지 없는 면"이며 오류가 아니다(ADR-0025 Amd#6 A3).
  *
  * ★ 오디오 경로는 **book_audio 행을 정본으로 읽는다**(추측 조립 금지).
  *   근거: 키 규약이 ADR-0034 Amendment #2로 개정돼(성우 층위 + 1-based pNN) 구·신 배치가
@@ -26,17 +34,19 @@ import { createServiceRoleClient } from '@/lib/supabase/server';
  * 본 모듈은 SELECT 전용.
  */
 
-const IMAGE_STORAGE_PREFIX = 'storage/v1/object/public/book-images';
 const AUDIO_STORAGE_PREFIX = 'storage/v1/object/public/book-audio';
 
-/** page = page_index + 1 (= 이미지 NN = 신 규약 mp3 키의 NN, ADR-0034 Amd#2). */
+/** page = page_index + 1 (= 신 규약 mp3 키의 NN, ADR-0034 Amd#2). */
 export interface ReaderAudioPage {
   /** 0-based (book_text.page_index). */
   pageIndex: number;
-  /** = pageIndex + 1. 이미지 NN·화면 표시용. */
+  /** = pageIndex + 1. 화면 표시용. */
   page: number;
-  /** 검수 화면과 동일 canonical 이미지 URL. */
-  imageUrl: string;
+  /**
+   * 검수 화면과 동일 출처의 이미지 URL = book_text.image_url 원본(ADR-0057 D2·D4).
+   * null = 이미지 없는 면(정상). 리더는 빈 칸으로 두지 말고 폴백을 그린다(ADR-0057 D3).
+   */
+  imageUrl: string | null;
   /** 자막 텍스트(빈 면은 ''). */
   text: string;
   /** 오디오 mp3 공개 URL. 빈 텍스트 면은 null(음성 없음). */
@@ -233,10 +243,12 @@ export async function getAudioReaderBook(
 
   const { data: textRows, error: textError } = await supabase
     .from('book_text')
-    .select('page_index, text')
+    .select('page_index, text, image_url')
     .eq('book_id', bookId)
     .order('page_index', { ascending: true })
-    .returns<{ page_index: number; text: string | null }[]>();
+    .returns<
+      { page_index: number; text: string | null; image_url: string | null }[]
+    >();
 
   if (textError) {
     throw new Error(`getAudioReaderBook: book_text 조회 실패 — ${textError.message}`);
@@ -272,21 +284,21 @@ export async function getAudioReaderBook(
   // 구분되지 않는다(UNIQUE가 kind를 포함하는 이유 — ADR-0034 Amd#1).
   const coverRow = (audioRows ?? []).find((row) => row.kind === 'cover') ?? null;
 
+  // slug는 이미지 조립용이 아니라 ReaderAudioBook.slug 반환값이다(아래 return).
   const slug = book.source_id;
-  const imageBase = requireSupabaseUrl();
   const audioBase = resolveAudioBase(opts);
 
   const pages: ReaderAudioPage[] = (textRows ?? []).map((row) => {
     const pageIndex = row.page_index;
     const page = pageIndex + 1;
-    const nn = String(page).padStart(2, '0');
     // 생성 시 정본과 동일하게 trim(브리지가 strip한 텍스트로 TTS를 만들었으므로 오프셋 정합).
     const text = (row.text ?? '').trim();
     const audio = audioByPageIndex.get(pageIndex);
     return {
       pageIndex,
       page,
-      imageUrl: `${imageBase}/${IMAGE_STORAGE_PREFIX}/book_dash-${slug}/${nn}.jpg`,
+      // DB 값 그대로 — 조립·가공 0건(ADR-0057 D2). NULL은 NULL로 전달한다.
+      imageUrl: row.image_url,
       text,
       audioUrl: audio ? `${audioBase}/${audio.audio_path}` : null,
       marksUrl: audio?.marks_path ? `${audioBase}/${audio.marks_path}` : null,

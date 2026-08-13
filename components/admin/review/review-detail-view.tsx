@@ -31,13 +31,17 @@ import { isRotatedPage } from '@/lib/admin/review/rotation-pages';
  *     라이브러리 추가 0건 — React 상태만 사용.
  *
  * ──────────────────────────────────────────────────────────────────────────────
- * 이미지 URL 조립 규칙 (Storage 접근 0건 — 문자열 조립만)
+ * 이미지 출처 = book_text.image_url (조립 0건 — ADR-0057 D2)
  * ──────────────────────────────────────────────────────────────────────────────
- *   {NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/book-images/book_dash-{slug}/{NN}.jpg
- *     - slug   = books.source_id (books에 slug 컬럼 없음.
- *                scripts/pdf_harvest/upload_page_images.py:9-10 "source_id = slug 코호트")
- *     - NN     = pageIndex + 1, 2자리 zero-pad (ADR-0046 D2: page_index는 0-based)
- *     - 버킷은 public이라 anon 조회 대상 — secret 키 불요·불사용(Hard Rule 6).
+ *   DB에 저장된 완성된 절대 URL을 그대로 <img src>에 쓴다. 종전의 문자열 조립
+ *   (`book-images/book_dash-{slug}/{NN}.jpg`)과 그 조립 함수 buildPageImageUrl은 폐기됐다.
+ *   폐기 사유: 접두사 book_dash- 가 하드코딩이라 타 플랫폼에서 조용히 404가 났고,
+ *   ASb·Bloom 본문 이미지는 애초에 이 버킷에 객체가 없다(외부 CDN 소재).
+ *
+ *   오디오 리더(lib/book/audio-manifest.ts)와 **같은 컬럼**을 읽는다 —
+ *   두 화면의 출처 동일성 불변식(ADR-0052 D4)이 이제 DB 컬럼 하나로 보장된다(ADR-0057 D4).
+ *   imageUrl이 null인 면은 "이미지 없음" 표기를 렌더한다(ADR-0057 D3 — 빈 칸 금지).
+ *   버킷·CDN 모두 공개 읽기 — secret 키 불요·불사용(Hard Rule 6).
  *
  * ──────────────────────────────────────────────────────────────────────────────
  * 클라이언트 잠금은 UX일 뿐이다
@@ -86,16 +90,6 @@ const TTS_REVERT_CONFIRM =
 /** 미저장 수정이 있는 상태에서 [확정] 클릭 시 1회 경고. */
 const DIRTY_CONFIRM_CONFIRM =
   '저장하지 않은 수정이 있습니다. 그래도 확정할까요?';
-
-/** Storage 공개 URL 조립. env 누락 시 빈 문자열 → img가 로드 실패로 자기 칸만 비운다. */
-function buildPageImageUrl(slug: string, pageIndex: number): string {
-  const base = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  if (!base) {
-    return '';
-  }
-  const nn = String(pageIndex + 1).padStart(2, '0');
-  return `${base}/storage/v1/object/public/book-images/book_dash-${slug}/${nn}.jpg`;
-}
 
 /** 행 단위 저장 표시 상태. */
 type RowState =
@@ -265,14 +259,23 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
                       </span>
                     )}
                   </span>
-                  {/* 자체 창고(Supabase Storage public) 이미지 — 규칙 조립 URL이라 next/image
-                      최적화 불요. asb-reader.tsx PageImage 선례 정합. */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={buildPageImageUrl(detail.slug, page.pageIndex)}
-                    alt={`${detail.title} ${page.pageIndex + 1}면`}
-                    className="h-auto w-full rounded-md bg-surface-2 object-contain"
-                  />
+                  {/* 이미지 출처 = book_text.image_url(ADR-0057 D2). 외부 CDN·자체 Storage가
+                      섞여 있고 도메인 화이트리스트 관리 대상이 아니므로 next/image 미사용.
+                      asb-reader.tsx PageImage 선례 정합. */}
+                  {page.imageUrl ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={page.imageUrl}
+                      alt={`${detail.title} ${page.pageIndex + 1}면`}
+                      className="h-auto w-full rounded-md bg-surface-2 object-contain"
+                    />
+                  ) : (
+                    // ADR-0057 D3 — 빈 칸으로 두지 않는다. 검수자가 "이미지 결손"과
+                    // "아직 안 뜬 이미지"를 구분할 수 있어야 한다.
+                    <div className="flex min-h-24 items-center justify-center rounded-md border border-dashed border-outline bg-surface-2 px-3 py-6 text-center text-xs text-text-variant">
+                      이미지 없음 (텍스트 전용 면)
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-2">

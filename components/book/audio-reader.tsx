@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   ChevronLeft,
   ChevronRight,
+  ImageOff,
   Info,
   Loader2,
   Pause,
@@ -152,8 +153,15 @@ function activeMarkIndex(marks: WordMark[], nowMs: number): number {
 
 type ImagePhase = 'loading' | 'loaded' | 'failed';
 
-/** 페이지 이미지 — object-contain, 로딩 스피너, 실패 시 자리 비움(AsbReader 패턴). */
-function PageImage({ src, alt }: { src: string; alt: string }) {
+/**
+ * 페이지 이미지 — object-contain, 로딩 스피너.
+ *
+ * ★ src=null(그림 없는 면)과 로드 실패를 **같은 폴백으로 수렴**시킨다(ADR-0057 D3).
+ *   종전에는 실패 시 `return null`이라 그 칸이 빈 채로 남았다. 그래서 "그림이 원래 없는 면"과
+ *   "URL이 틀려 못 불러온 면"이 화면에서 구분되지 않았고, ASb·Bloom 전 면이 404였던 결함이
+ *   오래 드러나지 않았다(ADR-0056 O-d). 조용한 실패를 만들지 않는다.
+ */
+function PageImage({ src, alt }: { src: string | null; alt: string }) {
   const [phase, setPhase] = useState<ImagePhase>('loading');
   const imgRef = useRef<HTMLImageElement>(null);
   // 캐시/즉시 완료된 이미지는 onLoad가 핸들러 부착 전 발생해 놓칠 수 있다.
@@ -164,8 +172,17 @@ function PageImage({ src, alt }: { src: string; alt: string }) {
       setPhase('loaded');
     }
   }, [src]);
-  if (phase === 'failed') {
-    return null;
+  if (src === null || phase === 'failed') {
+    return (
+      <div className="flex h-full w-full items-center justify-center p-6">
+        <div className="flex flex-col items-center gap-2 rounded-md border border-dashed border-outline bg-surface-2 px-6 py-8 text-center">
+          <ImageOff aria-hidden className="h-7 w-7 text-text-variant" />
+          <p className="font-display text-sm font-medium text-text-variant">
+            그림이 없는 면이에요
+          </p>
+        </div>
+      </div>
+    );
   }
   return (
     <div className="relative flex h-full w-full items-center justify-center">
@@ -194,8 +211,11 @@ interface FlipState {
   /** 애니메이션 재시작 식별자(연속 넘김 시 remount). */
   id: number;
   direction: 'next' | 'prev';
-  /** 접혀 넘어가는 현재(옛) 장 이미지. 단판이라 새 장은 아래 정적 베이스가 담당. */
-  fromUrl: string;
+  /**
+   * 접혀 넘어가는 현재(옛) 장 이미지. 단판이라 새 장은 아래 정적 베이스가 담당.
+   * null = 그림 없는 면 — 아래 렌더가 종이 뒷면 질감(bg-surface-2)으로 대체한다.
+   */
+  fromUrl: string | null;
   fromAlt: string;
 }
 
@@ -308,7 +328,8 @@ function FlipOverlay({
 /** 표지·본문을 한 축으로 다루는 슬라이드. key는 marks 캐시·audio remount 식별자. */
 interface Slide {
   key: string;
-  imageUrl: string;
+  /** 본문 = book_text.image_url 원본(ADR-0057 D2). null = 그림 없는 면 → PageImage 폴백. */
+  imageUrl: string | null;
   imageAlt: string;
   /** 화면 우상단 위치 표시. 표지는 '표지', 본문은 'n / total'. */
   positionLabel: string;
@@ -887,7 +908,11 @@ export function AudioReader({
           >
             {/* 정적 베이스 — 항상 현재(넘김 후 새) 페이지. 넘김 중에는 위 FlipOverlay가 덮고,
                 끝나면 오버레이가 사라지며 이 베이스가 그대로 드러난다(마스킹 0). */}
-            <PageImage key={page.imageUrl} src={page.imageUrl} alt={page.imageAlt} />
+            <PageImage
+              key={page.imageUrl ?? `no-image-${page.key}`}
+              src={page.imageUrl}
+              alt={page.imageAlt}
+            />
             {/* 2단계 3D 플립 오버레이(피드백 v2 Task A) — 넘김 중에만 마운트. id로 remount해
                 연속 넘김에도 새 애니메이션. 끝나면 onDone으로 flip=null → 언마운트. 감속 모드는
                 beginTurn이 flip을 세우지 않아 마운트되지 않는다(즉시 전환). pointer-events-none이라

@@ -30,9 +30,12 @@ import { createServiceRoleClient } from '@/lib/supabase/server';
  * ──────────────────────────────────────────────────────────────────────────────
  *   books 테이블에 slug 컬럼은 존재하지 않는다(001_initial_schema.sql). 152권 검수 코호트의
  *   slug는 books.source_id다 — scripts/pdf_harvest/upload_page_images.py:9-10
- *   "source_id = slug 코호트(ADR-0047 D1 조인 근거)". Storage 키
- *   book-images/book_dash-{slug}/NN.jpg의 {slug}가 곧 이 값이다.
+ *   "source_id = slug 코호트(ADR-0047 D1 조인 근거)".
  *   따라서 본 모듈은 source_id를 조회해 slug로 노출한다.
+ *
+ *   ※ 이 값은 **더 이상 이미지 URL 조립에 쓰이지 않는다**(ADR-0057 D2 — 조립 폐기,
+ *     book_text.image_url 단일 출처). 현재 용도는 화면 표시·회전 의심면 판정
+ *     (lib/admin/review/rotation-pages.ts)·목록 코호트 필터 3가지다.
  *
  * ADR: docs/adr/0051-admin-review-screen.md D1·D2·D5
  * 패턴 정합: lib/admin/books/query.ts (server-only + service role + 단일 export)
@@ -64,7 +67,7 @@ function statusRank(status: ReviewStatus): number {
 export interface ReviewBookListRow {
   bookId: string;
   title: string;
-  /** = books.source_id. Storage 키 book_dash-{slug}/NN.jpg 조립에 사용. */
+  /** = books.source_id. 화면 표시·회전 판정·코호트 필터용(이미지 조립 용도 폐기, ADR-0057 D2). */
   slug: string;
   status: ReviewStatus;
   updatedAt: string;
@@ -72,9 +75,15 @@ export interface ReviewBookListRow {
 
 /** /admin/review/[bookId] 상세 1페이지. */
 export interface ReviewPage {
-  /** 0-based (ADR-0046 D2). 이미지 파일명 NN = pageIndex + 1. */
+  /** 0-based (ADR-0046 D2). */
   pageIndex: number;
   text: string;
+  /**
+   * book_text.image_url 원본(ADR-0057 D2). 화면은 이 값을 그대로 <img src>에 쓴다 —
+   * 조립 0건. null = 이미지 없는 면(정상, ADR-0025 Amd#6 A3).
+   * 오디오 리더(lib/book/audio-manifest.ts)와 동일 출처다(ADR-0052 D4 · ADR-0057 D4).
+   */
+  imageUrl: string | null;
 }
 
 /** /admin/review/[bookId] 상세 전체. */
@@ -195,10 +204,12 @@ export async function getReviewBookDetail(
 
   const { data: textRows, error: textError } = await supabase
     .from('book_text')
-    .select('page_index, text')
+    .select('page_index, text, image_url')
     .eq('book_id', bookId)
     .order('page_index', { ascending: true })
-    .returns<{ page_index: number; text: string }[]>();
+    .returns<
+      { page_index: number; text: string; image_url: string | null }[]
+    >();
 
   if (textError) {
     throw new Error(
@@ -214,6 +225,7 @@ export async function getReviewBookDetail(
     pages: (textRows ?? []).map((row) => ({
       pageIndex: row.page_index,
       text: row.text,
+      imageUrl: row.image_url,
     })),
   };
 }
