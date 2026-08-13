@@ -2,10 +2,15 @@
 
 ## Status
 
-**Proposed** (2026-08-13) / 기준 HEAD `f51ccef`
+**Accepted** (2026-08-13, 팀장 승인) / 기준 HEAD `f51ccef` · 제안 커밋 `82ee0d7`
 
-본 문서는 **결정 제안만** 담는다. DDL 실행·백필 SQL·코드 수정은 승인 후 별도 작업지시서에서 수행한다.
+DDL 실행·백필 SQL·코드 수정은 **본 승인 이후 별도 작업지시서**에서 수행한다.
 근거가 되는 **읽기 전용 정찰은 2026-08-13에 완료**됐으며, 본 문서의 파일:행 인용은 전부 그 실측이다.
+
+**2026-08-13 승인 시 확정 사항 2건** — 검토 회신으로 결정됐으며 결정문 본문은 무변경이다.
+
+1. **D5-① 대상 191권 확정**(152권 검수 코호트 포함 승인). 결정문 기재와 동일하다.
+2. **O-1(절대 URL 통일) 확정** → Open questions에서 **§Resolved R-1**로 이동.
 
 ADR-0056 D14가 "**잠정 조치**"로 유보하고 O-d가 "**ASb·Bloom 적재 시 재검토 필요**"로 넘긴
 **안건 3(이미지 URL 방식 · A-1안)** 을 본 ADR이 확정한다.
@@ -179,10 +184,11 @@ ALTER TABLE public.book_text ADD COLUMN image_url text;
 
 - ADR-0046 **D5**는 "스키마 변경 실행 경로를 `supabase/migrations/` 파일로 일원화"하고
   "ADR 본문에 DDL을 **중복 기재하지 않고** 경로만 참조한다(중복은 반드시 어긋난다)"를 규정한다.
-- 따라서 본 승인 후 **`supabase/migrations/008_book_text_image_url.sql`을 신설**하고, 팀장은 그
-  파일 내용을 SQL Editor에 붙여 실행한다. 위 DDL 인용은 결정 내용을 읽기 위한 것이며 **정본은
-  008 파일**이다.
-- 008 파일 생성은 본 ADR 승인 후 별도 승인으로 진행한다(본 ADR 작업 범위는 문서 1개).
+- **정본 파일 = `supabase/migrations/008_book_text_image_url.sql`** (2026-08-13 신설 완료).
+  팀장은 그 파일 내용을 SQL Editor에 붙여 실행한다. 위 DDL 인용은 결정 내용을 읽기 위한 것이며,
+  **실행 정본은 008 파일**이다. 두 기재가 어긋나면 008 파일이 우선한다.
+- 008은 `book_text`에 **컬럼 1개를 추가할 뿐** 기존 컬럼·제약·트리거·RLS 정책에 접촉하지 않는다
+  (006 §2.5 `book_text_touch_updated_at` · §3.1 SELECT 정책 무변경).
 
 ### D2. 전 플랫폼 **완성된 절대 URL**을 저장하고, 런타임 조립을 전면 제거한다
 
@@ -371,16 +377,22 @@ ALTER TABLE public.book_text ADD COLUMN image_url text;
 - D3 폴백의 구체 시각 디자인.
 - `book_review` 시드(ADR-0056 O5) · 관리자 TTS 버튼.
 
-## Open questions
+## Resolved
 
-### O-1. `{SUPABASE_URL}` 리터럴이 DB에 박히는 문제 — 비차단
+### R-1 (구 O-1). `{SUPABASE_URL}` 리터럴이 DB에 박히는 문제 — ✅ **Resolved (2026-08-13 팀장 승인)**
+
+> **절대 URL 통일 유지로 확정한다.** 프로젝트 URL이 바뀌면 **UPDATE 1문으로 재백필**한다.
+
+아래는 확정 전 기재분이다(이력 보존).
 
 - D5-①이 저장하는 book_dash 191권분 URL에는 프로젝트 URL이 포함된다. 프로젝트 이전 시 전 행
   재백필이 필요하다.
 - **대안**: 상대 키(`book_dash-{source_id}/{NN}.jpg`)만 저장하고 런타임에 base를 붙이는 방식.
   그러나 이는 D2의 "완성된 절대 URL" 원칙을 깨고, ASb·Bloom(외부 절대 URL)과 축이 갈린다.
-- **현 판단**: 프로젝트 URL 변경은 실무상 드물고, 발생 시 UPDATE 1문으로 해소된다. **절대 URL
-  통일을 유지**한다. 이견이 있으면 승인 시점에 제기해 주시기 바란다.
+- **판단 근거**: 프로젝트 URL 변경은 실무상 드물고, 발생 시 UPDATE 1문으로 해소된다. 반면 상대
+  키 방식은 D2의 "런타임 조립 전면 제거"를 되돌려 book_dash만 조립 코드를 남기게 된다.
+
+## Open questions
 
 ### O-2. ASb `axis_diff ≠ 0` 권들의 NULL 면 UX — 비차단, D3와 연동
 
@@ -407,5 +419,6 @@ ALTER TABLE public.book_text ADD COLUMN image_url text;
 
 ---
 
-*ADR-0057 끝. 본 문서는 Proposed이며, 팀장 승인 후 Status를 Accepted로 전환하고
-`supabase/migrations/008_book_text_image_url.sql`을 신설한다(D1-b).*
+*ADR-0057 끝. 본 문서는 **Accepted**(2026-08-13)이며, DDL 정본은
+`supabase/migrations/008_book_text_image_url.sql`이다(D1-b). 다음 단계는 008 실행(팀장) →
+D5 백필 → D2·D3 코드 전환 순이다 — 백필 완료가 코드 전환 배포의 선행 조건이다(§Consequences).*
