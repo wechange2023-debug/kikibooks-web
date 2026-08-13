@@ -6,6 +6,7 @@ import { useState, useTransition } from 'react';
 import {
   saveReviewText,
   transitionReviewStatus,
+  type ReviewTransitionTarget,
 } from '@/lib/admin/review/actions';
 import type {
   ReviewBookDetail,
@@ -75,17 +76,37 @@ import { isRotatedPage } from '@/lib/admin/review/rotation-pages';
  * 패턴 정합: components/admin/books/admin-books-browser.tsx (useTransition + server action 결과 표시)
  */
 
-/** status 신호등 — ADR-0051 D3 박제. app/admin/review/page.tsx와 동일 매핑. */
+/**
+ * status 신호등 — ADR-0051 D3 + ADR-0058 D2(tts_requested) 박제.
+ * review-list-view.tsx와 동일 매핑(두 곳 모두 Record<ReviewStatus, …>라 값이 늘면
+ * 양쪽 다 컴파일 에러로 드러난다 — 조용한 불일치가 생기지 않는다).
+ */
 const STATUS_SIGNAL: Record<ReviewStatus, { lamp: string; label: string }> = {
   draft: { lamp: '🔴', label: '초안' },
   in_review: { lamp: '🟡', label: '검수중' },
   confirmed: { lamp: '🟢', label: '확정' },
+  tts_requested: { lamp: '🟣', label: '음성요청됨' },
   tts_done: { lamp: '🔵', label: '음성완료' },
 };
 
 /** tts_done 되돌리기 경고 — ADR-0051 D3 박제 직역. */
 const TTS_REVERT_CONFIRM =
   '이 책은 음성이 이미 생성됐습니다. 텍스트를 다시 고치면 음성을 새로 만들어야 합니다. 계속할까요?';
+
+/**
+ * TTS 생성 요청 확인 — 요청은 곧 배치 합성 대상 등록이라 되돌리기 창이 좁다(ADR-0058 O2).
+ */
+const TTS_REQUEST_CONFIRM =
+  '이 책을 TTS 생성 요청 목록에 올립니다. 요청 후에는 텍스트를 고칠 수 없고, 음성이 만들어진 뒤에는 재생성이 지원되지 않습니다. 계속할까요?';
+
+/**
+ * 요청 철회 경고 — ADR-0058 O2(배치 착수 후 철회는 반영되지 않을 수 있음) 박제.
+ */
+const TTS_CANCEL_CONFIRM =
+  '음성 생성 요청을 철회하고 검수중으로 되돌립니다. 이미 생성 배치가 시작됐다면 철회가 반영되지 않을 수 있습니다. 계속할까요?';
+
+/** 오디오 보유로 요청 버튼이 잠겼을 때의 사유 표기 — ADR-0058 D4. */
+const AUDIO_LOCK_REASON = '오디오 보유 — 재생성은 별도 트랙';
 
 /** 미저장 수정이 있는 상태에서 [확정] 클릭 시 1회 경고. */
 const DIRTY_CONFIRM_CONFIRM =
@@ -154,9 +175,21 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
     });
   }
 
-  function handleTransition(to: 'in_review' | 'confirmed'): void {
+  function handleTransition(to: ReviewTransitionTarget): void {
     // 확정 직전 미저장 경고 (1회)
     if (to === 'confirmed' && dirty && !window.confirm(DIRTY_CONFIRM_CONFIRM)) {
+      return;
+    }
+    // TTS 생성 요청 확인 (ADR-0058 D3)
+    if (to === 'tts_requested' && !window.confirm(TTS_REQUEST_CONFIRM)) {
+      return;
+    }
+    // 요청 철회 경고 (ADR-0058 O2)
+    if (
+      detail.status === 'tts_requested' &&
+      to === 'in_review' &&
+      !window.confirm(TTS_CANCEL_CONFIRM)
+    ) {
       return;
     }
     // tts_done 되돌리기 경고 (ADR-0051 D3 박제)
@@ -185,13 +218,30 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
     });
   }
 
-  /** 현재 status에서 노출할 전이 버튼 1종. tts_done 설정 버튼은 없다(D3). */
-  const transitionButton: { label: string; to: 'in_review' | 'confirmed' } | null =
+  /**
+   * 현재 status에서 노출할 검수 전이 버튼 1종. tts_done 설정 버튼은 없다(ADR-0051 D3).
+   * tts_requested에서의 '되돌리기'는 요청 철회이므로 라벨을 구분한다(ADR-0058 D3).
+   */
+  const transitionButton: { label: string; to: ReviewTransitionTarget } =
     detail.status === 'draft'
       ? { label: '검수시작', to: 'in_review' }
       : detail.status === 'in_review'
         ? { label: '확정', to: 'confirmed' }
-        : { label: '되돌리기', to: 'in_review' };
+        : detail.status === 'tts_requested'
+          ? { label: '요청 철회', to: 'in_review' }
+          : { label: '되돌리기', to: 'in_review' };
+
+  /**
+   * TTS 생성 요청 버튼의 노출·활성 조건 (ADR-0058 D3·D4).
+   *
+   *   노출: status ∈ {draft, confirmed} — 전이표에 진입 행이 있는 두 상태뿐이다.
+   *         in_review는 편집 중이라 금지, tts_requested·tts_done은 이미 지난 단계다.
+   *   활성: book_audio 0행. 보유 시 잠그고 사유를 표시한다(재생성 차단).
+   *
+   * 이 잠금은 UX일 뿐이며 실제 거부는 actions.ts가 DB를 다시 읽어 수행한다.
+   */
+  const canRequestTts =
+    detail.status === 'draft' || detail.status === 'confirmed';
 
   return (
     <div className="relative left-1/2 flex w-[96vw] -translate-x-1/2 flex-col gap-4 px-4 md:gap-5">
@@ -210,15 +260,37 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
             <span className="text-primary">· 저장하지 않은 수정 있음</span>
           )}
 
-          {transitionButton && (
-            <button
-              type="button"
-              disabled={isPending}
-              onClick={() => handleTransition(transitionButton.to)}
-              className="ml-2 inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-xs font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50"
-            >
-              {transitionButton.label}
-            </button>
+          <button
+            type="button"
+            disabled={isPending}
+            onClick={() => handleTransition(transitionButton.to)}
+            className="ml-2 inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-xs font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50"
+          >
+            {transitionButton.label}
+          </button>
+
+          {/* ADR-0058 D3·D4 — 요청 기록 전용. 이 버튼은 합성을 시작하지 않는다(D1). */}
+          {canRequestTts && (
+            <>
+              <button
+                type="button"
+                disabled={isPending || detail.hasAudio}
+                title={
+                  detail.hasAudio
+                    ? AUDIO_LOCK_REASON
+                    : '팀장의 다음 생성 배치 대상으로 등록합니다.'
+                }
+                onClick={() => handleTransition('tts_requested')}
+                className="inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-xs font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50"
+              >
+                TTS 생성 요청
+              </button>
+              {detail.hasAudio && (
+                <span className="text-xs text-text-variant">
+                  {AUDIO_LOCK_REASON}
+                </span>
+              )}
+            </>
           )}
         </div>
 

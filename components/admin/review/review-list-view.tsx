@@ -20,11 +20,14 @@ import { hasRotatedPages } from '@/lib/admin/review/rotation-pages';
  * ──────────────────────────────────────────────────────────────────────────────
  * 필터·정렬 (화면단 처리 — 조회 시그니처 불변)
  * ──────────────────────────────────────────────────────────────────────────────
- *   getReviewBookList()는 152권 전건을 status 순으로 반환한다(변경 0건). 본 컴포넌트가
- *   받은 데이터를 걸러 보여준다:
- *     - 시범 12권 보기(기본 ON): PILOT_COHORT에 든 책만, **slug 알파벳순 고정**.
+ *   getReviewBookList()는 전건을 status 순으로 반환한다(시그니처 변경 0건 — platform 필드만
+ *   추가). 본 컴포넌트가 받은 데이터를 걸러 보여준다:
+ *     - 시범 12권(기본 선택): PILOT_COHORT에 든 책만, **slug 알파벳순 고정**.
  *       상태가 바뀌어도 행 순서가 흔들리지 않아야 검수 중 위치 감각이 유지된다.
- *     - 전체 보기: 받은 순서 그대로(= status 순, 152권). 재정렬 0건.
+ *     - 전체: 받은 순서 그대로(= status 순). 재정렬 0건.
+ *     - 플랫폼별(Book Dash / ASb / Bloom): ADR-0058 D5 코호트 필터. 시드로 목록이
+ *       152권 → 860권이 되면서 기존 검수 큐와 신규 코호트가 섞이는 문제를 해소한다
+ *       (ADR-0056 O5 검토항목 3). 정렬은 전체 보기와 동일하게 받은 순서 그대로다.
  *
  * ADR-0051 D4: 회전 의심 면을 가진 책에 ⚠ 아이콘(표시 전용, 교정 0건).
  *
@@ -35,33 +38,64 @@ import { hasRotatedPages } from '@/lib/admin/review/rotation-pages';
  * ADR: docs/adr/0051-admin-review-screen.md D1·D3·D4
  */
 
-/** status 신호등 — ADR-0051 D3 박제. review-detail-view.tsx와 동일 매핑. */
+/**
+ * status 신호등 — ADR-0051 D3 + ADR-0058 D2(tts_requested) 박제.
+ * review-detail-view.tsx와 동일 매핑.
+ */
 const STATUS_SIGNAL: Record<ReviewStatus, { lamp: string; label: string }> = {
   draft: { lamp: '🔴', label: '초안' },
   in_review: { lamp: '🟡', label: '검수중' },
   confirmed: { lamp: '🟢', label: '확정' },
+  tts_requested: { lamp: '🟣', label: '음성요청됨' },
   tts_done: { lamp: '🔵', label: '음성완료' },
 };
 
 /**
+ * 코호트 필터 (ADR-0058 D5 — ADR-0056 O5 검토항목 3 해소).
+ *
+ * 시드로 목록이 152권 → 860권이 되면서 기존 검수 큐(Book Dash PDF)와 신규 코호트가
+ * 한 화면에 섞인다. platform 값은 books.source_platform 원본이며, 여기 없는 값이
+ * 들어와도 '전체'에서는 보이므로 책이 사라지지 않는다.
+ */
+const COHORT_FILTERS = [
+  { key: 'pilot', label: '시범 12권' },
+  { key: 'all', label: '전체' },
+  { key: 'book_dash', label: 'Book Dash' },
+  { key: 'african_storybook', label: 'ASb' },
+  { key: 'bloom', label: 'Bloom' },
+] as const;
+
+type CohortKey = (typeof COHORT_FILTERS)[number]['key'];
+
+/**
  * "확정 완료"로 세는 상태.
  *
- * confirmed와 tts_done 둘 다 센다 — tts_done은 confirmed를 이미 지나 음성까지 만들어진
- * 상태라 진행도에서 되돌아가면 안 된다(ADR-0051 D3 파이프라인 순서).
+ * confirmed·tts_requested·tts_done을 센다 — 셋 다 confirmed를 이미 지난 상태라
+ * 진행도에서 되돌아가면 안 된다(ADR-0051 D3 · ADR-0058 D2 파이프라인 순서).
  */
 function isDone(status: ReviewStatus): boolean {
-  return status === 'confirmed' || status === 'tts_done';
+  return (
+    status === 'confirmed' ||
+    status === 'tts_requested' ||
+    status === 'tts_done'
+  );
 }
 
 export function ReviewListView({ rows }: { rows: ReviewBookListRow[] }) {
-  const [pilotOnly, setPilotOnly] = useState(true);
+  const [cohort, setCohort] = useState<CohortKey>('pilot');
 
   const pilotRows = rows
     .filter((row) => isPilotCohort(row.slug))
     // slug 알파벳순 고정 — status가 바뀌어도 순서 불변.
     .sort((a, b) => a.slug.localeCompare(b.slug));
 
-  const visibleRows = pilotOnly ? pilotRows : rows;
+  const visibleRows =
+    cohort === 'pilot'
+      ? pilotRows
+      : cohort === 'all'
+        ? rows
+        : rows.filter((row) => row.platform === cohort);
+
   const doneCount = pilotRows.filter((row) => isDone(row.status)).length;
 
   return (
@@ -72,17 +106,28 @@ export function ReviewListView({ rows }: { rows: ReviewBookListRow[] }) {
         </h1>
 
         <div className="flex flex-wrap items-center gap-2 text-sm text-text-variant">
-          <button
-            type="button"
-            onClick={() => setPilotOnly((prev) => !prev)}
-            className="inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-xs font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
-          >
-            {pilotOnly ? '전체 보기' : '시범 12권만 보기'}
-          </button>
+          {COHORT_FILTERS.map((filter) => {
+            const selected = cohort === filter.key;
+            return (
+              <button
+                key={filter.key}
+                type="button"
+                aria-pressed={selected}
+                onClick={() => setCohort(filter.key)}
+                className={`inline-flex items-center rounded-md border px-3 py-1 text-xs font-medium transition-colors focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
+                  selected
+                    ? 'border-primary bg-surface-2 text-text'
+                    : 'border-outline bg-surface text-text hover:bg-surface-2'
+                }`}
+              >
+                {filter.label}
+              </button>
+            );
+          })}
           <span>
-            {pilotOnly
+            {cohort === 'pilot'
               ? `시범 ${PILOT_COHORT.length}권`
-              : `전체 ${rows.length}권`}
+              : `${visibleRows.length}권 / 전체 ${rows.length}권`}
           </span>
         </div>
 
@@ -94,9 +139,9 @@ export function ReviewListView({ rows }: { rows: ReviewBookListRow[] }) {
 
       {visibleRows.length === 0 ? (
         <p className="rounded-lg border border-outline bg-surface p-4 text-sm text-text-variant">
-          {pilotOnly
+          {cohort === 'pilot'
             ? '시범 코호트에 해당하는 책이 목록에 없습니다.'
-            : '검수 대상 책이 없습니다.'}
+            : '이 코호트에 해당하는 책이 없습니다.'}
         </p>
       ) : (
         <ul className="flex flex-col gap-2">

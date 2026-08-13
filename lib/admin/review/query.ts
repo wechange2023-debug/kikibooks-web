@@ -41,19 +41,34 @@ import { createServiceRoleClient } from '@/lib/supabase/server';
  * 패턴 정합: lib/admin/books/query.ts (server-only + service role + 단일 export)
  */
 
-/** book_review.status 4상태 — migration 006 CHECK 제약과 동일 집합(ADR-0046 D6). */
-export type ReviewStatus = 'draft' | 'in_review' | 'confirmed' | 'tts_done';
+/**
+ * book_review.status 5상태 — migration 009 CHECK 제약과 동일 집합.
+ *
+ * 원안은 4상태(ADR-0046 D6 · migration 006)였고, ADR-0058 D2가 `tts_requested`를 추가했다
+ * (2026-08-13 적용 완료). 이 유니온이 곧 화면·서버의 상태 집합 단일 출처다 —
+ * 값이 하나 늘면 Record<ReviewStatus, …> 매핑(신호등 2곳·전이표)이 컴파일 단계에서
+ * 누락을 잡아준다.
+ */
+export type ReviewStatus =
+  | 'draft'
+  | 'in_review'
+  | 'confirmed'
+  | 'tts_requested'
+  | 'tts_done';
 
 /**
- * status 노출 순서 (ADR-0051 D3 전이 순서 = 파이프라인 진행 순서).
+ * status 노출 순서 (ADR-0051 D3 + ADR-0058 D2 전이 순서 = 파이프라인 진행 순서).
  *
  * 문자열 정렬을 쓰면 confirmed → draft → in_review → tts_done 이 되어 파이프라인 순서와
- * 무관해진다. 배열 인덱스 기반 정렬로 draft → in_review → confirmed → tts_done 을 강제한다.
+ * 무관해진다. 배열 인덱스 기반 정렬로
+ * draft → in_review → confirmed → tts_requested → tts_done 을 강제한다.
+ * tts_requested는 confirmed 다음·tts_done 앞이다(요청 → 합성 완료 순, ADR-0058 D2).
  */
 const STATUS_ORDER: readonly ReviewStatus[] = [
   'draft',
   'in_review',
   'confirmed',
+  'tts_requested',
   'tts_done',
 ];
 
@@ -69,6 +84,13 @@ export interface ReviewBookListRow {
   title: string;
   /** = books.source_id. 화면 표시·회전 판정·코호트 필터용(이미지 조립 용도 폐기, ADR-0057 D2). */
   slug: string;
+  /**
+   * = books.source_platform. 목록의 코호트 필터 기준(ADR-0058 D5).
+   *
+   * 시드 후 목록이 152권 → 860권이 되어 기존 검수 큐(Book Dash PDF)와 신규 코호트가
+   * 한 화면에 섞인다. ADR-0056 O5 검토항목 3의 해소 수단이 이 필터다.
+   */
+  platform: string;
   status: ReviewStatus;
   updatedAt: string;
 }
@@ -92,6 +114,18 @@ export interface ReviewBookDetail {
   title: string;
   slug: string;
   status: ReviewStatus;
+  /**
+   * book_audio 행이 1행이라도 있는가 (ADR-0058 D4).
+   *
+   * **voice 무관 판정**이다 — 구 `Ruth`든 `danielle`이든 행이 있으면 true.
+   * true면 화면은 TTS 요청 버튼을 잠근다. 최종 판정은 화면이 아니라 서버가 한다
+   * (actions.ts가 전이 직전 같은 조건을 다시 조회 — 클라이언트 잠금 불신 원칙).
+   *
+   * 목록(ReviewBookListRow)에는 같은 필드를 두지 않았다: 860권 × book_audio 존재 판정은
+   * PostgREST에서 1만 행대 조회 + 페이지네이션이 되어 목록 1회 렌더 비용이 급증한다.
+   * 버튼이 상세에만 있으므로 상세에서 책 1권분만 판정한다(N+1 아님 — 페이지당 1회).
+   */
+  hasAudio: boolean;
   pages: ReviewPage[];
 }
 
@@ -100,7 +134,7 @@ interface ReviewJoinRow {
   book_id: string;
   status: ReviewStatus;
   updated_at: string;
-  books: { title: string; source_id: string } | null;
+  books: { title: string; source_id: string; source_platform: string } | null;
 }
 
 /**
@@ -110,7 +144,7 @@ interface ReviewJoinRow {
  */
 function embeddedBook(
   value: ReviewJoinRow['books'] | ReviewJoinRow['books'][],
-): { title: string; source_id: string } | null {
+): { title: string; source_id: string; source_platform: string } | null {
   if (Array.isArray(value)) {
     return value[0] ?? null;
   }
@@ -118,13 +152,16 @@ function embeddedBook(
 }
 
 /**
- * /admin/review 목록 — book_review 전건 + books.title/source_id 조인.
+ * /admin/review 목록 — book_review 전건 + books.title/source_id/source_platform 조인.
  *
- * 페이지네이션 0건 — 검수 대상은 152권 고정 코호트라 전건 1회 조회가 단순하다
- * (lib/admin/books/query.ts의 keyset cursor는 수천 권 카탈로그용, 여기선 불필요).
+ * 페이지네이션 0건 — 종전에는 152권 고정 코호트였다. ADR-0058 D5 시드로 **860권**
+ * (Book Dash 191 + african_storybook 527 + bloom 142)이 됐고, 전건 1회 조회를 유지한다.
+ * PostgREST 기본 상한(1,000행)이 아직 충분하며, 화면단 코호트 필터(D5)가 노출을 나눈다.
+ * 상한을 넘길 규모가 되면 lib/admin/books/query.ts의 keyset cursor 패턴으로 옮긴다
+ * (ADR-0058 O4 — 조회 성능 실측 후 판단).
  *
- * 정렬: statusRank(draft→in_review→confirmed→tts_done) 우선, 동순위는 title 오름차순.
- * DB ORDER BY로는 배열 순서를 표현할 수 없어 조회 후 메모리 정렬(152행 — 비용 무시 가능).
+ * 정렬: statusRank(draft→in_review→confirmed→tts_requested→tts_done) 우선, 동순위는
+ * title 오름차순. DB ORDER BY로는 배열 순서를 표현할 수 없어 조회 후 메모리 정렬.
  *
  * 호출자 책임: requireAdmin/assertAdmin 통과 후 호출. 본 함수는 가드 0건.
  */
@@ -133,11 +170,26 @@ export async function getReviewBookList(): Promise<ReviewBookListRow[]> {
 
   const { data, error } = await supabase
     .from('book_review')
-    .select('book_id, status, updated_at, books(title, source_id)')
+    .select('book_id, status, updated_at, books(title, source_id, source_platform)')
     .returns<ReviewJoinRow[]>();
 
   if (error) {
     throw new Error(`getReviewBookList: book_review 조회 실패 — ${error.message}`);
+  }
+
+  /**
+   * 행 상한 fail-loud 가드 (ADR-0058 O4).
+   *
+   * 이 프로젝트의 PostgREST는 응답 행을 1,000으로 자른다(scripts/tts_pilot/run_tts_full708.py의
+   * `.range(start, start+999)` + `len(rows) < 1000` 종료 조건이 그 관행의 증거다).
+   * 잘리면 목록에서 책이 조용히 사라지는데, 그건 ADR-0056 O5가 겪은 증상과 똑같다
+   * ("검수 화면에 안 뜬다"). 조용한 잘림 대신 즉시 실패시킨다 — 860행 시점에서 여유는 140행뿐이다.
+   */
+  if ((data ?? []).length >= 1000) {
+    throw new Error(
+      'getReviewBookList: 조회 결과가 행 상한(1,000)에 도달했다 — 목록이 잘렸을 수 있다. ' +
+        'keyset cursor 페이지네이션 도입이 필요하다(ADR-0058 O4).',
+    );
   }
 
   const rows: ReviewBookListRow[] = (data ?? []).flatMap((row) => {
@@ -151,6 +203,7 @@ export async function getReviewBookList(): Promise<ReviewBookListRow[]> {
         bookId: row.book_id,
         title: book.title,
         slug: book.source_id,
+        platform: book.source_platform,
         status: row.status,
         updatedAt: row.updated_at,
       },
@@ -187,7 +240,7 @@ export async function getReviewBookDetail(
 
   const { data: reviewRow, error: reviewError } = await supabase
     .from('book_review')
-    .select('book_id, status, updated_at, books(title, source_id)')
+    .select('book_id, status, updated_at, books(title, source_id, source_platform)')
     .eq('book_id', bookId)
     .maybeSingle<ReviewJoinRow>();
 
@@ -217,11 +270,31 @@ export async function getReviewBookDetail(
     );
   }
 
+  /**
+   * 오디오 보유 판정 (ADR-0058 D4) — 이 책 1권분만, voice 무관, 1행만 확인.
+   *
+   * `limit(1)`이라 book_audio가 몇 행이든 왕복 1회·응답 최대 1행이다. 화면은 이 값으로
+   * TTS 요청 버튼을 잠그지만, 그건 UX일 뿐이고 실제 거부는 actions.ts가 한다.
+   */
+  const { data: audioRows, error: audioError } = await supabase
+    .from('book_audio')
+    .select('book_id')
+    .eq('book_id', bookId)
+    .limit(1)
+    .returns<{ book_id: string }[]>();
+
+  if (audioError) {
+    throw new Error(
+      `getReviewBookDetail: book_audio 조회 실패 — ${audioError.message}`,
+    );
+  }
+
   return {
     bookId: reviewRow.book_id,
     title: book.title,
     slug: book.source_id,
     status: reviewRow.status,
+    hasAudio: (audioRows ?? []).length > 0,
     pages: (textRows ?? []).map((row) => ({
       pageIndex: row.page_index,
       text: row.text,
