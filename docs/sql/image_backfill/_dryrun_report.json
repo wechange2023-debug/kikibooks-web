@@ -1,0 +1,266 @@
+{
+  "adr": "ADR-0057 D5-②",
+  "input_rows": 669,
+  "books": {
+    "total": 669,
+    "fetch_ok": 669,
+    "fetch_failed": 0,
+    "by_platform_ok": {
+      "african_storybook": 527,
+      "bloom": 142
+    }
+  },
+  "image_rows": {
+    "total_emitted": 6780,
+    "by_platform": {
+      "african_storybook": 5211,
+      "bloom": 1569
+    },
+    "expected_not_null_after": 9377,
+    "expected_null_after": 119
+  },
+  "image_lt_text": {
+    "books": 30,
+    "rows": 119,
+    "detail": [
+      {
+        "platform": "african_storybook",
+        "source_id": "19260",
+        "n_text": 8,
+        "n_image": 7,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "20367",
+        "n_text": 12,
+        "n_image": 11,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "2124",
+        "n_text": 13,
+        "n_image": 12,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "21555",
+        "n_text": 5,
+        "n_image": 4,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "22702",
+        "n_text": 9,
+        "n_image": 3,
+        "missing": 6
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "23002",
+        "n_text": 10,
+        "n_image": 8,
+        "missing": 2
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "31900",
+        "n_text": 42,
+        "n_image": 10,
+        "missing": 32
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "31901",
+        "n_text": 20,
+        "n_image": 13,
+        "missing": 7
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "31945",
+        "n_text": 12,
+        "n_image": 11,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "32228",
+        "n_text": 16,
+        "n_image": 13,
+        "missing": 3
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "32386",
+        "n_text": 7,
+        "n_image": 4,
+        "missing": 3
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "32391",
+        "n_text": 6,
+        "n_image": 3,
+        "missing": 3
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "32431",
+        "n_text": 7,
+        "n_image": 3,
+        "missing": 4
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "32435",
+        "n_text": 7,
+        "n_image": 4,
+        "missing": 3
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "34111",
+        "n_text": 12,
+        "n_image": 8,
+        "missing": 4
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "34414",
+        "n_text": 8,
+        "n_image": 6,
+        "missing": 2
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "34575",
+        "n_text": 13,
+        "n_image": 4,
+        "missing": 9
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "35647",
+        "n_text": 7,
+        "n_image": 5,
+        "missing": 2
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "36705",
+        "n_text": 12,
+        "n_image": 11,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "36825",
+        "n_text": 18,
+        "n_image": 5,
+        "missing": 13
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "36909",
+        "n_text": 10,
+        "n_image": 9,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "37501",
+        "n_text": 9,
+        "n_image": 6,
+        "missing": 3
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "37559",
+        "n_text": 8,
+        "n_image": 4,
+        "missing": 4
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "38073",
+        "n_text": 12,
+        "n_image": 9,
+        "missing": 3
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "38163",
+        "n_text": 6,
+        "n_image": 5,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "39060",
+        "n_text": 8,
+        "n_image": 7,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "39100",
+        "n_text": 8,
+        "n_image": 7,
+        "missing": 1
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "39920",
+        "n_text": 7,
+        "n_image": 4,
+        "missing": 3
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "5566",
+        "n_text": 5,
+        "n_image": 3,
+        "missing": 2
+      },
+      {
+        "platform": "african_storybook",
+        "source_id": "7387",
+        "n_text": 10,
+        "n_image": 9,
+        "missing": 1
+      }
+    ]
+  },
+  "image_gt_text": {
+    "books": 466,
+    "rows_dropped": 518
+  },
+  "fetch_failures": [],
+  "url_scheme_violations": 0,
+  "baseline": {
+    "total_rows": 9496,
+    "total_books": 860,
+    "bookdash_not_null": 2597
+  },
+  "sql_files": {
+    "step0": "step0_staging.sql",
+    "chunks": [
+      "chunk_01.sql",
+      "chunk_02.sql",
+      "chunk_03.sql",
+      "chunk_04.sql",
+      "chunk_05.sql",
+      "chunk_06.sql",
+      "chunk_07.sql",
+      "chunk_08.sql",
+      "chunk_09.sql"
+    ],
+    "step2": "step2_merge.sql",
+    "step3": "step3_verify.sql",
+    "step4": "step4_drop.sql"
+  }
+}
