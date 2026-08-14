@@ -2,6 +2,8 @@
 
 ## Status
 Accepted (2026-07-20) / 기준 HEAD d704958
+**Amendment #1(2026-08-13, ADR-0058 D3·D8)** — D3 전이표를 4상태 → **5상태**(`tts_requested` 추가)로
+개정한다. D1·D2·D4·D5는 무개정. 문서 반영 2026-08-14.
 
 ## Deciders
 팀장, 오케스트레이터
@@ -36,6 +38,36 @@ ADR-0046(리뷰 데이터 모델), ADR-0048(적재 시맨틱), ADR-0049(이미�
 
 ### D3. status 전이 — 4상태
 
+> **Amendment #1 (2026-08-13, ADR-0058 D3·D8로 개정) — 4상태 → 5상태**
+>
+> `tts_requested`(음성요청됨)가 추가된다. 아래 최초 기재분의
+> "`tts_done` 상태는 본 화면이 직접 설정하지 않는다…" 문장은 다음으로 **대체된다**:
+>
+> > `tts_done` 상태는 본 화면이 직접 설정하지 않는다(TTS 파이프라인 소관). 본 화면은
+> > **`tts_requested`까지만 설정**하며, `tts_done` 전이는 로컬 파이프라인의 적재 SQL이
+> > 수행한다(ADR-0058 D2·D6). 본 화면은 `tts_done`을 **표시·되돌리기만** 한다.
+>
+> **개정 후 전이표** (`lib/admin/review/actions.ts` `ALLOWED_TRANSITIONS`):
+>
+> | 현재 | 허용 도착 | 화면 라벨 |
+> |---|---|---|
+> | `draft` | `in_review`, **`tts_requested`** | 검수시작 / TTS 생성 요청 |
+> | `in_review` | `confirmed` | 확정 |
+> | `confirmed` | `in_review`, **`tts_requested`** | 되돌리기 / TTS 생성 요청 |
+> | **`tts_requested`** | `in_review` | 요청 철회(경고 팝업) |
+> | `tts_done` | `in_review` | 되돌리기(경고 팝업, 기존 유지) |
+>
+> - **`in_review`에서는 요청할 수 없다** — 편집이 열린 텍스트로 합성하면 재생성이 필요해지는데,
+>   재생성은 ADR-0058 D4에서 Non-goal이다. `draft`에서 요청 가능한 것은 ADR-0053 D1(검수 게이트
+>   폐지) 정합이다.
+> - zod(`transitionReviewStatusSchema`): `to: z.enum(['in_review','confirmed','tts_requested'])`.
+>   **`tts_done`은 여전히 enum 밖**이라 화면발 설정이 타입 단계에서 차단되는 구조는 유지된다.
+> - `saveReviewText`의 "`in_review`에서만 저장" 규칙은 **무개정**. `tts_requested`도 편집 잠김이다.
+> - 어떤 상태에서도 `tts_done`으로 가는 전이는 표에 없다 — 그 표기는 적재 SQL만이 만든다.
+> - D1·D2·D4·D5는 **무개정**이다.
+
+아래는 최초 기재분이다(이력 보존).
+
 - `book_review.status` CHECK 기존값 그대로 사용: `draft` / `in_review` / `confirmed` / `tts_done`.
 - 전이 규칙:
   - `draft`(🔴, 편집 잠김) → **[검수시작]** → `in_review`(🟡, 편집 열림)
@@ -43,6 +75,9 @@ ADR-0046(리뷰 데이터 모델), ADR-0048(적재 시맨틱), ADR-0049(이미�
   - `confirmed`(🟢) → **[되돌리기]** → `in_review`(🟡) … 자유 허용
   - `tts_done`(🔵, 음성 생성 완료) → **[되돌리기]** → `in_review`(🟡) … **경고 팝업 후** 허용
     - 경고 문구: "이 책은 음성이 이미 생성됐습니다. 텍스트를 다시 고치면 음성을 새로 만들어야 합니다. 계속할까요?"
+    - (2026-08-14 추가) 이 경고의 실측 근거는 **ADR-0058 §실행 완결 §줄바꿈 실험**이다 —
+      수정 지점 **앞** 글자수가 변하면 marks 좌표가 어긋나 하이라이트가 밀린다(3면 재현).
+      문구 자체는 무변경.
 - `text` 저장(mutation)은 **`in_review` 상태에서만** 가능. 나머지 상태는 편집칸 잠금.
 - `tts_done` 상태는 본 화면이 직접 설정하지 않는다(TTS 파이프라인 소관). 본 화면은 **표시·되돌리기만**.
 
