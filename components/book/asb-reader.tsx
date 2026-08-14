@@ -8,6 +8,8 @@ import type { BookReaderCopy } from '@/lib/book/copy';
 import { parseAsbText, type AsbBook } from '@/lib/book/asb-parser';
 import { startReadingSession } from '@/lib/book/reading-session';
 
+import { usePreviewEntry } from './use-preview-entry';
+
 /**
  * AsbReader — content_type='asb_native' 책 본문 자체 렌더 리더 (ADR-0025 Amd#3·#6).
  *
@@ -163,12 +165,19 @@ export function AsbReader({
   // 스와이프 컨테이너 — 가로 제스처 기본동작 차단용 native touchmove 리스너 부착 대상.
   const swipeContainerRef = useRef<HTMLDivElement>(null);
 
+  // 관리자 미리보기 진입(?preview=1) 여부 — 세션을 만들지 않는다(preview-mode.ts).
+  const isPreview = usePreviewEntry();
+
   // 세션 시작 — 마운트 1회(HtmlReader와 동일, intent §5.1). 실패는 silent(읽기 흐름 유지).
+  // 미리보기 진입이면 호출 자체를 건너뛴다(1차 방어. 2차는 server action의 role AND preview).
   useEffect(() => {
+    if (isPreview) {
+      return;
+    }
     startReadingSession(bookId).catch(() => {
       // 네트워크 오류 등 — 의도적 silent fail.
     });
-  }, [bookId]);
+  }, [bookId, isPreview]);
 
   // 본문 .txt fetch + 파싱 — 클라이언트 마운트 후 1회. abort·언마운트 가드.
   useEffect(() => {

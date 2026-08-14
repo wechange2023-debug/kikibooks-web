@@ -22,6 +22,7 @@ import type {
   AdminBooksPage,
 } from '@/lib/admin/books/query';
 import type { AdminCopy } from '@/lib/admin/copy';
+import { previewReadHref } from '@/lib/book/preview-mode';
 import { cn } from '@/lib/utils';
 
 /**
@@ -163,6 +164,12 @@ function FilterChip({
  *   target="_blank"로 목록의 스크롤·필터 상태(useState, URL 미동기 — D20)를 잃지 않는다.
  *   카드의 나머지 클릭 표면(level select·is_active 토글)은 링크 밖이라 충돌 0건.
  *
+ *   ★ 링크에 `?preview=1`을 붙인다(previewReadHref — lib/book/preview-mode.ts).
+ *   **화면은 그대로이고 독서 기록만 남기지 않는다** — 위 "같은 화면" 원칙은 유지된다.
+ *   이 파라미터가 없던 시절(커밋 5bd84c8, 2026-07-28) 검수 열람 1회마다 미완독 세션이
+ *   1행씩 쌓여 2,381행이 누적됐고, 마이페이지 조회가 PostgREST 1,000행 상한에 잘렸다
+ *   (ADR-0059 §Non-goals '원인 확정').
+ *
  * 오디오 배지:
  *   row.hasAudio(= book_audio 행 존재, query.ts 정본)일 때만 썸네일 우하단에 Volume2를
  *   올린다. false면 DOM 0건(빈 자리 표시 없음). aria-hidden — 링크 aria-label이 오디오
@@ -197,7 +204,7 @@ function AdminBookCard({
     <article className="flex flex-col gap-3 rounded-md border border-outline bg-surface p-4 shadow-elev-1">
       <div className="flex gap-3">
         <a
-          href={`/book/${row.id}/read`}
+          href={previewReadHref(row.id)}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={

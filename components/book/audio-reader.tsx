@@ -37,6 +37,8 @@ import {
 import type { ReaderAudioBook } from '@/lib/book/audio-manifest';
 import { startReadingSession } from '@/lib/book/reading-session';
 
+import { usePreviewEntry } from './use-preview-entry';
+
 /**
  * AudioReader — book_dash 시범 12권용 자체 오디오 리더 (ADR-0052 Phase D).
  *
@@ -495,14 +497,22 @@ export function AudioReader({
   const currentAudioUrlRef = useRef<string | null>(page.audioUrl);
   currentAudioUrlRef.current = page.audioUrl;
 
+  // 관리자 미리보기 진입(?preview=1) 여부 — 세션을 만들지 않는다(preview-mode.ts).
+  const isPreview = usePreviewEntry();
+
   // 세션 시작 — 마운트 1회(HtmlReader·AsbReader와 동일, intent §5.1). 실패는 silent.
   // ★ 이 호출이 없으면 FinishButton의 completeReadingSession이 미완료 세션을 못 찾아
   //   '완독할 세션을 찾을 수 없습니다.'로 실패한다(reading-session.ts:189 0행 분기).
+  //   미리보기 진입에서 '다 읽었어요'가 실패하는 것은 **의도된 동작**이다 — 검수 열람은
+  //   완독 대상이 아니다(1차 방어. 2차는 server action의 관리자 role AND preview).
   useEffect(() => {
+    if (isPreview) {
+      return;
+    }
     startReadingSession(bookId).catch(() => {
       // 네트워크 오류 등 — 의도적 silent fail.
     });
-  }, [bookId]);
+  }, [bookId, isPreview]);
 
   // 이미 로드 시도한 슬라이드(중복 요청 방지). ref라 StrictMode 이중 마운트에도 유지된다.
   const loadedMarksRef = useRef<Set<string>>(new Set());

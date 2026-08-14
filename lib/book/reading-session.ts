@@ -1,8 +1,11 @@
 'use server';
 
+import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
 
+import { assertAdmin } from '@/lib/admin/gate';
+import { isPreviewUrl } from '@/lib/book/preview-mode';
 import { awardCompletionRewards } from '@/lib/book/rewards';
 import { getActiveChild } from '@/lib/home/active-child';
 import { createClient } from '@/lib/supabase/server';
@@ -56,6 +59,33 @@ import { createClient } from '@/lib/supabase/server';
 const bookIdSchema = z.string().uuid({ message: 'bookId 형식이 올바르지 않습니다.' });
 
 /**
+ * 관리자 미리보기 진입인가 — 세션 증식 재발 방지의 **2차 방어**(lib/book/preview-mode.ts).
+ *
+ * 1차는 리더 3종이 마운트 시 호출 자체를 건너뛰는 것이고(usePreviewEntry), 본 함수는
+ * 그 1차를 빠뜨린 경로(신규 리더 추가 등)가 생겨도 관리자 검수 열람이 기록되지 않게 한다.
+ *
+ * **관리자 role AND preview 진입의 AND**다. role만으로 막지 않는 이유: 관리자가 자기 자녀
+ * 계정으로 실제 독서를 하면 그 기록까지 사라진다(운영자가 실사용자를 겸한다). 두 조건을
+ * 모두 요구하면 그 위험이 없다.
+ *
+ * preview 신호는 **Referer 헤더**에서 읽는다 — server action은 페이지 URL을 인자로 받지
+ * 않으므로, 클라이언트가 보내는 별도 플래그(위조 가능)보다 요청 자체에 실린 값을 쓴다.
+ * Referer가 없거나 파싱 불가면 false다 — 판정 불가 시 **기록을 남기는 쪽**으로 실패한다
+ * (실사용자의 독서를 조용히 잃는 것보다 관리자 열람 1건이 남는 편이 복구 가능하다).
+ *
+ * 비용: Referer에 preview가 없으면 즉시 false라 정상 열람 경로의 추가 왕복은 **0건**이다.
+ * assertAdmin(auth + profiles 2왕복)은 preview 진입에서만 실행된다.
+ */
+async function isAdminPreviewEntry(): Promise<boolean> {
+  if (!isPreviewUrl(headers().get('referer'))) {
+    return false;
+  }
+
+  const admin = await assertAdmin();
+  return admin.ok;
+}
+
+/**
  * 결과 — 성공(ok:true) 또는 사용자에게 표시할 에러 메시지 1줄.
  * completeReadingSession은 성공 시 redirect(never)하므로 ok:false만 정상 반환한다.
  */
@@ -77,6 +107,12 @@ export async function startReadingSession(bookId: string): Promise<SessionAction
   const parsed = bookIdSchema.safeParse(bookId);
   if (!parsed.success) {
     return { ok: false, error: '잘못된 요청입니다.' };
+  }
+
+  // 관리자 미리보기 진입 — 세션을 만들지 않는다(2차 방어, isAdminPreviewEntry 주석 참조).
+  // ok:true를 반환한다: 리더 입장에서 실패가 아니며, 읽기 흐름을 방해하지 않는다.
+  if (await isAdminPreviewEntry()) {
+    return { ok: true };
   }
 
   const supabase = createClient();

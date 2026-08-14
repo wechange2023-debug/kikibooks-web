@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import type { BookReaderCopy } from '@/lib/book/copy';
 import { startReadingSession } from '@/lib/book/reading-session';
 
+import { usePreviewEntry } from './use-preview-entry';
+
 /**
  * HtmlReader — content_type='html' 책 본문 iframe 리더 (ADR-0017 D1 단일 경로).
  *
@@ -105,17 +107,24 @@ export function HtmlReader({
   // 부착되는 onLoad가 그 load 이벤트를 유실 → 5초 타임아웃이 error 폴백을 오발동시킨다.
   // mounted 이후에만 iframe을 생성하면 onLoad/onError가 이미 부착된 상태가 보장된다.
   const [mounted, setMounted] = useState(false);
+  // 관리자 미리보기 진입(?preview=1) 여부 — 세션을 만들지 않는다(preview-mode.ts).
+  const isPreview = usePreviewEntry();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   // 세션 시작 — 마운트 1회(intent §5.1 L104). 중복 가드는 server action 책임(§4.3).
+  // 미리보기 진입이면 호출 자체를 건너뛴다 — 검수 열람이 독서 기록으로 남지 않게 하는
+  // 1차 방어다(2차는 server action의 관리자 role AND preview 확인).
   useEffect(() => {
+    if (isPreview) {
+      return;
+    }
     startReadingSession(bookId).catch(() => {
       // 네트워크 오류 등 — 의도적 silent fail(읽기 흐름 유지, intent §4.4).
     });
-  }, [bookId]);
+  }, [bookId, isPreview]);
 
   useEffect(() => {
     // 타이머는 mounted(=iframe 생성 + 리스너 부착) 이후에만 시작한다. hydration 지연이
