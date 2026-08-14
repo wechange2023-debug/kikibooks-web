@@ -105,6 +105,7 @@
 | 기술적 의사결정 | `docs/adr/` 전체 인덱스 훑기 → 신규 ADR 작성 | 6절 |
 | 하네스 시스템 자체 | `docs/harness/phase-runner.md`, `docs/harness/recovery.md` | — |
 | 협상·비즈니스 (참조용) | `PLAN.md` 10절만 | 10절 |
+| 일정·마일스톤 확인·갱신 | `docs/ops/schedule-2026-08.md` (정본) | — |
 
 **라우팅 원칙**:
 - 한 작업이 여러 행에 걸친다면, 해당 행의 문서를 **모두** 로드한다
