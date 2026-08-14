@@ -55,10 +55,15 @@
 
   # 정제·좌표 규칙 점검
   PYTHONUTF8=1 python scripts/tts_pilot/tts_targets.py --selftest
+
+  # 비용 게이트 회귀 점검 (DB·네트워크·과금 0건)
+  PYTHONUTF8=1 python scripts/tts_pilot/process_tts_requests.py --selftest
 """
 from __future__ import annotations
 
 import argparse
+import contextlib
+import io
 import json
 import os
 import re
@@ -680,6 +685,156 @@ def build_sql(run_id: str) -> Path:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# 자체점검 — 비용 게이트 회귀 (2026-08-14 추가)
+#
+# 배경: 구판(33b3491)의 비율 게이트(±1.0%)가 catch-that-cat 1권 드라이런에서
+#       개행 유래 +11자를 +1.447%로 계산해 오탐 STOP을 냈다. f93c0de에서 원인
+#       판정으로 바꿨으나 판정부에 테스트가 없어, 스크롤 잔상과 실동작을 구분할
+#       근거가 코드 안에 남지 않았다. 그 구분을 여기에 박제한다.
+#
+# 실행 경로: 아래 두 케이스는 delta_is_newline_only() · build_targets()의 분류
+#       루프 · report()의 게이트를 **실물 그대로** 통과시킨다. 대역을 세우는 것은
+#       DB 조회 4건(book_review·books·book_text·book_audio)뿐이다.
+# ─────────────────────────────────────────────────────────────────────────────
+class _FakeQuery:
+    """supabase-py 조회 체인의 최소 대역. 테스트 전용 — 네트워크 0건."""
+
+    def __init__(self, rows: list[dict]):
+        self._rows = rows
+
+    def select(self, *_a, **_k) -> "_FakeQuery":
+        return self
+
+    def eq(self, col: str, val) -> "_FakeQuery":
+        self._rows = [r for r in self._rows if r.get(col) == val]
+        return self
+
+    def in_(self, col: str, vals) -> "_FakeQuery":
+        keep = set(vals)
+        self._rows = [r for r in self._rows if r.get(col) in keep]
+        return self
+
+    def range(self, start: int, end: int) -> "_FakeQuery":
+        self._rows = self._rows[start:end + 1]
+        return self
+
+    def execute(self) -> "_FakeQuery":
+        return self
+
+    @property
+    def data(self) -> list[dict]:
+        return list(self._rows)
+
+
+class _FakeClient:
+    def __init__(self, tables: dict[str, list[dict]]):
+        self._tables = tables
+
+    def table(self, name: str) -> _FakeQuery:
+        return _FakeQuery([dict(r) for r in self._tables.get(name, [])])
+
+
+_T_BOOK_ID = "00000000-0000-4000-8000-000000000001"
+_T_SOURCE_ID = "catch-that-cat"
+_T_TITLE = "Catch That Cat"                              # cover_text → 15자
+
+# 개행 유지분 +1자/면. tts_targets 셀프테스트가 쓰는 실문장과 동일하다(polly 38 / std 37).
+_T_NL_PAGE = "Hurry. Hurry! \nHelp me catch that cat!"
+# 개행 없음 · sanitize 항등(연속공백·양끝공백·PUNCT_GAP 대상 아님). 338자.
+_T_PLAIN_PAGE = ("the cat naps " * 26).strip() + "!"
+# 엔티티 5중 인코딩. unescape_deep(max_rounds=4)이 다 풀지 못해 D6 정제문에 개행
+# 접기만 더해도 기존 정제문과 일치하지 않는다 → 편차 +1자가 **개행으로 설명되지 않는다**.
+# (polly '&amp; \nx' 8자 / std '&amp; x' 7자 — 원문 오염 계열의 실제 형태)
+_T_DIRTY_PAGE = "&amp;amp;amp;amp;amp; \nx"
+
+# 원인 판정 단위 점검 — (D6 정제문, 기존 정제문, 개행 유래인가)
+_T_CAUSE_CASES = [
+    ("line1\nline2", "line1 line2", True),                # 개행 유래 · 길이 동일
+    (_T_NL_PAGE, "Hurry. Hurry! Help me catch that cat!", True),   # 개행 유래 +1자
+    ("a\n\nb", "a b", True),                              # 개행 유래 +2자
+    ("cat", "cat", True),                                 # 편차 0
+    ("Tom && Jerry", "Tom & Jerry", False),               # 문자 오염 +1자
+    ("&amp; \nx", "&amp; x", False),                      # 엔티티 잔재
+]
+
+
+def _gate_case(pages: list[str]) -> dict:
+    """페이지 원문 목록 → 실제 build_targets + report 실행. 반환: report 요약."""
+    client = _FakeClient({
+        "book_review": [{"book_id": _T_BOOK_ID, "status": REQUESTED,
+                         "updated_at": "2026-08-13T18:00:00+00:00"}],
+        "books": [{"id": _T_BOOK_ID, "source_platform": "asb",
+                   "source_id": _T_SOURCE_ID, "title": _T_TITLE, "is_active": True}],
+        "book_text": [{"book_id": _T_BOOK_ID, "page_index": i, "text": t}
+                      for i, t in enumerate(pages)],
+        "book_audio": [],
+    })
+    targets, excluded = build_targets(client)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        summary = report(targets, excluded)
+    summary["_stdout"] = buf.getvalue()
+    return summary
+
+
+def _check(label: str, cond: bool, detail: str = "") -> int:
+    print(f"  [{'ok ' if cond else 'FAIL'}] {label}" + ("" if cond else f"  ← 실측 {detail}"))
+    return 0 if cond else 1
+
+
+def _selftest() -> int:
+    bad = 0
+
+    print("[D6] delta_is_newline_only — 편차의 **원인** 판정")
+    for polly, std, want in _T_CAUSE_CASES:
+        got = delta_is_newline_only(polly, std)
+        bad += _check(f"{polly!r} vs {std!r} ({len(polly) - len(std):+d}자) → "
+                      f"{'개행 유래' if want else '개행 외'}", got == want, f"{got}")
+
+    # ── 회귀 ① 편차 전액이 개행 유지분(+11자)이고 비율이 1.0%를 넘어도 PASS ──────
+    # 구판이라면 여기서 +1.447% > ±1.0% 로 오탐 STOP이 났다. 그 재발을 막는다.
+    print("\n[D6] 회귀 ① 편차 전액 개행 유지분(+11자 · 비율 1.0% 초과) → PASS")
+    ok = _gate_case([_T_NL_PAGE] * 11 + [_T_PLAIN_PAGE])
+    for label, cond, detail in [
+        ("총 771자 (본문 756 + 표지 15)", ok["total_chars"] == 771, f"{ok['total_chars']}자"),
+        ("기존 정제 규칙 대비 +11자", ok["delta"] == 11, f"{ok['delta']:+d}자"),
+        ("개행 보존분 +11자", ok["delta_expected"] == 11, f"{ok['delta_expected']:+d}자"),
+        ("원인 불명 0자", ok["delta"] - ok["delta_expected"] == 0,
+         f"{ok['delta'] - ok['delta_expected']:+d}자"),
+        ("원인 불명 0면", ok["unexplained_pages"] == 0, f"{ok['unexplained_pages']}면"),
+        ("참고 비율 +1.447% — 구 규칙 ±1.0%를 넘는다", abs(ok["delta_pct"] - 1.4474) < 0.001,
+         f"{ok['delta_pct']:+.4f}%"),
+        ("비율은 참고값으로만 출력", "참고값, 게이트 아님" in ok["_stdout"], "문구 없음"),
+        ("STOP 미출력", "[STOP]" not in ok["_stdout"], "STOP 출력됨"),
+        ("cost_gate_ok=True", ok["cost_gate_ok"] is True, f"{ok['cost_gate_ok']}"),
+    ]:
+        bad += _check(label, cond, detail)
+
+    # ── 회귀 ② 개행 유지분 +11자에 개행 외 편차 +1자가 섞이면 STOP ───────────────
+    print("\n[D6] 회귀 ② 개행 유지분 +11자 + 개행 외 편차 +1자 → STOP")
+    ng = _gate_case([_T_NL_PAGE] * 11 + [_T_PLAIN_PAGE, _T_DIRTY_PAGE])
+    for label, cond, detail in [
+        ("기존 정제 규칙 대비 +12자", ng["delta"] == 12, f"{ng['delta']:+d}자"),
+        ("개행 보존분 +11자만 면제", ng["delta_expected"] == 11, f"{ng['delta_expected']:+d}자"),
+        ("원인 불명 +1자", ng["delta"] - ng["delta_expected"] == 1,
+         f"{ng['delta'] - ng['delta_expected']:+d}자"),
+        ("원인 불명 1면 적출", ng["unexplained_pages"] == 1, f"{ng['unexplained_pages']}면"),
+        ("STOP 사유가 개행 미설명 편차", "개행으로 설명되지 않는 문자수 편차" in ng["_stdout"],
+         "문구 없음"),
+        ("cost_gate_ok=False", ng["cost_gate_ok"] is False, f"{ng['cost_gate_ok']}"),
+    ]:
+        bad += _check(label, cond, detail)
+
+    total = len(_T_CAUSE_CASES) + 15
+    print(f"\n[{'PASS' if not bad else 'FAIL'}] 비용 게이트 자체점검 {total - bad}/{total}"
+          f" (원인 판정 {len(_T_CAUSE_CASES)} + 회귀① 9 + 회귀② 6)")
+    if bad:
+        print("\n── 회귀 ① 드라이런 출력 ──\n" + ok["_stdout"])
+        print("\n── 회귀 ② 드라이런 출력 ──\n" + ng["_stdout"])
+    return 0 if not bad else 1
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # main
 # ─────────────────────────────────────────────────────────────────────────────
 def main() -> int:
@@ -695,7 +850,13 @@ def main() -> int:
     ap.add_argument("--overwrite", action="store_true", help="--upload: 기존 키 덮어쓰기(기본 금지)")
     ap.add_argument("--allow-offset-drift", action="store_true",
                     help="좌표 경고를 무시하고 합성 강행(하이라이트 밀림 감수)")
+    ap.add_argument("--selftest", action="store_true",
+                    help="비용 게이트 회귀 점검. DB·네트워크·과금 0건 — 단독으로 쓴다")
     args = ap.parse_args()
+
+    # 큐 조회(make_client) 이전에 갈라진다 — 자격증명 없이도 돈다.
+    if args.selftest:
+        return _selftest()
 
     try:
         # ── 업로드·SQL 단계는 로컬 산출물만 본다(큐 조회 불요) ──
