@@ -181,26 +181,47 @@
 
 ---
 
-## 7. `catch-that-cat` — 재합성 대상 확정 (착수 대기, 2026-08-18)
+## 7. `catch-that-cat` — 재합성 완결 (2026-08-18)
 
 대상 **18권 33면** 중 **`catch-that-cat` 1권 1면(`page_no` = 5, `page_index` = 4)** 은
-6절의 17권 32면 트랙에서 제외했다. 그 사유와 현재 상태는 아래와 같다.
+`book_audio` 보유로 6절의 17권 32면 트랙에서 제외했다가, 별도 트랙으로 처리해 **완결**했다.
 
-- **제외 사유(실측)**: 이 책은 `book_audio` 행을 보유한다(`has_audio = true`). 따라서 상세 화면의
-  **[TTS 생성 요청] 버튼이 잠겨 있다** — `review-detail-view.tsx:276`(화면 잠금) ·
-  `lib/admin/review/actions.ts:304-312`(서버 거부). 잠김 사유 표기는
-  `오디오 보유 — 재생성은 별도 트랙`이다.
-- **팀장 확인 사항**: 이 책은 지난주 교정이 이미 진행된 도서다.
-- **판별 결과**: **재합성 대상으로 확정**됐다. 텍스트 교정이 합성보다 나중이어서 하이라이트
-  좌표가 밀린다(ADR-0058 Amendment #1 G6 — "TTS 완료 도서 텍스트 수정 = 재합성").
-  판별 조회: `scripts/sql/trackB_catchthatcat_audit.sql`(읽기 전용).
-- **승인된 대응**: **A안 — `book_audio` 13행 전삭제**(page 12 + cover 1).
-  삭제하면 `hasBookAudio`가 행 존재로만 판정하므로 **잠금이 자동 해제**된다
-  (ADR-0058 Amd#1 G1 ② — 코드 변경 0건).
-- **현재 상태**: **착수 대기.** 별도 지시 전까지 이 책의 코드·문서·데이터를 건드리지 않는다.
+### 실행 기록
 
+| 단계 | 결과 |
+|---|---|
+| ① 삭제 | `book_audio` **13행 전삭제**(page 12 + cover 1) — `docs/sql/adr0058/catchthatcat_audio_delete.sql` 팀장 COMMIT |
+| ② 잠금 해제 | 자동 — `hasBookAudio`가 행 존재로만 판정(ADR-0058 Amd#1 G1 ②, 코드 변경 0건) |
+| ③ 화면 조작 | `tts_done` → [되돌리기] → `in_review` → [확정] → `confirmed` → [TTS 생성 요청] → `tts_requested`. **5면 텍스트 재교정 없음**(이미 교정본) |
+| ④ 재합성 | `run_id` **`20260818-152853`** · **13유닛** · **771자** · 실패 0 · $0.1542 |
+| ⑤ 업로드 | **26객체**(mp3 13 + marks 13) `--upload --overwrite` · 업로드 26 · **스킵 0** · 실패 0 |
+| ⑥ 적재 | `book_audio` **13행** · `book_review` **`tts_done`** — `docs/sql/adr0058/requests/20260818-152853.sql` 팀장 COMMIT |
 
-### 7-1. 삭제 SQL COMMIT 이후 팀장 조작 순서 (실측 기반)
+덮어쓰기 실증: 업로드 전후 스냅샷 대조에서 **객체 26개의 `updated_at`이 전건 이동**
+(`2026-08-14T02:30:5xZ` → `2026-08-18T06:31:1xZ`). 객체 수 증가 0, 이름 집합 동일.
+
+### ⚠ 실증 — 재합성은 결과적으로 **불필요했다**
+
+재합성 결과물이 **옛 음원과 바이트 단위로 동일**했다.
+
+- Storage 객체 **크기 26건 전건 무변동** (`p03.mp3` 59,900B · `p05.mp3` 54,020B 그대로)
+- 옛 적재 SQL(`20260814-101906.sql`)의 `duration_ms` ↔ 새 manifest `out_ms` **13/13 일치**
+- marks JSON 크기 13건 무변동
+
+**원인**: `sanitize`가 연속 공백·개행을 접으므로 원문의 **공백만 수정하면 Polly 입력이 변하지
+않는다.** 재합성 판정 근거였던 `book_text.updated_at > book_audio.created_at`은 그 행에
+UPDATE가 있었다는 사실만 말할 뿐, 정제 후 텍스트가 달라졌다는 뜻이 아니었다.
+
+**후속 조치**: 판정 절차를 2단으로 개정했다 — ① `updated_at` 비교로 후보를 좁히고
+② **드라이런의 `[좌표]` 정합 판정으로 확정**한다. `[좌표] 전 유닛 정합 ✅`이면 재합성은 불요다.
+(ADR-0058 Amd#1 **G6-a** · `scripts/sql/trackB_catchthatcat_audit.sql` 헤더)
+
+비용 $0.1542는 **학습 비용으로 종결**(2026-08-18 팀장 판단). 8/14 당시 `book_text.text`는
+DB에 이력이 없어 복원 불가이므로 추가 조사는 반려됐다.
+
+---
+
+### 7-1. 삭제 SQL COMMIT 이후 팀장 조작 순서 (실행 완료된 절차 기록)
 
 삭제 SQL: `docs/sql/adr0058/catchthatcat_audio_delete.sql` (BEGIN … ROLLBACK · COMMIT 문 0건).
 COMMIT 이후 화면에서 아래 순서를 밟는다.
@@ -267,7 +288,22 @@ COMMIT 이후 화면에서 아래 순서를 밟는다.
 
 ---
 
-## 8. 표준 순서 요약
+## 8. ✅ 회전 18권 33면 트랙 — 전체 완결 (2026-08-18)
+
+| 구분 | 권 | 면 | 합성 run | `book_audio` |
+|---|---:|---:|---|---:|
+| 17권 배치 | 17 | 32 | `20260818-144217` | 221행 |
+| `catch-that-cat` | 1 | 1 | `20260818-152853` | 13행 |
+| **합계** | **18** | **33** | — | **234행** |
+
+18권 전부 `book_review.status = 'tts_done'`. 최종 검증 조회:
+`scripts/sql/trackB_final_verify.sql`(읽기 전용 · 통과 기준 = 18권 `tts_done` ·
+`audio_rows` 합계 **234** · `is_active` 전부 true).
+
+---
+
+
+## 9. 표준 순서 요약
 
 ```
 조회 SQL 실행(팀장)  →  결과에서 book_id 확보
@@ -287,7 +323,7 @@ COMMIT 이후 화면에서 아래 순서를 밟는다.
 
 ---
 
-## 9. 참조
+## 10. 참조
 
 - 대상 조회 SQL: `scripts/sql/trackB_rotation_targets.sql` (읽기 전용)
 - 회전 대상 상수: `lib/admin/review/rotation-pages.ts`
