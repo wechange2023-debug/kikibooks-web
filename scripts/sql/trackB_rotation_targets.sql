@@ -21,7 +21,7 @@
 -- -----------------------------------------------------------------------------
 --   page_index = 0-based. book_text.page_index 축이다(ADR-0046 D2).
 --   page_no    = page_index + 1 = 1-based. 검수 화면이 "NN면"으로 표시하는 값이며
---                (components/admin/review/review-detail-view.tsx:325)
+--                (components/admin/review/review-detail-view.tsx:324)
 --                scratchpad/rotation_audit_154.csv 의 page_no 와 같은 축이다.
 --   팀장이 화면에서 찾을 때 쓰는 번호는 page_no 다.
 --
