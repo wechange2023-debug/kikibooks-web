@@ -7,6 +7,7 @@ import {
 } from '@supabase/supabase-js';
 
 import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
+import { fetchAllWithinRowCap } from '@/lib/shared/row-cap';
 import {
   toPopularBooks,
   type PopularBook,
@@ -372,17 +373,35 @@ async function fetchCompletedBookIds(
   supabase: SupabaseClient,
   childId: string,
 ): Promise<Set<string>> {
-  const { data, error } = await supabase
-    .from('reading_sessions')
-    .select('book_id')
-    .eq('child_id', childId)
-    .eq('is_completed', true)
-    .returns<CompletedSessionRow[]>();
+  // 행 상한 2중 가드 (ADR-0059 D1 #3) — 청크 페이징 + 길이 일치 감지.
+  // 불일치는 헬퍼가 console.error 1줄로 남기고 **화면 표시는 바꾸지 않는다**: 이 Set은
+  // 표시 수치가 아니라 차집합 필터이며, 잘림의 영향은 "이미 읽은 책이 재노출"에 그친다.
+  // 화면을 에러로 막으면 원 버그보다 피해가 크다. 쿼리 실패에 throw하는 기존 동작은
+  // queryError(불일치와 별개 신호)로 그대로 보존한다.
+  const result = await fetchAllWithinRowCap<CompletedSessionRow>({
+    label: 'fetchCompletedBookIds(categories): reading_sessions',
+    selectCount: () =>
+      supabase
+        .from('reading_sessions')
+        .select('id', { count: 'exact', head: true })
+        .eq('child_id', childId)
+        .eq('is_completed', true),
+    // offset 페이징의 결정적 정렬 키 — PK 오름차순(완독 행은 book_id 중복이 가능하다).
+    selectChunk: (from, to) =>
+      supabase
+        .from('reading_sessions')
+        .select('book_id')
+        .eq('child_id', childId)
+        .eq('is_completed', true)
+        .order('id', { ascending: true })
+        .range(from, to)
+        .returns<CompletedSessionRow[]>(),
+  });
 
-  if (error) {
-    throw new Error(`fetchCompletedBookIds: reading_sessions 조회 실패 — ${error.message}`);
+  if (result.queryError) {
+    throw new Error(result.queryError);
   }
-  return new Set((data ?? []).map((row) => row.book_id));
+  return new Set(result.rows.map((row) => row.book_id));
 }
 
 /**

@@ -2,6 +2,7 @@ import 'server-only';
 
 import type { SupabaseClient } from '@supabase/supabase-js';
 
+import { fetchAllWithinRowCap } from '@/lib/shared/row-cap';
 import {
   toPopularBooks,
   type PopularBook,
@@ -107,12 +108,26 @@ export async function getMypageSummary(
 
   // ── 1파: 상호 의존 없는 3개 쿼리 병렬 ──────────────────────────────────────
   const [sessionsResult, pointsResult, favoritesResult] = await Promise.all([
-    supabase
-      .from('reading_sessions')
-      .select('book_id, is_completed, completed_at')
-      .eq('child_id', childId)
-      .order('completed_at', { ascending: false, nullsFirst: false })
-      .returns<SessionRow[]>(),
+    // 행 상한 2중 가드 (ADR-0059 D1 #1) — 청크 페이징 + 길이 일치 감지.
+    // 보조 정렬 키 id ASC는 필수다: completed_at은 미완독 행에서 전부 NULL이라 동률이
+    // 대량으로 남고, 그 상태로 offset 페이징을 하면 청크 경계에서 중복·누락이 생긴다.
+    fetchAllWithinRowCap<SessionRow>({
+      label: 'getMypageSummary: reading_sessions',
+      selectCount: () =>
+        supabase
+          .from('reading_sessions')
+          .select('id', { count: 'exact', head: true })
+          .eq('child_id', childId),
+      selectChunk: (from, to) =>
+        supabase
+          .from('reading_sessions')
+          .select('book_id, is_completed, completed_at')
+          .eq('child_id', childId)
+          .order('completed_at', { ascending: false, nullsFirst: false })
+          .order('id', { ascending: true })
+          .range(from, to)
+          .returns<SessionRow[]>(),
+    }),
     supabase
       .from('children')
       .select('points')
@@ -127,7 +142,9 @@ export async function getMypageSummary(
       .returns<FavoriteRow[]>(),
   ]);
 
-  if (sessionsResult.error) {
+  // 쿼리 실패뿐 아니라 **길이 불일치**도 degraded로 승격한다 — 잘린 수치를 정확한 값인
+  // 것처럼 표시하지 않기 위한 fail-loud다(ADR-0059 D1 #1, 신규 필드 0건).
+  if (!sessionsResult.consistent) {
     degraded = true;
   }
   if (pointsResult.error) {
@@ -137,7 +154,7 @@ export async function getMypageSummary(
     degraded = true;
   }
 
-  const sessions = sessionsResult.error ? [] : (sessionsResult.data ?? []);
+  const sessions = sessionsResult.rows;
   const points = pointsResult.error ? 0 : (pointsResult.data?.points ?? 0);
   const favoriteRows = favoritesResult.error ? [] : (favoritesResult.data ?? []);
 
