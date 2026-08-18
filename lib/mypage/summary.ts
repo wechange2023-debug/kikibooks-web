@@ -15,6 +15,12 @@ import {
  * D3(스키마 변경 0건): reading_sessions · children.points · favorites 3개 기존 테이블을
  *   **읽기 전용으로만** 재사용한다. 신규 컬럼·테이블·트리거 0건.
  *
+ * ADR-0059 D2-b(2026-08-18 COMMIT 확정): 4수치의 **정본은 DB 함수**
+ *   `public.get_child_reading_stats(p_child_id uuid)`다(SECURITY INVOKER). 세션 행을
+ *   전량 받아 JS로 세던 구조를 폐기했으므로, 행 수가 늘어도 PostgREST 행 상한에
+ *   걸리지 않는다. 함수 신설은 D3의 "스키마 변경 0건"에 대한 유일한 예외이며
+ *   ADR-0059가 승인 근거다(테이블·컬럼·트리거는 여전히 0건).
+ *
  * Amendment O2(2026-08-07) 권수 정의:
  *   - **완독 권수 = `reading_sessions.is_completed = true`** 기준. ADR-0018의 완독 판정
  *     (+50 포인트 적립 앵커)·스트릭 채움 기준(lib/home/streak.ts)과 동일 컬럼을 써서
@@ -48,12 +54,6 @@ import {
 /** 읽은 책·즐겨찾기 리스트에 노출하는 최대 권수(ADR-0024 작업지시서). */
 const LIST_LIMIT = 20;
 
-/**
- * 완독 세션 조회 상한 — 같은 책을 여러 번 완독하면 세션이 중복되므로 넉넉히 받아
- * book_id 기준으로 접은 뒤 LIST_LIMIT으로 자른다.
- */
-const COMPLETED_SESSION_SCAN = 60;
-
 /** 마이페이지 4개 섹션이 필요로 하는 데이터 일체. */
 export interface MypageSummary {
   /** 완독한 책 **종수**(is_completed = true, 중복 제거). */
@@ -70,11 +70,26 @@ export interface MypageSummary {
   degraded: boolean;
 }
 
-/** reading_sessions 조회 행. */
-interface SessionRow {
+/**
+ * get_child_reading_stats RPC 반환 1행 (ADR-0059 D2-b).
+ *
+ * bigint 3종은 PostgREST가 JSON number로 직렬화한다. 권수 2종은 ADR-0024 O2의
+ * **책 종수** 정의를 그대로 따른다 — 세션 행 수가 아니다.
+ */
+interface ReadingStatsRow {
+  /** reading_sessions 행 수(총계). 진단용 — 화면 계약에는 넣지 않는다. */
+  session_rows: number;
+  /** is_completed = true 인 DISTINCT book_id 종수. */
+  completed_titles: number;
+  /** 완독 이력이 전혀 없는 DISTINCT book_id 종수. completed_titles와 상호 배타. */
+  in_progress_titles: number;
+  /** 완독 세션의 MAX(completed_at). 완독 0건이면 null. */
+  last_read_at: string | null;
+}
+
+/** '읽은 책' 목록 순서를 얻기 위한 완독 세션 행. is_completed = true로 좁혀 조회한다. */
+interface CompletedSessionRow {
   book_id: string;
-  is_completed: boolean;
-  completed_at: string | null;
 }
 
 /** favorites 조회 행. */
@@ -91,7 +106,7 @@ interface PointsRow {
  * 자녀의 마이페이지 요약을 조회한다.
  *
  * 쿼리 구성 (3파):
- *   1파 Promise.all — 세션 전량 / 포인트 / 즐겨찾기 목록 (상호 무의존)
+ *   1파 Promise.all — **RPC 4수치** / 포인트 / 즐겨찾기 목록 / 완독 세션 목록 (상호 무의존)
  *   2파               — 1파에서 얻은 book_id로 books 1회 조회 (읽은 책 + 즐겨찾기 합집합)
  *   3파               — toPopularBooks 1회 (book_audio 조회도 1회로 수렴)
  *   2·3파는 1파 결과에 의존하므로 병렬화할 수 없다. 대신 두 리스트의 id를 **합집합으로
@@ -106,28 +121,14 @@ export async function getMypageSummary(
 ): Promise<MypageSummary> {
   let degraded = false;
 
-  // ── 1파: 상호 의존 없는 3개 쿼리 병렬 ──────────────────────────────────────
-  const [sessionsResult, pointsResult, favoritesResult] = await Promise.all([
-    // 행 상한 2중 가드 (ADR-0059 D1 #1) — 청크 페이징 + 길이 일치 감지.
-    // 보조 정렬 키 id ASC는 필수다: completed_at은 미완독 행에서 전부 NULL이라 동률이
-    // 대량으로 남고, 그 상태로 offset 페이징을 하면 청크 경계에서 중복·누락이 생긴다.
-    fetchAllWithinRowCap<SessionRow>({
-      label: 'getMypageSummary: reading_sessions',
-      selectCount: () =>
-        supabase
-          .from('reading_sessions')
-          .select('id', { count: 'exact', head: true })
-          .eq('child_id', childId),
-      selectChunk: (from, to) =>
-        supabase
-          .from('reading_sessions')
-          .select('book_id, is_completed, completed_at')
-          .eq('child_id', childId)
-          .order('completed_at', { ascending: false, nullsFirst: false })
-          .order('id', { ascending: true })
-          .range(from, to)
-          .returns<SessionRow[]>(),
-    }),
+  // ── 1파: 상호 의존 없는 4개 쿼리 병렬 ──────────────────────────────────────
+  const [statsResult, pointsResult, favoritesResult, completedResult] = await Promise.all([
+    // 4수치의 **정본**(ADR-0059 D2-b) — DB가 집계한 값을 왕복 1회로 받는다. 행 수와
+    // 무관하므로 PostgREST 행 상한 문제가 이 경로에서는 구조적으로 소멸한다.
+    // SECURITY INVOKER라 reading_sessions RLS(001 §9.4)가 그대로 걸린다.
+    supabase
+      .rpc('get_child_reading_stats', { p_child_id: childId })
+      .maybeSingle<ReadingStatsRow>(),
     supabase
       .from('children')
       .select('points')
@@ -140,11 +141,36 @@ export async function getMypageSummary(
       .order('created_at', { ascending: false })
       .limit(LIST_LIMIT)
       .returns<FavoriteRow[]>(),
+    // '읽은 책' 목록의 **순서**는 RPC가 주지 않는다(종수·타임스탬프만 반환). 그래서
+    // 세션 조회가 남지만, 범위를 **완독 세션으로 한정**해 전체 세션 전량 스캔(절단의
+    // 직접 원인, 실측 2,433행)을 없앴다 — 완독 행은 실측 52행이라 사실상 1왕복이다.
+    // 행 상한 가드는 유지한다(ADR-0059 D1): 목록이 조용히 잘리면 책이 사라진다.
+    // 보조 정렬 키 id ASC는 필수다 — 같은 completed_at 동률에서 청크 경계가 흔들린다.
+    fetchAllWithinRowCap<CompletedSessionRow>({
+      label: 'getMypageSummary: reading_sessions(completed)',
+      selectCount: () =>
+        supabase
+          .from('reading_sessions')
+          .select('id', { count: 'exact', head: true })
+          .eq('child_id', childId)
+          .eq('is_completed', true),
+      selectChunk: (from, to) =>
+        supabase
+          .from('reading_sessions')
+          .select('book_id')
+          .eq('child_id', childId)
+          .eq('is_completed', true)
+          .order('completed_at', { ascending: false, nullsFirst: false })
+          .order('id', { ascending: true })
+          .range(from, to)
+          .returns<CompletedSessionRow[]>(),
+    }),
   ]);
 
-  // 쿼리 실패뿐 아니라 **길이 불일치**도 degraded로 승격한다 — 잘린 수치를 정확한 값인
-  // 것처럼 표시하지 않기 위한 fail-loud다(ADR-0059 D1 #1, 신규 필드 0건).
-  if (!sessionsResult.consistent) {
+  // RPC 실패·0행은 degraded로 승격하고 **청크 방식으로 폴백하지 않는다** — 폴백은
+  // ADR-0059가 없앤 절단 버그를 되살린다. 신규 필드 0건(기존 degraded 재사용).
+  const stats = statsResult.error ? null : statsResult.data;
+  if (!stats) {
     degraded = true;
   }
   if (pointsResult.error) {
@@ -153,35 +179,30 @@ export async function getMypageSummary(
   if (favoritesResult.error) {
     degraded = true;
   }
+  // 목록 조회는 길이 불일치도 degraded다 — 조용히 잘리면 '읽은 책'에서 책이 사라진다.
+  if (!completedResult.consistent) {
+    degraded = true;
+  }
 
-  const sessions = sessionsResult.rows;
   const points = pointsResult.error ? 0 : (pointsResult.data?.points ?? 0);
   const favoriteRows = favoritesResult.error ? [] : (favoritesResult.data ?? []);
 
-  // 완독 책 종수 — 세션 행 수가 아니라 book_id 집합 크기(재완독 중복 제거).
-  const completedBookIds: string[] = [];
-  const completedSeen = new Set<string>();
-  for (const row of sessions) {
-    if (!row.is_completed || completedSeen.has(row.book_id)) {
+  // 최근 완독순 상위 LIST_LIMIT권의 book_id — **종수 산출에는 쓰지 않는다**.
+  // 4수치의 정본은 RPC 하나뿐이며, 같은 수치를 두 경로로 만들지 않는다.
+  const readBookIds: string[] = [];
+  const readSeen = new Set<string>();
+  for (const row of completedResult.rows) {
+    if (readSeen.has(row.book_id)) {
       continue;
     }
-    completedSeen.add(row.book_id);
+    readSeen.add(row.book_id);
     // 이미 completed_at DESC로 정렬돼 있으므로 최근 완독순이 그대로 보존된다.
-    if (completedBookIds.length < COMPLETED_SESSION_SCAN) {
-      completedBookIds.push(row.book_id);
+    readBookIds.push(row.book_id);
+    if (readBookIds.length >= LIST_LIMIT) {
+      break;
     }
   }
 
-  // 읽는 중 종수 — 미완독 세션이 있고, 그 책을 아직 한 번도 완독하지 않은 경우만.
-  const inProgressSeen = new Set<string>();
-  for (const row of sessions) {
-    if (row.is_completed || completedSeen.has(row.book_id)) {
-      continue;
-    }
-    inProgressSeen.add(row.book_id);
-  }
-
-  const readBookIds = completedBookIds.slice(0, LIST_LIMIT);
   const favoriteBookIds = favoriteRows.map((row) => row.book_id);
 
   // ── 2·3파: books 1회 + toPopularBooks 1회 (두 리스트 합집합) ───────────────
@@ -191,8 +212,9 @@ export async function getMypageSummary(
   });
 
   return {
-    completedCount: completedSeen.size,
-    inProgressCount: inProgressSeen.size,
+    // ADR-0024 O2 정의(책 종수) 그대로 — RPC가 DISTINCT book_id로 센 값이다.
+    completedCount: stats?.completed_titles ?? 0,
+    inProgressCount: stats?.in_progress_titles ?? 0,
     points,
     // is_active=false 책은 bookMap에 없다 → 자동 제외(책 상세가 notFound라 죽은 링크 방지).
     readBooks: readBookIds.map((id) => bookMap.get(id)).filter(isPresent),
