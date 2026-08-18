@@ -199,6 +199,67 @@
   (ADR-0058 Amd#1 G1 ② — 코드 변경 0건).
 - **현재 상태**: **착수 대기.** 별도 지시 전까지 이 책의 코드·문서·데이터를 건드리지 않는다.
 
+
+### 7-1. 삭제 SQL COMMIT 이후 팀장 조작 순서 (실측 기반)
+
+삭제 SQL: `docs/sql/adr0058/catchthatcat_audio_delete.sql` (BEGIN … ROLLBACK · COMMIT 문 0건).
+COMMIT 이후 화면에서 아래 순서를 밟는다.
+
+**0. 상세 화면을 새로고침한다.**
+`hasAudio`는 페이지를 열 때 서버가 `book_audio`를 조회해 계산한다
+(`lib/admin/review/query.ts:270-279`). 삭제 전에 열어 둔 탭은 낡은 값을 들고 있으므로
+반드시 다시 연다 — `/admin/review/56027756-fc5d-45f9-8b8c-fe33727e6089`
+
+**1. 현재 상태에서 보이는 버튼**
+`status = 'tts_done'` 이므로 머리말 전이 버튼의 라벨은 **[되돌리기]**(→ `in_review`)다
+(`review-detail-view.tsx:225-233`). 이 상태에서는 **[TTS 생성 요청] 버튼이 보이지 않는다**
+— 노출 조건이 `draft` 또는 `confirmed` 뿐이기 때문이다(`:243-244`).
+
+**2. [되돌리기] 클릭 → 경고 1회**
+> 이 책은 음성이 이미 생성됐습니다. 텍스트를 다시 고치면 음성을 새로 만들어야 합니다. 계속할까요?
+
+(`review-detail-view.tsx:93-94`) — 확인을 누르면 `tts_done → in_review`.
+
+**3. [확정] 클릭 → `confirmed`**
+`in_review`가 되면 라벨이 **[확정]** 으로 바뀐다. **`in_review → tts_requested` 는 전이표에서
+금지**되므로(`lib/admin/review/actions.ts:112`) 확정을 건너뛸 수 없다.
+
+**4. [TTS 생성 요청] 클릭**
+`confirmed` 가 되면 버튼이 **나타나고**, `book_audio` 0행이므로 **잠기지 않는다**
+(잠금 조건 `detail.hasAudio`, `:276`). 확인창 1회 후 `tts_requested`.
+여기까지가 팀장 몫이며, 이후 드라이런·합성·업로드·적재 SQL 생성은 워커가 맡는다.
+
+**전이 경로 요약** — `tts_done` → (되돌리기) → `in_review` → (확정) → `confirmed` → (요청) → `tts_requested`
+
+#### 5면 텍스트를 다시 고쳐야 하는가 — **불요** (실측 근거)
+
+| 항목 | 실측값 (2026-08-18 조회) |
+|---|---|
+| `book_audio.created_at` (13행 전부) | `2026-08-14T02:38:09Z` |
+| `book_text` `page_index` **4** (= `page_no` 5, 회전 대상) `updated_at` | `2026-08-14T03:58:08Z` |
+| `book_text` `page_index` **2** (= `page_no` 3) `updated_at` | `2026-08-14T03:54:52Z` |
+| 나머지 11면 | `2026-08-13` (오디오보다 이름) |
+
+교정본은 **이미 `book_text`에 저장돼 있다**. 5면 텍스트는 오디오 적재보다 **1시간 20분 뒤**에
+갱신됐고, 재합성은 합성 시점의 `book_text.text`를 그대로 읽으므로 **손댈 필요가 없다.**
+`in_review` 상태에서 아무 것도 고치지 않고 바로 [확정]으로 넘어가면 된다
+(미저장 수정이 없으면 경고창도 뜨지 않는다 — `review-detail-view.tsx:112-113`).
+
+> **드리프트는 1면이 아니라 최소 2면이다.** `page_no` 3(`page_index` 2)도 오디오보다 나중에
+> 수정됐다. A안(13행 전삭제 → 권 단위 재합성)은 두 면을 모두 덮으므로 계획 변경은 없다.
+> 이 사실은 1행만 지우는 B안이 왜 성립하지 않는지를 한 번 더 뒷받침한다.
+
+#### Storage 처리 — 선삭제하지 않는다
+
+재합성 후 업로드는 **`--upload --overwrite` 가 필수**다.
+- 업로드 키는 `{platform}-{source_id}/{voice}/{unit}` 로 **`run_id`와 무관하게 결정적**이다
+  (`process_tts_requests.py:294` `key_prefix = f"{book_key}/{VOICE}"`). 기존 26개 객체와 **전건 충돌**한다.
+- `--overwrite` 없이 올리면 `upsert=false`라 충돌 키가 **조용히 스킵된다**(`:544-557`).
+  그러면 Storage에는 **옛 음원이 남고** 새 `book_audio` 행이 그 키를 가리켜, 텍스트와 marks가
+  어긋난 상태가 그대로 배포된다. 업로드가 멈추지 않으므로 눈에 띄지 않는다 — 가장 위험한 경로다.
+- 파이프라인에 Storage 객체 삭제 코드는 **존재하지 않는다**(전 저장소 실측 0건). ADR-0058
+  Amd#1 G2가 정한 대로 **덮어쓰기**가 유일한 교체 수단이다(삭제 후 재업로드는 404 구간을 만든다).
+
 > 재합성 표준 4단계(ADR-0058 Amd#1 G1): ① 팀장이 `book_audio` 행 삭제 → ② 잠금 자동 해제
 > → ③ 검수 화면에서 텍스트 수정 → `confirmed` → ④ TTS 재요청 → 드라이런 → `--execute`
 > → **`--upload --overwrite`** → 적재 SQL.
