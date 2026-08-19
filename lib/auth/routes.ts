@@ -62,3 +62,22 @@ export function isProtectedPath(pathname: string): boolean {
 export function isAuthPage(pathname: string): boolean {
   return (AUTH_PAGES as readonly string[]).includes(pathname);
 }
+
+/**
+ * 책 읽기(/read)·완독(/celebrate) 몰입 화면 — 공통 헤더·푸터 **둘 다** 미렌더 대상.
+ * 정확한 세그먼트 매칭이라 `/book/[id]`(상세) 자신은 걸리지 않는다.
+ *
+ * ★ ADR-0061 D4 — 이 정규식을 복제하지 않는다. 복제하면 한쪽만 고쳐지는 순간
+ *   헤더는 숨고 푸터는 남는 상태가 된다. `AppHeader`(ADR-0021 D3)와 `AppFooter`가
+ *   같은 상수를 공유한다.
+ *
+ * 알려진 한계(ADR-0021 D3 승계): `/book/[id]` not-found는 책 상세와 URL이 같아
+ *   (`notFound()`는 요청 URL을 그대로 렌더) usePathname으로 구별할 수 없다.
+ *   따라서 not-found에서는 헤더·푸터가 노출된다.
+ */
+export const IMMERSIVE_ROUTE_RE = /^\/book\/[^/]+\/(read|celebrate)$/;
+
+/** 몰입 화면(헤더·푸터 미렌더)인지 판정한다. */
+export function isImmersiveRoute(pathname: string): boolean {
+  return IMMERSIVE_ROUTE_RE.test(pathname);
+}

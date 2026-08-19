@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { BRAND_NAME } from '@/lib/brand';
+import { CC_BY_NOTICE, PRIVACY_LABEL, TERMS_LABEL } from '@/lib/legal';
 
 /**
  * 랜딩 페이지(Screen 01) 카피 단일 출처 (Single Source of Truth).
@@ -104,10 +105,11 @@ const LANDING_COPY: LandingCopy = {
   footer: {
     companyName: '주식회사 위체인지 (WECHANGE)',
     copyright: '© 2026 주식회사 위체인지',
-    attributionNotice:
-      '모든 도서는 CC BY 4.0 라이선스이며, 글·그림 저작자와 원본 출처는 각 책 상세 페이지에 표시됩니다.',
-    termsLabel: '이용약관',
-    privacyLabel: '개인정보처리방침',
+    // ADR-0061 D3 — 문구·라벨은 lib/legal.ts가 단일 출처다. 랜딩 푸터와 공통 푸터
+    // (components/app/app-footer.tsx)가 같은 상수를 참조해 이중 관리를 없앤다.
+    attributionNotice: CC_BY_NOTICE,
+    termsLabel: TERMS_LABEL,
+    privacyLabel: PRIVACY_LABEL,
   },
 };
 

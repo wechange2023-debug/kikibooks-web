@@ -130,5 +130,5 @@ const TERMS_DOCUMENT: LegalDocument = {
 };
 
 export default function TermsPage() {
-  return <LegalPageShell doc={TERMS_DOCUMENT} />;
+  return <LegalPageShell doc={TERMS_DOCUMENT} current="terms" />;
 }

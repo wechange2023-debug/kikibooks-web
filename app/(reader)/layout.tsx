@@ -1,3 +1,4 @@
+import { AppFooter } from '@/components/app/app-footer';
 import { AppHeader } from '@/components/app/app-header';
 
 /**
@@ -14,10 +15,19 @@ import { AppHeader } from '@/components/app/app-header';
  *   - D3: AppHeader가 'use client' + usePathname으로 /read·/celebrate에서 null 반환.
  *     본 layout은 server component 유지(헤더 분기는 AppHeader 책임).
  *
- * 적용 대상(D1 세그먼트 공유): /home · /library · /book/[id] 및 그 하위 read·celebrate·
- *   not-found 전부. 몰입 화면(read·celebrate) 헤더 차단은 AppHeader가 담당.
+ * 적용 대상(D1 세그먼트 공유): /home · /library · /mypage · /book/[id] 및 그 하위
+ *   read·celebrate·not-found 전부. 몰입 화면(read·celebrate) 헤더 차단은 AppHeader가 담당.
+ *
+ * ──────────────────────────────────────────────────────────────────────────────
+ * 공통 푸터 (ADR-0061 D1)
+ * ──────────────────────────────────────────────────────────────────────────────
+ *   AppFooter를 `{children}` **뒤**에 둔다. D2(각 page가 자체 컨테이너 보유)에 따라
+ *   layout은 헤더·푸터 바만 제공하며 컨테이너를 강제하지 않는다.
+ *   몰입 화면 차단은 AppHeader와 동일하게 AppFooter가 자체 처리한다(ADR-0061 D4,
+ *   isImmersiveRoute 공용 상수 공유). 본 layout은 server component를 유지한다.
  *
  * ADR: docs/adr/0021-reader-route-group-and-app-header.md D1·D2·D3
+ *      docs/adr/0061-global-footer-legal-links.md D1·D4
  */
 export default function ReaderLayout({
   children,
@@ -28,6 +38,7 @@ export default function ReaderLayout({
     <>
       <AppHeader />
       {children}
+      <AppFooter />
     </>
   );
 }

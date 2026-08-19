@@ -4,7 +4,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { MobileNav } from '@/components/app/mobile-nav';
-import { HOME_PATH, LIBRARY_PATH, MYPAGE_PATH, SHOWCASE_PATH } from '@/lib/auth/routes';
+import {
+  HOME_PATH,
+  LIBRARY_PATH,
+  MYPAGE_PATH,
+  SHOWCASE_PATH,
+  isImmersiveRoute,
+} from '@/lib/auth/routes';
 import { BRAND_NAME } from '@/lib/brand';
 
 /**
@@ -48,8 +54,9 @@ import { BRAND_NAME } from '@/lib/brand';
  * ADR: docs/adr/0021-reader-route-group-and-app-header.md D2·D3·D4·D5
  */
 
-/** 책 읽기(/read)·완독(/celebrate) 몰입 화면 — 헤더 미렌더 대상. 정확한 세그먼트 매칭. */
-const IMMERSIVE_ROUTE_RE = /^\/book\/[^/]+\/(read|celebrate)$/;
+// 몰입 화면 판정은 lib/auth/routes.ts의 isImmersiveRoute로 이관했다 —
+// AppFooter가 같은 판정을 써야 하고, 복제하면 한쪽만 고쳐지는 순간 헤더는 숨고
+// 푸터는 남는 상태가 된다(ADR-0061 D4).
 
 interface NavLink {
   href: string;
@@ -87,8 +94,8 @@ const NAV_LINKS: NavLink[] = [
 export function AppHeader() {
   const pathname = usePathname();
 
-  // D3 — 몰입 화면(/read·/celebrate)에서는 헤더 미렌더.
-  if (IMMERSIVE_ROUTE_RE.test(pathname)) {
+  // D3 — 몰입 화면(/read·/celebrate)에서는 헤더 미렌더. AppFooter와 같은 판정을 쓴다.
+  if (isImmersiveRoute(pathname)) {
     return null;
   }
 
