@@ -31,7 +31,7 @@ import { completeReadingSession } from '@/lib/book/reading-session';
  *     `import type`이므로 server-only 런타임은 유입되지 않는다.
  *
  * 디자인 (design-system §6.1 Button Primary — read-button.tsx 형제 정합):
- *   bg-primary + text-on-primary + shadow-elev-cta + rounded-pill + h-[52px] (lg 액션).
+ *   bg-primary + text-on-primary + shadow-elev-2 + rounded-pill + h-[52px] (lg 액션).
  *   pending 시 disabled + opacity-[0.38](§ level-selector 토큰) + Loader2 스피너 +
  *   completingLabel. raw HEX 0건(Hard Rule 10).
  *
@@ -74,7 +74,7 @@ export function FinishButton({ bookId, copy }: FinishButtonProps) {
         onClick={handleClick}
         disabled={isPending}
         aria-busy={isPending}
-        className="inline-flex h-[52px] items-center justify-center gap-2 rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-[0.38] disabled:hover:translate-y-0 disabled:hover:bg-primary"
+        className="inline-flex h-[52px] items-center justify-center gap-2 rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-2 transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-[0.38] disabled:hover:translate-y-0 disabled:hover:bg-primary"
       >
         {isPending ? (
           <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />

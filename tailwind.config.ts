@@ -102,6 +102,8 @@ const config: Config = {
         'elev-1': '0 1px 2px rgba(20,15,10,.06), 0 2px 6px rgba(20,15,10,.04)',
         'elev-2': '0 4px 12px rgba(20,15,10,.08), 0 1px 3px rgba(20,15,10,.06)',
         'elev-3': '0 8px 20px rgba(20,15,10,.10), 0 2px 6px rgba(20,15,10,.06)',
+        // 발광색이 CTA 오렌지레드다 — bg-cta 버튼 전용. 큐 D-4에서 §6.1 버튼 위계를
+        // 적용해 메인 CTA를 bg-cta로 전환할 때 함께 붙인다(현재 사용처 0곳).
         'elev-cta': '0 12px 28px rgba(206,61,26,.22), 0 4px 10px rgba(20,15,10,.06)',
         'elev-modal': '0 30px 80px rgba(20,15,10,.18), 0 8px 24px rgba(20,15,10,.10)',
       },

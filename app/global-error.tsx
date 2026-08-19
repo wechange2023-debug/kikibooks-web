@@ -54,7 +54,7 @@ export default function GlobalError({
             <button
               type="button"
               onClick={() => reset()}
-              className="inline-flex h-[52px] items-center justify-center rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+              className="inline-flex h-[52px] items-center justify-center rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-2 transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
             >
               다시 시도
             </button>

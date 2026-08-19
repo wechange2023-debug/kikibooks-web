@@ -31,8 +31,9 @@ import { useEffect, useRef, useState } from 'react';
  *
  * Hard Rule 10 (raw HEX 0건):
  *   모든 색·간격·여백·shadow는 tailwind.config.ts 등록 semantic 토큰만 사용
- *   (text-accent-mustard·text-text-disabled·text-text-variant·text-text·bg-surface·
- *    bg-accent-mustard·shadow-elev-1·rounded-lg·rounded-pill·ease-kiki·ease-kiki-bounce).
+ *   (text-accent-mustard·text-text-disabled·text-text-variant·text-cta·
+ *    text-on-accent-mustard·bg-surface·bg-accent-mustard·shadow-elev-1·rounded-lg·
+ *    rounded-pill·ease-kiki·ease-kiki-bounce).
  *   easing의 cubic-bezier(...)는 색상이 아닌 모션 곡선이라 raw HEX 규칙 대상 아님.
  *
  * props 직렬화 0 문제:
@@ -162,7 +163,13 @@ export function CelebrateRewards({
         }`}
         aria-live="polite"
       >
-        <span className="font-display text-display font-bold text-accent-mustard tabular-nums">
+        {/*
+          포인트 숫자는 정보다 — 대비 기준을 적용한다. accent-mustard는 흰 배경 대비
+          1.78:1로 AA(4.5)·AA Large(3.0) 모두 미달이라(§1.9 금지 조합) cta(4.88:1)를 쓴다.
+          v1의 #FFC53D도 동일한 미달 상태였다(큐 D-3에서 시정). 별 아이콘(:149)은
+          장식으로 판정해 머스터드를 유지한다(팀장 확정 2026-08-19).
+        */}
+        <span className="font-display text-display font-bold text-cta tabular-nums">
           {`+${count}`}
         </span>
         <span className="text-label font-medium text-text-variant">{pointsLabel}</span>

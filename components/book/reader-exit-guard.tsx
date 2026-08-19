@@ -149,7 +149,7 @@ export function ReaderExitGuard({ bookDetailHref, copy }: ReaderExitGuardProps) 
             type="button"
             onClick={stay}
             autoFocus
-            className="inline-flex h-11 flex-1 items-center justify-center rounded-pill bg-primary px-5 text-label font-semibold text-on-primary shadow-elev-cta transition-all duration-200 ease-kiki hover:bg-primary-hover"
+            className="inline-flex h-11 flex-1 items-center justify-center rounded-pill bg-primary px-5 text-label font-semibold text-on-primary shadow-elev-2 transition-all duration-200 ease-kiki hover:bg-primary-hover"
           >
             {copy.stayLabel}
           </button>
