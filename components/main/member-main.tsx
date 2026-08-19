@@ -1,10 +1,11 @@
 import { CategoryCarousel } from '@/components/home/category-carousel';
-import { HomeHero } from '@/components/home/home-hero';
 import { LevelSelector } from '@/components/home/level-selector';
 import { RecommendationList } from '@/components/home/recommendation-list';
 import { StreakChart } from '@/components/home/streak-chart';
 import { PopularBooks } from '@/components/landing/popular-books';
 import { ValueProps } from '@/components/landing/value-props';
+import { MainHero } from '@/components/main/main-hero';
+import { LIBRARY_PATH } from '@/lib/auth/routes';
 import type { ActiveChild } from '@/lib/home/active-child';
 import type { CategoryDefinition, CategorySlug } from '@/lib/home/categories';
 import type { HomeCopy } from '@/lib/home/copy';
@@ -45,6 +46,53 @@ interface MemberMainProps {
   landingCopy: LandingCopy;
 }
 
+/**
+ * 자녀 프로필 칩 — 히어로 뱃지 슬롯에 주입한다(로그인 전용).
+ *
+ * `home-hero.tsx`가 폐기되며(ADR-0062 Amd.2) 이 조각만 옮겨 왔다.
+ *
+ * ★ 대비 교정 승계: 이니셜 칩은 `bg-level-N-container` + `text-text`를 쓴다.
+ *   v1은 `bg-level-N`(진한 색)에 `text-text`를 얹어 4.05:1(level-1)·3.39:1(level-5)로
+ *   **AA 미달**이었다. §1.7 규칙 1("level-N은 스트로크·도트 전용")·규칙 2에 따라
+ *   container 조합으로 바꿨다(13.3~14.5:1).
+ *
+ * 동적 클래스 회피(D11): 레벨별 클래스는 정적 매핑으로 박제한다.
+ */
+const LEVEL_CHIP_CLASSES: Record<number, string> = {
+  1: 'bg-level-1-container',
+  2: 'bg-level-2-container',
+  3: 'bg-level-3-container',
+  4: 'bg-level-4-container',
+  5: 'bg-level-5-container',
+};
+
+/** child.age는 NULL 가능 — 표시할 때만 사용. */
+function formatChildLabel(child: ActiveChild): string {
+  const ageLabel = typeof child.age === 'number' ? `만 ${child.age}세` : '';
+  const parts = [child.name, ageLabel, `Lv.${child.current_level}`].filter(
+    (part) => part.length > 0,
+  );
+  return parts.join(' · ');
+}
+
+function ChildBadge({ child }: { child: ActiveChild }) {
+  const chipClass = LEVEL_CHIP_CLASSES[child.current_level] ?? 'bg-surface-3';
+
+  return (
+    <div className="flex items-center gap-2">
+      <span
+        aria-hidden="true"
+        className={`flex h-9 w-9 items-center justify-center rounded-pill text-label font-bold text-text ${chipClass}`}
+      >
+        {[...child.name][0] ?? '?'}
+      </span>
+      <span className="inline-flex h-[38px] items-center rounded-pill bg-surface px-4 text-label font-medium text-text">
+        {formatChildLabel(child)}
+      </span>
+    </div>
+  );
+}
+
 export function MemberMain({
   greeting,
   child,
@@ -59,11 +107,19 @@ export function MemberMain({
   return (
     <>
       <div className="px-4 pt-6 md:px-6">
-        {/* books는 추천 캐러셀과 같은 배열 재사용 — 히어로용 신규 쿼리 0건. */}
-        <HomeHero
-          greeting={greeting}
-          child={child}
+        {/*
+          ADR-0062 Amd.2 — 히어로는 비로그인과 **같은 컴포넌트·같은 클래스**다.
+          바뀌는 것은 데이터뿐: 인사말·자녀 칩·CTA 대상·표지 출처(오늘의 추천 상위 3권).
+          books는 추천 캐러셀과 같은 배열 재사용 — 히어로용 신규 쿼리 0건.
+        */}
+        <MainHero
+          title={greeting.primary}
+          subtitle={greeting.subtitle}
+          badge={<ChildBadge child={child} />}
+          ctaHref={LIBRARY_PATH}
+          ctaLabel="책 보러 가기"
           books={recommendation.books}
+          signedIn
         />
       </div>
 

@@ -1,7 +1,8 @@
 import { CategoryCarousel } from '@/components/home/category-carousel';
-import { HeroSection } from '@/components/landing/hero-section';
 import { PopularBooks } from '@/components/landing/popular-books';
 import { ValueProps } from '@/components/landing/value-props';
+import { MainHero } from '@/components/main/main-hero';
+import { SIGNUP_PATH } from '@/lib/auth/routes';
 import type { CategoryDefinition, CategorySlug } from '@/lib/home/categories';
 import type { HomeCopy } from '@/lib/home/copy';
 import type { LandingCopy } from '@/lib/landing/copy';
@@ -45,7 +46,22 @@ export function AnonymousMain({
 }: AnonymousMainProps) {
   return (
     <>
-      <HeroSection copy={copy.hero} />
+      {/*
+        ADR-0062 Amd.2 — 히어로는 로그인 상태와 **같은 컴포넌트·같은 클래스**다.
+        v1의 색 블록 6장 장식은 폐기하고 실표지 3장으로 통일했다(A2-1).
+        표지 데이터는 이미 조회한 인기 책 상위 3권을 재사용한다 — 신규 쿼리 0건(A2-4).
+        아래 인기 책 그리드와 표지가 겹치나 제거하지 않는다(A2-5).
+      */}
+      <div className="px-4 pt-6 md:px-6">
+        <MainHero
+          title={copy.hero.title}
+          subtitle={copy.hero.subtitle}
+          ctaHref={SIGNUP_PATH}
+          ctaLabel={copy.hero.ctaLabel}
+          books={books}
+          signedIn={false}
+        />
+      </div>
       <ValueProps items={copy.valueProps} />
       <PopularBooks copy={copy.popularSection} books={books} signedIn={false} />
 
