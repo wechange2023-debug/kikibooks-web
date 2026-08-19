@@ -68,6 +68,9 @@ const NAV_LINKS: NavLink[] = [
   {
     href: HOME_PATH,
     label: '홈',
+    // ★ ADR-0062 O-M4 확정 — **정확 일치만 쓴다.** HOME_PATH가 '/'이므로
+    //   startsWith로 바꾸면 모든 경로에서 홈이 활성이 된다. 아래 라이브러리·
+    //   마이페이지처럼 startsWith를 덧붙이지 말 것.
     isActive: (p) => p === HOME_PATH,
   },
   {

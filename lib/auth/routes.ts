@@ -18,15 +18,24 @@ export const PROTECTED_PREFIXES = [
 /** 로그인한 사용자에게는 다시 보여주지 않는 인증 페이지. */
 export const AUTH_PAGES = ['/login', '/signup'] as const;
 
-/** 로그인 성공 후 자녀가 이미 있을 때의 도착 경로. */
-export const POST_LOGIN_PATH = '/home';
+/**
+ * 로그인 성공 후 자녀가 이미 있을 때의 도착 경로.
+ *
+ * ★ ADR-0062 D3 — `/home`에서 **`/`로 전환**했다. `/`가 단일 메인이며 로그인 상태면
+ *   개인화 블록을 렌더한다. 자녀 0명은 여전히 ONBOARDING_PATH다(D4).
+ */
+export const POST_LOGIN_PATH = '/';
 
 /**
- * 공통 헤더(components/app/app-header.tsx) 네비 경로 — 홈 화면.
+ * 공통 헤더(components/app/app-header.tsx) 네비 경로 — 메인(홈) 화면.
  * POST_LOGIN_PATH와 값은 같으나 의미가 다르다(리다이렉트 도착지 vs 네비 링크).
- * ADR-0021 D5 — 네비 경로 중앙화.
+ * ADR-0021 D5 — 네비 경로 중앙화. ADR-0062 D3 — `/home` → `/`.
+ *
+ * ★ **활성 판정은 정확 일치(`===`)만 쓴다** (ADR-0062 **O-M4 확정**).
+ *   값이 `/`가 되었으므로 `startsWith(HOME_PATH)`로 바꾸면 **모든 경로에서 홈이 활성**이
+ *   된다. `app-header.tsx`의 홈 링크 isActive를 수정할 때 반드시 확인할 것.
  */
-export const HOME_PATH = '/home';
+export const HOME_PATH = '/';
 
 /** 공통 헤더 네비 경로 — 라이브러리 화면 (ADR-0021 D5). */
 export const LIBRARY_PATH = '/library';
