@@ -96,7 +96,12 @@ export default async function HomePage() {
         로그아웃·네비는 공통 헤더로 수렴(ADR-0021 D4).
       */}
       <div className="px-4 pt-6 md:px-6">
-        <HomeHero greeting={greeting} child={activeChild} />
+        {/* books는 추천 캐러셀과 같은 배열 재사용 — 히어로용 신규 쿼리 0건. */}
+        <HomeHero
+          greeting={greeting}
+          child={activeChild}
+          books={recommendation.books}
+        />
       </div>
 
       <div className="mx-auto mt-8 flex max-w-screen-sm flex-col gap-8 px-4 md:max-w-screen-md md:px-6 lg:max-w-screen-lg">

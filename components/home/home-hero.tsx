@@ -1,8 +1,10 @@
 import Link from 'next/link';
 
+import { HeroCoverStack } from '@/components/home/hero-cover-stack';
 import { LIBRARY_PATH } from '@/lib/auth/routes';
 import type { ActiveChild } from '@/lib/home/active-child';
 import type { GreetingData } from '@/lib/home/greeting';
+import type { PopularBook } from '@/lib/landing/popular-books';
 
 /**
  * 홈 풀폭 히어로 — 인사 카피 + 자녀 프로필 칩 + CTA 1개.
@@ -36,6 +38,11 @@ import type { GreetingData } from '@/lib/home/greeting';
 interface HomeHeroProps {
   greeting: GreetingData;
   child: ActiveChild;
+  /**
+   * 우측 표지 연출용 — `getRecommendations()`가 이미 가져온 배열을 그대로 받는다.
+   * HeroCoverStack이 상위 3권만 쓴다. **신규 쿼리 0건**(추천 캐러셀과 같은 배열).
+   */
+  books: PopularBook[];
 }
 
 /** Level 1~5 → 칩 배경 정적 매핑 (design-system v2 §1.7 규칙 2). */
@@ -56,7 +63,7 @@ function formatChildLabel(child: ActiveChild): string {
   return parts.join(' · ');
 }
 
-export function HomeHero({ greeting, child }: HomeHeroProps) {
+export function HomeHero({ greeting, child, books }: HomeHeroProps) {
   const chipClass = LEVEL_CHIP_CLASSES[child.current_level] ?? 'bg-surface-3';
 
   return (
@@ -64,7 +71,7 @@ export function HomeHero({ greeting, child }: HomeHeroProps) {
       aria-label="인사"
       className="rounded-xl bg-primary px-6 py-8 shadow-elev-2 md:px-10 md:py-10"
     >
-      <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-8">
+      <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-10">
         <div className="flex flex-col gap-3">
           <p className="font-display text-h1 text-text-inverse break-keep">
             {greeting.primary}
@@ -85,16 +92,27 @@ export function HomeHero({ greeting, child }: HomeHeroProps) {
               {formatChildLabel(child)}
             </span>
           </div>
+
+          {/*
+            §6.4 — 히어로는 CTA 1개를 포함한다. /home의 유일한 CTA다.
+            우측 표지는 콘텐츠 링크지 CTA가 아니다(§6.1 계수 대상 아님).
+            h-[52px]로 §6.5 터치 타깃 하한 44px를 넘긴다 — 390px에서도 동일.
+          */}
+          <Link
+            href={LIBRARY_PATH}
+            className="mt-2 inline-flex h-[52px] w-fit items-center justify-center gap-2 rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2"
+          >
+            책 보러 가기
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
 
-        {/* §6.4 — 히어로는 CTA 1개를 포함한다. /home의 유일한 CTA다. */}
-        <Link
-          href={LIBRARY_PATH}
-          className="inline-flex h-[52px] shrink-0 items-center justify-center gap-2 self-start rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2 md:self-auto"
-        >
-          책 보러 가기
-          <span aria-hidden="true">→</span>
-        </Link>
+        {/*
+          우측 표지 연출 — 오늘의 추천 상위 3권(신규 쿼리 0건).
+          추천이 비면 HeroCoverStack이 null을 반환해 텍스트 전폭 레이아웃이 된다.
+          모바일에서는 flex-col이라 텍스트 아래로 내려온다(지시 1 — 390px 재배치).
+        */}
+        <HeroCoverStack books={books} />
       </div>
     </section>
   );
