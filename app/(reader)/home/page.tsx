@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
-import { CategoryGrid } from '@/components/home/category-grid';
-import { GreetingCard } from '@/components/home/greeting-card';
+import { CategoryCarousel } from '@/components/home/category-carousel';
+import { HomeHero } from '@/components/home/home-hero';
 import { LevelSelector } from '@/components/home/level-selector';
 import { RecommendationList } from '@/components/home/recommendation-list';
 import { StreakChart } from '@/components/home/streak-chart';
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
  *   오작동 위험 회피 + revalidatePath('/home') 작동 보장 (LevelSelector server action).
  *
  * 카테고리 라우팅:
- *   CategoryGrid 카드는 /library?category={slug}로 이동한다(라이브러리 카테고리
+ *   CategoryCarousel 타일은 /library?category={slug}로 이동한다(라이브러리 카테고리
  *   결과 재사용). 과거의 /home?cat= 안내 카드 분기는 제거됨 — 결과·빈 상태는
  *   라이브러리가 책임(ADR-0015 결정 5b 이연 해소).
  *
@@ -89,11 +89,17 @@ export default async function HomePage() {
   const greeting = buildGreeting(profile, activeChild, copy.greeting);
 
   return (
-    <main className="min-h-screen bg-surface-2 py-6">
-      <div className="mx-auto flex max-w-screen-sm flex-col gap-4 px-4 md:max-w-screen-md md:gap-5 md:px-6 lg:max-w-screen-lg">
-        {/* 로그아웃·홈↔라이브러리 네비는 공통 헤더(components/app/app-header.tsx)로 수렴 — ADR-0021 D4. */}
-        <GreetingCard greeting={greeting} child={activeChild} />
+    <main className="min-h-screen bg-surface-2 pb-8">
+      {/*
+        §6.4 풀폭 히어로 — 아래 본문 컨테이너(max-w-screen-*) **밖**에 둔다.
+        컨테이너 안에 넣으면 폭이 본문과 같아져 "풀폭"이 성립하지 않는다.
+        로그아웃·네비는 공통 헤더로 수렴(ADR-0021 D4).
+      */}
+      <div className="px-4 pt-6 md:px-6">
+        <HomeHero greeting={greeting} child={activeChild} />
+      </div>
 
+      <div className="mx-auto mt-8 flex max-w-screen-sm flex-col gap-8 px-4 md:max-w-screen-md md:px-6 lg:max-w-screen-lg">
         <LevelSelector
           childId={activeChild.id}
           currentLevel={activeChild.current_level}
@@ -102,7 +108,7 @@ export default async function HomePage() {
 
         <RecommendationList result={recommendation} copy={copy.recommendations} />
 
-        <CategoryGrid
+        <CategoryCarousel
           categories={CATEGORIES}
           copy={copy.categories}
           distribution={distribution}

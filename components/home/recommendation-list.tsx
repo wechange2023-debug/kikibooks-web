@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BookOpen, Headphones } from 'lucide-react';
 
+import { SectionHeader } from '@/components/home/section-header';
+import { LIBRARY_PATH } from '@/lib/auth/routes';
 import type { HomeCopy } from '@/lib/home/copy';
 import type { PopularBook } from '@/lib/landing/popular-books';
 import type { RecommendationResult } from '@/lib/home/recommendations';
@@ -122,22 +124,27 @@ export function RecommendationList({ result, copy }: RecommendationListProps) {
   const isEmpty = fallbackStage === 5 || books.length === 0;
 
   return (
-    <section
-      aria-label={copy.title}
-      className="flex flex-col gap-3 rounded-md bg-surface p-5 shadow-elev-1"
-    >
-      <h2 className="font-display text-body font-semibold text-text">{copy.title}</h2>
+    <section aria-label={copy.title} className="flex flex-col gap-4">
+      {/* §6.3 — 섹션 타이틀 + 우측 "전체 보기" pill. 캐러셀의 대체 도달 경로다(§6.4). */}
+      <SectionHeader title={copy.title} href={LIBRARY_PATH} />
 
       {isEmpty ? (
-        <p className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-label text-text-variant">
+        <p className="rounded-md border border-outline bg-surface px-4 py-3 text-label text-text-variant">
           {copy.empty}
         </p>
       ) : (
-        <div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:thin] sm:gap-5">
+        <ul
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- 스크롤 영역의 키보드 조작(WCAG 2.1.1)
+          tabIndex={0}
+          aria-label={`${copy.title} 가로 스크롤 목록`}
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto rounded-lg bg-surface-3 p-3 [scrollbar-width:thin] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 sm:gap-5"
+        >
           {books.map((book) => (
-            <RecommendationCard key={book.id} book={book} />
+            <li key={book.id} className="shrink-0 snap-start">
+              <RecommendationCard book={book} />
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </section>
   );
