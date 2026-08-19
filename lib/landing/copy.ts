@@ -1,7 +1,13 @@
 import 'server-only';
 
 import { BRAND_NAME } from '@/lib/brand';
-import { CC_BY_NOTICE, PRIVACY_LABEL, TERMS_LABEL } from '@/lib/legal';
+import {
+  CC_BY_NOTICE,
+  COMPANY_NAME,
+  COPYRIGHT,
+  PRIVACY_LABEL,
+  TERMS_LABEL,
+} from '@/lib/legal';
 
 /**
  * 랜딩 페이지(Screen 01) 카피 단일 출처 (Single Source of Truth).
@@ -103,8 +109,8 @@ const LANDING_COPY: LandingCopy = {
     subheading: '회원가입하면 모든 그림책을 무료로 볼 수 있어요.',
   },
   footer: {
-    companyName: '주식회사 위체인지 (WECHANGE)',
-    copyright: '© 2026 주식회사 위체인지',
+    companyName: COMPANY_NAME,
+    copyright: COPYRIGHT,
     // ADR-0061 D3 — 문구·라벨은 lib/legal.ts가 단일 출처다. 랜딩 푸터와 공통 푸터
     // (components/app/app-footer.tsx)가 같은 상수를 참조해 이중 관리를 없앤다.
     attributionNotice: CC_BY_NOTICE,

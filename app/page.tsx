@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
+import { AppFooter } from '@/components/app/app-footer';
 import { HeroSection } from '@/components/landing/hero-section';
-import { LandingFooter } from '@/components/landing/landing-footer';
 import { LandingHeader } from '@/components/landing/landing-header';
 import { PopularBooks } from '@/components/landing/popular-books';
 import { ValueProps } from '@/components/landing/value-props';
@@ -84,7 +84,8 @@ export default async function LandingPage() {
         <ValueProps items={copy.valueProps} />
         <PopularBooks copy={copy.popularSection} books={books} />
       </main>
-      <LandingFooter brandName={copy.brandName} copy={copy.footer} />
+      {/* ADR-0062 D5·O-M3 — 푸터는 AppFooter로 일원화. LandingFooter는 폐기 예정. */}
+      <AppFooter />
     </div>
   );
 }

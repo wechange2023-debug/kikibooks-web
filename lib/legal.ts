@@ -37,3 +37,15 @@ export const PRIVACY_LABEL = '개인정보처리방침';
  */
 export const CC_BY_NOTICE =
   '모든 도서는 CC BY 4.0 라이선스이며, 글·그림 저작자와 원본 출처는 각 책 상세 페이지에 표시됩니다.';
+
+/**
+ * 사업자 표기 — v1에서는 랜딩 푸터에만 있었다(`lib/landing/copy.ts` footer.companyName).
+ *
+ * ADR-0062 **O-M3 확정**으로 `AppFooter`가 전 화면에 노출한다. 전자상거래법상
+ * 표기 의무는 유료 결제 도입 시 발생하나, 미리 전 화면에 두는 편이 유리하다
+ * (ADR-0061 O-F2 해소).
+ */
+export const COMPANY_NAME = '주식회사 위체인지 (WECHANGE)';
+
+/** 저작권 표기. 위와 같은 사유로 공용 상수로 승격했다. */
+export const COPYRIGHT = '© 2026 주식회사 위체인지';

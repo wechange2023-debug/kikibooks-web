@@ -4,8 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { isImmersiveRoute } from '@/lib/auth/routes';
+import { BRAND_NAME } from '@/lib/brand';
 import {
   CC_BY_NOTICE,
+  COMPANY_NAME,
+  COPYRIGHT,
   PRIVACY_LABEL,
   PRIVACY_PATH,
   TERMS_LABEL,
@@ -31,8 +34,10 @@ import {
  *   `components/landing/landing-footer.tsx` **1곳뿐**이라, 로그인 이후 사용자는
  *   랜딩으로 되돌아가지 않는 한 약관에 도달할 수 없었다.
  *
- * 사업자 정보·저작권 표기는 넣지 않는다 — 랜딩 푸터가 보유하며, 전자상거래법상
- *   표기 의무는 유료 결제 도입 시점에 재검토한다(ADR-0061 O-F2).
+ * ★ 사업자 정보·저작권 표기 (ADR-0062 **O-M3 확정**, 2026-08-19):
+ *   v1에서 랜딩 푸터 전용이던 두 항목을 본 컴포넌트로 이관해 **전 화면에 노출**한다.
+ *   `LandingFooter`는 폐기되고 `/`도 본 컴포넌트를 쓴다(ADR-0062 D5).
+ *   ADR-0061 O-F2("유료 결제 도입 시 재검토")를 여기서 해소한다.
  *
  * 디자인 (design-system v2): 상단 구분선 border-outline(장식용) + bg-surface-2 웜크림,
  *   링크 text-label + text-text-variant → hover text-text, 안내문 text-caption.
@@ -50,6 +55,7 @@ export function AppFooter() {
   return (
     <footer className="border-t border-outline bg-surface-2 px-4 py-6 md:px-6">
       <div className="mx-auto flex max-w-screen-sm flex-col gap-3 md:max-w-screen-md lg:max-w-screen-lg">
+        <p className="font-display text-h3 text-primary">{BRAND_NAME}</p>
         <nav aria-label="법적 고지" className="flex flex-wrap items-center gap-x-5">
           <Link
             href={TERMS_PATH}
@@ -64,9 +70,11 @@ export function AppFooter() {
             {PRIVACY_LABEL}
           </Link>
         </nav>
+        <p className="text-label text-text-variant">{COMPANY_NAME}</p>
         <p className="break-keep text-caption font-normal text-text-variant">
           {CC_BY_NOTICE}
         </p>
+        <p className="text-caption font-normal text-text-disabled">{COPYRIGHT}</p>
       </div>
     </footer>
   );
