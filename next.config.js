@@ -8,6 +8,19 @@ const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL
 
 const nextConfig = {
   reactStrictMode: true,
+  /**
+   * ADR-0062 D2 — `/home`은 `/`로 흡수됐다. 기존 북마크·외부 링크를 보호하기 위해
+   * 라우트를 지우고 **영구 리다이렉트(308)** 만 남긴다.
+   *
+   * ★ 여기(next.config)에 두는 근거는 실측이다(O-M1, Next 14.2.35):
+   *   redirects()가 **미들웨어보다 먼저** 평가된다 — 비로그인 `/home` 진입이
+   *   308로 `/`에 홉 1회로 도착하고 `/login`을 경유하지 않는다.
+   *   (대조군: `/library`·`/mypage`는 미들웨어가 307로 `/login`에 보낸다.)
+   *   페이지의 permanentRedirect()보다 싸다 — 렌더 없이 edge에서 끝난다.
+   */
+  async redirects() {
+    return [{ source: '/home', destination: '/', permanent: true }];
+  },
   images: {
     // Vercel 이미지 최적화 한도 소진으로 표지가 전량 402(OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED)
     // 응답을 받아 미출력됐다(2026-08-06 진단: 표본 28건 중 402 28건 / 200은 캐시 HIT 2건뿐).

@@ -1,13 +1,6 @@
 import 'server-only';
 
 import { BRAND_NAME } from '@/lib/brand';
-import {
-  CC_BY_NOTICE,
-  COMPANY_NAME,
-  COPYRIGHT,
-  PRIVACY_LABEL,
-  TERMS_LABEL,
-} from '@/lib/legal';
 
 /**
  * 랜딩 페이지(Screen 01) 카피 단일 출처 (Single Source of Truth).
@@ -24,6 +17,10 @@ import {
  *   직접 import하는 우회로를 컴파일 단계에서 차단한다(ADR-0012 결정 2).
  * ★ `import 'server-only'` — 이 모듈의 값은 서버에서만 읽힌다. 컴포넌트는
  *   `import type { LandingCopy }`(타입 전용, 런타임 제거)만 사용한다.
+ *
+ * ★ ADR-0062 D5 — 푸터 카피(사업자·저작권·CC BY 안내·약관 라벨)는 본 파일에서
+ *   빠졌다. `AppFooter`가 전 화면 공용이 되면서 `lib/legal.ts`가 단일 출처가 됐고,
+ *   `LandingFooter`는 폐기됐다. 랜딩 전용 카피만 여기 남는다.
  *
  * 의도 문서: docs/intent/screen-01-landing.md 5절(화면 구성)
  */
@@ -52,14 +49,6 @@ export interface LandingCopy {
   popularSection: {
     heading: string;
     subheading: string;
-  };
-  footer: {
-    companyName: string;
-    copyright: string;
-    /** ADR-0013 결정 2 — 표지 노출 화면의 CC BY 안내 문구. */
-    attributionNotice: string;
-    termsLabel: string;
-    privacyLabel: string;
   };
 }
 
@@ -107,15 +96,6 @@ const LANDING_COPY: LandingCopy = {
   popularSection: {
     heading: '그림책 미리 만나보기',
     subheading: '회원가입하면 모든 그림책을 무료로 볼 수 있어요.',
-  },
-  footer: {
-    companyName: COMPANY_NAME,
-    copyright: COPYRIGHT,
-    // ADR-0061 D3 — 문구·라벨은 lib/legal.ts가 단일 출처다. 랜딩 푸터와 공통 푸터
-    // (components/app/app-footer.tsx)가 같은 상수를 참조해 이중 관리를 없앤다.
-    attributionNotice: CC_BY_NOTICE,
-    termsLabel: TERMS_LABEL,
-    privacyLabel: PRIVACY_LABEL,
   },
 };
 
