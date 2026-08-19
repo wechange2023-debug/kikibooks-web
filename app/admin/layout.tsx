@@ -72,7 +72,7 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
     <main className="min-h-screen bg-surface-2 py-6">
       <div className="mx-auto flex max-w-screen-sm flex-col gap-4 px-4 md:max-w-screen-md md:gap-5 md:px-6 lg:max-w-screen-lg">
         <header className="flex items-center justify-end gap-2">
-          <span className="rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant">
+          <span className="rounded-md border border-outline bg-surface px-2 py-1 text-caption font-medium text-text-variant">
             {copy.users.roleBadges[ctx.profile.role]}
           </span>
           {/*
@@ -82,13 +82,13 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
             - 'use client' 0건 — native HTML form action + POST가 Server Component에서 동작.
             - 라벨 copy.nav.logout 주입 — phase-14 CP2-a #5 해소(AdminCopy.nav.logout 분리).
               AdminNav는 고정 4키(home·books·users·stats)만 참조하므로 nav 링크 회귀 0건.
-            - 시각: role badge와 동일 토큰 패턴(border-outline·bg-surface·rounded-md·text-xs
+            - 시각: role badge와 동일 토큰 패턴(border-outline·bg-surface·rounded-md·text-caption
               text-text-variant) + button hover/focus 토큰 추가. 신규 토큰 0건.
           */}
           <form action="/auth/sign-out" method="post">
             <button
               type="submit"
-              className="inline-flex items-center rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              className="inline-flex items-center rounded-md border border-outline bg-surface px-2 py-1 text-caption font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             >
               {copy.nav.logout}
             </button>

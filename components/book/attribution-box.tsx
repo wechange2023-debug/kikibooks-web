@@ -12,10 +12,10 @@ import type { AttributionRow } from '@/lib/book/attribution';
  *
  * 디자인 인용 (design-system §7.1):
  *   - Container: bg-surface-2 + border-outline 1px + rounded-md + py-4 px-5
- *   - 라벨: text-sm + font-semibold + text-text
- *   - 값: text-xs + text-text-variant
- *   - 외부 링크: text-sm + text-tertiary + hover underline
- *   - 라이선스 배지: rounded-pill + bg-tertiary-container + text-on-tertiary-container
+ *   - 라벨: text-label + font-semibold + text-text
+ *   - 값: text-caption + text-text-variant
+ *   - 외부 링크: text-label + text-accent-purple + hover underline
+ *   - 라이선스 배지: rounded-pill + bg-level-5-container + text-text
  *
  * 위치 규칙 (license-rules.md §5.3): 책 표지 직하단·읽기 버튼 직상단·모바일 fold above.
  * 본 컴포넌트는 위치 강제를 자체적으로 하지 않는다 — 페이지(app/book/[id]/page.tsx)가
@@ -58,7 +58,7 @@ export function AttributionBox({ rows }: AttributionBoxProps) {
                   href={row.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-semibold text-tertiary transition-colors duration-200 ease-kiki hover:underline"
+                  className="text-label font-semibold text-accent-purple transition-colors duration-200 ease-kiki hover:underline"
                 >
                   {row.label}
                 </a>
@@ -72,19 +72,19 @@ export function AttributionBox({ rows }: AttributionBoxProps) {
                 key={row.key}
                 className="flex flex-wrap items-center gap-2"
               >
-                <dt className="text-sm font-semibold text-text">{row.label}</dt>
+                <dt className="text-label font-semibold text-text">{row.label}</dt>
                 <dd>
                   {row.href ? (
                     <a
                       href={row.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-pill bg-tertiary-container px-3 py-1 text-xs font-medium text-on-tertiary-container transition-colors duration-200 ease-kiki hover:underline"
+                      className="inline-flex items-center rounded-pill bg-level-5-container px-3 py-1 text-caption font-medium text-text transition-colors duration-200 ease-kiki hover:underline"
                     >
                       {row.value}
                     </a>
                   ) : (
-                    <span className="inline-flex items-center rounded-pill bg-tertiary-container px-3 py-1 text-xs font-medium text-on-tertiary-container">
+                    <span className="inline-flex items-center rounded-pill bg-level-5-container px-3 py-1 text-caption font-medium text-text">
                       {row.value}
                     </span>
                   )}
@@ -95,10 +95,10 @@ export function AttributionBox({ rows }: AttributionBoxProps) {
 
           return (
             <div key={row.key} className="flex flex-wrap items-baseline gap-2">
-              <dt className="shrink-0 text-sm font-semibold text-text">
+              <dt className="shrink-0 text-label font-semibold text-text">
                 {row.label}
               </dt>
-              <dd className="break-keep text-xs text-text-variant">{row.value}</dd>
+              <dd className="break-keep text-caption text-text-variant">{row.value}</dd>
             </div>
           );
         })}

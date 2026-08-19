@@ -133,15 +133,15 @@ export function ReaderExitGuard({ bookDetailHref, copy }: ReaderExitGuardProps) 
         className="absolute inset-0 h-full w-full cursor-default"
       />
       <div className="relative z-10 m-3 w-full max-w-sm rounded-lg border border-outline bg-surface p-5 text-center shadow-elev-modal">
-        <h2 className="font-body text-lg font-semibold text-text">{copy.title}</h2>
-        <p className="mt-2 break-keep text-sm text-text-variant">{copy.body}</p>
+        <h2 className="font-body text-h3 font-semibold text-text">{copy.title}</h2>
+        <p className="mt-2 break-keep text-label text-text-variant">{copy.body}</p>
         {/* 주 동작('계속 읽기')을 오른쪽·primary로 둔다 — 아이가 습관적으로 누르는 자리에
             이탈이 아니라 복귀가 오도록. */}
         <div className="mt-5 flex items-center justify-center gap-2">
           <button
             type="button"
             onClick={leave}
-            className="inline-flex h-11 flex-1 items-center justify-center rounded-pill border border-outline bg-surface px-5 text-sm font-semibold text-text-variant transition-colors duration-200 ease-kiki hover:bg-surface-2"
+            className="inline-flex h-11 flex-1 items-center justify-center rounded-pill border border-outline bg-surface px-5 text-label font-semibold text-text-variant transition-colors duration-200 ease-kiki hover:bg-surface-2"
           >
             {copy.leaveLabel}
           </button>
@@ -149,7 +149,7 @@ export function ReaderExitGuard({ bookDetailHref, copy }: ReaderExitGuardProps) 
             type="button"
             onClick={stay}
             autoFocus
-            className="inline-flex h-11 flex-1 items-center justify-center rounded-pill bg-primary px-5 text-sm font-semibold text-on-primary shadow-elev-pop transition-all duration-200 ease-kiki hover:bg-primary-hover"
+            className="inline-flex h-11 flex-1 items-center justify-center rounded-pill bg-primary px-5 text-label font-semibold text-on-primary shadow-elev-cta transition-all duration-200 ease-kiki hover:bg-primary-hover"
           >
             {copy.stayLabel}
           </button>

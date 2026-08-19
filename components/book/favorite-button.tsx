@@ -94,7 +94,7 @@ export function FavoriteButton({ bookId, initialFavorited }: FavoriteButtonProps
       </button>
 
       {error && (
-        <p role="alert" className="text-sm font-medium text-error">
+        <p role="alert" className="text-label font-medium text-error">
           {error}
         </p>
       )}

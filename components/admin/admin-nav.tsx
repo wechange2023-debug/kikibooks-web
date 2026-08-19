@@ -102,8 +102,8 @@ export function AdminNav({ copy }: AdminNavProps) {
       {links.map((link) => {
         const active = link.isActive(pathname);
         const linkClass = active
-          ? 'shrink-0 rounded px-3 py-1.5 text-sm font-medium bg-surface-2 text-text'
-          : 'shrink-0 rounded px-3 py-1.5 text-sm font-medium text-text-variant hover:bg-surface-2 hover:text-text';
+          ? 'shrink-0 rounded px-3 py-1.5 text-label font-medium bg-surface-2 text-text'
+          : 'shrink-0 rounded px-3 py-1.5 text-label font-medium text-text-variant hover:bg-surface-2 hover:text-text';
         return (
           <Link
             key={link.href}

@@ -15,7 +15,7 @@ import { cn } from '@/lib/utils';
  *
  * PM 결정(2026-06-10) 반영:
  *   - 월~일 고정 정렬(streak.ts가 보장) — 오늘 기준 회전 제거.
- *   - 오늘 강조: 트랙 ring-accent-yellow + 요일 라벨/권수 숫자 primary·bold
+ *   - 오늘 강조: 트랙 ring-accent-mustard + 요일 라벨/권수 숫자 primary·bold
  *     (기존 dot을 ring 하이라이트로 강화).
  *   - 각 막대 위에 완독 권수 숫자 표기. 미래 요일(isFuture)은 칸을 흐림(opacity-40)
  *     처리하고 숫자 미표시.
@@ -60,7 +60,7 @@ export function StreakChart({ days, copy }: StreakChartProps) {
       aria-label={copy.title}
       className="flex flex-col gap-3 rounded-md bg-surface p-5 shadow-elev-1"
     >
-      <h2 className="font-display text-base font-semibold text-text">{copy.title}</h2>
+      <h2 className="font-display text-body font-semibold text-text">{copy.title}</h2>
 
       {/* 막대 7개(월→일) + 권수 숫자 + 요일 라벨 */}
       <div className="flex items-end justify-between gap-2">
@@ -78,7 +78,7 @@ export function StreakChart({ days, copy }: StreakChartProps) {
               <span
                 aria-hidden="true"
                 className={cn(
-                  'h-4 text-xs font-semibold leading-4 tabular-nums',
+                  'h-4 text-caption font-semibold leading-4 tabular-nums',
                   day.isToday ? 'text-primary' : 'text-text-variant',
                 )}
               >
@@ -89,7 +89,7 @@ export function StreakChart({ days, copy }: StreakChartProps) {
               <div
                 className={cn(
                   'relative flex h-[60px] w-7 items-end overflow-hidden rounded-t-sm bg-surface-3',
-                  day.isToday && 'ring-2 ring-accent-yellow',
+                  day.isToday && 'ring-2 ring-accent-mustard',
                 )}
               >
                 <div
@@ -102,7 +102,7 @@ export function StreakChart({ days, copy }: StreakChartProps) {
               {/* 요일 라벨 — 오늘 강조(bold primary). */}
               <span
                 className={cn(
-                  'text-xs',
+                  'text-caption',
                   day.isToday
                     ? 'font-bold text-primary'
                     : 'font-medium text-text-variant',
@@ -124,7 +124,7 @@ export function StreakChart({ days, copy }: StreakChartProps) {
 
       {/* 빈 상태 폴백 */}
       {isEmpty && (
-        <p className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-sm text-text-variant">
+        <p className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-label text-text-variant">
           {copy.empty}
         </p>
       )}

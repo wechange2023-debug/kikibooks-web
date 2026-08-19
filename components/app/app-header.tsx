@@ -102,7 +102,7 @@ export function AppHeader() {
           <Link
             href={HOME_PATH}
             aria-label="홈으로"
-            className="font-display text-base font-bold text-primary transition-colors duration-200 ease-kiki hover:text-primary-hover md:text-xl"
+            className="font-display text-body font-bold text-primary transition-colors duration-200 ease-kiki hover:text-primary-hover md:text-h2"
           >
             {BRAND_NAME}
           </Link>
@@ -112,8 +112,8 @@ export function AppHeader() {
             {NAV_LINKS.map((link) => {
               const active = link.isActive(pathname);
               const linkClass = active
-                ? 'rounded px-3 py-1.5 text-sm font-medium bg-surface-2 text-text'
-                : 'rounded px-3 py-1.5 text-sm font-medium text-text-variant hover:bg-surface-2 hover:text-text';
+                ? 'rounded px-3 py-1.5 text-label font-medium bg-surface-2 text-text'
+                : 'rounded px-3 py-1.5 text-label font-medium text-text-variant hover:bg-surface-2 hover:text-text';
               return (
                 <Link
                   key={link.href}
@@ -134,7 +134,7 @@ export function AppHeader() {
           <form action="/auth/sign-out" method="post" className="hidden md:block">
             <button
               type="submit"
-              className="inline-flex items-center rounded-md border border-outline bg-surface px-2 py-1 text-xs font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              className="inline-flex items-center rounded-md border border-outline bg-surface px-2 py-1 text-caption font-medium text-text-variant transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             >
               로그아웃
             </button>

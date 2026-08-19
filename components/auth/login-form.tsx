@@ -19,7 +19,7 @@ type LoginValues = z.infer<typeof loginSchema>;
 
 // 입력 필드 — design-system.md 3.2(높이 52px·좌우 22px)·4.2(pill)·6.2(focus 시 border 색만 변경).
 const fieldClass =
-  'h-[52px] w-full rounded-pill border border-outline bg-surface px-[22px] text-sm text-text placeholder:text-text-disabled focus:border-primary focus:outline-none disabled:opacity-[0.38]';
+  'h-[52px] w-full rounded-pill border border-outline bg-surface px-[22px] text-label text-text placeholder:text-text-disabled focus:border-primary focus:outline-none disabled:opacity-[0.38]';
 
 /** 이메일 로그인 폼 + Google 로그인. (docs/intent/auth-flow.md 4.2·4.3절) */
 export function LoginForm() {
@@ -52,7 +52,7 @@ export function LoginForm() {
   return (
     <form noValidate onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
-        <label htmlFor="login-email" className="text-sm font-medium text-text">
+        <label htmlFor="login-email" className="text-label font-medium text-text">
           이메일
         </label>
         <input
@@ -67,14 +67,14 @@ export function LoginForm() {
           {...register('email')}
         />
         {errors.email && (
-          <p id="login-email-error" className="text-sm font-medium text-error">
+          <p id="login-email-error" className="text-label font-medium text-error">
             {errors.email.message}
           </p>
         )}
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="login-password" className="text-sm font-medium text-text">
+        <label htmlFor="login-password" className="text-label font-medium text-text">
           비밀번호
         </label>
         <input
@@ -89,7 +89,7 @@ export function LoginForm() {
           {...register('password')}
         />
         {errors.password && (
-          <p id="login-password-error" className="text-sm font-medium text-error">
+          <p id="login-password-error" className="text-label font-medium text-error">
             {errors.password.message}
           </p>
         )}
@@ -98,7 +98,7 @@ export function LoginForm() {
       {formError && (
         <p
           role="alert"
-          className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-sm font-medium text-error"
+          className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-label font-medium text-error"
         >
           {formError}
         </p>
@@ -110,7 +110,7 @@ export function LoginForm() {
 
       <div className="flex items-center gap-3 py-1">
         <span className="h-px flex-1 bg-outline" />
-        <span className="text-sm font-medium text-text-variant">또는</span>
+        <span className="text-label font-medium text-text-variant">또는</span>
         <span className="h-px flex-1 bg-outline" />
       </div>
 
@@ -118,7 +118,7 @@ export function LoginForm() {
 
       {/* phase-13: 카카오 로그인 버튼 자리 (ADR-0009 결정 1 — 베타 이후 추가) */}
 
-      <p className="pt-2 text-center text-sm text-text-variant">
+      <p className="pt-2 text-center text-label text-text-variant">
         아직 계정이 없으신가요?{' '}
         <Link href="/signup" className="font-semibold text-primary hover:underline">
           회원가입

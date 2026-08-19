@@ -59,7 +59,7 @@ const LANGUAGE_NAMES: Record<string, string> = {
 
 /** 모든 칩에 공통 적용되는 §3 Chip 토큰. */
 const CHIP_CLASS =
-  'inline-flex h-[38px] items-center rounded-pill border border-outline bg-surface-2 px-4 text-sm font-medium text-text';
+  'inline-flex h-[38px] items-center rounded-pill border border-outline bg-surface-2 px-4 text-label font-medium text-text';
 
 /** age_min/age_max → 한국어 라벨. 둘 다 NULL이면 null 반환(호출 측이 칩 생략). */
 function formatAgeRange(min: number | null, max: number | null): string | null {
@@ -82,7 +82,7 @@ export function BookMeta({ book, audioLabel }: BookMetaProps) {
     >
       {book.level !== null && swatchClass ? (
         <li className={`${CHIP_CLASS} gap-2`}>
-          <span aria-hidden="true" className={`h-3 w-3 rounded-full ${swatchClass}`} />
+          <span aria-hidden="true" className={`h-3 w-3 rounded-pill ${swatchClass}`} />
           Level {book.level}
         </li>
       ) : null}

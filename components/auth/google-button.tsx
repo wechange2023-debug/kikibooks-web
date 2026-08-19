@@ -77,7 +77,7 @@ export function GoogleButton({ label = 'Google로 계속하기' }: { label?: str
         {isLoading ? '이동 중…' : label}
       </Button>
       {error && (
-        <p role="alert" className="text-sm font-medium text-error">
+        <p role="alert" className="text-label font-medium text-error">
           {error}
         </p>
       )}

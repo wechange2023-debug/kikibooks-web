@@ -110,22 +110,22 @@ export default async function ShowcaseSourcePage({
         <header className="flex flex-col gap-2">
           <Link
             href="/showcase"
-            className="text-sm font-medium text-text-variant outline-none hover:text-text focus-visible:ring-2 focus-visible:ring-primary/50"
+            className="text-label font-medium text-text-variant outline-none hover:text-text focus-visible:ring-2 focus-visible:ring-primary/50"
           >
             ← 출처 목록
           </Link>
-          <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
+          <h1 className="font-display text-h1 font-bold text-text">
             {sourceLabel(source)}
           </h1>
-          <p className="text-sm text-text-variant">총 {books.length}권</p>
+          <p className="text-label text-text-variant">총 {books.length}권</p>
         </header>
 
         {books.length === 0 ? (
           <div className="flex flex-col items-center gap-2 rounded-md border border-outline bg-surface px-5 py-12 text-center shadow-elev-1">
-            <h2 className="font-display text-lg font-semibold text-text">
+            <h2 className="font-display text-h3 font-semibold text-text">
               공개된 책이 없어요
             </h2>
-            <p className="text-sm text-text-variant">
+            <p className="text-label text-text-variant">
               이 출처에는 아직 공개 도서가 없습니다.
             </p>
           </div>

@@ -28,7 +28,7 @@ import { BRAND_NAME } from '@/lib/brand';
  *   - AdminBooksBrowser ('use client'): 필터·검색·낙관적 UI·무한스크롤 인터랙션 전부.
  *
  * 토큰 재사용 (Hard Rule 10):
- *   - 헤더: font-display text-2xl md:text-3xl text-text (library/page.tsx + admin/page.tsx 정합).
+ *   - 헤더: font-display text-h1 md:text-h1 text-text (library/page.tsx + admin/page.tsx 정합).
  *   - 컨테이너: layout이 max-w-* + bg-surface-2 처리. 본 페이지는 children gap만.
  *   - 신규 토큰·raw HEX 0건.
  *
@@ -53,7 +53,7 @@ export default async function AdminBooksPage() {
   return (
     <div className="flex flex-col gap-4 md:gap-5">
       <header className="flex flex-col gap-1">
-        <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
+        <h1 className="font-display text-h1 font-bold text-text">
           {copy.pageTitles.books.title}
         </h1>
       </header>

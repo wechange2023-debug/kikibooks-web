@@ -99,9 +99,9 @@ const SENTINEL_ROOT_MARGIN = '0px 0px 200px 0px';
  * RecommendationList·BookCoverCard와 동일 팔레트(Hello Kiki 카드 fallback 표준).
  */
 const FALLBACK_PALETTE = [
-  { block: 'bg-primary-container', text: 'text-on-primary-container' },
-  { block: 'bg-secondary-container', text: 'text-on-secondary-container' },
-  { block: 'bg-tertiary-container', text: 'text-on-tertiary-container' },
+  { block: 'bg-level-1-container', text: 'text-text' },
+  { block: 'bg-level-3-container', text: 'text-text' },
+  { block: 'bg-level-5-container', text: 'text-text' },
 ] as const;
 
 function pickFallbackColor(id: string): (typeof FALLBACK_PALETTE)[number] {
@@ -148,7 +148,7 @@ export function LibraryBookCard({ book }: { book: PopularBook }) {
           >
             <BookOpen className={`h-7 w-7 ${fallback.text}`} aria-hidden="true" />
             <p
-              className={`line-clamp-4 text-center text-sm font-semibold ${fallback.text}`}
+              className={`line-clamp-4 text-center text-label font-semibold ${fallback.text}`}
             >
               {book.title}
             </p>
@@ -175,9 +175,9 @@ export function LibraryBookCard({ book }: { book: PopularBook }) {
         ) : null}
       </div>
       <div className="flex flex-col gap-0.5">
-        <p className="line-clamp-2 text-sm font-semibold text-text">{book.title}</p>
+        <p className="line-clamp-2 text-label font-semibold text-text">{book.title}</p>
         {book.author ? (
-          <p className="line-clamp-1 text-xs text-text-variant">{book.author}</p>
+          <p className="line-clamp-1 text-caption text-text-variant">{book.author}</p>
         ) : null}
       </div>
     </Link>
@@ -203,7 +203,7 @@ function FilterChip({
       aria-pressed={active}
       disabled={disabled}
       className={cn(
-        'inline-flex h-[38px] items-center rounded-pill border px-4 text-sm font-medium transition-colors disabled:opacity-[0.38]',
+        'inline-flex h-[38px] items-center rounded-pill border px-4 text-label font-medium transition-colors disabled:opacity-[0.38]',
         active
           ? 'border-primary bg-surface-2 text-text'
           : 'border-outline bg-surface text-text-variant hover:bg-surface-2',
@@ -385,7 +385,7 @@ export function LibraryBrowser({
       >
         {/* 레벨 칩 */}
         <fieldset className="flex flex-col gap-2">
-          <legend className="text-sm font-semibold text-text">
+          <legend className="text-label font-semibold text-text">
             {copy.filters.levelLabel}
           </legend>
           <div role="group" aria-label={copy.filters.levelLabel} className="flex flex-wrap gap-2">
@@ -411,7 +411,7 @@ export function LibraryBrowser({
 
         {/* 카테고리 칩 */}
         <fieldset className="flex flex-col gap-2">
-          <legend className="text-sm font-semibold text-text">
+          <legend className="text-label font-semibold text-text">
             {copy.filters.categoryLabel}
           </legend>
           <div
@@ -452,14 +452,14 @@ export function LibraryBrowser({
             placeholder={copy.search.placeholder}
             maxLength={KEYWORD_MAX}
             onChange={(event) => handleKeywordChange(event.target.value)}
-            className="h-[52px] flex-1 rounded-md border border-outline bg-surface px-[22px] text-sm text-text placeholder:text-text-variant focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            className="h-[52px] flex-1 rounded-md border border-outline bg-surface px-[22px] text-label text-text placeholder:text-text-variant focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           />
           {hasActiveFilter && (
             <button
               type="button"
               onClick={handleReset}
               disabled={isPending}
-              className="inline-flex h-[44px] items-center justify-center rounded-pill border border-outline bg-surface px-5 text-sm font-medium text-text-variant transition-colors hover:bg-surface-2 disabled:opacity-[0.38]"
+              className="inline-flex h-[44px] items-center justify-center rounded-pill border border-outline bg-surface px-5 text-label font-medium text-text-variant transition-colors hover:bg-surface-2 disabled:opacity-[0.38]"
             >
               {copy.search.resetLabel}
             </button>
@@ -469,14 +469,14 @@ export function LibraryBrowser({
 
       {/* 에러 메시지 (LevelSelector 패턴 정합) */}
       {error && (
-        <p role="alert" className="rounded-md bg-surface px-5 py-3 text-sm font-medium text-error shadow-elev-1">
+        <p role="alert" className="rounded-md bg-surface px-5 py-3 text-label font-medium text-error shadow-elev-1">
           {error}
         </p>
       )}
 
       {/* 결과 권수 — 전체·레벨·카테고리·키워드 모든 모드 단일 계약(query.ts totalCount). */}
       {books.length > 0 && (
-        <p className="text-sm font-medium text-text-variant" aria-live="polite">
+        <p className="text-label font-medium text-text-variant" aria-live="polite">
           총 {totalCount}권
         </p>
       )}
@@ -484,10 +484,10 @@ export function LibraryBrowser({
       {/* 그리드 / 빈 상태 */}
       {isEmpty ? (
         <div className="flex flex-col items-center gap-2 rounded-md border border-outline bg-surface px-5 py-12 text-center shadow-elev-1">
-          <h2 className="font-display text-lg font-semibold text-text">
+          <h2 className="font-display text-h3 font-semibold text-text">
             {copy.empty.title}
           </h2>
-          <p className="text-sm text-text-variant">{copy.empty.body}</p>
+          <p className="text-label text-text-variant">{copy.empty.body}</p>
         </div>
       ) : (
         <ul
@@ -511,7 +511,7 @@ export function LibraryBrowser({
           aria-hidden={!isPending}
         >
           {isPending && (
-            <span aria-live="polite" className="text-sm text-text-variant">
+            <span aria-live="polite" className="text-label text-text-variant">
               {copy.loadingMore}
             </span>
           )}

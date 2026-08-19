@@ -115,10 +115,10 @@ export default async function LibraryPage({ searchParams }: LibraryPageProps) {
           헤더(components/app/app-header.tsx)로 수렴 → 우측 form 제거, flex-col 복원.
         */}
         <header className="flex flex-col gap-1">
-          <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
+          <h1 className="font-display text-h1 font-bold text-text">
             {copy.title}
           </h1>
-          <p className="text-sm text-text-variant">{copy.subtitle}</p>
+          <p className="text-label text-text-variant">{copy.subtitle}</p>
         </header>
 
         <LibraryBrowser

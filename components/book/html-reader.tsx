@@ -152,13 +152,13 @@ export function HtmlReader({
       <div className="relative flex h-full w-full flex-1 overflow-hidden rounded-lg bg-surface-3 shadow-elev-2">
         {status === 'error' ? (
           <div className="flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center">
-            <p className="font-display text-lg font-semibold text-text">
+            <p className="font-display text-h3 font-semibold text-text">
               {readerCopy.errorTitle}
             </p>
-            <p className="text-sm text-text-variant">{readerCopy.errorBody}</p>
+            <p className="text-label text-text-variant">{readerCopy.errorBody}</p>
             <Link
               href={bookDetailHref}
-              className="mt-2 inline-flex h-11 items-center justify-center rounded-pill border border-outline bg-surface px-6 text-sm font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-2"
+              className="mt-2 inline-flex h-11 items-center justify-center rounded-pill border border-outline bg-surface px-6 text-label font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-2"
             >
               {readerCopy.backToDetailLabel}
             </Link>
@@ -182,9 +182,9 @@ export function HtmlReader({
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-surface-3">
                 <div
                   aria-hidden="true"
-                  className="h-10 w-10 animate-spin rounded-full border-4 border-surface-2 border-t-primary"
+                  className="h-10 w-10 animate-spin rounded-pill border-4 border-surface-2 border-t-primary"
                 />
-                <p className="text-sm text-text-variant">{readerCopy.loading}</p>
+                <p className="text-label text-text-variant">{readerCopy.loading}</p>
               </div>
             )}
           </>

@@ -30,7 +30,7 @@ import { BRAND_NAME } from '@/lib/brand';
  *   - 카드: rounded-md border border-outline bg-surface shadow-elev-1
  *     (home/page.tsx aside 카드 정합).
  *   - 호버: hover:bg-surface-2(진입 카드 Link).
- *   - 타이포: font-display text-2xl md:text-3xl(h1, library/page.tsx 정합).
+ *   - 타이포: font-display text-h1 md:text-h1(h1, library/page.tsx 정합).
  *   - 신규 토큰·raw HEX 0건.
  *
  * Cache·SEO:
@@ -52,14 +52,14 @@ export default async function AdminHomePage() {
   return (
     <div className="flex flex-col gap-4 md:gap-5">
       <header className="flex flex-col gap-1">
-        <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
+        <h1 className="font-display text-h1 font-bold text-text">
           {copy.pageTitles.home.title}
         </h1>
       </header>
 
       {/* D13 — stats anchor target. getAdminStats() 실측 4종 COUNT(CP5-b). */}
       <section id="stats" aria-labelledby="stats-heading" className="flex flex-col gap-3">
-        <h2 id="stats-heading" className="font-display text-lg font-semibold text-text">
+        <h2 id="stats-heading" className="font-display text-h3 font-semibold text-text">
           {copy.nav.stats}
         </h2>
         <StatsDashboard stats={stats} copy={copy.stats} />
@@ -70,10 +70,10 @@ export default async function AdminHomePage() {
           href="/admin/books"
           className="flex flex-col gap-1 rounded-md border border-outline bg-surface px-5 py-4 shadow-elev-1 transition-colors hover:bg-surface-2"
         >
-          <span className="font-display text-base font-semibold text-text">
+          <span className="font-display text-body font-semibold text-text">
             {copy.nav.books}
           </span>
-          <span className="text-sm text-text-variant">
+          <span className="text-label text-text-variant">
             {copy.pageTitles.books.title}
           </span>
         </Link>
@@ -81,10 +81,10 @@ export default async function AdminHomePage() {
           href="/admin/users"
           className="flex flex-col gap-1 rounded-md border border-outline bg-surface px-5 py-4 shadow-elev-1 transition-colors hover:bg-surface-2"
         >
-          <span className="font-display text-base font-semibold text-text">
+          <span className="font-display text-body font-semibold text-text">
             {copy.nav.users}
           </span>
-          <span className="text-sm text-text-variant">
+          <span className="text-label text-text-variant">
             {copy.pageTitles.users.title}
           </span>
         </Link>

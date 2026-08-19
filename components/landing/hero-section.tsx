@@ -13,13 +13,13 @@ interface HeroSectionProps {
   copy: LandingCopy['hero'];
 }
 
-/** 색상 블록 — design-system 1.4 Accent·1.1 Primary container 토큰. */
+/** 색상 블록 — design-system v2 §1.7 레벨 토큰 + §1.1 primary container. 장식(aria-hidden). */
 const HERO_BLOCK_COLORS = [
-  'bg-accent-yellow',
-  'bg-accent-pink',
-  'bg-accent-sky',
-  'bg-accent-green',
-  'bg-accent-violet',
+  'bg-level-1',
+  'bg-level-2',
+  'bg-level-3',
+  'bg-level-4',
+  'bg-level-5',
   'bg-primary-container',
 ] as const;
 
@@ -28,10 +28,10 @@ export function HeroSection({ copy }: HeroSectionProps) {
     <section className="bg-bg px-5 py-12 sm:py-16">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:gap-12">
         <div className="flex flex-col items-center gap-4 text-center md:flex-1 md:items-start md:text-left">
-          <h1 className="font-display text-3xl font-semibold leading-tight text-text break-keep sm:text-4xl">
+          <h1 className="font-display text-h1 font-semibold leading-tight text-text break-keep sm:text-display">
             {copy.title}
           </h1>
-          <p className="max-w-md text-base text-text-variant break-keep sm:text-lg">
+          <p className="max-w-md text-body text-text-variant break-keep sm:text-h3">
             {copy.subtitle}
           </p>
           <Button asChild size="lg" className="mt-2">

@@ -288,7 +288,7 @@ export function AsbReader({
             aria-hidden="true"
             className="h-10 w-10 animate-spin text-primary"
           />
-          <p className="text-sm text-text-variant">{readerCopy.loading}</p>
+          <p className="text-label text-text-variant">{readerCopy.loading}</p>
         </div>
       </div>
     );
@@ -298,22 +298,22 @@ export function AsbReader({
     return (
       <div className="flex h-full w-full flex-col px-4 py-4 md:px-8 lg:px-16">
         <div className="flex h-full w-full flex-1 flex-col items-center justify-center gap-3 rounded-lg bg-surface-3 px-6 text-center shadow-elev-2">
-          <p className="font-display text-lg font-semibold text-text">
+          <p className="font-display text-h3 font-semibold text-text">
             {readerCopy.errorTitle}
           </p>
-          <p className="text-sm text-text-variant">{readerCopy.errorBody}</p>
+          <p className="text-label text-text-variant">{readerCopy.errorBody}</p>
           <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
             <a
               href={originalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center justify-center rounded-pill border border-outline bg-surface px-6 text-sm font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-2"
+              className="inline-flex h-11 items-center justify-center rounded-pill border border-outline bg-surface px-6 text-label font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-2"
             >
               {originalLinkLabel}
             </a>
             <Link
               href={bookDetailHref}
-              className="inline-flex h-11 items-center justify-center rounded-pill border border-outline bg-surface px-6 text-sm font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-2"
+              className="inline-flex h-11 items-center justify-center rounded-pill border border-outline bg-surface px-6 text-label font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-2"
             >
               {readerCopy.backToDetailLabel}
             </Link>
@@ -384,7 +384,7 @@ export function AsbReader({
           </div>
         )}
         {face.text && (
-          <p className="w-full max-w-3xl shrink-0 whitespace-pre-line break-keep text-center font-display text-xl font-semibold leading-relaxed text-text md:text-2xl">
+          <p className="w-full max-w-3xl shrink-0 whitespace-pre-line break-keep text-center font-display text-h2 font-semibold leading-relaxed text-text md:text-h1">
             {face.text}
           </p>
         )}
@@ -404,7 +404,7 @@ export function AsbReader({
 
         <span
           aria-live="polite"
-          className="text-sm font-semibold text-text-variant"
+          className="text-label font-semibold text-text-variant"
         >
           {index + 1} / {total}
         </span>

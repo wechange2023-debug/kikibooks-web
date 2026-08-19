@@ -68,7 +68,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 // 입력 필드 — signup-form.tsx와 동일 토큰 (design-system.md 3.2·4.2·6.2).
 const fieldClass =
-  'h-[52px] w-full rounded-pill border border-outline bg-surface px-[22px] text-sm text-text placeholder:text-text-disabled focus:border-primary focus:outline-none disabled:opacity-[0.38]';
+  'h-[52px] w-full rounded-pill border border-outline bg-surface px-[22px] text-label text-text placeholder:text-text-disabled focus:border-primary focus:outline-none disabled:opacity-[0.38]';
 
 export function ChildProfileForm() {
   const [formError, setFormError] = useState<string | null>(null);
@@ -149,13 +149,13 @@ export function ChildProfileForm() {
         <div
           aria-hidden="true"
           className={cn(
-            'flex h-20 w-20 items-center justify-center rounded-full text-3xl font-bold text-text transition-colors',
+            'flex h-20 w-20 items-center justify-center rounded-pill text-h1 font-bold text-text transition-colors',
             avatarSwatch,
           )}
         >
           {avatarChar}
         </div>
-        <p className="text-xs text-text-variant">
+        <p className="text-caption text-text-variant">
           {trimmedName
             ? `${trimmedName}의 프로필`
             : '이름을 입력하면 미리보기가 보여요'}
@@ -165,10 +165,10 @@ export function ChildProfileForm() {
       {/* 이름 */}
       <div className="flex flex-col gap-2">
         <div className="flex items-baseline justify-between">
-          <label htmlFor="child-name" className="text-sm font-medium text-text">
+          <label htmlFor="child-name" className="text-label font-medium text-text">
             자녀 이름
           </label>
-          <span className="text-xs text-text-variant" aria-hidden="true">
+          <span className="text-caption text-text-variant" aria-hidden="true">
             {name.length} / {NAME_MAX}
           </span>
         </div>
@@ -185,7 +185,7 @@ export function ChildProfileForm() {
           {...register('name')}
         />
         {errors.name && (
-          <p id="child-name-error" className="text-sm font-medium text-error">
+          <p id="child-name-error" className="text-label font-medium text-error">
             {errors.name.message}
           </p>
         )}
@@ -193,7 +193,7 @@ export function ChildProfileForm() {
 
       {/* 나이 */}
       <div className="flex flex-col gap-2">
-        <span className="text-sm font-medium text-text">자녀 나이 (만)</span>
+        <span className="text-label font-medium text-text">자녀 나이 (만)</span>
         <div className="flex gap-2" role="group" aria-label="자녀 나이 선택">
           {AGE_OPTIONS.map((ageOption) => {
             const selected = age === ageOption;
@@ -205,7 +205,7 @@ export function ChildProfileForm() {
                 aria-pressed={selected}
                 disabled={isPending}
                 className={cn(
-                  'flex-1 rounded-md border py-3 text-base font-semibold transition-colors disabled:opacity-[0.38]',
+                  'flex-1 rounded-md border py-3 text-body font-semibold transition-colors disabled:opacity-[0.38]',
                   selected
                     ? 'border-primary bg-primary text-on-primary'
                     : 'border-outline bg-surface text-text hover:bg-surface-2',
@@ -217,15 +217,15 @@ export function ChildProfileForm() {
           })}
         </div>
         {errors.age && (
-          <p className="text-sm font-medium text-error">{errors.age.message}</p>
+          <p className="text-label font-medium text-error">{errors.age.message}</p>
         )}
       </div>
 
       {/* 레벨 */}
       <div className="flex flex-col gap-2">
-        <span className="text-sm font-medium text-text">읽기 레벨</span>
+        <span className="text-label font-medium text-text">읽기 레벨</span>
         {recommendedLevel != null ? (
-          <p className="text-sm text-text-variant">
+          <p className="text-label text-text-variant">
             만 {age}세 →{' '}
             <span className="font-semibold text-text">
               Level {recommendedLevel} {LEVEL_META[recommendedLevel - 1].alias}
@@ -233,7 +233,7 @@ export function ChildProfileForm() {
             추천
           </p>
         ) : (
-          <p className="text-sm text-text-variant">
+          <p className="text-label text-text-variant">
             나이를 선택하면 레벨이 자동으로 추천돼요
           </p>
         )}
@@ -257,19 +257,19 @@ export function ChildProfileForm() {
               >
                 <span
                   className={cn(
-                    'flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-text',
+                    'flex h-8 w-8 items-center justify-center rounded-pill text-label font-bold text-text',
                     meta.swatchClass,
                   )}
                 >
                   {meta.level}
                 </span>
-                <span className="text-xs font-medium text-text">
+                <span className="text-caption font-medium text-text">
                   {meta.alias}
                 </span>
                 {/* 추천 라벨 — 자리를 항상 차지해 선택 시 레이아웃이 흔들리지 않게 한다. */}
                 <span
                   className={cn(
-                    'text-xs font-semibold',
+                    'text-caption font-semibold',
                     recommended ? 'text-primary' : 'text-transparent',
                   )}
                 >
@@ -280,12 +280,12 @@ export function ChildProfileForm() {
           })}
         </div>
         {levelChangedFromRecommendation && (
-          <p className="text-xs text-text-variant">
+          <p className="text-caption text-text-variant">
             추천 레벨에서 직접 변경했어요. 언제든 다시 바꿀 수 있어요.
           </p>
         )}
         {errors.level && (
-          <p className="text-sm font-medium text-error">
+          <p className="text-label font-medium text-error">
             {errors.level.message}
           </p>
         )}
@@ -294,7 +294,7 @@ export function ChildProfileForm() {
       {formError && (
         <p
           role="alert"
-          className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-sm font-medium text-error"
+          className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-label font-medium text-error"
         >
           {formError}
         </p>

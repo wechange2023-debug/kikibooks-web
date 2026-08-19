@@ -66,7 +66,7 @@ import { cn } from '@/lib/utils';
  *   - TabButton 활성: border-primary bg-surface-2 text-text
  *     (FilterChip 패턴 정합, admin-books-browser FilterChip 정합).
  *   - TabButton 비활성: border-outline bg-surface text-text-variant hover:bg-surface-2.
- *   - role badge·level badge: rounded-pill border bg-surface-2 text-xs text-text-variant.
+ *   - role badge·level badge: rounded-pill border bg-surface-2 text-caption text-text-variant.
  *   - 신규 토큰·raw HEX 0건.
  *
  * ──────────────────────────────────────────────────────────────────────────────
@@ -134,7 +134,7 @@ function TabButton({ label, isActive, controls, onClick }: TabButtonProps) {
       aria-controls={controls}
       onClick={onClick}
       className={cn(
-        'inline-flex h-[38px] items-center rounded-pill border px-4 text-sm font-medium transition-colors',
+        'inline-flex h-[38px] items-center rounded-pill border px-4 text-label font-medium transition-colors',
         isActive
           ? 'border-primary bg-surface-2 text-text'
           : 'border-outline bg-surface text-text-variant hover:bg-surface-2',
@@ -158,23 +158,23 @@ function AdminProfileCard({ row, copy }: AdminProfileCardProps) {
   return (
     <article className="flex flex-col gap-2 rounded-md border border-outline bg-surface p-4 shadow-elev-1">
       <div className="flex items-start justify-between gap-2">
-        <h2 className="line-clamp-2 text-sm font-semibold text-text">
+        <h2 className="line-clamp-2 text-label font-semibold text-text">
           {row.email}
         </h2>
         <span
           aria-label={copy.profilesColumns.role}
-          className="inline-flex shrink-0 items-center rounded-pill border border-outline bg-surface-2 px-2 py-0.5 text-xs text-text-variant"
+          className="inline-flex shrink-0 items-center rounded-pill border border-outline bg-surface-2 px-2 py-0.5 text-caption text-text-variant"
         >
           {copy.roleBadges[row.role]}
         </span>
       </div>
       <div
         aria-label={copy.profilesColumns.displayName}
-        className="text-sm text-text-variant"
+        className="text-label text-text-variant"
       >
         {row.display_name ?? '—'}
       </div>
-      <div className="flex flex-wrap items-center gap-x-2 text-xs text-text-variant">
+      <div className="flex flex-wrap items-center gap-x-2 text-caption text-text-variant">
         <span aria-label={copy.profilesColumns.id}>
           {row.id.slice(0, 8)}…
         </span>
@@ -201,31 +201,31 @@ function AdminChildCard({ row, copy }: AdminChildCardProps) {
   return (
     <article className="flex flex-col gap-2 rounded-md border border-outline bg-surface p-4 shadow-elev-1">
       <div className="flex items-start justify-between gap-2">
-        <h2 className="line-clamp-2 text-sm font-semibold text-text">
+        <h2 className="line-clamp-2 text-label font-semibold text-text">
           {row.name}
         </h2>
         <span
           aria-label={copy.childrenColumns.level}
-          className="inline-flex shrink-0 items-center rounded-pill border border-outline bg-surface-2 px-2 py-0.5 text-xs text-text-variant"
+          className="inline-flex shrink-0 items-center rounded-pill border border-outline bg-surface-2 px-2 py-0.5 text-caption text-text-variant"
         >
           {row.current_level}
         </span>
       </div>
-      <div className="flex flex-wrap gap-x-3 text-sm text-text-variant">
+      <div className="flex flex-wrap gap-x-3 text-label text-text-variant">
         <span>
-          <span className="text-xs">{copy.childrenColumns.age}: </span>
+          <span className="text-caption">{copy.childrenColumns.age}: </span>
           {row.age ?? '—'}
         </span>
         <span>
-          <span className="text-xs">{copy.childrenColumns.points}: </span>
+          <span className="text-caption">{copy.childrenColumns.points}: </span>
           {row.points}
         </span>
       </div>
-      <div className="text-sm text-text-variant">
-        <span className="text-xs">{copy.childrenColumns.parentEmail}: </span>
+      <div className="text-label text-text-variant">
+        <span className="text-caption">{copy.childrenColumns.parentEmail}: </span>
         {row.parent_email || '—'}
       </div>
-      <div className="flex flex-wrap items-center gap-x-2 text-xs text-text-variant">
+      <div className="flex flex-wrap items-center gap-x-2 text-caption text-text-variant">
         <span aria-label={copy.childrenColumns.id}>
           {row.id.slice(0, 8)}…
         </span>
@@ -460,7 +460,7 @@ export function AdminUsersBrowser({
               onChange={(event) =>
                 handleProfilesKeywordChange(event.target.value)
               }
-              className="h-[52px] w-full rounded-md border border-outline bg-surface px-[22px] text-sm text-text placeholder:text-text-variant focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              className="h-[52px] w-full rounded-md border border-outline bg-surface px-[22px] text-label text-text placeholder:text-text-variant focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             />
           </>
         ) : (
@@ -478,7 +478,7 @@ export function AdminUsersBrowser({
               onChange={(event) =>
                 handleChildrenKeywordChange(event.target.value)
               }
-              className="h-[52px] w-full rounded-md border border-outline bg-surface px-[22px] text-sm text-text placeholder:text-text-variant focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              className="h-[52px] w-full rounded-md border border-outline bg-surface px-[22px] text-label text-text placeholder:text-text-variant focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             />
           </>
         )}
@@ -488,7 +488,7 @@ export function AdminUsersBrowser({
       {activeError && (
         <p
           role="alert"
-          className="rounded-md bg-surface px-5 py-3 text-sm font-medium text-error shadow-elev-1"
+          className="rounded-md bg-surface px-5 py-3 text-label font-medium text-error shadow-elev-1"
         >
           {activeError}
         </p>
@@ -497,10 +497,10 @@ export function AdminUsersBrowser({
       {/* 그리드 / 빈 상태 */}
       {isEmpty ? (
         <div className="flex flex-col items-center gap-2 rounded-md border border-outline bg-surface px-5 py-12 text-center shadow-elev-1">
-          <h2 className="font-display text-lg font-semibold text-text">
+          <h2 className="font-display text-h3 font-semibold text-text">
             {copy.empty.title}
           </h2>
-          <p className="text-sm text-text-variant">{copy.empty.body}</p>
+          <p className="text-label text-text-variant">{copy.empty.body}</p>
         </div>
       ) : (
         <div id={activePanelId} role="tabpanel" aria-busy={isPending}>

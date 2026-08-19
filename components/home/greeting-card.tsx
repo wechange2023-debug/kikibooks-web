@@ -54,19 +54,19 @@ export function GreetingCard({ greeting, child }: GreetingCardProps) {
       className="flex flex-col gap-3 rounded-md bg-surface p-5 shadow-elev-1"
     >
       <div className="flex flex-col gap-1">
-        <p className="font-display text-lg font-semibold text-text">{greeting.primary}</p>
-        <p className="text-sm text-text-variant">{greeting.subtitle}</p>
+        <p className="font-display text-h3 font-semibold text-text">{greeting.primary}</p>
+        <p className="text-label text-text-variant">{greeting.subtitle}</p>
       </div>
 
       {/* 자녀 프로필 칩 — §3 Chip 토큰 */}
       <div className="flex items-center gap-2">
         <span
           aria-hidden="true"
-          className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-text ${swatchClass}`}
+          className={`flex h-9 w-9 items-center justify-center rounded-pill text-label font-bold text-text ${swatchClass}`}
         >
           {[...child.name][0] ?? '?'}
         </span>
-        <span className="inline-flex h-[38px] items-center rounded-pill border border-outline bg-surface-2 px-4 text-sm font-medium text-text">
+        <span className="inline-flex h-[38px] items-center rounded-pill border border-outline bg-surface-2 px-4 text-label font-medium text-text">
           {formatChildLabel(child)}
         </span>
       </div>

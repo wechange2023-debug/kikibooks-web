@@ -44,28 +44,28 @@ export default function GlobalError({
           >
             <h1
               id="global-error-title"
-              className="font-display text-2xl font-bold text-text"
+              className="font-display text-h1 font-bold text-text"
             >
               문제가 발생했어요
             </h1>
-            <p className="break-keep text-base text-text-variant">
+            <p className="break-keep text-body text-text-variant">
               잠시 후 다시 시도해 주세요. 문제가 계속되면 잠시 뒤에 다시 방문해 주세요.
             </p>
             <button
               type="button"
               onClick={() => reset()}
-              className="inline-flex h-[52px] items-center justify-center rounded-pill bg-primary px-8 text-base font-semibold text-on-primary shadow-elev-pop transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+              className="inline-flex h-[52px] items-center justify-center rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
             >
               다시 시도
             </button>
             <a
               href="/"
-              className="text-sm font-medium text-text-variant underline-offset-2 transition-colors hover:text-text hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              className="text-label font-medium text-text-variant underline-offset-2 transition-colors hover:text-text hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             >
               홈으로
             </a>
             {error.digest ? (
-              <p className="text-xs text-text-variant/70">오류 코드: {error.digest}</p>
+              <p className="text-caption text-text-variant/70">오류 코드: {error.digest}</p>
             ) : null}
           </section>
         </main>

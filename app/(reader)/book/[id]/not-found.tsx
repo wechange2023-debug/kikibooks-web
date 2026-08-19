@@ -33,16 +33,16 @@ export default async function BookNotFound() {
       >
         <h1
           id="book-not-found-title"
-          className="font-display text-2xl font-bold text-text"
+          className="font-display text-h1 font-bold text-text"
         >
           {copy.notFound.title}
         </h1>
-        <p className="break-keep text-base text-text-variant">
+        <p className="break-keep text-body text-text-variant">
           {copy.notFound.body}
         </p>
         <Link
           href={POST_LOGIN_PATH}
-          className="inline-flex h-[52px] items-center justify-center rounded-pill bg-primary px-8 text-base font-semibold text-on-primary shadow-elev-pop transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+          className="inline-flex h-[52px] items-center justify-center rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
         >
           {copy.notFound.homeLinkLabel}
         </Link>

@@ -228,14 +228,14 @@ export default async function ReadPage({ params }: ReadPageProps) {
       readerBody = (
         <div className="flex h-full w-full flex-col px-4 py-4 md:px-8 lg:px-16">
           <div className="flex h-full w-full flex-1 flex-col items-center justify-center gap-3 rounded-lg bg-surface-3 px-6 text-center shadow-elev-2">
-            <p className="font-display text-lg font-semibold text-text">
+            <p className="font-display text-h3 font-semibold text-text">
               {readerCopy.unsupportedFormat.notice}
             </p>
             <a
               href={book.original_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex h-11 items-center justify-center rounded-pill border border-outline bg-surface px-6 text-sm font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-2"
+              className="mt-2 inline-flex h-11 items-center justify-center rounded-pill border border-outline bg-surface px-6 text-label font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-2"
             >
               {readerCopy.unsupportedFormat.originalLinkLabel}
             </a>
@@ -252,7 +252,7 @@ export default async function ReadPage({ params }: ReadPageProps) {
 
   return (
     <div className="flex h-screen flex-col bg-surface-2">
-      <h1 className="truncate border-b border-outline bg-surface px-4 py-2 font-display text-base font-semibold text-text md:px-6">
+      <h1 className="truncate border-b border-outline bg-surface px-4 py-2 font-display text-body font-semibold text-text md:px-6">
         {book.title}
       </h1>
       <ReaderAttributionBar rows={readerRows} />

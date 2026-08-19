@@ -19,10 +19,10 @@ export function PopularBooks({ copy, books }: PopularBooksProps) {
     <section className="bg-bg px-5 py-12 sm:py-16">
       <div className="mx-auto flex max-w-5xl flex-col gap-6">
         <header className="flex flex-col gap-2 text-center">
-          <h2 className="font-display text-2xl font-semibold text-text">
+          <h2 className="font-display text-h1 font-semibold text-text">
             {copy.heading}
           </h2>
-          <p className="text-sm text-text-variant">{copy.subheading}</p>
+          <p className="text-label text-text-variant">{copy.subheading}</p>
         </header>
         {books.length > 0 ? (
           <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
@@ -33,7 +33,7 @@ export function PopularBooks({ copy, books }: PopularBooksProps) {
             ))}
           </ul>
         ) : (
-          <p className="text-center text-sm text-text-variant">
+          <p className="text-center text-label text-text-variant">
             그림책을 준비하고 있어요.
           </p>
         )}

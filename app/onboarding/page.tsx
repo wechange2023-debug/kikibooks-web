@@ -38,10 +38,10 @@ export default async function OnboardingPage() {
     <main className="flex min-h-screen items-center justify-center bg-surface-2 px-6 py-12">
       <div className="w-full max-w-md rounded-xl bg-surface p-6 shadow-elev-2 sm:p-8">
         <header className="mb-6 flex flex-col gap-2 text-center">
-          <h1 className="font-display text-xl font-semibold text-text">
+          <h1 className="font-display text-h2 font-semibold text-text">
             자녀를 등록해 주세요
           </h1>
-          <p className="text-sm text-text-variant">
+          <p className="text-label text-text-variant">
             아이에게 꼭 맞는 그림책을 추천하기 위해 정보가 필요해요
           </p>
         </header>

@@ -34,9 +34,9 @@ interface BookCoverCardProps {
 
 /** 깨진 표지 fallback 색 — WCAG 대비가 보장된 container 토큰 쌍. */
 const FALLBACK_PALETTE = [
-  { block: 'bg-primary-container', text: 'text-on-primary-container' },
-  { block: 'bg-secondary-container', text: 'text-on-secondary-container' },
-  { block: 'bg-tertiary-container', text: 'text-on-tertiary-container' },
+  { block: 'bg-level-1-container', text: 'text-text' },
+  { block: 'bg-level-3-container', text: 'text-text' },
+  { block: 'bg-level-5-container', text: 'text-text' },
 ] as const;
 
 /** book.id로 fallback 색을 결정적으로 고른다 — 같은 책은 항상 같은 색. */
@@ -67,7 +67,7 @@ export function BookCoverCard({ book }: BookCoverCardProps) {
               aria-hidden="true"
             />
             <p
-              className={`line-clamp-4 text-center text-sm font-semibold ${fallback.text}`}
+              className={`line-clamp-4 text-center text-label font-semibold ${fallback.text}`}
             >
               {book.title}
             </p>
@@ -96,11 +96,11 @@ export function BookCoverCard({ book }: BookCoverCardProps) {
         ) : null}
       </div>
       <div className="flex flex-col gap-0.5">
-        <p className="line-clamp-2 text-sm font-semibold text-text">
+        <p className="line-clamp-2 text-label font-semibold text-text">
           {book.title}
         </p>
         {book.author ? (
-          <p className="line-clamp-1 text-xs text-text-variant">
+          <p className="line-clamp-1 text-caption text-text-variant">
             {book.author}
           </p>
         ) : null}

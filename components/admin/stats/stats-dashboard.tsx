@@ -46,7 +46,7 @@ import type { AdminStats } from '@/lib/admin/stats/query';
  *   - 그리드: grid grid-cols-2 gap-3 md:grid-cols-4.
  *   - 카드: rounded-md border border-outline bg-surface px-4 py-3 shadow-elev-1.
  *   - 라벨·서브·아이콘: text-text-variant (placeholder label 토큰 정합).
- *   - 값: font-display text-2xl font-bold text-text (placeholder value 토큰 정합).
+ *   - 값: font-display text-h1 font-bold text-text (placeholder value 토큰 정합).
  *   shadcn/ui Card 미사용 — placeholder가 raw div 토큰이라 정합 유지(신규 의존 0건).
  *
  * ADR: docs/adr/0019-admin-system.md D9·D13
@@ -72,14 +72,14 @@ function StatsCard({ icon, label, value, sublabel }: StatsCardProps) {
     <div className="rounded-md border border-outline bg-surface px-4 py-3 shadow-elev-1">
       <div className="flex items-center gap-1.5 text-text-variant">
         {icon}
-        <span className="text-xs">{label}</span>
+        <span className="text-caption">{label}</span>
       </div>
       {/* #12 locale 'ko-KR' 하드코딩 — 천 단위 콤마, i18n 진입 시 정정. */}
-      <div className="mt-1 font-display text-2xl font-bold text-text">
+      <div className="mt-1 font-display text-h1 font-bold text-text">
         {value.toLocaleString('ko-KR')}
       </div>
       {sublabel ? (
-        <div className="mt-0.5 text-xs text-text-variant">{sublabel}</div>
+        <div className="mt-0.5 text-caption text-text-variant">{sublabel}</div>
       ) : null}
     </div>
   );

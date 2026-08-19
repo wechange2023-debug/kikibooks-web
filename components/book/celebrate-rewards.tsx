@@ -13,7 +13,7 @@ import { useEffect, useRef, useState } from 'react';
  *
  * design-system §7.3 Celebrate 모션 토큰 100% 정합 (line 368~381):
  *   별 3개 등장: 0/150/300ms stagger, scale(0)→(1.2)→(1), cubic-bezier(0.34, 1.56, 0.64, 1) bounce
- *   별 채우기: 등장 후 200ms 지연 + 색상 transition 400ms (회색 → --color-accent-yellow)
+ *   별 채우기: 등장 후 200ms 지연 + 색상 transition 400ms (회색 → --color-accent-mustard)
  *   포인트 카운터: 0→50 count-up, 600ms ease-out
  *   포인트 카드: 별 완료 후 100ms 지연, fade-in + translateY(20px→0), 300ms
  *   배지 등장: 포인트 카드 후 200ms 지연, scale(0.5)→(1), 350ms bounce
@@ -31,8 +31,8 @@ import { useEffect, useRef, useState } from 'react';
  *
  * Hard Rule 10 (raw HEX 0건):
  *   모든 색·간격·여백·shadow는 tailwind.config.ts 등록 semantic 토큰만 사용
- *   (text-accent-yellow·text-text-disabled·text-text-variant·text-text·bg-surface·
- *    bg-accent-yellow·shadow-elev-1·rounded-lg·rounded-pill·ease-kiki·ease-kiki-bounce).
+ *   (text-accent-mustard·text-text-disabled·text-text-variant·text-text·bg-surface·
+ *    bg-accent-mustard·shadow-elev-1·rounded-lg·rounded-pill·ease-kiki·ease-kiki-bounce).
  *   easing의 cubic-bezier(...)는 색상이 아닌 모션 곡선이라 raw HEX 규칙 대상 아님.
  *
  * props 직렬화 0 문제:
@@ -73,7 +73,7 @@ const COUNT_UP_DURATION_MS = 600;
  * 단계 — 모션 진행 상태.
  *   0: hidden(초기, 모든 요소 미가시)
  *   1: stars appear(별 3개 stagger 등장, 회색)
- *   2: stars fill(별 회색 → accent-yellow)
+ *   2: stars fill(별 회색 → accent-mustard)
  *   3: points card + count-up(0→50)
  *   4: badge reveal(badgeNewlyEarned일 때만)
  */
@@ -139,14 +139,14 @@ export function CelebrateRewards({
 
   return (
     <div className="flex flex-col items-center gap-6">
-      {/* 별 3개 stagger 등장 + 회색→accent-yellow 채우기 (§7.3) */}
+      {/* 별 3개 stagger 등장 + 회색→accent-mustard 채우기 (§7.3) */}
       <div className="flex items-center gap-3" aria-hidden="true">
         {STAR_STAGGER_MS.map((delay, i) => (
           <Star
             key={i}
             className={`h-12 w-12 fill-current transition-all ease-kiki-bounce motion-reduce:transition-none ${
               starsVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
-            } ${starsFilled ? 'text-accent-yellow' : 'text-text-disabled'}`}
+            } ${starsFilled ? 'text-accent-mustard' : 'text-text-disabled'}`}
             style={{
               transitionDelay: `${delay}ms`,
               transitionDuration: starsFilled ? '400ms' : '300ms',
@@ -162,10 +162,10 @@ export function CelebrateRewards({
         }`}
         aria-live="polite"
       >
-        <span className="font-display text-4xl font-bold text-accent-yellow tabular-nums">
+        <span className="font-display text-display font-bold text-accent-mustard tabular-nums">
           {`+${count}`}
         </span>
-        <span className="text-sm font-medium text-text-variant">{pointsLabel}</span>
+        <span className="text-label font-medium text-text-variant">{pointsLabel}</span>
       </div>
 
       {/* 배지 — 신규 획득(badgeNewlyEarned=true) 시만 mount + scale bounce 등장 (§7.3) */}
@@ -191,12 +191,12 @@ function BadgeReveal({ label }: { label: string }) {
 
   return (
     <div
-      className={`rounded-pill bg-accent-yellow px-5 py-2 transition-all ease-kiki-bounce motion-reduce:transition-none ${
+      className={`rounded-pill bg-accent-mustard px-5 py-2 transition-all ease-kiki-bounce motion-reduce:transition-none ${
         visible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
       }`}
       style={{ transitionDuration: '350ms' }}
     >
-      <span className="text-sm font-semibold text-text">{label}</span>
+      <span className="text-label font-semibold text-on-accent-mustard">{label}</span>
     </div>
   );
 }

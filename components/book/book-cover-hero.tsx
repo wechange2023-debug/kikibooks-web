@@ -44,9 +44,9 @@ interface BookCoverHeroProps {
 
 /** 깨진 표지 fallback 색 — WCAG 대비 보장된 container 토큰 쌍 (phase-09a 패턴). */
 const FALLBACK_PALETTE = [
-  { block: 'bg-primary-container', text: 'text-on-primary-container' },
-  { block: 'bg-secondary-container', text: 'text-on-secondary-container' },
-  { block: 'bg-tertiary-container', text: 'text-on-tertiary-container' },
+  { block: 'bg-level-1-container', text: 'text-text' },
+  { block: 'bg-level-3-container', text: 'text-text' },
+  { block: 'bg-level-5-container', text: 'text-text' },
 ] as const;
 
 /** book.id로 fallback 색을 결정적으로 고른다 — 같은 책은 항상 같은 색. */
@@ -74,7 +74,7 @@ export function BookCoverHero({ book }: BookCoverHeroProps) {
               aria-hidden="true"
             />
             <p
-              className={`line-clamp-4 text-center text-base font-semibold ${fallback.text}`}
+              className={`line-clamp-4 text-center text-body font-semibold ${fallback.text}`}
             >
               {book.title}
             </p>
@@ -91,7 +91,7 @@ export function BookCoverHero({ book }: BookCoverHeroProps) {
           />
         )}
       </div>
-      <h1 className="break-keep text-center font-display text-2xl font-bold text-text sm:text-3xl">
+      <h1 className="break-keep text-center font-display text-h1 font-bold text-text">
         {book.title}
       </h1>
     </header>

@@ -147,8 +147,8 @@ export default async function CelebratePage({ params }: CelebratePageProps) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-8 bg-surface-2 px-6 py-12 text-center">
       <div className="flex flex-col items-center gap-3">
-        <h1 className="font-display text-3xl font-bold text-text">{celebrateCopy.title}</h1>
-        <p className="text-base text-text-variant">{subtitle}</p>
+        <h1 className="font-display text-h1 font-bold text-text">{celebrateCopy.title}</h1>
+        <p className="text-body text-text-variant">{subtitle}</p>
       </div>
 
       {/* §7.3 보상 모션 (CP2-d 신규 + CP2-e 조립) — 별 3개·포인트 카운터·배지(신규 시) */}
@@ -161,7 +161,7 @@ export default async function CelebratePage({ params }: CelebratePageProps) {
 
       <Link
         href={LIBRARY_PATH}
-        className="inline-flex h-[52px] items-center justify-center gap-2 rounded-pill bg-primary px-8 text-base font-semibold text-on-primary shadow-elev-pop transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+        className="inline-flex h-[52px] items-center justify-center gap-2 rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
       >
         {celebrateCopy.libraryLinkLabel}
       </Link>

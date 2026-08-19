@@ -15,7 +15,7 @@ import { type HighlightUnit } from '@/lib/book/highlight-config';
  *   - 'word'     : activeIndex 단어 1개만 강조.
  *   - 'sentence' : activeIndex 단어가 속한 문장 전체 강조.
  *
- * 강조 시각: accent 토큰 배경 칠(bg-accent-yellow), 밑줄 아님(팀장 확정). raw 색상값 0(Hard Rule 10).
+ * 강조 시각: accent 토큰 배경 칠(bg-accent-mustard), 밑줄 아님(팀장 확정). raw 색상값 0(Hard Rule 10).
  */
 
 /** generate_tts.py speech marks 1행(word). */
@@ -133,7 +133,7 @@ export function HighlightedText({
               <span
                 className={
                   isActive
-                    ? 'rounded-[0.2em] bg-accent-yellow px-[0.08em] text-text transition-colors duration-150 ease-kiki'
+                    ? 'rounded-[0.2em] bg-accent-mustard px-[0.08em] text-on-accent-mustard transition-colors duration-150 ease-kiki'
                     : 'transition-colors duration-150 ease-kiki'
                 }
               >

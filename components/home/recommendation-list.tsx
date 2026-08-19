@@ -38,9 +38,9 @@ interface RecommendationListProps {
 
 /** 깨진 표지 fallback 색 — WCAG 대비 보장된 container 토큰 쌍. */
 const FALLBACK_PALETTE = [
-  { block: 'bg-primary-container', text: 'text-on-primary-container' },
-  { block: 'bg-secondary-container', text: 'text-on-secondary-container' },
-  { block: 'bg-tertiary-container', text: 'text-on-tertiary-container' },
+  { block: 'bg-level-1-container', text: 'text-text' },
+  { block: 'bg-level-3-container', text: 'text-text' },
+  { block: 'bg-level-5-container', text: 'text-text' },
 ] as const;
 
 /** book.id 합으로 fallback 색을 결정 — 같은 책은 항상 같은 색. */
@@ -81,7 +81,7 @@ function RecommendationCard({ book }: { book: PopularBook }) {
               aria-hidden="true"
             />
             <p
-              className={`line-clamp-4 text-center text-xs font-semibold ${fallback.text}`}
+              className={`line-clamp-4 text-center text-caption font-semibold ${fallback.text}`}
             >
               {book.title}
             </p>
@@ -108,9 +108,9 @@ function RecommendationCard({ book }: { book: PopularBook }) {
         ) : null}
       </div>
       <div className="flex flex-col gap-0.5">
-        <p className="line-clamp-2 text-sm font-semibold text-text">{book.title}</p>
+        <p className="line-clamp-2 text-label font-semibold text-text">{book.title}</p>
         {book.author ? (
-          <p className="line-clamp-1 text-xs text-text-variant">{book.author}</p>
+          <p className="line-clamp-1 text-caption text-text-variant">{book.author}</p>
         ) : null}
       </div>
     </Link>
@@ -126,10 +126,10 @@ export function RecommendationList({ result, copy }: RecommendationListProps) {
       aria-label={copy.title}
       className="flex flex-col gap-3 rounded-md bg-surface p-5 shadow-elev-1"
     >
-      <h2 className="font-display text-base font-semibold text-text">{copy.title}</h2>
+      <h2 className="font-display text-body font-semibold text-text">{copy.title}</h2>
 
       {isEmpty ? (
-        <p className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-sm text-text-variant">
+        <p className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-label text-text-variant">
           {copy.empty}
         </p>
       ) : (

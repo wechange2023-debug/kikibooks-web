@@ -47,8 +47,6 @@ export type CategorySlug =
 export interface CategoryDefinition {
   slug: CategorySlug;
   labelKo: string;
-  /** CSS variable 이름 (design-system §1.4 Accent 토큰, raw HEX 미사용). */
-  accentToken: string;
   keywords: readonly string[];
 }
 
@@ -61,7 +59,6 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
   {
     slug: 'animals',
     labelKo: '동물',
-    accentToken: '--color-accent-green',
     keywords: [
       'animal',
       'dog',
@@ -83,7 +80,6 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
   {
     slug: 'family',
     labelKo: '가족',
-    accentToken: '--color-accent-pink',
     keywords: [
       'family',
       'mom',
@@ -102,7 +98,6 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
   {
     slug: 'abc',
     labelKo: 'ABC',
-    accentToken: '--color-tertiary',
     keywords: [
       'abc',
       'alphabet',
@@ -119,7 +114,6 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
   {
     slug: 'numbers',
     labelKo: '숫자',
-    accentToken: '--color-accent-sky',
     keywords: [
       'number',
       'numbers',
@@ -138,7 +132,6 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
   {
     slug: 'emotions',
     labelKo: '감정',
-    accentToken: '--color-accent-pink',
     keywords: [
       'feel',
       'feeling',
@@ -160,7 +153,6 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
   {
     slug: 'nature',
     labelKo: '자연',
-    accentToken: '--color-accent-green',
     keywords: [
       'tree',
       'flower',
@@ -185,7 +177,6 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
   {
     slug: 'food',
     labelKo: '음식',
-    accentToken: '--color-accent-yellow',
     keywords: [
       'food',
       'eat',
@@ -206,7 +197,6 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
   {
     slug: 'bedtime',
     labelKo: '잠자리',
-    accentToken: '--color-accent-violet',
     keywords: [
       'night',
       'sleep',

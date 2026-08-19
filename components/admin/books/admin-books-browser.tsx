@@ -101,9 +101,9 @@ const SENTINEL_ROOT_MARGIN = '0px 0px 200px 0px';
 
 /** 표지 깨짐 fallback 팔레트 — library-browser.tsx 정합 (3종 회전). */
 const FALLBACK_PALETTE = [
-  { block: 'bg-primary-container', text: 'text-on-primary-container' },
-  { block: 'bg-secondary-container', text: 'text-on-secondary-container' },
-  { block: 'bg-tertiary-container', text: 'text-on-tertiary-container' },
+  { block: 'bg-level-1-container', text: 'text-text' },
+  { block: 'bg-level-3-container', text: 'text-text' },
+  { block: 'bg-level-5-container', text: 'text-text' },
 ] as const;
 
 function pickFallbackColor(id: string): (typeof FALLBACK_PALETTE)[number] {
@@ -138,7 +138,7 @@ function FilterChip({
       aria-pressed={isActive}
       disabled={disabled}
       className={cn(
-        'inline-flex h-[38px] items-center rounded-pill border px-4 text-sm font-medium transition-colors disabled:opacity-[0.38]',
+        'inline-flex h-[38px] items-center rounded-pill border px-4 text-label font-medium transition-colors disabled:opacity-[0.38]',
         isActive
           ? 'border-primary bg-surface-2 text-text'
           : 'border-outline bg-surface text-text-variant hover:bg-surface-2',
@@ -245,19 +245,19 @@ function AdminBookCard({
           )}
         </a>
         <div className="flex min-w-0 flex-1 flex-col gap-1">
-          <h2 className="line-clamp-2 text-sm font-semibold text-text">
+          <h2 className="line-clamp-2 text-label font-semibold text-text">
             {row.title}
           </h2>
           <div className="flex flex-wrap gap-1">
             <span
               aria-label={copy.columns.source}
-              className="inline-flex items-center rounded-pill border border-outline bg-surface-2 px-2 py-0.5 text-xs text-text-variant"
+              className="inline-flex items-center rounded-pill border border-outline bg-surface-2 px-2 py-0.5 text-caption text-text-variant"
             >
               {row.source_platform}
             </span>
             <span
               aria-label={copy.columns.license}
-              className="inline-flex items-center rounded-pill border border-outline bg-surface-2 px-2 py-0.5 text-xs text-text-variant"
+              className="inline-flex items-center rounded-pill border border-outline bg-surface-2 px-2 py-0.5 text-caption text-text-variant"
             >
               {row.license}
             </span>
@@ -266,13 +266,13 @@ function AdminBookCard({
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <label className="flex items-center gap-2 text-xs text-text-variant">
+        <label className="flex items-center gap-2 text-caption text-text-variant">
           <span>{copy.columns.level}</span>
           <select
             value={levelSelectValue}
             onChange={(event) => onLevelChange(row.id, event.target.value)}
             disabled={isPending}
-            className="h-9 appearance-none rounded-md border border-outline bg-surface px-2 text-sm text-text focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-[0.38]"
+            className="h-9 appearance-none rounded-md border border-outline bg-surface px-2 text-label text-text focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-[0.38]"
           >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -290,7 +290,7 @@ function AdminBookCard({
           aria-pressed={row.is_active}
           aria-label={copy.columns.isActive}
           className={cn(
-            'inline-flex h-9 items-center rounded-pill border px-4 text-sm font-medium transition-colors disabled:opacity-[0.38]',
+            'inline-flex h-9 items-center rounded-pill border px-4 text-label font-medium transition-colors disabled:opacity-[0.38]',
             row.is_active
               ? 'border-primary bg-surface-2 text-text'
               : 'border-outline bg-surface text-text-variant hover:bg-surface-2',
@@ -485,7 +485,7 @@ export function AdminBooksBrowser({ initialPage, copy }: AdminBooksBrowserProps)
       {/* 카탈로그 캐시 비우기 (ADR-0033 Amd#1 (b)) — SQL 직접 토글 후 즉시 반영용 */}
       <div className="flex flex-wrap items-center justify-end gap-3">
         {cacheMsg && (
-          <span role="status" aria-live="polite" className="text-sm text-text-variant">
+          <span role="status" aria-live="polite" className="text-label text-text-variant">
             {cacheMsg}
           </span>
         )}
@@ -493,7 +493,7 @@ export function AdminBooksBrowser({ initialPage, copy }: AdminBooksBrowserProps)
           type="button"
           onClick={handleClearCache}
           disabled={cacheClearing}
-          className="inline-flex h-[38px] items-center rounded-pill border border-outline bg-surface px-4 text-sm font-medium text-text-variant transition-colors hover:bg-surface-2 disabled:opacity-[0.38]"
+          className="inline-flex h-[38px] items-center rounded-pill border border-outline bg-surface px-4 text-label font-medium text-text-variant transition-colors hover:bg-surface-2 disabled:opacity-[0.38]"
         >
           {cacheClearing ? '비우는 중…' : '카탈로그 캐시 비우기'}
         </button>
@@ -506,7 +506,7 @@ export function AdminBooksBrowser({ initialPage, copy }: AdminBooksBrowserProps)
       >
         {/* is_active 3 chip */}
         <fieldset className="flex flex-col gap-2">
-          <legend className="text-sm font-semibold text-text">
+          <legend className="text-label font-semibold text-text">
             {copy.filters.isActiveLabel}
           </legend>
           <div
@@ -537,7 +537,7 @@ export function AdminBooksBrowser({ initialPage, copy }: AdminBooksBrowserProps)
 
         {/* level 7 chip — All + 1~5 + Null */}
         <fieldset className="flex flex-col gap-2">
-          <legend className="text-sm font-semibold text-text">
+          <legend className="text-label font-semibold text-text">
             {copy.filters.levelLabel}
           </legend>
           <div
@@ -582,7 +582,7 @@ export function AdminBooksBrowser({ initialPage, copy }: AdminBooksBrowserProps)
             placeholder={copy.search.placeholder}
             maxLength={KEYWORD_MAX}
             onChange={(event) => handleKeywordChange(event.target.value)}
-            className="h-[52px] w-full rounded-md border border-outline bg-surface px-[22px] text-sm text-text placeholder:text-text-variant focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            className="h-[52px] w-full rounded-md border border-outline bg-surface px-[22px] text-label text-text placeholder:text-text-variant focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           />
         </div>
       </section>
@@ -591,7 +591,7 @@ export function AdminBooksBrowser({ initialPage, copy }: AdminBooksBrowserProps)
       {error && (
         <p
           role="alert"
-          className="rounded-md bg-surface px-5 py-3 text-sm font-medium text-error shadow-elev-1"
+          className="rounded-md bg-surface px-5 py-3 text-label font-medium text-error shadow-elev-1"
         >
           {error}
         </p>
@@ -600,10 +600,10 @@ export function AdminBooksBrowser({ initialPage, copy }: AdminBooksBrowserProps)
       {/* 그리드 / 빈 상태 */}
       {isEmpty ? (
         <div className="flex flex-col items-center gap-2 rounded-md border border-outline bg-surface px-5 py-12 text-center shadow-elev-1">
-          <h2 className="font-display text-lg font-semibold text-text">
+          <h2 className="font-display text-h3 font-semibold text-text">
             {copy.empty.title}
           </h2>
-          <p className="text-sm text-text-variant">{copy.empty.body}</p>
+          <p className="text-label text-text-variant">{copy.empty.body}</p>
         </div>
       ) : (
         <ul

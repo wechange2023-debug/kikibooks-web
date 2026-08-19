@@ -111,8 +111,8 @@ export function MobileNav({ items }: MobileNavProps) {
               onClick={() => setOpen(false)}
               className={
                 item.active
-                  ? 'rounded px-3 py-2 text-sm font-medium bg-surface-2 text-text'
-                  : 'rounded px-3 py-2 text-sm font-medium text-text-variant hover:bg-surface-2 hover:text-text'
+                  ? 'rounded px-3 py-2 text-label font-medium bg-surface-2 text-text'
+                  : 'rounded px-3 py-2 text-label font-medium text-text-variant hover:bg-surface-2 hover:text-text'
               }
             >
               {item.label}
@@ -123,7 +123,7 @@ export function MobileNav({ items }: MobileNavProps) {
           <form action="/auth/sign-out" method="post" className="pt-1">
             <button
               type="submit"
-              className="w-full rounded border border-outline bg-surface px-3 py-2 text-left text-sm font-medium text-text-variant transition-colors hover:bg-surface-2 hover:text-text focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              className="w-full rounded border border-outline bg-surface px-3 py-2 text-left text-label font-medium text-text-variant transition-colors hover:bg-surface-2 hover:text-text focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             >
               로그아웃
             </button>

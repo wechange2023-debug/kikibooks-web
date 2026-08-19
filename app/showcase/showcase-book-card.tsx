@@ -21,9 +21,9 @@ import type { PopularBook } from '@/lib/landing/popular-books';
  */
 
 const FALLBACK_PALETTE = [
-  { block: 'bg-primary-container', text: 'text-on-primary-container' },
-  { block: 'bg-secondary-container', text: 'text-on-secondary-container' },
-  { block: 'bg-tertiary-container', text: 'text-on-tertiary-container' },
+  { block: 'bg-level-1-container', text: 'text-text' },
+  { block: 'bg-level-3-container', text: 'text-text' },
+  { block: 'bg-level-5-container', text: 'text-text' },
 ] as const;
 
 function pickFallbackColor(id: string): (typeof FALLBACK_PALETTE)[number] {
@@ -51,7 +51,7 @@ export function ShowcaseBookCard({ book }: { book: PopularBook }) {
           >
             <BookOpen className={`h-7 w-7 ${fallback.text}`} aria-hidden="true" />
             <p
-              className={`line-clamp-4 text-center text-sm font-semibold ${fallback.text}`}
+              className={`line-clamp-4 text-center text-label font-semibold ${fallback.text}`}
             >
               {book.title}
             </p>
@@ -78,9 +78,9 @@ export function ShowcaseBookCard({ book }: { book: PopularBook }) {
         ) : null}
       </div>
       <div className="flex flex-col gap-0.5">
-        <p className="line-clamp-2 text-sm font-semibold text-text">{book.title}</p>
+        <p className="line-clamp-2 text-label font-semibold text-text">{book.title}</p>
         {book.author ? (
-          <p className="line-clamp-1 text-xs text-text-variant">{book.author}</p>
+          <p className="line-clamp-1 text-caption text-text-variant">{book.author}</p>
         ) : null}
       </div>
     </Link>

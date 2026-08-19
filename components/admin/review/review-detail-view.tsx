@@ -246,10 +246,10 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
   return (
     <div className="relative left-1/2 flex w-[96vw] -translate-x-1/2 flex-col gap-4 px-4 md:gap-5">
       <header className="flex flex-col gap-2">
-        <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
+        <h1 className="font-display text-h1 font-bold text-text">
           {detail.title}
         </h1>
-        <div className="flex flex-wrap items-center gap-2 text-sm text-text-variant">
+        <div className="flex flex-wrap items-center gap-2 text-label text-text-variant">
           <span aria-hidden="true">{signal.lamp}</span>
           <span>{signal.label}</span>
           <span aria-hidden="true">·</span>
@@ -264,7 +264,7 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
             type="button"
             disabled={isPending}
             onClick={() => handleTransition(transitionButton.to)}
-            className="ml-2 inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-xs font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50"
+            className="ml-2 inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-caption font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50"
           >
             {transitionButton.label}
           </button>
@@ -281,12 +281,12 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
                     : '팀장의 다음 생성 배치 대상으로 등록합니다.'
                 }
                 onClick={() => handleTransition('tts_requested')}
-                className="inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-xs font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50"
+                className="inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-caption font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50"
               >
                 TTS 생성 요청
               </button>
               {detail.hasAudio && (
-                <span className="text-xs text-text-variant">
+                <span className="text-caption text-text-variant">
                   {AUDIO_LOCK_REASON}
                 </span>
               )}
@@ -295,14 +295,14 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
         </div>
 
         {statusError && (
-          <p role="alert" className="text-sm text-primary">
+          <p role="alert" className="text-label text-primary">
             {statusError}
           </p>
         )}
       </header>
 
       {detail.pages.length === 0 ? (
-        <p className="rounded-lg border border-outline bg-surface p-4 text-sm text-text-variant">
+        <p className="rounded-lg border border-outline bg-surface p-4 text-label text-text-variant">
           적재된 페이지 텍스트가 없습니다.
         </p>
       ) : (
@@ -320,12 +320,12 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
                 className="grid grid-cols-[3fr_2fr] gap-4 rounded-lg border border-outline bg-surface p-4"
               >
                 <div className="flex flex-col gap-1">
-                  <span className="flex items-center gap-2 text-xs text-text-variant">
+                  <span className="flex items-center gap-2 text-caption text-text-variant">
                     <span>{String(page.pageIndex + 1).padStart(2, '0')}면</span>
                     {rotated && (
                       <span
                         title="원본이 90° 회전 인쇄된 면입니다. 읽기순서가 뒤집혔을 수 있으니 확인해 주세요."
-                        className="inline-flex items-center rounded border border-outline bg-surface-2 px-1.5 py-0.5 text-xs font-medium text-text"
+                        className="inline-flex items-center rounded border border-outline bg-surface-2 px-1.5 py-0.5 text-caption font-medium text-text"
                       >
                         ⚠ 회전 의심
                       </span>
@@ -344,7 +344,7 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
                   ) : (
                     // ADR-0057 D3 — 빈 칸으로 두지 않는다. 검수자가 "이미지 결손"과
                     // "아직 안 뜬 이미지"를 구분할 수 있어야 한다.
-                    <div className="flex min-h-24 items-center justify-center rounded-md border border-dashed border-outline bg-surface-2 px-3 py-6 text-center text-xs text-text-variant">
+                    <div className="flex min-h-24 items-center justify-center rounded-md border border-dashed border-outline bg-surface-2 px-3 py-6 text-center text-caption text-text-variant">
                       이미지 없음 (텍스트 전용 면)
                     </div>
                   )}
@@ -366,34 +366,34 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
                           // 편집을 시작하면 이전 저장 결과 표시를 지운다.
                           setRowState(page.pageIndex, { kind: 'idle' });
                         }}
-                        className="w-full rounded-md border border-outline bg-surface-2 p-3 font-sans text-sm leading-relaxed text-text focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+                        className="w-full rounded-md border border-outline bg-surface-2 p-3 font-sans text-label leading-relaxed text-text focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                       />
                       <div className="flex items-center gap-2">
                         <button
                           type="button"
                           disabled={isPending || rowState.kind === 'saving'}
                           onClick={() => handleSave(page.pageIndex)}
-                          className="inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-xs font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50"
+                          className="inline-flex items-center rounded-md border border-outline bg-surface px-3 py-1 text-caption font-medium text-text transition-colors hover:bg-surface-2 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50"
                         >
                           저장
                         </button>
                         {rowState.kind === 'saving' && (
-                          <span className="text-xs text-text-variant">
+                          <span className="text-caption text-text-variant">
                             저장 중…
                           </span>
                         )}
                         {rowState.kind === 'saved' && (
-                          <span className="text-xs text-text-variant">
+                          <span className="text-caption text-text-variant">
                             저장됨
                           </span>
                         )}
                         {rowState.kind === 'error' && (
-                          <span role="alert" className="text-xs text-primary">
+                          <span role="alert" className="text-caption text-primary">
                             {rowState.message}
                           </span>
                         )}
                         {rowState.kind === 'idle' && rowDirty && (
-                          <span className="text-xs text-primary">
+                          <span className="text-caption text-primary">
                             수정됨 · 저장 필요
                           </span>
                         )}
@@ -401,7 +401,7 @@ export function ReviewDetailView({ detail }: { detail: ReviewBookDetail }) {
                     </>
                   ) : (
                     /* in_review가 아니면 편집칸 잠금 — 읽기 전용 표시(ADR-0051 D3). */
-                    <pre className="whitespace-pre-wrap break-words rounded-md bg-surface-2 p-3 font-sans text-sm leading-relaxed text-text">
+                    <pre className="whitespace-pre-wrap break-words rounded-md bg-surface-2 p-3 font-sans text-label leading-relaxed text-text">
                       {page.text}
                     </pre>
                   )}

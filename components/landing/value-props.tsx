@@ -37,10 +37,10 @@ export function ValueProps({ items }: ValuePropsProps) {
                   aria-hidden="true"
                 />
               </span>
-              <h3 className="font-display text-base font-semibold text-text">
+              <h3 className="font-display text-body font-semibold text-text">
                 {item.title}
               </h3>
-              <p className="text-sm text-text-variant">{item.description}</p>
+              <p className="text-label text-text-variant">{item.description}</p>
             </div>
           );
         })}

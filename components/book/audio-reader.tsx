@@ -179,7 +179,7 @@ function PageImage({ src, alt }: { src: string | null; alt: string }) {
       <div className="flex h-full w-full items-center justify-center p-6">
         <div className="flex flex-col items-center gap-2 rounded-md border border-dashed border-outline bg-surface-2 px-6 py-8 text-center">
           <ImageOff aria-hidden className="h-7 w-7 text-text-variant" />
-          <p className="font-display text-sm font-medium text-text-variant">
+          <p className="font-display text-label font-medium text-text-variant">
             그림이 없는 면이에요
           </p>
         </div>
@@ -871,7 +871,7 @@ export function AudioReader({
           <ArrowLeft className="h-5 w-5" aria-hidden />
         </Link>
         {/* 제목 서체 = font-body(고딕). 자막과 통일(P2-C). 세리프(font-display) 복귀 가능. */}
-        <h1 className="min-w-0 flex-1 truncate text-center font-body text-base font-semibold text-text md:text-lg">
+        <h1 className="min-w-0 flex-1 truncate text-center font-body text-body font-semibold text-text md:text-h3">
           {title}
         </h1>
         {/* ⓘ 저작권 — 상단 어트리뷰션 바 제거(F7)를 대체하는 1탭 도달점. 뒤로가기와 같은
@@ -961,7 +961,7 @@ export function AudioReader({
                 aria-label="눌러서 시작하기"
                 className="absolute inset-0 z-10 flex items-center justify-center backdrop-blur-sm transition-opacity duration-200 ease-kiki"
               >
-                <span className="inline-flex items-center gap-2 rounded-pill bg-primary px-6 py-3 font-body text-lg font-semibold text-white shadow-elev-2">
+                <span className="inline-flex items-center gap-2 rounded-pill bg-primary px-6 py-3 font-body text-h3 font-semibold text-white shadow-elev-2">
                   <Play className="h-6 w-6 translate-x-[1px]" aria-hidden />
                   눌러서 시작하기
                 </span>
@@ -971,7 +971,7 @@ export function AudioReader({
                 커진 그림 곁에 진행도를 둔다). 표지='표지', 본문='n / 전체본문수'(표지는 별도
                 트랙이라 본문 카운트 제외 — 기존 positionLabel). solid bg(투명도 미사용).
                 pointer-events-none으로 이미지·오버레이 탭을 막지 않는다. */}
-            <span className="pointer-events-none absolute bottom-1 right-1 rounded-pill border border-outline bg-surface px-2.5 py-1 text-xs font-semibold tabular-nums text-text-variant shadow-elev-1">
+            <span className="pointer-events-none absolute bottom-1 right-1 rounded-pill border border-outline bg-surface px-2.5 py-1 text-caption font-semibold tabular-nums text-text-variant shadow-elev-1">
               {page.positionLabel}
             </span>
           </div>
@@ -996,12 +996,12 @@ export function AudioReader({
                 marks={marks}
                 activeIndex={activeIndex}
                 unit={HIGHLIGHT_UNIT}
-                // lg:text-3xl은 자체 line-height를 함께 지정하므로 lg:leading-loose를 반드시 동반한다
+                // lg:text-h1은 자체 line-height를 함께 지정하므로 lg:leading-loose를 반드시 동반한다
                 // (없으면 lg 구간 행간이 1.2로 되돌아간다 — 실측 확인).
-                className="whitespace-pre-wrap text-center font-body text-2xl font-semibold leading-loose text-text lg:text-3xl lg:leading-loose"
+                className="whitespace-pre-wrap text-center font-body text-h1 font-semibold leading-loose text-text lg:leading-loose"
               />
             ) : (
-              <p className="text-center text-sm text-text-variant">
+              <p className="text-center text-label text-text-variant">
                 이 페이지는 소리가 없어요.
               </p>
             )}
@@ -1012,7 +1012,7 @@ export function AudioReader({
             넘어가는지 숫자로 알린다(멈춘 것처럼 보이는 문제 해소). 인라인 문구(copy.ts 미편입).
             조건은 silentCountdown 상태 하나로 충족 — 토글 OFF·오디오 면·마지막 면이면 null. */}
         {silentCountdown !== null && (
-          <p className="shrink-0 text-center text-sm font-semibold text-text-variant">
+          <p className="shrink-0 text-center text-label font-semibold text-text-variant">
             <span className="tabular-nums text-primary">{silentCountdown}</span>초 후 다음 장
           </p>
         )}
@@ -1050,7 +1050,7 @@ export function AudioReader({
                 }`}
               />
             </button>
-            <span className="hidden whitespace-nowrap text-sm text-text-variant md:inline">
+            <span className="hidden whitespace-nowrap text-label text-text-variant md:inline">
               자막
             </span>
             <button
@@ -1077,7 +1077,7 @@ export function AudioReader({
             {/* 토글 라벨(F4) — md 미만에서만 접는다(hidden md:inline). 접히는 구간에서도 스위치의
                 aria-label('재생 후 자동 넘김')은 그대로라 스크린리더 정보 손실은 0이다.
                 whitespace-nowrap 유지 — 노출 구간에서 두 줄로 흘러 P1-D를 깨지 않게. */}
-            <span className="hidden whitespace-nowrap text-sm text-text-variant md:inline">
+            <span className="hidden whitespace-nowrap text-label text-text-variant md:inline">
               {autoAdvanceLabel}
             </span>
           </div>
@@ -1129,7 +1129,7 @@ export function AudioReader({
             숨겨 세로 공간을 회수한다(무스크롤 단일화면 유지). 완독 버튼 쪽에
             붙도록 우측 정렬. title= 툴팁은 hover 없는 터치기기에서 안 보여 보조일 뿐. */}
         {!reachedEnd && (
-          <p className="w-full max-w-4xl shrink-0 text-right text-xs text-text-variant">
+          <p className="w-full max-w-4xl shrink-0 text-right text-caption text-text-variant">
             끝까지 들으면 완독 버튼이 켜져요
           </p>
         )}
@@ -1172,7 +1172,7 @@ export function AudioReader({
           />
           <div className="relative z-10 m-3 w-full max-w-md rounded-lg border border-outline bg-surface p-5 shadow-elev-modal">
             <div className="mb-3 flex items-center justify-between gap-2">
-              <h2 className="font-body text-base font-semibold text-text">저작권 정보</h2>
+              <h2 className="font-body text-body font-semibold text-text">저작권 정보</h2>
               <button
                 type="button"
                 onClick={() => setShowAttribution(false)}
@@ -1182,7 +1182,7 @@ export function AudioReader({
                 <X className="h-5 w-5" aria-hidden />
               </button>
             </div>
-            <dl className="flex flex-col gap-2 text-sm">
+            <dl className="flex flex-col gap-2 text-label">
               {/* ② 책 제목 — books.title 원문 그대로. */}
               <div className="flex items-baseline gap-2">
                 <dt className="shrink-0 font-semibold text-text">📖 제목</dt>
@@ -1199,7 +1199,7 @@ export function AudioReader({
                             href={row.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-tertiary transition-colors duration-200 ease-kiki hover:underline"
+                            className="text-accent-purple transition-colors duration-200 ease-kiki hover:underline"
                           >
                             {row.value}
                           </a>
@@ -1219,7 +1219,7 @@ export function AudioReader({
                           href={row.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-tertiary transition-colors duration-200 ease-kiki hover:underline"
+                          className="text-accent-purple transition-colors duration-200 ease-kiki hover:underline"
                         >
                           새 탭에서 열기
                         </a>
@@ -1236,7 +1236,7 @@ export function AudioReader({
                 );
               })}
             </dl>
-            <p className="mt-4 text-xs text-text-variant">
+            <p className="mt-4 text-caption text-text-variant">
               모든 도서는 CC BY 4.0 라이선스입니다.
             </p>
           </div>

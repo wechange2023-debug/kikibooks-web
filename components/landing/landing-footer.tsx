@@ -20,10 +20,10 @@ export function LandingFooter({ brandName, copy }: LandingFooterProps) {
   return (
     <footer className="border-t border-outline bg-surface-2 px-5 py-10">
       <div className="mx-auto flex max-w-5xl flex-col gap-4">
-        <p className="font-display text-lg font-bold text-primary">
+        <p className="font-display text-h3 font-bold text-primary">
           {brandName}
         </p>
-        <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+        <nav className="flex flex-wrap gap-x-5 gap-y-2 text-label">
           <Link
             href="/terms"
             className="text-text-variant transition-colors duration-200 ease-kiki hover:text-text"
@@ -37,9 +37,9 @@ export function LandingFooter({ brandName, copy }: LandingFooterProps) {
             {copy.privacyLabel}
           </Link>
         </nav>
-        <p className="text-sm text-text-variant">{copy.companyName}</p>
-        <p className="text-xs text-text-variant">{copy.attributionNotice}</p>
-        <p className="text-xs text-text-disabled">{copy.copyright}</p>
+        <p className="text-label text-text-variant">{copy.companyName}</p>
+        <p className="text-caption text-text-variant">{copy.attributionNotice}</p>
+        <p className="text-caption text-text-disabled">{copy.copyright}</p>
       </div>
     </footer>
   );

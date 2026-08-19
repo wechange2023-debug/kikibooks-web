@@ -13,10 +13,10 @@ export default function SignupPage() {
     <main className="flex min-h-screen items-center justify-center bg-surface-2 px-6 py-12">
       <div className="w-full max-w-md rounded-xl bg-surface p-6 shadow-elev-2 sm:p-8">
         <header className="mb-6 flex flex-col gap-2 text-center">
-          <h1 className="font-display text-xl font-semibold text-text">
+          <h1 className="font-display text-h2 font-semibold text-text">
             {BRAND_NAME} 시작하기
           </h1>
-          <p className="text-sm text-text-variant">
+          <p className="text-label text-text-variant">
             우리 아이의 영어 그림책 서재를 만들어요
           </p>
         </header>

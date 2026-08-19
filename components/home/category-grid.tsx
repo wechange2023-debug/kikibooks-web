@@ -42,18 +42,25 @@ interface CategoryGridProps {
 }
 
 /**
- * 카테고리 slug → Tailwind accent 클래스 정적 매핑 (D11).
+ * 카테고리 slug → Tailwind 스와치 클래스 정적 매핑 (D11).
  * ADR-0015 결정 2.1 표 인용. CategorySlug union 8 키와 1:1 정합(D16 점검 완료).
+ *
+ * ★ 큐 D-3 (2026-08-19, 팀장 승인) — v1의 accent 8색(accent-green/pink/sky/violet ·
+ *   tertiary)은 design-system v2 §1.8에서 폐기됐다. 카테고리별 색 구분을 v2 팔레트로
+ *   재매핑하지 않고 **surface-3 단색으로 통일**한다. 스와치는 aria-hidden 장식이고
+ *   의미는 아래 라벨 텍스트가 전달하므로 정보 손실이 없다.
+ *   색 구분 복원은 **큐 D-4 홈 화면 리뉴얼**에서 캐러셀 패턴(§6.4)과 함께 재설계한다.
+ *   맵 구조는 그대로 두어 복원 시 값만 바꾸면 되도록 한다.
  */
 const CATEGORY_ACCENT_CLASSES: Record<CategorySlug, string> = {
-  animals: 'bg-accent-green',
-  family: 'bg-accent-pink',
-  abc: 'bg-tertiary',
-  numbers: 'bg-accent-sky',
-  emotions: 'bg-accent-pink',
-  nature: 'bg-accent-green',
-  food: 'bg-accent-yellow',
-  bedtime: 'bg-accent-violet',
+  animals: 'bg-surface-3',
+  family: 'bg-surface-3',
+  abc: 'bg-surface-3',
+  numbers: 'bg-surface-3',
+  emotions: 'bg-surface-3',
+  nature: 'bg-surface-3',
+  food: 'bg-surface-3',
+  bedtime: 'bg-surface-3',
 };
 
 export function CategoryGrid({ categories, copy, distribution }: CategoryGridProps) {
@@ -62,7 +69,7 @@ export function CategoryGrid({ categories, copy, distribution }: CategoryGridPro
       aria-label={copy.title}
       className="flex flex-col gap-3 rounded-md bg-surface p-5 shadow-elev-1"
     >
-      <h2 className="font-display text-base font-semibold text-text">{copy.title}</h2>
+      <h2 className="font-display text-body font-semibold text-text">{copy.title}</h2>
 
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {categories.map((category) => {
@@ -77,10 +84,10 @@ export function CategoryGrid({ categories, copy, distribution }: CategoryGridPro
                   aria-hidden="true"
                   className={`block h-14 w-full rounded-sm ${accentClass}`}
                 />
-                <span className="text-sm font-semibold text-text">
+                <span className="text-label font-semibold text-text">
                   {category.labelKo}
                 </span>
-                <span className="text-xs text-text-variant">
+                <span className="text-caption text-text-variant">
                   {distribution[category.slug]}권
                 </span>
               </Link>

@@ -20,7 +20,7 @@ export function LandingHeader({ brandName, copy }: LandingHeaderProps) {
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5">
         <Link
           href="/"
-          className="font-display text-xl font-bold text-primary"
+          className="font-display text-h2 font-bold text-primary"
         >
           {brandName}
         </Link>

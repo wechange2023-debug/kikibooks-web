@@ -24,9 +24,9 @@ import type { AttributionRow } from '@/lib/book/attribution';
  *   - 미니 바 전용 토큰은 §7.2에 별도 박제가 없어 AttributionBox(§7.1)와 동일 토큰을
  *     쓴다 — bg-surface-2 + border-outline 하단 구분선. iframe 컨테이너(§7.2 html 행
  *     --color-surface-3)와 표면 단계가 1칸 달라 시각적으로 분리된다.
- *   - 라벨: text-xs + font-semibold + text-text / 값: text-xs + text-text-variant
- *   - 라이선스 배지: rounded-pill + bg-tertiary-container + text-on-tertiary-container
- *   - 외부 링크: text-tertiary + hover underline
+ *   - 라벨: text-caption + font-semibold + text-text / 값: text-caption + text-text-variant
+ *   - 라이선스 배지: rounded-pill + bg-level-5-container + text-text
+ *   - 외부 링크: text-accent-purple + hover underline
  *   - 여백: 모바일 px-4 / 태블릿+ px-6 (§7.2 뷰어 좌우 여백 16/32px 정합)
  *
  * 외부 링크 안전 속성 (license-rules.md §7.2) — AttributionBox와 동일:
@@ -58,7 +58,7 @@ export function ReaderAttributionBar({ rows }: ReaderAttributionBarProps) {
   return (
     <section
       aria-label="저작권 정보"
-      className="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-outline bg-surface-2 px-4 py-2 text-xs md:px-6"
+      className="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-outline bg-surface-2 px-4 py-2 text-caption md:px-6"
     >
       {barRows.map((row) => {
         if (row.key === 'originalLink') {
@@ -68,7 +68,7 @@ export function ReaderAttributionBar({ rows }: ReaderAttributionBarProps) {
               href={row.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-tertiary transition-colors duration-200 ease-kiki hover:underline"
+              className="font-semibold text-accent-purple transition-colors duration-200 ease-kiki hover:underline"
             >
               {row.label}
             </a>
@@ -82,14 +82,14 @@ export function ReaderAttributionBar({ rows }: ReaderAttributionBarProps) {
               href={row.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-pill bg-tertiary-container px-3 py-1 font-medium text-on-tertiary-container transition-colors duration-200 ease-kiki hover:underline"
+              className="inline-flex items-center rounded-pill bg-level-5-container px-3 py-1 font-medium text-text transition-colors duration-200 ease-kiki hover:underline"
             >
               {row.value}
             </a>
           ) : (
             <span
               key={row.key}
-              className="inline-flex items-center rounded-pill bg-tertiary-container px-3 py-1 font-medium text-on-tertiary-container"
+              className="inline-flex items-center rounded-pill bg-level-5-container px-3 py-1 font-medium text-text"
             >
               {row.value}
             </span>

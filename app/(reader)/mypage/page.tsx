@@ -60,10 +60,10 @@ export const metadata: Metadata = {
 /** 섹션 카드 공통 — design-system §6.2 정보 카드(홈 섹션들과 동일 토큰). */
 const SECTION_CLASS = 'flex flex-col gap-3 rounded-md bg-surface p-5 shadow-elev-1';
 /** 섹션 제목 공통. */
-const SECTION_TITLE_CLASS = 'font-display text-base font-semibold text-text';
+const SECTION_TITLE_CLASS = 'font-display text-body font-semibold text-text';
 /** 빈 상태 안내 공통 — StreakChart·RecommendationList의 빈 상태와 동일 토큰. */
 const EMPTY_CLASS =
-  'rounded-md border border-outline bg-surface-2 px-4 py-3 text-sm text-text-variant';
+  'rounded-md border border-outline bg-surface-2 px-4 py-3 text-label text-text-variant';
 /** 책 그리드 공통 — library-browser의 그리드 컬럼 정합. */
 const GRID_CLASS = 'grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6';
 
@@ -92,7 +92,7 @@ export default async function MypagePage() {
             </p>
             <Link
               href={ONBOARDING_PATH}
-              className="inline-flex h-[52px] items-center justify-center gap-2 self-start rounded-pill bg-primary px-8 text-base font-semibold text-on-primary shadow-elev-pop transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+              className="inline-flex h-[52px] items-center justify-center gap-2 self-start rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
             >
               자녀 프로필 만들기
             </Link>
@@ -179,12 +179,12 @@ function SummaryTile({
 }) {
   return (
     <div className="flex flex-col items-center gap-1 rounded-md border border-outline bg-surface-2 px-2 py-3">
-      <dt className="text-xs font-medium text-text-variant">{label}</dt>
+      <dt className="text-caption font-medium text-text-variant">{label}</dt>
       <dd
         className={
           highlight
-            ? 'font-display text-xl font-bold tabular-nums text-primary'
-            : 'font-display text-xl font-bold tabular-nums text-text'
+            ? 'font-display text-h2 font-bold tabular-nums text-primary'
+            : 'font-display text-h2 font-bold tabular-nums text-text'
         }
       >
         {value}

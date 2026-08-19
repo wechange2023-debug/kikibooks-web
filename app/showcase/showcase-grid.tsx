@@ -58,12 +58,12 @@ export function ShowcaseGrid({ books }: { books: PopularBook[] }) {
           className="flex h-12 items-center justify-center"
           aria-live="polite"
         >
-          <span className="text-sm text-text-variant">
+          <span className="text-label text-text-variant">
             더 불러오는 중… ({count}/{books.length})
           </span>
         </div>
       ) : (
-        <p className="py-4 text-center text-sm text-text-variant" aria-live="polite">
+        <p className="py-4 text-center text-label text-text-variant" aria-live="polite">
           전체 {books.length}권 표시 완료
         </p>
       )}

@@ -73,7 +73,7 @@ export function LevelSelector({ childId, currentLevel, copy }: LevelSelectorProp
       aria-label={copy.title}
       className="flex flex-col gap-3 rounded-md bg-surface p-5 shadow-elev-1"
     >
-      <h2 className="font-display text-base font-semibold text-text">{copy.title}</h2>
+      <h2 className="font-display text-body font-semibold text-text">{copy.title}</h2>
 
       <div
         role="group"
@@ -90,7 +90,7 @@ export function LevelSelector({ childId, currentLevel, copy }: LevelSelectorProp
               aria-pressed={selected}
               disabled={isPending}
               className={cn(
-                'inline-flex h-[38px] items-center gap-2 rounded-pill border px-4 text-sm font-medium transition-colors disabled:opacity-[0.38]',
+                'inline-flex h-[38px] items-center gap-2 rounded-pill border px-4 text-label font-medium transition-colors disabled:opacity-[0.38]',
                 selected
                   ? 'border-primary bg-surface-2 text-text'
                   : 'border-outline bg-surface text-text-variant hover:bg-surface-2',
@@ -98,7 +98,7 @@ export function LevelSelector({ childId, currentLevel, copy }: LevelSelectorProp
             >
               <span
                 aria-hidden="true"
-                className={cn('h-3 w-3 rounded-full', meta.swatchClass)}
+                className={cn('h-3 w-3 rounded-pill', meta.swatchClass)}
               />
               Level {meta.level} · {meta.alias}
             </button>
@@ -107,7 +107,7 @@ export function LevelSelector({ childId, currentLevel, copy }: LevelSelectorProp
       </div>
 
       {error && (
-        <p role="alert" className="text-sm font-medium text-error">
+        <p role="alert" className="text-label font-medium text-error">
           {error}
         </p>
       )}

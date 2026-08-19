@@ -101,11 +101,11 @@ export function ReviewListView({ rows }: { rows: ReviewBookListRow[] }) {
   return (
     <div className="flex flex-col gap-4 md:gap-5">
       <header className="flex flex-col gap-2">
-        <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
+        <h1 className="font-display text-h1 font-bold text-text">
           텍스트 검수
         </h1>
 
-        <div className="flex flex-wrap items-center gap-2 text-sm text-text-variant">
+        <div className="flex flex-wrap items-center gap-2 text-label text-text-variant">
           {COHORT_FILTERS.map((filter) => {
             const selected = cohort === filter.key;
             return (
@@ -114,7 +114,7 @@ export function ReviewListView({ rows }: { rows: ReviewBookListRow[] }) {
                 type="button"
                 aria-pressed={selected}
                 onClick={() => setCohort(filter.key)}
-                className={`inline-flex items-center rounded-md border px-3 py-1 text-xs font-medium transition-colors focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
+                className={`inline-flex items-center rounded-md border px-3 py-1 text-caption font-medium transition-colors focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
                   selected
                     ? 'border-primary bg-surface-2 text-text'
                     : 'border-outline bg-surface text-text hover:bg-surface-2'
@@ -132,13 +132,13 @@ export function ReviewListView({ rows }: { rows: ReviewBookListRow[] }) {
         </div>
 
         {/* 시범 코호트 진행 표시 — 전체 보기에서도 진행도는 코호트 기준으로 유지한다. */}
-        <p className="text-sm text-text-variant">
+        <p className="text-label text-text-variant">
           {doneCount} / {PILOT_COHORT.length}권 확정 완료
         </p>
       </header>
 
       {visibleRows.length === 0 ? (
-        <p className="rounded-lg border border-outline bg-surface p-4 text-sm text-text-variant">
+        <p className="rounded-lg border border-outline bg-surface p-4 text-label text-text-variant">
           {cohort === 'pilot'
             ? '시범 코호트에 해당하는 책이 목록에 없습니다.'
             : '이 코호트에 해당하는 책이 없습니다.'}
@@ -153,22 +153,22 @@ export function ReviewListView({ rows }: { rows: ReviewBookListRow[] }) {
                   href={`/admin/review/${row.bookId}`}
                   className="flex items-center gap-3 rounded-lg border border-outline bg-surface px-4 py-3 transition-colors hover:bg-surface-2"
                 >
-                  <span aria-hidden="true" className="text-base">
+                  <span aria-hidden="true" className="text-body">
                     {signal.lamp}
                   </span>
-                  <span className="min-w-0 flex-1 truncate text-sm font-medium text-text">
+                  <span className="min-w-0 flex-1 truncate text-label font-medium text-text">
                     {row.title}
                   </span>
                   {/* ADR-0051 D4 — 회전 의심 면을 가진 책 식별용. 표시 전용(교정 0건). */}
                   {hasRotatedPages(row.slug) && (
                     <span
                       title="회전 의심 면이 있는 책입니다."
-                      className="shrink-0 text-xs text-text-variant"
+                      className="shrink-0 text-caption text-text-variant"
                     >
                       ⚠
                     </span>
                   )}
-                  <span className="shrink-0 text-xs text-text-variant">
+                  <span className="shrink-0 text-caption text-text-variant">
                     {signal.label}
                   </span>
                 </Link>

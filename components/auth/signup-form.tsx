@@ -20,7 +20,7 @@ type SignupValues = z.infer<typeof signupSchema>;
 
 // 입력 필드 — design-system.md 3.2(높이 52px·좌우 22px)·4.2(pill)·6.2(focus 시 border 색만 변경).
 const fieldClass =
-  'h-[52px] w-full rounded-pill border border-outline bg-surface px-[22px] text-sm text-text placeholder:text-text-disabled focus:border-primary focus:outline-none disabled:opacity-[0.38]';
+  'h-[52px] w-full rounded-pill border border-outline bg-surface px-[22px] text-label text-text placeholder:text-text-disabled focus:border-primary focus:outline-none disabled:opacity-[0.38]';
 
 /** 이메일 회원가입 폼 + Google 회원가입. (docs/intent/auth-flow.md 4.1·4.3절) */
 export function SignupForm() {
@@ -68,15 +68,15 @@ export function SignupForm() {
   if (emailSent) {
     return (
       <div role="status" className="flex flex-col gap-4 text-center">
-        <h2 className="font-display text-xl font-semibold text-text">
+        <h2 className="font-display text-h2 font-semibold text-text">
           메일함을 확인해 주세요
         </h2>
-        <p className="text-sm text-text-variant">
+        <p className="text-label text-text-variant">
           입력하신 이메일로 인증 링크를 보냈어요. 링크를 누르면 가입이 완료됩니다.
         </p>
         <Link
           href="/login"
-          className="text-sm font-semibold text-primary hover:underline"
+          className="text-label font-semibold text-primary hover:underline"
         >
           로그인 화면으로 가기
         </Link>
@@ -87,7 +87,7 @@ export function SignupForm() {
   return (
     <form noValidate onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
-        <label htmlFor="signup-email" className="text-sm font-medium text-text">
+        <label htmlFor="signup-email" className="text-label font-medium text-text">
           이메일
         </label>
         <input
@@ -102,14 +102,14 @@ export function SignupForm() {
           {...register('email')}
         />
         {errors.email && (
-          <p id="signup-email-error" className="text-sm font-medium text-error">
+          <p id="signup-email-error" className="text-label font-medium text-error">
             {errors.email.message}
           </p>
         )}
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="signup-password" className="text-sm font-medium text-text">
+        <label htmlFor="signup-password" className="text-label font-medium text-text">
           비밀번호
         </label>
         <input
@@ -124,14 +124,14 @@ export function SignupForm() {
           {...register('password')}
         />
         {errors.password && (
-          <p id="signup-password-error" className="text-sm font-medium text-error">
+          <p id="signup-password-error" className="text-label font-medium text-error">
             {errors.password.message}
           </p>
         )}
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="signup-password-confirm" className="text-sm font-medium text-text">
+        <label htmlFor="signup-password-confirm" className="text-label font-medium text-text">
           비밀번호 확인
         </label>
         <input
@@ -150,7 +150,7 @@ export function SignupForm() {
         {errors.passwordConfirm && (
           <p
             id="signup-password-confirm-error"
-            className="text-sm font-medium text-error"
+            className="text-label font-medium text-error"
           >
             {errors.passwordConfirm.message}
           </p>
@@ -160,7 +160,7 @@ export function SignupForm() {
       {formError && (
         <p
           role="alert"
-          className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-sm font-medium text-error"
+          className="rounded-md border border-outline bg-surface-2 px-4 py-3 text-label font-medium text-error"
         >
           {formError}
         </p>
@@ -172,7 +172,7 @@ export function SignupForm() {
 
       <div className="flex items-center gap-3 py-1">
         <span className="h-px flex-1 bg-outline" />
-        <span className="text-sm font-medium text-text-variant">또는</span>
+        <span className="text-label font-medium text-text-variant">또는</span>
         <span className="h-px flex-1 bg-outline" />
       </div>
 
@@ -180,7 +180,7 @@ export function SignupForm() {
 
       {/* phase-13: 카카오 회원가입 버튼 자리 (ADR-0009 결정 1 — 베타 이후 추가) */}
 
-      <p className="pt-2 text-center text-sm text-text-variant">
+      <p className="pt-2 text-center text-label text-text-variant">
         이미 계정이 있으신가요?{' '}
         <Link href="/login" className="font-semibold text-primary hover:underline">
           로그인

@@ -38,22 +38,22 @@ export default function AdminError({
     >
       <h1
         id="admin-error-title"
-        className="font-display text-2xl font-bold text-text"
+        className="font-display text-h1 font-bold text-text"
       >
         오류가 발생했습니다
       </h1>
-      <p className="break-keep text-base text-text-variant">
+      <p className="break-keep text-body text-text-variant">
         관리 화면을 불러오는 중 문제가 발생했습니다. 재시도하거나 잠시 후 다시 시도해 주세요.
       </p>
       <button
         type="button"
         onClick={() => reset()}
-        className="inline-flex h-[52px] items-center justify-center rounded-pill bg-primary px-8 text-base font-semibold text-on-primary shadow-elev-pop transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+        className="inline-flex h-[52px] items-center justify-center rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
       >
         재시도
       </button>
       {error.digest ? (
-        <p className="text-xs text-text-variant/70">오류 코드: {error.digest}</p>
+        <p className="text-caption text-text-variant/70">오류 코드: {error.digest}</p>
       ) : null}
     </section>
   );
