@@ -5,9 +5,15 @@
  * 결정 근거: docs/adr/0009-auth-architecture.md 3.4절(미들웨어 중앙 가드)
  */
 
-/** 로그인해야만 들어갈 수 있는 경로의 접두사 목록. */
+/**
+ * 로그인해야만 들어갈 수 있는 경로의 접두사 목록.
+ *
+ * ★ ADR-0062 D3 — `'/home'`을 **제거**했다. `/home`은 `next.config.js` redirects가
+ *   `/`로 308 보내는 경로가 되었고(D2), `/`는 공개 라우트다. 목록에 남겨두면
+ *   비로그인 `/home` 북마크가 `/login`으로 새어 D2 합격 기준을 깬다.
+ *   (실측: redirects가 미들웨어보다 먼저 평가되나, 목록에서도 빼 이중으로 막는다.)
+ */
 export const PROTECTED_PREFIXES = [
-  '/home',
   '/onboarding',
   '/library',
   '/book',
