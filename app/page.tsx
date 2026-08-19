@@ -2,12 +2,18 @@ import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import { AppFooter } from '@/components/app/app-footer';
-import { HeroSection } from '@/components/landing/hero-section';
+import { AppHeader } from '@/components/app/app-header';
 import { LandingHeader } from '@/components/landing/landing-header';
-import { PopularBooks } from '@/components/landing/popular-books';
-import { ValueProps } from '@/components/landing/value-props';
-import { resolvePostLoginPath } from '@/lib/auth/resolve-post-login-path';
+import { AnonymousMain } from '@/components/main/anonymous-main';
+import { MemberMain } from '@/components/main/member-main';
+import { ONBOARDING_PATH } from '@/lib/auth/routes';
 import { BRAND_NAME, BRAND_TAGLINE } from '@/lib/brand';
+import { getActiveChild } from '@/lib/home/active-child';
+import { CATEGORIES, getCategoryDistribution } from '@/lib/home/categories';
+import { getHomeCopy } from '@/lib/home/copy';
+import { buildGreeting, getGreetingProfile } from '@/lib/home/greeting';
+import { getRecommendations } from '@/lib/home/recommendations';
+import { getStreakThisWeek } from '@/lib/home/streak';
 import { getLandingCopy } from '@/lib/landing/copy';
 import { getPopularBooks, type PopularBook } from '@/lib/landing/popular-books';
 import { createClient } from '@/lib/supabase/server';
@@ -17,10 +23,11 @@ const PAGE_DESCRIPTION =
   '만 3~7세 아이를 위한 무료 영어 그림책 서재. 890권이 넘는 그림책을 나이별 맞춤 추천으로, 광고 없이 안전하게 보여주세요.';
 
 /**
- * 랜딩 페이지 SEO 메타데이터 (phase-09a CP4 — D-3).
+ * SEO 메타데이터는 **정적**이다 — 로그인 상태로 개인화하지 않는다.
  *
- * og:image·twitter:image는 app/opengraph-image.tsx를 Next.js가 자동으로 연결한다.
- * 절대 URL 해석 기준 metadataBase는 app/layout.tsx(루트)에 사이트 전역으로 설정한다.
+ * ADR-0062 회귀 목록 17번: 크롤러는 비로그인이므로 `/`에서 마케팅 랜딩만 본다.
+ * metadata가 상태 의존이 되면 OG 카드에 개인 정보가 샐 수 있으므로 static을 유지한다.
+ * og:image·twitter:image는 app/opengraph-image.tsx를 Next가 자동 연결한다.
  */
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -41,51 +48,122 @@ export const metadata: Metadata = {
 };
 
 /**
- * Screen 01 랜딩 페이지 (`/`).
+ * `/` — **단일 메인 페이지** (ADR-0062 D1).
  *
- * 비로그인 방문자에게 5개 섹션(헤더·히어로·핵심 가치·인기 책·푸터)을 보여주는
- * 마케팅 페이지다. 로그인 상태로 접근하면 phase-08의 resolvePostLoginPath()
- * 결과로 /home·/onboarding에 리다이렉트한다 — 분기는 이 페이지 컴포넌트가
- * 직접 하며 middleware.ts·lib/auth/routes.ts는 건드리지 않는다
- * (docs/adr/0012-landing-page-static.md 결정 4).
+ * ──────────────────────────────────────────────────────────────────────────────
+ * 3갈래 분기 (D1·D4)
+ * ──────────────────────────────────────────────────────────────────────────────
+ *   1. 비로그인          → 랜딩 블록(AnonymousMain) 렌더. **리다이렉트 0회**
+ *   2. 로그인 + 자녀 0명 → redirect(/onboarding)
+ *   3. 로그인 + 자녀≥1   → 개인화 블록(MemberMain) 렌더. **리다이렉트 0회**
  *
- * createClient()가 세션 쿠키를 읽으므로 이 라우트는 dynamic으로 렌더된다.
- * 인기 책 랜덤 6권은 매 요청 새로 뽑힌다 (ADR-0012 결정 3·6).
+ * v1은 로그인 사용자를 `/home`으로 리다이렉트했다(ADR-0012 결정 4). ADR-0062 D8이
+ * 그 결정을 supersede해 **리다이렉트 대신 블록을 바꿔 렌더**한다 — 로그인 사용자의
+ * `/` 접근에서 왕복 1회가 사라진다.
  *
- * 의도 문서: docs/intent/screen-01-landing.md
+ * ★ 유지되는 원칙: **미들웨어는 이 분기를 하지 않는다.** `/`는 `PROTECTED_PREFIXES`에
+ *   넣지 않는 공개 라우트이며(ADR-0009 3.4절 모델), 분기는 도착 지점 1회다
+ *   (ADR-0011 결정 1). 데이터 보호의 최종 방어선은 RLS다.
+ *
+ * ──────────────────────────────────────────────────────────────────────────────
+ * 헤더·푸터 (D5)
+ * ──────────────────────────────────────────────────────────────────────────────
+ *   헤더는 상태로 고른다 — 비로그인 `LandingHeader`(로그인/회원가입) /
+ *   로그인 `AppHeader`(4개 내비 + 로그아웃). 내비 항목이 완전히 달라 합치지 않는다.
+ *   푸터는 양쪽 다 `AppFooter`로 일원화한다(O-M3 확정).
+ *
+ * ──────────────────────────────────────────────────────────────────────────────
+ * 렌더링·비용
+ * ──────────────────────────────────────────────────────────────────────────────
+ *   `createClient()`가 쿠키를 읽으므로 이 라우트는 **원래부터 dynamic**이다
+ *   (ADR-0012 결정 6 승계) — 통합으로 인한 static→dynamic 전환은 없다.
+ *   미들웨어도 이미 `/`를 matcher에 포함하므로 세션 판독 비용 증가분도 0이다.
+ *   인기 책 랜덤 6권은 매 요청 새로 뽑힌다(ADR-0012 결정 3).
+ *   `getCategoryDistribution`은 unstable_cache(tags: books-catalog)라 비로그인
+ *   경로에서도 왕복이 사실상 0이다.
+ *
+ * 의도 문서: docs/intent/screen-01-landing.md · docs/intent/screen-02-home.md
  */
-export default async function LandingPage() {
+
+export const dynamic = 'force-dynamic';
+
+export default async function MainPage() {
   const supabase = createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // ADR-0012 결정 4 — 로그인 사용자는 도착 경로(/home·/onboarding)로 리다이렉트.
-  if (user) {
-    redirect(await resolvePostLoginPath(supabase, user.id));
+  // ── 갈래 1: 비로그인 → 랜딩 ────────────────────────────────────────────────
+  if (!user) {
+    const [copy, homeCopy, distribution] = await Promise.all([
+      getLandingCopy(),
+      getHomeCopy(),
+      getCategoryDistribution(supabase),
+    ]);
+
+    // 인기 책 조회 실패가 마케팅 페이지 전체를 막지 않도록 방어한다(ADR-0012).
+    let books: PopularBook[] = [];
+    try {
+      books = await getPopularBooks(supabase);
+    } catch (error) {
+      console.error('MainPage: 인기 책 조회 실패 —', error);
+    }
+
+    return (
+      <div className="flex min-h-screen flex-col bg-bg">
+        <LandingHeader brandName={copy.brandName} copy={copy.header} />
+        <main className="flex-1">
+          <AnonymousMain
+            copy={copy}
+            homeCopy={homeCopy}
+            books={books}
+            categories={CATEGORIES}
+            distribution={distribution}
+          />
+        </main>
+        <AppFooter />
+      </div>
+    );
   }
 
-  // 비로그인 방문자 — 랜딩을 렌더한다.
-  const copy = await getLandingCopy();
+  // ── 갈래 2·3: 로그인 ──────────────────────────────────────────────────────
+  // activeChild-무관 fetch를 자녀 가드와 겹쳐 착수한다(왕복 1회 절감, P0-3(A) 승계).
+  const profilePromise = getGreetingProfile(supabase, user.id);
+  const copyPromise = getHomeCopy();
+  const distributionPromise = getCategoryDistribution(supabase);
 
-  // 인기 책 조회 실패가 마케팅 페이지 전체를 막지 않도록 방어한다.
-  let books: PopularBook[] = [];
-  try {
-    books = await getPopularBooks(supabase);
-  } catch (error) {
-    console.error('LandingPage: 인기 책 조회 실패 —', error);
+  // 갈래 2 — 자녀 0명은 온보딩으로. 메인의 개인화 블록이 전부 활성 자녀를 전제한다.
+  const activeChild = await getActiveChild(supabase, user.id);
+  if (!activeChild) {
+    redirect(ONBOARDING_PATH);
   }
 
+  const [profile, recommendation, streakDays, copy, distribution] = await Promise.all([
+    profilePromise,
+    getRecommendations(supabase, activeChild),
+    getStreakThisWeek(supabase, activeChild.id),
+    copyPromise,
+    distributionPromise,
+  ]);
+
+  const greeting = buildGreeting(profile, activeChild, copy.greeting);
+
+  // 갈래 3 — 개인화 메인.
   return (
-    <div className="flex min-h-screen flex-col bg-bg">
-      <LandingHeader brandName={copy.brandName} copy={copy.header} />
-      <main className="flex-1">
-        <HeroSection copy={copy.hero} />
-        <ValueProps items={copy.valueProps} />
-        <PopularBooks copy={copy.popularSection} books={books} />
+    <>
+      <AppHeader />
+      <main className="min-h-screen bg-surface-2 pb-8">
+        <MemberMain
+          greeting={greeting}
+          child={activeChild}
+          recommendation={recommendation}
+          streakDays={streakDays}
+          copy={copy}
+          categories={CATEGORIES}
+          distribution={distribution}
+        />
       </main>
-      {/* ADR-0062 D5·O-M3 — 푸터는 AppFooter로 일원화. LandingFooter는 폐기 예정. */}
       <AppFooter />
-    </div>
+    </>
   );
 }
