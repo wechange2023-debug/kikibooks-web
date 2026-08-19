@@ -3,7 +3,7 @@ import Link from 'next/link';
 /**
  * 섹션 헤더 — 좌측 타이틀 + 우측 "전체 보기" pill.
  *
- * design-system v2 §6.3의 관용구를 컴포넌트로 박제한다:
+ * design-system v2 §6.3의 관용구를 컴포넌트로 박제한다. 홈·랜딩 공용이라 ui/에 둔다:
  *
  *   [ 섹션 타이틀 (text-h2) ]              [ 전체 보기 → (pill) ]
  *   [ 콘텐츠: 캐러셀 또는 그리드 ]

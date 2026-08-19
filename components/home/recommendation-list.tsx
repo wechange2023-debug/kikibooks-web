@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BookOpen, Headphones } from 'lucide-react';
 
-import { SectionHeader } from '@/components/home/section-header';
+import { SectionHeader } from '@/components/ui/section-header';
 import { LIBRARY_PATH } from '@/lib/auth/routes';
 import type { HomeCopy } from '@/lib/home/copy';
 import type { PopularBook } from '@/lib/landing/popular-books';

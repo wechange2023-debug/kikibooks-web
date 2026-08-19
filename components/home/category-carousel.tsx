@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { SectionHeader } from '@/components/home/section-header';
+import { SectionHeader } from '@/components/ui/section-header';
 import { LIBRARY_PATH } from '@/lib/auth/routes';
 import type { CategoryDefinition, CategorySlug } from '@/lib/home/categories';
 import type { HomeCopy } from '@/lib/home/copy';

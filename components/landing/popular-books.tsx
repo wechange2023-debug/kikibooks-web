@@ -1,3 +1,4 @@
+import { SectionHeader } from '@/components/ui/section-header';
 import { BookCoverCard } from '@/components/landing/book-cover-card';
 import type { LandingCopy } from '@/lib/landing/copy';
 import type { PopularBook } from '@/lib/landing/popular-books';
@@ -18,10 +19,13 @@ export function PopularBooks({ copy, books }: PopularBooksProps) {
   return (
     <section className="bg-bg px-5 py-12 sm:py-16">
       <div className="mx-auto flex max-w-5xl flex-col gap-6">
-        <header className="flex flex-col gap-2 text-center">
-          <h2 className="font-display text-h1 font-semibold text-text">
-            {copy.heading}
-          </h2>
+        {/*
+          §6.3 섹션 헤더 패턴 — 좌측 타이틀 + (우측 pill). 랜딩은 비로그인 화면이라
+          "전체 보기" 대상이 없으므로 href를 주지 않는다(§6.4의 캐러셀 대체 경로
+          요구는 가로 스크롤 섹션에만 걸린다 — 이 섹션은 그리드다).
+        */}
+        <header className="flex flex-col gap-2">
+          <SectionHeader title={copy.heading} />
           <p className="text-label text-text-variant">{copy.subheading}</p>
         </header>
         {books.length > 0 ? (

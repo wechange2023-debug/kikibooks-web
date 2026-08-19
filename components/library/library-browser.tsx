@@ -141,7 +141,7 @@ export function LibraryBookCard({ book }: { book: PopularBook }) {
       prefetch={false}
       className="group flex flex-col gap-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
     >
-      <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-surface-3 shadow-elev-1 transition-transform duration-200 ease-kiki group-hover:-translate-y-1">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-surface-3 shadow-elev-1 transition-all duration-200 ease-kiki group-hover:-translate-y-1 group-hover:shadow-elev-2">
         {imageError ? (
           <div
             className={`flex h-full w-full flex-col items-center justify-center gap-2 p-3 ${fallback.block}`}
