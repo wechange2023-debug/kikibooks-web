@@ -1,17 +1,34 @@
 import type { Metadata } from 'next';
-import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google';
+import { Gothic_A1, Plus_Jakarta_Sans } from 'next/font/google';
 
 import { BRAND_NAME } from '@/lib/brand';
 import { SITE_URL } from '@/lib/site';
 
 import './globals.css';
 
-// docs/design-system.md 2.1 — Display/Body 폰트. 한글은 Pretendard 폴백.
-const fraunces = Fraunces({
+/**
+ * docs/design-system.md v2 §2.1 — Display/Body 폰트.
+ *
+ * Display = Gothic A1 (v1의 Fraunces 폐기 — ADR-0060 D2-b). 한글·라틴을 한 폰트로
+ * 처리해 헤드라인 서체 혼합이 일어나지 않는다. weight는 §2.3의 800 금지 규칙에 따라
+ * 500·700 두 종만 로드한다.
+ *
+ * Body = Plus Jakarta Sans 유지(라틴) + Gothic A1 한글 폴백. PJS에는 한글 글리프가
+ * 없으므로 브라우저가 글리프 단위로 폴백해 라틴은 PJS, 한글은 Gothic A1이 렌더된다.
+ * 이 합성은 tailwind.config.ts의 fontFamily.body 스택이 담당한다(§10.2).
+ *
+ * ★ Pretendard는 v1 내내 로드된 적이 없다(@font-face·CDN·public 폰트 파일 0건).
+ *   ADR-0060 D2-b에 따라 스택에 남기되, 실제 로드되는 Gothic A1 **뒤**에 둔다 —
+ *   로컬 설치 여부에 따라 사용자마다 다른 서체로 보이는 것을 막는다.
+ *
+ * subsets는 font-data.json이 노출하는 값만 지정 가능하다(Gothic A1은 'latin'뿐).
+ * 한글 글리프는 unicode-range 청크로 함께 self-host되며 preload 대상만 아니다.
+ */
+const gothicA1 = Gothic_A1({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['500', '700'],
   variable: '--font-display',
-  fallback: ['Pretendard', 'Georgia', 'serif'],
+  fallback: ['Pretendard', 'system-ui', 'sans-serif'],
   display: 'swap',
 });
 
@@ -49,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className={`${fraunces.variable} ${plusJakarta.variable}`}>
+    <html lang="ko" className={`${gothicA1.variable} ${plusJakarta.variable}`}>
       <body className="font-body">{children}</body>
     </html>
   );
