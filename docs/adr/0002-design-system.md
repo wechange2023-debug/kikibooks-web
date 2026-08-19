@@ -4,9 +4,17 @@
 > 미래에 "왜 이 시스템을 선택했는지", "왜 풀 핸드오프 번들이 아닌 시스템만 추출했는지" 답할 수 있는 단일 진실 공급원.
 
 **문서 번호** ADR-0002
-**상태** Accepted (확정)
+**상태** **Superseded by ADR-0060** (2026-08-19) — 원 상태는 Accepted(확정, 2026-05-13)였다.
 **결정일** 2026-05-13
-**관련 문서** `docs/design-system.md`, `docs/adr/0001-tech-stack.md`, `claude.md` 5절(라우팅)
+**관련 문서** `docs/adr/0060-design-system-v2.md`(대체 ADR), `docs/design-system.md`, `docs/adr/0001-tech-stack.md`, `claude.md` 5절(라우팅)
+
+> **Superseded 안내 (2026-08-19)**
+> 본 ADR이 채택한 「Claude Design v0.1 추출본 + 키키북스 보강」 디자인 시스템은
+> **ADR-0060(디자인 시스템 v2 전면 개정)** 으로 대체됐다. `docs/design-system.md`는
+> **v2.0으로 전면 개정**되어 본 문서가 기술하는 v1.0 팔레트·타이포와 더 이상 일치하지 않는다.
+>
+> **본문은 소급 수정하지 않는다** — 당시의 결정 근거와 대안 검토를 보존하기 위한 이력
+> 문서다(ADR-0002 §7 "미래 자신을 위한 메모"의 취지). 현행 결정은 ADR-0060을 볼 것.
 
 ---
 

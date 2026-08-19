@@ -94,8 +94,8 @@
 | Screen 02 (홈) 구현 | `docs/intent/screen-02-home.md` + `docs/design-system.md` | 9절 |
 | Screen 03 (책 상세) 구현 | `docs/intent/screen-03-book-detail.md` + `docs/design-system.md` + `docs/guidelines/license-rules.md` | 9절 |
 | Screen 04 (책 뷰어) 구현 | `docs/intent/screen-04-reader.md` + `docs/design-system.md` (7.2 Reader 토큰) | 9절 |
-| Screen 05 (완독 보상) 구현 | `docs/intent/screen-05-celebrate.md` + `docs/design-system.md` (7.3 Celebrate 모션) | 9절 |
-| **디자인 시스템·토큰 변경** | `docs/design-system.md` + `docs/adr/0002-design-system.md` + 신규 ADR 작성 | — |
+| Screen 05 (완독 보상) 구현 | `docs/intent/screen-05-celebrate.md` + `docs/design-system.md` (7.5 Celebrate 모션) | 9절 |
+| **디자인 시스템·토큰 변경** | `docs/design-system.md` + `docs/adr/0060-design-system-v2.md` + 신규 ADR 작성 | — |
 | **Tailwind 설정 변경** | `docs/design-system.md` 10절 (필수) | — |
 | 인증·온보딩 | `docs/intent/auth-flow.md` + `docs/intent/onboarding-flow.md` | 9절 Week 3~4 |
 | 콘텐츠 동기화 (Book Dash, GDL) | `docs/intent/content-sync.md` + `docs/guidelines/license-rules.md` | 8절 |
