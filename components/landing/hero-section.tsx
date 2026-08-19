@@ -34,7 +34,7 @@ export function HeroSection({ copy }: HeroSectionProps) {
           <p className="max-w-md text-body text-text-variant break-keep sm:text-h3">
             {copy.subtitle}
           </p>
-          <Button asChild size="lg" className="mt-2">
+          <Button asChild variant="cta" size="lg" className="mt-2">
             <Link href="/signup">{copy.ctaLabel}</Link>
           </Button>
         </div>
