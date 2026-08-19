@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { SectionHeader } from '@/components/ui/section-header';
-import { LIBRARY_PATH } from '@/lib/auth/routes';
+import { LIBRARY_PATH, SIGNUP_PATH } from '@/lib/auth/routes';
 import type { CategoryDefinition, CategorySlug } from '@/lib/home/categories';
 import type { HomeCopy } from '@/lib/home/copy';
 
@@ -46,6 +46,14 @@ interface CategoryCarouselProps {
   categories: readonly CategoryDefinition[];
   copy: HomeCopy['categories'];
   distribution: Record<CategorySlug, number>;
+  /**
+   * 로그인 여부 — 타일·"전체 보기"의 링크 대상을 가른다 (ADR-0062 **O-M2 확정**).
+   *
+   * `/library`는 보호 라우트라 비로그인이 누르면 `/login`으로 튄다. 카테고리를 미끼로만
+   * 쓰고 끝나므로, 비로그인은 **가입 동선(`/signup`)으로 직결**시킨다.
+   * 타일 자체는 활성 링크로 유지한다 — 비활성 미리보기는 "고장난 화면"으로 읽힌다.
+   */
+  signedIn: boolean;
 }
 
 /**
@@ -72,10 +80,16 @@ export function CategoryCarousel({
   categories,
   copy,
   distribution,
+  signedIn,
 }: CategoryCarouselProps) {
+  // O-M2 — 비로그인은 가입으로, 로그인은 라이브러리 카테고리 필터로.
+  const seeAllHref = signedIn ? LIBRARY_PATH : SIGNUP_PATH;
+  const tileHref = (slug: CategorySlug) =>
+    signedIn ? `${LIBRARY_PATH}?category=${slug}` : SIGNUP_PATH;
+
   return (
     <section aria-label={copy.title} className="flex flex-col gap-4">
-      <SectionHeader title={copy.title} href={LIBRARY_PATH} />
+      <SectionHeader title={copy.title} href={seeAllHref} />
 
       <ul
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- 스크롤 영역의 키보드 조작(WCAG 2.1.1)
@@ -86,7 +100,7 @@ export function CategoryCarousel({
         {categories.map((category) => (
           <li key={category.slug} className="shrink-0 snap-start">
             <Link
-              href={`${LIBRARY_PATH}?category=${category.slug}`}
+              href={tileHref(category.slug)}
               className="group flex w-36 flex-col gap-2 rounded-lg bg-surface p-3 shadow-elev-1 outline-none transition-transform duration-200 ease-kiki hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-primary/50"
             >
               <span

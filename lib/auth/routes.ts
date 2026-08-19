@@ -51,6 +51,17 @@ export const ONBOARDING_PATH = '/onboarding';
 /** 비로그인 사용자가 보호 라우트에 접근했을 때 보내는 경로. */
 export const SIGN_IN_PATH = '/login';
 
+/**
+ * 회원가입 경로. 비로그인 방문자를 가입 동선으로 보낼 때 쓴다.
+ *
+ * ADR-0062 **O-M2** — 메인의 카테고리 타일은 로그인 시 `/library?category=`,
+ * 비로그인 시 본 경로로 간다. `/library`가 보호 라우트라 비로그인이 누르면
+ * `/login`으로 튀어 카테고리가 미끼로만 끝나기 때문이다.
+ * `AUTH_PAGES`에 이미 값이 있으나 의미가 달라(가드 목록 vs 링크 대상) 상수를 분리한다
+ * — `HOME_PATH`/`POST_LOGIN_PATH`와 같은 선례다.
+ */
+export const SIGNUP_PATH = '/signup';
+
 /** 주어진 경로가 보호 라우트인지 판정한다. (정확히 일치하거나 하위 경로) */
 export function isProtectedPath(pathname: string): boolean {
   return PROTECTED_PREFIXES.some(

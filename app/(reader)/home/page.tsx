@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
-import { CategoryCarousel } from '@/components/home/category-carousel';
-import { HomeHero } from '@/components/home/home-hero';
-import { LevelSelector } from '@/components/home/level-selector';
-import { RecommendationList } from '@/components/home/recommendation-list';
-import { StreakChart } from '@/components/home/streak-chart';
+import { MemberMain } from '@/components/main/member-main';
 import { ONBOARDING_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getActiveChild } from '@/lib/home/active-child';
 import { CATEGORIES, getCategoryDistribution } from '@/lib/home/categories';
@@ -90,37 +86,15 @@ export default async function HomePage() {
 
   return (
     <main className="min-h-screen bg-surface-2 pb-8">
-      {/*
-        §6.4 풀폭 히어로 — 아래 본문 컨테이너(max-w-screen-*) **밖**에 둔다.
-        컨테이너 안에 넣으면 폭이 본문과 같아져 "풀폭"이 성립하지 않는다.
-        로그아웃·네비는 공통 헤더로 수렴(ADR-0021 D4).
-      */}
-      <div className="px-4 pt-6 md:px-6">
-        {/* books는 추천 캐러셀과 같은 배열 재사용 — 히어로용 신규 쿼리 0건. */}
-        <HomeHero
-          greeting={greeting}
-          child={activeChild}
-          books={recommendation.books}
-        />
-      </div>
-
-      <div className="mx-auto mt-8 flex max-w-screen-sm flex-col gap-8 px-4 md:max-w-screen-md md:px-6 lg:max-w-screen-lg">
-        <LevelSelector
-          childId={activeChild.id}
-          currentLevel={activeChild.current_level}
-          copy={copy.levelSelector}
-        />
-
-        <RecommendationList result={recommendation} copy={copy.recommendations} />
-
-        <CategoryCarousel
-          categories={CATEGORIES}
-          copy={copy.categories}
-          distribution={distribution}
-        />
-
-        <StreakChart days={streakDays} copy={copy.streak} />
-      </div>
+      <MemberMain
+        greeting={greeting}
+        child={activeChild}
+        recommendation={recommendation}
+        streakDays={streakDays}
+        copy={copy}
+        categories={CATEGORIES}
+        distribution={distribution}
+      />
     </main>
   );
 }
