@@ -5,12 +5,16 @@ import { AttributionBox } from '@/components/book/attribution-box';
 import { BookCoverHero } from '@/components/book/book-cover-hero';
 import { BookMeta } from '@/components/book/book-meta';
 import { FavoriteButton } from '@/components/book/favorite-button';
+import { InactiveBookNotice } from '@/components/book/inactive-book-notice';
 import { ReadButton } from '@/components/book/read-button';
+import { assertAdmin } from '@/lib/admin/gate';
 import { SIGN_IN_PATH } from '@/lib/auth/routes';
 import { buildAttributionRows } from '@/lib/book/attribution';
 import { getBookDetailCopy } from '@/lib/book/copy';
-import { getBookById } from '@/lib/book/detail';
+import { getBookByIdIncludingInactive } from '@/lib/book/detail';
+import { PREVIEW_PARAM, isPreviewParamValue } from '@/lib/book/preview-mode';
 import { getActiveChild } from '@/lib/home/active-child';
+import { getMypageCopy } from '@/lib/mypage/copy';
 import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
 import { createClient } from '@/lib/supabase/server';
 import { BRAND_NAME } from '@/lib/brand';
@@ -20,11 +24,18 @@ import { BRAND_NAME } from '@/lib/brand';
  *
  * 베타 법적 의무: AttributionBox 100% 표시 (license-rules.md §5).
  *
- * 가드 4종 (notFound 단일 출구로 사용자 사유 비노출, intent §5.5 일관 UX):
+ * 가드 5종 (404는 사용자 사유 비노출 유지, intent §5.5 일관 UX):
  *   1. params.id UUID 형식 불일치 → notFound (사전 차단, DB 호출 방지)
  *   2. 미인증 → redirect(/login) (미들웨어 자동 1차, 본 페이지 2차 안전망)
  *   3. ADR-0014 Amendment #4 블랙리스트 4 UUID 일치 → notFound
- *   4. books 행 NULL (없음·is_active=false·RLS 차단) → notFound
+ *   4. books 행 NULL (책이 없음·RLS 차단) → notFound
+ *   5. is_active = false → **InactiveBookNotice** (ADR-0063 D2, 2026-08-19 신설)
+ *
+ * ★ 가드 4·5의 분리 (ADR-0063 O-D5-5): 종전에는 조회 함수가 is_active=true를 걸어
+ *   "없는 책"과 "쉬는 책"이 같은 404로 합쳐져 있었다. 이제 조회를
+ *   getBookByIdIncludingInactive로 바꿔 두 경우를 나눈다 — 없는 책은 그대로 404이고,
+ *   쉬는 책만 안내 화면으로 간다. 블랙리스트(가드 3)는 **가드 5보다 먼저** 평가하므로
+ *   블랙리스트 도서는 활성 여부와 무관하게 404를 유지한다(ADR-0063 §Context 3).
  *
  * 페이지 구조 (intent §5):
  *   BookCoverHero (표지 + H1 — ADR-0016 결정 3 통합 어트리뷰션 단위)
@@ -63,9 +74,37 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 
 interface BookDetailPageProps {
   params: { id: string };
+  /** `?preview=1` — 관리자 검수 진입 표시 (ADR-0063 D4). 그 외 키는 읽지 않는다. */
+  searchParams?: { [PREVIEW_PARAM]?: string };
 }
 
-export default async function BookDetailPage({ params }: BookDetailPageProps) {
+/**
+ * 비활성 도서 예외 통과 판정 — 관리자 role **AND** `preview=1` (ADR-0063 D4·O-D5-1).
+ *
+ * **단축 평가**다. preview 파라미터가 없으면 assertAdmin을 부르지 않는다 — 파라미터가
+ * 없으면 예외 통과 자체가 성립하지 않으므로 role을 확인할 이유가 없다(A AND B에서 A가
+ * 거짓이면 B는 평가 불필요, 논리적 동치). 따라서 **정상 열람 경로의 추가 왕복은 0건**이며,
+ * assertAdmin(auth + profiles 2왕복)은 비활성 도서 + preview 진입에서만 실행된다.
+ * lib/book/reading-session.ts:79-85 isAdminPreviewEntry가 Referer로 하는 것과 같은 구조다.
+ *
+ * ★ 판정 기준을 새로 만들지 않았다 — 관리자 여부는 lib/admin/gate.ts:202 assertAdmin
+ *   단일 출처를 그대로 쓴다(판정 기준 이원화 금지). preview 신호만 Referer가 아닌
+ *   searchParams에서 읽는다 — 페이지 렌더는 자기 URL을 인자로 받으므로 Referer보다
+ *   정확하고 위조 여지가 적다.
+ */
+async function isAdminPreview(previewValue: string | undefined): Promise<boolean> {
+  if (!isPreviewParamValue(previewValue)) {
+    return false;
+  }
+
+  const admin = await assertAdmin();
+  return admin.ok;
+}
+
+export default async function BookDetailPage({
+  params,
+  searchParams,
+}: BookDetailPageProps) {
   // 가드 1: UUID 형식 사전 차단 — DB 호출 방지 + 보안
   if (!UUID_RE.test(params.id)) {
     notFound();
@@ -85,7 +124,7 @@ export default async function BookDetailPage({ params }: BookDetailPageProps) {
   // activeChild는 즐겨찾기 초기 상태 조회에만 쓰이며, 페이지 가드로는 쓰지 않는다(자녀 0명
   // 이어도 책 상세는 정상 렌더 — FavoriteButton만 빠진다).
   const [book, copy, activeChild] = await Promise.all([
-    getBookById(supabase, params.id),
+    getBookByIdIncludingInactive(supabase, params.id),
     getBookDetailCopy(),
     getActiveChild(supabase, user.id),
   ]);
@@ -95,6 +134,8 @@ export default async function BookDetailPage({ params }: BookDetailPageProps) {
   }
 
   // 가드 3: ADR-0014 Amendment #4 블랙리스트 4 UUID 차단
+  // ★ 가드 5(비활성)보다 **먼저** 평가한다 — 블랙리스트 도서는 활성 여부와 무관하게
+  //   404다. 순서를 바꾸면 비활성 블랙리스트 도서가 안내 화면으로 새어 나간다.
   if (
     book.source_platform === 'book_dash' &&
     (BOOK_DASH_404_SOURCE_IDS as readonly string[]).includes(book.source_id)
@@ -103,6 +144,16 @@ export default async function BookDetailPage({ params }: BookDetailPageProps) {
   }
 
   const rows = buildAttributionRows(book, copy);
+
+  // 가드 5: 비활성 도서 → 안내 화면 (ADR-0063 D2). 관리자 preview 진입만 예외 통과.
+  //   assertAdmin은 이 분기 안에서만 호출된다 — 활성 도서는 평가 자체가 없다(단축 평가).
+  //   rows는 buildAttributionRows 결과 **전량**을 그대로 넘긴다(행 축소 0건, 회귀 1번).
+  if (!book.is_active && !(await isAdminPreview(searchParams?.[PREVIEW_PARAM]))) {
+    const mypageCopy = await getMypageCopy();
+    return (
+      <InactiveBookNotice book={book} rows={rows} copy={mypageCopy.inactiveBook} />
+    );
+  }
 
   // 즐겨찾기 초기 상태 — 활성 자녀가 있을 때만 조회한다(자녀 0명이면 버튼 자체가 없다).
   // 조회 실패는 페이지를 깨뜨리지 않고 '미즐겨찾기'로 폴백한다 — 쓰기 시점에 server action이

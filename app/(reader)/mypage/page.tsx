@@ -8,6 +8,7 @@ import { ONBOARDING_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getActiveChild } from '@/lib/home/active-child';
 import { getHomeCopy } from '@/lib/home/copy';
 import { getStreakThisWeek } from '@/lib/home/streak';
+import { getMypageCopy } from '@/lib/mypage/copy';
 import { getMypageSummary } from '@/lib/mypage/summary';
 import { createClient } from '@/lib/supabase/server';
 import { BRAND_NAME } from '@/lib/brand';
@@ -41,8 +42,14 @@ import { BRAND_NAME } from '@/lib/brand';
  * 책 카드: components/library/library-browser.tsx의 LibraryBookCard 재사용(A안,
  *   2026-08-07 팀장 결정). 카드 신규 생성 0건 — 통합 리팩터링은 backlog §7.4 (y).
  *
- * 카피: 화면 전용 문구는 본 파일에 hardcode한다(app-header.tsx의 라벨 정책과 동일 —
- *   copy.ts 박제 확장 회피). 스트릭 카피만 getHomeCopy()에서 가져온다(컴포넌트 계약).
+ * 카피 (2026-08-19 ADR-0063으로 **반전**): 종전 결정은 "화면 전용 문구는 본 파일에
+ *   hardcode한다(app-header.tsx의 라벨 정책과 동일 — copy.ts 박제 확장 회피)"였다.
+ *   ADR-0063이 이를 뒤집는다 — 문구가 3종 이상 늘었고, 그중 "쉬는 중" 어휘는
+ *   책 상세 안내 화면(components/book/inactive-book-notice.tsx)과 **표현을 맞춰야**
+ *   하기 때문이다. 두 라우트가 같은 말을 쓰려면 단일 출처가 필요하다.
+ *   → lib/mypage/copy.ts getMypageCopy() 신설(lib/home/copy.ts 패턴 준용).
+ *   섹션 제목·빈 목록 문구 등 이 화면에서만 쓰는 라벨은 계속 본 파일에 둔다.
+ *   스트릭 카피는 종전대로 getHomeCopy()에서 가져온다(컴포넌트 계약).
  *
  * Cache 정책: force-dynamic — 읽기 이력·즐겨찾기는 요청마다 최신이어야 한다.
  * Metadata: robots noindex — 로그인 후 개인 화면(책 상세와 동일 방어).
@@ -103,11 +110,16 @@ export default async function MypagePage() {
   }
 
   // 요약·스트릭·카피는 상호 의존이 없다 — 한 번에 착수해 왕복을 겹친다.
-  const [summary, streakDays, copy] = await Promise.all([
+  const [summary, streakDays, copy, mypageCopy] = await Promise.all([
     getMypageSummary(supabase, activeChild.id),
     getStreakThisWeek(supabase, activeChild.id),
     getHomeCopy(),
+    getMypageCopy(),
   ]);
+
+  // "쉬는 중" 배지 판정 (ADR-0063 D1) — 읽은 책·즐겨찾기 **양쪽**에 같은 집합을 쓴다.
+  // summary가 배열로 주는 이유는 lib/mypage/summary.ts MypageSummary 주석 참조(직렬화).
+  const inactiveBookIds = new Set(summary.inactiveBookIds);
 
   return (
     <main className="min-h-screen bg-surface-2 py-6">
@@ -122,9 +134,11 @@ export default async function MypagePage() {
             <SummaryTile label="포인트" value={`${summary.points}P`} />
           </dl>
 
+          {/* ADR-0059 D1 — 표시 제거 금지. 문구만 ADR-0063 O-D5-2 안 A로 교체.
+              role="status"는 접근성 계약이라 유지한다. */}
           {summary.degraded && (
             <p role="status" className={EMPTY_CLASS}>
-              일부 정보를 불러오지 못했어요. 잠시 후 새로고침해 주세요.
+              {mypageCopy.degradedNotice}
             </p>
           )}
         </section>
@@ -140,7 +154,13 @@ export default async function MypagePage() {
           ) : (
             <div className={GRID_CLASS}>
               {summary.readBooks.map((book) => (
-                <LibraryBookCard key={book.id} book={book} />
+                <LibraryBookCard
+                  key={book.id}
+                  book={book}
+                  inactive={inactiveBookIds.has(book.id)}
+                  inactiveLabel={mypageCopy.inactiveBook.badgeLabel}
+                  inactiveAriaLabel={mypageCopy.inactiveBook.badgeAriaLabel}
+                />
               ))}
             </div>
           )}
@@ -154,7 +174,13 @@ export default async function MypagePage() {
           ) : (
             <div className={GRID_CLASS}>
               {summary.favoriteBooks.map((book) => (
-                <LibraryBookCard key={book.id} book={book} />
+                <LibraryBookCard
+                  key={book.id}
+                  book={book}
+                  inactive={inactiveBookIds.has(book.id)}
+                  inactiveLabel={mypageCopy.inactiveBook.badgeLabel}
+                  inactiveAriaLabel={mypageCopy.inactiveBook.badgeAriaLabel}
+                />
               ))}
             </div>
           )}
