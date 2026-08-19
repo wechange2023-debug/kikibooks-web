@@ -57,6 +57,9 @@ export const metadata: Metadata = {
  *   2. 로그인 + 자녀 0명 → redirect(/onboarding)
  *   3. 로그인 + 자녀≥1   → 개인화 블록(MemberMain) 렌더. **리다이렉트 0회**
  *
+ * ADR-0062 **Amendment 1** — 로그인 메인에도 랜딩 섹션(인기 책·핵심가치)이 붙는다.
+ *   섹션 순서: 히어로 → 레벨 → 추천 → 카테고리 → 인기 책 → 핵심가치 → 푸터.
+ *
  * v1은 로그인 사용자를 `/home`으로 리다이렉트했다(ADR-0012 결정 4). ADR-0062 D8이
  * 그 결정을 supersede해 **리다이렉트 대신 블록을 바꿔 렌더**한다 — 로그인 사용자의
  * `/` 접근에서 왕복 1회가 사라진다.
@@ -131,6 +134,13 @@ export default async function MainPage() {
   const profilePromise = getGreetingProfile(supabase, user.id);
   const copyPromise = getHomeCopy();
   const distributionPromise = getCategoryDistribution(supabase);
+  // ADR-0062 Amd.1 — 로그인 메인에도 인기 책·핵심가치 섹션이 들어간다.
+  // getLandingCopy()는 정적 상수라 왕복이 아니고, getPopularBooks()가 유일한 신규 쿼리다.
+  const landingCopyPromise = getLandingCopy();
+  const popularBooksPromise = getPopularBooks(supabase).catch((error) => {
+    console.error('MainPage: 인기 책 조회 실패(로그인) —', error);
+    return [] as PopularBook[];
+  });
 
   // 갈래 2 — 자녀 0명은 온보딩으로. 메인의 개인화 블록이 전부 활성 자녀를 전제한다.
   const activeChild = await getActiveChild(supabase, user.id);
@@ -138,12 +148,22 @@ export default async function MainPage() {
     redirect(ONBOARDING_PATH);
   }
 
-  const [profile, recommendation, streakDays, copy, distribution] = await Promise.all([
+  const [
+    profile,
+    recommendation,
+    streakDays,
+    copy,
+    distribution,
+    landingCopy,
+    popularBooks,
+  ] = await Promise.all([
     profilePromise,
     getRecommendations(supabase, activeChild),
     getStreakThisWeek(supabase, activeChild.id),
     copyPromise,
     distributionPromise,
+    landingCopyPromise,
+    popularBooksPromise,
   ]);
 
   const greeting = buildGreeting(profile, activeChild, copy.greeting);
@@ -161,6 +181,8 @@ export default async function MainPage() {
           copy={copy}
           categories={CATEGORIES}
           distribution={distribution}
+          popularBooks={popularBooks}
+          landingCopy={landingCopy}
         />
       </main>
       <AppFooter />

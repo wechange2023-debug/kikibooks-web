@@ -30,6 +30,14 @@ import type { PopularBook } from '@/lib/landing/popular-books';
  */
 interface BookCoverCardProps {
   book: PopularBook;
+  /**
+   * 로그인 여부 — 링크 대상을 가른다 (ADR-0062 **Amendment 1** 부수 결정 2).
+   *
+   * v1에서는 `href="/signup"`이 하드코딩돼 있었다(랜딩 전용 컴포넌트였기 때문).
+   * Amendment 1로 로그인 메인에도 인기 책 섹션이 들어가면서, 로그인 사용자는
+   * 책 상세로 바로 갈 수 있어야 한다. `CategoryCarousel`의 O-M2 분기와 같은 패턴이다.
+   */
+  signedIn: boolean;
 }
 
 /** 깨진 표지 fallback 색 — WCAG 대비가 보장된 container 토큰 쌍. */
@@ -48,13 +56,14 @@ function pickFallbackColor(id: string): (typeof FALLBACK_PALETTE)[number] {
   return FALLBACK_PALETTE[sum % FALLBACK_PALETTE.length];
 }
 
-export function BookCoverCard({ book }: BookCoverCardProps) {
+export function BookCoverCard({ book, signedIn }: BookCoverCardProps) {
   const [imageError, setImageError] = useState(false);
   const fallback = pickFallbackColor(book.id);
 
   return (
     <Link
-      href="/signup"
+      href={signedIn ? `/book/${book.id}` : '/signup'}
+      prefetch={false}
       className="group flex flex-col gap-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
     >
       <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-surface-3 shadow-elev-1 transition-transform duration-200 ease-kiki group-hover:-translate-y-1">

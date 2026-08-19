@@ -47,7 +47,7 @@ export function AnonymousMain({
     <>
       <HeroSection copy={copy.hero} />
       <ValueProps items={copy.valueProps} />
-      <PopularBooks copy={copy.popularSection} books={books} />
+      <PopularBooks copy={copy.popularSection} books={books} signedIn={false} />
 
       <section className="bg-bg px-4 pb-12 md:px-6 sm:pb-16">
         <div className="mx-auto max-w-5xl">

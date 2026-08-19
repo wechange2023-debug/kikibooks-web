@@ -3,12 +3,16 @@ import { HomeHero } from '@/components/home/home-hero';
 import { LevelSelector } from '@/components/home/level-selector';
 import { RecommendationList } from '@/components/home/recommendation-list';
 import { StreakChart } from '@/components/home/streak-chart';
+import { PopularBooks } from '@/components/landing/popular-books';
+import { ValueProps } from '@/components/landing/value-props';
 import type { ActiveChild } from '@/lib/home/active-child';
 import type { CategoryDefinition, CategorySlug } from '@/lib/home/categories';
 import type { HomeCopy } from '@/lib/home/copy';
 import type { GreetingData } from '@/lib/home/greeting';
 import type { RecommendationResult } from '@/lib/home/recommendations';
 import type { StreakDay } from '@/lib/home/streak';
+import type { LandingCopy } from '@/lib/landing/copy';
+import type { PopularBook } from '@/lib/landing/popular-books';
 
 /**
  * 로그인 사용자용 메인 블록 — 인사 히어로 · 레벨 · 추천 · 카테고리 · 스트릭.
@@ -35,6 +39,10 @@ interface MemberMainProps {
   copy: HomeCopy;
   categories: readonly CategoryDefinition[];
   distribution: Record<CategorySlug, number>;
+  /** 인기 책 랜덤 6권 — ADR-0062 Amd.1. 추천과 겹칠 수 있으나 제거하지 않는다. */
+  popularBooks: PopularBook[];
+  /** 인기 책·핵심가치 섹션 카피 — 비로그인 랜딩과 **같은 출처**를 쓴다. */
+  landingCopy: LandingCopy;
 }
 
 export function MemberMain({
@@ -45,6 +53,8 @@ export function MemberMain({
   copy,
   categories,
   distribution,
+  popularBooks,
+  landingCopy,
 }: MemberMainProps) {
   return (
     <>
@@ -74,6 +84,27 @@ export function MemberMain({
         />
 
         <StreakChart days={streakDays} copy={copy.streak} />
+      </div>
+
+      {/*
+        ADR-0062 Amendment 1 — 랜딩 섹션 병합.
+        개인화 블록(위)이 자주 쓰는 것, 마케팅성 정보(아래)가 덜 급한 것이다.
+
+        ★ 두 섹션은 자체 전폭 <section>(px-5 py-12 + 내부 max-w-5xl)을 갖는다.
+          위 max-w-screen-* 컨테이너 **밖 형제**로 둬야 이중 제약이 걸리지 않는다.
+
+        인기 책은 로그인 상태라 카드 링크가 /book/[id]로 간다(Amd.1 부수 결정 2).
+        "오늘의 추천"과 책이 겹칠 수 있으나 제거하지 않는다(부수 결정 3).
+        ValueProps에는 CTA 버튼이 없어 §6.1 "화면당 CTA 1개"가 그대로 지켜진다
+        (실측: 정보 카드 4장뿐 — Amd.1 부수 결정 4).
+      */}
+      <div className="mt-10">
+        <PopularBooks
+          copy={landingCopy.popularSection}
+          books={popularBooks}
+          signedIn
+        />
+        <ValueProps items={landingCopy.valueProps} />
       </div>
     </>
   );
