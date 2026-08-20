@@ -108,6 +108,10 @@ async function main() {
   console.log(`활성 ${books.length}권 중 book_text 보유 ${targets.length}권 처리\n`);
 
   const results = [];
+  // W-0 집계 — 오디오 생성 대상 확정용
+  const uniqueWords = new Map();
+  const allPossessives = new Set();
+  const allHyphen = new Set();
   const oddCounts = Object.fromEntries(ODD_PATTERNS.map((p) => [p.key, 0]));
   const oddSamples = Object.fromEntries(ODD_PATTERNS.map((p) => [p.key, []]));
   let cursor = 0;
@@ -142,6 +146,12 @@ async function main() {
       }
 
       const selection = await selectWordCards(supabase, book.id);
+      if (selection) {
+        for (const w of selection.droppedPossessives) allPossessives.add(w);
+        for (const w of selection.hyphenWords) allHyphen.add(w);
+        for (const c of selection.candidates)
+          uniqueWords.set(c.word, (uniqueWords.get(c.word) ?? 0) + 1);
+      }
       const entry = {
         bookId: book.id,
         title: book.title,
@@ -235,6 +245,23 @@ async function main() {
     console.log('\n  (✗ = 발음 재생 불가)');
   }
 
+  // ── W-0: 오디오 생성 대상 ──
+  const w0words = [...uniqueWords.keys()].sort();
+  const w0chars = w0words.reduce((a, w) => a + w.length, 0);
+  const lenDist = {};
+  for (const w of w0words) {
+    const L = w.split('-').join('').length;
+    lenDist[L] = (lenDist[L] ?? 0) + 1;
+  }
+  console.log('');
+  console.log('=== W-0 오디오 생성 대상 ===');
+  console.log('  고유 단어(카드 합집합): ' + w0words.length + '개');
+  console.log('  총 문자수: ' + w0chars + '자 · 평균 ' + (w0chars / w0words.length).toFixed(2) + '자');
+  console.log('  길이 분포(하이픈 제외): ' + JSON.stringify(lenDist));
+  console.log('  규칙 B 제외 소유격: ' + allPossessives.size + '종');
+  console.log('  규칙 C 하이픈 통단어: ' + allHyphen.size + '종');
+  console.log('');
+
   const outPath = join(SCRIPT_DIR, 'out', `wordplay-dryrun-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}.json`);
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, JSON.stringify({
@@ -245,6 +272,15 @@ async function main() {
     by_platform: byPlatform,
     failures: allFailures,
     odd_patterns: { counts: oddCounts, samples: oddSamples },
+    w0: {
+      unique_words: w0words,
+      unique_word_count: w0words.length,
+      total_chars: w0chars,
+      length_distribution: lenDist,
+      possessives_excluded: [...allPossessives].sort(),
+      hyphen_words: [...allHyphen].sort(),
+      word_book_counts: Object.fromEntries([...uniqueWords].sort()),
+    },
     books: results,
   }, null, 2), 'utf8');
   console.log(`\n저장: ${outPath}`);

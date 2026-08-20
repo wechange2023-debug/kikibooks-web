@@ -29,13 +29,42 @@ export const MIN_WORD_LENGTH = 3;
 export const MAX_WORD_LENGTH = 10;
 
 /**
- * 단어 토큰 정규식 — 알파벳 + 내부 아포스트로피(축약형·소유격).
+ * 단어 토큰 정규식 — 알파벳 + 내부 아포스트로피 + **내부 하이픈**.
  *
  * 아포스트로피를 통째로 버리면 `don't` → `dont`가 되어 Polly mark의 `value`(`don't`)와
- * 매칭되지 않는다(word-audio.ts). 그래서 **단어 내부의** 아포스트로피만 남긴다.
+ * 매칭되지 않는다. 그래서 **단어 내부의** 아포스트로피만 남긴다.
  * 숫자·비ASCII 문자는 잡지 않는다(본문이 영어 산문 — ADR-0065 §1.1).
+ *
+ * ★ 규칙 C (팀장 승인 2026-08-20) — 하이픈 복합어는 **쪼개지 않고 통단어**로 다룬다.
+ *   종전에는 `Doof-Doofs`가 `doof`+`doofs` 두 토큰이 돼, Polly가 한 덩어리로 발음한
+ *   마크(`Doof-Doofs`)와 매칭되지 않아 재생 불가로 빠졌다(E-2a 실측 — 하이픈 복합어가
+ *   매칭 실패 35건의 주요 갈래였다). 통단어로 잡으면 발음도 표기도 원문과 일치한다.
+ *   ASCII 하이픈만 잇는다 — em/en 대시(—·–)는 문장부호이므로 단어를 잇지 않는다.
  */
-const WORD_RE = /[A-Za-z]+(?:['‘’ʼ][A-Za-z]+)*/g;
+const WORD_RE = /[A-Za-z]+(?:['‘’ʼ-][A-Za-z]+)*/g;
+
+/**
+ * 길이 판정용 문자수 — **하이픈을 제외**하고 센다 (규칙 C).
+ *
+ * `well-known`(10자)은 하이픈을 빼면 9자라 상한 안에 든다. 하이픈은 표기 기호일 뿐
+ * 발음 길이도 카드 폭도 늘리지 않으므로 길이 산정에서 뺀다.
+ */
+function letterLength(word: string): number {
+  return word.replace(/-/g, '').length;
+}
+
+/**
+ * 소유격(`-'s`)인가 — 규칙 B (팀장 승인 2026-08-20).
+ *
+ * `sherry's`·`yusuf's`처럼 소유격은 **기본형 존재 여부와 무관하게 일괄 제외**한다.
+ * 카드로서 가르칠 형태가 아니고, 대개 인명에 붙어 고유명사 필터를 우회해 들어온다.
+ *
+ * ★ `'s`로 끝나는 것만 본다 — `don't`·`can't`·`I'll` 같은 다른 축약형은 **유지**한다
+ *   (규칙 B 단서). `it's`·`he's` 등 `'s` 축약형은 이미 STOPWORDS에 있어 여기 오지 않는다.
+ */
+function isPossessive(word: string): boolean {
+  return word.endsWith("'s");
+}
 
 /** 굽은 따옴표(’‘ʼ)를 곧은 따옴표로 통일한다. 원문에 커브 따옴표가 섞여 있다(ADR-0065 §1.1). */
 const CURLY_APOSTROPHE_RE = /[‘’ʼ]/g;
@@ -121,6 +150,10 @@ export interface WordSelection {
   droppedProperNouns: number;
   /** 어형 중복으로 제거한 파생형 수 (E-2b 필터 효과 계측용). */
   droppedInflections: number;
+  /** 규칙 B로 제외한 소유격 전량(정규형, 중복 없음). W-0 보고·감사용. */
+  droppedPossessives: string[];
+  /** 규칙 C로 통단어 취급한 하이픈 복합어 전량(정규형, 중복 없음). W-0 보고·감사용. */
+  hyphenWords: string[];
   /** 최종 카드 후보 — 빈도 desc, 동점은 첫 등장 asc. 길이 MIN_CARDS~MAX_CARDS. */
   candidates: WordCandidate[];
 }
@@ -147,7 +180,8 @@ interface Bucket {
 /**
  * 경량 어형 중복 제거 (E-2b 0-b).
  *
- * 후보 목록 **안에 기본형이 있을 때만** `-s`·`-'s` 파생형을 접고, 빈도가 높은 쪽을 남긴다.
+ * 후보 목록 **안에 기본형이 있을 때만** `-s` 복수형을 접고, 빈도가 높은 쪽을 남긴다.
+ * `-'s` 소유격은 규칙 B가 토큰 단계에서 이미 일괄 제외하므로 여기 도달하지 않는다.
  * 기본형이 목록에 없으면 파생형을 그대로 둔다 — 과잉 교정 금지(예: `clouds`만 있는 책에서
  * `cloud`로 바꾸지 않는다. 원문에 없는 표기를 카드에 띄우면 발음 매칭도 깨진다).
  *
@@ -162,10 +196,8 @@ function dedupeInflections(buckets: Bucket[]): Bucket[] {
 
   for (const bucket of buckets) {
     const word = bucket.word;
-    // `'s`를 먼저 본다 — `sherry's`는 `s`로도 끝나므로 순서가 뒤바뀌면 `sherry'`를 찾게 된다.
-    const base = word.endsWith("'s")
-      ? word.slice(0, -2)
-      : word.endsWith('s') && word.length > MIN_WORD_LENGTH
+    const base =
+      word.endsWith('s') && letterLength(word) > MIN_WORD_LENGTH
         ? word.slice(0, -1)
         : null;
     if (!base) continue;
@@ -211,6 +243,10 @@ export async function selectWordCards(
 
   const rows = data ?? [];
   const buckets = new Map<string, Bucket>();
+  /** 규칙 B로 걸러낸 소유격(보고용). */
+  const possessives = new Set<string>();
+  /** 규칙 C로 통단어가 된 하이픈 복합어(보고용). */
+  const hyphenSeen = new Set<string>();
   let totalTokens = 0;
 
   for (const row of rows) {
@@ -230,8 +266,18 @@ export async function selectWordCards(
       tokenIndex += 1;
       totalTokens += 1;
 
-      if (word.length < MIN_WORD_LENGTH || word.length > MAX_WORD_LENGTH) continue;
+      // 규칙 C — 길이는 하이픈을 뺀 문자수로 판정한다.
+      const len = letterLength(word);
+      if (len < MIN_WORD_LENGTH || len > MAX_WORD_LENGTH) continue;
+      // 불용어를 **먼저** 본다 — `it's`·`he's`·`that's`는 `'s`로 끝나지만 소유격이 아니라
+      // 축약형(기능어)이다. 순서가 뒤바뀌면 이들이 "소유격으로 제외됨"으로 잘못 기록된다.
       if (STOPWORDS.has(word)) continue;
+      // 규칙 B — 소유격은 기본형 유무와 무관하게 일괄 제외한다.
+      if (isPossessive(word)) {
+        possessives.add(word);
+        continue;
+      }
+      if (word.includes('-')) hyphenSeen.add(word);
 
       const ordinal = seenOnPage.get(word) ?? 0;
       seenOnPage.set(word, ordinal + 1);
@@ -309,6 +355,8 @@ export async function selectWordCards(
     eligibleWordCount: eligible.length,
     droppedProperNouns,
     droppedInflections,
+    droppedPossessives: [...possessives].sort(),
+    hyphenWords: [...hyphenSeen].sort(),
     candidates,
   };
 }
