@@ -165,12 +165,12 @@ async function main() {
       };
 
       if (selection && !skipAudio) {
-        const clips = await resolveWordAudioClips(supabase, book.id, selection.candidates);
+        // ADR-0065 Amd#1(W-1) — 단어별 단독 파일 방식. 매니페스트 1회 조회로 판정한다.
+        const clips = await resolveWordAudioClips(selection.candidates);
         entry.clips = clips.map((c) => ({
           word: c.word,
           playable: c.playable,
           failure: c.failure,
-          durationMs: c.playable ? c.endMs - c.startMs : null,
         }));
       }
 

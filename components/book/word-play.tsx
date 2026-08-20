@@ -15,10 +15,9 @@ import type { WordPlayCard } from '@/lib/wordplay/get-word-play';
  * ★ 완독 흐름 무접촉(ADR-0065 D3): 본 컴포넌트는 celebrate 화면 **안에서만** 살고,
  *   lib/book/reading-session.ts의 완독·redirect 구조를 건드리지 않는다.
  *
- * 재생 방식은 오디오 리더 선례를 따른다(신규 방식 발명 0건):
- *   - `<audio ref>` + `el.currentTime` + `el.play().catch()`
- *     — components/book/audio-reader.tsx:405·:573-579·:1139-1143
- *   - 구간 종료 감시는 requestAnimationFrame — 같은 파일 :550-558 `startRaf`
+ * 재생 방식(ADR-0065 Amendment #1 · W-1): 단어별 단독 mp3를 **처음부터** 재생한다.
+ *   `<audio ref>` + `el.play().catch()` — 오디오 리더 선례(audio-reader.tsx:405·:573-579).
+ *   구간 좌표·seek·rAF 감시는 전부 사라졌다. 파일 하나가 곧 한 단어이기 때문이다.
  *
  * 디자인 제약(docs/design-system.md v2):
  *   - 터치 타깃 44px 하한 / 아이 조작 버튼 48px 권장(§6.5 :478·:482) → 카드 `min-h-[64px]`,
@@ -80,94 +79,46 @@ function buildQuestions(cards: readonly WordPlayCard[]): Question[] {
 }
 
 /**
- * 구간 재생 훅 — mp3 하나에서 [startMs, endMs) 만 재생한다.
+ * 단어 재생 훅 — 단어 mp3 하나를 **처음부터 끝까지** 재생한다.
  *
- * audio-reader.tsx:550-558의 rAF 추적 패턴을 구간 종료 감시로 좁혀 쓴다.
- * `timeupdate` 이벤트는 250ms 안팎으로 성기게 발화해 500ms대 단어 구간을 넘겨버린다.
+ * ★ ADR-0065 Amendment #1(W-1)로 구간 재생이 폐기되면서 크게 단순해졌다.
+ *   종전에는 본문 mp3에서 [startMs, endMs)만 잘라야 해서 rAF로 종료 시각을 감시하고
+ *   메타데이터 로드를 기다려 seek해야 했다. 이제 파일 자체가 그 단어뿐이라
+ *   **seek·구간 감시·경계 클램프가 전부 불필요**하다 — currentTime = 0에서 재생만 한다.
  */
-function useClipPlayer() {
+function useWordPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const rafRef = useRef<number | null>(null);
-  const stopAtRef = useRef<number>(Number.POSITIVE_INFINITY);
   const [playingWord, setPlayingWord] = useState<string | null>(null);
 
-  const stopRaf = useCallback(() => {
-    if (rafRef.current !== null) {
-      cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
-    }
-  }, []);
-
   const stop = useCallback(() => {
-    stopRaf();
     const el = audioRef.current;
     if (el) el.pause();
     setPlayingWord(null);
-  }, [stopRaf]);
+  }, []);
 
-  const play = useCallback(
-    (card: WordPlayCard) => {
-      if (!card.playable || !card.audioUrl || card.startMs === null || card.endMs === null) {
-        return;
-      }
-      const el = audioRef.current;
-      if (!el) return;
+  const play = useCallback((card: WordPlayCard) => {
+    if (!card.playable || !card.audioUrl) return;
+    const el = audioRef.current;
+    if (!el) return;
 
-      // 좁혀진 타입을 지역에 고정한다 — 아래 클로저 안에서는 narrowing이 유지되지 않는다.
-      const src = card.audioUrl;
-      const startSec = card.startMs / 1000;
+    const src = card.audioUrl;
+    if (el.src !== src) el.src = src;
+    el.currentTime = 0;
+    setPlayingWord(card.word);
 
-      stopRaf();
-      stopAtRef.current = card.endMs / 1000;
-      setPlayingWord(card.word);
-
-      const tick = () => {
-        if (el.currentTime >= stopAtRef.current) {
-          el.pause();
-          setPlayingWord(null);
-          rafRef.current = null;
-          return;
-        }
-        rafRef.current = requestAnimationFrame(tick);
-      };
-
-      const seekAndPlay = () => {
-        el.currentTime = startSec;
-        el.play()
-          .then(() => {
-            rafRef.current = requestAnimationFrame(tick);
-          })
-          .catch(() => {
-            // 브라우저 자동재생 정책 등 — 조용히 무시한다(카드는 그대로 보인다).
-            setPlayingWord(null);
-          });
-      };
-
-      // 같은 mp3면 src를 다시 넣지 않는다(재로딩으로 첫 재생이 끊기는 것을 막는다).
-      if (el.src !== src) {
-        el.src = src;
-      }
-
-      // ★ 메타데이터가 준비되기 전의 seek은 브라우저마다 무시되거나 0으로 되돌아간다.
-      //   그러면 단어가 아니라 **페이지 첫머리**가 재생돼 "뭉개진 소리"로 들린다.
-      //   readyState >= HAVE_METADATA(1)일 때만 즉시 seek하고, 아니면 로드를 기다린다.
-      if (el.readyState >= HAVE_METADATA) {
-        seekAndPlay();
-      } else {
-        el.addEventListener('loadedmetadata', seekAndPlay, { once: true });
-        el.load();
-      }
-    },
-    [stopRaf],
-  );
+    el.play().catch(() => {
+      // 브라우저 자동재생 정책 등 — 조용히 무시한다(카드는 그대로 보인다).
+      setPlayingWord(null);
+    });
+  }, []);
 
   useEffect(() => stop, [stop]);
 
-  return { audioRef, play, stop, playingWord };
-}
+  /** 재생이 끝났을 때 강조만 해제한다(pause 불필요 — 이미 끝났다). */
+  const clearPlaying = useCallback(() => setPlayingWord(null), []);
 
-/** HTMLMediaElement.HAVE_METADATA — 상수를 직접 쓴다(SSR에서 전역 미정의 회피). */
-const HAVE_METADATA = 1;
+  return { audioRef, play, stop, playingWord, clearPlaying };
+}
 
 const CARD_BASE =
   'flex min-h-[64px] items-center justify-center gap-2 rounded-lg border px-2 py-3 text-body font-semibold sm:px-3 transition-all duration-200 ease-kiki outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 motion-reduce:transition-none';
@@ -184,7 +135,7 @@ export function WordPlay({ cards }: { cards: WordPlayCard[] }) {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
   const [score, setScore] = useState(0);
-  const { audioRef, play, stop, playingWord } = useClipPlayer();
+  const { audioRef, play, stop, playingWord, clearPlaying } = useWordPlayer();
 
   const holdTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(
@@ -242,10 +193,13 @@ export function WordPlay({ cards }: { cards: WordPlayCard[] }) {
 
   return (
     <section className="w-full max-w-md" aria-label="단어 놀이">
-      {/* 구간 재생용 — 화면에 노출하지 않는다(카드 탭이 컨트롤).
-          preload="metadata"는 오디오 리더 선례(components/book/audio-reader.tsx:1143).
-          메타데이터가 미리 있어야 첫 탭의 seek이 정확히 떨어진다. */}
-      <audio ref={audioRef} preload="metadata" />
+      {/* 단어 재생용 — 화면에 노출하지 않는다(카드 탭이 컨트롤).
+          파일 하나가 곧 한 단어라 끝나면 그대로 종료된다(onEnded로 강조 해제). */}
+      <audio
+        ref={audioRef}
+        preload="none"
+        onEnded={clearPlaying}
+      />
 
       {phase === 'idle' && (
         <div className="flex justify-center">

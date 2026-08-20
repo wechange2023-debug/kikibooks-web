@@ -1,324 +1,184 @@
 import 'server-only';
 
-import type { SupabaseClient } from '@supabase/supabase-js';
-
 import { resolveAudioBase } from '@/lib/book/audio-manifest';
-import { normalizeWord, type WordCandidate } from '@/lib/wordplay/select-words';
+import type { WordCandidate } from '@/lib/wordplay/select-words';
 
 /**
- * 단어 발음 구간 좌표 산출 (ADR-0065 D4 · Q3).
+ * 단어 발음 오디오 해소 (ADR-0065 **Amendment #1** D-A1·D-A4 · W-1).
  *
- * 카드 단어 하나를 **해당 페이지 오디오의 어느 구간에서 재생하면 되는지**를 계산한다.
- * 오디오를 자르거나 새로 만들지 않는다 — 기존 mp3의 재생 구간(ms)만 돌려준다.
+ * 카드 단어 하나에 대해 **그 단어만 담긴 mp3의 URL**을 돌려준다.
  *
- * ★ 무기록 원칙(ADR-0065 D1): 본 모듈은 **SELECT + Storage 읽기만** 한다.
+ * ★ 구간 재생 방식은 폐기됐다(Amendment #1 §배경). 종전에는 본문 mp3에서
+ *   `[mark[i].time, mark[i+1].time)`을 잘라 썼는데, word mark가 **연속**이라
+ *   여유를 주면 옆 단어를 침범하고(팀장 실청 `stop` → `and stop`), 여유를 빼면
+ *   재생 오차가 어미를 잘랐다 — 침범과 잘림이 시소를 탔다. 단어를 단어로 만들면
+ *   이웃이 없어 **침범이 구조적으로 불가능**하고, 파일 처음부터 재생하므로
+ *   **seek 오차도 개입하지 않는다**.
  *
- * ★ Storage 접근은 **기존 오디오 재생 경로를 그대로 따른다**(신규 방식 발명 0건):
- *   - URL 조립 = `{audioBase}/{book_audio.audio_path | marks_path}`
- *     — lib/book/audio-manifest.ts:331-332 (`getAudioReaderBook`)와 동일
- *   - audioBase 해소 = opts → `NEXT_PUBLIC_TTS_AUDIO_BASE` → Supabase 공개 버킷
- *     — lib/book/audio-manifest.ts:213-221 (`resolveAudioBase`)와 동일 체인
- *   - marks 파싱 = line-delimited JSON에서 `type === 'word'`만
- *     — components/book/audio-reader.tsx:124-145 (`parseMarks`)의 포트
- *   - 오디오 경로는 **book_audio 행을 정본으로 읽는다**(추측 조립 금지)
- *     — lib/book/audio-manifest.ts:23-30에 박제된 원칙
+ * ★ marks 자산 자체는 존속한다(D-A6) — 오디오 리더의 단어 하이라이트가 계속 쓴다.
+ *   폐기된 것은 "단어카드 구간 재생" 용도뿐이며, 그 계산 로직이 이 파일에서 사라졌다.
+ *   구간 클램프·lead-in/tail 여유 상수도 함께 제거됐다(단독 파일 재생이라 불필요).
  *
- * ※ base 해소는 audio-manifest.ts의 `resolveAudioBase`를 **직접 import**한다(E-2b 통합).
- *   E-2a에서는 `AUDIO_STORAGE_PREFIX`가 module-private이라 리터럴을 복제했는데,
- *   하드코딩된 Storage 접두사는 과거 전 면 404를 만든 전력이 있어(audio-manifest.ts:15-21)
- *   해당 함수를 export로 승격하고 본 모듈이 그것을 쓰도록 정리했다 — 리터럴 단일 출처.
+ * ★ 스키마 무변경(D-A4): 단어 오디오는 책·자녀에 종속되지 않는 **전역 사전**이라
+ *   DB에 정본을 적지 않는다. 경로가 단어에서 결정론적으로 나오고, 존재 여부는
+ *   매니페스트(`_words/{voice}/_index.json`)가 답한다.
+ *
+ * ★ 본 모듈은 **읽기 전용**이다(ADR-0065 D1 무기록). DB 접근 0건 —
+ *   Storage 공개 오브젝트 GET만 한다.
  */
 
-/** 본문 낭독 트랙 kind. audio-manifest.ts:106 `READER_AUDIO_KIND`와 동일. */
-const READER_AUDIO_KIND = 'page';
+/** 확정 보이스. audio-manifest.ts의 DEFAULT_READER_VOICE와 동일(ADR-0052 Amd#2). */
+const DEFAULT_WORD_VOICE = 'danielle';
 
-/** 확정 보이스. audio-manifest.ts:104 `DEFAULT_READER_VOICE`와 동일(ADR-0052 Amd#2). */
-const DEFAULT_READER_VOICE = 'danielle';
+/** 단어 오디오 경로 접두사 (ADR-0065 D-A4). */
+const WORDS_PREFIX = '_words';
 
-/**
- * 마지막 단어의 재생 상한 (ADR-0065 Q3 처리, 제안값 1.5초).
- *
- * 다음 mark가 없으면 끝 시각을 알 수 없다. `duration_ms`(오디오 전체 길이)와
- * `start + 이 상한` 중 **이른 쪽**을 쓴다 — 페이지 끝의 긴 무음까지 재생하지 않기 위해서다.
- */
-export const LAST_WORD_MAX_MS = 1500;
+/** 매니페스트 파일명 — 단어→key 목록. D-A5 증분 생성의 기준점이기도 하다. */
+const MANIFEST_FILE = '_index.json';
 
-/**
- * 구간 앞뒤 여유 — **재생 타이밍 오차 흡수용** (E-2b 결함 수정, 2026-08-20).
- *
- * ★ atempo 가설은 실측으로 반증됐다. 파이프라인이 이미 marks를 보정해 저장한다
- *   (scripts/tts_pilot/run_tts_fullbatch.py:333
- *    `marks = [{**m, "time": int(round(m["time"] / atempo))} ...]`).
- *   Storage 서빙본이 로컬 배포본(스케일 완료)과 일치함을 대조로 확인했다 —
- *   native 650·925ms → 배포·서빙 765·1088ms (비 1.1769 = 1/0.85). 추가 스케일은 오히려 틀린다.
- *
- * ★ 실제 잘림 원인은 **구간 폭에 여유가 0**이라는 점이다. 종전 규칙은
- *   `[mark[i].time, mark[i+1].time)`로 앞말과 뒷말 사이를 빈틈없이 잘랐는데, 재생 쪽에는
- *   피할 수 없는 오차가 있다:
- *     - mp3 seek은 프레임 단위로 양자화된다(1152 샘플 @24kHz = **48ms**)
- *     - ffmpeg 재인코딩으로 붙는 인코더 지연(수십 ms)을 브라우저가 항상 벗겨주지 않는다
- *   드라이런 실측 구간 길이는 중앙값 559ms·최소 118ms였다. 최소 구간에서는 48ms 오차만으로도
- *   40%가 날아간다 — "대부분의 단어가 뭉개지고 잘린다"는 증상과 일치한다.
- *
- * 그래서 앞에 lead-in, 뒤에 tail을 두고 최소 길이를 보장한다. 뒷말로 조금 번지는 것은
- * 허용한다 — 발음을 온전히 듣는 편이 낫다.
- */
-/**
- * 구간 시작을 앞당기는 여유(ms). **현재 0** — 측정 전까지 켜지 않는다.
- *
- * 종전 60ms는 'stop'을 눌렀을 때 앞말이 함께 들리는 침범('and stop')을 만들었다.
- * word mark는 **연속**이라(단어 i의 구간 = [t_i, t_{i+1})) 앞으로 넘긴 만큼은 반드시
- * 이전 단어의 구간이다. seek 오차를 흡수하려는 값이었으나 그 오차를 실측하지 못했고
- * (§파일 상단 주석), 근거 없는 값은 침범만 남긴다.
- *
- * 0보다 크게 설정해도 아래 `resolveWordAudioClips`가 **이전 mark 경계에서 클램프**하므로
- * 구조적으로 이전 단어의 시작을 넘지는 못한다. 실측 후 안전하게 올릴 수 있는 손잡이다.
- */
-export const LEAD_IN_MS = 0;
-/**
- * 구간 끝을 늘리는 여유(ms). **현재 0** — 같은 이유.
- *
- * 내부 단어의 끝은 이미 다음 mark 시각이라, 여기서 더 늘리면 곧바로 다음 단어를 침범한다.
- * 아래 클램프가 **다음 mark 경계**를 넘지 못하게 막으므로 값과 무관하게 침범은 0이다.
- */
-export const TAIL_MS = 0;
-/**
- * 최소 구간 길이(ms). 짧은 구간의 가청성을 위한 값이나, **이웃 경계 안에서만** 늘린다.
- *
- * 종전에는 경계를 무시하고 늘려 다음 단어를 삼켰다. 이제는 다음 mark를 넘지 못하므로
- * 실제로는 "남은 여유가 있으면 그만큼만" 늘어난다.
- */
-export const MIN_CLIP_MS = 320;
+/** 매니페스트 캐시 수명(ms). 증분 생성이 반영되도록 짧게 둔다. */
+const MANIFEST_TTL_MS = 5 * 60 * 1000;
 
-/** 발음 재생 불가 사유. 실패율 실측용으로 분류를 남긴다(ADR-0065 D4). */
+/** key 허용 문자 — gen_all_words.py `word_to_key`와 **같은 규칙이어야 한다**. */
+const KEY_STRIP_RE = /[^a-z0-9-]/g;
+
+/** 발음 재생 불가 사유. */
 export type WordAudioFailure =
-  /** 이 책·보이스에 해당 페이지의 book_audio 행이 없다. */
-  | 'no-audio-row'
-  /** book_audio 행은 있으나 marks_path가 비어 있다. */
-  | 'no-marks-path'
-  /** marks 파일을 받지 못했다(네트워크·404). */
-  | 'marks-fetch-failed'
-  /** marks는 받았으나 단어와 일치하는 mark가 없다(표기 차이 등). */
-  | 'word-not-matched';
+  /** 매니페스트에 없는 단어 — 아직 합성되지 않았다(신규 책 추가 직후 등). */
+  | 'not-in-manifest'
+  /** 매니페스트를 받지 못했다(네트워크·404). 전 단어가 이 사유로 접힌다. */
+  | 'manifest-unavailable';
 
-/** 단어 1개의 발음 구간. */
+/** 단어 1개의 발음 오디오. */
 export interface WordAudioClip {
   /** select-words의 정규형. */
   word: string;
-  /** 재생 가능 여부. false여도 **카드 후보에서 빼지 않는다**(ADR-0065 D4). */
+  /** 재생 가능 여부. false여도 **카드에서 빼지 않는다**(ADR-0065 D4 — 표시만 한다). */
   playable: boolean;
-  /** 재생할 페이지 오디오(0-based page_index). 불가 시 null. */
-  pageIndex: number | null;
-  /** 페이지 mp3 공개 URL. 불가 시 null. */
+  /** 단어 mp3 공개 URL. 불가 시 null. 파일 **처음부터 끝까지** 재생하면 된다. */
   audioUrl: string | null;
-  /** 구간 시작(ms). */
-  startMs: number | null;
-  /** 구간 끝(ms). */
-  endMs: number | null;
   /** playable=false일 때의 사유. */
   failure: WordAudioFailure | null;
 }
 
-interface AudioRow {
-  page_index: number;
-  audio_path: string;
-  marks_path: string | null;
-  duration_ms: number | null;
-}
-
-/** Polly word speech mark 1건. components/book/highlighted-text.tsx:22-31과 동일 형태. */
-interface WordMark {
-  time: number;
-  value: string;
-  start: number;
-  end: number;
-}
-
 export interface WordAudioOptions {
-  /** 오디오 base URL 상위 지정. 미지정 시 env → Supabase 공개 버킷 순으로 해소한다. */
+  /** 오디오 base URL 상위 지정. 미지정 시 audio-manifest의 해소 체인을 쓴다. */
   audioBase?: string;
-  /** book_audio.voice 필터. 기본 'danielle'. */
+  /** 보이스 폴더명. 기본 'danielle'. */
   voice?: string;
-  /** marks 파일 fetch 구현 주입점(테스트·드라이런용). 기본은 전역 fetch. */
+  /** fetch 구현 주입점(테스트·스크립트용). 기본은 전역 fetch. */
   fetchImpl?: typeof fetch;
 }
 
-/**
- * line-delimited speech marks JSON 파싱(word만).
- * components/book/audio-reader.tsx:124-145의 포트 — 깨진 줄은 건너뛴다.
- */
-export function parseMarks(raw: string): WordMark[] {
-  const out: WordMark[] = [];
-  for (const line of raw.split('\n')) {
-    const t = line.trim();
-    if (!t) continue;
-    try {
-      const m = JSON.parse(t) as Partial<WordMark> & { type?: string };
-      if (m.type === 'word' && typeof m.time === 'number') {
-        out.push({
-          time: m.time,
-          value: String(m.value ?? ''),
-          start: Number(m.start),
-          end: Number(m.end),
-        });
-      }
-    } catch {
-      // 깨진 줄은 건너뛴다(구간 산출만 영향, 페이지 재생 무관).
-    }
-  }
-  return out;
+interface WordManifest {
+  voice: string;
+  count: number;
+  /** 정규형 단어 → 파일 key. */
+  words: Record<string, string>;
 }
 
 /**
- * 카드 단어들의 발음 구간을 산출한다.
+ * 정규형 단어 → Storage 파일 key (ADR-0065 D-A4).
  *
- * 단어마다 등장 위치를 순서대로 훑어 **처음으로 재생 가능한 구간 1개**를 찾는다
- * (발음은 한 번만 들려주면 되므로 모든 등장을 다 계산하지 않는다). 한 페이지의 marks는
- * 한 번만 받아 캐시하므로, 카드 8장이 같은 페이지에 몰려도 fetch는 1회다.
+ * `'`를 제거하고 그 밖의 비허용 문자도 제거한다.
+ *   said → said · buzz-buzz → buzz-buzz · don't → dont
  *
- * @param candidates select-words.ts가 고른 후보. 각 후보의 `occurrences`를 그대로 쓴다.
+ * ★ scripts/wordplay/gen_all_words.py의 `word_to_key`와 **반드시 같은 결과**여야 한다.
+ *   한쪽만 바꾸면 업로드된 파일과 조회 경로가 어긋나 전 단어가 조용히 재생 불가가 된다.
+ */
+export function wordToKey(word: string): string {
+  return word.replace(/'/g, '').replace(KEY_STRIP_RE, '');
+}
+
+/** 단어 mp3의 공개 URL. */
+function wordAudioUrl(audioBase: string, voice: string, key: string): string {
+  return `${audioBase}/${WORDS_PREFIX}/${voice}/${key}.mp3`;
+}
+
+/** 프로세스 수명 동안의 매니페스트 캐시 — 카드 요청마다 받아오지 않는다. */
+const manifestCache = new Map<string, { at: number; data: WordManifest | null }>();
+
+async function loadManifest(
+  audioBase: string,
+  voice: string,
+  doFetch: typeof fetch,
+): Promise<WordManifest | null> {
+  const cacheKey = `${audioBase}::${voice}`;
+  const hit = manifestCache.get(cacheKey);
+  if (hit && Date.now() - hit.at < MANIFEST_TTL_MS) {
+    return hit.data;
+  }
+
+  let data: WordManifest | null = null;
+  try {
+    const res = await doFetch(
+      `${audioBase}/${WORDS_PREFIX}/${voice}/${MANIFEST_FILE}`,
+      { cache: 'no-store' },
+    );
+    if (res.ok) {
+      const parsed = (await res.json()) as Partial<WordManifest>;
+      if (parsed && typeof parsed.words === 'object' && parsed.words) {
+        data = {
+          voice: parsed.voice ?? voice,
+          count: parsed.count ?? Object.keys(parsed.words).length,
+          words: parsed.words as Record<string, string>,
+        };
+      }
+    }
+  } catch {
+    // 네트워크 실패 — 발음만 빠지고 카드 자체는 그대로 보인다(가용성 우선).
+    data = null;
+  }
+
+  manifestCache.set(cacheKey, { at: Date.now(), data });
+  return data;
+}
+
+/**
+ * 카드 단어들의 발음 오디오를 해소한다.
+ *
+ * 매니페스트를 **한 번만** 받아 전 단어를 판정한다(카드 8장에 요청 1회).
+ *
+ * @param candidates select-words.ts가 고른 후보.
  * @returns 후보와 **같은 순서·같은 길이**의 배열. 재생 불가 단어도 `playable:false`로
- *   자리를 지킨다 — 카드에서 빼지 않는다(ADR-0065 D4 "카드 후보에서 제외하지 않음").
+ *   자리를 지킨다 — 카드에서 빼지 않는다(ADR-0065 D4).
  */
 export async function resolveWordAudioClips(
-  supabase: SupabaseClient,
-  bookId: string,
   candidates: readonly WordCandidate[],
   opts?: WordAudioOptions,
 ): Promise<WordAudioClip[]> {
-  const voice = opts?.voice ?? DEFAULT_READER_VOICE;
+  const voice = opts?.voice ?? DEFAULT_WORD_VOICE;
   const audioBase = resolveAudioBase(opts);
   const doFetch = opts?.fetchImpl ?? fetch;
 
-  // 오디오 정본 — book_audio 행. 업로드된 오브젝트 키를 그대로 쓴다(추측 조립 금지,
-  // audio-manifest.ts:23-30). duration_ms는 마지막 단어 상한 계산에 쓴다.
-  const { data, error } = await supabase
-    .from('book_audio')
-    .select('page_index, audio_path, marks_path, duration_ms')
-    .eq('book_id', bookId)
-    .eq('voice', voice)
-    .eq('kind', READER_AUDIO_KIND)
-    .returns<AudioRow[]>();
+  const manifest = await loadManifest(audioBase, voice, doFetch);
 
-  if (error) {
-    throw new Error(`resolveWordAudioClips: book_audio 조회 실패 — ${error.message}`);
-  }
-
-  const audioByPage = new Map((data ?? []).map((row) => [row.page_index, row] as const));
-
-  /** pageIndex → marks. null = 받기 실패(재시도하지 않는다). */
-  const marksCache = new Map<number, WordMark[] | null>();
-
-  async function loadMarks(row: AudioRow): Promise<WordMark[] | null> {
-    const cached = marksCache.get(row.page_index);
-    if (cached !== undefined) return cached;
-
-    let marks: WordMark[] | null = null;
-    try {
-      const res = await doFetch(`${audioBase}/${row.marks_path}`);
-      if (res.ok) {
-        marks = parseMarks(await res.text());
-      }
-    } catch {
-      marks = null;
-    }
-    marksCache.set(row.page_index, marks);
-    return marks;
-  }
-
-  const clips: WordAudioClip[] = [];
-
-  for (const candidate of candidates) {
-    let clip: WordAudioClip | null = null;
-    // 가장 "약한" 실패 사유를 기억해 둔다 — 모든 등장이 실패했을 때 보고용.
-    let lastFailure: WordAudioFailure = 'no-audio-row';
-
-    for (const occurrence of candidate.occurrences) {
-      const row = audioByPage.get(occurrence.pageIndex);
-      if (!row) {
-        lastFailure = 'no-audio-row';
-        continue;
-      }
-      if (!row.marks_path) {
-        lastFailure = 'no-marks-path';
-        continue;
-      }
-
-      const marks = await loadMarks(row);
-      if (!marks) {
-        lastFailure = 'marks-fetch-failed';
-        continue;
-      }
-
-      // 이 페이지에서 같은 단어에 해당하는 mark들.
-      const matchIndexes: number[] = [];
-      for (let i = 0; i < marks.length; i++) {
-        if (normalizeWord(marks[i].value) === candidate.word) {
-          matchIndexes.push(i);
-        }
-      }
-      if (matchIndexes.length === 0) {
-        lastFailure = 'word-not-matched';
-        continue;
-      }
-
-      // 페이지 내 등장 순번(ordinal)에 대응하는 mark를 고른다. 토큰과 mark의 개수가
-      // 어긋나면(구두점 처리 차이 등) 첫 매칭으로 접는다 — 발음은 같기 때문이다.
-      const markIndex = matchIndexes[occurrence.ordinal] ?? matchIndexes[0];
-      const mark = marks[markIndex];
-      const next = marks[markIndex + 1];
-
-      // ── 이웃 경계 클램프 (E-2b 결함 수정 2026-08-20) ──
-      // word mark는 연속이다 — 단어 i의 구간은 [t_i, t_{i+1})이고 그 사이에 빈 곳이 없다.
-      // 따라서 여유를 고정값으로 더하면 **반드시** 옆 단어를 침범한다(팀장 실청: 'stop'을
-      // 눌렀는데 'and stop'). 여유는 이웃 mark가 허용하는 만큼만 쓴다.
-      const prev = markIndex > 0 ? marks[markIndex - 1] : null;
-
-      /** 앞으로 넘어갈 수 없는 하한 = 이전 단어의 시작(없으면 파일 처음). */
-      const lowerBound = prev ? prev.time : 0;
-      /** 뒤로 넘어갈 수 없는 상한 = 다음 단어의 시작(없으면 파일 끝). */
-      const upperBound = next
-        ? next.time
-        : (row.duration_ms ?? mark.time + LAST_WORD_MAX_MS);
-
-      const rawEnd = next
-        ? next.time
-        : Math.min(
-            row.duration_ms ?? mark.time + LAST_WORD_MAX_MS,
-            mark.time + LAST_WORD_MAX_MS,
-          );
-
-      const startMs = Math.max(lowerBound, mark.time - LEAD_IN_MS);
-      // 최소 길이 연장도 상한 안에서만 한다 — 경계를 넘겨 늘리면 같은 침범이 재발한다.
-      const endMs = Math.min(
-        upperBound,
-        Math.max(rawEnd + TAIL_MS, startMs + MIN_CLIP_MS),
-      );
-
-      clip = {
-        word: candidate.word,
-        playable: true,
-        pageIndex: occurrence.pageIndex,
-        audioUrl: `${audioBase}/${row.audio_path}`,
-        startMs,
-        endMs,
-        failure: null,
-      };
-      break;
-    }
-
-    clips.push(
-      clip ?? {
+  return candidates.map((candidate) => {
+    if (!manifest) {
+      return {
         word: candidate.word,
         playable: false,
-        pageIndex: null,
         audioUrl: null,
-        startMs: null,
-        endMs: null,
-        failure: lastFailure,
-      },
-    );
-  }
+        failure: 'manifest-unavailable' as const,
+      };
+    }
 
-  return clips;
+    // 매니페스트가 정본이다 — 목록에 없으면 파일도 없다(404를 만나기 전에 판정).
+    const key = manifest.words[candidate.word];
+    if (!key) {
+      return {
+        word: candidate.word,
+        playable: false,
+        audioUrl: null,
+        failure: 'not-in-manifest' as const,
+      };
+    }
+
+    return {
+      word: candidate.word,
+      playable: true,
+      audioUrl: wordAudioUrl(audioBase, voice, key),
+      failure: null,
+    };
+  });
 }

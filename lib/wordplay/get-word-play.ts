@@ -25,12 +25,14 @@ export interface WordPlayCard {
   word: string;
   /** 발음 재생 가능 여부. false면 스피커 아이콘을 숨긴다(E-2b 1-e). */
   playable: boolean;
-  /** 페이지 mp3 공개 URL. playable=false면 null. */
+  /**
+   * **단어 단독 mp3**의 공개 URL. playable=false면 null.
+   *
+   * ★ ADR-0065 Amendment #1(W-1)로 본문 구간 재생이 폐기됐다 — 이제 이 URL은
+   *   그 단어만 담긴 파일이므로 **처음부터 끝까지** 재생하면 된다.
+   *   구간 좌표(startMs·endMs)는 더 이상 존재하지 않는다.
+   */
   audioUrl: string | null;
-  /** 재생 구간 시작(ms). */
-  startMs: number | null;
-  /** 재생 구간 끝(ms). */
-  endMs: number | null;
 }
 
 export interface WordPlayData {
@@ -55,7 +57,8 @@ export async function getWordPlay(
     return null;
   }
 
-  const clips = await resolveWordAudioClips(supabase, bookId, selection.candidates);
+  // 매니페스트 1회 조회로 전 단어를 판정한다(DB 접근 0건 — Storage 읽기만).
+  const clips = await resolveWordAudioClips(selection.candidates);
 
   // clips는 candidates와 같은 순서·같은 길이임이 보장된다(word-audio.ts @returns).
   const cards: WordPlayCard[] = selection.candidates.map((candidate, i) => {
@@ -64,8 +67,6 @@ export async function getWordPlay(
       word: candidate.word,
       playable: clip.playable,
       audioUrl: clip.audioUrl,
-      startMs: clip.startMs,
-      endMs: clip.endMs,
     };
   });
 
