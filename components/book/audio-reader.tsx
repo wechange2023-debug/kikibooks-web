@@ -1052,7 +1052,7 @@ export function AudioReader({
                 }`}
               />
             </button>
-            <span className="hidden whitespace-nowrap text-label text-text-variant md:inline">
+            <span className="hidden whitespace-nowrap text-label text-text-variant sm:inline">
               자막
             </span>
             <button
@@ -1076,10 +1076,13 @@ export function AudioReader({
                 }`}
               />
             </button>
-            {/* 토글 라벨(F4) — md 미만에서만 접는다(hidden md:inline). 접히는 구간에서도 스위치의
+            {/* 토글 라벨(F4) — sm 미만에서만 접는다(hidden sm:inline). 접히는 구간에서도 스위치의
                 aria-label('재생 후 자동 넘김')은 그대로라 스크린리더 정보 손실은 0이다.
-                whitespace-nowrap 유지 — 노출 구간에서 두 줄로 흘러 P1-D를 깨지 않게. */}
-            <span className="hidden whitespace-nowrap text-label text-text-variant md:inline">
+                whitespace-nowrap 유지 — 노출 구간에서 두 줄로 흘러 P1-D를 깨지 않게.
+                ★ 2026-08-20: 기준을 md(768px) → sm(640px)으로 내렸다. 폰 가로모드(740px 전후)에서
+                  이름표가 사라져 두 스위치의 구분이 안 된다는 지적. 640px에서 좌측 열 가용폭은
+                  264px이고 라벨 포함 좌측 내용은 205px이라 단일행이 유지된다(실측). */}
+            <span className="hidden whitespace-nowrap text-label text-text-variant sm:inline">
               {autoAdvanceLabel}
             </span>
           </div>

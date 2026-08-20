@@ -33,10 +33,11 @@ import { completeReadingSession } from '@/lib/book/reading-session';
  * 디자인 (design-system §6.1 Button CTA — read-button.tsx 형제 정합):
  *   bg-cta + text-on-cta + shadow-elev-cta + rounded-pill + h-[52px] (lg 액션, §6.1 CTA).
  *
- *   ★ 375px 대응(2026-08-20): 가로 여백을 px-3(sm 이상 px-8)으로 줄이고 whitespace-nowrap을
- *     둔다. 오디오 리더 하단은 grid-cols-[1fr_auto_1fr]이라 우측 열이 **139.5px**뿐인데
- *     종전 px-8 구성은 175px(진행 중 190px)이라 라벨이 두 줄로 흘렀다(iPhone SE 실측).
- *     px-3 구성은 135px(진행 중 122px)로 들어온다. h-[52px]는 그대로라 44px 하한 유지.
+ *   ★ 375px 대응(2026-08-20 재측정): 오디오 리더 하단은 grid-cols-[1fr_auto_1fr]이라
+ *     우측 열이 **131.5px**뿐이다(브라우저 실측 — 이전 보고의 139.5px은 오산이었다).
+ *     px-8+아이콘 174.8px → px-3+아이콘 134.8px로도 **3.3px 초과**라 줄바꿈이 남았다.
+ *     아이콘까지 sm 미만에서 접어 **106.8px**(진행 중 121.6px)로 내렸다 — 여유 24.7px.
+ *     h-[52px]는 그대로라 터치 타깃 44px 하한(§6.5 :478) 유지.
  *   pending 시 disabled + opacity-[0.38](§ level-selector 토큰) + Loader2 스피너 +
  *   completingLabel. raw HEX 0건(Hard Rule 10).
  *
@@ -81,16 +82,18 @@ export function FinishButton({ bookId, copy }: FinishButtonProps) {
         aria-busy={isPending}
         className="inline-flex h-[52px] items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-cta px-3 text-body font-semibold text-on-cta shadow-elev-cta sm:px-8 transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-[0.38] disabled:hover:translate-y-0 disabled:hover:bg-cta"
       >
-        {/* 375px에서 우측 그리드 열이 139.5px뿐이라 진행 중 라벨('완독 처리 중…' 98px)과
-            아이콘이 함께 들어가지 않는다. 진행 중에는 sm 미만에서 스피너를 접는다 —
-            라벨 자체가 진행 상태를 말하고 aria-busy가 남아 정보 손실은 0이다. */}
+        {/* 375px 실측(2026-08-20): 리더 하단 우측 그리드 열은 **131.5px**뿐이다.
+            아이콘(20px)+gap(8px)을 포함하면 기본 134.8px·진행 중 149.6px로 열을 넘어
+            줄바꿈이 난다. 아이콘은 aria-hidden 장식이므로 sm 미만에서 접는다 —
+            접으면 106.8px / 121.6px로 각각 24.7px·9.9px 여유가 생긴다.
+            라벨 텍스트와 aria-busy가 남아 정보 손실은 0이다. */}
         {isPending ? (
           <Loader2
             className="hidden h-5 w-5 animate-spin sm:block"
             aria-hidden="true"
           />
         ) : (
-          <Check className="h-5 w-5" aria-hidden="true" />
+          <Check className="hidden h-5 w-5 sm:block" aria-hidden="true" />
         )}
         {isPending ? copy.completingLabel : copy.buttonLabel}
       </button>

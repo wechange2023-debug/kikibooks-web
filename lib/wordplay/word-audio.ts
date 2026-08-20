@@ -63,11 +63,31 @@ export const LAST_WORD_MAX_MS = 1500;
  * 그래서 앞에 lead-in, 뒤에 tail을 두고 최소 길이를 보장한다. 뒷말로 조금 번지는 것은
  * 허용한다 — 발음을 온전히 듣는 편이 낫다.
  */
-/** 구간 시작을 이만큼 앞당긴다(제안값). seek이 단어 시작보다 늦게 떨어지는 것을 흡수. */
-export const LEAD_IN_MS = 60;
-/** 구간 끝을 이만큼 늘린다(제안값 — 지시서 제안 범위 80~120ms 내). 어미 잘림 방지. */
-export const TAIL_MS = 110;
-/** 최소 구간 길이(제안값). `a`처럼 118ms짜리 구간은 눌러도 들리지 않는다. */
+/**
+ * 구간 시작을 앞당기는 여유(ms). **현재 0** — 측정 전까지 켜지 않는다.
+ *
+ * 종전 60ms는 'stop'을 눌렀을 때 앞말이 함께 들리는 침범('and stop')을 만들었다.
+ * word mark는 **연속**이라(단어 i의 구간 = [t_i, t_{i+1})) 앞으로 넘긴 만큼은 반드시
+ * 이전 단어의 구간이다. seek 오차를 흡수하려는 값이었으나 그 오차를 실측하지 못했고
+ * (§파일 상단 주석), 근거 없는 값은 침범만 남긴다.
+ *
+ * 0보다 크게 설정해도 아래 `resolveWordAudioClips`가 **이전 mark 경계에서 클램프**하므로
+ * 구조적으로 이전 단어의 시작을 넘지는 못한다. 실측 후 안전하게 올릴 수 있는 손잡이다.
+ */
+export const LEAD_IN_MS = 0;
+/**
+ * 구간 끝을 늘리는 여유(ms). **현재 0** — 같은 이유.
+ *
+ * 내부 단어의 끝은 이미 다음 mark 시각이라, 여기서 더 늘리면 곧바로 다음 단어를 침범한다.
+ * 아래 클램프가 **다음 mark 경계**를 넘지 못하게 막으므로 값과 무관하게 침범은 0이다.
+ */
+export const TAIL_MS = 0;
+/**
+ * 최소 구간 길이(ms). 짧은 구간의 가청성을 위한 값이나, **이웃 경계 안에서만** 늘린다.
+ *
+ * 종전에는 경계를 무시하고 늘려 다음 단어를 삼켰다. 이제는 다음 mark를 넘지 못하므로
+ * 실제로는 "남은 여유가 있으면 그만큼만" 늘어난다.
+ */
 export const MIN_CLIP_MS = 320;
 
 /** 발음 재생 불가 사유. 실패율 실측용으로 분류를 남긴다(ADR-0065 D4). */
@@ -248,8 +268,19 @@ export async function resolveWordAudioClips(
       const mark = marks[markIndex];
       const next = marks[markIndex + 1];
 
-      // 끝 시각: 다음 mark가 있으면 그 시작. 없으면(= 페이지 마지막 단어, ADR-0065 Q3)
-      // 오디오 전체 길이와 start + LAST_WORD_MAX_MS 중 **이른 쪽**.
+      // ── 이웃 경계 클램프 (E-2b 결함 수정 2026-08-20) ──
+      // word mark는 연속이다 — 단어 i의 구간은 [t_i, t_{i+1})이고 그 사이에 빈 곳이 없다.
+      // 따라서 여유를 고정값으로 더하면 **반드시** 옆 단어를 침범한다(팀장 실청: 'stop'을
+      // 눌렀는데 'and stop'). 여유는 이웃 mark가 허용하는 만큼만 쓴다.
+      const prev = markIndex > 0 ? marks[markIndex - 1] : null;
+
+      /** 앞으로 넘어갈 수 없는 하한 = 이전 단어의 시작(없으면 파일 처음). */
+      const lowerBound = prev ? prev.time : 0;
+      /** 뒤로 넘어갈 수 없는 상한 = 다음 단어의 시작(없으면 파일 끝). */
+      const upperBound = next
+        ? next.time
+        : (row.duration_ms ?? mark.time + LAST_WORD_MAX_MS);
+
       const rawEnd = next
         ? next.time
         : Math.min(
@@ -257,10 +288,12 @@ export async function resolveWordAudioClips(
             mark.time + LAST_WORD_MAX_MS,
           );
 
-      // 여유 적용(위 LEAD_IN_MS 주석의 근거). 파일 경계를 넘지 않도록 마지막에 클램프한다.
-      const startMs = Math.max(0, mark.time - LEAD_IN_MS);
-      const withTail = Math.max(rawEnd + TAIL_MS, startMs + MIN_CLIP_MS);
-      const endMs = row.duration_ms ? Math.min(withTail, row.duration_ms) : withTail;
+      const startMs = Math.max(lowerBound, mark.time - LEAD_IN_MS);
+      // 최소 길이 연장도 상한 안에서만 한다 — 경계를 넘겨 늘리면 같은 침범이 재발한다.
+      const endMs = Math.min(
+        upperBound,
+        Math.max(rawEnd + TAIL_MS, startMs + MIN_CLIP_MS),
+      );
 
       clip = {
         word: candidate.word,
