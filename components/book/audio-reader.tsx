@@ -1026,8 +1026,10 @@ export function AudioReader({
             상쇄해 리더 폭 전체를 덮고(경계선 edge-to-edge), 안쪽에서 px로 되돌려 컨트롤은
             max-w-4xl mx-auto로 기존 위치를 그대로 유지한다. 이미지 행(flex-1) 흡수로 무스크롤 불변. */}
         <div className="w-full shrink-0 border-t border-outline bg-gradient-to-b from-surface to-surface-2 pt-2 -mx-2 px-2 md:-mx-4 md:px-4">
+          {/* min-w-0 — 그리드 자식의 기본 min-width:auto가 내용물 폭을 하한으로 잡아
+              좁은 화면에서 열이 밀려나는 것을 막는다(375px 대응). */}
           <div className="mx-auto grid w-full max-w-4xl grid-cols-[1fr_auto_1fr] items-center gap-2">
-          <div className="flex items-center justify-start gap-1.5">
+          <div className="flex min-w-0 items-center justify-start gap-1.5">
             {/* 자막 스위치 — 아이콘 버튼에서 스위치로 통일(피드백 v2 Task 1). '자동 넘김'과
                 동일한 스위치 언어(h-6 w-11 pill, primary=켜짐)를 써 두 토글의 시각·조작을 맞춘다.
                 켜짐=자막 표시. 라벨 '자막'은 md 미만에서 접어(P1-D 단일행 유지) 스위치만 남기고,
@@ -1105,7 +1107,7 @@ export function AudioReader({
               grayscale로 primary 주황을 회색으로 낮추고, pointer-events-none으로 클릭을 막는다.
               FinishButton은 HtmlReader·AsbReader와 공유하므로 시그니처·스타일을 건드리지 않는다. */}
           <div
-            className={`flex items-center justify-end ${
+            className={`flex min-w-0 items-center justify-end ${
               reachedEnd ? '' : 'cursor-not-allowed'
             }`}
             aria-disabled={!reachedEnd}

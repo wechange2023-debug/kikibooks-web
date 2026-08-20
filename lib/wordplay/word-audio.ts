@@ -43,6 +43,33 @@ const DEFAULT_READER_VOICE = 'danielle';
  */
 export const LAST_WORD_MAX_MS = 1500;
 
+/**
+ * 구간 앞뒤 여유 — **재생 타이밍 오차 흡수용** (E-2b 결함 수정, 2026-08-20).
+ *
+ * ★ atempo 가설은 실측으로 반증됐다. 파이프라인이 이미 marks를 보정해 저장한다
+ *   (scripts/tts_pilot/run_tts_fullbatch.py:333
+ *    `marks = [{**m, "time": int(round(m["time"] / atempo))} ...]`).
+ *   Storage 서빙본이 로컬 배포본(스케일 완료)과 일치함을 대조로 확인했다 —
+ *   native 650·925ms → 배포·서빙 765·1088ms (비 1.1769 = 1/0.85). 추가 스케일은 오히려 틀린다.
+ *
+ * ★ 실제 잘림 원인은 **구간 폭에 여유가 0**이라는 점이다. 종전 규칙은
+ *   `[mark[i].time, mark[i+1].time)`로 앞말과 뒷말 사이를 빈틈없이 잘랐는데, 재생 쪽에는
+ *   피할 수 없는 오차가 있다:
+ *     - mp3 seek은 프레임 단위로 양자화된다(1152 샘플 @24kHz = **48ms**)
+ *     - ffmpeg 재인코딩으로 붙는 인코더 지연(수십 ms)을 브라우저가 항상 벗겨주지 않는다
+ *   드라이런 실측 구간 길이는 중앙값 559ms·최소 118ms였다. 최소 구간에서는 48ms 오차만으로도
+ *   40%가 날아간다 — "대부분의 단어가 뭉개지고 잘린다"는 증상과 일치한다.
+ *
+ * 그래서 앞에 lead-in, 뒤에 tail을 두고 최소 길이를 보장한다. 뒷말로 조금 번지는 것은
+ * 허용한다 — 발음을 온전히 듣는 편이 낫다.
+ */
+/** 구간 시작을 이만큼 앞당긴다(제안값). seek이 단어 시작보다 늦게 떨어지는 것을 흡수. */
+export const LEAD_IN_MS = 60;
+/** 구간 끝을 이만큼 늘린다(제안값 — 지시서 제안 범위 80~120ms 내). 어미 잘림 방지. */
+export const TAIL_MS = 110;
+/** 최소 구간 길이(제안값). `a`처럼 118ms짜리 구간은 눌러도 들리지 않는다. */
+export const MIN_CLIP_MS = 320;
+
 /** 발음 재생 불가 사유. 실패율 실측용으로 분류를 남긴다(ADR-0065 D4). */
 export type WordAudioFailure =
   /** 이 책·보이스에 해당 페이지의 book_audio 행이 없다. */
@@ -223,19 +250,24 @@ export async function resolveWordAudioClips(
 
       // 끝 시각: 다음 mark가 있으면 그 시작. 없으면(= 페이지 마지막 단어, ADR-0065 Q3)
       // 오디오 전체 길이와 start + LAST_WORD_MAX_MS 중 **이른 쪽**.
-      const endMs = next
+      const rawEnd = next
         ? next.time
         : Math.min(
             row.duration_ms ?? mark.time + LAST_WORD_MAX_MS,
             mark.time + LAST_WORD_MAX_MS,
           );
 
+      // 여유 적용(위 LEAD_IN_MS 주석의 근거). 파일 경계를 넘지 않도록 마지막에 클램프한다.
+      const startMs = Math.max(0, mark.time - LEAD_IN_MS);
+      const withTail = Math.max(rawEnd + TAIL_MS, startMs + MIN_CLIP_MS);
+      const endMs = row.duration_ms ? Math.min(withTail, row.duration_ms) : withTail;
+
       clip = {
         word: candidate.word,
         playable: true,
         pageIndex: occurrence.pageIndex,
         audioUrl: `${audioBase}/${row.audio_path}`,
-        startMs: mark.time,
+        startMs,
         endMs,
         failure: null,
       };

@@ -113,12 +113,12 @@ function useClipPlayer() {
       const el = audioRef.current;
       if (!el) return;
 
+      // 좁혀진 타입을 지역에 고정한다 — 아래 클로저 안에서는 narrowing이 유지되지 않는다.
+      const src = card.audioUrl;
+      const startSec = card.startMs / 1000;
+
       stopRaf();
       stopAtRef.current = card.endMs / 1000;
-
-      // 같은 mp3면 src를 다시 넣지 않는다(재로딩으로 첫 재생이 끊기는 것을 막는다).
-      if (el.src !== card.audioUrl) el.src = card.audioUrl;
-      el.currentTime = card.startMs / 1000;
       setPlayingWord(card.word);
 
       const tick = () => {
@@ -131,14 +131,32 @@ function useClipPlayer() {
         rafRef.current = requestAnimationFrame(tick);
       };
 
-      el.play()
-        .then(() => {
-          rafRef.current = requestAnimationFrame(tick);
-        })
-        .catch(() => {
-          // 브라우저 자동재생 정책 등 — 조용히 무시한다(카드는 그대로 보인다).
-          setPlayingWord(null);
-        });
+      const seekAndPlay = () => {
+        el.currentTime = startSec;
+        el.play()
+          .then(() => {
+            rafRef.current = requestAnimationFrame(tick);
+          })
+          .catch(() => {
+            // 브라우저 자동재생 정책 등 — 조용히 무시한다(카드는 그대로 보인다).
+            setPlayingWord(null);
+          });
+      };
+
+      // 같은 mp3면 src를 다시 넣지 않는다(재로딩으로 첫 재생이 끊기는 것을 막는다).
+      if (el.src !== src) {
+        el.src = src;
+      }
+
+      // ★ 메타데이터가 준비되기 전의 seek은 브라우저마다 무시되거나 0으로 되돌아간다.
+      //   그러면 단어가 아니라 **페이지 첫머리**가 재생돼 "뭉개진 소리"로 들린다.
+      //   readyState >= HAVE_METADATA(1)일 때만 즉시 seek하고, 아니면 로드를 기다린다.
+      if (el.readyState >= HAVE_METADATA) {
+        seekAndPlay();
+      } else {
+        el.addEventListener('loadedmetadata', seekAndPlay, { once: true });
+        el.load();
+      }
     },
     [stopRaf],
   );
@@ -148,14 +166,17 @@ function useClipPlayer() {
   return { audioRef, play, stop, playingWord };
 }
 
+/** HTMLMediaElement.HAVE_METADATA — 상수를 직접 쓴다(SSR에서 전역 미정의 회피). */
+const HAVE_METADATA = 1;
+
 const CARD_BASE =
-  'flex min-h-[64px] items-center justify-center gap-2 rounded-lg border px-3 py-3 text-body font-semibold transition-all duration-200 ease-kiki outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 motion-reduce:transition-none';
+  'flex min-h-[64px] items-center justify-center gap-2 rounded-lg border px-2 py-3 text-body font-semibold sm:px-3 transition-all duration-200 ease-kiki outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 motion-reduce:transition-none';
 
 const PRIMARY_BUTTON =
-  'inline-flex h-12 items-center justify-center gap-2 rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0';
+  'inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-cta px-6 sm:px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0';
 
 const SECONDARY_BUTTON =
-  'inline-flex h-12 items-center justify-center gap-2 rounded-pill border border-outline bg-surface px-6 text-body font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 motion-reduce:transition-none';
+  'inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-pill border border-outline bg-surface px-5 sm:px-6 text-body font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 motion-reduce:transition-none';
 
 export function WordPlay({ cards }: { cards: WordPlayCard[] }) {
   const [phase, setPhase] = useState<Phase>('idle');
@@ -221,8 +242,10 @@ export function WordPlay({ cards }: { cards: WordPlayCard[] }) {
 
   return (
     <section className="w-full max-w-md" aria-label="단어 놀이">
-      {/* 구간 재생용 — 화면에 노출하지 않는다(카드 탭이 컨트롤). */}
-      <audio ref={audioRef} preload="none" />
+      {/* 구간 재생용 — 화면에 노출하지 않는다(카드 탭이 컨트롤).
+          preload="metadata"는 오디오 리더 선례(components/book/audio-reader.tsx:1143).
+          메타데이터가 미리 있어야 첫 탭의 seek이 정확히 떨어진다. */}
+      <audio ref={audioRef} preload="metadata" />
 
       {phase === 'idle' && (
         <div className="flex justify-center">
