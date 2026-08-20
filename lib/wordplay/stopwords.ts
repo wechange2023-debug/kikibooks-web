@@ -27,8 +27,11 @@
  *     `alwaysCapitalized` 신호를 함께 반환하되 **필터에는 쓰지 않는다**(ADR 미규정).
  */
 
-/** 불용어 집합. 전부 소문자·정규화된 형태(굽은 따옴표는 `'`로 통일된 뒤 대조된다). */
-export const STOPWORDS: ReadonlySet<string> = new Set([
+/**
+ * ① 기능어 불용어 — ADR-0065 §단어 선정 규칙의 제안 범위(80~120개)가 적용되는 본체.
+ * 전부 소문자·정규화된 형태(굽은 따옴표는 `'`로 통일된 뒤 대조된다).
+ */
+const FUNCTION_STOPWORDS: readonly string[] = [
   // 관사·한정사 (16)
   'the', 'this', 'that', 'these', 'those',
   'some', 'any', 'all', 'both', 'each', 'every', 'other', 'another', 'such', 'same', 'own',
@@ -64,7 +67,40 @@ export const STOPWORDS: ReadonlySet<string> = new Set([
   // 축약형 — 굽은 따옴표 정규화 후 형태. 빈출 상위만 싣는다 (12)
   "don't", "doesn't", "didn't", "isn't", "can't", "won't",
   "i'm", "it's", "he's", "she's", "that's", "there's",
+];
+
+/**
+ * ② 2026-08-20 청취 검수 제외분 (21종) — ADR-0065 Amendment #1 §사후 청취 검수.
+ *
+ * 전량 생성 후 표기 늘림·웃음소리·의성어 35종을 팀장이 실제로 들어보고 판정했다.
+ * **판정 기준**: 표기 늘림·웃음소리·동물 소리 등 **소리 흉내는 제외**하고,
+ * `boom`·`wow` 같은 **감탄사 계열은 유지**한다.
+ *
+ * ★ 여기 오른 단어의 **mp3는 지우지 않는다**(Amendment #1 방침). 재판정 시 재합성
+ *   비용을 피하고 판정 이력을 파일로 남기기 위해서다. 카드 선정에서만 빠진다.
+ *
+ * ★ 이 블록은 ①의 80~120개 범위 밖이다 — 기능어가 아니라 **청취 판정 결과**이므로
+ *   성격이 다르다. 범위 준수는 `FUNCTION_STOPWORD_COUNT`로 따로 확인한다.
+ */
+const LISTENING_EXCLUDED: readonly string[] = [
+  // 표기 늘림 (11)
+  'aaaaahhh', 'awoooo', 'eeee', 'eeeeh', 'hawoooo', 'hooeeeee',
+  'rrrrr', 'shhh', 'ssss', 'whaaat', 'hmmm',
+  // 웃음소리·반복형 (3)
+  'ha-ha', 'dum-dum', 'pam-pam',
+  // 동물 소리·소리 흉내 (7)
+  'achoo', 'moo', 'oink', 'splash', 'shh', 'woof', 'hmm',
+];
+
+/** 카드 선정에서 제외할 전체 집합 = ① 기능어 + ② 청취 검수 제외분. */
+export const STOPWORDS: ReadonlySet<string> = new Set([
+  ...FUNCTION_STOPWORDS,
+  ...LISTENING_EXCLUDED,
 ]);
 
-/** 불용어 개수 — ADR-0065 제안 범위(80~120개) 준수를 코드로 확인 가능하게 노출한다. */
+/** ① 기능어 개수 — ADR-0065 제안 범위(80~120개) 준수를 코드로 확인 가능하게 노출한다. */
+export const FUNCTION_STOPWORD_COUNT = new Set(FUNCTION_STOPWORDS).size;
+/** ② 청취 검수로 제외한 개수 (2026-08-20). */
+export const LISTENING_EXCLUDED_COUNT = new Set(LISTENING_EXCLUDED).size;
+/** 전체 불용어 개수. */
 export const STOPWORD_COUNT = STOPWORDS.size;

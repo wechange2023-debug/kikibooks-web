@@ -582,6 +582,26 @@ Storage 서빙본이 로컬 배포본과 일치한다(native 650·925ms → 배�
 제외**한다(불용어 목록에 추가). **오디오 파일은 지우지 않고 보존**한다 — 재판정 시 다시
 합성하는 비용을 피하고, 판정 이력을 파일로 남기기 위해서다.
 
+#### 판정 결과 (2026-08-20, 팀장 청취) — 대상 35종 중 **21종 제외 · 14종 유지**
+
+**판정 기준**: 표기 늘림·웃음소리·동물 소리 등 **소리 흉내는 제외**하고,
+`boom`·`wow` 같은 **감탄사 계열은 유지**한다.
+
+| 분류 | 제외 (21종) |
+|---|---|
+| 표기 늘림 11 | `aaaaahhh` `awoooo` `eeee` `eeeeh` `hawoooo` `hooeeeee` `rrrrr` `shhh` `ssss` `whaaat` `hmmm` |
+| 웃음소리·반복형 3 | `ha-ha` `dum-dum` `pam-pam` |
+| 동물 소리·소리 흉내 7 | `achoo` `moo` `oink` `splash` `shh` `woof` `hmm` |
+
+**유지 (14종)**: `buzz-buzz` `bye-bye` `doof-doof` `beep` `boom` `hey` `hooray` `knock`
+`oops` `ugh` `wow` `yay` `yum` `t-shirt`
+
+제외분은 `lib/wordplay/stopwords.ts`의 `LISTENING_EXCLUDED` 블록에 기능어 목록과 **분리해**
+등재했다 — 기능어가 아니라 청취 판정 결과이므로 성격이 다르고, ADR의 80~120개 범위는
+기능어 본체(`FUNCTION_STOPWORD_COUNT` = 119)에만 적용된다.
+
+**mp3 21개는 Storage에 그대로 둔다**(위 보존 원칙). 카드 선정에서만 빠진다.
+
 ### Open Questions (Amendment)
 
 - **QA-1 — 감속 적용 여부. → 확정(2026-08-20 팀장 판정)**: **감속(atempo 0.85) · Danielle**.
