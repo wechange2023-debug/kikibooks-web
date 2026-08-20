@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { z } from 'zod';
 
 import { POST_LOGIN_PATH } from '@/lib/auth/routes';
+import { markOnboardingSkipped } from '@/lib/child-optional/skip';
 import {
   MAX_AGE,
   MAX_LEVEL,
@@ -70,5 +71,31 @@ export async function registerChild(
     };
   }
 
+  redirect(POST_LOGIN_PATH);
+}
+
+/**
+ * 온보딩 "나중에 할게요" — ADR-0064 **D3**.
+ *
+ * 자녀 등록을 하지 않고 둘러보기로 넘어간다. 하는 일은 둘뿐이다:
+ *   1. 스킵 쿠키를 심는다(`lib/child-optional/skip.ts`) — 다음 로그인부터
+ *      `resolvePostLoginPath`가 `/`로 보낸다(D2).
+ *   2. `/`로 이동한다.
+ *
+ * ★ **DB를 건드리지 않는다.** `children` INSERT도, `profiles` UPDATE도 없다 —
+ *   건너뛰기는 “자녀가 없다”를 기록하는 것이 아니라 “지금은 만들지 않겠다”만
+ *   기억하는 동작이다. 나중에 `/onboarding`으로 돌아오면 그대로 등록할 수 있다
+ *   (역방향 가드는 자녀가 **있을 때**만 되돌린다 — `app/onboarding/page.tsx:33-35`).
+ *
+ * 인증 검사를 따로 하지 않는다 — `/onboarding`은 보호 라우트라 미들웨어가
+ * 비로그인을 이미 막았고(`PROTECTED_PREFIXES`), 이 액션이 얻는 것은 쿠키 1개뿐이라
+ * 권한 경계가 아니다(`skip.ts` JSDoc “이 쿠키가 하지 않는 일” 참조).
+ *
+ * 반환값이 없다 — `redirect()`가 NEXT_REDIRECT를 throw하므로 정상 경로는 항상 이탈이다.
+ *
+ * ADR: docs/adr/0064-child-optional-registration.md D2·D3
+ */
+export async function skipOnboarding(): Promise<void> {
+  markOnboardingSkipped();
   redirect(POST_LOGIN_PATH);
 }

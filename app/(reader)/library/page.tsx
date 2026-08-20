@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import { LibraryBrowser } from '@/components/library/library-browser';
-import { ONBOARDING_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
-import { getActiveChild } from '@/lib/home/active-child';
+import { SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getLibraryCopy } from '@/lib/library/copy';
 import {
   getBooks,
@@ -29,12 +28,13 @@ import { BRAND_NAME } from '@/lib/brand';
  *     후속 페이지 fetch.
  *
  * ──────────────────────────────────────────────────────────────────────────────
- * 3-가드 (intent §4.5, home/page.tsx 패턴 정합)
+ * 2-가드 (intent §4.5, home/page.tsx 패턴 정합)
  * ──────────────────────────────────────────────────────────────────────────────
  *   1. auth.getUser → 미인증 redirect(SIGN_IN_PATH) — 미들웨어 1차, 본 페이지 2차 안전망
- *   2. getActiveChild → 자녀 0명 redirect(ONBOARDING_PATH) — "분기는 도착 지점에서"
- *      (phase-08 onboarding-flow + ADR-0011 결정 1 계승)
- *   3. 필터 입력 검증 → /library는 searchParams.category를 초기 필터로 복원(아래 L91~).
+ *      — **자녀 0명 가드는 ADR-0064 D6으로 삭제됐다**(2026-08-20). 자녀 없이도
+ *        목록을 볼 수 있어야 하며, activeChild는 이 페이지에서 가드 외 용도가 없었다
+ *        (아래 activeChildId 미주입 주석 참조). 조회는 getBooks(supabase, filters, null).
+ *   2. 필터 입력 검증 → /library는 searchParams.category를 초기 필터로 복원(아래 L91~).
  *      클라→URL 동기화는 category만 구현됨(library-browser.tsx history.replaceState shallow,
  *      커밋 예정) — level·keyword의 URL 동기화는 여전히 F-item(ADR-0018 D12 명시 0건).
  *      필터 입력 검증은 fetchLibraryPage
@@ -83,12 +83,6 @@ export default async function LibraryPage({ searchParams }: LibraryPageProps) {
 
   if (!user) {
     redirect(SIGN_IN_PATH);
-  }
-
-  // 가드 2: 자녀 0명 → 온보딩 (home/page.tsx 정합 — "분기는 도착 지점에서")
-  const activeChild = await getActiveChild(supabase, user.id);
-  if (!activeChild) {
-    redirect(ONBOARDING_PATH);
   }
 
   // searchParams.category 검증 — 홈 카테고리 카드(/library?category={slug}) 진입점.

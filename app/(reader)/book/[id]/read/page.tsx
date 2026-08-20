@@ -14,6 +14,7 @@ import { getAudioReaderBook, hasReaderAudio } from '@/lib/book/audio-manifest';
 import { buildAttributionRows, type AttributionRow } from '@/lib/book/attribution';
 import { getBookDetailCopy, getBookReaderCopy } from '@/lib/book/copy';
 import { getBookByIdIncludingInactive } from '@/lib/book/detail';
+import { getActiveChild } from '@/lib/home/active-child';
 import { PREVIEW_PARAM, isPreviewParamValue } from '@/lib/book/preview-mode';
 import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
 import { createClient } from '@/lib/supabase/server';
@@ -174,6 +175,21 @@ export default async function ReadPage({ params, searchParams }: ReadPageProps) 
     redirect(`/book/${book.id}`);
   }
 
+  // ADR-0064 **D4** — 자녀 0명이면 완독 버튼을 렌더하지 않는다.
+  //
+  //   종전에는 버튼이 무조건 렌더돼, 누르면 completeReadingSession이
+  //   "자녀 정보를 찾을 수 없습니다"를 되돌려 생짜 에러 문구가 떴다
+  //   (`lib/book/reading-session.ts:204-208`). 반면 세션 **시작**은 같은 상황에서
+  //   조용히 건너뛰고 ok:true를 돌려준다(`:127-131`) — 둘이 비대칭이었다.
+  //   버튼을 숨겨 둘을 대칭으로 맞춘다.
+  //
+  //   ★ 서버의 에러 반환 자체는 그대로 둔다 — 안전망이다(ADR-0064 §불변 사항).
+  //   이 페이지의 가드 5종은 그대로다 — **열람 자체는 자녀 유무와 무관**하게 허용된다.
+  const activeChild = await getActiveChild(supabase, user.id);
+  const finishButton = activeChild ? (
+    <FinishButton bookId={book.id} copy={readerCopy.finish} />
+  ) : null;
+
   // 미니 바 행 압축 — buildAttributionRows 재사용, page에서 선별 (신규 export 0건)
   const allAttributionRows = buildAttributionRows(book, detailCopy);
   const readerRows = allAttributionRows.filter((row) => READER_BAR_KEYS.has(row.key));
@@ -222,7 +238,7 @@ export default async function ReadPage({ params, searchParams }: ReadPageProps) 
               bookDetailHref={`/book/${book.id}`}
               autoAdvanceLabel={readerCopy.audioReader.autoAdvanceLabel}
               attributionRows={readerPopoverRows}
-              finishSlot={<FinishButton bookId={book.id} copy={readerCopy.finish} />}
+              finishSlot={finishButton}
             />
           </main>
         </div>
@@ -297,9 +313,12 @@ export default async function ReadPage({ params, searchParams }: ReadPageProps) 
       </h1>
       <ReaderAttributionBar rows={readerRows} />
       <main className="flex-1 overflow-hidden">{readerBody}</main>
-      <footer className="border-t border-outline bg-surface px-4 py-3">
-        <FinishButton bookId={book.id} copy={readerCopy.finish} />
-      </footer>
+      {/* 자녀 0명이면 푸터 바 자체를 내린다 — 빈 띄가 남지 않게(ADR-0064 D4). */}
+      {finishButton ? (
+        <footer className="border-t border-outline bg-surface px-4 py-3">
+          {finishButton}
+        </footer>
+      ) : null}
     </div>
   );
 }

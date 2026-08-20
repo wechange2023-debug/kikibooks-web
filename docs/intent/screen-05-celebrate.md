@@ -53,7 +53,7 @@ phase-12에서 `/celebrate`는 "완독 흐름이 끝까지 작동한다"는 신�
 | 경로 | 공개/보호 | 비고 |
 |---|---|---|
 | `/book/[id]/celebrate` | 보호 (로그인 필수) | phase-12 placeholder → 정식 보상. 4-가드(UUID·미인증·book NULL·자녀 0명) phase-12 옵션 P 상속. **보상 쓰기는 본 페이지가 하지 않는다**(d3 — 완독 전이 시점에 이미 적립됨). 페이지는 적립 결과 표시 + 모션만 |
-| `/library` | 보호 (로그인 필수) | 신규. 3-가드(미인증 redirect·자녀 0명 onboarding·필터 입력 검증). PROTECTED_PREFIXES에 phase-12 등록 완료. books `is_active=true` + 블랙리스트 제외 카탈로그 |
+| `/library` | 보호 (로그인 필수) | 신규. **2-가드**(미인증 redirect·필터 입력 검증) — 자녀 0명 가드는 **ADR-0064 D6으로 삭제**(2026-08-20). 자녀 없이도 목록을 본다. PROTECTED_PREFIXES에 phase-12 등록 완료. books `is_active=true` + 블랙리스트 제외 카탈로그 |
 
 **routes.ts·middleware.ts 인증 로직은 수정하지 않는다.** 두 경로 모두 phase-07 기존 보호 라우트 prefix(`/book`·`/library`)에 자연 포함된다. `robots.ts`의 `/book` disallow는 기존대로 유지하며, `/library`의 robots 정책(closed environment 정합 — index 회피)은 CP1-adr에서 확정한다.
 
@@ -109,8 +109,8 @@ phase-12에서 `/celebrate`는 "완독 흐름이 끝까지 작동한다"는 신�
 
 | 화면 | 가드 |
 |---|---|
-| `/celebrate` | 4-가드(옵션 P, phase-12 상속): ①UUID 형식 ②미인증 redirect ③book NULL notFound ④자녀 0명 onboarding(축하 문구에 자녀명 필요) |
-| `/library` | 3-가드(d7): ①미인증 redirect ②자녀 0명 onboarding ③필터 입력 검증(level 1~5·category·keyword sanitize). 개별 책 uuid 불요(목록). 목록 카드는 `lib/shared/blacklist.ts` 차단분 제외 |
+| `/celebrate` | 4-가드(옵션 P, phase-12 상속): ①UUID 형식 ②미인증 redirect ③book NULL notFound ④자녀 0명 onboarding(축하 문구에 자녀명 필요) — **ADR-0064에서도 유지**한다. 완독이 성립해야 도달하는 화면이고 완독은 자녀를 요구하므로(D4), 자녀 0명은 애초에 도달 불가 — 가드는 안전망이다 |
+| `/library` | **2-가드**(d7 → ADR-0064 D6 개정): ①미인증 redirect ②필터 입력 검증(level 1~5·category·keyword sanitize). 개별 책 uuid 불요(목록). 목록 카드는 `lib/shared/blacklist.ts` 차단분 제외 |
 | `awardCompletionRewards` | 4.5중(d2, §4.2): zod·auth·getActiveChild(RLS §9.3 소유권)·secret 쓰기·child_id 출처 RLS 검증 |
 
 ---
