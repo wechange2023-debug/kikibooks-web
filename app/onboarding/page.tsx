@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import { ChildProfileForm } from '@/components/onboarding/child-profile-form';
+import { skipOnboarding } from '@/app/onboarding/actions';
 import { POST_LOGIN_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
+import { getChildOptionalCopy } from '@/lib/child-optional/copy';
 import { hasChildren } from '@/lib/children/has-children';
 import { createClient } from '@/lib/supabase/server';
 import { BRAND_NAME } from '@/lib/brand';
@@ -34,6 +36,8 @@ export default async function OnboardingPage() {
     redirect(POST_LOGIN_PATH);
   }
 
+  const copy = await getChildOptionalCopy();
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-surface-2 px-6 py-12">
       <div className="w-full max-w-md rounded-xl bg-surface p-6 shadow-elev-2 sm:p-8">
@@ -46,6 +50,23 @@ export default async function OnboardingPage() {
           </p>
         </header>
         <ChildProfileForm />
+
+        {/*
+          ADR-0064 D3 — "나중에 할게요". 폼 **밖**에 둔다:
+            - `child-profile-form.tsx` 무수정(조사 A안) — 공유 폼에 분기를 넣지 않는다
+            - `<form>` 중첩은 HTML상 불가 — ChildProfileForm의 form과 **형제**로 놓는다
+            - design-system §6.1 Text 버튼이라 "화면당 CTA 1개"는 폼 제출 버튼이 그대로 가진다
+          터치 타깃은 `min-h-11`(44px, §6.5). 클릭 시 스킵 쿠키를 심고 `/`로 간다.
+        */}
+        <form action={skipOnboarding} className="mt-4 flex justify-center">
+          <button
+            type="submit"
+            aria-label={copy.onboardingSkip.ariaLabel}
+            className="inline-flex min-h-11 items-center rounded-pill px-4 text-label font-semibold text-text-variant transition-colors duration-200 ease-kiki hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+          >
+            {copy.onboardingSkip.linkLabel}
+          </button>
+        </form>
       </div>
     </main>
   );

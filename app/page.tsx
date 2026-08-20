@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { redirect } from 'next/navigation';
 
 import { AppFooter } from '@/components/app/app-footer';
 import { AppHeader } from '@/components/app/app-header';
 import { LandingHeader } from '@/components/landing/landing-header';
 import { AnonymousMain } from '@/components/main/anonymous-main';
 import { MemberMain } from '@/components/main/member-main';
-import { ONBOARDING_PATH } from '@/lib/auth/routes';
+import { NoChildMain } from '@/components/main/no-child-main';
 import { BRAND_NAME, BRAND_TAGLINE } from '@/lib/brand';
+import { getChildOptionalCopy } from '@/lib/child-optional/copy';
 import { getActiveChild } from '@/lib/home/active-child';
 import { CATEGORIES, getCategoryDistribution } from '@/lib/home/categories';
 import { getHomeCopy } from '@/lib/home/copy';
@@ -54,7 +54,8 @@ export const metadata: Metadata = {
  * 3갈래 분기 (D1·D4)
  * ──────────────────────────────────────────────────────────────────────────────
  *   1. 비로그인          → 랜딩 블록(AnonymousMain) 렌더. **리다이렉트 0회**
- *   2. 로그인 + 자녀 0명 → redirect(/onboarding)
+ *   2. 로그인 + 자녀 0명 → 자녀 미등록 블록(NoChildMain) 렌더. **리다이렉트 0회**
+ *      (ADR-0064 D1 — 종전 `redirect(/onboarding)`을 뒤집었다. 자녀 없는 성인도 열람한다)
  *   3. 로그인 + 자녀≥1   → 개인화 블록(MemberMain) 렌더. **리다이렉트 0회**
  *
  * ADR-0062 **Amendment 1** — 로그인 메인에도 랜딩 섹션(인기 책·핵심가치)이 붙는다.
@@ -142,10 +143,43 @@ export default async function MainPage() {
     return [] as PopularBook[];
   });
 
-  // 갈래 2 — 자녀 0명은 온보딩으로. 메인의 개인화 블록이 전부 활성 자녀를 전제한다.
+  // 갈래 2 — 자녀 0명. **ADR-0064 D1이 종전 redirect(ONBOARDING_PATH)를 뒤집는다.**
+  //   공부방·학원 선생님처럼 자녀가 없는 성인도 열람은 할 수 있어야 하므로,
+  //   되돌리지 않고 전용 블록을 렌더한다. 기록계 기능(레벨·추천·스트릭)은
+  //   전부 빠진다 — ADR-0064 §원칙 절 "기록계 기능은 자녀 0명에게 일괄 숨김".
   const activeChild = await getActiveChild(supabase, user.id);
   if (!activeChild) {
-    redirect(ONBOARDING_PATH);
+    // 인사말은 자녀 이름을 요구하므로(greeting.ts:66-75) 이 갈래에서 쓰지 않는다.
+    // 이미 착수된 promise라 rejection만 흡수한다 — 미사용 promise가 unhandled로
+    // 남지 않게 하기 위함이며(getGreetingProfile은 조회 실패 시 throw한다),
+    // 갈래 3의 병렬 fetch 이득은 그대로 둔다.
+    void profilePromise.catch(() => undefined);
+
+    const [homeCopy, distribution, landingCopy, popularBooks, childOptionalCopy] =
+      await Promise.all([
+        copyPromise,
+        distributionPromise,
+        landingCopyPromise,
+        popularBooksPromise,
+        getChildOptionalCopy(),
+      ]);
+
+    return (
+      <>
+        <AppHeader />
+        <main className="min-h-screen bg-surface-2 pb-8">
+          <NoChildMain
+            copy={childOptionalCopy}
+            landingCopy={landingCopy}
+            homeCopy={homeCopy}
+            books={popularBooks}
+            categories={CATEGORIES}
+            distribution={distribution}
+          />
+        </main>
+        <AppFooter />
+      </>
+    );
   }
 
   const [
