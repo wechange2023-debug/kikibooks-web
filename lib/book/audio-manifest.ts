@@ -117,6 +117,15 @@ export const READER_AUDIO_KIND = 'page';
 const AUDIO_LOOKUP_CHUNK = 300;
 
 /**
+ * `book_audio` 조회 1회가 받아오는 최대 행수 — PostgREST 기본 max-rows(1000)와 정합.
+ *
+ * AUDIO_LOOKUP_CHUNK가 막는 것은 **요청 URL 길이**(414)뿐이고 **응답 행수**는 막지 못한다.
+ * book_audio는 책 1권당 페이지 수만큼 행이 있어(kind='page'), 300권을 한 번에 물으면
+ * 수천 행이 되어 이 상한에서 조용히 잘린다. 그래서 청크마다 .range() 루프가 필요하다.
+ */
+const AUDIO_ROW_PAGE = 1000;
+
+/**
  * 「이 책에 재생 가능한 낭독이 있는가」 판정의 **단일 출처**.
  *
  * 조건 = book_audio에 (kind=READER_AUDIO_KIND AND voice=DEFAULT_READER_VOICE) 행 존재.
@@ -135,11 +144,19 @@ const AUDIO_LOOKUP_CHUNK = 300;
  *   모두 받기 위해서다. book_audio RLS는 anon/authenticated SELECT 공개읽기라
  *   (ADR-0034 (d)) publishable 클라이언트로도 동일한 답이 나온다.
  * @param bookIds 판정 대상 book id들. 권마다 개별 조회하는 N+1을 쓰지 않는다 —
- *   AUDIO_LOOKUP_CHUNK(300)개씩 묶어 조회하므로 일반 목록은 쿼리 1회로 끝난다.
+ *   AUDIO_LOOKUP_CHUNK(300)개씩 묶고, 청크마다 AUDIO_ROW_PAGE(1000)행씩 .range()로
+ *   끝까지 읽는다. 일반 목록(카드 24·admin 24·상세 1)은 여전히 쿼리 1회로 끝난다.
  * @returns 낭독이 있는 book id 집합. 조회 실패 시 빈 Set — 배지·오디오 UI가 안 뜰 뿐
  *   책 자체는 기존 경로로 정상 노출된다(가용성 우선, 기존 폴백 동작 유지).
  *   청크 하나만 실패해도 전체를 빈 Set으로 접는다(부분 결과로 「어떤 책만 배지가 빠지는」
  *   설명 불가능한 상태를 만들지 않는다).
+ *
+ *   ★ 종전에는 이 방어가 겨냥한 상태가 방어를 우회해 실제로 발생했다. 행 페이지네이션이
+ *   없어 PostgREST 기본 1000행 cap에 걸리면, 그 응답은 error가 아니라 **정상 200**이라
+ *   위 `if (error)` 폴백이 발동하지 않은 채 잘린 결과가 그대로 통과했다. 쇼케이스처럼
+ *   한 출처 전량을 넘기는 표면에서 「책 절반만 배지가 빠지는」 증상으로 나타났다
+ *   (Book Dash 190권 중 86권, ASb 527권 중 195권만 판정 — 2026-08-20 실측).
+ *   .range() 루프로 청크를 끝까지 읽어 해소했다.
  */
 export async function selectReaderAudioBookIds(
   supabase: SupabaseClient,
@@ -155,20 +172,31 @@ export async function selectReaderAudioBookIds(
   for (let start = 0; start < bookIds.length; start += AUDIO_LOOKUP_CHUNK) {
     const chunk = bookIds.slice(start, start + AUDIO_LOOKUP_CHUNK);
 
-    const { data, error } = await supabase
-      .from('book_audio')
-      .select('book_id')
-      .in('book_id', chunk)
-      .eq('kind', READER_AUDIO_KIND)
-      .eq('voice', voice)
-      .returns<{ book_id: string }[]>();
+    // 청크 하나가 1000행을 넘길 수 있다(책 1권당 페이지 수만큼 행). 반환이 한 페이지
+    // 미만이 될 때까지 .range()로 끝까지 읽는다 — 잘린 결과를 정답으로 오인하지 않기 위해.
+    for (let offset = 0; ; offset += AUDIO_ROW_PAGE) {
+      const { data, error } = await supabase
+        .from('book_audio')
+        .select('book_id')
+        .in('book_id', chunk)
+        .eq('kind', READER_AUDIO_KIND)
+        .eq('voice', voice)
+        .order('book_id', { ascending: true })
+        .range(offset, offset + AUDIO_ROW_PAGE - 1)
+        .returns<{ book_id: string }[]>();
 
-    if (error) {
-      return new Set();
-    }
+      if (error) {
+        return new Set();
+      }
 
-    for (const row of data ?? []) {
-      found.add(row.book_id);
+      const rows = data ?? [];
+      for (const row of rows) {
+        found.add(row.book_id);
+      }
+
+      if (rows.length < AUDIO_ROW_PAGE) {
+        break;
+      }
     }
   }
 
