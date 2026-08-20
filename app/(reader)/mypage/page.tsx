@@ -64,6 +64,17 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+/**
+ * 페이지 메인 타이틀 공통 (큐 D-5c).
+ *
+ * design-system §2.2 "Heading 1 = 페이지 메인 타이틀". 종전에는 H1이 요약 카드 **안**에
+ * SECTION_TITLE_CLASS(16px)로 들어가 있어, 앱 안에서 유일하게 페이지 헤더가 없는 화면이었다.
+ * 구현 정본과 클래스를 맞춘다 — app/(reader)/library/page.tsx:118 ·
+ * app/showcase/page.tsx:60 · app/admin/page.tsx:55 (총 12곳 동일 리터럴).
+ * 헤더 골격도 같다: <header className="flex flex-col gap-1"> 직계 배치.
+ * 헤더 ↔ 첫 섹션 간격은 컨테이너의 gap-5/md:gap-6가 그대로 §3.3(gap-5~6)을 충족한다.
+ */
+const PAGE_TITLE_CLASS = 'font-display text-h1 font-bold text-text';
 /** 섹션 카드 공통 — design-system §6.2 정보 카드(홈 섹션들과 동일 토큰). */
 const SECTION_CLASS = 'flex flex-col gap-3 rounded-md bg-surface p-5 shadow-elev-1';
 /** 섹션 제목 공통. */
@@ -92,8 +103,11 @@ export default async function MypagePage() {
     return (
       <main className="min-h-screen bg-surface-2 py-6">
         <div className="mx-auto flex max-w-screen-sm flex-col gap-5 px-4 md:max-w-screen-md md:gap-6 md:px-6 lg:max-w-screen-lg">
+          <header className="flex flex-col gap-1">
+            <h1 className={PAGE_TITLE_CLASS}>마이페이지</h1>
+          </header>
+
           <section className={SECTION_CLASS} aria-label="마이페이지">
-            <h1 className={SECTION_TITLE_CLASS}>마이페이지</h1>
             <p className={EMPTY_CLASS}>
               아직 자녀 프로필이 없어요. 프로필을 만들면 읽은 책과 포인트를 모아볼 수 있어요.
             </p>
@@ -124,10 +138,12 @@ export default async function MypagePage() {
   return (
     <main className="min-h-screen bg-surface-2 py-6">
       <div className="mx-auto flex max-w-screen-sm flex-col gap-5 px-4 md:max-w-screen-md md:gap-6 md:px-6 lg:max-w-screen-lg">
+        <header className="flex flex-col gap-1">
+          <h1 className={PAGE_TITLE_CLASS}>{activeChild.name}의 기록</h1>
+        </header>
+
         {/* ① 요약 — 완독/읽는 중/포인트 */}
         <section className={SECTION_CLASS} aria-label="독서 요약">
-          <h1 className={SECTION_TITLE_CLASS}>{activeChild.name}의 기록</h1>
-
           <dl className="grid grid-cols-3 gap-3">
             <SummaryTile label="완독" value={`${summary.completedCount}권`} highlight />
             <SummaryTile label="읽는 중" value={`${summary.inProgressCount}권`} />
@@ -204,7 +220,7 @@ function SummaryTile({
   highlight?: boolean;
 }) {
   return (
-    <div className="flex flex-col items-center gap-1 rounded-md border border-outline bg-surface-2 px-2 py-3">
+    <div className="flex flex-col items-center gap-1 rounded-md border border-outline bg-surface-2 px-4 py-3">
       <dt className="text-caption font-medium text-text-variant">{label}</dt>
       <dd
         className={
