@@ -2,6 +2,7 @@ import 'server-only';
 
 import type { SupabaseClient } from '@supabase/supabase-js';
 
+import { resolveAudioBase } from '@/lib/book/audio-manifest';
 import { normalizeWord, type WordCandidate } from '@/lib/wordplay/select-words';
 
 /**
@@ -22,14 +23,11 @@ import { normalizeWord, type WordCandidate } from '@/lib/wordplay/select-words';
  *   - 오디오 경로는 **book_audio 행을 정본으로 읽는다**(추측 조립 금지)
  *     — lib/book/audio-manifest.ts:23-30에 박제된 원칙
  *
- * ※ `AUDIO_STORAGE_PREFIX`가 audio-manifest.ts:37에 module-private이라 리터럴이 두 곳에
- *   존재하게 된다. 하드코딩된 Storage 접두사는 과거 전 면 404를 만든 전력이 있으므로
- *   (audio-manifest.ts:15-21), E-2b에서 audio-manifest가 base 해소 함수를 export하고
- *   본 모듈이 그것을 쓰도록 통합할 것을 권한다.
+ * ※ base 해소는 audio-manifest.ts의 `resolveAudioBase`를 **직접 import**한다(E-2b 통합).
+ *   E-2a에서는 `AUDIO_STORAGE_PREFIX`가 module-private이라 리터럴을 복제했는데,
+ *   하드코딩된 Storage 접두사는 과거 전 면 404를 만든 전력이 있어(audio-manifest.ts:15-21)
+ *   해당 함수를 export로 승격하고 본 모듈이 그것을 쓰도록 정리했다 — 리터럴 단일 출처.
  */
-
-/** Supabase book-audio 공개 버킷 접두사. audio-manifest.ts:37과 동일해야 한다. */
-const AUDIO_STORAGE_PREFIX = 'storage/v1/object/public/book-audio';
 
 /** 본문 낭독 트랙 kind. audio-manifest.ts:106 `READER_AUDIO_KIND`와 동일. */
 const READER_AUDIO_KIND = 'page';
@@ -96,23 +94,6 @@ export interface WordAudioOptions {
   voice?: string;
   /** marks 파일 fetch 구현 주입점(테스트·드라이런용). 기본은 전역 fetch. */
   fetchImpl?: typeof fetch;
-}
-
-function requireSupabaseUrl(): string {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  if (!url) {
-    throw new Error('word-audio: NEXT_PUBLIC_SUPABASE_URL 미설정');
-  }
-  return url.replace(/\/+$/, '');
-}
-
-/** audio-manifest.ts:213-221 `resolveAudioBase`와 동일한 해소 체인. */
-function resolveAudioBase(opts: WordAudioOptions | undefined): string {
-  const base =
-    opts?.audioBase ??
-    process.env.NEXT_PUBLIC_TTS_AUDIO_BASE ??
-    `${requireSupabaseUrl()}/${AUDIO_STORAGE_PREFIX}`;
-  return base.replace(/\/+$/, '');
 }
 
 /**

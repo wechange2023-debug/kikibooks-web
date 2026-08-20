@@ -40,6 +40,31 @@ const WORD_RE = /[A-Za-z]+(?:['‘’ʼ][A-Za-z]+)*/g;
 /** 굽은 따옴표(’‘ʼ)를 곧은 따옴표로 통일한다. 원문에 커브 따옴표가 섞여 있다(ADR-0065 §1.1). */
 const CURLY_APOSTROPHE_RE = /[‘’ʼ]/g;
 
+/**
+ * 문장 첫머리 판정 시 건너뛰는 여는 문장부호.
+ * 그림책 본문은 대사가 많아 `“Come Mama, …”`처럼 따옴표가 앞에 붙는다.
+ */
+const OPENING_PUNCT = new Set(['"', "'", '“', '”', '‘', '’', '«', '»', '(', '[', '—', '-']);
+
+/** 문장 종결부호 — 이 뒤의 첫 단어는 문장 첫머리다. */
+const SENTENCE_END = new Set(['.', '!', '?']);
+
+/**
+ * `index` 위치의 토큰이 **문장 첫머리인가**.
+ *
+ * 고유명사 판정(alwaysCapitalized)에서 문장 첫 글자 대문자를 오탐하지 않기 위해 쓴다.
+ * 뒤로 훑으며 공백·여는 문장부호를 건너뛰고, 직전 실질 문자가 `.!?`이면 문장 첫머리다.
+ */
+function isSentenceInitial(text: string, index: number): boolean {
+  for (let i = index - 1; i >= 0; i--) {
+    const ch = text[i];
+    if (ch === ' ' || ch === '\n' || ch === '\t' || ch === '\r') continue;
+    if (OPENING_PUNCT.has(ch)) continue;
+    return SENTENCE_END.has(ch);
+  }
+  return true; // 페이지 첫 토큰
+}
+
 /** 원문 토큰 → 대조용 정규형(소문자 + 아포스트로피 통일). */
 export function normalizeWord(raw: string): string {
   return raw.toLowerCase().replace(CURLY_APOSTROPHE_RE, "'");
@@ -69,11 +94,16 @@ export interface WordCandidate {
   /** 등장 위치 전량(페이지·순번 오름차순). */
   occurrences: WordOccurrence[];
   /**
-   * 모든 등장이 대문자로 시작했는가 — **고유명사(등장인물 이름) 추정 신호**.
+   * 고유명사(등장인물 이름) 추정 — **문장 첫머리를 제외한** 모든 등장이 대문자로 시작.
    *
-   * ★ 필터에 쓰지 않는다. ADR-0065가 고유명사 처리를 규정하지 않았으므로 임의로 거르지
-   *   않고, E-2b가 판단할 수 있도록 신호만 실어 보낸다(stopwords.ts 주석 §의도적으로
-   *   넣지 않은 것들). 문장 첫머리 대문자와 구분하지 않는 **거친 신호**다.
+   * ★ E-2b에서 **후보 제외 필터로 승격**됐다(비기 결정 2026-08-20). E-2a 드라이런에서
+   *   카드의 19%(1,303/6,846)가 `oluhle`·`makhulu`·`nathi` 같은 등장인물 이름이었고,
+   *   이는 아이가 배울 영어 단어가 아니기 때문이다.
+   *
+   * ★ 문장 첫머리 등장은 판정에서 뺀다(`isSentenceInitial`). 빼지 않으면
+   *   `"Water is good."`의 `Water`처럼 문장 앞에만 나온 보통명사가 고유명사로 오인돼
+   *   과잉 제거된다. 문장 첫머리에서만 등장한 단어는 **판단 불가 → 고유명사 아님**으로
+   *   보수적으로 처리한다(좋은 단어를 잃는 쪽보다 낫다).
    */
   alwaysCapitalized: boolean;
 }
@@ -85,8 +115,12 @@ export interface WordSelection {
   totalPages: number;
   /** 길이·불용어 필터 **이전**의 전체 토큰 수. */
   totalTokens: number;
-  /** 필터를 통과한 고유 단어 수(상위 절단 이전). */
+  /** 필터를 통과한 고유 단어 수(상위 절단 이전, 고유명사·파생형 제거 후). */
   eligibleWordCount: number;
+  /** 고유명사로 판정해 제외한 단어 수 (E-2b 필터 효과 계측용). */
+  droppedProperNouns: number;
+  /** 어형 중복으로 제거한 파생형 수 (E-2b 필터 효과 계측용). */
+  droppedInflections: number;
   /** 최종 카드 후보 — 빈도 desc, 동점은 첫 등장 asc. 길이 MIN_CARDS~MAX_CARDS. */
   candidates: WordCandidate[];
 }
@@ -103,8 +137,47 @@ interface Bucket {
   count: number;
   /** 책 전체 토큰 순서상 첫 등장 인덱스 — 동점 시 안정 정렬 키. */
   firstSeen: number;
-  capitalizedCount: number;
+  /** 문장 첫머리가 **아닌** 등장 횟수. 고유명사 판정의 모집단. */
+  nonInitialCount: number;
+  /** 그중 대문자로 시작한 횟수. */
+  nonInitialCapCount: number;
   occurrences: WordOccurrence[];
+}
+
+/**
+ * 경량 어형 중복 제거 (E-2b 0-b).
+ *
+ * 후보 목록 **안에 기본형이 있을 때만** `-s`·`-'s` 파생형을 접고, 빈도가 높은 쪽을 남긴다.
+ * 기본형이 목록에 없으면 파생형을 그대로 둔다 — 과잉 교정 금지(예: `clouds`만 있는 책에서
+ * `cloud`로 바꾸지 않는다. 원문에 없는 표기를 카드에 띄우면 발음 매칭도 깨진다).
+ *
+ * 표제어화 라이브러리를 쓰지 않는다(Hard Rule 11). `-es`·불규칙 복수(`children`)는
+ * 다루지 않는다 — 규칙이 커질수록 오교정 위험이 커지므로 가장 안전한 두 형태만 접는다.
+ *
+ * @returns 유지할 버킷 목록. 제거된 파생형 수는 호출자가 길이 차로 계산한다.
+ */
+function dedupeInflections(buckets: Bucket[]): Bucket[] {
+  const byWord = new Map(buckets.map((b) => [b.word, b]));
+  const dropped = new Set<string>();
+
+  for (const bucket of buckets) {
+    const word = bucket.word;
+    // `'s`를 먼저 본다 — `sherry's`는 `s`로도 끝나므로 순서가 뒤바뀌면 `sherry'`를 찾게 된다.
+    const base = word.endsWith("'s")
+      ? word.slice(0, -2)
+      : word.endsWith('s') && word.length > MIN_WORD_LENGTH
+        ? word.slice(0, -1)
+        : null;
+    if (!base) continue;
+
+    const baseBucket = byWord.get(base);
+    if (!baseBucket || dropped.has(base) || dropped.has(word)) continue;
+
+    // 빈도 높은 쪽을 남긴다. 동점이면 기본형을 남긴다(카드로서 더 일반적).
+    dropped.add(bucket.count > baseBucket.count ? base : word);
+  }
+
+  return buckets.filter((b) => !dropped.has(b.word));
 }
 
 /**
@@ -163,12 +236,17 @@ export async function selectWordCards(
       const ordinal = seenOnPage.get(word) ?? 0;
       seenOnPage.set(word, ordinal + 1);
 
+      // 고유명사 판정 모집단 — 문장 첫머리 등장은 제외한다(대문자가 문법 때문이므로).
+      const initial = isSentenceInitial(text, match.index);
       const isCapitalized = raw[0] >= 'A' && raw[0] <= 'Z';
       const existing = buckets.get(word);
 
       if (existing) {
         existing.count += 1;
-        if (isCapitalized) existing.capitalizedCount += 1;
+        if (!initial) {
+          existing.nonInitialCount += 1;
+          if (isCapitalized) existing.nonInitialCapCount += 1;
+        }
         existing.occurrences.push({
           pageIndex: row.page_index,
           ordinal,
@@ -181,7 +259,8 @@ export async function selectWordCards(
           display: raw.replace(CURLY_APOSTROPHE_RE, "'"),
           count: 1,
           firstSeen: totalTokens,
-          capitalizedCount: isCapitalized ? 1 : 0,
+          nonInitialCount: initial ? 0 : 1,
+          nonInitialCapCount: !initial && isCapitalized ? 1 : 0,
           occurrences: [
             { pageIndex: row.page_index, ordinal, tokenIndex: currentTokenIndex },
           ],
@@ -190,9 +269,21 @@ export async function selectWordCards(
     }
   }
 
-  const eligible = [...buckets.values()];
+  const all = [...buckets.values()];
+
+  // (a) 고유명사 제외 (E-2b 0-a). 문장 첫머리 등장만 있는 단어는 판단 불가 → 남긴다.
+  const isProperNoun = (b: Bucket) =>
+    b.nonInitialCount > 0 && b.nonInitialCapCount === b.nonInitialCount;
+  const withoutProperNouns = all.filter((b) => !isProperNoun(b));
+  const droppedProperNouns = all.length - withoutProperNouns.length;
+
+  // (b) 경량 어형 중복 제거 (E-2b 0-b). 상위 절단 **이전**에 접어야 카드 8장이
+  //     서로 다른 단어로 채워진다(lions/lion이 두 자리를 먹지 않는다).
+  const eligible = dedupeInflections(withoutProperNouns);
+  const droppedInflections = withoutProperNouns.length - eligible.length;
 
   // 후보 부족 — 진입점 미렌더(ADR-0065 §후보 부족 시 처리).
+  // 고유명사·파생형을 걷어낸 **뒤**의 개수로 판정한다(E-2b 0-a 단서).
   if (eligible.length < MIN_CARDS) {
     return null;
   }
@@ -208,7 +299,7 @@ export async function selectWordCards(
       display: b.display,
       count: b.count,
       occurrences: b.occurrences,
-      alwaysCapitalized: b.capitalizedCount === b.count,
+      alwaysCapitalized: isProperNoun(b),
     }));
 
   return {
@@ -216,6 +307,8 @@ export async function selectWordCards(
     totalPages: rows.length,
     totalTokens,
     eligibleWordCount: eligible.length,
+    droppedProperNouns,
+    droppedInflections,
     candidates,
   };
 }

@@ -211,7 +211,18 @@ function requireSupabaseUrl(): string {
   return url.replace(/\/+$/, '');
 }
 
-function resolveAudioBase(opts: BuildOptions | undefined): string {
+/**
+ * 오디오 base URL 해소 — **Storage 접두사의 단일 출처**.
+ *
+ * ★ export 이유(E-2b): 단어카드 발음 재생(lib/wordplay/word-audio.ts)이 같은 버킷을
+ *   읽어야 하는데, 접두사를 그쪽에 복제하면 리터럴이 두 곳이 된다. 하드코딩된 Storage
+ *   접두사는 과거 ASb·Bloom·GDL 본문 이미지 전 면을 조용히 404로 만든 전력이 있다
+ *   (본 파일 :15-21). 그래서 해소 로직을 여기 하나로 두고 호출자가 가져다 쓴다.
+ *   동작·기본값은 종전과 동일하다(회귀 0 — 시그니처만 넓혔다).
+ *
+ * @param opts 미지정 시 env NEXT_PUBLIC_TTS_AUDIO_BASE → Supabase 공개 버킷 순.
+ */
+export function resolveAudioBase(opts?: { audioBase?: string }): string {
   const base =
     opts?.audioBase ??
     process.env.NEXT_PUBLIC_TTS_AUDIO_BASE ??

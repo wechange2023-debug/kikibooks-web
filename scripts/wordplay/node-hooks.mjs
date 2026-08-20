@@ -19,7 +19,14 @@ const ROOT = pathToFileURL(process.cwd() + '/').href;
 /** alias 대상이 확장자 없이 적히므로 후보를 순서대로 시도한다. */
 const SUFFIXES = ['.ts', '.tsx', '/index.ts', '/index.tsx', ''];
 
+/** Next 런타임 전용 모듈 → 로컬 스텁. 드라이런에는 도달 경로가 없다. */
+const STUBS = new Map([['next/headers', './next-headers-stub.mjs']]);
+
 export async function resolve(specifier, context, nextResolve) {
+  const stub = STUBS.get(specifier);
+  if (stub) {
+    return nextResolve(new URL(stub, import.meta.url).href, context);
+  }
   if (specifier.startsWith('@/')) {
     const base = new URL(specifier.slice(2), ROOT).href;
     let lastError;
