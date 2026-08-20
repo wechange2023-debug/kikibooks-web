@@ -1,0 +1,278 @@
+import 'server-only';
+
+import type { SupabaseClient } from '@supabase/supabase-js';
+
+import { normalizeWord, type WordCandidate } from '@/lib/wordplay/select-words';
+
+/**
+ * 단어 발음 구간 좌표 산출 (ADR-0065 D4 · Q3).
+ *
+ * 카드 단어 하나를 **해당 페이지 오디오의 어느 구간에서 재생하면 되는지**를 계산한다.
+ * 오디오를 자르거나 새로 만들지 않는다 — 기존 mp3의 재생 구간(ms)만 돌려준다.
+ *
+ * ★ 무기록 원칙(ADR-0065 D1): 본 모듈은 **SELECT + Storage 읽기만** 한다.
+ *
+ * ★ Storage 접근은 **기존 오디오 재생 경로를 그대로 따른다**(신규 방식 발명 0건):
+ *   - URL 조립 = `{audioBase}/{book_audio.audio_path | marks_path}`
+ *     — lib/book/audio-manifest.ts:331-332 (`getAudioReaderBook`)와 동일
+ *   - audioBase 해소 = opts → `NEXT_PUBLIC_TTS_AUDIO_BASE` → Supabase 공개 버킷
+ *     — lib/book/audio-manifest.ts:213-221 (`resolveAudioBase`)와 동일 체인
+ *   - marks 파싱 = line-delimited JSON에서 `type === 'word'`만
+ *     — components/book/audio-reader.tsx:124-145 (`parseMarks`)의 포트
+ *   - 오디오 경로는 **book_audio 행을 정본으로 읽는다**(추측 조립 금지)
+ *     — lib/book/audio-manifest.ts:23-30에 박제된 원칙
+ *
+ * ※ `AUDIO_STORAGE_PREFIX`가 audio-manifest.ts:37에 module-private이라 리터럴이 두 곳에
+ *   존재하게 된다. 하드코딩된 Storage 접두사는 과거 전 면 404를 만든 전력이 있으므로
+ *   (audio-manifest.ts:15-21), E-2b에서 audio-manifest가 base 해소 함수를 export하고
+ *   본 모듈이 그것을 쓰도록 통합할 것을 권한다.
+ */
+
+/** Supabase book-audio 공개 버킷 접두사. audio-manifest.ts:37과 동일해야 한다. */
+const AUDIO_STORAGE_PREFIX = 'storage/v1/object/public/book-audio';
+
+/** 본문 낭독 트랙 kind. audio-manifest.ts:106 `READER_AUDIO_KIND`와 동일. */
+const READER_AUDIO_KIND = 'page';
+
+/** 확정 보이스. audio-manifest.ts:104 `DEFAULT_READER_VOICE`와 동일(ADR-0052 Amd#2). */
+const DEFAULT_READER_VOICE = 'danielle';
+
+/**
+ * 마지막 단어의 재생 상한 (ADR-0065 Q3 처리, 제안값 1.5초).
+ *
+ * 다음 mark가 없으면 끝 시각을 알 수 없다. `duration_ms`(오디오 전체 길이)와
+ * `start + 이 상한` 중 **이른 쪽**을 쓴다 — 페이지 끝의 긴 무음까지 재생하지 않기 위해서다.
+ */
+export const LAST_WORD_MAX_MS = 1500;
+
+/** 발음 재생 불가 사유. 실패율 실측용으로 분류를 남긴다(ADR-0065 D4). */
+export type WordAudioFailure =
+  /** 이 책·보이스에 해당 페이지의 book_audio 행이 없다. */
+  | 'no-audio-row'
+  /** book_audio 행은 있으나 marks_path가 비어 있다. */
+  | 'no-marks-path'
+  /** marks 파일을 받지 못했다(네트워크·404). */
+  | 'marks-fetch-failed'
+  /** marks는 받았으나 단어와 일치하는 mark가 없다(표기 차이 등). */
+  | 'word-not-matched';
+
+/** 단어 1개의 발음 구간. */
+export interface WordAudioClip {
+  /** select-words의 정규형. */
+  word: string;
+  /** 재생 가능 여부. false여도 **카드 후보에서 빼지 않는다**(ADR-0065 D4). */
+  playable: boolean;
+  /** 재생할 페이지 오디오(0-based page_index). 불가 시 null. */
+  pageIndex: number | null;
+  /** 페이지 mp3 공개 URL. 불가 시 null. */
+  audioUrl: string | null;
+  /** 구간 시작(ms). */
+  startMs: number | null;
+  /** 구간 끝(ms). */
+  endMs: number | null;
+  /** playable=false일 때의 사유. */
+  failure: WordAudioFailure | null;
+}
+
+interface AudioRow {
+  page_index: number;
+  audio_path: string;
+  marks_path: string | null;
+  duration_ms: number | null;
+}
+
+/** Polly word speech mark 1건. components/book/highlighted-text.tsx:22-31과 동일 형태. */
+interface WordMark {
+  time: number;
+  value: string;
+  start: number;
+  end: number;
+}
+
+export interface WordAudioOptions {
+  /** 오디오 base URL 상위 지정. 미지정 시 env → Supabase 공개 버킷 순으로 해소한다. */
+  audioBase?: string;
+  /** book_audio.voice 필터. 기본 'danielle'. */
+  voice?: string;
+  /** marks 파일 fetch 구현 주입점(테스트·드라이런용). 기본은 전역 fetch. */
+  fetchImpl?: typeof fetch;
+}
+
+function requireSupabaseUrl(): string {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!url) {
+    throw new Error('word-audio: NEXT_PUBLIC_SUPABASE_URL 미설정');
+  }
+  return url.replace(/\/+$/, '');
+}
+
+/** audio-manifest.ts:213-221 `resolveAudioBase`와 동일한 해소 체인. */
+function resolveAudioBase(opts: WordAudioOptions | undefined): string {
+  const base =
+    opts?.audioBase ??
+    process.env.NEXT_PUBLIC_TTS_AUDIO_BASE ??
+    `${requireSupabaseUrl()}/${AUDIO_STORAGE_PREFIX}`;
+  return base.replace(/\/+$/, '');
+}
+
+/**
+ * line-delimited speech marks JSON 파싱(word만).
+ * components/book/audio-reader.tsx:124-145의 포트 — 깨진 줄은 건너뛴다.
+ */
+export function parseMarks(raw: string): WordMark[] {
+  const out: WordMark[] = [];
+  for (const line of raw.split('\n')) {
+    const t = line.trim();
+    if (!t) continue;
+    try {
+      const m = JSON.parse(t) as Partial<WordMark> & { type?: string };
+      if (m.type === 'word' && typeof m.time === 'number') {
+        out.push({
+          time: m.time,
+          value: String(m.value ?? ''),
+          start: Number(m.start),
+          end: Number(m.end),
+        });
+      }
+    } catch {
+      // 깨진 줄은 건너뛴다(구간 산출만 영향, 페이지 재생 무관).
+    }
+  }
+  return out;
+}
+
+/**
+ * 카드 단어들의 발음 구간을 산출한다.
+ *
+ * 단어마다 등장 위치를 순서대로 훑어 **처음으로 재생 가능한 구간 1개**를 찾는다
+ * (발음은 한 번만 들려주면 되므로 모든 등장을 다 계산하지 않는다). 한 페이지의 marks는
+ * 한 번만 받아 캐시하므로, 카드 8장이 같은 페이지에 몰려도 fetch는 1회다.
+ *
+ * @param candidates select-words.ts가 고른 후보. 각 후보의 `occurrences`를 그대로 쓴다.
+ * @returns 후보와 **같은 순서·같은 길이**의 배열. 재생 불가 단어도 `playable:false`로
+ *   자리를 지킨다 — 카드에서 빼지 않는다(ADR-0065 D4 "카드 후보에서 제외하지 않음").
+ */
+export async function resolveWordAudioClips(
+  supabase: SupabaseClient,
+  bookId: string,
+  candidates: readonly WordCandidate[],
+  opts?: WordAudioOptions,
+): Promise<WordAudioClip[]> {
+  const voice = opts?.voice ?? DEFAULT_READER_VOICE;
+  const audioBase = resolveAudioBase(opts);
+  const doFetch = opts?.fetchImpl ?? fetch;
+
+  // 오디오 정본 — book_audio 행. 업로드된 오브젝트 키를 그대로 쓴다(추측 조립 금지,
+  // audio-manifest.ts:23-30). duration_ms는 마지막 단어 상한 계산에 쓴다.
+  const { data, error } = await supabase
+    .from('book_audio')
+    .select('page_index, audio_path, marks_path, duration_ms')
+    .eq('book_id', bookId)
+    .eq('voice', voice)
+    .eq('kind', READER_AUDIO_KIND)
+    .returns<AudioRow[]>();
+
+  if (error) {
+    throw new Error(`resolveWordAudioClips: book_audio 조회 실패 — ${error.message}`);
+  }
+
+  const audioByPage = new Map((data ?? []).map((row) => [row.page_index, row] as const));
+
+  /** pageIndex → marks. null = 받기 실패(재시도하지 않는다). */
+  const marksCache = new Map<number, WordMark[] | null>();
+
+  async function loadMarks(row: AudioRow): Promise<WordMark[] | null> {
+    const cached = marksCache.get(row.page_index);
+    if (cached !== undefined) return cached;
+
+    let marks: WordMark[] | null = null;
+    try {
+      const res = await doFetch(`${audioBase}/${row.marks_path}`);
+      if (res.ok) {
+        marks = parseMarks(await res.text());
+      }
+    } catch {
+      marks = null;
+    }
+    marksCache.set(row.page_index, marks);
+    return marks;
+  }
+
+  const clips: WordAudioClip[] = [];
+
+  for (const candidate of candidates) {
+    let clip: WordAudioClip | null = null;
+    // 가장 "약한" 실패 사유를 기억해 둔다 — 모든 등장이 실패했을 때 보고용.
+    let lastFailure: WordAudioFailure = 'no-audio-row';
+
+    for (const occurrence of candidate.occurrences) {
+      const row = audioByPage.get(occurrence.pageIndex);
+      if (!row) {
+        lastFailure = 'no-audio-row';
+        continue;
+      }
+      if (!row.marks_path) {
+        lastFailure = 'no-marks-path';
+        continue;
+      }
+
+      const marks = await loadMarks(row);
+      if (!marks) {
+        lastFailure = 'marks-fetch-failed';
+        continue;
+      }
+
+      // 이 페이지에서 같은 단어에 해당하는 mark들.
+      const matchIndexes: number[] = [];
+      for (let i = 0; i < marks.length; i++) {
+        if (normalizeWord(marks[i].value) === candidate.word) {
+          matchIndexes.push(i);
+        }
+      }
+      if (matchIndexes.length === 0) {
+        lastFailure = 'word-not-matched';
+        continue;
+      }
+
+      // 페이지 내 등장 순번(ordinal)에 대응하는 mark를 고른다. 토큰과 mark의 개수가
+      // 어긋나면(구두점 처리 차이 등) 첫 매칭으로 접는다 — 발음은 같기 때문이다.
+      const markIndex = matchIndexes[occurrence.ordinal] ?? matchIndexes[0];
+      const mark = marks[markIndex];
+      const next = marks[markIndex + 1];
+
+      // 끝 시각: 다음 mark가 있으면 그 시작. 없으면(= 페이지 마지막 단어, ADR-0065 Q3)
+      // 오디오 전체 길이와 start + LAST_WORD_MAX_MS 중 **이른 쪽**.
+      const endMs = next
+        ? next.time
+        : Math.min(
+            row.duration_ms ?? mark.time + LAST_WORD_MAX_MS,
+            mark.time + LAST_WORD_MAX_MS,
+          );
+
+      clip = {
+        word: candidate.word,
+        playable: true,
+        pageIndex: occurrence.pageIndex,
+        audioUrl: `${audioBase}/${row.audio_path}`,
+        startMs: mark.time,
+        endMs,
+        failure: null,
+      };
+      break;
+    }
+
+    clips.push(
+      clip ?? {
+        word: candidate.word,
+        playable: false,
+        pageIndex: null,
+        audioUrl: null,
+        startMs: null,
+        endMs: null,
+        failure: lastFailure,
+      },
+    );
+  }
+
+  return clips;
+}
