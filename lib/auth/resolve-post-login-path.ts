@@ -8,7 +8,7 @@ import { hasChildren } from '@/lib/children/has-children';
 /**
  * 로그인이 막 완료된 시점에 사용자를 어디로 보낼지 결정한다.
  *
- *  - 자녀가 한 명이라도 있으면 → POST_LOGIN_PATH('/home')
+ *  - 자녀가 한 명이라도 있으면 → POST_LOGIN_PATH('/', ADR-0062 D3)
  *  - 자녀가 없으면          → ONBOARDING_PATH('/onboarding')
  *
  * 이 분기는 로그인 도착 지점(/auth/callback, 이메일 로그인/회원가입 서버 액션)

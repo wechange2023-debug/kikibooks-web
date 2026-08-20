@@ -8,11 +8,13 @@ import { FinishButton } from '@/components/book/finish-button';
 import { HtmlReader } from '@/components/book/html-reader';
 import { ReaderAttributionBar } from '@/components/book/reader-attribution-bar';
 import { ReaderExitGuard } from '@/components/book/reader-exit-guard';
+import { assertAdmin } from '@/lib/admin/gate';
 import { SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getAudioReaderBook, hasReaderAudio } from '@/lib/book/audio-manifest';
 import { buildAttributionRows, type AttributionRow } from '@/lib/book/attribution';
 import { getBookDetailCopy, getBookReaderCopy } from '@/lib/book/copy';
-import { getBookById } from '@/lib/book/detail';
+import { getBookByIdIncludingInactive } from '@/lib/book/detail';
+import { PREVIEW_PARAM, isPreviewParamValue } from '@/lib/book/preview-mode';
 import { BOOK_DASH_404_SOURCE_IDS } from '@/lib/shared/blacklist';
 import { createClient } from '@/lib/supabase/server';
 import { BRAND_NAME } from '@/lib/brand';
@@ -29,9 +31,14 @@ import { BRAND_NAME } from '@/lib/brand';
  *           복사 사유: 추출은 데이터 레이어 영향 평가가 필요한 별도 작업 단위):
  *   1. params.id UUID 형식 불일치 → notFound (DB 호출 방지)
  *   2. 미인증 → redirect(/login) (미들웨어 1차, 본 페이지 2차 안전망)
- *   3. books 행 NULL (없음·is_active=false·RLS 차단) → notFound
+ *   3. books 행 NULL (책이 없음·RLS 차단) → notFound
  *   4. ADR-0014 Amendment #5 블랙리스트 4 UUID 일치 → notFound (5번째 차단 표면 —
  *      깨진 GitHub Pages를 iframe이 로드하지 않도록 사전 차단)
+ *   5. is_active = false → **redirect(/book/[id])** (ADR-0063 D3, 2026-08-19 신설).
+ *      종전에는 조회 함수가 is_active=true를 걸어 가드 3에 흡수돼 404였다. 이제
+ *      getBookByIdIncludingInactive로 "없는 책"과 "쉬는 책"을 나눠, 쉬는 책은 상세의
+ *      안내 화면으로 흘려보낸다. **진입 차단이라는 결과 자체는 종전과 동일하다.**
+ *      관리자 `?preview=1` 진입만 예외 통과한다(D4).
  *
  * 미니 어트리뷰션 바 (ADR-0016 Amendment #1):
  *   buildAttributionRows(book, detailCopy) 결과에서 author/publisher·license·
@@ -97,9 +104,33 @@ const READER_POPOVER_KEYS: ReadonlySet<AttributionRow['key']> = new Set([
 
 interface ReadPageProps {
   params: { id: string };
+  /** `?preview=1` — 관리자 검수 진입 표시 (ADR-0063 D4). 그 외 키는 읽지 않는다. */
+  searchParams?: { [PREVIEW_PARAM]?: string };
 }
 
-export default async function ReadPage({ params }: ReadPageProps) {
+/**
+ * 비활성 도서 예외 통과 판정 — 관리자 role **AND** `preview=1` (ADR-0063 D4·O-D5-1).
+ *
+ * app/(reader)/book/[id]/page.tsx의 동명 함수와 **같은 판정**이다. 두 라우트가 각자
+ * 자기 searchParams를 읽어야 해서 함수 본체가 양쪽에 있으나, **판정 기준은 이원화되지
+ * 않는다** — 관리자 여부는 양쪽 모두 lib/admin/gate.ts:202 assertAdmin 단일 출처를
+ * 그대로 쓰고, preview 값 판정도 lib/book/preview-mode.ts:45 isPreviewParamValue
+ * 단일 출처를 쓴다. 한쪽만 고치는 일이 없도록 두 주석이 서로를 가리킨다.
+ *
+ * **단축 평가**: preview 파라미터가 없으면 assertAdmin을 부르지 않는다. 파라미터가
+ * 없으면 예외 통과가 성립하지 않으므로 role 확인이 불필요하다(논리적 동치).
+ * 정상 열람 경로의 추가 왕복 0건.
+ */
+async function isAdminPreview(previewValue: string | undefined): Promise<boolean> {
+  if (!isPreviewParamValue(previewValue)) {
+    return false;
+  }
+
+  const admin = await assertAdmin();
+  return admin.ok;
+}
+
+export default async function ReadPage({ params, searchParams }: ReadPageProps) {
   // 가드 1: UUID 형식 사전 차단 — DB 호출 방지 + 보안
   if (!UUID_RE.test(params.id)) {
     notFound();
@@ -117,7 +148,7 @@ export default async function ReadPage({ params }: ReadPageProps) {
 
   // 가드 3·정상 fetch 병렬 — book + 카피 2종 의존성 없음
   const [book, detailCopy, readerCopy] = await Promise.all([
-    getBookById(supabase, params.id),
+    getBookByIdIncludingInactive(supabase, params.id),
     getBookDetailCopy(),
     getBookReaderCopy(),
   ]);
@@ -127,11 +158,20 @@ export default async function ReadPage({ params }: ReadPageProps) {
   }
 
   // 가드 4: ADR-0014 Amendment #5 블랙리스트 4 UUID 차단 (5번째 표면)
+  // ★ 가드 5(비활성)보다 먼저 평가한다 — 블랙리스트는 활성 여부와 무관하게 404다.
   if (
     book.source_platform === 'book_dash' &&
     (BOOK_DASH_404_SOURCE_IDS as readonly string[]).includes(book.source_id)
   ) {
     notFound();
+  }
+
+  // 가드 5: 비활성 도서 → **상세로 redirect** (ADR-0063 D3, 2026-08-19 신설).
+  //   진입 차단이라는 결과는 종전(notFound)과 같고 착지점만 바뀐다 — 아이가 막다른
+  //   404 대신 상세의 안내 화면(D2)에 도착한다. 관리자 preview 진입만 예외 통과하며,
+  //   assertAdmin은 이 분기 안에서만 호출된다(단축 평가, isAdminPreview 주석 참조).
+  if (!book.is_active && !(await isAdminPreview(searchParams?.[PREVIEW_PARAM]))) {
+    redirect(`/book/${book.id}`);
   }
 
   // 미니 바 행 압축 — buildAttributionRows 재사용, page에서 선별 (신규 export 0건)

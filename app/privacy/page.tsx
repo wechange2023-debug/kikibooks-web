@@ -141,5 +141,5 @@ const PRIVACY_DOCUMENT: LegalDocument = {
 };
 
 export default function PrivacyPage() {
-  return <LegalPageShell doc={PRIVACY_DOCUMENT} />;
+  return <LegalPageShell doc={PRIVACY_DOCUMENT} current="privacy" />;
 }

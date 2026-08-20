@@ -18,6 +18,10 @@ import { BRAND_NAME } from '@/lib/brand';
  * ★ `import 'server-only'` — 이 모듈의 값은 서버에서만 읽힌다. 컴포넌트는
  *   `import type { LandingCopy }`(타입 전용, 런타임 제거)만 사용한다.
  *
+ * ★ ADR-0062 D5 — 푸터 카피(사업자·저작권·CC BY 안내·약관 라벨)는 본 파일에서
+ *   빠졌다. `AppFooter`가 전 화면 공용이 되면서 `lib/legal.ts`가 단일 출처가 됐고,
+ *   `LandingFooter`는 폐기됐다. 랜딩 전용 카피만 여기 남는다.
+ *
  * 의도 문서: docs/intent/screen-01-landing.md 5절(화면 구성)
  */
 
@@ -45,14 +49,6 @@ export interface LandingCopy {
   popularSection: {
     heading: string;
     subheading: string;
-  };
-  footer: {
-    companyName: string;
-    copyright: string;
-    /** ADR-0013 결정 2 — 표지 노출 화면의 CC BY 안내 문구. */
-    attributionNotice: string;
-    termsLabel: string;
-    privacyLabel: string;
   };
 }
 
@@ -100,14 +96,6 @@ const LANDING_COPY: LandingCopy = {
   popularSection: {
     heading: '그림책 미리 만나보기',
     subheading: '회원가입하면 모든 그림책을 무료로 볼 수 있어요.',
-  },
-  footer: {
-    companyName: '주식회사 위체인지 (WECHANGE)',
-    copyright: '© 2026 주식회사 위체인지',
-    attributionNotice:
-      '모든 도서는 CC BY 4.0 라이선스이며, 글·그림 저작자와 원본 출처는 각 책 상세 페이지에 표시됩니다.',
-    termsLabel: '이용약관',
-    privacyLabel: '개인정보처리방침',
   },
 };
 

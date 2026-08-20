@@ -130,8 +130,35 @@ function pickFallbackColor(id: string): (typeof FALLBACK_PALETTE)[number] {
  *   만들지 않기 위해 export만 추가했고 마크업·props는 무변경이다. 카드 4벌(랜딩·홈·
  *   라이브러리·쇼케이스)을 공용 컴포넌트로 통합하는 리팩터링은 별도 작업 단위로
  *   분리했다(docs/backlog.md §7.4 (y) — 홈·라이브러리 회귀 검증 포함).
+ *
+ * inactive prop (2026-08-19, ADR-0063 D1·O-D5-3 형태 '가'):
+ *   비활성 도서(books.is_active = false)에 **표지 딤 + 좌상단 소형 칩 "쉬는 중"**.
+ *   카드를 복제하지 않고 **선택 prop 1개**만 더했다 — 기본값 false라 라이브러리
+ *   호출부(아래 그리드)는 무변경이고 마이페이지만 값을 넘긴다.
+ *   PopularBook 타입에 필드를 넣지 않은 이유: 카드 4표면이 공유하는 타입이라
+ *   (lib/landing/popular-books.ts:42) 무관한 표면까지 전부 흔들리기 때문이다.
+ *
+ *   딤 강도 30%는 실측으로 정한 값이다. 딤은 표지 폴백(색 블록 + 제목 텍스트)도 함께
+ *   덮으므로 텍스트 대비가 같이 떨어진다. text/level-*-container 3조합에서 흰 스크림
+ *   60%는 2.26:1(AA 미달), 40%는 3.89:1(미달), 35%는 4.54:1(간신히), **30%는 5.29:1**로
+ *   AA 4.5:1을 여유 있게 통과한다(최악 조합 level-5-container 기준).
+ *   ★ 폴백 자체(onError → BookOpen + pickFallbackColor)는 **무변경**이다 —
+ *     회귀 체크리스트 3번(표지 폴백 6표면) 동작에 손대지 않는다.
  */
-export function LibraryBookCard({ book }: { book: PopularBook }) {
+export function LibraryBookCard({
+  book,
+  inactive = false,
+  inactiveLabel,
+  inactiveAriaLabel,
+}: {
+  book: PopularBook;
+  /** 비활성 도서면 true — 표지 딤 + "쉬는 중" 칩 (ADR-0063 D1). */
+  inactive?: boolean;
+  /** 칩 라벨. lib/mypage/copy.ts 단일 출처에서 내려온다(하드코딩 금지). */
+  inactiveLabel?: string;
+  /** 칩의 스크린리더 라벨. 시각 배지만으로는 상태가 전달되지 않는다. */
+  inactiveAriaLabel?: string;
+}) {
   const [imageError, setImageError] = useState(false);
   const fallback = pickFallbackColor(book.id);
 
@@ -141,7 +168,7 @@ export function LibraryBookCard({ book }: { book: PopularBook }) {
       prefetch={false}
       className="group flex flex-col gap-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
     >
-      <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-surface-3 shadow-elev-1 transition-transform duration-200 ease-kiki group-hover:-translate-y-1">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-surface-3 shadow-elev-1 transition-all duration-200 ease-kiki group-hover:-translate-y-1 group-hover:shadow-elev-2">
         {imageError ? (
           <div
             className={`flex h-full w-full flex-col items-center justify-center gap-2 p-3 ${fallback.block}`}
@@ -163,6 +190,25 @@ export function LibraryBookCard({ book }: { book: PopularBook }) {
             onError={() => setImageError(true)}
           />
         )}
+        {/* 비활성 딤 (ADR-0063 O-D5-3 형태 '가') — 흰 스크림 30%. 강도 근거는 위 JSDoc.
+            라이트 모드 강제 환경이라 어둡게가 아니라 **밝게 바래는** 방향으로 죽인다
+            (어두운 스크림은 폴백의 dark text를 뭉갠다). 클릭은 막지 않는다 —
+            pointer-events-none으로 링크 히트 영역을 그대로 둔다(D1 카드는 상세로 간다). */}
+        {inactive ? (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-surface/30"
+          />
+        ) : null}
+        {/* "쉬는 중" 칩 — 좌상단. 오디오 배지가 우상단을 쓰므로 겹치지 않는다. */}
+        {inactive ? (
+          <span
+            aria-label={inactiveAriaLabel}
+            className="absolute left-1.5 top-1.5 inline-flex items-center rounded-pill border border-outline bg-surface px-2 py-0.5 text-caption font-semibold text-text-variant shadow-elev-1"
+          >
+            {inactiveLabel}
+          </span>
+        ) : null}
         {/* 오디오 지원 배지 (Phase F) — hasAudio=true인 책만. BookCoverCard와 동일 pill. */}
         {book.hasAudio ? (
           <span

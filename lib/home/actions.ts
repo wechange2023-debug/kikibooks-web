@@ -15,7 +15,7 @@ import { createClient } from '@/lib/supabase/server';
  *     (parent_id = auth.uid())가 1차 방어선. 다른 사용자의 childId 입력 시 0행 UPDATE.
  *   - `.update(...).eq('id', childId).select('id').maybeSingle()`로 affected_rows 검증.
  *     **0행이면 명시적 error 반환** — RLS의 묵묵한 실패(UPDATE 0행 + no error)를 방지.
- *   - 성공 시 revalidatePath('/home')로 추천 5권을 새 레벨 기준으로 재계산.
+ *   - 성공 시 revalidatePath('/')로 추천 5권을 새 레벨 기준으로 재계산(ADR-0062 D3).
  *
  * single() vs maybeSingle():
  *   - .single()은 0행이면 PostgrestError(code='PGRST116')를 던져 일반 error 분기로 흡수됨.
@@ -80,8 +80,10 @@ export async function updateChildLevel(
     return { ok: false, error: '자녀 정보를 찾을 수 없습니다.' };
   }
 
-  // 추천 5권 재계산 — 새 current_level 기준으로 /home 캐시 무효화.
-  revalidatePath('/home');
+  // 추천 5권 재계산 — 새 current_level 기준으로 메인 캐시 무효화.
+  // ★ ADR-0062 D3·회귀 11 — 대상이 '/home'에서 '/'로 바뀌었다. 이 줄이 틀리면
+  //   타입·빌드는 통과하는데 "레벨을 바꿔도 추천이 그대로"인 증상만 남는다.
+  revalidatePath('/');
 
   return { ok: true };
 }

@@ -15,13 +15,13 @@ import { BookOpen } from 'lucide-react';
  *     ADR-0024 Amendment O1(2026-08-07)로 **즐겨찾기 토글 채택**으로 뒤집혔다.
  *     구현체는 components/book/favorite-button.tsx — 본 컴포넌트와 같은 행에 배치된다.
  *
- * 디자인 인용 (design-system §6.1 Button Primary):
- *   - Primary 변형: bg-primary + text-on-primary + shadow-elev-2 + hover:bg-primary-hover
+ * 디자인 인용 (design-system §6.1 Button CTA):
+ *   - CTA 변형(§6.1·§1.2): bg-cta + text-on-cta + shadow-elev-cta + hover:bg-cta-hover
  *   - 모양: rounded-pill (§6.1 "기본 pill, 사각형 금지")
  *   - 사이즈: h-[52px] (lg — 결제·가입 등 중요 액션 사이즈. 모바일 큰 터치 타겟, Apple HIG 44pt 초과)
  *   - 아이콘: BookOpen 20px + gap-2 (§6.1 "아이콘 18~20px, 텍스트와 간격 8px")
- *   - hover: translateY(-1px) + bg-primary-hover
- *   - focus: 2px outline primary 50% alpha
+ *   - hover: translateY(-1px) + bg-cta-hover
+ *   - focus: 2px outline cta 50% alpha
  *
  * 위치 규칙 (license-rules.md §5.3): AttributionBox 직하단. 페이지가 배치 책임.
  *
@@ -45,7 +45,7 @@ export function ReadButton({ bookId, label }: ReadButtonProps) {
   return (
     <Link
       href={`/book/${bookId}/read`}
-      className="inline-flex h-[52px] items-center justify-center gap-2 rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-2 transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+      className="inline-flex h-[52px] items-center justify-center gap-2 rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2"
     >
       <BookOpen className="h-5 w-5" aria-hidden="true" />
       {label}

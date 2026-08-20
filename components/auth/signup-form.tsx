@@ -166,7 +166,7 @@ export function SignupForm() {
         </p>
       )}
 
-      <Button type="submit" size="lg" className="w-full" disabled={isPending}>
+      <Button type="submit" variant="cta" size="lg" className="w-full" disabled={isPending}>
         {isPending ? '가입 중…' : '회원가입'}
       </Button>
 

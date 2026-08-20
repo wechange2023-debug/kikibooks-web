@@ -300,7 +300,7 @@ export function ChildProfileForm() {
         </p>
       )}
 
-      <Button type="submit" size="lg" className="w-full" disabled={isPending}>
+      <Button type="submit" variant="cta" size="lg" className="w-full" disabled={isPending}>
         {isPending ? '저장 중…' : '시작하기'}
       </Button>
     </form>

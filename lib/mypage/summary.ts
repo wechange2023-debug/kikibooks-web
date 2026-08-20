@@ -62,10 +62,22 @@ export interface MypageSummary {
   inProgressCount: number;
   /** children.points 누적 포인트(ADR-0018 D5 매 완독 +50). */
   points: number;
-  /** 최근 완독순 상위 LIST_LIMIT권. */
+  /** 최근 완독순 상위 LIST_LIMIT권. 비활성 도서도 포함한다(ADR-0063 D1). */
   readBooks: PopularBook[];
-  /** 최근 추가순 상위 LIST_LIMIT권. */
+  /** 최근 추가순 상위 LIST_LIMIT권. 비활성 도서도 포함한다(ADR-0063 D1). */
   favoriteBooks: PopularBook[];
+  /**
+   * 위 두 목록 중 **비활성 도서(books.is_active = false)의 id** (ADR-0063 D1·O-D5-3).
+   *
+   * 화면이 이 집합으로 "쉬는 중" 배지를 켠다. PopularBook에 필드를 더하지 않은 이유:
+   * PopularBook은 카드 4표면(랜딩·홈 추천·라이브러리·카테고리)이 공유하는 타입이라
+   * (lib/landing/popular-books.ts:42) 필드를 늘리면 무관한 표면까지 전부 흔든다.
+   * 마이페이지만 아는 정보는 마이페이지 반환값에 둔다.
+   *
+   * Set이 아니라 배열인 이유: 이 값은 Server Component에서 client component
+   * (LibraryBookCard)로 내려가는 경로에 있어 **직렬화 가능**해야 한다.
+   */
+  inactiveBookIds: string[];
   /** 쿼리 1건 이상이 실패해 0·빈 배열로 폴백했으면 true. */
   degraded: boolean;
 }
@@ -207,7 +219,7 @@ export async function getMypageSummary(
 
   // ── 2·3파: books 1회 + toPopularBooks 1회 (두 리스트 합집합) ───────────────
   const unionIds = Array.from(new Set([...readBookIds, ...favoriteBookIds]));
-  const bookMap = await fetchBooksById(supabase, unionIds, () => {
+  const { bookMap, inactiveIds } = await fetchBooksById(supabase, unionIds, () => {
     degraded = true;
   });
 
@@ -216,9 +228,11 @@ export async function getMypageSummary(
     completedCount: stats?.completed_titles ?? 0,
     inProgressCount: stats?.in_progress_titles ?? 0,
     points,
-    // is_active=false 책은 bookMap에 없다 → 자동 제외(책 상세가 notFound라 죽은 링크 방지).
+    // ADR-0063 D1 — 비활성 도서도 bookMap에 담기므로 두 목록에 **그대로 남는다**.
+    // filter(isPresent)는 이제 "삭제된 책"(books 행 자체가 없는 id)만 걸러낸다.
     readBooks: readBookIds.map((id) => bookMap.get(id)).filter(isPresent),
     favoriteBooks: favoriteBookIds.map((id) => bookMap.get(id)).filter(isPresent),
+    inactiveBookIds: Array.from(inactiveIds),
     degraded,
   };
 }
@@ -228,37 +242,63 @@ function isPresent(book: PopularBook | undefined): book is PopularBook {
   return book !== undefined;
 }
 
+/** fetchBooksById 조회 행 — PopularBookRow + 배지 판정용 is_active 1컬럼. */
+interface MypageBookRow extends PopularBookRow {
+  is_active: boolean;
+}
+
 /**
- * book_id 목록 → PopularBook Map. 활성 책(is_active=true)만 담는다.
+ * book_id 목록 → PopularBook Map + 비활성 id 집합. **활성/비활성을 가리지 않는다.**
  *
- * 비활성 책(중복 표지 정리로 꺼진 231권 등)은 책 상세가 notFound()이므로 리스트에서
- * 빼는 편이 맞다 — 카드를 눌렀는데 404가 뜨는 죽은 링크를 만들지 않는다.
+ * ──────────────────────────────────────────────────────────────────────────────
+ * 종전 결정과 그 반전 (ADR-0063 D1)
+ * ──────────────────────────────────────────────────────────────────────────────
+ *   종전 주석(원문 보존):
+ *     "활성 책(is_active=true)만 담는다. 비활성 책(중복 표지 정리로 꺼진 231권 등)은
+ *      책 상세가 notFound()이므로 리스트에서 빼는 편이 맞다 — 카드를 눌렀는데 404가
+ *      뜨는 죽은 링크를 만들지 않는다."
+ *
+ *   **이 결정은 ADR-0063으로 반전됐다(2026-08-19).** 반전 근거 2가지:
+ *     1. 제외의 유일한 근거였던 "죽은 링크"가 사라졌다 — ADR-0063 D2가 비활성 도서
+ *        상세를 404 대신 안내 화면으로 바꿨다. 카드를 눌러도 404가 뜨지 않는다.
+ *     2. 제외의 부작용이 더 컸다 — 포인트 총점은 남는데 목록에서만 사라져 수치가
+ *        어긋나 보였다(ADR-0059 §O-8: 키키주니어 2,600P 중 900P가 이 상태였다).
+ *        3~7세에게 "읽은 책이 사라지는 것"은 혼란·상실감을 준다.
+ *
+ *   반전 범위는 **읽은 책과 즐겨찾기 양쪽**이다 — 두 목록이 이 Map 하나를 공유하며,
+ *   찜한 책이 말없이 사라지는 것도 같은 성격의 혼란이기 때문이다(ADR-0063 D1).
+ *
+ * is_active 1컬럼을 더 읽는다. PopularBook 타입은 건드리지 않는다(카드 4표면 공유
+ * 타입이라 필드 추가의 파급이 크다) — 비활성 id는 별도 Set으로 돌려준다.
  */
 async function fetchBooksById(
   supabase: SupabaseClient,
   bookIds: string[],
   onError: () => void,
-): Promise<Map<string, PopularBook>> {
+): Promise<{ bookMap: Map<string, PopularBook>; inactiveIds: Set<string> }> {
   if (bookIds.length === 0) {
-    return new Map();
+    return { bookMap: new Map(), inactiveIds: new Set() };
   }
 
   const { data, error } = await supabase
     .from('books')
-    .select('id, title, author, cover_url')
+    .select('id, title, author, cover_url, is_active')
     .in('id', bookIds)
-    .eq('is_active', true)
-    .returns<PopularBookRow[]>();
+    .returns<MypageBookRow[]>();
 
   if (error) {
     onError();
-    return new Map();
+    return { bookMap: new Map(), inactiveIds: new Set() };
   }
 
   const rows = data ?? [];
+  const inactiveIds = new Set(
+    rows.filter((row) => !row.is_active).map((row) => row.id),
+  );
 
   // hasAudio 산출은 toPopularBooks 단일 통로 — has_audio 컬럼 직접 읽기 금지.
+  // toPopularBooks는 PopularBookRow만 읽으므로 여분의 is_active는 그냥 무시된다.
   const books = await toPopularBooks(supabase, rows);
 
-  return new Map(books.map((book) => [book.id, book]));
+  return { bookMap: new Map(books.map((book) => [book.id, book])), inactiveIds };
 }

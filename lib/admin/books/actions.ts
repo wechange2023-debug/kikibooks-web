@@ -20,7 +20,7 @@ import { createServiceRoleClient } from '@/lib/supabase/server';
  *   - D2 트리플 가드 4단 표준 — ①zod ②auth.getUser ③requireAdmin ④createServiceRoleClient.
  *     본 모듈은 ②+③단을 assertAdmin()(gate.ts)으로 통합한다(server action 환경 정합 —
  *     redirect 대신 ok/error 반환). 실효 패턴 = ①zod → ②+③assertAdmin → ④service role UPDATE.
- *   - D11 revalidatePath 3중 호출 — mutation 직후 '/admin/books' + '/home' + '/library'.
+ *   - D11 revalidatePath 3중 호출 — mutation 직후 '/admin/books' + '/' + '/library'.
  *     force-dynamic 페이지에서 효과는 미세하나 표준 박제(향후 ISR·캐시 도입 시 자동 동기).
  *   - D18 낙관적 UI — server action 결과는 클라이언트가 useTransition으로 받아 즉시 시각
  *     토글 환원 또는 메시지 표시. 본 server action은 결과만 반환(클라이언트 책임).
@@ -84,12 +84,13 @@ export type FetchAdminBooksPageResult =
   | { ok: false; error: string };
 
 // =============================================================================
-// D11 revalidatePath 3중 호출 — mutation 성공 시 admin/books + home + library
+// D11 revalidatePath 3중 호출 — mutation 성공 시 admin/books + 메인(/) + library
 // =============================================================================
 
+// ★ ADR-0062 D3·회귀 12 — '/home' → '/'. 메인이 통합되며 무효화 대상도 옮겨졌다.
 const ADMIN_MUTATION_REVALIDATE_PATHS = [
   '/admin/books',
-  '/home',
+  '/',
   '/library',
 ] as const;
 

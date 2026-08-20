@@ -202,3 +202,77 @@ export async function getBookById(
   void supabase; // 캐시 경로 미사용(ADR-0033) — 시그니처 안정성 위해 인자만 유지.
   return getBookByIdCached(id);
 }
+
+/**
+ * getBookByIdIncludingInactive 캐시 코어 (ADR-0063 O-D5-5 안 ② 채택).
+ *
+ * 위 getBookByIdCached와 **단 한 가지만 다르다** — `.eq('is_active', true)`가 없다.
+ * 비활성 도서의 상세 데이터(제목·저자·삽화가·라이선스·원본 링크 = CC BY 4.0 어트리뷰션
+ * 4요소)를 읽어야 D2 안내 화면이 성립하기 때문이다(ADR-0063 D2 — 어트리뷰션 유지는
+ * 법적 의무라 "책 정보를 못 읽으니 생략"이 성립하지 않는다).
+ *
+ * 나머지는 전부 동일하다:
+ *   - 캐시 키: ['getBookById-any-v1'] — 기존 v3와 **다른 키**라 캐시가 섞이지 않는다.
+ *   - tag: 'books-catalog' — 기존과 **같은 태그**다. admin의 is_active 토글이 쏘는
+ *     revalidateTag(lib/admin/books/actions.ts:98·107) 한 번이 두 캐시를 동시에
+ *     무효화한다. 무효화 정책은 ADR-0033 그대로이며 신규 태그 0건이다.
+ *   - revalidate: 3600 — 기존과 동일.
+ *   - 클라이언트: createCatalogClient(쿠키 없는 publishable). secret 키 0건.
+ *     books RLS §9.1 USING(true)라 비활성 행도 세션 없이 읽힌다(RLS 우회 아님).
+ *   - SELECT 컬럼·Book 타입 무변경 — is_active가 이미 둘 다에 포함돼 있다(:83·:147).
+ *
+ * ★ 판정은 호출부 책임이다. 본 함수는 활성/비활성을 **가리지 않고 반환**하므로,
+ *   호출부가 `book.is_active === false`를 보고 D2(안내)·D3(redirect)·D5(정상)를 고른다.
+ */
+const getBookByIdAnyCached = unstable_cache(
+  async (id: string): Promise<Book | null> => {
+    const supabase = createCatalogClient();
+    const { data, error } = await supabase
+      .from('books')
+      .select(
+        'id, title, author, illustrator, cover_url, content_url, content_type, original_url, license, attribution_text, source_platform, source_id, level, age_min, age_max, language, is_active',
+      )
+      .eq('id', id)
+      .maybeSingle<BookRow>();
+
+    if (error) {
+      throw new Error(
+        `getBookByIdIncludingInactive: books 조회 실패 (id=${id}) — ${error.message}`,
+      );
+    }
+
+    if (!data) {
+      return null;
+    }
+
+    // 오디오 판정도 활성 경로와 **같은 함수**를 쓴다(단일 출처 유지, :164 주석과 동일 원칙).
+    const audioBookIds = await selectReaderAudioBookIds(supabase, [id]);
+
+    return { ...data, hasAudio: audioBookIds.has(id) };
+  },
+  ['getBookById-any-v1'],
+  { tags: ['books-catalog'], revalidate: 3600 },
+);
+
+/**
+ * books.id로 책 1권을 조회한다 — **is_active를 가리지 않는다** (ADR-0063 O-D5-5).
+ *
+ * getBookById와의 차이는 활성 필터 유무 하나뿐이다. 비활성 도서에 안내 화면(D2)·
+ * 상세 redirect(D3)·완독 축하 정상 표시(D5)를 제공해야 하는 3개 표면이 본 함수를 쓴다.
+ * 나머지 호출부(라이브러리·홈·추천 등)는 계속 getBookById를 쓴다 — 기존 함수는
+ * 무변경이므로 회귀 범위가 이 3표면으로 국한된다(O-D5-5 안 ② 채택 근거).
+ *
+ * 없는 책은 여전히 null이다. 호출 측은 null이면 notFound()를 호출해야 한다.
+ *
+ * @param supabase 호출자의 본인 세션 클라이언트.
+ *   ★getBookById와 동일하게 **캐시 경로에서 사용하지 않는다** — 시그니처 정합을 위해
+ *   인자만 유지한다(ADR-0033 안전 원칙).
+ * @param id       books.id UUID. 형식 검증은 호출 측 책임.
+ */
+export async function getBookByIdIncludingInactive(
+  supabase: SupabaseClient,
+  id: string,
+): Promise<Book | null> {
+  void supabase; // 캐시 경로 미사용(ADR-0033) — getBookById와 동일.
+  return getBookByIdAnyCached(id);
+}

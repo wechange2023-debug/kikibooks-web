@@ -5,7 +5,7 @@ import { notFound, redirect } from 'next/navigation';
 import { CelebrateRewards } from '@/components/book/celebrate-rewards';
 import { ONBOARDING_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getCelebrateCopy } from '@/lib/book/copy';
-import { getBookById } from '@/lib/book/detail';
+import { getBookByIdIncludingInactive } from '@/lib/book/detail';
 import { getActiveChild } from '@/lib/home/active-child';
 import { createClient } from '@/lib/supabase/server';
 import { BRAND_NAME } from '@/lib/brand';
@@ -43,7 +43,16 @@ import { BRAND_NAME } from '@/lib/brand';
  *   1. params.id UUID 형식 불일치 → notFound (DB 호출 방지)
  *   2. 미인증 → redirect(/login) (미들웨어 1차, 본 페이지 2차 안전망)
  *   3. 자녀 0명 → redirect(/onboarding) (축하 문구에 자녀명 필요)
- *   4. books 행 NULL (없음·is_active=false·RLS 차단) → notFound
+ *   4. books 행 NULL (책이 없음·RLS 차단) → notFound
+ *
+ * ★ 비활성 도서 분기 0건 (ADR-0063 **D5**, 2026-08-19): 조회를
+ *   getBookByIdIncludingInactive로 바꿔 is_active=false인 책도 **축하 화면을 그대로**
+ *   보여준다. D2(안내 화면)·D3(redirect)를 적용하지 않는다.
+ *     - 이미 읽은 사실과 지급된 포인트는 유효하다 — 축하를 취소할 이유가 없다.
+ *     - 본 화면에는 다시 읽기 진입점이 없어 D3의 취지를 침범하지 않는다.
+ *     - 완독 직후는 아이에게 가장 민감한 순간이라, 여기서 404를 띄우는 것이
+ *       ADR-0059 O-8이 없애려 한 상실감을 가장 나쁜 타이밍에 만든다.
+ *   책 자체가 없을 때의 notFound(가드 4)는 그대로 유지한다.
  *
  * Cache 정책 (ADR-0018 D11 — phase-12 무변경):
  *   export const dynamic = 'force-dynamic' — 자녀명·책 제목·points·badge가 매번 fresh.
@@ -103,12 +112,12 @@ export default async function CelebratePage({ params }: CelebratePageProps) {
 
   // 3-fetch 병렬 — book + child + copy 의존성 없음 (read/page.tsx 패턴 정합)
   const [book, child, celebrateCopy] = await Promise.all([
-    getBookById(supabase, params.id),
+    getBookByIdIncludingInactive(supabase, params.id),
     getActiveChild(supabase, user.id),
     getCelebrateCopy(),
   ]);
 
-  // 가드 4: books 행 NULL → notFound
+  // 가드 4: books 행 NULL → notFound (ADR-0063 D5 — is_active 분기는 두지 않는다)
   if (!book) {
     notFound();
   }
@@ -161,7 +170,7 @@ export default async function CelebratePage({ params }: CelebratePageProps) {
 
       <Link
         href={LIBRARY_PATH}
-        className="inline-flex h-[52px] items-center justify-center gap-2 rounded-pill bg-primary px-8 text-body font-semibold text-on-primary shadow-elev-2 transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+        className="inline-flex h-[52px] items-center justify-center gap-2 rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2"
       >
         {celebrateCopy.libraryLinkLabel}
       </Link>
