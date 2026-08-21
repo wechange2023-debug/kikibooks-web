@@ -87,13 +87,24 @@ function usePlayer() {
     if (el) el.pause();
   }, []);
 
-  const play = useCallback((src: string | null) => {
+  /**
+   * @returns 재생이 **실제로 시작됐는지**. false면 자동재생 정책 등에 막힌 것이다.
+   *   호출부는 이 값으로 "이어 재생"을 걸지 말지 정한다 — 막힌 뒤에 다음 트랙을
+   *   억지로 걸면 그것도 막히고, 콘솔만 시끄러워진다.
+   */
+  const play = useCallback(async (src: string | null): Promise<boolean> => {
     const el = ref.current;
-    if (!el || !src) return;
+    if (!el || !src) return false;
     if (el.src !== src) el.src = src;
     el.currentTime = 0;
-    // 자동재생 정책 등으로 막히면 조용히 무시한다 — 화면 텍스트가 병기돼 있다(D-B4).
-    el.play().catch(() => {});
+    try {
+      await el.play();
+      return true;
+    } catch {
+      // 자동재생 차단(상호작용 0 상태에서 직접 URL 진입 등) — **조용히 대기**한다.
+      // 화면 텍스트가 병기돼 있고(D-B4), 버튼을 탭하면 그때 정상 재생된다.
+      return false;
+    }
   }, []);
 
   useEffect(() => stop, [stop]);
@@ -122,9 +133,41 @@ export function BookQuiz({ source, exitHref }: { source: QuizSource; exitHref: s
 
   const current = questions[index];
 
-  // 문항이 바뀌면 지시문을 한 번 들려준다(D-B4). 화면 텍스트는 항상 함께 보인다.
+  /**
+   * 문항 진입 시 오디오 자동 연결 (Q-2c).
+   *
+   * 지시문(Seoyeon)을 들려주고, **끝나면** 문항 ①의 영어 문장 클립을 이어 재생한다.
+   * 아이가 버튼을 찾아 누르지 않아도 "문제를 듣는" 상태가 되는 것이 목적이다.
+   *
+   * ★ 겹치지 않는다: `ended` 이벤트를 기다렸다가 다음을 건다. 두 트랙이 서로 다른
+   *   `<audio>`라 동시에 울릴 수 있는데, 순서를 이벤트로 묶어 그것을 막는다.
+   * ★ 자동재생이 막히면 **아무것도 하지 않는다**: `play()`가 false를 돌려주면 이어
+   *   재생을 걸지 않는다. 콘솔 에러도, 깨진 UI도 남기지 않고 조용히 대기한다 —
+   *   "문제 다시 듣기"·"문장 듣기" 버튼을 탭하면 그때 정상 재생된다.
+   * ★ 문항을 넘기거나 언마운트하면 대기 중인 연결을 끊는다(cancelled 플래그 + 리스너 해제).
+   */
   useEffect(() => {
-    if (phase === 'quiz' && current) prompt.play(current.promptAudioUrl);
+    if (phase !== 'quiz' || !current) return;
+
+    const promptEl = prompt.ref.current;
+    let cancelled = false;
+    let onEnded: (() => void) | null = null;
+
+    // 문항 ①만 이어 재생 대상이다. ②③은 지시문만 들려주면 문제가 성립한다.
+    const nextClip = current.id === 'q1' ? current.clipUrl : null;
+
+    void prompt.play(current.promptAudioUrl).then((started) => {
+      if (cancelled || !started || !nextClip || !promptEl) return;
+      onEnded = () => {
+        if (!cancelled) void clip.play(nextClip);
+      };
+      promptEl.addEventListener('ended', onEnded, { once: true });
+    });
+
+    return () => {
+      cancelled = true;
+      if (promptEl && onEnded) promptEl.removeEventListener('ended', onEnded);
+    };
     // 문항 전환에만 반응해야 한다.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, index, questions]);
@@ -181,7 +224,9 @@ export function BookQuiz({ source, exitHref }: { source: QuizSource; exitHref: s
   }
 
   return (
-    <section className="flex w-full max-w-xl flex-col gap-4" aria-label="책 퀴즈">
+    // max-w-3xl — PC에서 보기 그림을 키우려면 카드 폭부터 넓어야 한다(Q-2c).
+    // 3열 기준 그림 한 변이 약 170px → 약 230px가 된다.
+    <section className="flex w-full max-w-3xl flex-col gap-4" aria-label="책 퀴즈">
       {/* 질문 음성(한국어)과 본문 클립을 분리한다 — 서로 끊지 않게. */}
       <audio ref={prompt.ref} preload="none" />
       <audio ref={clip.ref} preload="none" />
@@ -196,7 +241,7 @@ export function BookQuiz({ source, exitHref }: { source: QuizSource; exitHref: s
             <h1 className="font-display text-h3 font-bold text-text">{current.prompt}</h1>
             <button
               type="button"
-              onClick={() => prompt.play(current.promptAudioUrl)}
+              onClick={() => void prompt.play(current.promptAudioUrl)}
               className="inline-flex h-11 items-center justify-center gap-1 rounded-pill px-3 text-label font-semibold text-primary transition-colors duration-200 ease-kiki hover:bg-surface-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 motion-reduce:transition-none"
             >
               <Volume2 className="h-5 w-5" aria-hidden="true" />
@@ -204,21 +249,22 @@ export function BookQuiz({ source, exitHref }: { source: QuizSource; exitHref: s
             </button>
           </div>
 
-          {/* ① 문제는 본문 낭독이다 — 기존 페이지 mp3를 그대로 쓴다(신규 합성 0건). */}
+          {/* ① 문제는 본문 낭독이다 — 기존 페이지 mp3를 그대로 쓴다(신규 합성 0건).
+              문항 진입 시 지시문에 이어 자동 재생되므로, 이 버튼은 **다시 듣기**다. */}
           {current.id === 'q1' && (
             <button
               type="button"
-              onClick={() => clip.play(current.clipUrl)}
+              onClick={() => void clip.play(current.clipUrl)}
               className={`${PRIMARY_BUTTON} self-center`}
             >
               <Volume2 className="h-5 w-5" aria-hidden="true" />
-              문장 듣기
+              문장 다시 듣기
             </button>
           )}
 
           {/* ③ 문제는 그림 하나다. 보기는 문장이 된다. */}
           {current.id === 'q3' && (
-            <div className="mx-auto flex aspect-[4/3] w-full max-w-sm items-center justify-center overflow-hidden rounded-lg bg-surface-2">
+            <div className="mx-auto flex aspect-[4/3] w-full max-w-md items-center justify-center overflow-hidden rounded-lg bg-surface-2">
               {/* 삽화는 외부 CDN 임의 경로라 next/image를 쓰지 않는다 — 원격 도메인
                   화이트리스트 밖 호스트가 섞이고 최적화도 불요하다
                   (asb-reader.tsx:130-133 선례와 같은 근거). */}
@@ -253,7 +299,14 @@ export function BookQuiz({ source, exitHref }: { source: QuizSource; exitHref: s
               })}
             </ul>
           ) : (
-            <ul className={`grid gap-2 ${current.choices.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}`}>
+            /* 모바일(<768px)은 **세로 1열**이라 그림 하나가 카드 폭을 다 쓴다.
+               768px 이상에서만 보기 수만큼 가로로 편다(②는 2열, ①은 3열).
+               세로로 길어져 스크롤이 생겨도 무방하다 — 아이에게는 큰 그림이 먼저다. */
+            <ul
+              className={`grid gap-3 ${
+                current.choices.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'
+              }`}
+            >
               {current.choices.map((choice) => {
                 const isAnswer = choice.key === current.answerKey;
                 return (
