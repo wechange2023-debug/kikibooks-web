@@ -1,4 +1,5 @@
 import type { QuizQuestionId } from '@/lib/book/copy';
+import { UNUSABLE_IMAGE_URLS } from '@/lib/quiz/blank-images';
 import type { QuizPage, QuizPrompt, QuizSource } from '@/lib/quiz/quiz-source';
 
 /**
@@ -71,6 +72,17 @@ export type QuizQuestion =
   | QuizPickEarlierScene
   | QuizLookPickSentence;
 
+/**
+ * 보기로 쓸 수 있는 삽화인가 (Q-2d).
+ *
+ * `image_url`이 있어도 **콘텐츠가 백지**이거나 URL이 죽어 있으면 보기가 빈 카드가 된다.
+ * 렌더는 성공하므로 화면만 비고 오류는 나지 않는다 — 그래서 여기서 미리 걸러야 한다.
+ * 목록의 근거와 갱신 방법은 `lib/quiz/blank-images.ts` 참조.
+ */
+function usableImage(page: QuizPage): boolean {
+  return page.imageUrl !== null && !UNUSABLE_IMAGE_URLS.has(page.imageUrl);
+}
+
 /** 면 식별자 — 0-based page_index를 안정 문자열로. */
 function pageKey(page: QuizPage): string {
   return `p${page.pageIndex}`;
@@ -98,8 +110,8 @@ function distinctImagePages(pages: readonly QuizPage[]): QuizPage[] {
   const seen = new Set<string>();
   const out: QuizPage[] = [];
   for (const page of pages) {
-    if (!page.imageUrl || seen.has(page.imageUrl)) continue;
-    seen.add(page.imageUrl);
+    if (!usableImage(page) || seen.has(page.imageUrl as string)) continue;
+    seen.add(page.imageUrl as string);
     out.push(page);
   }
   return out;
@@ -120,7 +132,7 @@ function distinctTextPages(pages: readonly QuizPage[]): QuizPage[] {
 /** ①의 재료 — 오디오와 삽화를 **둘 다** 가진 면들 중 삽화가 서로 다른 것. */
 function q1Pool(source: QuizSource): QuizPage[] {
   return distinctImagePages(
-    source.pages.filter((p) => p.audioUrl !== null && p.imageUrl !== null),
+    source.pages.filter((p) => p.audioUrl !== null && usableImage(p)),
   );
 }
 
@@ -135,7 +147,7 @@ function q3Pool(source: QuizSource): { sentences: QuizPage[]; anchors: QuizPage[
   return {
     sentences,
     // 문제 그림은 **그 문장이 있는 면**의 그림이어야 한다 — 그래야 정답이 정해진다.
-    anchors: sentences.filter((p) => p.imageUrl !== null),
+    anchors: sentences.filter(usableImage),
   };
 }
 

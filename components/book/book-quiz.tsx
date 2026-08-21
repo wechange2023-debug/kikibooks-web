@@ -224,9 +224,9 @@ export function BookQuiz({ source, exitHref }: { source: QuizSource; exitHref: s
   }
 
   return (
-    // max-w-3xl — PC에서 보기 그림을 키우려면 카드 폭부터 넓어야 한다(Q-2c).
-    // 3열 기준 그림 한 변이 약 170px → 약 230px가 된다.
-    <section className="flex w-full max-w-3xl flex-col gap-4" aria-label="책 퀴즈">
+    // max-w-screen-2xl(1536px) — PC 보기 그림을 약 2배로 키우기 위한 폭이다(Q-2d).
+    // 3열 기준 한 변 약 230px → 약 490px. 화면이 좁으면 뷰포트 폭에 맞춰 자연히 줄어든다.
+    <section className="flex w-full max-w-screen-2xl flex-col gap-4" aria-label="책 퀴즈">
       {/* 질문 음성(한국어)과 본문 클립을 분리한다 — 서로 끊지 않게. */}
       <audio ref={prompt.ref} preload="none" />
       <audio ref={clip.ref} preload="none" />
@@ -262,49 +262,54 @@ export function BookQuiz({ source, exitHref }: { source: QuizSource; exitHref: s
             </button>
           )}
 
-          {/* ③ 문제는 그림 하나다. 보기는 문장이 된다. */}
-          {current.id === 'q3' && (
-            <div className="mx-auto flex aspect-[4/3] w-full max-w-md items-center justify-center overflow-hidden rounded-lg bg-surface-2">
-              {/* 삽화는 외부 CDN 임의 경로라 next/image를 쓰지 않는다 — 원격 도메인
-                  화이트리스트 밖 호스트가 섞이고 최적화도 불요하다
-                  (asb-reader.tsx:130-133 선례와 같은 근거). */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={current.imageUrl}
-                alt="이 그림에 맞는 문장을 골라요"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-          )}
-
           {current.id === 'q3' ? (
-            <ul className="flex flex-col gap-2">
-              {current.choices.map((choice) => {
-                const isAnswer = choice.key === current.answerKey;
-                return (
-                  <li key={choice.key}>
-                    <button
-                      type="button"
-                      disabled={graded}
-                      onClick={() => handlePick(choice.key)}
-                      className={`${CHOICE_BASE} min-h-[64px] px-4 py-3 ${toneOf(graded, isAnswer, picked === choice.key)}`}
-                    >
-                      <span className="text-body text-text">{choice.text}</span>
-                      {graded && (isAnswer || picked === choice.key) && (
-                        <GradeMark isAnswer={isAnswer} />
-                      )}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
+            /* ③은 문제 그림 1장 + 문장 보기다.
+               PC에서는 **좌우 2단**(그림 | 문장)으로 편다 — 세로로 쌓으면 그림을 키우는
+               만큼 문장 보기가 화면 밖으로 밀린다. 모바일은 그대로 세로로 쌓는다. */
+            <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
+              <div className="mx-auto flex aspect-[4/3] w-full max-w-2xl items-center justify-center overflow-hidden rounded-lg bg-surface-2 md:mx-0 md:w-1/2 md:max-w-none">
+                {/* 삽화는 외부 CDN 임의 경로라 next/image를 쓰지 않는다 — 원격 도메인
+                    화이트리스트 밖 호스트가 섞이고 최적화도 불요하다
+                    (asb-reader.tsx:130-133 선례와 같은 근거). */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={current.imageUrl}
+                  alt="이 그림에 맞는 문장을 골라요"
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+
+              <ul className="flex flex-col gap-2 md:w-1/2">
+                {current.choices.map((choice) => {
+                  const isAnswer = choice.key === current.answerKey;
+                  return (
+                    <li key={choice.key}>
+                      <button
+                        type="button"
+                        disabled={graded}
+                        onClick={() => handlePick(choice.key)}
+                        className={`${CHOICE_BASE} min-h-[64px] px-4 py-3 ${toneOf(graded, isAnswer, picked === choice.key)}`}
+                      >
+                        <span className="text-body text-text">{choice.text}</span>
+                        {graded && (isAnswer || picked === choice.key) && (
+                          <GradeMark isAnswer={isAnswer} />
+                        )}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           ) : (
             /* 모바일(<768px)은 **세로 1열**이라 그림 하나가 카드 폭을 다 쓴다.
                768px 이상에서만 보기 수만큼 가로로 편다(②는 2열, ①은 3열).
                세로로 길어져 스크롤이 생겨도 무방하다 — 아이에게는 큰 그림이 먼저다. */
             <ul
-              className={`grid gap-3 ${
-                current.choices.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'
+              className={`mx-auto grid w-full gap-3 ${
+                current.choices.length === 2
+                  ? // 2장은 3장보다 한 칸이 커지므로 폭을 조금 묶어 세로 길이를 잡는다.
+                    'md:max-w-4xl md:grid-cols-2'
+                  : 'md:grid-cols-3'
               }`}
             >
               {current.choices.map((choice) => {

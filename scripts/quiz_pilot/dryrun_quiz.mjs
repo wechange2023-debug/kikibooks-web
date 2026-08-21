@@ -2,7 +2,7 @@
  * 책 퀴즈 문항 빌더 전수 드라이런 (ADR-0065 Amd#2 D-B3 검증 · 읽기 전용).
  *
  * `lib/quiz/*.ts`를 **실물 그대로** 불러 858권 전량에 문항 조건을 적용하고,
- * 문항별 출제 가능 권수가 확정치(856 / 858 / **706**)와 **일치하는지 대조**한다.
+ * 문항별 출제 가능 권수가 확정치(855 / 858 / **706**)와 **일치하는지 대조**한다.
  * 불일치는 STOP 사유다 — 화면을 만들기 전에 잡아야 한다.
  *
  * ★ DB는 SELECT만. 쓰기 0건(ADR-0065 D1).
@@ -27,13 +27,15 @@ const READER_VOICE = 'danielle';
 
 /**
  * 대조 기준값.
- *   q1·q2 — Q-0 실측 §4 그대로.
+ *   q1    — **855**. Q-0 실측 856에서 1권 감소 — 무효 삽화 8건 제외로
+ *           asb slug 34242('Yoyo and his father travel')의 상이 삽화가 3->2가 됐다(Q-2d).
+ *   q2    — Q-0 실측 §4 그대로.
  *   q3    — **706**. Q-0의 707은 텍스트 *면 수* 기준 근사치였고,
  *           고유 문장 수 기준으로 다시 세어 706으로 확정했다
  *           (팀장 A안 확정 2026-08-21 · ADR Amd#2 D-B3).
  *   q3NoExclusion — 문장 인쇄 계보를 빼지 않았을 때의 ③ 권수(리포트 각주 857 검증용).
  */
-const EXPECTED = { q1: 856, q2: 858, q3: 706, q3NoExclusion: 857, population: 858 };
+const EXPECTED = { q1: 855, q2: 858, q3: 706, q3NoExclusion: 857, population: 858 };
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
