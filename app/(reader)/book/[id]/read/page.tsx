@@ -223,8 +223,11 @@ export default async function ReadPage({ params, searchParams }: ReadPageProps) 
       // CC BY 어트리뷰션은 AudioReader 헤더 ⓘ 팝오버로 1탭 도달을 보장한다(readerPopoverRows).
       // 아래 content_type 경로는 기존대로 ReaderAttributionBar를 유지한다(회귀 0).
       // 이탈 확인 가드(Wave 2 F5) — AudioReader 형제로 마운트한다. 재생 상태와 접점이
-      // 없어(props·ref 공유 0건) 오디오·하이라이트 로직은 무수정이다. 완독 → /celebrate는
-      // 클라이언트 라우팅이라 가드가 발화하지 않는다(정상 흐름 무간섭).
+      // 없어(props·ref 공유 0건) 오디오·하이라이트 로직은 무수정이다.
+      // ★ 2026-08-21 정정: 종전 주석은 "완독 → /celebrate는 클라이언트 라우팅이라
+      //   가드가 발화하지 않는다"고 했으나 **틀렸다**. 서버액션 redirect가 MPA 폴백으로
+      //   문서를 언로드해 beforeunload가 떴다(팀장 프로덕션 실측). 이제 FinishButton이
+      //   호출 직전에 READER_LEAVING_EVENT를 쏴 가드를 내린다(reader-exit-guard.tsx 참조).
       // html·asb_native 경로에는 달지 않는다 — intent 문서가 기존 뷰어 일관성을 미결로 둠.
       return (
         <div className="flex h-screen flex-col bg-surface">

@@ -3,6 +3,10 @@
 import { Check, Loader2 } from 'lucide-react';
 import { useState, useTransition } from 'react';
 
+import {
+  READER_LEAVING_EVENT,
+  READER_STAY_EVENT,
+} from '@/components/book/reader-exit-guard';
 import type { BookReaderCopy } from '@/lib/book/copy';
 import { completeReadingSession } from '@/lib/book/reading-session';
 
@@ -66,10 +70,29 @@ export function FinishButton({ bookId, copy }: FinishButtonProps) {
     }
     setError(null);
 
+    // ★ 이탈 가드 내리기 (2026-08-21 A안). 완독은 **정상 이탈**인데, 서버액션의
+    //   redirect가 MPA 폴백으로 문서를 언로드할 수 있어 ReaderExitGuard의
+    //   beforeunload가 발화했다 — 아이 화면에 브라우저 기본 경고("사이트에서
+    //   나갈까요?")가 떴다. 호출 **직전**에 신호를 보내 가드를 내린다.
+    //   가드가 없는 화면(HtmlReader·AsbReader 경로)에서는 수신자가 없어 무해하다.
+    window.dispatchEvent(new Event(READER_LEAVING_EVENT));
+
     startTransition(async () => {
       // 성공 시 server action이 redirect(never)하므로, 값이 반환됐다는 것은 곧 실패다.
       const result = await completeReadingSession(bookId);
-      setError(result.error);
+
+      // ★ `result` 존재 여부로 분기한다 (2026-08-21 실측 교정).
+      //   Next는 서버액션 redirect를 **이동 직전에 프로미스부터 resolve**한다
+      //   (server-action-reducer.js:115 `resolve(actionResult)` → :118 `handleExternalUrl`).
+      //   그래서 **성공 경로에서도 이 자리가 실행된다** — 다만 redirect 응답에는
+      //   actionResult가 없어 `result`는 undefined다. 무조건 복구를 쏘면 언로드 직전에
+      //   가드가 다시 켜져 경고가 되살아난다(실측으로 STAY 발신 확인).
+      //   값이 실제로 온 경우 = 실패 = 리더에 그대로 남는 경우에만 보호를 되살린다.
+      //   (덤으로 종전의 `result.error` 무조건 접근도 안전해진다.)
+      if (result) {
+        window.dispatchEvent(new Event(READER_STAY_EVENT));
+        setError(result.error);
+      }
     });
   };
 

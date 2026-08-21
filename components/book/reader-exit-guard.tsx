@@ -24,11 +24,20 @@ import type { BookReaderCopy } from '@/lib/book/copy';
  *      따라서 ①만 우리 카피를 쓰고, ②는 "정말 나갈까요?" 계열 기본창으로 대체된다.
  *
  * ──────────────────────────────────────────────────────────────────────────────
- * 완독(정상 흐름)은 보호 대상이 아니다
+ * 완독(정상 흐름)은 보호 대상이 아니다 — **명시 신호로 가드를 내린다**
  * ──────────────────────────────────────────────────────────────────────────────
- *   FinishButton → completeReadingSession → server redirect(/celebrate)는 클라이언트
- *   라우팅이라 beforeunload가 발화하지 않고, popstate도 개입하지 않는다. 즉 본 가드는
- *   완독 → 축하 화면 흐름에 **코드상 접점이 0건**이다(별도 예외 처리 불필요).
+ *   ★ 2026-08-21 정정. 종전 주석은 "완독 → /celebrate는 클라이언트 라우팅이라
+ *     beforeunload가 발화하지 않는다 = 접점 0건"이라고 단언했는데 **사실이 아니었다.**
+ *     서버액션의 `redirect()`는 응답이 RSC flight가 아니면 Next가 **MPA 폴백**으로
+ *     전체 페이지 이동을 한다(node_modules/next/dist/client/components/router-reducer/
+ *     reducers/server-action-reducer.js:114-120 `handleExternalUrl`). 그때 문서가
+ *     언로드되어 아래 beforeunload가 발화하고, 아이 화면에 브라우저 기본 경고가 떴다
+ *     (팀장 프로덕션 실측 2026-08-21). 도입(2026-07-24) 이래 계속 있던 결함이다.
+ *
+ *   그래서 완독 흐름이 **직접 가드를 내린다**. FinishButton이 서버액션 호출 직전에
+ *   `READER_LEAVING_EVENT`를 쏘고, 본 컴포넌트가 그것을 받아 `leavingRef`를 켠다 —
+ *   모달의 '나가기'와 **같은 경로**이므로 새 개념이 아니다.
+ *   완독이 실패해 페이지에 남는 경우에는 `READER_STAY_EVENT`로 보호를 되살린다.
  *
  * ──────────────────────────────────────────────────────────────────────────────
  * 오디오·하이라이트와의 관계
@@ -53,6 +62,24 @@ interface ReaderExitGuardProps {
 
 /** sentinel 히스토리 항목 식별자. 중복 push 방지 판별에 쓴다. */
 const GUARD_STATE_KEY = '__kikiReaderExitGuard';
+
+/**
+ * "지금 나가는 것은 정상 흐름이다" 신호 — 받으면 가드를 내린다.
+ *
+ * 가드와 완독 버튼은 형제로 마운트돼 props·ref를 공유하지 않으므로
+ * (read/page.tsx가 각각 별도로 배치한다) window 이벤트를 통로로 쓴다.
+ * **문자열 계약이라 반드시 이 상수를 import해 쓴다** — 양쪽이 문자열을 각자
+ * 적으면 오타 하나로 조용히 동작하지 않는다(경고가 다시 뜨는 회귀).
+ */
+export const READER_LEAVING_EVENT = 'kiki:reader-leaving';
+
+/**
+ * "이탈이 취소됐다" 신호 — 받으면 가드를 되살린다.
+ *
+ * 완독 서버액션이 **실패를 반환하면 사용자는 리더에 그대로 남는다**. 그때 가드가
+ * 내려간 채로 두면 이후 탭 닫기·새로고침이 무방비가 되므로 원상 복구한다.
+ */
+export const READER_STAY_EVENT = 'kiki:reader-stay';
 
 export function ReaderExitGuard({ bookDetailHref, copy }: ReaderExitGuardProps) {
   const router = useRouter();
@@ -86,11 +113,24 @@ export function ReaderExitGuard({ bookDetailHref, copy }: ReaderExitGuardProps) 
       e.returnValue = '';
     };
 
+    // 완독 등 정상 이탈 흐름이 보내는 신호 — 모달 '나가기'와 같은 효과다.
+    const onLeaving = () => {
+      leavingRef.current = true;
+    };
+    // 이탈이 취소됐을 때(완독 실패 등) 보호를 되살린다.
+    const onStay = () => {
+      leavingRef.current = false;
+    };
+
     window.addEventListener('popstate', onPopState);
     window.addEventListener('beforeunload', onBeforeUnload);
+    window.addEventListener(READER_LEAVING_EVENT, onLeaving);
+    window.addEventListener(READER_STAY_EVENT, onStay);
     return () => {
       window.removeEventListener('popstate', onPopState);
       window.removeEventListener('beforeunload', onBeforeUnload);
+      window.removeEventListener(READER_LEAVING_EVENT, onLeaving);
+      window.removeEventListener(READER_STAY_EVENT, onStay);
     };
   }, [pushSentinel]);
 
