@@ -163,9 +163,13 @@ def slow_down(ffmpeg: str, preset: dict, src: Path, dest: Path) -> int:
         "-filter:a", f"atempo={preset['atempo']}",
         "-ar", preset["sample_rate"], "-q:a", MP3_QUALITY, str(dest),
     ]
-    p = subprocess.run(cmd, capture_output=True, text=True)
+    # 성공 시엔 -loglevel error로 출력이 없지만, 실패 시 경로가 섞인 오류문이 나온다.
+    # 로케일 코덱(cp949)으로 디코드하면 진짜 원인이 UnicodeDecodeError에 가려진다
+    # (2026-08-21 R-1에서 run_tts_fullbatch.duration_ms가 같은 이유로 터졌다).
+    p = subprocess.run(cmd, capture_output=True, text=True,
+                       encoding="utf-8", errors="replace")
     if p.returncode != 0 or not dest.exists() or dest.stat().st_size == 0:
-        raise RuntimeError(f"ffmpeg rc={p.returncode}: {p.stderr.strip()[:200]}")
+        raise RuntimeError(f"ffmpeg rc={p.returncode}: {(p.stderr or '').strip()[:200]}")
     return dest.stat().st_size
 
 

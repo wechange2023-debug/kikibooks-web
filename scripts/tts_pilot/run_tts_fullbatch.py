@@ -274,9 +274,17 @@ def write_marks(path: Path, marks: list[dict]) -> None:
 
 
 def duration_ms(ffmpeg: str, path: Path) -> int | None:
+    # ★ encoding/errors 필수 (2026-08-21 R-1 결함 수정)
+    #   이 호출만 -loglevel을 주지 않아 ffmpeg가 입력 리포트를 stderr로 쏟는다. 그 안에
+    #   **파일 경로**가 들어가는데, 저장소 경로에 한글이 있으면 ffmpeg는 UTF-8로 내보내고
+    #   text=True는 로케일 코덱(이 PC는 cp949)으로 디코드해 UnicodeDecodeError가 난다.
+    #   디코드가 리더 스레드에서 터지면 p.stderr가 None이 되어 곧바로 AttributeError로
+    #   이어졌다. 같은 파일 :331·gen_all_words.py의 ffmpeg 호출이 멀쩡했던 이유는
+    #   -loglevel error로 성공 시 출력이 아예 없어 디코드할 것이 없었기 때문이다.
     p = subprocess.run([ffmpeg, "-hide_banner", "-i", str(path)],
-                       capture_output=True, text=True)
-    for line in p.stderr.splitlines():
+                       capture_output=True, text=True,
+                       encoding="utf-8", errors="replace")
+    for line in (p.stderr or "").splitlines():
         line = line.strip()
         if line.startswith("Duration:"):
             t = line.split("Duration:")[1].split(",")[0].strip()
@@ -328,9 +336,13 @@ def synth_unit(polly, ffmpeg: str, preset: dict, dest_dir: Path, raw_dir: Path,
         cmd = [ffmpeg, "-hide_banner", "-loglevel", "error", "-y", "-i", str(native),
                "-filter:a", f"atempo={atempo}", "-ar", preset["sample_rate"],
                "-q:a", MP3_QUALITY, str(dest_mp3)]
-        p = subprocess.run(cmd, capture_output=True, text=True)
+        # -loglevel error라 성공 시 출력이 없지만, **실패 시**에는 경로가 섞인 오류문이
+        # 나온다. 그때 로케일 코덱으로 디코드하면 진짜 원인 대신 UnicodeDecodeError가
+        # 보이므로 여기서도 utf-8/replace를 고정한다(2026-08-21 R-1).
+        p = subprocess.run(cmd, capture_output=True, text=True,
+                           encoding="utf-8", errors="replace")
         if p.returncode != 0 or not dest_mp3.exists():
-            raise RuntimeError(f"ffmpeg rc={p.returncode}: {p.stderr.strip()[:200]}")
+            raise RuntimeError(f"ffmpeg rc={p.returncode}: {(p.stderr or '').strip()[:200]}")
         marks = [{**m, "time": int(round(m["time"] / atempo))} for m in marks]
     else:
         dest_mp3.write_bytes(audio)
