@@ -14,8 +14,16 @@ import type { QuizSource } from '@/lib/quiz/quiz-source';
  *   언마운트·새로고침과 함께 사라진다. fetch·server action 호출 경로가 아예 없다
  *   (오디오 mp3 GET과 이미지 GET만 — 공개 Storage 읽기).
  *
- * ★ 재추첨(D-B2): 문항은 **클라이언트에서** `buildQuiz(source)`로 만든다. 그래서
- *   "다시 하기"가 서버 왕복 없이 새로 뽑는다. 단어 놀이가 쓰는 구조와 같다
+ * ★ **첫 문항은 서버가 뽑아 `initialQuestions`로 내려준다** (Q-2 수리).
+ *   여기서 뽑으면 안 된다 — `useState`의 초기화 함수는 **SSR과 하이드레이션에서 각각**
+ *   실행되고, `buildQuiz`는 `Math.random()`을 쓰므로 두 번의 추첨이 달라진다. 그러면
+ *   화면의 `<img src>`(서버 추첨)와 `answerKey`·`clipUrl`(클라이언트 추첨)이 어긋나
+ *   **들리는 문장과 정답 그림이 맞지 않는다**. React는 구조가 같고 속성만 다른 경우
+ *   서버 값을 그대로 두기 때문에 조용히 어긋난 채로 남는다.
+ *   → 초기화 함수 안에서 다시 뽑지 말 것.
+ *
+ * ★ 재추첨(D-B2): **두 번째 이후**의 추첨은 클라이언트가 한다(`restart`). 하이드레이션이
+ *   끝난 뒤라 안전하고, "다시 하기"에 서버 왕복이 붙지 않는다. 단어 놀이와 같은 구조다
  *   (`word-play.tsx:167` `startQuiz`).
  *
  * ★ 오답 무벌점(D-B5): 점수를 깎지 않는다. 오답을 고르면 정답을 보여주고 다음으로 넘어간다.
@@ -112,9 +120,19 @@ function usePlayer() {
   return { ref, play, stop };
 }
 
-export function BookQuiz({ source, exitHref }: { source: QuizSource; exitHref: string }) {
-  // 첫 조립은 마운트 시 1회 — 렌더마다 새로 뽑히면 화면이 요동친다.
-  const [questions, setQuestions] = useState<QuizQuestion[]>(() => buildQuiz(source));
+interface BookQuizProps {
+  /** 재추첨용 재료. "다시 하기"가 이걸로 새 문항을 만든다. */
+  source: QuizSource;
+  /**
+   * **서버가 뽑은 첫 문항.** 여기서 다시 뽑지 않는다 — 위 ★ 참조.
+   * SSR HTML과 클라이언트 초기 상태가 같은 추첨을 써야 화면과 소리가 맞는다.
+   */
+  initialQuestions: QuizQuestion[];
+  exitHref: string;
+}
+
+export function BookQuiz({ source, initialQuestions, exitHref }: BookQuizProps) {
+  const [questions, setQuestions] = useState<QuizQuestion[]>(initialQuestions);
   const [phase, setPhase] = useState<Phase>('quiz');
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);

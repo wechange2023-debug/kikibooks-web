@@ -6,7 +6,7 @@ import { SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getQuizCopy } from '@/lib/book/copy';
 import { getBookByIdIncludingInactive } from '@/lib/book/detail';
 import { createClient } from '@/lib/supabase/server';
-import { eligibleQuestionIds } from '@/lib/quiz/build-quiz';
+import { buildQuiz, eligibleQuestionIds } from '@/lib/quiz/build-quiz';
 import { getQuizSource } from '@/lib/quiz/quiz-source';
 import { BRAND_NAME } from '@/lib/brand';
 
@@ -26,9 +26,20 @@ import { BRAND_NAME } from '@/lib/brand';
  *
  * ★ 무기록(D1 · D-B5): 이 경로 전체에서 INSERT/UPDATE **0건**. SELECT + Storage 읽기만.
  *
- * ★ 문항 조립을 서버에서 하지 않는 이유: "다시 하기 = 재추첨"(D-B2)이라 클라이언트가
- *   스스로 새로 뽑아야 한다. 서버는 **재료**(`QuizSource`)만 내려보내고, 조립은
- *   순수 함수 `buildQuiz`가 맡는다. 서버는 같은 재료로 **출제 가능 여부만** 판정한다.
+ * ★ **첫 문항은 서버에서 뽑는다** (Q-2 수리 · 하이드레이션 불일치 해소):
+ *   `buildQuiz`는 `Math.random()`을 쓴다. 종전에는 클라이언트의 `useState` 초기화 함수가
+ *   이것을 호출했는데, 그 초기화 함수는 **SSR에서 한 번, 하이드레이션에서 또 한 번** 돈다.
+ *   두 번의 추첨이 다르니 HTML의 `<img src>`(서버 추첨)와 메모리의 `answerKey`·`clipUrl`
+ *   (클라이언트 추첨)이 어긋났다 — React는 구조가 같고 속성만 다르면 서버 값을 유지하기
+ *   때문이다. 그 결과 **들리는 문장과 정답 그림이 맞지 않았다**(2026-08-21 팀장 실검).
+ *   12면 책 기준 첫 진입의 99.8%가 어긋났다.
+ *
+ *   그래서 첫 추첨을 **여기서 한 번만** 하고 결과를 props로 내려보낸다. SSR HTML과
+ *   클라이언트 초기 상태가 같은 추첨을 쓴다.
+ *
+ * ★ 그래도 재료(`QuizSource`)를 함께 내려보내는 이유: **"다시 하기 = 재추첨"**(D-B2).
+ *   두 번째 이후의 추첨은 하이드레이션 이후라 안전하므로 클라이언트가 직접 한다 —
+ *   서버 왕복 0건.
  *
  * 가드 4종 (wordplay와 동형):
  *   1. params.id UUID 형식 불일치 → notFound
@@ -86,11 +97,18 @@ export default async function QuizPage({ params }: QuizPageProps) {
     notFound();
   }
 
+  // 첫 추첨은 여기서 **한 번만**. 클라이언트는 이 결과를 그대로 이어받는다(위 ★ 참조).
+  const initialQuestions = buildQuiz(source);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-surface-2 px-4 py-12 sm:px-6">
       {/* 나가기는 celebrate 허브로 돌려보낸다 — 거기서 다음 놀이를 고를 수 있다(D-B1).
           확인 대화상자는 두지 않는다(D-B2 이탈 시 즉시 복귀). wordplay와 같은 규칙이다. */}
-      <BookQuiz source={source} exitHref={`/book/${book.id}/celebrate`} />
+      <BookQuiz
+        source={source}
+        initialQuestions={initialQuestions}
+        exitHref={`/book/${book.id}/celebrate`}
+      />
     </main>
   );
 }
