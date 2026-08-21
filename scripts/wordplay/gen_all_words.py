@@ -33,6 +33,7 @@ import re
 import subprocess
 import sys
 import time
+import urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -63,6 +64,25 @@ REQUEST_DELAY_S = 0.15
 
 #: key 허용 문자 — ADR-0065 D-A4 경로 규칙.
 KEY_ALLOWED_RE = re.compile(r"[^a-z0-9-]")
+
+
+def fetch_manifest(voice_key: str) -> dict | None:
+    """Storage의 매니페스트를 받는다 — D-A5 증분 생성의 기준점.
+
+    공개 오브젝트라 자격 증명이 필요 없다(dry-run도 그대로 동작한다).
+    """
+    import os
+
+    base = os.environ.get("NEXT_PUBLIC_SUPABASE_URL") or os.environ.get("SUPABASE_URL")
+    if not base:
+        return None
+    url = (f"{base.rstrip('/')}/storage/v1/object/public/book-audio"
+           f"/_words/{voice_key}/_index.json")
+    try:
+        with urllib.request.urlopen(url, timeout=20) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except Exception:  # noqa: BLE001
+        return None
 
 
 def word_to_key(word: str) -> str:
@@ -165,6 +185,9 @@ def main() -> int:
                     help=f"기대 단어 수. 다르면 STOP (기본 {EXPECTED_WORDS})")
     ap.add_argument("--limit", type=int, default=None,
                     help="앞에서 N개만 — 소규모 시험용(선택)")
+    ap.add_argument("--incremental", action="store_true",
+                    help="D-A5 증분 — Storage 매니페스트에 없는 단어만 대상으로 삼는다. "
+                         "개수 게이트(--expect)는 적용하지 않는다.")
     args = ap.parse_args()
 
     preset = PRESETS[PRESET_KEY]
@@ -200,8 +223,30 @@ def main() -> int:
         if w in words or True:
             print(f"   {w:12s} → _words/{preset['voice_key']}/{word_to_key(w)}.mp3")
 
-    # ── 개수 게이트 (지시서 W-1 d) ──
-    if len(words) != args.expect:
+    # ── D-A5 증분 모드 — 매니페스트 차집합 ──
+    if args.incremental:
+        manifest = fetch_manifest(preset["voice_key"])
+        if manifest is None:
+            print("[STOP] 매니페스트를 받지 못했습니다. "
+                  "NEXT_PUBLIC_SUPABASE_URL 환경변수와 네트워크를 확인하세요.")
+            return 2
+        have = set(manifest.get("words", {}))
+        missing = [w for w in words if w not in have]
+        print("")
+        print(f"[증분] 매니페스트 {len(have)}단어 · 카드 단어 {len(words)}개 "
+              f"-> 없는 단어 {len(missing)}개")
+        for w in missing:
+            print(f"   + {w:16s} → _words/{preset['voice_key']}/{word_to_key(w)}.mp3")
+        inc_chars = sum(len(w) for w in missing)
+        print(f"[증분 비용] {inc_chars}자 · "
+              f"${estimate(inc_chars, preset['usd_per_million'], 1):.4f}")
+        words = missing
+        if not words:
+            print("[완료] 새로 만들 단어가 없습니다.")
+            return 0
+
+    # ── 개수 게이트 (지시서 W-1 d) — 증분 모드에는 적용하지 않는다 ──
+    if not args.incremental and len(words) != args.expect:
         print(f"\n[STOP] 기대 {args.expect}개와 다릅니다(실제 {len(words)}개). "
               "선정 규칙이나 원문이 바뀐 것이므로 확인 후 --expect로 명시하세요.")
         return 2

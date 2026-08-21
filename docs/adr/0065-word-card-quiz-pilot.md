@@ -596,6 +596,20 @@ Storage 서빙본이 로컬 배포본과 일치한다(native 650·925ms → 배�
 **유지 (14종)**: `buzz-buzz` `bye-bye` `doof-doof` `beep` `boom` `hey` `hooray` `knock`
 `oops` `ugh` `wow` `yay` `yum` `t-shirt`
 
+#### 2회전 (2026-08-21) — 3종 추가 제외
+
+21종을 빼자 **같은 부류가 그 자리에 올라왔다**(`shhh`·`shh` 제외 → `shhhh` 진입).
+소리 흉내를 빼면 다음 소리 흉내가 올라오는 구조라 같은 판정을 한 번 더 적용했다.
+
+| 단어 | 등장 책 | 성격 |
+|---|---|---|
+| `shhhh` | Shhhhh! (Book Dash) | `shhh`의 h 하나 더 붙은 변형 |
+| `ahuuun` | Watch Out! The Tiger is Here! (Bloom) | 표기 늘림 |
+| `toot` | Senzo and the Sun (Book Dash) | 소리 흉내 |
+
+**개별 청취 없이 동일 기준을 분류로 적용**했다 — 이 3종은 1회전 청취 목록(35종)에
+없었고, 제외 결과로 새로 올라온 것이기 때문이다. 누적 제외 **24종**이다.
+
 제외분은 `lib/wordplay/stopwords.ts`의 `LISTENING_EXCLUDED` 블록에 기능어 목록과 **분리해**
 등재했다 — 기능어가 아니라 청취 판정 결과이므로 성격이 다르고, ADR의 80~120개 범위는
 기능어 본체(`FUNCTION_STOPWORD_COUNT` = 119)에만 적용된다.

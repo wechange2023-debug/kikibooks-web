@@ -70,7 +70,7 @@ const FUNCTION_STOPWORDS: readonly string[] = [
 ];
 
 /**
- * ② 2026-08-20 청취 검수 제외분 (21종) — ADR-0065 Amendment #1 §사후 청취 검수.
+ * ② 청취 검수 제외분 (24종) — ADR-0065 Amendment #1 §사후 청취 검수.
  *
  * 전량 생성 후 표기 늘림·웃음소리·의성어 35종을 팀장이 실제로 들어보고 판정했다.
  * **판정 기준**: 표기 늘림·웃음소리·동물 소리 등 **소리 흉내는 제외**하고,
@@ -81,6 +81,10 @@ const FUNCTION_STOPWORDS: readonly string[] = [
  *
  * ★ 이 블록은 ①의 80~120개 범위 밖이다 — 기능어가 아니라 **청취 판정 결과**이므로
  *   성격이 다르다. 범위 준수는 `FUNCTION_STOPWORD_COUNT`로 따로 확인한다.
+ *
+ * ★ 2026-08-21 추가 3종은 **개별 청취 없이 같은 기준을 분류로 적용**한 것이다.
+ *   21종을 빼자 그 자리에 같은 부류가 올라왔기 때문이다(`shhh`·`shh` 제외 → `shhhh` 진입).
+ *   소리 흉내를 빼면 다음 소리 흉내가 올라오는 구조라, 같은 판정을 반복 적용한다.
  */
 const LISTENING_EXCLUDED: readonly string[] = [
   // 표기 늘림 (11)
@@ -90,6 +94,10 @@ const LISTENING_EXCLUDED: readonly string[] = [
   'ha-ha', 'dum-dum', 'pam-pam',
   // 동물 소리·소리 흉내 (7)
   'achoo', 'moo', 'oink', 'splash', 'shh', 'woof', 'hmm',
+
+  // 2026-08-21 추가 (3) — 위 21종 제외로 카드에 새로 올라온 같은 부류.
+  // 개별 청취 없이 동일 기준(소리 흉내 제외)을 분류로 적용했다.
+  'shhhh', 'ahuuun', 'toot',
 ];
 
 /** 카드 선정에서 제외할 전체 집합 = ① 기능어 + ② 청취 검수 제외분. */
