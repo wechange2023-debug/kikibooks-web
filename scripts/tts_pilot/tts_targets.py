@@ -119,11 +119,23 @@ def unescape_deep(text: str, max_rounds: int = 4) -> tuple[str, int]:
     return text, rounds
 
 
-def sanitize(text: str | None, *, collapse_newlines: bool = True) -> tuple[str, dict]:
+def sanitize(text: str | None, *, collapse_newlines: bool = True,
+             collapse_punct_runs: bool = False) -> tuple[str, dict]:
     """Polly 입력용 정제. 반환: (정제문, 진단 dict).
 
     진단 키: entity_rounds(엔티티 디코딩 라운드), stripped_ctrl(제거된 제어문자 수),
-             changed(원문 대비 변화 여부).
+             punct_runs_collapsed(접은 연속 문장부호 수), changed(원문 대비 변화 여부).
+
+    collapse_punct_runs (R-1 예방 규칙, 2026-08-21 · **기본 꺼짐**)
+    -----------------------------------------------------------
+        연속 `!`/`?` 뒤에 단어가 이어지면 Polly가 **앞 단어를 통째로 삼킨다**
+        (`AAAAAHHH!!!! Mmawe!` 실측 — 발화 617ms, `AAAAAHHH`가 무음). 이 옵션은
+        그 조합만 골라 문장부호를 하나로 접는다(`collapse_repeated_punct` 주석에 실측 근거).
+
+        ★ **신규 생성분에만 쓴다.** 기존 오디오를 이 규칙으로 다시 만들지 않는다 —
+          이미 적재된 marks와 오프셋이 어긋나기 때문이다.
+        ★ 켜면 바이트 오프셋이 줄어드므로 **합성 후 marks 재매핑이 필수**다.
+          그래서 기본값이 False이고, 기존 호출부 동작은 하나도 바뀌지 않는다.
 
     collapse_newlines (ADR-0058 D6, 2026-08-13 좌표계 결정)
     ------------------------------------------------------
@@ -157,11 +169,48 @@ def sanitize(text: str | None, *, collapse_newlines: bool = True) -> tuple[str, 
     cleaned = _WS_RE.sub(" ", cleaned).strip()
     cleaned = _PUNCT_GAP_RE.sub(r"\1 ", cleaned)
 
+    punct_runs = 0
+    if collapse_punct_runs:
+        cleaned, punct_runs = collapse_repeated_punct(cleaned)
+
     return cleaned, {
         "entity_rounds": rounds,
         "stripped_ctrl": stripped_ctrl,
+        "punct_runs_collapsed": punct_runs,
         "changed": cleaned != raw,
     }
+
+
+#: 연속 `!`/`?` 중 **뒤에 내용이 더 있는 것만** 잡는다 (R-1 확정 원인).
+#:
+#: 2026-08-21 실측으로 원인을 분리했다:
+#:   `AAAAAHHH!!!! Mmawe!` → 발화 617ms  (앞 단어가 죽음)
+#:   `AAAAAHHH!!!!`        → 발화 558ms  (혼자면 정상 — 뒤에 단어가 없으면 무해)
+#:   `AAAAAHHH Mmawe!`     → 발화 908ms  (`!!!!`만 빼면 정상)
+#:   `Aaaaahhh! Mmawe!`    → 발화 899ms  (느낌표 1개로 줄이면 정상)
+#: 즉 **연속 문장부호 + 뒤따르는 단어**의 조합에서만 앞 단어가 잘린다.
+#: 문장 끝의 `POW!!!`류는 무해하므로(R-0 실측 126.8 ms/char 정상) 건드리지 않는다 —
+#: 그래야 바이트 오프셋도 흔들리지 않는다(뒤에 토큰이 없으므로).
+#: 룩어헤드가 `\S`가 아니라 **영숫자**인 이유: `\S`면 `POW!!!`에서 마지막 `!`를 "뒤따르는
+#: 내용"으로 오인해 `POW!!`로 접는다(문장 끝이라 무해한데 오프셋만 흔든다).
+#: 뒤에 **단어가 실제로 이어질 때만** 접어야 확정 원인에 정확히 대응한다.
+_PUNCT_RUN_RE = re.compile(r"([!?])\1+(?=\s*[A-Za-z0-9])")
+
+
+def collapse_repeated_punct(text: str) -> tuple[str, int]:
+    """연속 `!`/`?`를 하나로 접는다. 반환: (결과, 접은 횟수).
+
+    ★ **바이트 오프셋이 줄어든다.** 이 함수를 거친 텍스트로 합성하면 Polly가 주는
+      speech marks의 `start`/`end`가 **원문(book_text.text) 좌표와 어긋난다**.
+      리더는 그 오프셋으로 원문을 잘라 표시하므로
+      (components/book/highlighted-text.tsx:96-106) 재매핑 없이 쓰면 하이라이트가 깨진다.
+
+      쓰려면 합성 후 marks를 원문 좌표로 되돌려야 한다 —
+      `scripts/audit/resynth_caps.py`의 `remap_marks()`가 그 구현이다.
+      그래서 `sanitize()`의 기본값은 **끔(False)**이며, 기존 호출부 동작은 불변이다.
+    """
+    out, n = _PUNCT_RUN_RE.subn(r"\1", text)
+    return out, n
 
 
 def cover_text(title: str | None, author: str | None) -> str:
