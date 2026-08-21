@@ -90,8 +90,13 @@ export function isAuthPage(pathname: string): boolean {
 }
 
 /**
- * 책 읽기(/read)·완독(/celebrate) 몰입 화면 — 공통 헤더·푸터 **둘 다** 미렌더 대상.
- * 정확한 세그먼트 매칭이라 `/book/[id]`(상세) 자신은 걸리지 않는다.
+ * 책 읽기(/read)·완독(/celebrate)·단어 놀이(/wordplay) 몰입 화면 — 공통 헤더·푸터
+ * **둘 다** 미렌더 대상. 정확한 세그먼트 매칭이라 `/book/[id]`(상세) 자신은 걸리지 않는다.
+ *
+ * ★ `wordplay` 추가 (ADR-0065 Amendment #2 D-B1 · Q-1): 단어 놀이는 **원래 celebrate
+ *   안에서** 렌더됐고 celebrate는 이미 몰입 화면이었다. 전용 URL로 옮기면서 화면의 겉모습을
+ *   바꾸지 않으려면 같은 대우가 필요하다 — 옮겼더니 헤더·푸터가 새로 생기는 것은 이동이
+ *   아니라 변경이다. 아이가 노는 화면에 법적 링크 푸터를 붙일 이유도 없다.
  *
  * ★ ADR-0061 D4 — 이 정규식을 복제하지 않는다. 복제하면 한쪽만 고쳐지는 순간
  *   헤더는 숨고 푸터는 남는 상태가 된다. `AppHeader`(ADR-0021 D3)와 `AppFooter`가
@@ -101,7 +106,7 @@ export function isAuthPage(pathname: string): boolean {
  *   (`notFound()`는 요청 URL을 그대로 렌더) usePathname으로 구별할 수 없다.
  *   따라서 not-found에서는 헤더·푸터가 노출된다.
  */
-export const IMMERSIVE_ROUTE_RE = /^\/book\/[^/]+\/(read|celebrate)$/;
+export const IMMERSIVE_ROUTE_RE = /^\/book\/[^/]+\/(read|celebrate|wordplay)$/;
 
 /** 몰입 화면(헤더·푸터 미렌더)인지 판정한다. */
 export function isImmersiveRoute(pathname: string): boolean {

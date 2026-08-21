@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
+import { Sparkles } from 'lucide-react';
 
 import { CelebrateRewards } from '@/components/book/celebrate-rewards';
-import { WordPlay } from '@/components/book/word-play';
 import { ONBOARDING_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
 import { getCelebrateCopy } from '@/lib/book/copy';
 import { getBookByIdIncludingInactive } from '@/lib/book/detail';
 import { getActiveChild } from '@/lib/home/active-child';
 import { createClient } from '@/lib/supabase/server';
-import { getWordPlay } from '@/lib/wordplay/get-word-play';
+import { hasWordPlay } from '@/lib/wordplay/get-word-play';
 import { BRAND_NAME } from '@/lib/brand';
 
 /**
@@ -80,6 +80,9 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 /** phase-13 CP3 정식 구현되는 라이브러리 경로 (PROTECTED_PREFIXES에 phase-12 등록 완료). */
 const LIBRARY_PATH = '/library';
 
+/** 단어 놀이 전용 화면 경로 (ADR-0065 Amendment #2 D-B1 · Q-1). */
+const wordPlayPath = (bookId: string) => `/book/${bookId}/wordplay`;
+
 /**
  * 완독 1회당 적립 포인트 — CelebrateRewards count-up 목표값.
  *
@@ -146,10 +149,11 @@ export default async function CelebratePage({ params }: CelebratePageProps) {
       .maybeSingle<{ id: string }>(),
   ]);
 
-  // 단어 놀이 데이터 (ADR-0065 D3·D4 — E-2b). null이면 진입점을 렌더하지 않는다
-  // (ADR-0065 D2 조용한 미표시 — book_text가 없는 GDL·후보 4개 미만 도서).
+  // 단어 놀이 **진입 가능 여부만** 판정한다 (ADR-0065 Amendment #2 D-B1 · Q-1).
+  // 놀이 자체는 /book/[id]/wordplay로 빠졌으므로 celebrate는 카드가 필요 없다.
+  // false면 버튼을 렌더하지 않는다 — 안내 문구·비활성 버튼도 두지 않는다(D2 조용한 미표시).
   // ★ 읽기 전용이다. 무기록 원칙(D1)상 이 경로에도 쓰기는 0건이다.
-  const wordPlay = await getWordPlay(supabase, book.id);
+  const wordPlayAvailable = await hasWordPlay(supabase, book.id);
 
   // 완독 카디널리티 == 1(첫 완독) + 배지 행 존재 → newly. ≥2(재독) 또는 배지 부재 → false.
   const completedCount = completedSessionsResult.data?.length ?? 0;
@@ -175,16 +179,30 @@ export default async function CelebratePage({ params }: CelebratePageProps) {
         badgeNewlyEarned={badgeNewlyEarned}
       />
 
-      {/* 단어 놀이 선택 진입 (ADR-0065 D3) — 보상 표시 아래, 내 책장 링크 위.
-          강제가 아니다. 무시하고 책장으로 갈 수 있어야 한다(D3). */}
-      {wordPlay && <WordPlay cards={wordPlay.cards} />}
+      {/* 허브 버튼 (ADR-0065 Amendment #2 D-B1 · D-B7) — 보상 표시 아래.
+          "퀴즈 풀어볼까?"(버튼 2)는 Q-2에서 /book/[id]/quiz와 **함께** 추가한다.
+          목적지 없는 버튼을 먼저 두지 않는다.
 
-      <Link
-        href={LIBRARY_PATH}
-        className="inline-flex h-[52px] items-center justify-center gap-2 rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2"
-      >
-        {celebrateCopy.libraryLinkLabel}
-      </Link>
+          강제가 아니다(D-B7 존속) — 무시하고 책장으로 갈 수 있어야 한다. 그래서 단어 놀이
+          버튼이 없어도(대상 외 도서) 책장 버튼은 항상 남는다. */}
+      <div className="flex w-full max-w-md flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        {wordPlayAvailable && (
+          <Link
+            href={wordPlayPath(book.id)}
+            className="inline-flex h-[52px] w-full items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:w-auto"
+          >
+            <Sparkles className="h-5 w-5" aria-hidden="true" />
+            {celebrateCopy.wordPlayLinkLabel}
+          </Link>
+        )}
+
+        <Link
+          href={LIBRARY_PATH}
+          className="inline-flex h-[52px] w-full items-center justify-center gap-2 whitespace-nowrap rounded-pill border border-outline bg-surface px-8 text-body font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 motion-reduce:transition-none sm:w-auto"
+        >
+          {celebrateCopy.libraryLinkLabel}
+        </Link>
+      </div>
     </main>
   );
 }

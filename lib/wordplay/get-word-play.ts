@@ -76,3 +76,26 @@ export async function getWordPlay(
     playableCount: cards.filter((c) => c.playable).length,
   };
 }
+
+/**
+ * 진입점을 렌더할지만 판정한다 — 카드 내용은 만들지 않는다 (Amd#2 D-B1 · Q-1).
+ *
+ * celebrate가 "단어 놀이 해볼까?" 버튼을 띄울지 정할 때 쓴다. 놀이 자체가 전용 화면
+ * `/book/[id]/wordplay`로 빠지면서, celebrate는 **카드가 필요 없어졌다**.
+ *
+ * ★ `getWordPlay() !== null`과 **결과가 같다.** 위 함수가 null을 반환하는 경로는
+ *   `selectWordCards()`가 null인 경우 **하나뿐**이기 때문이다(`:56-58`).
+ *   그래서 이 함수는 판정을 바꾸지 않으면서 Storage 매니페스트 조회 1건을 아낀다 —
+ *   발음 재생 가능 여부는 버튼 노출과 무관하다(재생 불가 카드도 표시는 된다).
+ *
+ * ★ 무기록(ADR-0065 D1): SELECT만. 쓰기 0건.
+ *
+ * @returns 카드가 MIN_CARDS 이상 확보되면 true. GDL 464권은 여기서 false가 되어
+ *   **조용히 미표시**된다(ADR-0065 D2 — 안내 문구·비활성 버튼을 두지 않는다).
+ */
+export async function hasWordPlay(
+  supabase: SupabaseClient,
+  bookId: string,
+): Promise<boolean> {
+  return (await selectWordCards(supabase, bookId)) !== null;
+}

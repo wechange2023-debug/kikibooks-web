@@ -243,6 +243,15 @@ export interface CelebrateCopy {
   badgeLabel: string;
   /** '다른 책 보러 가기' — /library 링크 라벨 (ADR-0018 D13 단일 Link). */
   libraryLinkLabel: string;
+  /**
+   * '단어 놀이 해볼까?' — `/book/[id]/wordplay` 진입 버튼 라벨
+   * (ADR-0065 Amendment #2 D-B1 · Q-1).
+   *
+   * 종전에는 이 문구가 WordPlay 컴포넌트 안에 하드코딩돼 있었다(`idle` 단계). 놀이가
+   * 전용 화면으로 빠지면서 버튼만 celebrate에 남았고, 카피는 단일 출처로 올렸다
+   * (ADR-0012 결정 2). 문구 자체는 본문 D3 `:176`이 예시로 든 것을 그대로 쓴다.
+   */
+  wordPlayLinkLabel: string;
 }
 
 /**
@@ -338,6 +347,7 @@ const CELEBRATE_COPY: CelebrateCopy = {
   pointsLabel: '포인트',
   badgeLabel: '완독 배지 획득!',
   libraryLinkLabel: '다른 책 보러 가기',
+  wordPlayLinkLabel: '단어 놀이 해볼까?',
 };
 
 /**

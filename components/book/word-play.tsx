@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Check, RotateCcw, Sparkles, Volume2, X } from 'lucide-react';
 
@@ -12,8 +13,14 @@ import type { WordPlayCard } from '@/lib/wordplay/get-word-play';
  *   언마운트·새로고침과 함께 사라진다. fetch·server action 호출 경로가 아예 없다
  *   (오디오 mp3 GET만 — 공개 Storage 읽기).
  *
- * ★ 완독 흐름 무접촉(ADR-0065 D3): 본 컴포넌트는 celebrate 화면 **안에서만** 살고,
- *   lib/book/reading-session.ts의 완독·redirect 구조를 건드리지 않는다.
+ * ★ 거처 이동(ADR-0065 Amendment #2 D-B1 · Q-1): 본 컴포넌트는 이제 celebrate 안이 아니라
+ *   전용 화면 `/book/[id]/wordplay`에서 산다. celebrate에는 진입 버튼만 남는다.
+ *   그래서 종전의 `idle` 단계("단어 놀이 해볼까?" 버튼)가 사라지고 **`cards`부터 시작**한다.
+ *   나가기는 상태 되돌리기가 아니라 `exitHref`로의 **이동**이다(D-B2 이탈 시 즉시 복귀 —
+ *   확인 대화상자를 두지 않는다).
+ *
+ * ★ 완독 흐름 무접촉(ADR-0065 D3 승계 · Amd#2 D-B7): lib/book/reading-session.ts의
+ *   완독·redirect 구조를 건드리지 않는다. 완독 여부를 **읽지도 않는다**(Amd#2 D-B2 A안).
  *
  * 재생 방식(ADR-0065 Amendment #1 · W-1): 단어별 단독 mp3를 **처음부터** 재생한다.
  *   `<audio ref>` + `el.play().catch()` — 오디오 리더 선례(audio-reader.tsx:405·:573-579).
@@ -36,7 +43,7 @@ const CHOICES_PER_QUESTION = 4;
 /** 오답 표시 후 다음 문항까지 머무는 시간(ms). 아이가 정답을 읽을 시간. */
 const FEEDBACK_HOLD_MS = 1600;
 
-type Phase = 'idle' | 'cards' | 'quiz' | 'result';
+type Phase = 'cards' | 'quiz' | 'result';
 
 interface Question {
   /** 정답 카드(반드시 playable — 발음을 들려줘야 하므로). */
@@ -129,8 +136,17 @@ const PRIMARY_BUTTON =
 const SECONDARY_BUTTON =
   'inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-pill border border-outline bg-surface px-5 sm:px-6 text-body font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 motion-reduce:transition-none';
 
-export function WordPlay({ cards }: { cards: WordPlayCard[] }) {
-  const [phase, setPhase] = useState<Phase>('idle');
+interface WordPlayProps {
+  cards: WordPlayCard[];
+  /**
+   * "그만하기"가 향하는 곳. 전용 화면이 된 뒤로 나가기는 state 복귀가 아니라 **이동**이다.
+   * 호출부가 celebrate 경로를 넘긴다 — 허브로 돌아가 다음 놀이를 고를 수 있게(Amd#2 D-B1).
+   */
+  exitHref: string;
+}
+
+export function WordPlay({ cards, exitHref }: WordPlayProps) {
+  const [phase, setPhase] = useState<Phase>('cards');
   const [questions, setQuestions] = useState<Question[]>([]);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
@@ -186,11 +202,6 @@ export function WordPlay({ cards }: { cards: WordPlayCard[] }) {
     [current, picked, questionIndex, questions.length, stop],
   );
 
-  const exit = useCallback(() => {
-    stop();
-    setPhase('idle');
-  }, [stop]);
-
   return (
     <section className="w-full max-w-md" aria-label="단어 놀이">
       {/* 단어 재생용 — 화면에 노출하지 않는다(카드 탭이 컨트롤).
@@ -200,15 +211,6 @@ export function WordPlay({ cards }: { cards: WordPlayCard[] }) {
         preload="none"
         onEnded={clearPlaying}
       />
-
-      {phase === 'idle' && (
-        <div className="flex justify-center">
-          <button type="button" onClick={() => setPhase('cards')} className={SECONDARY_BUTTON}>
-            <Sparkles className="h-5 w-5 text-primary" aria-hidden="true" />
-            단어 놀이 해볼까?
-          </button>
-        </div>
-      )}
 
       {phase === 'cards' && (
         <div className="flex flex-col gap-4 rounded-lg bg-surface p-5 shadow-elev-1">
@@ -257,9 +259,9 @@ export function WordPlay({ cards }: { cards: WordPlayCard[] }) {
                 퀴즈 풀어보기
               </button>
             )}
-            <button type="button" onClick={exit} className={SECONDARY_BUTTON}>
+            <Link href={exitHref} className={SECONDARY_BUTTON}>
               그만하기
-            </button>
+            </Link>
           </div>
         </div>
       )}
@@ -351,9 +353,9 @@ export function WordPlay({ cards }: { cards: WordPlayCard[] }) {
               <RotateCcw className="h-5 w-5" aria-hidden="true" />
               다시 하기
             </button>
-            <button type="button" onClick={exit} className={SECONDARY_BUTTON}>
+            <Link href={exitHref} className={SECONDARY_BUTTON}>
               그만하기
-            </button>
+            </Link>
           </div>
         </div>
       )}
