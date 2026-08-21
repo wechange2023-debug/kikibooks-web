@@ -297,6 +297,57 @@ def run_apply(preset: dict, ffmpeg: str, cand: str) -> int:
     return 0
 
 
+def run_cover(preset: dict, ffmpeg: str) -> int:
+    """표지(kind='cover') 재합성 — R-1b.
+
+    이 책의 표지 낭독은 **제목만**이다(marks 2개 = `AAAAAHHH`·`Mmawe`).
+    같은 코호트의 다른 book_dash 책은 `제목 + "Created by 저자"`인데
+    (`cover_text()` — run_tts_full708.py:228), 이 책은 제목만인 경로로 만들어졌다
+    (gen_cover_danielle.py:12-13 "확정 사양은 제목만"). **내용 형태는 그대로 두고**
+    연속 문장부호 결함만 고친다 — 내용 변경은 별도 승인 사항이다.
+
+    합성 입력은 R-1 확정 규칙을 그대로 적용해 만든다:
+        sanitize(title, collapse_punct_runs=True)  →  'AAAAAHHH! Mmawe!'
+    """
+    dest = OUT / "cover"
+    raw = dest / "_raw"
+    polly = make_polly(preset)
+
+    synth_text, diag = sanitize(PHRASE, collapse_punct_runs=True)
+    print(f"[원문 제목] {PHRASE!r}")
+    print(f"[합성 입력] {synth_text!r}  (연속 문장부호 {diag['punct_runs_collapsed']}건 접음)")
+    print(f"[대상] {BOOK_SLUG}/{preset['voice_key']}/cover.mp3 · cover.marks.json\n")
+
+    synth_unit(polly, ffmpeg, preset, dest, raw, "cover", synth_text)
+    mp3 = dest / "cover.mp3"
+    total, sp = speech_ms(ffmpeg, mp3)
+
+    # marks를 **원문 제목 좌표**로 되돌린다 — 리더는 표지 텍스트로 books.title을 쓰고
+    # 그 문자열을 marks 오프셋으로 자른다(lib/book/audio-manifest.ts:70·:352).
+    mpath = dest / "cover.marks.json"
+    marks = [json.loads(l) for l in mpath.read_text(encoding="utf-8").splitlines() if l.strip()]
+    remapped = remap_marks(marks, PHRASE)
+    mpath.write_text("".join(json.dumps(m, ensure_ascii=False) + "\n" for m in remapped),
+                     encoding="utf-8")
+
+    ok = sp >= EXPECT_MIN_MS
+    print(f"  cover  전체 {total:>6.0f}ms · 발화 {sp:>6.0f}ms  {'✅' if ok else '❌'}")
+    print(f"  marks(원문 좌표): {[(m['value'], m['start'], m['end'], m['time']) for m in remapped]}")
+
+    (dest / "_cover_report.json").write_text(
+        json.dumps({"text": synth_text, "original": PHRASE,
+                    "total_ms": round(total), "speech_ms": round(sp), "ok": ok,
+                    "marks_remapped": [(m["value"], m["start"], m["end"], m["time"])
+                                       for m in remapped]},
+                   ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"\n[저장] {dest}")
+    if not ok:
+        print(f"[STOP] 발화량 {sp:.0f}ms < {EXPECT_MIN_MS}ms — 업로드하지 마십시오.")
+        return 2
+    print("[완료] 표지 정상. 업로드 단계로 진행 가능합니다.")
+    return 0
+
+
 def run_selftest() -> int:
     """marks 재매핑 자가 시험 — Polly 호출 0건."""
     print("marks 원문 좌표 재매핑 자가 시험 (Polly 호출 0건)\n")
@@ -339,6 +390,7 @@ def main() -> int:
     ap.add_argument("--trial", action="store_true", help="후보 시험 합성(후보당 Polly 1회)")
     ap.add_argument("--apply", action="store_true", help="확정 후보로 4면 재합성")
     ap.add_argument("--candidate", help="--apply 시 필수 (a_bang1 등)")
+    ap.add_argument("--cover", action="store_true", help="표지(cover) 재합성 — R-1b")
     ap.add_argument("--selftest", action="store_true", help="marks 재매핑 자가 시험(무비용)")
     args = ap.parse_args()
 
@@ -353,13 +405,15 @@ def main() -> int:
 
     if args.trial:
         return run_trial(preset, ffmpeg)
+    if args.cover:
+        return run_cover(preset, ffmpeg)
     if args.apply:
         if not args.candidate:
             print(f"[STOP] --candidate 를 지정하세요 (가능: {sorted(CANDIDATES)}).")
             return 2
         return run_apply(preset, ffmpeg, args.candidate)
 
-    print("--trial · --apply --candidate <이름> · --selftest 중 하나를 지정하세요.")
+    print("--trial · --apply --candidate <이름> · --cover · --selftest 중 하나를 지정하세요.")
     return 1
 
 
