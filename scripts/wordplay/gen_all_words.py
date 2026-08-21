@@ -57,7 +57,12 @@ FAILURES = OUT / "_failures.json"
 PRESET_KEY = "danielle-longform"
 
 #: 드라이런 산출물에서 기대하는 고유 단어 수. 다르면 STOP한다(지시서 W-1 d).
-EXPECTED_WORDS = 1874
+#: 이력 — 1874(W-1 최초) → 1855(Amd#1 청취 제외 2·3회전) → 1750(Amd#3 1회전)
+#:        → 1741(Amd#3 5회전 수렴, 현재).
+#: 1874는 청취 제외 2·3회전 이전 값이라 그대로 두면 이 게이트가 항상 STOP했다.
+#: 현재 값은 카드 표시 제외 167종(ADR-0065 Amd#3, 5회전 수렴) 적용 후 드라이런 실측이다
+#: (scripts/wordplay/out/wordplay-dryrun-20260821.json · 2026-08-21 5회 재실행).
+EXPECTED_WORDS = 1741
 
 #: 요청 간 최소 간격(초). long-form 엔진은 TPS가 낮아 몰아치면 스로틀링이 난다.
 REQUEST_DELAY_S = 0.15

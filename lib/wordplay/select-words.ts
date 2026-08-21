@@ -2,6 +2,7 @@ import 'server-only';
 
 import type { SupabaseClient } from '@supabase/supabase-js';
 
+import { CARD_EXCLUDED } from '@/lib/wordplay/card-excluded';
 import { STOPWORDS } from '@/lib/wordplay/stopwords';
 
 /**
@@ -272,6 +273,12 @@ export async function selectWordCards(
       // 불용어를 **먼저** 본다 — `it's`·`he's`·`that's`는 `'s`로 끝나지만 소유격이 아니라
       // 축약형(기능어)이다. 순서가 뒤바뀌면 이들이 "소유격으로 제외됨"으로 잘못 기록된다.
       if (STOPWORDS.has(word)) continue;
+      // 카드 표시 제외(ADR-0065 Amd#3) — 인명·비영어·철자오류·소리감탄사·민감어.
+      // 불용어 바로 옆에 두는 이유: 둘 다 "이 단어는 카드가 되지 않는다"는 같은 층의
+      // 판정이라, 소유격·하이픈 집계에 잡히기 **전에** 함께 끊어야 기록이 어긋나지 않는다.
+      // ★ 카드 선정 한정이다 — 이미 만든 단어 mp3는 Storage에 그대로 둔다
+      //   (청취 제외 27종과 동일 취급. 근거는 card-excluded.ts 머리말).
+      if (CARD_EXCLUDED.has(word)) continue;
       // 규칙 B — 소유격은 기본형 유무와 무관하게 일괄 제외한다.
       if (isPossessive(word)) {
         possessives.add(word);
