@@ -252,6 +252,14 @@ export interface CelebrateCopy {
    * (ADR-0012 결정 2). 문구 자체는 본문 D3 `:176`이 예시로 든 것을 그대로 쓴다.
    */
   wordPlayLinkLabel: string;
+  /**
+   * '퀵즈 풀어볼까?' — `/book/[id]/quiz` 진입 버튼 라벨
+   * (ADR-0065 Amendment #2 D-B1 · Q-2b).
+   *
+   * 반말 청유형으로 둘다 — 버튼은 아이를 부르는 말이라 `wordPlayLinkLabel`과 결을 맞춘다.
+   * 문항 지시문(`QuizCopy.questionPrompts`)이 해요체인 것과 의도적으로 다르다.
+   */
+  quizLinkLabel: string;
 }
 
 /**
@@ -384,6 +392,7 @@ const CELEBRATE_COPY: CelebrateCopy = {
   badgeLabel: '완독 배지 획득!',
   libraryLinkLabel: '다른 책 보러 가기',
   wordPlayLinkLabel: '단어 놀이 해볼까?',
+  quizLinkLabel: '퀵즈 풀어볼까?',
 };
 
 /**

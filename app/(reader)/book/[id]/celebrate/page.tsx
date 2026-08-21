@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
-import { Sparkles } from 'lucide-react';
+import { HelpCircle, Sparkles } from 'lucide-react';
 
 import { CelebrateRewards } from '@/components/book/celebrate-rewards';
 import { ONBOARDING_PATH, SIGN_IN_PATH } from '@/lib/auth/routes';
-import { getCelebrateCopy } from '@/lib/book/copy';
+import { getCelebrateCopy, getQuizCopy } from '@/lib/book/copy';
 import { getBookByIdIncludingInactive } from '@/lib/book/detail';
 import { getActiveChild } from '@/lib/home/active-child';
 import { createClient } from '@/lib/supabase/server';
+import { hasBookQuiz } from '@/lib/quiz/quiz-source';
 import { hasWordPlay } from '@/lib/wordplay/get-word-play';
 import { BRAND_NAME } from '@/lib/brand';
 
@@ -83,6 +84,9 @@ const LIBRARY_PATH = '/library';
 /** 단어 놀이 전용 화면 경로 (ADR-0065 Amendment #2 D-B1 · Q-1). */
 const wordPlayPath = (bookId: string) => `/book/${bookId}/wordplay`;
 
+/** 책 퀴즈 전용 화면 경로 (ADR-0065 Amendment #2 D-B1 · Q-2b). */
+const quizPath = (bookId: string) => `/book/${bookId}/quiz`;
+
 /**
  * 완독 1회당 적립 포인트 — CelebrateRewards count-up 목표값.
  *
@@ -116,10 +120,11 @@ export default async function CelebratePage({ params }: CelebratePageProps) {
   }
 
   // 3-fetch 병렬 — book + child + copy 의존성 없음 (read/page.tsx 패턴 정합)
-  const [book, child, celebrateCopy] = await Promise.all([
+  const [book, child, celebrateCopy, quizCopy] = await Promise.all([
     getBookByIdIncludingInactive(supabase, params.id),
     getActiveChild(supabase, user.id),
     getCelebrateCopy(),
+    getQuizCopy(),
   ]);
 
   // 가드 4: books 행 NULL → notFound (ADR-0063 D5 — is_active 분기는 두지 않는다)
@@ -149,11 +154,15 @@ export default async function CelebratePage({ params }: CelebratePageProps) {
       .maybeSingle<{ id: string }>(),
   ]);
 
-  // 단어 놀이 **진입 가능 여부만** 판정한다 (ADR-0065 Amendment #2 D-B1 · Q-1).
-  // 놀이 자체는 /book/[id]/wordplay로 빠졌으므로 celebrate는 카드가 필요 없다.
-  // false면 버튼을 렌더하지 않는다 — 안내 문구·비활성 버튼도 두지 않는다(D2 조용한 미표시).
+  // 허브 버튼 1·2의 **진입 가능 여부만** 판정한다 (ADR-0065 Amendment #2 D-B1 · Q-1·Q-2b).
+  // 놀이 자체는 /wordplay·/quiz로 빠졌으므로 celebrate는 카드도 문항도 필요 없다.
+  // false면 그 버튼을 렌더하지 않는다 — 안내 문구·비활성 버튼도 두지 않는다(D2 조용한 미표시).
+  // 두 판정은 서로 독립이라 병렬로 돌린다. 둘 다 SELECT만 한다.
   // ★ 읽기 전용이다. 무기록 원칙(D1)상 이 경로에도 쓰기는 0건이다.
-  const wordPlayAvailable = await hasWordPlay(supabase, book.id);
+  const [wordPlayAvailable, quizAvailable] = await Promise.all([
+    hasWordPlay(supabase, book.id),
+    hasBookQuiz(supabase, book, quizCopy.questionPrompts),
+  ]);
 
   // 완독 카디널리티 == 1(첫 완독) + 배지 행 존재 → newly. ≥2(재독) 또는 배지 부재 → false.
   const completedCount = completedSessionsResult.data?.length ?? 0;
@@ -179,26 +188,38 @@ export default async function CelebratePage({ params }: CelebratePageProps) {
         badgeNewlyEarned={badgeNewlyEarned}
       />
 
-      {/* 허브 버튼 (ADR-0065 Amendment #2 D-B1 · D-B7) — 보상 표시 아래.
-          "퀴즈 풀어볼까?"(버튼 2)는 Q-2에서 /book/[id]/quiz와 **함께** 추가한다.
-          목적지 없는 버튼을 먼저 두지 않는다.
+      {/* 허브 버튼 3종 (ADR-0065 Amendment #2 D-B1 · D-B7) — 보상 표시 아래.
 
-          강제가 아니다(D-B7 존속) — 무시하고 책장으로 갈 수 있어야 한다. 그래서 단어 놀이
-          버튼이 없어도(대상 외 도서) 책장 버튼은 항상 남는다. */}
-      <div className="flex w-full max-w-md flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          버튼 1·2는 각자 조건이 맞는 책에서만 렌더한다(D2 조용한 미표시) — 안내 문구도
+          비활성 버튼도 두지 않는다. 두 판정은 **화면이 쓰는 함수와 같은 함수**를 쓴다
+          (hasWordPlay / hasBookQuiz) — 그래야 "버튼은 보이는데 들어가면 빈 화면"이 없다.
+
+          강제가 아니다(D-B7 존속) — 무시하고 책장으로 갈 수 있어야 한다. 그래서 버튼 1·2가
+          둘 다 없어도(대상 외 도서) 책장 버튼은 항상 남는다. */}
+      <div className="flex w-full max-w-md flex-col items-center gap-3">
         {wordPlayAvailable && (
           <Link
             href={wordPlayPath(book.id)}
-            className="inline-flex h-[52px] w-full items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:w-auto"
+            className="inline-flex h-[52px] w-full items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
           >
             <Sparkles className="h-5 w-5" aria-hidden="true" />
             {celebrateCopy.wordPlayLinkLabel}
           </Link>
         )}
 
+        {quizAvailable && (
+          <Link
+            href={quizPath(book.id)}
+            className="inline-flex h-[52px] w-full items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-cta px-8 text-body font-semibold text-on-cta shadow-elev-cta transition-all duration-200 ease-kiki hover:-translate-y-px hover:bg-cta-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+          >
+            <HelpCircle className="h-5 w-5" aria-hidden="true" />
+            {celebrateCopy.quizLinkLabel}
+          </Link>
+        )}
+
         <Link
           href={LIBRARY_PATH}
-          className="inline-flex h-[52px] w-full items-center justify-center gap-2 whitespace-nowrap rounded-pill border border-outline bg-surface px-8 text-body font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 motion-reduce:transition-none sm:w-auto"
+          className="inline-flex h-[52px] w-full items-center justify-center gap-2 whitespace-nowrap rounded-pill border border-outline bg-surface px-8 text-body font-semibold text-text transition-colors duration-200 ease-kiki hover:bg-surface-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 motion-reduce:transition-none"
         >
           {celebrateCopy.libraryLinkLabel}
         </Link>
