@@ -255,6 +255,42 @@ export interface CelebrateCopy {
 }
 
 /**
+ * 책 퀴즈 문항 식별자 — **화면 순서이자 음성 파일명**이다 (ADR-0065 Amd#2 D-B3 · QB-5).
+ *
+ * 하 → 중 → 상 **고정 순서**로 매번 3문항 전부를 낸다(QB-5 확정). 순서가 결정으로
+ * 박제돼 있으므로 번호를 그대로 키로 쓴다 — 지시문 하나에서 화면 문구와 오디오 경로가
+ * 동시에 결정된다(Amd#1 D-A4 결정론적 경로 정신 승계).
+ *
+ *   q1 = 문장 듣고 그림 찾기 (하)
+ *   q2 = 먼저 나온 장면      (중)
+ *   q3 = 그림 보고 문장 찾기 (상)
+ */
+export const QUIZ_QUESTION_IDS = ['q1', 'q2', 'q3'] as const;
+
+export type QuizQuestionId = (typeof QUIZ_QUESTION_IDS)[number];
+
+/**
+ * 책 퀴즈 카피 (ADR-0065 Amendment #2 D-B4 · Q-2a).
+ *
+ * ★ **여기가 유일한 출처다.** 같은 문장이 두 곳에 쓰인다 —
+ *   (1) 화면에 문자로 병기되고 (2) 한국어 음성(Polly Seoyeon)으로 합성된다.
+ *   D-B4가 "음성만으로 전달하지 않는다"고 못박았으므로 둘은 **반드시 같은 문장**이어야
+ *   한다. 컴포넌트가 문구를 따로 들고 있으면 한쪽만 고쳐지는 순간 말과 글이 어긋난다.
+ *   합성 스크립트(`scripts/quiz_pilot/synth_questions.py`)도 이 파일을 읽어 쓴다.
+ *
+ * 톤: **해요체(친절한 선생님)** — 2026-08-21 팀장 확정. celebrate 버튼 카피
+ *   ("단어 놀이 해볼까?")의 반말 청유형과 의도적으로 다르다. 버튼은 아이를 부르는 말이고,
+ *   지시문은 문제를 안내하는 말이라 층위가 다르다.
+ */
+export interface QuizCopy {
+  /**
+   * 문항별 지시문 — 화면 텍스트와 음성 대본이 **동일 문자열**이다(D-B4 텍스트 병기).
+   * 이 문자열을 바꾸면 음성도 **다시 합성해야 한다**(경로는 문항 id로 고정이므로 덮어쓰기).
+   */
+  questionPrompts: Record<QuizQuestionId, string>;
+}
+
+/**
  * 책 상세 카피 정본. export하지 않는다(위 주석 — 컴포넌트 직접 import 차단).
  */
 const BOOK_DETAIL_COPY: BookDetailCopy = {
@@ -351,6 +387,21 @@ const CELEBRATE_COPY: CelebrateCopy = {
 };
 
 /**
+ * 책 퀴즈 지시문 3종 (2026-08-21 팀장 확정 · ADR-0065 Amd#2 D-B4).
+ *
+ * ★ 문장을 바꾸면 `_quiz/{voice}/{id}.mp3`를 **재합성·덮어쓰기**해야 한다.
+ *   경로는 문항 id로 고정이라 새 파일이 생기지 않는다 — 화면 글자만 바뀌고 음성은
+ *   옛 문장인 상태가 조용히 유지될 수 있다. 문구 변경 시 반드시 함께 처리한다.
+ */
+const QUIZ_COPY: QuizCopy = {
+  questionPrompts: {
+    q1: '문장을 잘 듣고, 맞는 그림을 찾아보세요',
+    q2: '책에서 먼저 나온 장면은 어느 쪽일까요?',
+    q3: '그림을 보고, 맞는 문장을 찾아보세요',
+  },
+};
+
+/**
  * 책 상세 페이지 카피를 반환한다.
  *
  * phase-11 — 정적 상수를 그대로 반환한다.
@@ -378,4 +429,15 @@ export async function getBookReaderCopy(): Promise<BookReaderCopy> {
  */
 export async function getCelebrateCopy(): Promise<CelebrateCopy> {
   return CELEBRATE_COPY;
+}
+
+/**
+ * 책 퀴즈 카피를 반환한다.
+ *
+ * Q-2a — 정적 상수를 그대로 반환한다(getCelebrateCopy와 동일 패턴).
+ * 퀴즈 화면(Q-2b)이 이 결과를 하위 컴포넌트에 props로 내려준다 — 컴포넌트가 카피를
+ * 직접 import하지 않는다(본 파일 상단 ADR-0012 결정 2 패턴).
+ */
+export async function getQuizCopy(): Promise<QuizCopy> {
+  return QUIZ_COPY;
 }
