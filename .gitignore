@@ -25,8 +25,13 @@ scripts/tts_pilot/out/audio_requests/
 .vercel/
 
 # Environment ★ 보안: 절대 커밋 금지 (Hard Rule 6 — service_role 키 보호)
-.env.local
-.env.*.local
+# 리뷰 P-2-1 지적 #2 — 종전에는 .env.local / .env.*.local 두 줄뿐이라
+# .env · .env.production · .env.development 가 무시되지 않았다(git check-ignore 실측).
+# Next.js는 그 셋도 읽으므로 실수로 키를 담아 커밋할 통로였다. 계열 전체를 막고
+# 템플릿(.env.example)만 되살린다.
+.env
+.env.*
+!.env.example
 
 # Logs
 *.log
