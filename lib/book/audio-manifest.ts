@@ -133,11 +133,11 @@ const AUDIO_ROW_PAGE = 1000;
  * `books.has_audio` 컬럼을 따로 보다가 구 Ruth 44권에서 「배지는 뜨는데 재생은 안 됨」이
  * 발생했다(2026-07-28 정찰). 그래서 조건 리터럴은 이 함수 안에만 둔다.
  *
- * 현재 호출 표면 4곳:
- *   1. hasReaderAudio(아래)          — /book/[id]/read 오디오 리더 게이트
- *   2. lib/book/detail.ts            — 상세 "듣기 지원" 배지 (카탈로그 캐시 안에서 산출)
- *   3. lib/admin/books/query.ts      — /admin/books 썸네일 오디오 배지
- *   4. lib/landing/popular-books.ts  — toPopularBooks(카드 4표면 공용 통로)
+ * 현재 호출 표면 3곳:
+ *   1. lib/book/detail.ts            — 상세 "듣기 지원" 배지 (카탈로그 캐시 안에서 산출).
+ *                                      ADR-0067 D1(a) 이후 리더 게이트도 이 값(Book.hasAudio)을 본다
+ *   2. lib/admin/books/query.ts      — /admin/books 썸네일 오디오 배지
+ *   3. lib/landing/popular-books.ts  — toPopularBooks(카드 4표면 공용 통로)
  *
  * @param supabase 호출자가 넘긴 클라이언트. **본 함수는 클라이언트를 만들지 않는다** —
  *   service role(리더·admin)과 쿠키 없는 publishable(카탈로그 캐시, ADR-0033 안전 원칙)을
@@ -231,85 +231,79 @@ export function resolveAudioBase(opts?: { audioBase?: string }): string {
 }
 
 /**
- * 오디오 리더 게이트 — 해당 책에 재생 가능한 오디오가 있는지만 확인한다.
+ * ADR-0067 D1(a) — `hasReaderAudio()`는 삭제됐다.
  *
- * 판정은 selectReaderAudioBookIds(단일 출처)에 위임한다. 조건 리터럴(kind·voice)을
- * 여기서 다시 쓰지 않는 이유는 그 함수 주석 참조. 행이 0이면 호출자는 기존 뷰어 경로를
- * 그대로 탄다(회귀 0). 조회 실패도 동일하게 false로 접힌다.
- *
- * count(head:true) → book_id SELECT로 바뀌었다. 대상이 1권이라 최대 십수 행이고,
- * 판정 결과는 동일하다(행 존재 여부만 본다).
+ * 유일한 호출자였던 `read/page.tsx`가 이제 `Book.hasAudio`(lib/book/detail.ts:99)를 본다.
+ * 그 값도 **같은 `selectReaderAudioBookIds`·같은 기본 voice**로 산출되므로 판정이 같고
+ * (detail.ts:170·:249), 게이트 전용 `book_audio` 왕복 1회가 사라진다.
+ * 판정 단일 출처는 여전히 `selectReaderAudioBookIds`다 — 그 함수는 무변경이다.
  */
-export async function hasReaderAudio(
-  bookId: string,
-  voice: string = DEFAULT_READER_VOICE,
-): Promise<boolean> {
-  const audioBookIds = await selectReaderAudioBookIds(
-    createServiceRoleClient(),
-    [bookId],
-    voice,
-  );
-  return audioBookIds.has(bookId);
+
+/**
+ * `getAudioReaderBook`이 필요로 하는 책 정보 (ADR-0067 D1(b)).
+ *
+ * 종전에는 함수가 `books`를 **직접 한 번 더** 읽었다. 그런데 호출자(`read/page.tsx`)는 그 시점에
+ * 이미 `getBookByIdIncludingInactive`로 같은 행을 손에 들고 있고, 여기서 쓰는 컬럼은 넷뿐이라
+ * 전부 그 안에 들어 있다(lib/book/detail.ts:146-148). 그래서 조회 대신 **인자로 받는다.**
+ * `Book` 전체가 아니라 필요한 넷만 받는 이유: 이 모듈이 `Book` 타입에 묶이지 않게 하기 위함이다.
+ */
+export interface ReaderAudioBookInput {
+  id: string;
+  title: string;
+  source_id: string;
+  cover_url: string | null;
 }
 
 /**
  * 오디오 리더용 책 데이터 조립.
- * @returns books 행이 없으면 null. book_text 0행이어도 pages: []로 반환(빈 책 노출).
+ *
+ * ADR-0067 D1(b)·D2 — `books` 조회를 걷어내고(인자로 대체), 남은 `book_text`·`book_audio`를
+ * **병렬로** 돌린다. 둘은 `book_id`(와 `voice`)만 걸고 서로의 결과를 쓰지 않는다 —
+ * 결합은 조회가 끝난 뒤 `pages`·`cover` 조립에서만 일어난다. 함수 내부 왕복 3단 → 1단.
+ *
+ * @returns 항상 객체다. 종전의 `null`은 "books 행 없음"이었는데, 이제 호출자가 책을 넘기므로
+ *   그 경우가 성립하지 않는다. book_text 0행이어도 `pages: []`로 반환한다(빈 책 노출).
  */
 export async function getAudioReaderBook(
-  bookId: string,
+  book: ReaderAudioBookInput,
   opts?: BuildOptions,
-): Promise<ReaderAudioBook | null> {
+): Promise<ReaderAudioBook> {
   const supabase = createServiceRoleClient();
+  const bookId = book.id;
+  const voice = opts?.voice ?? DEFAULT_READER_VOICE;
 
-  const { data: book, error: bookError } = await supabase
-    .from('books')
-    .select('id, title, source_id, cover_url')
-    .eq('id', bookId)
-    .maybeSingle<{
-      id: string;
-      title: string;
-      source_id: string;
-      cover_url: string | null;
-    }>();
-
-  if (bookError) {
-    throw new Error(`getAudioReaderBook: books 조회 실패 — ${bookError.message}`);
-  }
-  if (!book) {
-    return null;
-  }
-
-  const { data: textRows, error: textError } = await supabase
-    .from('book_text')
-    .select('page_index, text, image_url')
-    .eq('book_id', bookId)
-    .order('page_index', { ascending: true })
-    .returns<
-      { page_index: number; text: string | null; image_url: string | null }[]
-    >();
+  // ADR-0067 D2 — 상호 참조 0건임을 본문 전량으로 확인하고 병렬화했다.
+  // 오디오 정본은 book_audio 행이다. 업로드된 오브젝트 키를 그대로 쓴다(추측 조립 금지).
+  const [
+    { data: textRows, error: textError },
+    { data: audioRows, error: audioError },
+  ] = await Promise.all([
+    supabase
+      .from('book_text')
+      .select('page_index, text, image_url')
+      .eq('book_id', bookId)
+      .order('page_index', { ascending: true })
+      .returns<
+        { page_index: number; text: string | null; image_url: string | null }[]
+      >(),
+    supabase
+      .from('book_audio')
+      .select('kind, page_index, audio_path, marks_path')
+      .eq('book_id', bookId)
+      .eq('voice', voice)
+      .returns<
+        {
+          kind: string;
+          page_index: number;
+          audio_path: string;
+          marks_path: string | null;
+        }[]
+      >(),
+  ]);
 
   if (textError) {
     throw new Error(`getAudioReaderBook: book_text 조회 실패 — ${textError.message}`);
   }
-
-  const voice = opts?.voice ?? DEFAULT_READER_VOICE;
-
-  // 오디오 정본 — book_audio 행. 업로드된 오브젝트 키를 그대로 쓴다(추측 조립 금지).
-  const { data: audioRows, error: audioError } = await supabase
-    .from('book_audio')
-    .select('kind, page_index, audio_path, marks_path')
-    .eq('book_id', bookId)
-    .eq('voice', voice)
-    .returns<
-      {
-        kind: string;
-        page_index: number;
-        audio_path: string;
-        marks_path: string | null;
-      }[]
-    >();
-
   if (audioError) {
     throw new Error(`getAudioReaderBook: book_audio 조회 실패 — ${audioError.message}`);
   }

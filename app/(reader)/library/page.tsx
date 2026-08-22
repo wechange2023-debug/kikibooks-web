@@ -75,19 +75,12 @@ interface LibraryPageProps {
 }
 
 export default async function LibraryPage({ searchParams }: LibraryPageProps) {
-  // 가드 1: 미인증 redirect — 미들웨어 1차, 본 페이지 2차 안전망 (phase-07 정합)
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    redirect(SIGN_IN_PATH);
-  }
 
   // searchParams.category 검증 — 홈 카테고리 카드(/library?category={slug}) 진입점.
   // LibraryFiltersSchema(server action과 동일 스키마) 재사용. 잘못된·없는 slug는
   // safeParse 실패 → 빈 필터로 폴백(너그러운 무시 = 전체 카탈로그, 기존 동작 유지).
+  // ★ 세션 조회보다 **앞**에 둔다 — 동기 파싱이라 왕복이 0이고, 아래 병렬 착수에 필요하다.
   const parsedFilters = LibraryFiltersSchema.safeParse({
     category: searchParams?.category,
   });
@@ -95,11 +88,29 @@ export default async function LibraryPage({ searchParams }: LibraryPageProps) {
     ? parsedFilters.data
     : {};
 
-  // 초기 페이지 SSR — 초기 필터·cursor null. 2개 fetch 병렬 (의존성 0건).
-  const [initialPage, copy] = await Promise.all([
+  // ★ ADR-0067 D4 — 세션 조회와 초기 페이지 조회를 함께 착수한다.
+  //   getBooks는 user를 **인자로도 받지 않는다**(lib/library/query.ts:219-223) — 순차였던
+  //   이유가 값 의존이 아니라 코드 배치였다. 왕복 2 → 1.
+  //   대가: 비로그인 요청에도 getBooks가 1건 나간다. books는 전체 공개라
+  //   (001_initial_schema.sql:214) 노출은 늘지 않고, /library는 PROTECTED_PREFIXES라
+  //   미들웨어가 이미 /login으로 보내므로 여기 도달하는 비로그인 요청 자체가 드물다.
+  const [
+    {
+      data: { user },
+    },
+    initialPage,
+    copy,
+  ] = await Promise.all([
+    supabase.auth.getUser(),
     getBooks(supabase, initialFilters, null),
     getLibraryCopy(),
   ]);
+
+  // 가드 1: 미인증 redirect — 미들웨어 1차, 본 페이지 2차 안전망 (phase-07 정합).
+  //   결과 수령 **후** 평가한다(D4). 리다이렉트되는 요청의 initialPage는 그대로 버려진다.
+  if (!user) {
+    redirect(SIGN_IN_PATH);
+  }
 
   return (
     <main className="min-h-screen bg-surface-2 py-6">

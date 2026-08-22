@@ -10,7 +10,7 @@ import { ReaderAttributionBar } from '@/components/book/reader-attribution-bar';
 import { ReaderExitGuard } from '@/components/book/reader-exit-guard';
 import { assertAdmin } from '@/lib/admin/gate';
 import { SIGN_IN_PATH } from '@/lib/auth/routes';
-import { getAudioReaderBook, hasReaderAudio } from '@/lib/book/audio-manifest';
+import { getAudioReaderBook } from '@/lib/book/audio-manifest';
 import { buildAttributionRows, type AttributionRow } from '@/lib/book/attribution';
 import { getBookDetailCopy, getBookReaderCopy } from '@/lib/book/copy';
 import { getBookByIdIncludingInactive } from '@/lib/book/detail';
@@ -199,8 +199,13 @@ export default async function ReadPage({ params, searchParams }: ReadPageProps) 
   );
 
   // 오디오 리더 분기 (ADR-0052 Phase D·F) — book_audio 행이 있는 책만.
-  //   게이트는 쿼리 1회(hasReaderAudio). 행이 0이면 아래 content_type 경로를 그대로 타므로
-  //   기존 896권 html·asb_native 동작은 변하지 않는다(회귀 0).
+  //   ★ ADR-0067 D1(a) — 게이트가 **쿼리 0회**가 됐다. 종전에는 hasReaderAudio()로 book_audio를
+  //   한 번 더 읽었는데, 그 판정값은 이미 book.hasAudio에 들어 있다 — 둘 다
+  //   selectReaderAudioBookIds·같은 기본 voice로 산출된다(lib/book/detail.ts:170·:249).
+  //   대신 book.hasAudio는 카탈로그 캐시(revalidate 3600)를 거쳐 **최대 1시간 stale**일 수 있다.
+  //   그래도 배지와 게이트가 **같은 값을 보게 되므로** 둘이 어긋나던 종전보다 정합적이다.
+  //   판정이 true인데 실제 행이 0이면 audioPageCount가 0이 되어 아래 content_type 경로로
+  //   그대로 떨어진다 — 기존 896권 html·asb_native 동작은 변하지 않는다(회귀 0).
   //
   //   ★ 판정 단일화 (2026-07-28):
   //     리더 게이팅(재생·연속 듣기·하이라이트)과 카드·상세·관리자의 "듣기 지원" 배지가
@@ -211,9 +216,10 @@ export default async function ReadPage({ params, searchParams }: ReadPageProps) 
   //   종전에는 배지만 books.has_audio 컬럼을 따로 봤다(표시/게이팅 진실 원천 분리).
   //   그 결과 구 Ruth 44권(voice='Ruth')에서 배지는 뜨는데 재생은 안 되는 상태가 생겨
   //   판정을 하나로 합쳤다. has_audio 컬럼 자체는 미접촉이며 읽기 참조만 끊었다.
-  if (await hasReaderAudio(book.id)) {
-    const audioBook = await getAudioReaderBook(book.id);
-    if (audioBook && audioBook.audioPageCount > 0) {
+  if (book.hasAudio) {
+    // ADR-0067 D1(b) — 이미 읽은 book을 넘긴다. getAudioReaderBook이 books를 다시 읽지 않는다.
+    const audioBook = await getAudioReaderBook(book);
+    if (audioBook.audioPageCount > 0) {
       // 제목·페이지수·뒤로가기는 AudioReader 헤더가 보유 → 외곽 h1 중복 제거.
       // 어트리뷰션 바(CC BY 의무)는 page 레벨 유지. 완독 버튼은 P2-B 재배치로
       // AudioReader 하단 1행에 합류시킨다 — FinishButton 자체는 무수정(슬롯 주입).
