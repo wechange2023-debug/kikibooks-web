@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Check, RotateCcw, Sparkles, Volume2, X } from 'lucide-react';
 
 import type { WordPlayCard } from '@/lib/wordplay/get-word-play';
+import { KO_MEANINGS } from '@/lib/wordplay/ko-meanings';
 
 /**
  * 단어 놀이 — 단어카드 + 발음 기반 4지선다 퀴즈 (ADR-0065 D3~D5 · E-2b).
@@ -21,6 +22,17 @@ import type { WordPlayCard } from '@/lib/wordplay/get-word-play';
  *
  * ★ 완독 흐름 무접촉(ADR-0065 D3 승계 · Amd#2 D-B7): lib/book/reading-session.ts의
  *   완독·redirect 구조를 건드리지 않는다. 완독 여부를 **읽지도 않는다**(Amd#2 D-B2 A안).
+ *
+ * 뒤집기(ADR-0065 Amendment #4 · D-D1~D-D6): 카드 본체 탭은 **앞/뒤 토글**이고, 발음 재생은
+ *   카드 안의 **스피커 전용 <button>**만 한다. 본체까지 <button>으로 두면 스피커와 중첩되어
+ *   HTML이 깨지므로, 본체는 role="button" + tabIndex + Enter/Space 처리로 **버튼과 동등한
+ *   조작성을 손으로 갖춘다**(D-D2). 그 대가로 두 가지를 직접 막아야 한다 —
+ *   포인터는 스피커에서 `stopPropagation`, 키보드는 `e.target === e.currentTarget` 확인이다.
+ *   **포인터만 막으면 스피커 포커스 + Enter에서 재생과 뒤집기가 동시에 일어난다.**
+ *
+ *   면 전환은 **조건부 렌더**다(보이는 면만 DOM에 둔다). 양면을 동시에 두고
+ *   `backface-visibility`로 감추는 3D 방식을 쓰면 숨은 면을 `aria-hidden`으로 덮어야 하는데,
+ *   그러면 화면낭독기 사용자에게 **뜻이 영영 읽히지 않는다**.
  *
  * 재생 방식(ADR-0065 Amendment #1 · W-1): 단어별 단독 mp3를 **처음부터** 재생한다.
  *   `<audio ref>` + `el.play().catch()` — 오디오 리더 선례(audio-reader.tsx:405·:573-579).
@@ -42,6 +54,15 @@ const MAX_QUESTIONS = 3;
 const CHOICES_PER_QUESTION = 4;
 /** 오답 표시 후 다음 문항까지 머무는 시간(ms). 아이가 정답을 읽을 시간. */
 const FEEDBACK_HOLD_MS = 1600;
+/**
+ * 뒷면에 띄울 뜻이 없을 때의 표시 (ADR-0065 Amd#4 D-D1).
+ *
+ * 현재 말뭉치에서는 **뜰 일이 없다** — 사전이 카드가 되는 고유 단어 전량을 덮고 있고,
+ * 제외 167종은 애초에 카드로 오지 않는다(Amd#3 D-C1 · select-words.ts:281).
+ * 이것이 실제로 화면에 뜬다면 **신규 책이 적재돼 사전 갱신이 밀렸다는 신호**다.
+ * 빈 문자열도 앞면 반복도 아닌 이유: 아이에게는 조용하고, 검수자에게는 눈에 띈다.
+ */
+const FALLBACK_MEANING = '—';
 
 type Phase = 'cards' | 'quiz' | 'result';
 
@@ -153,6 +174,28 @@ export function WordPlay({ cards, exitHref }: WordPlayProps) {
   const [score, setScore] = useState(0);
   const { audioRef, play, stop, playingWord, clearPlaying } = useWordPlayer();
 
+  /**
+   * 뒤집힌 카드의 `word` 집합 — **카드별 독립**이다(Amd#4 D-D4). 한 장을 뒤집어도 다른 장은
+   * 그대로고, 여러 장이 동시에 뒤집혀 있어도 된다. 한 번에 한 장만 허용하면 아이가 방금
+   * 뒤집은 카드가 다음 카드를 누르는 순간 되돌아가 **비교 자체가 불가능**해진다.
+   *
+   * `card.word`를 키로 쓴다 — 후보는 정규형으로 중복 제거돼 있어 고유하다
+   * (`key={card.word}`가 이미 같은 전제 위에 서 있다).
+   */
+  const [flipped, setFlipped] = useState<ReadonlySet<string>>(() => new Set());
+  /** 본체 `aria-labelledby`가 가리킬 면 텍스트의 id 접두사. */
+  const faceIdPrefix = useId();
+
+  const toggleFlip = useCallback((word: string) => {
+    setFlipped((prev) => {
+      // Set을 제자리에서 고치면 참조가 같아 리렌더되지 않는다. 매번 새로 만든다.
+      const next = new Set(prev);
+      if (next.has(word)) next.delete(word);
+      else next.add(word);
+      return next;
+    });
+  }, []);
+
   const holdTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(
     () => () => {
@@ -166,6 +209,9 @@ export function WordPlay({ cards, exitHref }: WordPlayProps) {
 
   const startQuiz = useCallback(() => {
     stop();
+    // 면 상태 초기화(Amd#4 D-D4). 퀴즈를 마치고 cards로 돌아올 경로는 아직 없지만,
+    // 빼두면 그 경로가 생기는 순간 이전 회차의 뒤집힘이 유령처럼 남는다.
+    setFlipped(new Set());
     const next = buildQuestions(cards);
     setQuestions(next);
     setQuestionIndex(0);
@@ -216,41 +262,92 @@ export function WordPlay({ cards, exitHref }: WordPlayProps) {
         <div className="flex flex-col gap-4 rounded-lg bg-surface p-5 shadow-elev-1">
           <div className="flex flex-col gap-1 text-center">
             <h2 className="font-display text-h3 font-bold text-text">이 책에 나온 단어</h2>
-            <p className="text-label text-text-variant">단어를 눌러 소리를 들어보세요</p>
+            <p className="text-label text-text-variant">
+              카드를 누르면 뜻이 보여요. 스피커를 누르면 소리가 나요
+            </p>
           </div>
 
           <ul className="grid grid-cols-2 gap-2">
-            {cards.map((card) => (
-              <li key={card.word}>
-                {card.playable ? (
-                  <button
-                    type="button"
-                    onClick={() => play(card)}
-                    aria-label={`${card.word} 발음 듣기`}
-                    className={`${CARD_BASE} w-full ${
-                      playingWord === card.word
-                        ? 'border-primary bg-primary-container text-on-primary-container'
-                        : 'border-outline bg-surface-2 text-text hover:bg-surface-3'
+            {cards.map((card, index) => {
+              const isFlipped = flipped.has(card.word);
+              const isPlaying = playingWord === card.word;
+              const faceId = `${faceIdPrefix}-${index}`;
+              // 추가 정규화를 하지 않는다(Amd#4 D-D1) — 화면 표기(card.word)가 곧 사전 키다
+              // (get-word-play.ts:64-71이 normalizeWord 결과를 그대로 넘긴다).
+              // 여기에 toLowerCase()를 덧대면 정규화 지점이 둘로 늘어 정본이 흐려진다.
+              //
+              // `?? `가 아니라 `Object.hasOwn`인 이유: 객체 리터럴은 Object.prototype을 물려받아
+              // `KO_MEANINGS['constructor']`가 undefined가 아니라 **함수**를 돌려준다. `?? `는
+              // 그것을 통과시키고, React는 함수를 자식으로 받으면 렌더 중 throw한다.
+              // 현 말뭉치에서는 도달 불가다(토크나이저 /[A-Za-z]+.../ 가 밑줄을 못 만들어
+              // `__proto__`가 불가능하고, 길이 3~10이 `constructor`(11자)를 끊으며, 나머지
+              // 프로토타입 멤버는 전부 camelCase라 소문자 정규형과 일치하지 않는다).
+              // 도달 불가를 근거로 두지 않는다 — 세 전제 중 하나만 바뀌어도 흰 화면이 된다.
+              const meaning = Object.hasOwn(KO_MEANINGS, card.word)
+                ? KO_MEANINGS[card.word]
+                : FALLBACK_MEANING;
+
+              // 재생 강조가 뒤집힘 표시보다 앞선다 — 지금 소리가 나는 카드가 무엇인지가
+              // 더 급한 정보다. 뒤집힘은 글자가 한글로 바뀌는 것으로 이미 드러난다
+              // (색 단독 전달이 아니다 — design-system.md:484).
+              const tone = isPlaying
+                ? 'border-primary bg-primary-container text-on-primary-container'
+                : isFlipped
+                  ? 'border-outline-strong bg-surface-3 text-text'
+                  : 'border-outline bg-surface-2 text-text hover:bg-surface-3';
+
+              return (
+                // h-full — 스피커(44px)가 있는 카드와 없는 카드의 높이를 한 행에서 맞춘다.
+                <li key={card.word} className="h-full">
+                  {/* 카드 본체는 <button>이 아니다(D-D2 중첩 금지). 버튼과 동등한 조작성을
+                      role·tabIndex·Enter/Space로 직접 갖춘다. */}
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={isFlipped}
+                    aria-labelledby={faceId}
+                    onClick={() => toggleFlip(card.word)}
+                    onKeyDown={(e) => {
+                      // 자손(스피커 버튼)에서 올라온 키는 처리하지 않는다. 이 확인을 빼면
+                      // 스피커에 포커스가 있을 때 Enter가 재생과 뒤집기를 동시에 일으킨다 —
+                      // 포인터 쪽 stopPropagation만으로는 막히지 않는 경로다(D-D2 주의 2).
+                      if (e.target !== e.currentTarget) return;
+                      if (e.key !== 'Enter' && e.key !== ' ') return;
+                      e.preventDefault(); // Space의 기본 스크롤 차단
+                      toggleFlip(card.word);
+                    }}
+                    className={`${CARD_BASE} h-full w-full cursor-pointer select-none ${tone} ${
+                      isFlipped ? 'scale-[0.98]' : 'scale-100'
                     }`}
                   >
-                    <Volume2
-                      className={`h-5 w-5 shrink-0 ${
-                        playingWord === card.word ? 'text-primary' : 'text-text-variant'
-                      }`}
-                      aria-hidden="true"
-                    />
-                    <span className="truncate">{card.word}</span>
-                  </button>
-                ) : (
-                  // 발음 재생 불가 — 스피커 아이콘 없이 표시만 한다(E-2b 1-e).
-                  <div
-                    className={`${CARD_BASE} w-full cursor-default border-outline bg-surface-2 text-text`}
-                  >
-                    <span className="truncate">{card.word}</span>
+                    {/* 발음 재생 불가 카드는 스피커만 없다 — 뒤집기는 그대로 제공한다(D-D3).
+                        소리가 없다는 것과 뜻이 없다는 것은 다른 얘기다. */}
+                    {card.playable && (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          // 여기서 끊지 않으면 본체 토글이 함께 발화한다(D-D2 주의 1).
+                          e.stopPropagation();
+                          play(card);
+                        }}
+                        aria-label={`${card.word} 발음 듣기`}
+                        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-pill transition-colors duration-200 ease-kiki hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 motion-reduce:transition-none ${
+                          isPlaying ? 'text-primary' : 'text-text-variant'
+                        }`}
+                      >
+                        <Volume2 className="h-5 w-5" aria-hidden="true" />
+                      </button>
+                    )}
+                    {/* 보이는 면만 DOM에 둔다 — aria-hidden을 쓰지 않으므로 화면낭독기가
+                        뜻을 읽는다(D-D2). 본체의 aria-labelledby가 이 id를 가리켜,
+                        중첩된 스피커의 aria-label이 본체 이름에 섞여 들어가지 않게 한다. */}
+                    <span id={faceId} className="truncate">
+                      {isFlipped ? meaning : card.word}
+                    </span>
                   </div>
-                )}
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
 
           <div className="flex flex-col gap-2 sm:flex-row sm:justify-center">
